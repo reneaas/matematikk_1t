@@ -27,8 +27,8 @@ ax.set_xlabel(r"$x$", fontsize=16, loc="right")
 ax.set_ylabel(r"$y$", fontsize=16, loc="top", rotation="horizontal")
 
 
-plt.axvline(x=2, color="purple", linestyle="-", lw=2, alpha=0.7)
-plt.axhline(y=1, color="orange", linestyle="-", lw=2, alpha=0.7)
+plt.axvline(x=4, color="purple", linestyle="-", lw=2, alpha=0.7)
+plt.axhline(y=2, color="blue", linestyle="-", lw=2, alpha=0.7)
 
 
 
