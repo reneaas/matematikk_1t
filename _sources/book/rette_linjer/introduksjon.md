@@ -16,17 +16,17 @@ Figuren viser tre eksempler på rette linjer. Den grønne linjene er en *skrå* 
 
 ````{admonition} Underveisoppgave
 :class: note
-Kan du forklare hvilke av uttrykkene under som hører til de ulike linjene i figur {numref}`rette_linjer`?
+Kan du forklare hvilke av uttrykkene under som hører til de ulike linjene i {numref}`rette_linjer`?
 
 1. $y = -x + 3$
 2. $x = 2$
 3. $y = 1$
 
 ```{dropdown} Løsning
-Den skrå linja er gitt ved $y = -x + 3$. Den vertikale linja er gitt ved $x = 2$ og den horisontale linja er gitt ved $y = 1$.
+1. Den skrå linja er $y = -x + 3$ fordi både $x$- og $y$-verdiene endrer seg.
+2. Den vertikale linja er $x = 2$ fordi $x$-verdien er konstant, mens alle $y$-verdier ligger på linja.
+3. Den horisontale linja er $y = 1$ fordi $y$-verdien er konstant, mens alle $x$-verdier ligger på linja.
 ```
-
-
 ````
 
 
