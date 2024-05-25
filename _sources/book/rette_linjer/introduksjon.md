@@ -11,7 +11,7 @@ Under vises en figur som illustrerer de tre typene:
 :name: rette_linjer
 :width: 80%
 
-Figuren viser tre eksempler på rette linjer. Den grønne linjene er en *skrå* linje. Den lilla linjen er en *vertikal* linje og den oransje linjen er en *horisontal* linje.
+Figuren viser tre eksempler på rette linjer. Den grønne linjene er en *skrå* linje. Den lilla linjen er en *vertikal* linje og den blå linjen er en *horisontal* linje.
 ````
 
 ````{admonition} Underveisoppgave
@@ -19,8 +19,8 @@ Figuren viser tre eksempler på rette linjer. Den grønne linjene er en *skrå* 
 Kan du forklare hvilke av uttrykkene under som hører til de ulike linjene i {numref}`rette_linjer`?
 
 1. $y = -x + 3$
-2. $x = 2$
-3. $y = 1$
+2. $x = 4$
+3. $y = 2$
 
 ```{dropdown} Løsning
 1. Den skrå linja er $y = -x + 3$ fordi både $x$- og $y$-verdiene endrer seg.
@@ -30,7 +30,20 @@ Kan du forklare hvilke av uttrykkene under som hører til de ulike linjene i {nu
 ````
 
 
-````{admonition} Algebraisk definisjon av skrå linjer
+````{admonition} Algebraisk definisjon av en linje
+:class: tip
+En *rett linje* er alle punkter $(x, y)$ som oppfyller likningen
+
+$$
+Ax + By = C
+$$
+
+der $A$, $B$ og $C$ er konstanter.
+
+````
+
+
+````{admonition} Algebraisk likning for skrå linjer
 :class: tip
 
 En skrå linje kan alltid skrives på formen
