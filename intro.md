@@ -1,3 +1,3 @@
 # Matematikk 1T
 
-Prosjekt under utvikling.
+Prosjekt under utvikling. Mer kommer snart.
