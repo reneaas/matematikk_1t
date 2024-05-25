@@ -24,8 +24,8 @@ Kan du forklare hvilke av uttrykkene under som hører til de ulike linjene i {nu
 
 ```{dropdown} Løsning
 1. Den skrå linja er $y = -x + 3$ fordi både $x$- og $y$-verdiene endrer seg.
-2. Den vertikale linja er $x = 2$ fordi $x$-verdien er konstant, mens alle $y$-verdier ligger på linja.
-3. Den horisontale linja er $y = 1$ fordi $y$-verdien er konstant, mens alle $x$-verdier ligger på linja.
+2. Den vertikale linja er $x = 4$ fordi $x$-verdien er konstant, mens alle $y$-verdier ligger på linja.
+3. Den horisontale linja er $y = 2$ fordi $y$-verdien er konstant, mens alle $x$-verdier ligger på linja.
 ```
 ````
 
