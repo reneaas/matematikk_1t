@@ -22,6 +22,9 @@ Kan du forklare hvilke av uttrykkene under som hører til de ulike linjene i fig
 2. $x = 2$
 3. $y = 1$
 
+```{dropdown} Løsning
+Den skrå linja er gitt ved $y = -x + 3$. Den vertikale linja er gitt ved $x = 2$ og den horisontale linja er gitt ved $y = 1$.
+```
 
 
 ````
