@@ -1,12 +1,12 @@
 # Grafisk representasjon 
 
 Vi tenker oss at vi har en linje $y = 2x - 2$. Hvordan kan vi representere denne linja grafisk?
-Sagt på en annen måte, hvordan ser grafen til linja ut?
+Sagt på en annen måte, hvordan ser grafen til linja ut? For å svare på dette, går via en verditabell til et koordinatsystem.
 
 ## Fra verditabell til koordinatsystem
 
 En måte å finne ut hvordan grafen til linja ser ut er å sette opp en verditabell for ulike verdier av $x$. 
-Vi bruker formelen $y = 2x - 2$ til å regne ut hvilke $y$-verdier som svarer til en gitt $x$-verdi.
+Vi bruker formelen $y = 2x - 2$ til å regne ut hvilken $y$-verdier som svarer til en $x$-verdi.
 
 Under kan vi se en verditabell for linja $y = 2x - 2$:
 
