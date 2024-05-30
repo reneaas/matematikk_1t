@@ -19,9 +19,9 @@ Vi kan tegne opp punktene fra verditabellen i et koordinatsystem.
 ````{admonition} Påminnelse: Koordinatsystemet
 :class: dropdown, tip
 
-Det *kartesiske* koordinatsystemet får vi vet å lage oss to tallinjer som står $90^\circ$ på hverandre, der hvor null på hver tallinje ligger på samme sted. Vi kaller dette punktet for *origo*, og det har koordinatene $(0, 0)$.
+Det *kartesiske* koordinatsystemet får vi vet å lage oss to tallinjer som står $90^\circ$ på hverandre, der null på hver tallinje ligger på samme sted. Vi kaller dette punktet for *origo*, og det har koordinatene $(0, 0)$.
 
-Den vannrette linja kaller vi oftest $x$-aksen. Et annet navn for aksen er *førstaksen*.
+Den vannrette linja kaller vi oftest $x$-aksen. Et annet navn for aksen er *førsteaksen*.
 Den loddrette linja kaller vi $y$-aksen. Et annen navn for denne aksen er *andreaksen*. 
 Hvis vi har et punkt $(x, y)$ i koordinatsystemet, betyr det at vi går $x$ enheter langs $x$-aksen og $y$ enheter langs $y$-aksen fra origo. For eksempel betyr $(3, 2)$ at vi først flytter oss 3 plasser langs $x$-aksen og deretter 2 plasser langs $y$-aksen. Da står vi på punktet $(3, 2)$. Se figuren under: 
 
@@ -34,6 +34,7 @@ Figuren viser et eksempel på et koordinatsystem der punktet $(3, 2)$ er markert
 ````
 
 Ut ifra verdiene vi har fra verditabellen, kan vi tegne opp punktene i et koordinatsystem, og så trekker vi rette linjer mellom punktene. Da får vi en grafisk representasjon av linja $y = 2x - 2$ ut ifra verditabellen.
+
 **Prøv å tegne linja i et koordinatsystem for hånd før du ser på fasiten under!**
 
 ````{admonition} Grafisk representasjon av $y = 2x - 2$
