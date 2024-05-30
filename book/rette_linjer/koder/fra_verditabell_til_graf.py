@@ -44,7 +44,7 @@ xticks = list(np.arange(-1, 4, 1))
 xticks.remove(0)
 plt.xticks(xticks, fontsize=16)
 
-yticks = list(np.arange(-4, 7, 1))
+yticks = list(np.arange(-4, 7, 2))
 yticks.remove(0)
 plt.yticks(yticks, fontsize=16)
 
