@@ -50,3 +50,22 @@ Figuren viser grafen til $y = 2x - 2$ i et koordinatsystem der vi har tegnet inn
 
 ````
 
+
+
+
+## Oppgaver
+
+### Level 1 🔥
+
+#### Oppgave 1
+
+I denne oppgaven skal du tegne grafen til linja $y = 3x - 1$ i et koordinatsystem ved å bruke en verditabell.
+
+**a)** Lag en verditabell for linja $y = 3x - 1$ for $x \in \{-2, -1, 0, 1, 2\}$.
+
+
+**b)** Tegn grafen til linja $y = 3x - 1$ i et koordinatsystem ved å bruke verditabellen fra **a)**.
+
+### Level 2 🔥🔥
+
+### Level 3 🔥🔥🔥
