@@ -4,12 +4,11 @@ import matplotlib.pyplot as plt
 plt.rc("text", usetex=True)
 
 def f(x):
-    return 2*x - 2
+    return -x + 3
 
 
-a = -4
-b = 6
-
+a = -5
+b = 7
 
 x = np.linspace(a, b, 1024)
 
@@ -28,35 +27,28 @@ ax.set_xlabel(r"$x$", fontsize=16, loc="right")
 ax.set_ylabel(r"$y$", fontsize=16, loc="top", rotation="horizontal")
 
 
-x_vals = [i for i in range(-1, 4)]
-y_vals = [f(i) for i in x_vals]
-
-for i in range(len(x_vals)):
-    ax.plot(x_vals[i], y_vals[i], color="black", alpha=0.7, marker="o")
-    if x_vals[i] == 0:
-        ax.text(x_vals[i]+0.1, y_vals[i] - 0.1, f"({x_vals[i]}, {y_vals[i]})", fontsize=16, ha="left", va="center")
-    else:
-        ax.text(x_vals[i], y_vals[i] + 0.1, f"({x_vals[i]}, {y_vals[i]})", fontsize=16, ha="right", va="bottom")
+plt.axvline(x=4, color="purple", linestyle="-", lw=2, alpha=0.7)
+plt.axhline(y=2, color="blue", linestyle="-", lw=2, alpha=0.7)
 
 
 
-xticks = list(np.arange(-1, 4, 1))
+xticks = list(np.arange(-1, 6, 1))
 xticks.remove(0)
 plt.xticks(xticks, fontsize=16)
 
-yticks = list(np.arange(-4, 7, 2))
+yticks = list(np.arange(-2, 5, 1))
 yticks.remove(0)
 plt.yticks(yticks, fontsize=16)
 
-plt.ylim(-5, 7)
-plt.xlim(-2, 4)
+plt.ylim(-3, 5)
+plt.xlim(-2, 6)
 
 plt.grid(True, linestyle="--", alpha=0.6)
 plt.tight_layout()
 
 # Lagrer to versjoner av figuren.
-plt.savefig("../figs/eksempel_rett_linje.png") 
-plt.savefig("../figs/eksempel_rett_linje.pdf")
-plt.savefig("../figs/eksempel_rett_linje.svg")
+plt.savefig("../../figurer/eksempler/rette_linjer.png") 
+plt.savefig("../../figurer/eksempler/rette_linjer.pdf")
+plt.savefig("../../figurer/eksempler/rette_linjer.svg")
 
 plt.show()
