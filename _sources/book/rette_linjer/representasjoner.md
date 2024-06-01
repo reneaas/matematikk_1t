@@ -4,6 +4,14 @@ En representasjon er en måte å uttrykke noe på. Når vi jobber med rette linj
 
 ---
 
+## Læringsmål
+Målet med denne siden er at du skal kunne:
+- Lese av og tegne koordinater i et koordinatssystem.
+- Kunne lage en verditabell og tegne grafen til en linje i et koordinatssystem.
+- Kunne bestemme likningen til en linje ved å bestemme stigningstall og skjæring med $y$-aksen.
+
+---
+
 ## Grafisk representasjon av linjer
 Vi tenker oss at vi har en linje $y = 2x - 4$. Hvordan kan vi representere denne linja grafisk?
 Sagt på en annen måte, hvordan ser grafen til linja ut? For å svare på dette, går via en verditabell til et koordinatsystem.
@@ -258,6 +266,17 @@ Formel for stigningstallet
 : $$a = \frac{\Delta y}{\Delta x} = \frac{y_2 - y_1}{x_2 - x_1}$$
 ```
 
+````{margin} 
+```{admonition} Sentrale formler
+:class: tip
+Algebraisk uttrykk for en skrå linje
+: $$y = ax + b$$
+
+Formel for stigningstallet
+: $$a = \frac{\Delta y}{\Delta x} = \frac{y_2 - y_1}{x_2 - x_1}$$
+```
+````
+
 
 Bestem formlene for de rette linjene i grafen som vises under. 
 
@@ -311,6 +330,15 @@ y = -\frac{1}{2}x + 1
 $$
 
 ```
+
+````{admonition} Fasit (Alternativ måte å strukturere det på)
+:class: dropdown, note
+
+```{}
+
+```
+
+````
 
 
 
