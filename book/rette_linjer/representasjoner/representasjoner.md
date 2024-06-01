@@ -104,7 +104,7 @@ Vi tar utgangspunkt i grafen under.
 :name: graf_til_formel
 :width: 80%
 
-Figuren viser grafen til en skrå linje i et koordinatsystem. 
+Figuren viser grafen til en skrå linje i et koordinatsystem. Men kan du bestemme likningen for linja?
 
 ```
 
