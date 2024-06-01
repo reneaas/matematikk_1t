@@ -118,7 +118,7 @@ der $\Delta y = y_2 - y_1$ og $\Delta x = x_2 - x_1$. Figuren under viser formel
 :name: stigningstall
 :width: 80%
 
-Figuren viser en skrå linje i et koordinatsystem der to punkter $(x_1, y_1)$ og $(x_2, y_2)$ er ligger på linja.
+Figuren viser grafen til en skrå linje i et koordinatsystem der to punkter $(x_1, y_1)$ og $(x_2, y_2)$ er ligger på linja.
 Endringene i $x$-verdi og $y$-verdi er representert som striplete linjer. Lengden av den striplete linjen parallell med $x$-aksen er $\Delta x = x_2 - x_1$ og lengden av den striplete linjen parallell med $y$-aksen er $\Delta y = y_2 - y_1$.
 ```
 
@@ -233,7 +233,7 @@ Dermed får vi verditabellen:
 ```
 
 ##### Oppgave 1b
-Tegn grafen til linja $y = 3x - 1$ i et koordinatsystem ved å bruke verditabellen fra 1a.
+Tegn grafen til linja $y = x - 2$ i et koordinatsystem ved å bruke verditabellen fra 1a.
 
 ````{admonition} Fasit
 :class: dropdown, note
@@ -298,7 +298,7 @@ $$
 y = 2x - 3.
 $$
 
-For den lilla linja kan vi lese av at punkteke $(0, 1)$ og $(2, 0)$ ligger på linja. Dermed blir stigningstallet til linja
+For den lilla linja kan vi lese av at punktene $(0, 1)$ og $(2, 0)$ ligger på linja. Dermed blir stigningstallet til linja
 
 $$
 a = \frac{y_2 - y_1}{x_2 - x_1} = \frac{0 - 1}{2 - 0} = \frac{-1}{2} = -\frac{1}{2}.
