@@ -14,7 +14,7 @@ Under vises en figur som illustrerer de tre typene:
 Figuren viser tre eksempler på rette linjer. Den grønne linjene er en *skrå* linje. Den lilla linjen er en *vertikal* linje og den blå linjen er en *horisontal* linje.
 ````
 
-````{admonition} Underveisoppgave
+````{admonition} Underveisoppgave 1
 :class: note
 Kan du forklare hvilke av uttrykkene under som hører til de ulike linjene i {numref}`rette_linjer`?
 

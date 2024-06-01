@@ -59,20 +59,20 @@ Figuren viser grafen til $y = 2x - 4$ i et koordinatsystem der vi har tegnet inn
 
 #### Oppgave 1
 
-I denne oppgaven skal du tegne grafen til linja $y = 3x - 1$ i et koordinatsystem ved å bruke en verditabell.
+I denne oppgaven skal du tegne grafen til linja $y = x - 2$ i et koordinatsystem ved å bruke en verditabell.
 
 ##### Oppgave 1a
-Fyll ut verditabellen under for linja $y = 3x - 1$. 
+Fyll ut verditabellen under for linja $y = x - 2$. 
 
-| $x$ | $-2$ | $-1$ | $0$ | $1$ | $2$ |
-| --- | --- | --- | --- | --- | --- |
-| $y$ |  |  |  |  |  |
+| $x$ | $-2$ | $-1$ | $0$ | $1$ | $2$ | $3$ |
+| --- | --- | --- | --- | --- | --- | --- |
+| $y$ |  |  |  |  |  | |
 
 ```{admonition} Fasit
 :class: note, dropdown
-| $x$ | $-2$ | $-1$ | $0$ | $1$ | $2$ |
-| --- | --- | --- | --- | --- | --- |
-| $y$ | $-7$ | $-4$ | $-1$ | $2$ | $5$ |
+| $x$ | $-2$ | $-1$ | $0$ | $1$ | $2$ | $3$ |
+| --- | --- | --- | --- | --- | --- | --- |
+| $y$ | $-4$ | $-3$ | $-2$ | $-1$ | $0$ | $1$ |
 ```
 
 ```{admonition} Løsning
@@ -82,49 +82,56 @@ Først må vi regne ut $y$-verdiene for de ulike $x$-verdiene. Vi setter inn $x$
 For $x = -2$:
 
 $$
-y = 3 \cdot (-2) - 1 = -7
+y = (-2) - 2 = -4
 $$
 
 For $x = -1$:
 
 $$
-y = 3 \cdot (-1) - 1 = -4
+y = (-1) - 2 = -3
 $$
 
 For $x = 0$:
 
 $$
-y = 3 \cdot 0 - 1 = -1
+y = 0 - 2 = -2
 $$
 
 For $x = 1$:
 
 $$
-y = 3 \cdot 1 - 1 = 2
+y = 1 - 2 = -1
 $$
 
 For $x = 2$:
 
 $$
-y = 3 \cdot 2 - 1 = 5
+y = 2 - 2 = 0
+$$
+
+For $x = 3$:
+
+$$
+y = 3 - 2 = 1
 $$
 
 Dermed får vi verditabellen:
 
-| $x$ | $-2$ | $-1$ | $0$ | $1$ | $2$ |
-| --- | --- | --- | --- | --- | --- |
-| $y$ | $-7$ | $-4$ | $-1$ | $2$ | $5$ |
+| $x$ | $-2$ | $-1$ | $0$ | $1$ | $2$ | $3$ |
+| --- | --- | --- | --- | --- | --- | --- |
+| $y$ | $-4$ | $-3$ | $-2$ | $-1$ | $0$ | $1$ |
 ```
 
 ##### Oppgave 1b
 Tegn grafen til linja $y = 3x - 1$ i et koordinatsystem ved å bruke verditabellen fra 1a.
 
 ````{admonition} Fasit
-
-```{figure} ./figurer/eksempler/eksempel_rett_linje.pdf
+:class: dropdown, note
+```{figure} ./figurer/oppgaver/oppgave1.pdf
 :name: rett_linje_oppgave_1b
 :width: 80%
 
+Figuren viser grafen til $y = x - 2$ i et koordinatsystem der vi har tegnet inn punktene fra verditabellen og trukket linjer mellom punktene. Vi har også latt linja fortsette utenfor punktene for å vise hvordan linja ser ut.
 ```
 
 ````
