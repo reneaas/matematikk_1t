@@ -70,5 +70,5 @@ plt.tight_layout()
 
 progress_callback = lambda i, n: print(f"Writing progress: {(i+1) / n * 100 :.1f} %", end="\r")
 ani = FuncAnimation(fig, update, frames=range(len(x_values)), init_func=init, blit=True, repeat=False)
-ani.save("grid_search.gif", writer="imagemagick", fps=1, progress_callback=progress_callback)
+ani.save("../animasjoner/grid_search.gif", writer="imagemagick", fps=1, progress_callback=progress_callback)
 plt.close()
