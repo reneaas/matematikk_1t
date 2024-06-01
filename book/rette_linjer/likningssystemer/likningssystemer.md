@@ -14,10 +14,10 @@ Eleven har skrevet følgende kode der eleven har brukt en strategi som på _godt
 for y in range(-4, 5):
     for x in range(-4, 5):
         if x - y == -1 and x + y == 1:
-            print(f"x = {x}, y = {y}")
+            print(f"{x = } og {y = }")
 ```
 
-Animasjonen i 
+Animasjonen i {numref}`grid_search` viser hvordan denne strategien fungerer grafisk:
 
 ```{figure} ./animasjoner/grid_search.gif
 :name: grid_search
