@@ -138,7 +138,7 @@ Endringene i $x$-verdi og $y$-verdi er representert som striplete linjer. Lengde
 Vi tenker oss linja $y = ax + b$ og to punkter $(x_1, y_1)$ og $(x_2, y_2)$ på linja. Hvis vi regner ut endringen i $y$-verdi med formelen får vi:
 
 $$
-\Delta y = y_2 - y_1 = = (ax_2 + b) - (ax_1 + b) = ax_2 - ax_1 = a(x_2 - x_1) = a\Delta x
+\Delta y = y_2 - y_1 = (ax_2 + b) - (ax_1 + b) = ax_2 - ax_1 = a(x_2 - x_1) = a\Delta x
 $$
 
 Dermed har vi at 
