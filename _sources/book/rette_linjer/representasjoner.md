@@ -1,9 +1,14 @@
-# Grafisk representasjon av skrå linjer
+# Algebraisk og grafisk representasjon av skrå linjer
 
+En representasjon er en måte å uttrykke noe på. Når vi jobber med rette linjer, er de to vanligste måtene å representer linjer på algebraisk og grafisk. Med algebraisk representasjon, mener vi en formel som beskriver linja. Med grafisk representasjon, mener vi en tegning av linja i et koordinatsystem.
+
+
+
+## Grafisk representasjon av linjer
 Vi tenker oss at vi har en linje $y = 2x - 4$. Hvordan kan vi representere denne linja grafisk?
 Sagt på en annen måte, hvordan ser grafen til linja ut? For å svare på dette, går via en verditabell til et koordinatsystem.
 
-## Fra verditabell til koordinatsystem
+### Fra verditabell til koordinatsystem
 
 En måte å finne ut hvordan grafen til linja ser ut er å sette opp en verditabell for ulike verdier av $x$. 
 Vi bruker formelen $y = 2x - 4$ til å regne ut hvilken $y$-verdier som svarer til en $x$-verdi.
@@ -49,6 +54,109 @@ Figuren viser grafen til $y = 2x - 4$ i et koordinatsystem der vi har tegnet inn
 
 
 ````
+
+## Algebraisk representasjon av skrå linjer
+Først bør vi se på en algebraisk definisjon av en skrå linje. 
+
+````{admonition} Algebraisk definisjon av skrå linjer
+:class: tip
+
+En skrå linje kan alltid skrives på formen
+
+$$
+y = ax + b
+$$
+
+der $a$ er *stigningstallet* og $b$ er skjæringen til linja med $y$-aksen. Konstanten $b$ kalles ofte også for konstantleddet eller $y$-skjæringen. 
+````
+
+````{admonition} Underveisoppgave
+:class: 
+Bestem stigningstallet og skjæringen med $y$-aksen til linjene
+1. $y = 3x - 1$
+2. $y = -2x + 4$
+3. $y = -x + 2$
+````
+
+````{admonition} Løsning
+:class: dropdown, note
+
+1. Linja $y = 3x - 1$ har stigningstallet $a = 3$ og skjæringen med $y$-aksen $b = -1$.
+2. Linja $y = -2x + 4$ har stigningstallet $a = -2$ og skjæringen med $y$-aksen $b = 4$.
+3. Linja $y = -x + 2$ har stigningstallet $a = -1$ og skjæringen med $y$-aksen $b = 2$.
+````
+
+## Fra graf til algebraisk uttrykk
+Hvis kjenner grafen til en rett linje, hvordan kan vi da finne et algebraisk uttrykk for linja? 
+Sagt på en annen måte, hvordan finner vi en formel $y = ax + b$ for linja?
+
+Vi tar utgangspunkt i grafen under.
+
+```{figure} ./figurer/eksempler/fra_graf_til_formel.pdf
+:name: fra_graf_til_formel
+:width: 80%
+```
+
+### Stigningstallet $a$
+En måte å finne stigningstallet $a$ på, er å se hvor mye $y$-verdien endrer seg når vi går én enhet langs $x$-aksen.
+Hvis vi ser på grafen i {numref}`fra_graf_til_formel`, ser vi at når vi går fra $x = 0$ til $x = 1$, går $y$-verdien fra $y = 3$ til $y = 1$. Endringen i $y$-verdien er $-2$. Dermed er stigningstallet $a = -2$. 
+
+Men kan det tenkes at det er en mer generell måte å finne stigningstallet på?
+
+`````{admonition} Generell formel for stigningstallet
+:class: tip
+For en skrå linje på formen $y = ax + b$, og to punkter $(x_1, y_1)$ og $(x_2, y_2)$ på linja, kan vi finne stigningstallet $a$ ved
+
+$$
+a = \frac{\Delta y}{\Delta x} = \frac{y_2 - y_1}{x_2 - x_1} ,
+$$
+
+der $\Delta y = y_2 - y_1$ og $\Delta x = x_2 - x_1$. Figuren under viser formelens betydning grafisk:
+
+```{figure} ./figurer/eksempler/stigningstall.pdf
+:name: stigningstall
+:width: 80%
+
+Figuren viser en skrå linje i et koordinatsystem der to punkter $(x_1, y_1)$ og $(x_2, y_2)$ er ligger på linja.
+Endringene i $x$-verdi og $y$-verdi er representert som striplete linjer. 
+```
+
+
+````{admonition} Bevis for formelen
+:class: dropdown
+Vi tenker oss linja $y = ax + b$ og to punkter $(x_1, y_1)$ og $(x_2, y_2)$ på linja. Hvis vi regner ut endringen i $y$-verdi med formelen får vi:
+
+$$
+\Delta y = y_2 - y_1 = = (ax_2 + b) - (ax_1 + b) = ax_2 - ax_1 = a(x_2 - x_1) = a\Delta x
+$$
+
+Dermed har vi at 
+
+$$
+a\Delta x = \Delta y
+$$
+
+Snur vi om på formelen ved å dele med $\Delta x$ på begge sider, får vi
+
+$$
+a = \frac{\Delta y}{\Delta x} = \frac{y_2 - y_1}{x_2 - x_1}
+$$
+
+som var det vi skulle vise.
+````
+
+`````
+
+
+For å bestemme formelen $y = ax + b$ for linja, må vi enten:
+1. Kjenne til to punkter på linja.
+2. Kjenne til stigningstallet $a$ og ett punkt på linja.
+3. Kjenne til stigningstallet og skjæringen med $y$-aksen.
+
+
+### Bestemme stigningstall og skjæring med $y$-aksen
+
+Kjenner vi grafen til linja, kan vi bestemme stigningstallet $a$ 
 
 
 
