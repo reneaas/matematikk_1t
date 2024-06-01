@@ -39,7 +39,7 @@ Den vannrette linja kaller vi oftest $x$-aksen. Et annet navn for aksen er *før
 Den loddrette linja kaller vi $y$-aksen. Et annen navn for denne aksen er *andreaksen*. 
 Hvis vi har et punkt $(x, y)$ i koordinatsystemet, betyr det at vi går $x$ enheter langs $x$-aksen og $y$ enheter langs $y$-aksen fra origo. For eksempel betyr $(3, 2)$ at vi først flytter oss 3 plasser langs $x$-aksen og deretter 2 plasser langs $y$-aksen. Da står vi på punktet $(3, 2)$. Se figuren under: 
 
-```{figure} ./figurer/eksempler/koordinatsystem.pdf
+```{figure} ./figurer/eksempler/koordinatsystem.svg
 :name: koordinatsystem
 :width: 80%
 
@@ -54,7 +54,7 @@ Ut ifra verdiene vi har fra verditabellen, kan vi tegne opp punktene i et koordi
 ````{admonition} Grafisk representasjon av $y = 2x - 4$
 :class: dropdown
 
-```{figure} ./figurer/eksempler/eksempel_rett_linje.pdf
+```{figure} ./figurer/eksempler/eksempel_rett_linje.svg
 :name: rett_linje_eksempel
 :width: 80%
 
@@ -101,7 +101,7 @@ Sagt på en annen måte, hvordan finner vi en formel $y = ax + b$ for linja?
 
 Vi tar utgangspunkt i grafen under.
 
-```{figure} ./figurer/eksempler/fra_graf_til_formel.pdf
+```{figure} ./figurer/eksempler/fra_graf_til_formel.svg
 :name: fra_graf_til_formel
 :width: 80%
 ```
@@ -122,7 +122,7 @@ $$
 
 der $\Delta y = y_2 - y_1$ og $\Delta x = x_2 - x_1$. Figuren under viser formelens betydning grafisk:
 
-```{figure} ./figurer/eksempler/stigningstall.pdf
+```{figure} ./figurer/eksempler/stigningstall.svg
 :name: stigningstall
 :width: 80%
 
@@ -245,7 +245,7 @@ Tegn grafen til linja $y = x - 2$ i et koordinatsystem ved å bruke verditabelle
 
 ````{admonition} Fasit
 :class: dropdown, note
-```{figure} ./figurer/oppgaver/oppgave_1.pdf
+```{figure} ./figurer/oppgaver/oppgave_1.svg
 :name: rett_linje_oppgave_1b
 :width: 80%
 
@@ -280,7 +280,7 @@ Formel for stigningstallet
 
 Bestem formlene for de rette linjene i grafen som vises under. 
 
-```{figure} ./figurer/oppgaver/oppgave_2.pdf
+```{figure} ./figurer/oppgaver/oppgave_2.svg
 :name: rett_linje_oppgave_2
 :width: 80%
 ```
