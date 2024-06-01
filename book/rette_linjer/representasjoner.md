@@ -324,7 +324,35 @@ $$
 ```
 
 
+#### Oppgave 3
+En elev jobber med en oppgave og har skrevet et program: 
 
+```{code-block} python
+:linenos:
+:emphasize-lines: 6, 7
+# Punkt (x1, y1)
+x1 = 1
+y1 = 2
+
+# Punkt (x2, y2)
+x2 = 4
+y2 = 6
+
+dy = y2 - y1
+dx = x2 - x1
+
+a = dy / dx
+b = y1 - a*x1
+
+print(f"Formelen for linja er y = {a}x + {b}")
+```
+
+##### Opppgave 3a
+Forklar formelene på linje 6 og 7 i programmet.
+
+##### Oppgave 3b
+
+Hva blir utskriften av programmet?
 
 
 ### Level 2 🔥🔥
