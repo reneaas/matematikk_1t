@@ -127,7 +127,7 @@ Tegn grafen til linja $y = 3x - 1$ i et koordinatsystem ved å bruke verditabell
 
 ````{admonition} Fasit
 :class: dropdown, note
-```{figure} ./figurer/oppgaver/oppgave1.pdf
+```{figure} ./figurer/oppgaver/oppgave_1.pdf
 :name: rett_linje_oppgave_1b
 :width: 80%
 
