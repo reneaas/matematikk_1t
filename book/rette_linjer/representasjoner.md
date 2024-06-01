@@ -14,7 +14,7 @@ Målet med denne siden er at du skal kunne:
 
 ## Grafisk representasjon av linjer
 Vi tenker oss at vi har en linje $y = 2x - 4$. Hvordan kan vi representere denne linja grafisk?
-Sagt på en annen måte, hvordan ser grafen til linja ut? For å svare på dette, går via en verditabell til et koordinatsystem.
+Sagt på en annen måte, hvordan ser grafen til linja ut? For å svare på dette, går vi via en verditabell til et koordinatsystem.
 
 ### Fra verditabell til koordinatsystem
 
@@ -61,7 +61,6 @@ Ut ifra verdiene vi har fra verditabellen, kan vi tegne opp punktene i et koordi
 Figuren viser grafen til $y = 2x - 4$ i et koordinatsystem der vi har tegnet inn punktene fra verditabellen og trukket linjer mellom punktene. Vi har også latt linja fortsette utenfor punktene for å vise hvordan linja ser ut.
 ```
 
-
 ````
 
 ## Algebraisk representasjon av skrå linjer
@@ -90,9 +89,9 @@ Bestem stigningstallet og skjæringen med $y$-aksen til linjene
 ````{admonition} Løsning
 :class: dropdown, note
 
-1. Linja $y = 3x - 1$ har stigningstallet $a = 3$ og skjæringen med $y$-aksen $b = -1$.
-2. Linja $y = -2x + 4$ har stigningstallet $a = -2$ og skjæringen med $y$-aksen $b = 4$.
-3. Linja $y = -x + 2$ har stigningstallet $a = -1$ og skjæringen med $y$-aksen $b = 2$.
+1. For linja $y = 3x - 1$ er stigningstallet $a = 3$ og skjæring med $y$-aksen $b = -1$.
+2. For linja $y = -2x + 4$ er stigningstallet $a = -2$ og skjæringen med $y$-aksen $b = 4$.
+3. For linja $y = -x + 2$ har stigningstallet $a = -1$ og skjæringen med $y$-aksen $b = 2$.
 ````
 
 ## Fra graf til algebraisk uttrykk
@@ -102,13 +101,16 @@ Sagt på en annen måte, hvordan finner vi en formel $y = ax + b$ for linja?
 Vi tar utgangspunkt i grafen under.
 
 ```{figure} ./figurer/eksempler/fra_graf_til_formel.svg
-:name: fra_graf_til_formel
+:name: graf_til_formel
 :width: 80%
+
+Figuren viser grafen til en skrå linje i et koordinatsystem. 
+
 ```
 
 ### Stigningstallet $a$
 En måte å finne stigningstallet $a$ på, er å se hvor mye $y$-verdien endrer seg når vi går én enhet langs $x$-aksen.
-Hvis vi ser på grafen i {numref}`fra_graf_til_formel`, ser vi at når vi går fra $x = 0$ til $x = 1$, går $y$-verdien fra $y = 3$ til $y = 1$. Endringen i $y$-verdien er $-2$. Dermed er stigningstallet $a = -2$. 
+Hvis vi ser på grafen i {numref}`graf_til_formel`, ser vi at når vi går fra $x = 0$ til $x = 1$, går $y$-verdien fra $y = 3$ til $y = 1$. Endringen i $y$-verdien er $-2$. Dermed er stigningstallet $a = -2$. 
 
 Men kan det tenkes at det er en mer generell måte å finne stigningstallet på?
 
