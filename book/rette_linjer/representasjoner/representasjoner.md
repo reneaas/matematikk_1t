@@ -328,7 +328,6 @@ $$
 En elev jobber med en oppgave og har skrevet et program: 
 
 ```{code-block} python
-:linenos:
 :emphasize-lines: 12, 13
 # Punkt (x1, y1)
 x1 = 1
