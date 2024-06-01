@@ -2,7 +2,7 @@
 
 En representasjon er en måte å uttrykke noe på. Når vi jobber med rette linjer, er de to vanligste måtene å representer linjer på algebraisk og grafisk. Med algebraisk representasjon, mener vi en formel som beskriver linja. Med grafisk representasjon, mener vi en tegning av linja i et koordinatsystem.
 
-
+---
 
 ## Grafisk representasjon av linjer
 Vi tenker oss at vi har en linje $y = 2x - 4$. Hvordan kan vi representere denne linja grafisk?
@@ -20,6 +20,7 @@ Under kan vi se en verditabell for linja $y = 2x - 4$:
 | $y$ | $-4$ | $-2$ | $0$ | $2$ | $4$ |
 
 Vi kan tegne opp punktene fra verditabellen i et koordinatsystem. 
+
 
 ````{admonition} Påminnelse: Koordinatsystemet
 :class: dropdown, tip
@@ -118,7 +119,7 @@ der $\Delta y = y_2 - y_1$ og $\Delta x = x_2 - x_1$. Figuren under viser formel
 :width: 80%
 
 Figuren viser en skrå linje i et koordinatsystem der to punkter $(x_1, y_1)$ og $(x_2, y_2)$ er ligger på linja.
-Endringene i $x$-verdi og $y$-verdi er representert som striplete linjer. 
+Endringene i $x$-verdi og $y$-verdi er representert som striplete linjer. Lengden av den striplete linjen parallell med $x$-aksen er $\Delta x = x_2 - x_1$ og lengden av den striplete linjen parallell med $y$-aksen er $\Delta y = y_2 - y_1$.
 ```
 
 
@@ -162,6 +163,7 @@ Kjenner vi grafen til linja, kan vi bestemme stigningstallet $a$
 
 
 ## Oppgaver
+
 
 ### Level 1 🔥
 
@@ -243,6 +245,75 @@ Figuren viser grafen til $y = x - 2$ i et koordinatsystem der vi har tegnet inn 
 ```
 
 ````
+
+#### Oppgave 2
+
+```{margin} Sentrale formler:
+<br>
+
+Algebraisk uttrykk for en skrå linje
+: $$y = ax + b$$
+
+Formel for stigningstallet
+: $$a = \frac{\Delta y}{\Delta x} = \frac{y_2 - y_1}{x_2 - x_1}$$
+```
+
+
+Bestem formlene for de rette linjene i grafen som vises under. 
+
+```{figure} ./figurer/oppgaver/oppgave_2.pdf
+:name: rett_linje_oppgave_2
+:width: 80%
+```
+
+
+```{admonition} Fasit
+:class: dropdown, note
+
+Den grønne linja har formelen 
+
+$$
+y = 2x - 3.
+$$
+
+Den lilla linja har formelen 
+
+$$
+y = -x + 3.
+$$
+```
+
+```{admonition} Løsning
+:class: dropdown, note
+For å bestemme formelen for den grønne linja, kan vi lese av to punkter på grafen for å bestemme stigningstallet.
+Vi kan se at punktene $(0, -3)$ og $(3, 3)$ ligger på linja. Dermed blir stigningstallet
+
+$$
+a = \frac{y_2 - y_1}{x_2 - x_1} = \frac{3 - (-3)}{3 - 0} = \frac{6}{3} = 2.
+$$
+
+Vi kan lese av at grafen skjærer $y$-aksen i $y = -3$. Dermed er $b = -3$. Derfor er formelen for den grønne linja
+
+$$
+y = 2x - 3.
+$$
+
+For den lilla linja kan vi lese av at punkteke $(0, 1)$ og $(2, 0)$ ligger på linja. Dermed blir stigningstallet til linja
+
+$$
+a = \frac{y_2 - y_1}{x_2 - x_1} = \frac{0 - 1}{2 - 0} = \frac{-1}{2} = -\frac{1}{2}.
+$$
+
+Vi kan lese av at grafen skjærer $y$-aksen i $y = 1$. Dermed er $b = 1$. Derfor er formelen for den lilla linja
+
+$$
+y = -\frac{1}{2}x + 1
+$$
+
+```
+
+
+
 
 ### Level 2 🔥🔥
 
