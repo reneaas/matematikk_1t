@@ -258,19 +258,9 @@ Figuren viser grafen til $y = x - 2$ i et koordinatsystem der vi har tegnet inn 
 
 #### Oppgave 2
 
-```{margin} Sentrale formler:
-<br>
-
-Algebraisk uttrykk for en skrå linje
-: $$y = ax + b$$
-
-Formel for stigningstallet
-: $$a = \frac{\Delta y}{\Delta x} = \frac{y_2 - y_1}{x_2 - x_1}$$
-```
-
 ````{margin} 
 ```{admonition} Sentrale formler
-:class: tip
+:class: tip, dropdown
 Algebraisk uttrykk for en skrå linje
 : $$y = ax + b$$
 
@@ -333,14 +323,6 @@ $$
 
 ```
 
-````{admonition} Fasit (Alternativ måte å strukturere det på)
-:class: dropdown, note
-
-```{}
-
-```
-
-````
 
 
 
