@@ -226,7 +226,7 @@ Fyll ut verditabellen under for linja $y = x - 2$.
 
 ```{admonition} Løsningsforslag
 :class: note, dropdown
-Først må vi regne ut $y$-verdiene for de ulike $x$-verdiene. Vi setter inn $x$-verdiene i formelen $y = 3x - 1$:
+Først må vi regne ut $y$-verdiene for de ulike $x$-verdiene. Vi setter inn $x$-verdiene i formelen $y = x - 2$:
 
 For $x = -2$:
 
