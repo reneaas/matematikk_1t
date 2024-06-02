@@ -79,7 +79,7 @@ der $a$ er *stigningstallet* og $b$ er skjæringen til linja med $y$-aksen. Kons
 ````
 
 ````{admonition} Underveisoppgave
-:class: 
+
 Bestem stigningstallet og skjæringen med $y$-aksen til linjene
 1. $y = 3x - 1$
 2. $y = -2x + 4$
@@ -104,7 +104,7 @@ Vi tar utgangspunkt i grafen under.
 :name: graf_til_formel
 :width: 80%
 
-Figuren viser grafen til en skrå linje i et koordinatsystem. Men kan du bestemme likningen for linja?
+Figuren viser grafen til en skrå linje i et koordinatsystem. Men hva er likningen til linja? 
 
 ```
 
@@ -325,33 +325,99 @@ $$
 
 
 #### Oppgave 3
-En elev jobber med en oppgave og har skrevet et program: 
+En elev prøver å bestemme likningen til en linje ut ifra to punkter på linja. 
 
 ```{code-block} python
+:linenos:
 :emphasize-lines: 12, 13
-# Punkt (x1, y1)
-x1 = 1
-y1 = 2
+    # Punkt (x1, y1)
+    x1 = -2
+    y1 = 2
 
-# Punkt (x2, y2)
-x2 = 4
-y2 = 6
+    # Punkt (x2, y2)
+    x2 = 4
+    y2 = 5
 
-dy = y2 - y1
-dx = x2 - x1
+    dy = y2 - y1
+    dx = x2 - x1
 
-a = dy / dx
-b = y1 - a*x1
+    a = ??
+    b = ??
 
-print(f"Formelen for linja er y = {a}x + {b}")
+    print(f"Formelen for linja er y = {a}x + {b}")
 ```
 
-##### Opppgave 3a
-Forklar formelene på linje 12 og 13 i programmet.
+##### Oppgave 3a
+
+Hva må stå på linje 12 og 13 for at programmet skal gi riktig svar?
+Hva blir utskriften av programmet da?
+
+````{admonition} Fasit
+:class: dropdown, note
+
+På linja 12 må det stå {code-block}`a = dy / dx` og på linje 13 kan det stå `b = y1 - a * x1`{l=python} eller `b = y2 - a * x2`{l=python}.
+Det som skrives ut av programmet er
+````
+
+
+````{admonition} Løsningsforslag
+:class: dropdown, note
+
+Vi tar for oss linje 12 først. Vi vet at stigningstallet $a$ er endringen i $y$-verdi delt på endringen i $x$-verdi. Vi kan se at $\Delta y = y_2 - y_1$ regnes ut i programmet som `dy = y2 - y1`{l=python} og $\Delta x$ regnes ut i programmet som `dx = x2 - x1`{l=python}. Dermed må vi skrive `a = dy / dx`{l=python} for å regne ut stigningstallet på linje 12.
+
+På linje 13 skal vi finne skjæringen med $y$-aksen. For en linje betyr dette å bestemme $b$ i formelen $y = ax + b$. Vi kan ta utgangspunkt i punktet $(x_1, y_1)$ for å bestemme $b$:
+
+$$
+y_1 = ax_1 + b \Leftrightarrow b = y_1 - ax_1
+$$
+
+eller vi kan ta utgangspunkt i $(x_2, y_2)$:
+
+$$
+y_2 = ax_2 + b \Leftrightarrow b = y_2 - ax_2
+$$
+
+Derfor kan det stå `b = y1 - a * x1`{l=python} eller `b = y2 - a * x2`{l=python} på linje 13.
+
+````
 
 ##### Oppgave 3b
+Bestem hva som skrives ut av programmet.
 
-Hva blir utskriften av programmet?
+````{admonition} Fasit
+:class: dropdown, note
+```console
+Formelen for linja er y = 0.5x + 3
+```
+````
+
+````{admonition} Løsningsforslag
+:class: dropdown, note
+Stigningstallet som regnes ut av programmet er 
+
+$$
+a = \frac{\Delta y}{\Delta x} = \frac{y_2 - y_1}{x_2 - x_1} = \frac{5 - 2}{4 - (-2)} = \frac{3}{6} = \frac{1}{2} = 0.5
+$$
+
+Kontantleddet $b$ kan vi finne ved å sette inn $a = 1$ og $(x_1, y_1) = (-2, 2)$ i formelen $y = ax + b$:
+
+$$
+2 = \frac{1}{2}\cdot (-2) + b  \quad \Leftrightarrow \quad b = 2 + 1 = 3
+$$
+
+Dermed blir formelen for linja som skrives ut 
+
+$$
+y = \frac{1}{2}x + 3 = 0.5x + 3
+$$
+
+På datamaskin, representeres tall som desimaltall og ikke som brøk. Derfor får vi at utskriften blir
+
+```console
+Formelen for linja er y = 0.5x + 3
+```
+
+````
 
 
 ### Level 2 🔥🔥
