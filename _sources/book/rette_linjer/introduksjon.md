@@ -7,7 +7,7 @@ En *rett linje* kommer i tre typer:
 
 Under vises en figur som illustrerer de tre typene:
 
-````{figure} ./figurer/eksempler/rette_linjer.svg
+````{figure} ./representasjoner/figurer/eksempler/rette_linjer.svg
 :name: rette_linjer
 :width: 80%
 
