@@ -23,21 +23,3 @@ Under vises en figur der vi har henholdsvis brukt 7 og 21 punkter som vi har teg
 
 En grafisk representasjon av $f(x) = x^2 - 4$ for $x \in [-3, 3]$. Til venstre er det brukt 7 punkter, mens til høyre er det brukt 21 punkter. Mellom punktene har vi tegnet rette linjer. 
 ```
-
-
-```{prf:example}
-Her er mitt eksempel
-```
-
-
-```{prf:theorem}
-Her er min setning
-```
-
-```{prf:definition}
-Her er min definisjon
-```
-
-```{prf:exercise}
-Her er min øvelse
-```
