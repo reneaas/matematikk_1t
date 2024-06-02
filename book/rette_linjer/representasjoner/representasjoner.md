@@ -24,7 +24,7 @@ Vi bruker formelen $y = 2x - 4$ til å regne ut hvilken $y$-verdier som svarer t
 Under kan vi se en verditabell for linja $y = 2x - 4$:
 
 | $x$ | $-1$ | $0$ | $1$ | $2$ | $3$ |
-| --- | --- | --- | --- | --- | --- |
+| :---: | :---: | :---: | :---: | :---: | :---: |
 | $y$ | $-4$ | $-2$ | $0$ | $2$ | $4$ |
 
 Vi kan tegne opp punktene fra verditabellen i et koordinatsystem. 
@@ -185,17 +185,17 @@ I denne oppgaven skal du tegne grafen til linja $y = x - 2$ i et koordinatsystem
 Fyll ut verditabellen under for linja $y = x - 2$. 
 
 | $x$ | $-2$ | $-1$ | $0$ | $1$ | $2$ | $3$ |
-| --- | --- | --- | --- | --- | --- | --- |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | $y$ |  |  |  |  |  | |
 
 ```{admonition} Fasit
 :class: note, dropdown
 | $x$ | $-2$ | $-1$ | $0$ | $1$ | $2$ | $3$ |
-| --- | --- | --- | --- | --- | --- | --- |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | $y$ | $-4$ | $-3$ | $-2$ | $-1$ | $0$ | $1$ |
 ```
 
-```{admonition} Løsning
+```{admonition} Løsningsforslag
 :class: note, dropdown
 Først må vi regne ut $y$-verdiene for de ulike $x$-verdiene. Vi setter inn $x$-verdiene i formelen $y = 3x - 1$:
 
@@ -238,7 +238,7 @@ $$
 Dermed får vi verditabellen:
 
 | $x$ | $-2$ | $-1$ | $0$ | $1$ | $2$ | $3$ |
-| --- | --- | --- | --- | --- | --- | --- |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | $y$ | $-4$ | $-3$ | $-2$ | $-1$ | $0$ | $1$ |
 ```
 
@@ -290,11 +290,11 @@ $$
 Den lilla linja har formelen 
 
 $$
-y = -x + 3.
+y = -\frac{1}{2}x + 1.
 $$
 ```
 
-```{admonition} Løsning
+```{admonition} Løsningsforslag
 :class: dropdown, note
 For å bestemme formelen for den grønne linja, kan vi lese av to punkter på grafen for å bestemme stigningstallet.
 Vi kan se at punktene $(0, -3)$ og $(3, 3)$ ligger på linja. Dermed blir stigningstallet
@@ -320,32 +320,30 @@ Vi kan lese av at grafen skjærer $y$-aksen i $y = 1$. Dermed er $b = 1$. Derfor
 $$
 y = -\frac{1}{2}x + 1
 $$
-
 ```
-
 
 #### Oppgave 3
 En elev prøver å bestemme likningen til en linje ut ifra to punkter på linja. 
 
-```{code-block} python
+````{code} python
 :linenos:
 :emphasize-lines: 12, 13
-    # Punkt (x1, y1)
-    x1 = -2
-    y1 = 2
+# Punkt (x1, y1)
+x1 = -2
+y1 = 2
 
-    # Punkt (x2, y2)
-    x2 = 4
-    y2 = 5
+# Punkt (x2, y2)
+x2 = 4
+y2 = 5
 
-    dy = y2 - y1
-    dx = x2 - x1
+dy = y2 - y1
+dx = x2 - x1
 
-    a = ??
-    b = ??
+a = ??
+b = ??
 
-    print(f"Formelen for linja er y = {a}x + {b}")
-```
+print(f"Formelen for linja er y = {a}x + {b}")
+````
 
 ##### Oppgave 3a
 
@@ -368,13 +366,13 @@ Vi tar for oss linje 12 først. Vi vet at stigningstallet $a$ er endringen i $y$
 På linje 13 skal vi finne skjæringen med $y$-aksen. For en linje betyr dette å bestemme $b$ i formelen $y = ax + b$. Vi kan ta utgangspunkt i punktet $(x_1, y_1)$ for å bestemme $b$:
 
 $$
-y_1 = ax_1 + b \Leftrightarrow b = y_1 - ax_1
+y_1 = ax_1 + b \quad \Leftrightarrow \quad b = y_1 - ax_1
 $$
 
 eller vi kan ta utgangspunkt i $(x_2, y_2)$:
 
 $$
-y_2 = ax_2 + b \Leftrightarrow b = y_2 - ax_2
+y_2 = ax_2 + b \quad \Leftrightarrow \quad b = y_2 - ax_2
 $$
 
 Derfor kan det stå `b = y1 - a * x1`{l=python} eller `b = y2 - a * x2`{l=python} på linje 13.
