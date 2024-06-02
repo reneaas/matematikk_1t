@@ -118,9 +118,13 @@ Men kan det tenkes at det er en mer generell måte å finne stigningstallet på?
 :class: tip
 For en skrå linje på formen $y = ax + b$, og to punkter $(x_1, y_1)$ og $(x_2, y_2)$ på linja, kan vi finne stigningstallet $a$ ved
 
+\begin{equation} \label{eq:stigningstall2}
+a = \frac{\Delta y}{\Delta x} = \frac{y_2 - y_1}{x_2 - x_1} ,
+\end{equation}
+
 $$
 a = \frac{\Delta y}{\Delta x} = \frac{y_2 - y_1}{x_2 - x_1} ,
-$$
+$$ (eq:stigningstall)
 
 der $\Delta y = y_2 - y_1$ og $\Delta x = x_2 - x_1$. Figuren under viser formelens betydning grafisk:
 
@@ -131,7 +135,6 @@ der $\Delta y = y_2 - y_1$ og $\Delta x = x_2 - x_1$. Figuren under viser formel
 Figuren viser grafen til en skrå linje i et koordinatsystem der to punkter $(x_1, y_1)$ og $(x_2, y_2)$ ligger på linja.
 Endringene i $x$-verdi og $y$-verdi er representert som striplete linjer. Lengden av den striplete linjen parallell med $x$-aksen er $\Delta x = x_2 - x_1$ og lengden av den striplete linjen parallell med $y$-aksen er $\Delta y = y_2 - y_1$.
 ```
-
 
 ````{admonition} Bevis for formelen
 :class: dropdown
@@ -153,10 +156,36 @@ $$
 a = \frac{\Delta y}{\Delta x} = \frac{y_2 - y_1}{x_2 - x_1}
 $$
 
-som var det vi skulle vise.
+Dette er likning {eq}`eq:stigningstall`, så vi har vist det vi skulle.
 ````
 
 `````
+
+````{prf:example} Finne stigningstallet
+Vi tenker oss en linje der vi kjenner til to punkter på linja, $(1, 3)$ og $(2, 1)$. Hva er stigningstallet til linja?
+
+**Prøv å finne stigningstallet før du ser på løsningen under**! 
+
+```{dropdown} Løsning
+Vi kjenner til to punkter $(1, 3)$ og $(2, 1)$ på linja. Vi kan la 
+
+$$
+(x_1, y_1) = (1, 3) \quad \text{og} \quad (x_2, y_2) = (2, 1). 
+$$
+
+Vi bruker formelen fra likning {eq}`eq:stigningstall` for å finne stigningstallet:
+
+$$
+a = \frac{y_2 - y_1}{x_2 - x_1} = \frac{1 - 3}{2 - 1} = \frac{-2}{1} = -2.
+$$
+
+Altså er stigningstallet $a = -2$. 
+```
+
+````
+
+
+Likning {eq}`eq:stigningstall` gir oss en generell formel for å finne stigningstallet til en linje når vi kjenner til to punkter $(x_1, y_1)$ og $(x_2, y_2)$ på linja. Men hva skal til for at vi skal bestemme formelen for linja fullstendig? 
 
 
 For å bestemme formelen $y = ax + b$ for linja, må vi enten:
