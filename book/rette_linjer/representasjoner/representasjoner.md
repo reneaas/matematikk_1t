@@ -328,6 +328,7 @@ En elev prøver å bestemme likningen til en linje ut ifra to punkter på linja.
 ````{code} python
 :linenos:
 :emphasize-lines: 12, 13
+
 # Punkt (x1, y1)
 x1 = -2
 y1 = 2
@@ -353,8 +354,7 @@ Hva blir utskriften av programmet da?
 ````{admonition} Fasit
 :class: dropdown, note
 
-På linja 12 må det stå {code-block}`a = dy / dx` og på linje 13 kan det stå `b = y1 - a * x1`{l=python} eller `b = y2 - a * x2`{l=python}.
-Det som skrives ut av programmet er
+På linja 12 kan det stå {code-block}`a = dy / dx` og på linje 13 kan det stå `b = y1 - a * x1`{l=python} eller `b = y2 - a * x2`{l=python}.
 ````
 
 
