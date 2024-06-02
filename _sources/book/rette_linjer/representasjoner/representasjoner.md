@@ -23,9 +23,9 @@ Vi bruker formelen $y = 2x - 4$ til å regne ut hvilken $y$-verdier som svarer t
 
 Under kan vi se en verditabell for linja $y = 2x - 4$:
 
-| $x$ | $-1$ | $0$ | $1$ | $2$ | $3$ |
+| **$x$** | $-1$ | $0$ | $1$ | $2$ | $3$ |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| $y$ | $-4$ | $-2$ | $0$ | $2$ | $4$ |
+| **$y$** | $-4$ | $-2$ | $0$ | $2$ | $4$ |
 
 Vi kan tegne opp punktene fra verditabellen i et koordinatsystem. 
 
@@ -213,20 +213,20 @@ I denne oppgaven skal du tegne grafen til linja $y = x - 2$ i et koordinatsystem
 ##### Oppgave 1a
 Fyll ut verditabellen under for linja $y = x - 2$. 
 
-| $x$ | $-2$ | $-1$ | $0$ | $1$ | $2$ | $3$ |
+| **$x$** | $-2$ | $-1$ | $0$ | $1$ | $2$ | $3$ |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| $y$ |  |  |  |  |  | |
+| **$y$** |  |  |  |  |  | |
 
 ```{admonition} Fasit
 :class: note, dropdown
-| $x$ | $-2$ | $-1$ | $0$ | $1$ | $2$ | $3$ |
+| **$x$** | $-2$ | $-1$ | $0$ | $1$ | $2$ | $3$ |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| $y$ | $-4$ | $-3$ | $-2$ | $-1$ | $0$ | $1$ |
+| **$y$** | $-4$ | $-3$ | $-2$ | $-1$ | $0$ | $1$ |
 ```
 
 ```{admonition} Løsningsforslag
 :class: note, dropdown
-Først må vi regne ut $y$-verdiene for de ulike $x$-verdiene. Vi setter inn $x$-verdiene i formelen $y = 3x - 1$:
+Først må vi regne ut $y$-verdiene for de ulike $x$-verdiene. Vi setter inn $x$-verdiene i formelen $y = x - 2$:
 
 For $x = -2$:
 
@@ -266,9 +266,9 @@ $$
 
 Dermed får vi verditabellen:
 
-| $x$ | $-2$ | $-1$ | $0$ | $1$ | $2$ | $3$ |
+| **$x$** | $-2$ | $-1$ | $0$ | $1$ | $2$ | $3$ |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| $y$ | $-4$ | $-3$ | $-2$ | $-1$ | $0$ | $1$ |
+| **$y$** | $-4$ | $-3$ | $-2$ | $-1$ | $0$ | $1$ |
 ```
 
 ##### Oppgave 1b
