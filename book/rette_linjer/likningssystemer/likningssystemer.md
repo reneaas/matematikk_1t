@@ -8,7 +8,7 @@ En elev har skrevet en kode for å løse likningssystemet
     x + y & = 1 \\
 \end{align}
 
-Eleven har skrevet følgende kode der eleven har brukt en strategi som på _godt norsk_ kalels for *grid search*. 
+Eleven har skrevet følgende kode der eleven har brukt en strategi som på _godt norsk_ kalles for **grid search**. 
 
 ```python
 for y in range(-4, 5):
@@ -17,7 +17,7 @@ for y in range(-4, 5):
             print(f"{x = } og {y = }")
 ```
 
-Animasjonen i {numref}`grid_search` viser hvordan denne strategien fungerer grafisk:
+Animasjonen i {numref}`grid_search` illustrerer hvordan koden går gjennom punkter $(x, y)$ i et gitt område. Koden sjekker så om likningene er oppfylt samtidig for hvert punkt.
 
 ```{figure} ./animasjoner/grid_search.gif
 :name: grid_search
