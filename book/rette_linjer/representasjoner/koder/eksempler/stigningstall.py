@@ -56,9 +56,7 @@ plt.yticks([y1, y2], [r"$y_1$", r"$y_2$"], fontsize=16)
 
 plt.tight_layout()
 
-# Lagrer to versjoner av figuren.
-plt.savefig("../../figurer/eksempler/stigningstall.png") 
-plt.savefig("../../figurer/eksempler/stigningstall.pdf")
+# Lagrer figuren i vektorformat
 plt.savefig("../../figurer/eksempler/stigningstall.svg")
 
 plt.show()

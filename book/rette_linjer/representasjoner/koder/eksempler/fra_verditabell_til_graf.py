@@ -54,7 +54,7 @@ plt.xlim(-2, 4)
 plt.grid(True, linestyle="--", alpha=0.6)
 plt.tight_layout()
 
-# Lagrer to versjoner av figuren.
+# Lagrer figuren i vektorformat
 plt.savefig("../figurer/eksempler/eksempel_rett_linje.svg")
 
 plt.show()

@@ -48,9 +48,7 @@ plt.xlim(-2, 5)
 plt.grid(True, linestyle="--", alpha=0.6)
 plt.tight_layout()
 
-# Lagrer to versjoner av figuren.
-plt.savefig("../../figurer/oppgaver/oppgave_2.png") 
-plt.savefig("../../figurer/oppgaver/oppgave_2.pdf")
+# Lagrer figuren i vektorformat
 plt.savefig("../../figurer/oppgaver/oppgave_2.svg")
 
 plt.show()

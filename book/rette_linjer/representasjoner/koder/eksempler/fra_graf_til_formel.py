@@ -43,9 +43,7 @@ plt.xlim(-2, 4)
 plt.grid(True, linestyle="--", alpha=0.6)
 plt.tight_layout()
 
-# Lagrer to versjoner av figuren.
-plt.savefig("../../figurer/eksempler/fra_graf_til_formel.png") 
-plt.savefig("../../figurer/eksempler/fra_graf_til_formel.pdf")
+# Lagrer versjonen i vektorformat. 
 plt.savefig("../../figurer/eksempler/fra_graf_til_formel.svg")
 
 plt.show()

@@ -46,9 +46,7 @@ plt.xlim(-2, 6)
 plt.grid(True, linestyle="--", alpha=0.6)
 plt.tight_layout()
 
-# Lagrer to versjoner av figuren.
-plt.savefig("../../figurer/eksempler/rette_linjer.png") 
-plt.savefig("../../figurer/eksempler/rette_linjer.pdf")
+# Lagrer figuren i vektorformat
 plt.savefig("../../figurer/eksempler/rette_linjer.svg")
 
 plt.show()

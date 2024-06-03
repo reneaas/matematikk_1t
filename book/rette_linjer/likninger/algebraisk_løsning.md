@@ -1,0 +1,1 @@
+# Algebraisk løsning

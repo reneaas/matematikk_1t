@@ -357,21 +357,21 @@ En elev prøver å bestemme likningen til en linje ut ifra to punkter på linja.
 ````{code-block} python
 :linenos:
 :emphasize-lines: 12, 13
-    # Punkt (x1, y1)
-    x1 = -2
-    y1 = 2
+# Punkt (x1, y1)
+x1 = -2
+y1 = 2
 
-    # Punkt (x2, y2)
-    x2 = 4
-    y2 = 5
+# Punkt (x2, y2)
+x2 = 4
+y2 = 5
 
-    dy = y2 - y1
-    dx = x2 - x1
+dy = y2 - y1
+dx = x2 - x1
 
-    a = ??
-    b = ??
+a = ??
+b = ??
 
-    print(f"Formelen for linja er y = {a}x + {b}")
+print(f"Formelen for linja er y = {a}x + {b}")
 ````
 
 ##### Oppgave 3a
@@ -382,7 +382,7 @@ Hva blir utskriften av programmet da?
 ````{admonition} Fasit
 :class: dropdown, note
 
-På linja 12 kan det stå {code-block}`a = dy / dx` og på linje 13 kan det stå `b = y1 - a * x1`{l=python} eller `b = y2 - a * x2`{l=python}.
+På linja 12 kan det stå `a = dy / dx`{l=python} og på linje 13 kan det stå `b = y1 - a * x1`{l=python} eller `b = y2 - a * x2`{l=python}.
 ````
 
 

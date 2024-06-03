@@ -48,9 +48,7 @@ plt.xlim(-2, 6)
 plt.grid(True, linestyle="--", alpha=0.6)
 plt.tight_layout()
 
-# Lagrer to versjoner av figuren.
-plt.savefig("../figurer/eksempler/koordinatsystem.png") 
-plt.savefig("../figurer/eksempler/koordinatsystem.pdf")
+# Lagrer figuren i vektorformat
 plt.savefig("../figurer/eksempler/koordinatsystem.svg")
 
 plt.show()
