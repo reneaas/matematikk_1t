@@ -55,8 +55,6 @@ plt.grid(True, linestyle="--", alpha=0.6)
 plt.tight_layout()
 
 # Lagrer to versjoner av figuren.
-plt.savefig("../figurer/eksempler/eksempel_rett_linje.png") 
-plt.savefig("../figurer/eksempler/eksempel_rett_linje.pdf")
 plt.savefig("../figurer/eksempler/eksempel_rett_linje.svg")
 
 plt.show()
