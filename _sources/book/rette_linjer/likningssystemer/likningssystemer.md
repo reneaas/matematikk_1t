@@ -1,27 +1,29 @@
-# Likningssystemer
+# Lineære Likningssystemer
 
+````{margin}
+```{admonition} Likningssystem vs likningssett
+På ungdomsskolen har nok et likningssystem blitt kalt for et **likningssett**. Vi skal bruke begrepet **likningssystem** gjennom denne boken fordi dette er det mest brukte begrepet i matematikk på videregående skole og i høyere utdanning.
+```
+````
 
-En elev har skrevet en kode for å løse likningssystemet
+Et **likningssystem** er et system bestående av én eller flere likninger som må være oppfylt samtidig. Målet er å finne verdier for variabelene slik at alle likningene i systemet er oppfylt. En annen måte å si dette på, er at alle likningene i systemet løses samtidig. 
+
+Et **lineært likningssystem** er et likningssystem der alle likningene kan beskrives av funksjonsuttrykkene til lineære funksjoner. For eksempel er følgende likningsystem et lineært likningssystem:
 
 \begin{align}
     x - y & = -1 \\
     x + y & = 1 \\
 \end{align}
 
-Eleven har skrevet følgende kode der eleven har brukt en strategi som på _godt norsk_ kalles for **grid search**. 
+De to likningene i systemet er lineære likninger fordi de kan skrives som funksjonsuttrykkene til lineære funksjoner. 
 
-```python
-for y in range(-4, 5):
-    for x in range(-4, 5):
-        if x - y == -1 and x + y == 1:
-            print(f"{x = } og {y = }")
-```
+```{admonition} Læringsutbytte: lineære likningssystemer
+:class: tip
 
-Animasjonen i {numref}`grid_search` illustrerer hvordan koden går gjennom punkter $(x, y)$ i et gitt område. Koden sjekker så om likningene er oppfylt samtidig for hvert punkt.
+Målet med dette kapittelet er at du skal kunne løse lineære likningssystemer ved hjelp av ulike løsningsstrategier. 
+Du skal kunne løse lineære likningssystemer ved hjelp av følgende strategier:
+1. Grafisk løsning
+2. Algebraisk løsning
+3. Ved programmering
 
-```{figure} ./animasjoner/grid_search.gif
-:name: grid_search
-:width: 80%
-
-Animasjonen viser strategien bak grid search for å løse et likningssystem. Metoden søker gjennom noen mulige punkter $(x, y)$ i et gitt område og sjekker om likningene i likningssystemet er oppfylt. 
 ```
