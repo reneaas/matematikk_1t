@@ -17,13 +17,15 @@ Et **lineært likningssystem** er et likningssystem der alle likningene kan besk
 
 De to likningene i systemet er lineære likninger fordi de kan skrives som funksjonsuttrykkene til lineære funksjoner. 
 
-```{admonition} Læringsutbytte: lineære likningssystemer
+```{admonition} Læringsmål: lineære likningssystemer
 :class: tip
 
-Målet med dette kapittelet er at du skal kunne løse lineære likningssystemer ved hjelp av ulike løsningsstrategier. 
-Du skal kunne løse lineære likningssystemer ved hjelp av følgende strategier:
-1. Grafisk løsning
-2. Algebraisk løsning
-3. Ved programmering
+* Målet med dette kapittelet er at du skal kunne løse lineære likningssystemer ved hjelp av ulike løsningsstrategier. Du skal kunne løse lineære likningssystemer ved hjelp av følgende strategier:
+    1. Grafisk løsning
+    2. Algebraisk løsning
+    3. Ved programmering
+* Du skal kunne uttrykke løsningen av et lineært likningssystem på to forskjellige måter:
+    1. Som et likningssystem
+    2. Som en mengde
 
 ```

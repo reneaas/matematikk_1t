@@ -6,14 +6,14 @@ $$
 x + 3 > 2x - 1.
 $$ (eq:ulikhet_intro_eksempel)
 
-Vi trenger en oversikt over betydningen av noen nye matematiske symboler for å kunne lese ulikheter:
+Vi trenger en oversikt over betydningen av noen nye matematiske symboler for å kunne lese ulikheter og uttrykke løsningen av en ulikhet: 
 
-| Symbol | Betydning | Eksempel |
-|:------:|:---------:|:-------:|
-| $<$    | Mindre enn | $2 < 3$ leses som $2$ er _mindre enn_ $3$ |
-| $>$    | Større enn | $3 > 2$ leses som $3$ er _større enn_ $2$ |
-| $\leq$ | Mindre enn eller lik | $2 \leq 3$ leses som $2$ er _mindre enn eller lik_ $3$ |
-| $\geq$ | Større enn eller lik | $3 \geq 2$ leses som $3$ er _større enn eller lik_ $2$ |
+| Symbol | Betydning | Eksempel | Leses som... |
+|:------:|:---------:|:-------:|:-------:|
+| $<$    | Mindre enn | $2 < 3$  | $2$ er _mindre enn_ $3$ |
+| $>$    | Større enn | $3 > 2$ | $3$ er _større enn_ $2$ |
+| $\leq$ | Mindre enn eller lik | $2 \leq 3$ | $2$ er _mindre enn eller lik_ $3$
+| $\geq$ | Større enn eller lik | $3 \geq 2$ | $3$ er _større enn eller lik_ $2$ |
 
 Vi kan altså lese ulikheten {eq}`eq:ulikhet_intro_eksempel` som at den uttrykker at $x + 3$ er større enn $2x - 1$. Men dette er slettes ikke sant for _alle_ verdier av $x$. 
 

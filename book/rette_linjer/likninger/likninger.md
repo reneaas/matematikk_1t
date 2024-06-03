@@ -12,11 +12,13 @@ Med en begrepet **likning**, mener vi at venstresiden (her: $2x + 3$) skal være
 
 I denne delen skal vi se på ulike løsningsstrategier for å løse likninger. 
 
-```{admonition} Læringsutbytte: lineære likninger
+```{admonition} Læringsmål: lineære likninger
 :class: tip
-Du skal kunne løse lineære likninger ved hjelp av ulike løsningsstrategier.
-
-1. Grafisk løsning.
-2. Algebraisk løsning.
-3. Ved programmering.
+* Du skal kunne løse lineære likninger ved hjelp av ulike løsningsstrategier.
+    1. Grafisk løsning.
+    2. Algebraisk løsning.
+    3. Ved programmering.
+* Du skal kunne uttrykke løsningen av en lineær likning på to forskjellige måter:
+    1. Som en likning.
+    2. Som en mengde.
 ```
