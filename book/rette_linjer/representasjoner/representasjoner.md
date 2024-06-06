@@ -213,7 +213,7 @@ Kjenner vi grafen til linja, kan vi bestemme stigningstallet $a$
 Under vises et interaktivt plott av en linje $y = ax + b$. Du kan endre på stigningstallet $a$ og konstantleddet $b$. 
 
 Bruk det interaktive plottet til å bestemme ulike linjer (én linje for hvert punkt i lista) som:
-1. Har stigningstall $a = 3$ og konstantledd $b = -4$. Bestem hvor grafen til linja skjærer $x$-aksen og $y$-aksen ved hjelp av den grafiske framstillingen.
+1. Har stigningstall $a = 2$ og konstantledd $b = -4$. Bestem hvor grafen til linja skjærer $x$-aksen og $y$-aksen ved hjelp av den grafiske framstillingen.
 2. Skjærer $y$-aksen i $y = 2$ og skjærer $x$-aksen i $x = 1$. 
 3. Går gjennom punktene $(1, 3)$ og $(-4, -2)$
 
