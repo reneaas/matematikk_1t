@@ -16,6 +16,7 @@ Målet med denne siden er at du skal kunne:
 Vi tenker oss at vi har en linje $y = 2x - 4$. Hvordan kan vi representere denne linja grafisk?
 Sagt på en annen måte, hvordan ser grafen til linja ut? For å svare på dette, går vi via en verditabell til et koordinatsystem.
 
+
 ### Fra verditabell til koordinatsystem
 
 En måte å finne ut hvordan grafen til linja ser ut er å sette opp en verditabell for ulike verdier av $x$. 
@@ -62,6 +63,8 @@ Figuren viser grafen til $y = 2x - 4$ i et koordinatsystem der vi har tegnet inn
 ```
 
 ````
+
+
 
 ## Algebraisk representasjon av skrå linjer
 Først bør vi se på en algebraisk definisjon av en skrå linje. 
@@ -206,11 +209,24 @@ Kjenner vi grafen til linja, kan vi bestemme stigningstallet $a$
 
 ### Level 1 🔥
 
-#### Oppgave 1
+#### Oppgave 1 
+Under vises et interaktivt plott av en linje $y = ax + b$. Du kan endre på stigningstallet $a$ og konstantleddet $b$. 
+
+Bruk det interaktive plottet til å bestemme ulike linjer (én linje for hvert punkt i lista) som:
+1. Som har stigningstall $a = 3$ og konstantledd $b = -4$. 
+2. Som skjærer $y$-aksen i $y = 2$ og skjærer $x$-aksen i $x = 1$. 
+3. Går gjennom punktene $(1, 3)$ og $(-4, -2)$
+
+```{raw} html
+:file: ./figurer/interaktive_plot/skrå_linjer_interaktiv.html
+```
+
+
+#### Oppgave 2
 
 I denne oppgaven skal du tegne grafen til linja $y = x - 2$ i et koordinatsystem ved å bruke en verditabell.
 
-##### Oppgave 1a
+##### Oppgave 2a
 Fyll ut verditabellen under for linja $y = x - 2$. 
 
 | $x$ | $-2$ | $-1$ | $0$ | $1$ | $2$ | $3$ |
@@ -271,7 +287,7 @@ Dermed får vi verditabellen:
 | $y$ | $-4$ | $-3$ | $-2$ | $-1$ | $0$ | $1$ |
 ```
 
-##### Oppgave 1b
+##### Oppgave 2b
 Tegn grafen til linja $y = x - 2$ i et koordinatsystem ved å bruke verditabellen fra 1a.
 
 ````{admonition} Fasit
@@ -285,7 +301,7 @@ Figuren viser grafen til $y = x - 2$ i et koordinatsystem der vi har tegnet inn 
 
 ````
 
-#### Oppgave 2
+#### Oppgave 3
 
 ````{margin} 
 ```{admonition} Sentrale formler
@@ -351,7 +367,7 @@ y = -\frac{1}{2}x + 1
 $$
 ```
 
-#### Oppgave 3
+#### Oppgave 4
 En elev prøver å bestemme likningen til en linje ut ifra to punkter på linja. 
 
 ````{code-block} python
@@ -374,7 +390,7 @@ b = ??
 print(f"Formelen for linja er y = {a}x + {b}")
 ````
 
-##### Oppgave 3a
+##### Oppgave 4a
 
 Hva må stå på linje 12 og 13 for at programmet skal gi riktig svar?
 Hva blir utskriften av programmet da?
@@ -407,7 +423,7 @@ Derfor kan det stå `b = y1 - a * x1`{l=python} eller `b = y2 - a * x2`{l=python
 
 ````
 
-##### Oppgave 3b
+##### Oppgave 4b
 Bestem hva som skrives ut av programmet.
 
 ````{admonition} Fasit
