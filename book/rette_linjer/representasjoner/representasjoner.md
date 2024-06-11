@@ -112,24 +112,47 @@ Figuren viser grafen til en skrå linje i et koordinatsystem. Men hva er likning
 ```
 
 ### Stigningstallet $a$
-En måte å finne stigningstallet $a$ på, er å se hvor mye $y$-verdien endrer seg når vi går én enhet langs $x$-aksen.
+En måte å finne stigningstallet $a$ på, er å se hvor mye $y$-verdien endrer seg når vi øker verdien til $x$ med én. 
 Hvis vi ser på grafen i {numref}`graf_til_formel`, ser vi at når vi går fra $x = 0$ til $x = 1$, går $y$-verdien fra $y = 3$ til $y = 1$. Endringen i $y$-verdien er $-2$. Dermed er stigningstallet $a = -2$. 
 
 Men kan det tenkes at det er en mer generell måte å finne stigningstallet på?
+
+````{margin}
+```{admonition} Forklaring av notasjon
+Betydningen av $\Delta x$
+: Notasjonen leses som "delta"-$x$. Vi tenker på dette enten som avstanden mellom to punkter på $x$-aksen, eller som endringen i        $x$-verdi.
+
+Betydningen av $\Delta y$
+: Notasjonen leses som "delta"-$y$. Vi tenker på dette enten som avstanden mellom to punkter på $y$-aksen, eller som endringen i $y$-verdi.
+```
+````
 
 `````{admonition} Generell formel for stigningstallet
 :class: tip
 For en skrå linje på formen $y = ax + b$, og to punkter $(x_1, y_1)$ og $(x_2, y_2)$ på linja, kan vi finne stigningstallet $a$ ved
 
-\begin{equation} \label{eq:stigningstall2}
-a = \frac{\Delta y}{\Delta x} = \frac{y_2 - y_1}{x_2 - x_1} ,
-\end{equation}
-
 $$
 a = \frac{\Delta y}{\Delta x} = \frac{y_2 - y_1}{x_2 - x_1} ,
 $$ (eq:stigningstall)
 
-der $\Delta y = y_2 - y_1$ og $\Delta x = x_2 - x_1$. Figuren under viser formelens betydning grafisk:
+der $\Delta y = y_2 - y_1$ og $\Delta x = x_2 - x_1$. <br>
+
+
+Stigningstallet forteller oss hvor mye $y$-verdien endrer seg i _forhold_ til $x$-verdien. En endring $\Delta x$, gir en endring 
+
+$$
+\Delta y = a\Delta x
+$$
+
+i $y$-verdien. Dersom $\Delta x = 1$, kan vi se at endringen i $y$-verdien blir 
+
+$$
+\Delta y = a\underbrace{\Delta x}_{=1} = a
+$$ 
+
+Vi kan derfor tolke stigningstallet som endringen i $y$-verdi dersom vi endrer $x$-verdien med én.
+
+Figuren viser en geometrisk illustrasjon av formelen for stigningstallet.
 
 ```{figure} ./figurer/eksempler/stigningstall.svg
 :name: stigningstall
@@ -164,7 +187,7 @@ Dette er likning {eq}`eq:stigningstall`, så vi har vist det vi skulle.
 
 `````
 
-````{prf:example} Finne stigningstallet
+````{admonition} Eksempel: Finne stigningstallet
 Vi tenker oss en linje der vi kjenner til to punkter på linja, $(1, 3)$ og $(2, 1)$. Hva er stigningstallet til linja?
 
 **Prøv å finne stigningstallet før du ser på løsningen under**! 
