@@ -3,7 +3,9 @@
 På ungdomsskolen har du lært om regnerekkefølgen og de fire regneartene. I tillegg har du sannsynligvis regnet litt med bokstavuttrykk. Regning med bokstavuttrykk kalles gjerne ofte for algebra, men algebra er så mye mer. Algebra handler om hvilke regneregler som tallsystemene våre følger. 
 
 I dette kapittelet skal vi se på hvordan vi kan koke regnereglene til tall ned til 10 lover. Disse 10 lovene er grunnlaget for _all_ regning. 
+
 Det er **viktig** å merke seg at de algebraiske lovene er **oppfinnelser** og ikke **oppdagelser**. Vi har funnet opp regnereglene for å uttrykke ideer og sammenhenger i virkeligheten. 
+
 
 La oss se på hva du skal lære i dette kapittelet.
 
@@ -12,7 +14,7 @@ La oss se på hva du skal lære i dette kapittelet.
 
 * Du skal kunne bruke de 10 algebraiske lovene til å manipulere algebraiske uttrykk.
 * Du skal kunne gi en forklaring av de 10 algebraiske lovene ved hjelp av tallinja.
-* Du skal kunne gi praktiske tolkninger av de 10 algebraiske lovene for å forklare gyldigheten av regnereglenee.
+* Du skal kunne gi praktiske tolkninger av de 10 algebraiske lovene for å forklare gyldigheten av regnereglene.
 
 ```
 
