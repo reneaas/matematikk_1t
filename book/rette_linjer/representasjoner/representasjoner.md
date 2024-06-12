@@ -394,7 +394,6 @@ $$
 En elev prøver å bestemme likningen til en linje ut ifra to punkter på linja. 
 
 ````{code-block} python
-:linenos:
 :emphasize-lines: 12, 13
 # Punkt (x1, y1)
 x1 = -2
@@ -407,15 +406,15 @@ y2 = 5
 dy = y2 - y1
 dx = x2 - x1
 
-a = ??
-b = ??
+a = NotImplemented
+b = NotImplemented
 
 print(f"Formelen for linja er y = {a}x + {b}")
 ````
 
 ##### Oppgave 4a
 
-Hva må stå på linje 12 og 13 for at programmet skal gi riktig svar?
+Hva må stå på de uthevede linjene for at programmet skal gi riktig utskrift?
 Hva blir utskriften av programmet da?
 
 ````{admonition} Fasit
