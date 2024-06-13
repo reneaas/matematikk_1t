@@ -2,6 +2,12 @@ from bokeh.plotting import figure, output_file, save
 from bokeh.layouts import column
 from bokeh.models import Slider, CustomJS, Label, SingleIntervalTicker, HoverTool
 from bokeh.models.formatters import NumeralTickFormatter
+from bokeh.plotting import figure, output_file, save
+from bokeh.layouts import column
+from bokeh.models import Slider, CustomJS, Label, SingleIntervalTicker, HoverTool
+from bokeh.models.formatters import NumeralTickFormatter
+from bokeh.models.sources import ColumnDataSource
+
 
 # Generate x-axis data
 x = [i for i in range(-10, 11)]
@@ -12,8 +18,12 @@ y_min = -5
 y_max = 5
 
 
+a = 2
+b = 3
+k = 0
+
 # Set up the initial plot
-p = figure(title="y = ax + b",
+p = figure(title=f"2x + 3 = k",
            x_range=(x_min, x_max + 0.5), y_range=(y_min, y_max + 0.5),
            width=700, height=500,
            toolbar_location=None)
@@ -44,7 +54,14 @@ p.xaxis.fixed_location = 0
 p.yaxis.fixed_location = 0
 
 # Styling lines and axes
-line = p.line(x, [1 * xi + 0 for xi in x], line_width=3, line_color="#008080")
+line_source = ColumnDataSource(data={'x': x, 'y': [2 * xi + 3 for xi in x]})
+line = p.line('x', 'y', source=line_source, line_width=3, line_color="#008080")
+
+# Line for y = k
+k_line_source = ColumnDataSource(data={'x': x, 'y': [0 for _ in x]})
+y_const_line = p.line('x', 'y', source=k_line_source, line_width=3, line_color="#0000FF")
+
+
 
 # Hover tool
 hover = HoverTool(tooltips=[('x', '$x'), ('y', '$y')], mode='vline')
@@ -66,26 +83,24 @@ p.axis.axis_line_color = "black"
 p.axis.major_tick_line_color = "black"
 p.axis.minor_tick_line_color = "black"
 
-# Create sliders for slope and intercept
-slider_a = Slider(start=-10, end=10, value=1, step=0.5, title="Stigningstall")
-slider_b = Slider(start=-10, end=10, value=0, step=1, title="Konstantledd")
+# Create slider for k
+slider_k = Slider(start=-4, end=5, value=0, step=0.25, title="k")
 
 # JavaScript callback for updating the plot
-callback = CustomJS(args=dict(line=p.renderers[0], slider_a=slider_a, slider_b=slider_b), code="""
-    const data = line.data_source.data;
-    const A = slider_a.value;
-    const B = slider_b.value;
-    const x = data['x'];
-    const y = data['y'];
-    for (let i = 0; i < x.length; i++) {
-        y[i] = A * x[i] + B;
+callback = CustomJS(args=dict(line_source=line_source, k_line_source=k_line_source, slider_k=slider_k), code="""
+    const k = slider_k.value;
+    const k_data = k_line_source.data;
+    const y_const_line = k_data['y'];
+    for (let i = 0; i < y_const_line.length; i++) {
+        y_const_line[i] = k;
     }
-    line.data_source.change.emit();
+    k_line_source.change.emit();
 """)
-slider_a.js_on_change('value', callback)
-slider_b.js_on_change('value', callback)
+slider_k.js_on_change('value', callback)
+
+slider_k.js_on_change('value', callback)
 
 # Organize layout and output
-layout = column(p, slider_a, slider_b)
-output_file("../../figurer/interaktive_plot/skrå_linjer_interaktiv.html")
+layout = column(p, slider_k)
+output_file("../figurer/interaktive_plot/lineær_likning_med_variabel_høyre_side.html")
 save(layout)
