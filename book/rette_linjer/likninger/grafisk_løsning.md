@@ -17,9 +17,18 @@ Ettersom vi ønsker å finne ut hvor de to sidene er like, må vi finne en x-ver
 (Sett inn underveisoppgave)
 
 ## Grafisk løsning når kun venstreside inneholder variabler
-I tilfellet over måtte vi tegne to skrå linjer, for deretter å finne skjæringspunktet. Mange likninger vil være på formen $2 x + 3 = k$. I såfall holder det å bestemme når funksjonen krysser linja $y = k$, som vist i animasjonen under. Husk at $k$ også kan være 0. 
+I tilfellet over måtte vi tegne to skrå linjer, for deretter å finne skjæringspunktet. Mange likninger vil være på formen $2 x + 3 = k$. I såfall holder det å bestemme for hvilken verdi av $x$ funksjonen krysser linja $y = k$. Husk at hvis $k = 0$, så betyr det at $y = 0$ som er det samme som $x$-aksen.
 
-(Kan vi få en pen animasjon med $2x + 3$ fast og en linje $y=k$ som kan flyttes opp og ned?)
+````{admonition} Underveisoppgave 1
+Under vises et interaktivt plott for likningen $2x + 3 = k$. Bruk plottet til å 
+1. Bestemme løsningen av likningen $2x + 3 = -3$
+2. Bestemme løsningen av likningen $2x + 3 = 1$.
+3. Bestemme hvilken verdi av $k$ som gir løsningen $x = -2$.
+
+```{raw} html
+:file: ./figurer/interaktive_plot/lineær_likning_med_variabel_høyre_side.html
+```
+````
 
 ## Ingen, en eller uendelig mange løsninger
 Eksemplene vi har sett på så langt har hatt én løsning, men det finnes også lineære likninger som har ingen løsninger, eller uendelig mange løsninger. 
