@@ -51,7 +51,7 @@ Datamodellering - stygg figur som må fikses slik at den viser flere ulike linje
 ```
 
 ## Regresjon
-Vi kan finne linja som passer best ved å bruke regresjon. Til regresjon bruker vi alltid et digitalt verktøy, enten python eller GeoGebra. Dersom vi velger GeoGebra, ser det ut som på figuren under. 
+I modellen over så vi at en av linjene passet bedre enn de andre. Vi kan finne linja som passer best ved å bruke regresjon. Til regresjon bruker vi alltid et digitalt verktøy, enten python eller GeoGebra. Dersom vi velger GeoGebra, ser det ut som på figuren under. 
 
 ```{figure} ./figurer/regresjon.svg
 :name: regresjon
