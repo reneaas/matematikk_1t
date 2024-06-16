@@ -34,7 +34,7 @@ Vi kan tegne opp punktene fra verditabellen i et koordinatsystem.
 ````{admonition} Påminnelse: Koordinatsystemet
 :class: dropdown, tip
 
-Det *kartesiske* koordinatsystemet får vi vet å lage oss to tallinjer som står $90^\circ$ på hverandre, der null på hver tallinje ligger på samme sted. Vi kaller dette punktet for *origo*, og det har koordinatene $(0, 0)$.
+Det *kartesiske* koordinatsystemet får vi ved å lage oss to tallinjer som står $90^\circ$ på hverandre, der null på hver tallinje ligger på samme sted. Vi kaller dette punktet for *origo*, og det har koordinatene $(0, 0)$.
 
 Den vannrette linja kaller vi oftest $x$-aksen. Et annet navn for aksen er *førsteaksen*.
 Den loddrette linja kaller vi $y$-aksen. Et annen navn for denne aksen er *andreaksen*. 
