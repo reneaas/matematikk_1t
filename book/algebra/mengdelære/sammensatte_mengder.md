@@ -65,8 +65,31 @@ Fyll ut tabellen under:
 | $[-3, 3]$ | $[0, 2]$ | | | |
 ```
 
+```{dropdown} Løsning
+
+| Mengde $A$ | Mengde $B$ | $A \cup B$ | $A \cap B$ | $A \setminus B$ |
+| :---: | :---: | :---: | :---: | :---: |
+|$\{-1, 1\}$| $\{0, 2\}$ | $\{-1, 0, 1, 2\}$ | $\{1\}$ | $\{-1\}$ |
+| $\{-4, 2, 4\}$ | $\{1, 2, 4\}$ | $\{-4, 1, 2, 4\}$ | $\{2, 4\}$ | $\{-4\}$ |
+| $\{1, 2, 3\}$ | $\{3, 4, 5\}$ | $\{1, 2, 3, 4, 5\}$ | $\{3\}$ | $\{1, 2\}$ |
+| $[1, 2]$ | $[2, 4]$ | $[1, 4]$ | $[2, 2]$ | $[1, 2 \rangle$ |
+| $[-1, 2]$ | $[4, 6]$ | $[-1, 2, 4, 6]$ | $\{2\}$ | $[-1, 2 \rangle$ |
+| $[-3, 3]$ | $[0, 2]$ | $[-3, 3]$ | $[0, 2]$ | $[-3, 0 \rangle$ |
+```
+
 
 ## Sammensatte mengder som intervaller 
+Når vi ønsker å beskrive flere deler av tallinja, kan vi bruke regnereglene for mengder til å uttrykke mengden av de reelle tallene vi ønsker å beskrive.
+I tabellen under vises eksempler på sammensatte mengder uttrykt som intervaller. 
+
+Les tabellen **nøye** og overbevis deg selv om at du forstår sammenhengen mellom beskrivelsen av mengden og intervallnotasjonen:
+
+| Beskrivelse av mengde | Intervallnotasjon |
+| :--- | :--- |
+| Alle reelle tall fra og med $2$ til og med $4$, og fra $5$ til $8$ | $[2, 4] \cup \langle 5, 8 \rangle$ |
+| Alle reelle tall fra og med $2$ til $3$, og fra og med $5$ til $6$ | $[2, 3\rangle \cup [5, 6 \rangle$ |
+| Alle reelle tall, bortsett fra $0$ | $\langle \gets, 0 \rangle \cup \langle 0, \to \rangle = \mathbb{R} \setminus \{0\}$ |
+| Alle reelle tall under $-2$ og over $3$ | $\langle \gets, -2 \rangle \cup \langle 3, \to \rangle$ |
 
 
 ## Sammensatte mengder som ulikheter
