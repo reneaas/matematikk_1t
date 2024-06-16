@@ -24,6 +24,7 @@ Viktig sjekkliste:
 |Kommando|Beskrivelse|
 |:---:|:---|
 |`git pull`| Henter endringer fra skyen|
+|`git pull origin branch`| Puller nytt content fra en branch i skyen. Merger endringene i den branchen med dine lokale endringer. Kan gjøres i stedet for å merge i skyen (men kun anbefalt når du er blitt litt dreven på git). |
 |`git add --all`| Legger til nye endringer som er gjort i alle filer. |
 |`git commit -m "Din beskrivende melding"`| Committer endringer |
 |`git push`| Pusher endringer til skyen |
