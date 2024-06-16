@@ -26,32 +26,48 @@ Under vises et interaktivt plott for likningen $2x + 3 = k$. Bruk plottet til å
 3. Bestemme hvilken verdi av $k$ som gir løsningen $x = -2$.
 
 ```{raw} html
-:file: ./figurer/interaktive_plot/lineær_likning_med_variabel_høyre_side.html
+:file: ./figurer/interaktive_plot/lineær_likning_2x+3=k.html
 ```
 ````
 
-## Ingen, en eller uendelig mange løsninger
+## Ingen, én eller uendelig mange løsninger
 Eksemplene vi har sett på så langt har hatt én løsning, men det finnes også lineære likninger som har ingen løsninger, eller uendelig mange løsninger. 
 
-Et eksempel på en lineær likning uten løsninger er $x + 1 = x + 3$. Dette kan vi se dersom vi forsøker å løse likningen grafisk. 
+Et eksempel på en lineær likning uten løsninger er 
+
+$$
+x + 1 = x + 3.
+$$ 
+
+Dette kan vi se dersom vi forsøker å løse likningen grafisk. 
 
 (sett inn figur)
 
 Vi ser at vi har to parallelle linjer som aldri skjærer hverandre, og dermed finnes det ingen verdier for $x$ der de to sidene av likningen har samme verdi. 
 
-Likningen $2(x+5) = 2x + 10$ vil på den andre siden ha uendelig mange løsninger. Det skyldes at likningen er en identitet, og altså vil den være oppfylt for alle tenkelige verdier av $x$. Forsøker vi å løse likningen grafisk, ser vi at de to sidene gir to overlappende linjer, som dermed deler alle verdier. 
+Likningen 
+
+$$
+2(x+5) = 2x + 10
+$$ 
+
+vil på den andre siden ha uendelig mange løsninger. Det skyldes at likningen er en identitet, og altså vil den være oppfylt for alle tenkelige verdier av $x$. Forsøker vi å løse likningen grafisk, ser vi at de to sidene gir to overlappende linjer, som dermed deler alle verdier. 
 
 (Sett inn figur)
 
 ## Oppgaver
+---
 ### Oppgave 1
 Bruk figuren under til å løse likningene: 
 
 1. $ x + 3 = 0$
 2. $ x + 3 = 4$
-3. $ x + 3 = - 2
+3. $ x + 3 = -2$
 
-(Sett inn figur av $f(x)=x+3$)
+```{figure} ./figurer/oppgaver/oppg_1.svg
+:name: oppg_1
+:width: 80%
+```
 
 ```{admonition} Fasit
 :class: dropdown, note
@@ -60,15 +76,25 @@ Bruk figuren under til å løse likningene:
 3. $x = -5$
 
 ```
-
+---
 ### Oppgave 2
-1. Bruk figuren under til å sette opp minst tre ulike likninger. 
-2. Løs likningene. 
+Bruk figuren under til:
+1. Å Sette opp minst tre ulike likninger. 
+2. Å Løse likningene ved hjelp av figuren. 
 
-Sett inn figur av $f(x) = 3x - 1$ og $f(x) = -\frac{x}{x} + 2$
+```{figure} ./figurer/oppgaver/oppg_2.svg
+:name: oppg_2
+:width: 80%
+``` 
 
+---
 ### Oppgave 3
-Bruk figuren under til å forklare hvorfor likningen $2x+1 = k$ har løsninger for alle verdier av $k$. 
+Bruk den interaktive figuren under til å forklare hvorfor likningen $2x+1 = k$ har løsninger for alle verdier av $k$. 
+Bestem hvilken verdi av $k$ som gir løsningen $x = -2$. 
 
-(Sett inn figur av grafen til $f(x)=x+1$, eventuelt en versjon av animasjonen fra tidligere der $k$ kan endres)
+
+```{raw} html
+:file: ./figurer/interaktive_plot/lineær_likning_2x+1=k.html
+```
+
 

@@ -1,10 +1,20 @@
-# Mengder som intervaller og ulikheter
+# Mengder som intervaller, ulikheter og lister
 
 Noen ganger ønsker vi å beskrive en mengde tall på en kort og presis måte. Dersom vi ønsker å beskrive én eller flere sammenhengende deler av tallinja, kan vi bruke **intervaller**. 
-Vi kan også uttrykke intervaller som **ulikheter**. I denne seksjonen skal vi først se på hvordan vi kan uttrykke mengdene som intervaller, deretter som ulikheter.
+Vi kan også uttrykke intervaller som **ulikheter**. Men mengden vi ønsker å beskrive må ikke nøvendigvis alltid være sammenhengende deler av tallinja. Mengdene må slettes ikke engang være tall, men kan for eksempel være punkter. Da kan vi bruke **listenotasjon** for å beskrive mengdene.
+I denne seksjonen skal du lære hvordan du kan uttrykke mengder med intervaller, ulikheter og listenotasjon.
+
+```{admonition} Læringsmål: intervaller, ulikheter og listenotasjon
+:class: tip
+Etter du har gått gjennom denne seksjonen skal du:
+* Kunne beskrive mengder ved hjelp av intervaller.
+* Kunne beskrive mengder ved hjelp av ulikheter.
+* Kunne beskrive mengder ved hjelp av listenotasjon.
+```
 
 ## Intervaller
-Noen ganger ønsker vi å beskrive en mengde tall på en kort og presis måte. Dersom vi ønsker å beskrive én eller flere sammenhengende deler av tallinja, kan vi bruke **intervaller**.  
+Noen ganger ønsker vi å beskrive en mengde reelle tall på tallinja på en kort og presis måte. Dersom vi ønsker å beskrive én eller flere sammenhengende deler av tallinja, kan vi bruke **intervaller**.  
+Her skal vi bare se på én del av tallinja - senere skal vi se på hvordan vi kan beskrive flere deler av tallinja.
 
 ### Intervaller
 I tabellen under vises de vanligste måte å uttrykke intervaller på. Les forklaringene i tabellen **nøye**:
@@ -55,11 +65,11 @@ Ta for deg mengdene i tabellen under og bestemm type intervall og beskriv tallen
 ````{dropdown} Løsning
 | Mengde | Type intervall | Beskrivelse |
 |:---:|:---:|---|
-| $[-1, 1]$| Lukket intervall |Alle reelle tall fra og med $-1$ til og med $1$. |
-| $\langle 0, 3\rangle$| Åpent intervall | Alle reelle tall fra $0$ opp til $3$ |
-| $\langle -2, 2]$| Halvåpent intervall | Alle reelle tall fra $-2$ opp til og med $2$ |
-| $[0, \to \rangle$| Lukket intervall | Alle reelle tall fra og med $0$ og oppover |
-| $\langle \gets, -3\rangle$ | Halvåpent intervall | Alle reelle tall opp til $-3$ |
+| $[-1, 1]$| Lukket |Alle reelle tall fra og med $-1$ til og med $1$. |
+| $\langle 0, 3\rangle$| Åpent | Alle reelle tall fra $0$ opp til $3$ |
+| $\langle -2, 2]$| Halvåpent  | Alle reelle tall fra $-2$ opp til og med $2$ |
+| $[0, \to \rangle$| Lukket | Alle reelle tall fra og med $0$ og oppover |
+| $\langle \gets, -3\rangle$ | Halvåpent | Alle reelle tall opp til $-3$ |
 ````
 
 ## Mengder beskrevet som ulikheter
@@ -74,12 +84,21 @@ Mengder kan også beskrives med **ulikheter**. Før vi ser på sammenhengen mell
 | $\geq$ | Større enn eller lik | $x \geq 5$ betyr at $x$ er større enn eller lik $5$.|
 
 ### Sammenhengen mellom intervaller og ulikheter
-For å beskrive et intervall, så introduserer vi en variabel (for eksempel $x$) som oppfyller én eller flere ulikheter. Dette vil være en beskrivelse av intervallet. Vi trenger bittelitt mer notasjon for å kunne uttrykke oss presist:
+For å beskrive en mengde ved hjelp av en ulikhet, introduserer vi en variabel (for eksempel $x$) som oppfyller én eller flere ulikheter. Det vil da være et samsvar mellom et intervall $I$ og en ulikhet. Vi trenger bittelitt mer notasjon for å kunne uttrykke oss presist: 
 
-Definisjonen over er svært abstrakt, men heldigvis skal vi nå gjøre det mer konkrete. Vi skal vise hvordan vi kan uttrykke intervallet ved hjelp av ulikheter. Les tabellen under **nøye** (du må nok lese definisjonene over flere ganger mens du leser tabellen under for å forstå det ordentlig):
+```{admonition} Sammenheng mellom et lukket intervall $I = [a, b]$ og en ulikhet
+:class: tip
+Gitt en variabel $x \in I = [a, b]$, vil ulikheten $a \leq x \leq b$ bety akkurat det samme som intervallnotasjonen $I = [a, b]$. 
+Vi sier at de to påstandene er **ekvivalente** og skriver
 
+$$
+x \in [a, b] \quad \Leftrightarrow \quad a \leq x \leq b
+$$
 
-I tabellen vises hvordan de ulike intervallene kan uttrykkes ved hjelp av ulikheter:
+der "$\Leftrightarrow$" betyr at de to utsagnene er ekvivalente. Vi kaller "$\Leftrightarrow$" for et **ekvivalenstegn**.
+```
+Vi kan naturligvis utvide skrivemåten til å gjelde for halvåpne og åpne intervaller også.
+Les tabellen under **nøye** og overbevis deg selv om at du forstår skrivemåtene:
 
 | Intervall | Ulikhet | Eksempel |
 | :---: | :---: | :---: |
@@ -92,23 +111,6 @@ I tabellen vises hvordan de ulike intervallene kan uttrykkes ved hjelp av ulikhe
 |$x \in \langle a, \to \rangle$| $a < x$ | $x \in \langle 0, \to \rangle \quad \Leftrightarrow \quad 0 < x $ |
 |$x \in \langle \gets, b\rangle$| $x < b$ | $x \in \langle \gets, 2\rangle \quad \Leftrightarrow \quad x < 2$ |
 
-
-````{comment}
-```{admonition} Ekvivalens
-:class: tip
-Ekvivalens
-: Når to utsagn som er uttrykt på forskjellig måte betyr det samme, sier vi at de er **ekvivalente**. Hvis $p$ og $q$ er to påstander som er ekvivalente, skriver vi $p \Leftrightarrow q$.
-
-Implikasjon
-: Når et utsagn fører til at et annet utsagn er sant, men ikke omvendt, sier vi at det første utsagnet **impliserer** det andre. Hvis $p$ impliserer $q$, skriver vi $p \Rightarrow q$. Vi kan også snu på det å skrive $q \Leftarrow p$. Begge skrivemåter uttrykker at $p$ implisere $q$.
-
-Konjunksjon
-: Når to utsagn er sanne, sier vi at de er **konjunktive**. Hvis $p$ og $q$ er sanne, skriver vi $p \land q$. Vi kan lese $\land$ som **og samtidig** fordi det uttrykker at $p$ og $q$ er sanne på én og samme tid.
-
-Disjunksjon
-: Når minst ett av to utsagn er sant, sier vi at de er **disjunktive**. Hvis $p$ eller $q$ er sanne, skriver vi $p \lor q$. Vi kan lese $\lor$ som **eller** fordi det uttrykker at enten $p$ er sann, eller $q$ er sann, eller så er begge sanne. 
-```
-````
 
 ```{admonition} Underveisoppgave 2
 :class: note
@@ -167,6 +169,68 @@ Skriv om ulikhetene under som intervaller:
 | $13 < x$ | $x \in \langle 13, \to \rangle$ |
 | $x < -17$ | $x \in \langle \gets, -17\rangle$ |
 ```
+
+## Listenotasjon for mengder
+Noen kan ikke uttrykkes som intervaller eller ulikheter. I slike tilfeller kan vi ofte bruke **listenotasjon** eller **listeform**. Når en mengde er skrevet på listeform, vil du i de fleste tilfeller kunne *se* hvilke elementer som er i mengden, eller så vil det være et mønster som repetererer seg. 
+
+```{admonition} Definisjon: Listeform
+:class: tip
+En mengde $L$ kan skrives på listeform dersom mengden er en såkalt **tellbar** mengde. Notasjonen vi bruker for dette ser slik ut:
+
+$$
+L = \{\text{element 1}, \text{element 2}, \text{element 3}, \ldots\}
+$$
+```
+
+I tabellen under følger eksempler på mengder skrevet på listeform. Les eksemplene i tabellen **nøye** og overbevis deg om du forstår skrivemåten:
+
+````{margin}
+```{admonition} Rekkefølgen spiller ingen rolle
+:class: tip
+Merk at *rekkefølgen* på elementene i en mengde skrevet på listeform er *ubetydelig*. Noen ganger er det naturlig å stille dem i stigende rekkefølge, men det er slettes ikke nødvendig.
+```
+````
+
+| Mengde | Forklaring |
+|:---|:---|
+| $\{1, 2, 3, 4, 5\}$ | Mengden av de fem første naturlige tallene |
+| $\{1, 3, 5, 7, 9, \ldots\}$ | Mengden av alle positive oddetall |
+| $\{2, 4, 6, 8, 10, \ldots\}$ | Mengden av alle positive partall |
+| $\{1, 4, 9, 16, 25, \ldots\}$ | Mengden av kvadrattallene |
+| $\{1, 2, 4, 8, 16, 32, \ldots\}$ | Mengden av potenser av $2$ |
+| $\mathbb{N} = \{1, 2, 3, \ldots\}$| Mengden av naturlige tall |
+| $\mathbb{Z} = \{\ldots, -2, -1, 0, 1, 2, \ldots\}$ | Heltallene |
+|$\{(1, 2), (-3, 4), (0, 0)\}$| Mengden bestående av punktene $(1, 2)$ og $(-3, 4)$ og $(0, 0)$.|
+
+Som du kan se fra tabellen, så er det mange tilfeller hvor denne notasjonen vil være nyttig for å beskrive mengder. 
+Nå skal du teste deg selv for å sjekke at du har forstått notasjonen.
+
+```{admonition} Underveisoppgave 4
+:class: note
+Skriv om mengdene under til listeform:
+
+| Mengde | Listeform |
+|:---|:---|
+| De naturlige tallene fra og med $5$ til og med $8$ | |
+| De negative partallene | |
+| Oddetallene fra $3$ til og med $7$ | |
+| De positive kubikktallene | |
+| Mengden som består av punktene $(1, 2)$ og $(-1, 1)$ | |
+| Mengden som består av tallene $-1$, $1$ og $3$ | |
+```
+
+```{dropdown} Løsning
+| Mengde | Listeform |
+|:---|:---|
+| De naturlige tallene fra og med $5$ til og med $8$ | $\{5, 6, 7, 8\}$ |
+| De negative partallene | $\{-2, -4, -6, \ldots\}$ eller $\{\ldots, -6, -4, -2\}$ |
+| Oddetallene fra $3$ til og med $7$ | $\{3, 5, 7\}$ |
+| De positive kubikktallene | $\{1, 8, 27, 64, \ldots\}$ eller $\{1^3, 2^3, 3^3, 4^3, \ldots\}$ |
+| Mengden som består av punktene $(1, 2)$ og $(-1, 1)$ | $\{(1, 2), (-1, 1)\}$ |
+| Mengden som består av tallene $-1$, $1$ og $3$ | $\{-1, 1, 3\}$ |
+```
+
+
 
 
 
