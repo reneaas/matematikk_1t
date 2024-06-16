@@ -44,5 +44,5 @@ slider_b.js_on_change('value', callback)
 
 # Organize layout and output
 layout = column(p, slider_a, slider_b)
-output_file("interactive_linear_function.html")
+output_file("../../figurer/interactive_linear_function.html")
 save(layout)

@@ -19,11 +19,11 @@ y_max = 5
 
 
 a = 2
-b = 3
+b = 1
 k = 0
 
 # Set up the initial plot
-p = figure(title=f"2x + 3 = k",
+p = figure(title=f"{a}x + {b} = k",
            x_range=(x_min, x_max + 0.5), y_range=(y_min, y_max + 0.5),
            width=700, height=500,
            toolbar_location=None)
@@ -54,7 +54,7 @@ p.xaxis.fixed_location = 0
 p.yaxis.fixed_location = 0
 
 # Styling lines and axes
-line_source = ColumnDataSource(data={'x': x, 'y': [2 * xi + 3 for xi in x]})
+line_source = ColumnDataSource(data={'x': x, 'y': [a * xi + b for xi in x]})
 line = p.line('x', 'y', source=line_source, line_width=3, line_color="#008080")
 
 # Line for y = k
@@ -102,5 +102,5 @@ slider_k.js_on_change('value', callback)
 
 # Organize layout and output
 layout = column(p, slider_k)
-output_file("../figurer/interaktive_plot/lineær_likning_med_variabel_høyre_side.html")
+output_file("../figurer/interaktive_plot/lineær_likning_2x+1=k.html")
 save(layout)
