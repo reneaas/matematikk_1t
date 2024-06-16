@@ -8,10 +8,10 @@ For å bygge en Jupyterbook, skriv følgende kommando i terminalen i **root** av
 jb build . --all
 ```
 
-Html-kode for hele boka genereres og en link til root i html-filene skrives ut i terminalen. 
-Html-koden vil ligge i `_build/html` mappen. Du må åpne `index.html` i nettleseren for å se på den lokale versjonen av boka. Denne pushes ikke opp til skyen - Git bygger boka når du pusher slik at vi ikke kan *breake* noe.
+html-kode for hele boka genereres og en link til root i html-filene skrives ut i terminalen. 
+html-koden vil ligge i `_build/html` mappen. Du må åpne `index.html` i nettleseren (på Windows, anyway) for å se på den lokale versjonen av boka. Denne pushes ikke opp til skyen - GitHub bygger boka når du pusher slik at vi ikke kan *breake* noe.
 
-## Git greier
+## git stuff
 
 Viktig sjekkliste:
 1. Jobb alltid på din *egen branch* lokalt. Merge til `main` når du er ferdig med noe fra Github.com ved å legge inn en pull request og merge i skyen. 
