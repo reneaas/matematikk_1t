@@ -66,7 +66,10 @@ Hvis det oppstår en merge-konflikt, er dette **hensikten med git** og er ønske
 |$\mathbb{R}$| `\mathbb{R}`|
 |$\to$|`\to`|
 |$\gets$ |`\gets`|
-|$\{a, b\}$ |`\{a, b\}`|
+|$\left\{a, b\right\}$ |`\{a, b\}`|
+|$\frac{a}{b}$ |`\frac{a}{b}`|
+|$a\cdot b$ |`a\cdot b`|
+|$a_1, a_2, \ldots, a_n$ | `a_1, a_2, \ldots, a_n`|
 
 ### Likningnummerering
 For å nummerere likninger, brukes følgende syntaks:
