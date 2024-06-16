@@ -67,7 +67,7 @@ Som vi nevnte i innledningen, er en mengde bare en samling objekter. I de fleste
 
 En **mengde** $A$ er en samling tall. Dersom et tall $x$ er en del av mengden $A$, skriver vi $x \in A$. Vi leser dette som "$x$ er *et element i* mengden $A$". 
 
-Dersom et tall $y$ *ikke* er er en del av mengden $A$, skriver vi $y \notin A$. Vi leser dette som "$y$ er ikke *ikke* et element i mengden $A$". 
+Dersom et tall $y$ *ikke* er er en del av mengden $A$, skriver vi $y \notin A$. Vi leser dette som "$y$ er *ikke* et element i mengden $A$". 
 ```
 
 
