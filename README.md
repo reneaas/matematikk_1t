@@ -29,10 +29,11 @@ Viktig sjekkliste:
 |`git push`| Pusher endringer til skyen |
 |`git branch` | Viser alle branches, inkludert hvilken du jobber på. |
 |`git checkout branchnavn`| Bytter til en annen branch |
-| `git status` | Viser status på filer som er endret, lagt til, osv. |
+|`git status`| Viser status på filer som er endret, lagt til, osv. |
 
 ### Merge konflikter
 Hvis det oppstår en merge-konflikt, er dette **hensikten med git** og er ønsket atferd. For å løse merge-konflikter lokalt, må du åpne opp filene og identifisere hvor i filen konflikten er (git markerer dette og forteller deg hvilken versjon av innholdet som er din egen, og hvilken som er hentet fra skyen). Du må manuelt redigere filene for å fjerne konflikten, og så er det bare å committe endringene og pushe opp til skyen. 
+Typisk når du merger, gjør du det fra skyen som medfører at du kanskje må fikse merge-konflikter der oppe. Er du usikker på hva du må gjøre, spør en kollega så du ikke sletter noe ved et uhell.
 
 
 
