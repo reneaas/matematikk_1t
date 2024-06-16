@@ -66,7 +66,7 @@ Hvis det oppstår en merge-konflikt, er dette **hensikten med git** og er ønske
 |$\mathbb{R}$| `\mathbb{R}`|
 |$\to$|`\to`|
 |$\gets$ |`\gets`|
-|$\left\{a, b\right\}$ |`\{a, b\}`|
+|$\{ a, b \}$ |`\{a, b\}`|
 |$\frac{a}{b}$ |`\frac{a}{b}`|
 |$a\cdot b$ |`a\cdot b`|
 |$a_1, a_2, \ldots, a_n$ | `a_1, a_2, \ldots, a_n`|
