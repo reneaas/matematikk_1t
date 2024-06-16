@@ -8,6 +8,9 @@ For å bygge en Jupyterbook, skriv følgende kommando i terminalen i **root** av
 jb build . --all
 ```
 
+Html-kode for hele boka genereres og en link til root i html-filene skrives ut i terminalen. 
+Html-koden vil ligge i `_build/html` mappen. Du må åpne `index.html` i nettleseren for å se på den lokale versjonen av boka. Denne pushes ikke opp til skyen - Git bygger boka når du pusher slik at vi ikke kan *breake* noe.
+
 ## Git greier
 
 Viktig sjekkliste:
@@ -21,7 +24,7 @@ Viktig sjekkliste:
 |Kommando|Beskrivelse|
 |:---:|:---|
 |`git pull`| Henter endringer fra skyen|
-|`git add --all`| Legger til tracking av alle nye filer |
+|`git add --all`| Legger til nye endringer som er gjort i alle filer. |
 |`git commit -m "Din beskrivende melding"`| Committer endringer |
 |`git push`| Pusher endringer til skyen |
 |`git branch` | Viser alle branches, inkludert hvilken du jobber på. |
