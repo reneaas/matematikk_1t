@@ -1,7 +1,7 @@
 # Sammensatte mengder
 
 Noen ganger kan vi ikke beskrive en mengde med ett intervall eller med én ulikhet. Noen ganger kan vi ikke uttrykke de som ulikheter eller intervaller i det hele tatt.
-Vi kan gi noen eksempler på tilfeller der vi teorien vi kjenner så langt ikke strekker til:
+Vi kan gi noen eksempler på tilfeller der vi teorien kjenner så langt ikke strekker til:
 * Alle reelle tall bortsett fra $x = 0$. 
 * Alle reelle tall over $x = 2$ og mindre enn $x = -1$.
 * Alle reelle fra $x = -2$ til $x = 1$ og fra $x = 3$ til $x = 4$.
@@ -29,9 +29,18 @@ Akkurat som reelle tall har regneregler, har også mengder sine egne regneregler
 :class: tip
 
 La $A$ og $B$ være to mengder. Da har vi følgende regneregler:
-1. **Union**: $A \cup B$ er mengden av alle elementer som er i $A$ eller i $B$, eller i begge.
-2. **Snitt**: $A \cap B$ er mengden av alle elementer som er i både $A$ og $B$.
-3. **Mengdeminus**: $A \setminus B$ er mengden av alle elementer som er $A$, *bortsett* fra alle som også er i $B$.
+
+Union: $A \cup B$
+: Gir mengden av alle elementer som er i $A$ eller i $B$, eller i begge. Det vil si, alle elementer $x$ som enten oppfyller $x \in A$ eller $x \in B$, eller begge.
+
+Snitt: $A \cap B$
+: Gir mengden av alle elementer som er i både $A$ og $B$. Det vil si, alle elementer $x$ som oppfyller $x \in A$ og $x \in B$ samtidig. 
+
+Differens (mengdeminus): $A \setminus B$
+: Gir mengden av alle elementer som er i $A$, bortsett fra alle som også er i $B$. Det vil si, alle elementer $x$ som oppfyller $x \in A$ og $x \notin B$
+
+Komplement: $A^c$
+: Gir mengden av alle elementer som *ikke* er i $A$. Det vil si, mengden av alle elementer $x$ slik at $x \notin A$.
 ```
 
 I tabellen under vises noen eksempler med listenotasjon og intervaller. Les den **nøye** og overbevis deg selv om at du forstår regnereglene:
@@ -91,8 +100,34 @@ Les tabellen **nøye** og overbevis deg selv om at du forstår sammenhengen mell
 | Alle reelle tall, bortsett fra $0$ | $\langle \gets, 0 \rangle \cup \langle 0, \to \rangle = \mathbb{R} \setminus \{0\}$ |
 | Alle reelle tall under $-2$ og over $3$ | $\langle \gets, -2 \rangle \cup \langle 3, \to \rangle$ |
 
+```{admonition} Underveisoppgave 2
+:class: note
+
+Fyll ut tabellen under:
+| Beskrivelse av mengde | Intervallnotasjon |
+| :--- | :--- |
+| Alle reelle tall fra og med $-1$ til og med $1$, og fra $2$ til $3$ | |
+| Alle reelle tall fra og med $-2$ til $0$, og fra og med $1$ til $2$ | |
+| Alle reelle tall, bortsett fra $1$ | |
+| Alle reelle tall under $-3$ og over $2$ | |
+| Alle reelle tall utenom $-1$, $0$ og $1$ | |
+| Alle reelle tall utenom heltallene | |  
+```
+
+```{dropdown} Løsning
+| Beskrivelse av mengde | Intervallnotasjon |
+| :--- | :--- |
+| Alle reelle tall fra og med $-1$ til og med $1$, og fra $2$ til $3$ | $[-1, 1] \cup [2, 3]$ |
+| Alle reelle tall fra og med $-2$ til $0$, og fra og med $1$ til $2$ | $[-2, 0\rangle \cup [1, 2 \rangle$ |
+| Alle reelle tall, bortsett fra $1$ | $\langle \gets, 1 \rangle \cup \langle 1, \to \rangle = \mathbb{R} \setminus \{1\}$ |
+| Alle reelle tall under $-3$ og over $2$ | $\langle \gets, -3 \rangle \cup \langle 2, \to \rangle$ |
+| Alle reelle tall utenom $-1$, $0$ og $1$ | $\mathbb{R} \setminus \{-1, 0, 1\}$ |
+| Alle reelle tall utenom heltallene | $\mathbb{R} \setminus \mathbb{Z}$ |
+```
+
 
 ## Sammensatte mengder som ulikheter
+
 
 
 
