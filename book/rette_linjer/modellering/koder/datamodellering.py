@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-plt.rc("text", usetex=True)
+#plt.rc("text", usetex=True)
 
 x = np.array([15, 30, 45, 60, 75, 90])
 y = np.array([18, 25, 55, 78, 90, 120])
@@ -16,7 +16,7 @@ ax.plot(x, y, color="black", alpha=0.7, marker="o", linestyle="none")
 # Plott grafene til tre modeller
 x = np.linspace(-10, 130, 1024)
 ax.plot(x, a*x + b, color="blue", lw=1.5, linestyle="-", alpha=0.7)
-ax.plot(x, a*x + (b+2), color="red", lw=1.5, linestyle="-", alpha=0.7)
+ax.plot(x, a*x + (b+6), color="red", lw=1.5, linestyle="-", alpha=0.7)
 ax.plot(x, (a+0.5)*x + b, color="green", lw=1.5, linestyle="-", alpha=0.7)
 
 ax.spines["left"].set_position("zero")
@@ -46,6 +46,6 @@ plt.grid(True, linestyle="--", alpha=0.6)
 plt.tight_layout()
 
 # Lagrer figuren i vektorformat
-plt.savefig("../figurer/datamodellering.svg")
+plt.savefig("/home/eva/matematikk_1t/book/rette_linjer/modellering/figurer/datamodellering.svg")
 
 plt.show()

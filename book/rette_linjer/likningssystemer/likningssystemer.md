@@ -1,4 +1,4 @@
-# Lineære Likningssystemer
+# Lineære likningssystemer
 
 ````{margin}
 ```{admonition} Likningssystem vs likningssett
@@ -15,7 +15,7 @@ Et **lineært likningssystem** er et likningssystem der alle likningene kan besk
     x + y & = 1 \\
 \end{align}
 
-De to likningene i systemet er lineære likninger fordi de kan skrives som funksjonsuttrykkene til lineære funksjoner. 
+De to likningene i systemet er lineære likninger fordi de kan skrives som funksjonsuttrykkene til lineære funksjoner. Vi ser at vi har to variabler - $x$ og $y$. For å løse likningssystemet må vi finne verdien til begge to. Vi kan også ha likningssystemer med flere enn to variabler. 
 
 ```{admonition} Læringsmål: lineære likningssystemer
 :class: tip
