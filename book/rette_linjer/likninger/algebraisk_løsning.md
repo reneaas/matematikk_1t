@@ -14,7 +14,7 @@ I eksempelet under har vi konsekvent lagt til eller trukket fra det samme på be
 Kan du løse likningen 
 
 $$ 
-2x + 3 = - x + 1
+2x + 3 = - x - 3
 $$
 
 ```{dropdown} Løsning
@@ -23,34 +23,34 @@ For å løse denne ønsker vi å samle leddene som inneholder $x$ på *venstre s
 Vi starter med å fjerne $x$ fra *høyre side*. Det gjør vi ved å legge til $x$ på begge sider: 
 
 $$
-2x + 3 + x = -x + 1 + x
+2x + 3 + x = -x - 3 + x
 $$
 
 Det gir oss likningen: 
 
 $$
-3x + 3  = 1 
+3x + 3  = - 3
 $$
 
 Deretter trekker vi fra $3$ på begge sider: 
 
 $$
-3x + 3 - 3 = 1 - 3
+3x + 3 - 3 = -3 - 3
 $$
 
 Vi har da ett ledd igjen på *høyre side* og ett ledd igjen på *venstre side*: 
 
 $$
-3x = -2
+3x = -6
 $$
 
 For å finne $x$ kan vi nå dele på $3$:
 
 $$
-x = -\frac{2}{3}
+x = -\frac{6}{3} = - 2
 $$
 
-Likningen har altså løsningen $x=-\frac{2}{3}$. 
+Likningen har altså løsningen $x=-2$. 
 ```
 ````
 
@@ -59,10 +59,10 @@ På ungdomsskolen har du kanskje lært å sette prøve på svaret? Det betyr at 
 
 ````{admonition} Underveisoppgave 2
 :class: note
-Sett prøve på svaret $x=-\frac{2}{3}$ for likningen
+Sett prøve på svaret $x=-2$ for likningen
 
 $$ 
-2x + 3 = - x + 1
+2x + 3 = - x - 3
 $$
 
 ```{dropdown} Løsning
@@ -71,24 +71,20 @@ Vi sjekker *venstre side* (VS) og *høyre side* (HS) hver for seg:
 
 
 $$
-\text{VS:}\quad 2\cdot -\frac{2}{3} + 3  = -\frac{4}{3} + 3 = -\frac{4}{3} + \frac{9}{3} = \frac{5}{3}
+\text{VS:}\quad 2\cdot -2 + 3  = -4 + 3 = - 1
 $$
 
 $$
-\text{HS:}\quad -\left(-\frac{2}{3}\right) + 1 = \frac{2}{3} + \frac{3}{3} = \frac{5}{3}
+\text{HS:}\quad - (-2) - 3 = 2 - 3 = -1
 $$
 
-Vi ser at *venstre side* og *høyre side* er like, og dermed er løsningen $x=-\dfrac{2}{3}$ riktig. 
+Vi ser at *venstre side* og *høyre side* er like, og dermed er løsningen $x=-2 $ riktig. 
 
 ```
 ````
 
 ## Uttrykke løsningen av en likning
-Fra tidligere er du antakeligvis kjent med å oppgi løsningen av en likning som $x = -\frac{2}{3}$, som i underveisoppgaven over. Tidligere i 1T har du også lært om mengder. Mengdene kan også brukes til å uttrykke løsningen av likninger. Vi kan da skrive $ L = \{-\frac{2}{3}\}$. Vi leser det som *Løsingsmengden inneholder $-\frac{2}{3}$*. 
-
-
-## Mer komplisert eksempel
-Bør vi ha et mer komplisert eksempel her?
+Fra tidligere er du antakeligvis kjent med å oppgi løsningen av en likning som $x = -2$, som i underveisoppgaven over. Tidligere i 1T har du også lært om mengder. Mengdene kan også brukes til å uttrykke løsningen av likninger. Vi kan da skrive $ L = \{-2}\}$. Vi leser det som *Løsingsmengden inneholder $-2$*. 
 
 ## Oppgaver
 ### Oppgave 1

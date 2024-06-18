@@ -11,7 +11,7 @@ Sparkesykkelfirmaet *Lemon* har en prismodell der du betaler 10 kr for å låse 
 1. Sett opp en matematisk modell som beskriver sammenhengen mellom prisen, $P$ og antall minutter du har kjørt sparkesykkelen $t$.
 2. Bruk modellen din til å finne ut hva det koster dersom du har kjørt sparkesykkelen i 8 minutter. 
 
-**Prøv godt selv før du ser på løsningsforslaget. Det kan hende du bør lese gjennom forklaringene over et par ganger for å forstå den godt.**
+**Prøv selv før du ser på løsningsforslaget. Det kan hende du bør lese gjennom forklaringene over et par ganger for å forstå den godt.**
 
 ```{dropdown} Løsningsforslag
 1. I dette tilfellet er $t$ en uavhengig variabel, mens $P$ er en avhengig variabel som avhenger av $t$. Vi setter da opp funksjonsuttrykket
@@ -47,7 +47,7 @@ Basert på dataene over kan vi lage en figur og forsøke å finne den linja som 
 :name: datamod
 :width: 100%
 
-Datamodellering - stygg figur som må fikses slik at den viser flere ulike linjer. 
+Datamodellering 
 ```
 
 ## Regresjon
@@ -57,10 +57,50 @@ I modellen over så vi at en av linjene passet bedre enn de andre. Vi kan finne 
 :name: regresjon
 :width: 100%
 
-Eksempel på regresjon i GeoGebra
+Eksempel på regresjon i GeoGebra, dette gjør vi om til faner. 
 ```
 GeoGebra har mange ulike modeller vi kan velge i tillegg til lineære modeller. Vi skal bruke flere av de andre modellene senere i 1T. 
 
 ## Oppgaver
+### Oppgave 1
+I [denne](https://www.tek.no/nyheter/guide/i/XgPoLm/leie-sparkesykkel-dette-selskapet-er-best-og-billigst) saken fra tek.no finner du priser for ulike sparkesykkelselskap. 
 
+1) Ta utgangspunkt i oppstartsprisen og prisen per minutt, og lag en modell som viser prisen per selskap. 
+2) Bruk modellen til å bestemme hvilket selskap som er billigst dersom du bruker sparkesykkelen i 8 minutter. 
+3) I tabellen finner du også pris per 10 minutter. Vurder hvor godt dette tilbudet er i hvert tilfelle.
 
+---
+
+### Oppgave 2
+I 1987 kostet en kroneis 6 kr. I 2022 hadde prisen steget til 27 kroner. Vi antar at prisutviklingen har vært tilnærmet lineær i perioden fra 1987 til 2022. 
+
+Sett opp en lineær modell som beskriver prissstigningen. 
+
+```{dropdown} Løsningsforslag
+Vi lar $x$ være antall år etter 1987. Ettersom konstantleddet er prisen i startåret, setter vi $b = 6$. 
+
+Fra 1987 til 2022 er det 35 år. På de 35 årene har prisen steget med 21 kroner. Vi finner da årlig prisstigning
+
+$$ a = \frac{\Delta y}{\Delta x} = \frac{21}{35} = \frac{3}{5}$$
+
+Vi kan da sette opp den lineære modellen $y = \frac{3}{5} + 6$. 
+```
+---
+### Oppgave 3
+Gunnar og Einar sår et tomatfrø. De følger nøye med og måler planten hver dag den første uka etter at planten begynner å spire. 
+
+|Antall dager | 0 | 1 | 2 | 3 | 4 | 5 | 6 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Høyde i cm | 0,8 | 1,2 | 1,5 | 1,7 | 1,9 | 2,3 | 2,5 |
+
+1) Bestem en lineær modell for tomatplanten. 
+2) Bruk modellen til å forutsi høyden etter 10 dager. 
+3) Gunnar og Einar har tenkt å plante ut planten etter hvert. Kan modellen brukes til å anslå hvor høy planten er etter to måneder?
+
+```{dropdown} Løsningsforslag
+1) Vi bruker regresjon og får den lineære modellen $ T(x) = 0.275 x + 0.875
+2) Etter 10 dager vil planten være $ T(10) = 2,75 + 0,875 = 3,6 cm ifølge modellen
+3) Nei, det er ikke så sannsynlig, for planten vil ikke ha lineær vekst hele tiden. 
+
+```
+---
