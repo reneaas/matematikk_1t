@@ -20,8 +20,6 @@ Målet for denne seksjon er at du skal:
 * Kunne beskrive sammensatte mengder ved hjelp av intervaller, ulikheter og listenotasjon.
 ```
 
-
-
 ## Regneregler for mengder
 Akkurat som reelle tall har regneregler, har også mengder sine egne regneregler. Vi trenger heldigvis bare noen få regneregler for å kunne beskrive sammensatte mengder.
 
@@ -54,7 +52,7 @@ Noen ganger er det nyttig å kunne beskrive en mengde som ikke inneholder *noen 
 
 | Mengde $A$ | Mengde $B$ | $A \cup B$ | $A \cap B$ | $A \setminus B$ |
 | :---: | :---: | :---: | :---: | :---: |
-| $\{1, 2, 3\}$ | $\{2, 3, 4\}$ | $\{1, 2, 3, 4\}$ | $\{2, 3\}$ | $\{1\}$ |
+| $\{1, 2, 3\}$ | $\{2, 3, 4\}$ | $\{1, 2, 3, 4\}$ | $\{2, 3\}$ | $\{-1, 1\}$ |
 | $\{-2, -1\}$ | $\{1, 2\}$ | $\{-2, -1, 1, 2\}$ | $\emptyset$ | $\{-2, -1\}$ |
 | $[1, 3]$ | $[2, 4]$ | $[1, 4]$ | $[2, 3]$ | $[1, 2 \rangle$ |
 | $[1, 3]$ | $[4, 6]$ | $[1, 3] \cup [4, 6]$ | $\emptyset$ | $[1, 3]$ |
@@ -78,12 +76,12 @@ Fyll ut tabellen under:
 
 | Mengde $A$ | Mengde $B$ | $A \cup B$ | $A \cap B$ | $A \setminus B$ |
 | :---: | :---: | :---: | :---: | :---: |
-|$\{-1, 1\}$| $\{0, 2\}$ | $\{-1, 0, 1, 2\}$ | $\{1\}$ | $\{-1\}$ |
+|$\{-1, 1\}$| $\{0, 2\}$ | $\{-1, 0, 1, 2\}$ | $\emptyset$ | $\{-1\}$ |
 | $\{-4, 2, 4\}$ | $\{1, 2, 4\}$ | $\{-4, 1, 2, 4\}$ | $\{2, 4\}$ | $\{-4\}$ |
 | $\{1, 2, 3\}$ | $\{3, 4, 5\}$ | $\{1, 2, 3, 4, 5\}$ | $\{3\}$ | $\{1, 2\}$ |
 | $[1, 2]$ | $[2, 4]$ | $[1, 4]$ | $[2, 2]$ | $[1, 2 \rangle$ |
-| $[-1, 2]$ | $[4, 6]$ | $[-1, 2, 4, 6]$ | $\{2\}$ | $[-1, 2 \rangle$ |
-| $[-3, 3]$ | $[0, 2]$ | $[-3, 3]$ | $[0, 2]$ | $[-3, 0 \rangle$ |
+| $[-1, 2]$ | $[4, 6]$ | $[-1, 2] \cup [4, 6]$ | $\emptyset$ | $[-1, 2]$ |
+| $[-3, 3]$ | $[0, 2]$ | $[-3, 3]$ | $[0, 2]$ | $[-3, 0 \rangle \cup \langle 2, 3]$ |
 ```
 
 
@@ -127,7 +125,50 @@ Fyll ut tabellen under:
 
 
 ## Sammensatte mengder som ulikheter
+En annen måte å uttrykke sammensatte mengder på er ved hjelp av ulikheter. Da trenger vi to nye begreper og en notasjon:
 
+```{admonition} Logiske operatorer: konjunksjon og disjunksjon
+:class: tip
+Vi tenker oss at vi har to påstander $p$ og $q$. Da har vi følgende logiske operatorer:
+
+Disjunksjon
+: Når enten $p$ eller $q$ er sanne, eller begge er sanne, sier vi at de er **disjunktive** påstander. Vi skriver $p \lor q$ og leser det som $p$ **eller** $q$ (eller *begge*).
+
+Konjunksjon
+: Når både $p$ og $q$ er sanne samtidig, sier vi at de er **konjuktive** påstander. Vi skriver $p \land q$ og leser det som $p$ **og samtidig** $q$.
+```
+
+Begrepene over er litt abstrakte, så la oss gjøre dem mer konkrete:
+
+
+
+```{admonition} Eksempel 1: disjunksjon
+:class: eksempel
+Mengden bestående av alle $x \in [-1, 0] \cup \langle 1, 2 \rangle$ kan vi uttrykke som at enten så er $x\in [-1, 0]$ eller så er $x \in \langle 1, 2 \rangle$. Vi kan derfor uttrykke dette som at 
+
+$$
+x \in [-1, 0] \cup \langle 1, 2 \rangle \quad \Leftrightarrow \quad -1 \leq x \leq 0 \, \lor \, 1 < x < 2
+$$
+```
+
+```{admonition} Eksempel 2: konjunksjon
+:class: eksempel
+Vi tenker oss et likningssystem 
+
+\begin{align}
+    x+y &= 3 \\
+    x-y &= 1
+\end{align}
+
+Dette likningssystemet har løsningen $x = 2$ og $y = 1$. Vi kan uttrykke mengden av løsningene til likningssystemet som 
+
+$$
+(x, y) \in \{(2, 1)\} \quad \Leftrightarrow \quad x = 2 \, \land \, y = 1
+$$
+
+Vi merker oss at siden $x = 2$ og $y = 1$ samtidig, så bruker vi konjunksjon for å binde $x = 2$ og $y = 1$ sammen. De må altså være sanne samtidig.
+
+```
 
 
 
