@@ -36,9 +36,6 @@ Snitt: $A \cap B$
 
 Differens (mengdeminus): $A \setminus B$
 : Gir mengden av alle elementer som er i $A$, bortsett fra alle som også er i $B$. Det vil si, alle elementer $x$ som oppfyller $x \in A$ og $x \notin B$
-
-Komplement: $A^c$
-: Gir mengden av alle elementer som *ikke* er i $A$. Det vil si, mengden av alle elementer $x$ slik at $x \notin A$.
 ```
 
 I tabellen under vises noen eksempler med listenotasjon og intervaller. Les den **nøye** og overbevis deg selv om at du forstår regnereglene:
@@ -134,10 +131,10 @@ Nå er vi klare for å innføre to nye begreper og en samsvarende skrivemåte:
 :class: tip
 Vi tenker oss at vi har to påstander $p$ og $q$. Da har vi følgende logiske operatorer:
 
-Disjunksjon: $p \lor q$
+Disjunksjon (logisk eller): $p \lor q$
 : Når enten $p$ eller $q$ er sanne, eller begge er sanne, sier vi at de er **disjunktive** påstander. Vi skriver $p \lor q$ og leser det som $p$ **eller** $q$ (eller *begge*).
 
-Konjunksjon: $p \land q$
+Konjunksjon (logisk og): $p \land q$
 : Når både $p$ og $q$ er sanne samtidig, sier vi at de er **konjuktive** påstander. Vi skriver $p \land q$ og leser det som $p$ **og samtidig** $q$.
 ```
 
@@ -145,7 +142,7 @@ Begrepene over er litt abstrakte, så la oss gjøre dem mer konkrete:
 
 
 
-```{admonition} Eksempel 1: disjunksjon
+```{admonition} Eksempel 1: disjunksjon (eller)
 :class: eksempel
 Mengden bestående av alle $x \in [-1, 0] \cup \langle 1, 2 \rangle$ kan vi uttrykke som at enten så er $x\in [-1, 0]$ eller så er $x \in \langle 1, 2 \rangle$. Vi kan derfor uttrykke dette som at 
 
@@ -156,7 +153,7 @@ $$
 Knytter vi det til teorien over er den éne påstanden $-1 \leq x \leq 0$ og den andre påstanden $1 < x < 2$. Disse to påstandene er disjunktive, og vi bruker disjunksjon for å binde dem sammen.
 ```
 
-```{admonition} Eksempel 2: konjunksjon
+```{admonition} Eksempel 2: konjunksjon (og samtidig)
 :class: eksempel
 Vi tenker oss et likningssystem 
 
@@ -173,3 +170,65 @@ $$
 
 Vi merker oss at siden $x = 2$ og $y = 1$ samtidig, så bruker vi konjunksjon for å binde $x = 2$ og $y = 1$ sammen. De må altså være sanne samtidig. Knytter vi de over til teorien, så er $x = 2$ den *ene* påstanden og $y = 1$ den andre. Men disse *må* være sanne samtidig, så derfor bruker vi konjuksjonssymbolet $\land$.
 ```
+
+Nå er vi klare for å se på hvordan vi kan skrive om intervaller til ulikheter:
+
+```{admonition} Sammensatte mengder som ulikheter
+:class: tip
+Hvis et intervall $I = [a, b] \cup [c, d]$ og $x \in I$, så kan vi skrive 
+
+$$
+x \in I \quad \Leftrightarrow \quad a \leq x \leq b \, \lor \, c \leq x \leq d
+$$
+```
+Den generelle formen over kan utvides til åpne og halvåpne intervaller. 
+
+```{admonition} Underveisoppgave 3
+:class: note
+Fyll ut tabellen under:
+
+| Intervall | Ulikheter |
+| :---: | :---: |
+| $x\in [1, 2] \cup [3, 4]$ | |
+| $y\in[1, 2] \cup \langle 3, 4]$ | |
+| $p\in \langle 1, 2] \cup [3, 4]$ | |
+| $q\in \langle 1, 2] \cup \langle 3, 4]$ | |
+| $r \in \mathbb{R} \setminus [-1, 1]$ | |
+```
+
+```{dropdown} Løsning
+| Intervall | Ulikheter |
+| :---: | :---: |
+| $x\in [1, 2] \cup [3, 4]$ | $1 \leq x \leq 2 \, \lor \, 3 \leq x \leq 4$ |
+| $y\in[1, 2] \cup \langle 3, 4]$ | $1 \leq y \leq 2 \, \lor \, 3 < y \leq 4$ |
+| $p\in \langle 1, 2] \cup [3, 4]$ | $1 < p \leq 2 \, \lor \, 3 \leq p \leq 4$ |
+| $q\in \langle 1, 2] \cup \langle 3, 4]$ | $1 < q \leq 2 \, \lor \, 3 < q < 4$ |
+| $r \in \mathbb{R} \setminus [-1, 1]$ | $r < -1 \, \lor \, r > 1$ |
+```
+
+
+## Oppgaver
+
+### Oppgave 1
+Fyll ut tabellen under:
+
+|Intervall | Ulikheter |
+|:---:|:---:|
+| $x\in [0, 1] \cup [2, 5]$ | |
+|  | $-2 \leq y \land y\leq 3$  |
+| $z\in \langle -1, 1 \rangle \cup \langle 2, 3 \rangle$ | |
+|  | $-3 \leq p < 2 \, \lor  p > 4$ |
+| $q\in \mathbb{R} \setminus \langle 0, 1]$ | |
+
+
+```{dropdown} Løsning
+|Intervall | Ulikheter |
+|:---:|:---:|
+| $x\in [0, 1] \cup [2, 5]$ | $0 \leq x \leq 1 \, \lor \, 2 \leq x \leq 5$ |
+| $y \in [-2, 3]$ | $-2 \leq y \land y\leq 3$ |
+| $z\in \langle -1, 1 \rangle \cup \langle 2, 3 \rangle$ | $-1 < z < 1 \, \lor \, 2 < z < 3$ |
+| $p \in [-3, 2 \rangle \cup \langle 4, \to \rangle$ | $-3 \leq p < 2 \, \lor  p > 4$ |
+| $q\in \mathbb{R} \setminus \langle 0, 1]$ | $q \leq 0 \, \lor \, p > 1$ |
+```
+
+### Oppgave 2

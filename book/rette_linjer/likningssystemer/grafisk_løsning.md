@@ -105,7 +105,7 @@ x-3y-1 &=0 \\
 
 ```{admonition} Fasit
 :class: dropdown, note
-Likningssystemet har løsningen $x=-2, y=-1$
+Likningssystemet har løsningen $x=-2 \, \land \, y=-1$
 
 ```
 
@@ -113,15 +113,17 @@ Likningssystemet har løsningen $x=-2, y=-1$
 Bestem $k$ slik at likningssystemet 
 
 \begin{align}
-2x + 3y &= 5
+2x + 3y &= 5 \\
 x + y + k &= 0
 \end{align}
 
-får løsningen $x=4, y=1$. 
+får løsningen $x = 4 \, \land \, y = -1$. 
 
-"""
-legg inn interaktivt plot. 
-"""
+```{raw} html
+:file: ./figurer/interaktive_plot/oppg_3.html
+```
+
+
 ```{admonition} Fasit
 :class: dropdown, note
 $k=-3$
