@@ -36,9 +36,6 @@ Snitt: $A \cap B$
 
 Differens (mengdeminus): $A \setminus B$
 : Gir mengden av alle elementer som er i $A$, bortsett fra alle som også er i $B$. Det vil si, alle elementer $x$ som oppfyller $x \in A$ og $x \notin B$
-
-Komplement: $A^c$
-: Gir mengden av alle elementer som *ikke* er i $A$. Det vil si, mengden av alle elementer $x$ slik at $x \notin A$.
 ```
 
 I tabellen under vises noen eksempler med listenotasjon og intervaller. Les den **nøye** og overbevis deg selv om at du forstår regnereglene:
@@ -125,16 +122,19 @@ Fyll ut tabellen under:
 
 
 ## Sammensatte mengder som ulikheter
-En annen måte å uttrykke sammensatte mengder på er ved hjelp av ulikheter. Da trenger vi to nye begreper og en notasjon:
+En annen måte å uttrykke sammensatte mengder på er ved hjelp av ulikheter. Før vi går videre, må vi gjøre det klart hva vi mener med en **påstand** i matematikk. En påstand er et utsagn om noe, for eksempel vil $2x + 1 = 3$ regnes som en påstand selv om vi vanligvis bruker begrepet *likning* om en slik påstand. Et annet eksempel på en påstand er $x > 4$. En påstand er enten sann eller usann. Typisk når vi ønsker å beskrive svaret på en likning, ulikhet eller et likningssystem, uttrykker vi det med påstander som er *sanne*.
+
+
+Nå er vi klare for å innføre to nye begreper og en samsvarende skrivemåte:
 
 ```{admonition} Logiske operatorer: konjunksjon og disjunksjon
 :class: tip
 Vi tenker oss at vi har to påstander $p$ og $q$. Da har vi følgende logiske operatorer:
 
-Disjunksjon
+Disjunksjon (logisk eller): $p \lor q$
 : Når enten $p$ eller $q$ er sanne, eller begge er sanne, sier vi at de er **disjunktive** påstander. Vi skriver $p \lor q$ og leser det som $p$ **eller** $q$ (eller *begge*).
 
-Konjunksjon
+Konjunksjon (logisk og): $p \land q$
 : Når både $p$ og $q$ er sanne samtidig, sier vi at de er **konjuktive** påstander. Vi skriver $p \land q$ og leser det som $p$ **og samtidig** $q$.
 ```
 
@@ -142,16 +142,18 @@ Begrepene over er litt abstrakte, så la oss gjøre dem mer konkrete:
 
 
 
-```{admonition} Eksempel 1: disjunksjon
+```{admonition} Eksempel 1: disjunksjon (eller)
 :class: eksempel
 Mengden bestående av alle $x \in [-1, 0] \cup \langle 1, 2 \rangle$ kan vi uttrykke som at enten så er $x\in [-1, 0]$ eller så er $x \in \langle 1, 2 \rangle$. Vi kan derfor uttrykke dette som at 
 
 $$
 x \in [-1, 0] \cup \langle 1, 2 \rangle \quad \Leftrightarrow \quad -1 \leq x \leq 0 \, \lor \, 1 < x < 2
 $$
+
+Knytter vi det til teorien over er den éne påstanden $-1 \leq x \leq 0$ og den andre påstanden $1 < x < 2$. Disse to påstandene er disjunktive, og vi bruker disjunksjon for å binde dem sammen.
 ```
 
-```{admonition} Eksempel 2: konjunksjon
+```{admonition} Eksempel 2: konjunksjon (og samtidig)
 :class: eksempel
 Vi tenker oss et likningssystem 
 
@@ -166,25 +168,67 @@ $$
 (x, y) \in \{(2, 1)\} \quad \Leftrightarrow \quad x = 2 \, \land \, y = 1
 $$
 
-Vi merker oss at siden $x = 2$ og $y = 1$ samtidig, så bruker vi konjunksjon for å binde $x = 2$ og $y = 1$ sammen. De må altså være sanne samtidig.
-
+Vi merker oss at siden $x = 2$ og $y = 1$ samtidig, så bruker vi konjunksjon for å binde $x = 2$ og $y = 1$ sammen. De må altså være sanne samtidig. Knytter vi de over til teorien, så er $x = 2$ den *ene* påstanden og $y = 1$ den andre. Men disse *må* være sanne samtidig, så derfor bruker vi konjuksjonssymbolet $\land$.
 ```
 
+Nå er vi klare for å se på hvordan vi kan skrive om intervaller til ulikheter:
 
-
-````{comment}
-```{admonition} Ekvivalens
+```{admonition} Sammensatte mengder som ulikheter
 :class: tip
-Ekvivalens
-: Når to utsagn som er uttrykt på forskjellig måte betyr det samme, sier vi at de er **ekvivalente**. Hvis $p$ og $q$ er to påstander som er ekvivalente, skriver vi $p \Leftrightarrow q$.
+Hvis et intervall $I = [a, b] \cup [c, d]$ og $x \in I$, så kan vi skrive 
 
-Implikasjon
-: Når et utsagn fører til at et annet utsagn er sant, men ikke omvendt, sier vi at det første utsagnet **impliserer** det andre. Hvis $p$ impliserer $q$, skriver vi $p \Rightarrow q$. Vi kan også snu på det å skrive $q \Leftarrow p$. Begge skrivemåter uttrykker at $p$ implisere $q$.
-
-Konjunksjon
-: Når to utsagn er sanne, sier vi at de er **konjunktive**. Hvis $p$ og $q$ er sanne, skriver vi $p \land q$. Vi kan lese $\land$ som **og samtidig** fordi det uttrykker at $p$ og $q$ er sanne på én og samme tid.
-
-Disjunksjon
-: Når minst ett av to utsagn er sant, sier vi at de er **disjunktive**. Hvis $p$ eller $q$ er sanne, skriver vi $p \lor q$. Vi kan lese $\lor$ som **eller** fordi det uttrykker at enten $p$ er sann, eller $q$ er sann, eller så er begge sanne. 
+$$
+x \in I \quad \Leftrightarrow \quad a \leq x \leq b \, \lor \, c \leq x \leq d
+$$
 ```
-````
+Den generelle formen over kan utvides til åpne og halvåpne intervaller. 
+
+```{admonition} Underveisoppgave 3
+:class: note
+Fyll ut tabellen under:
+
+| Intervall | Ulikheter |
+| :---: | :---: |
+| $x\in [1, 2] \cup [3, 4]$ | |
+| $y\in[1, 2] \cup \langle 3, 4]$ | |
+| $p\in \langle 1, 2] \cup [3, 4]$ | |
+| $q\in \langle 1, 2] \cup \langle 3, 4]$ | |
+| $r \in \mathbb{R} \setminus [-1, 1]$ | |
+```
+
+```{dropdown} Løsning
+| Intervall | Ulikheter |
+| :---: | :---: |
+| $x\in [1, 2] \cup [3, 4]$ | $1 \leq x \leq 2 \, \lor \, 3 \leq x \leq 4$ |
+| $y\in[1, 2] \cup \langle 3, 4]$ | $1 \leq y \leq 2 \, \lor \, 3 < y \leq 4$ |
+| $p\in \langle 1, 2] \cup [3, 4]$ | $1 < p \leq 2 \, \lor \, 3 \leq p \leq 4$ |
+| $q\in \langle 1, 2] \cup \langle 3, 4]$ | $1 < q \leq 2 \, \lor \, 3 < q < 4$ |
+| $r \in \mathbb{R} \setminus [-1, 1]$ | $r < -1 \, \lor \, r > 1$ |
+```
+
+
+## Oppgaver
+
+### Oppgave 1
+Fyll ut tabellen under:
+
+|Intervall | Ulikheter |
+|:---:|:---:|
+| $x\in [0, 1] \cup [2, 5]$ | |
+|  | $-2 \leq y \land y\leq 3$  |
+| $z\in \langle -1, 1 \rangle \cup \langle 2, 3 \rangle$ | |
+|  | $-3 \leq p < 2 \, \lor  p > 4$ |
+| $q\in \mathbb{R} \setminus \langle 0, 1]$ | |
+
+
+```{dropdown} Løsning
+|Intervall | Ulikheter |
+|:---:|:---:|
+| $x\in [0, 1] \cup [2, 5]$ | $0 \leq x \leq 1 \, \lor \, 2 \leq x \leq 5$ |
+| $y \in [-2, 3]$ | $-2 \leq y \land y\leq 3$ |
+| $z\in \langle -1, 1 \rangle \cup \langle 2, 3 \rangle$ | $-1 < z < 1 \, \lor \, 2 < z < 3$ |
+| $p \in [-3, 2 \rangle \cup \langle 4, \to \rangle$ | $-3 \leq p < 2 \, \lor  p > 4$ |
+| $q\in \mathbb{R} \setminus \langle 0, 1]$ | $q \leq 0 \, \lor \, p > 1$ |
+```
+
+### Oppgave 2
