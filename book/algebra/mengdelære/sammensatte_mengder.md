@@ -125,16 +125,19 @@ Fyll ut tabellen under:
 
 
 ## Sammensatte mengder som ulikheter
-En annen måte å uttrykke sammensatte mengder på er ved hjelp av ulikheter. Da trenger vi to nye begreper og en notasjon:
+En annen måte å uttrykke sammensatte mengder på er ved hjelp av ulikheter. Før vi går videre, må vi gjøre det klart hva vi mener med en **påstand** i matematikk. En påstand er et utsagn om noe, for eksempel vil $2x + 1 = 3$ regnes som en påstand selv om vi vanligvis bruker begrepet *likning* om en slik påstand. Et annet eksempel på en påstand er $x > 4$. En påstand er enten sann eller usann. Typisk når vi ønsker å beskrive svaret på en likning, ulikhet eller et likningssystem, uttrykker vi det med påstander som er *sanne*.
+
+
+Nå er vi klare for å innføre to nye begreper og en samsvarende skrivemåte:
 
 ```{admonition} Logiske operatorer: konjunksjon og disjunksjon
 :class: tip
 Vi tenker oss at vi har to påstander $p$ og $q$. Da har vi følgende logiske operatorer:
 
-Disjunksjon
+Disjunksjon: $p \lor q$
 : Når enten $p$ eller $q$ er sanne, eller begge er sanne, sier vi at de er **disjunktive** påstander. Vi skriver $p \lor q$ og leser det som $p$ **eller** $q$ (eller *begge*).
 
-Konjunksjon
+Konjunksjon: $p \land q$
 : Når både $p$ og $q$ er sanne samtidig, sier vi at de er **konjuktive** påstander. Vi skriver $p \land q$ og leser det som $p$ **og samtidig** $q$.
 ```
 
@@ -149,6 +152,8 @@ Mengden bestående av alle $x \in [-1, 0] \cup \langle 1, 2 \rangle$ kan vi uttr
 $$
 x \in [-1, 0] \cup \langle 1, 2 \rangle \quad \Leftrightarrow \quad -1 \leq x \leq 0 \, \lor \, 1 < x < 2
 $$
+
+Knytter vi det til teorien over er den éne påstanden $-1 \leq x \leq 0$ og den andre påstanden $1 < x < 2$. Disse to påstandene er disjunktive, og vi bruker disjunksjon for å binde dem sammen.
 ```
 
 ```{admonition} Eksempel 2: konjunksjon
@@ -166,25 +171,5 @@ $$
 (x, y) \in \{(2, 1)\} \quad \Leftrightarrow \quad x = 2 \, \land \, y = 1
 $$
 
-Vi merker oss at siden $x = 2$ og $y = 1$ samtidig, så bruker vi konjunksjon for å binde $x = 2$ og $y = 1$ sammen. De må altså være sanne samtidig.
-
+Vi merker oss at siden $x = 2$ og $y = 1$ samtidig, så bruker vi konjunksjon for å binde $x = 2$ og $y = 1$ sammen. De må altså være sanne samtidig. Knytter vi de over til teorien, så er $x = 2$ den *ene* påstanden og $y = 1$ den andre. Men disse *må* være sanne samtidig, så derfor bruker vi konjuksjonssymbolet $\land$.
 ```
-
-
-
-````{comment}
-```{admonition} Ekvivalens
-:class: tip
-Ekvivalens
-: Når to utsagn som er uttrykt på forskjellig måte betyr det samme, sier vi at de er **ekvivalente**. Hvis $p$ og $q$ er to påstander som er ekvivalente, skriver vi $p \Leftrightarrow q$.
-
-Implikasjon
-: Når et utsagn fører til at et annet utsagn er sant, men ikke omvendt, sier vi at det første utsagnet **impliserer** det andre. Hvis $p$ impliserer $q$, skriver vi $p \Rightarrow q$. Vi kan også snu på det å skrive $q \Leftarrow p$. Begge skrivemåter uttrykker at $p$ implisere $q$.
-
-Konjunksjon
-: Når to utsagn er sanne, sier vi at de er **konjunktive**. Hvis $p$ og $q$ er sanne, skriver vi $p \land q$. Vi kan lese $\land$ som **og samtidig** fordi det uttrykker at $p$ og $q$ er sanne på én og samme tid.
-
-Disjunksjon
-: Når minst ett av to utsagn er sant, sier vi at de er **disjunktive**. Hvis $p$ eller $q$ er sanne, skriver vi $p \lor q$. Vi kan lese $\lor$ som **eller** fordi det uttrykker at enten $p$ er sann, eller $q$ er sann, eller så er begge sanne. 
-```
-````
