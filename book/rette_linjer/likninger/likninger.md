@@ -5,7 +5,7 @@ En **lineær likning** er en likning hvor de algebraiske uttrykkene er funksjons
 Et eksempel på en lineær likning er
 
 $$
-2x + 3 = -x - 3.
+2x + 3 = -x - 3
 $$
 
 Med en begrepet **likning**, mener vi at venstresiden (her: $2x + 3$) skal være lik høyresiden (her: $-x + 1$). Som oftest vil det være en **variabel** (her: $x$) i likningen, og likningen vil kun være oppfylt for noen utvalgte verdier av variabelen.

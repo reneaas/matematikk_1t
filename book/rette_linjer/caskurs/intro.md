@@ -1,0 +1,2 @@
+# CAS
+På ungdomsskolen har du antakeligvis brukt graftegneren i GeoGebra. En annen nyttig del av GeoGebra er CAS, som står for *Computer Algebraic System*. Det betyr at CAS er en kalkulator som kan regne med symboler, og ikke bare med tall. CAS er spesielt god til å løse likninger og likningssystemer. Her vil du få en smakebit av hva du kan gjøre i CAS, og så vil du lære mer senere i kurset. 
