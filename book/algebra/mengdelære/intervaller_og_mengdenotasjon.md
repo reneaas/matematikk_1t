@@ -1,8 +1,17 @@
 # Mengder som intervaller, ulikheter og lister
 
-Noen ganger ønsker vi å beskrive en mengde tall på en kort og presis måte. Dersom vi ønsker å beskrive én eller flere sammenhengende deler av tallinja, kan vi bruke **intervaller**. 
-Vi kan også uttrykke intervaller som **ulikheter**. Men mengden vi ønsker å beskrive må ikke nøvendigvis alltid være sammenhengende deler av tallinja. Mengdene må slettes ikke engang være tall, men kan for eksempel være punkter. Da kan vi bruke **listenotasjon** for å beskrive mengdene.
-I denne seksjonen skal du lære hvordan du kan uttrykke mengder med intervaller, ulikheter og listenotasjon.
+Noen ganger ønsker vi å beskrive en mengde tall på en kort og presis måte. Vi skal se på tre forskjellige måter å skrive mengder på her:
+
+Intervaller
+: Hvis en mengde består av en eller flere sammenhengende deler av tallinja, kan vi uttrykke mengdene som intervaller.
+
+Ulikheter
+: Vi kan også bruke ulikheter til å uttrykke den samme mengden som vi kan uttrykke med intervaller. Ofte veksler vi mellom disse representasjonsformene - så det er viktig å kunne lese og bruke begge representasjonsformer.
+
+Listenotasjon
+: Noen ganger vil ikke en mengde bestå av sammenhengende deler på tallinja, men utvalgte tall. Mengden trenger ikke engang å bestå av tall, men kan bestå av utvalgte punkter. Da er listenotasjon en nyttig representasjonsform.
+
+I denne seksjonen skal du lære om de tre representasjonsformene for mengder.
 
 ```{admonition} Læringsmål: intervaller, ulikheter og listenotasjon
 :class: tip
@@ -14,10 +23,10 @@ Etter du har gått gjennom denne seksjonen skal du:
 
 ## Intervaller
 Noen ganger ønsker vi å beskrive en mengde reelle tall på tallinja på en kort og presis måte. Dersom vi ønsker å beskrive én eller flere sammenhengende deler av tallinja, kan vi bruke **intervaller**.  
-Her skal vi bare se på én del av tallinja - senere skal vi se på hvordan vi kan beskrive flere deler av tallinja.
+Her skal vi bare se på én del av tallinja - senere skal vi se på hvordan vi kan beskrive flere deler av tallinja samtidig.
 
 ### Intervaller
-I tabellen under vises de vanligste måte å uttrykke intervaller på. Les forklaringene i tabellen **nøye**:
+I tabellen under vises de vanligste måtene å uttrykke intervaller på. Les forklaringene i tabellen **nøye**:
 
 ```{margin}
 <br>
@@ -49,7 +58,7 @@ Du legger kanskje merke til at når et intervall er åpent er ingen av endepunkt
 ````{admonition} Underveisoppgave 1
 :class: note
 
-Ta for deg mengdene i tabellen under og bestemm type intervall og beskriv tallene som hører til mengdene:
+Ta for deg mengdene i tabellen under og bestem type intervall og beskriv tallene som hører til mengdene:
 
 | Mengde | Type intervall | Beskrivelse |
 |:---:|:---:|---|
@@ -66,10 +75,10 @@ Ta for deg mengdene i tabellen under og bestemm type intervall og beskriv tallen
 | Mengde | Type intervall | Beskrivelse |
 |:---:|:---:|---|
 | $[-1, 1]$| Lukket |Alle reelle tall fra og med $-1$ til og med $1$. |
-| $\langle 0, 3\rangle$| Åpent | Alle reelle tall fra $0$ opp til $3$ |
-| $\langle -2, 2]$| Halvåpent  | Alle reelle tall fra $-2$ opp til og med $2$ |
-| $[0, \to \rangle$| Lukket | Alle reelle tall fra og med $0$ og oppover |
-| $\langle \gets, -3\rangle$ | Halvåpent | Alle reelle tall opp til $-3$ |
+| $\langle 0, 3\rangle$| Åpent | Alle reelle tall fra $0$ opp til $3$. Hverken $0$ eller $3$ er inkludert i mengden. |
+| $\langle -2, 2]$| Halvåpent  | Alle reelle tall fra $-2$ opp til og med $2$. Her er $-2$ ekskludert, mens $2$ er inkludert i mengden. |
+| $[0, \to \rangle$| Lukket | Alle reelle tall fra og med $0$ og oppover. Her er $0$ inkludert i mengden. |
+| $\langle \gets, -3\rangle$ | Halvåpent | Alle reelle tall opp til $-3$. Her er $-3$ ekskludert fra mengden. |
 ````
 
 ## Mengder beskrevet som ulikheter
@@ -95,7 +104,7 @@ $$
 x \in [a, b] \quad \Leftrightarrow \quad a \leq x \leq b
 $$
 
-der "$\Leftrightarrow$" betyr at de to utsagnene er ekvivalente. Vi kaller "$\Leftrightarrow$" for et **ekvivalenstegn**.
+der "$\Leftrightarrow$" betyr at de to utsagnene er ekvivalente. Vi kaller "$\Leftrightarrow$" for et **ekvivalenstegn**. Vi leser dette tegnet som *hvis og bare hvis*. 
 ```
 Vi kan naturligvis utvide skrivemåten til å gjelde for halvåpne og åpne intervaller også.
 Les tabellen under **nøye** og overbevis deg selv om at du forstår skrivemåtene:
@@ -173,6 +182,12 @@ Skriv om ulikhetene under som intervaller:
 ## Listenotasjon for mengder
 Noen kan ikke uttrykkes som intervaller eller ulikheter. I slike tilfeller kan vi ofte bruke **listenotasjon** eller **listeform**. Når en mengde er skrevet på listeform, vil du i de fleste tilfeller kunne *se* hvilke elementer som er i mengden, eller så vil det være et mønster som repetererer seg. 
 
+````{margin}
+```{admonition} Ellipse (...)
+:class: tip
+Vi skriver $...$ (kalles for en *ellipse*) når vi vil indikere at et mønster gjentar seg. Hvis det ikke følger noe etter ellipsen, betyr det at mønsteret gjentar seg for alltid. Hvis det følger noe etter ellipsen, betyr det at mønsteret gjentar seg opp til det tallet.
+````
+
 ```{admonition} Definisjon: Listeform
 :class: tip
 En mengde $L$ kan skrives på listeform dersom mengden er en såkalt **tellbar** mengde. Notasjonen vi bruker for dette ser slik ut:
@@ -193,13 +208,13 @@ Merk at *rekkefølgen* på elementene i en mengde skrevet på listeform er *ubet
 
 | Mengde | Forklaring |
 |:---|:---|
-| $\{1, 2, 3, 4, 5\}$ | Mengden av de fem første naturlige tallene |
-| $\{1, 3, 5, 7, 9, \ldots\}$ | Mengden av alle positive oddetall |
-| $\{2, 4, 6, 8, 10, \ldots\}$ | Mengden av alle positive partall |
-| $\{1, 4, 9, 16, 25, \ldots\}$ | Mengden av kvadrattallene |
-| $\{1, 2, 4, 8, 16, 32, \ldots\}$ | Mengden av potenser av $2$ |
-| $\mathbb{N} = \{1, 2, 3, \ldots\}$| Mengden av naturlige tall |
-| $\mathbb{Z} = \{\ldots, -2, -1, 0, 1, 2, \ldots\}$ | Heltallene |
+| $\{1, 2, 3, 4, 5\}$ | Mengden av de fem første naturlige tallene. |
+| $\{1, 3, 5, 7, 9, \ldots, 21\}$ | Mengden av alle positive oddetall opp til og med $21$. |
+| $\{2, 4, 6, 8, 10, \ldots\}$ | Mengden av alle positive partall. |
+| $\{1, 4, 9, 16, 25, \ldots\}$ | Mengden av kvadrattallene. |
+| $\{1, 2, 4, 8, 16, 32, \ldots\}$ | Mengden av potenser av $2$. |
+| $\mathbb{N} = \{1, 2, 3, \ldots\}$| Mengden av naturlige tall. |
+| $\mathbb{Z} = \{\ldots, -2, -1, 0, 1, 2, \ldots\}$ | Heltallene. |
 |$\{(1, 2), (-3, 4), (0, 0)\}$| Mengden bestående av punktene $(1, 2)$ og $(-3, 4)$ og $(0, 0)$.|
 
 Som du kan se fra tabellen, så er det mange tilfeller hvor denne notasjonen vil være nyttig for å beskrive mengder. 
@@ -229,6 +244,8 @@ Skriv om mengdene under til listeform:
 | Mengden som består av punktene $(1, 2)$ og $(-1, 1)$ | $\{(1, 2), (-1, 1)\}$ |
 | Mengden som består av tallene $-1$, $1$ og $3$ | $\{-1, 1, 3\}$ |
 ```
+
+
 
 
 
