@@ -1,6 +1,6 @@
 # Mengdelære
 
-Har du tenkt på at det finnes ulike typer tall? Tallene $1$, $5$ og $8$ skiller seg fra tallene $\frac{13}{5}$ og $\pi$, men hva er forskjellen? I dette kapittelet skal vi se på noen vanlige tallmengder og hvilke tall som hører til i de ulike mengdene. 
+Har du tenkt på at det finnes ulike typer tall? Tallene $1$, $5$ og $8$ skiller seg fra tallene $13/5$ og $\pi$, men hva er forskjellen? I dette kapittelet skal vi se på noen vanlige tallmengder og hvilke tall som hører til i de ulike mengdene. 
 
 ```{admonition} Læringsmål: mengdelære
 :class: tip
