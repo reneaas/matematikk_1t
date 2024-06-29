@@ -71,7 +71,8 @@ Ta for deg mengdene i tabellen under og bestem type intervall og beskriv tallene
 ````
 
 
-````{dropdown} Løsning
+````{admonition} Løsning
+:class: dropdown, solution
 | Mengde | Type intervall | Beskrivelse |
 |:---:|:---:|---|
 | $[-1, 1]$| Lukket |Alle reelle tall fra og med $-1$ til og med $1$. |
@@ -137,7 +138,8 @@ Skriv om intervallene i tabellen under til ulikheter:
 | $x \in \langle \gets, 2\rangle$ | |
 ```
 
-```{dropdown} Løsning
+```{admonition} Løsning
+:class: dropdown, solution
 | Intervall | Ulikhet |
 |:---:|:---:|
 | $x \in [0, 3]$ | $0 \leq x \leq 3$ |
@@ -166,7 +168,8 @@ Skriv om ulikhetene under som intervaller:
 | $x < -17$ | |
 ```
 
-```{dropdown} Løsning
+```{admonition} Løsning
+:class: dropdown, solution
 | Ulikhet | Intervall |
 |:---:|:---:|
 | $-1 \leq x \leq 1$ | $x \in [-1, 1]$ |
@@ -234,7 +237,8 @@ Skriv om mengdene under til listeform:
 | Mengden som består av tallene $-1$, $1$ og $3$ | |
 ```
 
-```{dropdown} Løsning
+```{admonition} Løsning
+:class: dropdown, solution
 | Mengde | Listeform |
 |:---|:---|
 | De naturlige tallene fra og med $5$ til og med $8$ | $\{5, 6, 7, 8\}$ |

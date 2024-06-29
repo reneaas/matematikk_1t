@@ -30,34 +30,3 @@ Kan du forklare hvilke av uttrykkene under som hører til de ulike linjene i {nu
 ````
 
 
-````{admonition} Algebraisk definisjon av en linje
-:class: tip
-En *rett linje* er alle punkter $(x, y)$ som oppfyller likningen
-
-$$
-Ax + By = C
-$$
-
-der $A$, $B$ og $C$ er konstanter.
-
-````
-
-
-````{admonition} Algebraisk likning for skrå linjer
-:class: tip
-
-En skrå linje kan alltid skrives på formen
-
-$$
-y = ax + b
-$$
-
-der $a$ er *stigningstallet* og $b$ er skjæringen til linja med $y$-aksen.
-
-Hvis vi kjenner til to punkter $(x_1, y_1)$ og $(x_2, y_2)$ på linja, kan vi finne stigningstallet ved
-
-$$
-a = \frac{\Delta y}{\Delta x} = \frac{y_2 - y_1}{x_2 - x_1}
-$$
-````
-
