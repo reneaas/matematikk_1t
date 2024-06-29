@@ -21,17 +21,17 @@ Vi starter med et konkret eksempel:
 Vi skal dele polynomet $x^3 + 2x^2 - 5x - 6$ med $x - 2$. Først skal vi se hele resultatet:
 
 ```{figure} ./figurer/eksempler/eksempel1.svg
-:scale: 200%
+:width: 70%
 ```
 Ser overveldende ut, men vi skal ta det stegvis under.
 
 Steg 1
-: Vi starter med å se på leddet med høyest potens av $x$ i $x^3 + 2x^2 - 5x - 6$, som er $x^3$. Vi deler dette leddet på høyeste potens av $x$ i nevneren som er $x$, som gir $x^2$. Dette er første ledd i kvotienten. Deretter trekker vi fra $x^2\cdot(x - 2) = x^3 - 2x^2$ fra polynomet i teller:
+: Vi starter med å se på leddet med høyest potens av $x$ i $x^3 + 2x^2 - 5x - 6$, som er $x^3$. Vi deler dette leddet på høyeste potens av $x$ i nevneren som er $x$, som gir $x^2$. Dette er første ledd i kvotienten. Deretter trekker vi fra $x^2\cdot(x - 2) = x^3 - 2x^2$ fra polynomet i teller (legg merke til at fortegnet i hvert av leddene i uttrykket vi trekker fra har endret seg i diagrammet under):
 \begin{align*}
 & (\quad \, x^3 + 2x^2 - 5x - 6) \div (x - 2) = x^2 \\
-& -x^3 - 2x^2 & \\
+& -x^3 + 2x^2 & \\
 \hline
-& \quad\quad\quad\, 4x^2 - 5x & \\
+& \quad\quad\quad\,\,\, 4x^2 - 5x & \\
 \end{align*}
 
 Steg 2
@@ -39,7 +39,7 @@ Steg 2
 
 \begin{align*}
 & (\quad \, x^3 + 2x^2 - 5x - 6) \div (x - 2) = x^2 + 4x \\
-& -x^3 - 2x^2 & \\
+& -x^3 + 2x^2 & \\
 \hline
 & \quad\quad\quad\, 4x^2 - 5x & \\
 & \quad\quad\,\, -4x^2 + 8x & \\
@@ -91,9 +91,10 @@ $$
 **Hint**: Det kan være lurt å skrive $x^3 - 7x - 6$ som $x^3 + 0x^2 - 7x - 6$ slik at du kan følge algoritmen i eksempelet over. Eventuelt bare husk å legge til litt plass der det skulle stått et ledd med $x^2$.
 ```
 
-````{dropdown} Løsning
+````{admonition} Løsning
+:class: solution, dropdown
 ```{figure} ./figurer/underveisoppgaver/underveisoppgave1.svg
-:scale: 200%
+:width: 65%
 ```
 ````
 
@@ -109,7 +110,7 @@ $$
 Hvis vi utfører denne polynomdivisjonen, får vi:
     
 ```{figure} ./figurer/eksempler/eksempel2.svg
-:scale: 200%
+:width: 70%
 ```
 Vi kan merke oss at når vi gikk gjennom alle stegene her, så endte vi ikke opp med $0$ til slutt, men med $2$. Det betyr at vi har en **rest** på $2$ etter divisjonen og vi legger derfor på et ledd $2/(x + 1)$ til slutt. 
 ````
@@ -126,8 +127,63 @@ $$
 **Hint:** Skriv polynomet som $x^3 + 5x^2 + 0x - 1$ når du utfører polynomdivisjonen. Eller etterlat en plass der hvor leddet til $x$ mangler så du ikke glemmer å ta med det i divisjonen!
 ```
 
-````{dropdown} Løsning
+````{admonition} Løsning
+:class: solution, dropdown
 ```{figure} ./figurer/underveisoppgaver/underveisoppgave2.svg
-:scale: 200%
+:width: 70%
 ```
+````
+
+
+# Oppgaver 
+
+## Level 1 🔥
+
+### Oppgave 1
+
+Utfør polynomdivisjonen
+
+$$
+(x^2 - x - 6) \div (x + 2)
+$$
+
+Kan du utifra resultatet si hvilke nullpunkter $f(x) = x^2 - x - 6$ har?
+
+
+````{admonition} Løsning
+:class: solution, dropdown
+Ved å utføre polynomdivisjon, får vi:
+
+```{figure} ./figurer/oppgaver/polynomdivisjon_oppgave1.svg
+:width: 50%
+```
+Siden 
+
+$$
+(x^2 - x - 6) \div (x + 2) = x - 3,
+$$
+betyr det at 
+
+$$
+x^2 - x - 6 = (x+2)(x-3).
+$$
+
+Etter produktregelen vil derfor 
+
+$$
+f(x) = x^2 - x - 6 = 0 \quad \Leftrightarrow \quad (x+2)(x-3) = 0,
+$$
+bety at 
+
+$$
+x+2 = 0 \quad \lor \quad x - 3 = 0 
+$$
+
+som igjen betyr at 
+
+$$
+x = -2 \quad \lor \quad x = 3
+$$
+
+Derfor er $x = -2$ og $x = 3$ nullpunkter til $f(x)$.
 ````

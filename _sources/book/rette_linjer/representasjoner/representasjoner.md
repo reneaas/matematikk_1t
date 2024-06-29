@@ -9,7 +9,10 @@ En representasjon er en måte å uttrykke noe på. Når vi jobber med rette linj
 Målet med denne seksjonen er at du skal kunne:
 * Lese av og tegne koordinater i et koordinatssystem.
 * Kunne lage en verditabell og tegne grafen til en skrå linje i et koordinatssystem.
-* Kunne bestemme likningen til en skrå linje ved å bestemme stigningstall og skjæring med $y$-aksen med ulike strategier.
+* Kunne bestemme likningen til en skrå linje ved å bestemme stigningstall og skjæring med $y$-aksen med ulike strategier:
+  1. Ved bruk av topunktsformelen
+  2. Ved bruk av ettpunktsformelen
+  3. Ved å lese av stigningstall og skjæring med $y$-aksen fra en graf.
 ```
 ---
 
@@ -91,7 +94,7 @@ Bestem stigningstallet og skjæringen med $y$-aksen til linjene
 ````
 
 ````{admonition} Løsning
-:class: dropdown, note
+:class: solution, dropdown
 
 1. For linja $y = 3x - 1$ er stigningstallet $a = 3$ og skjæring med $y$-aksen $b = -1$.
 2. For linja $y = -2x + 4$ er stigningstallet $a = -2$ og skjæringen med $y$-aksen $b = 4$.
@@ -128,7 +131,7 @@ Betydningen av $\Delta y$
 ```
 ````
 
-`````{admonition} Generell formel for stigningstallet
+`````{admonition} Generell formel for stigningstallet (topunktsformelen)
 :class: tip
 For en skrå linje på formen $y = ax + b$, og to punkter $(x_1, y_1)$ og $(x_2, y_2)$ på linja, kan vi finne stigningstallet $a$ ved
 
@@ -188,12 +191,31 @@ Dette er likning {eq}`eq:stigningstall`, så vi har vist det vi skulle.
 
 `````
 
-````{admonition} Eksempel: Finne stigningstallet
+````{admonition} Eksempel 1: Finne likningen for linja i Fig 5.
+:class: eksempel
+Vi tar utgangspunkt i {numref}`graf_til_formel` og ser på linja i figuren. Vi har to punkter $(x_1, y_1) = (0, 3)$ og $(x_2, y_2) = (1, 1)$ på linja. Da kan vi finne stigningstallet ved å bruke formelen for stigningstallet {eq}`eq:stigningstall`:
+
+$$
+a = \frac{\Delta y}{\Delta x} = \frac{y_2 - y_1}{x_2 - x_1} = \frac{1 - 3}{1 - 0} = \frac{-2}{1} = -2
+$$
+
+Videre ser vi at linja skjærer $y$-aksen i $y = 3$, så betyr at konstantleddet $b = 3$. Dermed har vi at likningen til linja er 
+
+$$
+y = ax + b = -2x + 3.
+$$
+
+````
+
+
+````{admonition} Eksempel 2: Finne stigningstallet
+:class: eksempel
 Vi tenker oss en linje der vi kjenner til to punkter på linja, $(1, 3)$ og $(2, 1)$. Hva er stigningstallet til linja?
 
 **Prøv å finne stigningstallet før du ser på løsningen under**! 
 
-```{dropdown} Løsning
+```{admonition} Løsning
+:class: solution, dropdown
 Vi kjenner til to punkter $(1, 3)$ og $(2, 1)$ på linja. Vi kan la 
 
 $$
@@ -224,7 +246,7 @@ For å bestemme formelen $y = ax + b$ for linja, må vi enten:
 
 Vi skal i det følgende se ett eksempel på hvert tilfelle.
 
-```{admonition} Eksempel 1 (formelen når vi kjenner stigningstallet og skjæring med $y$-aksen)
+```{admonition} Eksempel 3 (formelen når vi kjenner stigningstallet og skjæring med $y$-aksen)
 :class: eksempel
 En skrå linje har stigningstall $3$ og skjærer $y$-aksen i $y = -3$. Bestem formelen for linja.
 
@@ -236,7 +258,7 @@ y = 3x - 3.
 $$
 ```
 
-````{admonition} Eksempel 2 (formelen når vi kjenner til to punkter på linja)
+````{admonition} Eksempel 4 (formelen når vi kjenner til to punkter på linja)
 :class: eksempel
 En rett linje går gjennom punktene $(2, 3)$ og $(4, 7)$. Bestem formelen for linja.
 
@@ -319,7 +341,7 @@ Dermed har vi vist hvordan vi kommer fram til ettpunktsformelen for en skrå lin
 ```
 ````
 
-```{admonition} Eksempel 3 (formelen når vi kjenner stigningstallet og ett punkt på linja - ettpunktsformelen)
+```{admonition} Eksempel 5 (formelen når vi kjenner stigningstallet og ett punkt på linja - ettpunktsformelen)
 :class: eksempel
 
 Et skrå linje har stigningstall $2$ og går gjennom punktet $(4, 1)$. Bestem formelen for linja. 
@@ -611,15 +633,37 @@ For at $-2x_1 = -2$, må derfor $x_1 = 1$.
 ```
 
 
+#### Oppgave 7
+En linje har stigningstall $4$ og går gjennom punktet $(-3, 2)$. Bestem hvor linja skjærer $y$-aksen.
+
+
+```{admonition} Løsning
+:class: solution, dropdown
+
+Linja har stigningstall $a = 4$ og går gjennom punktet $(x_1, y_1) = (-3, 2)$. Vi kan dermed bruke ettpunktsformelen for å bestemme likningen til linja
+
+$$
+y - y_1 = a(x - x_1)
+$$
+
+som gir 
+
+$$
+y - 2 = 4(x - (-3)) = 4(x + 3) = 4x + 12.
+$$
+
+Vi kan skrive om likninga til 
+
+$$
+y = 4x + 14.
+$$
+
+Vi kan lese av at linja skjærer $y$-aksen i $y = 14$ (fra konstantleddet, eller ved å sette inn $x = 0$ i likningen).
+```
 
 
 
-
-### Level 3 🔥🔥🔥
-
-
-
-#### Oppgave 6
+#### Oppgave 8
 En elev prøver å bestemme likningen til en linje ut ifra to punkter på linja. 
 
 ````{code-block} python
@@ -641,7 +685,7 @@ b = NotImplemented
 print(f"Formelen for linja er y = {a}x + {b}")
 ````
 
-##### Oppgave 6a
+##### Oppgave 8a
 
 Hva må stå på de uthevede linjene for at programmet skal gi riktig utskrift?
 Hva blir utskriften av programmet da?
@@ -674,7 +718,7 @@ Derfor kan det stå `b = y1 - a * x1`{l=python} eller `b = y2 - a * x2`{l=python
 
 ````
 
-##### Oppgave 6b
+##### Oppgave 8b
 Bestem hva som skrives ut av programmet.
 
 ````{admonition} Fasit
@@ -712,7 +756,7 @@ Formelen for linja er y = 0.5x + 3
 
 ````
 
-##### Oppgave 6c 
+##### Oppgave 8c 
 Gjør nødvendige endringer av programmet og prøv det ut med punktene for den rette linja fra fra eksempel 3. <br>
 Blir utskriften som forventet?
 
