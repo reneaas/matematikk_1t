@@ -69,14 +69,14 @@ Fyll ut tabellen under:
 | $[-3, 3]$ | $[0, 2]$ | | | |
 ```
 
-```{dropdown} Løsning
-
+```{admonition} Løsning
+:class: dropdown, solution
 | Mengde $A$ | Mengde $B$ | $A \cup B$ | $A \cap B$ | $A \setminus B$ |
 | :---: | :---: | :---: | :---: | :---: |
 |$\{-1, 1\}$| $\{0, 2\}$ | $\{-1, 0, 1, 2\}$ | $\emptyset$ | $\{-1, 1\}$ |
 | $\{-4, 2, 4\}$ | $\{1, 2, 4\}$ | $\{-4, 1, 2, 4\}$ | $\{2, 4\}$ | $\{-4\}$ |
 | $\{1, 2, 3\}$ | $\{3, 4, 5\}$ | $\{1, 2, 3, 4, 5\}$ | $\{3\}$ | $\{1, 2\}$ |
-| $[1, 2]$ | $[2, 4]$ | $[1, 4]$ | $[2, 2] = {2}$ | $[1, 2 \rangle$ |
+| $[1, 2]$ | $[2, 4]$ | $[1, 4]$ | $[2, 2] = \{2\}$ | $[1, 2 \rangle$ |
 | $[-1, 2]$ | $[4, 6]$ | $[-1, 2] \cup [4, 6]$ | $\emptyset$ | $[-1, 2]$ |
 | $[-3, 3]$ | $[0, 2]$ | $[-3, 3]$ | $[0, 2]$ | $[-3, 0 \rangle \cup \langle 2, 3]$ |
 ```
@@ -109,7 +109,8 @@ Fyll ut tabellen under:
 | Alle reelle tall utenom heltallene | |  
 ```
 
-```{dropdown} Løsning
+```{admonition} Løsning
+:class: solution, dropdown
 | Beskrivelse av mengde | Intervallnotasjon |
 | :--- | :--- |
 | Alle reelle tall fra og med $-1$ til og med $1$, og fra $2$ til $3$ | $[-1, 1] \cup [2, 3]$ |
@@ -196,7 +197,8 @@ Fyll ut tabellen under:
 | $r \in \mathbb{R} \setminus [-1, 1]$ | |
 ```
 
-```{dropdown} Løsning
+```{admonition} Løsning
+:class: dropdown, solution
 | Intervall | Ulikheter |
 | :---: | :---: |
 | $x\in [1, 2] \cup [3, 4]$ | $1 \leq x \leq 2 \, \lor \, 3 \leq x \leq 4$ |
@@ -239,7 +241,8 @@ Fyll ut tabellen under:
 | $q\in \mathbb{R} \setminus \langle 0, 1]$ | |
 
 
-```{dropdown} Løsning
+```{admonition} Løsning
+:class: dropdown, solution
 |Intervall | Ulikheter |
 |:---:|:---:|
 | $x\in [0, 1] \cup [2, 5]$ | $0 \leq x \leq 1 \, \lor \, 2 \leq x \leq 5$ |

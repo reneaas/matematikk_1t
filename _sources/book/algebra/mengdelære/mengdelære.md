@@ -44,7 +44,8 @@ Plasser tallene under i riktig tallmengde (husk: den *minste* mulige mengden):
 
 ```
 
-````{dropdown} Løsning
+````{admonition} Løsning
+:class: solution, dropdown
 ```{margin}
 <br>
 Noen av tallene er ikke skrevet så enkelt som mulig. Spesielt kan vi merke oss at:
@@ -89,7 +90,9 @@ Fyll ut tabellen under der du uttrykket om tallet er et element i mengden eller 
 | $\sqrt{3}$ | | $\mathbb{R}$ |
 ```
 
-```{dropdown} Løsning
+```{admonition} Løsning
+:class: solution, dropdown
+
 |Tall| $\in$ eller $\notin$ | Mengde |
 |:---:|:---:|:---:|
 | $3$ | $\in$ | $\mathbb{N}$ |

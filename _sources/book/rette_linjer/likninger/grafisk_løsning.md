@@ -8,7 +8,7 @@ $$
 2x + 3 = -x - 3
 $$
 
-Denne likningen kan vi løse grafisk ved å tegne de to funksjonene $y = 2x + 3$ og $y -x - 3$. Hver side av likningen vil da være representert ved en funksjon. 
+Denne likningen kan vi løse grafisk ved å tegne de to funksjonene $y = 2x + 3$ og $y = x - 3$. Hver side av likningen vil da være representert ved en funksjon. 
 
 ```{figure} ./figurer/eksempler/eksempel1.svg
 :name: likningergrafisk
