@@ -1,11 +1,10 @@
 # Funksjonsbegrepet
 
-Her skal du få en innføring i funksjonsbegrepet. En funksjon kan noen ganger tenkes på som en graf, andre ganger tenker vi på det som en formel. Vi tenker på formelen og grafen som ulike representasjoner av en mer generell sammenheng som vi kaller for en **funksjon**. 
+Her skal du få en litt grundigere innføring i funksjonsbegrepet. En funksjon kan noen ganger tenkes på som en graf, andre ganger tenker vi på det som en formel. Vi tenker på formelen og grafen som ulike representasjoner av en mer generell sammenheng som vi kaller for en **funksjon**. 
 
 ```{admonition} Læringsmål: funksjonsbegrepet
 Etter å ha arbeidet med dette kapittelet er målet at du skal kunne:
 * Forklare hva en funksjoner er og hva som skiller en funksjon fra en kurve.
-* Skrive en funksjon en algebraisk formel.
 * Forstå begrepene definisjonsmengde og verdimengde til en funksjon.
 ```
 
