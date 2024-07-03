@@ -25,7 +25,7 @@ ax.plot(1, 0, ">k", transform=ax.get_yaxis_transform(), clip_on=False)
 ax.plot(0, 1, "^k", transform=ax.get_xaxis_transform(), clip_on=False)
 
 ax.set_xlabel(r"$x$", fontsize=16, loc="right")
-ax.set_ylabel(r"$y$", fontsize=16, loc="top", rotation="horizontal")
+ax.set_ylabel(r"$f(x)$", fontsize=16, loc="top", rotation="horizontal")
 
 
 x_vals = [i for i in range(-1, 4)]
@@ -55,6 +55,6 @@ plt.grid(True, linestyle="--", alpha=0.6)
 plt.tight_layout()
 
 # Lagrer figuren i vektorformat
-plt.savefig("../figurer/eksempler/eksempel_rett_linje.svg")
+plt.savefig("../../figurer/eksempler/eksempel_1_graf.svg")
 
 plt.show()

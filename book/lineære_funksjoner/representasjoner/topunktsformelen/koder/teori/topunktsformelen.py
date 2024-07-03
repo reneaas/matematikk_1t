@@ -42,8 +42,8 @@ ax.text(x2, y2 + 0.1, r"$(x_2, y_2)$", fontsize=16, ha="right", va="bottom")
 ax.plot([x1, x2], [y1, y1], linestyle="--", color="blue", alpha=0.7)
 ax.plot([x2, x2], [y1, y2], linestyle="--", color="blue", alpha=0.7)
 
-ax.text((x1 + x2) / 2, y1 - 0.3, r"$x_2 - x_1$", fontsize=16, ha="center", va="center")
-ax.text(x2 + 0.3, (y1 + y2) / 2, r"$y_2 - y_1$", fontsize=16, ha="left", va="center")
+ax.text((x1 + x2) / 2, y1 - 0.3, r"$\Delta x$", fontsize=16, ha="center", va="center")
+ax.text(x2 + 0.3, (y1 + y2) / 2, r"$\Delta y$", fontsize=16, ha="left", va="center")
 
 
 
@@ -57,6 +57,6 @@ plt.yticks([y1, y2], [r"$y_1$", r"$y_2$"], fontsize=16)
 plt.tight_layout()
 
 # Lagrer figuren i vektorformat
-plt.savefig("../../figurer/eksempler/stigningstall.svg")
+plt.savefig("../../figurer/teori/topunktsformelen.svg")
 
 plt.show()

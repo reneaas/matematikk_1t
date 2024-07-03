@@ -5,10 +5,9 @@ I denne delen skal vi se hvordan vi kan generalisere ideen om skrå linjer til d
 Men først og fremst må vi forstå _hva_ en **funksjon** er.
 
 ```{admonition} Læringsmål: Lineære funksjoner
-* Du skal kunne forklare hva en funksjon er, og kjenne til hvordan vi kan definere en funksjon ved hjelp av:
-    1. En formel
-    2. En graf
-    3. En tabell
-* Du skal kjenne til skrivemåter for funksjoner og kunne bruke dem i praksis.
-* Du skal kjenne til begrepene definisjonsmengde og verdimengde, og kunne bestemme disse for en funksjon.
+Etter ha gått gjennom temaet om lineære funksjoner, er målet at du skal kunne:
+* Kjenne til funksjonsbegrepet, inkludert definisjon, notasjon, og ulike representasjoner.
+* Kunne analysere lineære funksjoner og bruke dem i praktisk problemløsing.
+* Forstå sammenhengen mellom lineære funksjoner, skrå og horisontale linjer.
+* Forstå begrepet nullpunkt, og forstå sammenhengen mellom nullpunkter, likninger, ulikheter og likningssystemer.
 ```
