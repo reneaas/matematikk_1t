@@ -13,7 +13,7 @@ Etter å gått gjennom dette kapittelet skal du kunne:
 * Utføre polynomdivisjon der nevneren er et førstegradspolynom.
 * Kjenne til sammenhengen mellom nullpunkter, faktorer og rest, og kunne bruke dette til å bestemme nullpunktene til tredjegradspolynomer.
 
-Vi starter med et konkret eksempel:
+Vi starter med et konkret eksempel uten rest. Vi tar første eksempel grundig:
 ```
 
 ````{admonition} Eksempel 1 (uten rest)
@@ -80,6 +80,8 @@ Merk
 : Siden vi får null i rest her, så sier vi at divisjonen **går opp**. Det betyr at $x - 2$ er en faktor i $x^3 + 2x^2 - 5x - 6$ og at $x = 2$ er et nullpunkt for tredjegradspolynomet.
 ````
 
+Nå er det **din tur**!
+
 ```{admonition} Underveisoppgave 1
 :class: note
 Utfør polynomdivisjonen
@@ -98,6 +100,7 @@ $$
 ```
 ````
 
+La oss ta et eksempel med rest også:
 
 ````{admonition} Eksempel 2 (med rest)
 :class: eksempel
@@ -114,6 +117,8 @@ Hvis vi utfører denne polynomdivisjonen, får vi:
 ```
 Vi kan merke oss at når vi gikk gjennom alle stegene her, så endte vi ikke opp med $0$ til slutt, men med $2$. Det betyr at vi har en **rest** på $2$ etter divisjonen og vi legger derfor på et ledd $2/(x + 1)$ til slutt. 
 ````
+
+Hvem sin tur er det nå da? **Stemmer, din tur**!
 
 ```{admonition} Underveisoppgave 2
 :class: note
