@@ -141,7 +141,7 @@ Stigningstallet
 : Vi starter på en $x$-verdi og ser hvor mye $y$-verdien endrer seg når vi øker $x$ med én. Starter vi på $x = 0$, så er $y = f(0) = 6$. Øker vi $x$ med én, har vi at $x = 1$. Da er $y = f(1) = 4$. Dermed er endringen av $y$-verdien $a = -2$ som også er stigningstallet til grafen.
 
 Konstantleddet
-: Vi ser på $y$-verdien der grafen skjærer $y$-aksen. Når $x = 0$ er $y = f(0) = 6$. Dermed er konstantleddet $b = 0$. 
+: Vi ser på $y$-verdien der grafen skjærer $y$-aksen. Når $x = 0$ er $y = f(0) = 6$. Dermed er konstantleddet $b = 6$. 
 
 
 Altså er 

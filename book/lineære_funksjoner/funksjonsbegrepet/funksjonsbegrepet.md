@@ -4,7 +4,7 @@ Her skal du få en litt grundigere innføring i funksjonsbegrepet. En funksjon k
 
 ```{admonition} Læringsmål: funksjonsbegrepet
 Etter å ha arbeidet med dette kapittelet er målet at du skal kunne:
-* Forklare hva en funksjoner er og hva som skiller en funksjon fra en kurve.
+* Forklare hva en funksjon er og hva som skiller en funksjon fra en kurve.
 * Forstå begrepene definisjonsmengde og verdimengde til en funksjon.
 ```
 
@@ -90,16 +90,22 @@ Under vises fire grafer. Bestem hvilke av de som representerer en funksjon, og h
 :width: 90%
 
 Her vises fire grafer $A$, $B$, $C$ og $D$. Men hvilke av de er funksjoner? Hvilke av de er bare kurver?
+```
 
 ```{admonition} Løsning
 :class: solution, dropdown
-I {numref}`funksjonsgraf_vs_kurve_oppgave1` ser vi at graf $A$ bare har én $y$-verdi for hver $x$-verdi, så dette må være en funksjon. 
 
-Graf $B$ har to $y$-verdier for alle $x \in \langle -2, 2 \rangle \setminus \{0\}$, så dette er ikke en funksjon.
+Graf $A$
+: Graf $A$ viser en kurve som for *hver* $x$-verdi kun har én $y$-verdi. Grafen representerer derfor en funksjon (en lineær funksjon).
 
-Graf $C$ er en rett linje der $x = -1$ har uendelig mange $y$-verdier, så dette er ikke en funksjon heller.
+Graf $B$
+: Graf $B$ viser en kurve som for alle $x \in \langle -2, 2 \rangle \setminus \{0\}$ har to $y$-verdier. Dermed er dette ikke en funksjon.
 
-Graf $D$ er en linje $y = -1$ der alle $x$-verdier har samme $y$-verdi. Men hver $x$-verdi har bare én $y$-verdi som betyr at grafen er en funksjon.
+Graf $C$
+: Graf $C$ viser en rett linje der $x = -1$ har uendelig mange $y$-verdier. Dermed er dette ikke en funksjon.
+
+Graf $D$
+: Graf $D$ viser en linje $y = -1$ der alle $x$-verdier har denne $y$-verdien. Men for en bestemt verdi av $x$, finnes det bare én $y$-verdi. Derfor er dette en funksjon (en lineær funksjon med stigningstall $0$ og konstantledd $-1$).
 ```
 ````
 

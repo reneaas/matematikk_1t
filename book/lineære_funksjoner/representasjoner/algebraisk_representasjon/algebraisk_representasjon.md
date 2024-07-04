@@ -31,7 +31,7 @@ Merknad 1
 : Sammenhengen mellom $y = ax + b$ og uttrykket over, er at vi tydeliggjør at $y$ er bestemt av $x$ ved å bytte ut $y = f(x)$. Vi sier gjerne at $f(x)$ er *funksjonsverdien*, men det er også greit å kalle $f(x)$ for funksjonen. Vi sier gjerne at $f$ er *navnet* på funksjonen, eller *funksjonsnavnet*.
 
 Merknad 2
-: Konstantene $a$ og $b$ kalles for **koeffisientene** til en lineære funksjonen. Koeffisienten $a$ kalles **stigningstallet** og konstanten $b$ kalles **konstantleddet**. 
+: Konstantene $a$ og $b$ kalles for **koeffisientene** til den lineære funksjonen. Koeffisienten $a$ kalles ofte for **stigningstallet** og konstanten $b$ kalles **konstantleddet** eller **skjæringen med $y$-aksen**. 
 
 Merknad 3
 : Det er *ingenting* spesielt med at vi bruker $f$ for *funksjon* annet enn at dette en vanlig. Vi kommer til å møte på funksjoner som heter $g$ og har funksjonsverdier $g(x)$, funksjoner som heter $h$ og har funksjonsverdier $h(x)$, og så videre. 
