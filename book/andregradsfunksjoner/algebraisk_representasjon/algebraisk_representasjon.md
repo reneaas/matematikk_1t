@@ -9,7 +9,7 @@ Vi lister opp læringsmålene for de neste seksjonene så du vet hva du har i ve
 Etter å ha gått gjennom de neste seksjonene, er målet at du skal kunne:
 * Kjenne til de tre kvadratsetningene og sammenhengen deres med andregradsfunksjoner.
 * Kjenne til hvordan man kan fullføre kvadrater for å faktorisere andregradsfunksjoner.
-* Kjenne til og kunne begrunne $abc$-formelen, og kunne bruke denne til å finne nullpunkter til andregradsfunksjoner, og løse generelle andregradslikninger og andregradsulikhter.
+* Kjenne til ulike strategier for å løse andregradslikninger og andregradsulikheter, og kunne bruke disse strategiene til å løse konkrete problemer knyttet til andregradsfunksjoner.
 * Kunne skrive andregradsfunksjoner på ulike former, og forstå hvordan disse formene kan brukes til å analysere andregradsfunksjoner.
 ```
 
