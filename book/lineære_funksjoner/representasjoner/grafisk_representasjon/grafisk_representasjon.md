@@ -19,7 +19,7 @@ Steg 3: Tegne rette linjer mellom nabopunkter i koordinatsystemet
 Vi tar et eksempel:
 
 ````{admonition} Eksempel 1: Tegne grafen til en lineær funksjon
-:class: eksempel
+:class: example
 
 Vi skal tegne grafen til den lineære funksjonen
 
@@ -55,7 +55,7 @@ Gjett hva... nå er det **din tur**!
 
 
 `````{admonition} Underveisoppgave 1
-:class: note
+:class: check
 
 Tegn grafen til en lineære funksjonen 
 
@@ -108,7 +108,7 @@ Steg 2 og 3:
 Når vi har grafen til en lineær funksjon, kan vi lære oss å lese av stigningstallet $a$ og konstantleddet $b$ direkte fra grafen.
 
 ```{admonition} Lese av koeffisientene fra grafen til en lineær funksjon
-:class: tip
+:class: theory
 Gitt grafen til en lineær funksjon $f(x) = ax + b$ kan vi lese av koeffisientene som følger:
 
 Stigningstallet $a$
@@ -122,7 +122,7 @@ La oss se på et eksempel
 
 
 ````{admonition} Eksempel 2: lese av koeffisientene til en lineær funksjon fra graf
-:class: eksempel
+:class: example
 
 Vi har grafen til en funksjon $f(x)$ som vist i figure under:
 
@@ -155,7 +155,7 @@ $$
 Og så var det **din tur**!
 
 ````{admonition} Underveisoppgave 2
-:class: note
+:class: check
 
 Under vises grafen til en lineær funksjon $g$. Bruk grafen til å bestemme $g(x)$. 
 
@@ -178,11 +178,7 @@ Altså er funksjonsuttrykket gitt ved
 $$
 g(x) = 3x - 2.
 $$
-
 ```
-
-
-
 ````
 
 

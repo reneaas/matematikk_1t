@@ -34,37 +34,38 @@ Figuren viser hvordan de ulike tallmengdene henger sammen. Diagrammet illustrere
 
 Legg merke til at vi sier at $2$ tilhører $\mathbb{N}$. Det betyr selvsagt at $2$ også tilhører alle de andre tallmengdene. Vi velger altså alltid den **minste** mulige tallmengden et tall kan tilhøre. 
 
-```{admonition} Underveisoppgave 1
-:class: note
+`````{admonition} Underveisoppgave 1
+:class: check
 Plasser tallene under i riktig tallmengde (husk: den *minste* mulige mengden):
 
 | Tall | $-6$ | $4$ | $0$ | $120$ | $\frac{5}{2}$ | $\frac{15}{5}$ | $\sqrt{3}$ | $-8$ | $\sqrt{16}$ |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | 
 | **Mengde** | | | | | | | | | | 
 
-```
+
 
 ````{admonition} Løsning
 :class: solution, dropdown
-```{margin}
-<br>
-Noen av tallene er ikke skrevet så enkelt som mulig. Spesielt kan vi merke oss at:
+Merk først at noen av tallene er ikke skrevet så enkelt som mulig. Spesielt kan vi merke oss at:
 
 $$
 \frac{15}{5} = \frac{3 \cdot 5}{5} = 3  \quad \text{og} \quad \sqrt{16} = 4.
 $$
-```
+
+Deretter kan vi fylle ut tabellen:
 
 | Tall | $-6$ | $4$ | $0$ | $120$ | $\frac{5}{2}$ | $\frac{15}{5}$ | $\sqrt{3}$ | $-8$ | $\sqrt{16}$ |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | 
 | **Mengde** | $\mathbb{Z}$ | $\mathbb{N}$ | $\mathbb{Z}$ | $\mathbb{N}$ | $\mathbb{Q}$ | $\mathbb{N}$ | $\mathbb{R}$ | $\mathbb{Z}$ | $\mathbb{N}$ |
 ````
 
+`````
+
 ## En mer generell definisjon av en mengde
 Som vi nevnte i innledningen, er en mengde bare en samling objekter. I de fleste tilfeller vil objektene i mengden være tall, men de vil i blant være punkter. Men foreløpig skal vi formulere en generell nok definisjon av mengde som består av tall:
 
 ```{admonition} Definisjon: Mengde
-:class: tip
+:class: theory
 
 En **mengde** $A$ er en samling tall. Dersom et tall $x$ er en del av mengden $A$, skriver vi $x \in A$. Vi leser dette som "$x$ er *et element i* mengden $A$". 
 
@@ -72,8 +73,10 @@ Dersom et tall $y$ *ikke* er er en del av mengden $A$, skriver vi $y \notin A$. 
 ```
 
 
-```{admonition} Underveisoppgave 2
-:class: note
+Her kan du få prøve å anvende definisjonen på noen eksempler:
+
+````{admonition} Underveisoppgave 2
+:class: check
 
 Vi skriver $2 \in \mathbb{N}$ fordi $2$ er et element i den naturlige mengden. Samtidig kan vi skrive $\pi \notin \mathbb{Z}$ siden $\pi$ ikke er et element i heltallsmengden. 
 Fyll ut tabellen under der du uttrykket om tallet er et element i mengden eller ikke:
@@ -88,7 +91,6 @@ Fyll ut tabellen under der du uttrykket om tallet er et element i mengden eller 
 | $0$ | | $\mathbb{R}$ |
 | $-3$ | | $\mathbb{R}$ |
 | $\sqrt{3}$ | | $\mathbb{R}$ |
-```
 
 ```{admonition} Løsning
 :class: solution, dropdown
@@ -104,3 +106,4 @@ Fyll ut tabellen under der du uttrykket om tallet er et element i mengden eller 
 | $-3$ | $\in$ | $\mathbb{R}$ |
 | $\sqrt{3}$ | $\in$ | $\mathbb{R}$ |
 ```
+````

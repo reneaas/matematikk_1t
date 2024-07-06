@@ -16,8 +16,8 @@ Vi har allerede sett at vi kan skrive om et andregradsuttrykk på formen $ax^2 +
 
 ```{figure} ./figurer/teori/fullstendig_kvadrat.svg
 :name: fullstendig_kvadrat
-:width: 100%
-Viser 1.kvadratsetning grafisk. Et kvadrat med areal $(a + b)^2$ har samme areal som summen av arealene til to kvadrater med areal $a^2$ og $b^2$, og to rektangler med areal $2ab$ til sammen. Dermed får vi $(a + b)^2 = a^2 + 2ab + b^2$. Det er herfra begrepet *fullstendig kvadrat* kommer fra.
+:width: 80%
+Viser 1.kvadratsetning grafisk. Et kvadrat med areal $(p + q)^2$ har samme areal som summen av arealene til to kvadrater med areal $p^2$ og $q^2$, og to rektangler med areal $pq$. Dermed får vi $(p + q)^2 = p^2 + 2pq + q^2$. Det er herfra begrepet *fullstendig kvadrat* kommer fra.
 ```
 
 
@@ -25,8 +25,31 @@ Viser 1.kvadratsetning grafisk. Et kvadrat med areal $(a + b)^2$ har samme areal
 
 Fullstendig kvadraters metode er en måte å skrive om et andregradsuttrykk på formen $x^2 + bx + c$ til en form som består av et fullstendig kvadrat pluss et potensielt tilleggsledd som forteller oss hvor mye andregradsuttrykket avviker fra et kvadrat.
 
+
+```{admonition} Fullstendige kvadraters metode
+:class: theory
+Gitt en andregradsfunksjon
+
+$$
+f(x) = ax^2 + bx + c,
+$$
+
+kan vi alltid skrive om funksjonsuttrykket som
+
+$$
+f(x) = a(x + r)^2 + k,
+$$
+
+der 
+
+$$
+r = \frac{b}{2a} \quad \text{og} \quad k = c - \left(\frac{b}{2a}\right)^2.
+$$
+```
+
+
 ```{admonition} Algoritme: Fullstendige kvadraters metode
-:class: tip
+:class: theory
 Gitt et andregradsuttrykk $x^2 + bx + c$. For å skrive dette uttrykket som et fullstendig kvadrat, gjør vi følgende:
 
 Steg 1
@@ -55,7 +78,7 @@ Ser ut som skumle greier, så la oss ta et eksempel:
 
 
 ```{admonition} Eksempel 1: fullstendig kvadraters metode
-:class: eksempel
+:class: example
 Gitt andregradsfunksjonen
 
 $$
@@ -80,7 +103,7 @@ Vi kan altså skrive $f(x)$ som et fullstendig kvadrat minus et tilleggsledd.
 Nå er det **din tur**!
 
 ````{admonition} Underveisoppgave 1
-:class: note
+:class: check
 Bruk fullstendig kvadraters metode til å skrive om andregradsfunksjonen
 
 $$
@@ -121,19 +144,19 @@ Steg 2:
 Steg 3:
 : Bruk produktregelen til å løse likningen $x^2 + bx + c = 0$ med det faktoriserte uttrykket.
 
-````{margin}
+
 ```{admonition} Påminnelse: konjugatsetningen
-:class: note
+:class: note, margin
 $$
-a^2 - b^2 = (a - b)(a + b)
+p^2 - q^2 = (p - q)(p + q)
 $$
 ```
-````
+
 
 Vi tar et eksempel:
 
 ```{admonition} Eksempel 2: Fullstendig kvadraters metode og andregradslikninger
-:class: eksempel
+:class: example
 
 La oss si vi vil løse likningen
 
@@ -157,7 +180,7 @@ Steg 2:
 : Vi kan merke oss at her er tilleggsleddet negativt, som betyr at vi kan faktorisere uttrykket ved å bruke konjugatsetningen som følger:
 
 $$
-f(x) = (x - 2)^2 - 9 = \underbrace{(x - 2)^2}_{a^2} - \underbrace{3^2}_{b^2}= \underbrace{(x - 2 - 3)}_{(a - b)} \cdot \underbrace{(x - 2 + 3)}_{(a + b)} = (x - 5)(x + 1).
+f(x) = (x - 2)^2 - 9 = \underbrace{(x - 2)^2}_{p^2} - \underbrace{3^2}_{q^2}= \underbrace{(x - 2 - 3)}_{(p - q)} \cdot \underbrace{(x - 2 + 3)}_{(p + q)} = (x - 5)(x + 1).
 $$
 
 Steg 3:
@@ -177,7 +200,7 @@ $$
 **Din tur**!
 
 ````{admonition} Underveisoppgave 2
-:class:
+:class: check
 Løs likningen 
 
 $$
@@ -233,7 +256,7 @@ $$
 Vi kan bruke fullstendig kvadraters metode til å avgjøre hvor mange løsninger en andregradslikning har, eller sagt på en annen måte, hvor mange nullpunkter en andregradsfunksjon har.
 
 ```{admonition} Setning: Antall løsninger for en andregradslikning
-:class: tip
+:class: theory
 Gitt en andregradsfunksjon på formen
 
 $$
@@ -250,7 +273,7 @@ så har likningen $f(x) = 0$:
 La oss se på et eksempel der vi ser alle tre tilfellene oppstå:
 
 ```{admonition} Eksempel 3: Antall løsninger for en andregradslikning
-:class: eksempel
+:class: example
 
 To løsninger
 : Vi tar for oss andregradslikningen $x^2 + x - 6 = 0$. Fullfører vi kvadratet, får vi

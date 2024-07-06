@@ -17,7 +17,8 @@ Fyll inn i tabellen under med symbolene $\in$, $\notin$, $>$ eller $<$
 | $4$ | | $-2$ |
 | $\|-3\|$ |  | $\mathbb{N}$ |
 
-````{dropdown} Løsning
+````{admonition} Løsning
+:class: dropdown, solution
 ```{margin}
 <br>
 
@@ -53,7 +54,8 @@ Fyll inn med logikksymbolene $\Leftarrow$, $\Rightarrow$ eller $\Leftrightarrow$
 | $x^2 = 4$ | | $\|x\| = 2$ |
 | $2x - y = 5$ | | $x = 2 \, \land \, y = -1$ |
 
-````{dropdown} Løsning
+````{admonition} Løsning
+:class: dropdown, solution
 
 |Påstand $p$| Symbol | Påstand $q$ |
 |:---:|:---:|:---:|
@@ -79,7 +81,8 @@ Fyll inn med implikasjonstegn eller ekvivalenstegn for påstand $p$ og $q$ i tab
 | $w \in \langle 2, 8 \rangle$ | | $w \in \langle 3, 7 \rangle$ |
 
 
-```{dropdown} Løsning
+```{admonition} Løsning
+:class: dropdown, solution
 
 |Påstand $p$| Symbol | Påstand $q$ |
 |:---:|:---:|:---:|
@@ -107,7 +110,8 @@ Skriv om intervallene under som ulikheter:
 | $s \in [3, 5\rangle$ | |
 | $t \in \langle -2, 3 \rangle$ | |
 
-````{dropdown} Løsning
+````{admonition} Løsning
+:class: solution, dropdown
 
 |Intervall | Ulikhet |
 |:---:|:---:|
@@ -131,7 +135,8 @@ Skriv om ulikheten under som intervaller:
 | $-3 < r \leq 2$ | |
 | $s < 2 \, \land \, s > -2$ | |
 
-````{dropdown} Løsning
+````{admonition} Løsning
+:class: solution, dropdown
 
 | Ulikhet | Intervall |
 |:---:|:---:|
@@ -158,7 +163,8 @@ Skriv om intervallene i tabellen under som ulikheter:
 | $r \in \langle -3, 1 \rangle \cup \langle 2, 6 \rangle$ | |
 | $s \in \langle -1, 1 \rangle \cup \langle 0, 2 \rangle$ | |
 
-````{dropdown} Løsning
+````{admonition} Løsning
+:class: dropdown, solution
 
 |Intervall | Ulikhet |
 |:---:|:---:|
@@ -184,7 +190,8 @@ Skriv mengdene i tabellen under på en annen måte, gjerne så enkelt som mulig.
 | $x = 1 \, \land \, y = 2$ | |
 | $\langle \gets, -1] \cup [1, \to\rangle$ | |
 
-````{dropdown} Løsning
+````{admonition} Løsning
+:class: solution, dropdown
 
 | Mengde | Forenklet mengde |
 |:---:|:---:|

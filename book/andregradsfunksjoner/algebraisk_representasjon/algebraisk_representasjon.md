@@ -5,7 +5,7 @@ Vi har nå sett kort på hvordan en andregradsfunksjon kan se ut grafisk og hvor
 Vi lister opp læringsmålene for de neste seksjonene så du vet hva du har i vente:
 
 ```{admonition} Læringsmål: algebraisk representasjon av andregradsfunksjoner
-:class: tip
+:class: theory
 Etter å ha gått gjennom de neste seksjonene, er målet at du skal kunne:
 * Kjenne til de tre kvadratsetningene og sammenhengen deres med andregradsfunksjoner.
 * Kjenne til hvordan man kan fullføre kvadrater for å faktorisere andregradsfunksjoner.

@@ -11,11 +11,11 @@ Målet med dette kapittelet er at du skal kunne:
 
 ## Ettpunktsformelen: hva er det?
 
-Vi tar utgangspunkt i {ref}`ettpunktsformelen`. 
+Vi tar utgangspunkt i {numref}`fig-ettpunktsformelen`. 
 
 ```{figure} ./figurer/teori/ettpunktsformelen.svg
-:name: ettpunktsformelen
-:Width:80%
+:name: fig-ettpunktsformelen
+:width: 80%
 
 Viser en lineær funksjon et kjent punkt $(x_1, y_1)$ og et vilkårlig punkt $(x, y)$ er tegnet inn.
 ```
@@ -36,7 +36,7 @@ $$
 Dette er ettpunktsformelen.
 
 ```{admonition} Ettpunktsformelen
-:class: tip
+:class: theory
 Dersom vi kjenner stigningstallet $a$ og et punkt $(x_1, y_1)$ på grafen til en lineær funksjon, kan vi bestemme funksjonsuttrykket til funksjonen ved hjelp av ettpunktsformelen
 
 $$
@@ -53,7 +53,7 @@ $$
 La oss se på et eksempel for å forstå hvordan vi kan bruke ettpunktsformelen.
 
 ```{admonition} Eksempel 1: ettpunktsformelen
-:class: eksempel
+:class: example
 
 Et lineær funksjon $f$ har stigningstall $-2$ og går gjennom punktet $(1, 3)$. <br>
 Bestem funksjonsuttrykket til funksjonen.
@@ -82,7 +82,7 @@ $$
 Og så er det **din tur**!
 
 ````{admonition} Underveisoppgave 1
-:class: note
+:class: check
 
 En lineær funksjon $g$ har stigningstall $4$ og går gjennom punktet $(-1, -3)$. <br> 
 Bestem funksjonsuttrykket til funksjonen.

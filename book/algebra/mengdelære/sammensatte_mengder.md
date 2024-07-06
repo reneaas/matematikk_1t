@@ -24,7 +24,7 @@ Målet for denne seksjon er at du skal:
 Akkurat som reelle tall har regneregler, har også mengder sine egne regneregler. Vi trenger heldigvis bare noen få regneregler for å kunne beskrive sammensatte mengder.
 
 ```{admonition} Regneregler for mengder
-:class: tip
+:class: theory
 
 La $A$ og $B$ være to mengder. Da har vi følgende regneregler:
 
@@ -40,12 +40,10 @@ Differens (mengdeminus): $A \setminus B$
 
 I tabellen under vises noen eksempler med listenotasjon og intervaller. Les den **nøye** og overbevis deg selv om at du forstår regnereglene:
 
-````{margin}
 ```{admonition} Den tomme mengden
-:class: tip
+:class: note, margin
 Noen ganger er det nyttig å kunne beskrive en mengde som ikke inneholder *noen elementer*. Vi kaller denne mengden for den **tomme mengden**. Vi bruker symbolet $\emptyset$ for denne mengden. På listeform kan vi skrive $\emptyset = \{\}$.
 ```
-````
 
 | Mengde $A$ | Mengde $B$ | $A \cup B$ | $A \cap B$ | $A \setminus B$ |
 | :---: | :---: | :---: | :---: | :---: |
@@ -55,8 +53,8 @@ Noen ganger er det nyttig å kunne beskrive en mengde som ikke inneholder *noen 
 | $[1, 3]$ | $[4, 6]$ | $[1, 3] \cup [4, 6]$ | $\emptyset$ | $[1, 3]$ |
 | $[-3, 3]$ | $[0, 2]$ | $[-3, 3]$ | $[0, 2]$ | $[-3, 0 \rangle$ |
 
-```{admonition} Underveisoppgave 1
-:class: note
+````{admonition} Underveisoppgave 1
+:class: check
 
 Fyll ut tabellen under:
 | Mengde $A$ | Mengde $B$ | $A \cup B$ | $A \cap B$ | $A \setminus B$ |
@@ -67,7 +65,6 @@ Fyll ut tabellen under:
 | $[1, 2]$ | $[2, 4]$ | | | |
 | $[-1, 2]$ | $[4, 6]$ | | | |
 | $[-3, 3]$ | $[0, 2]$ | | | |
-```
 
 ```{admonition} Løsning
 :class: dropdown, solution
@@ -80,6 +77,8 @@ Fyll ut tabellen under:
 | $[-1, 2]$ | $[4, 6]$ | $[-1, 2] \cup [4, 6]$ | $\emptyset$ | $[-1, 2]$ |
 | $[-3, 3]$ | $[0, 2]$ | $[-3, 3]$ | $[0, 2]$ | $[-3, 0 \rangle \cup \langle 2, 3]$ |
 ```
+````
+
 
 
 ## Sammensatte mengder som intervaller 
@@ -95,8 +94,8 @@ Les tabellen **nøye** og overbevis deg selv om at du forstår sammenhengen mell
 | Alle reelle tall, bortsett fra $0$ | $\langle \gets, 0 \rangle \cup \langle 0, \to \rangle = \mathbb{R} \setminus \{0\}$ |
 | Alle reelle tall under $-2$ og over $3$ | $\langle \gets, -2 \rangle \cup \langle 3, \to \rangle$ |
 
-```{admonition} Underveisoppgave 2
-:class: note
+````{admonition} Underveisoppgave 2
+:class: check
 
 Fyll ut tabellen under:
 | Beskrivelse av mengde | Intervallnotasjon |
@@ -107,7 +106,6 @@ Fyll ut tabellen under:
 | Alle reelle tall under $-3$ og over $2$ | |
 | Alle reelle tall utenom $-1$, $0$ og $1$ | |
 | Alle reelle tall utenom heltallene | |  
-```
 
 ```{admonition} Løsning
 :class: solution, dropdown
@@ -120,6 +118,8 @@ Fyll ut tabellen under:
 | Alle reelle tall utenom $-1$, $0$ og $1$ | $\mathbb{R} \setminus \{-1, 0, 1\}$ |
 | Alle reelle tall utenom heltallene | $\mathbb{R} \setminus \mathbb{Z}$ |
 ```
+````
+
 
 
 ## Sammensatte mengder som ulikheter
@@ -129,7 +129,7 @@ En annen måte å uttrykke sammensatte mengder på er ved hjelp av ulikheter. F�
 Nå er vi klare for å innføre to nye begreper fra **setningslogikken** og en samsvarende skrivemåter:
 
 ```{admonition} Logiske operatorer: konjunksjon og disjunksjon
-:class: tip
+:class: theory
 Vi tenker oss at vi har to påstander $p$ og $q$. Da har vi følgende logiske operatorer:
 
 Disjunksjon (logisk eller): $p \lor q$
@@ -144,7 +144,7 @@ Begrepene over er litt abstrakte, så la oss gjøre dem mer konkrete:
 
 
 ```{admonition} Eksempel 1: disjunksjon (eller)
-:class: eksempel
+:class: example
 Mengden bestående av alle $x \in [-1, 0] \cup \langle 1, 2 \rangle$ kan vi uttrykke som at enten så er $x\in [-1, 0]$ eller så er $x \in \langle 1, 2 \rangle$. Vi kan derfor uttrykke dette som at 
 
 $$
@@ -155,7 +155,7 @@ Knytter vi det til teorien over er den éne påstanden $-1 \leq x \leq 0$ og den
 ```
 
 ```{admonition} Eksempel 2: konjunksjon (og samtidig)
-:class: eksempel
+:class: example
 Vi tenker oss et likningssystem 
 
 \begin{align}
@@ -175,7 +175,7 @@ Vi merker oss at siden $x = 2$ og $y = 1$ samtidig, så bruker vi konjunksjon fo
 Nå er vi klare for å se på hvordan vi kan skrive om sammensatte intervaller til ulikheter:
 
 ```{admonition} Sammensatte mengder som ulikheter
-:class: tip
+:class: theory
 Hvis et intervall $I = [a, b] \cup [c, d]$ og $x \in I$, så kan vi skrive 
 
 $$
@@ -184,8 +184,8 @@ $$
 ```
 Den generelle formen over kan utvides til åpne og halvåpne intervaller. Prøv deg på oppgaven under for å se om du forstår sammenhengen! **Prøv godt før du ser på løsningen**.
 
-```{admonition} Underveisoppgave 3
-:class: note
+````{admonition} Underveisoppgave 3
+:class: check
 Fyll ut tabellen under:
 
 | Intervall | Ulikheter |
@@ -195,7 +195,6 @@ Fyll ut tabellen under:
 | $p\in \langle 1, 2] \cup [3, 4]$ | |
 | $q\in \langle 1, 2] \cup \langle 3, 4]$ | |
 | $r \in \mathbb{R} \setminus [-1, 1]$ | |
-```
 
 ```{admonition} Løsning
 :class: dropdown, solution
@@ -207,9 +206,12 @@ Fyll ut tabellen under:
 | $q\in \langle 1, 2] \cup \langle 3, 4]$ | $1 < q \leq 2 \, \lor \, 3 < q < 4$ |
 | $r \in \mathbb{R} \setminus [-1, 1]$ | $r < -1 \, \lor \, r > 1$ |
 ```
+````
+
+
 
 ```{admonition} Eksempel 3: Enkle intervaller som ulikheter
-:class: eksempel
+:class: example
 
 Vi har sett at vi kan skrive enkle intervaller som en slags "dobbel"-ulikhet. For eksempel har vi skrevet 
 
@@ -252,4 +254,3 @@ Fyll ut tabellen under:
 | $q\in \mathbb{R} \setminus \langle 0, 1]$ | $q \leq 0 \, \lor \, p > 1$ |
 ```
 
-### Oppgave 2

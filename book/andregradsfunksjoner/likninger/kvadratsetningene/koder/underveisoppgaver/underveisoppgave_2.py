@@ -25,7 +25,7 @@ plt.gca().add_patch(rect_1)
 plt.text(
     x=0.5 * a,
     y=-0.1,
-    s="$a$",
+    s="$p$",
     fontsize=20,
     color="teal",
 )
@@ -33,7 +33,7 @@ plt.text(
 plt.text(
     x=-0.1,
     y=0.5 * a,
-    s="$a$",
+    s="$p$",
     fontsize=20,
     color="teal",
 )
@@ -45,7 +45,7 @@ plt.plot([0, a], [a - b, a - b], "blue", linestyle="--")
 plt.text(
     x=a - 0.5 * b,
     y=0.05,
-    s="$b$",
+    s="$q$",
     fontsize=20,
     color="blue",
 )
@@ -53,7 +53,7 @@ plt.text(
 plt.text(
     x=0.05,
     y=a - 0.5 * b,
-    s="$b$",
+    s="$q$",
     fontsize=20,
     color="blue",
 )

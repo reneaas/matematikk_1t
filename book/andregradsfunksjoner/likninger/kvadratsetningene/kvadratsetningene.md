@@ -13,17 +13,17 @@ Kvadratsetningene er viktige setninger i algebra som lar oss faktorisere andregr
 Det finnes til sammen tre kvadratsetninger. Vi skal begrunne de to første geometrisk, og den siste algebraisk.
 
 ```{admonition} Kvadratsetningene
-:class: tip 
-Gitt to vilkårlige tall $a, b \in \mathbb{R}$, så gjelder følgende tre setninger:
+:class: theory
+Gitt to vilkårlige tall $p, q \in \mathbb{R}$, så gjelder følgende tre setninger:
 
 1.Kvadratsetning
-: $(a + b)^2 = a^2 + 2ab + b^2$
+: $(p + q)^2 = p^2 + 2pq + q^2$
 
 2.Kvadratsetning
-: $(a - b)^2 = a^2 - 2ab + b^2$
+: $(p - q)^2 = p^2 - 2pq + q^2$
 
 Konjugatsetningen
-: $(a + b)(a - b) = a^2 - b^2$
+: $(p + q)(p - q) = p^2 - q^2$
 ```
 
 
@@ -32,7 +32,7 @@ Konjugatsetningen
 Du skal få prøve å begrunne de to første kvadratsetningene i underveisoppgavene under. Du starter med 1.kvadratsetning:
 
 ````{admonition} Underveisoppgave 1
-:class: note
+:class: check
 
 I figuren under vises et kvadrat med sidelengder $a + b$ som inneholder et kvadrat med sidelengder $a$, et kvadrat med sidelenger $b$ og to rektangler med sidelengder $a$ og $b$. 
 
@@ -49,19 +49,19 @@ Bruk figuren til å utlede 1.kvadratsetning ved hjelp av arealberegninger.
 Hele kvadratet har sidelengder $a + b$ som betyr at arealet $A$ er
 
 $$
-A = (a + b)\cdot (a + b) = (a + b)^2.
+A = (p + q)\cdot (p + q) = (p + q)^2.
 $$
 
 Vi kan også uttrykke arealet ved å summere opp arealet av de mindre figurene den består av. Da har vi
 
 $$
-A = \underbrace{a\cdot a}_{\text{Grønt kvadrat}} + \underbrace{b\cdot b}_{\text{Rødt kvadrat}} + \underbrace{2\cdot a\cdot b}_{\text{To lilla rektangler}} = a^2 + b^2 + 2ab.
+A = \underbrace{p\cdot p}_{\text{Grønt kvadrat}} + \underbrace{q\cdot q}_{\text{Rødt kvadrat}} + \underbrace{2\cdot p\cdot q}_{\text{To lilla rektangler}} = p^2 + q^2 + 2pq.
 $$
 
 Men disse to arealene må være like hverandre som gir
 
 $$
-(a + b)^2 = a^2 + b^2 + 2ab = a^2 + 2ab + b^2,
+(p + q)^2 = p^2 + q^2 + 2pq = p^2 + 2pq + q^2,
 $$
 
 som er 1.kvadratsetning.
@@ -71,9 +71,9 @@ som er 1.kvadratsetning.
 Du skal få gå løs rett på 2.kvadratsetning også!
 
 ````{admonition} Underveisoppgave 2
-:class: note
+:class: check
 
-I figuren under vises et ytre kvadrat med sidelengder $a$ som inneholder et kvadrat med sidelengder $a - b$, og to rektangler med sidelengder $b$ og $a - b$. 
+I figuren under vises et ytre kvadrat med sidelengder $p$ som inneholder et kvadrat med sidelengder $p - q$, og to rektangler med sidelengder $q$ og $p - q$. 
 
 Bruk figuren til å utlede 2.kvadratsetning ved hjelp av arealberegninger. 
 
@@ -87,34 +87,33 @@ Bruk figuren til å utlede 2.kvadratsetning ved hjelp av arealberegninger.
 Hele kvadratet har areal
 
 $$
-A = a\cdot a = a^2.
+A = p\cdot p = p^2.
 $$
 
 Vi kan også uttrykket arealet ved å summere opp arealet av de mindre figurene den består av. Da får vi
 
 $$
-A = \underbrace{(a - b)\cdot (a - b)}_{\text{Stort kvadrat}} + \underbrace{b\cdot b}_{\text{Lite kvadrat}} + 2 \cdot \underbrace{b\cdot(a - b)}_{\text{To rektangler}} = (a - b)^2 + b^2 + 2b(a - b),
+A = \underbrace{(p - q)\cdot (p - q)}_{\text{Stort kvadrat}} + \underbrace{q\cdot q}_{\text{Lite kvadrat}} + 2 \cdot \underbrace{q\cdot(p - q)}_{\text{To rektangler}} = (p - q)^2 + q^2 + 2q(p - q),
 $$
 
 som vi kan forenkle til
 
 $$
-A = (a - b)^2 + b^2 +2ab - 2b^2 = (a - b)^2 + 2ab - b^2.
+A = (p - q)^2 + q^2 +2pq - 2q^2 = (p - q)^2 + 2pq - q^2.
 $$
 
 Setter vi de to uttrykkene lik hverandre, får vi
 
 $$
-a^2 = (a - b)^2 + 2ab - b^2,
+p^2 = (p - q)^2 + 2pq - q^2,
 $$
 
 som vi kan skrive om til
 
 $$
-a^2 - 2ab + b^2 = (a - b)^2 = (b - a)^2,
+p^2 - 2pq + q^2 = (p - q)^2
 $$
 
-der vi har brukt at alle tall opphøyd i 2 er positive, så $(a - b)^2 = (b - a)^2$. <br>
 Men da har vi vist 2.kvadratsetning geometrisk.
 ```
 
@@ -124,7 +123,7 @@ Men da har vi vist 2.kvadratsetning geometrisk.
 Du skal få prøve å utlede konjugatsetningen algebraisk i underveisoppgaven under.
 
 ````{admonition} Underveisoppgave 3
-:class: note
+:class: check
 
 Gitt tall $a, b, c, d \in \mathbb{R}$, så gjelder følgende algebraiske sammenheng:
 
@@ -139,7 +138,7 @@ Bruk sammenhengen til å vise konjugatsetningen.
 Vi starter fra venstre side av konjugatsetningen:
 
 $$
-(a + b)(a - b) = a\cdot a + a\cdot (-b) + b\cdot a + b\cdot (-b) = a^2 - ab + ab - b^2 = a^2 - b^2.
+(p + q)(p - q) = p\cdot p + p\cdot (-q) + q\cdot p + q\cdot (-q) = p^2 - pq + pq - q^2 = p^2 - q^2.
 $$
 
 Dermed har vi vist konjugatsetningen algebraisk.
@@ -152,7 +151,7 @@ Dermed har vi vist konjugatsetningen algebraisk.
 Kvadratsetningene er viktige fordi de gir oss en metode for å faktorisere andregradsfunksjoner. Vi skal se på et eksempel for å vise hvordan vi kan bruke kvadratsetningene til å faktorisere noen spesielle andregradsfunksjoner som kun har ett nullpunkt. 
 
 ```{admonition} Eksempel 1: Faktorisering av andregradsfunksjoner
-:class: eksempel
+:class: example
 
 La oss se på andregradsfunksjonen 
 
@@ -166,7 +165,7 @@ $$
 f(x) = x^2 + 2\cdot x \cdot 4 + 4^2, 
 $$
 
-og da kan vi merke oss at vi kan bruke 1.kvadratsetning med $a = x$ og $b = 4$, som gir
+og da kan vi merke oss at vi kan bruke 1.kvadratsetning med $p = x$ og $q = 4$, som gir
 
 $$
 f(x) = (x + 4)^2.
@@ -182,8 +181,8 @@ $$
 Så er det **din tur**!
 
 
-````{admonition} Underveisoppgave 3
-:class: note
+````{admonition} Underveisoppgave 4
+:class: check
 
 En funksjon $g(x)$ er gitt ved
 
@@ -202,7 +201,7 @@ $$
 g(x) = x^2 - 2\cdot x \cdot 2 + 2^2,
 $$
 
-og dersom vi setter $a = x$ og $b = 2$, kan vi gjenkjenne dette som 2.kvadratsetning. Vi faktoriserer og får:
+og dersom vi setter $p = x$ og $q = 2$, kan vi gjenkjenne dette som 2.kvadratsetning. Vi faktoriserer og får:
 
 $$
 g(x) = (x - 2)^2.
@@ -218,8 +217,8 @@ $$
 
 Du klarer en til! 
 
-````{admonition} Underveisoppgave 4
-:class: note
+````{admonition} Underveisoppgave 5
+:class: check
 
 En andregradsfunksjon $h(x)$ er gitt ved
 
@@ -232,13 +231,13 @@ Bruk en kvadratsetning til å bestemme koeffisientene til $h(x)$. Finn også nul
 
 ```{admonition} Løsning
 :class: solution, dropdown
-Først kan vi bruke 2.kvadratsetning til å utvide uttrykket til $h(x)$ med $a = 3x$ og $b = 4$. Da får vi 
+Først kan vi bruke 2.kvadratsetning til å utvide uttrykket til $h(x)$ med $p = 3x$ og $q = 4$. Da får vi 
 
 $$
 h(x) = (3x - 4)^2 = (3x)^2 - 2\cdot (3x)\cdot 4 + 4^2 = 9x^2 - 24x + 16.
 $$
 
-Altså er koeffisientene til $h(x)$ (ikke forvirr navnene på koeffisientene under med $a$ og $b$ i kvadratsetningene):
+Altså er koeffisientene til $h(x)$:
 
 $$
 a = 9 \quad \land \quad b = -24 \quad \land \quad c = 16.
@@ -248,7 +247,7 @@ $$
 ````
 
 ```{admonition} Eksempel 2: konjugatsetningen og andregradsfunksjoner
-:class: eksempel
+:class: example
 
 En andregradsfunksjon er gitt ved
 

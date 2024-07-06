@@ -13,7 +13,7 @@ Når vi jobber algebraisk, vil vi alltid skrive om likningen på denne måten, m
 Vi har allerede sett at skjæringen til en funksjongraf med $x$-aksen svarer til å bestemme nullpunktene til en funksjon $f(x)$. For en andregradsfunksjon $f(x) = ax^2 + bx + c$, vil nullpunktene være løsningene til likningen $f(x) = 0$. Dette er akkurat det samme som å løse en andregradslikning $ax^2 + bx + c = 0$. 
 
 ````{admonition} Eksempel 1: grafisk løsning av $ax^2 + bx + c = 0$
-:class: eksempel
+:class: example
 Figuren under viser en grafen til andregradsfunksjonen 
 
 $$
@@ -47,7 +47,7 @@ $$
 Nå er det **din tur**!
 
 ````{admonition} Underveisoppgave 1
-:class: note
+:class: check
 I figuren under vises grafen til en andregradsfunksjon
 
 $$
@@ -87,7 +87,7 @@ $$
 Selv om vi strengt tatt alltid kan skrive om disse til den generelle formen i likning {eq}`eq:generell_andregradslikning}, kan det være enklere å løse likningen grafisk direkte. 
 
 ````{admonition} Eksempel 2: grafisk løsning av $f(x) = g(x)$
-:class: eksempel
+:class: example
 Figuren under viser grafene til funksjonene
 
 $$
@@ -116,7 +116,7 @@ $$
 Så er det **din tur**!
 
 ````{admonition} Underveisoppgave 2
-:class: note
+:class: check
 I figuren under vises grafene til funksjonene
 
 $$

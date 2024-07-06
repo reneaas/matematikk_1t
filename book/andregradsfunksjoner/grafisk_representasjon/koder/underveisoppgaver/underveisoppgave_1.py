@@ -15,7 +15,7 @@ y_max = 8.3
 
 
 # Set up the initial plot
-p = figure(title=r"Andregradsfunksjon",
+p = figure(title=r"Interaktiv andregradsfunksjon",
            x_range=(x_min, x_max + 0.5), y_range=(y_min, y_max + 0.5),
            width=700, height=500,
            toolbar_location=None)
@@ -69,9 +69,9 @@ p.axis.major_tick_line_color = "black"
 p.axis.minor_tick_line_color = "black"
 
 # Create sliders for slope and intercept
-slider_a = Slider(start=-10, end=10, value=1, step=0.5, title="a")
-slider_b = Slider(start=-10, end=10, value=0, step=0.5, title="b")
-slider_c = Slider(start=-10, end=10, value=0, step=0.5, title="c")
+slider_a = Slider(start=-10, end=10, value=1, step=0.25, title="a")
+slider_b = Slider(start=-10, end=10, value=0, step=0.25, title="b")
+slider_c = Slider(start=-10, end=10, value=0, step=0.25, title="c")
 
 # JavaScript callback for updating the plot
 callback = CustomJS(args=dict(line=p.renderers[0], slider_a=slider_a, slider_b=slider_b, slider_c=slider_c), code="""
