@@ -34,12 +34,6 @@ I tabellen under vises de vanligste måtene å uttrykke intervaller på. Les for
 Merk at når det nedre endepunktet er inkludert, sier vi **fra og med**. Når det ikke er inkludert, sier vi bare **fra**. På samme måte sier vi **til og med** når det øvre endepunktet er inkludert, og **opp til** eller bare **til** når det ikke er inkludert.
 ```
 
-````{margin}
-```{admonition} Åpent, halvåpent eller lukket intervall?
-:class: tip
-Du legger kanskje merke til at når et intervall er åpent er ingen av endepunktene inkludert. Når det er halvåpent er det ene endepunktet inkludert, mens det andre er ikke. Likevel påstår tabellen at $[a, \to \rangle$ er et lukket intervall. Men dette er fordi vi mener at vi inkluderer **alle** tall fra og med $a$ og oppover. En annen måte å skrive dette på er $[a, \infty\rangle$. Men $\infty$ (uendelig) er ikke et punkt, det forteller oss bare at vi aldri stopper å gå oppover tallinja. Notasjonen uttrykker altså at vi inkluderer alle tall over $a$, så da må jo tallmengden være lukket, selv om $\infty$ ikke i seg selv er et tall.
-```
-````
 
 | Notasjon | Type intervall | Forklaring | Eksempel |
 | :---: | :---: | --- | --- |
@@ -52,11 +46,15 @@ Du legger kanskje merke til at når et intervall er åpent er ingen av endepunkt
 |$\langle a, \to \rangle$| **Halvåpent** | Alle tall fra $a$ og oppover. | $\langle 0, \to \rangle$ betyr mengden av alle reelle tall fra $0$ og oppover, men $0$ er ikke inkludert. |
 |$\langle \gets, b\rangle$| **Halvåpent** | Alle tall opp til $b$. | $\langle \gets, 2\rangle$ betyr mengden av alle reelle tall opp til $2$, men $2$ er ikke inkludert. |
 
+```{admonition} Åpent, halvåpent eller lukket intervall?
+:class: discussion, dropdown
+Du legger kanskje merke til at når et intervall er åpent er ingen av endepunktene inkludert. Når det er halvåpent er det ene endepunktet inkludert, mens det andre er ikke. Likevel påstår tabellen at $[a, \to \rangle$ er et lukket intervall. Men dette er fordi vi mener at vi inkluderer **alle** tall fra og med $a$ og oppover. En annen måte å skrive dette på er $[a, \infty\rangle$. Men $\infty$ (uendelig) er ikke et punkt, det forteller oss bare at vi aldri stopper å gå oppover tallinja. Notasjonen uttrykker altså at vi inkluderer alle tall over $a$, så da må jo tallmengden være lukket, selv om $\infty$ ikke i seg selv er et tall.
+```
 
 
 
 ````{admonition} Underveisoppgave 1
-:class: note
+:class: check
 
 Ta for deg mengdene i tabellen under og bestem type intervall og beskriv tallene som hører til mengdene:
 
@@ -68,10 +66,8 @@ Ta for deg mengdene i tabellen under og bestem type intervall og beskriv tallene
 | $[0, \to \rangle$| | |
 | $\langle \gets, -3\rangle$ | | |
 
-````
 
-
-````{admonition} Løsning
+```{admonition} Løsning
 :class: dropdown, solution
 | Mengde | Type intervall | Beskrivelse |
 |:---:|:---:|---|
@@ -80,7 +76,10 @@ Ta for deg mengdene i tabellen under og bestem type intervall og beskriv tallene
 | $\langle -2, 2]$| Halvåpent  | Alle reelle tall fra $-2$ opp til og med $2$. Her er $-2$ ekskludert, mens $2$ er inkludert i mengden. |
 | $[0, \to \rangle$| Lukket | Alle reelle tall fra og med $0$ og oppover. Her er $0$ inkludert i mengden. |
 | $\langle \gets, -3\rangle$ | Halvåpent | Alle reelle tall opp til $-3$. Her er $-3$ ekskludert fra mengden. |
+```
+
 ````
+
 
 ## Mengder beskrevet som ulikheter
 
@@ -97,7 +96,7 @@ Mengder kan også beskrives med **ulikheter**. Før vi ser på sammenhengen mell
 For å beskrive en mengde ved hjelp av en ulikhet, introduserer vi en variabel (for eksempel $x$) som oppfyller én eller flere ulikheter. Det vil da være et samsvar mellom et intervall $I$ og en ulikhet. Vi trenger bittelitt mer notasjon for å kunne uttrykke oss presist: 
 
 ```{admonition} Sammenheng mellom et lukket intervall $I = [a, b]$ og en ulikhet
-:class: tip
+:class: theory
 Gitt en variabel $x \in I = [a, b]$, vil ulikheten $a \leq x \leq b$ bety akkurat det samme som intervallnotasjonen $I = [a, b]$. 
 Vi sier at de to påstandene er **ekvivalente** og skriver
 
@@ -122,8 +121,8 @@ Les tabellen under **nøye** og overbevis deg selv om at du forstår skrivemåte
 |$x \in \langle \gets, b\rangle$| $x < b$ | $x \in \langle \gets, 2\rangle \quad \Leftrightarrow \quad x < 2$ |
 
 
-```{admonition} Underveisoppgave 2
-:class: note
+````{admonition} Underveisoppgave 2
+:class: check
 Skriv om intervallene i tabellen under til ulikheter:
 
 | Intervall | Ulikhet |
@@ -136,7 +135,6 @@ Skriv om intervallene i tabellen under til ulikheter:
 | $x \in [2, 5\rangle$ | |
 | $x \in \langle -5, \to \rangle$ | |
 | $x \in \langle \gets, 2\rangle$ | |
-```
 
 ```{admonition} Løsning
 :class: dropdown, solution
@@ -151,9 +149,11 @@ Skriv om intervallene i tabellen under til ulikheter:
 | $x \in \langle -5, \to \rangle$ | $-5 < x$ |
 | $x \in \langle \gets, 2\rangle$ | $x < 2$ |
 ```
+````
 
-```{admonition} Underveisoppgave 3
-:class: note
+
+````{admonition} Underveisoppgave 3
+:class: check
 Skriv om ulikhetene under som intervaller:
 
 | Ulikhet | Intervall |
@@ -166,7 +166,6 @@ Skriv om ulikhetene under som intervaller:
 | $3 \leq x < 8$ | |
 | $13 < x$ | |
 | $x < -17$ | |
-```
 
 ```{admonition} Løsning
 :class: dropdown, solution
@@ -181,18 +180,18 @@ Skriv om ulikhetene under som intervaller:
 | $13 < x$ | $x \in \langle 13, \to \rangle$ |
 | $x < -17$ | $x \in \langle \gets, -17\rangle$ |
 ```
+````
 
 ## Listenotasjon for mengder
 Noen kan ikke uttrykkes som intervaller eller ulikheter. I slike tilfeller kan vi ofte bruke **listenotasjon** eller **listeform**. Når en mengde er skrevet på listeform, vil du i de fleste tilfeller kunne *se* hvilke elementer som er i mengden, eller så vil det være et mønster som repetererer seg. 
 
-````{margin}
 ```{admonition} Ellipse (...)
-:class: tip
+:class: note, margin
 Vi skriver $...$ (kalles for en *ellipse*) når vi vil indikere at et mønster gjentar seg. Hvis det ikke følger noe etter ellipsen, betyr det at mønsteret gjentar seg for alltid. Hvis det følger noe etter ellipsen, betyr det at mønsteret gjentar seg opp til det tallet.
-````
+```
 
 ```{admonition} Definisjon: Listeform
-:class: tip
+:class: theory
 En mengde $L$ kan skrives på listeform dersom mengden er en såkalt **tellbar** mengde. Notasjonen vi bruker for dette ser slik ut:
 
 $$
@@ -202,12 +201,10 @@ $$
 
 I tabellen under følger eksempler på mengder skrevet på listeform. Les eksemplene i tabellen **nøye** og overbevis deg om du forstår skrivemåten:
 
-````{margin}
 ```{admonition} Rekkefølgen spiller ingen rolle
-:class: tip
+:class: note, margin
 Merk at *rekkefølgen* på elementene i en mengde skrevet på listeform er *ubetydelig*. Noen ganger er det naturlig å stille dem i stigende rekkefølge, men det er slettes ikke nødvendig.
 ```
-````
 
 | Mengde | Forklaring |
 |:---|:---|
@@ -223,8 +220,8 @@ Merk at *rekkefølgen* på elementene i en mengde skrevet på listeform er *ubet
 Som du kan se fra tabellen, så er det mange tilfeller hvor denne notasjonen vil være nyttig for å beskrive mengder. 
 Nå skal du teste deg selv for å sjekke at du har forstått notasjonen.
 
-```{admonition} Underveisoppgave 4
-:class: note
+````{admonition} Underveisoppgave 4
+:class: check
 Skriv om mengdene under til listeform:
 
 | Mengde | Listeform |
@@ -235,7 +232,6 @@ Skriv om mengdene under til listeform:
 | De positive kubikktallene | |
 | Mengden som består av punktene $(1, 2)$ og $(-1, 1)$ | |
 | Mengden som består av tallene $-1$, $1$ og $3$ | |
-```
 
 ```{admonition} Løsning
 :class: dropdown, solution
@@ -248,6 +244,7 @@ Skriv om mengdene under til listeform:
 | Mengden som består av punktene $(1, 2)$ og $(-1, 1)$ | $\{(1, 2), (-1, 1)\}$ |
 | Mengden som består av tallene $-1$, $1$ og $3$ | $\{-1, 1, 3\}$ |
 ```
+````
 
 
 

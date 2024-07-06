@@ -18,7 +18,7 @@ Målet med denne seksjonen er at du skal kunne:
 En lineær funksjon er en spesiell rett linje der $y$-verdien er bestemt av $x$-verdien. Vi skal komme mer presist tilbake til funksjonsbegrepet senere, men først tar vi en litt kortfattet og enkelt definisjon av en lineær funksjon:
 
 ````{admonition} Definisjon: lineær funksjon
-:class: tip
+:class: theory
 En **lineær funksjon** $f$ er en formel som kan skrives som en likning på formen 
 
 $$
@@ -40,7 +40,7 @@ Merknad 3
 Vi tar noen eksempler på lineære funksjoner med skrivemåten over:
 
 ```{admonition} Eksempel 1: algebraisk representasjon av lineære funksjoner
-:class: eksempel
+:class: example
 
 Under vises funksjonsuttrykket til tre lineære funksjoner. Vi skal bestemme stigningstallet og konstantleddet til hver av funksjonene. 
 
@@ -57,7 +57,7 @@ Under vises funksjonsuttrykket til tre lineære funksjoner. Vi skal bestemme sti
 Og så er det **din tur**!
 
 ````{admonition} Underveisoppgave 1: algebraisk representasjon av lineære funksjoner
-:class: note
+:class: check
 
 Fyll ut tabellen under: 
 
@@ -86,7 +86,7 @@ Fyll ut tabellen under:
 Når vi introduserte $f(x)$ som notasjon, så sa vi $f(x) = y$ var funksjonsverdien til $f$ for en bestemt $x$-verdi. Her skal vi ta en titt på skrivemåten og hvordan man regner ut funksjonsverdier med en funksjonsuttrykket til $f$. Vi sier for eksempel at $f(2)$ er funksjonsverdien til $f$ i $x = 2$. Mer generelt er $f(a)$ funksjonsverdien til $f$ i $x = a$. 
 
 ```{admonition} Eksempel 2: funksjonsverdier
-:class: eksempel
+:class: example
 
 Under vises eksempler på utregning av funksjonsverdier. Vi erstatter rett og slett verdien til $x$ alle steder den opptrer i funksjonsuttrykket (formelen/likningen) til funksjonen og regner ut. Ingen hokus pokus! 
 
@@ -104,7 +104,7 @@ Og så er det **din tur**!
 
 
 ````{admonition} Underveisoppgave 2: funksjonsverdier
-:class: note
+:class: check
 
 Regn ut funksjonsverdiene i tabellen under:
 

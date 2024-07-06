@@ -1,10 +1,9 @@
 # Lineære likningssystemer
 
-````{margin}
 ```{admonition} Likningssystem vs likningssett
+:class: note, margin
 På ungdomsskolen har nok et likningssystem blitt kalt for et **likningssett**. Vi skal bruke begrepet **likningssystem** gjennom denne boken fordi dette er det mest brukte begrepet i matematikk på videregående skole og i høyere utdanning.
 ```
-````
 
 Et **likningssystem** er et system bestående av én eller flere likninger som må være oppfylt samtidig. Målet er å finne verdier for variabelene slik at alle likningene i systemet er oppfylt. En annen måte å si dette på, er at alle likningene i systemet løses samtidig. 
 

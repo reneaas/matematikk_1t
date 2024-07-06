@@ -29,7 +29,7 @@ Steg 2: bestemme konstantleddet $b$
 Men *hva* er topunktsformelen? 
 
 ````{admonition} Topunktsformelen
-:class: tip
+:class: theory
 Hvis grafen til en lineær funksjon $f(x)$ går gjennom to punkter $(x_1, y_1)$ og $(x_2, y_2)$, så er stigningstallet $a$ gitt ved 
 
 $$
@@ -56,7 +56,7 @@ Grafen under viser to punkter $(x_1, y_1)$ og $(x_2, y_2)$ som grafen til en lin
 La oss ta et eksempel:
 
 ```{admonition} Eksempel 1: topunktsformelen til å finne stigningstallet
-:class: eksempel
+:class: example
 
 Grafen til en lineær funksjon $f$ går gjennom punktene $(1, 2)$ og $(5, 6)$. 
 
@@ -79,7 +79,7 @@ $$
 Nå er det **din tur**:
 
 `````{admonition} Underveisoppgave 1
-:class: note
+:class: check
 
 Under vises en tabell over noen lineære funksjoner der det er oppgitt to punkter som hver av grafene går gjennom. 
 
@@ -114,7 +114,7 @@ Bestem stigningstallet til hver av funksjonene.
 En ting du kanskje stusset over i eksempelet over er at vi gikk ut ifra at vi bare kunne bruke tilfeldige punkter på grafen til en lineær funksjon for å bestemme stigningstallet til funksjonen. <br> Dette bør vi sette prøve på - eller **du bør**!
 
 ````{admonition} Underveisoppgave 2
-:class: note
+:class: check
 
 I figuren under vises grafen til en lineær funksjon $f$. Det er tegnet inn en rekke punkter på grafen. 
 

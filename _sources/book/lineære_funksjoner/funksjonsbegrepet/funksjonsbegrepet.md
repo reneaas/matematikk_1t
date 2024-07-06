@@ -3,6 +3,8 @@
 Her skal du få en litt grundigere innføring i funksjonsbegrepet. En funksjon kan noen ganger tenkes på som en graf, andre ganger tenker vi på det som en formel. Vi tenker på formelen og grafen som ulike representasjoner av en mer generell sammenheng som vi kaller for en **funksjon**. 
 
 ```{admonition} Læringsmål: funksjonsbegrepet
+:class: tip
+
 Etter å ha arbeidet med dette kapittelet er målet at du skal kunne:
 * Forklare hva en funksjon er og hva som skiller en funksjon fra en kurve.
 * Forstå begrepene definisjonsmengde og verdimengde til en funksjon.
@@ -12,21 +14,21 @@ Etter å ha arbeidet med dette kapittelet er målet at du skal kunne:
 ## Funksjon som formel
 Når vi har jobbet med rette linjer hittil, har vi brukt formelen for en skrå linje $y = ax + b$, eller vi har jobbet med en graf der vi har punkter $(x, y)$ som ligger på linja. For skrå linjer, er det naturlig å tenke oss at $y$-verdien er bestemt av $x$-verdien når vi jobber med formelen $y = ax + b$. Vi kaller $x$ for den **uavhengige** variabelen, og $y$ for den **avhengige** variabelen. Vi kan tenke på det som at den uavhengige variabelen _bestemmer_ den avhengige variabelen - altså $x$ bestemmer verdien til $y$. Vi sier da at $y$ er en _funksjon_ av $x$. 
 
-````{margin}
+
 ```{admonition} En $x$-verdi kan bare gi én $y$-verdi
-:class: note
+:class: note, margin
 Det er viktig å merke seg at for at en sammenheng mellom $x$ og $y$ skal regnes som en funksjon, kan vi for en verdi av $x$ _kun_ få nøyaktig én $y$-verdi. Dersom vi har flere $y$-verdier for en $x$-verdi, er det ikke en funksjon.
 ```
-````
 
 ```{admonition} Funksjon som algebraisk formel
-:class: tip
+:class: theory
 Dersom vi har en uavhengig variabel $x$ og en avhengig variabel $y$, der vi tenker oss at $x$ entydig bestemmer verdien til $y$, så kaller vi sammenhengen mellom dem for en funksjon $f$. I matematikken har vi bestemt at:
 * $f$ er **funksjonsnavnet** eller bare _funksjonen_. Vi sier ofte "en funksjon $f$" eller "funksjonen $f$".
 * Vi skriver $y = f(x)$ for å understreke at $y$ er en funksjon av $x$. Vi kaller $f(x)$ for **funksjonsverdien** til $f$ for bestemt verdi av $x$.
 
 Vi skriver oftest bare $f(x)$ i stedet for $y = f(x)$. 
 ```
+
 
 Ut ifra forklaringen over, kan vi nå skrive en skrå linje $y = ax + b$ ved å sette $y = f(x)$ der vi mener at $f$ er funksjonen som gir oss sammenhengen mellom $x$ og $y$ i formelen. Da får vi
 
@@ -36,7 +38,9 @@ $$ (eq:lineær_funksjon1)
 
 Vi kaller funksjonen i likning {eq}`eq:lineær_funksjon1` for en **lineær funksjon**.
 
-````{admonition} Underveisoppgave
+````{admonition} Underveisoppgave 1
+:class: check
+
 En lineær funksjon er gitt ved funksjonsuttrykket
 
 $$
@@ -82,7 +86,9 @@ I {numref}`funksjonsgraf_vs_kurve` under vises et eksempel på to grafer, der ku
 Grafen til venstre viser en funksjon fordi det for _hver_ $x$-verdi finnes nøyaktig én $y$-verdi. Punktene $(x, y)$ definerer derfor en funksjon. Grafen til høyre viser en kurve (en sirkel med radius 2) som _ikke_ er en funksjon fordi det _ikke_ finnes nøyaktig én $y$-verdi for hver $x$-verdi. For eksempel har vi to $y$-verdier for $x = 0$. Dermed kan ikke en sirkel beskrives som en funksjon.
 ```
 
-````{admonition} Underveisoppgave
+````{admonition} Underveisoppgave 2
+:class: check
+
 Under vises fire grafer. Bestem hvilke av de som representerer en funksjon, og hvilke av de som ikke representerer en funksjon. Begrunn svarene dine.
 
 ```{figure} ./figurer/underveisoppgaver/funksjonsbegrepet/funksjonsgraf_vs_kurve_oppgave1.svg
@@ -115,7 +121,7 @@ Graf $D$
 Vi er nå klare for å oppsummere en definisjon av en funksjon. 
 
 ```{admonition} Definisjon: Funksjon
-:class: tip
+:class: theory
 En **funksjon** $f$ er en regel som for _hvert_ element $x \in D_f$ tilordner _nøyaktig én_ funksjonsverdi $f(x) \in V_f$.
 
 Vi kaller $D_f$ for **definisjonsmengden** til $f$ som er mengden av alle $x$-verdier vi kan regne ut en funksjonsverdi $y = f(x)$ med. Vi kaller $V_f$ for **verdimengden** til $f$ som er mengden av alle $y$-verdier som kan regnes ut med $x \in D_f$.
@@ -124,7 +130,7 @@ Vi kaller $D_f$ for **definisjonsmengden** til $f$ som er mengden av alle $x$-ve
 Definisjonen over er litt abstrakt, så vi tar utgangspunkt i et konkret eksempel. 
 
 ````{admonition} Eksempel 1: Lineær funksjon med definisjonsmengde og verdimengde
-:class: eksempel
+:class: example
 
 Vi lar en funksjon $f$ være gitt ved funksjonsuttrykket 
 
@@ -146,8 +152,17 @@ Dermed finner vi at verdimengden til $f$ er $V_f = [-3, 5]$.
 ```
 ````
 
+Så er **din tur**!
+
+````{admonition} underveisoppgave 3
+:class: check
+
+
+
+````
+
 ````{admonition} Eksempel 2: En annerledes funksjon
-:class: eksempel
+:class: example
 Noen ganger har vi en funksjon som ikke kan skrives som en algebraisk formelen. Under vises en funksjon $g$ som er gitt ved 
 
 $$
