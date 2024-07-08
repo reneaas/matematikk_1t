@@ -391,3 +391,141 @@ også.
 
 ## Oppgaver
 
+````{admonition} Oppgave 1
+:class: problem
+
+Løs likningen
+
+$$
+(x - 2)(x + 3) = 0.
+$$
+
+```{admonition} Løsning
+:class: dropdown, solution
+
+Vi bruker produktregelen:
+
+$$
+(x - 2)(x + 3) = 0 \quad \Leftrightarrow \quad x - 2 = 0 \quad \lor \quad x + 3 = 0,
+$$
+
+som gir
+
+$$
+x = 2 \quad \lor \quad x = -3.
+$$
+```
+
+````
+
+
+````{admonition} Oppgave 2
+:class: problem
+
+Løs likningen
+
+$$
+(3x + 9)^2 = 0.
+$$
+
+```{admonition} Løsning
+:class: solution, dropdown
+
+Vi bruker produktregelen:
+
+$$
+(3x + 9)^2 = 0 \quad \Leftrightarrow \quad 3x + 9 = 0 \quad \Leftrightarrow \quad 3x = -9 \quad \Leftrightarrow \quad x = -3.
+$$
+```
+
+````
+
+
+
+````{admonition} Oppgave 3
+:class: problem
+
+Løs likningen
+
+$$
+5x^2 + 10x = 0.
+$$
+
+```{admonition} Løsning
+:class: dropdown, solution
+
+Vi faktoriserer ut en faktor $5x$ fra uttrykket først:
+
+$$
+5x^2 + 10x = 5x\cdot x + 5x \cdot 2 = 5x(x + 2)
+$$
+
+Så vi kan vi løse likningen med produktregelen:
+
+$$
+5x(x + 2) = 0 \quad \Leftrightarrow \quad 5x = 0 \quad \lor \quad x + 2 = 0,
+$$
+
+som gir
+
+$$
+x = 0 \quad \lor \quad x = -2.
+$$
+```
+
+````
+
+
+````{admonition} Oppgave 4
+:class: problem
+
+Løs likningen
+
+$$
+4x^2 - 16 = 0.
+$$
+
+```{admonition} Løsning
+:class: dropdown, solution
+
+Vi deler likningen med $4$:
+
+$$
+4x^2 - 16 = 0 \quad \Leftrightarrow \quad x^2 - 4 = 0.
+$$
+
+Deretter kan vi enten bruke konjugatsetningen, eller ta $\pm$ kvadratroten. Vi velger den siste strategien her:
+
+$$
+x^2 = 4 \quad \Leftrightarrow \quad x = \pm \sqrt{4} = \pm 2.
+$$
+```
+
+
+````
+
+
+````{admonition} Oppgave 5
+:class: problem
+Løs likningen
+
+$$
+x^2 - x - 6 = -x + 3.
+$$
+
+```{admonition} Løsning
+:class: dropdown, solution
+
+Vi starter med å flytte alle ledd til venstre side av likningen:
+
+$$
+x^2 - x - 6 = -x + 3 \quad \Leftrightarrow \quad x^2 - x - 6 + x - 3 = 0 \quad \Leftrightarrow \quad x^2 - 9 = 0.
+$$
+
+Herfra kan vi skrive om likningen og ta $\pm$ kvadratroten: 
+
+$$
+x^2 = 9 \quad \Leftrightarrow \quad x = \pm \sqrt{9} = \pm 3.
+$$
+```
+````

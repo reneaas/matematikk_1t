@@ -1,6 +1,6 @@
 # Polynomdivisjon
 
-Polynomdivisjon er en algoritme som lar oss systematisk dele et polynom med et annet. Når vi deler et polynom $p(x)$ med et annet polynom $q(x)$, vil vi få en **kvotient** $k(x)$ og en **rest** $r(x)$ slik at 
+Polynomdivisjon er en algoritme som lar oss dele et polynom med et annet. Når vi deler et polynom $p(x)$ med et annet polynom $q(x)$, vil vi få en **kvotient** $k(x)$ og en **rest** $r(x)$ slik at 
 
 $$
 \frac{p(x)}{q(x)} = k(x) + \frac{r(x)}{q(x)}
@@ -9,6 +9,8 @@ $$
 Det er ikke alltid vi får en rest. Da sier vi at polynomdivisjonen **går opp**. Ofte skriver vi polynomdivisjon som $p(x) \div q(x)$ i stedet for som en brøk $p(x) / q(x)$. Men begge skrivemåter er meningsfulle og betyr det samme.
 
 ```{admonition} Læringsmål: polynomdivisjon
+:class: tip
+
 Etter å gått gjennom dette kapittelet skal du kunne:
 * Utføre polynomdivisjon der nevneren er et førstegradspolynom.
 * Kjenne til sammenhengen mellom nullpunkter, faktorer og rest, og kunne bruke dette til å bestemme nullpunktene til tredjegradspolynomer.
@@ -17,7 +19,7 @@ Vi starter med et konkret eksempel uten rest. Vi tar første eksempel grundig:
 ```
 
 ````{admonition} Eksempel 1 (uten rest)
-:class: eksempel
+:class: example
 Vi skal dele polynomet $x^3 + 2x^2 - 5x - 6$ med $x - 2$. Først skal vi se hele resultatet:
 
 ```{figure} ./figurer/eksempler/eksempel1.svg
@@ -83,7 +85,7 @@ Merk
 Nå er det **din tur**!
 
 ```{admonition} Underveisoppgave 1
-:class: note
+:class: check
 Utfør polynomdivisjonen
 
 $$
@@ -103,7 +105,7 @@ $$
 La oss ta et eksempel med rest også:
 
 ````{admonition} Eksempel 2 (med rest)
-:class: eksempel
+:class: example
 Vi skal se på polynomdivisjonen
 
 $$
@@ -121,7 +123,7 @@ Vi kan merke oss at når vi gikk gjennom alle stegene her, så endte vi ikke opp
 Hvem sin tur er det nå da? **Stemmer, din tur**!
 
 ```{admonition} Underveisoppgave 2
-:class: note
+:class: check
 
 Utfør polynomdivisjonen under:
 
@@ -146,6 +148,9 @@ $$
 
 ### Oppgave 1
 
+
+`````{admonition} Oppgave 1
+:class: problem
 Utfør polynomdivisjonen
 
 $$
@@ -153,7 +158,6 @@ $$
 $$
 
 Kan du utifra resultatet si hvilke nullpunkter $f(x) = x^2 - x - 6$ har?
-
 
 ````{admonition} Løsning
 :class: solution, dropdown
@@ -181,14 +185,17 @@ $$
 bety at 
 
 $$
-x+2 = 0 \quad \lor \quad x - 3 = 0 
+x+2 = 0 \quad \lor \quad x - 3 = 0,
 $$
 
 som igjen betyr at 
 
 $$
-x = -2 \quad \lor \quad x = 3
+x = -2 \quad \lor \quad x = 3.
 $$
 
 Derfor er $x = -2$ og $x = 3$ nullpunkter til $f(x)$.
 ````
+
+`````
+

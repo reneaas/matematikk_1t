@@ -1,6 +1,0 @@
-# Algebraisk løsning
-
-
-## Innsettingsmetoden
-
-## Addisjonsmetoden

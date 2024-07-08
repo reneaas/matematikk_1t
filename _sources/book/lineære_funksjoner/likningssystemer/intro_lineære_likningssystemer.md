@@ -16,6 +16,20 @@ Et **lineært likningssystem** er et likningssystem der alle likningene kan besk
 
 De to likningene i systemet er lineære likninger fordi de kan skrives som funksjonsuttrykkene til lineære funksjoner. Vi ser at vi har to variabler - $x$ og $y$. For å løse likningssystemet må vi finne verdien til begge to. Vi kan også ha likningssystemer med flere enn to variabler. 
 
+En annen måte å skrive opp likningssystemet på er ved hjelp av konjunksjon:
+
+$$
+x - y = -1 \quad \land \quad x + y = 1,
+$$
+
+som understreker at det er to påstander som skal være oppfylt samtidig. Løsningen av et likningssystem, er selv et likningssystem. For eksempel er løsningen av likningssystemet over:
+
+$$
+x = 0 \quad \land \quad y = 1,
+$$
+
+som er et likningssystem bestående av to **trivielle** likninger (her: triviell betyr at løsningen kan leses av direkte).
+
 ```{admonition} Læringsmål: lineære likningssystemer
 :class: tip
 

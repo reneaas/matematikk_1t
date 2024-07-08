@@ -106,20 +106,24 @@ $$
 ax^2 + bx + c = 0.
 $$
 
-```{dropdown} Hint 1
+```{admonition} Hint 1
+:class: hints, dropdown
 Start med å dele hele likningen med $a$.
 ```
 
-```{dropdown} Hint 2
+```{admonition} Hint 2
+:class: hints, dropdown
 Start med å fullføre kvadratet. 
 ```
 
-```{dropdown} Hint 3 
+```{admonition} Hint 3 
+:class: hints, dropdown
 Når du har fullført kvadratet, bruk konjugatsetningen til å faktorisere uttrykket. 
 ```
 
 
-```{dropdown} Hint 4
+```{admonition} Hint 4
+:class: hints, dropdown
 Når uttrykket er faktorisert i to lineære faktorer, kan du bruke produktregelen til å finne de generelle løsningene.
 ```
 
@@ -204,7 +208,7 @@ som er $abc$-formelen.
 ````
 
 ## Antall løsninger
-Vi kan bruke $abc$-formelen til å bestemme hvor mange løsninger en andregradslikning veldig raskt.
+Vi kan bruke $abc$-formelen til å bestemme hvor mange løsninger en andregradslikning har. 
 
 ```{admonition} Setning: Antall løsninger for en andregradslikning
 :class: theory
