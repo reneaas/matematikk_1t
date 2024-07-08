@@ -84,7 +84,7 @@ $$
 f(x) = g(x). 
 $$
 
-Selv om vi strengt tatt alltid kan skrive om disse til den generelle formen i likning {eq}`eq:generell_andregradslikning}, kan det være enklere å løse likningen grafisk direkte. 
+Selv om vi strengt tatt alltid kan skrive om disse til den generelle formen i likning {eq}`eq:generell_andregradslikning`, kan det være enklere å løse likningen grafisk direkte. 
 
 ````{admonition} Eksempel 2: grafisk løsning av $f(x) = g(x)$
 :class: example

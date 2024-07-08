@@ -1,0 +1,2 @@
+# Egenskaper ved andregradsfunksjoner
+

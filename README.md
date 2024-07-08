@@ -159,13 +159,14 @@ Innholdet i boksen
 ```
 ````
 
-| Klasse | Farge |
+| Klasse | Beskrivelse |
 |:---:|:---:|
-|`note`| Blå |
-|`tip`| Grønn |
-|`warning`| Gul |
-|`important`| Rød |
-|`dropdown`| Dropdown versjon av boksen |
+|`note`| Mindre biter med informasjon |
+|`tip`| Læringsål |
+|`theory`| Brukes for hovedbiter med teori. Setninger, algoritmer, lemmaer osv. |
+|`example`| Brukes ved eksempler |
+|`solution, dropdown`| Bruker for løsningsforslag |
+|`check`| Brukes for underveisoppgaver |
 
 Dropdown bokser kan brukes sammen med de andre klassene, for eksempel:
 
