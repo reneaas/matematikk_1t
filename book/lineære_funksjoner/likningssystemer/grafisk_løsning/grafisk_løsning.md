@@ -213,9 +213,9 @@ Oppgave 2b
 ``````{admonition} Oppgave 3
 :class: problem
 
-Figuren under viser to lineære funksjoner. 
+Figuren under viser grafene til to lineære funksjoner. 
 
-Bestem et likningssystem som kan beskrive de to funksjonen og bruk grafen til å løse likningssystemet.
+Lag et likningssystem som kan beskrives av de to funksjonene, og bruk figuren til å løse likningssystemet.
 
 
 ```{figure} ./figurer/oppgaver/oppgave_3.svg
