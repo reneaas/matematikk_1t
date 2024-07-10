@@ -24,6 +24,9 @@ ax + b = 0,
 $$
 
 svare til skjæringen mellom $x$-aksen og grafen til $f(x)$. Vi kaller dette for **nullpunktet** til funksjonen.  
+
+Merknad
+: Nullpunkter kalles ofte for **røttene** til en funksjon. Dette er bare et annet mye brukt begrep for det samme. Begrepet har *ingenting* med kvadratrøtter eller $n$-te røtter å gjøre.
 ````
 
 ````{admonition} Eksempel 1: likning av typen $ax + b = 0$
@@ -34,7 +37,7 @@ $$
 2x - 4 = 0.
 $$
 
-For å løse denne likningen grafisk, tegner vi grafen til funksjonen $f(x) = 2x - 4$, og undersøker hvor grafen skjærer $x$-aksen. Vi kan se grafen til $f(x)$ i {numref}`lineære-likninger-grafisk-eksempel-1`. 
+For å løse denne likningen grafisk, tegner vi grafen til funksjonen $f(x) = 2x - 4$, og undersøker hvor grafen skjærer $x$-aksen (vi finner nullpunktet!). Vi kan se grafen til $f(x)$ i {numref}`lineære-likninger-grafisk-eksempel-1`. 
 
 ```{figure} ./figurer/eksempler/eksempel_1.svg
 :name: lineære-likninger-grafisk-eksempel-1

@@ -8,7 +8,29 @@ $$ (eq:generell_andregradslikning)
 
 Når vi jobber algebraisk, vil vi alltid skrive om likningen på denne måten, men når vi jobber grafisk har vi større frihet til å angripe problemene direkte. 
 
-## Skjæring med $x$-aksen (nullpunkter)
+## Likninger på formen $ax^2 + bx + c = 0$
+Vi skal først se på den generelle formen til en andregradslikning {eq}`eq:generell_andregradslikning` og se hvordan vi løser denne grafisk:
+
+
+````{admonition} Grafisk løsning av $ax^2 + bx + c = 0$
+:class: theory
+Gitt en andregradsfunksjon $f(x) = ax^2 + bx + c$, svarer løsningene til likningen
+
+$$
+ax^2 + bx + c = 0,
+$$
+
+til skjæringen mellom grafen til $f(x)$ og $x$-aksen. 
+
+Nullpunkter
+: Løsningene til likningen tilsvarer **nullpunktene** til $f(x)$. 
+
+```{figure} ./figurer/teori/nullpunkter.svg
+:name: andregradslikninger-grafisk-teori-nullpunkter
+:width: 80%
+```
+
+````
 
 Vi har allerede sett at skjæringen til en funksjongraf med $x$-aksen svarer til å bestemme nullpunktene til en funksjon $f(x)$. For en andregradsfunksjon $f(x) = ax^2 + bx + c$, vil nullpunktene være løsningene til likningen $f(x) = 0$. Dette er akkurat det samme som å løse en andregradslikning $ax^2 + bx + c = 0$. 
 
@@ -27,7 +49,7 @@ f(x) = 0 \quad \Leftrightarrow \quad x^2 - x - 6 = 0.
 $$
 
 ```{figure} ./figurer/eksempler/eksempel_1.svg
-:name: eksempel-1
+:name: andregradslikninger-grafisk-eksempel-1
 :width: 80%
 ```
 
@@ -61,7 +83,7 @@ x^2 - 4x - 5 = 0.
 $$
 
 ```{figure} ./figurer/underveisoppgaver/underveisoppgave_1.svg
-:name: underveisoppgave-1
+:name: andregradslikninger-grafisk-underveisoppgave-1
 :width: 80%
 ```
 
@@ -76,7 +98,29 @@ $$
 
 ````
 
-## Skjæring mellom funksjoner
+## Likninger på formen $ax^2 + bx + c = rx + q$
+
+Noen ganger så møter vi likninger av typen $ax^2 + bx + c = rx + q$. Vi kan tolke dette som $x$-verdiene til skjæringspunktene mellom grafene til en andregradsfunksjon og en lineær funksjon. 
+
+````{admonition} Grafisk løsning av $ax^2 + bx + c = rx + q$
+:class: theory
+Gitt en andregradsfunksjon $f(x) = ax^2 + bx + c$ og en lineær funksjon $g(x) = rx + q$, svarer løsningene til likningen 
+
+$$
+ax^2 + bx + c = rx + q,
+$$
+
+til $x$-verdiene til skjæringspunktene mellom grafene til $f(x)$ og $g(x)$. 
+
+```{figure} ./figurer/teori/skjæring_mellom_grafer.svg
+:name: andregradslikninger-grafisk-teori-skjæring_mellom_grafer
+:width: 80%
+
+Grafisk løsning av likninger på formen $ax^2 + bx + c = rx + q$ svarer til $x$-verdiene til skjæringspunktene mellom grafen til $f(x) = ax^2 + bx + c$ og $g(x) = rx + q$.
+```
+
+````
+
 
 Hvis $f(x)$ er en andregradsfunksjon og $g(x)$ er enten en andregradsfunksjon eller en lineær funksjon, så hender det vi ønsker å løse likninger av typen
 

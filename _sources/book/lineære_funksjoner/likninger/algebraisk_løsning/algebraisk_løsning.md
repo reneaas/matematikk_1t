@@ -1,23 +1,33 @@
 # Algebraisk løsning
 
-Med algebraisk løsning av likninger mener vi at vi uttrykker likningen med symboler og deretter bruker algebraiske lover til å finne løsningen, hvis den eksisterer. Som tidligere nevnt, ønsker vi å finne ut når høyre side og venstre side er like. Det at vi kan legge til, trekke fra, multiplisere med eller dele på ett tall, så lenge vi husker å gjøre samme operasjon på begge sider.
+Å løse likninger algebraisk, handler om å jobbe med likningene symbolsk og bruke algebraiske lover til å isolere variabelen i likningen, hvis mulig. Vi kaller dette å bestemme løsningen. Grovt sett er det fire regneoperasjoner vi kan gjøre med likninger:
+1. Legge til noe på begge sider av likningen.
+2. Trekke fra noe på begge sider av likningen.
+3. Gange med noe på begge sider av likningen.
+4. Dele på noe på begge sider av likningen.
 
-````{margin}
+Det er viktig å understreke at vi må gjøre samme regneoperasjon på **begge sider** av likningen. 
+
+
+## Likninger av typen $ax + b = 0$
+
+
+
 ```{admonition} Flytte og bytte
-:class: note
-I eksempelet under har vi konsekvent lagt til eller trukket fra det samme på begge sider. Kanskje er du vant med å *flytte og bytte* istedenfor? Disse to metodene gir samme resultat, men vår erfaring er at det er lettere å unngå feil dersom du bruker metoden over. 
+:class: note, margin
+I eksempel 1 har vi konsekvent lagt til eller trukket fra det samme på begge sider. Kanskje er du vant med å *flytte og bytte* istedenfor? Disse to metodene gir samme resultat, men vår erfaring er at det er lettere å unngå feil dersom du bruker metoden over. 
 ```
-````
 
 ````{admonition} Underveisoppgave 1
-:class: note
-Kan du løse likningen 
+:class: check
+Løs likningen
 
 $$ 
 2x + 3 = - x - 3
 $$
 
-```{dropdown} Løsning
+```{admonition} Løsning
+:class: dropdown, solution
 For å løse denne ønsker vi å samle leddene som inneholder $x$ på *venstre side* og leddene som kun inneholder tall på *høyre side*. Det gjør vi ved å trekke fra eller legge til det samme på begge sider: 
 
 Vi starter med å fjerne $x$ fra *høyre side*. Det gjør vi ved å legge til $x$ på begge sider: 
@@ -58,14 +68,15 @@ Likningen har altså løsningen $x=-2$.
 På ungdomsskolen har du kanskje lært å sette prøve på svaret? Det betyr at vi setter inn verdien vi har funnet i likningen og sjekker at de to sidene faktisk blir like. Det er lurt å gjøre, spesielt dersom du løser nye type likninger. 
 
 ````{admonition} Underveisoppgave 2
-:class: note
+:class: check
 Sett prøve på svaret $x=-2$ for likningen
 
 $$ 
 2x + 3 = - x - 3
 $$
 
-```{dropdown} Løsning
+```{admonition} Løsning
+:class: solution, dropdown
 
 Vi sjekker *venstre side* (VS) og *høyre side* (HS) hver for seg: 
 
@@ -84,7 +95,7 @@ Vi ser at *venstre side* og *høyre side* er like, og dermed er løsningen $x=-2
 ````
 
 ## Uttrykke løsningen av en likning
-Fra tidligere er du antakeligvis kjent med å oppgi løsningen av en likning som $x = -2$, som i underveisoppgaven over. Tidligere i 1T har du også lært om mengder. Mengdene kan også brukes til å uttrykke løsningen av likninger. Vi kan da skrive $ L = \{-2}\}$. Vi leser det som *Løsingsmengden inneholder $-2$*. 
+Fra tidligere er du antakeligvis kjent med å oppgi løsningen av en likning som $x = -2$, som i underveisoppgaven over. Tidligere i 1T har du også lært om mengder. Mengdene kan også brukes til å uttrykke løsningen av likninger. Vi kan da skrive $ L = \{-2\}$. Vi leser dette som at løsningsmengden består av tallet $-2$. Det er likevel ofte nyttig å være tydelig på hvilken variabel som svarer til løsningsmengden, og vi skriver derfor ofte $x \in \{-2\}$. 
 
 ## Oppgaver
 ### Oppgave 1
@@ -104,9 +115,8 @@ Linje 1-3 er uttrykk, mens linje 4-6 er likninger. Linje 7 er en identitet, ford
 
 ```
 
-````{margin} 
 ```{admonition} Algebraiske lover
-:class: tip, dropdown
+:class: note, dropdown, margin
 1. $$a\cdot (b + c) = a\cdot b + a \cdot c$$
 2. $$a - (b - c) = a - b + c$$
 3. $$\frac{a}{c}\cdot \frac{b}{d} = \frac{a \cdot b}{c \cdot d}$$
@@ -115,7 +125,7 @@ Linje 1-3 er uttrykk, mens linje 4-6 er likninger. Linje 7 er en identitet, ford
 6. $$\frac{a}{b} : \frac{c}{d} = \frac{a}{b} \cdot \frac{d}{c}$$
 7. $$\frac{a}{c} + \frac{b}{d} = \frac{a \cdot d + b \cdot c}{c \cdot d}$$
 ```
-````
+
 
 ### Oppgave 2
 Løs likningene og sett prøve på svaret. 
