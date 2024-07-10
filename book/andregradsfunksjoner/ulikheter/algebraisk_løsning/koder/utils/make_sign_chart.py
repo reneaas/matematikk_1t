@@ -4,46 +4,55 @@ import sympy as sp
 
 plt.rc("text", usetex=True)
 
-def make_sign_chart(f: sp.Expr, x: sp.symbols, fn_name: str = None, fname: str = None) -> None:
-    # Extract the roots of the polynomial
-    roots = sp.solve(f, x)
-    roots = [float(root) for root in roots]
-    roots = [int(root) if int(root) == root else root for root in roots]
-
-    # Sort roots in ascending order just in case
-    roots = sorted(roots)
-    
-
-    # Extract the linear factors of the polynomial
-    factors = str(f.factor())
-    factors = factors.split("*")
-    new_factors = []
-    for factor in factors:
-        if factor[0] == "-" and factor[1] == "(":
-            tmp = ["-1", factor[1:]]
-            new_factors = new_factors + tmp
-        else:
-            new_factors.append(factor)
-    
-    factors = new_factors
-        
-
-    # Sort linear factors in ascending order. 
-    sorted_factors = [0]*len(factors)
-    if sp.solve(factors[0]) == []:
-        sorted_factors[0] = factors[0]
-        for factor in factors[1:]:
-            root = sp.solve(factor, x)[0]
-            root_idx = roots.index(float(root))
-            sorted_factors[root_idx + 1] = factor
+def get_factors(polynomial: sp.Expr) -> list[dict]:
+    polynomial = sp.expand(polynomial) # expand first in case multiple factors of the same kind are present
+    factor_list = sp.factor_list(polynomial)
+    leading_coeff = factor_list[0]
+    if not leading_coeff == 1:
+        linear_factors = [{"expression": leading_coeff, "exponent": 1, "root": -np.inf}]
     else:
-        for factor in factors:
-            root = sp.solve(factor, x)[0]
-            root_idx = roots.index(float(root))
-            sorted_factors[root_idx] = factor
+        linear_factors = []
 
-    factors = sorted_factors
+    
+    for (linear_factor, exponent) in factor_list[1]:            
+        exponent = int(exponent)
+        root = sp.solve(linear_factor, x)
+        if root == []:
+            linear_factors.append(
+                {
+                    "expression": linear_factor,
+                    "exponent": exponent,
+                    "root": -np.inf
+                }
+            )
+        else:
+            linear_factors.append(
+                {
+                    "expression": linear_factor,
+                    "exponent": exponent,
+                    "root": sp.solve(linear_factor, x)[0]    
+                }
+            )
+    
+    return linear_factors
 
+
+
+def sort_factors(factors: list[dict]) -> list[dict]:
+    factors = sorted(factors, key=lambda x: x.get("root"))
+    return factors
+
+
+def make_sign_chart(f: sp.Expr, x: sp.symbols, fn_name: str = None, fname: str = None, color: bool = True) -> None:
+
+    if color:
+        color_pos = "red"
+        color_neg = "blue"
+    else:
+        color_pos = color_neg = "black"
+
+    factors = get_factors(polynomial=f)         # Compute the linear factors of the polynomial
+    factors = sort_factors(factors=factors)     # Sort linear factors in ascending order.
 
     print(f"Creating sign chart for f(x) = {f} = {f.factor()}")
 
@@ -63,32 +72,50 @@ def make_sign_chart(f: sp.Expr, x: sp.symbols, fn_name: str = None, fname: str =
     ax.set_xlabel(r"$x$", fontsize=16, loc="right")
 
     # Set tick marks to roots of the polynomial
+    roots = [factor.get("root") for factor in factors if factor.get("root") != -np.inf]
     plt.xticks(
         ticks=[i for i in range(len(roots))],
         labels=[f"${root}$" for root in roots],
-        fontsize=16
+        fontsize=16,
     )
 
     # Draw horisontal sign lines for each factor 
     dy = -1
     dx = 0.1
     for i, factor in enumerate(factors):
+        expression = str(factor.get("expression"))
+        exponent = factor.get("exponent")
+        if "**" in str(expression):
+            expression = expression.replace("**", "^")
+        
+        if exponent > 1:
+            s = f"$({expression})^{exponent}$"
+        else:
+            s = f"${expression}$"
+
+
         plt.text(
             x=-1,
             y=(i+1)*dy,
-            s=f"${factor}$",
+            s=s,
             fontsize=16,
             ha="center",
             va="center",
         )
-        if sp.solve(factor, x) == []:
-            if sp.sympify(factor).evalf(subs={x: 0}) > 0:
-                plt.axhline(y=(i+1)*dy, xmin=0.05, xmax=1, color="blue", linestyle="-", lw=2)
+        if factor.get("root") == -np.inf:
+            if sp.sympify(factor.get("expression")).evalf(subs={x: 0}) > 0:
+                # plt.axhline(y=(i+1)*dy, xmin=0.05, xmax=1, color="blue", linestyle="-", lw=2)
+                ax.plot([-0.7, len(roots)], [(i+1)*dy, (i+1)*dy], color=color_pos, linestyle="-", lw=2)
             else:
-                plt.axhline(y=(i+1)*dy, xmin=0.05, xmax=1, color="red", linestyle="--", lw=2)
+                # plt.axhline(y=(i+1)*dy, xmin=0.05, xmax=1, color="red", linestyle="--", lw=2)
+                ax.plot([-0.7, len(roots)], [(i+1)*dy, (i+1)*dy], color=color_neg, linestyle="--", lw=2)
         
-        elif sp.solve(factor, x) != []:
-            root = sp.solve(factor, x)[0]
+        elif factor.get("exponent") % 2 == 0:
+            root = factor.get("root")
+            root_idx = roots.index(float(root))
+            ax.plot([-0.7, root_idx - dx], [(i+1)*dy, (i+1)*dy], color=color_pos, linestyle="-", lw=2)
+            ax.plot([root_idx + dx, len(roots)], [(i+1)*dy, (i+1)*dy], color=color_pos, linestyle="-", lw=2)
+
             root_idx = roots.index(float(root))
             plt.text(
                 x=root_idx,
@@ -98,8 +125,22 @@ def make_sign_chart(f: sp.Expr, x: sp.symbols, fn_name: str = None, fname: str =
                 ha="center",
                 va="center",
             )
-            ax.plot([-0.7, root_idx - dx], [(i+1)*dy, (i+1)*dy], color="red", linestyle="--", lw=2)
-            ax.plot([root_idx + dx, len(roots)], [(i+1)*dy, (i+1)*dy], color="blue", linestyle="-", lw=2)
+
+        else:
+            root = factor.get("root")
+            root_idx = roots.index(float(root))
+            ax.plot([-0.7, root_idx - dx], [(i+1)*dy, (i+1)*dy], color=color_neg, linestyle="--", lw=2)
+            ax.plot([root_idx + dx, len(roots)], [(i+1)*dy, (i+1)*dy], color=color_pos, linestyle="-", lw=2)
+
+
+            plt.text(
+                x=root_idx,
+                y=(i+1)*dy,
+                s=f"$0$",
+                fontsize=20,
+                ha="center",
+                va="center",
+            )
 
 
     # Label the function
@@ -111,79 +152,53 @@ def make_sign_chart(f: sp.Expr, x: sp.symbols, fn_name: str = None, fname: str =
         ha="center",
         va="center",
     )
-    
-    # Draw sign lines for the complete function
-    if sp.sympify(f).evalf(subs={x: float(roots[0]) - dx}) > 0:
-        for root in roots:
-            plt.text(
-                x=roots.index(root),
-                y=(len(factors)+1)*dy,
-                s=f"${0}$",
-                fontsize=20,
-                ha="center",
-                va="center",
-            )
 
-        for i, root in enumerate(roots):
-            if i % 2 == 0:
-                plt.axhline(y=(len(factors)+1)*dy, xmin=i/(len(roots)+1) + 0.05, xmax=(i+1)/(len(roots) + 1)- 0.05, color="blue", linestyle="-", lw=2)
-            else:
-                plt.axhline(y=(len(factors)+1)*dy, xmin=i/(len(roots)+1) + 0.05, xmax=(i+1)/(len(roots) + 1)- 0.05, color="red", linestyle="--", lw=2)
 
-        if (len(roots) + 1) % 2 != 0:
-            plt.axhline(y=(len(factors)+1)*dy, xmin=(len(roots))/(len(roots)+1) + 0.05, xmax=1, color="blue", linestyle="-", lw=2)
+    for i, root in enumerate(roots):
+
+        plt.text(
+            x=i,
+            y=(len(factors)+1)*dy,
+            s=f"${0}$",
+            fontsize=20,
+            ha="center",
+            va="center",
+        )
+        
+        x0 = root - dx
+        y0 = sp.sympify(f).evalf(subs={x: x0})
+        print(f" {x0 = } ; {y0 = }")
+
+        if y0 > 0:
+            plt.axhline(y=(len(factors)+1)*dy, xmin=i/(len(roots)+1) + 0.05, xmax=(i+1)/(len(roots) + 1)- 0.05, color=color_pos, linestyle="-", lw=2)
         else:
-            plt.axhline(y=(len(factors)+1)*dy, xmin=(len(roots))/(len(roots)+1) + 0.05, xmax=1, color="red", linestyle="--", lw=2)
+            plt.axhline(y=(len(factors)+1)*dy, xmin=i/(len(roots)+1) + 0.05, xmax=(i+1)/(len(roots) + 1)- 0.05, color=color_neg, linestyle="--", lw=2)
 
+    x0 = roots[-1] + dx
+    y0 = sp.sympify(f).evalf(subs={x: x0})
+    if y0 > 0:
+        plt.axhline(y=(len(factors)+1)*dy, xmin=(len(roots))/(len(roots)+1) + 0.05, xmax=1, color=color_pos, linestyle="-", lw=2)
     else:
-        for root in roots:
-            plt.text(
-                x=roots.index(root),
-                y=(len(factors)+1)*dy,
-                s=f"${0}$",
-                fontsize=20,
-                ha="center",
-                va="center",
-            )
+        plt.axhline(y=(len(factors)+1)*dy, xmin=(len(roots))/(len(roots)+1) + 0.05, xmax=1, color=color_neg, linestyle="--", lw=2)
 
-        for i, root in enumerate(roots):
-            if i % 2 == 0:
-                plt.axhline(y=(len(factors)+1)*dy, xmin=i/(len(roots)+1) + 0.05, xmax=(i+1)/(len(roots) + 1)- 0.05, color="red", linestyle="--", lw=2)
-            else:
-                plt.axhline(y=(len(factors)+1)*dy, xmin=i/(len(roots)+1) + 0.05, xmax=(i+1)/(len(roots) + 1)- 0.05, color="blue", linestyle="-", lw=2)
 
-        if (len(roots) + 1) % 2 == 0:
-            plt.axhline(y=(len(factors)+1)*dy, xmin=(len(roots))/(len(roots)+1) + 0.05, xmax=1, color="blue", linestyle="-", lw=2)
-        else:
-            plt.axhline(y=(len(factors)+1)*dy, xmin=(len(roots))/(len(roots)+1) + 0.05, xmax=1 , color="red", linestyle="--", lw=2)
 
     # Draw vertical lines to separate regions
     offset_upper = 1 / (len(factors) + 2)
     offset_lower = (len(factors) + 1) / (len(factors) + 2)
 
-    print(len(factors) + 2)
-
-    offset = 0
     offset_dy = 0.2
 
-    if sp.solve(factors[0]) == []:
-        # factors.remove(factors[0])
-        offset = 1
 
-        for i, factor in enumerate(factors[1:]):
-            plt.plot([i, i], [-0.4, (i + 1 + offset) * dy + offset_dy], color="black", linestyle="--", lw=1)
-            plt.plot([i, i], [(i + 1 + offset) * dy - offset_dy, (len(factors) + 1) * dy + offset_dy], color="black", linestyle="--", lw=1)
-    
-    else:
-        for i, factor in enumerate(factors):
-            plt.plot([i, i], [-0.4, (i + 1 + offset) * dy + offset_dy], color="black", linestyle="--", lw=1)
-            plt.plot([i, i], [(i + 1 + offset) * dy - offset_dy, (len(factors) + 1) * dy + offset_dy], color="black", linestyle="--", lw=1)
+    n_factors_without_roots = len([factor for factor in factors if factor.get("root") == -np.inf])
 
+    print(f"{n_factors_without_roots = }")
 
-        # plt.axvline(x=i, ymin=(len(factors) - 1 - i)/(len(factors)), ymax=0.85, color="black", linestyle="--", lw=1)
-        # plt.axvline(x=i, ymin=0.1, ymax=(len(factors) - i - offset_lower)/(len(factors) + 1), color="black", linestyle="--", lw=1)
-        # plt.axvline(x=i, ymin=1/(len(roots)) * i, ymax=0.85, color="black", linestyle="--", lw=1)
-        # plt.axvline(x=i, ymin=0.1, ymax=0.85, color="black", linestyle="--", lw=1)
+    offset = 1
+    for i, root in enumerate(roots):
+        plt.plot([i, i], [-0.4, (i + n_factors_without_roots + offset) * dy + offset_dy], color="black", linestyle="--", lw=1)
+        plt.plot([i, i], [(i + n_factors_without_roots + offset) * dy - offset_dy, (len(factors) + 1) * dy + offset_dy], color="black", linestyle="--", lw=1)
+
 
     # Remove tick labels on y-axis 
     plt.yticks([])
@@ -200,7 +215,9 @@ def make_sign_chart(f: sp.Expr, x: sp.symbols, fn_name: str = None, fname: str =
 
 
 if __name__ == "__main__":
-    x = sp.symbols("x")
-    f = -1*(2*x**2 - 8*x - 10) * (x - 6)
-    make_sign_chart(f)
-
+    x = sp.symbols("x", real=True)
+    # f = -(2*x**2 - 8*x - 10) 
+    # f = -(x**2 - 4*x - 5) * (x**2 + 1)
+    # f = x**2 + 4*x + 4
+    f = -2 * (x**2 - 1)**4 * (x - 3) * (x - 1)
+    make_sign_chart(f, x, color=True)

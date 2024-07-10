@@ -6,16 +6,26 @@ Målet med det delkapitlet er at du skal kunne:
 * Kunne løse andregradsulikheter algebraisk ved hjelp av fortegnslinjer.
 ```
 
+Når vi løser andregradsulikheter, får vi bruk for å kunne løse andregradslikninger som en del av løsningsprosessen.
+
+````{admonition} Algebraisk løsning av andregradsulikheter
+:class: theory
+Andregradsulikheter kan løses algebraisk gjennom følgende steg:
+
+Steg 1: Nullpunktsfaktorisering
+: Vi nullpunktsfaktoriserer en andregradsfunksjon 
+
+$$
+f(x) = ax^2 + bx + c = a(x - x_1)(x - x_2),
+$$
+
+Steg 2: Fortegnsskjema
+: Vi tegner et **fortegnsskjema** for $f(x)$ ved å tegne en **fortegnslinje** for hver lineær faktor i $f(x)$, og deretter ett for produktet av faktorene. Vi ser på fortegnene til faktorene for å bestemme fortegnet til $f(x)$ på hvert intervall. 
+
+````
+
 Andregradsulikheter løses algebraisk i to steg:
 
-Steg 1
-: Skriv ulikheten på formen $f(x) > 0$ eller $f(x) < 0$.
-
-Steg 2
-: Nullpunktsfaktoriser $f(x)$.
-
-Steg 3
-: Bruk fortegnslinjer til å bestemme fortegnet til $f(x)$ på ulike intervaller for å identifisere løsningsmengden. 
 
 
 Vi går løs på et eksempel
@@ -110,7 +120,7 @@ $$
 f(x) = a(x - x_1)(x - x_2),
 $$
 
-må du huske å ta med den ledenede koeffisienten $a$ som en egen faktor i fortegnsskjemaet for at fortegnslinja til $f(x)$ skal bli riktig.
+må du huske å ta med den ledende koeffisienten $a$ som en egen faktor i fortegnsskjemaet for at fortegnslinja til $f(x)$ skal bli riktig.
 ```
 
 ````{admonition} Løsning
@@ -140,6 +150,57 @@ Fra fortegnsskjema, kan vi se at $f(x) \leq 0$ når $x \leq -1 \, \lor x \geq 3$
 $$
 x \in \mathbb{R} \setminus \langle -1, 3\rangle.
 $$
+````
+
+`````
+
+
+## Oppgaver
+
+`````{admonition} Oppgave 1
+:class: problem-level-1
+
+Bestem løsningsmengden til ulikheten
+
+$$
+x^2 - 4x \geq 0.
+$$
+
+````{admonition} Fasit
+:class: solution, dropdown
+
+$$
+x \in \mathbb{R} \setminus \langle 0, 4 \rangle.
+$$
+
+eller
+
+$$
+x \in \langle \gets, 0] \cup [4, \to \rangle.
+$$
+````
+
+````{admonition} Løsning
+:class: solution, dropdown
+Vi tenker oss en andregradsfunksjon $f(x) = x^2 - 4x$ som vi skal nullpunktsfaktorisere:
+
+$$
+f(x) = x^2 - 4x = x(x - 4). 
+$$
+
+Deretter tegner vi et fortegnsskjema for $f(x)$: 
+
+```{figure} ./figurer/oppgaver/oppgave_1.svg
+:name: andregradsulikheter-algebraisk-oppgaver-oppgave-1
+:width: 80%
+```
+
+Fra fortegnslinja til $f(x)$, kan vi se at $f(x) \geq 0$ når
+
+$$
+x \in \mathbb{R} \setminus \langle 0, 4 \rangle.
+$$
+
 ````
 
 `````
