@@ -4,7 +4,7 @@ import sympy as sp
 
 plt.rc("text", usetex=True)
 
-def get_factors(polynomial: sp.Expr) -> list[dict]:
+def get_factors(polynomial: sp.Expr, x: sp.symbols) -> list[dict]:
     polynomial = sp.expand(polynomial) # expand first in case multiple factors of the same kind are present
     factor_list = sp.factor_list(polynomial)
     leading_coeff = factor_list[0]
@@ -51,7 +51,7 @@ def make_sign_chart(f: sp.Expr, x: sp.symbols, fn_name: str = None, fname: str =
     else:
         color_pos = color_neg = "black"
 
-    factors = get_factors(polynomial=f)         # Compute the linear factors of the polynomial
+    factors = get_factors(polynomial=f, x=x)         # Compute the linear factors of the polynomial
     factors = sort_factors(factors=factors)     # Sort linear factors in ascending order.
 
     print(f"Creating sign chart for f(x) = {f} = {f.factor()}")
