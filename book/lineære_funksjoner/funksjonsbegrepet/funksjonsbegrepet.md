@@ -76,6 +76,9 @@ $$
 ## Funksjon som en graf
 Når vi tenker på en funksjon som en graf, så tenker vi på en graf der hver $x$-verdi er tilordnet nøyaktig én $y$-verdi. Til sammen gir dette oss par $(x, y)$ der vi kan tegne en graf. Betingelsen for at det skal være en funksjon, er at det er **kun én** $y$-verdi for hver $x$-verdi. Her også erstatter vi $y = f(x)$ dersom sammenhengen mellom $x$ og $y$ kan beskrives av en funksjon. Da blir et punkt på grafen $(x, y) = (x, f(x))$.
 
+
+`````{admonition} Eksempel 1: funksjonsgraf vs kurve
+:class: example
 Med betingelsen over, er det derfor sånn at en graf ikke nødvendigvis er en funksjon. 
 I {numref}`funksjonsgraf_vs_kurve` under vises et eksempel på to grafer, der kun én av dem representerer en funksjon.
 
@@ -85,6 +88,7 @@ I {numref}`funksjonsgraf_vs_kurve` under vises et eksempel på to grafer, der ku
 
 Grafen til venstre viser en funksjon fordi det for _hver_ $x$-verdi finnes nøyaktig én $y$-verdi. Punktene $(x, y)$ definerer derfor en funksjon. Grafen til høyre viser en kurve (en sirkel med radius 2) som _ikke_ er en funksjon fordi det _ikke_ finnes nøyaktig én $y$-verdi for hver $x$-verdi. For eksempel har vi to $y$-verdier for $x = 0$. Dermed kan ikke en sirkel beskrives som en funksjon.
 ```
+`````
 
 ````{admonition} Underveisoppgave 2
 :class: check
@@ -129,7 +133,7 @@ Vi kaller $D_f$ for **definisjonsmengden** til $f$ som er mengden av alle $x$-ve
 
 Definisjonen over er litt abstrakt, så vi tar utgangspunkt i et konkret eksempel. 
 
-````{admonition} Eksempel 1: Lineær funksjon med definisjonsmengde og verdimengde
+````{admonition} Eksempel 2: Lineær funksjon med definisjonsmengde og verdimengde
 :class: example
 
 Vi lar en funksjon $f$ være gitt ved funksjonsuttrykket 
@@ -161,7 +165,7 @@ Så er **din tur**!
 
 ````
 
-````{admonition} Eksempel 2: En annerledes funksjon
+````{admonition} Eksempel 3: En annerledes funksjon
 :class: example
 Noen ganger har vi en funksjon som ikke kan skrives som en algebraisk formelen. Under vises en funksjon $g$ som er gitt ved 
 
