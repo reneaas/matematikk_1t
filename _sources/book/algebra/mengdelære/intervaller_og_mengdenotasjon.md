@@ -1,5 +1,13 @@
 # Mengder som intervaller, ulikheter og lister
 
+```{admonition} Læringsmål: intervaller, ulikheter og listenotasjon
+:class: tip
+Etter du har gått gjennom denne seksjonen skal du:
+* Kunne beskrive mengder ved hjelp av intervaller.
+* Kunne beskrive mengder ved hjelp av ulikheter.
+* Kunne beskrive mengder ved hjelp av listenotasjon.
+```
+
 Noen ganger ønsker vi å beskrive en mengde tall på en kort og presis måte. Vi skal se på tre forskjellige måter å skrive mengder på her:
 
 Intervaller
@@ -11,33 +19,30 @@ Ulikheter
 Listenotasjon
 : Noen ganger vil ikke en mengde bestå av sammenhengende deler på tallinja, men utvalgte tall. Mengden trenger ikke engang å bestå av tall, men kan bestå av utvalgte punkter. Da er listenotasjon en nyttig representasjonsform.
 
-I denne seksjonen skal du lære om de tre representasjonsformene for mengder.
+I dette delkapittelet skal du lære om de tre representasjonsformene for mengder.
 
-```{admonition} Læringsmål: intervaller, ulikheter og listenotasjon
-:class: tip
-Etter du har gått gjennom denne seksjonen skal du:
-* Kunne beskrive mengder ved hjelp av intervaller.
-* Kunne beskrive mengder ved hjelp av ulikheter.
-* Kunne beskrive mengder ved hjelp av listenotasjon.
-```
 
 ## Intervaller
 Noen ganger ønsker vi å beskrive en mengde reelle tall på tallinja på en kort og presis måte. Dersom vi ønsker å beskrive én eller flere sammenhengende deler av tallinja, kan vi bruke **intervaller**.  
 Her skal vi bare se på én del av tallinja - senere skal vi se på hvordan vi kan beskrive flere deler av tallinja samtidig.
 
-### Intervaller
 I tabellen under vises de vanligste måtene å uttrykke intervaller på. Les forklaringene i tabellen **nøye**:
 
-```{margin}
-<br>
+```{admonition} Språkbruk for intervaller
+:class: note, margin
 
 Merk at når det nedre endepunktet er inkludert, sier vi **fra og med**. Når det ikke er inkludert, sier vi bare **fra**. På samme måte sier vi **til og med** når det øvre endepunktet er inkludert, og **opp til** eller bare **til** når det ikke er inkludert.
 ```
 
+```{admonition} Alternativ skrivemåte
+:class: note, margin
+
+Notasjonen $[a, \to\rangle = [a, \infty\rangle$ og $\langle \gets, b] = \langle -\infty, b]$ er også vanlig, og du kan fritt velge hvilken notasjon du bruker. Vi kommer til å bruke pilene fordi det er så vanlig i matematikken på videregående skole. 
+```
 
 | Notasjon | Type intervall | Forklaring | Eksempel |
 | :---: | :---: | --- | --- |
-| $[a, b]$ | **Lukket** | Alle tall fra og med $a$ til og med $b$ | $[2, 5]$ betyr mengden av reelle tall fra og med $2$ til og med $5$. Både $2$ og $5$ er inkludert.|
+| $[a, b]$ | **Lukket** | Alle tall fra og med $a$ til og med $b$. | $[2, 5]$ betyr mengden av reelle tall fra og med $2$ til og med $5$. Både $2$ og $5$ er inkludert.|
 | $\langle a, b\rangle$ | **Åpent** | Alle tall fra $a$ til $b$, men $a$ og $b$ er *ikke* inkludert. | $\langle1, 4\rangle$ betyr mengden av reelle tall fra $1$ opp til $4$, men $1$ og $4$ er ikke inkludert.|
 | $\langle a, b]$ | **Halvåpent** | Alle tall fra $a$ opp til og med $b$. | $\langle -1, 3]$ betyr mengden av alle reelle tall fra $-1$ opp til og med $3$. $-1$ er *ikke* inkludert, men $3$ er inkludert. |
 | $[a, b\rangle$ | **Halvåpent** | Alle tall fra og med $a$ til $b$. | $[0, 2\rangle$ betyr mengden av alle reelle tall fra og med $0$ opp til $2$. $0$ er inkludert, men $2$ er ikke. |
@@ -85,6 +90,7 @@ Ta for deg mengdene i tabellen under og bestem type intervall og beskriv tallene
 
 Mengder kan også beskrives med **ulikheter**. Før vi ser på sammenhengen mellom intervaller og ulikheter, trenger vi å forstå litt notasjon som brukes når man uttrykker ulikheter. Les tabellen under **nøye**:
 
+
 | Ulikhet | Forklaring | Eksempel |
 | :---: | --- | --- |
 |  $<$ | Mindre enn | $2 < 3$ betyr at $2$ er mindre enn $3$.|
@@ -92,7 +98,6 @@ Mengder kan også beskrives med **ulikheter**. Før vi ser på sammenhengen mell
 | $\leq$ | Mindre enn eller lik | $x \leq 3$ betyr at $x$ er mindre enn eller lik $3$.|
 | $\geq$ | Større enn eller lik | $x \geq 5$ betyr at $x$ er større enn eller lik $5$.|
 
-### Sammenhengen mellom intervaller og ulikheter
 For å beskrive en mengde ved hjelp av en ulikhet, introduserer vi en variabel (for eksempel $x$) som oppfyller én eller flere ulikheter. Det vil da være et samsvar mellom et intervall $I$ og en ulikhet. Vi trenger bittelitt mer notasjon for å kunne uttrykke oss presist: 
 
 ```{admonition} Sammenheng mellom et lukket intervall $I = [a, b]$ og en ulikhet

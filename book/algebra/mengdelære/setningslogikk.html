@@ -1,0 +1,816 @@
+
+<!DOCTYPE html>
+
+
+<html lang="norwegian" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1.3. Setningslogikk &#8212; Matematikk 1T</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=87e54e7c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=bac78266" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=c712eed9"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../../_static/tabs.js?v=3ee01567"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/algebra/mengdelære/setningslogikk';</script>
+    <script>mermaid.initialize({"startOnLoad": true})</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="1.4. Sammensatte mengder" href="sammensatte_mengder.html" />
+    <link rel="prev" title="1.2. Mengder som intervaller, ulikheter og lister" href="intervaller_og_mengdenotasjon.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="norwegian"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Matematikk 1T</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Algebra</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro_mengdel%C3%A6re.html">1. Mengdelære</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="mengder.html">1.1. Mengder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intervaller_og_mengdenotasjon.html">1.2. Mengder som intervaller, ulikheter og lister</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.3. Setningslogikk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sammensatte_mengder.html">1.4. Sammensatte mengder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="oppgavesamling.html">1.5. Oppgavesamling</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Lineære funksjoner</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../line%C3%A6re_funksjoner/introduksjon.html">2. Hva er en lineær funksjon?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../line%C3%A6re_funksjoner/representasjoner/algebraisk_representasjon/algebraisk_representasjon.html">2.1. Algebraisk representasjon av lineære funksjoner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../line%C3%A6re_funksjoner/representasjoner/grafisk_representasjon/grafisk_representasjon.html">2.2. Grafisk representasjon av lineære funksjoner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../line%C3%A6re_funksjoner/representasjoner/topunktsformelen/topunktsformelen.html">2.3. Topunktsformelen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../line%C3%A6re_funksjoner/representasjoner/ettpunktsformelen/ettpunktsformelen.html">2.4. Ettpunktsformelen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../line%C3%A6re_funksjoner/funksjonsbegrepet/funksjonsbegrepet.html">2.5. Funksjonsbegrepet</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../line%C3%A6re_funksjoner/likninger/intro_line%C3%A6re_likninger.html">3. Lineære likninger</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../line%C3%A6re_funksjoner/likninger/grafisk_l%C3%B8sning/grafisk_l%C3%B8sning.html">3.2. Grafisk løsning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../line%C3%A6re_funksjoner/likninger/algebraisk_l%C3%B8sning/algebraisk_l%C3%B8sning.html">3.3. Algebraisk løsning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../line%C3%A6re_funksjoner/likninger/programmering/programmering.html">3.4. Løsning med programmering</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../line%C3%A6re_funksjoner/likningssystemer/intro_line%C3%A6re_likningssystemer.html">4. Lineære likningssystemer</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../line%C3%A6re_funksjoner/likningssystemer/grafisk_l%C3%B8sning/grafisk_l%C3%B8sning.html">4.1. Grafisk løsning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../line%C3%A6re_funksjoner/likningssystemer/algebraisk_l%C3%B8sning/algebraisk_l%C3%B8sning.html">4.2. Algebraisk løsning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../line%C3%A6re_funksjoner/likningssystemer/programmering/programmering.html">4.3. Løsning med programmering</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../line%C3%A6re_funksjoner/ulikheter/ulikheter.html">5. Lineære ulikheter</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../line%C3%A6re_funksjoner/ulikheter/grafisk_l%C3%B8sning.html">5.1. Grafisk løsning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../line%C3%A6re_funksjoner/ulikheter/algebraisk_l%C3%B8sning.html">5.2. Algebraisk løsning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../line%C3%A6re_funksjoner/ulikheter/programmering.html">5.3. Løsning med programmering</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../line%C3%A6re_funksjoner/modellering/modellering.html">6. Modellering</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../line%C3%A6re_funksjoner/modellering/lagemodell.html">6.1. Lag en matematisk modell</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Andregradsfunksjoner</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../andregradsfunksjoner/grafisk_representasjon/grafisk_representasjon.html">7. Hva er en andregradsfunksjon?</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../andregradsfunksjoner/likninger/intro_andregradslikninger.html">8. Andregradslikninger</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../andregradsfunksjoner/likninger/grafisk_l%C3%B8sning/grafisk_l%C3%B8sning.html">8.1. Grafisk løsning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../andregradsfunksjoner/likninger/spesielle_andregradslikninger/spesielle_andregradslikninger.html">8.2. Spesielle andregradslikninger</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../andregradsfunksjoner/likninger/kvadratsetningene/kvadratsetningene.html">8.3. Kvadratsetningene</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../andregradsfunksjoner/likninger/fullstendig_kvadrat/fullstendig_kvadrat.html">8.4. Fullstendige kvadraters metode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../andregradsfunksjoner/likninger/abc_formelen/abc_formelen.html">8.5. <span class="math notranslate nohighlight">\(abc\)</span>-formelen</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../andregradsfunksjoner/ulikheter/intro_andregradsulikheter.html">9. Andregradsulikheter</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../andregradsfunksjoner/ulikheter/algebraisk_l%C3%B8sning/algebraisk_l%C3%B8sning.html">9.1. Algebraisk løsning</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../andregradsfunksjoner/egenskaper/intro_egenskaper.html">10. Egenskaper ved andregradsfunksjoner</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Polynomer</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../polynomer/polynomdivisjon/polynomdivisjon.html">11. Polynomdivisjon</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Programmering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../programmering/variabler/variabler.html">Variabler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programmering/regning/regning.html">Regning med Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programmering/if_else/if_else.html"><code class="code docutils literal highlight highlight-python"><span class="k">if</span></code>-<code class="code docutils literal highlight highlight-python"><span class="k">else</span></code>-setninger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programmering/while_loops/while_loops.html"><code class="docutils literal notranslate"><span class="pre">while</span></code>-løkker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programmering/for_loops/for_loops.html"><code class="docutils literal notranslate"><span class="pre">for</span></code>-løkker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programmering/functions/functions.html">Funksjoner</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Last ned denne siden">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/book/algebra/mengdelære/setningslogikk.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Last ned kildefilen"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Skriv ut til PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullskjerm-modus"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Setningslogikk</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Innhold </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pastander">1.3.1. Påstander</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implikasjon-og-ekvivalens">1.3.2. Implikasjon og ekvivalens</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konjunksjon-og-disjunksjon">1.3.3. Konjunksjon og disjunksjon</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="setningslogikk">
+<h1><span class="section-number">1.3. </span>Setningslogikk<a class="headerlink" href="#setningslogikk" title="Link to this heading">#</a></h1>
+<div class="tip admonition">
+<p class="admonition-title">Læringsmål: setningslogikk</p>
+<p>Etter å ha gått gjennom dette delkapittelet, er målet at du skal kunne:</p>
+<ul class="simple">
+<li><p>Forklare hva en påstand er i matematikken.</p></li>
+<li><p>Forklare implikasjon og ekvivalens, og bruke disse i praksis for å uttrykke sammenhenger mellom påstander.</p></li>
+<li><p>Forklare konjunksjon og disjunksjon, og bruke disse i praksis for å uttrykke sammensatte påstander.</p></li>
+</ul>
+</div>
+<p>Setningslogikken er i grenseland mellom matematikk og filosofi, og er utviklet for å kunne uttrykke sammenhenger mellom påstander på en presis måte. Vi skal forholde oss til nytteverdien det har for å beskrive sammenhenger i matematikken på en presis og kompakt måte.</p>
+<section id="pastander">
+<h2><span class="section-number">1.3.1. </span>Påstander<a class="headerlink" href="#pastander" title="Link to this heading">#</a></h2>
+<p>En <strong>påstand</strong> i matematikken kan ofte beskrives som en likning eller en ulikhet. En påstand kan være usann, men vi skal alltid anta at en påstand er sann og utvikle teori der vi beskriver sanne påstander (ærlighet varer lengst, <em>amirite</em>?).</p>
+<div class="example admonition">
+<p class="admonition-title">Eksempel 1: påstander i matematikken</p>
+<p>La oss se på noen eksempler på påstander i matematikken:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Påstand</p></th>
+<th class="head text-center"><p>Beskrivelse</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(2x + 1 = 3\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(2x + 1\)</span> er lik <span class="math notranslate nohighlight">\(3\)</span>.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><span class="math notranslate nohighlight">\(x &gt; 4\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(x\)</span> er større enn 4.</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(x \in [1, 2]\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(x\)</span> er et tall i intervallet <span class="math notranslate nohighlight">\([1, 2]\)</span>.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><span class="math notranslate nohighlight">\(x \in \mathbb{N}\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(x\)</span> er et naturlig tall.</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(x \in \mathbb{R}\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(x\)</span> er et reelt tall.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="implikasjon-og-ekvivalens">
+<h2><span class="section-number">1.3.2. </span>Implikasjon og ekvivalens<a class="headerlink" href="#implikasjon-og-ekvivalens" title="Link to this heading">#</a></h2>
+<p>Ofte er det en sammenheng mellom to påstander. Noen vil en sann påstand medføre at en annen påstand er sann, andre ganger vil de begge medføre at den andre er sann samtidig. Vi har to måter å uttrykke slike sammenhenger på:</p>
+<div class="note margin admonition">
+<p class="admonition-title">Vanlige symboler for påstander</p>
+<p>Det er vanlig å bruke symbolene <span class="math notranslate nohighlight">\(p\)</span> og <span class="math notranslate nohighlight">\(q\)</span> for påstander.</p>
+</div>
+<div class="theory admonition">
+<p class="admonition-title">Implikasjon og ekvivalens</p>
+<p>La <span class="math notranslate nohighlight">\(p\)</span> og <span class="math notranslate nohighlight">\(q\)</span> være to påstander. Da har vi følgende definisjoner:</p>
+<dl class="simple myst">
+<dt>Implikasjon: <span class="math notranslate nohighlight">\(p \Rightarrow q\)</span></dt><dd><p><span class="math notranslate nohighlight">\(q\)</span> er sann hvis <span class="math notranslate nohighlight">\(p\)</span> er sann. Hvis <span class="math notranslate nohighlight">\(p\)</span> er sann, så er <span class="math notranslate nohighlight">\(q\)</span> også sann, sier vi at <span class="math notranslate nohighlight">\(p\)</span> <strong>impliserer</strong> <span class="math notranslate nohighlight">\(q\)</span>. Vi skriver <span class="math notranslate nohighlight">\(p \Rightarrow q\)</span>. Påstanden <span class="math notranslate nohighlight">\(p \Rightarrow q\)</span> leses som “hvis <span class="math notranslate nohighlight">\(p\)</span>, så <span class="math notranslate nohighlight">\(q\)</span>”.</p>
+</dd>
+<dt>Ekvivalens: <span class="math notranslate nohighlight">\(p \Leftrightarrow q\)</span></dt><dd><p><span class="math notranslate nohighlight">\(q\)</span> er sann hvis <span class="math notranslate nohighlight">\(p\)</span> er sann (<span class="math notranslate nohighlight">\(p \Rightarrow q\)</span>), og <span class="math notranslate nohighlight">\(p\)</span> er sann hvis <span class="math notranslate nohighlight">\(q\)</span> er sann (<span class="math notranslate nohighlight">\(p \Leftarrow q\)</span>). Vi sier at <span class="math notranslate nohighlight">\(p\)</span> og <span class="math notranslate nohighlight">\(q\)</span> er <strong>ekvivalente</strong> og skriver <span class="math notranslate nohighlight">\(p \Leftrightarrow q\)</span>. Symbolet <span class="math notranslate nohighlight">\(\Leftrightarrow\)</span> leses som “hvis og bare hvis”.</p>
+</dd>
+</dl>
+</div>
+<p>La oss ta et litt hverdagslig eksempel først:</p>
+<div class="example admonition">
+<p class="admonition-title">Eksempel 2: implikasjon</p>
+<p>Vi har to påstander <span class="math notranslate nohighlight">\(p\)</span> og <span class="math notranslate nohighlight">\(q\)</span> som følger:</p>
+<div class="math notranslate nohighlight">
+\[
+p = \text{Kari bor i Oslo} \quad \text{og} \quad q = \text{Kari bor i Norge}.
+\]</div>
+<p>Hvis <span class="math notranslate nohighlight">\(p\)</span> er sann, så er også <span class="math notranslate nohighlight">\(q\)</span> sann. Dermed kan vi skrive <span class="math notranslate nohighlight">\(p \Rightarrow q\)</span>. Men hvis <span class="math notranslate nohighlight">\(q\)</span> er sann, så betyr ikke det at <span class="math notranslate nohighlight">\(p\)</span> er sann, siden du kan bo i fryktelig mange andre steder i Norge enn Oslo. Dermed er <span class="math notranslate nohighlight">\(p \not \Leftarrow q\)</span>, så påstandene er ikke ekvivalente. (Vi slenger en skråstrek gjennom et symbol for å indikere motsetningen til symbolet).</p>
+</div>
+<p>Vi tar et eksempel som er mer matematisk orientert:</p>
+<div class="example admonition">
+<p class="admonition-title">Eksempel 3: implikasjon og ekvivalens</p>
+<p>|Påstand <span class="math notranslate nohighlight">\(p\)</span>|  |</p>
+</div>
+<p>Vi tar et eksempel til, men nå litt mer matematisk orientert:</p>
+<div class="example admonition">
+<p class="admonition-title">Eksempel 4: ekvivalens</p>
+<p>Vi har to påstander <span class="math notranslate nohighlight">\(p\)</span> og <span class="math notranslate nohighlight">\(q\)</span> som følger:</p>
+<dl class="simple myst">
+<dt>Påstand <span class="math notranslate nohighlight">\(p\)</span>:</dt><dd><p><span class="math notranslate nohighlight">\(x \in [1, 2]\)</span></p>
+</dd>
+<dt>Påstand <span class="math notranslate nohighlight">\(q\)</span>:</dt><dd><p><span class="math notranslate nohighlight">\(1 \leq x \leq 2\)</span></p>
+</dd>
+</dl>
+<p>Hvis <span class="math notranslate nohighlight">\(p\)</span> er sann, så er også <span class="math notranslate nohighlight">\(q\)</span> sann. Hvis <span class="math notranslate nohighlight">\(q\)</span> er sann, så er også <span class="math notranslate nohighlight">\(p\)</span> sann. Dermed er <span class="math notranslate nohighlight">\(p\)</span> og <span class="math notranslate nohighlight">\(q\)</span> ekvivalente, og vi kan skrive <span class="math notranslate nohighlight">\(p \Leftrightarrow q\)</span>, eller da</p>
+<div class="math notranslate nohighlight">
+\[
+x \in [1, 2] \quad \Leftrightarrow \quad 1 \leq x \leq 2.
+\]</div>
+</div>
+<div class="check admonition">
+<p class="admonition-title">Underveisoppgave 1</p>
+<p>Fyll ut tabellen under:
+Fyll inn med logikksymbolene <span class="math notranslate nohighlight">\(\Leftarrow\)</span>, <span class="math notranslate nohighlight">\(\Rightarrow\)</span> eller <span class="math notranslate nohighlight">\(\Leftrightarrow\)</span> i tabellen under slik at du får en sann påstand.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Påstand <span class="math notranslate nohighlight">\(p\)</span></p></th>
+<th class="head text-center"><p>Symbol</p></th>
+<th class="head text-center"><p>Påstand <span class="math notranslate nohighlight">\(q\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(x &gt; 6\)</span></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(x &gt; 2\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><span class="math notranslate nohighlight">\(x^2 = 25\)</span></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(x = 5\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(x = -3\)</span></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(x^2 = 9\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><span class="math notranslate nohighlight">\(x^2 = 4\)</span></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(|x| = 2\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(2x - y = 5\)</span></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(x = 2 \, \land \, y = -1\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="dropdown solution admonition">
+<p class="admonition-title">Løsning</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Påstand <span class="math notranslate nohighlight">\(p\)</span></p></th>
+<th class="head text-center"><p>Symbol</p></th>
+<th class="head text-center"><p>Påstand <span class="math notranslate nohighlight">\(q\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(x &gt; 6\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\Rightarrow\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(x &gt; 2\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><span class="math notranslate nohighlight">\(x^2 = 25\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\Leftarrow\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(x = 5\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(x = -3\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\Rightarrow\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(x^2 = 9\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><span class="math notranslate nohighlight">\(x^2 = 4\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\Leftrightarrow\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(|x| = 2\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(2x - y = 5\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\Leftarrow\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(x = 2 \, \land \, y = -1\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="konjunksjon-og-disjunksjon">
+<h2><span class="section-number">1.3.3. </span>Konjunksjon og disjunksjon<a class="headerlink" href="#konjunksjon-og-disjunksjon" title="Link to this heading">#</a></h2>
+<p>En annen måte å uttrykke sammensatte mengder på er ved hjelp av ulikheter. Før vi går videre, må vi gjøre det klart hva vi mener med en <strong>påstand</strong> i matematikk. En påstand er et utsagn om noe, for eksempel vil <span class="math notranslate nohighlight">\(2x + 1 = 3\)</span> regnes som en påstand selv om vi vanligvis bruker begrepet <em>likning</em> om en slik påstand. Et annet eksempel på en påstand er <span class="math notranslate nohighlight">\(x &gt; 4\)</span>. En påstand er enten sann eller usann. Typisk når vi ønsker å beskrive svaret på en likning, ulikhet eller et likningssystem, uttrykker vi det med påstander som er <em>sanne</em>.</p>
+<p>Nå er vi klare for å innføre to nye begreper fra <strong>setningslogikken</strong> og en samsvarende skrivemåter:</p>
+<div class="theory admonition">
+<p class="admonition-title">Logiske operatorer: konjunksjon og disjunksjon</p>
+<p>Vi tenker oss at vi har to påstander <span class="math notranslate nohighlight">\(p\)</span> og <span class="math notranslate nohighlight">\(q\)</span>. Da har vi følgende logiske operatorer:</p>
+<dl class="simple myst">
+<dt>Disjunksjon (logisk eller): <span class="math notranslate nohighlight">\(p \lor q\)</span></dt><dd><p>Når enten <span class="math notranslate nohighlight">\(p\)</span> eller <span class="math notranslate nohighlight">\(q\)</span> er sanne, eller begge er sanne, sier vi at de er <strong>disjunktive</strong> påstander. Vi skriver <span class="math notranslate nohighlight">\(p \lor q\)</span> og leser det som <span class="math notranslate nohighlight">\(p\)</span> <strong>eller</strong> <span class="math notranslate nohighlight">\(q\)</span> (eller <em>begge</em>). Altså er enten påstand <span class="math notranslate nohighlight">\(p\)</span> sann, eller så er <span class="math notranslate nohighlight">\(q\)</span> sann, eller så er begge sanne.</p>
+</dd>
+<dt>Konjunksjon (logisk og): <span class="math notranslate nohighlight">\(p \land q\)</span></dt><dd><p>Når både <span class="math notranslate nohighlight">\(p\)</span> og <span class="math notranslate nohighlight">\(q\)</span> er sanne samtidig, sier vi at de er <strong>konjuktive</strong> påstander. Vi skriver <span class="math notranslate nohighlight">\(p \land q\)</span> og leser det som <span class="math notranslate nohighlight">\(p\)</span> <strong>og samtidig</strong> <span class="math notranslate nohighlight">\(q\)</span>. Altså må både påstand <span class="math notranslate nohighlight">\(p\)</span> og <span class="math notranslate nohighlight">\(q\)</span> være sanne samtidig!</p>
+</dd>
+</dl>
+</div>
+<p>Begrepene over er litt abstrakte, så la oss gjøre dem mer konkrete.</p>
+<div class="example admonition">
+<p class="admonition-title">Eksempel 4: disjunksjon (eller)</p>
+<p>Mengden bestående av alle <span class="math notranslate nohighlight">\(x \in [-1, 0] \cup \langle 1, 2 \rangle\)</span> kan vi uttrykke som at enten så er <span class="math notranslate nohighlight">\(x\in [-1, 0]\)</span> eller så er <span class="math notranslate nohighlight">\(x \in \langle 1, 2 \rangle\)</span>. Vi kan derfor uttrykke dette som at</p>
+<div class="math notranslate nohighlight">
+\[
+x \in [-1, 0] \cup \langle 1, 2 \rangle \quad \Leftrightarrow \quad -1 \leq x \leq 0 \, \lor \, 1 &lt; x &lt; 2
+\]</div>
+<p>Knytter vi det til teorien over er den éne påstanden <span class="math notranslate nohighlight">\(-1 \leq x \leq 0\)</span> og den andre påstanden <span class="math notranslate nohighlight">\(1 &lt; x &lt; 2\)</span>. Disse to påstandene er disjunktive siden de ikke trenger å være sanne samtidig (faktisk <em>kan</em> de ikke være sanne samtidig her), og vi bruker disjunksjon for å binde dem sammen.</p>
+</div>
+<p><strong>Din tur!</strong></p>
+<div class="check admonition">
+<p class="admonition-title">Underveisoppgave 3</p>
+<p>Fyll ut tabellen under:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Intervall</p></th>
+<th class="head text-center"><p>Ulikheter</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(x\in [1, 2] \cup [3, 4]\)</span></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><span class="math notranslate nohighlight">\(y\in[1, 2] \cup \langle 3, 4]\)</span></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(p\in \langle 1, 2] \cup [3, 4]\)</span></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><span class="math notranslate nohighlight">\(q\in \langle 1, 2] \cup \langle 3, 4]\)</span></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(r \in \mathbb{R} \setminus [-1, 1]\)</span></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="dropdown answer admonition">
+<p class="admonition-title">Fasit</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Intervall</p></th>
+<th class="head text-center"><p>Ulikheter</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(x\in [1, 2] \cup [3, 4]\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(1 \leq x \leq 2 \, \lor \, 3 \leq x \leq 4\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><span class="math notranslate nohighlight">\(y\in[1, 2] \cup \langle 3, 4]\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(1 \leq y \leq 2 \, \lor \, 3 &lt; y \leq 4\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(p\in \langle 1, 2] \cup [3, 4]\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(1 &lt; p \leq 2 \, \lor \, 3 \leq p \leq 4\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><span class="math notranslate nohighlight">\(q\in \langle 1, 2] \cup \langle 3, 4]\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(1 &lt; q \leq 2 \, \lor \, 3 &lt; q &lt; 4\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(r \in \mathbb{R} \setminus [-1, 1]\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(r &lt; -1 \, \lor \, r &gt; 1\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>Vi tar også et eksempel på konjunksjon som illustrerer bruken av konjunksjon når vi jobber med likningssystemer senere i matematikken:</p>
+<div class="example admonition">
+<p class="admonition-title">Eksempel 5: konjunksjon (og samtidig)</p>
+<p>Vi tenker oss et likningssystem</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b7390908-b927-4f26-a213-1be7ddfaad2d">
+<span class="eqno">(1.1)<a class="headerlink" href="#equation-b7390908-b927-4f26-a213-1be7ddfaad2d" title="Permalink to this equation">#</a></span>\[\begin{align}
+    x+y &amp;= 3 \\
+    x-y &amp;= 1
+\end{align}\]</div>
+<p>I et likningssystem skal begge likninger være oppfylt samtidig. Vi kan se på dette som to påstander som må være sanne samtidig. Derfor kan vi skrive likningssystemet som</p>
+<div class="math notranslate nohighlight">
+\[
+x+y = 3 \, \land \, x-y = 1.
+\]</div>
+<p>Løsningen til dette likningssystemet vil i seg selv være et (trivielt) likningssystem som består av to likninger som er sanne samtidig. Prøver vi ut <span class="math notranslate nohighlight">\(x = 2\)</span> og <span class="math notranslate nohighlight">\(y = 1\)</span>, så er begge likninger oppfylt samtidig, som betyr at</p>
+<div class="math notranslate nohighlight">
+\[
+x + y = 3 \, \land \, x - y = 1 \quad \Leftrightarrow \quad x = 2 \, \land \, y = 1
+\]</div>
+</div>
+<div class="example admonition">
+<p class="admonition-title">Eksempel 6: Enkle intervaller som ulikheter</p>
+<p>Vi har sett at vi kan skrive enkle intervaller som en slags “dobbel”-ulikhet. For eksempel har vi skrevet</p>
+<div class="math notranslate nohighlight">
+\[
+x \in [-1, 1] \quad \Leftrightarrow \quad -1 \leq x \leq 1
+\]</div>
+<p>Men vi kan også skriv dette ved hjelp av en konjunksjon som</p>
+<div class="math notranslate nohighlight">
+\[
+-1 \leq x \leq 1  \quad \Leftrightarrow \quad  -1 \leq x \, \land \, x \leq 1
+\]</div>
+<p>Denne skrivemåten er ikke nødvendigvis så fryktelig vanlig fordi den ikke er noe særlig enklere å skrive, men er likevel en helt gyldig uttrykksmåte. Vi velger vanligvis den enkleste skrivemåten som også er lettest mulig å lese.</p>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./book/algebra/mengdelære"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intervaller_og_mengdenotasjon.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">1.2. </span>Mengder som intervaller, ulikheter og lister</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="sammensatte_mengder.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">1.4. </span>Sammensatte mengder</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Innhold
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pastander">1.3.1. Påstander</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implikasjon-og-ekvivalens">1.3.2. Implikasjon og ekvivalens</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konjunksjon-og-disjunksjon">1.3.3. Konjunksjon og disjunksjon</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Av Edvard Munch Videregående Skole
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

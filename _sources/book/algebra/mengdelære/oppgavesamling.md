@@ -44,30 +44,6 @@ Oppklaring 2
 
 ### Oppgave 2
 
-Fyll inn med logikksymbolene $\Leftarrow$, $\Rightarrow$ eller $\Leftrightarrow$ i tabellen under slik at du får en sann påstand.
-
-|Påstand $p$| Symbol | Påstand $q$ |
-|:---:|:---:|:---:|
-| $x > 6$ | | $x > 2$ |
-| $x^2 = 25$ | | $x = 5$ |
-| $x = -3$ | | $x^2 = 9$ |
-| $x^2 = 4$ | | $\|x\| = 2$ |
-| $2x - y = 5$ | | $x = 2 \, \land \, y = -1$ |
-
-````{admonition} Løsning
-:class: dropdown, solution
-
-|Påstand $p$| Symbol | Påstand $q$ |
-|:---:|:---:|:---:|
-| $x > 6$ | $\Rightarrow$ | $x > 2$ |
-| $x^2 = 25$ | $\Leftarrow$ | $x = 5$ |
-| $x = -3$ | $\Rightarrow$ | $x^2 = 9$ |
-| $x^2 = 4$ | $\Leftrightarrow$ | $\|x\| = 2$ |
-| $2x - y = 5$ | $\Leftarrow$ | $x = 2 \, \land \, y = -1$ |
-````
-
-### Oppgave 3
-
 Fyll inn med implikasjonstegn eller ekvivalenstegn for påstand $p$ og $q$ i tabellen under slik at du får en sann påstand.
 
 |Påstand $p$| Symbol | Påstand $q$ |
@@ -97,7 +73,7 @@ Fyll inn med implikasjonstegn eller ekvivalenstegn for påstand $p$ og $q$ i tab
 
 ## Level 2 🔥🔥
 
-### Oppgave 4
+### Oppgave 3
 
 Skriv om intervallene under som ulikheter:
 
@@ -123,7 +99,7 @@ Skriv om intervallene under som ulikheter:
 | $t \in \langle -2, 3 \rangle$ | $-2 < t < 3$ |
 ````
 
-### Oppgave 5
+### Oppgave 4
 
 Skriv om ulikheten under som intervaller:
 
@@ -150,7 +126,7 @@ Skriv om ulikheten under som intervaller:
 
 ## Level 3 🔥🔥🔥
 
-### Oppgave 6
+### Oppgave 5
 
 Skriv om intervallene i tabellen under som ulikheter:
 
@@ -177,7 +153,7 @@ Skriv om intervallene i tabellen under som ulikheter:
 
 ````
 
-### Oppgave 7
+### Oppgave 6
 Skriv mengdene i tabellen under på en annen måte, gjerne så enkelt som mulig.
 
 | Mengde | Forenklet mengde |

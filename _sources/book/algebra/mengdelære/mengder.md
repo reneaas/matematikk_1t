@@ -1,20 +1,19 @@
-# Mengdelære
+# Mengder
 
-Har du tenkt på at det finnes ulike typer tall? Tallene $1$, $5$ og $8$ skiller seg fra tallene $13/5$ og $\pi$, men hva er forskjellen? I dette kapittelet skal vi se på noen vanlige tallmengder og hvilke tall som hører til i de ulike mengdene. 
-
-```{admonition} Læringsmål: mengdelære
+```{admonition} Læringsmål: mengder
 :class: tip
-
-* Du skal kunne forklare mengdene $\mathbb{N}$, $\mathbb{Z}$, $\mathbb{Q}$ og $\mathbb{R}$ og gi eksempler på tall som er inneholdt i hver mengde. 
-* Du skal kunne skrive tallmengder både som intervaller og som mengder.
-
+Etter å gått gjennom dette delkapittelet, er målet at du skal kunne:
+* Kunne forklare hva en mengde er og bruke notasjon for mengder.
+* Forklare mengdene $\mathbb{N}$, $\mathbb{Z}$, $\mathbb{Q}$ og $\mathbb{R}$ og gi eksempler på tall som er inneholdt i hver mengde. 
 ```
 
-## Tallmengder
+
+## De spesielle tallmengdene
+
 En **mengde** er rett og slett en samling objekter. En **tallmengde** er derfor en samling med tall. Noen ganger er tall i en mengde gruppert sammen fordi de har like egenskaper, andre ganger fordi vi ønsker å beskrive en samling tall, for eksempel som løsningen til en likning. 
 Vi starter med å introdusere fire *spesielle* tallmengder:
 
-| Symbol | Navn | Eksempel | Kommentar | 
+| Symbol | Navn | Eksempel | Forklaring | 
 | :---: | --- | --- |--- |
 | $\mathbb{N}$ | De **naturlige** tallene. | $1, 2, 3, 8 $| Alle de positive heltallene. |
 | $\mathbb{Z}$ | **Heltallene** | $-3, -2, -1, 0, 1, 2$| Alle heltallene, inkludert 0. |
@@ -67,9 +66,9 @@ Som vi nevnte i innledningen, er en mengde bare en samling objekter. I de fleste
 ```{admonition} Definisjon: Mengde
 :class: theory
 
-En **mengde** $A$ er en samling tall. Dersom et tall $x$ er en del av mengden $A$, skriver vi $x \in A$. Vi leser dette som "$x$ er *et element i* mengden $A$". 
+En **mengde** $A$ er en samling tall. Dersom et tall $x$ er en del av mengden $A$, skriver vi $x \in A$. Vi leser dette som "$x$ er *et element i* $A$". 
 
-Dersom et tall $y$ *ikke* er er en del av mengden $A$, skriver vi $y \notin A$. Vi leser dette som "$y$ er *ikke* et element i mengden $A$". 
+Dersom et tall $y$ *ikke* er er en del av mengden $A$, skriver vi $y \notin A$. Vi leser dette som "$y$ er *ikke* et element i $A$". 
 ```
 
 
@@ -79,7 +78,7 @@ Her kan du få prøve å anvende definisjonen på noen eksempler:
 :class: check
 
 Vi skriver $2 \in \mathbb{N}$ fordi $2$ er et element i den naturlige mengden. Samtidig kan vi skrive $\pi \notin \mathbb{Z}$ siden $\pi$ ikke er et element i heltallsmengden. 
-Fyll ut tabellen under der du uttrykket om tallet er et element i mengden eller ikke:
+Fyll ut tabellen under der du uttrykker om tallet er et element i mengden eller ikke:
 
 |Tall| $\in$ eller $\notin$ | Mengde |
 |:---:|:---:|:---:|

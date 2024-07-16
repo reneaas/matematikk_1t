@@ -1,5 +1,14 @@
 # Grafisk representasjon av lineære funksjoner
 
+```{admonition} Læringsmål: representasjoner av lineære funksjoner
+:class: tip
+Målet med denne seksjonen er at du skal kunne:
+* Lese av og tegne koordinater i et koordinatssystem.
+* Kunne lage en verditabell og tegne grafen til en lineær funksjon i et koordinatssystem.
+* Ved å lese av stigningstall og skjæring med $y$-aksen fra en graf.
+```
+---
+
 Når vi kjenner formelen til en lineær funksjon $f(x) = ax + b$ kan vi tegne **grafen** til funksjonen. I mange tilfeller, er det nyttig å bruke grafen til å få oversikt over egenskapene til en funksjon og for å løse problemer i praksis. 
 Selv om du ofte vil bruke digitale hjelpemidler til å tegne grafen, er det å kunne skissere grafen raskt for hånd en uvurderlig ferdighet i matematikk, spesielt når man skal få rask oversikt over et problem man prøver å løse.
 
@@ -15,6 +24,23 @@ Steg 2: Tegne punktene i et koordinatsystem
 Steg 3: Tegne rette linjer mellom nabopunkter i koordinatsystemet
 : Vi tegner rette linjer mellom nabopunktene for å få en grafisk representasjon av funksjonen. Dette blir **grafen** til funksjonen.
 
+
+````{admonition} Påminnelse: koordinatssystem
+:class: dropdown, note
+
+Det *kartesiske* koordinatsystemet får vi ved å lage oss to tallinjer som står $90^\circ$ på hverandre, der null på hver tallinje ligger på samme sted. Vi kaller dette punktet for *origo*, og det har koordinatene $(0, 0)$.
+
+Den vannrette linja kaller vi oftest $x$-aksen. Et annet navn for aksen er *førsteaksen*.
+Den loddrette linja kaller vi $y$-aksen. Et annen navn for denne aksen er *andreaksen*. 
+Hvis vi har et punkt $(x, y)$ i koordinatsystemet, betyr det at vi går $x$ enheter langs $x$-aksen og $y$ enheter langs $y$-aksen fra origo. For eksempel betyr $(3, 2)$ at vi først flytter oss 3 plasser langs $x$-aksen og deretter 2 plasser langs $y$-aksen. Da står vi på punktet $(3, 2)$. Se figuren under: 
+
+```{figure} ./figurer/teori/koordinatsystem.svg
+:name: koordinatsystem
+:width: 80%
+
+Figuren viser et eksempel på et koordinatsystem der punktet $(3, 2)$ er markert. For å lese av $x$-koordinaten, trekker vi en linje fra punktet normalt ned på $x$-aksen. For å lese av $y$-koordinaten, trekker vi en linje fra punktet normalt bort på $y$-aksen.
+```
+````
 
 Vi tar et eksempel:
 
