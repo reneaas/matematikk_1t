@@ -23,3 +23,18 @@ class: theory
 En **betingelse** er en påstand som kan være sann eller usann. I Python er en betingelse en boolsk variabel (`bool`{l=python}), som kan ha verdiene `True` eller `False`.
 
 ````
+
+
+Kode:
+
+```{code-block} python
+---
+linenos: true
+---
+
+a = 5 
+if a > 3:
+    print("a er større enn 3")
+else:
+    print("a er ikke større enn 3")
+```
