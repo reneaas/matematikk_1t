@@ -62,6 +62,8 @@ Eksempel på regresjon i GeoGebra, dette gjør vi om til faner.
 GeoGebra har mange ulike modeller vi kan velge i tillegg til lineære modeller. Vi skal bruke flere av de andre modellene senere i 1T. 
 
 ## Oppgaver
+
+
 ### Oppgave 1
 I [denne](https://www.tek.no/nyheter/guide/i/XgPoLm/leie-sparkesykkel-dette-selskapet-er-best-og-billigst) saken fra tek.no finner du priser for ulike sparkesykkelselskap. 
 
@@ -103,4 +105,40 @@ Gunnar og Einar sår et tomatfrø. De følger nøye med og måler planten hver d
 3) Nei, det er ikke så sannsynlig, for planten vil ikke ha lineær vekst hele tiden. 
 
 ```
+
 ---
+
+
+````{admonition} Oppgave 3
+:class: problem-level-2
+Det er tre selskaper som tilbyr leie av elsparkesykler i Oslo (per juli 2024). I tabellen under vises oppstartspris og pris per minutt for de ulike selskapene. Selskapene har litt forskjellige tilbud til kundene sine. 
+
+| Selskap | Oppstartspris [kr] | Pris per minutt [kr/min] | Pris per km [kr/km] |
+| :---: | :---: | :---: | :---: |
+| Voi | 10 | 3 | - |
+| Bolt | 5 | - | 11.88 |
+| Ryde | 10 | 2.5 | - |
+
+<br>
+
+{style=lower-alpha}
+1. Lag en modell $g$ som gir $f(x)$ kroner for $x$ minutter med kjøretid med en sparkesykkel fra Voi. Hvor mye koster det å kjøre sparkesykkelen i 8 minutter?
+2. Lag en modell $g$ som gir $g(x)$ kroner for å kjøre $x$ minutter med en sparkesykkel fra Bolt.  Hvor mye koster det å kjøre sparkesykkelen i 8 minutter?
+3. Hvilket tilbud er mest gunstig dersom du skal kjøre $2 \ \mathrm{km}$? 
+
+<br>
+
+Oppgave 3a
+: Lag en modell $g$ som gir $f(x)$ kroner for $x$ minutter med kjøretid med en sparkesykkel fra Voi. Hvor mye koster det å kjøre sparkesykkelen i 8 minutter?
+
+<br>
+
+Vi antar at gjennomsnittsfarten under en kjøretur er $15 \ \mathrm{km/t}$.
+
+Oppgave 3b
+: Lag en modell $g$ som gir $g(x)$ kroner for å kjøre $x$ minutter med en sparkesykkel fra Bolt.  Hvor mye koster det å kjøre sparkesykkelen i 8 minutter?
+
+Oppgave 3c
+: Hvilket tilbud er mest gunstig dersom du skal kjøre $2 \ \mathrm{km}$? 
+
+````

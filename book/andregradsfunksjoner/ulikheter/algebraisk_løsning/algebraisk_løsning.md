@@ -48,7 +48,7 @@ $$
 som gir 
 
 $$
-x = -2 \quad \text{eller} \quad x = 3.
+x = -2 \quad \lor \quad x = 3.
 $$
 
 Dermed kan vi skrive
@@ -203,4 +203,114 @@ $$
 
 ````
 
+`````
+
+`````{admonition} Oppgave 2
+:class: problem-level-1
+
+En andregradsfunksjon er gitt ved $f(x) = -x^2 + 3x + 4$.
+
+Bestem løsningsmengden for $f(x) \leq 0$.
+
+
+````{admonition} Fasit
+:class: solution, dropdown
+
+```{figure} ./figurer/oppgaver/oppgave_2_uten_faktorer.svg
+:name: oppgave-2-uten-faktorer
+:width: 100%
+```
+
+
+$$
+x \in \mathbb{R} \setminus \langle -1, 4 \rangle.
+$$
+````
+
+````{admonition} Løsning
+:class: solution, dropdown
+Vi må først bestemme nullpunktene til $f(x)$ for å kunne nullpunktsfaktorisere: 
+
+$$
+x = \frac{-3 \pm \sqrt{(-3)^2 - 4\cdot (-1)\cdot 4}}{2\cdot (-1)} = \frac{-3 \pm \sqrt{9 + 16}}{-2} = \frac{-3\pm 5}{-2} = \frac{3 \mp 5}{2}
+$$
+
+som gir
+
+$$
+x = -1 \quad \lor \quad x = 4. 
+$$
+
+Vi husker på at den ledende koeffisienten er $a = -1$, som gir
+
+$$
+f(x) = -x^2 + 3x + 4 = -1\cdot(x + 1)(x - 4) = -(x + 1)(x - 4).
+$$
+
+Nå kan vi tegne fortegnsskjema for funksjonen:
+
+```{figure} ./figurer/oppgaver/oppgave_2.svg
+:name: andregradsulikheter-algebraisk-oppgaver-oppgave-2
+:width: 80%
+```
+
+Fra fortegnsskjemaet kan vi se at $f(x) \leq 0$ når 
+
+$$
+x \in \mathbb{R} \setminus \langle -1, 4 \rangle.
+$$
+````
+`````
+
+
+`````{admonition} Oppgave 3
+:class: problem-level-2
+En funksjon $g$ har fortegnslinje som vist i {numref}`andregradsulikheter-algebraisk-oppgaver-oppgave-3`. Bestem et mulig uttrykk for $g(x)$. 
+
+```{figure} ./figurer/oppgaver/oppgave_3_uten_faktorer.svg
+:name: andregradsulikheter-algebraisk-oppgaver-oppgave-3
+:width: 100%
+
+Fortegnsskjema for en funksjon $g(x)$.
+```
+
+
+````{admonition} Fasit
+:class: solution, dropdown
+Et eksempel på en funksjon som passer:
+
+$$
+g(x) = -(x - 2)(x + 2)
+$$
+
+Alle funksjoner på formen
+
+$$
+g(x) = a(x - 2)(x + 2), \quad a < 0
+$$
+
+passer med fortegnslinja til $g$. 
+````
+
+````{admonition} Løsning
+:class: solution, dropdown
+Vi kan tegne et mer detaljert fortegnsskjema der vi har én lineær faktor med nullpunkt i $x = -2$ og én lineær faktor med nullpunkt i $x = 2$: 
+
+```{figure} ./figurer/oppgaver/oppgave_3.svg
+:name: andregradsulikheter-algebraisk-oppgaver-oppgave-3-solution
+:width: 80%
+```
+
+Vi kan se at så lenge den ledende koeffisienten er negativ, får vi riktig fortegnslinje. Dermed er det meste generelle uttrykket for $g(x)$
+
+$$
+g(x) = a(x - 2)(x + 2), \quad a < 0.
+$$
+
+I fortegnslinja har vi valgt ett eksempel som passer:
+
+$$
+g(x) = -(x - 2)(x + 2)
+$$
+````
 `````

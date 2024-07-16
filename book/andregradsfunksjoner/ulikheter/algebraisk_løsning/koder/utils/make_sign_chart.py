@@ -137,7 +137,7 @@ def draw_factors(factors, roots, ax, color_pos, color_neg, x, dy=-1, dx=0.1):
             )
 
 
-def draw_function(factors, roots, ax, color_pos, color_neg, x, fn_name=None, include_factors=True, dy=-1, dx=0.1):
+def draw_function(factors, roots, ax, color_pos, color_neg, x, f, fn_name=None, include_factors=True, dy=-1, dx=0.1):
 
     if include_factors:
         y = (len(factors) + 1) * dy
@@ -250,7 +250,10 @@ def draw_vertical_lines(roots, factors, ax, include_factors=True, dy=-1):
 
 def make_axis():
     fig, ax = plt.subplots()
-
+    
+    # Moves ticks above the x-axis. Does not work properly.
+    # ax.tick_params(top=True, labeltop=True, bottom=False, labelbottom=False, length=10)
+    
     # Create x-axis and remove y-axis
     ax.spines["left"].set_color("none")  # Remove the left y-axis
     ax.spines["right"].set_color("none")  # Remove the right y-axis
@@ -284,9 +287,8 @@ def make_sign_chart(
     else:
         color_pos = color_neg = "black"
 
-    factors = get_factors(
-        polynomial=f, x=x
-    )  # Compute the linear factors of the polynomial
+
+    factors = get_factors(polynomial=f, x=x) # compute linear factors
     factors = sort_factors(factors=factors)  # Sort linear factors in ascending order.
 
     print(f"Creating sign chart for f(x) = {f} = {f.factor()}")
@@ -320,7 +322,7 @@ def make_sign_chart(
         draw_factors(factors, roots, ax, color_pos, color_neg, x)
 
     # Draw sign lines for function
-    draw_function(factors, roots, ax, color_pos, color_neg, x, fn_name, include_factors)
+    draw_function(factors, roots, ax, color_pos, color_neg, x, f, fn_name, include_factors)
 
     # Draw vertical lines to separate regions
     draw_vertical_lines(roots, factors, ax, include_factors)
@@ -368,7 +370,7 @@ def make_sign_chart(
     if include_factors:
         plt.tight_layout()
     else:
-        fig.set_size_inches(10, 2)
+        fig.set_size_inches(8, 2)
 
     if fname:
         plt.savefig(fname)
@@ -382,4 +384,4 @@ if __name__ == "__main__":
     # f = -(x**2 - 4*x - 5) * (x**2 + 1)
     # f = x**2 + 4*x + 4
     f = -2 * (x**2 - 1) ** 4 * (x - 3) * (x - 1)
-    make_sign_chart(f, x, color=False, include_factors=False)
+    make_sign_chart(f, x, color=True, include_factors=True)
