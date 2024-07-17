@@ -368,7 +368,7 @@ Utvid programmet fra {ref}`eksempel 3 <if_else_setninger-eksempel-3>` slik at pr
 * Skriver ut prisen på varen i stedet for merverdiavgiften. 
 
 
-:::{admonition} Hint 4.1: nyttig formel
+:::{admonition} Hint: nyttig formel
 ---
 class: hints, dropdown
 name: if_else_setninger-underveisoppgave-4-hint-1
@@ -387,7 +387,7 @@ class: solution, dropdown
 Vi legger til de tre linjene som mangler i programmet fra {ref}`eksempel 3 <if_else_setninger-eksempel-3>`:
 
 * På linje 2 har vi lagt at brukeren kan oppgi prisen på varen før merverdiavgift og lagrer verdien i `pris_før`{l=python}.
-* På linje 11 regner vi ut prisen på verdien etter merverdiavgift ved å bruke formelen i fra {ref}`hint 4.1 <if_else_setninger-underveisoppgave-4-hint-1>`. Vi lagrer resultatet i `pris_etter`{l=python}. 
+* På linje 11 regner vi ut prisen på verdien etter merverdiavgift ved å bruke formelen i fra {ref}`hintet <if_else_setninger-underveisoppgave-4-hint-1>`. Vi lagrer resultatet i `pris_etter`{l=python}. 
 * På linje 13 har vi byttet ut `print`{l=python}-utsagnet slik at det skriver ut verdien til `pris_etter`{l=python} i stedet for `merverdiavgift`{l=python}. 
 ```{code-block} python
 ---
@@ -466,7 +466,6 @@ Under vises et uferdig program som skal sjekke om et trekant med sidelengder $a$
 ```{code-block} python
 ---
 linenos:
-emphasize
 ---
 a = float(input("Skriv inn sidelengde a: "))
 b = float(input("Skriv inn sidelengde b: "))

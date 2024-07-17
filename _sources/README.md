@@ -72,7 +72,7 @@ Typisk når du merger, gjør du det fra skyen som medfører at du kanskje må fi
 |$\to$|`\to`|
 |$\gets$ |`\gets`|
 | \{ a, b \} |`\{a, b\}`|
-|$\frac{a}{b}$ |`\frac{a}{b}`|
+|$\dfrac{a}{b}$ |`\dfrac{a}{b}`|
 |$a\cdot b$ |`a\cdot b`|
 |$a_1, a_2, \ldots, a_n$ | `a_1, a_2, \ldots, a_n`|
 
@@ -160,13 +160,17 @@ Innholdet i boksen
 ````
 
 | Klasse | Beskrivelse |
-|:---:|:---:|
+|:---|:---|
 |`note`| Mindre biter med informasjon |
-|`tip`| Læringsål |
+|`tip`| Læringsmål |
 |`theory`| Brukes for hovedbiter med teori. Setninger, algoritmer, lemmaer osv. |
 |`example`| Brukes ved eksempler |
+|`answer, dropdown`| Brukes for fasit |
 |`solution, dropdown`| Bruker for løsningsforslag |
 |`check`| Brukes for underveisoppgaver |
+|`hints, dropdown`| Brukes for hint |
+|`sidenote, margin`| Brukes for oppklaringer i margen |
+|`margin`| Brukes for å lage bokser i margen |
 
 Dropdown bokser kan brukes sammen med de andre klassene, for eksempel:
 
@@ -181,7 +185,7 @@ Skjult innhold som kan åpnes ved å klikke på tittelboksen.
 ## Kode
 For å sette inn kode, brukes følgende syntaks:
 ````markdown
-```python
+```{code-block} python
 def f(x):
     return x**2
 ```
@@ -191,7 +195,7 @@ Bokser kan kombineres:
 
 `````markdown
 ````{dropdown} Klikk for kode
-```python
+```{code-block} python
 def f(x):
     return x**2
 ```
