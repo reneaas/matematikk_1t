@@ -129,3 +129,58 @@ Regn ut funksjonsverdiene i tabellen under:
 | $r(x) = -2x$ | $5$ | $r(5) = -2\cdot 5 = -10$  |
 ```
 ````
+
+## Regne ut funksjonsverdier med Python
+Vi kan bruke Python som en kalkulator for å regne ut funksjonsverdier. 
+
+::::{admonition} Eksempel 3: funksjonsverdier i Python
+---
+class: example
+---
+
+La oss regne ut funksjonsverdien til 
+
+$$
+f(x) = 3x - 1,
+$$
+
+i x = 2. Da kan vi skrive følgende kode i Python:
+
+
+```{code-block} python
+---
+linenos:
+---
+x = 2
+y = 3*x - 1
+
+print(f"{y = }")
+
+```
+som gir utskriften
+```console
+y = 5
+```
+::::
+
+Men i eksemplet over bruker vi ikke notasjonen for funksjoner. Men i Python har vi faktisk støtte for akkurat dette. 
+
+
+:::{admonition} Ordforklaring: syntaks
+---
+class: sidenote, margin
+--- 
+Ordet **syntaks** betyr "regler for å skrive kode". Tenk på det som grammatikk - men i motsetning til norsklæreren, så skjønner ikke Python hva du mener hvis du ikke skriver riktig.
+:::
+
+::::{admonition} Syntaks: Funksjoner i Python
+---
+class: theory
+---
+En funksjon i Python har følgende syntaks:
+
+
+```{code-block} python
+def f(x):
+    return funksjonsuttrykk
+```
