@@ -1,1 +1,1 @@
-# `for`-løkker
+# `for`{l=python}-løkker

@@ -1,9 +1,9 @@
 .figure .caption {
-  text-align: left;
+  text-align: left !important;
 }
 
 .image .caption {
-  text-align: left;
+  text-align: left !important;
 }
 
 /* Stil for teoriblokker */
@@ -72,7 +72,7 @@ div.solution > .admonition-title::before {
 }
 
 div.solution > .admonition-title::after {
-  content: "✅";
+  content: "🪄";
 }
 
 
@@ -165,18 +165,6 @@ div.discussion > .admonition-title::after {
   content: "💬";
 }
 
-/* Custom style for solution admonition */
-/* div.solution {
-  border-left-color: rgba(171, 86, 241, 0.6);
-} */
-
-/* Ensure direct child targeting and apply background color */
-/* div.solution > .admonition-title {
-  background-color: rgba(171, 86, 241, 0) !important;
-  position: relative;
-} */
-
-
 
 /* Stil for oppgaver med programmering */
 div.progging {
@@ -196,7 +184,25 @@ div.progging > .admonition-title::after {
 }
 
 
-/* Stil for oppgaver med programmering */
+/* Stil for side notes */
+div.sidenote {
+  border-left-color: rgba(0, 195, 255, 0.6);
+}
+
+div.sidenote > .admonition-title {
+  background-color: rgba(0, 195, 255, 0.2);
+}
+
+div.sidenote > .admonition-title::before {
+  color: rgba(0, 195, 255, 0);
+}
+
+div.sidenote > .admonition-title::after {
+  content: "📜";
+}
+
+
+/* Stil for hints */
 div.hints {
   border-left-color: rgba(0, 195, 255, 0.6);
 }
@@ -210,8 +216,9 @@ div.hints > .admonition-title::before {
 }
 
 div.hints > .admonition-title::after {
-  content: "📜";
+  content: "🔑";
 }
+
 
 
 /* To avoid clipping of equations. Adds vertical whitespace for the display of equations. */
@@ -233,9 +240,6 @@ div.hints > .admonition-title::after {
 }
 
 
-
-
-
 /* Center line numbers and ensure they stay centered even with multiple digits */
 .highlight .linenos {
   display: inline-block;
@@ -248,26 +252,25 @@ div.hints > .admonition-title::after {
 }
 
 
-
 /* Ensure the code block doesn't overlap with the line numbers */
 .highlight pre {
   margin-left: 3.5em; /* Adjust this value to match or slightly exceed the .linenos width and padding */
 }
 
+
+/* Configure line highlighting for light and dark mode */
 [data-mode=light] .highlight .hll {
   background-color: #03ff9a38 !important; 
 }
 
 [data-mode=dark] .highlight .hll {
-  background-color: #5408634a !important; 
+  background-color: #6038688e !important; 
 }
 
 /* Style for system wide preferance [data-mode=auto] */
-
-/* Dark mode styles for line numbers */
 @media (prefers-color-scheme: dark) {
   .highlight .hll {
-    background-color: #5408634a !important; 
+    background-color: #6038688e !important; 
   }
 }
 
@@ -277,3 +280,11 @@ div.hints > .admonition-title::after {
   }
 }
 
+
+
+
+/* Highlight # TODO comments for python code in jupyterbook */
+/* .highlight:not(.pygments) .c1:contains("# TODO") {
+  color: red;
+  font-weight: bold;
+} */
