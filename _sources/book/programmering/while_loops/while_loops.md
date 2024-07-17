@@ -1,1 +1,1 @@
-# `while`-løkker
+# `while`{l=python}-løkker
