@@ -466,18 +466,18 @@ Under vises et uferdig program som skal sjekke om et trekant med sidelengder $a$
 ```{code-block} python
 ---
 linenos:
+emphasize
 ---
 a = float(input("Skriv inn sidelengde a: "))
 b = float(input("Skriv inn sidelengde b: "))
 c = float(input("Skriv inn sidelengde c: "))
 
-# TODO
-# Bytt ut betingelse1, betingelse2 og betingelse3
-if betingelse1: 
+# TODO: bytt ut betingelse1 og betingelse2
+if a**2 + b**2 == c**2: 
     print("Trekanten er rettvinklet")
-elif betingelse2: 
+elif betingelse1: 
     print("Trekanten er rettvinklet")
-elif betingelse3:
+elif betingelse2:
     print("Trekanten er rettvinklet")
 else:
     print("Trekanten er ikke rettvinklet")
