@@ -50,7 +50,7 @@ Under vises funksjonsuttrykket til tre lineære funksjoner. Vi skal bestemme sti
 | $g$ | $g(x) = -2x + 4$ | $-2$ | $4$ |
 | $h$ | $h(x) = -x + 2$ | $-1$ | $2$ |
 | $r$ | $r(x) = 3$ | $0$ | $3$ |
-| $s$ | $s(x) = \frac{1}{2}x$ | $\frac{1}{2}$ | $0$ |
+| $s$ | $s(x) = \dfrac{1}{2}x$ | $\dfrac{1}{2}$ | $0$ |
 
 ```
 
@@ -96,7 +96,7 @@ Under vises eksempler på utregning av funksjonsverdier. Vi erstatter rett og sl
 | $g(x) = -2x + 4$ | $3$ | $g(3) = -2\cdot 3 + 4 = -6 + 4 = -2$ |
 | $h(x) = -x + 2$ | $0$ | $h(0) = -0 + 2 = 2$ |
 | $r(x) = 3$ | $1$ | $r(1) = 3$ |
-| $s(x) = \frac{1}{2}x$ | $4$ | $s(4) = \frac{1}{2}\cdot 4 = 2$ |
+| $s(x) = \dfrac{1}{2}x$ | $4$ | $s(4) = \dfrac{1}{2}\cdot 4 = 2$ |
 
 ```
 

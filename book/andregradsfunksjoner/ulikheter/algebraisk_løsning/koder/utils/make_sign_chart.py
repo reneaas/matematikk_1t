@@ -6,10 +6,10 @@ plt.rc("text", usetex=True)
 
 
 def get_factors(polynomial: sp.Expr, x: sp.symbols) -> list[dict]:
-    polynomial = sp.expand(
-        polynomial
-    )  # expand first in case multiple factors of the same kind are present
-    factor_list = sp.factor_list(polynomial)
+    # expand first in case multiple factors of the same kind are present
+    polynomial = sp.expand(polynomial)
+
+    factor_list = sp.factor_list(polynomial)  # Get list of factors of the polynomial
     leading_coeff = factor_list[0]
     if not leading_coeff == 1:
         linear_factors = [{"expression": leading_coeff, "exponent": 1, "root": -np.inf}]
@@ -21,7 +21,11 @@ def get_factors(polynomial: sp.Expr, x: sp.symbols) -> list[dict]:
         root = sp.solve(linear_factor, x)
         if root == []:
             linear_factors.append(
-                {"expression": linear_factor, "exponent": exponent, "root": -np.inf}
+                {
+                    "expression": linear_factor,
+                    "exponent": exponent,
+                    "root": -np.inf,
+                }
             )
         else:
             linear_factors.append(
@@ -40,7 +44,7 @@ def sort_factors(factors: list[dict]) -> list[dict]:
     return factors
 
 
-def draw_factors(factors, roots, ax, color_pos, color_neg, x, dy=-1, dx=0.1):
+def draw_factors(factors, roots, ax, color_pos, color_neg, x, dy=-1, dx=0.1) -> None:
     # Draw horisontal sign lines for each factor
     for i, factor in enumerate(factors):
         expression = str(factor.get("expression"))
@@ -83,7 +87,8 @@ def draw_factors(factors, roots, ax, color_pos, color_neg, x, dy=-1, dx=0.1):
 
         elif factor.get("exponent") % 2 == 0:
             root = factor.get("root")
-            root_idx = roots.index(float(root))
+            root_idx = roots.index(root)
+
             ax.plot(
                 [-0.7, root_idx - dx],
                 [(i + 1) * dy, (i + 1) * dy],
@@ -99,7 +104,6 @@ def draw_factors(factors, roots, ax, color_pos, color_neg, x, dy=-1, dx=0.1):
                 lw=2,
             )
 
-            root_idx = roots.index(float(root))
             plt.text(
                 x=root_idx,
                 y=(i + 1) * dy,
@@ -111,7 +115,8 @@ def draw_factors(factors, roots, ax, color_pos, color_neg, x, dy=-1, dx=0.1):
 
         else:
             root = factor.get("root")
-            root_idx = roots.index(float(root))
+            root_idx = roots.index(root)
+
             ax.plot(
                 [-0.7, root_idx - dx],
                 [(i + 1) * dy, (i + 1) * dy],
@@ -137,7 +142,19 @@ def draw_factors(factors, roots, ax, color_pos, color_neg, x, dy=-1, dx=0.1):
             )
 
 
-def draw_function(factors, roots, ax, color_pos, color_neg, x, f, fn_name=None, include_factors=True, dy=-1, dx=0.1):
+def draw_function(
+    factors,
+    roots,
+    ax,
+    color_pos,
+    color_neg,
+    x,
+    f,
+    fn_name=None,
+    include_factors=True,
+    dy=-1,
+    dx=0.1,
+):
 
     if include_factors:
         y = (len(factors) + 1) * dy
@@ -209,7 +226,6 @@ def draw_function(factors, roots, ax, color_pos, color_neg, x, f, fn_name=None, 
         )
 
 
-
 def draw_vertical_lines(roots, factors, ax, include_factors=True, dy=-1):
     # Draw vertical lines to separate regions
     offset_dy = 0.2
@@ -248,12 +264,10 @@ def draw_vertical_lines(roots, factors, ax, include_factors=True, dy=-1):
                 lw=1,
             )
 
+
 def make_axis():
     fig, ax = plt.subplots()
-    
-    # Moves ticks above the x-axis. Does not work properly.
-    # ax.tick_params(top=True, labeltop=True, bottom=False, labelbottom=False, length=10)
-    
+
     # Create x-axis and remove y-axis
     ax.spines["left"].set_color("none")  # Remove the left y-axis
     ax.spines["right"].set_color("none")  # Remove the right y-axis
@@ -287,27 +301,13 @@ def make_sign_chart(
     else:
         color_pos = color_neg = "black"
 
-
-    factors = get_factors(polynomial=f, x=x) # compute linear factors
+    factors = get_factors(polynomial=f, x=x)  # compute linear factors
     factors = sort_factors(factors=factors)  # Sort linear factors in ascending order.
 
     print(f"Creating sign chart for f(x) = {f} = {f.factor()}")
 
     # Create figure
     fig, ax = make_axis()
-    # fig, ax = plt.subplots()
-
-    # # Create x-axis and remove y-axis
-    # ax.spines["left"].set_color("none")  # Remove the left y-axis
-    # ax.spines["right"].set_color("none")  # Remove the right y-axis
-    # ax.spines["bottom"].set_position("zero")  # Move the bottom x-axis to y=0
-    # ax.spines["top"].set_color("none")  # Remove the top x-axis
-
-    # # Attach arrow to the right end of the x-axis
-    # ax.plot(1, 0, ">k", transform=ax.get_yaxis_transform(), clip_on=False)
-
-    # # Label the x-axis
-    # ax.set_xlabel(r"$x$", fontsize=16, loc="right")
 
     # Set tick marks to roots of the polynomial
     roots = [factor.get("root") for factor in factors if factor.get("root") != -np.inf]
@@ -322,44 +322,12 @@ def make_sign_chart(
         draw_factors(factors, roots, ax, color_pos, color_neg, x)
 
     # Draw sign lines for function
-    draw_function(factors, roots, ax, color_pos, color_neg, x, f, fn_name, include_factors)
+    draw_function(
+        factors, roots, ax, color_pos, color_neg, x, f, fn_name, include_factors
+    )
 
     # Draw vertical lines to separate regions
     draw_vertical_lines(roots, factors, ax, include_factors)
-
-    # # Draw vertical lines to separate regions
-    # dy = -1
-    # dx = 0.1
-    # offset_upper = 1 / (len(factors) + 2)
-    # offset_lower = (len(factors) + 1) / (len(factors) + 2)
-
-    # offset_dy = 0.2
-
-    # n_factors_without_roots = len(
-    #     [factor for factor in factors if factor.get("root") == -np.inf]
-    # )
-
-    # print(f"{n_factors_without_roots = }")
-
-    # offset = 1
-    # for i, root in enumerate(roots):
-    #     plt.plot(
-    #         [i, i],
-    #         [-0.4, (i + n_factors_without_roots + offset) * dy + offset_dy],
-    #         color="black",
-    #         linestyle="--",
-    #         lw=1,
-    #     )
-    #     plt.plot(
-    #         [i, i],
-    #         [
-    #             (i + n_factors_without_roots + offset) * dy - offset_dy,
-    #             (len(factors) + 1) * dy + offset_dy,
-    #         ],
-    #         color="black",
-    #         linestyle="--",
-    #         lw=1,
-    #     )
 
     # Remove tick labels on y-axis
     plt.yticks([])

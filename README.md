@@ -190,14 +190,3 @@ def f(x):
     return x**2
 ```
 ````
-
-Bokser kan kombineres:
-
-`````markdown
-````{dropdown} Klikk for kode
-```{code-block} python
-def f(x):
-    return x**2
-```
-````
-`````

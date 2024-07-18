@@ -14,5 +14,8 @@ if __name__ == "__main__":
     f = -x**2 + 3*x + 4
     fname = "../../figurer/oppgaver/oppgave_2.svg"
     make_sign_chart(f, x, fn_name="f(x)", fname=fname)
+
+    fname = "../../figurer/oppgaver/oppgave_2_uten_faktorer.svg"
+    make_sign_chart(f, x, fn_name="f(x)", fname=fname, include_factors=False)
     
 
