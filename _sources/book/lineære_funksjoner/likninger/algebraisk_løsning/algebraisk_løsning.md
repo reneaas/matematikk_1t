@@ -98,8 +98,13 @@ Vi ser at *venstre side* og *høyre side* er like, og dermed er løsningen $x=-2
 Fra tidligere er du antakeligvis kjent med å oppgi løsningen av en likning som $x = -2$, som i underveisoppgaven over. Tidligere i 1T har du også lært om mengder. Mengdene kan også brukes til å uttrykke løsningen av likninger. Vi kan da skrive $ L = \{-2\}$. Vi leser dette som at løsningsmengden består av tallet $-2$. Det er likevel ofte nyttig å være tydelig på hvilken variabel som svarer til løsningsmengden, og vi skriver derfor ofte $x \in \{-2\}$. 
 
 ## Oppgaver
-### Oppgave 1
+
+:::::{admonition} Oppgave 1
+---
+class: problem-level-1
+---
 Hvilke av linjene under er likninger?
+
 1. $4$
 2. $x+4$
 3. $4x$
@@ -108,67 +113,138 @@ Hvilke av linjene under er likninger?
 6. $4x = 16$ 
 7. $4\left(x+1\right) = 4x + 4$
 
-```{admonition} Fasit
-:class: dropdown, note
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
 
 Linje 1-3 er uttrykk, mens linje 4-6 er likninger. Linje 7 er en identitet, fordi løsningsmengden er $L = \mathbb{R}$, altså er likningen oppfylt for alle reelle tall. 
-
-```
-
-```{admonition} Algebraiske lover
-:class: note, dropdown, margin
-1. $$a\cdot (b + c) = a\cdot b + a \cdot c$$
-2. $$a - (b - c) = a - b + c$$
-3. $$\frac{a}{c}\cdot \frac{b}{d} = \frac{a \cdot b}{c \cdot d}$$
-4. $$\frac{a\cdot c}{b \cdot c} = \frac{a}{b}$$
-5. $$\frac{a\cdot b}{c} = a\cdot \frac{b}{c}$$
-6. $$\frac{a}{b} : \frac{c}{d} = \frac{a}{b} \cdot \frac{d}{c}$$
-7. $$\frac{a}{c} + \frac{b}{d} = \frac{a \cdot d + b \cdot c}{c \cdot d}$$
-```
+:::
+:::::
 
 
-### Oppgave 2
-Løs likningene og sett prøve på svaret. 
+:::::{admonition} Oppgave 2 
+---
+class: problem-level-1
+---
+Løs likningene under og sett prøve på svaret.
 
-1. $ 2𝑥=4 $
-2. $ 2𝑥+2=4 $
-3. $ 2𝑥+2=𝑥+ 4$
-4. $2𝑥−2=𝑥+4$
-5. $\frac{𝑥}{2}=4$
-6. $\frac{𝑥}{2}+3=4$
-7. $\frac{2}{𝑥}=4$
+Oppgave 2a
+: $$ 2x = 4$$
 
-```{admonition} Fasit
-:class: dropdown, note
+:::{admonition} Fasit: 2a
+---
+class: dropdown, answer
+---
+$$x = 2 \quad \Leftrightarrow \quad x \in \{2\}.$$
+:::
 
-1. $x = 2$ eller $L=\{2\}$
-2. $ x = 1$ eller $L=\{1\}$
-3. $ x = 2 $ eller $L=\{2\}$
-4. $ x = 6 $ eller $L=\{6\}$
-5. $ x = 8 $ eller $L=\{8\}$
-6. $ x = 2 $ eller $L=\{2\}$
-7. $ x = \frac{1}{2}$ eller $L=\{\frac{1}{2}\}$
+Oppgave 2b
+: $$2x + 2 = 4$$
 
-```
-### Oppgave 3
-Løs likningene. 
-1. $ \frac{𝑥}{2}−\left(\frac{𝑥}{3}+\frac{1}{2}\right)=𝑥−2\left(\frac{𝑥}{4}−1\right)$
-2. $ 3x + 9 = 3(x + 3)$
-3. $ 3𝑥 − \left(𝑥−2 \right) =\left(2𝑥−1\right)−\left(3𝑥+9\right)$
-4. $ \frac{1}{2} \left(𝑥−4\right)−\left(\frac{2𝑥}{3}−1\right)=\frac{1}{3} \left(𝑥−1\right)+\frac{𝑥}{6}$
-5. $ 2 x + 3 = 2 x + 4$
+:::{admonition} Fasit: 2b
+---
+class: dropdown, answer
+---
 
-```{admonition} Fasit
-:class: dropdown, note
+$$x = 1 \quad \Leftrightarrow \quad x \in \{1\}.$$
+:::
 
-1. $x = \frac{-15}{2}$ eller $L=\{\frac{-15}{2}\}$
-2. $ x \in \mathbb{R} $ eller $L=\mathbb{R}$
-Denne likningen er en identitet, og er gyldig for alle verdier av $x$
-3. $ x = -4 $ eller $L=\{-4\}$
-4. $ x = -1 $ eller $L=\{-1\}$
-5. Ingen løsning eller $L=\{\emptyset}$
+Oppgave 2c
+: $$2x + 2 = x + 4$$
 
-```
+:::{admonition} Fasit: 2c
+---
+class: dropdown, answer
+---
+$$x = 2 \quad \Leftrightarrow \quad x \in \{2\}.$$
+:::
 
-### Oppgave 4
-Oppgave der elevene skal oppdage feil
+Oppgave 2d
+: $$2x - 2 = x + 4$$
+
+:::{admonition} Fasit: 2d
+---
+class: dropdown, answer
+---
+$$x = 6 \quad \Leftrightarrow \quad x \in \{6\}.$$
+:::
+
+Oppgave 2e
+: $$\dfrac{x}{2} = 4$$
+
+:::{admonition} Fasit: 2e
+---
+class: dropdown, answer
+---
+$$x = 8 \quad \Leftrightarrow \quad x \in \{8\}.$$
+:::
+
+Oppgave 2f
+: $$\dfrac{x}{2} + 3 = 4$$
+
+
+:::{admonition} Fasit: 2f
+---
+class: dropdown, answer
+---
+$$x = 2 \quad \Leftrightarrow \quad x \in \{2\}.$$
+:::
+:::::
+
+
+:::::{admonition} Oppgave 3
+---
+class: problem-level-2
+---
+Løs likningene.
+
+Oppgave 3a
+: $$ 3x + 9 = 3(x + 3)$$
+
+:::{admonition} Fasit: 3a
+---
+class: dropdown, answer
+---
+Likningen er en identitet, så løsningen er $x \in \mathbb{R}$. Venstre og høyre side er like for alle reelle tall.
+:::
+
+Oppgave 3b
+: $$ 3x - (x - 2) = (2x - 1) - (3x + 9)$$
+
+:::{admonition} Fasit: 3b
+---
+class: dropdown, answer
+---
+$$
+x = -4 \quad \Leftrightarrow \quad x \in \{-4\}.
+$$
+:::
+
+Oppgave 3c
+: $$ \dfrac{x}{2}−\left(\dfrac{x}{3}+\dfrac{1}{2}\right)=𝑥−2\left(\dfrac{x}{4}−1\right)$$
+
+:::{admonition} Fasit: 3c
+---
+class: dropdown, answer
+---
+$$
+x = -\dfrac{15}{2} \quad \Leftrightarrow \quad x \in \left\{-\dfrac{15}{2}\right\}.
+$$
+:::
+
+
+Oppgave 3d
+: $$ \dfrac{1}{2} \left(x-4\right)-\left(\dfrac{2x}{3}-1\right)=\dfrac{1}{3} \left(x-1\right)+\dfrac{x}{6}$$
+
+:::{admonition} Fasit: 3d
+---
+class: dropdown, answer
+---
+$$
+x = -1 \quad \Leftrightarrow \quad x \in \{-1\}.
+$$
+:::
+
+
+:::::
