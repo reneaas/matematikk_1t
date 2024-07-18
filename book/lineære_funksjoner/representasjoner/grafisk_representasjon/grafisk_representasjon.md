@@ -77,6 +77,45 @@ Steg 3: Tegn rette linjer mellom nabopunkter i koordinatsystemet
 ```
 ````
 
+
+
+:::::{comment}
+::::{admonition} Eksempel 2: lage verditabell med Python
+---
+class: example
+name: grafisk-representasjon-eksempel-2
+---
+Det kan være litt jobb å regne ut en verditabell for hånd. Vi kan skrive en kort Pythonkode som gjør det hele for oss som følger:
+
+```{code-block} python
+---
+linenos:
+---
+def f(x):
+    return 2*x - 4
+
+print("x", "f(x)", sep="\t")    # sep="\t" gir tabellformat
+for x in range(-1, 4, 1):       # gir x = -1, 0, 1, 2, 3
+    print(x, f(x), sep="\t")
+```
+
+som gir utskriften
+
+```console
+x	f(x)
+-1	-6
+0	-4
+1	-2
+2	0
+3	2
+```
+::::
+:::::
+
+
+
+::::
+
 Gjett hva... nå er det **din tur**!
 
 

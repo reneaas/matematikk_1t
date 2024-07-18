@@ -219,18 +219,17 @@ x = 2
 class: check
 ---
 
-Under vises et uferdig program. Sett inn en passende betingelse på linje 4 slik at programmet skriver ut verdien til `y`{l=python} (du må bytte ut `NotImplemented`{l=python} med en betingelse). 
+Under vises et uferdig program. Sett inn en passende betingelse på linje 4 slik at programmet skriver ut verdien til `y`{l=python}.
 
 
 ```{code-block} python
 ---
 linenos:
-emphasize-lines: 4
 ---
 x = 2
 y = 2*x + 3
 
-if NotImplemented:
+if betingelse: # FIKSMEG!
     print(f"{y = }")
 ```
 
@@ -474,9 +473,9 @@ c = float(input("Skriv inn sidelengde c: "))
 # TODO: bytt ut betingelse1 og betingelse2
 if a**2 + b**2 == c**2: 
     print("Trekanten er rettvinklet")
-elif betingelse1: 
+elif betingelse1: # FIKSMEG
     print("Trekanten er rettvinklet")
-elif betingelse2:
+elif betingelse2: # FIKSMEG
     print("Trekanten er rettvinklet")
 else:
     print("Trekanten er ikke rettvinklet")
