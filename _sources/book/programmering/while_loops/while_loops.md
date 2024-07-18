@@ -69,14 +69,14 @@ Spørsmål 2: Hva betyr `i = i + 1`{l=python}?
 ---
 class: check
 ---
-I denne oppgaven kan du kopiere programmet fra {ref}`eksempel 1 <while-loops-eksempel-1>`. 
+I denne oppgaven kan du kopiere programmet fra {ref}`eksempel 1 <while-loops-example-1>`. 
 
 
 Deloppgave 1
-: Endre programmet fra {ref}`eksempel 1 <while-loops-eksempel-1>` slik at det skriver ut alle heltall $i \in \{1, 2, \ldots, 10\}$.
+: Endre programmet fra {ref}`eksempel 1 <while-loops-example-1>` slik at det skriver ut alle heltall $i \in \{1, 2, \ldots, 10\}$.
 
 Deloppgave 2
-: Endre programmet fra {ref}`eksempel 1 <while-loops-eksempel-1>` slik at det skriver ut alle heltall $i \in \{2, 4, 6, \ldots, 10\}$.
+: Endre programmet fra {ref}`eksempel 1 <while-loops-example-1>` slik at det skriver ut alle heltall $i \in \{2, 4, 6, \ldots, 10\}$.
 
 
 

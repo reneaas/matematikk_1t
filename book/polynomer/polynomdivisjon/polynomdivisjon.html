@@ -69,7 +69,7 @@
     <script src="../../../_static/custom.js?v=e6295722"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="12.2. Mer komplisert polynomdivisjon" href="generell_polynomdivisjon.html" />
+    <link rel="next" title="11.2. Mer komplisert polynomdivisjon" href="generell_polynomdivisjon.html" />
     <link rel="prev" title="10. Egenskaper ved andregradsfunksjoner" href="../../andregradsfunksjoner/egenskaper/intro_egenskaper.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="norwegian"/>
@@ -157,8 +157,14 @@
   
   
   
+    
+    
+      
+    
+    
+    <img src="../../../_static/evg_logo_med_1T.jpg" class="logo__image only-light" alt="Matematikk 1T - Home"/>
+    <script>document.write(`<img src="../../../_static/evg_logo_med_1T.jpg" class="logo__image only-dark" alt="Matematikk 1T - Home"/>`);</script>
   
-    <p class="title logo__title">Matematikk 1T</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -237,8 +243,10 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Polynomer</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">11. Polynomdivisjon</a></li>
-
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">11. Polynomdivisjon</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="generell_polynomdivisjon.html">11.2. Mer komplisert polynomdivisjon</a></li>
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Programmering</span></p>
 <ul class="nav bd-sidenav">
@@ -396,16 +404,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">11. Polynomdivisjon</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">12. Oppgaver</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#level-1">12.1. Level 1 🔥</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">12.1.1. Oppgave 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">11.1. Oppgaver</a></li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -418,12 +418,6 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="polynomdivisjon">
 <h1><span class="section-number">11. </span>Polynomdivisjon<a class="headerlink" href="#polynomdivisjon" title="Link to this heading">#</a></h1>
-<p>Polynomdivisjon er en algoritme som lar oss dele et polynom med et annet. Når vi deler et polynom <span class="math notranslate nohighlight">\(p(x)\)</span> med et annet polynom <span class="math notranslate nohighlight">\(q(x)\)</span>, vil vi få en <strong>kvotient</strong> <span class="math notranslate nohighlight">\(k(x)\)</span> og en <strong>rest</strong> <span class="math notranslate nohighlight">\(r(x)\)</span> slik at</p>
-<div class="math notranslate nohighlight">
-\[
-\frac{p(x)}{q(x)} = k(x) + \frac{r(x)}{q(x)}
-\]</div>
-<p>Det er ikke alltid vi får en rest. Da sier vi at polynomdivisjonen <strong>går opp</strong>. Ofte skriver vi polynomdivisjon som <span class="math notranslate nohighlight">\(p(x) \div q(x)\)</span> i stedet for som en brøk <span class="math notranslate nohighlight">\(p(x) / q(x)\)</span>. Men begge skrivemåter er meningsfulle og betyr det samme.</p>
 <div class="tip admonition">
 <p class="admonition-title">Læringsmål: polynomdivisjon</p>
 <p>Etter å gått gjennom dette kapittelet skal du kunne:</p>
@@ -433,6 +427,12 @@ document.write(`
 </ul>
 <p>Vi starter med et konkret eksempel uten rest. Vi tar første eksempel grundig:</p>
 </div>
+<p>Polynomdivisjon er en algoritme som lar oss dele et polynom med et annet. Når vi deler et polynom <span class="math notranslate nohighlight">\(p(x)\)</span> med et annet polynom <span class="math notranslate nohighlight">\(q(x)\)</span>, vil vi få en <strong>kvotient</strong> <span class="math notranslate nohighlight">\(k(x)\)</span> og en <strong>rest</strong> <span class="math notranslate nohighlight">\(r(x)\)</span> slik at</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{p(x)}{q(x)} = k(x) + \frac{r(x)}{q(x)}
+\]</div>
+<p>Det er ikke alltid vi får en rest. Da sier vi at polynomdivisjonen <strong>går opp</strong>. Ofte skriver vi polynomdivisjon som <span class="math notranslate nohighlight">\(p(x) \div q(x)\)</span> i stedet for som en brøk <span class="math notranslate nohighlight">\(p(x) / q(x)\)</span>. Men begge skrivemåter er meningsfulle og betyr det samme.</p>
 <div class="example admonition">
 <p class="admonition-title">Eksempel 1 (uten rest)</p>
 <p>Vi skal dele polynomet <span class="math notranslate nohighlight">\(x^3 + 2x^2 - 5x - 6\)</span> med <span class="math notranslate nohighlight">\(x - 2\)</span>. Først skal vi se hele resultatet:</p>
@@ -535,7 +535,9 @@ x^3 + 2x^2 - 5x - 6 = (x - 2)(x^2 + 4x + 3)
 \[
 (x^3 + 5x^2 - 1) \div (x + 1)
 \]</div>
-<p><strong>Hint:</strong> Skriv polynomet som <span class="math notranslate nohighlight">\(x^3 + 5x^2 + 0x - 1\)</span> når du utfører polynomdivisjonen. Eller etterlat en plass der hvor leddet til <span class="math notranslate nohighlight">\(x\)</span> mangler så du ikke glemmer å ta med det i divisjonen!</p>
+<div class="hints dropdown admonition">
+<p class="admonition-title">Hint</p>
+<p>Skriv polynomet som <span class="math notranslate nohighlight">\(x^3 + 5x^2 + 0x - 1\)</span> når du utfører polynomdivisjonen. Eller etterlat en plass der hvor leddet til <span class="math notranslate nohighlight">\(x\)</span> mangler så du ikke glemmer å ta med det i divisjonen!</p>
 </div>
 <div class="solution dropdown admonition">
 <p class="admonition-title">Løsning</p>
@@ -543,14 +545,10 @@ x^3 + 2x^2 - 5x - 6 = (x - 2)(x^2 + 4x + 3)
 <a class="reference internal image-reference" href="../../../_images/underveisoppgave2.svg"><img alt="../../../_images/underveisoppgave2.svg" src="../../../_images/underveisoppgave2.svg" style="width: 70%;" /></a>
 </figure>
 </div>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="oppgaver">
-<h1><span class="section-number">12. </span>Oppgaver<a class="headerlink" href="#oppgaver" title="Link to this heading">#</a></h1>
-<section id="level-1">
-<h2><span class="section-number">12.1. </span>Level 1 🔥<a class="headerlink" href="#level-1" title="Link to this heading">#</a></h2>
-<section id="oppgave-1">
-<h3><span class="section-number">12.1.1. </span>Oppgave 1<a class="headerlink" href="#oppgave-1" title="Link to this heading">#</a></h3>
-<div class="problem admonition">
+</div>
+<section id="oppgaver">
+<h2><span class="section-number">11.1. </span>Oppgaver<a class="headerlink" href="#oppgaver" title="Link to this heading">#</a></h2>
+<div class="problem-level-1 admonition">
 <p class="admonition-title">Oppgave 1</p>
 <p>Utfør polynomdivisjonen</p>
 <div class="math notranslate nohighlight">
@@ -592,7 +590,6 @@ x = -2 \quad \lor \quad x = 3.
 <p>Derfor er <span class="math notranslate nohighlight">\(x = -2\)</span> og <span class="math notranslate nohighlight">\(x = 3\)</span> nullpunkter til <span class="math notranslate nohighlight">\(f(x)\)</span>.</p>
 </div>
 </div>
-</section>
 </section>
 <div class="toctree-wrapper compound">
 </div>
@@ -642,7 +639,7 @@ x = -2 \quad \lor \quad x = 3.
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">12.2. </span>Mer komplisert polynomdivisjon</p>
+        <p class="prev-next-title"><span class="section-number">11.2. </span>Mer komplisert polynomdivisjon</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -662,16 +659,8 @@ x = -2 \quad \lor \quad x = 3.
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">11. Polynomdivisjon</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">12. Oppgaver</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#level-1">12.1. Level 1 🔥</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgave-1">12.1.1. Oppgave 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">11.1. Oppgaver</a></li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-
   </nav></div>
 
 </div></div>

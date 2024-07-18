@@ -286,7 +286,7 @@ Grafene til $f(x) = 2x + 2$ og $g(x) = 2(x+1)$ overlapper fordi likningen $2(x +
 
 
 ## Oppgaver
----
+
 ````{admonition} Oppgave 1
 :class: problem
 Bruk figuren under til å løse likningene: 
