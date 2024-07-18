@@ -20,8 +20,6 @@ Du bør ha lest {ref}`kapittelet om while-løkker <while-loops>` før du leser d
 
 En `for`{l=python}-løkke kan tenkes på som en *spesiell* type `while`{l=python}-løkke som automatiserer tellingen for deg. Det finnes mange typer `for`{l=python}-løkker, men vi skal konsentrere oss om en som er mest nyttig i matematikk.
 
-```{admonition} Læringsutbytte
-```
 
 ::::{admonition} Syntaks: `for`{l=python}-løkker med `range`{l=python}-funksjonen
 ---

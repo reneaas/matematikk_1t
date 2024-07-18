@@ -247,11 +247,6 @@ Fyll ut tabellen under:
 
 
 
-## Sammensatte mengder som ulikheter
-
-
----
-
 ## Oppgaver
 
 ```{admonition} Den tomme mengden
@@ -313,5 +308,3 @@ Fyll ut tabellen under:
 ```
 
 ````
-
----
