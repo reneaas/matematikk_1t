@@ -135,7 +135,6 @@ På samme måte som en lineær likning kan ha ingen, én eller uendelig mange l�
 Et likningssystem kan ha flere enn to variabler, men disse likningssystemene vil være vanskelige å tegne opp i et todimensjonalt koordinatsystem, ettersom vi har en variabel representert langs hver akse. For likningssystemer med flere enn to variabler vil vi som regel heller velge en algebraisk løsningsmetode.  -->
 
 ## Oppgaver
---- 
 
 ``````{admonition} Oppgave 1
 :class: problem

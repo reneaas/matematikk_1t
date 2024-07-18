@@ -1,5 +1,12 @@
 # `for`{l=python}-løkker
 
+:::{admonition} Gjør dette først!
+---
+class: warning, margin
+---
+Du bør ha lest [kapittelet om while-løkker](../while_loops/while_loops.md) før du leser dette kapittelet, eller være godt kjent med bruken av `while`{l=python}-løkker.
+:::
+
 :::{admonition} Læringsmål: `for`{l=python}-løkker
 ---
 class: tip
@@ -8,13 +15,6 @@ Etter å ha gått gjennom dette delkapittelet, er målet at du skal kunne:
 * Lese og forstå `for`{l=python}-løkker som brukes `range`{l=python}-funksjonen.
 * Kunne skrive grunnleggende `for`{l=python}-løkker som bruker `range`{l=python}-funksjonen til å løse matematiske problemer.
 
-:::
-
-:::{admonition} Gjør dette først!
----
-class: warning, margin
----
-Du bør ha lest {ref}`kapittelet om while-løkker <while-loops>` før du leser dette kapittelet, eller være godt kjent med bruken av `while`{l=python}-løkker.
 :::
 
 

@@ -1,13 +1,5 @@
 # Polynomdivisjon
 
-Polynomdivisjon er en algoritme som lar oss dele et polynom med et annet. Når vi deler et polynom $p(x)$ med et annet polynom $q(x)$, vil vi få en **kvotient** $k(x)$ og en **rest** $r(x)$ slik at 
-
-$$
-\frac{p(x)}{q(x)} = k(x) + \frac{r(x)}{q(x)}
-$$
-
-Det er ikke alltid vi får en rest. Da sier vi at polynomdivisjonen **går opp**. Ofte skriver vi polynomdivisjon som $p(x) \div q(x)$ i stedet for som en brøk $p(x) / q(x)$. Men begge skrivemåter er meningsfulle og betyr det samme.
-
 ```{admonition} Læringsmål: polynomdivisjon
 :class: tip
 
@@ -17,6 +9,14 @@ Etter å gått gjennom dette kapittelet skal du kunne:
 
 Vi starter med et konkret eksempel uten rest. Vi tar første eksempel grundig:
 ```
+
+Polynomdivisjon er en algoritme som lar oss dele et polynom med et annet. Når vi deler et polynom $p(x)$ med et annet polynom $q(x)$, vil vi få en **kvotient** $k(x)$ og en **rest** $r(x)$ slik at 
+
+$$
+\frac{p(x)}{q(x)} = k(x) + \frac{r(x)}{q(x)}
+$$
+
+Det er ikke alltid vi får en rest. Da sier vi at polynomdivisjonen **går opp**. Ofte skriver vi polynomdivisjon som $p(x) \div q(x)$ i stedet for som en brøk $p(x) / q(x)$. Men begge skrivemåter er meningsfulle og betyr det samme.
 
 ````{admonition} Eksempel 1 (uten rest)
 :class: example
@@ -122,7 +122,7 @@ Vi kan merke oss at når vi gikk gjennom alle stegene her, så endte vi ikke opp
 
 Hvem sin tur er det nå da? **Stemmer, din tur**!
 
-```{admonition} Underveisoppgave 2
+:::::{admonition} Underveisoppgave 2
 :class: check
 
 Utfør polynomdivisjonen under:
@@ -131,26 +131,31 @@ $$
 (x^3 + 5x^2 - 1) \div (x + 1)
 $$
 
-**Hint:** Skriv polynomet som $x^3 + 5x^2 + 0x - 1$ når du utfører polynomdivisjonen. Eller etterlat en plass der hvor leddet til $x$ mangler så du ikke glemmer å ta med det i divisjonen!
-```
 
-````{admonition} Løsning
+:::{admonition} Hint
+---
+class: hints, dropdown
+---
+Skriv polynomet som $x^3 + 5x^2 + 0x - 1$ når du utfører polynomdivisjonen. Eller etterlat en plass der hvor leddet til $x$ mangler så du ikke glemmer å ta med det i divisjonen!
+
+:::
+
+::::{admonition} Løsning
 :class: solution, dropdown
 ```{figure} ./figurer/underveisoppgaver/underveisoppgave2.svg
 :width: 70%
 ```
-````
+::::
+
+:::::
 
 
-# Oppgaver 
 
-## Level 1 🔥
-
-### Oppgave 1
+##  Oppgaver 
 
 
 `````{admonition} Oppgave 1
-:class: problem
+:class: problem-level-1
 Utfør polynomdivisjonen
 
 $$
