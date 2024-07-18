@@ -28,7 +28,7 @@ $$ (eq:linear_funksjon)
 
 
 Merknad 1
-: Sammenhengen mellom $y = ax + b$ og uttrykket over, er at vi tydeliggjør at $y$ er bestemt av $x$ ved å bytte ut $y = f(x)$. Vi sier at $f$ er funksjonen, mens $f(x)$ er *funksjonsverdien* eller *funksjonsuttrykket*.
+: Sammenhengen mellom $y = ax + b$ og uttrykket over, er at vi tydeliggjør at $y$ er bestemt av $x$ ved å bytte ut $y = f(x)$. Vi sier at $f$ er funksjonen, mens $f(x)$ er *funksjonsverdien* eller *funksjonsuttrykket*. Formelt sett betyr $y = f(x)$ det samme som $(x, y)$. 
 
 Merknad 2
 : Konstantene $a$ og $b$ kalles for **koeffisientene** til den lineære funksjonen. Koeffisienten $a$ kalles ofte for **stigningstallet** og konstanten $b$ kalles **konstantleddet** eller **skjæringen med $y$-aksen**. 
@@ -136,6 +136,7 @@ Vi kan bruke Python som en kalkulator for å regne ut funksjonsverdier.
 ::::{admonition} Eksempel 3: funksjonsverdier i Python
 ---
 class: example
+name: algebraisk-representasjon-example-3
 ---
 
 La oss regne ut funksjonsverdien til 
@@ -154,16 +155,48 @@ linenos:
 x = 2
 y = 3*x - 1
 
-print(f"{y = }")
+print(y)
 
 ```
 som gir utskriften
 ```console
-y = 5
+5
 ```
+Med andre ord er $f(2) = 5$.
 ::::
 
-Men i eksemplet over bruker vi ikke notasjonen for funksjoner. Men i Python har vi faktisk støtte for akkurat dette. 
+Og så er det **din tur**!
+
+::::{admonition} Underveisoppgave 3: funksjonsverdier i Python
+---
+class: check
+---
+
+Skriv et program som regner ut $y = 4x + 2$ når $x = -1$. 
+
+:::{admonition} Løsning
+---
+class: solution, dropdown
+---
+
+```{code-block} python
+---
+linenos:
+---
+x = -1
+y = 4*x + 2
+
+print(y)
+```
+som gir utskriften
+```console
+-2
+```
+Altså er $y = -2$.
+:::
+::::
+
+Men i {ref}`eksempel 3 <algebraisk-representasjon-example-3>` brukte vi ikke notasjonen for funksjoner. Men i Python har vi faktisk støtte for akkurat dette. 
 
 
 :::{admonition} Ordforklaring: syntaks
@@ -181,6 +214,66 @@ En funksjon i Python har følgende syntaks:
 
 
 ```{code-block} python
-def f(x):
+def funksjonsnavn(x):
     return funksjonsuttrykk
 ```
+::::
+
+::::{admonition} Eksempel 4: funksjoner i Python
+---
+class: example
+name: algebraisk-representasjon-example-4
+---
+
+La oss skrive om {ref}`eksempel 3 <algebraisk-representasjon-example-3>` ved å bruke funksjonsnotasjon i Python. Vi husker på at vi har funksjonen $f(x) = 3x - 1$ og at vi skal regne ut $f(2)$. 
+Følgende Pythonkode oppnår dette:
+
+```{code-block} python
+---
+linenos:
+---
+# Definerer funksjonen f(x) = 3x - 1
+def f(x):
+    return 3*x - 1
+
+print(f(2)) # Regner ut f(2) og skriver ut resultatet
+```
+som gir utskriften
+
+```console
+5
+```
+som betyr at $f(2) = 5$.
+::::
+
+
+Og så er det **din tur**!
+
+::::{admonition} Underveisoppgave 4: funksjoner i Python
+---
+class: check
+---
+
+Lag et program som bruker en funksjon for $g(x) = 2x + 3$ og regn ut $g(-2)$ med programmet.
+
+
+:::{admonition} Løsning
+---
+class: solution, dropdown
+---
+
+```{code-block} python
+---
+linenos:
+---
+def g(x):
+    return 2*x + 3
+
+print(g(-2))
+```
+som gir utskriften
+```console
+-1
+```
+Altså er $g(-2) = -1$.
+::::
