@@ -50,6 +50,6 @@ plt.grid(True, linestyle="--", alpha=0.6)
 plt.tight_layout()
 
 # Lagrer figuren i vektorformat
-plt.savefig("../../figurer/oppgaver/oppg_2.svg")
+plt.savefig("../../figurer/oppgaver/oppg_3.svg")
 
 plt.show()

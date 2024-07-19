@@ -1,6 +1,5 @@
 # Grafisk løsning
 
-Å løse likninger grafisk betyr at vi bruker den grafiske representasjonen til en eller flere funksjoner til å løse likningen ved å se på skjæringen mellom grafer.
 
 ```{admonition} Læringsmål: grafisk løsning av lineære likninger
 :class: tip
@@ -11,6 +10,8 @@ Etter å ha gått gjennom dette delkapittelet, er målet at du skal kunne:
     - $ax + b = cx + d$
 * Forstå sammenhengen mellom likninger, nullpunkter og skjæring mellom grafene til funksjoner.
 ```
+
+Å løse likninger grafisk betyr at vi bruker den grafiske representasjonen til en eller flere funksjoner til å løse likningen ved å se på skjæringen mellom grafer.
 
 ## Lineære likninger av typen $ax + b = 0$
 Vi skal starte med å se på lineære likninger av typen $ax + b = 0$. 
@@ -23,9 +24,21 @@ $$
 ax + b = 0,
 $$
 
-svare til skjæringen mellom $x$-aksen og grafen til $f(x)$. Vi kaller dette for **nullpunktet** til funksjonen.  
+svare til $x$-verdien til skjæringen mellom $x$-aksen og grafen til $f$. Vi kaller dette for **nullpunktet** til funksjonen.  
 
-Merknad
+:::{figure} ./figurer/teori/nullpunkter.svg
+---
+name: lineære-likninger-grafisk-nullpunkt
+width: 80%
+---
+Viser grafen til en lineær funksjon $f(x) = ax + b$ og skjæringen med $x$-aksen. Løsningen av likningen $ax + b = 0$ er $x$-koordinaten til skjæringspunktet, som er navngitt $x_1$.
+:::
+
+
+Merknad 1
+: $x$-aksen er en linje som har likningen $y = 0$. 
+
+Merknad 2
 : Nullpunkter kalles ofte for **røttene** til en funksjon. Dette er bare et annet mye brukt begrep for det samme. Begrepet har *ingenting* med kvadratrøtter eller $n$-te røtter å gjøre.
 ````
 
@@ -37,7 +50,7 @@ $$
 2x - 4 = 0.
 $$
 
-For å løse denne likningen grafisk, tegner vi grafen til funksjonen $f(x) = 2x - 4$, og undersøker hvor grafen skjærer $x$-aksen (vi finner nullpunktet!). Vi kan se grafen til $f(x)$ i {numref}`lineære-likninger-grafisk-eksempel-1`. 
+For å løse denne likningen grafisk, tegner vi grafen til funksjonen $f(x) = 2x - 4$, og undersøker hvor grafen skjærer $x$-aksen (vi finner nullpunktet!). Vi kan se grafen til $f$ i {numref}`lineære-likninger-grafisk-eksempel-1`. 
 
 ```{figure} ./figurer/eksempler/eksempel_1.svg
 :name: lineære-likninger-grafisk-eksempel-1
@@ -59,9 +72,9 @@ $$
 g(x) = -2x + 6.
 $$ 
 
-Grafen til funksjonen vises i {numref}`lineære-likninger-grafisk-underveisoppgave-1`.
+Grafen til $g$ vises i {numref}`lineære-likninger-grafisk-underveisoppgave-1`.
 
-Bestem nullpunktet til $g(x)$.
+Bestem nullpunktet til $g$.
 
 ```{figure} ./figurer/underveisoppgaver/underveisoppgave_1.svg
 :name: lineære-likninger-grafisk-underveisoppgave-1
@@ -70,10 +83,21 @@ Bestem nullpunktet til $g(x)$.
 Viser grafen til $g(x) = -2x + 6$. 
 ```
 
-```{admonition} Løsning
-:class: solution, dropdown
-Vi kan se at grafen skjærer $x$-aksen i $x = 3$. Dermed er $x = 3$ nullpunktet til $g(x)$. 
-```
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x = 3
+$$
+:::
+
+:::{admonition} Løsning
+---
+class: solution, dropdown
+---
+Vi kan se at grafen skjærer $x$-aksen i $x = 3$. Dermed er $x = 3$ nullpunktet til $g$. 
+:::
 
 ````
 
@@ -89,7 +113,14 @@ $$
 ax + b = k,
 $$
 
-svare til skjæringen mellom grafen til $f(x)$ og en horisontal linje $y = k$. 
+svare til $x$-verdien til skjæringen mellom grafen til $f$ og en horisontal linje $y = k$. 
+
+:::{figure} ./figurer/teori/skjæring_lineær_fn_horisontal_linje.svg
+---
+name: lineær-likning-grafisk-skjæring-horisontal-linje
+width: 80%
+---
+Viser grafen til en lineær funksjon $f(x) = ax + b$ og skjæringen med en horisontal linje $y = k$. Skjæringspunktet mellom grafen til $f$ og linja $y = k$ er markert. Løsningen av likningen $ax + b = k$ er $x$-koordinaten til skjæringspunkt, som er navngitt $x_1$.
 ````
 
 Vi går løs på et eksempel:
@@ -102,7 +133,7 @@ $$
 2x + 3 = 5,
 $$
 
-grafisk. Vi tegner grafen til den lineære funksjonen $f(x) = 2x + 3$, og undersøker for hvilken $x$-verdi grafen skjærer linja $y = 5$. Grafen til $f(x)$ og linja $y = 5$ er tegnet inn i {numref}`lineære-likninger-grafisk-eksempel-2`.
+grafisk. Vi tegner grafen til den lineære funksjonen $f(x) = 2x + 3$, og undersøker for hvilken $x$-verdi grafen skjærer linja $y = 5$. Grafen til $f$ og linja $y = 5$ er tegnet inn i {numref}`lineære-likninger-grafisk-eksempel-2`.
 
 ```{figure} ./figurer/eksempler/eksempel_2.svg
 :name: lineære-likninger-grafisk-eksempel-2
@@ -111,7 +142,7 @@ grafisk. Vi tegner grafen til den lineære funksjonen $f(x) = 2x + 3$, og unders
 Grafen til $f(x) = 2x + 3$ og linja $y = 5$. 
 ```
 
-Vi kan se at grafen til $f(x)$ skjærer linja $y = 5$ i punktet $(x, y) = (1, 5)$ som betyr at løsningen av likningen er $x = 1$. 
+Vi kan se at grafen til $f$ skjærer linja $y = 5$ i punktet $(x, y) = (1, 5)$ som betyr at løsningen av likningen er $x = 1$. 
 ````
 
 Så var det over til **deg igjen**!
@@ -119,49 +150,77 @@ Så var det over til **deg igjen**!
 ````{admonition} Underveisoppgave 2
 :class: check
 Under vises et interaktivt plott av den lineære funksjon $f(x) = 2x + 3$ og en linje $y = k$. <br>
-Du kan endre på linja $y = k$. Bruk figuren til å løse følgende problemer:
-
-2a
-: Bestem løsningen av likningen $2x + 3 = -3$
-
-2b
-: Bestem løsningen av likningen $2x + 3 = 1$
-
-2c
-: Bestem hvilken linje $y = k$ som gir løsningen $x = -2$.
-
+Du kan endre på linja $y = k$. 
 
 ```{raw} html
-:file: ./figurer/interaktive_plot/lineær_likning_2x+3=k.html
+---
+file: ./figurer/interaktive_plot/lineær_likning_2x+3=k.html
+---
 ```
 
+<br>
 
-```{admonition} Fasit
-:class: solution, dropdown
+Deloppgave 1
+: Bestem løsningen av likningen $2x + 3 = -3$
 
-2a
-: $x = -3$
+:::{admonition} Fasit: deloppgave 1
+---
+class: answer, dropdown
+---
+$$
+x = -3
+$$
+:::
 
-2b
-: $x = -1$
+:::{admonition} Løsning: deloppgave 1 
+---
+class: solution, dropdown
+---
+Setter vi $k = -3$, så skjærer grafen til $f$ og linja $y = -3$ i $(x, y) = (-3, -3)$. Løsningen av likningen er derfor $x = -3$.
+::: 
 
-2c
-: $k = -1$
-```
+<br>
 
-```{admonition} Løsning
-:class: solution, dropdown
+Deloppgave 2
+: Bestem løsningen av likningen $2x + 3 = 1$
 
-2a
-: Setter vi $k = -3$, så skjærer grafen til $f(x)$ og linja $y = -3$ i $(x, y) = (-3, -3)$. Løsningen av likningen er derfor $x = -3$.
+:::{admonition} Fasit: deloppgave 2
+---
+class: answer, dropdown
+---
+$$
+x = -1
+$$
+:::
 
-2b
-: Setter vi $k = 1$, så skjærer grafen til $f(x)$ og linja $y = 1$ i $(x, y) = (-1, 1)$. Løsningen av likningen er derfor $x = -1$.
+:::{admonition} Løsning: deloppgave 2
+---
+class: solution, dropdown
+---
+Setter vi $k = 1$, så skjærer grafen til $f(x)$ og linja $y = 1$ i $(x, y) = (-1, 1)$. Løsningen av likningen er derfor $x = -1$.
+::: 
 
-2c
-: Grafen til $f(x)$ går gjennom punktet $(x, y) = (-2, -1)$, som betyr at når $y = -1$, så er $x = -2$. Dermed vil $k = -1$ gi løsningen $x = -2$. 
+<br>
 
-```
+Deloppgave 3
+: Bestem hvilken linje $y = k$ som gir løsningen $x = -2$.
+
+:::{admonition} Fasit: deloppgave 3
+---
+class: answer, dropdown
+---
+$$
+k = -1
+$$
+:::
+
+:::{admonition} Løsning: deloppgave 3
+---
+class: solution, dropdown
+---
+Grafen til $f(x)$ går gjennom punktet $(x, y) = (-2, -1)$, som betyr at når $y = -1$, så er $x = -2$. Dermed vil $k = -1$ gi løsningen $x = -2$.
+::: 
+
 ````
 
 
@@ -183,9 +242,19 @@ $$
 ax + b = cx + d,
 $$
 
-til skjæringen mellom grafene til $f(x)$ og $g(x)$. 
+til $x$-koordinaten til skjæringspunktet mellom grafene til $f$ og $g$. 
+
+:::{figure} ./figurer/teori/skjæring_mellom_to_lineære_fn.svg
+---
+name: lineære-likninger-grafisk-skjæring-to-lineære-fn
+width: 80%
+---
+Viser grafene til to lineære funksjoner $f(x) = ax + b$ og $g(x) = cx + d$ og skjæringen mellom dem. Løsningen av likningen er $ax + b = cx + d$ er $x$-koordinaten til skjæringspunktet, som navngitt $x_1$.
+:::
+
 ````
 
+Vi går løs på et eksempel:
 
 ````{admonition} Eksempel 3: likning av typen $ax + b = cx + d$
 :class: example
@@ -201,7 +270,7 @@ $$
 f(x) = x - 1 \quad \text{og} \quad g(x) = -x + 3,
 $$
 
-og så ser vi på skjæringen mellom grafene til de to funksjonene. $x$-verdien til skjæringspunktet vil være løsningen av likningen. Grafene til $f(x)$ og $g(x)$ er tegnet inn i {numref}`lineære-likninger-grafisk-eksempel-3`.
+og så ser vi på skjæringen mellom grafene til de to funksjonene. $x$-verdien til skjæringspunktet vil være løsningen av likningen. Grafene til $f$ og $g$ er tegnet inn i {numref}`lineære-likninger-grafisk-eksempel-3`.
 
 ```{figure} ./figurer/eksempler/eksempel_3.svg
 :name: lineære-likninger-grafisk-eksempel-3
@@ -213,6 +282,8 @@ Grafen til $f(x) = x - 1$ og $g(x) = -x + 3$.
 Grafene skjærer hverandre i punktet $(x, y) = (1, 2)$, som betyr at løsningen av likningen er $x = 1$. 
 
 ````
+
+**Din tur**!
 
 ````{admonition} Underveisoppgave 3
 :class: check
@@ -235,10 +306,21 @@ $$
 Grafene til $f(x) = -2x + 1$ og $g(x) = x - 2$. 
 ```
 
-```{admonition} Løsning
-:class: dropdown, solution 
-Fra figuren ser vi at de to linjene krysser hverandre når $x = 1$. Løsningen av likningen er derfor $x = -1$
-```
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x = 1
+$$
+:::
+
+:::{admonition} Løsning
+---
+class: dropdown, solution 
+---
+Fra figuren ser vi at de to linjene krysser hverandre når $x = 1$. Løsningen av likningen er derfor $x = 1$
+:::
 ````
 
 
@@ -288,62 +370,187 @@ Grafene til $f(x) = 2x + 2$ og $g(x) = 2(x+1)$ overlapper fordi likningen $2(x +
 ## Oppgaver
 
 ````{admonition} Oppgave 1
-:class: problem
-Bruk figuren under til å løse likningene: 
-
-1a
-: $x + 3 = 0$
-
-1b
-: $x + 3 = 4$
-
-1c
-: $x + 3 = -2$
+---
+class: problem-level-1
+---
+I {numref}`lineære-likninger-grafisk-løsning-oppg-1` er grafen til $f(x) = x + 3$ tegnet inn. 
 
 ```{figure} ./figurer/oppgaver/oppg_1.svg
-:name: oppg_1
-:width: 80%
-```
-
-```{admonition} Fasit
-:class: dropdown, solution
-1a
-: $x = -3$
-
-1b
-: $x = 1$
-
-1c
-: $x = -5$
-```
-````
+---
+name: lineære-likninger-grafisk-løsning-oppg-1
+width: 80%
 ---
 
-````{admonition} Oppgave 2
-:class: problem
-Bruk {numref}`lineære-likninger-grafisk-oppg-2` til å lage tre ulike likninger, og løs likningene ved hjelp av figuren.
+Grafen til $f(x) = x + 3$.
+```
 
-```{figure} ./figurer/oppgaver/oppg_2.svg
-:name: lineære-likninger-grafisk-oppg-2
-:width: 80%
+Bruk grafen til å løse likningene under.
 
-Grafene til to lineære funksjoner.
-``` 
+Oppgave 1a
+: $$x + 3 = 0$$
 
+:::{admonition} Fasit
+---
+class: dropdown, answer
+---
+$$
+x = -3
+$$
+:::
+
+:::{admonition} Løsning
+---
+class: dropdown, solution
+---
+Grafen skjærer $x$-aksen i $x = -3$, som betyr at løsningen av likningen er $x = -3$.
+:::
+
+
+<br>
+
+Oppgave 1b
+: $$x + 3 = 4$$
+
+:::{admonition} Fasit
+---
+class: dropdown, answer
+---
+$$
+x = 1
+$$
+:::
+
+:::{admonition} Løsning
+---
+class: dropdown, solution
+---
+Grafen skjærer linja $y = 4$ i $(x, y) = (1, 4)$, som betyr at løsningen av likningen er $x = 1$.
+:::
+
+
+<br>
+
+Oppgave 1c
+: $$x + 3 = -2$$
+
+:::{admonition} Fasit
+---
+class: dropdown, answer
+---
+$$
+x = -5
+$$
+:::
+
+:::{admonition} Løsning
+---
+class: dropdown, solution
+---
+Grafen skjærer linja $y = -2$ i $(x, y) = (-5, -2)$, som betyr at løsningen av likningen er $x = -2$.
+:::
 ````
 
----
 
-
-````{admonition} Oppgave 3
-:class: problem
+::::{admonition} Oppgave 2
+:class: problem-level-1
 Bruk den interaktive figuren under til å forklare hvorfor likningen $2x+1 = k$ har løsninger for alle verdier av $k$. 
 Bestem hvilken verdi av $k$ som gir løsningen $x = -2$. 
 
 
 ```{raw} html
-:file: ./figurer/interaktive_plot/lineær_likning_2x+1=k.html
+---
+file: ./figurer/interaktive_plot/lineær_likning_2x+1=k.html
+---
 ```
-````
+::::
+
+::::::{admonition} Oppgave 3
+---
+class: problem-level-2
+---
+
+I {numref}`lineære-likninger-grafisk-løsning-oppg-3` vises grafene til to lineære funksjoner. 
+Bruk figuren til å lage
+* En likning på formen $ax + b = 0$
+* En likning på formen $ax + b = k$
+* En likning på formen $ax + b = cx + d$
+
+Løs likningene ved hjelp av figuren.
+
+```{figure} ./figurer/oppgaver/oppg_3.svg
+---
+name: lineære-likninger-grafisk-løsning-oppg-3
+width: 80%
+---
+
+Grafene til to lineære funksjoner.
+``` 
+
+:::{admonition} Hint
+---
+class: hints, dropdown
+---
+For å lage likningene, må du bestemme funksjonsuttrykkene til de to lineære funksjonene ut ifra grafene.
+:::
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+Det finnes flere muligheter enn de som er listet her.
+
+Likning 1
+: $$-x + 3 = 0 \quad \Leftrightarrow \quad x = 3$$
+
+Likning 2
+: $$3x - 1 = 5 \quad \Leftrightarrow \quad x = 2 $$
+
+Likning 2
+: $$-x + 3 = 3x - 1 \quad \Leftrightarrow \quad x = 1$$
+::::
+
+:::::{admonition} Løsning
+---
+class: solution, dropdown
+---
+
+Vi må bestemme funksjonsuttrykkene til de to grafene først. Vi lar den grønne grafen væren $f$ og den lilla være $g$. 
+Vi bruker tabellen under til å bestemme funksjonsuttrykkene
+
+| Funksjon | $(x_1, y_1)$ | $(x_2, y_2)$ | $\Delta x$ | $\Delta y$ | $a = \dfrac{\Delta y}{\Delta x}$ | $b$ | 
+|:--------:|:------------:|:------------:|:----------:|:----------:|:--------------------------------:|:---:|
+| $f$      | $(0, 3)$     | $(1, 2)$     | $1$        | $-1$       | $-1$                             | $3$ |
+| $g$      | $(0, -1)$    | $(1, 2)$     | $1$        | $3$        | $3$                              | $-1$|
+
+<br>
+
+Dermed er funksjonsuttrykkene til $f$ og $g$ gitt ved
+
+$$
+f(x) = -x + 3 \quad \text{og} \quad g(x) = 3x - 1.
+$$
+
+
+Nå kan vi lage tre likninger.
+
+Likning 1
+: $$-x + 3 = 0$$
+: Likningen svarer til $x$-verdien til der grafen til $g$ skjærer $x$-aksen. Grafen skjærer $x$-aksen i $(x, y) = (3, 0)$, så løsningen av likningen er $x = 3$.
+
+Likning 2
+: $$3x - 1 = 5$$
+: Likningen svarer $x$-verdien til skjæringen mellom grafen til $f$ og linja $y = 5$. Skjæringen skjer i $(x, y) = (2, 5)$, så løsningen av likningen er $x = 2$.
+
+Likning 2
+: $$-x + 3 = 3x - 1$$
+: Likningen svarer til $x$-verdien til skjæringen mellom grafene til $f$ og $g$. De skjærer hverandre i $(x, y) = (1, 2)$, så løsningen av likningen er $x = 1$.
+:::::
+
+::::::
+
+
+
+
+
 
 
