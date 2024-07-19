@@ -37,7 +37,7 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=87e54e7c" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=29b18659" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=c4a6db68" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -204,7 +204,10 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../intro_line%C3%A6re_likninger.html">3. Lineære likninger</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../grafisk_l%C3%B8sning/grafisk_l%C3%B8sning.html">3.2. Grafisk løsning</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">3.3. Algebraisk løsning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../programmering/programmering.html">3.4. Løsning med programmering</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../programmering/programmering.html">3.4. Løsning med programmering</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../programmering/symbolsk_l%C3%B8sning.html">3.4.3. Symbolsk programmering (CAS)</a></li>
+</ul>
+</details></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../likningssystemer/intro_line%C3%A6re_likningssystemer.html">4. Lineære likningssystemer</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -405,8 +408,8 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#likninger-av-typen-ax-b-0">3.3.1. Likninger av typen <span class="math notranslate nohighlight">\(ax + b = 0\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sette-prove-pa-svaret">3.3.2. Sette prøve på svaret</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uttrykke-losningen-av-en-likning">3.3.3. Uttrykke løsningen av en likning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#likninger-pa-formen-ax-b-k">3.3.2. Likninger på formen <span class="math notranslate nohighlight">\(ax + b = k\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#likninger-pa-formen-ax-b-cx-d">3.3.3. Likninger på formen <span class="math notranslate nohighlight">\(ax + b = cx + d\)</span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">3.3.4. Oppgaver</a></li>
 </ul>
             </nav>
@@ -421,6 +424,25 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="algebraisk-losning">
 <h1><span class="section-number">3.3. </span>Algebraisk løsning<a class="headerlink" href="#algebraisk-losning" title="Link to this heading">#</a></h1>
+<div class="tip admonition">
+<p class="admonition-title">Læringsmål: algebraisk løsning av lineære likninger</p>
+<p>Etter å gått gjennom dette delkapittelet, er målet at du skal kunne:</p>
+<ul class="simple">
+<li><p>Løse lineære likninger algebraisk på formen</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(ax + b = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(ax + b = k\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(ax + b = cx + d\)</span></p></li>
+</ul>
+</li>
+<li><p>Kunne uttrykke løsningen av en likning som</p>
+<ul>
+<li><p>En likning</p></li>
+<li><p>En løsningsmengde</p></li>
+</ul>
+</li>
+</ul>
+</div>
 <p>Å løse likninger algebraisk, handler om å jobbe med likningene symbolsk og bruke algebraiske lover til å isolere variabelen i likningen, hvis mulig. Vi kaller dette å bestemme løsningen. Grovt sett er det fire regneoperasjoner vi kan gjøre med likninger:</p>
 <ol class="arabic simple">
 <li><p>Legge til noe på begge sider av likningen.</p></li>
@@ -428,80 +450,355 @@ document.write(`
 <li><p>Gange med noe på begge sider av likningen.</p></li>
 <li><p>Dele på noe på begge sider av likningen.</p></li>
 </ol>
-<p>Det er viktig å understreke at vi må gjøre samme regneoperasjon på <strong>begge sider</strong> av likningen.</p>
+<p>Det er viktig å understreke at vi må gjøre samme regneoperasjon på <strong>begge sider</strong>, i alle ledd.</p>
 <section id="likninger-av-typen-ax-b-0">
 <h2><span class="section-number">3.3.1. </span>Likninger av typen <span class="math notranslate nohighlight">\(ax + b = 0\)</span><a class="headerlink" href="#likninger-av-typen-ax-b-0" title="Link to this heading">#</a></h2>
-<div class="note margin admonition">
+<p>Vi tar et eksempel:</p>
+<div class="sidenote margin admonition">
 <p class="admonition-title">Flytte og bytte</p>
-<p>I eksempel 1 har vi konsekvent lagt til eller trukket fra det samme på begge sider. Kanskje er du vant med å <em>flytte og bytte</em> istedenfor? Disse to metodene gir samme resultat, men vår erfaring er at det er lettere å unngå feil dersom du bruker metoden over.</p>
+<p>I <a class="reference internal" href="#lineaere-likninger-algebraisk-losning-example-1"><span class="std std-ref">eksempel 1</span></a> har vi konsekvent lagt til eller trukket fra det samme på begge sider. Kanskje er du vant med å <em>flytte og bytte</em> istedenfor? Disse to metodene gir samme resultat, men vår erfaring er at det er lettere å unngå feil dersom du bruker metoden over.</p>
 </div>
+<div class="example admonition" id="lineaere-likninger-algebraisk-losning-example-1">
+<p class="admonition-title">Eksempel 1</p>
+<p>Løs likningen</p>
+<div class="math notranslate nohighlight">
+\[
+3x + 6 = 0.
+\]</div>
+<p>Målet vårt er å finne ut hvilken verdi av <span class="math notranslate nohighlight">\(x\)</span> som gjør at likningen er sann.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+3x + 6 &amp;= 0 \\
+&amp; \Updownarrow \\
+3x + 6 \textcolor{red}{-6} &amp;= 0 \textcolor{red}{-6} &amp;&amp; \text{Trekker fra $6$ på begge sider}\\
+&amp; \Updownarrow \\
+3x &amp;= -6 \\
+&amp; \Updownarrow \\
+\frac{\bcancel{3}x}{\bcancel{\textcolor{red}{3}}} &amp;= \frac{-6}{\textcolor{red}{3}} &amp;&amp; \text{Deler med 3 på begge sider}\\
+&amp; \Updownarrow \\
+\frac{\bcancel{3}x}{\bcancel{\textcolor{red}{3}}} &amp;= \frac{-6}{\textcolor{red}{3}} &amp;&amp; \text{Deler med 3 på begge sider}\\
+&amp; \Updownarrow \\
+x &amp;= -2
+\end{align*}\]</div>
+<p>Over har vi uttrykt løsningen vår som en likning. Noen ganger er dette ryddigst, andre ganger er det ryddigere å uttrykke løsningen som en løsningsmengde - spesielt når likningen flere løsninger.
+Da kan vi skrive</p>
+<div class="math notranslate nohighlight">
+\[
+\underbrace{x = -2}_{\text{likning}} \quad \Leftrightarrow \quad \underbrace{x \in \{-2\}}_{\text{løsningsmengde}}
+\]</div>
+<p>Vi velger oss bare én av de to representasjonene når vi oppgir løsningen til slutt. Valget handler stort sett alltid om å skrive <em>minst mulig</em> så det er <em>lettest å lese</em>.</p>
+</div>
+<p><strong>Din tur!</strong></p>
 <div class="check admonition">
 <p class="admonition-title">Underveisoppgave 1</p>
 <p>Løs likningen</p>
 <div class="math notranslate nohighlight">
 \[ 
-2x + 3 = - x - 3
+4x - 2 = 0.
 \]</div>
+<p>Uttrykk løsningen som</p>
+<ul class="simple">
+<li><p>En likning</p></li>
+<li><p>En løsningsmengde</p></li>
+</ul>
+<div class="answer dropdown admonition">
+<p class="admonition-title">Fasit</p>
+<div class="math notranslate nohighlight">
+\[
+x = \dfrac{1}{2} \quad \Leftrightarrow \quad x \in \left\{\dfrac{1}{2}\right\}.
+\]</div>
+</div>
 <div class="dropdown solution admonition">
 <p class="admonition-title">Løsning</p>
-<p>For å løse denne ønsker vi å samle leddene som inneholder <span class="math notranslate nohighlight">\(x\)</span> på <em>venstre side</em> og leddene som kun inneholder tall på <em>høyre side</em>. Det gjør vi ved å trekke fra eller legge til det samme på begge sider:</p>
-<p>Vi starter med å fjerne <span class="math notranslate nohighlight">\(x\)</span> fra <em>høyre side</em>. Det gjør vi ved å legge til <span class="math notranslate nohighlight">\(x\)</span> på begge sider:</p>
-<div class="math notranslate nohighlight">
-\[
-2x + 3 + x = -x - 3 + x
-\]</div>
-<p>Det gir oss likningen:</p>
-<div class="math notranslate nohighlight">
-\[
-3x + 3  = - 3
-\]</div>
-<p>Deretter trekker vi fra <span class="math notranslate nohighlight">\(3\)</span> på begge sider:</p>
-<div class="math notranslate nohighlight">
-\[
-3x + 3 - 3 = -3 - 3
-\]</div>
-<p>Vi har da ett ledd igjen på <em>høyre side</em> og ett ledd igjen på <em>venstre side</em>:</p>
-<div class="math notranslate nohighlight">
-\[
-3x = -6
-\]</div>
-<p>For å finne <span class="math notranslate nohighlight">\(x\)</span> kan vi nå dele på <span class="math notranslate nohighlight">\(3\)</span>:</p>
-<div class="math notranslate nohighlight">
-\[
-x = -\frac{6}{3} = - 2
-\]</div>
-<p>Likningen har altså løsningen <span class="math notranslate nohighlight">\(x=-2\)</span>.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+4x - 2 &amp;= 0 \\
+&amp; \Updownarrow \\
+4x - 2 \textcolor{red}{+2} &amp;= 0 \textcolor{red}{+2} &amp;&amp; \text{Legger til $2$ på begge sider}\\
+&amp; \Updownarrow \\
+4x &amp;= 2 \\
+&amp; \Updownarrow \\
+\frac{\bcancel{4}x}{\bcancel{\textcolor{red}{4}}} &amp;= \frac{2}{\textcolor{red}{4}} &amp;&amp; \text{Deler med 4 på begge sider}\\
+&amp; \Updownarrow \\
+x &amp;= \dfrac{1}{2} \\
+&amp; \Updownarrow \\
+x &amp;\in \left\{\dfrac{1}{2}\right\}
+\end{align*}\]</div>
 </div>
 </div>
 </section>
-<section id="sette-prove-pa-svaret">
-<h2><span class="section-number">3.3.2. </span>Sette prøve på svaret<a class="headerlink" href="#sette-prove-pa-svaret" title="Link to this heading">#</a></h2>
-<p>På ungdomsskolen har du kanskje lært å sette prøve på svaret? Det betyr at vi setter inn verdien vi har funnet i likningen og sjekker at de to sidene faktisk blir like. Det er lurt å gjøre, spesielt dersom du løser nye type likninger.</p>
+<section id="likninger-pa-formen-ax-b-k">
+<h2><span class="section-number">3.3.2. </span>Likninger på formen <span class="math notranslate nohighlight">\(ax + b = k\)</span><a class="headerlink" href="#likninger-pa-formen-ax-b-k" title="Link to this heading">#</a></h2>
+<p>Vi går løs på et eksempel på denne typen lineære likning også:</p>
+<div class="sidenote margin admonition">
+<p class="admonition-title">Stryk med pil</p>
+<p>Når du ser notasjonen</p>
+<div class="math notranslate nohighlight">
+\[
+\cancelto{2}{4}
+\]</div>
+<p>betyr dette at vi sitter igjen med en faktor <span class="math notranslate nohighlight">\(2\)</span> etter å ha stryket <span class="math notranslate nohighlight">\(4\)</span> mot noe. For eksempel:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{5}{2} \cdot \textcolor{red}{4} = \dfrac{5}{\cancel{2}} \cdot \cancelto{\displaystyle 2}{\textcolor{red}{4}} = 5\cdot \textcolor{red}{2}
+\]</div>
+</div>
+<div class="example admonition" id="lineaere-likninger-algebraisk-losning-example-2">
+<p class="admonition-title">Eksempel 2</p>
+<p>Vi skal løse likningen</p>
+<div class="math notranslate nohighlight">
+\[
+5x + 2 = -3.
+\]</div>
+<p>Målet vårt er å bestemme hvilken verdi av <span class="math notranslate nohighlight">\(x\)</span> som gjør at likningen er sann, så vi skal isolere <span class="math notranslate nohighlight">\(x\)</span> på en side av likningen.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+5x + 2 &amp;= -3 \\
+&amp; \Updownarrow \\
+5x + 2 \textcolor{red}{-2} &amp;= -3 \textcolor{red}{-2} &amp;&amp; \text{Trekker fra $2$ på begge sider}\\
+&amp; \Updownarrow \\
+5x &amp;= -5 \\
+&amp; \Updownarrow \\
+\frac{\bcancel{5}x}{\bcancel{\textcolor{red}{5}}} &amp;= \frac{\cancelto{\displaystyle -1}{-5}}{\cancel{\textcolor{red}{5}}} &amp;&amp; \text{Deler med 5 på begge sider}\\
+&amp; \Updownarrow \\
+x &amp;= -1
+\end{align*}\]</div>
+<p>Altså er løsningen</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Likning</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+x = -1
+\]</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Løsningsmengde</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+x \in \{-1\}
+\]</div>
+</div>
+</div>
+</div>
+<p>Så er det <strong>din tur</strong>!</p>
 <div class="check admonition">
 <p class="admonition-title">Underveisoppgave 2</p>
-<p>Sett prøve på svaret <span class="math notranslate nohighlight">\(x=-2\)</span> for likningen</p>
+<p>Løs likningen</p>
 <div class="math notranslate nohighlight">
-\[ 
-2x + 3 = - x - 3
+\[
+-3x + 5 = 4.
 \]</div>
-<div class="solution dropdown admonition">
+<p>Uttrykk løsningen som</p>
+<ul class="simple">
+<li><p>En likning</p></li>
+<li><p>En løsningsmengde</p></li>
+</ul>
+<div class="answer dropdown admonition">
+<p class="admonition-title">Fasit</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+Likning</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+x = \dfrac{1}{3}
+\]</div>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
+Løsningsmengde</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+x \in \left\{\dfrac{1}{3}\right\}
+\]</div>
+</div>
+</div>
+</div>
+<div class="dropdown solution admonition">
 <p class="admonition-title">Løsning</p>
-<p>Vi sjekker <em>venstre side</em> (VS) og <em>høyre side</em> (HS) hver for seg:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+-3x + 5 &amp;= 4 \\
+&amp; \Updownarrow \\
+-3x + 5 \textcolor{red}{-5} &amp;= 4 \textcolor{red}{-5} &amp;&amp; \text{Trekker fra $5$ på begge sider}\\
+&amp; \Updownarrow \\
+-3x &amp;= -1 \\
+&amp; \Updownarrow \\
+\frac{\bcancel{-3}x}{\bcancel{\textcolor{red}{-3}}} &amp;= \frac{-1}{\textcolor{red}{-3}} &amp;&amp; \text{Deler med $-3$ på begge sider}\\
+&amp; \Updownarrow \\
+x &amp;= \dfrac{1}{3}
+\end{align*}\]</div>
+<p>Altså er løsningen</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
+Likning</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
-\text{VS:}\quad 2\cdot -2 + 3  = -4 + 3 = - 1
+x = \dfrac{1}{3}
 \]</div>
+</div>
+<input id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-5">
+Løsningsmengde</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
-\text{HS:}\quad - (-2) - 3 = 2 - 3 = -1
+x \in \left\{\dfrac{1}{3}\right\}
 \]</div>
-<p>Vi ser at <em>venstre side</em> og <em>høyre side</em> er like, og dermed er løsningen <span class="math notranslate nohighlight">\(x=-2 \)</span> riktig.</p>
+</div>
+</div>
 </div>
 </div>
 </section>
-<section id="uttrykke-losningen-av-en-likning">
-<h2><span class="section-number">3.3.3. </span>Uttrykke løsningen av en likning<a class="headerlink" href="#uttrykke-losningen-av-en-likning" title="Link to this heading">#</a></h2>
-<p>Fra tidligere er du antakeligvis kjent med å oppgi løsningen av en likning som <span class="math notranslate nohighlight">\(x = -2\)</span>, som i underveisoppgaven over. Tidligere i 1T har du også lært om mengder. Mengdene kan også brukes til å uttrykke løsningen av likninger. Vi kan da skrive <span class="math notranslate nohighlight">\( L = \{-2\}\)</span>. Vi leser dette som at løsningsmengden består av tallet <span class="math notranslate nohighlight">\(-2\)</span>. Det er likevel ofte nyttig å være tydelig på hvilken variabel som svarer til løsningsmengden, og vi skriver derfor ofte <span class="math notranslate nohighlight">\(x \in \{-2\}\)</span>.</p>
+<section id="likninger-pa-formen-ax-b-cx-d">
+<h2><span class="section-number">3.3.3. </span>Likninger på formen <span class="math notranslate nohighlight">\(ax + b = cx + d\)</span><a class="headerlink" href="#likninger-pa-formen-ax-b-cx-d" title="Link to this heading">#</a></h2>
+<p>Vi går løs på den siste varianten av lineære likninger, men løsningsstrategien er fortsatt den samme!</p>
+<div class="example admonition" id="lineaere-likninger-algebraisk-losning-example-3">
+<p class="admonition-title">Eksempel 3</p>
+<p>Vi skal løse likningen</p>
+<div class="math notranslate nohighlight">
+\[
+\dfrac{3x}{4} - \dfrac{1}{2} = x + \dfrac{3}{2}.
+\]</div>
+<p>Målet vårt er å få <span class="math notranslate nohighlight">\(x\)</span> alene. Det betyr i praksis at vi får alle ledd med <span class="math notranslate nohighlight">\(x\)</span> over på én side av likningen. Typisk når en likning inneholder brøker, er det lurt å gange bort alle brøkene først.</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\dfrac{3x}{4} - \dfrac{1}{2} &amp;= x + \dfrac{3}{2} \\
+&amp; \Updownarrow \\
+\dfrac{3x}{\cancel{4}} \cdot \cancel{\textcolor{red}{4}} - \dfrac{1}{\cancel{2}} \cdot \cancelto{\displaystyle 2}{\textcolor{red}{4}} &amp;= \textcolor{red}{4}\cdot x + \dfrac{3}{\cancel{2}} \cdot \cancelto{\displaystyle 2}{\textcolor{red}{4}} &amp;&amp; \text{Ganger med $4$ på begge sider}\\
+&amp; \Updownarrow \\
+3x - 1\cdot \textcolor{red}{2} &amp;= 4x + 3\cdot \textcolor{red}{2} &amp;&amp; \text{Restfaktorer etter ganging med brøkene}\\
+&amp; \Updownarrow \\
+3x \textcolor{red}{-3x} - 2 &amp;= 4x \textcolor{red}{-3x} + 6 &amp;&amp; \text{Trekker fra $3x$ på begge sider}\\
+&amp; \Updownarrow \\
+-2 &amp;= x + 6 \\
+&amp; \Updownarrow \\
+-2 \textcolor{red}{-6} &amp;= x + 6 \textcolor{red}{-6} &amp;&amp; \text{Trekker fra $6$ på begge sider}\\
+&amp; \Updownarrow \\
+-8 &amp;= x
+\end{align*}\]</div>
+<p>En god vane er å <strong>sette prøve</strong> på svaret når du har løst likningen. Det vil si å sette inn løsningen din i den opprinnelige likningen for å verifisere at du har regnet riktig.
+Vi gjør som følger, vi sette inn verdien av <span class="math notranslate nohighlight">\(x\)</span> på venstre side (V.S) og høyre side (V.S) og sjekker at vi får samme verdi:</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+V.S: <span class="math notranslate nohighlight">\(\dfrac{3x}{4} - \dfrac{1}{2}\)</span></div>
+<div class="math notranslate nohighlight">
+\[
+\dfrac{3\cdot \textcolor{red}{(-8)}}{4} - \dfrac{1}{2} = \dfrac{-24}{4} - \dfrac{2}{4} = -\dfrac{\cancelto{\displaystyle 13}{26}}{\cancelto{\displaystyle 2}{4}} = -\dfrac{13}{2}
+\]</div>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+H.S: <span class="math notranslate nohighlight">\(x + \dfrac{3}{2}\)</span></div>
+<div class="math notranslate nohighlight">
+\[
+\textcolor{red}{(-8)} + \dfrac{3}{2} = -\dfrac{16}{2} + \dfrac{3}{2} = -\dfrac{13}{2}
+\]</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Altså får vi samme verdi på begge sider av den opprinnelige likningen med <span class="math notranslate nohighlight">\(x = -8\)</span>, som betyr at løsningen er</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-6">
+Likning</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+x = -8
+\]</div>
+</div>
+<input id="sd-tab-item-7" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-7">
+Løsningsmengde</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+x \in \{-8\}
+\]</div>
+</div>
+</div>
+</div>
+<p><strong>Din tur</strong>!</p>
+<div class="check admonition">
+<p class="admonition-title">Underveisoppgave 3</p>
+<p>Løs likningen</p>
+<div class="math notranslate nohighlight">
+\[
+-\dfrac{2x}{3} + 3 = x - 2.
+\]</div>
+<p>Sett prøve på svaret ditt.</p>
+<div class="answer dropdown admonition">
+<p class="admonition-title">Fasit</p>
+<div class="math notranslate nohighlight">
+\[
+x = 3
+\]</div>
+</div>
+<div class="dropdown solution admonition">
+<p class="admonition-title">Løsning</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+-\dfrac{2x}{3} + 3 &amp;= x - 2 \\
+&amp; \Updownarrow \\
+-\dfrac{2x}{\cancel{3}} \cancel{\textcolor{red}{\cdot 3}} + 3 \textcolor{red}{\cdot 3} &amp;= x \textcolor{red}{\cdot 3} - 2 \textcolor{red}{\cdot 3} &amp;&amp; \text{Ganger med 3 på begge sider}\\
+&amp; \Updownarrow \\
+-2x + 9 &amp;= 3x - 6\\
+&amp; \Updownarrow \\
+-2x \textcolor{red}{- 3x} + 9 &amp;= 3x \textcolor{red}{- 3x} - 6 &amp;&amp; \text{Trekker fra $3x$ på begge sider}\\
+&amp; \Updownarrow \\
+-5x + 9 &amp;= -6 \\
+&amp; \Updownarrow \\
+-5x + 9 \textcolor{red}{-9} &amp;= -6 \textcolor{red}{-9} &amp;&amp; \text{Trekker fra $9$ på begge sider}\\
+&amp; \Updownarrow \\
+-5x &amp;= -15 \\
+&amp; \Updownarrow \\
+\frac{\bcancel{-5}x}{\bcancel{\textcolor{red}{-5}}} &amp;= \frac{\cancelto{\displaystyle 3}{-15}}{\cancel{\textcolor{red}{-5}}} &amp;&amp; \text{Deler med $-5$ på begge sider}\\
+&amp; \Updownarrow \\
+x &amp;= 3
+\end{align*}\]</div>
+<p>Til slutt setter vi prøve på svaret:</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+V.S: <span class="math notranslate nohighlight">\(-\dfrac{2x}{3} + 3\)</span></div>
+<div class="math notranslate nohighlight">
+\[
+-\dfrac{2\cdot \textcolor{red}{3}}{3} + 3 = -2 + 3 = 1
+\]</div>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+H.S: <span class="math notranslate nohighlight">\(x - 2\)</span></div>
+<div class="math notranslate nohighlight">
+\[
+\textcolor{red}{3} - 2 = 1
+\]</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="oppgaver">
 <h2><span class="section-number">3.3.4. </span>Oppgaver<a class="headerlink" href="#oppgaver" title="Link to this heading">#</a></h2>
@@ -532,8 +829,24 @@ x = -\frac{6}{3} = - 2
 </dl>
 <div class="dropdown answer admonition">
 <p class="admonition-title">Fasit: 2a</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-8" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-8">
+Likning</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
-\[x = 2 \quad \Leftrightarrow \quad x \in \{2\}.\]</div>
+\[
+x = 2
+\]</div>
+</div>
+<input id="sd-tab-item-9" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-9">
+Løsningsmengde</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+x \in \{2\}
+\]</div>
+</div>
+</div>
 </div>
 <dl class="simple myst">
 <dt>Oppgave 2b</dt><dd><div class="math notranslate nohighlight">
@@ -542,8 +855,24 @@ x = -\frac{6}{3} = - 2
 </dl>
 <div class="dropdown answer admonition">
 <p class="admonition-title">Fasit: 2b</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-10" name="sd-tab-set-5" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-10">
+Likning</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
-\[x = 1 \quad \Leftrightarrow \quad x \in \{1\}.\]</div>
+\[
+x = 1
+\]</div>
+</div>
+<input id="sd-tab-item-11" name="sd-tab-set-5" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-11">
+Løsningsmengde</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+x \in \{1\}
+\]</div>
+</div>
+</div>
 </div>
 <dl class="simple myst">
 <dt>Oppgave 2c</dt><dd><div class="math notranslate nohighlight">
@@ -552,8 +881,24 @@ x = -\frac{6}{3} = - 2
 </dl>
 <div class="dropdown answer admonition">
 <p class="admonition-title">Fasit: 2c</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-12" name="sd-tab-set-6" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-12">
+Likning</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
-\[x = 2 \quad \Leftrightarrow \quad x \in \{2\}.\]</div>
+\[
+x = 2
+\]</div>
+</div>
+<input id="sd-tab-item-13" name="sd-tab-set-6" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-13">
+Løsningsmengde</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+x \in \{2\}
+\]</div>
+</div>
+</div>
 </div>
 <dl class="simple myst">
 <dt>Oppgave 2d</dt><dd><div class="math notranslate nohighlight">
@@ -562,8 +907,24 @@ x = -\frac{6}{3} = - 2
 </dl>
 <div class="dropdown answer admonition">
 <p class="admonition-title">Fasit: 2d</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-14" name="sd-tab-set-7" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-14">
+Likning</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
-\[x = 6 \quad \Leftrightarrow \quad x \in \{6\}.\]</div>
+\[
+x = 6
+\]</div>
+</div>
+<input id="sd-tab-item-15" name="sd-tab-set-7" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-15">
+Løsningsmengde</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+x \in \{6\}
+\]</div>
+</div>
+</div>
 </div>
 <dl class="simple myst">
 <dt>Oppgave 2e</dt><dd><div class="math notranslate nohighlight">
@@ -572,8 +933,24 @@ x = -\frac{6}{3} = - 2
 </dl>
 <div class="dropdown answer admonition">
 <p class="admonition-title">Fasit: 2e</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-16" name="sd-tab-set-8" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-16">
+Likning</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
-\[x = 8 \quad \Leftrightarrow \quad x \in \{8\}.\]</div>
+\[
+x = 8
+\]</div>
+</div>
+<input id="sd-tab-item-17" name="sd-tab-set-8" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-17">
+Løsningsmengde</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+x \in \{8\}
+\]</div>
+</div>
+</div>
 </div>
 <dl class="simple myst">
 <dt>Oppgave 2f</dt><dd><div class="math notranslate nohighlight">
@@ -582,8 +959,24 @@ x = -\frac{6}{3} = - 2
 </dl>
 <div class="dropdown answer admonition">
 <p class="admonition-title">Fasit: 2f</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-18" name="sd-tab-set-9" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-18">
+Likning</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
-\[x = 2 \quad \Leftrightarrow \quad x \in \{2\}.\]</div>
+\[
+x = 2
+\]</div>
+</div>
+<input id="sd-tab-item-19" name="sd-tab-set-9" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-19">
+Løsningsmengde</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+x \in \{2\}
+\]</div>
+</div>
+</div>
 </div>
 </div>
 <div class="problem-level-2 admonition">
@@ -605,10 +998,24 @@ x = -\frac{6}{3} = - 2
 </dl>
 <div class="dropdown answer admonition">
 <p class="admonition-title">Fasit: 3b</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-20" name="sd-tab-set-10" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-20">
+Likning</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
-x = -4 \quad \Leftrightarrow \quad x \in \{-4\}.
+x = -4
 \]</div>
+</div>
+<input id="sd-tab-item-21" name="sd-tab-set-10" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-21">
+Løsningsmengde</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+x \in \{-4\}
+\]</div>
+</div>
+</div>
 </div>
 <dl class="simple myst">
 <dt>Oppgave 3c</dt><dd><div class="math notranslate nohighlight">
@@ -617,10 +1024,24 @@ x = -4 \quad \Leftrightarrow \quad x \in \{-4\}.
 </dl>
 <div class="dropdown answer admonition">
 <p class="admonition-title">Fasit: 3c</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-22" name="sd-tab-set-11" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-22">
+Likning</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
-x = -\dfrac{15}{2} \quad \Leftrightarrow \quad x \in \left\{-\dfrac{15}{2}\right\}.
+x = -\dfrac{15}{2}
 \]</div>
+</div>
+<input id="sd-tab-item-23" name="sd-tab-set-11" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-23">
+Løsningsmengde</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+x \in \left\{-\dfrac{15}{2}\right\}
+\]</div>
+</div>
+</div>
 </div>
 <dl class="simple myst">
 <dt>Oppgave 3d</dt><dd><div class="math notranslate nohighlight">
@@ -629,10 +1050,24 @@ x = -\dfrac{15}{2} \quad \Leftrightarrow \quad x \in \left\{-\dfrac{15}{2}\right
 </dl>
 <div class="dropdown answer admonition">
 <p class="admonition-title">Fasit: 3d</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-24" name="sd-tab-set-12" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-24">
+Likning</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
-x = -1 \quad \Leftrightarrow \quad x \in \{-1\}.
+x = -1
 \]</div>
+</div>
+<input id="sd-tab-item-25" name="sd-tab-set-12" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-25">
+Løsningsmengde</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+x \in \{-1\}
+\]</div>
+</div>
+</div>
 </div>
 </div>
 </section>
@@ -703,8 +1138,8 @@ x = -1 \quad \Leftrightarrow \quad x \in \{-1\}.
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#likninger-av-typen-ax-b-0">3.3.1. Likninger av typen <span class="math notranslate nohighlight">\(ax + b = 0\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sette-prove-pa-svaret">3.3.2. Sette prøve på svaret</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uttrykke-losningen-av-en-likning">3.3.3. Uttrykke løsningen av en likning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#likninger-pa-formen-ax-b-k">3.3.2. Likninger på formen <span class="math notranslate nohighlight">\(ax + b = k\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#likninger-pa-formen-ax-b-cx-d">3.3.3. Likninger på formen <span class="math notranslate nohighlight">\(ax + b = cx + d\)</span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">3.3.4. Oppgaver</a></li>
 </ul>
   </nav></div>
