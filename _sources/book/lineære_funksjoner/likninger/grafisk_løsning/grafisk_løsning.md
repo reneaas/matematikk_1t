@@ -16,6 +16,14 @@ Etter å ha gått gjennom dette delkapittelet, er målet at du skal kunne:
 ## Lineære likninger av typen $ax + b = 0$
 Vi skal starte med å se på lineære likninger av typen $ax + b = 0$. 
 
+
+::::{admonition} Nullpunkter vs røtter
+---
+class: sidenote, margin
+---
+Nullpunkter kalles ofte for **røttene** til en funksjon. Dette er bare et annet mye brukt begrep for det samme. Begrepet har *ingenting* med kvadratrøtter eller $n$-te røtter å gjøre.
+::::
+
 ````{admonition} Lineære likninger på formen $ax + b = 0$
 :class: theory
 Gitt en lineær funksjon $f(x) = ax + b$, så vil løsningen av likningen
@@ -34,12 +42,6 @@ width: 80%
 Viser grafen til en lineær funksjon $f(x) = ax + b$ og skjæringen med $x$-aksen. Løsningen av likningen $ax + b = 0$ er $x$-koordinaten til skjæringspunktet, som er navngitt $x_1$.
 :::
 
-
-Merknad 1
-: $x$-aksen er en linje som har likningen $y = 0$. 
-
-Merknad 2
-: Nullpunkter kalles ofte for **røttene** til en funksjon. Dette er bare et annet mye brukt begrep for det samme. Begrepet har *ingenting* med kvadratrøtter eller $n$-te røtter å gjøre.
 ````
 
 ````{admonition} Eksempel 1: likning av typen $ax + b = 0$
@@ -453,23 +455,93 @@ Grafen skjærer linja $y = -2$ i $(x, y) = (-5, -2)$, som betyr at løsningen av
 
 ::::{admonition} Oppgave 2
 :class: problem-level-1
-Bruk den interaktive figuren under til å forklare hvorfor likningen $2x+1 = k$ har løsninger for alle verdier av $k$. 
-Bestem hvilken verdi av $k$ som gir løsningen $x = -2$. 
-
+Under vises en interaktiv graf av funksjonen $f(x) = 2x + 1$ og en linje $y = k$. Du kan endre på verdien av $k$.
 
 ```{raw} html
 ---
 file: ./figurer/interaktive_plot/lineær_likning_2x+1=k.html
 ---
 ```
+
+Oppgave 2a
+: Bestem hvilken verdi av $k$ som gir løsningen $x = -2$. 
+
+:::{admonition} Fasit: 2a
+---
+class: answer, dropdown
+---
+$k = -3$. 
+:::
+
+:::{admonition} Løsning: 2a
+---
+class: solution, dropdown
+---
+Justerer vi linja $y = k$ til $y = -3$, så skjærer grafen til $f$ linja i $(x, y) = (-2, -3)$. Dermed gir $k = -3$ løsningen $x = -2$. 
+:::
+
+
+<br>
+
+Oppgave 2b
+: Bruk grafen til å forklare hvorfor likningen $2x + 1 = k$ har en løsning for alle $k \in \mathbb{R}$.
+
+
 ::::
 
-::::::{admonition} Oppgave 3
+
+
+:::::{admonition} Oppgave 3
+---
+class: problem-level-1
+---
+I figur {numref}`lineære-likninger-grafisk-løsning-oppg-3` er grafene til to lineære funksjoner $f$ og $g$ tegnet inn. 
+
+:::{figure} ./figurer/oppgaver/oppg_3.svg
+---
+name: lineære-likninger-grafisk-løsning-oppg-3
+---
+Grafene til to lineære funksjoner $f$ og $g$.
+
+:::
+
+Oppgave 3a
+: Bestem likningen som svarer til skjæringen mellom grafene til $f$ og $g$. 
+
+::::{admonition} Fasit: 3a
+---
+class: answer, dropdown
+---
+$$
+x - 2 = -2x - 5.
+$$
+::::
+
+<br>
+
+Oppgave 3b
+: Løs likningen fra oppgave 3a ved hjelp av figuren.
+
+
+
+::::{admonition} Fasit: 3b
+---
+class: answer, dropdown
+---
+$$
+x = -1.
+$$
+::::
+:::::
+
+
+
+::::::{admonition} Oppgave 4
 ---
 class: problem-level-2
 ---
 
-I {numref}`lineære-likninger-grafisk-løsning-oppg-3` vises grafene til to lineære funksjoner. 
+I {numref}`lineære-likninger-grafisk-løsning-oppg-4` vises grafene til to lineære funksjoner. 
 Bruk figuren til å lage
 * En likning på formen $ax + b = 0$
 * En likning på formen $ax + b = k$
@@ -477,9 +549,9 @@ Bruk figuren til å lage
 
 Løs likningene ved hjelp av figuren.
 
-```{figure} ./figurer/oppgaver/oppg_3.svg
+```{figure} ./figurer/oppgaver/oppg_4.svg
 ---
-name: lineære-likninger-grafisk-løsning-oppg-3
+name: lineære-likninger-grafisk-løsning-oppg-4
 width: 80%
 ---
 
@@ -547,9 +619,6 @@ Likning 2
 :::::
 
 ::::::
-
-
-
 
 
 
