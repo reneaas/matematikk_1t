@@ -31,7 +31,7 @@ Vi tar et eksempel:
 ---
 class: sidenote, margin
 ---
-I {ref}`eksempel 1 <lineære-likninger-algebraisk-løsning-example-1>` har vi konsekvent lagt til eller trukket fra det samme på begge sider. Kanskje er du vant med å *flytte og bytte* istedenfor? Disse to metodene gir samme resultat, men vår erfaring er at det er lettere å unngå feil dersom du bruker metoden over. 
+I {ref}`eksempel 1 <lineære-likninger-algebraisk-løsning-example-1>` har vi trekt fra samme tall på hver side i første steg. Men tidligere har du kanskje lært "flytte og bytte"-regelen. Denne regelen kommer fra at man legger til eller trekker fra samme tall på hver side av likningen.  
 :::
 
 ::::{admonition} Eksempel 1

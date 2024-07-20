@@ -4,10 +4,10 @@ import matplotlib.pyplot as plt
 plt.rc("text", usetex=True)
 
 def f(x):
-    return x - 2
+    return 3*x - 1
 
 def g(x):
-    return -2*x - 5
+    return -x + 3
 
 
 
@@ -18,8 +18,8 @@ b = 7
 x = np.linspace(a, b, 1024)
 
 fig, ax = plt.subplots()
-ax.plot(x, f(x), color="teal", lw=2, alpha=0.7, label="$f$")
-ax.plot(x, g(x), color="purple", lw=2, alpha=0.7, label="$g$")
+ax.plot(x, f(x), color="teal", lw=2, alpha=0.7)
+ax.plot(x, g(x), color="purple", lw=2, alpha=0.7)
 
 ax.spines["left"].set_position("zero")
 ax.spines["right"].set_color("none")
@@ -35,21 +35,21 @@ ax.set_ylabel(r"$y$", fontsize=16, loc="top", rotation="horizontal")
 
 
 
-xticks = list(np.arange(-4, 5, 1))
+xticks = list(np.arange(-4, 6, 1))
 xticks.remove(0)
 plt.xticks(xticks, fontsize=16)
 
-yticks = list(np.arange(-5, 4, 1))
+yticks = list(np.arange(-2, 7, 1))
 yticks.remove(0)
 plt.yticks(yticks, fontsize=16)
 
-plt.ylim(-6, 4)
-plt.xlim(-5, 5)
+plt.ylim(-3, 7)
+plt.xlim(-5, 6)
 
 plt.grid(True, linestyle="--", alpha=0.6)
 plt.tight_layout()
 
 # Lagrer figuren i vektorformat
-plt.savefig("../../figurer/oppgaver/oppg_3.svg")
+plt.savefig("../../figurer/oppgaver/oppg_4.svg")
 
 plt.show()
