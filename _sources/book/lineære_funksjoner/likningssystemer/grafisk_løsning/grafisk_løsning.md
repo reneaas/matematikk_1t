@@ -6,59 +6,170 @@ På samme måte som vi løste likninger, kan vi også løse likningssystemer gra
 ```{admonition} Læringsmål: grafisk løsning av lineære likningssystemer
 :class: tip
 Etter å ha lest dette delkapittelet, er målet at du skal kunne:
+* Forstå sammenhengen mellom likningen for en linje på formene $Ax + By = C$ og $y = ax + b$.
 * Løse lineære likningssystemer grafisk.
 * Kunne uttrykke løsningen av et lineært likningssystem som et likningssystem eller som en løsningsmengde.
 ```
 
+## Linjer på formen $Ax + By = C$
 
-Vi starter med å se på et eksempel:
+Frem til nå, har vi jobbet med linjer på formen $y = ax + b$ og sett at disse samsvarer med lineære funksjoner. Men dette er ikke den mest generelle formen for linjer. Nå skal vi utforske en mer generell form
 
-`````{admonition} Eksempel 1
-:class: example
+::::{admonition} Generelle linjer
+---
+class: theory
+---
+En linje i planet er alle punkter $(x, y)$ som oppfyller en likning på formen
 
 $$
-\begin{align}
-    x - y & = -1 \\
-    x + y & = 1 \\
-\end{align}
-$$ (eq:eksempel-1)
+Ax + By = C,
+$$
+
+der $A, B, C \in \mathbb{R}$ er konstanter.
+
+::::
+
+::::{admonition} Eksempel 1: linjer på formen $Ax + By = C$
+---
+class: example
+name: lineære-likningssystemer-grafisk-eksempel-1
+---
+En linje på formen $2x + 3y = 6$ kan skrives om til formen $y = ax + b$ med litt algebra:
+
+\begin{align*}
+    2x + 3y & = 6 \\
+    & \Updownarrow \\
+    2x \textcolor{red}{- 2x} + 3y & = \textcolor{red}{- 2x} + 6 && \text{Trekker fra $2x$ på hver side} \\
+    & \Updownarrow \\
+    3y & = -2x + 6 \\
+    & \Updownarrow \\
+    \frac{\cancel{3}y}{\cancel{\textcolor{red}{3}}} & = \frac{-2x}{\textcolor{red}{3}} + \frac{\cancelto{\displaystyle \textcolor{teal}{2}}{6}}{\cancel{\textcolor{red}{3}}} && \text{Deler med $3$} \\
+    & \Updownarrow \\
+    y & = -\frac{2}{3}x + 2
+\end{align*}
+
+Altså finner vi at 
+
+$$
+2x + 3y = 6 \quad \Leftrightarrow \quad y = -\frac{2}{3}x + 2.
+$$
+
+::::
 
 
-Vi ser at vi har to likninger med to ulike variabler, $x$ og $y$. For å løse likningssystemet grafisk tegner vi hver likning. Det er enklest å se hvis vi først skriver om hver likning slik at vi har $y$ på *venstre side* og alt annet på *høyre side*. 
+::::{admonition} Eksempel 2: linjer på formen $Ax + By = C$
+---
+class: example
+name: lineære-likningssystemer-grafisk-eksempel-2
+---
+En fordel med den generelle formen på likningen $Ax + Bx = C$, er at den lar oss beskrive alle type linjer:
+* Skrå linjer ($y = ax + b$)
+* Vertikale linjer ($x = \text{konstant}$)
+* Horisontale linjer ($y = \text{konstant}$)
 
-\begin{align}
-    - y & = -1 - x \\
-    y & = 1 - 1 \\
-\end{align}
+I figuren under vises de tre typene linjer og tilhørende likninger.
 
-Vi multipliserer hele den første likningen med $(-1)$ slik at det ser litt penere ut: 
+:::{figure} ./figurer/eksempler/eksempel_2.svg
+---
+name: fig-lineære-likningssystemer-grafisk-eksempel-2
+width: 80%
+---
+Viser grafene til en skrå-, vertikal- og horisontal linje.
+::::
 
-\begin{align}
-    y & = 1 + x \\
-    y & = 1 - 1 \\
-\end{align}
+## Grafisk løsning av likningssystemer
 
-Vi kan nå tegne de to likningene grafisk, slik vi ha gjort før. 
 
-```{figure} ./figurer/eksempler/eksempel1.svg
-:name: eksempel1
+:::::{admonition} Grafisk løsning av likningssystemer
+---
+class: theory
+---
+Gitt et lineært likningssystem 
+
+\begin{align*}
+    Ax + By & = C \\
+    Dx + Ey & = F
+\end{align*}
+
+er løsningen av likningssystemer skjæringspunktet $(x_1, y_1)$ mellom de to linjene. Se {numref}`fig-lineære-likningssystemer-grafisk-løsning`.
+
+:::{figure} ./figurer/teori/grafisk_løsning.svg
+---
+name: fig-lineære-likningssystemer-grafisk-løsning
+width: 80%
+---
+Løsningen av likningssystemet $Ax + By = C \, \land \, Dx + Ey = F$ er skjæringspunktet $(x_1, y_1)$ mellom de to linjene. 
+:::
+
+Løsningen skriver vi enten som et likningssystem eller som en løsningsmengde:
+
+$$
+\underbrace{x = x_1 \quad \land \quad y = y_1}_{\text{Likningssystem}} \quad \text{eller} \quad \underbrace{(x, y) \in \{(x_1, y_1)\}}_{\text{Løsningsmengde}}. 
+$$
+
+:::::
+Vi starter med å se på et eksempel:
+
+`````{admonition} Eksempel 3: grafisk løsning av likningssystemer
+:class: example
+Et likningssystem er gitt ved
+
+\begin{align*}
+    -2x + y & = 1 \tag{1}\label{eq-lineære-likningssystemer-grafisk-eksempel-3a} \\
+    x + y & = 4  \tag{2}\label{eq-lineære-likningssystemer-grafisk-eksempel-3b} \\
+\end{align*}
+
+For å løse likningssystemet grafisk, skriver om de to likningene til formen $y = ax + b$ så vi kan tolke de som lineære funksjoner:
+
+For likning $\eqref{eq-lineære-likningssystemer-grafisk-eksempel-3a}$:
+
+\begin{align*}
+    -2x + y & = 1 \\
+    & \Updownarrow \\
+    -2x \textcolor{red}{+ 2x} + y & = 1 \textcolor{red}{+ 2x} && \text{Trekker fra $2x$ på hver side} \\
+    & \Updownarrow \\
+    y & = 2x + 1
+\end{align*}
+
+Og tilsvarende for likning $\eqref{eq-lineære-likningssystemer-grafisk-eksempel-3b}$:
+
+\begin{align*}
+    x + y & = 4 \\
+    & \Updownarrow \\
+    x \textcolor{red}{- x} + y & = 4 \textcolor{red}{-x} && \text{Trekker fra $x$ på hver side} \\
+    & \Updownarrow \\
+    y & = -x + 4
+\end{align*}
+
+Dermed får vi at likningssystemet kan skrives som
+
+\begin{align*}
+    y & = 2x + 1 \\
+    y & = -x + 4
+\end{align*}
+
+
+Vi kan nå tegne de to linjene grafisk, slik vi ha gjort før. 
+
+```{figure} ./figurer/eksempler/eksempel_3.svg
+:name: lineære-likningssystemer-grafisk-eksempel-3
 :width: 80%
 
-Grafene til de lineære funksjonene $f(x) = 1 + x$ og $g(x) = 1 - x$. Skjæringspunktet mellom de to grafene svarer til løsningen av likningssystemet i {eq}`eq:eksempel-1`. 
+Grafene til de lineære funksjonene $f(x) = 2x + 1$ og $g(x) = -x + 4$. Skjæringspunktet mellom de to grafene svarer til løsningen av likningssystemet. 
 ```
 
-Løsningen av likningssystemet svarer til koordinatene til skjæringspunktet mellom de to lineære funksjonene. Vi kan lese av at dette er $(x, y) = (0, 1)$. Da kan vi uttrykke løsningen av likningssystemet enten som et likningssystem eller som en løsningsmengde:
+Løsningen av likningssystemet svarer til koordinatene til skjæringspunktet mellom de to lineære funksjonene. Vi kan lese av at dette er $(x, y) = (1, 3)$. Da kan vi uttrykke løsningen av likningssystemet enten som et likningssystem eller som en løsningsmengde:
 
 ````{tab-set}
 ```{tab-item} Løsning som likningssystem
 $$
-x = 0 \quad \land \quad y = 1.
+x = 1 \quad \land \quad y = 3.
 $$
 ```
 
 ```{tab-item} Løsning som løsningsmengde 
 $$
-(x, y) \in \{(0, 1)\}.
+(x, y) \in \{(1, 3)\}.
 $$
 ```
 ````
@@ -79,12 +190,14 @@ Uttrykk løsningen som
 1. Et likningssystem
 2. En løsningsmengde
 
-```{figure} ./figurer/eksempler/eksempel2.svg
-:name: eksempel2
-:width: 80%
+:::{figure} ./figurer/underveisoppgaver/underveisoppgave_1.svg
+---
+name: lineære-likningssystemer-grafisk-underveisoppgave-1
+width: 80%
+---
 
 Grafisk representasjon av likningssystemet
-```
+:::
 
 `````{admonition} Fasit
 :class: solution, dropdown
@@ -137,22 +250,26 @@ Et likningssystem kan ha flere enn to variabler, men disse likningssystemene vil
 ## Oppgaver
 
 ``````{admonition} Oppgave 1
-:class: problem
+---
+class: problem-level-1
+---
 Bruk figuren under til å løse likningssystemet 
-\begin{align} 
+\begin{align*} 
 x - 2y &=2 \\
 x + 4y & =8 \\
-\end{align}
+\end{align*}
 
 Uttrykk løsningen som 
 1. Et likningssystem
 2. En løsningsmengde
 
-```{figure} ./figurer/oppgaver/oppgave1.svg
-:name: oppgave 1
-:width: 80%
+```{figure} ./figurer/oppgaver/oppgave_1.svg
+---
+name: lineære-likningssystemer-grafisk-oppgave-1
+width: 80%
+---
 
-Bruk figuren til å løse likningssystemet
+Grafisk representasjon av likningssystemet.
 ```
 
 `````{admonition} Fasit
@@ -175,42 +292,63 @@ $$
 
 ---
 
-````{admonition} Oppgave 2
-:class: problem
-Bruk det interaktive vinduet under til å bestemme $k$ slik at likningssystemet 
+::::{admonition} Oppgave 2
+---
+class: problem-level-1
+---
+Under vises en interaktiv grafisk representasjon av likningssystemet
 
-\begin{align}
-2x + 3y &= 5 \\
-x + y + k &= 0
-\end{align}
+\begin{align*}
+-2x + 3y &= 5 \\
+x + y &= k
+\end{align*}
+
+der $k$ kan varieres.
+
+:::{raw} html
+---
+file: ./figurer/oppgaver/oppgave_2.html
+---
+:::
+
+<br>
+
+
+Bestem $k$ slik at likningssystemet har
 
 Oppgave 2a
-: Har løsningen $x = 4 \, \land \, y = -1$.
+: Løsningen $x = -4 \, \land \, y = -1$.
+
+:::{admonition} Fasit: 2a
+---
+class: answer, dropdown
+---
+$$
+k = 5
+$$
+
+:::
 
 Oppgave 2b
-: Har løsningsmengden $(x, y) \in \{(-2, 3)\}$.
+: Løsningsmengden $(x, y) \in \{(2, 3)\}$.
 
-```{raw} html
-:file: ./figurer/interaktive_plot/oppg_3.html
-```
-
-
-```{admonition} Fasit
-:class: dropdown, solution
-Oppgave 2a
-: $k = -3$.
-
-Oppgave 2b
-: $k = -1$.
-```
-
-````
+:::{admonition} Fasit: 2b
+---
+class: answer, dropdown
+---
+$$
+k = -5
+$$
+:::
+::::
 
 ---
 
 
-``````{admonition} Oppgave 3
-:class: problem
+::::::{admonition} Oppgave 3
+---
+class: problem-level-2
+---
 
 Figuren under viser grafene til to lineære funksjoner. 
 
@@ -232,29 +370,31 @@ $$
 
 Et likningssystem som beskrives av de to funksjonene er derfor
 
-$$
 \begin{align*}
     -2x + y &= 8 \\
     2x + y &= -4
 \end{align*}
-$$
 
 Løsningen av likningssystemet kan uttrykkes som
 
-````{tab-set}
-```{tab-item} Løsning som likningssystem
+::::{tab-set}
+
+:::{tab-item} Løsning som likningssystem
 $$
 x = -3 \quad \land \quad y = 2.
 $$
-```
+:::
 
-```{tab-item} Løsning som løsningsmengde
+:::{tab-item} Løsning som løsningsmengde
 $$
 (x, y) \in \{(-3, 2)\}.
 $$
-```
-`````
+:::
+
+::::
+
+:::::
 
 
 
-```````
+::::::

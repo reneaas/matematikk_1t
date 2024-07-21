@@ -8,6 +8,7 @@ Etter dette delkapittelet, er målet at du skal kunne:
 * Løse lineære likningssystemer med to variabler ved hjelp av innsettingsmetoden.
 * Løse lineære likningssystemer med to variabler ved hjelp av addisjonsmetoden.
 * Kunne uttrykke løsningen av et lineært likningssystem som et likningssystem eller som en løsningsmengde.
+* Kunne bestemme funksjonsuttrykket til en lineær funksjon ved hjelp av likningssystemer.
 ```
 
 
@@ -68,7 +69,7 @@ $$
 $$
 
 Steg 3
-: Nå plugger vi inn løsningen vår for $x$ i enten likning $\eqref{1a}$ eller $\eqref{1b}$ (det spiller ingen rolle hvilken, så vi velge den som gir minst regning). Vi velger å plugge inn i likning $\eqref{1b}$ siden vi allerede løst denne likningen for $y$:
+: Nå plugger vi inn løsningen vår for $x$ i enten likning $\eqref{1a}$ eller $\eqref{1b}$ (det spiller ingen rolle hvilken, så vi velger den som gir minst regning). Vi velger å plugge inn i likning $\eqref{1b}$ siden vi allerede løst denne likningen for $y$:
 
 $$
 y = 3 - 1 = 2.
@@ -313,3 +314,45 @@ $$
 `````
 
 ``````
+
+## Anvendelser
+Lineære likningssystemer dukker opp i mange praktiske situasjoner. Vi skal se på hvordan vi går fra en praktisk situasjon til et lineært likningssystem.
+
+
+::::{admonition} Eksempel 3: fra praktisk situasjon til likningssystem
+---
+class: example
+---
+Anna skal plante trær i en park. Hun skal plante to forskjellige typer som tar opp ulik plass. Eiketrær trenger 4 kvadratmeter plass, mens bjørketrær trenger 2 kvadratmeter plass. Anna har totalt 00 kvadratmeter til rådighet. Hun har bestemt seg for å plante 40 trær. 
+
+Hvor mange av hver type tre skal hun plante?
+
+
+:::{admonition} Løsning
+---
+class: solution
+---
+Vi lar $x$ være antall eiketrær og $y$ være antall bjørketrær. Siden det skal være 40 trær til sammen, kan vi sette opp den ene likningen som:
+
+\begin{align*}
+x + y &= 40 && \text{(Antall trær til sammen)}
+\end{align*}
+
+Ett eiketre tar opp 4 kvadratmeter og bjørketrær tar opp 2 kvadratmeter. Vi har 100 kvadratmeter til sammen, som betyr at vi kan sette opp den andre likningen som:
+
+\begin{align*}
+\underbrace{4x}_\text{Plass for eiketrær} + \underbrace{2y}_\text{Plass for bjørketrær} &= 100 && \text{(Totalt antall kvadratmeter)}
+\end{align*}
+
+Vi har altså likningssystemet
+
+\begin{align*}
+x + y & = 40 \\
+4x + 2y & = 100
+\end{align*}
+:::
+::::
+
+## Oppgaver
+
+::::{admonition} Underveisoppgave 1

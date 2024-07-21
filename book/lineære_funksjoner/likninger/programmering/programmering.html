@@ -217,9 +217,9 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../ulikheter/ulikheter.html">5. Lineære ulikheter</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../ulikheter/grafisk_l%C3%B8sning.html">5.1. Grafisk løsning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../ulikheter/algebraisk_l%C3%B8sning.html">5.2. Algebraisk løsning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../ulikheter/programmering.html">5.3. Løsning med programmering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ulikheter/grafisk_l%C3%B8sning/grafisk_l%C3%B8sning.html">5.1. Grafisk løsning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ulikheter/algebraisk_l%C3%B8sning/algebraisk_l%C3%B8sning.html">5.2. Algebraisk løsning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ulikheter/programmering/programmering.html">5.3. Løsning med programmering</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../modellering/modellering.html">6. Modellering</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -450,23 +450,19 @@ document.write(`
 <div class="mermaid" align="center">
 flowchart TD
     A["Sett x = startverdi"] --> B
-    B["Har f(x) endret fortegn?"] --> |Nei| C[Øk x med Δx]
+    B{"Er f(x) nærme null?"} --> |Nei| C[Øk x med Δx]
     C --> B
     B --> |Ja| D["Skriv ut x"]
 </div><br>
-<p>En Pythonkode som utfører denne algoritmen er</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1"># Definerer funksjonen f(x) = 2x - 4</span>
-<span class="linenos"> 2</span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="linenos"> 3</span>    <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">4</span>
-<span class="linenos"> 4</span>
-<span class="linenos"> 5</span><span class="n">x_start</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10</span>           <span class="c1"># Startverdi for x</span>
-<span class="linenos"> 6</span><span class="n">dx</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span>                <span class="c1"># Endring i x</span>
-<span class="linenos"> 7</span><span class="n">x</span> <span class="o">=</span> <span class="n">x_start</span>             <span class="c1"># Sett første `x`-verdi lik startverdien</span>
-<span class="linenos"> 8</span>
-<span class="linenos"> 9</span><span class="k">while</span> <span class="n">f</span><span class="p">(</span><span class="n">x_start</span><span class="p">)</span> <span class="o">*</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>    <span class="c1"># Så lenge f(x_start) og f(x) har samme fortegn</span>
-<span class="linenos">10</span>    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">dx</span>                  <span class="c1"># Øk x med dx</span>
-<span class="linenos">11</span>
-<span class="linenos">12</span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<p>Det vi må finne ut av nå, er hvordan vi skal kunne utføre stegene i algoritmen med et program.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">x_start</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10</span>               <span class="c1"># Startverdi for x</span>
+<span class="linenos">2</span><span class="n">dx</span> <span class="o">=</span> <span class="mf">0.001</span>                  <span class="c1"># Liten endring Δx </span>
+<span class="linenos">3</span><span class="n">x</span> <span class="o">=</span> <span class="n">x_start</span>                 <span class="c1"># Sett første `x`-verdi lik startverdien</span>
+<span class="linenos">4</span>
+<span class="linenos">5</span><span class="k">while</span> <span class="nb">abs</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">4</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">0.000001</span><span class="p">:</span>  <span class="c1"># Så lenge |f(x)| &gt; 0.000001  </span>
+<span class="linenos">6</span>    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">dx</span>                  <span class="c1"># Øk x med dx</span>
+<span class="linenos">7</span>
+<span class="linenos">8</span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
