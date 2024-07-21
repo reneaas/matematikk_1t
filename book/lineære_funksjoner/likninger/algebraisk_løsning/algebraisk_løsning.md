@@ -55,9 +55,7 @@ Målet vårt er å finne ut hvilken verdi av $x$ som gjør at likningen er sann.
 & \Updownarrow \\
 3x &= -6 \\
 & \Updownarrow \\
-\frac{\bcancel{3}x}{\bcancel{\textcolor{red}{3}}} &= \frac{-6}{\textcolor{red}{3}} && \text{Deler med 3 på begge sider}\\
-& \Updownarrow \\
-\frac{\bcancel{3}x}{\bcancel{\textcolor{red}{3}}} &= \frac{-6}{\textcolor{red}{3}} && \text{Deler med 3 på begge sider}\\
+\frac{\bcancel{3}x}{\bcancel{\textcolor{red}{3}}} &= \frac{\cancelto{\displaystyle \textcolor{teal}{-2}}{-6}}{\cancel{\textcolor{red}{3}}} && \text{Deler med 3 på begge sider}\\
 & \Updownarrow \\
 x &= -2
 \end{align*}

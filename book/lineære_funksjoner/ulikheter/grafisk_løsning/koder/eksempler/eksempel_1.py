@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 plt.rc("text", usetex=True)
 
 def f(x):
-    return 2*x - 4
+    return -2*x + 4
 
 a = -7
 b = 10
@@ -25,7 +25,7 @@ ax.plot(0, 1, "^k", transform=ax.get_xaxis_transform(), clip_on=False)
 ax.set_xlabel(r"$x$", fontsize=16, loc="right")
 ax.set_ylabel(r"$f(x)$", fontsize=16, loc="top", rotation="horizontal")
 
-xticks = list(np.arange(-1, 6, 1))
+xticks = list(np.arange(-3, 6, 1))
 xticks.remove(0)
 plt.xticks(xticks, fontsize=16)
 
@@ -34,8 +34,40 @@ yticks.remove(0)
 plt.yticks(yticks, fontsize=16)
 
 plt.ylim(-5, 6)
-plt.xlim(-2, 6)
+plt.xlim(-4, 6)
 
+
+plt.annotate(
+    text="Løsningsmengde",
+    xy=(0.5, 0),
+    xytext=(-2, 3),
+    fontsize=16,
+    arrowprops=dict(arrowstyle="->", lw=2, color="black", alpha=0.7),
+    horizontalalignment="center",
+    verticalalignment="center",
+)
+
+plt.annotate(
+    text="Løsningsmengde",
+    xy=(-2, 0),
+    xytext=(-2, 3),
+    fontsize=16,
+    arrowprops=dict(arrowstyle="->", lw=2, color="black", alpha=0.7),
+    horizontalalignment="center",
+    verticalalignment="center",
+)
+
+plt.annotate(
+    text="Løsningsmengde",
+    xy=(-3.5, 0),
+    xytext=(-2, 3),
+    fontsize=16,
+    arrowprops=dict(arrowstyle="->", lw=2, color="black", alpha=0.7),
+    horizontalalignment="center",
+    verticalalignment="center",
+)
+
+ax.hlines(0, -5, 2, color="red", alpha=0.3, lw=8)
 
 plt.grid(True, linestyle="--", alpha=0.6)
 plt.tight_layout()

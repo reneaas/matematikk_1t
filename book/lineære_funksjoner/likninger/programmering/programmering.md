@@ -46,25 +46,22 @@ Vi tenker oss at vi har en funksjon $f(x) = 2x - 4$ og at vi skal bestemme nullp
 
 <br>
 
-En Pythonkode som utfører denne algoritmen er 
+Det vi må finne ut av nå, er hvordan vi skal kunne utføre stegene i algoritmen med et program. 
 
 ```{code-block} python
 ---
 linenos: true
 ---
-# Definerer funksjonen f(x) = 2x - 4
-def f(x):
-    return 2*x - 4
+x_start = -10               # Startverdi for x
+dx = 0.001                  # Liten endring Δx 
+x = x_start                 # Sett første `x`-verdi lik startverdien
 
-x_start = -10           # Startverdi for x
-dx = 1/2                # Endring i x
-x = x_start             # Sett første `x`-verdi lik startverdien
-
-while f(x_start) * f(x) > 0:    # Så lenge f(x_start) og f(x) har samme fortegn
+while abs(2*x - 4) > 0.000001:  # Så lenge |f(x)| > 0.000001  
     x = x + dx                  # Øk x med dx
 
 print(x)
 ```
+
 :::::
 
 

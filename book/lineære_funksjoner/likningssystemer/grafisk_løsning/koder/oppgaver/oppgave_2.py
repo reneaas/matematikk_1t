@@ -6,12 +6,12 @@ from bokeh.models.formatters import NumeralTickFormatter
 # Generate x-axis data
 x = [i for i in range(-10, 11)]
 
-x_min = -5
-x_max = 5
-y_min = -5
-y_max = 5
+x_min = -7.3
+x_max = 7.3
+y_min = -7.3
+y_max = 7.3
 
-a = -2/3
+a = 2/3
 b = 5/3
 
 # Set up the initial plot
@@ -19,7 +19,7 @@ p = figure(
     x_range=(x_min, x_max + 0.5), 
     y_range=(y_min, y_max + 0.5),
     width=700, 
-    height=500,
+    height=400,
     toolbar_location=None,
 )
 
@@ -77,7 +77,7 @@ p.axis.major_tick_line_color = "black"
 p.axis.minor_tick_line_color = "black"
 
 # Create slider for k
-slider_k = Slider(start=-5, end=5, value=0, step=0.25, title="k")
+slider_k = Slider(start=-10, end=10, value=0, step=0.5, title="k")
 
 # JavaScript callback for updating the plot
 callback = CustomJS(args=dict(k_line_source=k_line_source, slider_k=slider_k), code="""
@@ -94,5 +94,5 @@ slider_k.js_on_change('value', callback)
 
 # Organize layout and output
 layout = column(p, slider_k)
-output_file("../../figurer/interaktive_plot/oppg_3.html")
+output_file("../../figurer/oppgaver/oppgave_2.html")
 save(layout)
