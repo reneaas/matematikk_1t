@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>11.2. Mer komplisert polynomdivisjon &#8212; Matematikk 1T</title>
+    <title>CAS-kurs del 1 &#8212; Matematikk 1T</title>
   
   
   
@@ -64,13 +64,13 @@
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'book/polynomer/polynomdivisjon/generell_polynomdivisjon';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/cas/cas_del1/cas_del1';</script>
     <script>mermaid.initialize({"startOnLoad": true})</script>
     <script src="../../../_static/custom.js?v=095e7735"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="CAS" href="../../cas/intro.html" />
-    <link rel="prev" title="11. Polynomdivisjon" href="polynomdivisjon.html" />
+    <link rel="next" title="Variabler" href="../../programmering/variabler/variabler.html" />
+    <link rel="prev" title="CAS" href="../intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="norwegian"/>
   </head>
@@ -245,16 +245,16 @@
 <li class="toctree-l1"><a class="reference internal" href="../../andregradsfunksjoner/egenskaper/intro_egenskaper.html">10. Egenskaper ved andregradsfunksjoner</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Polynomer</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="polynomdivisjon.html">11. Polynomdivisjon</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">11.2. Mer komplisert polynomdivisjon</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../polynomer/polynomdivisjon/polynomdivisjon.html">11. Polynomdivisjon</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../polynomer/polynomdivisjon/generell_polynomdivisjon.html">11.2. Mer komplisert polynomdivisjon</a></li>
 </ul>
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CAS</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../cas/intro.html">CAS</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../cas/cas_del1/cas_del1.html">CAS-kurs del 1</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../intro.html">CAS</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">CAS-kurs del 1</a></li>
 </ul>
 </details></li>
 </ul>
@@ -320,7 +320,7 @@
       
       
       
-      <li><a href="../../../_sources/book/polynomer/polynomdivisjon/generell_polynomdivisjon.md" target="_blank"
+      <li><a href="../../../_sources/book/cas/cas_del1/cas_del1.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Last ned kildefilen"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -404,7 +404,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Mer komplisert polynomdivisjon</h1>
+    <h1>CAS-kurs del 1</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -414,7 +414,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polynomdivisjon-generelt">11.2.1. Polynomdivisjon generelt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finn-cas">Finn CAS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lose-likninger-i-cas">Løse likninger i CAS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#likningssystemer">Likningssystemer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#likningssystemer-med-flere-enn-to-ukjente">Likningssystemer med flere enn to ukjente</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ulikheter">Ulikheter</a></li>
 </ul>
             </nav>
         </div>
@@ -426,124 +432,160 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="mer-komplisert-polynomdivisjon">
-<h1><span class="section-number">11.2. </span>Mer komplisert polynomdivisjon<a class="headerlink" href="#mer-komplisert-polynomdivisjon" title="Link to this heading">#</a></h1>
-<section id="polynomdivisjon-generelt">
-<h2><span class="section-number">11.2.1. </span>Polynomdivisjon generelt<a class="headerlink" href="#polynomdivisjon-generelt" title="Link to this heading">#</a></h2>
-<p>Hittil har vi sett på polynomdivisjon der vi har delt et tredjegradspolynom på et lineært polynom.
-Men så lenge teller har større grad enn nevner, kan vi utføre polynomdivisjon. I denne seksjonen skal vi se på noen eksempler på dette. Men først skal vi skrive ned et mer generelt resultat:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="cas-kurs-del-1">
+<h1>CAS-kurs del 1<a class="headerlink" href="#cas-kurs-del-1" title="Link to this heading">#</a></h1>
+<p>Dette er en introduksjon til CAS. Etter hvert som du lærer mer matematikk i 1T, vil du også lære å ta i bruk flere funksjoner.</p>
+<section id="finn-cas">
+<h2>Finn CAS<a class="headerlink" href="#finn-cas" title="Link to this heading">#</a></h2>
+<p>Du finner fram til CAS ved å åpne geogebra og trykke på “hamburgermenyen” (tre streker) øverst til høyre. Klikk på denne og sørg for at CAS er huket av.</p>
+<p>I CAS kan du velge mellom å løse likninger eller gjøre utregninger symbolsk eller numerisk. Symbolsk-tegnet er <span class="math notranslate nohighlight">\(=\)</span> og gir oss nøyaktige tall og brøker. Numerisk-tegnet er <span class="math notranslate nohighlight">\(\approx\)</span> og gir oss et desimaltall.</p>
+<p>Du kan prøve ut dette ved å skriv inn sqrt(2) og observere at du får opp et kvadratrottegn. Du kan også få frem <span class="math notranslate nohighlight">\(\sqrt{\quad}\)</span> ved å finne den på tastaturet. Prøv nå å trykke på <span class="math notranslate nohighlight">\(\approx\)</span> og sammenlign med dersom du trykker på <span class="math notranslate nohighlight">\(=\)</span>.</p>
+<figure class="align-default" id="eks0">
+<a class="reference internal image-reference" href="../../../_images/cas0.png"><img alt="../../../_images/cas0.png" src="../../../_images/cas0.png" style="width: 50%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">CAS kan både regne eksakt og numerisk.</span><a class="headerlink" href="#eks0" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
-<div class="tip admonition">
-<p class="admonition-title">Polynomgrad</p>
-<p>Når vi snakker om graden til et polynom <span class="math notranslate nohighlight">\(p\)</span> skriver vi <span class="math notranslate nohighlight">\(\deg(p)\)</span> (fra det engelske ordet <em>degree</em>). Dette er den høyeste potensen av <span class="math notranslate nohighlight">\(x\)</span> i polynomet. For eksempel for <span class="math notranslate nohighlight">\(p(x) = x^3 - 5x + 1\)</span>, så er <span class="math notranslate nohighlight">\(\deg(p) = 3\)</span> fordi det er den høyeste potensen av <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<div class="note admonition">
+<p class="admonition-title">Tips</p>
+<p>Har tastaturet ditt forsvunnet? Finn tastatursymbolet nederst i høyre hjørne, så kommer du tilbake.</p>
 </div>
 </aside>
-<div class="tip admonition">
-<p class="admonition-title">Polynomdivisjon (generelt)</p>
-<p>Gitt et polynom <span class="math notranslate nohighlight">\(p(x)\)</span> av grad <span class="math notranslate nohighlight">\(\deg(p) = n\)</span> og et polynom <span class="math notranslate nohighlight">\(q(x)\)</span> av grad <span class="math notranslate nohighlight">\(\deg(q) = m\)</span>, vil polynomdivisjonen <span class="math notranslate nohighlight">\(p(x) \div q(x)\)</span> gi</p>
-<div class="math notranslate nohighlight">
-\[
-\frac{p(x)}{q(x)} = k(x) + \frac{r(x)}{q(x)}
-\]</div>
-<p>der <span class="math notranslate nohighlight">\(k(x)\)</span> kalles for <strong>kvotienten</strong> og er et polynom av grad <span class="math notranslate nohighlight">\(\deg(k) = n - m\)</span>, og <span class="math notranslate nohighlight">\(r(x)\)</span> kalles for <strong>resten</strong> og er et polynom med en grad <span class="math notranslate nohighlight">\(\deg(r) \leq m - 1\)</span>.</p>
-<p>Alternativt kan vi skrive sammenhengen over som</p>
-<div class="math notranslate nohighlight">
-\[
-p(x) = k(x)q(x) + r(x)
-\]</div>
-<dl class="simple myst">
-<dt>Observasjon</dt><dd><p>Dersom polynomdivisjonen går opp, så er <span class="math notranslate nohighlight">\(r(x) = 0\)</span>. Dette betyr at <span class="math notranslate nohighlight">\(q(x)\)</span> er en faktor i <span class="math notranslate nohighlight">\(p(x)\)</span>.</p>
-</dd>
-</dl>
-</div>
-<div class="eksempel admonition">
-<p class="admonition-title">Eksempel 1 (tredjegradspolynom delt med andregradspolynom)</p>
-<p>Vi tenker oss at vi skal utføre polynomdivisjonen</p>
-<div class="math notranslate nohighlight">
-\[
-(x^3 - 5x^2 + 3x - 1) \div (x^2 - 3x + 2)
-\]</div>
-<p>Fremgangsmåten er som før, men nå deler vi med <span class="math notranslate nohighlight">\(x^2\)</span> og ikke med <span class="math notranslate nohighlight">\(x\)</span> siden dette er den høyeste potensten av <span class="math notranslate nohighlight">\(x\)</span> i nevneren.</p>
-<dl class="simple myst">
-<dt>Steg 1</dt><dd><p>Vi starter med å dele <span class="math notranslate nohighlight">\(x^3\)</span> med <span class="math notranslate nohighlight">\(x^2\)</span> som gir <span class="math notranslate nohighlight">\(x\)</span>, etterfulgt av å trekke fra <span class="math notranslate nohighlight">\(x\cdot(x^2 - 3x + 2) = x^3 - 3x^2 + 2x\)</span>:</p>
-</dd>
-</dl>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-&amp; (\quad x^3 - 5x^2 + 3x - 1) \div (x^2 - 3x + 2) = x^2 \\
-&amp; \,\,\, -x^3 + 3x^2 - 2x &amp; \\
-\hline
-&amp; \quad\quad\,\,\,\, -2x^2 + x - 1 &amp; \\
-\end{align*}\]</div>
-<dl class="simple myst">
-<dt>Steg 2</dt><dd><p>Nå sitter vi igjen med et andregradspolynom <span class="math notranslate nohighlight">\(-2x^2 + x - 1\)</span>. Vi gjentar med å dele med høyeste potens av <span class="math notranslate nohighlight">\(x\)</span> i polynomet med høyeste potens i nevneren. Derfor deler vi <span class="math notranslate nohighlight">\(-2x^2\)</span> med <span class="math notranslate nohighlight">\(x^2\)</span> som gir <span class="math notranslate nohighlight">\(-2\)</span> til kvotienten vår. Deretter trekker vi fra <span class="math notranslate nohighlight">\(-2\cdot(x^2 - 3x + 2) = -2x^2 + 6x - 4\)</span>:</p>
-</dd>
-</dl>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-&amp; (\quad x^3 - 5x^2 + 3x - 1) \div (x^2 - 3x + 2) = x^2 - 2 \\
-&amp; \,\,\, -x^3 + 3x^2 - 2x &amp; \\
-\hline
-&amp; \quad\quad\,\,\,\, -2x^2 + x - 1 &amp; \\
-&amp; \quad\quad\,\,\,\,\, 2x^2 - 6x + 4 &amp; \\
-\hline
-&amp; \quad\quad\quad\quad\,\,\,\, -5x + 3 &amp; \\
-\end{align*}\]</div>
-<dl class="simple myst">
-<dt>Steg 3</dt><dd><p>Nå sitter vi igjen med et førstegradspolynom <span class="math notranslate nohighlight">\(-5x + 3\)</span>. Siden graden til polynomet er lavere enn graden til polynomet i nevneren, så kan vi ikke dele videre. Vi får derfor en rest på <span class="math notranslate nohighlight">\(r(x) = -5x + 3\)</span> og kan skrive ned resultatet vårt som</p>
-</dd>
-</dl>
-<div class="math notranslate nohighlight">
-\[
-(x^3 - 5x^2 + 3x - 1) \div (x^2 - 3x + 2) = x^2 - 2 + \frac{-5x + 3}{x^2 - 3x + 2}
-\]</div>
-</div>
-<div class="eksempel admonition">
-<p class="admonition-title">Eksempel 2 (tredjegradspolynom delt med andregradspolynom)</p>
-<p>Vi tenker oss at vi skal utføre polynomdivisjonen</p>
-<div class="math notranslate nohighlight">
-\[
-(x^3 - 3x + 1) \div (x^2 - 2)
-\]</div>
-<p>Fremgangsmåten er ganske lik, bortsett fra at vi nå deler med <span class="math notranslate nohighlight">\(x^2\)</span> og ikke med <span class="math notranslate nohighlight">\(x\)</span>.</p>
-<dl class="simple myst">
-<dt>Steg 1</dt><dd><p>Vi starter med å dele <span class="math notranslate nohighlight">\(x^3\)</span> med <span class="math notranslate nohighlight">\(x^2\)</span> som gir <span class="math notranslate nohighlight">\(x\)</span>, etterfulgt av å trekke fra <span class="math notranslate nohighlight">\(x(x^2 - 2) = x^3 - 2x\)</span>:</p>
-</dd>
-</dl>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-&amp; (\quad x^3 - 3x + 1) \div (x^2 - 2) = x \\
-&amp; -x^3 + 2x &amp; \\
-\hline
-&amp; \quad\quad\quad\, -x + 1 &amp; \\
-\end{align*}\]</div>
-<dl class="simple myst">
-<dt>Steg 2</dt><dd><p>Det vi kan merke oss nå er at siden <span class="math notranslate nohighlight">\(-x + 1\)</span> er et førstegradsspolynom, så kan vi fortsette å dele dette med <span class="math notranslate nohighlight">\(x^2 - 2\)</span>. Derfor blir resten vår <span class="math notranslate nohighlight">\(-x + 1\)</span> og vi har at</p>
-</dd>
-</dl>
-<div class="math notranslate nohighlight">
-\[
-(x^3 - 3x + 1) \div (x^2 - 2) = x + \frac{-x + 1}{x^2 - 2}
-\]</div>
-</div>
+</section>
+<section id="lose-likninger-i-cas">
+<h2>Løse likninger i CAS<a class="headerlink" href="#lose-likninger-i-cas" title="Link to this heading">#</a></h2>
+<p>Skriv inn likningen <span class="math notranslate nohighlight">\(2x + 3 = -x - 3\)</span> i CAS. Det er lurt å sjekke at du har skrevet inn riktig før du går videre, for ellers løser du jo en helt annen likning!</p>
+<p>Løs likningen ved å trykke på knappen som er merket med “x=”. Denne skal vi heretter kalle “Løs-knappen”.</p>
+<figure class="align-default" id="eks1">
+<a class="reference internal image-reference" href="../../../_images/cas1.png"><img alt="../../../_images/cas1.png" src="../../../_images/cas1.png" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Vi kan løse likninger både numerisk og eksakt.</span><a class="headerlink" href="#eks1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
 <div class="note admonition">
 <p class="admonition-title">Underveisoppgave 1</p>
-<p>Utfør polynomdivisjonen</p>
-<div class="math notranslate nohighlight">
-\[
-(x^3 - 6x^2 - 3x + 2) \div (x^2 - x - 6)
-\]</div>
-</div>
+<p>Bruk CAS til å løse likningene:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\( 2x−10+x=x+20 \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\( \frac{5}{2}x+9x−2=12x \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\( \frac{x}{3}=12 \)</span></p></li>
+</ol>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Løsning</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Polynomdivisjonen gir</p>
-<figure class="align-default">
-<a class="reference internal image-reference" href="../../../_images/generell_polynomdivisjon_underveisoppgave1.svg"><img alt="../../../_images/generell_polynomdivisjon_underveisoppgave1.svg" src="../../../_images/generell_polynomdivisjon_underveisoppgave1.svg" style="width: 590.0px; height: 140.0px;" /></a>
-</figure>
+<ol class="arabic simple">
+<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(x = 15\)</span></p></li>
+<li><p class="sd-card-text"><span class="math notranslate nohighlight">\( x = -4\)</span></p></li>
+<li><p class="sd-card-text"><span class="math notranslate nohighlight">\( x = \frac{3}{2}\)</span></p></li>
+</ol>
 </div>
-</details></section>
+</details></div>
+</section>
+<section id="likningssystemer">
+<h2>Likningssystemer<a class="headerlink" href="#likningssystemer" title="Link to this heading">#</a></h2>
+<p>Vi kan også løse likningssystemer i CAS. Da skriver vi inn hver likning for seg, markerer linjene og trykker på Løs-knappen.</p>
+<p>Vi prøver med likningssettet</p>
+<div class="amsmath math notranslate nohighlight" id="equation-7bf1357c-a170-4903-b4a6-70643a08c516">
+<span class="eqno">(1)<a class="headerlink" href="#equation-7bf1357c-a170-4903-b4a6-70643a08c516" title="Permalink to this equation">#</a></span>\[\begin{align}
+    2x+3y-4 &amp; =0
+    2x+1 &amp;= 2-y
+\end{align}\]</div>
+<figure class="align-default" id="eks2">
+<a class="reference internal image-reference" href="../../../_images/cas2.png"><img alt="../../../_images/cas2.png" src="../../../_images/cas2.png" style="width: 60%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Når vi løser likningssett må vi huske å markere likningene vi skal løse.</span><a class="headerlink" href="#eks2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="note admonition">
+<p class="admonition-title">Underveisoppgave 2</p>
+<p>Bruk CAS til å løse likningssettene:</p>
+<ol class="arabic">
+<li><div class="amsmath math notranslate nohighlight" id="equation-e057df31-3453-40da-a0cb-507889a68c00">
+<span class="eqno">(2)<a class="headerlink" href="#equation-e057df31-3453-40da-a0cb-507889a68c00" title="Permalink to this equation">#</a></span>\[\begin{align}
+        3x+y &amp;=7 \\
+        x−y &amp;=1 \\
+    \end{align}\]</div>
+</li>
+<li><div class="amsmath math notranslate nohighlight" id="equation-cc7f20b5-aa7c-49cf-813d-ea2fac1ae00b">
+<span class="eqno">(3)<a class="headerlink" href="#equation-cc7f20b5-aa7c-49cf-813d-ea2fac1ae00b" title="Permalink to this equation">#</a></span>\[\begin{align}
+        x−2y &amp;= 7 \\
+        2x+y &amp;= 1 \\
+    \end{align}\]</div>
+</li>
+<li><div class="amsmath math notranslate nohighlight" id="equation-fe234cab-77e1-4b7b-8c32-c2b7afd51e2b">
+<span class="eqno">(4)<a class="headerlink" href="#equation-fe234cab-77e1-4b7b-8c32-c2b7afd51e2b" title="Permalink to this equation">#</a></span>\[\begin{align}
+        x+2y &amp;= 5 \\
+        4x &amp;= 6−y \\
+    \end{align}\]</div>
+</li>
+<li><div class="amsmath math notranslate nohighlight" id="equation-013325af-c2d5-4d36-8465-8374bbbf3f9f">
+<span class="eqno">(5)<a class="headerlink" href="#equation-013325af-c2d5-4d36-8465-8374bbbf3f9f" title="Permalink to this equation">#</a></span>\[\begin{align}
+        −2x+y &amp;= −1 \\
+        4x+2y+14 &amp;= 0 \\
+    \end{align}\]</div>
+</li>
+</ol>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Løsning</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(x = 2, y = 1\)</span></p></li>
+<li><p class="sd-card-text"><span class="math notranslate nohighlight">\( x = \frac{9}{5}, y = \frac{-13}{5}\)</span></p></li>
+<li><p class="sd-card-text"><span class="math notranslate nohighlight">\( x= 1, y = 2\)</span></p></li>
+<li><p class="sd-card-text"><span class="math notranslate nohighlight">\( x = \frac{-3}{2}, y = -4\)</span></p></li>
+</ol>
+</div>
+</details></div>
+<section id="likningssystemer-med-flere-enn-to-ukjente">
+<h3>Likningssystemer med flere enn to ukjente<a class="headerlink" href="#likningssystemer-med-flere-enn-to-ukjente" title="Link to this heading">#</a></h3>
+<p>Når vi bruker CAS, er det også lett å løse likningssystemer med flere enn to ukjente. Prøv selv!</p>
+<div class="note admonition">
+<p class="admonition-title">Underveisoppgave 4</p>
+<p>Løs likningssystemet</p>
+<div class="amsmath math notranslate nohighlight" id="equation-16237712-7d7c-4725-a56d-026c28522791">
+<span class="eqno">(6)<a class="headerlink" href="#equation-16237712-7d7c-4725-a56d-026c28522791" title="Permalink to this equation">#</a></span>\[\begin{align}
+    a - b + c &amp;= -11
+    a + b + c &amp;= 11
+    8a + 4b + 2c &amp;= -4
+\end{align}\]</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Løsning</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><span class="math notranslate nohighlight">\(a = -8, b = 11, c = 8\)</span></p>
+</div>
+</details></div>
+</section>
+</section>
+<section id="ulikheter">
+<h2>Ulikheter<a class="headerlink" href="#ulikheter" title="Link to this heading">#</a></h2>
+<p>Vi kan også løse ulikheter i CAS. Vi prøver oss frem med ulikheten <span class="math notranslate nohighlight">\(\frac{x}{3}+\frac{1}{2}\leq \frac{x}{2}+\frac{1}{3}\)</span>. Vi bruker Løs-knappen som tidligere og får <span class="math notranslate nohighlight">\(x \geq 1\)</span>, som vist under.</p>
+<figure class="align-default" id="eks3">
+<a class="reference internal image-reference" href="../../../_images/cas3.png"><img alt="../../../_images/cas3.png" src="../../../_images/cas3.png" style="width: 40%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Vi løser ulikheter på samme måte som likninger.</span><a class="headerlink" href="#eks3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="note admonition">
+<p class="admonition-title">Underveisoppgave 4</p>
+<p>Bruk CAS til å løse ulikhetene:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\( −2x+3 \geq 3x−5 \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\( 3(y+3) &lt; 5(y+3) \)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(3(x+3)-\frac{1}{2}\left(x+4\right) &lt; x+5(x-2)\)</span></p></li>
+</ol>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Løsning</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(x \leq \frac{4}{3} \)</span></p></li>
+<li><p class="sd-card-text"><span class="math notranslate nohighlight">\( x &gt; -3\)</span></p></li>
+<li><p class="sd-card-text"><span class="math notranslate nohighlight">\( x &gt; \frac{34}{7}\)</span></p></li>
+</ol>
+</div>
+</details></div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -559,7 +601,7 @@ p(x) = k(x)q(x) + r(x)
         },
         kernelOptions: {
             name: "python3",
-            path: "./book/polynomer/polynomdivisjon"
+            path: "./book/cas/cas_del1"
         },
         predefinedOutput: true
     }
@@ -577,20 +619,20 @@ p(x) = k(x)q(x) + r(x)
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="polynomdivisjon.html"
+       href="../intro.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">11. </span>Polynomdivisjon</p>
+        <p class="prev-next-title">CAS</p>
       </div>
     </a>
     <a class="right-next"
-       href="../../cas/intro.html"
+       href="../../programmering/variabler/variabler.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">CAS</p>
+        <p class="prev-next-title">Variabler</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -610,7 +652,13 @@ p(x) = k(x)q(x) + r(x)
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polynomdivisjon-generelt">11.2.1. Polynomdivisjon generelt</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finn-cas">Finn CAS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lose-likninger-i-cas">Løse likninger i CAS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#likningssystemer">Likningssystemer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#likningssystemer-med-flere-enn-to-ukjente">Likningssystemer med flere enn to ukjente</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ulikheter">Ulikheter</a></li>
 </ul>
   </nav></div>
 
