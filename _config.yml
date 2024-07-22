@@ -1,24 +1,25 @@
 title: Matematikk 1T
 author: Edvard Munch Videregående Skole
 copyright: "2024"
+logo: ./evg_logo_med_1T.jpg
 
 options:
   numbered: true
-
 
 execute:
   execute_notebooks: off
 
 parse:
-  # number_source_lines: true
   myst_enable_extensions:
-    # don't forget to list any other extensions you want enabled,
-    # including those that are enabled by default!
     - dollarmath
     - amsmath
     - html_image
     - deflist
+    - tasklist
     - attrs_inline
+    - attrs_block
+    - smartquotes
+    - colon_fence
 
 latex:
   latex_documents:
@@ -41,17 +42,26 @@ html:
   use_issues_button: true
   use_repository_button: true
   nb_number_source_lines: false
+  extra_js:
+    - _static/custom.js
+    - https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.13.4/mermaid.min.js
 
 
 sphinx:
     # nb_number_source_lines: true    # Enables line numbers in code
+
   extra_extensions:
     - sphinx_proof
     - sphinx_inline_tabs
     - sphinxmermaid
     - sphinxcontrib.tikz
+
   extra_css_files:
-    - custom.css
+    - _static/
+
+
   config:
     language: norwegian
-    html_extra_path: ["book/rette_linjer/representasjoner/figurer/interaktive_plot/"]
+    html_theme_options:
+      pygments_light_style: "github-light"
+      pygments_dark_style: "one-dark"

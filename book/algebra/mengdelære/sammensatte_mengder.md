@@ -1,18 +1,5 @@
 # Sammensatte mengder
 
-Noen ganger kan vi ikke beskrive en mengde med ett intervall eller med én ulikhet. Noen ganger kan vi ikke uttrykke de som ulikheter eller intervaller i det hele tatt.
-Vi kan gi noen eksempler på tilfeller der vi teorien kjenner så langt ikke strekker til:
-* Alle reelle tall bortsett fra $x = 0$. 
-* Alle reelle tall over $x = 2$ og mindre enn $x = -1$.
-* Alle reelle fra $x = -2$ til $x = 1$ og fra $x = 3$ til $x = 4$.
-* Mengden av tallene $-1$, $1$ og $3$.
-* Mengden av punktene $(1, 2)$ og $(3, 4)$ og $(-2, 3)$.
-
-Etter denne seksjonen vil du kunne beskrive slike mengder på en kort og kompakt måte.
-
-
-For å beskrive slike mengder, må vi finne ut hvordan vi setter sammen flere mengder, enten uttrykt som intervaller eller som ulikheter.
-
 ```{admonition} Læringsmål: sammensatte mengder
 :class: tip
 Målet for denne seksjon er at du skal:
@@ -20,13 +7,20 @@ Målet for denne seksjon er at du skal:
 * Kunne beskrive sammensatte mengder ved hjelp av intervaller, ulikheter og listenotasjon.
 ```
 
+Noen ganger kan vi ikke beskrive en mengde med ett intervall eller med én ulikhet. Noen ganger kan vi ikke uttrykke de som ulikheter eller intervaller i det hele tatt.
+Vi kan gi noen eksempler på tilfeller der vi teorien kjenner så langt ikke strekker til:
+* Alle reelle tall bortsett fra $x = 0$. 
+* Alle reelle tall som oppfyller at $x > 2$ eller $x \leq -1$.
+* Alle reelle som oppfyller $-2 < x \leq 1$ eller $3 <x < 4$. 
+* Løsningen av likninger og likningssystemer som har flere løsninger.
 
+Målet vårt nå, er å utvikle verktøy og notasjon som gir oss muligheten til å beskrive sammensatte mengder på en kort og kompakt måte.
 
 ## Regneregler for mengder
 Akkurat som reelle tall har regneregler, har også mengder sine egne regneregler. Vi trenger heldigvis bare noen få regneregler for å kunne beskrive sammensatte mengder.
 
 ```{admonition} Regneregler for mengder
-:class: tip
+:class: theory
 
 La $A$ og $B$ være to mengder. Da har vi følgende regneregler:
 
@@ -36,72 +30,197 @@ Union: $A \cup B$
 Snitt: $A \cap B$
 : Gir mengden av alle elementer som er i både $A$ og $B$. Det vil si, alle elementer $x$ som oppfyller $x \in A$ og $x \in B$ samtidig. 
 
-Differens (mengdeminus): $A \setminus B$
+Mengdeminus (differens): $A \setminus B$
 : Gir mengden av alle elementer som er i $A$, bortsett fra alle som også er i $B$. Det vil si, alle elementer $x$ som oppfyller $x \in A$ og $x \notin B$
-
-Komplement: $A^c$
-: Gir mengden av alle elementer som *ikke* er i $A$. Det vil si, mengden av alle elementer $x$ slik at $x \notin A$.
 ```
 
-I tabellen under vises noen eksempler med listenotasjon og intervaller. Les den **nøye** og overbevis deg selv om at du forstår regnereglene:
+Vi tar et eksempel for å illustrere regnereglene med lister:
 
-````{margin}
-```{admonition} Den tomme mengden
-:class: tip
-Noen ganger er det nyttig å kunne beskrive en mengde som ikke inneholder *noen elementer*. Vi kaller denne mengden for den **tomme mengden**. Vi bruker symbolet $\emptyset$ for denne mengden. På listeform kan vi skrive $\emptyset = \{\}$.
+
+````{admonition} Eksempel 1: regneregler for mengder - liste *edition*
+:class: example
+La $A = \{1, 2, 3\}$ og $B = \{2, 3, 4\}$. Da har vi at
+
+
+$A \cup B$ (union):
+: $A \cup B$ skal bestå av alle elementene som er inkludert i både $A$ eller $B$. Vi tar ikke med et element mer enn én gang selv om elementet er i begge mengdene. Derfor har vi at
+
+$$
+A \cup B = \{1, 2, 3, 4\}.
+$$
+
+$A \cap B$ (snitt):
+: $A \cap B$ skal bestå av alle elementene som er inkludert i både $A$ og $B$ samtidig. Derfor har vi at
+
+$$
+A \cap B = \{2, 3\}. 
+$$
+
+$A \setminus B$ (mengdeminus):
+: $A \setminus B$ skal bestå av alle elementene som er i $A$, bortsett fra de som *også* er i $B$. Derfor har vi at
+
+$$
+A \setminus B = \{1\}.
+$$
+
+
+````
+
+**Din tur**!
+
+````{admonition} Underveisoppgave 1
+:class: check
+
+Gitt mengdene $A = \{1, 3, 5\}$ og $B = \{-1, 1, 5\}$. Bestem mengdene
+* $A \cup B$
+* $A \cap B$
+* $A \setminus B$
+* $B \setminus A$
+
+```{admonition} Fasit
+:class: answer, dropdown
+
+* $A \cup B = \{-1, 1, 3, 5\}$
+* $A \cap B = \{1, 5\}$
+* $A \setminus B = \{3\}$
+* $B \setminus A = \{-1\}$
+```
+
+```{admonition} Løsning
+:class: solution, dropdown
+
+Vi har at $A = \{1, 3, 5\}$ og $B = \{-1, 1, 5\}$.
+
+$A \cup B$
+: Her skal vi ta med alle elementene som er i enten $A$ eller $B$, eller begge. Vi husker på at vi bare skal ha ett eksemplar av et element selv om elementet er i både $A$ og $B$. Dermed for vi
+
+$$
+A \cup B = \{-1, 1, 3, 5\}.
+$$
+
+$A \cap B$
+: Snittet er mengden som består av elementene som er i både $A$ og $B$ samtidig. Dette er bare $1$ og $5$, så vi får
+
+$$
+A \cap B = \{1, 5\}. 
+$$
+
+$A \setminus B$
+: A minus B er mengden av elementene som er i $A$, bortsett fra de som også er i $B$. Dermed har vi
+
+$$
+A \setminus B = \{3\}.
+$$
+
+$B \setminus A$
+: B minus A er mengden av elementene som er i $B$, bortsett fra de som også er i $A$. Dermed har vi
+
+$$
+B \setminus A = \{-1\}.
+$$
 ```
 ````
 
-| Mengde $A$ | Mengde $B$ | $A \cup B$ | $A \cap B$ | $A \setminus B$ |
-| :---: | :---: | :---: | :---: | :---: |
-| $\{1, 2, 3\}$ | $\{2, 3, 4\}$ | $\{1, 2, 3, 4\}$ | $\{2, 3\}$ | $\{1\}$ |
-| $\{-2, -1\}$ | $\{1, 2\}$ | $\{-2, -1, 1, 2\}$ | $\emptyset$ | $\{-2, -1\}$ |
-| $[1, 3]$ | $[2, 4]$ | $[1, 4]$ | $[2, 3]$ | $[1, 2 \rangle$ |
-| $[1, 3]$ | $[4, 6]$ | $[1, 3] \cup [4, 6]$ | $\emptyset$ | $[1, 3]$ |
-| $[-3, 3]$ | $[0, 2]$ | $[-3, 3]$ | $[0, 2]$ | $[-3, 0 \rangle$ |
+Så tar vi et eksempel med intervaller:
 
-```{admonition} Underveisoppgave 1
-:class: note
+````{admonition} Eksempel 2: regneregler for mengder - intervall *edition*
+:class: example
+La $A = [-1, 3]$ og $B = \langle 2, 5]$. Da har vi 
 
-Fyll ut tabellen under:
-| Mengde $A$ | Mengde $B$ | $A \cup B$ | $A \cap B$ | $A \setminus B$ |
-| :---: | :---: | :---: | :---: | :---: |
-|$\{-1, 1\}$| $\{0, 2\}$ | | | |
-| $\{-4, 2, 4\}$ | $\{1, 2, 4\}$ | | | |
-| $\{1, 2, 3\}$ | $\{3, 4, 5\}$ | | | |
-| $[1, 2]$ | $[2, 4]$ | | | |
-| $[-1, 2]$ | $[4, 6]$ | | | |
-| $[-3, 3]$ | $[0, 2]$ | | | |
+$A \cup B$:
+: Mengden skal bestå av alle tallene som er i enten $A$ eller $B$ eller begge. Vi kan se at $A$ og $B$ delvis overlapper, så mengden vi får blir bare å sette sammen de to intervallene til ett større intervall:
+
+$$
+A \cup B = [-1, 3] \cup \langle 2, 5] = [-1, 5].
+$$
+
+$A \cap B$:
+: Mengden skal bestå av alle tall som er i både $A$ og $B$ samtidig. Dette blir altså intervallet der $A$ og $B$ overlapper. Da får vi:
+
+$$
+A \cap B = [-1, 3] \cap \langle 2, 5] = \langle 2, 3].
+$$
+
+$A \setminus B$:
+: Mengden skal bestå av alle tall som er i $A$, bortsett fra de som også er i $B$. Dette blir 
+
+$$
+A \setminus B = [-1, 3] \setminus \langle 2, 5] = [-1, 2].
+$$
+````
+
+Så er **din tur**!
+
+````{admonition} Underveisoppgave 2
+:class: check
+To mengder er gitt ved $A = \langle -2, 3 \rangle$ og $B = [1, 4]$. Bestem mengdene
+
+* $A \cup B$
+* $A \cap B$
+* $A \setminus B$
+
+```{admonition} Fasit
+:class: answer, dropdown
+
+* $A \cup B = \langle -2, 4]$
+* $A \cap B = [1, 3 \rangle$
+* $A \setminus B = \langle -2, 1 \rangle$
 ```
 
-```{dropdown} Løsning
+```{admonition} Løsning
+:class: solution, dropdown
 
-| Mengde $A$ | Mengde $B$ | $A \cup B$ | $A \cap B$ | $A \setminus B$ |
-| :---: | :---: | :---: | :---: | :---: |
-|$\{-1, 1\}$| $\{0, 2\}$ | $\{-1, 0, 1, 2\}$ | $\{1\}$ | $\{-1\}$ |
-| $\{-4, 2, 4\}$ | $\{1, 2, 4\}$ | $\{-4, 1, 2, 4\}$ | $\{2, 4\}$ | $\{-4\}$ |
-| $\{1, 2, 3\}$ | $\{3, 4, 5\}$ | $\{1, 2, 3, 4, 5\}$ | $\{3\}$ | $\{1, 2\}$ |
-| $[1, 2]$ | $[2, 4]$ | $[1, 4]$ | $[2, 2]$ | $[1, 2 \rangle$ |
-| $[-1, 2]$ | $[4, 6]$ | $[-1, 2, 4, 6]$ | $\{2\}$ | $[-1, 2 \rangle$ |
-| $[-3, 3]$ | $[0, 2]$ | $[-3, 3]$ | $[0, 2]$ | $[-3, 0 \rangle$ |
+Vi har at $A = \langle -2, 3 \rangle$ og $B = [1, 4]$. 
+
+$A \cup B$:
+: Mengden skal bestå av alle tallene som enten er i $A$ eller $B$, eller i begge. Mengdene delvis overlapper, så vi bare inkluderer alle tallene som er i begge mengder:
+
+$$
+A \cup B = \langle -2, 3 \rangle \cup [1, 4] = \langle -2, 4].
+$$
+
+$A \cap B$:
+: Mengden skal bestå av alle tallene som er i både $A$ og $B$ samtidig. Dette er intervallet der $A$ og $B$ overlapper, som er:
+
+$$
+A \cap B = \langle -2, 3 \rangle \cap [1, 4] = [1, 3 \rangle.
+$$
+
+$A \setminus B$:
+: Mengden skal bestå av alle tallene som er i $A$, bortsett fra de som også er i $B$. Dette blir
+
+$$
+A \setminus B = \langle -2, 1 \rangle.
+$$
 ```
+
+````
+
+
+
 
 
 ## Sammensatte mengder som intervaller 
-Når vi ønsker å beskrive flere deler av tallinja, kan vi bruke regnereglene for mengder til å uttrykke mengden av de reelle tallene vi ønsker å beskrive.
-I tabellen under vises eksempler på sammensatte mengder uttrykt som intervaller. 
+Ofte vil vi trenge å beskrive flere intervaller på tallinja som *ikke overlapper*. Da får vi bruk for regnereglene for mengder. 
 
-Les tabellen **nøye** og overbevis deg selv om at du forstår sammenhengen mellom beskrivelsen av mengden og intervallnotasjonen:
 
+````{admonition} Eksempel 3: sammensatte mengder som intervaller
+:class: example 
+I tabellen under vises noen eksempler på sammensatte mengder uttrykt som intervaller, der intervallene vi prøver å sette ikke overlapper på tallinja.
 | Beskrivelse av mengde | Intervallnotasjon |
 | :--- | :--- |
 | Alle reelle tall fra og med $2$ til og med $4$, og fra $5$ til $8$ | $[2, 4] \cup \langle 5, 8 \rangle$ |
 | Alle reelle tall fra og med $2$ til $3$, og fra og med $5$ til $6$ | $[2, 3\rangle \cup [5, 6 \rangle$ |
 | Alle reelle tall, bortsett fra $0$ | $\langle \gets, 0 \rangle \cup \langle 0, \to \rangle = \mathbb{R} \setminus \{0\}$ |
-| Alle reelle tall under $-2$ og over $3$ | $\langle \gets, -2 \rangle \cup \langle 3, \to \rangle$ |
+| Alle reelle tall under $-2$ og over $3$ | $\langle \gets, -2 \rangle \cup \langle 3, \to \rangle = \mathbb{R} \setminus [-2, 3]$ |
 
-```{admonition} Underveisoppgave 2
-:class: note
+
+````
+
+**Din tur!**
+
+````{admonition} Underveisoppgave 3
+:class: check
 
 Fyll ut tabellen under:
 | Beskrivelse av mengde | Intervallnotasjon |
@@ -112,38 +231,80 @@ Fyll ut tabellen under:
 | Alle reelle tall under $-3$ og over $2$ | |
 | Alle reelle tall utenom $-1$, $0$ og $1$ | |
 | Alle reelle tall utenom heltallene | |  
-```
 
-```{dropdown} Løsning
+```{admonition} Fasit
+:class: answer, dropdown
 | Beskrivelse av mengde | Intervallnotasjon |
 | :--- | :--- |
 | Alle reelle tall fra og med $-1$ til og med $1$, og fra $2$ til $3$ | $[-1, 1] \cup [2, 3]$ |
 | Alle reelle tall fra og med $-2$ til $0$, og fra og med $1$ til $2$ | $[-2, 0\rangle \cup [1, 2 \rangle$ |
 | Alle reelle tall, bortsett fra $1$ | $\langle \gets, 1 \rangle \cup \langle 1, \to \rangle = \mathbb{R} \setminus \{1\}$ |
-| Alle reelle tall under $-3$ og over $2$ | $\langle \gets, -3 \rangle \cup \langle 2, \to \rangle$ |
+| Alle reelle tall under $-3$ og over $2$ | $\langle \gets, -3 \rangle \cup \langle 2, \to \rangle = \mathbb{R} \setminus [-3, 2]$ |
 | Alle reelle tall utenom $-1$, $0$ og $1$ | $\mathbb{R} \setminus \{-1, 0, 1\}$ |
 | Alle reelle tall utenom heltallene | $\mathbb{R} \setminus \mathbb{Z}$ |
 ```
-
-
-## Sammensatte mengder som ulikheter
-
+````
 
 
 
-````{comment}
-```{admonition} Ekvivalens
-:class: tip
-Ekvivalens
-: Når to utsagn som er uttrykt på forskjellig måte betyr det samme, sier vi at de er **ekvivalente**. Hvis $p$ og $q$ er to påstander som er ekvivalente, skriver vi $p \Leftrightarrow q$.
+## Oppgaver
 
-Implikasjon
-: Når et utsagn fører til at et annet utsagn er sant, men ikke omvendt, sier vi at det første utsagnet **impliserer** det andre. Hvis $p$ impliserer $q$, skriver vi $p \Rightarrow q$. Vi kan også snu på det å skrive $q \Leftarrow p$. Begge skrivemåter uttrykker at $p$ implisere $q$.
-
-Konjunksjon
-: Når to utsagn er sanne, sier vi at de er **konjunktive**. Hvis $p$ og $q$ er sanne, skriver vi $p \land q$. Vi kan lese $\land$ som **og samtidig** fordi det uttrykker at $p$ og $q$ er sanne på én og samme tid.
-
-Disjunksjon
-: Når minst ett av to utsagn er sant, sier vi at de er **disjunktive**. Hvis $p$ eller $q$ er sanne, skriver vi $p \lor q$. Vi kan lese $\lor$ som **eller** fordi det uttrykker at enten $p$ er sann, eller $q$ er sann, eller så er begge sanne. 
+```{admonition} Den tomme mengden
+:class: note, margin
+Noen ganger er det nyttig å kunne beskrive en mengde som ikke inneholder *noen elementer*. Vi kaller denne mengden for den **tomme mengden**. Vi bruker symbolet $\emptyset$ for denne mengden. På listeform kan vi skrive $\emptyset = \{\}$.
 ```
+
+````{admonition} Oppgave 1
+:class: problem-level-1
+
+Fyll ut tabellen under:
+| Mengde $A$ | Mengde $B$ | $A \cup B$ | $A \cap B$ | $A \setminus B$ |
+| :---: | :---: | :---: | :---: | :---: |
+|$\{-1, 1\}$| $\{0, 2\}$ | | | |
+| $\{-4, 2, 4\}$ | $\{1, 2, 4\}$ | | | |
+| $\{1, 2, 3\}$ | $\{3, 4, 5\}$ | | | |
+| $[1, 2]$ | $[2, 4]$ | | | |
+| $[-1, 2]$ | $[4, 6]$ | | | |
+| $[-3, 3]$ | $[0, 2]$ | | | |
+
+```{admonition} Fasit
+:class: dropdown, answer
+| Mengde $A$ | Mengde $B$ | $A \cup B$ | $A \cap B$ | $A \setminus B$ |
+| :---: | :---: | :---: | :---: | :---: |
+|$\{-1, 1\}$| $\{0, 2\}$ | $\{-1, 0, 1, 2\}$ | $\emptyset$ | $\{-1, 1\}$ |
+| $\{-4, 2, 4\}$ | $\{1, 2, 4\}$ | $\{-4, 1, 2, 4\}$ | $\{2, 4\}$ | $\{-4\}$ |
+| $\{1, 2, 3\}$ | $\{3, 4, 5\}$ | $\{1, 2, 3, 4, 5\}$ | $\{3\}$ | $\{1, 2\}$ |
+| $[1, 2]$ | $[2, 4]$ | $[1, 4]$ | $[2, 2] = \{2\}$ | $[1, 2 \rangle$ |
+| $[-1, 2]$ | $[4, 6]$ | $[-1, 2] \cup [4, 6]$ | $\emptyset$ | $[-1, 2]$ |
+| $[-3, 3]$ | $[0, 2]$ | $[-3, 3]$ | $[0, 2]$ | $[-3, 0 \rangle \cup \langle 2, 3]$ |
+```
+````
+
+---
+
+````{admonition} Oppgave 2
+:class: problem-level-1
+
+Fyll ut tabellen under:
+
+|Intervall | Ulikheter |
+|:---:|:---:|
+| $x\in [0, 1] \cup [2, 5]$ | |
+|  | $-2 \leq y \land y\leq 3$  |
+| $z\in \langle -1, 1 \rangle \cup \langle 2, 3 \rangle$ | |
+|  | $-3 \leq p < 2 \, \lor  p > 4$ |
+| $q\in \mathbb{R} \setminus \langle 0, 1]$ | |
+
+
+```{admonition} Fasit
+:class: dropdown, answer
+|Intervall | Ulikheter |
+|:---:|:---:|
+| $x\in [0, 1] \cup [2, 5]$ | $0 \leq x \leq 1 \, \lor \, 2 \leq x \leq 5$ |
+| $y \in [-2, 3]$ | $-2 \leq y \land y\leq 3$ |
+| $z\in \langle -1, 1 \rangle \cup \langle 2, 3 \rangle$ | $-1 < z < 1 \, \lor \, 2 < z < 3$ |
+| $p \in [-3, 2 \rangle \cup \langle 4, \to \rangle$ | $-3 \leq p < 2 \, \lor  p > 4$ |
+| $q\in \mathbb{R} \setminus \langle 0, 1]$ | $q \leq 0 \, \lor \, p > 1$ |
+```
+
 ````

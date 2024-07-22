@@ -1,1 +1,0 @@
-# Grafisk løsning

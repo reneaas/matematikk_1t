@@ -1,1 +1,0 @@
-# Funksjon som algebraisk uttrykk
