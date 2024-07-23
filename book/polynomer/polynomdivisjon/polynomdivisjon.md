@@ -27,6 +27,7 @@ Vi skal dele polynomet $x^3 + 2x^2 - 5x - 6$ med $x - 2$. Først skal vi se hele
 ```
 Ser overveldende ut, men vi skal ta det stegvis under.
 
+
 Steg 1
 : Vi starter med å se på leddet med høyest potens av $x$ i $x^3 + 2x^2 - 5x - 6$, som er $x^3$. Vi deler dette leddet på høyeste potens av $x$ i nevneren som er $x$, som gir $x^2$. Dette er første ledd i kvotienten. Deretter trekker vi fra $x^2\cdot(x - 2) = x^3 - 2x^2$ fra polynomet i teller (legg merke til at fortegnet i hvert av leddene i uttrykket vi trekker fra har endret seg i diagrammet under):
 \begin{align*}

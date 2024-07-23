@@ -354,5 +354,3 @@ x + y & = 40 \\
 ::::
 
 ## Oppgaver
-
-::::{admonition} Underveisoppgave 1

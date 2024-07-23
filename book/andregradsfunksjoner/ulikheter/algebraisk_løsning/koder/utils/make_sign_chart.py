@@ -294,6 +294,25 @@ def make_sign_chart(
     color: bool = True,
     include_factors: bool = True,
 ) -> None:
+    """Tegner fortegnsskjema for et polynom f. 
+
+    Args:
+        f (sp.Expr): 
+            Polynomet f(x)
+        x (sp.symbols): 
+            Symbolet som representerer variabelen i polynomet
+        fn_name (str, optional):
+            Navn på funksjonen. Defaults `None`.
+        fname (str, optional): 
+            Filnavn for å lagre figuren. Default: `None`.
+        color (bool, optional): 
+            Farge på fortegnslinjene. Default: `True`.
+        include_factors (bool, optional): 
+            Inkluderer alle faktorene til f(x). Default: `True`.
+    
+    Returns:
+        None
+    """
 
     if color:
         color_pos = "red"
@@ -347,9 +366,18 @@ def make_sign_chart(
 
 
 if __name__ == "__main__":
+
+    # Eksempel på bruk
     x = sp.symbols("x", real=True)
-    # f = -(2*x**2 - 8*x - 10)
-    # f = -(x**2 - 4*x - 5) * (x**2 + 1)
-    # f = x**2 + 4*x + 4
     f = -2 * (x**2 - 1) ** 4 * (x - 3) * (x - 1)
-    make_sign_chart(f, x, color=True, include_factors=True)
+
+    # Gir fortegnsskjema med fargede linjer og alle faktorer tegnet inn
+    make_sign_chart(f=f, x=x, color=True, include_factors=True)
+
+    # Gir fortegnsskjema for f(x) uten faktorer. Fargede linjer
+    make_sign_chart(f=f, x=x, color=True, include_factors=False)
+
+    # Gir fortegnsskjema for f(x) med alle faktorer. Uten farger
+    make_sign_chart(f=f, x=x, color=False, include_factors=True)
+
+
