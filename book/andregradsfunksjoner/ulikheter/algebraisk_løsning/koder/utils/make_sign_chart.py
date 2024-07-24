@@ -241,7 +241,7 @@ def draw_vertical_lines(roots, factors, ax, include_factors=True, dy=-1):
                 [i, i],
                 [-0.4, (i + n_factors_without_roots + offset) * dy + offset_dy],
                 color="black",
-                linestyle="--",
+                linestyle="-",
                 lw=1,
             )
             ax.plot(
@@ -251,7 +251,7 @@ def draw_vertical_lines(roots, factors, ax, include_factors=True, dy=-1):
                     (len(factors) + 1) * dy + offset_dy,
                 ],
                 color="black",
-                linestyle="--",
+                linestyle="-",
                 lw=1,
             )
     else:
@@ -260,7 +260,7 @@ def draw_vertical_lines(roots, factors, ax, include_factors=True, dy=-1):
                 [i, i],
                 [-0.3, 0.8 * dy],
                 color="black",
-                linestyle="--",
+                linestyle="-",
                 lw=1,
             )
 
@@ -293,6 +293,7 @@ def make_sign_chart(
     fname: str = None,
     color: bool = True,
     include_factors: bool = True,
+    generic_labels: bool = False,
 ) -> None:
     """Tegner fortegnsskjema for et polynom f. 
 
@@ -309,6 +310,8 @@ def make_sign_chart(
             Farge på fortegnslinjene. Default: `True`.
         include_factors (bool, optional): 
             Inkluderer alle faktorene til f(x). Default: `True`.
+        generic_label (bool, optional):
+            Bruker generiske labels for røttene: x_1, x_2, ..., x_N. Default: `False`. 
     
     Returns:
         None
@@ -332,7 +335,7 @@ def make_sign_chart(
     roots = [factor.get("root") for factor in factors if factor.get("root") != -np.inf]
     plt.xticks(
         ticks=[i for i in range(len(roots))],
-        labels=[f"${root}$" for root in roots],
+        labels=[f"${root}$" if not generic_labels else f"$x_{i + 1}$" for i, root in enumerate(roots)],
         fontsize=16,
     )
 
@@ -355,9 +358,11 @@ def make_sign_chart(
     plt.xlim(-1, len(roots))
 
     if include_factors:
-        plt.tight_layout()
+        fig.set_size_inches(8, 2 + int(0.7*len(factors)))
     else:
         fig.set_size_inches(8, 2)
+
+    plt.tight_layout()
 
     if fname:
         plt.savefig(fname)

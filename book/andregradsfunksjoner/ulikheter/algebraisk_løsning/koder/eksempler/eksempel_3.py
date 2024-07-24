@@ -10,9 +10,9 @@ sys.path.append(absolute_path)
 from make_sign_chart import make_sign_chart
 
 if __name__ == "__main__":
-    x = sp.symbols("x")
-    f = x**2 - 4*x - 5
-    fname = "../../figurer/underveisoppgaver/underveisoppgave_2.svg"
-    make_sign_chart(f, x, fn_name="f(x)", fname=fname)
+    x = sp.symbols("x", real=True)
+    f = -x**2 + x + 6
+    fname = "../../figurer/eksempler/eksempel_3.svg"
+    make_sign_chart(f=f, x=x, fname=fname)
     
 

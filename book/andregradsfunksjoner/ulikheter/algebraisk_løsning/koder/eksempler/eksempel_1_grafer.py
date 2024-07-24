@@ -13,15 +13,15 @@ x_max = 10
 
 x = np.linspace(x_min, x_max, 1024)
 
-a = -1
-b = 3
-c = 4
+a = 1
+b = -4
+c = 0
 
 x_symmetri = -b/(2*a)
 
 fig, ax = plt.subplots()
 ax.plot(x, f(x, a, b, c), color="teal", lw=2, alpha=0.7, label="$f$")
-ax.plot(x, f(x, a=0, b=-1, c=2), color="mediumorchid", lw=2, alpha=0.7, label="$g$")
+ax.plot(x, f(x, a=0, b=1, c=-2), color="mediumorchid", lw=2, alpha=0.7, label="$g$")
 
 roots = sp.solve(f"{a}*x**2 + {b}*x + {c}", "x")
 roots = [float(root.evalf()) for root in roots]
@@ -42,23 +42,23 @@ ax.set_ylabel(r"$y$", fontsize=16, loc="top", rotation="horizontal")
 
 
 dx = 5
-xticks = list(np.arange(int(x_symmetri) - dx + 1, int(x_symmetri) + dx, 1))
+xticks = list(np.arange(x_symmetri - dx + 1, x_symmetri + dx, 1))
 xticks.remove(0)
 plt.xticks(xticks, fontsize=16)
 
-yticks = list(np.arange(-4, 8, 1))
+yticks = list(np.arange(-4, 6, 1))
 yticks.remove(0)
 plt.yticks(yticks, fontsize=16)
 
-plt.ylim(-5, 8)
-plt.xlim(int(x_symmetri) - 5, int(x_symmetri) + 5)
+plt.ylim(-5, 6)
+plt.xlim(x_symmetri - 5, x_symmetri + 5)
 
 
 plt.legend(fontsize=16)
 plt.grid(True, linestyle="--", alpha=0.6)
 plt.tight_layout()
 
-plt.savefig("../../figurer/underveisoppgaver/underveisoppgave_1.svg")
+plt.savefig("../../figurer/eksempler/eksempel_1_grafer.svg")
 
 plt.show()
 
