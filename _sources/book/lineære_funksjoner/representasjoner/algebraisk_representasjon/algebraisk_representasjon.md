@@ -1,13 +1,16 @@
 # Algebraisk representasjon av lineære funksjoner
 
 
-```{admonition} Læringsmål: representasjoner av lineære funksjoner
-:class: tip
+:::{admonition} Læringsmål: representasjoner av lineære funksjoner
+---
+class: tip
+---
 Målet med denne seksjonen er at du skal kunne:
 * Ha en grunnleggende forståelse av funksjonsbegrepet.
 * Kjenne til den algebraiske representasjonen av lineære funksjoner.
 * Kunne regne ut funksjonsverdier for en lineær funksjon.
-```
+* Kunne bruke Python til å regne ut funksjonsverdier for en lineær funksjon.
+:::
 ---
 
 En representasjon er en måte å uttrykke noe på. Når vi jobber med rette linjer, er de to vanligste måtene å representere linjer på, algebraisk og grafisk. Med algebraisk representasjon, mener vi en formel som beskriver linja. Med grafisk representasjon, mener vi en tegning av linja i et koordinatsystem.
@@ -17,8 +20,18 @@ En representasjon er en måte å uttrykke noe på. Når vi jobber med rette linj
 ## Algebraisk representasjon av lineære funksjoner
 En lineær funksjon er en spesiell rett linje der $y$-verdien er bestemt av $x$-verdien. Vi skal komme mer presist tilbake til funksjonsbegrepet senere, men først tar vi en litt kortfattet og enkelt definisjon av en lineær funksjon:
 
-````{admonition} Definisjon: lineær funksjon
-:class: theory
+::::{admonition} Begrep: *Koeffisienter*
+---
+class: sidenote, margin
+---
+Konstantene $a$ og $b$ kalles for **koeffisientene** til den lineære funksjonen.
+::::
+
+
+::::{admonition} Definisjon: lineær funksjon
+---
+class: theory
+---
 En **lineær funksjon** $f$ er en formel som kan skrives som en likning på formen 
 
 $$
@@ -26,23 +39,18 @@ f(x) = ax + b.
 $$ (eq:linear_funksjon)
 
 
-
-Merknad 1
-: Sammenhengen mellom $y = ax + b$ og uttrykket over, er at vi tydeliggjør at $y$ er bestemt av $x$ ved å bytte ut $y = f(x)$. Vi sier at $f$ er funksjonen, mens $f(x)$ er *funksjonsverdien* eller *funksjonsuttrykket*. Formelt sett betyr $y = f(x)$ det samme som $(x, y)$. 
-
-Merknad 2
-: Konstantene $a$ og $b$ kalles for **koeffisientene** til den lineære funksjonen. Koeffisienten $a$ kalles ofte for **stigningstallet** og konstanten $b$ kalles **konstantleddet** eller **skjæringen med $y$-aksen**. 
-
-Merknad 3
-: Det er *ingenting* spesielt med at vi bruker $f$ for *funksjon* annet enn at dette en vanlig. Vi kommer til å møte på funksjoner som heter $g$ og har funksjonsverdier $g(x)$, funksjoner som heter $h$ og har funksjonsverdier $h(x)$, og så videre. 
-````
+* $a$ er **stigningstallet** til linja.
+* $b$ er **konstantleddet** til linja. Også kalt for **skjæringen med $y$-aksen**.
+* $f$ er **navnet** til funksjonen.
+* $y = f(x)$ er **funksjonsverdien** til en gitt $x$-verdi.
+::::
 
 Vi tar noen eksempler på lineære funksjoner med skrivemåten over:
 
-```{admonition} Eksempel 1: algebraisk representasjon av lineære funksjoner
+:::{admonition} Eksempel 1: algebraisk representasjon av lineære funksjoner
 :class: example
 
-Under vises funksjonsuttrykket til tre lineære funksjoner. Vi skal bestemme stigningstallet og konstantleddet til hver av funksjonene. 
+Under vises eksempler på lineære funksjoner. 
 
 | Funksjonsnavn | Funksjonsuttrykk | Stigningstall | Konstantledd |
 | :---: | :---: | :---: | :---: |
@@ -52,12 +60,14 @@ Under vises funksjonsuttrykket til tre lineære funksjoner. Vi skal bestemme sti
 | $r$ | $r(x) = 3$ | $0$ | $3$ |
 | $s$ | $s(x) = \dfrac{1}{2}x$ | $\dfrac{1}{2}$ | $0$ |
 
-```
+:::
 
 Og så er det **din tur**!
 
-````{admonition} Underveisoppgave 1: algebraisk representasjon av lineære funksjoner
-:class: check
+::::{admonition} Underveisoppgave 1: algebraisk representasjon av lineære funksjoner
+---
+class: check
+---
 
 Fyll ut tabellen under: 
 
@@ -69,8 +79,10 @@ Fyll ut tabellen under:
 | $q$ | $q(x) = 4$ |  |  |
 | $r$ |  | $-2$ | $0$ |
 
-```{admonition} Løsning
-:class: solution, dropdown
+:::{admonition} Løsning
+---
+class: solution, dropdown
+---
 
 | Funksjonsnavn | Funksjonsuttrykk | Stigningstall | Konstantledd |
 | :---: | :---: | :---: | :---: |
@@ -79,32 +91,44 @@ Fyll ut tabellen under:
 | $p$ | $p(x) = -x + 1$ | $-1$ | $1$ |
 | $q$ | $q(x) = 4$ | $0$ | $4$ |
 | $r$ | $r(x) = -2x$  | $-2$ | $0$ |
-```
-````
+:::
+::::
 
 ## Funksjonsverdier
-Når vi introduserte $f(x)$ som notasjon, så sa vi $f(x) = y$ var funksjonsverdien til $f$ for en bestemt $x$-verdi. Her skal vi ta en titt på skrivemåten og hvordan man regner ut funksjonsverdier med en funksjonsuttrykket til $f$. Vi sier for eksempel at $f(2)$ er funksjonsverdien til $f$ i $x = 2$. Mer generelt er $f(a)$ funksjonsverdien til $f$ i $x = a$. 
+Vi har sagt at $f(x)$ er funksjonsverdien til $f$ for en bestemt $x$-verdi. Her skal vi bli bedre kjent med skrivemåten og betydningen.
 
-```{admonition} Eksempel 2: funksjonsverdier
-:class: example
+:::{admonition} Funksjonsverdier
+---
+class: theory
+---
 
-Under vises eksempler på utregning av funksjonsverdier. Vi erstatter rett og slett verdien til $x$ alle steder den opptrer i funksjonsuttrykket (formelen/likningen) til funksjonen og regner ut:
+$f(a)$ er **funksjonsverdien** til $f$ i $x = a$ og regnes ut ved å sette $x = a$ i funksjonsuttrykket til $f$.
+:::
+
+:::{admonition} Eksempel 2: funksjonsverdier
+---
+class: example
+---
+
+Under vises eksempler på utregning av funksjonsverdier. Vi bytter ut $x$-verdien i formelen og regner ut.
 
 | Funksjon | $\quad x \quad$ | Funksjonsverdi $f(x)$ |
 | :--- | :---: | :--- |
-| $f(x) = 3x - 1$ | $2$ | $f(2) = 3\cdot 2 - 1 = 6 - 1 = 5$ |
-| $g(x) = -2x + 4$ | $3$ | $g(3) = -2\cdot 3 + 4 = -6 + 4 = -2$ |
-| $h(x) = -x + 2$ | $0$ | $h(0) = -0 + 2 = 2$ |
-| $r(x) = 3$ | $1$ | $r(1) = 3$ |
-| $s(x) = \dfrac{1}{2}x$ | $4$ | $s(4) = \dfrac{1}{2}\cdot 4 = 2$ |
+| $f(x) = 3x - 1$ | $2$ | $f(\textcolor{red}{2}) = 3\cdot \textcolor{red}{2} - 1 = 6 - 1 = 5$ |
+| $g(x) = -2x + 4$ | $3$ | $g(\textcolor{red}{3}) = -2\cdot \textcolor{red}{3} + 4 = -6 + 4 = -2$ |
+| $h(x) = -x + 2$ | $0$ | $h(\textcolor{red}{0}) = -\textcolor{red}{0} + 2 = 2$ |
+| $r(x) = 3$ | $1$ | $r(\textcolor{red}{1}) = 3$ |
+| $s(x) = \dfrac{1}{2}x$ | $4$ | $s(\textcolor{red}{4}) = \dfrac{1}{2}\cdot \textcolor{red}{4} = 2$ |
 
-```
+:::
 
 Og så er det **din tur**!
 
 
-````{admonition} Underveisoppgave 2: funksjonsverdier
-:class: check
+::::{admonition} Underveisoppgave 2: funksjonsverdier
+---
+class: check
+---
 
 Regn ut funksjonsverdiene i tabellen under:
 
@@ -118,8 +142,10 @@ Regn ut funksjonsverdiene i tabellen under:
 
 
 
-```{admonition} Løsning
-:class: solution, dropdown
+:::{admonition} Løsning
+---
+class: solution, dropdown
+---
 | Funksjonsuttrykk | $\quad x \quad$ | Funksjonsverdi $f(x)$ |
 | :--- | :---: | :--- |
 | $f(x) = -3x + 2$ | $1$ | $f(1) = -3\cdot 1 + 2 = -3 + 2 = -1$  |
@@ -127,10 +153,11 @@ Regn ut funksjonsverdiene i tabellen under:
 | $p(x) = -x + 1$ | $3$ | $p(3) = -3 + 1 = -2$  |
 | $q(x) = 4$ | $2$ | $q(2) = 4$  |
 | $r(x) = -2x$ | $5$ | $r(5) = -2\cdot 5 = -10$  |
-```
-````
+:::
 
-## Regne ut funksjonsverdier med Python
+::::
+
+## Funksjonsverdier i Python
 Vi kan bruke Python som en kalkulator for å regne ut funksjonsverdier. 
 
 ::::{admonition} Eksempel 3: funksjonsverdier i Python
@@ -145,7 +172,7 @@ $$
 f(x) = 3x - 1,
 $$
 
-i x = 2. Da kan vi skrive følgende kode i Python:
+i $x = 2$. Da kan vi skrive følgende kode i Python:
 
 
 ```{code-block} python
@@ -158,11 +185,15 @@ y = 3*x - 1
 print(y)
 
 ```
+
 som gir utskriften
+
 ```console
 5
 ```
+
 Med andre ord er $f(2) = 5$.
+
 ::::
 
 Og så er det **din tur**!
@@ -171,8 +202,12 @@ Og så er det **din tur**!
 ---
 class: check
 ---
+Kopier programmet fra {ref}`eksempel 3 <algebraisk-representasjon-example-3>` og endret programmet slik at det regner ut 
+$y = f(-1)$ for 
 
-Skriv et program som regner ut $y = 4x + 2$ når $x = -1$. 
+$$
+f(x) = 4x + 2.
+$$ 
 
 :::{admonition} Løsning
 ---
@@ -196,7 +231,9 @@ Altså er $y = -2$.
 :::
 ::::
 
-Men i {ref}`eksempel 3 <algebraisk-representasjon-example-3>` brukte vi ikke notasjonen for funksjoner. Men i Python har vi faktisk støtte for akkurat dette. 
+---
+
+I {ref}`eksempel 3 <algebraisk-representasjon-example-3>` brukte vi ikke notasjonen for funksjoner. Men i Python har vi faktisk støtte for akkurat dette. 
 
 
 :::{admonition} Ordforklaring: syntaks
@@ -277,3 +314,145 @@ som gir utskriften
 ```
 Altså er $g(-2) = -1$.
 ::::
+
+## Oppgaver
+
+:::::{admonition} Oppgave 1
+---
+class: problem-level-1
+---
+Fyll ut tabellen under.
+
+| Funksjonsnavn | Funksjonsuttrykk | Stigningstall | Konstantledd |
+| :---: | :---: | :---: | :---: |
+| $f$ | $f(x) = 2x - 3$ |  |  |
+| $g$ | $g(x) = -3x + 4$ |  |  |
+| $h$ | $h(x) = 4x + 1$ |  |  |
+| $r$ | $r(x) = 3$ |  |  |
+| $s$ | $s(x) = -\dfrac{1}{3}x + \dfrac{3}{2}$ |  |  |
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+
+| Funksjonsnavn | Funksjonsuttrykk | Stigningstall | Konstantledd |
+| :---: | :---: | :---: | :---: |
+| $f$ | $f(x) = 2x - 3$ | $2$ | $-3$ |
+| $g$ | $g(x) = -3x + 4$ | $-3$ | $4$ |
+| $h$ | $h(x) = 4x + 1$ | $4$ | $1$ |
+| $r$ | $r(x) = 3$ | $0$ | $3$ |
+| $s$ | $s(x) = -\dfrac{1}{3}x + \dfrac{3}{2}$ | $-\dfrac{1}{3}$ | $\dfrac{3}{2}$ |
+
+::::
+
+:::::
+
+
+:::::{admonition} Oppgave 2
+---
+class: problem-level-1
+---
+
+Regn ut funksjonsverdiene i tabellen under.
+
+| Funksjonsuttrykk | $\quad x \quad$ | Funksjonsverdi $f(x)$ |
+| :--- | :---: | :--- |
+| $f(x) = 2x - 3$ | $1$ |  |
+| $g(x) = -3x + 4$ | $2$ |  |
+| $h(x) = 4x + 1$ | $0$ |  |
+| $r(x) = 3$ | $-1$ |  |
+| $s(x) = -\dfrac{1}{3}x + \dfrac{3}{2}$ | $3$ |  |
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+
+| Funksjonsuttrykk | $\quad x \quad$ | Funksjonsverdi $f(x)$ |
+| :--- | :---: | :--- |
+| $f(x) = 2x - 3$ | $1$ | $-1$ |    
+| $g(x) = -3x + 4$ | $2$ | $-2$ |
+| $h(x) = 4x + 1$ | $0$ | $1$ |
+| $r(x) = 3$ | $-1$ | $3$ |
+| $s(x) = -\dfrac{1}{3}x + \dfrac{3}{2}$ | $3$ | $\dfrac{5}{2}$ |
+::::
+
+:::::
+
+
+:::::{admonition} Oppgave 3
+---
+class: problem-level-1
+---
+
+En elev har skrevet et program for å regne ut en funksjonsverdi.
+
+```{code-block} python
+---
+linenos:
+---
+def f(x):
+    return -x/2 + 3
+
+print(f(2))
+```
+
+<br>
+
+Deloppgave 1
+: Hvilken funksjon er det elevens program regner ut funksjonsverdien til?
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+f(x) = -\dfrac{x}{2} + 3 = -\dfrac{1}{2}x + 3
+$$
+::::
+
+<br>
+
+Deloppgave 2
+: Hva blir verdien programmet skriver ut? 📝 $\color{red}\xcancel{💻}$
+
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+f(2) = 2
+$$
+::::
+
+
+<br>
+
+Deloppgave 3
+: Kopier programmet og endre programmet slik at det skriver ut $f(-2)$. Hva blir verdien? 💻
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+Endret program:
+```{code-block} python
+---
+linenos:
+emphasize-lines: 4
+---
+def f(x):
+    return -x/2 + 3
+
+print(f(-2))
+```
+
+Funksjonsverdi:
+
+$$
+f(-2) = 4
+$$
+::::
+:::::

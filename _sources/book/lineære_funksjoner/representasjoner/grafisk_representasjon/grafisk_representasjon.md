@@ -1,51 +1,73 @@
 # Grafisk representasjon av lineære funksjoner
 
-```{admonition} Læringsmål: representasjoner av lineære funksjoner
-:class: tip
+:::{admonition} Læringsmål: representasjoner av lineære funksjoner
+---
+class: tip
+---
+
 Målet med denne seksjonen er at du skal kunne:
 * Lese av og tegne koordinater i et koordinatssystem.
 * Kunne lage en verditabell og tegne grafen til en lineær funksjon i et koordinatssystem.
 * Ved å lese av stigningstall og skjæring med $y$-aksen fra en graf.
-```
+:::
 ---
 
 Når vi kjenner formelen til en lineær funksjon $f(x) = ax + b$ kan vi tegne **grafen** til funksjonen. I mange tilfeller, er det nyttig å bruke grafen til å få oversikt over egenskapene til en funksjon og for å løse problemer i praksis. 
 Selv om du ofte vil bruke digitale hjelpemidler til å tegne grafen, er det å kunne skissere grafen raskt for hånd en uvurderlig ferdighet i matematikk, spesielt når man skal få rask oversikt over et problem man prøver å løse.
 
 ## Grafen til en lineær funksjon
-For å komme fram til grafen til en funksjon, kan vi følge en enkel oppskrift:
 
-Steg 1: Lage en verditabell
-: Vi velger ut en liste med $x$-verdier som vi ønsker å bruke til å tegne grafen til $x$. Deretter regner vi ut funksjonsverdiene $f(x)$ for hver $x$-verdi vi har valgt. Dette gir oss en **verditabell** bestående av punkter $(x, y) = (x, f(x))$ som grafen til funksjonen går gjennom.
+::::{admonition} Oppskrift: Tegne grafen til en funksjon
+---
+class: theory
+---
+
+Vi følger stegene under for å tegne grafen til en lineær funksjon $f(x) = ax + b$:
+
+Steg 1: Lage en verditabell av punkter $(x, y) = (x, f(x))$
+: $\to$ Velg ut en liste med $x$-verdier.
+: $\to$ Regn ut $f(x)$ for hver $x$-verdi. 
 
 Steg 2: Tegne punktene i et koordinatsystem
-: Vi tegner inn punktene $(x, f(x))$ i et koordinatsystem, med $x$-verdiene på førsteaksen og $f(x)$-verdiene på andreaksen.
+: $\to$ Tegn opp en $x$-akse og en $y$-akse i et koordinatsystem.
+: $\to$ Plasser punktene $(x, f(x))$ i koordinatsystemet.
 
 Steg 3: Tegne rette linjer mellom nabopunkter i koordinatsystemet
-: Vi tegner rette linjer mellom nabopunktene for å få en grafisk representasjon av funksjonen. Dette blir **grafen** til funksjonen.
+: $\to$ Vi tegner rette linjer mellom nabopunktene for å få en grafisk representasjon av funksjonen. 
+: $\to$ Dette blir **grafen** til funksjonen.
+
+::::
 
 
-````{admonition} Påminnelse: koordinatssystem
-:class: dropdown, note
+::::{admonition} Påminnelse: koordinatssystem
+---
+class: dropdown, sidenote
+---
 
-Det *kartesiske* koordinatsystemet får vi ved å lage oss to tallinjer som står $90^\circ$ på hverandre, der null på hver tallinje ligger på samme sted. Vi kaller dette punktet for *origo*, og det har koordinatene $(0, 0)$.
+Koordinatsystemet får vi ved å lage oss to tallinjer som står $90^\circ$ på hverandre, der null på hver tallinje ligger på samme sted. Vi kaller dette punktet for **origo**, og det har koordinatene $(0, 0)$.
 
-Den vannrette linja kaller vi oftest $x$-aksen. Et annet navn for aksen er *førsteaksen*.
-Den loddrette linja kaller vi $y$-aksen. Et annen navn for denne aksen er *andreaksen*. 
+* Den vannrette linja kaller vi oftest $x$-aksen. Et annet navn for aksen er *førsteaksen*.
+* Den loddrette linja kaller vi $y$-aksen. Et annen navn for denne aksen er *andreaksen*. 
+
 Hvis vi har et punkt $(x, y)$ i koordinatsystemet, betyr det at vi går $x$ enheter langs $x$-aksen og $y$ enheter langs $y$-aksen fra origo. For eksempel betyr $(3, 2)$ at vi først flytter oss 3 plasser langs $x$-aksen og deretter 2 plasser langs $y$-aksen. Da står vi på punktet $(3, 2)$. Se figuren under: 
 
-```{figure} ./figurer/teori/koordinatsystem.svg
-:name: koordinatsystem
-:width: 80%
+:::{figure} ./figurer/teori/koordinatsystem.svg
+---
+name: koordinatsystem
+width: 80%
+---
 
-Figuren viser et eksempel på et koordinatsystem der punktet $(3, 2)$ er markert. For å lese av $x$-koordinaten, trekker vi en linje fra punktet normalt ned på $x$-aksen. For å lese av $y$-koordinaten, trekker vi en linje fra punktet normalt bort på $y$-aksen.
-```
-````
+Viser et eksempel på et koordinatsystem der punktet $(3, 2)$ er markert. For å lese av $x$-koordinaten, trekker vi en linje fra punktet normalt ned på $x$-aksen. For å lese av $y$-koordinaten, trekker vi en linje fra punktet normalt bort på $y$-aksen.
+:::
+
+::::
 
 Vi tar et eksempel:
 
-````{admonition} Eksempel 1: Tegne grafen til en lineær funksjon
-:class: example
+::::{admonition} Eksempel 1: Tegne grafen til en lineær funksjon
+---
+class: example
+---
 
 Vi skal tegne grafen til den lineære funksjonen
 
@@ -64,108 +86,102 @@ Steg 1: Lage verditabell
 
 Steg 2: Tegn koordinatene i et koordinatsystem
 : Vi tegner inn punktene $(x, f(x))$ i et koordinatsystem, med $x$-verdiene på førsteaksen og $f(x)$-verdiene på andreaksen. Da får vi
-```{figure} ./figurer/eksempler/eksempel_1_koordinatsystem.svg
-:name: eksempel_1_koordinatsystem
-:width: 80%
-```
+
+:::{figure} ./figurer/eksempler/eksempel_1_koordinatsystem.svg
+---
+name: eksempel_1_koordinatsystem
+width: 80%
+---
+:::
 
 Steg 3: Tegn rette linjer mellom nabopunkter i koordinatsystemet
 : Vi tegner rette linjer mellom punktene for å få en grafisk representasjon av funksjonen. Da får vi
-```{figure} ./figurer/eksempler/eksempel_1_graf.svg
-:name: eksempel_1_graf
-:width: 80%
-```
-````
 
-
-
-:::::{comment}
-::::{admonition} Eksempel 2: lage verditabell med Python
+:::{figure} ./figurer/eksempler/eksempel_1_graf.svg
 ---
-class: example
-name: grafisk-representasjon-eksempel-2
+name: eksempel_1_graf
+width: 80%
 ---
-Det kan være litt jobb å regne ut en verditabell for hånd. Vi kan skrive en kort Pythonkode som gjør det hele for oss som følger:
-
-```{code-block} python
----
-linenos:
----
-def f(x):
-    return 2*x - 4
-
-print("x", "f(x)", sep="\t")    # sep="\t" gir tabellformat
-for x in range(-1, 4, 1):       # gir x = -1, 0, 1, 2, 3
-    print(x, f(x), sep="\t")
-```
-
-som gir utskriften
-
-```console
-x	f(x)
--1	-6
-0	-4
-1	-2
-2	0
-3	2
-```
-::::
-:::::
-
-
+:::
 
 ::::
 
 Gjett hva... nå er det **din tur**!
 
 
-`````{admonition} Underveisoppgave 1
-:class: check
-
-Tegn grafen til en lineære funksjonen 
+:::::{admonition} Underveisoppgave 1
+---
+class: check
+---
+En lineær funksjon er gitt ved
 
 $$
 f(x) = -x + 2. 
 $$
 
-Steg 1:
-: Fyll ut verditabellen under:
-
-| $x$ | $-1$ | $0$ | $1$ | $2$ | $3$ |
-| :---: | :---: | :---: | :---: | :---: | :---: |
-| $f(x)$ |  |  |  |  |  |
 
 <br>
 
-Steg 2: 
-: Tegn koordinatene i et koordinatsystem.
+Deloppgave 1
+: Fyll ut verditabellen under:
 
-Steg 3:
-: Tegn rette linjer mellom nabopunktene i koordinatsystemet (men *nabopunkter*, mener vi to punkter med naboverdier på $x$-aksen!)
+    | $x$ | $-1$ | $0$ | $1$ | $2$ | $3$ |
+    | :---: | :---: | :---: | :---: | :---: | :---: |
+    | $f(x)$ |  |  |  |  |  |
 
-````{admonition} Løsning
-:class: solution, dropdown
 
-Vi følger stegene for å tegne grafen til funksjonen:
-
-Steg 1: Lage verditabell
-: Vi lager en tabell bestående av punkter $(x, y) = (x, f(x))$ som grafen til funksjonen går gjennom. Da må vi regne ut funksjonsverdiene for hver $x$-verdi vi velger oss.
-
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
 | $x$ | $-1$ | $0$ | $1$ | $2$ | $3$ |
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | $f(x)$ | $3$ | $2$ | $1$ | $0$ | $-1$ |
+:::
 
 <br>
 
-Steg 2 og 3:
-: Vi tegner inn punktene fra verditabellen og tegner inn rette linjer mellom dem i samme koordinatsystem. Da får vi
+Deloppgave 2
+: Tegn koordinatene i et koordinatsystem.
 
-```{figure} ./figurer/underveisoppgaver/underveisoppgave_1.svg
-:name: underveisoppgave_1
-:width: 80%
-```
-````
-`````
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+
+:::{figure} ./figurer/underveisoppgaver/underveisoppgave_1_med_punkter.svg
+---
+name: fig-lineære-funksjoner-grafisk-representasjon-underveisoppgave-1
+width: 80%
+---
+Viser punktene fra verditabellen i deloppgave 1 i et koordinatsystem.
+:::
+
+::::
+
+<br>
+
+Deloppgave 3:
+: Tegn grafen til $f$.
+
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+:::{figure} ./figurer/underveisoppgaver/underveisoppgave_1_med_graf.svg
+---
+name: fig-lineære-funksjoner-grafisk-representasjon-underveisoppgave-1-graf
+width: 80%
+---
+Viser grafen til funksjonen $f(x) = -x + 2$.
+:::
+::::
+
+:::::
+
+
+
 
 
 ## Koeffisientene $a$ og $b$ i en lineær funksjon fra grafen
@@ -186,20 +202,23 @@ Konstantleddet $b$
 La oss se på et eksempel
 
 
-````{admonition} Eksempel 2: lese av koeffisientene til en lineær funksjon fra graf
+:::::{admonition} Eksempel 2: lese av koeffisientene til en lineær funksjon fra graf
 :class: example
 
 Vi har grafen til en funksjon $f(x)$ som vist i figure under:
 
-```{figure} ./figurer/eksempler/eksempel_2.svg
+:::{figure} ./figurer/eksempler/eksempel_2.svg
 :name: eksempel_2
 :width: 80%
-```
+:::
 
 Bestem $f(x)$ fra grafen. 
 
-
-**Løsning**: 
+::::{admonition} Løsning
+---
+class: solution
+---
+ 
 Vi kan lese av stigningstallet $a$ og konstantleddet $b$ direkte fra grafen slik som forklart over.
 
 Stigningstallet
@@ -214,7 +233,9 @@ Altså er
 $$
 f(x) = -2x + 6.
 $$
-````
+::::
+
+:::::
 
 
 Og så var det **din tur**!

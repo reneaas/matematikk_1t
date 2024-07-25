@@ -418,7 +418,8 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.1.1. Algebraisk representasjon av lineære funksjoner</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funksjonsverdier">2.1.2. Funksjonsverdier</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regne-ut-funksjonsverdier-med-python">2.1.3. Regne ut funksjonsverdier med Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funksjonsverdier-i-python">2.1.3. Funksjonsverdier i Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">2.1.4. Oppgaver</a></li>
 </ul>
             </nav>
         </div>
@@ -439,6 +440,7 @@ document.write(`
 <li><p>Ha en grunnleggende forståelse av funksjonsbegrepet.</p></li>
 <li><p>Kjenne til den algebraiske representasjonen av lineære funksjoner.</p></li>
 <li><p>Kunne regne ut funksjonsverdier for en lineær funksjon.</p></li>
+<li><p>Kunne bruke Python til å regne ut funksjonsverdier for en lineær funksjon.</p></li>
 </ul>
 </div>
 <hr class="docutils" />
@@ -447,6 +449,10 @@ document.write(`
 <section id="id1">
 <h2><span class="section-number">2.1.1. </span>Algebraisk representasjon av lineære funksjoner<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>En lineær funksjon er en spesiell rett linje der <span class="math notranslate nohighlight">\(y\)</span>-verdien er bestemt av <span class="math notranslate nohighlight">\(x\)</span>-verdien. Vi skal komme mer presist tilbake til funksjonsbegrepet senere, men først tar vi en litt kortfattet og enkelt definisjon av en lineær funksjon:</p>
+<div class="sidenote margin admonition">
+<p class="admonition-title">Begrep: <em>Koeffisienter</em></p>
+<p>Konstantene <span class="math notranslate nohighlight">\(a\)</span> og <span class="math notranslate nohighlight">\(b\)</span> kalles for <strong>koeffisientene</strong> til den lineære funksjonen.</p>
+</div>
 <div class="theory admonition">
 <p class="admonition-title">Definisjon: lineær funksjon</p>
 <p>En <strong>lineær funksjon</strong> <span class="math notranslate nohighlight">\(f\)</span> er en formel som kan skrives som en likning på formen</p>
@@ -454,19 +460,17 @@ document.write(`
 <span class="eqno">(2.1)<a class="headerlink" href="#equation-eq-linear-funksjon" title="Link to this equation">#</a></span>\[
 f(x) = ax + b.
 \]</div>
-<dl class="simple myst">
-<dt>Merknad 1</dt><dd><p>Sammenhengen mellom <span class="math notranslate nohighlight">\(y = ax + b\)</span> og uttrykket over, er at vi tydeliggjør at <span class="math notranslate nohighlight">\(y\)</span> er bestemt av <span class="math notranslate nohighlight">\(x\)</span> ved å bytte ut <span class="math notranslate nohighlight">\(y = f(x)\)</span>. Vi sier at <span class="math notranslate nohighlight">\(f\)</span> er funksjonen, mens <span class="math notranslate nohighlight">\(f(x)\)</span> er <em>funksjonsverdien</em> eller <em>funksjonsuttrykket</em>. Formelt sett betyr <span class="math notranslate nohighlight">\(y = f(x)\)</span> det samme som <span class="math notranslate nohighlight">\((x, y)\)</span>.</p>
-</dd>
-<dt>Merknad 2</dt><dd><p>Konstantene <span class="math notranslate nohighlight">\(a\)</span> og <span class="math notranslate nohighlight">\(b\)</span> kalles for <strong>koeffisientene</strong> til den lineære funksjonen. Koeffisienten <span class="math notranslate nohighlight">\(a\)</span> kalles ofte for <strong>stigningstallet</strong> og konstanten <span class="math notranslate nohighlight">\(b\)</span> kalles <strong>konstantleddet</strong> eller <strong>skjæringen med <span class="math notranslate nohighlight">\(y\)</span>-aksen</strong>.</p>
-</dd>
-<dt>Merknad 3</dt><dd><p>Det er <em>ingenting</em> spesielt med at vi bruker <span class="math notranslate nohighlight">\(f\)</span> for <em>funksjon</em> annet enn at dette en vanlig. Vi kommer til å møte på funksjoner som heter <span class="math notranslate nohighlight">\(g\)</span> og har funksjonsverdier <span class="math notranslate nohighlight">\(g(x)\)</span>, funksjoner som heter <span class="math notranslate nohighlight">\(h\)</span> og har funksjonsverdier <span class="math notranslate nohighlight">\(h(x)\)</span>, og så videre.</p>
-</dd>
-</dl>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(a\)</span> er <strong>stigningstallet</strong> til linja.</p></li>
+<li><p><span class="math notranslate nohighlight">\(b\)</span> er <strong>konstantleddet</strong> til linja. Også kalt for <strong>skjæringen med <span class="math notranslate nohighlight">\(y\)</span>-aksen</strong>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(f\)</span> er <strong>navnet</strong> til funksjonen.</p></li>
+<li><p><span class="math notranslate nohighlight">\(y = f(x)\)</span> er <strong>funksjonsverdien</strong> til en gitt <span class="math notranslate nohighlight">\(x\)</span>-verdi.</p></li>
+</ul>
 </div>
 <p>Vi tar noen eksempler på lineære funksjoner med skrivemåten over:</p>
 <div class="example admonition">
 <p class="admonition-title">Eksempel 1: algebraisk representasjon av lineære funksjoner</p>
-<p>Under vises funksjonsuttrykket til tre lineære funksjoner. Vi skal bestemme stigningstallet og konstantleddet til hver av funksjonene.</p>
+<p>Under vises eksempler på lineære funksjoner.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>Funksjonsnavn</p></th>
@@ -590,10 +594,14 @@ f(x) = ax + b.
 </section>
 <section id="funksjonsverdier">
 <h2><span class="section-number">2.1.2. </span>Funksjonsverdier<a class="headerlink" href="#funksjonsverdier" title="Link to this heading">#</a></h2>
-<p>Når vi introduserte <span class="math notranslate nohighlight">\(f(x)\)</span> som notasjon, så sa vi <span class="math notranslate nohighlight">\(f(x) = y\)</span> var funksjonsverdien til <span class="math notranslate nohighlight">\(f\)</span> for en bestemt <span class="math notranslate nohighlight">\(x\)</span>-verdi. Her skal vi ta en titt på skrivemåten og hvordan man regner ut funksjonsverdier med en funksjonsuttrykket til <span class="math notranslate nohighlight">\(f\)</span>. Vi sier for eksempel at <span class="math notranslate nohighlight">\(f(2)\)</span> er funksjonsverdien til <span class="math notranslate nohighlight">\(f\)</span> i <span class="math notranslate nohighlight">\(x = 2\)</span>. Mer generelt er <span class="math notranslate nohighlight">\(f(a)\)</span> funksjonsverdien til <span class="math notranslate nohighlight">\(f\)</span> i <span class="math notranslate nohighlight">\(x = a\)</span>.</p>
+<p>Vi har sagt at <span class="math notranslate nohighlight">\(f(x)\)</span> er funksjonsverdien til <span class="math notranslate nohighlight">\(f\)</span> for en bestemt <span class="math notranslate nohighlight">\(x\)</span>-verdi. Her skal vi bli bedre kjent med skrivemåten og betydningen.</p>
+<div class="theory admonition">
+<p class="admonition-title">Funksjonsverdier</p>
+<p><span class="math notranslate nohighlight">\(f(a)\)</span> er <strong>funksjonsverdien</strong> til <span class="math notranslate nohighlight">\(f\)</span> i <span class="math notranslate nohighlight">\(x = a\)</span> og regnes ut ved å sette <span class="math notranslate nohighlight">\(x = a\)</span> i funksjonsuttrykket til <span class="math notranslate nohighlight">\(f\)</span>.</p>
+</div>
 <div class="example admonition">
 <p class="admonition-title">Eksempel 2: funksjonsverdier</p>
-<p>Under vises eksempler på utregning av funksjonsverdier. Vi erstatter rett og slett verdien til <span class="math notranslate nohighlight">\(x\)</span> alle steder den opptrer i funksjonsuttrykket (formelen/likningen) til funksjonen og regner ut:</p>
+<p>Under vises eksempler på utregning av funksjonsverdier. Vi bytter ut <span class="math notranslate nohighlight">\(x\)</span>-verdien i formelen og regner ut.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>Funksjon</p></th>
@@ -604,23 +612,23 @@ f(x) = ax + b.
 <tbody>
 <tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(f(x) = 3x - 1\)</span></p></td>
 <td class="text-center"><p><span class="math notranslate nohighlight">\(2\)</span></p></td>
-<td class="text-left"><p><span class="math notranslate nohighlight">\(f(2) = 3\cdot 2 - 1 = 6 - 1 = 5\)</span></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(f(\textcolor{red}{2}) = 3\cdot \textcolor{red}{2} - 1 = 6 - 1 = 5\)</span></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(g(x) = -2x + 4\)</span></p></td>
 <td class="text-center"><p><span class="math notranslate nohighlight">\(3\)</span></p></td>
-<td class="text-left"><p><span class="math notranslate nohighlight">\(g(3) = -2\cdot 3 + 4 = -6 + 4 = -2\)</span></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(g(\textcolor{red}{3}) = -2\cdot \textcolor{red}{3} + 4 = -6 + 4 = -2\)</span></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(h(x) = -x + 2\)</span></p></td>
 <td class="text-center"><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
-<td class="text-left"><p><span class="math notranslate nohighlight">\(h(0) = -0 + 2 = 2\)</span></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(h(\textcolor{red}{0}) = -\textcolor{red}{0} + 2 = 2\)</span></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(r(x) = 3\)</span></p></td>
 <td class="text-center"><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
-<td class="text-left"><p><span class="math notranslate nohighlight">\(r(1) = 3\)</span></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(r(\textcolor{red}{1}) = 3\)</span></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(s(x) = \dfrac{1}{2}x\)</span></p></td>
 <td class="text-center"><p><span class="math notranslate nohighlight">\(4\)</span></p></td>
-<td class="text-left"><p><span class="math notranslate nohighlight">\(s(4) = \dfrac{1}{2}\cdot 4 = 2\)</span></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(s(\textcolor{red}{4}) = \dfrac{1}{2}\cdot \textcolor{red}{4} = 2\)</span></p></td>
 </tr>
 </tbody>
 </table>
@@ -697,8 +705,8 @@ f(x) = ax + b.
 </div>
 </div>
 </section>
-<section id="regne-ut-funksjonsverdier-med-python">
-<h2><span class="section-number">2.1.3. </span>Regne ut funksjonsverdier med Python<a class="headerlink" href="#regne-ut-funksjonsverdier-med-python" title="Link to this heading">#</a></h2>
+<section id="funksjonsverdier-i-python">
+<h2><span class="section-number">2.1.3. </span>Funksjonsverdier i Python<a class="headerlink" href="#funksjonsverdier-i-python" title="Link to this heading">#</a></h2>
 <p>Vi kan bruke Python som en kalkulator for å regne ut funksjonsverdier.</p>
 <div class="example admonition" id="algebraisk-representasjon-example-3">
 <p class="admonition-title">Eksempel 3: funksjonsverdier i Python</p>
@@ -707,7 +715,7 @@ f(x) = ax + b.
 \[
 f(x) = 3x - 1,
 \]</div>
-<p>i x = 2. Da kan vi skrive følgende kode i Python:</p>
+<p>i <span class="math notranslate nohighlight">\(x = 2\)</span>. Da kan vi skrive følgende kode i Python:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="linenos">2</span><span class="n">y</span> <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span>
 <span class="linenos">3</span>
@@ -723,7 +731,12 @@ f(x) = 3x - 1,
 <p>Og så er det <strong>din tur</strong>!</p>
 <div class="check admonition">
 <p class="admonition-title">Underveisoppgave 3: funksjonsverdier i Python</p>
-<p>Skriv et program som regner ut <span class="math notranslate nohighlight">\(y = 4x + 2\)</span> når <span class="math notranslate nohighlight">\(x = -1\)</span>.</p>
+<p>Kopier programmet fra <a class="reference internal" href="#algebraisk-representasjon-example-3"><span class="std std-ref">eksempel 3</span></a> og endret programmet slik at det regner ut
+<span class="math notranslate nohighlight">\(y = f(-1)\)</span> for</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = 4x + 2.
+\]</div>
 <div class="solution dropdown admonition">
 <p class="admonition-title">Løsning</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
@@ -739,7 +752,8 @@ f(x) = 3x - 1,
 <p>Altså er <span class="math notranslate nohighlight">\(y = -2\)</span>.</p>
 </div>
 </div>
-<p>Men i <a class="reference internal" href="#algebraisk-representasjon-example-3"><span class="std std-ref">eksempel 3</span></a> brukte vi ikke notasjonen for funksjoner. Men i Python har vi faktisk støtte for akkurat dette.</p>
+<hr class="docutils" />
+<p>I <a class="reference internal" href="#algebraisk-representasjon-example-3"><span class="std std-ref">eksempel 3</span></a> brukte vi ikke notasjonen for funksjoner. Men i Python har vi faktisk støtte for akkurat dette.</p>
 <div class="sidenote margin admonition">
 <p class="admonition-title">Ordforklaring: syntaks</p>
 <p>Ordet <strong>syntaks</strong> betyr “regler for å skrive kode”. Tenk på det som grammatikk - men i motsetning til norsklæreren, så skjønner ikke Python hva du mener hvis du ikke skriver riktig.</p>
@@ -786,6 +800,213 @@ Følgende Pythonkode oppnår dette:</p>
 </pre></div>
 </div>
 <p>Altså er <span class="math notranslate nohighlight">\(g(-2) = -1\)</span>.</p>
+</div>
+</div>
+</section>
+<section id="oppgaver">
+<h2><span class="section-number">2.1.4. </span>Oppgaver<a class="headerlink" href="#oppgaver" title="Link to this heading">#</a></h2>
+<div class="problem-level-1 admonition">
+<p class="admonition-title">Oppgave 1</p>
+<p>Fyll ut tabellen under.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Funksjonsnavn</p></th>
+<th class="head text-center"><p>Funksjonsuttrykk</p></th>
+<th class="head text-center"><p>Stigningstall</p></th>
+<th class="head text-center"><p>Konstantledd</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(f\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(f(x) = 2x - 3\)</span></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><span class="math notranslate nohighlight">\(g\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(g(x) = -3x + 4\)</span></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(h\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(h(x) = 4x + 1\)</span></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><span class="math notranslate nohighlight">\(r\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(r(x) = 3\)</span></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(s\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(s(x) = -\dfrac{1}{3}x + \dfrac{3}{2}\)</span></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="answer dropdown admonition">
+<p class="admonition-title">Fasit</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Funksjonsnavn</p></th>
+<th class="head text-center"><p>Funksjonsuttrykk</p></th>
+<th class="head text-center"><p>Stigningstall</p></th>
+<th class="head text-center"><p>Konstantledd</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(f\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(f(x) = 2x - 3\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(2\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(-3\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><span class="math notranslate nohighlight">\(g\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(g(x) = -3x + 4\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(-3\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(4\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(h\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(h(x) = 4x + 1\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(4\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><span class="math notranslate nohighlight">\(r\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(r(x) = 3\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(3\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(s\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(s(x) = -\dfrac{1}{3}x + \dfrac{3}{2}\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(-\dfrac{1}{3}\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\dfrac{3}{2}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="problem-level-1 admonition">
+<p class="admonition-title">Oppgave 2</p>
+<p>Regn ut funksjonsverdiene i tabellen under.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Funksjonsuttrykk</p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(\quad x \quad\)</span></p></th>
+<th class="head text-left"><p>Funksjonsverdi <span class="math notranslate nohighlight">\(f(x)\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(f(x) = 2x - 3\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
+<td class="text-left"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(g(x) = -3x + 4\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(2\)</span></p></td>
+<td class="text-left"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(h(x) = 4x + 1\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td class="text-left"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(r(x) = 3\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(-1\)</span></p></td>
+<td class="text-left"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(s(x) = -\dfrac{1}{3}x + \dfrac{3}{2}\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(3\)</span></p></td>
+<td class="text-left"><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="answer dropdown admonition">
+<p class="admonition-title">Fasit</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Funksjonsuttrykk</p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(\quad x \quad\)</span></p></th>
+<th class="head text-left"><p>Funksjonsverdi <span class="math notranslate nohighlight">\(f(x)\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(f(x) = 2x - 3\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(-1\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(g(x) = -3x + 4\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(2\)</span></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(-2\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(h(x) = 4x + 1\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(r(x) = 3\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(-1\)</span></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(3\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(s(x) = -\dfrac{1}{3}x + \dfrac{3}{2}\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(3\)</span></p></td>
+<td class="text-left"><p><span class="math notranslate nohighlight">\(\dfrac{5}{2}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="problem-level-1 admonition">
+<p class="admonition-title">Oppgave 3</p>
+<p>En elev har skrevet et program for å regne ut en funksjonsverdi.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="linenos">2</span>    <span class="k">return</span> <span class="o">-</span><span class="n">x</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span>
+<span class="linenos">3</span>
+<span class="linenos">4</span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+<br>
+<dl class="simple myst">
+<dt>Deloppgave 1</dt><dd><p>Hvilken funksjon er det elevens program regner ut funksjonsverdien til?</p>
+</dd>
+</dl>
+<div class="answer dropdown admonition">
+<p class="admonition-title">Fasit</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = -\dfrac{x}{2} + 3 = -\dfrac{1}{2}x + 3
+\]</div>
+</div>
+<br>
+<dl class="simple myst">
+<dt>Deloppgave 2</dt><dd><p>Hva blir verdien programmet skriver ut? 📝 <span class="math notranslate nohighlight">\(\color{red}\xcancel{💻}\)</span></p>
+</dd>
+</dl>
+<div class="answer dropdown admonition">
+<p class="admonition-title">Fasit</p>
+<div class="math notranslate nohighlight">
+\[
+f(2) = 2
+\]</div>
+</div>
+<br>
+<dl class="simple myst">
+<dt>Deloppgave 3</dt><dd><p>Kopier programmet og endre programmet slik at det skriver ut <span class="math notranslate nohighlight">\(f(-2)\)</span>. Hva blir verdien? 💻</p>
+</dd>
+</dl>
+<div class="answer dropdown admonition">
+<p class="admonition-title">Fasit</p>
+<p>Endret program:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="linenos">2</span>    <span class="k">return</span> <span class="o">-</span><span class="n">x</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span>
+<span class="linenos">3</span>
+<span class="hll"><span class="linenos">4</span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">))</span>
+</span></pre></div>
+</div>
+<p>Funksjonsverdi:</p>
+<div class="math notranslate nohighlight">
+\[
+f(-2) = 4
+\]</div>
 </div>
 </div>
 </section>
@@ -857,7 +1078,8 @@ Følgende Pythonkode oppnår dette:</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2.1.1. Algebraisk representasjon av lineære funksjoner</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funksjonsverdier">2.1.2. Funksjonsverdier</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regne-ut-funksjonsverdier-med-python">2.1.3. Regne ut funksjonsverdier med Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funksjonsverdier-i-python">2.1.3. Funksjonsverdier i Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">2.1.4. Oppgaver</a></li>
 </ul>
   </nav></div>
 
