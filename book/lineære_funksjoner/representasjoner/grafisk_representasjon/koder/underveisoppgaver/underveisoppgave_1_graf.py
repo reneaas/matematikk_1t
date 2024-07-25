@@ -55,6 +55,6 @@ plt.grid(True, linestyle="--", alpha=0.6)
 plt.tight_layout()
 
 # Lagrer figuren i vektorformat
-plt.savefig("../../figurer/underveisoppgaver/underveisoppgave_1.svg")
+plt.savefig("../../figurer/underveisoppgaver/underveisoppgave_1_med_graf.svg")
 
 plt.show()
