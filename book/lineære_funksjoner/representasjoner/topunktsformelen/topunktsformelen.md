@@ -114,15 +114,21 @@ Bestem stigningstallet til hver av funksjonene.
 En ting du kanskje stusset over i eksempelet over er at vi gikk ut ifra at vi bare kunne bruke tilfeldige punkter på grafen til en lineær funksjon for å bestemme stigningstallet til funksjonen. <br> Dette bør vi sette prøve på - eller **du bør**!
 
 ````{admonition} Underveisoppgave 2
-:class: check
+---
+class: check
+name: lineære-funksjoner-topunktsformelen-underveisoppgave-2
+---
 
 I figuren under vises grafen til en lineær funksjon $f$. Det er tegnet inn en rekke punkter på grafen. 
 
 Velg deg ut minst tre par med punkter og regn ut stigningstallet til funksjonen. 
 
 ```{figure} ./figurer/underveisoppgaver/underveisoppgave_2.svg
-:name: underveisoppgave_2
-:width: 80%
+---
+name: fig-lineære-funksjoner-topunktsformelen-underveisoppgave-2
+width: 80%
+---
+Viser grafen til $f$ med fem punkter tegnet inn på grafen.
 ```
 
 ```{admonition} Løsning
@@ -176,4 +182,22 @@ Altså kan vi observere at stigningstallet blir det samme uansett hvilke to par 
 ````
 
 
+:::::{admonition} Underveisoppgave 3
+---
+class: check
+---
+Under vises en interaktivt kodevindu med en kode som regner ut stigningstallet til en lineær funksjon som går gjennom to punkter.
+
+Endre programmet slik at det regner ut stigningstallet til funksjonen fra {ref}`underveisoppgave 2 <lineære-funksjoner-topunktsformelen-underveisoppgave-2>` ved å bruke to av punktene i som er vist i {numref}`fig-lineære-funksjoner-topunktsformelen-underveisoppgave-2`.
+
+:::{raw} html
+---
+file: interaktiv_kode/underveisoppgave_3.html
+---
+:::
+
+
+
+
+:::::
 
