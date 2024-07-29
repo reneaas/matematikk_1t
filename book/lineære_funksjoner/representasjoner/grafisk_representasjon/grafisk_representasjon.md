@@ -205,11 +205,14 @@ La oss se på et eksempel
 :::::{admonition} Eksempel 2: lese av koeffisientene til en lineær funksjon fra graf
 :class: example
 
-Vi har grafen til en funksjon $f(x)$ som vist i figure under:
+Grafen til en funksjon $f$ er vist i {numref}`fig-lineære-funksjoner-grafisk-representasjon-eksempel-2`.
 
 :::{figure} ./figurer/eksempler/eksempel_2.svg
-:name: eksempel_2
-:width: 80%
+---
+name: fig-lineære-funksjoner-grafisk-representasjon-eksempel-2
+width: 80%
+---
+Viser grafen til en lineær funksjon $f$.
 :::
 
 Bestem $f(x)$ fra grafen. 

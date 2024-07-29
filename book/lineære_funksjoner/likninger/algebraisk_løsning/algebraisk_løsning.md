@@ -60,14 +60,13 @@ Målet vårt er å finne ut hvilken verdi av $x$ som gjør at likningen er sann.
 x &= -2
 \end{align*}
 
-Over har vi uttrykt løsningen vår som en likning. Noen ganger er dette ryddigst, andre ganger er det ryddigere å uttrykke løsningen som en løsningsmengde - spesielt når likningen flere løsninger. 
-Da kan vi skrive 
+Over har vi uttrykt løsningen vår som en likning. Noen ganger er dette ryddigst, andre ganger er det ryddigere å uttrykke løsningen som en løsningsmengde - spesielt når likningen har mer enn én løsning. Vi oppgir løsningen som enten som en likning eller som en løsningsmengde:
 
 $$
 \underbrace{x = -2}_{\text{likning}} \quad \Leftrightarrow \quad \underbrace{x \in \{-2\}}_{\text{løsningsmengde}}
 $$
 
-Vi velger oss bare én av de to representasjonene når vi oppgir løsningen til slutt. Valget handler stort sett alltid om å skrive *minst mulig* så det er *lettest å lese*.
+Vi velger oss typisk den skrivemåten som er enklest å lese.
 ::::
 
 
@@ -128,7 +127,7 @@ class: sidenote, margin
 Når du ser notasjonen 
 
 $$
-\cancelto{2}{4}
+\cancelto{\displaystyle 2}{4}
 $$
 
 betyr dette at vi sitter igjen med en faktor $2$ etter å ha stryket $4$ mot noe. For eksempel:
