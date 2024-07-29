@@ -66,8 +66,8 @@
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
     <script>mermaid.initialize({"startOnLoad": true})</script>
-    <script src="_static/serviceWorker.js?v=0c3fcf3b"></script>
-    <script src="_static/setupEditor.js?v=2691a0d3"></script>
+    <script src="_static/serviceWorker.js?v=89d4c8d3"></script>
+    <script src="_static/setupEditor.js?v=9b0f19b1"></script>
     <script src="_static/custom.js?v=646d9cc7"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -75,10 +75,8 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="norwegian"/>
-<!-- Pyodide -->
 <script src="https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js"></script>
 
-<!-- CodeMirror -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/night.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
@@ -434,15 +432,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Matematikk 1T</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#innhold">Innhold</a><ul class="nav section-nav flex-column">
 </ul>
 </li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-python-with-pyodide-and-codemirror">Interactive Python with Pyodide and CodeMirror</a></li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -512,74 +505,6 @@ Men hold ut og jobb masse med faget, så kommer du ut på andre siden med en opp
 </div>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="interactive-python-with-pyodide-and-codemirror">
-<h1>Interactive Python with Pyodide and CodeMirror<a class="headerlink" href="#interactive-python-with-pyodide-and-codemirror" title="Link to this heading">#</a></h1>
-<p>Below is an interactive Python code editor using Pyodide and CodeMirror.</p>
-<div>
-    <textarea id="code-editor" name="code">
-def f(x):
-    return x**2 - 2*x + 3
-
-x = 2
-y = f(x)
-print(y)
-    </textarea>
-    <button id="run-button">Run</button>
-</div>
-<pre id="output"></pre>
-
-<script type="text/javascript">
-    async function main() {
-        // Load Pyodide
-        let pyodide = await loadPyodide();
-
-        // Initialize CodeMirror
-        let editor = CodeMirror.fromTextArea(document.getElementById("code-editor"), {
-            mode: "python",
-            lineNumbers: true,
-            theme: "nord",
-            tabSize: 4,
-            indentUnit: 4,
-        });
-
-        // Get references to the HTML elements
-        let runButton = document.getElementById("run-button");
-        let output = document.getElementById("output");
-
-        // Add an event listener to the run button
-        runButton.addEventListener("click", async () => {
-            // Get the code from the editor
-            let code = editor.getValue();
-
-            // Run the Python code and capture the output
-            try {
-                pyodide.runPythonAsync(`
-import sys
-from js import console
-class PyConsole:
-    def __init__(self):
-        self.buffer = ""
-    def write(self, msg):
-        self.buffer += msg
-    def flush(self):
-        console.log(self.buffer)
-        self.buffer = ""
-
-sys.stdout = PyConsole()
-sys.stderr = PyConsole()
-                `);
-                await pyodide.runPythonAsync(code);
-                let result = pyodide.globals.get("sys").stdout.buffer;
-                output.textContent = result;
-            } catch (err) {
-                output.textContent = err;
-            }
-        });
-    }
-
-    // Call the main function to set everything up
-    main();
-</script></section>
 
     <script type="text/x-thebe-config">
     {
@@ -636,15 +561,10 @@ sys.stderr = PyConsole()
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Matematikk 1T</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#innhold">Innhold</a><ul class="nav section-nav flex-column">
 </ul>
 </li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-python-with-pyodide-and-codemirror">Interactive Python with Pyodide and CodeMirror</a></li>
-</ul>
-
   </nav></div>
 
 </div></div>
