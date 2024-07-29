@@ -248,7 +248,7 @@ En mulig betingelse vi kan sette opp slik at verdien til `y`{l=python} skrives u
 ```{code-block} python
 ---
 linenos:
-emphasize-lines: 3
+emphasize-lines: 4
 ---
 x = 2
 y = 2*x + 3
