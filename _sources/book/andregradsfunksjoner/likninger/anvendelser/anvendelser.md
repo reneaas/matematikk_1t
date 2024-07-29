@@ -19,14 +19,10 @@ class: theory
 En andregradsfunksjon med nullpunkter $x_1$ og $x_2$ kan skrives på formen
 
 $$
-f(x) = a(x - x_1)(x - x_2)
+f(x) = a(x - x_1)(x - x_2).
 $$
 
-der $x_1$ og $x_2$ er løsningene av likningen
 
-$$
-ax^2 + bx + c = 0
-$$
 :::::
 
 Vi kan anvende dette til å bestemme funksjonsuttrykket til andregradsfunksjoner både med ett og to nullpunkter.
@@ -93,12 +89,3 @@ $$
 
 
 **Din tur!**
-
-:::{raw} html
----
-file: ./html/geogebra_basic.html
----
-:::
-
-<!-- <iframe scrolling="no" title="Likningssysstem" src="https://www.geogebra.org/material/iframe/id/uerbqrkz/width/1512/height/892/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" width="1512px" height="892px" style="border:0px;"> </iframe> -->
-

@@ -202,21 +202,55 @@ Og så er det **din tur**!
 ---
 class: check
 ---
-Kopier programmet fra {ref}`eksempel 3 <algebraisk-representasjon-example-3>` og endret programmet slik at det regner ut 
-$y = f(-1)$ for 
+Under vises et interaktivt vindu med koden fra {ref}`eksempel 3 <algebraisk-representasjon-example-3>`. 
 
-$$
-f(x) = 4x + 2.
-$$ 
+Deloppgave 1
+: Endre koden til å bestemme $f(-1)$.
 
-:::{admonition} Løsning
+<br>
+
+Deloppgave 2
+: Endre koden til å bestemme $g(-1)$ for $g(x) = 4x + 2$. Hva blir verdien? 💻
+
+<br>
+
+:::{raw} html
+---
+file: interaktiv_kode/underveisoppgave_3.html
+---
+:::
+
+:::{admonition} Løsning: deloppgave 1
 ---
 class: solution, dropdown
 ---
 
 ```{code-block} python
 ---
-linenos:
+linenos: true
+emphasize-lines: 1
+---
+x = -1
+y = 3*x - 1
+
+print(y)
+```
+som gir utskriften
+```console
+-4
+```
+Altså er $f(-1) = -4$. 
+:::
+
+:::{admonition} Løsning: deloppgave 2
+---
+class: solution, dropdown
+---
+
+```{code-block} python
+---
+linenos: true
+emphasize-lines: 2
 ---
 x = -1
 y = 4*x + 2
@@ -227,7 +261,7 @@ som gir utskriften
 ```console
 -2
 ```
-Altså er $y = -2$.
+Altså er $g(-1) = -2$. 
 :::
 ::::
 
@@ -273,7 +307,8 @@ linenos:
 def f(x):
     return 3*x - 1
 
-print(f(2)) # Regner ut f(2) og skriver ut resultatet
+y = f(2)    # Regner ut f(2)
+print(y) # skriver ut resultatet
 ```
 som gir utskriften
 
@@ -294,6 +329,13 @@ class: check
 Lag et program som bruker en funksjon for $g(x) = 2x + 3$ og regn ut $g(-2)$ med programmet.
 
 
+:::{raw} html
+---
+file: interaktiv_kode/underveisoppgave_4.html
+---
+:::
+
+
 :::{admonition} Løsning
 ---
 class: solution, dropdown
@@ -306,7 +348,8 @@ linenos:
 def g(x):
     return 2*x + 3
 
-print(g(-2))
+y = g(-2)
+print(y)
 ```
 som gir utskriften
 ```console
@@ -431,7 +474,15 @@ $$
 <br>
 
 Deloppgave 3
-: Kopier programmet og endre programmet slik at det skriver ut $f(-2)$. Hva blir verdien? 💻
+: Under vises programmet i et interaktivt vindu. Endre programmet slik at det regner ut $f(-2)$ og bruk programmet til å bestemme verdien. 💻
+
+
+:::{raw} html
+---
+file: interaktiv_kode/oppgave_3.html
+---
+:::
+
 
 ::::{admonition} Fasit
 ---
@@ -446,7 +497,8 @@ emphasize-lines: 4
 def f(x):
     return -x/2 + 3
 
-print(f(-2))
+y = f(-2)
+print(y)
 ```
 
 Funksjonsverdi:

@@ -66,13 +66,23 @@
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/cas/cas_del1/cas_del1';</script>
     <script>mermaid.initialize({"startOnLoad": true})</script>
-    <script src="../../../_static/custom.js?v=095e7735"></script>
+    <script src="../../../_static/custom.js?v=c2316de1"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Variabler" href="../../programmering/variabler/variabler.html" />
     <link rel="prev" title="12.2. Mer komplisert polynomdivisjon" href="../../polynomer/polynomdivisjon/generell_polynomdivisjon.html" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="norwegian"/>
+<!-- Pyodide -->
+<script src="https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js"></script>
+
+<!-- CodeMirror -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/night.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
+
   </head>
   
   
@@ -151,7 +161,7 @@
     
   
 
-<a class="navbar-brand logo" href="../../../intro.html">
+<a class="navbar-brand logo" href="../../../index.html">
   
   
   
@@ -229,14 +239,18 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Andregradsfunksjoner</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../andregradsfunksjoner/representasjoner/representasjoner.html">7. Hva er en andregradsfunksjon?</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../andregradsfunksjoner/representasjoner/representasjoner.html">7. Hva er en andregradsfunksjon?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../andregradsfunksjoner/representasjoner/algebraisk_representasjon/algebraisk_representasjon.html">7.1. Algebraisk representasjon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../andregradsfunksjoner/representasjoner/grafisk_representasjon/grafisk_representasjon.html">7.2. Grafisk representasjon</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../andregradsfunksjoner/likninger/intro_andregradslikninger.html">8. Andregradslikninger</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../andregradsfunksjoner/likninger/grafisk_l%C3%B8sning/grafisk_l%C3%B8sning.html">8.1. Grafisk løsning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../andregradsfunksjoner/likninger/spesielle_andregradslikninger/spesielle_andregradslikninger.html">8.2. Spesielle andregradslikninger</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../andregradsfunksjoner/likninger/kvadratsetningene/kvadratsetningene.html">8.3. Kvadratsetningene</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../andregradsfunksjoner/likninger/fullstendig_kvadrat/fullstendig_kvadrat.html">8.4. Fullstendige kvadraters metode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../andregradsfunksjoner/likninger/abc_formelen/abc_formelen.html">8.5. <span class="math notranslate nohighlight">\(abc\)</span>-formelen</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../andregradsfunksjoner/likninger/anvendelser/anvendelser.html">8.6. Anvendelser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../andregradsfunksjoner/representasjoner/bestemme_funksjonsuttrykk/bestemme_funksjonsuttrykk.html">8.6. Bestemme funksjonsuttrykk</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../andregradsfunksjoner/ulikheter/intro_andregradsulikheter.html">9. Andregradsulikheter</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -490,8 +504,8 @@ document.write(`
 <h2>Likningssystemer<a class="headerlink" href="#likningssystemer" title="Link to this heading">#</a></h2>
 <p>Vi kan også løse likningssystemer i CAS. Da skriver vi inn hver likning for seg, markerer linjene og trykker på Løs-knappen.</p>
 <p>Vi prøver med likningssettet</p>
-<div class="amsmath math notranslate nohighlight" id="equation-78a2e345-b902-4d07-b267-09682e65cd5a">
-<span class="eqno">(1)<a class="headerlink" href="#equation-78a2e345-b902-4d07-b267-09682e65cd5a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f5eb463c-5abc-4941-b4b5-c0a7f664ab0f">
+<span class="eqno">(1)<a class="headerlink" href="#equation-f5eb463c-5abc-4941-b4b5-c0a7f664ab0f" title="Permalink to this equation">#</a></span>\[\begin{align}
     2x+3y-4 &amp; =0
     2x+1 &amp;= 2-y
 \end{align}\]</div>
@@ -505,26 +519,26 @@ document.write(`
 <p class="admonition-title">Underveisoppgave 2</p>
 <p>Bruk CAS til å løse likningssettene:</p>
 <ol class="arabic">
-<li><div class="amsmath math notranslate nohighlight" id="equation-3881e626-aecd-41ac-bb86-6719bb62fcc6">
-<span class="eqno">(2)<a class="headerlink" href="#equation-3881e626-aecd-41ac-bb86-6719bb62fcc6" title="Permalink to this equation">#</a></span>\[\begin{align}
+<li><div class="amsmath math notranslate nohighlight" id="equation-1f69b03a-5614-4ae4-884c-5c020df6c2ca">
+<span class="eqno">(2)<a class="headerlink" href="#equation-1f69b03a-5614-4ae4-884c-5c020df6c2ca" title="Permalink to this equation">#</a></span>\[\begin{align}
         3x+y &amp;=7 \\
         x−y &amp;=1 \\
     \end{align}\]</div>
 </li>
-<li><div class="amsmath math notranslate nohighlight" id="equation-974414c8-496a-4e4f-ac7d-726425f19874">
-<span class="eqno">(3)<a class="headerlink" href="#equation-974414c8-496a-4e4f-ac7d-726425f19874" title="Permalink to this equation">#</a></span>\[\begin{align}
+<li><div class="amsmath math notranslate nohighlight" id="equation-6fb742fb-0331-42aa-ad9e-b578a2081703">
+<span class="eqno">(3)<a class="headerlink" href="#equation-6fb742fb-0331-42aa-ad9e-b578a2081703" title="Permalink to this equation">#</a></span>\[\begin{align}
         x−2y &amp;= 7 \\
         2x+y &amp;= 1 \\
     \end{align}\]</div>
 </li>
-<li><div class="amsmath math notranslate nohighlight" id="equation-0f48f710-4fb7-49be-aa53-c3e96691a132">
-<span class="eqno">(4)<a class="headerlink" href="#equation-0f48f710-4fb7-49be-aa53-c3e96691a132" title="Permalink to this equation">#</a></span>\[\begin{align}
+<li><div class="amsmath math notranslate nohighlight" id="equation-eb0d7f10-efd9-475c-8a9b-5bf465d0aa41">
+<span class="eqno">(4)<a class="headerlink" href="#equation-eb0d7f10-efd9-475c-8a9b-5bf465d0aa41" title="Permalink to this equation">#</a></span>\[\begin{align}
         x+2y &amp;= 5 \\
         4x &amp;= 6−y \\
     \end{align}\]</div>
 </li>
-<li><div class="amsmath math notranslate nohighlight" id="equation-1e7127d6-d5eb-417b-8847-f39b19762bcf">
-<span class="eqno">(5)<a class="headerlink" href="#equation-1e7127d6-d5eb-417b-8847-f39b19762bcf" title="Permalink to this equation">#</a></span>\[\begin{align}
+<li><div class="amsmath math notranslate nohighlight" id="equation-3a9a2c61-d0d8-4251-9d9a-f0755856943b">
+<span class="eqno">(5)<a class="headerlink" href="#equation-3a9a2c61-d0d8-4251-9d9a-f0755856943b" title="Permalink to this equation">#</a></span>\[\begin{align}
         −2x+y &amp;= −1 \\
         4x+2y+14 &amp;= 0 \\
     \end{align}\]</div>
@@ -547,8 +561,8 @@ document.write(`
 <div class="note admonition">
 <p class="admonition-title">Underveisoppgave 4</p>
 <p>Løs likningssystemet</p>
-<div class="amsmath math notranslate nohighlight" id="equation-95482aeb-4a35-4532-90ef-1716329a2ff7">
-<span class="eqno">(6)<a class="headerlink" href="#equation-95482aeb-4a35-4532-90ef-1716329a2ff7" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d9951852-9154-44bc-b7ea-22e04c097beb">
+<span class="eqno">(6)<a class="headerlink" href="#equation-d9951852-9154-44bc-b7ea-22e04c097beb" title="Permalink to this equation">#</a></span>\[\begin{align}
     a - b + c &amp;= -11
     a + b + c &amp;= 11
     8a + 4b + 2c &amp;= -4

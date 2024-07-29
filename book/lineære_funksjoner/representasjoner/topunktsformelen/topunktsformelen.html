@@ -66,13 +66,23 @@
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/lineære_funksjoner/representasjoner/topunktsformelen/topunktsformelen';</script>
     <script>mermaid.initialize({"startOnLoad": true})</script>
-    <script src="../../../../_static/custom.js?v=095e7735"></script>
+    <script src="../../../../_static/custom.js?v=c2316de1"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="2.4. Ettpunktsformelen" href="../ettpunktsformelen/ettpunktsformelen.html" />
     <link rel="prev" title="2.2. Grafisk representasjon av lineære funksjoner" href="../grafisk_representasjon/grafisk_representasjon.html" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="norwegian"/>
+<!-- Pyodide -->
+<script src="https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js"></script>
+
+<!-- CodeMirror -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/night.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
+
   </head>
   
   
@@ -151,7 +161,7 @@
     
   
 
-<a class="navbar-brand logo" href="../../../../intro.html">
+<a class="navbar-brand logo" href="../../../../index.html">
   
   
   
@@ -229,14 +239,18 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Andregradsfunksjoner</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../../andregradsfunksjoner/representasjoner/representasjoner.html">7. Hva er en andregradsfunksjon?</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../andregradsfunksjoner/representasjoner/representasjoner.html">7. Hva er en andregradsfunksjon?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../andregradsfunksjoner/representasjoner/algebraisk_representasjon/algebraisk_representasjon.html">7.1. Algebraisk representasjon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../andregradsfunksjoner/representasjoner/grafisk_representasjon/grafisk_representasjon.html">7.2. Grafisk representasjon</a></li>
+</ul>
+</details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../andregradsfunksjoner/likninger/intro_andregradslikninger.html">8. Andregradslikninger</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../andregradsfunksjoner/likninger/grafisk_l%C3%B8sning/grafisk_l%C3%B8sning.html">8.1. Grafisk løsning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../andregradsfunksjoner/likninger/spesielle_andregradslikninger/spesielle_andregradslikninger.html">8.2. Spesielle andregradslikninger</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../andregradsfunksjoner/likninger/kvadratsetningene/kvadratsetningene.html">8.3. Kvadratsetningene</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../andregradsfunksjoner/likninger/fullstendig_kvadrat/fullstendig_kvadrat.html">8.4. Fullstendige kvadraters metode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../andregradsfunksjoner/likninger/abc_formelen/abc_formelen.html">8.5. <span class="math notranslate nohighlight">\(abc\)</span>-formelen</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../andregradsfunksjoner/likninger/anvendelser/anvendelser.html">8.6. Anvendelser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../andregradsfunksjoner/representasjoner/bestemme_funksjonsuttrykk/bestemme_funksjonsuttrykk.html">8.6. Bestemme funksjonsuttrykk</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../andregradsfunksjoner/ulikheter/intro_andregradsulikheter.html">9. Andregradsulikheter</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -605,12 +619,15 @@ a = \frac{\Delta y}{\Delta x} = \frac{4}{6} = \frac{2}{3}.
 <section id="samme-stigningstall-uansett-hvilke-to-punkter-altsa">
 <h2><span class="section-number">2.3.3. </span>Samme stigningstall uansett hvilke to punkter, altså??<a class="headerlink" href="#samme-stigningstall-uansett-hvilke-to-punkter-altsa" title="Link to this heading">#</a></h2>
 <p>En ting du kanskje stusset over i eksempelet over er at vi gikk ut ifra at vi bare kunne bruke tilfeldige punkter på grafen til en lineær funksjon for å bestemme stigningstallet til funksjonen. <br> Dette bør vi sette prøve på - eller <strong>du bør</strong>!</p>
-<div class="check admonition">
+<div class="check admonition" id="lineaere-funksjoner-topunktsformelen-underveisoppgave-2">
 <p class="admonition-title">Underveisoppgave 2</p>
 <p>I figuren under vises grafen til en lineær funksjon <span class="math notranslate nohighlight">\(f\)</span>. Det er tegnet inn en rekke punkter på grafen.</p>
 <p>Velg deg ut minst tre par med punkter og regn ut stigningstallet til funksjonen.</p>
-<figure class="align-default" id="underveisoppgave-2">
+<figure class="align-default" id="fig-lineaere-funksjoner-topunktsformelen-underveisoppgave-2">
 <a class="reference internal image-reference" href="../../../../_images/underveisoppgave_25.svg"><img alt="../../../../_images/underveisoppgave_25.svg" src="../../../../_images/underveisoppgave_25.svg" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2.5 </span><span class="caption-text">Viser grafen til <span class="math notranslate nohighlight">\(f\)</span> med fem punkter tegnet inn på grafen.</span><a class="headerlink" href="#fig-lineaere-funksjoner-topunktsformelen-underveisoppgave-2" title="Link to this image">#</a></p>
+</figcaption>
 </figure>
 <div class="solution dropdown admonition">
 <p class="admonition-title">Løsning</p>
@@ -651,6 +668,44 @@ a = \frac{-6}{3} = -2
 \]</div>
 <p>Altså kan vi observere at stigningstallet blir det samme uansett hvilke to par punkter vi velger oss. Fra valg 2 kan vi også se at det er ikke en gang noe viktig å passe på at <span class="math notranslate nohighlight">\(x_2\)</span> er større enn <span class="math notranslate nohighlight">\(x_1\)</span>. Formelen funker uansett! Vi kommer tilbake til en tolkning av dette når vi skal diskutere begrepet <em>vekstfart</em>.</p>
 </div>
+</div>
+<div class="check admonition">
+<p class="admonition-title">Underveisoppgave 3</p>
+<p>Under vises en interaktivt kodevindu med en kode som regner ut stigningstallet til en lineær funksjon som går gjennom to punkter.</p>
+<p>Endre programmet slik at det regner ut stigningstallet til funksjonen fra <a class="reference internal" href="#lineaere-funksjoner-topunktsformelen-underveisoppgave-2"><span class="std std-ref">underveisoppgave 2</span></a> ved å bruke to av punktene i som er vist i <a class="reference internal" href="#fig-lineaere-funksjoner-topunktsformelen-underveisoppgave-2"><span class="std std-numref">Fig. 2.5</span></a>.</p>
+
+<div>
+    <textarea id="code-editor-underveisoppgave-3" name="code-underveisoppgave-3">
+x1 = 1
+x2 = 3
+y1 = 2
+y2 = 4
+
+dx = x2 - x1
+dy = y2 - y1
+
+a = dy / dx
+
+print(a)
+
+    </textarea>
+    <button id="run-button-underveisoppgave-3">Run</button>
+</div>
+
+<pre id="output-underveisoppgave-3"></pre>
+
+<script type="text/javascript">
+
+    async function main() {
+        // Load Pyodide
+        let pyodide = await initializePyodide();
+
+        await setupEditor(pyodide, "code-editor-underveisoppgave-3", "run-button-underveisoppgave-3", "output-underveisoppgave-3");
+    // Call the main function to set everything up
+    }
+    main();
+
+</script>
 </div>
 </section>
 </section>
