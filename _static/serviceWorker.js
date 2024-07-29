@@ -1,7 +1,7 @@
 const CACHE_NAME = 'pyodide-cache';
 const urlsToCache = [
-    'https://cdn.jsdelivr.net/pyodide/v0.21.3/full/pyodide.js',
-    'https://cdn.jsdelivr.net/pyodide/v0.21.3/full/pyodide.asm.wasm',
+    'https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js',
+    'https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.asm.wasm',
     // Add other necessary files
 ];
 
