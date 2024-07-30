@@ -222,7 +222,7 @@ Se {numref}`fig-andregradsulikheter-algebraisk-løsning-eksempel-2`.
 :name: fig-andregradsulikheter-algebraisk-løsning-eksempel-2
 :width: 100%
 
-Fortegnslinje for $f(x) = x^2 - x - 6 = (x + 2)(x - 3)$. De blå heltrukkede linjene representerer at faktoren er **positiv** på intervallet, mens de røde stiplede linjene representerer at faktoren er **negativ** på intervallet. Fortegnslinja til $f(x)$ får man ved å gange sammen fortegnene til faktorene.
+Fortegnslinje for $f(x) = x^2 - x - 6 = (x + 2)(x - 3)$. De blå heltrukne linjene representerer at faktoren er **positiv** på intervallet, mens de røde stiplede linjene representerer at faktoren er **negativ** på intervallet. Fortegnslinja til $f(x)$ får man ved å gange sammen fortegnene til faktorene.
 ```
 
 Fra fortegnsskjema, kan vi se at $f(x) > 0$ når $x < -2$ og $x > 3$. Vi kan derfor uttrykke løsningsmengden som 
