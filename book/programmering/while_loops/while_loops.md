@@ -189,7 +189,7 @@ Koden fra {ref}`eksempel 2 <while-loops-example-2>` er vist i det interaktive ko
 
 :::{raw} html
 ---
-file: interaktiv_kode/underveisoppgave_2.html
+file: ./interaktiv_kode/underveisoppgave_2.html
 ---
 :::
 
