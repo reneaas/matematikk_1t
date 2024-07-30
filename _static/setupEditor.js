@@ -12,9 +12,10 @@ async function setupEditor(pyodide, editorId, buttonId, outputId) {
     let editor = CodeMirror.fromTextArea(document.getElementById(editorId), {
         mode: "python",
         lineNumbers: true,
-        theme: "night", // Other themes at https://codemirror.net/5/demo/theme.html#default
+        theme: "midnight", // Other themes at https://codemirror.net/5/demo/theme.html#default
         tabSize: 4,
         indentUnit: 4,
+        fontSize: 30,
     });
     
     let runButton = document.getElementById(buttonId);

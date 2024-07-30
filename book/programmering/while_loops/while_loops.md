@@ -69,16 +69,18 @@ Spørsmål 2: Hva betyr `i = i + 1`{l=python}?
 ---
 class: check
 ---
-I denne oppgaven kan du kopiere programmet fra {ref}`eksempel 1 <while-loops-example-1>`. 
+I det interaktive kodevinduet under finner du koden fra {ref}`eksempel 1 <while-loops-example-1>`. 
+
+
+:::{raw} html
+---
+file: interaktiv_kode/underveisoppgave_1.html
+---
+:::
 
 
 Deloppgave 1
 : Endre programmet fra {ref}`eksempel 1 <while-loops-example-1>` slik at det skriver ut alle heltall $i \in \{1, 2, \ldots, 10\}$.
-
-Deloppgave 2
-: Endre programmet fra {ref}`eksempel 1 <while-loops-example-1>` slik at det skriver ut alle heltall $i \in \{2, 4, 6, \ldots, 10\}$.
-
-
 
 :::{admonition} Løsning: deloppgave 1
 ---
@@ -98,6 +100,12 @@ while i <= 10:
 
 ```
 :::
+
+<br>
+
+Deloppgave 2
+: Endre programmet fra {ref}`eksempel 1 <while-loops-example-1>` slik at det skriver ut alle heltall $i \in \{2, 4, 6, \ldots, 10\}$.
+
 :::{admonition} Løsning: deloppgave 2
 ---
 class: solution, dropdown
@@ -177,10 +185,19 @@ Så er det **din tur**!
 ---
 class: check
 ---
-Kopier koden fra {ref}`eksempel 2 <while-loops-example-2>` og gjør løs følgende deloppgaver.
+Koden fra {ref}`eksempel 2 <while-loops-example-2>` er vist i det interaktive kodevinduet under:
+
+:::{raw} html
+---
+file: interaktiv_kode/underveisoppgave_2.html
+---
+:::
+
+<br>
 
 Deloppgave 1
 : Endre programmet fra {ref}`eksempel 2 <while-loops-example-2>` slik at det regner ut summen av alle partall opp til og med 100.
+
 
 :::{admonition} Løsning: deloppgave 1
 ---
@@ -211,6 +228,8 @@ Kjører vi programmet, får vi utskriften
 summen = 2550
 ```
 :::
+
+<br>
 
 Deloppgave 2
 : Juster programmet ditt fra deloppgave 1 slik at det regner ut summen av de hundre første partallene. 
