@@ -190,11 +190,11 @@ Under vises en interaktivt kodevindu med en kode som regner ut stigningstallet t
 
 Endre programmet slik at det regner ut stigningstallet til funksjonen fra {ref}`underveisoppgave 2 <lineære-funksjoner-topunktsformelen-underveisoppgave-2>` ved å bruke to av punktene i som er vist i {numref}`fig-lineære-funksjoner-topunktsformelen-underveisoppgave-2`.
 
-:::{raw} html
+<!-- :::{raw} html
 ---
 file: interaktiv_kode/underveisoppgave_3.html
 ---
-:::
+::: -->
 
 
 
