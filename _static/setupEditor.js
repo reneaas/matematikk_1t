@@ -7,7 +7,6 @@ async function initializePyodide() {
     return pyodide;
 }
 
-
 // Setter opp code editor med code mirror
 async function setupEditor(pyodide, editorId, buttonId, outputId) {
     let editor = CodeMirror.fromTextArea(document.getElementById(editorId), {
@@ -47,4 +46,20 @@ async function setupEditor(pyodide, editorId, buttonId, outputId) {
             output.textContent =  err;
         }
     });
+}
+
+// Lazy load the editor and Pyodide when the editor comes into view
+function lazyLoadEditor(editorId, buttonId, outputId) {
+    const editorElement = document.getElementById(editorId);
+    const observer = new IntersectionObserver(async (entries, observer) => {
+        entries.forEach(async entry => {
+            if (entry.isIntersecting) {
+                observer.unobserve(entry.target);
+                let pyodide = await initializePyodide();
+                await setupEditor(pyodide, editorId, buttonId, outputId);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    observer.observe(editorElement);
 }

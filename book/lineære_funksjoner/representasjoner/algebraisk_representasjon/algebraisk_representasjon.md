@@ -321,13 +321,12 @@ som betyr at $f(2) = 5$.
 
 Og så er det **din tur**!
 
-::::{admonition} Underveisoppgave 4: funksjoner i Python
+:::::{admonition} Underveisoppgave 4: funksjoner i Python
 ---
 class: check
 ---
 
 Lag et program som bruker en funksjon for $g(x) = 2x + 3$ og regn ut $g(-2)$ med programmet.
-
 
 :::{raw} html
 ---
@@ -356,7 +355,8 @@ som gir utskriften
 -1
 ```
 Altså er $g(-2) = -1$.
-::::
+:::
+:::::
 
 ## Oppgaver
 
