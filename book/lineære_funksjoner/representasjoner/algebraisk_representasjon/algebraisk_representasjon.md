@@ -334,6 +334,16 @@ file: interaktiv_kode/underveisoppgave_4.html
 ---
 :::
 
+Deloppgave 1
+: Endre programmet slk at det regner ut $f(-4)$. 
+
+
+<br>
+
+Deloppgave 2
+: Endre programmet slik at det regner ut $g(-2)$ når $g(x) = 2x + 3$.
+
+
 
 :::{admonition} Løsning
 ---
