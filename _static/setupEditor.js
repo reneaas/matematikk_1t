@@ -1,33 +1,28 @@
-CodeMirror.defineMode("commentOverlay", function() {
-    return {
-        token: function(stream, state) {
-            if (stream.match("# TODO")) {
-                return "todo";
-            } else if (stream.match("# FIKSMEG")) {
-                return "fiksmeg";
-            } else if (stream.match("# FIKS MEG")) {
-                return "fiksmeg";
-            } else if (stream.match("# NOTE")) {
-                return "note";
-            }
-            while (stream.next() != null && 
-                !stream.match("# TODO", false) && 
-                !stream.match("# FIKSMEG", false) && 
-                !stream.match("# FIKS MEG", false) && 
-                !stream.match("# NOTE", false)) {}
-            return null;
-        }
+
+
+function debounce(func, wait) {
+    let timeout;
+    return function(...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+            func.apply(this, args);
+        }, wait);
     };
-});
+}
 
 
-// Setter opp pyodide
+
+// Setter opp pyodide og cacher den for gjentatt bruk.
+let packages = ["numpy"]
+let cachedPyodide = null;
 async function initializePyodide() {
-    console.log('Initializing Pyodide...');
-    let pyodide = await loadPyodide();
-    await pyodide.loadPackage('numpy');
-    console.log('Pyodide initialized.');
-    return pyodide;
+    if (!cachedPyodide) {
+        console.log('Initializing Pyodide...');
+        cachedPyodide = await loadPyodide();
+        await cachedPyodide.loadPackage(packages);
+        console.log('Pyodide initialized.');
+    }
+    return cachedPyodide;
 }
 
 // Setter opp code editor med code mirror
@@ -164,15 +159,17 @@ async function setupEditor(pyodide, editorId, buttonId, outputId) {
 // Lazy load the editor and Pyodide when the editor comes into view
 function lazyLoadEditor(editorId, buttonId, outputId) {
     const editorElement = document.getElementById(editorId);
-    const observer = new IntersectionObserver(async (entries, observer) => {
+    const observer = new IntersectionObserver(debounce(async (entries, observer) => {
         entries.forEach(async entry => {
             if (entry.isIntersecting) {
                 observer.unobserve(entry.target);
-                let pyodide = await initializePyodide();
-                await setupEditor(pyodide, editorId, buttonId, outputId);
+                if (!cachedPyodide) {
+                    cachedPyodide = await initializePyodide();
+                }
+                await setupEditor(cachedPyodide, editorId, buttonId, outputId);
             }
         });
-    }, { threshold: 0.1 });
+    }, 10), { threshold: 0.1 }); // 200ms debounce delay
 
     observer.observe(editorElement);
 }
