@@ -1,3 +1,26 @@
+CodeMirror.defineMode("commentOverlay", function() {
+    return {
+        token: function(stream, state) {
+            if (stream.match("# TODO")) {
+                return "todo";
+            } else if (stream.match("# FIKSMEG")) {
+                return "fiksmeg";
+            } else if (stream.match("# FIKS MEG")) {
+                return "fiksmeg";
+            } else if (stream.match("# NOTE")) {
+                return "note";
+            }
+            while (stream.next() != null && 
+                !stream.match("# TODO", false) && 
+                !stream.match("# FIKSMEG", false) && 
+                !stream.match("# FIKS MEG", false) && 
+                !stream.match("# NOTE", false)) {}
+            return null;
+        }
+    };
+});
+
+
 // Setter opp pyodide
 async function initializePyodide() {
     console.log('Initializing Pyodide...');
@@ -9,12 +32,9 @@ async function initializePyodide() {
 
 // Setter opp code editor med code mirror
 async function setupEditor(pyodide, editorId, buttonId, outputId) {
-    const lightTheme = "solarized";
-    const darkTheme = "midnight";
+    const lightTheme = "github-light";
+    const darkTheme = "github-dark";
 
-    // function getCurrentTheme() {
-    //     return window.matchMedia('(prefers-color-scheme: dark)').matches ? darkTheme : lightTheme;
-    // }
 
     function getCurrentTheme() {
         const mode = document.documentElement.getAttribute('data-mode');
@@ -30,7 +50,7 @@ async function setupEditor(pyodide, editorId, buttonId, outputId) {
         }
     }
 
-    console.log("Current theme: " + getCurrentTheme());
+    console.log("Current theme: " + getCurrentTheme()); // Debugging line to check current theme
     
     let editor = CodeMirror.fromTextArea(document.getElementById(editorId), {
         mode: "python",
@@ -38,7 +58,27 @@ async function setupEditor(pyodide, editorId, buttonId, outputId) {
         theme: getCurrentTheme(), // Other themes at https://codemirror.net/5/demo/theme.html#default
         tabSize: 4,
         indentUnit: 4,
-        fontSize: 30,
+    });
+
+    // Apply the overlay mode
+    editor.addOverlay({
+        token: function(stream, state) {
+            if (stream.match("# TODO")) {
+                return "todo";
+            } else if (stream.match("# FIKSMEG")) {
+                return "fiksmeg";
+            } else if (stream.match("# FIKS MEG")) {
+                return "fiksmeg";
+            } else if (stream.match("# NOTE")) {
+                return "note";
+            }
+            while (stream.next() != null && 
+                !stream.match("# TODO", false) && 
+                !stream.match("# FIKSMEG", false) && 
+                !stream.match("# FIKS MEG", false) && 
+                !stream.match("# NOTE", false)) {}
+            return null;
+        }
     });
 
     const observer = new MutationObserver(mutations => {
@@ -82,11 +122,41 @@ async function setupEditor(pyodide, editorId, buttonId, outputId) {
                 sys.stdout = PyConsole()
                 sys.stderr = PyConsole()
             `);
+
+
+            if (code.includes('input(')) {
+                await pyodide.runPythonAsync(`
+                    import builtins
+                    from js import document, window
+
+                    def input(prompt=""):
+                        try:
+                            output = document.getElementById("${outputId}")
+                            output.textContent += prompt  # Display the prompt text in the output element
+                            user_input = window.prompt(prompt)
+                            if user_input is None:
+                                user_input = ""
+                            output.textContent += user_input + "\\n"  # Append the user input to the output element
+                            return user_input
+                        except Exception as e:
+                            output.textContent += "Error: " + str(e) + "\\n"
+                            raise e
+
+                    builtins.input = input
+                `);
+            }
+
+            
+            
+            // await pyodide.runPythonAsync(code);
             await pyodide.runPythonAsync(code);
             let result = pyodide.globals.get("sys").stdout.buffer;
             output.textContent = result;
         } catch (err) {
-            output.textContent =  err;
+            // pyodide.runPython("import traceback; traceback.print_exception(sys.last_value)");
+            let errorMsg = pyodide.globals.get("sys").stderr.buffer;
+            output.textContent = `Error: ${errorMsg}`;
+            console.log("Error caught in JavaScript:", err);
         }
     });
 }
