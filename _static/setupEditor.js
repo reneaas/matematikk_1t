@@ -1,5 +1,3 @@
-
-
 function debounce(func, wait) {
     let timeout;
     return function(...args) {
@@ -9,8 +7,6 @@ function debounce(func, wait) {
         }, wait);
     };
 }
-
-
 
 // Setter opp pyodide og cacher den for gjentatt bruk.
 let packages = ["numpy"]
@@ -26,15 +22,14 @@ async function initializePyodide() {
 }
 
 // Setter opp code editor med code mirror
-async function setupEditor(pyodide, editorId, buttonId, outputId) {
+function setupEditor(editorId, buttonId, outputId) {
     const lightTheme = "github-light";
     const darkTheme = "github-dark";
-
 
     function getCurrentTheme() {
         const mode = document.documentElement.getAttribute('data-mode');
         // console.log("Mode: " + mode); // Debugging line for check `mode` value
-    
+
         if (mode === 'dark') {
             return darkTheme;
         } else if (mode === 'light') {
@@ -46,7 +41,7 @@ async function setupEditor(pyodide, editorId, buttonId, outputId) {
     }
 
     console.log("Current theme: " + getCurrentTheme()); // Debugging line to check current theme
-    
+
     let editor = CodeMirror.fromTextArea(document.getElementById(editorId), {
         mode: "python",
         lineNumbers: true,
@@ -85,7 +80,6 @@ async function setupEditor(pyodide, editorId, buttonId, outputId) {
         });
     });
 
-
     // Start observing the document's data-mode attribute for changes
     observer.observe(document.documentElement, {
         attributes: true,
@@ -94,7 +88,7 @@ async function setupEditor(pyodide, editorId, buttonId, outputId) {
 
     // Initial theme setup
     editor.setOption('theme', getCurrentTheme());
-    
+
     let runButton = document.getElementById(buttonId);
     let output = document.getElementById(outputId);
 
@@ -102,7 +96,7 @@ async function setupEditor(pyodide, editorId, buttonId, outputId) {
         let code = editor.getValue();
 
         try {
-            pyodide.runPythonAsync(`
+            cachedPyodide.runPythonAsync(`
                 import sys
                 from js import console
                 class PyConsole:
@@ -118,9 +112,8 @@ async function setupEditor(pyodide, editorId, buttonId, outputId) {
                 sys.stderr = PyConsole()
             `);
 
-
             if (code.includes('input(')) {
-                await pyodide.runPythonAsync(`
+                await cachedPyodide.runPythonAsync(`
                     import builtins
                     from js import document, window
 
@@ -141,23 +134,20 @@ async function setupEditor(pyodide, editorId, buttonId, outputId) {
                 `);
             }
 
-            
-            
-            // await pyodide.runPythonAsync(code);
-            await pyodide.runPythonAsync(code);
-            let result = pyodide.globals.get("sys").stdout.buffer;
+            await cachedPyodide.runPythonAsync(code);
+            let result = cachedPyodide.globals.get("sys").stdout.buffer;
             output.textContent = result;
         } catch (err) {
-            // pyodide.runPython("import traceback; traceback.print_exception(sys.last_value)");
-            let errorMsg = pyodide.globals.get("sys").stderr.buffer;
+            let errorMsg = cachedPyodide.globals.get("sys").stderr.buffer;
             output.textContent = `Error: ${errorMsg}`;
             console.log("Error caught in JavaScript:", err);
         }
     });
+    cachedPyodide = initializePyodide();
 }
 
-// Lazy load the editor and Pyodide when the editor comes into view
-function lazyLoadEditor(editorId, buttonId, outputId) {
+// Lazy load Pyodide when the editor comes into view
+function lazyLoadPyodide(editorId, buttonId, outputId) {
     const editorElement = document.getElementById(editorId);
     const observer = new IntersectionObserver(debounce(async (entries, observer) => {
         entries.forEach(async entry => {
@@ -166,10 +156,19 @@ function lazyLoadEditor(editorId, buttonId, outputId) {
                 if (!cachedPyodide) {
                     cachedPyodide = await initializePyodide();
                 }
-                await setupEditor(cachedPyodide, editorId, buttonId, outputId);
             }
         });
-    }, 10), { threshold: 0.1 }); // 200ms debounce delay
+    }, 10), { threshold: 0.1 }); // 10ms debounce delay
 
     observer.observe(editorElement);
 }
+
+// Immediately setup the editor on page load
+// document.addEventListener("DOMContentLoaded", () => {
+//     const editorId = 'code'; // Replace with your actual editor ID
+//     const buttonId = 'runButton'; // Replace with your actual button ID
+//     const outputId = 'output'; // Replace with your actual output ID
+
+//     setupEditor(editorId, buttonId, outputId);
+//     lazyLoadPyodide(editorId, buttonId, outputId);
+// });

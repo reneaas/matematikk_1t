@@ -160,114 +160,46 @@ class: solution, dropdown
 ## Funksjonsverdier i Python
 Vi kan bruke Python som en kalkulator for å regne ut funksjonsverdier. 
 
-::::{admonition} Eksempel 3: funksjonsverdier i Python
----
-class: example
-name: algebraisk-representasjon-example-3
----
 
-La oss regne ut funksjonsverdien til 
+:::::{admonition} {ref}`Utforsk 1 <algebraisk-representasjon-explore-1>`: funksjonsverdier i Python
+---
+class: explore
+name: lineære-funksjoner-algebraisk-representasjon-utforsk-1
+---
+Programmet under regner ut funksjonsverdien til 
 
 $$
 f(x) = 3x - 1,
 $$
 
-i $x = 2$. Da kan vi skrive følgende kode i Python:
+i $x = 2$. Programmet regner altså ut $f(2)$. 
 
-
-```{code-block} python
+:::{raw} html
 ---
-linenos:
+file: interaktiv_kode/utforsk/utforsk_1.html
 ---
-x = 2
-y = 3*x - 1
+:::
 
-print(y)
-
-```
-
-som gir utskriften
-
-```console
-5
-```
-
-Med andre ord er $f(2) = 5$.
-
-::::
-
-Og så er det **din tur**!
-
-::::{admonition} Underveisoppgave 3: funksjonsverdier i Python
----
-class: check
----
-Under vises et interaktivt vindu med koden fra {ref}`eksempel 3 <algebraisk-representasjon-example-3>`. 
 
 Deloppgave 1
-: Endre koden til å bestemme $f(-1)$.
+: Kjør programmet og sjekk at det regner ut riktig verdi for $f(2)$. Hva blir svaret? 
+
 
 <br>
 
 Deloppgave 2
-: Endre koden til å bestemme $g(-1)$ for $g(x) = 4x + 2$. Hva blir verdien? 💻
+: Kan du endre programmet slik at det regner ut $f(-1)$? Kjør koden og sjekk at svaret blir riktig.
+
 
 <br>
 
-:::{raw} html
----
-file: interaktiv_kode/underveisoppgave_3.html
----
-:::
 
-:::{admonition} Løsning: deloppgave 1
----
-class: solution, dropdown
----
+Deloppgave 3
+: Prøv å endre funksjonsuttrykket i `f(x)`{l=python} slik at programmet ut $f(-1)$ for $f(x) = 4x + 2$. Kjør koden og sjekk at svaret blir riktig.
 
-```{code-block} python
----
-linenos: true
-emphasize-lines: 1
----
-x = -1
-y = 3*x - 1
-
-print(y)
-```
-som gir utskriften
-```console
--4
-```
-Altså er $f(-1) = -4$. 
-:::
-
-:::{admonition} Løsning: deloppgave 2
----
-class: solution, dropdown
----
-
-```{code-block} python
----
-linenos: true
-emphasize-lines: 2
----
-x = -1
-y = 4*x + 2
-
-print(y)
-```
-som gir utskriften
-```console
--2
-```
-Altså er $g(-1) = -2$. 
-:::
-::::
+:::::
 
 ---
-
-I {ref}`eksempel 3 <algebraisk-representasjon-example-3>` brukte vi ikke notasjonen for funksjoner. Men i Python har vi faktisk støtte for akkurat dette. 
 
 
 :::{admonition} Ordforklaring: syntaks
@@ -276,6 +208,9 @@ class: sidenote, margin
 --- 
 Ordet **syntaks** betyr "regler for å skrive kode". Tenk på det som grammatikk - men i motsetning til norsklæreren, så skjønner ikke Python hva du mener hvis du ikke skriver riktig.
 :::
+
+
+Nå skal vi se litt mer grundig på skrivemåten for funksjoner i Python.
 
 ::::{admonition} Syntaks: Funksjoner i Python
 ---
@@ -288,85 +223,84 @@ En funksjon i Python har følgende syntaks:
 def funksjonsnavn(x):
     return funksjonsuttrykk
 ```
-::::
 
-::::{admonition} Eksempel 4: funksjoner i Python
----
-class: example
-name: algebraisk-representasjon-example-4
----
-
-La oss skrive om {ref}`eksempel 3 <algebraisk-representasjon-example-3>` ved å bruke funksjonsnotasjon i Python. Vi husker på at vi har funksjonen $f(x) = 3x - 1$ og at vi skal regne ut $f(2)$. 
-Følgende Pythonkode oppnår dette:
-
-```{code-block} python
----
-linenos:
----
-# Definerer funksjonen f(x) = 3x - 1
-def f(x):
-    return 3*x - 1
-
-y = f(2)    # Regner ut f(2)
-print(y) # skriver ut resultatet
-```
-som gir utskriften
-
-```console
-5
-```
-som betyr at $f(2) = 5$.
+* `def`{l=python} er et nøkkelord som forteller Python at vi skal lage en funksjon.
+* `return`{l=python} er et nøkkelord som gir tilbake verdien av funksjonsuttrykket til brukeren. Uten dette nøkkelordet, skjer ingenting når vi bruker funksjonen.
 ::::
 
 
-Og så er det **din tur**!
+Nå skal du prøve å lage et program som regner ut en funksjonsverdi i Python.
 
-:::::{admonition} Underveisoppgave 4: funksjoner i Python
+
+:::::{admonition} Underveisoppgave 3: funksjoner i Python
 ---
 class: check
+name: lineære-funksjoner-algebraisk-representasjon-underveisoppgave-3
 ---
+Under vises et uferdig program for å regne ut $g(-2)$ for funksjonen
 
-Lag et program som bruker en funksjon for $g(x) = 2x + 3$ og regn ut $g(-2)$ med programmet.
+$$
+g(x) = -2x + 3.
+$$
 
 :::{raw} html
 ---
-file: interaktiv_kode/underveisoppgave_4.html
+file: interaktiv_kode/underveisoppgaver/underveisoppgave_3.html
 ---
 :::
 
 Deloppgave 1
-: Endre programmet slk at det regner ut $f(-4)$. 
+: Fiks programmet slik at det regner ut $g(-2)$. Sjekk at programmet gir riktig svar ved å regne for hånd.
+
+
+:::{admonition} Løsning:
+---
+class: solution, dropdown
+---
+Programmet skal gi funksjonsverdien
+
+$$
+g(\textcolor{red}{-2}) = -2\cdot (\textcolor{red}{-2}) + 3 = 4 + 3 = 7.
+$$
+
+Vi må legge inn følgende i programmet:
+* Funksjonsuttrykket `-2*x + 3`{l=python} i funksjonen.
+* `y = g(-2)`{l=python} så vi regner ut $g(-2)$. 
+
+Programmet vil da se slik ut:
+
+```{code-block} python
+---
+linenos:
+emphasize-lines: 2, 4
+---
+def g(x):
+    return -2*x + 3
+
+y = g(-2)
+
+print(y)
+```
+Kjører vi programmet, får vi utskriften
+```console
+7
+```
+
+Så programmet funker som det skal.
+:::
 
 
 <br>
 
 Deloppgave 2
-: Endre programmet slik at det regner ut $g(-2)$ når $g(x) = 2x + 3$.
+: Bruk programmet til å regne ut $g(3)$. 
 
 
+<br>
 
-:::{admonition} Løsning
----
-class: solution, dropdown
----
-
-```{code-block} python
----
-linenos:
----
-def g(x):
-    return 2*x + 3
-
-y = g(-2)
-print(y)
-```
-som gir utskriften
-```console
--1
-```
-Altså er $g(-2) = -1$.
-:::
 :::::
+
+---
 
 ## Oppgaver
 
