@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         // Check if the comment starts with "# NOTE"
         if (block.textContent.trim().startsWith('# NOTE')) {
-            block.style.color = '#ff7b72';
+            block.style.color = '#ff0000';
             block.style.fontWeight = 'bold';
         }
     });

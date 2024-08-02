@@ -37,7 +37,13 @@
     <link rel="stylesheet" type="text/css" href="_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
-    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=80e078eb" />
+    <link rel="stylesheet" type="text/css" href="_static/static_code_blocks.css?v=b6831e29" />
+    <link rel="stylesheet" type="text/css" href="_static/misc.css?v=56eb3b15" />
+    <link rel="stylesheet" type="text/css" href="_static/admonitions.css?v=108d7419" />
+    <link rel="stylesheet" type="text/css" href="_static/code_mirror.css?v=ac98a70a" />
+    <link rel="stylesheet" type="text/css" href="_static/code_mirror_themes/github_light_cm.css?v=dc4d8798" />
+    <link rel="stylesheet" type="text/css" href="_static/code_mirror_themes/github_dark_cm.css?v=176c25df" />
+    <link rel="stylesheet" type="text/css" href="_static/code_mirror_themes/one_dark_cm.css?v=3ae52176" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -66,9 +72,9 @@
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
     <script>mermaid.initialize({"startOnLoad": true})</script>
-    <script src="_static/serviceWorker.js?v=e618b01c"></script>
-    <script src="_static/setupEditor.js?v=e1e7c334"></script>
-    <script src="_static/custom.js?v=646d9cc7"></script>
+    <script src="_static/serviceWorker.js?v=040695f9"></script>
+    <script src="_static/static_code_blocks.js?v=d0b96be4"></script>
+    <script src="_static/setupEditor.js?v=20631e8d"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="1. Mengdelære" href="book/algebra/mengdel%C3%A6re/intro_mengdel%C3%A6re.html" />
@@ -79,7 +85,14 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/midnight.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/solarized.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/eclipse.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/nord.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/dracula.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/monokai.min.css">
+<link rel="stylesheet" href="_static/code_mirror_themes/github_dark_cm.css">
+<link rel="stylesheet" href="_static/code_mirror_themes/github_light_cm.css">
+<link rel="stylesheet" href="_static/code_mirror_themes/one_dark_cm.css">
+
 <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/night.min.css"> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
@@ -450,10 +463,98 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="matematikk-1t">
 <h1>Matematikk 1T<a class="headerlink" href="#matematikk-1t" title="Link to this heading">#</a></h1>
-<p>Velkommen til ditt første programfag på videregående skole ved Edvard Munch Vgs!</p>
-<p>Matematikk 1T kommer til å by på mange nye utfordringer som du ikke har møtt i matematikken tidligere.
-Det er mange nye begreper og matematiske ideer som vil oppleves som abstrakte og vanskelige å forstå i starten.
-Men hold ut og jobb masse med faget, så kommer du ut på andre siden med en opplevelse av å ha mestret en av de største utfordringene du har møtt til nå!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeMirror Terminal Animation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/theme/monokai.min.css">
+    <style>
+        .CodeMirror {
+            height: auto;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <textarea id="code" name="code"></textarea>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/javascript/javascript.min.js"></script>
+    <script>
+        // Initialize CodeMirror
+        var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+            lineNumbers: true,
+            mode: "javascript",
+            theme: "monokai",
+            readOnly: true
+        });
+
+        // Function to animate dots in place
+        function animateDots(editor, times, delay, callback) {
+            let count = 0;
+            let dotIndex = 0;
+            const dots = ["", ".", "..", "..."];
+            function typeDots() {
+                if (count < times) {
+                    const line = editor.getLine(editor.lastLine());
+                    editor.replaceRange(dots[dotIndex], {line: editor.lastLine(), ch: line.length - 3}, {line: editor.lastLine(), ch: line.length});
+                    dotIndex = (dotIndex + 1) % dots.length;
+                    if (dotIndex === 0) count++;
+                    setTimeout(typeDots, delay);
+                } else {
+                    callback();
+                }
+            }
+            typeDots();
+        }
+
+        // Function to animate text
+        function animateText(editor, text, delay = 50) {
+            let index = 0;
+            let currentLine = editor.lastLine();
+            function type() {
+                if (index < text.length) {
+                    let char = text[index];
+                    editor.replaceRange(char, {line: currentLine});
+                    index++;
+                    if (char === "\n" || (index === text.length && text.endsWith("..."))) {
+                        let lineText = editor.getLine(currentLine);
+                        if (lineText.endsWith("...")) {
+                            animateDots(editor, 3, 250, () => {
+                                currentLine++;
+                                type();
+                            });
+                        } else {
+                            currentLine++;
+                            setTimeout(type, delay);
+                        }
+                    } else {
+                        setTimeout(type, delay);
+                    }
+                }
+            }
+            type();
+        }
+
+        // Text to display
+        const text = [
+            "Velkommen til ditt første programfag på videregående skole ved Edvard Munch Vgs...\n",
+            "Her møter du nye utfordringer du ikke har møtt tidligere...\n",
+            "Hold motet oppe...\n",
+            "Jobb jevnt og godt...\n",
+            "Dette fikser du! 🔥\n"
+        ].join("");
+
+        // Start the animation
+        animateDots(editor, 3, 250, () => {
+            animateText(editor, text);
+        });
+        // animateText(editor, text);
+    </script>
+</body>
+</html>
 <section id="innhold">
 <h2>Innhold<a class="headerlink" href="#innhold" title="Link to this heading">#</a></h2>
 <div class="toctree-wrapper compound">
