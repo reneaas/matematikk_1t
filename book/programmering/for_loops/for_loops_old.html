@@ -68,8 +68,10 @@
     <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3.2/es5/tex-mml-chtml.js"></script>
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'book/programmering/for_loops/for_loops';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/programmering/for_loops/for_loops_old';</script>
     <script>mermaid.initialize({"startOnLoad": true})</script>
     <script src="../../../_static/setupEditor.js?v=76b6815d"></script>
     <script src="../../../_static/serviceWorker.js?v=040695f9"></script>
@@ -77,8 +79,6 @@
     <script src="../../../_static/code_mirror_special_highlighting.js?v=1d683d48"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Funksjoner" href="../functions/functions.html" />
-    <link rel="prev" title="while-løkker" href="../while_loops/while_loops.html" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="norwegian"/>
@@ -157,6 +157,8 @@
     <div class="bd-container__inner bd-page-width">
       
       
+      
+        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -291,12 +293,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../../cas/cas_del1/cas_del1.html">CAS-kurs del 1</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Programmering</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../variabler/variabler.html">Variabler</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../regning/regning.html">Regning med Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../if_else/if_else.html"><code class="code docutils literal highlight highlight-python"><span class="k">if</span></code>-<code class="code docutils literal highlight highlight-python"><span class="k">else</span></code>-setninger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../while_loops/while_loops.html"><code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkker</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#"><code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="for_loops.html"><code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../functions/functions.html">Funksjoner</a></li>
 </ul>
 
@@ -352,7 +354,7 @@
       
       
       
-      <li><a href="../../../_sources/book/programmering/for_loops/for_loops.md" target="_blank"
+      <li><a href="../../../_sources/book/programmering/for_loops/for_loops_old.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Last ned kildefilen"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -463,132 +465,239 @@ document.write(`
 </ul>
 </div>
 <p>En <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkke kan tenkes på som en <em>spesiell</em> type <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkke som automatiserer tellingen for deg. Det finnes mange typer <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker, men vi skal konsentrere oss om en som er mest nyttig i matematikk.</p>
-<p>Vi starter med en sammenlikning av <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker og <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkker:</p>
-<div class="margin highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<div class="theory admonition">
+<p class="admonition-title">Syntaks: <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker med <code class="code docutils literal highlight highlight-python"><span class="nb">range</span></code>-funksjonen</p>
+<p>En <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkke med <code class="code docutils literal highlight highlight-python"><span class="nb">range</span></code>-funksjonen skrives på følgende måte:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">step</span><span class="p">):</span>
+    <span class="c1"># Gjøre noe for hvert tall i rekken</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="code docutils literal highlight highlight-python"><span class="n">start</span></code> er startverdien til <code class="docutils literal notranslate"><span class="pre">i</span></code>. Denne er frivillig og er satt til <code class="code docutils literal highlight highlight-python"><span class="n">start</span> <span class="o">=</span> <span class="mi">0</span></code> som standard.</p></li>
+<li><p><code class="code docutils literal highlight highlight-python"><span class="n">stop</span></code> er stoppverdien til <code class="docutils literal notranslate"><span class="pre">i</span></code>. Denne må skrives.</p></li>
+<li><p><code class="code docutils literal highlight highlight-python"><span class="n">step</span></code> er steglengden til <code class="docutils literal notranslate"><span class="pre">i</span></code> (avstanden mellom hver verdi). Denne er frivillig og er satt til <code class="code docutils literal highlight highlight-python"><span class="n">step</span> <span class="o">=</span> <span class="mi">1</span></code> som standard.</p></li>
+</ul>
+</div>
+<p>Vi tar et eksempel for å vise hvordan en <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkke fungerer ved å sammenligne med fra <span class="xref std std-ref">eksempel 1 fra while-løkker</span>.</p>
+<div class="sidenote margin admonition">
+<p class="admonition-title">Grenser i <code class="code docutils literal highlight highlight-python"><span class="nb">range</span></code>-funksjonen</p>
+<p><code class="code docutils literal highlight highlight-python"><span class="nb">range</span></code>-funksjonen stopper <em>før</em> stoppverdien. I <a class="reference internal" href="#for-loops-example-1"><span class="std std-ref">eksempel 1</span></a> ga <code class="code docutils literal highlight highlight-python"><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span></code>
+tallene 1, 2, 3, 4 og 5, men ikke 6.</p>
+</div>
+<div class="example admonition" id="for-loops-example-1">
+<p class="admonition-title">Eksempel 1: <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkke vs <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkke</p>
+<p>Følgende koder gir akkurat samme resultat.</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkke</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+<span class="linenos">2</span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkke</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="linenos">2</span><span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">:</span>
 <span class="linenos">3</span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos">4</span>    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
 </pre></div>
 </div>
-<div class="explore admonition">
-<p class="admonition-title">Utforsk 1: <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker vs <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkker</p>
-<p>Under vises to interaktive kodevinduer. Begge kodene skriver ut de 5 første naturlige tallene, men bruker forskjellige type løkke.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Vi kan merke oss at mens man med <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkka lager variabelen og oppdaterer <code class="code docutils literal highlight highlight-python"><span class="n">i</span></code> selv, gjør <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkka dette for deg automatisk. <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker er derfor en slags <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkke i bunnen.</p>
+<p>Utskriften vi får fra begge programmer er (kopier kodene og prøv selv!)</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">i = 1</span>
+<span class="go">i = 2</span>
+<span class="go">i = 3</span>
+<span class="go">i = 4</span>
+<span class="go">i = 5</span>
+</pre></div>
+</div>
+</div>
+<p><strong>Din tur</strong>!</p>
+<div class="check admonition">
+<p class="admonition-title">Underveisoppgave 1</p>
+<p>Kopier <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkke koden fra <a class="reference internal" href="#for-loops-example-1"><span class="std std-ref">eksempel 1</span></a>.</p>
+<dl class="simple myst">
+<dt>Deloppgave 1</dt><dd><p>Juster programmet slik at det skriver ut tallene <span class="math notranslate nohighlight">\(i = 1, 2, \ldots, 10\)</span>.</p>
+</dd>
+</dl>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Løsning: deloppgave 1</p>
+<p>Vi setter <code class="code docutils literal highlight highlight-python"><span class="n">start</span></code> til <code class="code docutils literal highlight highlight-python"><span class="mi">1</span></code> og <code class="code docutils literal highlight highlight-python"><span class="n">stop</span></code> til <code class="code docutils literal highlight highlight-python"><span class="mi">11</span></code> for å få tallene fra 1 til og med 10. Dette er fordi <code class="code docutils literal highlight highlight-python"><span class="nb">range</span></code>-funksjonen stopper én plass før <code class="code docutils literal highlight highlight-python"><span class="n">stop</span></code>. I koden under har vi skrevet <code class="code docutils literal highlight highlight-python"><span class="n">stop</span></code>-verdien som <code class="code docutils literal highlight highlight-python"><span class="mi">10</span> <span class="o">+</span> <span class="mi">1</span></code> for å gjøre det tydeligere.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+<span class="linenos">2</span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<hr class="docutils" />
+<dl class="simple myst">
+<dt>Deloppgave 2</dt><dd><p>Juster programmet slik at det skriver ut alle partallene <span class="math notranslate nohighlight">\(i \in \{2, 4, \ldots, 10\}\)</span></p>
+</dd>
+</dl>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Løsning: deloppgave 2</p>
+<p>For få partallene <span class="math notranslate nohighlight">\(i \in \{2, 4, \ldots, 10\}\)</span>, må vi gjøre følgende endringer:</p>
+<ol class="arabic simple">
+<li><p>Vi må sette startverdien til <code class="code docutils literal highlight highlight-python"><span class="n">start</span></code> til <code class="code docutils literal highlight highlight-python"><span class="mi">2</span></code>.</p></li>
+<li><p>Vi må sette <code class="code docutils literal highlight highlight-python"><span class="n">step</span></code> til <code class="code docutils literal highlight highlight-python"><span class="mi">2</span></code> så vi for hvert andre tall.</p></li>
+<li><p>Vi må sette <code class="code docutils literal highlight highlight-python"><span class="n">stop</span></code> til <code class="code docutils literal highlight highlight-python"><span class="mi">10</span> <span class="o">+</span> <span class="mi">1</span></code> så vi får med oss <span class="math notranslate nohighlight">\(10\)</span> som siste tall siden <code class="code docutils literal highlight highlight-python"><span class="nb">range</span></code>-funksjonen stopper før én plass før <code class="docutils literal notranslate"><span class="pre">stop</span></code>.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">for</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+<span class="linenos">2</span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<dl class="simple myst">
+<dt>Deloppgave 3</dt><dd><p>Juster programmet slik at det skriver ut alle <span class="math notranslate nohighlight">\(i \in \{10, 20, 30, 40, \ldots, 100\}\)</span>.</p>
+</dd>
+</dl>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Løsning: deloppgave 3</p>
+<p>Vi må gjøre følgende endringer for å få alle <span class="math notranslate nohighlight">\(i \in \{10, 20, 30, 40, \ldots, 100\}\)</span>:</p>
+<ol class="arabic simple">
+<li><p>Vi må endre <code class="code docutils literal highlight highlight-python"><span class="n">start</span></code> til <code class="code docutils literal highlight highlight-python"><span class="mi">10</span></code>.</p></li>
+<li><p>Vi må endre <code class="code docutils literal highlight highlight-python"><span class="n">step</span></code> til <code class="code docutils literal highlight highlight-python"><span class="mi">10</span></code> slik at vi får hvert tiende tall.</p></li>
+<li><p>Vi må sette <code class="code docutils literal highlight highlight-python"><span class="n">stop</span></code> til <code class="code docutils literal highlight highlight-python"><span class="mi">100</span> <span class="o">+</span> <span class="mi">1</span></code> for å få med oss <span class="math notranslate nohighlight">\(100\)</span> som siste tall.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+<span class="linenos">2</span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vi tar med en sammenlikning av <span class="xref std std-ref">eksempel 2 fra while-løkker</span> for å vise hvordan vi kan skrive <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker for å løse samme problem.</p>
+<div class="example admonition" id="for-loops-example-2">
+<p class="admonition-title">Eksempel 2: <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkke vs <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkke</p>
+<p>Vi skal regne ut summen av de 100 første naturlige tallene <span class="math notranslate nohighlight">\(n \in \{1, 2, 3, \ldots, 100\}\)</span>. Under to koder som løser problemet der den ene bruken <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkke og den andre en <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkke.</p>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
 <div class="sd-col sd-d-flex-row docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
-<p class="sd-card-text"><code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkke</p>
-<div>
-    <textarea   id="code-editor-programmering-for-løkker-utforsk-1" 
-                name="code-programmering-for-løkker-utforsk-1">
-for i in range(1, 6, 1):
-    print(f"{i = }")
-    </textarea>
-    
-    <button id="run-button-programmering-for-løkker-utforsk-1">
-        Kjør kode
-    </button>
+<div class="sd-card-title sd-font-weight-bold docutils">
+<code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkke</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">summen</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos">2</span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+<span class="linenos">3</span>    <span class="n">summen</span> <span class="o">=</span> <span class="n">summen</span> <span class="o">+</span> <span class="n">n</span>
+<span class="linenos">4</span>
+<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">summen</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
 </div>
-
-<pre id="output-programmering-for-løkker-utforsk-1"></pre>
-
-<script type="text/javascript">
-    document.addEventListener("DOMContentLoaded", () => {
-        setupEditor(
-            "code-editor-programmering-for-løkker-utforsk-1", 
-            "run-button-programmering-for-løkker-utforsk-1",
-            "output-programmering-for-løkker-utforsk-1"
-        );
-    });
-</script>
-
 </div>
 </div>
 </div>
 <div class="sd-col sd-d-flex-row docutils">
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
-<p class="sd-card-text"><code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkke</p>
-<div>
-    <textarea   id="code-editor-programmering-for-løkker-utforsk-1-while-loop" 
-                name="code-programmering-for-løkker-utforsk-1-while-loop">
-i = 1
-while i <= 5:
-    print(f"{i = }")
-    i = i + 1
-    </textarea>
-    
-    <button id="run-button-programmering-for-løkker-utforsk-1-while-loop">
-        Kjør kode
-    </button>
-</div>
-
-<pre id="output-programmering-for-løkker-utforsk-1-while-loop"></pre>
-
-<script type="text/javascript">
-    document.addEventListener("DOMContentLoaded", () => {
-        setupEditor(
-            "code-editor-programmering-for-løkker-utforsk-1-while-loop", 
-            "run-button-programmering-for-løkker-utforsk-1-while-loop",
-            "output-programmering-for-løkker-utforsk-1-while-loop"
-        );
-    });
-</script>
-
+<div class="sd-card-title sd-font-weight-bold docutils">
+<code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkke</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">summen</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos">2</span><span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="linenos">3</span>
+<span class="linenos">4</span><span class="k">while</span> <span class="n">heltall</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">:</span>
+<span class="linenos">5</span>    <span class="n">summen</span> <span class="o">=</span> <span class="n">summen</span> <span class="o">+</span> <span class="n">n</span>
+<span class="linenos">6</span>    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="linenos">7</span>
+<span class="linenos">8</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">summen</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
 </div>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<p><strong>Din tur</strong>!</p>
+<div class="check admonition">
+<p class="admonition-title">Underveisoppgave 2</p>
+<p>Under vises et program som regner ut noe.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">p</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="linenos">2</span><span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="linenos">3</span><span class="k">while</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">:</span>
+<span class="linenos">4</span>    <span class="n">p</span> <span class="o">=</span> <span class="n">p</span> <span class="o">*</span> <span class="n">n</span>
+<span class="linenos">5</span>    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="linenos">6</span>
+<span class="linenos">7</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">p</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="simple myst">
+<dt>Deloppgave 1</dt><dd><p>Kan du forklare hva programmet gjør (spesielt betydningen av linje 4)?</p>
+</dd>
+<dd><p>Kan du bestemme verdien programmet skriver ut <em>uten</em> å kjøre programmet først?</p>
+</dd>
+</dl>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Løsning: deloppgave 1</p>
+<p>På linje 4 finner vi koden <code class="code docutils literal highlight highlight-python"><span class="n">p</span> <span class="o">=</span> <span class="n">p</span> <span class="o">*</span> <span class="n">n</span></code>, som betyr at vi ganger den gamle verdien til <code class="code docutils literal highlight highlight-python"><span class="n">p</span></code> med <code class="code docutils literal highlight highlight-python"><span class="n">n</span></code> og lagrer resultatet i <code class="code docutils literal highlight highlight-python"><span class="n">p</span></code>. Vi gjentar dette for <span class="math notranslate nohighlight">\(n \in \{1, 2, 3, \ldots, 4, 5\}\)</span>.
+Vi kan lage en tabell for å spore endringene i <code class="code docutils literal highlight highlight-python"><span class="n">p</span></code> og <code class="code docutils literal highlight highlight-python"><span class="n">n</span></code>, der vi husker på at <code class="code docutils literal highlight highlight-python"><span class="n">p</span> <span class="o">*</span> <span class="n">n</span></code> blir verdien til <code class="code docutils literal highlight highlight-python"><span class="n">p</span></code> i neste iterasjon.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p><code class="code docutils literal highlight highlight-python"><span class="n">n</span></code></p></th>
+<th class="head text-center"><p><code class="code docutils literal highlight highlight-python"><span class="n">p</span></code></p></th>
+<th class="head text-center"><p><code class="code docutils literal highlight highlight-python"><span class="n">p</span> <span class="o">*</span> <span class="n">n</span></code></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><code class="code docutils literal highlight highlight-python"><span class="mi">1</span></code></p></td>
+<td class="text-center"><p><code class="code docutils literal highlight highlight-python"><span class="mi">1</span></code></p></td>
+<td class="text-center"><p><code class="code docutils literal highlight highlight-python"><span class="mi">1</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="code docutils literal highlight highlight-python"><span class="mi">2</span></code></p></td>
+<td class="text-center"><p><code class="code docutils literal highlight highlight-python"><span class="mi">1</span></code></p></td>
+<td class="text-center"><p><code class="code docutils literal highlight highlight-python"><span class="mi">2</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="code docutils literal highlight highlight-python"><span class="mi">3</span></code></p></td>
+<td class="text-center"><p><code class="code docutils literal highlight highlight-python"><span class="mi">2</span></code></p></td>
+<td class="text-center"><p><code class="code docutils literal highlight highlight-python"><span class="mi">6</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="code docutils literal highlight highlight-python"><span class="mi">4</span></code></p></td>
+<td class="text-center"><p><code class="code docutils literal highlight highlight-python"><span class="mi">6</span></code></p></td>
+<td class="text-center"><p><code class="code docutils literal highlight highlight-python"><span class="mi">24</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="code docutils literal highlight highlight-python"><span class="mi">5</span></code></p></td>
+<td class="text-center"><p><code class="code docutils literal highlight highlight-python"><span class="mi">24</span></code></p></td>
+<td class="text-center"><p><code class="code docutils literal highlight highlight-python"><span class="mi">120</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Den siste verdien til <code class="code docutils literal highlight highlight-python"><span class="n">p</span></code> er <code class="code docutils literal highlight highlight-python"><span class="mi">120</span></code>, så da skriver programmet ut</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">p = 120</span>
+</pre></div>
 </div>
 </div>
 <dl class="simple myst">
-<dt>Deloppgave 1</dt><dd><p>Undersøk hva de tre tallene i <code class="code docutils literal highlight highlight-python"><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span></code> gjør for noe ved å prøve ut forskjellige kombinasjoner av tall. Kan du forklare rollen til de tre tallene?</p>
-</dd>
-<dd><p><em>Tips</em>: Prøv ut ett tall av gangen! Du kan også bruke negative tall.</p>
+<dt>Deloppgave 2</dt><dd><p>Skriv om programmet slik at det bruker en <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkke i stedet for en <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkke.</p>
 </dd>
 </dl>
-<br>
-<dl class="simple myst">
-<dt>Deloppgave 2</dt><dd><p>Undersøk om du kan få <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkka til å skrive ut de 10 første naturlige tallene.</p>
-</dd>
-<dd><p>Endre <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkka til å gjøre det samme.</p>
-</dd>
-</dl>
-<br>
-<dl class="simple myst">
-<dt>Deloppgave 3</dt><dd><p>Undersøk om du kan få <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkka til å skrive ut alle partall fra 2 til 10.</p>
-</dd>
-<dd><p>Kan du gjøre det samme, men bare med oddetallene?</p>
-</dd>
-</dl>
-<br>
-<dl class="simple myst">
-<dt>Deloppgave 4</dt><dd><p>Kan du få <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkka til å skrive ut tallene fra 10 til 1 i synkende rekkefølge?</p>
-</dd>
-<dd><p>Kan du gjøre det samme med <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkka?</p>
-</dd>
-</dl>
-</div>
-<p>Nå har du fått litt oversikt over hvordan en enkel <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkke fungerer. Nå skal du se på hvordan du kan få en <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkke til å løse tilsvarende problemer som du løste når du så på <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkker.</p>
-<div class="explore admonition">
-<p class="admonition-title">Utforsk 2: <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker - <em>the better</em> løkke??</p>
-<p>Under vises to interaktive kodevinduer. Begge kodene summerer de 5 første naturlige tallene.</p>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
-<div class="sd-card-body docutils">
-<p class="sd-card-text"><code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkke</p>
-</div>
-</div>
-</div>
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
-<div class="sd-card-body docutils">
-<p class="sd-card-text"><code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkke</p>
-</div>
-</div>
-</div>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Løsning: deloppgave 2</p>
+<p>Vi må gjøre følgende endringer:</p>
+<ol class="arabic simple">
+<li><p>Vi kan bytte ut <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkka med en <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkke ved å bruke <code class="code docutils literal highlight highlight-python"><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span></code> for å få tallene <span class="math notranslate nohighlight">\(n \in \{1, 2, 3, 4, 5\}\)</span>.</p></li>
+<li><p>Vi må passe på at vi ikke øker verdien til <code class="code docutils literal highlight highlight-python"><span class="n">n</span></code> ved å ta bort linja <code class="code docutils literal highlight highlight-python"><span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span></code>.</p></li>
+</ol>
+<p>Da får vi koden</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">p</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="linenos">2</span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+<span class="linenos">3</span>    <span class="n">p</span> <span class="o">=</span> <span class="n">p</span> <span class="o">*</span> <span class="n">n</span>
+<span class="linenos">4</span>
+<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">p</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
 </div>
 </div>
 </div>
@@ -624,24 +733,6 @@ while i <= 5:
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="../while_loops/while_loops.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkker</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="../functions/functions.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Funksjoner</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               

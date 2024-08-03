@@ -113,6 +113,7 @@ En matematiker som het Gauss fikk angiveligvis i oppgave å summere opp de 100 f
 ::::{admonition} Utforsk 2
 ---
 class: explore
+name: programmering-while-loops-utforsk-2
 ---
 Under vises et interaktivt program som bruker en `while`{l=python}-løkke til å regne ut summen av de **fem** første naturlige tallene. 
 
@@ -311,11 +312,11 @@ s = 25502500
 Svaret er altså $25502500$.
 :::
 
-
+:::::
 
 :::::{admonition} Oppgave 2
 ---
-class: problem-level-1
+class: problem-level-2
 ---
 En matematisk størrelse som dukker opp i mange sammenhenger er $n$-fakultet. $n$-fakultet skrives $n!$ og er definert som produktet av alle naturlige tall opp til og med $n$. Matematisk skriver vi:
 
@@ -342,16 +343,74 @@ file: ./interaktiv_kode/oppgaver/oppgave_2.html
 Deloppgave 1
 : Fiks programmet slik at det regner ut $5!$ og sjekk svaret ved å regne for hånd.
 
+:::{admonition} Hint
+---
+class: hints, dropdown
+---
+Når vi skulle regne ut en sum `s`{l=python} i {ref}`utforsk 2 <programmering-while-loops-utforsk-2>`, så brukte vi kodelinja
 
+```{code-block} python
+s = s + i
+```
+for å øke verdien til `s`{l=python} med `i`{l=python}. 
+
+Kan du tenke deg hva du må gjøre hvis du i stedet skal gange sammen tallene?
+:::
+
+::::{admonition} Løsning
+---
+class: solution, dropdown
+---
+For å oppdatere `p`{l=python}, må vi overskrive `p`{l=python} med produktet `p * i`{l=python} ved hver iterasjon. Koden blir da
+
+```{code-block} python
+---
+linenos: true
+emphasize-lines: 5
+---
+p = 1
+i = 1
+
+while i <= 5:
+    p = p * i
+    i = i + 1
+
+print(f"{p = }")
+```
+
+::::
 <br>
 
 
 Deloppgave 2
-: Juster programmet slik at det regner ut $10!$. Hva blir svaret?
+: Juster programmet slik at det regner ut $10!$
+: Hva blir svaret?
 
-<br>
 
+:::{admonition} Løsning
+---
+class: solution, dropdown
+---
+Vi endrer betingelsen i `while`{l=python}-løkka til `i <= 10`{l=python} for å regne ut $10!$ - Koden blir da
 
-Deloppgave 3
-: 
+```{code-block} python
+---
+linenos: true
+emphasize-lines: 4
+---
+p = 1
+i = 1
+
+while i <= 10:
+    p = p * i
+    i = i + 1
+
+print(f"{p = }")
+```
+Kjører vi koden får vi utskriften
+```console
+p = 3628800
+```
+:::
+
 :::::

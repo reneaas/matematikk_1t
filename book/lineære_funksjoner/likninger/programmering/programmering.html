@@ -39,11 +39,12 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/static_code_blocks.css?v=b6831e29" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/admonitions.css?v=108d7419" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/misc.css?v=56eb3b15" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/code_mirror.css?v=8e052e01" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/code_mirror_themes/github_dark_cm.css?v=176c25df" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/misc.css?v=11aae1d9" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/code_mirror.css?v=41bd023b" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/code_mirror_themes/github_dark_cm.css?v=d1235728" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/code_mirror_themes/one_dark_cm.css?v=3ae52176" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/code_mirror_themes/github_light_cm.css?v=6847d1f5" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/code_mirror_themes/github_dark_high_contrast_cm.css?v=4c0c1b0f" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/code_mirror_themes/github_light_cm.css?v=facc8b7a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -72,13 +73,13 @@
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/lineære_funksjoner/likninger/programmering/programmering';</script>
     <script>mermaid.initialize({"startOnLoad": true})</script>
-    <script src="../../../../_static/setupEditor.js?v=a695c7ec"></script>
+    <script src="../../../../_static/setupEditor.js?v=76b6815d"></script>
     <script src="../../../../_static/serviceWorker.js?v=040695f9"></script>
     <script src="../../../../_static/static_code_blocks.js?v=d0b96be4"></script>
     <script src="../../../../_static/code_mirror_special_highlighting.js?v=1d683d48"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="3.4.3. Symbolsk programmering (CAS)" href="symbolsk_l%C3%B8sning.html" />
+    <link rel="next" title="3.4.2. Symbolsk programmering (CAS)" href="symbolsk_l%C3%B8sning.html" />
     <link rel="prev" title="3.3. Algebraisk løsning" href="../algebraisk_l%C3%B8sning/algebraisk_l%C3%B8sning.html" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -231,7 +232,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../grafisk_l%C3%B8sning/grafisk_l%C3%B8sning.html">3.2. Grafisk løsning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../algebraisk_l%C3%B8sning/algebraisk_l%C3%B8sning.html">3.3. Algebraisk løsning</a></li>
 <li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">3.4. Løsning med programmering</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="symbolsk_l%C3%B8sning.html">3.4.3. Symbolsk programmering (CAS)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="symbolsk_l%C3%B8sning.html">3.4.2. Symbolsk programmering (CAS)</a></li>
 </ul>
 </details></li>
 </ul>
@@ -448,7 +449,6 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerisk-losning-av-likninger">3.4.1. Numerisk løsning av likninger</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">3.4.2. Oppgaver</a></li>
 </ul>
             </nav>
         </div>
@@ -477,38 +477,39 @@ document.write(`
 <p>Å løse lineære likninger numerisk kan virke litt <em>teit</em>. Vi kan jo løse lineære likninger eksakt! Men det er mange likninger for praktiske problemer som ikke kan løses eksakt, og da er det viktig at vi får trent på å løse enklere likninger numerisk fordi vi også kan verifisere svaret. Dette gjør at vi kan løse de mer virkelighetsnære likningene med samme strategi, og at vi kan stole på at svaret vi får stemmer.</p>
 </div>
 <p>Å løse likninger <strong>numerisk</strong> betyr å finne en tilnærmet tallverdi for løsningen ved hjelp av et program. For å bestemme løsningen av en likning numerisk, bruker man gjerne en systematisk metode for å gradvis nærme seg løsningen. En slik metode kalles for en <strong>numerisk metode</strong>. En numerisk metode kan oftest formuleres ved hjelp av en <strong>algoritme</strong>. En algoritme er en oppskrift som forteller oss nøyaktig hvilke steg vi skal gjøre for å utføre en bestemt numerisk metode.</p>
-<p>Å løse lineære likninger numerisk kan virke litt tåpelig siden vi kan jo løse disse likningene analytisk (les: <em>finne et eksakt svar</em>).</p>
-<p>Vi skal gå løs på et eksempel for å illustrere hvordan vi kan løse en likning numerisk.</p>
-<div class="example admonition" id="lineaer-likning-programmering-numerisk-eksempel-1">
-<p class="admonition-title">Eksempel 1</p>
-<p>Vi skal løse likningen</p>
-<div class="math notranslate nohighlight">
-\[
-2x - 4 = 0.
-\]</div>
-<p>Vi tenker oss at vi har en funksjon <span class="math notranslate nohighlight">\(f(x) = 2x - 4\)</span> og at vi skal bestemme nullpunktet til <span class="math notranslate nohighlight">\(f\)</span>. En nokså rett fram algoritme er å starte med en startverdi for <span class="math notranslate nohighlight">\(x\)</span> på nedsiden av nullpunktet til <span class="math notranslate nohighlight">\(f\)</span>, og så gradvis øke verdien til <span class="math notranslate nohighlight">\(x\)</span> med en endring <span class="math notranslate nohighlight">\(\Delta x\)</span> til vi har passert nullpunktet til <span class="math notranslate nohighlight">\(f\)</span>. Flytdiagrammet under illustrerer algoritmen.</p>
-<div class="mermaid" align="center">
-flowchart TD
-    A["Sett x = startverdi"] --> B
-    B{"Er f(x) nærme null?"} --> |Nei| C[Øk x med Δx]
-    C --> B
-    B --> |Ja| D["Skriv ut x"]
-</div><br>
-<p>Det vi må finne ut av nå, er hvordan vi skal kunne utføre stegene i algoritmen med et program.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">x_start</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10</span>               <span class="c1"># Startverdi for x</span>
-<span class="linenos">2</span><span class="n">dx</span> <span class="o">=</span> <span class="mf">0.001</span>                  <span class="c1"># Liten endring Δx </span>
-<span class="linenos">3</span><span class="n">x</span> <span class="o">=</span> <span class="n">x_start</span>                 <span class="c1"># Sett første `x`-verdi lik startverdien</span>
-<span class="linenos">4</span>
-<span class="linenos">5</span><span class="k">while</span> <span class="nb">abs</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">4</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">0.000001</span><span class="p">:</span>  <span class="c1"># Så lenge |f(x)| &gt; 0.000001  </span>
-<span class="linenos">6</span>    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">dx</span>                  <span class="c1"># Øk x med dx</span>
-<span class="linenos">7</span>
-<span class="linenos">8</span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
+<div class="explore admonition" id="lineaere-funksjoner-likninger-programmering-utforsk-1">
+<p class="admonition-title">Utforsk 1</p>
+<p>Under vises en interaktiv kode som finner en løsning til en lineær likning.</p>
+<div>
+    <textarea   id="code-editor-lineære-funksjoner-likninger-programmering-utforsk-1" 
+                name="code-lineære-funksjoner-likninger-programmering-utforsk-1">
+def f(x):
+    return 4*x - 3
+
+x = -1
+while abs(f(x)) > 0.01: # NOTE: abs(a) = |a| (absoluttverdi)
+    x = x + 0.001
+    
+print(f"{x = :.2f}") 	# NOTE: :.2f runder av utskriften til 2 desimaler
+    </textarea>
+    
+    <button id="run-button-lineære-funksjoner-likninger-programmering-utforsk-1">
+        Kjør kode
+    </button>
 </div>
+
+<pre id="output-lineære-funksjoner-likninger-programmering-utforsk-1"></pre>
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", () => {
+        setupEditor(
+            "code-editor-lineære-funksjoner-likninger-programmering-utforsk-1", 
+            "run-button-lineære-funksjoner-likninger-programmering-utforsk-1", 
+            "output-lineære-funksjoner-likninger-programmering-utforsk-1"
+        );
+    });
+</script>
 </div>
-</section>
-<section id="oppgaver">
-<h2><span class="section-number">3.4.2. </span>Oppgaver<a class="headerlink" href="#oppgaver" title="Link to this heading">#</a></h2>
 </section>
 <div class="toctree-wrapper compound">
 </div>
@@ -558,7 +559,7 @@ flowchart TD
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3.4.3. </span>Symbolsk programmering (CAS)</p>
+        <p class="prev-next-title"><span class="section-number">3.4.2. </span>Symbolsk programmering (CAS)</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -579,7 +580,6 @@ flowchart TD
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerisk-losning-av-likninger">3.4.1. Numerisk løsning av likninger</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">3.4.2. Oppgaver</a></li>
 </ul>
   </nav></div>
 
