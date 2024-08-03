@@ -24,7 +24,7 @@ async function initializePyodide() {
 // Setter opp code editor med code mirror
 function setupEditor(editorId, buttonId, outputId) {
     const lightTheme = "github-light";
-    const darkTheme = "github-dark";
+    const darkTheme = "github-dark-high-contrast";
 
     function getCurrentTheme() {
         const mode = document.documentElement.getAttribute('data-mode');
@@ -139,36 +139,32 @@ function setupEditor(editorId, buttonId, outputId) {
             output.textContent = result;
         } catch (err) {
             let errorMsg = cachedPyodide.globals.get("sys").stderr.buffer;
-            output.textContent = `Error: ${errorMsg}`;
+            output.innerHTML = formatErrorMessage(errorMsg);  // Call to format the error message
+            // output.textContent = `Error: ${errorMsg}`;
             console.log("Error caught in JavaScript:", err);
         }
     });
     cachedPyodide = initializePyodide();
 }
 
-// Lazy load Pyodide when the editor comes into view
-function lazyLoadPyodide(editorId, buttonId, outputId) {
-    const editorElement = document.getElementById(editorId);
-    const observer = new IntersectionObserver(debounce(async (entries, observer) => {
-        entries.forEach(async entry => {
-            if (entry.isIntersecting) {
-                observer.unobserve(entry.target);
-                if (!cachedPyodide) {
-                    cachedPyodide = await initializePyodide();
-                }
-            }
-        });
-    }, 10), { threshold: 0.1 }); // 10ms debounce delay
 
-    observer.observe(editorElement);
+
+function formatErrorMessage(errorMsg) {
+    // Match and highlight the error type
+    let errorTypeMatch = errorMsg.match(/(\w+Error):/);
+    let formattedMessage = errorMsg;
+
+    if (errorTypeMatch) {
+        formattedMessage = formattedMessage.replace(errorTypeMatch[1], `<span class="error-type">${errorTypeMatch[1]}</span>`);
+    }
+
+    // Match and highlight the exact last occurrence of "line <number>"
+    let lineNumberMatches = [...errorMsg.matchAll(/\bline (\d+)\b/g)];
+    if (lineNumberMatches.length > 0) {
+        let lastLineNumberMatch = lineNumberMatches[lineNumberMatches.length - 1];
+        formattedMessage = formattedMessage.slice(0, lastLineNumberMatch.index) +
+            formattedMessage.slice(lastLineNumberMatch.index).replace(`line ${lastLineNumberMatch[1]}`, `<span class="error-line">line ${lastLineNumberMatch[1]}</span>`);
+    }
+
+    return `<div class="error-message">${formattedMessage}</div>`;
 }
-
-// Immediately setup the editor on page load
-// document.addEventListener("DOMContentLoaded", () => {
-//     const editorId = 'code'; // Replace with your actual editor ID
-//     const buttonId = 'runButton'; // Replace with your actual button ID
-//     const outputId = 'output'; // Replace with your actual output ID
-
-//     setupEditor(editorId, buttonId, outputId);
-//     lazyLoadPyodide(editorId, buttonId, outputId);
-// });
