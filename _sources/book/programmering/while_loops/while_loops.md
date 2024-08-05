@@ -5,8 +5,8 @@
 class: tip
 ---
 Etter å ha gått gjennom dette delkapittelet, er målet at du skal kunne:
-* Kunne lese `while`{l=python}-løkker. 
-* Kunne skrive `while`{l=python}-løkker som løser matematiske problemer.
+* Lese `while`{l=python}-løkker. 
+* Skrive `while`{l=python}-løkker som løser matematiske problemer.
 :::
 
 En `while`{l=python}-løkke er noe vi bruker når vi ønsker å gjenta en eller flere kodelinjer igjen og igjen så lenge en betingelse er oppfylt. 

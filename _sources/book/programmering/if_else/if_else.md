@@ -14,10 +14,10 @@ Etter å ha lest dette delkapittelet, er målet at du skal kunne:
 I mange tilfeller ønsker vi å skrive et program som gjør noe hvis én ting er sant, og noe annet hvis det er usant. Dette kan vi gjøre ved å bruke `if`{l=python}-`else`{l=python}-setninger.
 
 
-:::::{admonition} Underveisoppgave 1
+:::::{admonition} Utforsk 1
 ---
-class: check
-name: programmering-if-else-underveisoppgave-1
+class: explore
+name: programmering-if-else-utforsk-1
 ---
 Under vises et kort interaktivt program. 
 
@@ -50,18 +50,19 @@ Vi tar et eksempel:
 ---
 class: example
 ---
-I programmet fra {ref}`underveisoppgave 1 <programmering-if-else-underveisoppgave-1>` har vi brukt betingelsen `x > 0`{l=python} for å dele opp programmet. <br> 
+I programmet fra {ref}`utforsk 1 <programmering-if-else-utforsk-1>` har vi brukt betingelsen `x > 0`{l=python} for å dele opp programmet. <br> 
 `x > 0`{l=python} blir `True`{l=python} hvis `x`{l=python} er større enn 0, og `False`{l=python} ellers.
 :::: 
 
 
 Så kan **du** få utforske litt mer:
 
-:::::{admonition} Underveisoppgave 2
+:::::{admonition} Utforsk 2
 ---
-class: check
+class: explore
 ---
 Under vises et interakivt program som skriver ut forskjellige betingelser.
+
 
 Deloppgave 1
 : Prøv å bestemme hvilke av betingelsene som er `True`{l=python} og hvilke som er `False`{l=python} før du kjører programmet. 
@@ -69,8 +70,19 @@ Deloppgave 1
 
 <br>
 
+
+
+:::{raw} html
+---
+file: interaktiv_kode/underveisoppgave_2.html
+---
+:::
+
+
+<br>
+
 Deloppgave 2
-: Hvis du endrer verdiene til `a`{l=python} og `b`{l=python} slik at betingelsen `a > b`{l=python} er `True`{l=python}, hvilke mange av de andre betingelsene vil da også være `True`{l=python}? 
+: Hvis du endrer verdiene til `a`{l=python} og `b`{l=python} slik at betingelsen `a > b`{l=python} er `True`{l=python}, hvilke av de andre betingelsene vil da også være `True`{l=python}? 
 : Tenk ut først, deretter test ut med programmet!
 
 
@@ -80,13 +92,6 @@ Deloppgave 3
 : Hva er det største antall betingelser som er `True`{l=python} du kan få ut ifra programmet bare ved å endre på verdiene til `a`{l=python} og `b`{l=python}?
 
 
-<br>
-
-:::{raw} html
----
-file: interaktiv_kode/underveisoppgave_2.html
----
-:::
 
 :::::
 
