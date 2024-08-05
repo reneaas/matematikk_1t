@@ -8,11 +8,76 @@ function debounce(func, wait) {
     };
 }
 
-// Setter opp pyodide og cacher den for gjentatt bruk.
-let packages = ["numpy", "sympy"]
+const pyConsoleScript = `
+    import sys
+    from js import console
+    class PyConsole:
+        def __init__(self):
+            self.buffer = ""
+        def write(self, msg):
+            self.buffer += msg
+        def flush(self):
+            console.log(self.buffer)
+            self.buffer = ""
+
+    sys.stdout = PyConsole()
+    sys.stderr = PyConsole()
+`;
+
+async function setupCustomIO(outputId) {
+    await cachedPyodide.runPythonAsync(pyConsoleScript);
+}
+
+const customInputScript = (outputId) => `
+    import builtins
+    from js import document, window
+
+    def input(prompt=""):
+        try:
+            output = document.getElementById("${outputId}")
+            output.textContent += prompt
+            user_input = window.prompt(prompt)
+            if user_input is None:
+                user_input = ""
+            output.textContent += user_input + "\\n"
+            return user_input
+        except Exception as e:
+            output.textContent += "Error: " + str(e) + "\\n"
+            raise e
+
+    builtins.input = input
+`;
+
+async function setupCustomInput(outputId) {
+    await cachedPyodide.runPythonAsync(customInputScript(outputId));
+}
+
+async function runCode(editor, outputId) {
+    const code = editor.getValue();
+    const output = document.getElementById(outputId);
+
+    try {
+        await initializePyodide();
+        await resetPyodide();
+        await setupCustomIO(outputId);
+
+        if (code.includes('input(')) {
+            await setupCustomInput(outputId);
+        }
+
+        await cachedPyodide.runPythonAsync(code);
+        output.textContent = cachedPyodide.globals.get("sys").stdout.buffer;
+    } catch (err) {
+        output.innerHTML = formatErrorMessage(cachedPyodide.globals.get("sys").stderr.buffer);
+        console.log("Error caught in JavaScript:", err);
+    }
+}
+
+let packages = ["numpy", "sympy"];
 let cachedPyodide = null;
 let initialGlobals = new Set();
 let firstRun = true;
+
 async function initializePyodide() {
     if (!cachedPyodide) {
         console.log('Initializing Pyodide...');
@@ -20,10 +85,7 @@ async function initializePyodide() {
         await cachedPyodide.loadPackage(packages);
         console.log('Pyodide initialized.');
     }
-    return cachedPyodide;
 }
-
-
 
 async function resetPyodide() {
     const currentGlobals = new Set(cachedPyodide.globals.keys());
@@ -33,32 +95,44 @@ async function resetPyodide() {
     }
 }
 
-
-// Setter opp code editor med code mirror
-function setupEditor(editorId, buttonId, outputId) {
+function getCurrentTheme() {
+    const mode = document.documentElement.getAttribute('data-mode');
     const lightTheme = "github-light";
     const darkTheme = "github-dark-high-contrast";
-
-    function getCurrentTheme() {
-        const mode = document.documentElement.getAttribute('data-mode');
-        // console.log("Mode: " + mode); // Debugging line for check `mode` value
-
-        if (mode === 'dark') {
-            return darkTheme;
-        } else if (mode === 'light') {
-            return lightTheme;
-        } else if (mode === 'auto') {
-            const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            return prefersDarkScheme ? darkTheme : lightTheme;
-        }
+    if (mode === 'dark') {
+        return darkTheme;
+    } else if (mode === 'light') {
+        return lightTheme;
+    } else if (mode === 'auto') {
+        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        return prefersDarkScheme ? darkTheme : lightTheme;
     }
+}
 
-    console.log("Current theme: " + getCurrentTheme()); // Debugging line to check current theme
+function addcommentOverlayMode(editor) {
+    editor.addOverlay({
+        token: function(stream) {
+            const keywords = ["# TODO", "# FIKSMEG", "# FIKS MEG", "# NOTE", "# FYLL INN"];
+            for (const keyword of keywords) {
+                if (stream.match(keyword)) {
+                    return keyword.replace("# ", "").toLowerCase().replace(" ", "");
+                }
+            }
+            while (stream.next() != null && !keywords.some(keyword => stream.match(keyword, false))) {}
+            return null;
+        }
+    });
+    return editor;
+}
 
+function getEditor(editorId) {
     let editor = CodeMirror.fromTextArea(document.getElementById(editorId), {
-        mode: "python",
+        mode: {
+            name: "python",
+            overlay: "commentOverlay",
+        },
         lineNumbers: true,
-        theme: getCurrentTheme(), // Other themes at https://codemirror.net/5/demo/theme.html#default
+        theme: getCurrentTheme(),
         tabSize: 4,
         indentUnit: 4,
         extraKeys: {
@@ -66,183 +140,70 @@ function setupEditor(editorId, buttonId, outputId) {
                 let spaces = Array(cm.getOption("indentUnit") + 1).join(" ");
                 cm.replaceSelection(spaces);
             }
-        } // Sikrer at tab gir 4 spaces. Unngår utilsiktede bugs med innrykk.
-    });
-
-    // Apply the overlay mode
-    editor.addOverlay({
-        token: function(stream, state) {
-            if (stream.match("# TODO")) {
-                return "todo";
-            } else if (stream.match("# FIKSMEG")) {
-                return "fiksmeg";
-            } else if (stream.match("# FIKS MEG")) {
-                return "fiksmeg";
-            } else if (stream.match("# NOTE")) {
-                return "note";
-            } else if (stream.match("# FYLL INN")) {
-                return "fyllinn";
-            }
-            while (stream.next() != null && 
-                !stream.match("# TODO", false) && 
-                !stream.match("# FIKSMEG", false) && 
-                !stream.match("# FIKS MEG", false) && 
-                !stream.match("# NOTE", false) && 
-                !stream.match("# FYLL INN", false)) {}
-            return null;
         }
     });
+    editor = addcommentOverlayMode(editor);
+    return editor;
+}
+
+function setupEditor(editorId, buttonId, outputId) {
+    let editor = getEditor(editorId);
 
     const observer = new MutationObserver(mutations => {
         mutations.forEach(mutation => {
             if (mutation.attributeName === 'data-mode') {
-                // console.log('data-mode attribute changed'); // Debugging line to check attribute change
                 editor.setOption('theme', getCurrentTheme());
             }
         });
     });
 
-    // Start observing the document's data-mode attribute for changes
     observer.observe(document.documentElement, {
         attributes: true,
         attributeFilter: ['data-mode']
     });
 
-    // Initial theme setup
     editor.setOption('theme', getCurrentTheme());
 
     let runButton = document.getElementById(buttonId);
-    let output = document.getElementById(outputId);
-
     runButton.addEventListener("click", async () => {
-        let code = editor.getValue();
-        console.log("Running code:", code);
-
-        try {
-            await cachedPyodide.runPythonAsync(`
-                import sys
-                from js import console
-                class PyConsole:
-                    def __init__(self):
-                        self.buffer = ""
-                    def write(self, msg):
-                        self.buffer += msg
-                    def flush(self):
-                        console.log(self.buffer)
-                        self.buffer = ""
-
-                sys.stdout = PyConsole()
-                sys.stderr = PyConsole()
-            `);
-
-            if (code.includes('input(')) {
-                await cachedPyodide.runPythonAsync(`
-                    import builtins
-                    from js import document, window
-
-                    def input(prompt=""):
-                        try:
-                            output = document.getElementById("${outputId}")
-                            output.textContent += prompt  # Display the prompt text in the output element
-                            user_input = window.prompt(prompt)
-                            if user_input is None:
-                                user_input = ""
-                            output.textContent += user_input + "\\n"  # Append the user input to the output element
-                            return user_input
-                        except Exception as e:
-                            output.textContent += "Error: " + str(e) + "\\n"
-                            raise e
-
-                    builtins.input = input
-                `);
-            }
-
-            if (firstRun) {
-                initialGlobals = new Set(cachedPyodide.globals.keys());
-                firstRun = false;
-            }
-            else {
-                await resetPyodide();
-            }
-            await cachedPyodide.runPythonAsync(code);
-            
-            let result = cachedPyodide.globals.get("sys").stdout.buffer;
-            output.textContent = result;
-        } catch (err) {
-            let errorMsg = cachedPyodide.globals.get("sys").stderr.buffer;
-            output.innerHTML = formatErrorMessage(errorMsg);  // Call to format the error message
-            // output.textContent = `Error: ${errorMsg}`;
-            console.log("Error caught in JavaScript:", err);
-        }
+        await runCode(editor, outputId);
     });
+
     cachedPyodide = initializePyodide();
 }
 
-
-
-// function formatErrorMessage(errorMsg) {
-//     // Match and highlight the error type
-//     let errorTypeMatch = errorMsg.match(/(\w+Error):/);
-//     let formattedMessage = errorMsg;
-
-//     if (errorTypeMatch) {
-//         formattedMessage = formattedMessage.replace(errorTypeMatch[1], `<span class="error-type">${errorTypeMatch[1]}</span>`);
-//     }
-
-//     // Match and highlight the exact last occurrence of "line <number>"
-//     let lineNumberMatches = [...errorMsg.matchAll(/\bline (\d+)\b/g)];
-//     if (lineNumberMatches.length > 0) {
-//         let lastLineNumberMatch = lineNumberMatches[lineNumberMatches.length - 1];
-//         formattedMessage = formattedMessage.slice(0, lastLineNumberMatch.index) +
-//             formattedMessage.slice(lastLineNumberMatch.index).replace(`line ${lastLineNumberMatch[1]}`, `<span class="error-line">line ${lastLineNumberMatch[1]}</span>`);
-//     }
-
-//     return `<div class="error-message">${formattedMessage}</div>`;
-// }
-
-
-
 function formatErrorMessage(errorMsg) {
-    // Match and highlight the error type
-    let errorTypeMatch = errorMsg.match(/(\w+Error):/);
     let formattedMessage = errorMsg;
 
+    const errorTypeMatch = errorMsg.match(/(\w+Error):/);
     if (errorTypeMatch) {
         formattedMessage = formattedMessage.replace(errorTypeMatch[1], `<span class="error-type">${errorTypeMatch[1]}</span>`);
     }
 
-    // Match and highlight the exact occurrence of "line <number>"
-    let lineNumberMatches = [...errorMsg.matchAll(/\bline (\d+)\b/g)];
+    const lineNumberMatches = [...errorMsg.matchAll(/\bline (\d+)\b/g)];
     if (lineNumberMatches.length > 0) {
-        let lastLineNumberMatch = lineNumberMatches[lineNumberMatches.length - 1];
-        let secondLastLineNumberMatch = lineNumberMatches[lineNumberMatches.length - 2];
-        
-        // Check if line <number> exists in the same line as <type>Error
+        const lastLineNumberMatch = lineNumberMatches[lineNumberMatches.length - 1];
+        const secondLastLineNumberMatch = lineNumberMatches[lineNumberMatches.length - 2];
+
         if (errorTypeMatch) {
-            let errorLineIndex = errorTypeMatch.index;
-            let errorLineEndIndex = formattedMessage.indexOf('\n', errorLineIndex);
-            errorLineEndIndex = errorLineEndIndex === -1 ? formattedMessage.length : errorLineEndIndex;
-            
-            let errorLine = formattedMessage.slice(errorLineIndex, errorLineEndIndex);
-            let lineNumberInErrorLine = errorLine.match(/\bline (\d+)\b/);
-            
-            if (lineNumberInErrorLine) {
-                // Highlight the second last occurrence if line <number> exists in the error line
-                if (secondLastLineNumberMatch) {
-                    formattedMessage = formattedMessage.slice(0, secondLastLineNumberMatch.index) +
-                        formattedMessage.slice(secondLastLineNumberMatch.index).replace(`line ${secondLastLineNumberMatch[1]}`, `<span class="error-line">line ${secondLastLineNumberMatch[1]}</span>`);
-                }
+            const errorLineIndex = errorTypeMatch.index;
+            const errorLineEndIndex = formattedMessage.indexOf('\n', errorLineIndex) === -1 ? formattedMessage.length : formattedMessage.indexOf('\n', errorLineIndex);
+            const errorLine = formattedMessage.slice(errorLineIndex, errorLineEndIndex);
+            const lineNumberInErrorLine = errorLine.match(/\bline (\d+)\b/);
+
+            if (lineNumberInErrorLine && secondLastLineNumberMatch) {
+                formattedMessage = highlightLineNumber(formattedMessage, secondLastLineNumberMatch);
             } else {
-                // Highlight the last occurrence otherwise
-                formattedMessage = formattedMessage.slice(0, lastLineNumberMatch.index) +
-                    formattedMessage.slice(lastLineNumberMatch.index).replace(`line ${lastLineNumberMatch[1]}`, `<span class="error-line">line ${lastLineNumberMatch[1]}</span>`);
+                formattedMessage = highlightLineNumber(formattedMessage, lastLineNumberMatch);
             }
         } else {
-            // Highlight the last occurrence otherwise
-            formattedMessage = formattedMessage.slice(0, lastLineNumberMatch.index) +
-                formattedMessage.slice(lastLineNumberMatch.index).replace(`line ${lastLineNumberMatch[1]}`, `<span class="error-line">line ${lastLineNumberMatch[1]}</span>`);
+            formattedMessage = highlightLineNumber(formattedMessage, lastLineNumberMatch);
         }
     }
 
-    return `<div class="error-message">${formattedMessage}</div>`;
+    return formattedMessage;
+}
+
+function highlightLineNumber(message, match) {
+    return message.slice(0, match.index) + message.slice(match.index).replace(`line ${match[1]}`, `<span class="error-line">line ${match[1]}</span>`);
 }
