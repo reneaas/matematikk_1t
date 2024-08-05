@@ -80,12 +80,15 @@ function setupEditor(editorId, buttonId, outputId) {
                 return "fiksmeg";
             } else if (stream.match("# NOTE")) {
                 return "note";
+            } else if (stream.match("# FYLL INN")) {
+                return "fyllinn";
             }
             while (stream.next() != null && 
                 !stream.match("# TODO", false) && 
                 !stream.match("# FIKSMEG", false) && 
                 !stream.match("# FIKS MEG", false) && 
-                !stream.match("# NOTE", false)) {}
+                !stream.match("# NOTE", false) && 
+                !stream.match("# FYLL INN", false)) {}
             return null;
         }
     });
@@ -167,8 +170,8 @@ function setupEditor(editorId, buttonId, outputId) {
             output.textContent = result;
         } catch (err) {
             let errorMsg = cachedPyodide.globals.get("sys").stderr.buffer;
-            // output.innerHTML = formatErrorMessage(errorMsg);  // Call to format the error message
-            output.textContent = `Error: ${errorMsg}`;
+            output.innerHTML = formatErrorMessage(errorMsg);  // Call to format the error message
+            // output.textContent = `Error: ${errorMsg}`;
             console.log("Error caught in JavaScript:", err);
         }
     });

@@ -5,36 +5,28 @@ import sympy as sp
 plt.rc("text", usetex=True)
 
 
-def get_factors(polynomial: sp.Expr, x: sp.symbols) -> list[dict]:
-    # expand first in case multiple factors of the same kind are present
+def get_factors(polynomial: sp.Expr, x: sp.Symbol) -> list[dict]:
     polynomial = sp.expand(polynomial)
-
-    factor_list = sp.factor_list(polynomial)  # Get list of factors of the polynomial
+    factor_list = sp.factor_list(polynomial)
     leading_coeff = factor_list[0]
-    if not leading_coeff == 1:
-        linear_factors = [{"expression": leading_coeff, "exponent": 1, "root": -np.inf}]
-    else:
-        linear_factors = []
+
+    linear_factors = (
+        [{"expression": leading_coeff, "exponent": 1, "root": -np.inf}]
+        if leading_coeff != 1
+        else []
+    )
 
     for linear_factor, exponent in factor_list[1]:
         exponent = int(exponent)
         root = sp.solve(linear_factor, x)
-        if root == []:
-            linear_factors.append(
-                {
-                    "expression": linear_factor,
-                    "exponent": exponent,
-                    "root": -np.inf,
-                }
-            )
-        else:
-            linear_factors.append(
-                {
-                    "expression": linear_factor,
-                    "exponent": exponent,
-                    "root": sp.solve(linear_factor, x)[0],
-                }
-            )
+        root_value = root[0] if root else -np.inf
+        linear_factors.append(
+            {
+                "expression": linear_factor,
+                "exponent": exponent,
+                "root": root_value,
+            }
+        )
 
     return linear_factors
 
@@ -295,24 +287,24 @@ def make_sign_chart(
     include_factors: bool = True,
     generic_labels: bool = False,
 ) -> None:
-    """Tegner fortegnsskjema for et polynom f. 
+    """Tegner fortegnsskjema for et polynom f.
 
     Args:
-        f (sp.Expr): 
+        f (sp.Expr):
             Polynomet f(x)
-        x (sp.symbols): 
+        x (sp.symbols):
             Symbolet som representerer variabelen i polynomet
         fn_name (str, optional):
             Navn på funksjonen. Defaults `None`.
-        fname (str, optional): 
+        fname (str, optional):
             Filnavn for å lagre figuren. Default: `None`.
-        color (bool, optional): 
+        color (bool, optional):
             Farge på fortegnslinjene. Default: `True`.
-        include_factors (bool, optional): 
+        include_factors (bool, optional):
             Inkluderer alle faktorene til f(x). Default: `True`.
         generic_label (bool, optional):
-            Bruker generiske labels for røttene: x_1, x_2, ..., x_N. Default: `False`. 
-    
+            Bruker generiske labels for røttene: x_1, x_2, ..., x_N. Default: `False`.
+
     Returns:
         None
     """
@@ -335,7 +327,10 @@ def make_sign_chart(
     roots = [factor.get("root") for factor in factors if factor.get("root") != -np.inf]
     plt.xticks(
         ticks=[i for i in range(len(roots))],
-        labels=[f"${root}$" if not generic_labels else f"$x_{i + 1}$" for i, root in enumerate(roots)],
+        labels=[
+            f"${root}$" if not generic_labels else f"$x_{i + 1}$"
+            for i, root in enumerate(roots)
+        ],
         fontsize=16,
     )
 
@@ -358,7 +353,7 @@ def make_sign_chart(
     plt.xlim(-1, len(roots))
 
     if include_factors:
-        fig.set_size_inches(8, 2 + int(0.7*len(factors)))
+        fig.set_size_inches(8, 2 + int(0.7 * len(factors)))
     else:
         fig.set_size_inches(8, 2)
 
@@ -384,5 +379,3 @@ if __name__ == "__main__":
 
     # Gir fortegnsskjema for f(x) med alle faktorer. Uten farger
     make_sign_chart(f=f, x=x, color=False, include_factors=True)
-
-
