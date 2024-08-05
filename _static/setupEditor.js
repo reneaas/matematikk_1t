@@ -9,8 +9,10 @@ function debounce(func, wait) {
 }
 
 // Setter opp pyodide og cacher den for gjentatt bruk.
-let packages = ["numpy"]
+let packages = ["numpy", "sympy"]
 let cachedPyodide = null;
+let initialGlobals = new Set();
+let firstRun = true;
 async function initializePyodide() {
     if (!cachedPyodide) {
         console.log('Initializing Pyodide...');
@@ -20,6 +22,17 @@ async function initializePyodide() {
     }
     return cachedPyodide;
 }
+
+
+
+async function resetPyodide() {
+    const currentGlobals = new Set(cachedPyodide.globals.keys());
+    const globalsToClear = Array.from(currentGlobals).filter(x => !initialGlobals.has(x));
+    for (const key of globalsToClear) {
+        cachedPyodide.globals.delete(key);
+    }
+}
+
 
 // Setter opp code editor med code mirror
 function setupEditor(editorId, buttonId, outputId) {
@@ -48,6 +61,12 @@ function setupEditor(editorId, buttonId, outputId) {
         theme: getCurrentTheme(), // Other themes at https://codemirror.net/5/demo/theme.html#default
         tabSize: 4,
         indentUnit: 4,
+        extraKeys: {
+            Tab: function(cm) {
+                let spaces = Array(cm.getOption("indentUnit") + 1).join(" ");
+                cm.replaceSelection(spaces);
+            }
+        } // Sikrer at tab gir 4 spaces. Unngår utilsiktede bugs med innrykk.
     });
 
     // Apply the overlay mode
@@ -94,9 +113,10 @@ function setupEditor(editorId, buttonId, outputId) {
 
     runButton.addEventListener("click", async () => {
         let code = editor.getValue();
+        console.log("Running code:", code);
 
         try {
-            cachedPyodide.runPythonAsync(`
+            await cachedPyodide.runPythonAsync(`
                 import sys
                 from js import console
                 class PyConsole:
@@ -134,18 +154,48 @@ function setupEditor(editorId, buttonId, outputId) {
                 `);
             }
 
+            if (firstRun) {
+                initialGlobals = new Set(cachedPyodide.globals.keys());
+                firstRun = false;
+            }
+            else {
+                await resetPyodide();
+            }
             await cachedPyodide.runPythonAsync(code);
+            
             let result = cachedPyodide.globals.get("sys").stdout.buffer;
             output.textContent = result;
         } catch (err) {
             let errorMsg = cachedPyodide.globals.get("sys").stderr.buffer;
-            output.innerHTML = formatErrorMessage(errorMsg);  // Call to format the error message
-            // output.textContent = `Error: ${errorMsg}`;
+            // output.innerHTML = formatErrorMessage(errorMsg);  // Call to format the error message
+            output.textContent = `Error: ${errorMsg}`;
             console.log("Error caught in JavaScript:", err);
         }
     });
     cachedPyodide = initializePyodide();
 }
+
+
+
+// function formatErrorMessage(errorMsg) {
+//     // Match and highlight the error type
+//     let errorTypeMatch = errorMsg.match(/(\w+Error):/);
+//     let formattedMessage = errorMsg;
+
+//     if (errorTypeMatch) {
+//         formattedMessage = formattedMessage.replace(errorTypeMatch[1], `<span class="error-type">${errorTypeMatch[1]}</span>`);
+//     }
+
+//     // Match and highlight the exact last occurrence of "line <number>"
+//     let lineNumberMatches = [...errorMsg.matchAll(/\bline (\d+)\b/g)];
+//     if (lineNumberMatches.length > 0) {
+//         let lastLineNumberMatch = lineNumberMatches[lineNumberMatches.length - 1];
+//         formattedMessage = formattedMessage.slice(0, lastLineNumberMatch.index) +
+//             formattedMessage.slice(lastLineNumberMatch.index).replace(`line ${lastLineNumberMatch[1]}`, `<span class="error-line">line ${lastLineNumberMatch[1]}</span>`);
+//     }
+
+//     return `<div class="error-message">${formattedMessage}</div>`;
+// }
 
 
 
@@ -158,12 +208,37 @@ function formatErrorMessage(errorMsg) {
         formattedMessage = formattedMessage.replace(errorTypeMatch[1], `<span class="error-type">${errorTypeMatch[1]}</span>`);
     }
 
-    // Match and highlight the exact last occurrence of "line <number>"
+    // Match and highlight the exact occurrence of "line <number>"
     let lineNumberMatches = [...errorMsg.matchAll(/\bline (\d+)\b/g)];
     if (lineNumberMatches.length > 0) {
         let lastLineNumberMatch = lineNumberMatches[lineNumberMatches.length - 1];
-        formattedMessage = formattedMessage.slice(0, lastLineNumberMatch.index) +
-            formattedMessage.slice(lastLineNumberMatch.index).replace(`line ${lastLineNumberMatch[1]}`, `<span class="error-line">line ${lastLineNumberMatch[1]}</span>`);
+        let secondLastLineNumberMatch = lineNumberMatches[lineNumberMatches.length - 2];
+        
+        // Check if line <number> exists in the same line as <type>Error
+        if (errorTypeMatch) {
+            let errorLineIndex = errorTypeMatch.index;
+            let errorLineEndIndex = formattedMessage.indexOf('\n', errorLineIndex);
+            errorLineEndIndex = errorLineEndIndex === -1 ? formattedMessage.length : errorLineEndIndex;
+            
+            let errorLine = formattedMessage.slice(errorLineIndex, errorLineEndIndex);
+            let lineNumberInErrorLine = errorLine.match(/\bline (\d+)\b/);
+            
+            if (lineNumberInErrorLine) {
+                // Highlight the second last occurrence if line <number> exists in the error line
+                if (secondLastLineNumberMatch) {
+                    formattedMessage = formattedMessage.slice(0, secondLastLineNumberMatch.index) +
+                        formattedMessage.slice(secondLastLineNumberMatch.index).replace(`line ${secondLastLineNumberMatch[1]}`, `<span class="error-line">line ${secondLastLineNumberMatch[1]}</span>`);
+                }
+            } else {
+                // Highlight the last occurrence otherwise
+                formattedMessage = formattedMessage.slice(0, lastLineNumberMatch.index) +
+                    formattedMessage.slice(lastLineNumberMatch.index).replace(`line ${lastLineNumberMatch[1]}`, `<span class="error-line">line ${lastLineNumberMatch[1]}</span>`);
+            }
+        } else {
+            // Highlight the last occurrence otherwise
+            formattedMessage = formattedMessage.slice(0, lastLineNumberMatch.index) +
+                formattedMessage.slice(lastLineNumberMatch.index).replace(`line ${lastLineNumberMatch[1]}`, `<span class="error-line">line ${lastLineNumberMatch[1]}</span>`);
+        }
     }
 
     return `<div class="error-message">${formattedMessage}</div>`;
