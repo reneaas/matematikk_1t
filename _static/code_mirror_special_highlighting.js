@@ -9,12 +9,15 @@ CodeMirror.defineMode("commentOverlay", function() {
                 return "fiksmeg";
             } else if (stream.match("# NOTE")) {
                 return "note";
+            } else if (stream.match("# FYLL INN")) {
+                return "fyllinn";
             }
             while (stream.next() != null && 
                 !stream.match("# TODO", false) && 
                 !stream.match("# FIKSMEG", false) && 
                 !stream.match("# FIKS MEG", false) && 
-                !stream.match("# NOTE", false)) {}
+                !stream.match("# NOTE", false) &&
+                !stream.match("# FYLL INN", false)) {}
             return null;
         }
     };
