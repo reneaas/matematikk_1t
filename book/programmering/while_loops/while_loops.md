@@ -331,7 +331,7 @@ $$
 $$
 
 
-Under vises en uferdig kode som skal regne ut $5!$. 
+Under vises en uferdig kode som skal regne ut $4!$. 
 
 :::{raw} html
 ---
@@ -341,7 +341,7 @@ file: ./interaktiv_kode/oppgaver/oppgave_2.html
 
 
 Deloppgave 1
-: Fiks programmet slik at det regner ut $5!$ og sjekk svaret ved å regne for hånd.
+: Fiks programmet slik at det regner ut $4!$ og sjekk svaret ved å regne for hånd. Prøv også ut programmet med $5!$. Gir det riktig svar?
 
 :::{admonition} Hint
 ---
@@ -371,7 +371,7 @@ emphasize-lines: 5
 p = 1
 i = 1
 
-while i <= 5:
+while i <= 4:
     p = p * i
     i = i + 1
 

@@ -24,5 +24,5 @@ I denne delen skal vi se på ulike løsningsstrategier for å løse likninger.
 * Du skal kunne kjenne igjen en identitet og forklare forskjellen på en likning og en identitet. 
 ```
 
-## Identiteter
-For de fleste likninger finnes det ingen, én eller flere verdier av $x$ som gjør at likningen er oppfylt. For noen likninger vil derimot likningen være oppfylt for alle verdier av $x$. Slike likninger kaller vi for identiteter. Et eksempel på en identitet er $ 2 (x + 3) = 2x + 6 $. Vi ser at dersom vi ganger ut parantesen på venstre side, får vi høyre side. Dette gjør at de to sidene vil være like for alle verdier av $x$. 
+<!-- ## Identiteter
+For de fleste likninger finnes det ingen, én eller flere verdier av $x$ som gjør at likningen er oppfylt. For noen likninger vil derimot likningen være oppfylt for alle verdier av $x$. Slike likninger kaller vi for identiteter. Et eksempel på en identitet er $ 2 (x + 3) = 2x + 6 $. Vi ser at dersom vi ganger ut parantesen på venstre side, får vi høyre side. Dette gjør at de to sidene vil være like for alle verdier av $x$.  -->
