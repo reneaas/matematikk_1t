@@ -398,22 +398,42 @@ $$
 ---
 class: problem-level-1
 ---
-Hvilke av linjene under er likninger?
+Her skal du få en bedre forståelse av forskjellen på og sammenhengen mellom **uttrykk**, **likninger** og **identiteter**. 
 
-1. $4$
-2. $x+4$
-3. $4x$
-4. $x = 4$
-5. $x + 4 = 9$
-6. $4x = 16$ 
-7. $4\left(x+1\right) = 4x + 4$
+* Et uttrykk er bare en formel, som for eksempel $3x + 1$. Det inneholder ingen likhet som setter krav på verdien til $x$. 
+* En likning består av to uttrykk som er satt lik hverandre. 
+* En identitet er en likning som er sann for *alle* mulige valg av variablene. Det vil si, venstre og høyre side består av to uttrykk som gir samme verdi for alle valg av $x \in \mathbb{R}$. 
+
+
+Fyll ut tabellen under og sett kryss på om det er et uttrykk, en likning eller en identitet.
+
+| | Uttrykk | Likning | Identitet | 
+|-|---------|---------|-----------|
+| $4$ | | | |
+| $4x$ | | | |
+| $x = 4$ | | | |
+| $x + 4$ | | | |
+| $x + 4 = 9$ | | | |
+| $4x = 16$ | | | |
+| $4(x+1) = 4x + 4$ | | | |
+
 
 :::{admonition} Fasit
 ---
 class: answer, dropdown
 ---
 
-Linje 1-3 er uttrykk, mens linje 4-6 er likninger. Linje 7 er en identitet, fordi løsningsmengden er $L = \mathbb{R}$, altså er likningen oppfylt for alle reelle tall. 
+
+| | Uttrykk | Likning | Identitet | 
+|-|:---------:|:---------:|:-----------:|
+| $4$ | $\times$ | | |
+| $4x$ | $\times$ | | |
+| $x = 4$ | | $\times$ | |
+| $x + 4$ | $\times$ | | |
+| $x + 4 = 9$ | | $\times$ | |
+| $4x = 16$ | | $\times$ | |
+| $4(x+1) = 4x + 4$ | | | $\times$ |
+
 :::
 :::::
 
