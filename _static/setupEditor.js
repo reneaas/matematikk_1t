@@ -77,6 +77,7 @@ let packages = ["numpy", "sympy"];
 let cachedPyodide = null;
 let initialGlobals = new Set();
 let firstRun = true;
+let initialCode = null;
 
 async function initializePyodide() {
     if (!cachedPyodide) {
@@ -146,8 +147,10 @@ function getEditor(editorId) {
     return editor;
 }
 
-function setupEditor(editorId, buttonId, outputId) {
+function setupEditor(editorId, buttonId, resetButtonId, outputId) {
     let editor = getEditor(editorId);
+    // initialCode = editor.getValue(); // Save initial code
+    // console.log("Initial code:", initialCode);
 
     const observer = new MutationObserver(mutations => {
         mutations.forEach(mutation => {
@@ -167,6 +170,12 @@ function setupEditor(editorId, buttonId, outputId) {
     let runButton = document.getElementById(buttonId);
     runButton.addEventListener("click", async () => {
         await runCode(editor, outputId);
+    });
+
+
+    let resetButton = document.getElementById(resetButtonId);
+    resetButton.addEventListener("click", () => {
+        editor.setValue(document.getElementById(editorId).value);
     });
 
     cachedPyodide = initializePyodide();
