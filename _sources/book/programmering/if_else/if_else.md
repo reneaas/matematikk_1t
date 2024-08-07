@@ -25,7 +25,7 @@ Utforsk og kjør programmet, og forklar hva programmet gjør.
 
 :::{raw} html
 ---
-file: interaktiv_kode/underveisoppgave_1.html
+file: interaktiv_kode/utforsk/utforsk_1.html
 ---
 :::
 :::::
@@ -74,7 +74,7 @@ Deloppgave 1
 
 :::{raw} html
 ---
-file: interaktiv_kode/underveisoppgave_2.html
+file: interaktiv_kode/utforsk/utforsk_2.html
 ---
 :::
 

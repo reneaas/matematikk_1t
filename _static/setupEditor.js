@@ -1,100 +1,190 @@
-let packages = ["numpy", "sympy"];
-let cachedPyodide = null;
-let initialGlobals = new Set();
-let initialCode = null;
-let firstRun = true;
-
+let worker = null;
 
 const pyConsoleScript = `
-    import sys
-    from js import console
-    class PyConsole:
-        def __init__(self):
-            self.buffer = ""
-        def write(self, msg):
-            self.buffer += msg
-        def flush(self):
-            console.log(self.buffer)
-            self.buffer = ""
+import sys
+from js import postMessage
+import json
 
-    sys.stdout = PyConsole()
-    sys.stderr = PyConsole()
+class PyConsole:
+    def __init__(self):
+        self.buffer = ""
+
+    def write(self, msg):
+        self.buffer += msg
+        if "\\n" in msg:
+            self.flush()
+
+    def flush(self):
+        if self.buffer:
+            try:
+                postMessage(json.dumps({'type': 'stdout', 'msg': self.buffer}))
+            except Exception as e:
+                self.handle_error(e)
+
+        self.buffer = ""
+
+    def handle_error(self, e):
+        error_message = str(e)
+        postMessage(json.dumps({'type': 'stderr', 'msg': error_message}))
+
+sys.stdout = PyConsole()
+sys.stderr = PyConsole()
 `;
 
 
 const customInputScript = (outputId) => `
-    import builtins
-    from js import document, window
+import builtins
+from js import document, window
 
-    def input(prompt=""):
-        try:
-            output = document.getElementById("${outputId}")
-            output.textContent += prompt
-            user_input = window.prompt(prompt)
-            if user_input is None:
-                user_input = ""
-            output.textContent += user_input + "\\n"
-            return user_input
-        except Exception as e:
-            output.textContent += "Error: " + str(e) + "\\n"
-            raise e
+def custom_input(prompt=""):
+    try:
+        output = document.getElementById('${outputId}')
+        # Properly append the prompt with a newline using correct Python string concatenation
+        output.textContent += (prompt + '\n')
+        user_input = window.prompt(prompt)
+        if user_input is None:
+            user_input = ""  # Handle null input if the user cancels the input dialog
+        # Append the user input correctly and ensure newlines are properly escaped
+        output.textContent += (user_input + '\n')
+        return user_input
+    except Exception as e:
+        # Error handling that outputs to the same element and ensures strings are properly closed
+        output.textContent += ('Error: ' + str(e) + '\n')
+        raise e
 
-    builtins.input = input
+builtins.input = custom_input
 `;
 
 
-async function setupCustomIO(outputId) {
-    await cachedPyodide.runPythonAsync(pyConsoleScript);
-}
+function initializeWorker(outputId) {
+    const workerScript = `
+        importScripts('https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js');
 
-async function setupCustomInput(outputId) {
-    await cachedPyodide.runPythonAsync(customInputScript(outputId));
+        let pyodideReadyPromise = loadPyodide();
+        let pyodide;
+        let firstrun = true;
+        let initialGlobals = new Set();
+
+        async function resetPyodide() {
+            const currentGlobals = new Set(pyodide.globals.keys());
+            const globalsToClear = Array.from(currentGlobals).filter(x => !initialGlobals.has(x));
+            for (const key of globalsToClear) {
+                pyodide.globals.delete(key);
+            }
+            console.log("Globals cleared:", globalsToClear);
+        }
+
+
+        onmessage = async (event) => {
+            await pyodideReadyPromise;
+            if (event.data.type === 'init') {
+                pyodide = await pyodideReadyPromise;
+                await pyodide.loadPackage(['numpy', 'sympy']);
+                // postMessage({ type: 'initComplete', msg: 'Pyodide loaded' });  // Change here
+            }
+            if (event.data.type === 'runCode') {
+                const { code } = event.data;
+                try {
+                    await resetPyodide();
+                    await pyodide.runPythonAsync(code);
+                } catch (err) {
+                    postMessage({ type: 'stderr', 'msg': String(err) });
+                }
+            }
+        };
+    `;
+
+
+
+    if (!worker) {
+        const workerBlob = new Blob([workerScript], { type: 'application/javascript' });
+        worker = new Worker(URL.createObjectURL(workerBlob));
+    }
+
+    worker.onmessage = function(event) {
+        console.log("Received message:", event.data);  // Helpful for debugging
+        let data;
+        try {
+            data = JSON.parse(event.data);
+        } catch (e) {
+            console.error("Failed to parse message data:", event.data);
+            return;
+        }
+        const { type, msg } = data;
+        const outputElement = document.getElementById(outputId);
+        if (!outputElement) {
+            console.error("Output element not found:", outputId);
+            return;
+        }
+    
+        if (type === 'stdout') {
+            // Check if stdout contains error messages like SyntaxError
+            if (/Error/.test(msg)) {
+                outputElement.innerHTML += formatErrorMessage(msg); // Treat as error message
+            } else {
+                outputElement.textContent += msg;  // Append regular output
+            }
+        } else if (type === 'stderr') {
+            outputElement.innerHTML += formatErrorMessage(msg); // Always format stderr messages
+        }
+    };
+
+    worker.onerror = function(error) {
+        console.log('Error from worker:', error);
+        const outputElement = document.getElementById(outputId);
+        if (outputElement) {
+            outputElement.textContent += `Error: ${error.message}`;
+        }
+    };
+
+    worker.postMessage({ type: 'init' });
 }
 
 async function runCode(editor, outputId) {
     const code = editor.getValue();
-    const output = document.getElementById(outputId);
-
-    try {
-        await initializePyodide();
-        await resetPyodide();
-        await setupCustomIO(outputId);
-
-        if (code.includes('input(')) {
-            await setupCustomInput(outputId);
+    worker.onmessage = function(event) {
+        console.log("Received message:", event.data);  // Helpful for debugging
+        let data;
+        try {
+            data = JSON.parse(event.data);
+        } catch (e) {
+            console.error("Failed to parse message data:", event.data);
+            return;
         }
-
-        await cachedPyodide.runPythonAsync(code);
-        output.textContent = cachedPyodide.globals.get("sys").stdout.buffer;
-    } catch (err) {
-        output.innerHTML = formatErrorMessage(cachedPyodide.globals.get("sys").stderr.buffer);
-        console.log("Error caught in JavaScript:", err);
-    }
-}
-
-
-async function initializePyodide() {
-    if (!cachedPyodide) {
-        console.log('Initializing Pyodide...');
-        cachedPyodide = await loadPyodide();
-        await cachedPyodide.loadPackage(packages);
-        console.log('Pyodide initialized.');
-
-        if (firstRun) {
-            firstRun = false;
-            initialGlobals = new Set(cachedPyodide.globals.keys());
-            console.log("Initial globals:", initialGlobals);
+        const { type, msg } = data;
+        const outputElement = document.getElementById(outputId);
+        if (!outputElement) {
+            console.error("Output element not found:", outputId);
+            return;
         }
-    }
-}
+    
+        if (type === 'stdout') {
+            // Check if stdout contains error messages like SyntaxError
+            if (/Error/.test(msg)) {
+                outputElement.innerHTML += formatErrorMessage(msg); // Treat as error message
+            } else {
+                outputElement.textContent += msg;  // Append regular output
+            }
+        } else if (type === 'stderr') {
+            outputElement.innerHTML += formatErrorMessage(msg); // Always format stderr messages
+        }
+    };
 
-async function resetPyodide() {
-    const currentGlobals = new Set(cachedPyodide.globals.keys());
-    const globalsToClear = Array.from(currentGlobals).filter(x => !initialGlobals.has(x));
-    for (const key of globalsToClear) {
-        cachedPyodide.globals.delete(key);
+    // Ensure the worker is initialized before posting messages
+    if (!worker) {
+        initializeWorker(outputId);
     }
-    console.log("Globals cleared:", globalsToClear);
+
+    // Run the pyConsoleScript first
+    worker.postMessage({ type: 'runCode', code: pyConsoleScript });
+
+    // If the code contains input, run the customInputScript
+    // if (code.includes("input(")) {
+    //     worker.postMessage({ type: 'runCode', code: customInputScript(outputId) });
+    // }
+
+    // Finally, run the user's code
+    worker.postMessage({ type: 'runCode', code: code });
 }
 
 function getCurrentTheme() {
@@ -148,10 +238,8 @@ function getEditor(editorId) {
     return editor;
 }
 
-function setupEditor(editorId, buttonId, resetButtonId, outputId) {
+function setupEditor(editorId, runButtonId, cancelButtonId, resetButtonId, outputId) {
     let editor = getEditor(editorId);
-    // initialCode = editor.getValue(); // Save initial code
-    // console.log("Initial code:", initialCode);
 
     const observer = new MutationObserver(mutations => {
         mutations.forEach(mutation => {
@@ -168,20 +256,42 @@ function setupEditor(editorId, buttonId, resetButtonId, outputId) {
 
     editor.setOption('theme', getCurrentTheme());
 
-    let runButton = document.getElementById(buttonId);
-    runButton.addEventListener("click", async () => {
-        await runCode(editor, outputId);
-    });
+    let runButton = document.getElementById(runButtonId);
+    if (runButton) {
+        runButton.addEventListener("click", async () => {
+            const outputElement = document.getElementById(outputId);
+            if (outputElement) {
+                outputElement.textContent = "";
+            }
+            await runCode(editor, outputId);
+        });
+    }
 
-    let output = document.getElementById(outputId);
+    let cancelButton = document.getElementById(cancelButtonId);
+    if (cancelButton) {
+        cancelButton.addEventListener("click", () => {
+            if (worker) {
+                worker.terminate();
+                worker = null;
+                initializeWorker(outputId);
+            }
+        });
+    }
+
     let resetButton = document.getElementById(resetButtonId);
-    resetButton.addEventListener("click", () => {
-        editor.setValue(document.getElementById(editorId).value);
-        output.textContent = "";
-    });
+    if (resetButton) {
+        resetButton.addEventListener("click", () => {
+            editor.setValue(document.getElementById(editorId).value);
+            const outputElement = document.getElementById(outputId);
+            if (outputElement) {
+                outputElement.textContent = "";
+            }
+        });
+    }
 
-    cachedPyodide = initializePyodide();
+    initializeWorker(outputId);
 }
+
 
 function formatErrorMessage(errorMsg) {
     let formattedMessage = errorMsg;
