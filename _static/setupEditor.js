@@ -2,6 +2,7 @@ let packages = ["numpy", "sympy"];
 let cachedPyodide = null;
 let initialGlobals = new Set();
 let initialCode = null;
+let firstRun = true;
 
 
 const pyConsoleScript = `
@@ -79,8 +80,11 @@ async function initializePyodide() {
         await cachedPyodide.loadPackage(packages);
         console.log('Pyodide initialized.');
 
-        initialGlobals = new Set(cachedPyodide.globals.keys());
-        console.log("Initial globals:", initialGlobals);
+        if (firstRun) {
+            firstRun = false;
+            initialGlobals = new Set(cachedPyodide.globals.keys());
+            console.log("Initial globals:", initialGlobals);
+        }
     }
 }
 
