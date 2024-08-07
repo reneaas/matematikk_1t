@@ -1,12 +1,8 @@
-function debounce(func, wait) {
-    let timeout;
-    return function(...args) {
-        clearTimeout(timeout);
-        timeout = setTimeout(() => {
-            func.apply(this, args);
-        }, wait);
-    };
-}
+let packages = ["numpy", "sympy"];
+let cachedPyodide = null;
+let initialGlobals = new Set();
+let initialCode = null;
+
 
 const pyConsoleScript = `
     import sys
@@ -24,9 +20,6 @@ const pyConsoleScript = `
     sys.stderr = PyConsole()
 `;
 
-async function setupCustomIO(outputId) {
-    await cachedPyodide.runPythonAsync(pyConsoleScript);
-}
 
 const customInputScript = (outputId) => `
     import builtins
@@ -47,6 +40,11 @@ const customInputScript = (outputId) => `
 
     builtins.input = input
 `;
+
+
+async function setupCustomIO(outputId) {
+    await cachedPyodide.runPythonAsync(pyConsoleScript);
+}
 
 async function setupCustomInput(outputId) {
     await cachedPyodide.runPythonAsync(customInputScript(outputId));
@@ -73,11 +71,6 @@ async function runCode(editor, outputId) {
     }
 }
 
-let packages = ["numpy", "sympy"];
-let cachedPyodide = null;
-let initialGlobals = new Set();
-let firstRun = true;
-let initialCode = null;
 
 async function initializePyodide() {
     if (!cachedPyodide) {
@@ -85,6 +78,9 @@ async function initializePyodide() {
         cachedPyodide = await loadPyodide();
         await cachedPyodide.loadPackage(packages);
         console.log('Pyodide initialized.');
+
+        initialGlobals = new Set(cachedPyodide.globals.keys());
+        console.log("Initial globals:", initialGlobals);
     }
 }
 
@@ -94,6 +90,7 @@ async function resetPyodide() {
     for (const key of globalsToClear) {
         cachedPyodide.globals.delete(key);
     }
+    console.log("Globals cleared:", globalsToClear);
 }
 
 function getCurrentTheme() {
@@ -172,10 +169,11 @@ function setupEditor(editorId, buttonId, resetButtonId, outputId) {
         await runCode(editor, outputId);
     });
 
-
+    let output = document.getElementById(outputId);
     let resetButton = document.getElementById(resetButtonId);
     resetButton.addEventListener("click", () => {
         editor.setValue(document.getElementById(editorId).value);
+        output.textContent = "";
     });
 
     cachedPyodide = initializePyodide();
