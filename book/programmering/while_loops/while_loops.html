@@ -74,7 +74,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/programmering/while_loops/while_loops';</script>
     <script>mermaid.initialize({"startOnLoad": true})</script>
     <script src="../../../_static/static_code_blocks.js?v=d0b96be4"></script>
-    <script src="../../../_static/setupEditor.js?v=d1d32fb9"></script>
+    <script src="../../../_static/setupEditor.js?v=0f85b40a"></script>
     <script src="../../../_static/brython.js?v=46b190f3"></script>
     <script src="../../../_static/serviceWorker.js?v=df3feec7"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -873,6 +873,42 @@ print(f"{p = }")
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">p = 3628800</span>
 </pre></div>
 </div>
+</div>
+<br>
+<dl class="simple myst">
+<dt>Deloppgave 3</dt><dd><p>Fra teorien om kombinatorikk, kan man komme fram til at antall måter å stokke en kortstokk med 52 kort på er <span class="math notranslate nohighlight">\(52!\)</span>. <br> Bruk programmet til å bestemme dette tallet. Hva blir svaret?</p>
+</dd>
+</dl>
+<div class="solution dropdown admonition">
+<p class="admonition-title">Løsning</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span> 
+<span class="linenos">2</span><span class="n">p</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="linenos">3</span>
+<span class="hll"><span class="linenos">4</span><span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">52</span><span class="p">:</span>
+</span><span class="linenos">5</span>    <span class="n">p</span> <span class="o">=</span> <span class="n">p</span><span class="o">*</span><span class="n">i</span>
+<span class="linenos">6</span>    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="linenos">7</span>    
+<span class="linenos">8</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">p</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">p = 80658175170943878571660636856403766975289505440883277824000000000000</span>
+</pre></div>
+</div>
+<p>For å få bedre oversikt over hva dette tallet er, kan vi skrive om <code class="code docutils literal highlight highlight-python"><span class="nb">print</span></code>-setningen som</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">p</span><span class="w"> </span><span class="si">= :</span><span class="s2">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Dette skriver ut tallet med “vitenskapelig” notasjon (standardform, <em>kinda</em>). Utskriften blir da</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">p = 8.065818e+67</span>
+</pre></div>
+</div>
+<p>som betyr at</p>
+<div class="math notranslate nohighlight">
+\[
+52! = 8.065818 \times 10^{67},
+\]</div>
+<p>med en presisjon på 7 siffer.</p>
 </div>
 </div>
 </section>

@@ -413,4 +413,53 @@ p = 3628800
 ```
 :::
 
+<br>
+
+Deloppgave 3
+: Fra teorien om kombinatorikk, kan man komme fram til at antall måter å stokke en kortstokk med 52 kort på er $52!$. <br> Bruk programmet til å bestemme dette tallet. Hva blir svaret?
+
+
+:::{admonition} Løsning
+---
+class: solution, dropdown
+---
+```{code-block} python
+---
+linenos: true
+emphasize-lines: 4
+---
+i = 1 
+p = 1
+
+while i <= 52:
+    p = p*i
+    i = i + 1
+    
+print(f"{p = }")
+```
+som gir utskriften
+```console
+p = 80658175170943878571660636856403766975289505440883277824000000000000
+```
+For å få bedre oversikt over hva dette tallet er, kan vi skrive om `print`{l=python}-setningen som 
+
+```{code-block} python
+print(f"{p = :e}")
+```
+Dette skriver ut tallet med "vitenskapelig" notasjon (standardform, *kinda*). Utskriften blir da
+```console
+p = 8.065818e+67
+```
+
+som betyr at 
+
+$$
+52! = 8.065818 \times 10^{67},
+$$
+
+med en presisjon på 7 siffer.
+
+:::
+
+
 :::::
