@@ -33,26 +33,23 @@ sys.stderr = PyConsole()
 
 
 const customInputScript = (outputId) => `
-import builtins
-from js import document, window
+    import builtins
+    from js import document, window
 
-def custom_input(prompt=""):
-    try:
-        output = document.getElementById('${outputId}')
-        # Properly append the prompt with a newline using correct Python string concatenation
-        output.textContent += (prompt + '\n')
-        user_input = window.prompt(prompt)
-        if user_input is None:
-            user_input = ""  # Handle null input if the user cancels the input dialog
-        # Append the user input correctly and ensure newlines are properly escaped
-        output.textContent += (user_input + '\n')
-        return user_input
-    except Exception as e:
-        # Error handling that outputs to the same element and ensures strings are properly closed
-        output.textContent += ('Error: ' + str(e) + '\n')
-        raise e
+    def input(prompt=""):
+        try:
+            output = document.getElementById("${outputId}")
+            output.textContent += prompt
+            user_input = window.prompt(prompt)
+            if user_input is None:
+                user_input = ""
+            output.textContent += user_input + "\\n"
+            return user_input
+        except Exception as e:
+            output.textContent += "Error: " + str(e) + "\\n"
+            raise e
 
-builtins.input = custom_input
+    builtins.input = input
 `;
 
 
@@ -96,6 +93,9 @@ function initializeWorker(outputId) {
 
 
 
+
+
+
     if (!worker) {
         const workerBlob = new Blob([workerScript], { type: 'application/javascript' });
         worker = new Worker(URL.createObjectURL(workerBlob));
@@ -122,7 +122,7 @@ function initializeWorker(outputId) {
             if (/Error/.test(msg)) {
                 outputElement.innerHTML += formatErrorMessage(msg); // Treat as error message
             } else {
-                outputElement.textContent += msg;  // Append regular output
+                outputElement.innerHTML += msg;  // Append regular output
             }
         } else if (type === 'stderr') {
             outputElement.innerHTML += formatErrorMessage(msg); // Always format stderr messages
@@ -163,7 +163,7 @@ async function runCode(editor, outputId) {
             if (/Error/.test(msg)) {
                 outputElement.innerHTML += formatErrorMessage(msg); // Treat as error message
             } else {
-                outputElement.textContent += msg;  // Append regular output
+                outputElement.innerHTML += msg;  // Append regular output
             }
         } else if (type === 'stderr') {
             outputElement.innerHTML += formatErrorMessage(msg); // Always format stderr messages
@@ -293,38 +293,23 @@ function setupEditor(editorId, runButtonId, cancelButtonId, resetButtonId, outpu
 }
 
 
+
 function formatErrorMessage(errorMsg) {
     let formattedMessage = errorMsg;
 
+    // Highlight the error type
     const errorTypeMatch = errorMsg.match(/(\w+Error):/);
     if (errorTypeMatch) {
         formattedMessage = formattedMessage.replace(errorTypeMatch[1], `<span class="error-type">${errorTypeMatch[1]}</span>`);
     }
 
-    const lineNumberMatches = [...errorMsg.matchAll(/\bline (\d+)\b/g)];
-    if (lineNumberMatches.length > 0) {
-        const lastLineNumberMatch = lineNumberMatches[lineNumberMatches.length - 1];
-        const secondLastLineNumberMatch = lineNumberMatches[lineNumberMatches.length - 2];
-
-        if (errorTypeMatch) {
-            const errorLineIndex = errorTypeMatch.index;
-            const errorLineEndIndex = formattedMessage.indexOf('\n', errorLineIndex) === -1 ? formattedMessage.length : formattedMessage.indexOf('\n', errorLineIndex);
-            const errorLine = formattedMessage.slice(errorLineIndex, errorLineEndIndex);
-            const lineNumberInErrorLine = errorLine.match(/\bline (\d+)\b/);
-
-            if (lineNumberInErrorLine && secondLastLineNumberMatch) {
-                formattedMessage = highlightLineNumber(formattedMessage, secondLastLineNumberMatch);
-            } else {
-                formattedMessage = highlightLineNumber(formattedMessage, lastLineNumberMatch);
-            }
-        } else {
-            formattedMessage = highlightLineNumber(formattedMessage, lastLineNumberMatch);
-        }
-    }
+    // Highlight the line number in the pattern 'File "<exec>", line <number>'
+    // formattedMessage = formattedMessage.replace(/line (\d+)/g, (match, p1) => {
+    //     return match.replace(`line ${p1}`, `<span class="error-line">line ${p1}</span>`);
+    // });
 
     return formattedMessage;
 }
 
-function highlightLineNumber(message, match) {
-    return message.slice(0, match.index) + message.slice(match.index).replace(`line ${match[1]}`, `<span class="error-line">line ${match[1]}</span>`);
-}
+
+
