@@ -113,3 +113,22 @@ Vi har følgende boolske operatorer i Python:
 | `>=`{l=python} | `a >= b`{l=python} | Er `a`{l=python} større enn eller lik `b`{l=python}? |
 | `<=`{l=python} | `a <= b`{l=python} | Er `a`{l=python} mindre enn eller lik `b`{l=python}? |
 ::::
+
+
+
+
+## `if`{l=python}-`elif`-`else`{l=python}-setninger
+
+Noen ganger ønsker å splitte programmet vårt i flere enn to deler. Da kan vi bruke `elif`{l=python} setning (står for "else if"): 
+
+:::::{admonition} Utforsk 3
+---
+class: explore
+---
+Under vises et program som bruker en `if`{l=python}-`elif`{l=python}-`else`{l=python}-setning. 
+
+:::{raw} html
+---
+file: interaktiv_kode/utforsk/utforsk_3.html
+
+:::::
