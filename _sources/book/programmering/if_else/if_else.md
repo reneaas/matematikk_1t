@@ -117,9 +117,9 @@ Vi har følgende boolske operatorer i Python:
 
 
 
-## `if`{l=python}-`elif`-`else`{l=python}-setninger
+## `if`{l=python}-`elif`{l=python}-`else`{l=python}-setninger
 
-Noen ganger ønsker å splitte programmet vårt i flere enn to deler. Da kan vi bruke `elif`{l=python} setning (står for "else if"): 
+Noen ganger ønsker å splitte programmet vårt i flere enn to deler. Da kan vi bruke en `elif`{l=python}-setning (står for "else if"): 
 
 :::::{admonition} Utforsk 3
 ---

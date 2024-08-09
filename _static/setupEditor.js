@@ -160,7 +160,17 @@ async function runCode(editor, outputId, errorBoxId) {
         // If input statements are found, prompt the user for input
         let userValues = await getUserInputs(inputStatements);
 
+        save_eval_code = `
+def safe_eval(user_input):
+    try:
+        return float(user_input) if '.' in user_input else int(user_input)
+    except ValueError:
+        return user_input
+\n
+`;
+
         code = replaceInputStatements(code, userValues);
+        code = save_eval_code + code;
         console.log("Modified code: ", code);
     }
 
@@ -585,10 +595,7 @@ function replaceInputStatements(code, userValues) {
             // Replace the matching pattern with the try-except block
             if (floatInputRegex.test(line) || evalInputRegex.test(line) || inputRegex.test(line)) {
                 line = `
-try:
-    ${variable} = eval(${JSON.stringify(userValues[variable])})
-except:
-    ${variable} = ${JSON.stringify(userValues[variable])}
+${variable} = safe_eval(${JSON.stringify(userValues[variable])})
 `.trim(); // .trim() is used to remove leading and trailing whitespace for clean code formatting
             }
         }
