@@ -72,10 +72,10 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/programmering/if_else/if_else';</script>
     <script>mermaid.initialize({"startOnLoad": true})</script>
     <script src="../../../_static/static_code_blocks.js?v=d0b96be4"></script>
-    <script src="../../../_static/setupEditor.js?v=fc5e2b81"></script>
+    <script src="../../../_static/setupEditor.js?v=bd3b7a35"></script>
     <script src="../../../_static/brython.js?v=46b190f3"></script>
     <script src="../../../_static/generateInteractiveCode.js?v=4a00325e"></script>
-    <script src="../../../_static/serviceWorker.js?v=df3feec7"></script>
+    <script src="../../../_static/serviceWorker.js?v=9d61c2b7"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="while-løkker" href="../while_loops/while_loops.html" />
@@ -100,11 +100,6 @@
 
 <!-- CodeMirror -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/midnight.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/eclipse.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/nord.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/dracula.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/monokai.min.css">
 <link rel="stylesheet" href="_static/code_mirror_themes/github_dark_cm.css">
 <link rel="stylesheet" href="_static/code_mirror_themes/github_light_cm.css">
 <link rel="stylesheet" href="_static/code_mirror_themes/one_dark_cm.css">
@@ -112,6 +107,7 @@
 <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/night.min.css"> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
 
   </head>
@@ -457,6 +453,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#betingelser">Betingelser</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-elif-else-setninger"><code class="code docutils literal highlight highlight-python"><span class="k">if</span></code>-<code class="docutils literal notranslate"><span class="pre">elif</span></code>-<code class="code docutils literal highlight highlight-python"><span class="k">else</span></code>-setninger</a></li>
 </ul>
             </nav>
         </div>
@@ -487,7 +484,7 @@ document.write(`
 <div id="container-programmering-if-else-utforsk-1"></div>
 <script type="text/javascript">
     code = `
-x = 2
+x = float(input("Skriv inn en verdi for 'x': "))
 
 if x > 0:
     print(f"{x} er større enn 0")
@@ -604,6 +601,40 @@ print("a >= b: ", a >= b)       # Er a større enn eller lik b?
 </div>
 </div>
 </section>
+<section id="if-elif-else-setninger">
+<h2><code class="code docutils literal highlight highlight-python"><span class="k">if</span></code>-<code class="docutils literal notranslate"><span class="pre">elif</span></code>-<code class="code docutils literal highlight highlight-python"><span class="k">else</span></code>-setninger<a class="headerlink" href="#if-elif-else-setninger" title="Link to this heading">#</a></h2>
+<p>Noen ganger ønsker å splitte programmet vårt i flere enn to deler. Da kan vi bruke <code class="code docutils literal highlight highlight-python"><span class="k">elif</span></code> setning (står for “else if”):</p>
+<div class="explore admonition">
+<p class="admonition-title">Utforsk 3</p>
+<p>Under vises et program som bruker en <code class="code docutils literal highlight highlight-python"><span class="k">if</span></code>-<code class="code docutils literal highlight highlight-python"><span class="k">elif</span></code>-<code class="code docutils literal highlight highlight-python"><span class="k">else</span></code>-setning.</p>
+<div id="container-programmering-if-else-utforsk-3"></div>
+<script type="text/javascript">
+    code = `
+vare = input("Skriv inn varetype: 'mat', 'reise' eller 'annet': ")
+pris = float(input("Skriv inn pris: "))
+
+if vare == "mat":
+    moms = 0.15
+elif vare == "reise":
+    moms = 0.12
+else:
+    moms = 0.25
+
+totalpris = pris * (1 + moms)
+
+print(f"{totalpris = }")
+`;   
+
+    generateInteractiveCode(
+        "container-programmering-if-else-utforsk-3",
+        code,
+        "programmering-if-else-utforsk-3"
+    );
+</script>
+
+
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -671,6 +702,7 @@ print("a >= b: ", a >= b)       # Er a større enn eller lik b?
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#betingelser">Betingelser</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-elif-else-setninger"><code class="code docutils literal highlight highlight-python"><span class="k">if</span></code>-<code class="docutils literal notranslate"><span class="pre">elif</span></code>-<code class="code docutils literal highlight highlight-python"><span class="k">else</span></code>-setninger</a></li>
 </ul>
   </nav></div>
 

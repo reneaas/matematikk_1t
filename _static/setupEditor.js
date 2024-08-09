@@ -1,5 +1,6 @@
 
 
+
 let worker = null;
 
 const pyConsoleScript = `
@@ -78,8 +79,6 @@ function initializeWorker(outputId) {
             await pyodideReadyPromise;
             if (event.data.type === 'init') {
                 pyodide = await pyodideReadyPromise;
-                // await pyodide.loadPackage(['sympy']);
-                // postMessage({ type: 'initComplete', msg: 'Pyodide loaded' });  // Change here
             }
             if (event.data.type === 'runCode') {
                 const { code } = event.data;
@@ -153,7 +152,17 @@ function initializeWorker(outputId) {
 }
 
 async function runCode(editor, outputId, errorBoxId) {
-    const code = editor.getValue();
+    let code = editor.getValue();
+    console.log("Initial code: ", code);
+    // Search code for input statements
+    const inputStatements = findInputStatements(code);
+    if (inputStatements.length > 0) {
+        // If input statements are found, prompt the user for input
+        let userValues = await getUserInputs(inputStatements);
+
+        code = replaceInputStatements(code, userValues);
+        console.log("Modified code: ", code);
+    }
 
     worker.onmessage = function(event) {
         console.log("Received message:", event.data);  // Helpful for debugging
@@ -512,3 +521,83 @@ function clearAdmonitionContainer(errorBoxId) {
 function scrollToBottom(element) {
     element.scrollTop = element.scrollHeight;
 }
+
+
+
+// Helper functions for simulating the input function
+
+function findInputStatements(code) {
+    // Regular expression to find input statements within `float(input(...))`, `eval(input(...))`, and `input(...)`
+    const inputRegex = /(\w+)\s*=\s*(float|eval)?\(?input\(["'](.*?)["']\)\)?/g;
+    let match;
+    let inputs = [];
+
+    while ((match = inputRegex.exec(code)) !== null) {
+        inputs.push({
+            variable: match[1],      // The variable that stores the input value
+            promptText: match[3]      // The prompt text within input()
+        });
+    }
+
+    return inputs;
+}
+
+
+
+
+async function getUserInputs(inputs) {
+    let userValues = {};
+
+    for (let input of inputs) {
+        // Remove quotes around the prompt text if present
+        let promptText = input.promptText.replace(/['"]+/g, '');
+
+        // Prompt the user for input
+        let userValue = await promptUser(promptText);
+
+        // Store the value associated with the variable name
+        userValues[input.variable] = userValue;
+    }
+
+    return userValues;
+}
+
+function promptUser(promptText) {
+    return new Promise((resolve) => {
+        let userInput = prompt(promptText);
+        resolve(userInput);
+    });
+}
+
+
+function replaceInputStatements(code, userValues) {
+    // Split the code into lines
+    let codeLines = code.split('\n');
+
+    // Iterate over each line and replace the input statements
+    codeLines = codeLines.map(line => {
+        for (let variable in userValues) {
+            // Regex to match `float(input(...))` or `eval(input(...))`
+            const floatInputRegex = new RegExp(`\\s*${variable}\\s*=\\s*float\\(input\\(.*?\\)\\)`, 'g');
+            const evalInputRegex = new RegExp(`\\s*${variable}\\s*=\\s*eval\\(input\\(.*?\\)\\)`, 'g');
+            const inputRegex = new RegExp(`\\s*${variable}\\s*=\\s*input\\(.*?\\)`, 'g');
+
+            // Replace the matching pattern with the try-except block
+            if (floatInputRegex.test(line) || evalInputRegex.test(line) || inputRegex.test(line)) {
+                line = `
+try:
+    ${variable} = eval(${JSON.stringify(userValues[variable])})
+except:
+    ${variable} = ${JSON.stringify(userValues[variable])}
+`.trim(); // .trim() is used to remove leading and trailing whitespace for clean code formatting
+            }
+        }
+        return line;
+    });
+    // Join the modified lines back into a single code block
+    return codeLines.join('\n');
+}
+
+
+
+
