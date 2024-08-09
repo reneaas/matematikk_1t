@@ -38,9 +38,9 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../../_static/static_code_blocks.css?v=b6831e29" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/admonitions.css?v=956cd784" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/admonitions.css?v=1cbb9c3f" />
     <link rel="stylesheet" type="text/css" href="../../../_static/misc.css?v=11aae1d9" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror.css?v=9028e425" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror.css?v=1c3a1ec0" />
     <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_dark_high_contrast_cm.css?v=4c0c1b0f" />
     <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_dark_cm.css?v=d1235728" />
     <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_light_cm.css?v=facc8b7a" />
@@ -74,13 +74,14 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/cas/cas_del1/cas_del1';</script>
     <script>mermaid.initialize({"startOnLoad": true})</script>
     <script src="../../../_static/static_code_blocks.js?v=d0b96be4"></script>
-    <script src="../../../_static/setupEditor.js?v=53d4b222"></script>
+    <script src="../../../_static/setupEditor.js?v=fc5e2b81"></script>
     <script src="../../../_static/brython.js?v=46b190f3"></script>
+    <script src="../../../_static/generateInteractiveCode.js?v=4a00325e"></script>
     <script src="../../../_static/serviceWorker.js?v=df3feec7"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Variabler" href="../../programmering/variabler/variabler.html" />
-    <link rel="prev" title="12.2. Mer komplisert polynomdivisjon" href="../../polynomer/polynomdivisjon/generell_polynomdivisjon.html" />
+    <link rel="prev" title="12. Polynomdivisjon" href="../../polynomer/polynomdivisjon/polynomdivisjon.html" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="norwegian"/>
@@ -246,10 +247,7 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../line%C3%A6re_funksjoner/likninger/intro_line%C3%A6re_likninger.html">3. Lineære likninger</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../line%C3%A6re_funksjoner/likninger/grafisk_l%C3%B8sning/grafisk_l%C3%B8sning.html">3.1. Grafisk løsning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../line%C3%A6re_funksjoner/likninger/algebraisk_l%C3%B8sning/algebraisk_l%C3%B8sning.html">3.2. Algebraisk løsning</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../line%C3%A6re_funksjoner/likninger/programmering/programmering.html">3.3. Løsning med programmering</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../line%C3%A6re_funksjoner/likninger/programmering/symbolsk_l%C3%B8sning.html">3.3.2. Symbolsk programmering (CAS)</a></li>
-</ul>
-</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../../line%C3%A6re_funksjoner/likninger/programmering/programmering.html">3.3. Løsning med programmering</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../line%C3%A6re_funksjoner/likningssystemer/intro_line%C3%A6re_likningssystemer.html">4. Lineære likningssystemer</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -298,10 +296,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Polynomer</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../polynomer/polynomdivisjon/polynomdivisjon.html">12. Polynomdivisjon</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../polynomer/polynomdivisjon/generell_polynomdivisjon.html">12.2. Mer komplisert polynomdivisjon</a></li>
-</ul>
-</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../polynomer/polynomdivisjon/polynomdivisjon.html">12. Polynomdivisjon</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CAS</span></p>
 <ul class="current nav bd-sidenav">
@@ -536,8 +531,8 @@ document.write(`
 <h2>Likningssystemer<a class="headerlink" href="#likningssystemer" title="Link to this heading">#</a></h2>
 <p>Vi kan også løse likningssystemer i CAS. Da skriver vi inn hver likning for seg, markerer linjene og trykker på Løs-knappen.</p>
 <p>Vi prøver med likningssettet</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9b3f51b2-a143-43a6-9c52-84cb44950b68">
-<span class="eqno">(1)<a class="headerlink" href="#equation-9b3f51b2-a143-43a6-9c52-84cb44950b68" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-439f4b7a-ed55-4e3a-aa12-1bd3b363fc50">
+<span class="eqno">(1)<a class="headerlink" href="#equation-439f4b7a-ed55-4e3a-aa12-1bd3b363fc50" title="Permalink to this equation">#</a></span>\[\begin{align}
     2x+3y-4 &amp; =0
     2x+1 &amp;= 2-y
 \end{align}\]</div>
@@ -551,26 +546,26 @@ document.write(`
 <p class="admonition-title">Underveisoppgave 2</p>
 <p>Bruk CAS til å løse likningssettene:</p>
 <ol class="arabic">
-<li><div class="amsmath math notranslate nohighlight" id="equation-82271865-af94-4257-bc5d-6a21f47bca80">
-<span class="eqno">(2)<a class="headerlink" href="#equation-82271865-af94-4257-bc5d-6a21f47bca80" title="Permalink to this equation">#</a></span>\[\begin{align}
+<li><div class="amsmath math notranslate nohighlight" id="equation-ca14186d-d614-4115-bddc-6c92336aec3f">
+<span class="eqno">(2)<a class="headerlink" href="#equation-ca14186d-d614-4115-bddc-6c92336aec3f" title="Permalink to this equation">#</a></span>\[\begin{align}
         3x+y &amp;=7 \\
         x−y &amp;=1 \\
     \end{align}\]</div>
 </li>
-<li><div class="amsmath math notranslate nohighlight" id="equation-081c4608-e4dc-412e-875b-f54c04b07361">
-<span class="eqno">(3)<a class="headerlink" href="#equation-081c4608-e4dc-412e-875b-f54c04b07361" title="Permalink to this equation">#</a></span>\[\begin{align}
+<li><div class="amsmath math notranslate nohighlight" id="equation-ae14272d-cee9-4c97-80b5-445f87c2a208">
+<span class="eqno">(3)<a class="headerlink" href="#equation-ae14272d-cee9-4c97-80b5-445f87c2a208" title="Permalink to this equation">#</a></span>\[\begin{align}
         x−2y &amp;= 7 \\
         2x+y &amp;= 1 \\
     \end{align}\]</div>
 </li>
-<li><div class="amsmath math notranslate nohighlight" id="equation-6d97fff3-28a0-4e78-a9fa-49185c58a0d4">
-<span class="eqno">(4)<a class="headerlink" href="#equation-6d97fff3-28a0-4e78-a9fa-49185c58a0d4" title="Permalink to this equation">#</a></span>\[\begin{align}
+<li><div class="amsmath math notranslate nohighlight" id="equation-7d63f73d-d160-42a8-a82f-5e583d0a7942">
+<span class="eqno">(4)<a class="headerlink" href="#equation-7d63f73d-d160-42a8-a82f-5e583d0a7942" title="Permalink to this equation">#</a></span>\[\begin{align}
         x+2y &amp;= 5 \\
         4x &amp;= 6−y \\
     \end{align}\]</div>
 </li>
-<li><div class="amsmath math notranslate nohighlight" id="equation-1d17a1f1-1f50-4060-9f1b-671e628bb67c">
-<span class="eqno">(5)<a class="headerlink" href="#equation-1d17a1f1-1f50-4060-9f1b-671e628bb67c" title="Permalink to this equation">#</a></span>\[\begin{align}
+<li><div class="amsmath math notranslate nohighlight" id="equation-c361c08e-b0e4-41ca-bb5b-225292bcefc1">
+<span class="eqno">(5)<a class="headerlink" href="#equation-c361c08e-b0e4-41ca-bb5b-225292bcefc1" title="Permalink to this equation">#</a></span>\[\begin{align}
         −2x+y &amp;= −1 \\
         4x+2y+14 &amp;= 0 \\
     \end{align}\]</div>
@@ -593,8 +588,8 @@ document.write(`
 <div class="note admonition">
 <p class="admonition-title">Underveisoppgave 4</p>
 <p>Løs likningssystemet</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6b9665cf-dde5-4f47-a8c0-496db0118cb2">
-<span class="eqno">(6)<a class="headerlink" href="#equation-6b9665cf-dde5-4f47-a8c0-496db0118cb2" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d21003c0-e75e-465d-8205-7b2f46ebd181">
+<span class="eqno">(6)<a class="headerlink" href="#equation-d21003c0-e75e-465d-8205-7b2f46ebd181" title="Permalink to this equation">#</a></span>\[\begin{align}
     a - b + c &amp;= -11
     a + b + c &amp;= 11
     8a + 4b + 2c &amp;= -4
@@ -668,12 +663,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../../polynomer/polynomdivisjon/generell_polynomdivisjon.html"
+       href="../../polynomer/polynomdivisjon/polynomdivisjon.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">12.2. </span>Mer komplisert polynomdivisjon</p>
+        <p class="prev-next-title"><span class="section-number">12. </span>Polynomdivisjon</p>
       </div>
     </a>
     <a class="right-next"

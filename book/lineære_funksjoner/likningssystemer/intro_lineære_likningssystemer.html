@@ -38,9 +38,9 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../../_static/static_code_blocks.css?v=b6831e29" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/admonitions.css?v=956cd784" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/admonitions.css?v=1cbb9c3f" />
     <link rel="stylesheet" type="text/css" href="../../../_static/misc.css?v=11aae1d9" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror.css?v=9028e425" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror.css?v=1c3a1ec0" />
     <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_dark_high_contrast_cm.css?v=4c0c1b0f" />
     <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_dark_cm.css?v=d1235728" />
     <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_light_cm.css?v=facc8b7a" />
@@ -74,13 +74,14 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/lineære_funksjoner/likningssystemer/intro_lineære_likningssystemer';</script>
     <script>mermaid.initialize({"startOnLoad": true})</script>
     <script src="../../../_static/static_code_blocks.js?v=d0b96be4"></script>
-    <script src="../../../_static/setupEditor.js?v=53d4b222"></script>
+    <script src="../../../_static/setupEditor.js?v=fc5e2b81"></script>
     <script src="../../../_static/brython.js?v=46b190f3"></script>
+    <script src="../../../_static/generateInteractiveCode.js?v=4a00325e"></script>
     <script src="../../../_static/serviceWorker.js?v=df3feec7"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="4.1. Grafisk løsning" href="grafisk_l%C3%B8sning/grafisk_l%C3%B8sning.html" />
-    <link rel="prev" title="3.3.2. Symbolsk programmering (CAS)" href="../likninger/programmering/symbolsk_l%C3%B8sning.html" />
+    <link rel="prev" title="3.3. Løsning med programmering" href="../likninger/programmering/programmering.html" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="norwegian"/>
@@ -246,10 +247,7 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../likninger/intro_line%C3%A6re_likninger.html">3. Lineære likninger</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../likninger/grafisk_l%C3%B8sning/grafisk_l%C3%B8sning.html">3.1. Grafisk løsning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../likninger/algebraisk_l%C3%B8sning/algebraisk_l%C3%B8sning.html">3.2. Algebraisk løsning</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../likninger/programmering/programmering.html">3.3. Løsning med programmering</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="../likninger/programmering/symbolsk_l%C3%B8sning.html">3.3.2. Symbolsk programmering (CAS)</a></li>
-</ul>
-</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../likninger/programmering/programmering.html">3.3. Løsning med programmering</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">4. Lineære likningssystemer</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -298,10 +296,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Polynomer</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../polynomer/polynomdivisjon/polynomdivisjon.html">12. Polynomdivisjon</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../polynomer/polynomdivisjon/generell_polynomdivisjon.html">12.2. Mer komplisert polynomdivisjon</a></li>
-</ul>
-</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../polynomer/polynomdivisjon/polynomdivisjon.html">12. Polynomdivisjon</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CAS</span></p>
 <ul class="nav bd-sidenav">
@@ -473,8 +468,8 @@ document.write(`
 </div>
 <p>Et <strong>likningssystem</strong> er et system bestående av én eller flere likninger som må være oppfylt samtidig. Målet er å finne verdier for variabelene slik at alle likningene i systemet er oppfylt. En annen måte å si dette på, er at alle likningene i systemet løses samtidig.</p>
 <p>Et <strong>lineært likningssystem</strong> er et likningssystem der alle likningene kan beskrives av funksjonsuttrykkene til lineære funksjoner. For eksempel er følgende likningsystem et lineært likningssystem:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2a634b4a-ba4b-4baf-abba-fedd7ee72bec">
-<span class="eqno">(4.1)<a class="headerlink" href="#equation-2a634b4a-ba4b-4baf-abba-fedd7ee72bec" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e5055e1e-4dca-46cc-bfe4-e420698d74d0">
+<span class="eqno">(4.1)<a class="headerlink" href="#equation-e5055e1e-4dca-46cc-bfe4-e420698d74d0" title="Permalink to this equation">#</a></span>\[\begin{align}
     x - y &amp; = -1 \\
     x + y &amp; = 1 \\
 \end{align}\]</div>
@@ -543,12 +538,12 @@ x = 0 \quad \land \quad y = 1,
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../likninger/programmering/symbolsk_l%C3%B8sning.html"
+       href="../likninger/programmering/programmering.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">3.3.2. </span>Symbolsk programmering (CAS)</p>
+        <p class="prev-next-title"><span class="section-number">3.3. </span>Løsning med programmering</p>
       </div>
     </a>
     <a class="right-next"

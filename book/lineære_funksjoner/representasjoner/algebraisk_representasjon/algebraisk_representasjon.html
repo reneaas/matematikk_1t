@@ -38,9 +38,9 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/static_code_blocks.css?v=b6831e29" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/admonitions.css?v=956cd784" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/admonitions.css?v=1cbb9c3f" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/misc.css?v=11aae1d9" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/code_mirror.css?v=9028e425" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/code_mirror.css?v=1c3a1ec0" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/code_mirror_themes/github_dark_high_contrast_cm.css?v=4c0c1b0f" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/code_mirror_themes/github_dark_cm.css?v=d1235728" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/code_mirror_themes/github_light_cm.css?v=facc8b7a" />
@@ -74,8 +74,9 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/lineære_funksjoner/representasjoner/algebraisk_representasjon/algebraisk_representasjon';</script>
     <script>mermaid.initialize({"startOnLoad": true})</script>
     <script src="../../../../_static/static_code_blocks.js?v=d0b96be4"></script>
-    <script src="../../../../_static/setupEditor.js?v=53d4b222"></script>
+    <script src="../../../../_static/setupEditor.js?v=fc5e2b81"></script>
     <script src="../../../../_static/brython.js?v=46b190f3"></script>
+    <script src="../../../../_static/generateInteractiveCode.js?v=4a00325e"></script>
     <script src="../../../../_static/serviceWorker.js?v=df3feec7"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -246,10 +247,7 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../likninger/intro_line%C3%A6re_likninger.html">3. Lineære likninger</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../likninger/grafisk_l%C3%B8sning/grafisk_l%C3%B8sning.html">3.1. Grafisk løsning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../likninger/algebraisk_l%C3%B8sning/algebraisk_l%C3%B8sning.html">3.2. Algebraisk løsning</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../likninger/programmering/programmering.html">3.3. Løsning med programmering</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../likninger/programmering/symbolsk_l%C3%B8sning.html">3.3.2. Symbolsk programmering (CAS)</a></li>
-</ul>
-</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../../likninger/programmering/programmering.html">3.3. Løsning med programmering</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../likningssystemer/intro_line%C3%A6re_likningssystemer.html">4. Lineære likningssystemer</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -298,10 +296,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Polynomer</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../polynomer/polynomdivisjon/polynomdivisjon.html">12. Polynomdivisjon</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../polynomer/polynomdivisjon/generell_polynomdivisjon.html">12.2. Mer komplisert polynomdivisjon</a></li>
-</ul>
-</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../polynomer/polynomdivisjon/polynomdivisjon.html">12. Polynomdivisjon</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CAS</span></p>
 <ul class="nav bd-sidenav">
@@ -756,41 +751,31 @@ f(x) = ax + b.
 <h2><span class="section-number">2.1.3. </span>Funksjonsverdier i Python<a class="headerlink" href="#funksjonsverdier-i-python" title="Link to this heading">#</a></h2>
 <p>Vi kan bruke Python som en kalkulator for å regne ut funksjonsverdier.</p>
 <div class="explore admonition" id="lineaere-funksjoner-algebraisk-representasjon-utforsk-1">
-<p class="admonition-title"><span class="xref std std-ref">Utforsk 1</span>: funksjonsverdier i Python</p>
+<p class="admonition-title">Utforsk 1: funksjonsverdier i Python</p>
 <p>Programmet under regner ut funksjonsverdien til</p>
 <div class="math notranslate nohighlight">
 \[
 f(x) = 3x - 1,
 \]</div>
 <p>i <span class="math notranslate nohighlight">\(x = 2\)</span>. Programmet regner altså ut <span class="math notranslate nohighlight">\(f(2)\)</span>.</p>
-<div>
-    <textarea   id="code-editor-lineære-funksjoner-algebraisk-representasjon-utforsk-1" 
-                name="code-lineære-funksjoner-algebraisk-representasjon-utforsk-1">
+<div id="container-lineære-funksjoner-algebraisk-representasjon-utforsk-1"></div>
+<script type="text/javascript">
+    const codeLineæreFunksjonerAlgebraiskRepresentasjonUtforsk1 = `
 def f(x):
     return 3*x - 1
 
 y = f(2)
 print(y)
-    </textarea>
-    
-    <button id="run-button-lineære-funksjoner-algebraisk-representasjon-utforsk-1">
-        Kjør kode
-    </button>
-</div>
+`; 
 
-<pre id="output-lineære-funksjoner-algebraisk-representasjon-utforsk-1"></pre>
-
-<script type="text/javascript">
-    document.addEventListener("DOMContentLoaded", () => {
-        setupEditor(
-            "code-editor-lineære-funksjoner-algebraisk-representasjon-utforsk-1", 
-            "run-button-lineære-funksjoner-algebraisk-representasjon-utforsk-1", 
-            "output-lineære-funksjoner-algebraisk-representasjon-utforsk-1",
-
-        );
-    });
+    generateInteractiveCode(
+        "container-lineære-funksjoner-algebraisk-representasjon-utforsk-1",
+        codeLineæreFunksjonerAlgebraiskRepresentasjonUtforsk1,
+        "lineære-funksjoner-algebraisk-representasjon-utforsk-1"
+    );
 </script>
 
+<br>
 <dl class="simple myst">
 <dt>Deloppgave 1</dt><dd><p>Kjør programmet og sjekk at det regner ut riktig verdi for <span class="math notranslate nohighlight">\(f(2)\)</span>. Hva blir svaret?</p>
 </dd>
@@ -832,33 +817,28 @@ print(y)
 \[
 g(x) = -2x + 3.
 \]</div>
-<div>
-    <textarea   id="code-editor-lineære-funksjoner-algebraisk-representasjon-underveisoppgave-3" 
-                name="code-lineære-funksjoner-algebraisk-representasjon-underveisoppgave-3">
+<div id="container-lineære-funksjoner-algebraisk-representasjon-underveisoppgave-3"></div>
+<script type="text/javascript">
+    const codeLineæreFunksjonerAlgebraiskRepresentasjonUnderveisoppgave3 = `
 def g(x):
-    return ??       # FIKS MEG: skriv inn funksjonsuttrykk
+    return ??       # FYLL INN: skriv inn funksjonsuttrykk
 
-y = ??              # FIKS MEG: regn ut funksjonsverdi
+y = ??              # FYLL INN: regn ut funksjonsverdi
 
 print(y)
-    </textarea>
-    
-    <button id="run-button-lineære-funksjoner-algebraisk-representasjon-underveisoppgave-3">
-        Kjør kode
-    </button>
-</div>
+`;
 
-<pre id="output-lineære-funksjoner-algebraisk-representasjon-underveisoppgave-3"></pre>
-
-<script type="text/javascript">
-    document.addEventListener("DOMContentLoaded", () => {
-        setupEditor(
-            "code-editor-lineære-funksjoner-algebraisk-representasjon-underveisoppgave-3", 
-            "run-button-lineære-funksjoner-algebraisk-representasjon-underveisoppgave-3", 
-            "output-lineære-funksjoner-algebraisk-representasjon-underveisoppgave-3"
-        );
-    });
+    generateInteractiveCode(
+        "container-lineære-funksjoner-algebraisk-representasjon-underveisoppgave-3",
+        codeLineæreFunksjonerAlgebraiskRepresentasjonUnderveisoppgave3,
+        "lineære-funksjoner-algebraisk-representasjon-underveisoppgave-3"
+    );
 </script>
+
+
+
+
+<br>
 <dl class="simple myst">
 <dt>Deloppgave 1</dt><dd><p>Fiks programmet slik at det regner ut <span class="math notranslate nohighlight">\(g(-2)\)</span>. Sjekk at programmet gir riktig svar ved å regne for hånd.</p>
 </dd>
@@ -1053,13 +1033,25 @@ g(\textcolor{red}{-2}) = -2\cdot (\textcolor{red}{-2}) + 3 = 4 + 3 = 7.
 </div>
 <div class="problem-level-1 admonition">
 <p class="admonition-title">Oppgave 3</p>
-<p>En elev har skrevet et program for å regne ut en funksjonsverdi.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="linenos">2</span>    <span class="k">return</span> <span class="o">-</span><span class="n">x</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span>
-<span class="linenos">3</span>
-<span class="linenos">4</span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
-</pre></div>
-</div>
+<p>Under vises en kode som regner ut funksjonsverdien til en lineær funksjon.</p>
+<div id="container-lineære-funksjoner-algebraisk-representasjon-oppgave-3"></div>
+<script type="text/javascript">
+    const codeLineæreFunksjonerAlgebraiskRepresentasjonOppgave3 = `
+def f(x):
+    return -x/2 + 3
+
+y = f(2)
+print(y)
+`;
+
+    generateInteractiveCode(
+        "container-lineære-funksjoner-algebraisk-representasjon-oppgave-3",
+        codeLineæreFunksjonerAlgebraiskRepresentasjonOppgave3,
+        "lineære-funksjoner-algebraisk-representasjon-oppgave-3"
+    );
+</script>
+
+
 <br>
 <dl class="simple myst">
 <dt>Deloppgave 1</dt><dd><p>Hvilken funksjon er det elevens program regner ut funksjonsverdien til?</p>
@@ -1076,6 +1068,8 @@ f(x) = -\dfrac{x}{2} + 3 = -\dfrac{1}{2}x + 3
 <dl class="simple myst">
 <dt>Deloppgave 2</dt><dd><p>Hva blir verdien programmet skriver ut? 📝 <span class="math notranslate nohighlight">\(\color{red}\xcancel{💻}\)</span></p>
 </dd>
+<dd><p>Kjør programmet og sjekk om du forutså riktig.</p>
+</dd>
 </dl>
 <div class="answer dropdown admonition">
 <p class="admonition-title">Fasit</p>
@@ -1086,37 +1080,9 @@ f(2) = 2
 </div>
 <br>
 <dl class="simple myst">
-<dt>Deloppgave 3</dt><dd><p>Under vises programmet i et interaktivt vindu. Endre programmet slik at det regner ut <span class="math notranslate nohighlight">\(f(-2)\)</span> og bruk programmet til å bestemme verdien. 💻</p>
+<dt>Deloppgave 3</dt><dd><p>Endre programmet slik at det regner ut <span class="math notranslate nohighlight">\(f(-2)\)</span> og bruk programmet til å bestemme verdien. 💻</p>
 </dd>
 </dl>
-
-<div>
-<textarea id="code-editor-lineære-funksjoner-algebraisk-representasjon-oppgave-3" 
-name="code-lineære-funksjoner-algebraisk-representasjon-oppgave-3">
-def f(x):
-    return -x/2 + 3
-
-y = f(2)
-print(y)
-</textarea>
-    <button id="run-button-lineære-funksjoner-algebraisk-representasjon-oppgave-3">
-        Kjør kode
-    </button>
-</div>
-
-<pre id="output-lineære-funksjoner-algebraisk-representasjon-oppgave-3"></pre>
-
-<script type="text/javascript">
-    document.addEventListener("DOMContentLoaded", () => {
-        setupEditor(
-            "code-editor-lineære-funksjoner-algebraisk-representasjon-oppgave-3", 
-            "run-button-lineære-funksjoner-algebraisk-representasjon-oppgave-3", 
-            "output-lineære-funksjoner-algebraisk-representasjon-oppgave-3",
-        );
-    });
-
-
-</script>
 <div class="answer dropdown admonition">
 <p class="admonition-title">Fasit</p>
 <p>Endret program:</p>

@@ -161,7 +161,7 @@ class: solution, dropdown
 Vi kan bruke Python som en kalkulator for å regne ut funksjonsverdier. 
 
 
-:::::{admonition} {ref}`Utforsk 1 <algebraisk-representasjon-explore-1>`: funksjonsverdier i Python
+:::::{admonition} Utforsk 1: funksjonsverdier i Python
 ---
 class: explore
 name: lineære-funksjoner-algebraisk-representasjon-utforsk-1
@@ -180,6 +180,7 @@ file: interaktiv_kode/utforsk/utforsk_1.html
 ---
 :::
 
+<br>
 
 Deloppgave 1
 : Kjør programmet og sjekk at det regner ut riktig verdi for $f(2)$. Hva blir svaret? 
@@ -248,6 +249,8 @@ $$
 file: interaktiv_kode/underveisoppgaver/underveisoppgave_3.html
 ---
 :::
+
+<br>
 
 Deloppgave 1
 : Fiks programmet slik at det regner ut $g(-2)$. Sjekk at programmet gir riktig svar ved å regne for hånd.
@@ -373,17 +376,13 @@ class: answer, dropdown
 class: problem-level-1
 ---
 
-En elev har skrevet et program for å regne ut en funksjonsverdi.
+Under vises en kode som regner ut funksjonsverdien til en lineær funksjon.
 
-```{code-block} python
+:::{raw} html
 ---
-linenos:
+file: interaktiv_kode/oppgaver/oppgave_3.html
 ---
-def f(x):
-    return -x/2 + 3
-
-print(f(2))
-```
+:::
 
 <br>
 
@@ -402,7 +401,8 @@ $$
 <br>
 
 Deloppgave 2
-: Hva blir verdien programmet skriver ut? 📝 $\color{red}\xcancel{💻}$
+: Hva blir verdien programmet skriver ut? 📝 $\color{red}\xcancel{💻}$ 
+: Kjør programmet og sjekk om du forutså riktig.
 
 
 ::::{admonition} Fasit
@@ -418,14 +418,7 @@ $$
 <br>
 
 Deloppgave 3
-: Under vises programmet i et interaktivt vindu. Endre programmet slik at det regner ut $f(-2)$ og bruk programmet til å bestemme verdien. 💻
-
-
-:::{raw} html
----
-file: interaktiv_kode/oppgave_3.html
----
-:::
+: Endre programmet slik at det regner ut $f(-2)$ og bruk programmet til å bestemme verdien. 💻
 
 
 ::::{admonition} Fasit

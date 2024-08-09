@@ -78,7 +78,7 @@ function initializeWorker(outputId) {
             await pyodideReadyPromise;
             if (event.data.type === 'init') {
                 pyodide = await pyodideReadyPromise;
-                await pyodide.loadPackage(['numpy', 'sympy']);
+                // await pyodide.loadPackage(['sympy']);
                 // postMessage({ type: 'initComplete', msg: 'Pyodide loaded' });  // Change here
             }
             if (event.data.type === 'runCode') {
@@ -88,6 +88,16 @@ function initializeWorker(outputId) {
                     await pyodide.runPythonAsync(code);
                 } catch (err) {
                     postMessage({ type: 'stderr', 'msg': String(err) });
+                }
+            }
+
+            if (event.data.type === 'loadPackage') {
+                const { packages } = event.data;
+                try {
+                    await pyodide.loadPackage(packages);
+                    postMessage(JSON.stringify({ type: 'packagesLoaded' }));
+                } catch (err) {
+                    postMessage(JSON.stringify({ type: 'stderr', msg: String(err)}));
                 }
             }
         };
@@ -103,7 +113,7 @@ function initializeWorker(outputId) {
         worker = new Worker(URL.createObjectURL(workerBlob));
     }
 
-    worker.onmessage = function(event) {
+    worker.onmessage = async function(event) {
         console.log("Received message:", event.data);  // Helpful for debugging
         let data;
         try {
@@ -144,6 +154,7 @@ function initializeWorker(outputId) {
 
 async function runCode(editor, outputId, errorBoxId) {
     const code = editor.getValue();
+
     worker.onmessage = function(event) {
         console.log("Received message:", event.data);  // Helpful for debugging
         let data;
@@ -164,12 +175,22 @@ async function runCode(editor, outputId, errorBoxId) {
             // Check if stdout contains error messages like SyntaxError
             if (/Error/.test(msg)) {
                 outputElement.innerHTML += formatErrorMessage(msg, errorBoxId); // Treat as error message
+                scrollToBottom(outputElement);
             } else {
                 outputElement.innerHTML += formatErrorMessage(msg, errorBoxId);  // Append regular output
+                scrollToBottom(outputElement);
             }
         } else if (type === 'stderr') {
             outputElement.innerHTML += formatErrorMessage(msg, errorBoxId); // Always format stderr messages
+            scrollToBottom(outputElement);
         }
+
+        if (type === 'packagesLoaded') {
+            worker.postMessage({ type: 'runCode', code: pyConsoleScript });
+            // Finally, run the user's code
+            worker.postMessage({ type: 'runCode', code: code });
+        }
+
     };
 
     // Ensure the worker is initialized before posting messages
@@ -177,16 +198,24 @@ async function runCode(editor, outputId, errorBoxId) {
         initializeWorker(outputId);
     }
 
-    // Run the pyConsoleScript first
-    worker.postMessage({ type: 'runCode', code: pyConsoleScript });
+    // Request web worker to load missing packages
+    const packages = extractPackageNames(code); // Search for import statements in the code
+    if (packages.length > 0) {
+        worker.postMessage({ type: 'loadPackage', packages });
+    }
+    else {
+        worker.postMessage({ type: 'runCode', code: pyConsoleScript });
+        // Finally, run the user's code
+        worker.postMessage({ type: 'runCode', code: code });
+    }
+    
 
-    // If the code contains input, run the customInputScript
-    // if (code.includes("input(")) {
-    //     worker.postMessage({ type: 'runCode', code: customInputScript(outputId) });
-    // }
+    // // Run the pyConsoleScript first
+    // worker.postMessage({ type: 'runCode', code: pyConsoleScript });
 
-    // Finally, run the user's code
-    worker.postMessage({ type: 'runCode', code: code });
+
+    // // Finally, run the user's code
+    // worker.postMessage({ type: 'runCode', code: code });
 }
 
 function getCurrentTheme() {
@@ -307,6 +336,32 @@ function createAdmonition(title, content) {
     `;
 }
 
+function extractPackageNames(code) {
+    // Matches "import <package> as <alias>" and "import <package>"
+    const importRegex = /^\s*import\s+([^;\s]+)\s*/g;
+
+    // Matches "from <package> import <something>"
+    const fromImportRegex = /^\s*from\s+([^;\s]+)\s+import/g;
+
+    const packages = new Set();
+    let match;
+
+    // Process "import" statements
+    while ((match = importRegex.exec(code)) !== null) {
+        // If the package includes a dot (like "matplotlib.pyplot"), take only the first part
+        packages.add(match[1].split('.')[0]);
+    }
+
+    // Process "from ... import" statements
+    while ((match = fromImportRegex.exec(code)) !== null) {
+        // Capture the complete module/package path before the import
+        packages.add(match[1].split('.')[0]);
+    }
+
+    return Array.from(packages);
+}
+
+
 function formatErrorMessage(errorMsg, errorBoxId) {
     let formattedMessage = errorMsg;
     let content = '';
@@ -315,6 +370,7 @@ function formatErrorMessage(errorMsg, errorBoxId) {
     // Highlight the error type
     const errorTypeMatch = errorMsg.match(/(\w+Error):/);
     if (errorTypeMatch) {
+
         formattedMessage = formattedMessage.replace(errorTypeMatch[1], `<span class="error-type">${errorTypeMatch[1]}</span>`);
         
         if (errorTypeMatch[1] === 'SyntaxError') {
@@ -350,6 +406,7 @@ function formatErrorMessage(errorMsg, errorBoxId) {
                 Typiske tilfeller:
                 <li> Du har prøvd en parentes inntil en variabel. Da står det at variabelen ikke er "callable". </li>
                 <li> Du har prøvd å gjøre regneoperasjon med noe som ikke er et tall. </li>
+                <li> Du har glemt å returnere verdien i en funksjon. </li>
             `;
             knownError = true;
         }
@@ -412,6 +469,15 @@ function formatErrorMessage(errorMsg, errorBoxId) {
             knownError = true;
         }
 
+        else if (errorTypeMatch[1] === 'ModuleNotFoundError') {
+            title = 'ModuleNotFoundError';
+            content = `
+                ModuleNotFoundError er en feil som oppstår når du prøver å importere et Python-bibliotek som ikke er installert.
+                En av pakkene du har prøvd i å installere er dessverre ikke tilgjengelig.
+            `;
+            knownError = true;
+        }
+
         if (knownError) {
             addAdmonitionToContainer(title, content, errorBoxId); 
         }
@@ -440,4 +506,9 @@ function clearAdmonitionContainer(errorBoxId) {
     if (container) {
         container.innerHTML = '';
     }
+}
+
+
+function scrollToBottom(element) {
+    element.scrollTop = element.scrollHeight;
 }

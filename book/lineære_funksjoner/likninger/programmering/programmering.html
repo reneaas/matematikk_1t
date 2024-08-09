@@ -38,9 +38,9 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/static_code_blocks.css?v=b6831e29" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/admonitions.css?v=956cd784" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/admonitions.css?v=1cbb9c3f" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/misc.css?v=11aae1d9" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/code_mirror.css?v=9028e425" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/code_mirror.css?v=1c3a1ec0" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/code_mirror_themes/github_dark_high_contrast_cm.css?v=4c0c1b0f" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/code_mirror_themes/github_dark_cm.css?v=d1235728" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/code_mirror_themes/github_light_cm.css?v=facc8b7a" />
@@ -74,12 +74,13 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/lineære_funksjoner/likninger/programmering/programmering';</script>
     <script>mermaid.initialize({"startOnLoad": true})</script>
     <script src="../../../../_static/static_code_blocks.js?v=d0b96be4"></script>
-    <script src="../../../../_static/setupEditor.js?v=53d4b222"></script>
+    <script src="../../../../_static/setupEditor.js?v=fc5e2b81"></script>
     <script src="../../../../_static/brython.js?v=46b190f3"></script>
+    <script src="../../../../_static/generateInteractiveCode.js?v=4a00325e"></script>
     <script src="../../../../_static/serviceWorker.js?v=df3feec7"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="3.3.2. Symbolsk programmering (CAS)" href="symbolsk_l%C3%B8sning.html" />
+    <link rel="next" title="4. Lineære likningssystemer" href="../../likningssystemer/intro_line%C3%A6re_likningssystemer.html" />
     <link rel="prev" title="3.2. Algebraisk løsning" href="../algebraisk_l%C3%B8sning/algebraisk_l%C3%B8sning.html" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -246,10 +247,7 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../intro_line%C3%A6re_likninger.html">3. Lineære likninger</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../grafisk_l%C3%B8sning/grafisk_l%C3%B8sning.html">3.1. Grafisk løsning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../algebraisk_l%C3%B8sning/algebraisk_l%C3%B8sning.html">3.2. Algebraisk løsning</a></li>
-<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">3.3. Løsning med programmering</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="symbolsk_l%C3%B8sning.html">3.3.2. Symbolsk programmering (CAS)</a></li>
-</ul>
-</details></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.3. Løsning med programmering</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../likningssystemer/intro_line%C3%A6re_likningssystemer.html">4. Lineære likningssystemer</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -298,10 +296,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Polynomer</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../polynomer/polynomdivisjon/polynomdivisjon.html">12. Polynomdivisjon</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../polynomer/polynomdivisjon/generell_polynomdivisjon.html">12.2. Mer komplisert polynomdivisjon</a></li>
-</ul>
-</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../polynomer/polynomdivisjon/polynomdivisjon.html">12. Polynomdivisjon</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">CAS</span></p>
 <ul class="nav bd-sidenav">
@@ -487,47 +482,131 @@ document.write(`
 </div>
 <section id="numerisk-losning-av-likninger">
 <h2><span class="section-number">3.3.1. </span>Numerisk løsning av likninger<a class="headerlink" href="#numerisk-losning-av-likninger" title="Link to this heading">#</a></h2>
-<div class="sidenote margin admonition">
-<p class="admonition-title">Hva er vitsen?</p>
-<p>Å løse lineære likninger numerisk kan virke litt <em>teit</em>. Vi kan jo løse lineære likninger eksakt! Men det er mange likninger for praktiske problemer som ikke kan løses eksakt, og da er det viktig at vi får trent på å løse enklere likninger numerisk fordi vi også kan verifisere svaret. Dette gjør at vi kan løse de mer virkelighetsnære likningene med samme strategi, og at vi kan stole på at svaret vi får stemmer.</p>
-</div>
 <p>Å løse likninger <strong>numerisk</strong> betyr å finne en tilnærmet tallverdi for løsningen ved hjelp av et program. For å bestemme løsningen av en likning numerisk, bruker man gjerne en systematisk metode for å gradvis nærme seg løsningen. En slik metode kalles for en <strong>numerisk metode</strong>. En numerisk metode kan oftest formuleres ved hjelp av en <strong>algoritme</strong>. En algoritme er en oppskrift som forteller oss nøyaktig hvilke steg vi skal gjøre for å utføre en bestemt numerisk metode.</p>
+<p>Når man løser numeriske likninger, jobber man oftest med likninger som har null på høyre side. En slik likning kan skrives som <span class="math notranslate nohighlight">\(f(x) = 0\)</span>. Numerisk løsning av likninger handler derfor om å finne nullpunktene til en funksjon <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<div class="sidenote margin admonition">
+<p class="admonition-title"><code class="code docutils literal highlight highlight-python"><span class="nb">abs</span></code>-funksjonen</p>
+<p>I programmet i <a class="reference internal" href="#lineaere-funksjoner-likninger-programmering-utforsk-1"><span class="std std-ref">utforsk 1</span></a> brukes <code class="code docutils literal highlight highlight-python"><span class="nb">abs</span></code>-funksjonen. Denne funksjonen gir absoluttverdien <span class="math notranslate nohighlight">\(|x|\)</span> av et tall <span class="math notranslate nohighlight">\(x\)</span>. For eksempel er <code class="code docutils literal highlight highlight-python"><span class="nb">abs</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span></code> lik 3. I programmet brukes <code class="code docutils literal highlight highlight-python"><span class="nb">abs</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span></code> som er det samme som å skrive <span class="math notranslate nohighlight">\(|f(x)|\)</span>. Dette gir absoluttverdien av funksjonsverdien!</p>
+</div>
 <div class="explore admonition" id="lineaere-funksjoner-likninger-programmering-utforsk-1">
 <p class="admonition-title">Utforsk 1</p>
-<p>Under vises en interaktiv kode som finner en løsning til en lineær likning.</p>
-<div>
-    <textarea   id="code-editor-lineære-funksjoner-likninger-programmering-utforsk-1" 
-                name="code-lineære-funksjoner-likninger-programmering-utforsk-1">
+<p>Under vises en kode som finner en tilnærmet verdi til løsningen av en lineær likning. Vi kaller dette for en <em>numerisk løsning</em>.</p>
+<div id="container-lineære-funksjoner-lineære-likninger-programmering-utforsk-1"></div>
+<script type="text/javascript">
+    const codeLineæreFunksjonerLikningerProgrammeringUtforsk1 = `
 def f(x):
-    return 4*x - 3
+    return x - 3
 
-x = -1
-while abs(f(x)) > 0.01: # NOTE: abs(a) = |a| (absoluttverdi)
+x = -10         # Startverdi for x
+dx = 0.1        # Liten endring i x-verdien
+
+while abs(f(x)) > 0.001:
+    x = x + dx
+    print(F"{x = :.2f} 	 {f(x) = :.2f}")
+
+print(f"Løsning: {x = :.2f}")         # NOTE: :.2f runder av til to desimaler
+`;   
+
+    generateInteractiveCode(
+        "container-lineære-funksjoner-lineære-likninger-programmering-utforsk-1",
+        codeLineæreFunksjonerLikningerProgrammeringUtforsk1,
+        "lineære-funksjoner-lineære-likninger-programmering-utforsk-1"
+    );
+</script>
+<!-- :::{raw} html
+<div id="code-lineære-funksjoner-lineære-likninger-programmering-utforsk-1"></div>
+<script type="text/javascript">
+    const code = `
+def f(x):
+    return x - 3
+
+x = -10
+dx = 0.001
+
+while abs(f(x)) > 0.00001:
+    x = x + dx
+
+print(f"{x = :.2f}")
+`
+    const Id = "lineære-funksjoner-lineære-likninger-programmering-utforsk-1";
+    generateInteractiveCode(
+        "code-lineære-funksjoner-lineære-likninger-programmering-utforsk-1",
+        code,
+        Id
+    );
+</script>
+::: -->
+<br>
+<dl class="simple myst">
+<dt>Deloppgave 1</dt><dd><p>Hvilken likning er det programmet løser? Hva er løsningen? <br> Sjekk om programmet får samme svar som du får ved å løse likningen for hånd.</p>
+</dd>
+</dl>
+<br>
+<dl class="simple myst">
+<dt>Deloppgave 2</dt><dd><p>Kan du forklare hva programmet gjør? Hva er prinsippet bak den numeriske metoden som brukes?</p>
+</dd>
+</dl>
+<br>
+<dl class="simple myst">
+<dt>Deloppgave 3</dt><dd><p>Bruk programmet til å løse likningen <span class="math notranslate nohighlight">\(2x - 4 = 0\)</span>. <br> Sjekk at svaret stemmer.</p>
+</dd>
+</dl>
+</div>
+<p>Men hvis numerisk løsning handler om å løse likninger på formen <span class="math notranslate nohighlight">\(f(x) = 0\)</span>, hvordan kan man løse likninger numerisk når høyre siden ikke er null?</p>
+<p>Tenk deg at vi har likningen <span class="math notranslate nohighlight">\(f(x) = g(x)\)</span> for to lineære funksjoner <span class="math notranslate nohighlight">\(f\)</span> og <span class="math notranslate nohighlight">\(g\)</span>. Da kan vi skrive likningen som</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = g(x) \quad \Leftrightarrow \quad \underbrace{f(x) - g(x)}_{=h(x)} = 0 \quad \Leftrightarrow \quad h(x) = 0.
+\]</div>
+<p>Dermed vil løsningen av likningen <span class="math notranslate nohighlight">\(f(x) = g(x)\)</span> være det samme som nullpunktet til funksjonen <span class="math notranslate nohighlight">\(h(x) = f(x) - g(x)\)</span>.</p>
+<div class="explore admonition">
+<p class="admonition-title">Utforsk 2</p>
+<p>Under vises et program som regner ut løsningen av en likning <span class="math notranslate nohighlight">\(f(x) = g(x)\)</span>.</p>
+<div id="container-lineære-funksjoner-lineære-likninger-programmering-utforsk-2"></div>
+<script type="text/javascript">
+    const codeLineæreFunksjonerLikningerProgrammeringUtforsk2 = `
+def f(x):
+    return 2*x + 3
+
+def g(x):
+    return 1
+
+def h(x):
+    return f(x) - g(x)
+        
+x = -10         # Startverdi for x
+dx = 0.001      # dx er en liten endring i x-verdien.
+
+
+while abs(h(x)) > 0.01:
     x = x + 0.001
     
-print(f"{x = :.2f}") 	# NOTE: :.2f runder av utskriften til 2 desimaler
-    </textarea>
-    
-    <button id="run-button-lineære-funksjoner-likninger-programmering-utforsk-1">
-        Kjør kode
-    </button>
-</div>
+print(f"{x = :.2f}") 	# NOTE:  :.2f runder av til to desimaler. 
+`;
 
-<pre id="output-lineære-funksjoner-likninger-programmering-utforsk-1"></pre>
-
-<script type="text/javascript">
-    document.addEventListener("DOMContentLoaded", () => {
-        setupEditor(
-            "code-editor-lineære-funksjoner-likninger-programmering-utforsk-1", 
-            "run-button-lineære-funksjoner-likninger-programmering-utforsk-1", 
-            "output-lineære-funksjoner-likninger-programmering-utforsk-1"
-        );
-    });
+    generateInteractiveCode(
+        "container-lineære-funksjoner-lineære-likninger-programmering-utforsk-2",
+        codeLineæreFunksjonerLikningerProgrammeringUtforsk2,
+        "lineære-funksjoner-lineære-likninger-programmering-utforsk-2"
+    );
 </script>
+<br>
+<dl class="simple myst">
+<dt>Deloppgave 1</dt><dd><p>Hvilken likning er det programmet løser? Hva er løsningen? <br> Sjekk om programmet får samme svar som du får ved å løse likningen for hånd.</p>
+</dd>
+</dl>
+<br>
+<dl class="simple myst">
+<dt>Deloppgave 2</dt><dd><p>Endre programmet slik at det løser likningen <span class="math notranslate nohighlight">\(2x + 3 = -x + 6\)</span>. <br> Sjekk at svaret stemmer.</p>
+</dd>
+</dl>
+<br>
+<dl class="simple myst">
+<dt>Deloppgave 3</dt><dd><p>Endre programmet slik at det skriver ut verdien til <code class="code docutils literal highlight highlight-python"><span class="n">x</span></code>. Endre startverdien til</p>
+</dd>
+</dl>
 </div>
 </section>
-<div class="toctree-wrapper compound">
-</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -570,11 +649,11 @@ print(f"{x = :.2f}") 	# NOTE: :.2f runder av utskriften til 2 desimaler
       </div>
     </a>
     <a class="right-next"
-       href="symbolsk_l%C3%B8sning.html"
+       href="../../likningssystemer/intro_line%C3%A6re_likningssystemer.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3.3.2. </span>Symbolsk programmering (CAS)</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Lineære likningssystemer</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
