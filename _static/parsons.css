@@ -1,20 +1,33 @@
+/* Main container for Parsons puzzle */
 #parsons-puzzle {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     gap: 20px; /* Space between draggable code and drop area */
+    padding: 20px;
+    border: 1px solid #ccc; /* Border around the whole puzzle container */
+    border-radius: 8px; /* Rounded corners for the puzzle container */
+    background-color: #f9f9f9; /* Light background for contrast */
 }
 
+/* Separator between draggable and drop areas */
+#separator {
+    width: 2px;
+    background-color: #bbb;
+    height: 100%;
+}
 
+/* Light mode styles */
 .puzzle-container-light {
     background-color: #f6f8fa; /* Light background for the puzzle container */
     color: #24292f; /* Text color for light mode */
 }
 
 .puzzle-container-light .draggable {
+    background-color: #ffffff; /* Background for draggable elements */
     color: #24292f; /* Text color for draggable elements */
-    border: 1px solid #e1e4e8; /* Border color for draggable elements */
-    padding: 5px;
+    border: 1px solid #1b1b1b; /* Border color for draggable elements */
+    padding: 2px;
     margin-bottom: 5px;
     border-radius: 3px;
     cursor: move;
@@ -22,10 +35,13 @@
 
 .puzzle-container-light #drop-area {
     background-color: #f6f8fa; /* Background for the drop area */
-    border: 1px dashed #e1e4e8; /* Dashed border for the drop area */
+    border: 2px dashed #007bff; /* More distinct dashed border for the drop area */
     min-height: 150px;
     padding: 10px;
-    border-radius: 3px;
+    border-radius: 8px; /* Slightly more rounded corners */
+    position: relative; /* For positioning the placeholder text */
+    text-align: left; /* Center the placeholder text */
+    margin-top: 10px;
 }
 
 /* Dark mode styles */
@@ -38,7 +54,7 @@
     background-color: #2e2e2e; /* Background for draggable elements */
     color: #ffffff; /* Text color for draggable elements */
     border: 1px solid #3e3e3e; /* Border color for draggable elements */
-    padding: 5px;
+    padding: 2px;   
     margin-bottom: 5px;
     border-radius: 3px;
     cursor: move;
@@ -46,42 +62,63 @@
 
 .puzzle-container-dark #drop-area {
     background-color: #2e2e2e; /* Dark background for the drop area */
-    border: 1px dashed #3e3e3e; /* Dashed border for the drop area */
+    border: 2px dashed #007bff; /* More distinct dashed border for the drop area */
     min-height: 150px;
     padding: 10px;
-    border-radius: 3px;
+    border-radius: 8px; /* Slightly more rounded corners */
+    position: relative; /* For positioning the placeholder text */
+    text-align: left; /* Center the placeholder text */
+    margin-top: 10px;
 }
 
-  
-  
+/* General draggable item styles */
 .draggable {
-    background-color: #f9f9f9;
-    border: 1px solid #ccc;
-    padding: 5px;
-    margin-bottom: 5px;
     cursor: grab;
 }
-  
-  
-#drop-area {
-border-color: #bbb; /* Different color for drop area to differentiate */
+
+/* Drop area hover effect */
+#drop-area.dragover {
+    background-color: #e9ecef; /* Slightly darker background when dragging */
+    border-color: #0056b3; /* Darker border color */
 }
 
-/* Feedback styles */
+/* Placeholder text in drop area */
+/* #drop-area::before {
+    content: "Dra og dropp kodelinjer her! ";
+    color: #6c757d; 
+    font-style: italic;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none; 
+} */
+
+.placeholder-text {
+    content: "Dra og dropp kodelinjer her! ";
+    color: #6c757d; 
+    font-style: italic;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none; 
+}
+
+
+
+
+
+/* Feedback when dragging */
 .dragging {
     background-color: #e0f7fa;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transform: scale(1.05); /* Slightly increase the size */
     transition: all 0.2s ease;
-  }
-  
-  #drop-area.dragover {
-    background-color: #e0ffe0;
-    border-color: #66bb6a;
-  }
-  
+}
 
-  pre.highlight {
+/* Code block styles */
+pre.highlight {
     margin: 0;
     padding: 0;
     background: transparent; /* Ensure no background to blend with the draggable item */
@@ -89,36 +126,7 @@ border-color: #bbb; /* Different color for drop area to differentiate */
     font-family: inherit; /* Inherit the font from the draggable element */
     white-space: pre-wrap; /* Preserve whitespace */
     word-wrap: break-word; /* Break long lines */
-  }
-  
-
-  /* Default background colors for the Parsons puzzle environment */
-.puzzle-container-light {
-    background-color: #f6f8fa; /* Light mode background */
-    color: #24292f; /* Light mode text color */
 }
-
-.puzzle-container-dark {
-    background-color: #1e1e1e; /* Dark mode background */
-    color: #ffffff; /* Dark mode text color */
-}
-
-/* Additional styles for dark mode */
-.puzzle-container-dark .draggable {
-    background-color: #2e2e2e;
-    color: #ffffff;
-}
-
-.puzzle-container-light .draggable {
-    background-color: #ffffff;
-    color: #24292f;
-}
-
-
-
-
-
-/* Display code upon completion */
 
 /* Modal container (hidden by default) */
 .modal {
@@ -171,4 +179,40 @@ border-color: #bbb; /* Different color for drop area to differentiate */
 
 #copyCodeButton:hover {
     background-color: #0056b3;
+}
+
+
+
+
+/* Styling of buttons */
+
+.button-check-solution {
+    background-color: #28a745; /* Green background */
+    color: black; /* Black text */
+  }
+
+
+  .button-reset-puzzle {
+    background-color: #ffc107; /* Orange background */
+    color: black; /* Black text */
+  }
+
+
+  .placeholder {
+    height: 50px; /* Controls the vertical size of the placeholder */
+    margin-bottom: 5px; /* Space below the placeholder */
+    background-color: #e0e0e0; /* Background color to differentiate the placeholder */
+    border: 1px dashed #999; /* Border style to indicate it's a placeholder */
+    width: 100%; /* Width of the placeholder, usually matching the drop area width */
+    padding: 5px; /* Internal padding, can adjust for larger or smaller placeholders */
+    box-sizing: border-box; /* Ensures padding and border are included in the width and height */
+}
+
+
+.placeholder-text {
+    color: #6c757d; /* Gray placeholder text */
+    font-style: italic;
+    pointer-events: none; /* Ensure the text doesn't interfere with dragging */
+    text-align: center;
+    width: 100%;
 }

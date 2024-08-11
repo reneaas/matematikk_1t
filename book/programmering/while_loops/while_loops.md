@@ -330,8 +330,18 @@ $$
 4! = 1 \cdot 2 \cdot 3 \cdot 4 = 24.
 $$
 
+<br>
 
-Under vises en uferdig kode som skal regne ut $4!$. 
+Deloppgave 1
+: Under vises et program som regner ut $4!$ i tilfeldig rekkefølge. <br> Plasser kodelinjene i riktig rekkefølge for å få tilgang til det ferdige programmet. <br> Lim inn programmet i et interaktivt kodevindu og kjør det.
+
+:::{raw} html
+---
+file: ./parsons_puzzle/oppgave_2.html
+---
+:::
+
+<br>
 
 :::{raw} html
 ---
@@ -340,52 +350,6 @@ file: ./interaktiv_kode/oppgaver/oppgave_2.html
 :::
 
 
-Deloppgave 1
-: Under vises programmet i tilfeldig rekkefølge. Fiks programmet.
-
-:::{raw} html
----
-file: ./parson/parson_problem_1.html
----
-:::
-
-
-:::{admonition} Hint
----
-class: hints, dropdown
----
-Når vi skulle regne ut en sum `s`{l=python} i {ref}`utforsk 2 <programmering-while-loops-utforsk-2>`, så brukte vi kodelinja
-
-```{code-block} python
-s = s + i
-```
-for å øke verdien til `s`{l=python} med `i`{l=python}. 
-
-Kan du tenke deg hva du må gjøre hvis du i stedet skal gange sammen tallene?
-:::
-
-::::{admonition} Løsning
----
-class: solution, dropdown
----
-For å oppdatere `p`{l=python}, må vi overskrive `p`{l=python} med produktet `p * i`{l=python} ved hver iterasjon. Koden blir da
-
-```{code-block} python
----
-linenos: true
-emphasize-lines: 5
----
-p = 1
-i = 1
-
-while i <= 4:
-    p = p * i
-    i = i + 1
-
-print(f"{p = }")
-```
-
-::::
 <br>
 
 
