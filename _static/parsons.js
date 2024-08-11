@@ -64,6 +64,10 @@ function reset() {
     const dropArea = document.querySelector('#drop-area');
     const draggableCodeContainer = document.querySelector('#draggable-code');
     const originalShuffledOrder = Array.from(draggableCodeContainer.querySelectorAll('.draggable')); // Store original order or reshuffle as needed
+    const feedbackElement = document.querySelector('#feedback');
+
+    // Clear feedback text
+    feedbackElement.textContent = '';  // Reset the text content of the feedback element
 
     if (!dropArea) {
         console.error('Drop area not found');
