@@ -25,7 +25,6 @@ function initializeParsonsPuzzle(puzzleContainerId, codeString) {
     createPlaceholder(dropArea);
     enableDragAndDrop(draggableCodeContainer, dropArea);
 
-    updatePlaceholderVisibility(dropArea);
   
     checkButton.addEventListener('click', () => {
         checkSolution(dropArea, codeBlocks, feedback, fullCodeElement, solutionModal);
@@ -198,18 +197,15 @@ function enableDragAndDrop(draggableContainer, dropArea) {
         draggable.addEventListener('dragstart', dragStart);
         draggable.addEventListener('dragend', (e) => {
             dragEnd(e);
-            updatePlaceholderVisibility(dropArea); // Update visibility on drag end
         });
     });
 
     dropArea.addEventListener('dragover', (e) => dragOver(e, dropArea, placeholder));
     dropArea.addEventListener('drop', (e) => {
         drop(e);
-        updatePlaceholderVisibility(dropArea); // Update visibility on drop
     });
 
     // Ensure placeholder text is shown after reset
-    updatePlaceholderVisibility(dropArea);
 }
 
 function dragStart(e) {
@@ -246,8 +242,6 @@ function drop(e) {
     dropArea.insertBefore(draggableElement, dropArea.querySelector('.placeholder'));
     draggableElement.classList.remove('dragging');
 
-     // Update placeholder visibility after dropping an item
-     updatePlaceholderVisibility(dropArea);
 }
 
 
@@ -276,21 +270,4 @@ function createPlaceholderText(dropArea) {
     placeholderText.className = 'placeholder-text';
     placeholderText.textContent = "Dra og dropp kodelinjer her!";
     dropArea.appendChild(placeholderText);
-}
-
-
-/**
- * Updates the visibility of the placeholder text in the drop area.
- * @param {HTMLElement} dropArea - The drop area element.
- */
-function updatePlaceholderVisibility(dropArea) {
-    const placeholder = dropArea.querySelector('.placeholder-text');
-    
-    if (dropArea.children.length === 0 || (dropArea.children.length === 1 && dropArea.children[0].classList.contains('placeholder-text'))) {
-        if (!placeholder) {
-            createPlaceholder(dropArea);
-        }
-    } else if (placeholder) {
-        dropArea.removeChild(placeholder);
-    }
 }
