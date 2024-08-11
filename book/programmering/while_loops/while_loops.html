@@ -39,8 +39,9 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../../_static/static_code_blocks.css?v=b6831e29" />
     <link rel="stylesheet" type="text/css" href="../../../_static/admonitions.css?v=1cbb9c3f" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/misc.css?v=11aae1d9" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror.css?v=1c3a1ec0" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/misc.css?v=cdc9c602" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/parsons.css?v=a96cf0fe" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror.css?v=33037d07" />
     <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_dark_high_contrast_cm.css?v=4c0c1b0f" />
     <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_dark_cm.css?v=d1235728" />
     <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_light_cm.css?v=facc8b7a" />
@@ -73,8 +74,10 @@
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/programmering/while_loops/while_loops';</script>
     <script>mermaid.initialize({"startOnLoad": true})</script>
+    <script src="../../../_static/theme-switcher.js?v=c0cdcaac"></script>
     <script src="../../../_static/static_code_blocks.js?v=d0b96be4"></script>
-    <script src="../../../_static/setupEditor.js?v=0d5b699e"></script>
+    <script src="../../../_static/setupEditor.js?v=b7c5d90f"></script>
+    <script src="../../../_static/parsons.js?v=1c7dd867"></script>
     <script src="../../../_static/brython.js?v=46b190f3"></script>
     <script src="../../../_static/generateInteractiveCode.js?v=4a00325e"></script>
     <script src="../../../_static/serviceWorker.js?v=9d61c2b7"></script>
@@ -110,6 +113,24 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css"> -->
+<!-- <link id="highlight-theme-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css">
+<link id="highlight-theme-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github-dark.min.css"> -->
+<head>
+    <link id="highlight-theme-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css">
+    <link id="highlight-theme-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github-dark.min.css">
+    <script src="../../../_static/theme-switcher.js"></script>
+</head>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+<!-- 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/components/prism-python.min.js"></script> -->
 
 
   </head>
@@ -232,8 +253,8 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lineære funksjoner</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../line%C3%A6re_funksjoner/introduksjon.html">2. Hva er en lineær funksjon?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../line%C3%A6re_funksjoner/representasjoner/algebraisk_representasjon/algebraisk_representasjon.html">2.1. Algebraisk representasjon av lineære funksjoner</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../line%C3%A6re_funksjoner/intro_line%C3%A6re_funksjoner.html">2. Hva er en lineær funksjon?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../line%C3%A6re_funksjoner/representasjoner/algebraisk_representasjon/algebraisk_representasjon.html">2.1. Algebraisk representasjon</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../line%C3%A6re_funksjoner/representasjoner/grafisk_representasjon/grafisk_representasjon.html">2.2. Grafisk representasjon av lineære funksjoner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../line%C3%A6re_funksjoner/representasjoner/topunktsformelen/topunktsformelen.html">2.3. Topunktsformelen</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../line%C3%A6re_funksjoner/representasjoner/ettpunktsformelen/ettpunktsformelen.html">2.4. Ettpunktsformelen</a></li>
@@ -771,18 +792,38 @@ n! = 1 \cdot 2 \cdot 3 \cdot \ldots \cdot n
 \[
 4! = 1 \cdot 2 \cdot 3 \cdot 4 = 24.
 \]</div>
-<p>Under vises en uferdig kode som skal regne ut <span class="math notranslate nohighlight">\(4!\)</span>.</p>
+<br>
+<dl class="simple myst">
+<dt>Deloppgave 1</dt><dd><p>Under vises et program som regner ut <span class="math notranslate nohighlight">\(4!\)</span> i tilfeldig rekkefølge. <br> Plasser kodelinjene i riktig rekkefølge for å få tilgang til det ferdige programmet. <br> Lim inn programmet i et interaktivt kodevindu og kjør det.</p>
+</dd>
+</dl>
+<div id="container-programmering-while-løkker-oppgave-2-parson" class="puzzle-container">
+    <div id="draggable-code"></div>
+    <div id="drop-area"></div>
+    <button id="check-solution" class="button button-check-solution">Sjekk løsning!</button>
+    <button id="reset-puzzle" class="button button-reset-puzzle">Reset puslespill ↪️</button>
+    <div id="feedback"></div>
+</div>
+
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', () => {
+        const codeString = `
+i = 1 ;p = 1
+while i <= 4:
+    p = p * i
+    i = i + 1
+print(f"{p = }")
+        `;
+    
+        // Initialize the puzzle
+        initializeParsonsPuzzle('container-programmering-while-løkker-oppgave-2-parson', codeString);
+    });
+</script>
+<br>
 <div id="container-programmering-while-løkker-oppgave-2"></div>
 <script type="text/javascript">
     code = `
-i = 1 
-p = 1
-
-while i <= 4:
-    p =             # FYLL INN
-    i = i + 1
-    
-print(f"{p = }")
+# FYLL INN: kopier koden fra løsningen av puslespillet og lim inn her
 `;   
 
     generateInteractiveCode(
@@ -803,33 +844,6 @@ print(f"{p = }")
 
 
 
-<dl class="simple myst">
-<dt>Deloppgave 1</dt><dd><p>Fiks programmet slik at det regner ut <span class="math notranslate nohighlight">\(4!\)</span> og sjekk svaret ved å regne for hånd. Prøv også ut programmet med <span class="math notranslate nohighlight">\(5!\)</span>. Gir det riktig svar?</p>
-</dd>
-</dl>
-<div class="hints dropdown admonition">
-<p class="admonition-title">Hint</p>
-<p>Når vi skulle regne ut en sum <code class="code docutils literal highlight highlight-python"><span class="n">s</span></code> i <a class="reference internal" href="#programmering-while-loops-utforsk-2"><span class="std std-ref">utforsk 2</span></a>, så brukte vi kodelinja</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">i</span>
-</pre></div>
-</div>
-<p>for å øke verdien til <code class="code docutils literal highlight highlight-python"><span class="n">s</span></code> med <code class="code docutils literal highlight highlight-python"><span class="n">i</span></code>.</p>
-<p>Kan du tenke deg hva du må gjøre hvis du i stedet skal gange sammen tallene?</p>
-</div>
-<div class="solution dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<p>For å oppdatere <code class="code docutils literal highlight highlight-python"><span class="n">p</span></code>, må vi overskrive <code class="code docutils literal highlight highlight-python"><span class="n">p</span></code> med produktet <code class="code docutils literal highlight highlight-python"><span class="n">p</span> <span class="o">*</span> <span class="n">i</span></code> ved hver iterasjon. Koden blir da</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">p</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="linenos">2</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="linenos">3</span>
-<span class="linenos">4</span><span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">4</span><span class="p">:</span>
-<span class="hll"><span class="linenos">5</span>    <span class="n">p</span> <span class="o">=</span> <span class="n">p</span> <span class="o">*</span> <span class="n">i</span>
-</span><span class="linenos">6</span>    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
-<span class="linenos">7</span>
-<span class="linenos">8</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">p</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
 <br>
 <dl class="simple myst">
 <dt>Deloppgave 2</dt><dd><p>Juster programmet slik at det regner ut <span class="math notranslate nohighlight">\(10!\)</span></p>
