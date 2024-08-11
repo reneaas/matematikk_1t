@@ -181,6 +181,8 @@ function createSolutionModal(puzzleContainerId) {
 function createPlaceholder(dropArea) {
     const placeholder = document.createElement('div');
     placeholder.className = 'placeholder';
+    // Add textual content to the placeholder
+    placeholder.textContent = 'Dra og dropp kode her!';
     dropArea.appendChild(placeholder);
 }
 
