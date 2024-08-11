@@ -1,3 +1,4 @@
+
 /**
  * Initializes a Parsons puzzle by setting up the drag-and-drop elements,
  * the solution checking mechanism, and the reset functionality.
@@ -31,7 +32,8 @@ function initializeParsonsPuzzle(puzzleContainerId, codeString) {
     });
   
     resetButton.addEventListener('click', () => {
-        resetPuzzle(draggableCodeContainer, dropArea, shuffledCodeBlocks, feedback);
+        //resetPuzzle(draggableCodeContainer, dropArea, shuffledCodeBlocks, feedback);
+        reset();
     });
   
     closeModalButton.addEventListener('click', () => {
@@ -53,13 +55,60 @@ function initializeParsonsPuzzle(puzzleContainerId, codeString) {
  * @param {Array} shuffledCodeBlocks - The shuffled code block objects to reset to.
  * @param {HTMLElement} feedbackElement - The element displaying feedback.
  */
-function resetPuzzle(draggableContainer, dropArea, shuffledCodeBlocks, feedbackElement) {
-    feedbackElement.textContent = '';  // Clear feedback
-    dropArea.innerHTML = '';  // Clear the drop area
-    renderDraggableCode(draggableContainer, shuffledCodeBlocks); // Re-render using the stored shuffled blocks
-    createPlaceholder(dropArea);
-    enableDragAndDrop(draggableContainer, dropArea);
+// function resetPuzzle(draggableContainer, dropArea, shuffledCodeBlocks, feedbackElement) {
+//     feedbackElement.textContent = '';  // Clear feedback
+//     dropArea.innerHTML = '';  // Clear the drop area completely, including placeholder
+
+//     // Re-render draggable code blocks and recreate placeholder
+//     renderDraggableCode(draggableContainer, shuffledCodeBlocks);
+//     createPlaceholder(dropArea); // Re-create placeholder
+    
+//     enableDragAndDrop(draggableContainer, dropArea); // Re-enable drag-and-drop functionality
+// }
+
+function reset() {
+    console.log('Reset function called');
+
+    const dropArea = document.querySelector('#drop-area');
+    const draggableCodeContainer = document.querySelector('#draggable-code');
+    const originalShuffledOrder = Array.from(draggableCodeContainer.querySelectorAll('.draggable')); // Store original order or reshuffle as needed
+
+    if (!dropArea) {
+        console.error('Drop area not found');
+        return;
+    }
+
+    if (!draggableCodeContainer) {
+        console.error('Draggable code container not found');
+        return;
+    }
+
+    // Move all draggable elements back to the original container
+    const draggableElements = dropArea.querySelectorAll('.draggable');
+    draggableElements.forEach(element => {
+        console.log(`Moving element ${element.id} back to draggable code container`);
+        draggableCodeContainer.appendChild(element);
+    });
+
+    shuffleArray(originalShuffledOrder).forEach(element => {
+        draggableCodeContainer.appendChild(element);
+    });
+
+    // Reset placeholder visibility
+    const placeholder = dropArea.querySelector('.placeholder');
+    if (placeholder) {
+        console.log('Showing placeholder');
+        placeholder.style.display = '';
+    } else {
+        console.error('Placeholder not found');
+    }
+
+    // Additional reset logic if any
+    console.log('Reset function completed');
 }
+
+
+
 
 
 /**
@@ -178,13 +227,16 @@ function createSolutionModal(puzzleContainerId) {
     return modal;
 }
 
+
 function createPlaceholder(dropArea) {
+    // Always start fresh
     const placeholder = document.createElement('div');
     placeholder.className = 'placeholder';
-    // Add textual content to the placeholder
     placeholder.textContent = 'Dra og dropp kode her!';
     dropArea.appendChild(placeholder);
 }
+
+
 
 /**
  * Enables drag-and-drop functionality for the draggable elements and the drop area.
@@ -237,6 +289,45 @@ function dragOver(e, dropArea, placeholder) {
 }
 
 
+// function dragOver(e, dropArea, placeholder) {
+//     e.preventDefault();
+
+//     const afterElement = getDragAfterElement(e.clientY, dropArea);
+//     const draggable = document.querySelector('.dragging');
+
+//     // Debugging output to understand the state when error occurs
+//     console.log('Drag Over:', {
+//         afterElement,
+//         draggable,
+//         placeholder,
+//         children: Array.from(dropArea.children).map(child => child.className)
+//     });
+
+//     if (!draggable) {
+//         console.error('No element is currently being dragged.');
+//         return;
+//     }
+
+//     // Confirm both elements are in the correct parent
+//     if (afterElement === null) {
+//         if (placeholder.parentNode !== dropArea) {
+//             console.error('Placeholder not in dropArea when attempting to append at the end.');
+//             dropArea.appendChild(placeholder);
+//         }
+//         dropArea.appendChild(placeholder);
+//     } else {
+//         if (afterElement.parentNode !== dropArea) {
+//             console.error('Attempting to insert before an element not in dropArea.');
+//             return; // Avoid executing insertBefore
+//         }
+//         dropArea.insertBefore(placeholder, afterElement);
+//     }
+// }
+
+
+
+
+
 function drop(e) {
     e.preventDefault();
     const draggableElement = document.querySelector('.dragging');
@@ -244,8 +335,40 @@ function drop(e) {
     dropArea.insertBefore(draggableElement, dropArea.querySelector('.placeholder'));
     draggableElement.classList.remove('dragging');
 
+    // Pass the draggableCodeContainer reference correctly
+    const draggableCodeContainer = document.querySelector('#draggable-code');
+    updatePlaceholderVisibility(dropArea, draggableCodeContainer);
 }
 
+
+
+
+function updatePlaceholderVisibility(dropArea, draggableCodeContainer) {
+    const draggableItems = draggableCodeContainer.querySelectorAll('.draggable').length;
+
+    // If all draggable elements are in the drop area, hide the placeholder
+    if (draggableItems === 0) {
+        dropArea.querySelector('.placeholder').style.display = 'none';
+    } else {
+        dropArea.querySelector('.placeholder').style.display = ''; // Ensure it's visible if not all are placed
+    }
+}
+
+
+
+// function getDragAfterElement(y, dropArea) {
+//     const draggableElements = [...dropArea.querySelectorAll('.draggable:not(.dragging)')];
+
+//     return draggableElements.reduce((closest, child) => {
+//         const box = child.getBoundingClientRect();
+//         const offset = y - box.top - box.height / 2;
+//         if (offset < 0 && offset > closest.offset) {
+//             return { offset: offset, element: child };
+//         } else {
+//             return closest;
+//         }
+//     }, { offset: Number.NEGATIVE_INFINITY }).element;
+// }
 
 function getDragAfterElement(y, dropArea) {
     const draggableElements = [...dropArea.querySelectorAll('.draggable:not(.dragging)')];
@@ -260,6 +383,8 @@ function getDragAfterElement(y, dropArea) {
         }
     }, { offset: Number.NEGATIVE_INFINITY }).element;
 }
+
+
 
 
 
