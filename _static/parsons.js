@@ -34,6 +34,7 @@ function initializeParsonsPuzzle(puzzleContainerId, codeString) {
     resetButton.addEventListener('click', () => {
         //resetPuzzle(draggableCodeContainer, dropArea, shuffledCodeBlocks, feedback);
         reset();
+        reshuffle();
     });
   
     closeModalButton.addEventListener('click', () => {
@@ -55,16 +56,7 @@ function initializeParsonsPuzzle(puzzleContainerId, codeString) {
  * @param {Array} shuffledCodeBlocks - The shuffled code block objects to reset to.
  * @param {HTMLElement} feedbackElement - The element displaying feedback.
  */
-// function resetPuzzle(draggableContainer, dropArea, shuffledCodeBlocks, feedbackElement) {
-//     feedbackElement.textContent = '';  // Clear feedback
-//     dropArea.innerHTML = '';  // Clear the drop area completely, including placeholder
 
-//     // Re-render draggable code blocks and recreate placeholder
-//     renderDraggableCode(draggableContainer, shuffledCodeBlocks);
-//     createPlaceholder(dropArea); // Re-create placeholder
-    
-//     enableDragAndDrop(draggableContainer, dropArea); // Re-enable drag-and-drop functionality
-// }
 
 function reset() {
     console.log('Reset function called');
@@ -106,6 +98,17 @@ function reset() {
     // Additional reset logic if any
     console.log('Reset function completed');
 }
+
+function reshuffle() {
+    const draggableCodeContainer = document.querySelector('#draggable-code');
+    const originalShuffledOrder = Array.from(draggableCodeContainer.querySelectorAll('.draggable')); // Store original order or reshuffle as needed
+
+    shuffleArray(originalShuffledOrder).forEach(element => {
+        draggableCodeContainer.appendChild(element);
+    });
+}
+
+
 
 
 
