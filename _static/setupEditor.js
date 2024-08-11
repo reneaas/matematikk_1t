@@ -228,13 +228,6 @@ def safe_eval(user_input):
         worker.postMessage({ type: 'runCode', code: code });
     }
     
-
-    // // Run the pyConsoleScript first
-    // worker.postMessage({ type: 'runCode', code: pyConsoleScript });
-
-
-    // // Finally, run the user's code
-    // worker.postMessage({ type: 'runCode', code: code });
 }
 
 function getCurrentTheme() {

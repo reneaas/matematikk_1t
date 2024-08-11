@@ -130,5 +130,23 @@ Under vises et program som bruker en `if`{l=python}-`elif`{l=python}-`else`{l=py
 :::{raw} html
 ---
 file: interaktiv_kode/utforsk/utforsk_3.html
+:::
 
+<br>
+
+Deloppgave 1
+: Kjør programmet med varetype som "mat" og sett prisen til 50. <br> Kan du forutsi verdien programmet skriver ut? Kjør programmet og sjekk svaret ditt!
+
+
+<br>
+
+Deloppgave 2
+: Hva blir utskriften hvis du endrer varetype til "reise"? <br> Sjekk svaret ditt med programmet!
+
+
+<br>
+
+Deloppgave 3
+: Endre varetype til "annet" og prisen til 100. <br> Hva blir utskriften? Sjekk svaret ditt med programmet!
 :::::
+

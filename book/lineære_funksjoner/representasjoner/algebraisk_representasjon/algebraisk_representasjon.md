@@ -1,4 +1,4 @@
-# Algebraisk representasjon av lineære funksjoner
+# Algebraisk representasjon
 
 
 :::{admonition} Læringsmål: representasjoner av lineære funksjoner
@@ -17,8 +17,9 @@ En representasjon er en måte å uttrykke noe på. Når vi jobber med rette linj
 
 ---
 
+
 ## Algebraisk representasjon av lineære funksjoner
-En lineær funksjon er en spesiell rett linje der $y$-verdien er bestemt av $x$-verdien. Vi skal komme mer presist tilbake til funksjonsbegrepet senere, men først tar vi en litt kortfattet og enkelt definisjon av en lineær funksjon:
+En lineær funksjon er en spesiell rett linje der $y$-verdien er bestemt av $x$-verdien. Vi skal komme mer presist tilbake til funksjonsbegrepet senere. For nå holder følgende definisjon:
 
 ::::{admonition} Begrep: *Koeffisienter*
 ---
@@ -42,13 +43,16 @@ $$ (eq:linear_funksjon)
 * $a$ er **stigningstallet** til linja.
 * $b$ er **konstantleddet** til linja. Også kalt for **skjæringen med $y$-aksen**.
 * $f$ er **navnet** til funksjonen.
-* $y = f(x)$ er **funksjonsverdien** til en gitt $x$-verdi.
+* $y = f(x)$ er **funksjonsverdien** til en bestemt $x$-verdi.
 ::::
 
 Vi tar noen eksempler på lineære funksjoner med skrivemåten over:
 
 :::{admonition} Eksempel 1: algebraisk representasjon av lineære funksjoner
-:class: example
+---
+class: example
+name: lineære-funksjoner-algebraisk-representasjon-eksempel-1
+---
 
 Under vises eksempler på lineære funksjoner. 
 
@@ -64,9 +68,11 @@ Under vises eksempler på lineære funksjoner.
 
 Og så er det **din tur**!
 
+
 ::::{admonition} Underveisoppgave 1: algebraisk representasjon av lineære funksjoner
 ---
 class: check
+name: lineære-funksjoner-algebraisk-representasjon-underveisoppgave-1
 ---
 
 Fyll ut tabellen under: 
@@ -76,10 +82,10 @@ Fyll ut tabellen under:
 | $f$ | $f(x) = -3x + 2$ |  |  |
 |  | $t(x) = ax + 3$ | $2$ | |
 | $p$ | | $-1$ | $1$ |
-| $q$ | $q(x) = 4$ |  |  |
+|  | $q(x) = 4$ |  |  |
 | $r$ |  | $-2$ | $0$ |
 
-:::{admonition} Løsning
+:::{admonition} Løsning: 
 ---
 class: solution, dropdown
 ---
@@ -108,6 +114,7 @@ $f(a)$ er **funksjonsverdien** til $f$ i $x = a$ og regnes ut ved å sette $x = 
 :::{admonition} Eksempel 2: funksjonsverdier
 ---
 class: example
+name: lineære-funksjoner-algebraisk-representasjon-eksempel-2
 ---
 
 Under vises eksempler på utregning av funksjonsverdier. Vi bytter ut $x$-verdien i formelen og regner ut.
@@ -128,6 +135,7 @@ Og så er det **din tur**!
 ::::{admonition} Underveisoppgave 2: funksjonsverdier
 ---
 class: check
+name: lineære-funksjoner-algebraisk-representasjon-underveisoppgave-2
 ---
 
 Regn ut funksjonsverdiene i tabellen under:
@@ -310,6 +318,7 @@ Deloppgave 2
 :::::{admonition} Oppgave 1
 ---
 class: problem-level-1
+name: lineære-funksjoner-algebraisk-representasjon-oppgave-1
 ---
 Fyll ut tabellen under.
 
@@ -342,6 +351,7 @@ class: answer, dropdown
 :::::{admonition} Oppgave 2
 ---
 class: problem-level-1
+name: lineære-funksjoner-algebraisk-representasjon-oppgave-2
 ---
 
 Regn ut funksjonsverdiene i tabellen under.
@@ -374,6 +384,7 @@ class: answer, dropdown
 :::::{admonition} Oppgave 3
 ---
 class: problem-level-1
+name: lineære-funksjoner-algebraisk-representasjon-oppgave-3
 ---
 
 Under vises en kode som regner ut funksjonsverdien til en lineær funksjon.

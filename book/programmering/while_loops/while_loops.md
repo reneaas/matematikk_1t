@@ -341,7 +341,14 @@ file: ./interaktiv_kode/oppgaver/oppgave_2.html
 
 
 Deloppgave 1
-: Fiks programmet slik at det regner ut $4!$ og sjekk svaret ved å regne for hånd. Prøv også ut programmet med $5!$. Gir det riktig svar?
+: Under vises programmet i tilfeldig rekkefølge. Fiks programmet.
+
+:::{raw} html
+---
+file: ./parson/parson_problem_1.html
+---
+:::
+
 
 :::{admonition} Hint
 ---
@@ -463,3 +470,4 @@ med en presisjon på 7 siffer.
 
 
 :::::
+

@@ -465,7 +465,7 @@ $$
 ::::::
 
 
-
+---
 
 ## Oppgaver
 
@@ -516,6 +516,8 @@ $$
 ````
 
 `````
+
+---
 
 `````{admonition} Oppgave 2
 :class: problem-level-1
@@ -574,6 +576,7 @@ $$
 ````
 `````
 
+---
 
 `````{admonition} Oppgave 3
 :class: problem-level-2
@@ -626,3 +629,50 @@ g(x) = -(x - 2)(x + 2)
 $$
 ````
 `````
+
+---
+
+::::{admonition} Oppgave 4
+---
+class: problem-level-2
+---
+En andregradslikning er gitt ved
+
+$$
+rx^2 - x + r = 0.
+$$
+
+
+
+Deloppgave 1
+: Bestem alle $r \in \mathbb{R}$ slik at likningen har én løsning.
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+r = \pm \dfrac{1}{2}
+$$
+
+:::
+
+Deloppgave 2
+: Bestem alle $r \in \mathbb{R}$ slik at likningen har ingen løsning.
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+```{figure} ./figurer/oppgaver/oppgave_4.svg
+---
+width: 100%
+---
+```
+
+$$
+r \in \mathbb{R} \setminus \left\langle -\dfrac{1}{2}, \dfrac{1}{2} \right\rangle
+$$
+:::
+
+::::

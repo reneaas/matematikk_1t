@@ -107,6 +107,7 @@
 │   │   │   ├── oppgave_31.svg
 │   │   │   ├── oppgave_32.svg
 │   │   │   ├── oppgave_3_uten_faktorer.svg
+│   │   │   ├── oppgave_4.svg
 │   │   │   ├── oppgave_6.svg
 │   │   │   ├── polynomdivisjon_oppgave1.svg
 │   │   │   ├── regresjon.svg
@@ -250,6 +251,7 @@
 │   │   │   │   ├── eksponentialfunksjoner
 │   │   │   │   │   └── representasjoner
 │   │   │   │   │       └── representasjoner.md
+│   │   │   │   ├── index_page.md
 │   │   │   │   ├── lineære_funksjoner
 │   │   │   │   │   ├── funksjonsbegrepet
 │   │   │   │   │   │   ├── funksjonsbegrepet.md
@@ -257,6 +259,7 @@
 │   │   │   │   │   │   ├── nullpunkter.md
 │   │   │   │   │   │   ├── pythonfunksjoner.md
 │   │   │   │   │   │   └── vekstfart.md
+│   │   │   │   │   ├── intro_lineære_funksjoner.md
 │   │   │   │   │   ├── introduksjon.md
 │   │   │   │   │   ├── likninger
 │   │   │   │   │   │   ├── algebraisk_løsning
@@ -418,6 +421,8 @@
 │   │   │   ├── awesome-sphinx-design.js
 │   │   │   ├── base-stemmer.js
 │   │   │   ├── basic.css
+│   │   │   ├── brython.js
+│   │   │   ├── brythonWorker.js
 │   │   │   ├── c226d7283d0d52c2d32c.woff
 │   │   │   ├── check-solid.svg
 │   │   │   ├── clipboard.min.js
@@ -451,6 +456,7 @@
 │   │   │   ├── exercise.css
 │   │   │   ├── file.png
 │   │   │   ├── french-stemmer.js
+│   │   │   ├── generateInteractiveCode.js
 │   │   │   ├── github-dark-default.css
 │   │   │   ├── github-dark.css
 │   │   │   ├── github-light.css
@@ -654,6 +660,8 @@
 │   │   │   ├── misc.css
 │   │   │   ├── mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css
 │   │   │   ├── one_dark_cm.css
+│   │   │   ├── parsons.css
+│   │   │   ├── parsons.js
 │   │   │   ├── play-solid.svg
 │   │   │   ├── plus.png
 │   │   │   ├── proof.css
@@ -823,6 +831,7 @@
 │   │   │   ├── eksponentialfunksjoner
 │   │   │   │   └── representasjoner
 │   │   │   │       └── representasjoner.html
+│   │   │   ├── index_page.html
 │   │   │   ├── lineære_funksjoner
 │   │   │   │   ├── funksjonsbegrepet
 │   │   │   │   │   ├── funksjonsbegrepet.html
@@ -830,6 +839,7 @@
 │   │   │   │   │   ├── nullpunkter.html
 │   │   │   │   │   ├── pythonfunksjoner.html
 │   │   │   │   │   └── vekstfart.html
+│   │   │   │   ├── intro_lineære_funksjoner.html
 │   │   │   │   ├── introduksjon.html
 │   │   │   │   ├── likninger
 │   │   │   │   │   ├── algebraisk_løsning
@@ -1077,14 +1087,17 @@
 ├── _config.yml
 ├── _static
 │   ├── admonitions.css
-│   ├── codeWorker.js
+│   ├── brython.js
 │   ├── code_mirror.css
 │   ├── code_mirror_themes
 │   │   ├── github_dark_cm.css
 │   │   ├── github_dark_high_contrast_cm.css
 │   │   ├── github_light_cm.css
 │   │   └── one_dark_cm.css
+│   ├── generateInteractiveCode.js
 │   ├── misc.css
+│   ├── parsons.css
+│   ├── parsons.js
 │   ├── serviceWorker.js
 │   ├── setupEditor.js
 │   ├── static_code_blocks.css
@@ -1121,7 +1134,10 @@
 │   │   ├── introduksjon.md
 │   │   ├── likninger
 │   │   │   ├── abc_formelen
-│   │   │   │   └── abc_formelen.md
+│   │   │   │   ├── abc_formelen.md
+│   │   │   │   └── interaktiv_kode
+│   │   │   │       └── oppgaver
+│   │   │   │           └── oppgave_6.html
 │   │   │   ├── anvendelser
 │   │   │   │   ├── anvendelser.md
 │   │   │   │   ├── figurer
@@ -1242,7 +1258,9 @@
 │   │   │   │   │   │   ├── oppgave_2.svg
 │   │   │   │   │   │   ├── oppgave_2_uten_faktorer.svg
 │   │   │   │   │   │   ├── oppgave_3.svg
-│   │   │   │   │   │   └── oppgave_3_uten_faktorer.svg
+│   │   │   │   │   │   ├── oppgave_3_uten_faktorer.svg
+│   │   │   │   │   │   ├── oppgave_4.svg
+│   │   │   │   │   │   └── oppgave_4_uten_faktorer.svg
 │   │   │   │   │   ├── teori
 │   │   │   │   │   │   ├── fortegnslinje_graf.svg
 │   │   │   │   │   │   ├── teori_fortegnslinjer.svg
@@ -1262,7 +1280,8 @@
 │   │   │   │       ├── oppgaver
 │   │   │   │       │   ├── oppgave_1.py
 │   │   │   │       │   ├── oppgave_2.py
-│   │   │   │       │   └── oppgave_3.py
+│   │   │   │       │   ├── oppgave_3.py
+│   │   │   │       │   └── oppgave_4.py
 │   │   │   │       ├── teori
 │   │   │   │       │   ├── sign_chart_graph.py
 │   │   │   │       │   └── sign_chart_theory.py
@@ -1382,21 +1401,17 @@
 │   │   │   │       └── funksjonsbegrepet
 │   │   │   │           └── funksjonsgraf_vs_kurve_oppgave1.svg
 │   │   │   ├── funksjonsbegrepet.md
-│   │   │   ├── koder
-│   │   │   │   ├── eksempler
-│   │   │   │   │   ├── funksjonsgraf_vs_kurve.py
-│   │   │   │   │   ├── kurve.py
-│   │   │   │   │   └── nullpunkter_grafisk.py
-│   │   │   │   ├── interaktive_plott
-│   │   │   │   │   └── graf.py
-│   │   │   │   ├── oppgaver
-│   │   │   │   └── underveisoppgaver
-│   │   │   │       └── kurve_vs_funksjon.py
-│   │   │   ├── lineære_funksjoner.md
-│   │   │   ├── nullpunkter.md
-│   │   │   ├── pythonfunksjoner.md
-│   │   │   └── vekstfart.md
-│   │   ├── introduksjon.md
+│   │   │   └── koder
+│   │   │       ├── eksempler
+│   │   │       │   ├── funksjonsgraf_vs_kurve.py
+│   │   │       │   ├── kurve.py
+│   │   │       │   └── nullpunkter_grafisk.py
+│   │   │       ├── interaktive_plott
+│   │   │       │   └── graf.py
+│   │   │       ├── oppgaver
+│   │   │       └── underveisoppgaver
+│   │   │           └── kurve_vs_funksjon.py
+│   │   ├── intro_lineære_funksjoner.md
 │   │   ├── likninger
 │   │   │   ├── algebraisk_løsning
 │   │   │   │   └── algebraisk_løsning.md
@@ -1452,7 +1467,8 @@
 │   │   │       │   └── eksempel_1.md
 │   │   │       ├── interaktiv_kode
 │   │   │       │   └── utforsk
-│   │   │       │       └── utforsk_1.html
+│   │   │       │       ├── utforsk_1.html
+│   │   │       │       └── utforsk_2.html
 │   │   │       ├── numerisk_løsning.md
 │   │   │       ├── programmering.md
 │   │   │       └── symbolsk_løsning.md
@@ -1499,8 +1515,8 @@
 │   │   │   ├── figurer
 │   │   │   │   ├── datamodellering.svg
 │   │   │   │   ├── modelleringssyklus.svg
-│   │   │   │   ├── regresjon.svg
-│   │   │   │   └── råfil regresjon.pptx
+│   │   │   │   ├── råfil regresjon.pptx
+│   │   │   │   └── regresjon.svg
 │   │   │   ├── koder
 │   │   │   │   └── datamodellering.py
 │   │   │   ├── lagemodell.md
@@ -1509,7 +1525,8 @@
 │   │   │   ├── algebraisk_representasjon
 │   │   │   │   ├── algebraisk_representasjon.md
 │   │   │   │   └── interaktiv_kode
-│   │   │   │       ├── oppgave_3.html
+│   │   │   │       ├── oppgaver
+│   │   │   │       │   └── oppgave_3.html
 │   │   │   │       ├── underveisoppgaver
 │   │   │   │       │   └── underveisoppgave_3.html
 │   │   │   │       └── utforsk
@@ -1692,9 +1709,13 @@
 │       │   │   └── if_else_flytdiagram.md
 │       │   ├── if_else.md
 │       │   ├── if_else_old.md
-│       │   └── interaktiv_kode
-│       │       ├── underveisoppgave_1.html
-│       │       └── underveisoppgave_2.html
+│       │   ├── interaktiv_kode
+│       │   │   └── utforsk
+│       │   │       ├── utforsk_1.html
+│       │   │       ├── utforsk_2.html
+│       │   │       └── utforsk_3.html
+│       │   └── parsons_problems
+│       │       └── parson_problem_1.html
 │       ├── regning
 │       │   ├── interaktiv_kode
 │       │   │   ├── oppgaver
@@ -1713,7 +1734,6 @@
 │       │   │   ├── underveisoppgaver
 │       │   │   │   └── underveisoppgave_2.html
 │       │   │   └── utforsk
-│       │   │       └── utforsk_1.html
 │       │   └── variabler.md
 │       └── while_loops
 │           ├── flytdiagrammer
@@ -1729,6 +1749,10 @@
 │           └── while_loops.md
 ├── geogebra_basic.html
 ├── index.md
+├── legacy
+│   ├── github-dark-high-contrast.css
+│   ├── github_dark.css
+│   └── github_light.css
 ├── logo
 │   ├── evg_logo.jpg
 │   └── evg_logo_med_1T.jpg
@@ -1736,4 +1760,4 @@
 ├── tree_structure.txt
 └── velkommen.html
 
-592 directories, 1145 files
+598 directories, 1163 files

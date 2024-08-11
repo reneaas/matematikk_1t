@@ -41,8 +41,14 @@ def draw_factors(factors, roots, ax, color_pos, color_neg, x, dy=-1, dx=0.1) -> 
     for i, factor in enumerate(factors):
         expression = str(factor.get("expression"))
         exponent = factor.get("exponent")
+
+        # Replace ** with ^ for sympy expressions to work with latex
         if "**" in str(expression):
             expression = expression.replace("**", "^")
+
+        # Remove multiplication signs
+        if "*" in str(expression):
+            expression = expression.replace("*", "")
 
         if exponent > 1:
             s = f"$({expression})^{exponent}$"
