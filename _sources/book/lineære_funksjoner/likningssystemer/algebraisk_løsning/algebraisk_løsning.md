@@ -8,7 +8,9 @@ Etter dette delkapittelet, er målet at du skal kunne:
 * Løse lineære likningssystemer med to variabler ved hjelp av innsettingsmetoden.
 * Løse lineære likningssystemer med to variabler ved hjelp av addisjonsmetoden.
 * Kunne uttrykke løsningen av et lineært likningssystem som et likningssystem eller som en løsningsmengde.
-* Kunne bestemme funksjonsuttrykket til en lineær funksjon ved hjelp av likningssystemer.
+* Kunne anvende likningssystemer til å
+    * Bestemme koeffisientene til en lineær funksjon.
+    * Løse praktiske problemer.
 ```
 
 
@@ -323,7 +325,7 @@ Lineære likningssystemer dukker opp i mange praktiske situasjoner. Vi skal se p
 ---
 class: example
 ---
-Anna skal plante trær i en park. Hun skal plante to forskjellige typer som tar opp ulik plass. Eiketrær trenger 4 kvadratmeter plass, mens bjørketrær trenger 2 kvadratmeter plass. Anna har totalt 00 kvadratmeter til rådighet. Hun har bestemt seg for å plante 40 trær. 
+Anna skal plante trær i en park. Hun skal plante to forskjellige typer som tar opp ulik plass. Eiketrær trenger 4 kvadratmeter plass, mens bjørketrær trenger 2 kvadratmeter plass. Anna har totalt 100 kvadratmeter til rådighet. Hun har bestemt seg for å plante 40 trær. 
 
 Hvor mange av hver type tre skal hun plante?
 

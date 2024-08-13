@@ -337,7 +337,7 @@ Deloppgave 1
 
 :::{raw} html
 ---
-file: ./parsons_puzzle/oppgave_2.html
+file: ./parsons_puzzle/oppgaver/oppgave_2.html
 ---
 :::
 
@@ -434,4 +434,6 @@ med en presisjon på 7 siffer.
 
 
 :::::
+
+
 

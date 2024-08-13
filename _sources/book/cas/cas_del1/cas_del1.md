@@ -1,150 +1,230 @@
-# CAS-kurs del 1
-Dette er en introduksjon til CAS. Etter hvert som du lærer mer matematikk i 1T, vil du også lære å ta i bruk flere funksjoner. 
+# CAS-kurs: del 1
 
-## Finn CAS
-Du finner fram til CAS ved å åpne geogebra og trykke på "hamburgermenyen" (tre streker) øverst til høyre. Klikk på denne og sørg for at CAS er huket av. 
+:::{admonition} Læringsmål: CAS-kurs del 1
+---
+class: tip
+---
+Etter du har gått gjennom dette delkapittelet, er målet at du skal kunne:
+* Løse lineære likninger med CAS
+* Løse lineære likningssystemer med to ukjente med CAS
+* Løse lineære ulikheter med CAS.
 
-I CAS kan du velge mellom å løse likninger eller gjøre utregninger symbolsk eller numerisk. Symbolsk-tegnet er $=$ og gir oss nøyaktige tall og brøker. Numerisk-tegnet er $\approx$ og gir oss et desimaltall. 
+:::
 
-Du kan prøve ut dette ved å skriv inn sqrt(2) og observere at du får opp et kvadratrottegn. Du kan også få frem $\sqrt{\quad}$ ved å finne den på tastaturet. Prøv nå å trykke på $\approx$ og sammenlign med dersom du trykker på $=$. 
 
-```{figure} ./figurer/cas0.png
-:name: eks0
-:width: 50%
+## Likninger med CAS
 
-CAS kan både regne eksakt og numerisk.
+Å løse likninger i CAS kan gjøres enten ved å bruke `Løs`{l=geogebra}-funksjoner (`Solve`{l=geogebra} på engelsk) eller ved å trykke på <img src="figurer/icons/mode_solve.svg" class="inline-image"/>-knappen.
+
+
+::::{admonition} Hva gjør `$1`{l=geogebra}?
+---
+class: sidenote, margin
+---
+I CAS-vinduet i {ref}`Utforsk 1 <cas-del-1-utforsk-1>` har vi brukt `Løs($1, x)`{l=geogebra} for å løse likningen. Dette er fordi likningen står i celle nr. 1 og ved å skrive `$1`{l=geogebra}, setter vi inn innholdet i celle 1 inn i `Løs`{l=geogebra}-funksjonen.
+::::
+
+::::::{admonition} Utforsk 1: likninger med CAS
+---
+class: explore
+name: cas-del-1-utforsk-1
+---
+Under vises et *interaktivt* CAS-vindu der en lineær likning er løst på to forskjellige måter. 
+:::::{tab-set}
+
+::::{tab-item} Med `Løs`{l=geogebra}-funksjonen
+**Oppskrift**: <br>
+1. Skriv inn likningen i CAS-vinduet.
+2. Bruk `Løs`{l=geogebra}-funksjonen for å løse likningen.
+
+:::{raw} html
+---
+file: ggb/utforsk/utforsk_1_cmd.html
+---
+:::
+
+::::
+
+::::{tab-item} Med <img src="figurer/icons/mode_solve.svg" class="inline-image"/>
+**Oppskrift**: <br>
+1. Skriv inn likningen i CAS-vinduet.
+2. Trykk på <img src="figurer/icons/mode_solve.svg" class="inline-image"/>-knappen for å løse likningen.
+
+:::{raw} html
+---
+file: ggb/utforsk/utforsk_1_click_interface.html
+---
+:::
+::::
+
+:::::
+
+
+Deloppgave 1
+: Hvilken lineær likning er løst i CAS-vinduet? <br> Løs likningen for hånd og sjekk svaret.
+
+
+<br>
+
+Deloppgave 2
+: Bruk CAS-vinduene til å løse likningen $3x + 5 = -2x + 7$. <br> Får du samme svar med begge metodene? <br> *Tips: du trenger ikke slette det som står der allerede, bare start i celle 3!*
+
+
+::::::
+
+
+::::::{admonition} Underveisoppgave 1
+---
+class: check
+---
+Løs følgende likninger med CAS-vinduet under.  
+
+* $2x + 3 = 7$
+* $3x - 5 = 2x + 1$
+* $\dfrac{3}{2}x - 3 = 2x + 5$
+
+Bruk både `Løs`{l=geogebra}-funksjonen og <img src="figurer/icons/mode_solve.svg" class="inline-image"/>-knappen til å løse likningene.
+
+:::{raw} html
+---
+file: ggb/underveisoppgaver/oppgaver/underveisoppgave_1_tomt_cas_vindu.html
+---
+:::
+
+:::::{admonition} Løsning
+---
+class: solution, dropdown
+---
+::::{tab-set}
+:::{tab-item} Med `Løs`{l=geogebra}-funksjonen
+Legg merke til at vi kan skrive likningen direkte inn i `Løs`{l=geogebra}-funksjonen også (se celle 5).
+```{raw} html 
+---
+file: ggb/underveisoppgaver/løsninger/underveisoppgave_1_cmd_solve.html
+---
 ```
+:::
 
-
-````{margin}
-```{admonition} Tips
-:class: note
-Har tastaturet ditt forsvunnet? Finn tastatursymbolet nederst i høyre hjørne, så kommer du tilbake. 
+:::{tab-item} Med <img src="figurer/icons/mode_solve.svg" class="inline-image"/>-knappen
+```{raw} html
+---
+file: ggb/underveisoppgaver/løsninger/underveisoppgave_1_gui_solve.html
+---
 ```
-````
+:::
+::::
+:::::
 
-## Løse likninger i CAS
-Skriv inn likningen $2x + 3 = -x - 3$ i CAS. Det er lurt å sjekke at du har skrevet inn riktig før du går videre, for ellers løser du jo en helt annen likning!
+::::::
 
-Løs likningen ved å trykke på knappen som er merket med "x=". Denne skal vi heretter kalle "Løs-knappen". 
 
-```{figure} ./figurer/cas1.png
-:name: eks1
-:width: 80%
+## Likningssystemer med CAS
+Vi kan også løse likningssystemer med både `Løs`{l=geogebra}-funksjonen og <img src="figurer/icons/mode_solve.svg" class="inline-image"/>-knappen i CAS.
 
-Vi kan løse likninger både numerisk og eksakt. 
+
+:::::{admonition} Utforsk 2: likningssystemer med CAS
+---
+class: explore
+---
+Under vises et *interaktivt* CAS-vindu der et likningssystem er løst på to forskjellige måter. 
+
+::::{tab-set}
+:::{tab-item} Med `Løs`{l=geogebra}-funksjonen
+**Oppskrift**: <br>
+
+1. Skriv inn hver likning i hver sin celle. 
+2. Bruk `Løs`{l=geogebra}-funksjonen for å løse likningssystemet. <br> Legg merke til at likningene og variablene plasseres i hver sin liste `{}`{l=python}.
+
+```{raw} html
+---
+file: ggb/utforsk/utforsk_2_cmd.html
+---
 ```
+:::
 
-````{admonition} Underveisoppgave 1
-:class: note
-Bruk CAS til å løse likningene:
+:::{tab-item} Med <img src="figurer/icons/mode_solve.svg" class="inline-image"/>-knappen
+**Oppskrift**: <br>
 
-1) $ 2x−10+x=x+20 $
-2) $ \frac{5}{2}x+9x−2=12x $
-3) $ \frac{x}{3}=12 $
+1. Skriv inn hver likning i hver sin celle. 
+2. Marker likningene (dra musepekeren over cellenumrene - ikke bare trykk på cellene). 
+3. Trykk på <img src="figurer/icons/mode_solve.svg" class="inline-image"/>-knappen for å løse likningssystemet.
 
-```{dropdown} Løsning
-1) $x = 15$
-2) $ x = -4$
-3) $ x = \frac{3}{2}$
-
+```{raw} html
+---
+file: ggb/utforsk/utforsk_2_gui.html
+---
 ```
-````
+:::
+::::
 
-## Likningssystemer
-Vi kan også løse likningssystemer i CAS. Da skriver vi inn hver likning for seg, markerer linjene og trykker på Løs-knappen. 
 
-Vi prøver med likningssettet
+Deloppgave 1
+: Hvilket likningssystem er løst i CAS-vinduet? <br> Kan du lese av løsningen som er funnet?
 
-\begin{align}
-    2x+3y-4 & =0
-    2x+1 &= 2-y
-\end{align}
 
-```{figure} ./figurer/cas2.png
-:name: eks2
-:width: 60%
+Deloppgave 2
+: Bruk CAS-vinduene til å løse likningssystemet
+    \begin{align*}
+    2x + y & = 5 \label{1a} \quad\quad\quad \tag{1a} \\
+    x - y & = 1 \label{1b} \quad\quad\quad \tag{1b} 
+    \end{align*}
+:::::
 
-Når vi løser likningssett må vi huske å markere likningene vi skal løse.
+
+
+::::::{admonition} Underveisoppgave 2
+---
+class: check
+---
+Løs følgende likningssystemer med CAS vinduet under:
+
+Likningssystem 1
+:    \begin{align*}
+    3x + y & = 7 \\
+    x - y & = 1
+    \end{align*}
+
+Likningssystem 2
+:    \begin{align*}
+    x - 2y & = 7 \\
+    2x + y & = 1
+    \end{align*}
+
+Likningssystem 3
+:    \begin{align*}
+    x + 2y & = 5 \\
+    4x & = 6 - y
+    \end{align*}
+
+
+:::{raw} html
+---
+file: ggb/underveisoppgaver/oppgaver/underveisoppgave_2_tomt_cas_vindu.html
+---
+:::
+
+
+:::::{admonition} Løsning
+---
+class: dropdown, solution
+---
+::::{tab-set}
+:::{tab-item} Med `Løs`{l=geogebra}-funksjonen
+```{raw} html
+---
+file: ggb/underveisoppgaver/løsninger/underveisoppgave_2_cmd_solve.html
+---
 ```
+:::
 
-````{admonition} Underveisoppgave 2
-:class: note
-Bruk CAS til å løse likningssettene:
-
-1) \begin{align}
-        3x+y &=7 \\
-        x−y &=1 \\
-    \end{align}
-
-2) \begin{align}
-        x−2y &= 7 \\
-        2x+y &= 1 \\
-    \end{align}
-
-3) \begin{align}
-        x+2y &= 5 \\
-        4x &= 6−y \\
-    \end{align}
-
-4) \begin{align}
-        −2x+y &= −1 \\
-        4x+2y+14 &= 0 \\
-    \end{align}
-
-```{dropdown} Løsning
-1)  $x = 2, y = 1$
-2) $ x = \frac{9}{5}, y = \frac{-13}{5}$
-3) $ x= 1, y = 2$
-4) $ x = \frac{-3}{2}, y = -4$    
-    
+:::{tab-item} Med <img src="figurer/icons/mode_solve.svg" class="inline-image"/>-knappen
+```{raw} html
+---
+file: ggb/underveisoppgaver/løsninger/underveisoppgave_2_gui_solve.html
+---
 ```
-````
+:::
+::::
+:::::
 
-### Likningssystemer med flere enn to ukjente
-Når vi bruker CAS, er det også lett å løse likningssystemer med flere enn to ukjente. Prøv selv!
-
-````{admonition} Underveisoppgave 4
-:class: note
-Løs likningssystemet
-
-\begin{align}
-    a - b + c &= -11
-    a + b + c &= 11
-    8a + 4b + 2c &= -4
-\end{align}
-
-```{dropdown} Løsning
-$a = -8, b = 11, c = 8$
-
-```
-````
-
-## Ulikheter
-Vi kan også løse ulikheter i CAS. Vi prøver oss frem med ulikheten $\frac{x}{3}+\frac{1}{2}\leq \frac{x}{2}+\frac{1}{3}$. Vi bruker Løs-knappen som tidligere og får $x \geq 1$, som vist under. 
-
-```{figure} ./figurer/cas3.png
-:name: eks3
-:width: 40%
-
-Vi løser ulikheter på samme måte som likninger. 
-```
-
-````{admonition} Underveisoppgave 4
-:class: note
-Bruk CAS til å løse ulikhetene: 
-
-1) $ −2x+3 \geq 3x−5 $
-2) $ 3(y+3) < 5(y+3) $
-3) $3(x+3)-\frac{1}{2}\left(x+4\right) < x+5(x-2)$
-
-```{dropdown} Løsning
-1) $x \leq \frac{4}{3} $
-2) $ x > -3$
-3) $ x > \frac{34}{7}$
-
-```
-````
-
-
-
+::::::

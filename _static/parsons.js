@@ -17,6 +17,7 @@ function initializeParsonsPuzzle(puzzleContainerId, codeString) {
     const fullCodeElement = solutionModal.querySelector(`#fullCode-${puzzleContainerId}`);
     const closeModalButton = solutionModal.querySelector('.close');
     const copyCodeButton = solutionModal.querySelector(`#copyCodeButton-${puzzleContainerId}`);
+
   
     // Preprocess and shuffle the code once, then keep it stored in a variable
     let codeBlocks = preprocessCode(codeString);
@@ -46,6 +47,8 @@ function initializeParsonsPuzzle(puzzleContainerId, codeString) {
             alert('Du har kopiert koden!');
         });
     });
+
+
 
 }
 
@@ -117,36 +120,54 @@ function reshuffle() {
 
 
 
+// /**
+//  * Preprocesses the code by grouping semicolon-separated lines into single blocks,
+//  * preserving indentation, and removing the semicolons from the puzzle representation.
+//  * @param {string} codeString - The full code as a string.
+//  * @returns {Array} - An array of objects containing the code blocks with their original order.
+//  */
+// function preprocessCode(codeString) {
+//     const blocks = codeString.split('\n').reduce((acc, line, index) => {
+//         if (line.includes(';')) {
+//             // Split the line by semicolons and trim each part, preserving indentation
+//             const parts = line.split(';').map(part => part.match(/^\s*/) + part.trim()).filter(part => part !== '');
+//             acc.push({
+//                 block: parts.join('\n'),  // Join parts into a single block with each part on a new line
+//                 order: index
+//             });
+//         } else {
+//             const trimmedLine = line.match(/^\s*/) + line.trim(); // Preserve indentation
+//             if (trimmedLine.trim()) {  // Ensure no empty blocks are created
+//                 acc.push({
+//                     block: trimmedLine,
+//                     order: index
+//                 });
+//             }
+//         }
+//         return acc;
+//     }, []);
 
-/**
- * Preprocesses the code by grouping semicolon-separated lines into single blocks,
- * preserving indentation, and removing the semicolons from the puzzle representation.
- * @param {string} codeString - The full code as a string.
- * @returns {Array} - An array of objects containing the code blocks with their original order.
- */
+//     return blocks;
+// }
+
 function preprocessCode(codeString) {
-    const blocks = codeString.split('\n').reduce((acc, line, index) => {
-        if (line.includes(';')) {
-            // Split the line by semicolons and trim each part, preserving indentation
-            const parts = line.split(';').map(part => part.match(/^\s*/) + part.trim()).filter(part => part !== '');
-            acc.push({
-                block: parts.join('\n'),  // Join parts into a single block with each part on a new line
-                order: index
-            });
-        } else {
-            const trimmedLine = line.match(/^\s*/) + line.trim(); // Preserve indentation
-            if (trimmedLine.trim()) {  // Ensure no empty blocks are created
-                acc.push({
-                    block: trimmedLine,
-                    order: index
-                });
-            }
-        }
-        return acc;
-    }, []);
+    const lines = codeString.split('\n');
+    return lines.map((line, index) => {
+        let trimmedLine = line.trim();
 
-    return blocks;
+        if (line.includes(';')) {
+            const parts = line.split(';').map(part => part.trim()).filter(part => part !== '');
+            trimmedLine = parts.join('\n'); // Join parts into a single block with each part on a new line
+        }
+
+        return {
+            block: line.includes(';') ? trimmedLine : line,
+            order: index,
+            isEmpty: line.trim() === '' // Add an `isEmpty` property to track empty lines
+        };
+    });
 }
+
 
 
 
@@ -158,20 +179,39 @@ function shuffleArray(array) {
     return array;
 }
 
+// function renderDraggableCode(container, codeBlockObjects) {
+//     container.innerHTML = '';  // Clear the container
+//     codeBlockObjects.forEach((obj) => {
+//         const lineElement = document.createElement('div');
+//         lineElement.className = 'draggable';
+//         lineElement.draggable = true;
+//         lineElement.dataset.order = obj.order;
+        
+//         lineElement.innerHTML = `<pre class="highlight python"><code>${escapeHTML(obj.block)}</code></pre>`;
+        
+//         container.appendChild(lineElement);
+//         hljs.highlightElement(lineElement.querySelector('code'));
+//     });
+// }
+
+
 function renderDraggableCode(container, codeBlockObjects) {
     container.innerHTML = '';  // Clear the container
     codeBlockObjects.forEach((obj) => {
-        const lineElement = document.createElement('div');
-        lineElement.className = 'draggable';
-        lineElement.draggable = true;
-        lineElement.dataset.order = obj.order;
-        
-        lineElement.innerHTML = `<pre class="highlight"><code>${escapeHTML(obj.block)}</code></pre>`;
-        
-        container.appendChild(lineElement);
-        hljs.highlightElement(lineElement.querySelector('code'));
+        if (!obj.isEmpty) { // Skip rendering for empty lines
+            const lineElement = document.createElement('div');
+            lineElement.className = 'draggable';
+            lineElement.draggable = true;
+            lineElement.dataset.order = obj.order;
+            
+            lineElement.innerHTML = `<pre class="highlight python"><code>${escapeHTML(obj.block)}</code></pre>`;
+            
+            container.appendChild(lineElement);
+            hljs.highlightElement(lineElement.querySelector('code'));
+        }
     });
 }
+
 
 function escapeHTML(str) {
     return str.replace(/&/g, "&amp;")
@@ -181,33 +221,60 @@ function escapeHTML(str) {
               .replace(/'/g, "&#039;");
 }
 
-/**
- * Checks the solution by comparing the order of elements in the drop area
- * with the original order of the code blocks.
- * @param {HTMLElement} dropArea - The drop area containing the ordered elements.
- * @param {Array} codeBlockObjects - The original code block objects to check against.
- * @param {HTMLElement} feedbackElement - The element to display feedback to the user.
- * @param {HTMLElement} fullCodeElement - The element where the full code will be displayed.
- * @param {HTMLElement} solutionModal - The modal to display the full code.
- */
+// /**
+//  * Checks the solution by comparing the order of elements in the drop area
+//  * with the original order of the code blocks.
+//  * @param {HTMLElement} dropArea - The drop area containing the ordered elements.
+//  * @param {Array} codeBlockObjects - The original code block objects to check against.
+//  * @param {HTMLElement} feedbackElement - The element to display feedback to the user.
+//  * @param {HTMLElement} fullCodeElement - The element where the full code will be displayed.
+//  * @param {HTMLElement} solutionModal - The modal to display the full code.
+//  */
+// function checkSolution(dropArea, codeBlockObjects, feedbackElement, fullCodeElement, solutionModal) {
+//     const droppedItems = Array.from(dropArea.children).filter(item => !item.classList.contains('placeholder'));
+//     const droppedOrder = droppedItems.map(item => parseInt(item.dataset.order));
+
+//     // Sort the codeBlockObjects based on their original order to get the correct sequence
+//     const correctOrder = codeBlockObjects.slice().sort((a, b) => a.order - b.order).map(obj => obj.order);
+
+//     if (JSON.stringify(droppedOrder) === JSON.stringify(correctOrder)) {
+//         feedbackElement.textContent = 'Riktig!';
+//         feedbackElement.style.color = 'green';
+
+//         // Combine the full code and show it in the modal, preserving indentation
+//         const fullCode = droppedItems.map(item => item.querySelector('code').textContent).join('\n');
+//         fullCodeElement.textContent = fullCode;
+
+//         // Apply syntax highlighting to the full code
+//         hljs.highlightElement(fullCodeElement);
+
+//         solutionModal.style.display = 'block';
+//     } else {
+//         feedbackElement.textContent = 'Prøv igjen!';
+//         feedbackElement.style.color = 'red';
+//     }
+// }
+
+
 function checkSolution(dropArea, codeBlockObjects, feedbackElement, fullCodeElement, solutionModal) {
     const droppedItems = Array.from(dropArea.children).filter(item => !item.classList.contains('placeholder'));
     const droppedOrder = droppedItems.map(item => parseInt(item.dataset.order));
 
-    // Sort the codeBlockObjects based on their original order to get the correct sequence
-    const correctOrder = codeBlockObjects.slice().sort((a, b) => a.order - b.order).map(obj => obj.order);
+    // Combine all code blocks based on their order to form the full code, including empty lines
+    const fullCode = codeBlockObjects.sort((a, b) => a.order - b.order)
+                         .map(obj => obj.block)
+                         .join('\n');
+    
+    fullCodeElement.textContent = fullCode;
+    hljs.highlightElement(fullCodeElement);
 
+    // Solution correctness check remains unchanged
+    const correctOrder = codeBlockObjects.filter(obj => !obj.isEmpty)
+                                         .sort((a, b) => a.order - b.order)
+                                         .map(obj => obj.order);
     if (JSON.stringify(droppedOrder) === JSON.stringify(correctOrder)) {
         feedbackElement.textContent = 'Riktig!';
         feedbackElement.style.color = 'green';
-
-        // Combine the full code and show it in the modal, preserving indentation
-        const fullCode = droppedItems.map(item => item.querySelector('code').textContent).join('\n');
-        fullCodeElement.textContent = fullCode;
-
-        // Apply syntax highlighting to the full code
-        hljs.highlightElement(fullCodeElement);
-
         solutionModal.style.display = 'block';
     } else {
         feedbackElement.textContent = 'Prøv igjen!';
@@ -225,7 +292,7 @@ function createSolutionModal(puzzleContainerId) {
     modal.innerHTML = `
       <div class="modal-content">
         <span class="close">&times;</span>
-        <pre><code id="fullCode-${puzzleContainerId}" class="python"></code></pre>
+        <pre><code id="fullCode-${puzzleContainerId}" class="highlight python"></code></pre>
         <button id="copyCodeButton-${puzzleContainerId}" class="button button-check-solution">Bra jobba! 🔥 Kopier koden!</button>
       </div>
     `;

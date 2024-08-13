@@ -1,20 +1,68 @@
-# Løsning med programmering
+# Programmering av likningssystemer
+
+:::{admonition} Læringsmål
+---
+class: tip
+---
+Målet etter dette delkapittelet er at du skal kunne:
+* Lese og forstå enkle program som løser lineære likningssystemer. 
+* Kunne bruke og justere programkode for å løse lineære likningssystemer.
+:::
+
+:::{admonition} Bakgrunnsteori
+---
+class: warning, margin
+Her kan det være lurt å ha vært borti minst én type løkke. Ta en titt på (`for`{l=python}-løkker)[../../../programmering/for_loops/for_loops.md]
+:::
 
 
-Eleven har skrevet følgende kode der eleven har brukt en strategi som på _godt norsk_ kalles for **grid search**. 
+Akkurat som med likninger, kan vi bruke numeriske metoder for å finne omtrentlige løsninger til likningssystemer. I fåtall av tilfeller kan vi bestemme de eksakt, men i den virkelige verden må man som oftest si seg fornøyd med omtrentlige løsninger.
 
-```python
-for y in range(-4, 5):
-    for x in range(-4, 5):
-        if x - y == -1 and x + y == 1:
-            print(f"{x = } og {y = }")
-```
+:::::{admonition} Utforsk 1
+---
+class: explore
+---
+Under vises et interaktivt kodevindu med et program som forsøker å løse et likningssystem. 
 
-Animasjonen i {numref}`grid_search` illustrerer hvordan koden går gjennom punkter $(x, y)$ i et gitt område. Koden sjekker så om likningene er oppfylt samtidig for hvert punkt.
 
-```{figure} ./animasjoner/grid_search.gif
-:name: grid_search
-:width: 80%
+:::{raw} html
+---
+file: interaktiv_kode/utforsk/utforsk_1.html
+---
+:::
 
-Animasjonen viser strategien bak grid search for å løse et likningssystem. Metoden søker gjennom noen mulige punkter $(x, y)$ i et gitt område og sjekker om likningene i likningssystemet er oppfylt. 
-```
+<br>
+
+Deloppgave 1
+: Kan du forklare hvilket likningssystem programmet prøver å løse? <br> Gir programmet riktig løsning?
+
+
+<br>
+
+Deloppgave 2
+: Kan du gi en forklaring av strategien programmet bruker for å løse likningssystemet? 
+
+
+<br>
+
+Deloppgave 3
+: Endre programmet slik at det finner løsningen til likningssystemet
+
+    \begin{align*}
+    x + 2y &= 5 \\
+    4x + y &= 6
+    \end{align*}
+
+<br>
+
+Deloppgave 4
+: Hvis du endrer programmet til å forsøke og løse likningssystemet 
+
+    \begin{align*}
+    x - 2y &= 7 \\
+    2x + y &= 1
+    \end{align*}
+    
+    finner ikke programmet noen løsning. Hva er grunnen til det?
+
+:::::
