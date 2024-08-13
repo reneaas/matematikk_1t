@@ -2,32 +2,37 @@
 
 Her skal du få en litt grundigere innføring i funksjonsbegrepet. En funksjon kan noen ganger tenkes på som en graf, andre ganger tenker vi på det som en formel. Vi tenker på formelen og grafen som ulike representasjoner av en mer generell sammenheng som vi kaller for en **funksjon**. 
 
-```{admonition} Læringsmål: funksjonsbegrepet
-:class: tip
-
+:::{admonition} Læringsmål: funksjonsbegrepet
+---
+class: tip
+---
 Etter å ha arbeidet med dette kapittelet er målet at du skal kunne:
 * Forklare hva en funksjon er og hva som skiller en funksjon fra en kurve.
 * Forstå begrepene definisjonsmengde og verdimengde til en funksjon.
-```
+:::
 
 
 ## Funksjon som formel
 Når vi har jobbet med rette linjer hittil, har vi brukt formelen for en skrå linje $y = ax + b$, eller vi har jobbet med en graf der vi har punkter $(x, y)$ som ligger på linja. For skrå linjer, er det naturlig å tenke oss at $y$-verdien er bestemt av $x$-verdien når vi jobber med formelen $y = ax + b$. Vi kaller $x$ for den **uavhengige** variabelen, og $y$ for den **avhengige** variabelen. Vi kan tenke på det som at den uavhengige variabelen _bestemmer_ den avhengige variabelen - altså $x$ bestemmer verdien til $y$. Vi sier da at $y$ er en _funksjon_ av $x$. 
 
 
-```{admonition} En $x$-verdi kan bare gi én $y$-verdi
-:class: note, margin
+:::{admonition} En $x$-verdi kan bare gi én $y$-verdi
+---
+class: note, margin
+---
 Det er viktig å merke seg at for at en sammenheng mellom $x$ og $y$ skal regnes som en funksjon, kan vi for en verdi av $x$ _kun_ få nøyaktig én $y$-verdi. Dersom vi har flere $y$-verdier for en $x$-verdi, er det ikke en funksjon.
-```
+:::
 
-```{admonition} Funksjon som algebraisk formel
-:class: theory
+:::{admonition} Funksjon som algebraisk formel
+---
+class: theory
+---
 Dersom vi har en uavhengig variabel $x$ og en avhengig variabel $y$, der vi tenker oss at $x$ entydig bestemmer verdien til $y$, så kaller vi sammenhengen mellom dem for en funksjon $f$. I matematikken har vi bestemt at:
 * $f$ er **funksjonsnavnet** eller bare _funksjonen_. Vi sier ofte "en funksjon $f$" eller "funksjonen $f$".
 * Vi skriver $y = f(x)$ for å understreke at $y$ er en funksjon av $x$. Vi kaller $f(x)$ for **funksjonsverdien** til $f$ for bestemt verdi av $x$.
 
 Vi skriver oftest bare $f(x)$ i stedet for $y = f(x)$. 
-```
+:::
 
 
 Ut ifra forklaringen over, kan vi nå skrive en skrå linje $y = ax + b$ ved å sette $y = f(x)$ der vi mener at $f$ er funksjonen som gir oss sammenhengen mellom $x$ og $y$ i formelen. Da får vi
@@ -38,9 +43,10 @@ $$ (eq:lineær_funksjon1)
 
 Vi kaller funksjonen i likning {eq}`eq:lineær_funksjon1` for en **lineær funksjon**.
 
-````{admonition} Underveisoppgave 1
-:class: check
-
+::::{admonition} Underveisoppgave 1
+---
+class: check
+---
 En lineær funksjon er gitt ved funksjonsuttrykket
 
 $$
@@ -52,8 +58,10 @@ $$
 
 **Prøv godt selv før du ser på løsningsforslaget. Det kan hende du bør lese gjennom forklaringene over et par ganger for å forstå den godt.**
 
-```{admonition} Løsning
-:class: solution, dropdown
+:::{admonition} Løsning
+---
+class: solution, dropdown
+---
 1. For å bestemme $f(0)$, setter vi $x = 0$ i funksjonsuttrykket. Da får vi
 
     $$
@@ -68,8 +76,8 @@ $$
     $$
 
     Dermed er punktet $(2, f(2)) = (2, 5)$ på grafen til funksjonen.
-```
-````
+:::
+::::
 
 
 
@@ -77,34 +85,40 @@ $$
 Når vi tenker på en funksjon som en graf, så tenker vi på en graf der hver $x$-verdi er tilordnet nøyaktig én $y$-verdi. Til sammen gir dette oss par $(x, y)$ der vi kan tegne en graf. Betingelsen for at det skal være en funksjon, er at det er **kun én** $y$-verdi for hver $x$-verdi. Her også erstatter vi $y = f(x)$ dersom sammenhengen mellom $x$ og $y$ kan beskrives av en funksjon. Da blir et punkt på grafen $(x, y) = (x, f(x))$.
 
 
-`````{admonition} Eksempel 1: funksjonsgraf vs kurve
-:class: example
+::::{admonition} Eksempel 1: funksjonsgraf vs kurve
+---
+class: example
+---
 Med betingelsen over, er det derfor sånn at en graf ikke nødvendigvis er en funksjon. 
 I {numref}`funksjonsgraf_vs_kurve` under vises et eksempel på to grafer, der kun én av dem representerer en funksjon.
 
-```{figure} ./figurer/eksempler/funksjonsbegrepet/funksjonsgraf_vs_kurve.svg
-:name: funksjonsgraf_vs_kurve
-:width: 100%
-
+:::{figure} ./figurer/eksempler/funksjonsbegrepet/funksjonsgraf_vs_kurve.svg
+---
+name: funksjonsgraf_vs_kurve
+width: 100%
+---
 Grafen til venstre viser en funksjon fordi det for _hver_ $x$-verdi finnes nøyaktig én $y$-verdi. Punktene $(x, y)$ definerer derfor en funksjon. Grafen til høyre viser en kurve (en sirkel med radius 2) som _ikke_ er en funksjon fordi det _ikke_ finnes nøyaktig én $y$-verdi for hver $x$-verdi. For eksempel har vi to $y$-verdier for $x = 0$. Dermed kan ikke en sirkel beskrives som en funksjon.
-```
-`````
+:::
+::::
 
-````{admonition} Underveisoppgave 2
-:class: check
-
+::::{admonition} Underveisoppgave 2
+---
+class: check
+---
 Under vises fire grafer. Bestem hvilke av de som representerer en funksjon, og hvilke av de som ikke representerer en funksjon. Begrunn svarene dine.
 
-```{figure} ./figurer/underveisoppgaver/funksjonsbegrepet/funksjonsgraf_vs_kurve_oppgave1.svg
-:name: funksjonsgraf_vs_kurve_oppgave1
-:width: 90%
-
+:::{figure} ./figurer/underveisoppgaver/funksjonsbegrepet/funksjonsgraf_vs_kurve_oppgave1.svg
+---
+name: funksjonsgraf_vs_kurve_oppgave1
+width: 90%
+---
 Her vises fire grafer $A$, $B$, $C$ og $D$. Men hvilke av de er funksjoner? Hvilke av de er bare kurver?
-```
+:::
 
-```{admonition} Løsning
-:class: solution, dropdown
-
+:::{admonition} Løsning
+---
+class: solution, dropdown
+---
 Graf $A$
 : Graf $A$ viser en kurve som for *hver* $x$-verdi kun har én $y$-verdi. Grafen representerer derfor en funksjon (en lineær funksjon).
 
@@ -116,26 +130,29 @@ Graf $C$
 
 Graf $D$
 : Graf $D$ viser en linje $y = -1$ der alle $x$-verdier har denne $y$-verdien. Men for en bestemt verdi av $x$, finnes det bare én $y$-verdi. Derfor er dette en funksjon (en lineær funksjon med stigningstall $0$ og konstantledd $-1$).
-```
-````
+:::
+::::
 
 
 
 ## Definisjon av en funksjon
 Vi er nå klare for å oppsummere en definisjon av en funksjon. 
 
-```{admonition} Definisjon: Funksjon
-:class: theory
+:::{admonition} Definisjon: Funksjon
+---
+class: theory
+---
 En **funksjon** $f$ er en regel som for _hvert_ element $x \in D_f$ tilordner _nøyaktig én_ funksjonsverdi $f(x) \in V_f$.
 
 Vi kaller $D_f$ for **definisjonsmengden** til $f$ som er mengden av alle $x$-verdier vi kan regne ut en funksjonsverdi $y = f(x)$ med. Vi kaller $V_f$ for **verdimengden** til $f$ som er mengden av alle $y$-verdier som kan regnes ut med $x \in D_f$.
-```
+:::
 
 Definisjonen over er litt abstrakt, så vi tar utgangspunkt i et konkret eksempel. 
 
-````{admonition} Eksempel 2: Lineær funksjon med definisjonsmengde og verdimengde
-:class: example
-
+::::{admonition} Eksempel 2: Lineær funksjon med definisjonsmengde og verdimengde
+---
+class: example
+---
 Vi lar en funksjon $f$ være gitt ved funksjonsuttrykket 
 
 $$
@@ -144,8 +161,10 @@ $$
 
 Bestem verdimengden til $f$. 
 
-```{admonition} Løsning
-:class: solution, dropdown
+:::{admonition} Løsning
+---
+class: solution, dropdown
+---
 Fra funksjonsuttrykket, er definisjonsmengden gitt ved $D_f = [-2, 2]$. Dette betyr at vi bare kan bruke $x \in [-2, 2]$ til å regne ut funksjonsverdier $f(x)$. For å bestemme verdimengden, kan vi regne ut den største og minste mulige verdien vi kan få for $f(x)$ gitt $x \in D_f$. Siden det er en skrå rett linje, er det rimelig å bare se på endepunktene for å finne største og minste verdi:
 
 $$
@@ -153,20 +172,16 @@ f(-2) = 2 \cdot (-2) + 1 = -3, \quad f(2) = 2 \cdot 2 + 1 = 5.
 $$
 
 Dermed finner vi at verdimengden til $f$ er $V_f = [-3, 5]$. 
-```
-````
+:::
+::::
 
 Så er **din tur**!
 
-````{admonition} underveisoppgave 3
-:class: check
-
-
-
-````
 
 ````{admonition} Eksempel 3: En annerledes funksjon
-:class: example
+---
+class: example
+---
 Noen ganger har vi en funksjon som ikke kan skrives som en algebraisk formelen. Under vises en funksjon $g$ som er gitt ved 
 
 $$
