@@ -53,10 +53,13 @@ file: interaktiv_kode/utforsk/utforsk_1.html
 ---
 :::
 
+<br>
 
 Deloppgave 2
 : Endre programmet slik at det finner det *andre* nullpunktet til $f$.
 
+
+<br>
 
 Deloppgave 3
 : Hva skjer hvis du endrer setter `a = -10`{l=python} og `b = 10`{l=python} (hvis noe i det hele tatt)? <br> Hva er årsaken til dette?
