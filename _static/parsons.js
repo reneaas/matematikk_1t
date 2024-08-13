@@ -232,29 +232,20 @@ function createPlaceholder(dropArea) {
 }
 
 
-
-/**
- * Enables drag-and-drop functionality for the draggable elements and the drop area.
- * @param {HTMLElement} draggableContainer - The container holding the draggable elements.
- * @param {HTMLElement} dropArea - The drop area where elements can be dropped.
- */
 function enableDragAndDrop(draggableContainer, dropArea) {
     const draggables = draggableContainer.querySelectorAll('.draggable');
     const placeholder = dropArea.querySelector('.placeholder');
 
     draggables.forEach(draggable => {
         draggable.addEventListener('dragstart', dragStart);
-        draggable.addEventListener('dragend', (e) => {
-            dragEnd(e);
-        });
+        draggable.addEventListener('dragend', dragEnd);
     });
 
-    dropArea.addEventListener('dragover', (e) => dragOver(e, dropArea, placeholder));
-    dropArea.addEventListener('drop', (e) => {
-        drop(e);
+    // Adding event listeners for drag and drop operations to both areas
+    [dropArea, draggableContainer].forEach(container => {
+        container.addEventListener('dragover', (e) => dragOver(e, container));
+        container.addEventListener('drop', (e) => drop(e, container, dropArea, placeholder));
     });
-
-    // Ensure placeholder text is shown after reset
 }
 
 function dragStart(e) {
@@ -298,7 +289,7 @@ function dragOver(e, dropArea, placeholder) {
 function drop(e) {
     e.preventDefault();
     const draggableElement = document.querySelector('.dragging');
-    const dropArea = e.target.closest('#drop-area');
+    const dropArea = e.target.closest('#drop-area') || e.target.closest('#draggable-code');
     const afterElement = getDragAfterElement(e.clientY, dropArea);
     const placeholder = dropArea.querySelector('.placeholder');
 
@@ -326,6 +317,12 @@ function drop(e) {
     updatePlaceholderVisibility(dropArea, draggableCodeContainer);
 }
 
+function ensurePlaceholderAtBottom(dropArea, placeholder) {
+    if (!dropArea.contains(placeholder)) {
+        dropArea.appendChild(placeholder); // Append placeholder if it's not in the drop area
+    }
+}
+
 function updatePlaceholderVisibility(dropArea, draggableCodeContainer) {
     const draggableItems = draggableCodeContainer.querySelectorAll('.draggable').length;
     console.log("draggableItems: ", draggableItems);
@@ -334,7 +331,7 @@ function updatePlaceholderVisibility(dropArea, draggableCodeContainer) {
         const placeholder = dropArea.querySelector('.placeholder');
         if (placeholder) {
             placeholder.remove();
-        }
+        }        
     } else {
         // Ensure placeholder is visible and at the end of the drop area
         const placeholder = dropArea.querySelector('.placeholder');
@@ -361,4 +358,3 @@ function getDragAfterElement(y, dropArea) {
         }
     }, { offset: Number.NEGATIVE_INFINITY }).element;  // Return element before which the new block will be inserted
 }
-
