@@ -116,14 +116,18 @@ function reshuffle() {
 }
 
 
+
 function preprocessCode(codeString) {
     const lines = codeString.split('\n');
     return lines.map((line, index) => {
         let trimmedLine = line.trim();
 
         if (line.includes(';')) {
-            const parts = line.split(';').map(part => part.trim()).filter(part => part !== '');
-            trimmedLine = parts.join('\n'); // Join parts into a single block with each part on a new line
+            // Split the line at each semicolon, preserving empty parts
+            const parts = line.split(';');
+            
+            // Join the parts with newlines, keeping the original indentation or empty lines
+            trimmedLine = parts.map(part => part.trim() === '' ? '' : part).join('\n');
         }
 
         return {
@@ -133,7 +137,6 @@ function preprocessCode(codeString) {
         };
     });
 }
-
 
 
 
@@ -267,100 +270,7 @@ function dragEnd(e) {
     e.target.classList.remove('dragging');
 }
 
-// function dragOver(e, dropArea, placeholder) {
-//     e.preventDefault();
-//     const afterElement = getDragAfterElement(e.clientY, dropArea);
-//     const draggable = document.querySelector('.dragging');
-//     if (afterElement == null) {
-//         dropArea.insertBefore(draggable, placeholder);
-//     } else {
-//         dropArea.insertBefore(draggable, afterElement);
-//     }
 
-//     dropArea.appendChild(placeholder);
-// }
-
-
-// function drop(e) {
-//     e.preventDefault();
-//     const draggableElement = document.querySelector('.dragging');
-//     const dropArea = e.target.closest('#drop-area');
-//     dropArea.insertBefore(draggableElement, dropArea.querySelector('.placeholder'));
-//     draggableElement.classList.remove('dragging');
-
-//     // Pass the draggableCodeContainer reference correctly
-//     const draggableCodeContainer = document.querySelector('#draggable-code');
-//     updatePlaceholderVisibility(dropArea, draggableCodeContainer);
-// }
-
-
-
-// This works!!!
-
-// function dragOver(e, dropArea, placeholder) {
-//     e.preventDefault();
-//     const draggable = document.querySelector('.dragging');
-//     const afterElement = getDragAfterElement(e.clientY, dropArea);
-
-//     if (afterElement == null) {
-//         dropArea.insertBefore(draggable, placeholder);
-//     } else {
-//         const box = afterElement.getBoundingClientRect();
-//         const offset = e.clientY - box.top;
-
-//         // If the mouse is in the upper half of the element, place the draggable above it
-//         if (offset < box.height / 2) {
-//             dropArea.insertBefore(draggable, afterElement);
-//         } else {
-//             dropArea.insertBefore(draggable, afterElement.nextSibling);
-//         }
-//     }
-
-//     // Always move the placeholder to the end
-//     dropArea.appendChild(placeholder);
-// }
-
-// function drop(e) {
-//     e.preventDefault();
-//     const draggableElement = document.querySelector('.dragging');
-//     const dropArea = e.target.closest('#drop-area');
-//     const afterElement = getDragAfterElement(e.clientY, dropArea);
-
-//     if (afterElement == null) {
-//         dropArea.insertBefore(draggableElement, placeholder);
-//     } else {
-//         const box = afterElement.getBoundingClientRect();
-//         const offset = e.clientY - box.top;
-
-//         // If the mouse is in the upper half of the element, place the draggable above it
-//         if (offset < box.height / 2) {
-//             dropArea.insertBefore(draggableElement, afterElement);
-//         } else {
-//             dropArea.insertBefore(draggableElement, afterElement.nextSibling);
-//         }
-//     }
-
-//     draggableElement.classList.remove('dragging');
-
-//     // Always move the placeholder to the end
-//     dropArea.appendChild(placeholder);
-
-//     // Pass the draggableCodeContainer reference correctly
-//     const draggableCodeContainer = document.querySelector('#draggable-code');
-//     updatePlaceholderVisibility(dropArea, draggableCodeContainer);
-// }
-
-
-// function updatePlaceholderVisibility(dropArea, draggableCodeContainer) {
-//     const draggableItems = draggableCodeContainer.querySelectorAll('.draggable').length;
-
-//     // If all draggable elements are in the drop area, hide the placeholder
-//     if (draggableItems === 0) {
-//         dropArea.querySelector('.placeholder').style.display = 'none';
-//     } else {
-//         dropArea.querySelector('.placeholder').style.display = ''; // Ensure it's visible if not all are placed
-//     }
-// }
 
 function dragOver(e, dropArea, placeholder) {
     e.preventDefault();
@@ -435,15 +345,6 @@ function updatePlaceholderVisibility(dropArea, draggableCodeContainer) {
         }
     }
 }
-
-// function createPlaceholder(dropArea) {
-//     // Always start fresh
-//     const placeholder = document.createElement('div');
-//     placeholder.className = 'placeholder';
-//     placeholder.textContent = 'Dra og dropp kode her!';
-//     dropArea.appendChild(placeholder);
-// }
-
 
 
 function getDragAfterElement(y, dropArea) {
