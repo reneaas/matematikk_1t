@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>8.4. Fullstendige kvadraters metode &#8212; Matematikk 1T</title>
+    <title>8.6. Numerisk løsning &#8212; Matematikk 1T</title>
   
   
   
@@ -72,7 +72,7 @@
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3.2/es5/tex-mml-chtml.js"></script>
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'book/andregradsfunksjoner/likninger/fullstendig_kvadrat/fullstendig_kvadrat';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/andregradsfunksjoner/likninger/programmering/numerisk_løsning';</script>
     <script>mermaid.initialize({"startOnLoad": true})</script>
     <script src="../../../../_static/theme-switcher.js?v=c0cdcaac"></script>
     <script src="../../../../_static/geogebra-setup.js?v=c67998b1"></script>
@@ -84,8 +84,8 @@
     <script src="../../../../_static/serviceWorker.js?v=9d61c2b7"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="8.5. \(abc\)-formelen" href="../abc_formelen/abc_formelen.html" />
-    <link rel="prev" title="8.3. Kvadratsetningene" href="../kvadratsetningene/kvadratsetningene.html" />
+    <link rel="next" title="9. Andregradsulikheter" href="../../ulikheter/intro_andregradsulikheter.html" />
+    <link rel="prev" title="8.5. \(abc\)-formelen" href="../abc_formelen/abc_formelen.html" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="norwegian"/>
@@ -300,9 +300,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../grafisk_l%C3%B8sning/grafisk_l%C3%B8sning.html">8.1. Grafisk løsning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../spesielle_andregradslikninger/spesielle_andregradslikninger.html">8.2. Spesielle andregradslikninger</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../kvadratsetningene/kvadratsetningene.html">8.3. Kvadratsetningene</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">8.4. Fullstendige kvadraters metode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fullstendig_kvadrat/fullstendig_kvadrat.html">8.4. Fullstendige kvadraters metode</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../abc_formelen/abc_formelen.html">8.5. <span class="math notranslate nohighlight">\(abc\)</span>-formelen</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../programmering/numerisk_l%C3%B8sning.html">8.6. Numerisk løsning</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">8.6. Numerisk løsning</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../ulikheter/intro_andregradsulikheter.html">9. Andregradsulikheter</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -386,7 +386,7 @@
       
       
       
-      <li><a href="../../../../_sources/book/andregradsfunksjoner/likninger/fullstendig_kvadrat/fullstendig_kvadrat.md" target="_blank"
+      <li><a href="../../../../_sources/book/andregradsfunksjoner/likninger/programmering/numerisk_løsning.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Last ned kildefilen"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -470,7 +470,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Fullstendige kvadraters metode</h1>
+    <h1>Numerisk løsning</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -480,10 +480,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fullstendige-kvadrater">8.4.1. Fullstendige kvadrater</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">8.4.2. Fullstendige kvadraters metode</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fullstendig-kvadraters-metode-for-a-lose-andregradslikninger">8.4.3. Fullstendig kvadraters metode for å løse andregradslikninger</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#antall-losninger">8.4.4. Antall løsninger</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#halveringsmetoden">8.6.1. Halveringsmetoden</a></li>
 </ul>
             </nav>
         </div>
@@ -495,286 +492,104 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="fullstendige-kvadraters-metode">
-<h1><span class="section-number">8.4. </span>Fullstendige kvadraters metode<a class="headerlink" href="#fullstendige-kvadraters-metode" title="Link to this heading">#</a></h1>
-<p>Fullstendige kvadraters metode er en metode for å skrive om andregradsuttrykk på en spesiell form.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="numerisk-losning">
+<h1><span class="section-number">8.6. </span>Numerisk løsning<a class="headerlink" href="#numerisk-losning" title="Link to this heading">#</a></h1>
 <div class="tip admonition">
-<p class="admonition-title">Læringsmål: Fullstendig kvadraters metode</p>
-<p>Etter denne seksjonen, er målet at du skal kunne:</p>
+<p class="admonition-title">Læringsmål</p>
+<p>Etter å ha gått gjennom dette delkapittelet, er målet at du skal kunne:</p>
 <ul class="simple">
-<li><p>Bruke fullstendig kvadraters metode til å fullføre kvadrater.</p></li>
-<li><p>Bruke fullstendig kvadraters metode til å løse andregradslikninger, og avgjøre om en andregradslikning har reelle løsninger eller ikke.</p></li>
+<li><p>Lese mer kompliserte programmer som løser likninger numerisk.</p></li>
+<li><p>Kunne lese og forklare strategien/algoritmen som brukes i en programkode.</p></li>
+<li><p>Kunne justere og bruke et program til å løse likninger.</p></li>
 </ul>
 </div>
-<section id="fullstendige-kvadrater">
-<h2><span class="section-number">8.4.1. </span>Fullstendige kvadrater<a class="headerlink" href="#fullstendige-kvadrater" title="Link to this heading">#</a></h2>
-<p>Vi har allerede sett at vi kan skrive om et andregradsuttrykk på formen <span class="math notranslate nohighlight">\(ax^2 + bx + c\)</span> til en form som er lettere å jobbe med. Dette gjør vi ved å fullføre kvadrater. 1. og 2.kvadratsetning er eksempler på fullstendige kvadrater. Det kan vi se i <a class="reference internal" href="#fullstendig-kvadrat"><span class="std std-numref">Fig. 8.2</span></a>.</p>
-<figure class="align-default" id="fullstendig-kvadrat">
-<a class="reference internal image-reference" href="../../../../_images/fullstendig_kvadrat.svg"><img alt="../../../../_images/fullstendig_kvadrat.svg" src="../../../../_images/fullstendig_kvadrat.svg" style="width: 80%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 8.2 </span><span class="caption-text">Viser 1.kvadratsetning grafisk. Et kvadrat med areal <span class="math notranslate nohighlight">\((p + q)^2\)</span> har samme areal som summen av arealene til to kvadrater med areal <span class="math notranslate nohighlight">\(p^2\)</span> og <span class="math notranslate nohighlight">\(q^2\)</span>, og to rektangler med areal <span class="math notranslate nohighlight">\(pq\)</span>. Dermed får vi <span class="math notranslate nohighlight">\((p + q)^2 = p^2 + 2pq + q^2\)</span>. Det er herfra begrepet <em>fullstendig kvadrat</em> kommer fra.</span><a class="headerlink" href="#fullstendig-kvadrat" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-</section>
-<section id="id1">
-<h2><span class="section-number">8.4.2. </span>Fullstendige kvadraters metode<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-<p>Fullstendig kvadraters metode er en måte å skrive om et andregradsuttrykk på formen <span class="math notranslate nohighlight">\(x^2 + bx + c\)</span> til en form som består av et fullstendig kvadrat pluss et potensielt tilleggsledd som forteller oss hvor mye andregradsuttrykket avviker fra et kvadrat.</p>
-<div class="theory admonition">
-<p class="admonition-title">Fullstendige kvadraters metode</p>
-<p>Gitt en andregradsfunksjon</p>
-<div class="math notranslate nohighlight">
-\[
-f(x) = ax^2 + bx + c,
-\]</div>
-<p>kan vi alltid skrive om funksjonsuttrykket som</p>
-<div class="math notranslate nohighlight">
-\[
-f(x) = a(x + r)^2 + k,
-\]</div>
-<p>der</p>
-<div class="math notranslate nohighlight">
-\[
-r = \frac{b}{2a} \quad \text{og} \quad k = c - \left(\frac{b}{2a}\right)^2.
-\]</div>
-</div>
-<div class="theory admonition">
-<p class="admonition-title">Algoritme: Fullstendige kvadraters metode</p>
-<p>Gitt et andregradsuttrykk <span class="math notranslate nohighlight">\(x^2 + bx + c\)</span>. For å skrive dette uttrykket som et fullstendig kvadrat, gjør vi følgende:</p>
-<dl class="simple myst">
-<dt>Steg 1</dt><dd><p>Legg til og trekk fra <span class="math notranslate nohighlight">\((b / 2)^2\)</span></p>
-</dd>
-</dl>
-<div class="math notranslate nohighlight">
-\[
-x^2 + bx + c = x^2 + bx + \underbrace{\left(\frac{b}{2}\right)^2 - \left(\frac{b}{2}\right)^2}_{\text{Legg til og trekk fra } (b/2)^2} + c.
-\]</div>
-<dl class="simple myst">
-<dt>Steg 2</dt><dd><p>Bruk 1. eller 2.kvadratsetning til å faktorisere deler eller hele uttrykket.</p>
-</dd>
-</dl>
-<div class="math notranslate nohighlight">
-\[
-\underbrace{x^2 + bx + \left(\frac{b}{2}\right)^2}_{\text{1. eller 2.kvadratsetning}} - \left(\frac{b}{2}\right)^2 + c = \left(x + \frac{b}{2}\right)^2 - \left(\frac{b}{2}\right)^2 + c.
-\]</div>
-<p>Samlet, får vi</p>
-<div class="math notranslate nohighlight">
-\[
-x^2 + bx + c = \left(x + \frac{b}{2}\right)^2 - \left(\frac{b}{2}\right)^2 + c.
-\]</div>
-</div>
-<p>Ser ut som skumle greier, så la oss ta et eksempel:</p>
-<div class="example admonition">
-<p class="admonition-title">Eksempel 1: fullstendig kvadraters metode</p>
-<p>Gitt andregradsfunksjonen</p>
-<div class="math notranslate nohighlight">
-\[
-f(x) = x^2 + 6x + 8,
-\]</div>
-<p>så kan vi fullføre kvadratet som følger:</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-\begin{split}
-x^2 + 6x + 10 &amp; = x^2 + 6x + \underbrace{\left(\frac{6}{2}\right)^2 - \left(\frac{6}{2}\right)^2}_{\text{Legger til og trekker fra }(b/2)^2} + 8 \\
-\\
-&amp;= \underbrace{x^2 + 6x + 3^2}_{\text{1.kvadratsetning}} - 3^2 + 8 = (x + 3)^2 - 9 + 8 \\
-\\
-&amp; = (x + 3)^2 - 1.
-\end{split}
-\end{equation*}\]</div>
-<p>Vi kan altså skrive <span class="math notranslate nohighlight">\(f(x)\)</span> som et fullstendig kvadrat minus et tilleggsledd.</p>
-</div>
-<p>Nå er det <strong>din tur</strong>!</p>
-<div class="check admonition">
-<p class="admonition-title">Underveisoppgave 1</p>
-<p>Bruk fullstendig kvadraters metode til å skrive om andregradsfunksjonen</p>
-<div class="math notranslate nohighlight">
-\[
-g(x) = x^2 - 4x + 2.
-\]</div>
-<div class="solution dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<p>Vi har</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-\begin{split}
-x^2 - 4x + 2 &amp; = x^2 - 4x + \underbrace{\left(\frac{-4}{2}\right)^2 - \left(\frac{-4}{2}\right)^2}_{\text{Legger til og trekker fra }(b/2)^2} + 2 \\
-\\
-&amp;= \underbrace{x^2 - 4x + 2^2}_{\text{2.kvadratsetning}} - 2^2 + 2 = (x - 2)^2 - 4 + 2 \\
-\\
-&amp; = (x - 2)^2 - 2.
-\end{split}
-\end{equation*}\]</div>
-</div>
-</div>
-</section>
-<section id="fullstendig-kvadraters-metode-for-a-lose-andregradslikninger">
-<h2><span class="section-number">8.4.3. </span>Fullstendig kvadraters metode for å løse andregradslikninger<a class="headerlink" href="#fullstendig-kvadraters-metode-for-a-lose-andregradslikninger" title="Link to this heading">#</a></h2>
-<p>Vi kan bruke fullstendig kvadraters metode for å løse andregradslikninger av typen</p>
-<div class="math notranslate nohighlight">
-\[
-x^2 + bx + c = 0.
-\]</div>
-<p>Metoden funker som følger:</p>
-<dl class="simple myst">
-<dt>Steg 1:</dt><dd><p>Skriv om andregradsuttrykket med fullstendig kvadraters metode.</p>
-</dd>
-<dt>Steg 2:</dt><dd><p>Prøv å bruke konjugatsetningen til å faktorisere uttrykket. Hvis tilleggsleddet er positivt, er dette umulig og likningen har ingen reelle løsninger. Hvis tilleggsleddet er negativt, kan vi faktorisere uttrykket og løse likningen. Hvis tilleggsleddet er null, har du allerede faktorisert uttrykket fullstendig.</p>
-</dd>
-<dt>Steg 3:</dt><dd><p>Bruk produktregelen til å løse likningen <span class="math notranslate nohighlight">\(x^2 + bx + c = 0\)</span> med det faktoriserte uttrykket.</p>
-</dd>
-</dl>
-<div class="note margin admonition">
-<p class="admonition-title">Påminnelse: konjugatsetningen</p>
-<div class="math notranslate nohighlight">
-\[
-p^2 - q^2 = (p - q)(p + q)
-\]</div>
-</div>
-<p>Vi tar et eksempel:</p>
-<div class="example admonition">
-<p class="admonition-title">Eksempel 2: Fullstendig kvadraters metode og andregradslikninger</p>
-<p>La oss si vi vil løse likningen</p>
-<div class="math notranslate nohighlight">
-\[
-f(x) = x^2 - 4x - 5 = 0, 
-\]</div>
-<dl class="simple myst">
-<dt>Steg 1:</dt><dd><p>Vi bruker fullstendig kvadraters metode for å skrive om andregradsuttrykket:</p>
-</dd>
-</dl>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-\begin{split}
-x^2 - 4x - 5 &amp; = x^2 - 4x + \underbrace{\left(\frac{-4}{2}\right)^2 - \left(\frac{-4}{2}\right)^2}_{\text{Legger til og trekker fra }(b/2)^2} - 5 \\
-\\
-&amp;= \underbrace{x^2 - 4x + 2^2}_{\text{2.kvadratsetning}} - 2^2 - 5 = (x - 2)^2 - 4 - 5 \\
-\\
-&amp; = (x - 2)^2 - 9.
-\end{split}
-\end{equation*}\]</div>
-<dl class="simple myst">
-<dt>Steg 2:</dt><dd><p>Vi kan merke oss at her er tilleggsleddet negativt, som betyr at vi kan faktorisere uttrykket ved å bruke konjugatsetningen som følger:</p>
-</dd>
-</dl>
-<div class="math notranslate nohighlight">
-\[
-f(x) = (x - 2)^2 - 9 = \underbrace{(x - 2)^2}_{p^2} - \underbrace{3^2}_{q^2}= \underbrace{(x - 2 - 3)}_{(p - q)} \cdot \underbrace{(x - 2 + 3)}_{(p + q)} = (x - 5)(x + 1).
-\]</div>
-<dl class="simple myst">
-<dt>Steg 3:</dt><dd><p>Nå bruker vi produktregelen til å løse likningen <span class="math notranslate nohighlight">\(f(x) = 0\)</span>:</p>
-</dd>
-</dl>
-<div class="math notranslate nohighlight">
-\[
-(x - 5)(x + 1) = 0 \quad \Leftrightarrow \quad x - 5 = 0 \quad \lor \quad x + 1 = 0,
-\]</div>
-<p>som gir løsningene</p>
-<div class="math notranslate nohighlight">
-\[
-x = 5 \quad \lor \quad x = -1.
-\]</div>
-</div>
-<p><strong>Din tur</strong>!</p>
-<div class="check admonition">
-<p class="admonition-title">Underveisoppgave 2</p>
-<p>Løs likningen</p>
-<div class="math notranslate nohighlight">
-\[
-x^2 - x - 2 = 0.
-\]</div>
-<div class="solution dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<dl class="simple myst">
-<dt>Steg 1:</dt><dd><p>Vi bruker fullstendig kvadraters metode for å skrive om andregradsuttrykket:</p>
-</dd>
-</dl>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-\begin{split}
-x^2 - x - 2 &amp; = x^2 - x + \left(\frac{-1}{2}\right)^2 - \left(\frac{-1}{2}\right)^2 - 2 \\
-\\
-&amp; = \underbrace{x^2 - x + \left(\frac{1}{2}\right)^2}_{=(x - 1/2)^2} - \left(\frac{1}{2}\right)^2 - 2 = \left(x - \frac{1}{2}\right)^2 - \frac{1}{4} - 2 \\
-\\
-&amp; = \left(x - \frac{1}{2}\right)^2 - \frac{9}{4}.
-\end{split}
-\end{equation*}\]</div>
-<dl class="simple myst">
-<dt>Steg 2:</dt><dd><p>Vi bruker konjugatsetningen for å faktorisere andregradsuttrykket fullstendig:</p>
-</dd>
-</dl>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{equation*}
-\begin{split}
-\left(x-\frac{1}{2}\right)^2 - \frac{9}{4} &amp; = \left(x-\frac{1}{2}\right)^2 - \left(\frac{3}{2}\right)^2 \\
-\\
-&amp; = \left(x-\frac{1}{2} - \frac{3}{2}\right)\left(x-\frac{1}{2} + \frac{3}{2}\right) \\
-\\
-&amp; = (x-2)(x+1).
-\end{split}
-\end{equation*}\]</div>
-<dl class="simple myst">
-<dt>Steg 3</dt><dd><p>Nå er andregradsuttrykket fullstendig faktorisert, så vi kan løse likningen ved å bruke produktregelen:</p>
-</dd>
-</dl>
-<div class="math notranslate nohighlight">
-\[
-(x - 2)(x + 1) = 0 \quad \Leftrightarrow \quad x - 2 = 0 \quad \lor \quad x + 1 = 0,
-\]</div>
-<p>som gir løsningene</p>
-<div class="math notranslate nohighlight">
-\[
-x = 2 \quad \lor \quad x = -1.
-\]</div>
-</div>
-</div>
-</section>
-<section id="antall-losninger">
-<h2><span class="section-number">8.4.4. </span>Antall løsninger<a class="headerlink" href="#antall-losninger" title="Link to this heading">#</a></h2>
-<p>Vi kan bruke fullstendig kvadraters metode til å avgjøre hvor mange løsninger en andregradslikning har, eller sagt på en annen måte, hvor mange nullpunkter en andregradsfunksjon har.</p>
-<div class="theory admonition">
-<p class="admonition-title">Setning: Antall løsninger for en andregradslikning</p>
-<p>Gitt en andregradsfunksjon på formen</p>
-<div class="math notranslate nohighlight">
-\[
-f(x) = x^2 + bx + c,
-\]</div>
-<p>så har likningen <span class="math notranslate nohighlight">\(f(x) = 0\)</span>:</p>
+<section id="halveringsmetoden">
+<h2><span class="section-number">8.6.1. </span>Halveringsmetoden<a class="headerlink" href="#halveringsmetoden" title="Link to this heading">#</a></h2>
+<p>En metode for å finne en omtrentlig verdi for nullpunktet til en funksjon <span class="math notranslate nohighlight">\(f\)</span>, kalles for <strong>halveringsmetoden</strong>. Dette er en numerisk metode som som tar utgangspunkt i følgende algoritmisk idé</p>
+<ol class="arabic simple">
+<li><p>Velg to punkter <span class="math notranslate nohighlight">\(x = a\)</span> og <span class="math notranslate nohighlight">\(x = b\)</span> der vi <em>vet</em> at <span class="math notranslate nohighlight">\(f\)</span> har forskjellig fortegn.</p></li>
+<li><p>Bestem midtpunktet <span class="math notranslate nohighlight">\(m = \dfrac{a+b}{2}\)</span>.</p></li>
+<li><p>Hvis <span class="math notranslate nohighlight">\(f(m) = 0\)</span>, er m en løsning. Hvis ikke:</p>
 <ul class="simple">
-<li><p>To løsninger hvis <span class="math notranslate nohighlight">\(c - (b/2)^2 &lt; 0\)</span>.</p></li>
-<li><p>Én løsning hvis <span class="math notranslate nohighlight">\(c - (b/2)^2 = 0\)</span>.</p></li>
-<li><p>Ingen løsninger hvis <span class="math notranslate nohighlight">\(c - (b/2)^2 &gt; 0\)</span>.</p></li>
+<li><p>Hvis <span class="math notranslate nohighlight">\(f\)</span> har forskjellig fortegn i <span class="math notranslate nohighlight">\(x = a\)</span> og <span class="math notranslate nohighlight">\(x = m\)</span>, så er nullpunktet i intervallet <span class="math notranslate nohighlight">\([a, m]\)</span> - vi velger dette som vårt nye intervall.</p></li>
+<li><p>hvis <span class="math notranslate nohighlight">\(f\)</span> har forskjellig fortegn i <span class="math notranslate nohighlight">\(x = m\)</span> og <span class="math notranslate nohighlight">\(x = b\)</span>, så er nullpunktet i intervallet <span class="math notranslate nohighlight">\([m, b]\)</span>. - vi velger dette som vårt nye intervall.</p></li>
 </ul>
+</li>
+<li><p>Gå tilbake og gjenta steg 2 og gjenta.</p></li>
+</ol>
+<div class="explore admonition">
+<p class="admonition-title">Utforsk 1</p>
+<p>Under vises en programkode som bestemmer et nullpunkt til</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = x^2 - x - 6,
+\]</div>
+<p>ved å bruke halveringsmetoden slik den er beskrevet over. Men! Programmet står i tilfeldig rekkefølge!</p>
+<dl class="simple myst">
+<dt>Deloppgave 1</dt><dd><p>Bruk beskrivelsen av halveringsmetoden og pusle sammen programmet i riktig rekkefølge for å få tilgang til det fullstendige programmet. <br> Lim inn programmet i det interaktive kodevinduet under.</p>
+</dd>
+</dl>
+<div id="container-parsons-puzzle-andregradsfunksjoner-likninger-programmering-numerisk-utforsk-1" class="puzzle-container">
+    <div id="draggable-code"></div>
+    <div id="drop-area"></div>
+    <button id="check-solution" class="button button-check-solution">Sjekk løsning!</button>
+    <button id="reset-puzzle" class="button button-reset-puzzle">Reset puslespill ↪️</button>
+    <div id="feedback"></div>
 </div>
-<p>La oss se på et eksempel der vi ser alle tre tilfellene oppstå:</p>
-<div class="example admonition">
-<p class="admonition-title">Eksempel 3: Antall løsninger for en andregradslikning</p>
+
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', () => {
+        const codeString = 
+`def f(x):
+    return x**2 - x - 6
+
+a = -10 ;  b = 3
+
+m = (a + b) / 2
+
+while abs(f(m)) > 0.0000001:
+    if f(a) * f(m) < 0:
+        b = m
+    else:
+        a = m
+
+    m = (a + b) / 2
+`;
+    
+        // Initialize the puzzle
+        initializeParsonsPuzzle('container-parsons-puzzle-andregradsfunksjoner-likninger-programmering-numerisk-utforsk-1', codeString);
+    });
+</script>
+<br>
+<div id="container-kode-andregradsfunksjoner-likninger-programmering-numerisk-utforsk-1"></div>
+<script type="text/javascript">
+    code = `
+# TODO: lim inn koden fra puslespillet her!
+`;   
+
+    generateInteractiveCode(
+        "container-kode-andregradsfunksjoner-likninger-programmering-numerisk-utforsk-1",
+        code,
+        "kode-andregradsfunksjoner-likninger-programmering-numerisk-utforsk-1"
+    );
+</script>
+
+
+
+
+
+
+
+
+
+
+
 <dl class="simple myst">
-<dt>To løsninger</dt><dd><p>Vi tar for oss andregradslikningen <span class="math notranslate nohighlight">\(x^2 + x - 6 = 0\)</span>. Fullfører vi kvadratet, får vi</p>
+<dt>Deloppgave 2</dt><dd><p>Endre programmet slik at det finner det <em>andre</em> nullpunktet til <span class="math notranslate nohighlight">\(f\)</span>.</p>
+</dd>
+<dt>Deloppgave 3</dt><dd><p>Hva skjer hvis du endrer setter <code class="code docutils literal highlight highlight-python"><span class="n">a</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10</span></code> og <code class="code docutils literal highlight highlight-python"><span class="n">b</span> <span class="o">=</span> <span class="mi">10</span></code> (hvis noe i det hele tatt)? <br> Hva er årsaken til dette?</p>
 </dd>
 </dl>
-<div class="math notranslate nohighlight">
-\[
-x^2 + x - 6 = x^2 + x + \left(\frac{1}{2}\right)^2 - \left(\frac{1}{2}\right)^2 - 6 = \left(x + \frac{1}{2}\right)^2 - \frac{1}{4} - 6 = \left(x + \frac{1}{2}\right)^2 - \frac{25}{4}.
-\]</div>
-<p>Siden tilleggsleddet er negativt, kan vi bruke konjugatsetningen og må nødvendigvis ende opp med to forskjellige lineære faktorer. Dermed har likningen to løsninger.</p>
-<dl class="simple myst">
-<dt>Én løsning</dt><dd><p>Vi tar for oss andregradslikningen <span class="math notranslate nohighlight">\(x^2 - 4x + 4 = 0\)</span>. Fullfører vi kvadratet, får vi</p>
-</dd>
-</dl>
-<div class="math notranslate nohighlight">
-\[
-x^2 - 4x + 4 = x^2 - 4x + 2^2 - 2^2 + 4 = (x - 2)^2 - 4 + 4 = (x - 2)^2.
-\]</div>
-<p>Her er tilleggsleddet null, så vi har bare én løsning. Dette er ikke så overraskende siden vi effektivt her har bare gjort en tungvint måte å bruke 2.kvadratsetning på.</p>
-<dl class="simple myst">
-<dt>Ingen løsninger</dt><dd><p>Vi tar for oss andregradslikningen <span class="math notranslate nohighlight">\(x^2 + 2x + 2 = 0\)</span>. Fullfører vi kvadratet, får vi</p>
-</dd>
-</dl>
-<div class="math notranslate nohighlight">
-\[
-x^2 + 2x + 1 - 1 + 2 = (x + 1)^2 - 1 + 2 = (x + 1)^2 + 1.
-\]</div>
-<p>Her kan vi ikke bruke konjugatsetningen fordi tilleggsleddet er positivt. Dermed har likningen ingen reelle løsninger.</p>
 </div>
 </section>
 </section>
@@ -792,7 +607,7 @@ x^2 + 2x + 1 - 1 + 2 = (x + 1)^2 - 1 + 2 = (x + 1)^2 + 1.
         },
         kernelOptions: {
             name: "python3",
-            path: "./book/andregradsfunksjoner/likninger/fullstendig_kvadrat"
+            path: "./book/andregradsfunksjoner/likninger/programmering"
         },
         predefinedOutput: true
     }
@@ -810,20 +625,20 @@ x^2 + 2x + 1 - 1 + 2 = (x + 1)^2 - 1 + 2 = (x + 1)^2 + 1.
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../kvadratsetningene/kvadratsetningene.html"
+       href="../abc_formelen/abc_formelen.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">8.3. </span>Kvadratsetningene</p>
+        <p class="prev-next-title"><span class="section-number">8.5. </span><span class="math notranslate nohighlight">\(abc\)</span>-formelen</p>
       </div>
     </a>
     <a class="right-next"
-       href="../abc_formelen/abc_formelen.html"
+       href="../../ulikheter/intro_andregradsulikheter.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">8.5. </span><span class="math notranslate nohighlight">\(abc\)</span>-formelen</p>
+        <p class="prev-next-title"><span class="section-number">9. </span>Andregradsulikheter</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -843,10 +658,7 @@ x^2 + 2x + 1 - 1 + 2 = (x + 1)^2 - 1 + 2 = (x + 1)^2 + 1.
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fullstendige-kvadrater">8.4.1. Fullstendige kvadrater</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">8.4.2. Fullstendige kvadraters metode</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fullstendig-kvadraters-metode-for-a-lose-andregradslikninger">8.4.3. Fullstendig kvadraters metode for å løse andregradslikninger</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#antall-losninger">8.4.4. Antall løsninger</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#halveringsmetoden">8.6.1. Halveringsmetoden</a></li>
 </ul>
   </nav></div>
 
