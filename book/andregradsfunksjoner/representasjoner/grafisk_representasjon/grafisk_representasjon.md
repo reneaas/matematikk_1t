@@ -17,9 +17,9 @@ Grafen til tre forskjellige andregradsfunksjoner med ulike koeffisienter.
 
 Nå skal du utforske litt og se om du kan komme fram til hvordan koeffisientene $a$, $b$ og $c$ påvirker grafen til en andregradsfunksjon. 
 
-::::{admonition} Underveisoppgave 1
+::::{admonition} Utforsk 1
 ---
-class: check
+class: explore
 ---
 Bruk den interaktive grafen under til å utforske hvordan koeffisientene $a$, $b$ og $c$ påvirker grafen til en andregradsfunksjon.
 
@@ -32,7 +32,7 @@ Hint: Prøv å endre én og én koeffisient av gangen for å se hvordan de påvi
 
 :::{raw} html
 ---
-file: ./geogebra/underveisoppgaver/underveisoppgave_1.html
+file: ./ggb/utforsk/utforsk_1.html
 ---
 :::
 

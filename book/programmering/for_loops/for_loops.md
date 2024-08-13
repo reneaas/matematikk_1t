@@ -301,3 +301,93 @@ print(f"Summen ble: {s = }")
 
 
 :::::
+
+
+---
+
+## Oppgaver 
+
+:::::{admonition} Oppgave 1
+---
+class: problem-level-1
+---
+Vi husker at $x$ er et kvadrattall dersom $x = n^2$ for et tall $n \in \mathbb{N}$. <br>
+Under vises et uferdig program som skal bruke en `for`{l=python}-løkke til å legge sammen de 5 første kvadrattallene. 
+
+:::{raw} html
+---
+file: ./interaktiv_kode/oppgaver/oppgave_1.html
+---
+:::
+
+
+Deloppgave 1
+: Gjør ferdig koden og kjør programmet. <br> Sjekk at utskriften stemmer ved regning.
+
+
+
+Delopppgave 2
+: Endre programmet slik at det regner ut summen av de 10 første kvadrattallene. <br> Stemmer svaret du får ved å kjøre programmet?
+
+
+Deloppgave 3
+: Endre programmet til å regne ut summen av de 100 første kubikktallene. <br> Hva blir summen?
+
+
+:::::
+
+
+
+:::::{admonition} Oppgave 2
+---
+class: problem-level-2
+---
+
+Vi minner om at $n$-fakultet er definert som
+
+$$
+n! = 1 \cdot 2 \cdot \ldots \cdot (n - 1) \cdot n.
+$$
+
+For eksempel er 
+
+$$
+4! = 1 \cdot 2 \cdot 3 \cdot 4 = 24.
+$$
+
+
+Deloppgave 1
+: Under vises et program som regner ut $4!$ der kodelinjene er plassert i tilfeldig rekkefølge. <br> Plasser kodelinjene i riktig rekkefølge for å få tilgang til det ferdige programmet. <br> Lim inn programmet i det interaktivt kodevinduet og kjør det.  <br> Blir svaret riktig?
+
+
+:::{raw} html
+---
+file: ./parsons_puzzle/oppgaver/oppgave_2.html
+---
+:::
+
+<br>
+
+:::{raw} html
+---
+file: ./interaktiv_kode/oppgaver/oppgave_2.html
+---
+:::
+
+<br>
+
+Deloppgave 2
+: Endre programmet slik at det regner ut $7!$. <br> Hva blir svaret? svaret ved regning.
+
+
+<br>
+
+Deloppgave 3
+: Dobbeltfakultet $n!!$ er definert som at du tar produktet av annenhvert tall. Hvis tallet $n$ er et oddetall, starter du på $1$. Hvis $n$ er et partall, starter du på $2$. For eksempel er
+
+    $$
+    5!! = 1 \cdot 3 \cdot 5 = 15  \quad \text{og} \quad 6!! = 2 \cdot 4 \cdot 6 = 48.
+    $$
+
+    Endre programmet slik at det regner ut $6!!$ <br> Stemmer svaret overens med svaret over?
+:::::

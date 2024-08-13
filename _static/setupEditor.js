@@ -419,6 +419,7 @@ function formatErrorMessage(errorMsg, errorBoxId) {
                 <li> Du har prøvd en parentes inntil en variabel. Da står det at variabelen ikke er "callable". </li>
                 <li> Du har prøvd å gjøre regneoperasjon med noe som ikke er et tall. </li>
                 <li> Du har glemt å returnere verdien i en funksjon. </li>
+                <li> Du prøver å bruke desimaltall med range-funksjonen. </li>
             `;
             knownError = true;
         }
