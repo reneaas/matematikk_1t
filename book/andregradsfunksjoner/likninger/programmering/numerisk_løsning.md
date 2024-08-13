@@ -65,3 +65,13 @@ Deloppgave 3
 : Hva skjer hvis du endrer setter `a = -10`{l=python} og `b = 10`{l=python} (hvis noe i det hele tatt)? <br> Hva er årsaken til dette?
 
 :::::
+
+
+
+## Sup
+
+:::{raw} html
+---
+file: parsons_puzzle/utforsk/utforsk_2.html
+---
+:::
