@@ -99,7 +99,7 @@ function reset() {
         console.log('Showing placeholder');
         placeholder.style.display = '';
     } else {
-        console.error('Placeholder not found');
+        placeholder = createPlaceholder(dropArea);
     }
 
     // Additional reset logic if any
@@ -115,40 +115,6 @@ function reshuffle() {
     });
 }
 
-
-
-
-
-
-// /**
-//  * Preprocesses the code by grouping semicolon-separated lines into single blocks,
-//  * preserving indentation, and removing the semicolons from the puzzle representation.
-//  * @param {string} codeString - The full code as a string.
-//  * @returns {Array} - An array of objects containing the code blocks with their original order.
-//  */
-// function preprocessCode(codeString) {
-//     const blocks = codeString.split('\n').reduce((acc, line, index) => {
-//         if (line.includes(';')) {
-//             // Split the line by semicolons and trim each part, preserving indentation
-//             const parts = line.split(';').map(part => part.match(/^\s*/) + part.trim()).filter(part => part !== '');
-//             acc.push({
-//                 block: parts.join('\n'),  // Join parts into a single block with each part on a new line
-//                 order: index
-//             });
-//         } else {
-//             const trimmedLine = line.match(/^\s*/) + line.trim(); // Preserve indentation
-//             if (trimmedLine.trim()) {  // Ensure no empty blocks are created
-//                 acc.push({
-//                     block: trimmedLine,
-//                     order: index
-//                 });
-//             }
-//         }
-//         return acc;
-//     }, []);
-
-//     return blocks;
-// }
 
 function preprocessCode(codeString) {
     const lines = codeString.split('\n');
@@ -179,20 +145,6 @@ function shuffleArray(array) {
     return array;
 }
 
-// function renderDraggableCode(container, codeBlockObjects) {
-//     container.innerHTML = '';  // Clear the container
-//     codeBlockObjects.forEach((obj) => {
-//         const lineElement = document.createElement('div');
-//         lineElement.className = 'draggable';
-//         lineElement.draggable = true;
-//         lineElement.dataset.order = obj.order;
-        
-//         lineElement.innerHTML = `<pre class="highlight python"><code>${escapeHTML(obj.block)}</code></pre>`;
-        
-//         container.appendChild(lineElement);
-//         hljs.highlightElement(lineElement.querySelector('code'));
-//     });
-// }
 
 
 function renderDraggableCode(container, codeBlockObjects) {
@@ -220,40 +172,6 @@ function escapeHTML(str) {
               .replace(/"/g, "&quot;")
               .replace(/'/g, "&#039;");
 }
-
-// /**
-//  * Checks the solution by comparing the order of elements in the drop area
-//  * with the original order of the code blocks.
-//  * @param {HTMLElement} dropArea - The drop area containing the ordered elements.
-//  * @param {Array} codeBlockObjects - The original code block objects to check against.
-//  * @param {HTMLElement} feedbackElement - The element to display feedback to the user.
-//  * @param {HTMLElement} fullCodeElement - The element where the full code will be displayed.
-//  * @param {HTMLElement} solutionModal - The modal to display the full code.
-//  */
-// function checkSolution(dropArea, codeBlockObjects, feedbackElement, fullCodeElement, solutionModal) {
-//     const droppedItems = Array.from(dropArea.children).filter(item => !item.classList.contains('placeholder'));
-//     const droppedOrder = droppedItems.map(item => parseInt(item.dataset.order));
-
-//     // Sort the codeBlockObjects based on their original order to get the correct sequence
-//     const correctOrder = codeBlockObjects.slice().sort((a, b) => a.order - b.order).map(obj => obj.order);
-
-//     if (JSON.stringify(droppedOrder) === JSON.stringify(correctOrder)) {
-//         feedbackElement.textContent = 'Riktig!';
-//         feedbackElement.style.color = 'green';
-
-//         // Combine the full code and show it in the modal, preserving indentation
-//         const fullCode = droppedItems.map(item => item.querySelector('code').textContent).join('\n');
-//         fullCodeElement.textContent = fullCode;
-
-//         // Apply syntax highlighting to the full code
-//         hljs.highlightElement(fullCodeElement);
-
-//         solutionModal.style.display = 'block';
-//     } else {
-//         feedbackElement.textContent = 'Prøv igjen!';
-//         feedbackElement.style.color = 'red';
-//     }
-// }
 
 
 function checkSolution(dropArea, codeBlockObjects, feedbackElement, fullCodeElement, solutionModal) {
@@ -349,126 +267,197 @@ function dragEnd(e) {
     e.target.classList.remove('dragging');
 }
 
-function dragOver(e, dropArea, placeholder) {
-    e.preventDefault();
-    const afterElement = getDragAfterElement(e.clientY, dropArea);
-    const draggable = document.querySelector('.dragging');
-    if (afterElement == null) {
-        dropArea.insertBefore(draggable, placeholder);
-    } else {
-        dropArea.insertBefore(draggable, afterElement);
-    }
-
-    dropArea.appendChild(placeholder);
-}
-
-
 // function dragOver(e, dropArea, placeholder) {
 //     e.preventDefault();
-
 //     const afterElement = getDragAfterElement(e.clientY, dropArea);
 //     const draggable = document.querySelector('.dragging');
-
-//     // Debugging output to understand the state when error occurs
-//     console.log('Drag Over:', {
-//         afterElement,
-//         draggable,
-//         placeholder,
-//         children: Array.from(dropArea.children).map(child => child.className)
-//     });
-
-//     if (!draggable) {
-//         console.error('No element is currently being dragged.');
-//         return;
-//     }
-
-//     // Confirm both elements are in the correct parent
-//     if (afterElement === null) {
-//         if (placeholder.parentNode !== dropArea) {
-//             console.error('Placeholder not in dropArea when attempting to append at the end.');
-//             dropArea.appendChild(placeholder);
-//         }
-//         dropArea.appendChild(placeholder);
+//     if (afterElement == null) {
+//         dropArea.insertBefore(draggable, placeholder);
 //     } else {
-//         if (afterElement.parentNode !== dropArea) {
-//             console.error('Attempting to insert before an element not in dropArea.');
-//             return; // Avoid executing insertBefore
-//         }
-//         dropArea.insertBefore(placeholder, afterElement);
+//         dropArea.insertBefore(draggable, afterElement);
 //     }
+
+//     dropArea.appendChild(placeholder);
+// }
+
+
+// function drop(e) {
+//     e.preventDefault();
+//     const draggableElement = document.querySelector('.dragging');
+//     const dropArea = e.target.closest('#drop-area');
+//     dropArea.insertBefore(draggableElement, dropArea.querySelector('.placeholder'));
+//     draggableElement.classList.remove('dragging');
+
+//     // Pass the draggableCodeContainer reference correctly
+//     const draggableCodeContainer = document.querySelector('#draggable-code');
+//     updatePlaceholderVisibility(dropArea, draggableCodeContainer);
 // }
 
 
 
+// This works!!!
 
+// function dragOver(e, dropArea, placeholder) {
+//     e.preventDefault();
+//     const draggable = document.querySelector('.dragging');
+//     const afterElement = getDragAfterElement(e.clientY, dropArea);
+
+//     if (afterElement == null) {
+//         dropArea.insertBefore(draggable, placeholder);
+//     } else {
+//         const box = afterElement.getBoundingClientRect();
+//         const offset = e.clientY - box.top;
+
+//         // If the mouse is in the upper half of the element, place the draggable above it
+//         if (offset < box.height / 2) {
+//             dropArea.insertBefore(draggable, afterElement);
+//         } else {
+//             dropArea.insertBefore(draggable, afterElement.nextSibling);
+//         }
+//     }
+
+//     // Always move the placeholder to the end
+//     dropArea.appendChild(placeholder);
+// }
+
+// function drop(e) {
+//     e.preventDefault();
+//     const draggableElement = document.querySelector('.dragging');
+//     const dropArea = e.target.closest('#drop-area');
+//     const afterElement = getDragAfterElement(e.clientY, dropArea);
+
+//     if (afterElement == null) {
+//         dropArea.insertBefore(draggableElement, placeholder);
+//     } else {
+//         const box = afterElement.getBoundingClientRect();
+//         const offset = e.clientY - box.top;
+
+//         // If the mouse is in the upper half of the element, place the draggable above it
+//         if (offset < box.height / 2) {
+//             dropArea.insertBefore(draggableElement, afterElement);
+//         } else {
+//             dropArea.insertBefore(draggableElement, afterElement.nextSibling);
+//         }
+//     }
+
+//     draggableElement.classList.remove('dragging');
+
+//     // Always move the placeholder to the end
+//     dropArea.appendChild(placeholder);
+
+//     // Pass the draggableCodeContainer reference correctly
+//     const draggableCodeContainer = document.querySelector('#draggable-code');
+//     updatePlaceholderVisibility(dropArea, draggableCodeContainer);
+// }
+
+
+// function updatePlaceholderVisibility(dropArea, draggableCodeContainer) {
+//     const draggableItems = draggableCodeContainer.querySelectorAll('.draggable').length;
+
+//     // If all draggable elements are in the drop area, hide the placeholder
+//     if (draggableItems === 0) {
+//         dropArea.querySelector('.placeholder').style.display = 'none';
+//     } else {
+//         dropArea.querySelector('.placeholder').style.display = ''; // Ensure it's visible if not all are placed
+//     }
+// }
+
+function dragOver(e, dropArea, placeholder) {
+    e.preventDefault();
+    const draggable = document.querySelector('.dragging');
+    const afterElement = getDragAfterElement(e.clientY, dropArea);
+
+    if (afterElement == null) {
+        dropArea.insertBefore(draggable, placeholder);
+    } else {
+        const box = afterElement.getBoundingClientRect();
+        const offset = e.clientY - box.top;
+
+        // If the mouse is in the upper half of the element, place the draggable above it
+        if (offset < box.height / 2) {
+            dropArea.insertBefore(draggable, afterElement);
+        } else {
+            dropArea.insertBefore(draggable, afterElement.nextSibling);
+        }
+    }
+
+    // Always move the placeholder to the end
+    dropArea.appendChild(placeholder);
+}
 
 function drop(e) {
     e.preventDefault();
     const draggableElement = document.querySelector('.dragging');
     const dropArea = e.target.closest('#drop-area');
-    dropArea.insertBefore(draggableElement, dropArea.querySelector('.placeholder'));
+    const afterElement = getDragAfterElement(e.clientY, dropArea);
+    const placeholder = dropArea.querySelector('.placeholder');
+
+    if (afterElement == null) {
+        dropArea.insertBefore(draggableElement, placeholder);
+    } else {
+        const box = afterElement.getBoundingClientRect();
+        const offset = e.clientY - box.top;
+
+        // If the mouse is in the upper half of the element, place the draggable above it
+        if (offset < box.height / 2) {
+            dropArea.insertBefore(draggableElement, afterElement);
+        } else {
+            dropArea.insertBefore(draggableElement, afterElement.nextSibling);
+        }
+    }
+
     draggableElement.classList.remove('dragging');
+
+    // Always move the placeholder to the end
+    dropArea.appendChild(placeholder);
 
     // Pass the draggableCodeContainer reference correctly
     const draggableCodeContainer = document.querySelector('#draggable-code');
     updatePlaceholderVisibility(dropArea, draggableCodeContainer);
 }
 
-
-
-
 function updatePlaceholderVisibility(dropArea, draggableCodeContainer) {
     const draggableItems = draggableCodeContainer.querySelectorAll('.draggable').length;
-
-    // If all draggable elements are in the drop area, hide the placeholder
+    console.log("draggableItems: ", draggableItems);
+    // If all draggable elements are in the drop area, remove the placeholder
     if (draggableItems === 0) {
-        dropArea.querySelector('.placeholder').style.display = 'none';
+        const placeholder = dropArea.querySelector('.placeholder');
+        if (placeholder) {
+            placeholder.remove();
+        }
     } else {
-        dropArea.querySelector('.placeholder').style.display = ''; // Ensure it's visible if not all are placed
+        // Ensure placeholder is visible and at the end of the drop area
+        const placeholder = dropArea.querySelector('.placeholder');
+        if (placeholder) {
+            dropArea.appendChild(placeholder);
+        } else {
+            createPlaceholder(dropArea);  // Recreate the placeholder if it was removed somehow
+        }
     }
 }
 
-
-
-// function getDragAfterElement(y, dropArea) {
-//     const draggableElements = [...dropArea.querySelectorAll('.draggable:not(.dragging)')];
-
-//     return draggableElements.reduce((closest, child) => {
-//         const box = child.getBoundingClientRect();
-//         const offset = y - box.top - box.height / 2;
-//         if (offset < 0 && offset > closest.offset) {
-//             return { offset: offset, element: child };
-//         } else {
-//             return closest;
-//         }
-//     }, { offset: Number.NEGATIVE_INFINITY }).element;
+// function createPlaceholder(dropArea) {
+//     // Always start fresh
+//     const placeholder = document.createElement('div');
+//     placeholder.className = 'placeholder';
+//     placeholder.textContent = 'Dra og dropp kode her!';
+//     dropArea.appendChild(placeholder);
 // }
+
+
 
 function getDragAfterElement(y, dropArea) {
     const draggableElements = [...dropArea.querySelectorAll('.draggable:not(.dragging)')];
-
+    
     return draggableElements.reduce((closest, child) => {
         const box = child.getBoundingClientRect();
-        const offset = y - box.top - box.height / 2;
+        const offset = y - box.top - box.height / 2;  // Get the middle point
+
         if (offset < 0 && offset > closest.offset) {
             return { offset: offset, element: child };
         } else {
             return closest;
         }
-    }, { offset: Number.NEGATIVE_INFINITY }).element;
+    }, { offset: Number.NEGATIVE_INFINITY }).element;  // Return element before which the new block will be inserted
 }
 
-
-
-
-
-/**
- * Creates a placeholder text inside the drop area.
- * @param {HTMLElement} dropArea - The drop area element.
- */
-function createPlaceholderText(dropArea) {
-    const placeholderText = document.createElement('div');
-    placeholderText.className = 'placeholder-text';
-    placeholderText.textContent = "Dra og dropp kodelinjer her!";
-    dropArea.appendChild(placeholderText);
-}

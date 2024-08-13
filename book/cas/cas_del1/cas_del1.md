@@ -228,3 +228,41 @@ file: ggb/underveisoppgaver/løsninger/underveisoppgave_2_gui_solve.html
 :::::
 
 ::::::
+
+
+## Ulikheter med CAS
+
+:::::{admonition} Utforsk 3
+---
+class: explore
+---
+Under vises et *interaktivt* CAS-vindu der en lineær ulikhet er løst, både med `Løs`{l=geogebra}-funksjonen og <img src="figurer/icons/mode_solve.svg" class="inline-image"/>-knappen. 
+
+::::{tab-set}
+:::{tab-item} Med `Løs`{l=geogebra}-funksjonen
+```{raw} html
+---
+file: ggb/utforsk/utforsk_3_cmd.html
+---
+```
+:::
+
+:::{tab-item} Med <img src="figurer/icons/mode_solve.svg" class="inline-image"/>-knappen
+```{raw} html
+---
+file: ggb/utforsk/utforsk_3_gui.html
+---
+```
+:::
+
+::::
+
+
+Deloppgave 1
+: Hvilken ulikhet er det som er løst? <br> Kan du lese av løsningen som er funnet?
+
+
+Deloppgave 2
+: Bruk CAS-vinduene til å løse ulikheten $3x + 5 \leq -2x + 7$. <br> Får du samme svar med begge metodene? <br> *Tips: for å få symbolet $\leq$ kan du skrive `<`{l=geogebra} etterfulgt av `=`{l=geogebra} i CAS-vinduet.*
+
+:::::
