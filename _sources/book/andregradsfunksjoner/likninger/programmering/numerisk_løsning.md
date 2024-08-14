@@ -66,12 +66,3 @@ Deloppgave 3
 
 :::::
 
-
-
-## Sup
-
-:::{raw} html
----
-file: parsons_puzzle/utforsk/utforsk_2.html
----
-:::

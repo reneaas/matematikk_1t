@@ -1,7 +1,11 @@
 let code = null; // Global variable to store code temporarily
 
-function generateInteractiveCode(containerId, code, uniqueId) {
+
+
+function generateInteractiveCode(containerId, code) {
+    const uniqueId = generateUUID();
     const container = document.getElementById(containerId);
+
     if (!container) {
         console.error(`Container with ID ${containerId} not found.`);
         return;

@@ -1,360 +1,303 @@
+let codeString = null; // Global variable to store code temporarily
 
-/**
- * Initializes a Parsons puzzle by setting up the drag-and-drop elements,
- * the solution checking mechanism, and the reset functionality.
- * @param {string} puzzleContainerId - The ID of the puzzle container element.
- * @param {string} codeString - The code as a single string to be split and randomized.
- */
-function initializeParsonsPuzzle(puzzleContainerId, codeString) {
-    const puzzleContainer = document.getElementById(puzzleContainerId);
-    const dropArea = puzzleContainer.querySelector('#drop-area');
-    const checkButton = puzzleContainer.querySelector('#check-solution');
-    const resetButton = puzzleContainer.querySelector('#reset-puzzle');
-    const feedback = puzzleContainer.querySelector('#feedback');
-    const draggableCodeContainer = puzzleContainer.querySelector('#draggable-code');
-  
-    const solutionModal = createSolutionModal(puzzleContainerId);
-    const fullCodeElement = solutionModal.querySelector(`#fullCode-${puzzleContainerId}`);
-    const closeModalButton = solutionModal.querySelector('.close');
-    const copyCodeButton = solutionModal.querySelector(`#copyCodeButton-${puzzleContainerId}`);
 
-  
-    // Preprocess and shuffle the code once, then keep it stored in a variable
-    let codeBlocks = preprocessCode(codeString);
-    let shuffledCodeBlocks = shuffleArray(codeBlocks.slice()); // Shuffle and store the shuffled order
-  
-    renderDraggableCode(draggableCodeContainer, shuffledCodeBlocks);
-    createPlaceholder(dropArea);
-    enableDragAndDrop(draggableCodeContainer, dropArea);
+class ParsonsPuzzle {
+    constructor(puzzleContainerId, codeString) {
+        this.puzzleContainerId = puzzleContainerId;
+        this.puzzleContainer = document.getElementById(puzzleContainerId);
+        this.codeString = codeString;
 
-  
-    checkButton.addEventListener('click', () => {
-        checkSolution(dropArea, codeBlocks, feedback, fullCodeElement, solutionModal);
-    });
-  
-    resetButton.addEventListener('click', () => {
-        //resetPuzzle(draggableCodeContainer, dropArea, shuffledCodeBlocks, feedback);
-        reset();
-        reshuffle();
-    });
-  
-    closeModalButton.addEventListener('click', () => {
-        solutionModal.style.display = 'none';
-    });
-  
-    copyCodeButton.addEventListener('click', () => {
-        navigator.clipboard.writeText(fullCodeElement.textContent).then(() => {
-            alert('Du har kopiert koden!');
+        this.generateHTML();
+
+        this.dropArea = document.getElementById(this.dropAreaId);
+        this.checkButton = document.getElementById(this.checkSolutionId);
+        this.resetButton = document.getElementById(this.resetButtonId);
+        this.feedback = document.getElementById(this.feedbackId);
+        this.draggableCodeContainer = document.getElementById(this.draggableId);
+
+        this.solutionModal = this.createSolutionModal(puzzleContainerId);
+        this.fullCodeElement = this.solutionModal.querySelector(`#fullCode-${puzzleContainerId}`);
+        this.closeModalButton = this.solutionModal.querySelector('.close');
+        this.copyCodeButton = this.solutionModal.querySelector(`#copyCodeButton-${puzzleContainerId}`);
+
+        this.codeBlocks = this.preprocessCode(codeString);
+        this.shuffledCodeBlocks = this.shuffleArray(this.codeBlocks.slice());
+
+        this.renderDraggableCode(this.draggableCodeContainer, this.shuffledCodeBlocks);
+        this.createPlaceholder(this.dropArea);
+        this.enableDragAndDrop(this.draggableCodeContainer, this.dropArea);
+
+        this.checkButton.addEventListener('click', () => this.checkSolution());
+        this.resetButton.addEventListener('click', () => {
+            this.reset();
+            this.reshuffle();
         });
-    });
-
-
-
-}
-
-/**
- * Resets the puzzle to its shuffled state, clearing the drop area and feedback.
- * @param {HTMLElement} draggableContainer - The container holding the draggable elements.
- * @param {HTMLElement} dropArea - The drop area where elements were dropped.
- * @param {Array} shuffledCodeBlocks - The shuffled code block objects to reset to.
- * @param {HTMLElement} feedbackElement - The element displaying feedback.
- */
-
-
-function reset() {
-    console.log('Reset function called');
-
-    const dropArea = document.querySelector('#drop-area');
-    const draggableCodeContainer = document.querySelector('#draggable-code');
-    const originalShuffledOrder = Array.from(draggableCodeContainer.querySelectorAll('.draggable')); // Store original order or reshuffle as needed
-    const feedbackElement = document.querySelector('#feedback');
-
-    // Clear feedback text
-    feedbackElement.textContent = '';  // Reset the text content of the feedback element
-
-    if (!dropArea) {
-        console.error('Drop area not found');
-        return;
+        this.closeModalButton.addEventListener('click', () => this.solutionModal.style.display = 'none');
+        this.copyCodeButton.addEventListener('click', () => {
+            navigator.clipboard.writeText(this.fullCodeElement.textContent).then(() => {
+                alert('Du har kopiert koden!');
+            });
+        });
     }
 
-    if (!draggableCodeContainer) {
-        console.error('Draggable code container not found');
-        return;
-    }
-
-    // Move all draggable elements back to the original container
-    const draggableElements = dropArea.querySelectorAll('.draggable');
-    draggableElements.forEach(element => {
-        console.log(`Moving element ${element.id} back to draggable code container`);
-        draggableCodeContainer.appendChild(element);
-    });
-
-    shuffleArray(originalShuffledOrder).forEach(element => {
-        draggableCodeContainer.appendChild(element);
-    });
-
-    // Reset placeholder visibility
-    const placeholder = dropArea.querySelector('.placeholder');
-    if (placeholder) {
-        console.log('Showing placeholder');
-        placeholder.style.display = '';
-    } else {
-        placeholder = createPlaceholder(dropArea);
-    }
-
-    // Additional reset logic if any
-    console.log('Reset function completed');
-}
-
-function reshuffle() {
-    const draggableCodeContainer = document.querySelector('#draggable-code');
-    const originalShuffledOrder = Array.from(draggableCodeContainer.querySelectorAll('.draggable')); // Store original order or reshuffle as needed
-
-    shuffleArray(originalShuffledOrder).forEach(element => {
-        draggableCodeContainer.appendChild(element);
-    });
-}
-
-
-
-function preprocessCode(codeString) {
-    const lines = codeString.split('\n');
-    return lines.map((line, index) => {
-        let trimmedLine = line.trim();
-
-        if (line.includes(';')) {
-            // Split the line at each semicolon, preserving empty parts
-            const parts = line.split(';');
-            
-            // Join the parts with newlines, keeping the original indentation or empty lines
-            trimmedLine = parts.map(part => part.trim() === '' ? '' : part).join('\n');
+    generateHTML() {
+        const container = document.getElementById(this.puzzleContainerId);
+        if (!container) {
+            console.error(`Container with ID ${this.puzzleContainerId} not found.`);
+            return;
         }
 
-        return {
-            block: line.includes(';') ? trimmedLine : line,
-            order: index,
-            isEmpty: line.trim() === '' // Add an `isEmpty` property to track empty lines
-        };
-    });
-}
+        const uniqueId = generateUUID();
+        this.dropAreaId = `drop-area-${uniqueId}`;
+        this.checkSolutionId = `check-solution-${uniqueId}`;
+        this.resetButtonId = `reset-button-${uniqueId}`;
+        this.feedbackId = `feedback-${uniqueId}`;
+        this.draggableId = `draggable-code-${uniqueId}`;
 
 
+        const checkSolutionIcon = `
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+        </svg>
+        `;
 
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
+        const resetIcon = `
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+            <path fill-rule="evenodd" d="M9.53 2.47a.75.75 0 0 1 0 1.06L4.81 8.25H15a6.75 6.75 0 0 1 0 13.5h-3a.75.75 0 0 1 0-1.5h3a5.25 5.25 0 1 0 0-10.5H4.81l4.72 4.72a.75.75 0 1 1-1.06 1.06l-6-6a.75.75 0 0 1 0-1.06l6-6a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
+        </svg>
+        `;
+
+        const html = `
+            <div id="${this.draggableId}" class="draggable-code"></div>
+            <div id="${this.dropAreaId}" class="drop-area"></div>
+            <div class="button-container">
+                <button id="${this.checkSolutionId}" class="button button-check-solution">Sjekk løsning ${checkSolutionIcon}</button>
+                <button id="${this.resetButtonId}" class="button button-reset-puzzle">Reset puslespill ${resetIcon}</button>
+            </div>
+            <div id="${this.feedbackId}" class="feedback"></div>
+        `;
+
+        container.innerHTML = html;
     }
-    return array;
-}
 
+    preprocessCode(codeString) {
+        const lines = codeString.split('\n');
+        return lines.map((line, index) => {
+            let trimmedLine = line.trim();
+            if (line.includes(';')) {
+                const parts = line.split(';');
+                trimmedLine = parts.map(part => part.trim() === '' ? '' : part).join('\n');
+            }
+            return {
+                block: line.includes(';') ? trimmedLine : line,
+                order: index,
+                isEmpty: line.trim() === ''
+            };
+        });
+    }
 
-
-function renderDraggableCode(container, codeBlockObjects) {
-    container.innerHTML = '';  // Clear the container
-    codeBlockObjects.forEach((obj) => {
-        if (!obj.isEmpty) { // Skip rendering for empty lines
-            const lineElement = document.createElement('div');
-            lineElement.className = 'draggable';
-            lineElement.draggable = true;
-            lineElement.dataset.order = obj.order;
-            
-            lineElement.innerHTML = `<pre class="highlight python"><code>${escapeHTML(obj.block)}</code></pre>`;
-            
-            container.appendChild(lineElement);
-            hljs.highlightElement(lineElement.querySelector('code'));
+    shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
         }
-    });
-}
-
-
-function escapeHTML(str) {
-    return str.replace(/&/g, "&amp;")
-              .replace(/</g, "&lt;")
-              .replace(/>/g, "&gt;")
-              .replace(/"/g, "&quot;")
-              .replace(/'/g, "&#039;");
-}
-
-
-function checkSolution(dropArea, codeBlockObjects, feedbackElement, fullCodeElement, solutionModal) {
-    const droppedItems = Array.from(dropArea.children).filter(item => !item.classList.contains('placeholder'));
-    const droppedOrder = droppedItems.map(item => parseInt(item.dataset.order));
-
-    // Combine all code blocks based on their order to form the full code, including empty lines
-    const fullCode = codeBlockObjects.sort((a, b) => a.order - b.order)
-                         .map(obj => obj.block)
-                         .join('\n');
-    
-    fullCodeElement.textContent = fullCode;
-    hljs.highlightElement(fullCodeElement);
-
-    // Solution correctness check remains unchanged
-    const correctOrder = codeBlockObjects.filter(obj => !obj.isEmpty)
-                                         .sort((a, b) => a.order - b.order)
-                                         .map(obj => obj.order);
-    if (JSON.stringify(droppedOrder) === JSON.stringify(correctOrder)) {
-        feedbackElement.textContent = 'Riktig!';
-        feedbackElement.style.color = 'green';
-        solutionModal.style.display = 'block';
-    } else {
-        feedbackElement.textContent = 'Prøv igjen!';
-        feedbackElement.style.color = 'red';
+        return array;
     }
-}
 
+    renderDraggableCode(container, codeBlockObjects) {
+        container.innerHTML = '';
+        codeBlockObjects.forEach((obj) => {
+            if (!obj.isEmpty) {
+                const lineElement = document.createElement('div');
+                lineElement.className = 'draggable';
+                lineElement.draggable = true;
+                lineElement.dataset.order = obj.order;
+                lineElement.innerHTML = `<pre class="highlight python"><code>${this.escapeHTML(obj.block)}</code></pre>`;
+                container.appendChild(lineElement);
+                hljs.highlightElement(lineElement.querySelector('code'));
+            }
+        });
+    }
 
+    escapeHTML(str) {
+        return str.replace(/&/g, "&amp;")
+                  .replace(/</g, "&lt;")
+                  .replace(/>/g, "&gt;")
+                  .replace(/"/g, "&quot;")
+                  .replace(/'/g, "&#039;");
+    }
 
-function createSolutionModal(puzzleContainerId) {
-    const modal = document.createElement('div');
-    modal.id = `solutionModal-${puzzleContainerId}`;
-    modal.className = 'modal';
-  
-    modal.innerHTML = `
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <pre><code id="fullCode-${puzzleContainerId}" class="highlight python"></code></pre>
-        <button id="copyCodeButton-${puzzleContainerId}" class="button button-check-solution">Bra jobba! 🔥 Kopier koden!</button>
-      </div>
-    `;
-  
-    document.body.appendChild(modal);
-    return modal;
-}
-
-
-function createPlaceholder(dropArea) {
-    // Always start fresh
-    const placeholder = document.createElement('div');
-    placeholder.className = 'placeholder';
-    placeholder.textContent = 'Dra og dropp kode her!';
-    dropArea.appendChild(placeholder);
-}
-
-
-function enableDragAndDrop(draggableContainer, dropArea) {
-    const draggables = draggableContainer.querySelectorAll('.draggable');
-    const placeholder = dropArea.querySelector('.placeholder');
-
-    draggables.forEach(draggable => {
-        draggable.addEventListener('dragstart', dragStart);
-        draggable.addEventListener('dragend', dragEnd);
-    });
-
-    // Adding event listeners for drag and drop operations to both areas
-    [dropArea, draggableContainer].forEach(container => {
-        container.addEventListener('dragover', (e) => dragOver(e, container));
-        container.addEventListener('drop', (e) => drop(e, container, dropArea, placeholder));
-    });
-}
-
-function dragStart(e) {
-    e.dataTransfer.setData('text/plain', e.target.dataset.order);
-    e.target.classList.add('dragging');
-    setTimeout(() => {
-        e.target.style.display = 'none';
-    }, 0); // Hide the element briefly while dragging
-}
-
-function dragEnd(e) {
-    e.target.style.display = 'block';
-    e.target.classList.remove('dragging');
-}
-
-
-
-function dragOver(e, dropArea, placeholder) {
-    e.preventDefault();
-    const draggable = document.querySelector('.dragging');
-    const afterElement = getDragAfterElement(e.clientY, dropArea);
-
-    if (afterElement == null) {
-        dropArea.insertBefore(draggable, placeholder);
-    } else {
-        const box = afterElement.getBoundingClientRect();
-        const offset = e.clientY - box.top;
-
-        // If the mouse is in the upper half of the element, place the draggable above it
-        if (offset < box.height / 2) {
-            dropArea.insertBefore(draggable, afterElement);
+    checkSolution() {
+        const droppedItems = Array.from(this.dropArea.children).filter(item => !item.classList.contains('placeholder'));
+        const droppedOrder = droppedItems.map(item => parseInt(item.dataset.order));
+        const fullCode = this.codeBlocks.sort((a, b) => a.order - b.order).map(obj => obj.block).join('\n');
+        this.fullCodeElement.textContent = fullCode;
+        hljs.highlightElement(this.fullCodeElement);
+        const correctOrder = this.codeBlocks.filter(obj => !obj.isEmpty).sort((a, b) => a.order - b.order).map(obj => obj.order);
+        if (JSON.stringify(droppedOrder) === JSON.stringify(correctOrder)) {
+            this.feedback.textContent = 'Riktig!';
+            this.feedback.style.color = 'green';
+            this.solutionModal.style.display = 'block';
         } else {
-            dropArea.insertBefore(draggable, afterElement.nextSibling);
+            this.feedback.textContent = 'Prøv igjen!';
+            this.feedback.style.color = 'red';
         }
     }
 
-    // Always move the placeholder to the end
-    dropArea.appendChild(placeholder);
-}
+    createSolutionModal(puzzleContainerId) {
+        const modal = document.createElement('div');
+        modal.id = `solutionModal-${puzzleContainerId}`;
+        modal.className = 'modal';
+        modal.innerHTML = `
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <pre><code id="fullCode-${puzzleContainerId}" class="highlight python"></code></pre>
+                <button id="copyCodeButton-${puzzleContainerId}" class="button button-check-solution">Bra jobba! 🔥 Kopier koden!</button>
+            </div>
+        `;
+        document.body.appendChild(modal);
+        return modal;
+    }
 
-function drop(e) {
-    e.preventDefault();
-    const draggableElement = document.querySelector('.dragging');
-    const dropArea = e.target.closest('#drop-area') || e.target.closest('#draggable-code');
-    const afterElement = getDragAfterElement(e.clientY, dropArea);
-    const placeholder = dropArea.querySelector('.placeholder');
+    createPlaceholder(dropArea) {
+        const placeholder = document.createElement('div');
+        placeholder.className = 'placeholder';
+        placeholder.textContent = 'Dra og dropp kode her!';
+        dropArea.appendChild(placeholder);
+    }
 
-    if (afterElement == null) {
-        dropArea.insertBefore(draggableElement, placeholder);
-    } else {
-        const box = afterElement.getBoundingClientRect();
-        const offset = e.clientY - box.top;
 
-        // If the mouse is in the upper half of the element, place the draggable above it
-        if (offset < box.height / 2) {
-            dropArea.insertBefore(draggableElement, afterElement);
+    // Ensure placeholder is not moved when moving blocks back to draggable area
+    enableDragAndDrop(draggableContainer, dropArea) {
+        const draggables = draggableContainer.querySelectorAll('.draggable');
+        draggables.forEach(draggable => {
+            draggable.addEventListener('dragstart', (e) => this.dragStart(e));
+            draggable.addEventListener('dragend', (e) => this.dragEnd(e, dropArea));  // Always pass dropArea to manage the placeholder correctly
+        });
+
+        [dropArea, draggableContainer].forEach(container => {
+            container.addEventListener('dragover', (e) => this.dragOver(e, container));
+            container.addEventListener('drop', (e) => this.drop(e, container, this.dropArea.querySelector('.placeholder')));  // Always manage placeholder from dropArea
+        });
+    }
+
+    dragStart(e) {
+        e.dataTransfer.setData('text/plain', e.target.dataset.order);
+        e.target.classList.add('dragging');
+        setTimeout(() => {
+            e.target.style.display = 'none';
+        }, 0);
+    }
+
+    // Ensure dragEnd method doesn't remove the placeholder incorrectly
+    dragEnd(e, dropArea) {
+        e.target.style.display = 'block';
+        e.target.classList.remove('dragging');
+        this.updatePlaceholderVisibility(this.dropArea, this.draggableCodeContainer);  // Ensure placeholder visibility is updated based on both areas
+    }
+
+    dragOver(e, dropArea) {
+        e.preventDefault();
+        const draggable = document.querySelector('.dragging');
+        const afterElement = this.getDragAfterElement(e.clientY, dropArea);
+        if (afterElement == null) {
+            dropArea.insertBefore(draggable, dropArea.querySelector('.placeholder'));
         } else {
-            dropArea.insertBefore(draggableElement, afterElement.nextSibling);
+            const box = afterElement.getBoundingClientRect();
+            const offset = e.clientY - box.top;
+            if (offset < box.height / 2) {
+                dropArea.insertBefore(draggable, afterElement);
+            } else {
+                dropArea.insertBefore(draggable, afterElement.nextSibling);
+            }
         }
     }
 
-    draggableElement.classList.remove('dragging');
 
-    // Always move the placeholder to the end
-    dropArea.appendChild(placeholder);
+    // Update the drop method to handle placeholder correctly
+    drop(e, container, placeholder) {
+        e.preventDefault();
+        const draggableElement = document.querySelector('.dragging');
+        const targetDropArea = e.target.closest('.drop-area');
+        const targetDraggableArea = e.target.closest('.draggable-code');  // Handle re-adding to the draggable area
+        const afterElement = this.getDragAfterElement(e.clientY, targetDropArea || targetDraggableArea);
 
-    // Pass the draggableCodeContainer reference correctly
-    const draggableCodeContainer = document.querySelector('#draggable-code');
-    updatePlaceholderVisibility(dropArea, draggableCodeContainer);
-}
-
-function ensurePlaceholderAtBottom(dropArea, placeholder) {
-    if (!dropArea.contains(placeholder)) {
-        dropArea.appendChild(placeholder); // Append placeholder if it's not in the drop area
+        if (afterElement == null) {
+            (targetDropArea || targetDraggableArea).insertBefore(draggableElement, placeholder);
+        } else {
+            const box = afterElement.getBoundingClientRect();
+            const offset = e.clientY - box.top;
+            if (offset < box.height / 2) {
+                (targetDropArea || targetDraggableArea).insertBefore(draggableElement, afterElement);
+            } else {
+                (targetDropArea || targetDraggableArea).insertBefore(draggableElement, afterElement.nextSibling);
+            }
+        }
+        this.updatePlaceholderVisibility(this.dropArea, this.draggableCodeContainer);  // Update placeholder visibility for both areas
     }
-}
 
-function updatePlaceholderVisibility(dropArea, draggableCodeContainer) {
-    const draggableItems = draggableCodeContainer.querySelectorAll('.draggable').length;
-    console.log("draggableItems: ", draggableItems);
-    // If all draggable elements are in the drop area, remove the placeholder
-    if (draggableItems === 0) {
+    // Updated updatePlaceholderVisibility to consider both areas
+    updatePlaceholderVisibility(dropArea, draggableCodeContainer) {
+        const dropAreaBlockCount = dropArea.querySelectorAll('.draggable').length;
+        const draggableBlockCount = draggableCodeContainer.querySelectorAll('.draggable').length;
+        
+        console.log("dropAreaBlockCount: ", dropAreaBlockCount);
         const placeholder = dropArea.querySelector('.placeholder');
-        if (placeholder) {
-            placeholder.remove();
-        }        
-    } else {
-        // Ensure placeholder is visible and at the end of the drop area
-        const placeholder = dropArea.querySelector('.placeholder');
-        if (placeholder) {
+        if (draggableBlockCount === 0) {
+            if (placeholder) placeholder.style.display = 'none';  // Hide if no blocks in drop area
+        } else {
+            if (!placeholder) {
+                this.createPlaceholder(dropArea);  // Create if missing
+            }
+            placeholder.style.display = '';  // Show if blocks exist
+        }
+
+        // Ensure the placeholder is always at the end of the drop area when visible
+        if (placeholder && dropAreaBlockCount > 0) {
             dropArea.appendChild(placeholder);
-        } else {
-            createPlaceholder(dropArea);  // Recreate the placeholder if it was removed somehow
         }
+    }
+
+    getDragAfterElement(y, dropArea) {
+        const draggableElements = [...dropArea.querySelectorAll('.draggable:not(.dragging)')];
+        return draggableElements.reduce((closest, child) => {
+            const box = child.getBoundingClientRect();
+            const offset = y - box.top - box.height / 2;
+            if (offset < 0 && offset > closest.offset) {
+                return { offset: offset, element: child };
+            } else {
+                return closest;
+            }
+        }, { offset: Number.NEGATIVE_INFINITY }).element;
+    }
+
+    reset() {
+        this.feedback.textContent = '';
+        const draggableElements = this.dropArea.querySelectorAll('.draggable');
+        draggableElements.forEach(element => {
+            this.draggableCodeContainer.appendChild(element);
+        });
+        const originalShuffledOrder = Array.from(this.draggableCodeContainer.querySelectorAll('.draggable'));
+        this.shuffleArray(originalShuffledOrder).forEach(element => {
+            this.draggableCodeContainer.appendChild(element);
+        });
+        const placeholder = this.dropArea.querySelector('.placeholder');
+        if (placeholder) {
+            placeholder.style.display = '';
+        } else {
+            this.createPlaceholder(this.dropArea);
+        }
+    }
+
+    reshuffle() {
+        const originalShuffledOrder = Array.from(this.draggableCodeContainer.querySelectorAll('.draggable'));
+        this.shuffleArray(originalShuffledOrder).forEach(element => {
+            this.draggableCodeContainer.appendChild(element);
+        });
     }
 }
 
 
-function getDragAfterElement(y, dropArea) {
-    const draggableElements = [...dropArea.querySelectorAll('.draggable:not(.dragging)')];
-    
-    return draggableElements.reduce((closest, child) => {
-        const box = child.getBoundingClientRect();
-        const offset = y - box.top - box.height / 2;  // Get the middle point
-
-        if (offset < 0 && offset > closest.offset) {
-            return { offset: offset, element: child };
-        } else {
-            return closest;
-        }
-    }, { offset: Number.NEGATIVE_INFINITY }).element;  // Return element before which the new block will be inserted
+function makeParsonsPuzzle(puzzleContainerId, codeString) {
+    new ParsonsPuzzle(puzzleContainerId, codeString);
 }

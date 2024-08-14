@@ -40,7 +40,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/static_code_blocks.css?v=b6831e29" />
     <link rel="stylesheet" type="text/css" href="../../../_static/admonitions.css?v=7fe56572" />
     <link rel="stylesheet" type="text/css" href="../../../_static/misc.css?v=e32fe212" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/parsons.css?v=65d31460" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/parsons.css?v=d67bb409" />
     <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror.css?v=258bf6d2" />
     <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_dark_high_contrast_cm.css?v=4c0c1b0f" />
     <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_dark_cm.css?v=d1235728" />
@@ -77,11 +77,11 @@
     <script src="../../../_static/theme-switcher.js?v=c0cdcaac"></script>
     <script src="../../../_static/geogebra-setup.js?v=c67998b1"></script>
     <script src="../../../_static/static_code_blocks.js?v=d0b96be4"></script>
-    <script src="../../../_static/generateParsonsPuzzle.js"></script>
+    <script src="../../../_static/utils.js?v=8e047c30"></script>
     <script src="../../../_static/setupEditor.js?v=d4cbd883"></script>
-    <script src="../../../_static/parsons.js?v=d5395a16"></script>
+    <script src="../../../_static/parsons.js?v=121dc86c"></script>
     <script src="../../../_static/brython.js?v=46b190f3"></script>
-    <script src="../../../_static/generateInteractiveCode.js?v=40f1c8bc"></script>
+    <script src="../../../_static/generateInteractiveCode.js?v=b5d19ef6"></script>
     <script src="../../../_static/serviceWorker.js?v=9d61c2b7"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -507,6 +507,7 @@ document.write(`
 <div class="explore admonition">
 <p class="admonition-title">Utforsk 1</p>
 <p>Under vises et interaktivt program som bruker en <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkke til å skrive ut de <strong>fem</strong> første naturlige tallene. Her skal du utforske ulike biter av <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkken.</p>
+<br>
 <div id="container-kode-programmering-while-løkker-utforsk-1"></div>
 <script type="text/javascript">
     code = `
@@ -520,7 +521,6 @@ while i <= 5:
     generateInteractiveCode(
         "container-kode-programmering-while-løkker-utforsk-1",
         code,
-        "kode-programmering-while-løkker-utforsk-1"
     );
 </script>
 
@@ -598,6 +598,7 @@ while i <= 5:
 <div class="explore admonition" id="programmering-while-loops-utforsk-2">
 <p class="admonition-title">Utforsk 2</p>
 <p>Under vises et interaktivt program som bruker en <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkke til å regne ut summen av de <strong>fem</strong> første naturlige tallene.</p>
+<br>
 <div id="container-kode-programmering-while-løkker-utforsk-2"></div>
 <script type="text/javascript">
     code = `
@@ -614,12 +615,12 @@ print(f"{s = }")
     generateInteractiveCode(
         "container-kode-programmering-while-løkker-utforsk-2",
         code,
-        "kode-programmering-while-løkker-utforsk-2"
     );
 </script>
 
     
     
+<br>
 <dl class="simple myst">
 <dt>Deloppgave 1</dt><dd><p>Kan du få programmet til å regne ut summen av de <strong>ti</strong> første naturlige tallene? Sjekk at du får riktig svar ved å regne det ut for hånd.</p>
 </dd>
@@ -698,7 +699,6 @@ print(f"{s = }")
     generateInteractiveCode(
         "container-kode-programmering-while-løkker-oppgave-1",
         code,
-        "kode-programmering-while-løkker-oppgave-1"
     );
 </script>
 
@@ -712,6 +712,7 @@ print(f"{s = }")
 
 
 
+<br>
 <dl class="simple myst">
 <dt>Deloppgave 1</dt><dd><p>Fiks programmet slik at det regner ut summen av de fem første kvadrattallene. Sjekk svaret ved å regne for hånd.</p>
 </dd>
@@ -803,29 +804,21 @@ n! = 1 \cdot 2 \cdot 3 \cdot \ldots \cdot n
 <dt>Deloppgave 1</dt><dd><p>Under vises et program som regner ut <span class="math notranslate nohighlight">\(4!\)</span> i tilfeldig rekkefølge. <br> Plasser kodelinjene i riktig rekkefølge for å få tilgang til det ferdige programmet. <br> Lim inn programmet i et interaktivt kodevindu og kjør det.</p>
 </dd>
 </dl>
-<div id="container-parsons-puzzle-programmering-while-løkker-oppgave-2" class="puzzle-container">
-    <div id="draggable-code"></div>
-    <div id="drop-area"></div>
-    <button id="check-solution" class="button button-check-solution">Sjekk løsning!</button>
-    <button id="reset-puzzle" class="button button-reset-puzzle">Reset puslespill ↪️</button>
-    <div id="feedback"></div>
-</div>
+<br>
+<div id="container-parsons-puzzle-programmering-while-løkker-oppgave-2" class="puzzle-container"></div>
 
 <script type="text/javascript">
-    document.addEventListener('DOMContentLoaded', () => {
-        const codeString = 
+    codeString = 
 `i = 1 ;p = 1
 
 while i <= 4:
     p = p * i
-    i = i + 1
+    i = i + 1 
 
 print(f"{p = }")
 `;
-    
-        // Initialize the puzzle
-        initializeParsonsPuzzle('container-parsons-puzzle-programmering-while-løkker-oppgave-2', codeString);
-    });
+
+    makeParsonsPuzzle('container-parsons-puzzle-programmering-while-løkker-oppgave-2', codeString);
 </script>
 <br>
 <div id="container-kode-programmering-while-løkker-oppgave-2"></div>
@@ -837,7 +830,6 @@ print(f"{p = }")
     generateInteractiveCode(
         "container-kode-programmering-while-løkker-oppgave-2",
         code,
-        "kode-programmering-while-løkker-oppgave-2"
     );
 </script>
 
