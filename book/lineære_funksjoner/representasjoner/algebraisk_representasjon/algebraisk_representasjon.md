@@ -246,11 +246,25 @@ Nå skal du prøve å lage et program som regner ut en funksjonsverdi i Python.
 class: check
 name: lineære-funksjoner-algebraisk-representasjon-underveisoppgave-3
 ---
-Under vises et uferdig program for å regne ut $g(-2)$ for funksjonen
+Under vises et program i tilfeldig rekkefølge som regner ut funksjonsverdien til en funksjon. 
 
-$$
-g(x) = -2x + 3.
-$$
+
+Deloppgave 1
+: Pusle sammmen programmet i riktig rekkefølge, og kopier programmet i den interaktive kodecellen under.
+
+
+<br>
+
+:::{raw} html
+---
+file: parsons_puzzle/underveisoppgaver/underveisoppgave_3.html
+---
+:::
+
+<br>
+
+
+<br>
 
 :::{raw} html
 ---
@@ -387,7 +401,21 @@ class: problem-level-1
 name: lineære-funksjoner-algebraisk-representasjon-oppgave-3
 ---
 
-Under vises en kode som regner ut funksjonsverdien til en lineær funksjon.
+Under vises et program i tilfeldig rekkefølge som regner ut funksjonsverdien til en lineær funksjon.
+
+Deloppgave 1
+: Pusle sammen programmet i riktig rekkefølge og kopier programmet i den interaktive kodecellen under.
+
+<br>
+
+:::{raw} html
+---
+file: parsons_puzzle/oppgaver/oppgave_3.html
+---
+:::
+
+
+<br>
 
 :::{raw} html
 ---
@@ -397,23 +425,20 @@ file: interaktiv_kode/oppgaver/oppgave_3.html
 
 <br>
 
-Deloppgave 1
-: Hvilken funksjon er det elevens program regner ut funksjonsverdien til?
-
+Deloppgave 2
+: Hvilken funksjon er det programmet regner ut funksjonsverdien til? Og hvilken funksjonsverdi? 
 ::::{admonition} Fasit
 ---
 class: answer, dropdown
 ---
-$$
-f(x) = -\dfrac{x}{2} + 3 = -\dfrac{1}{2}x + 3
-$$
+* Funksjon: $f(x)= -\dfrac{1}{2}x + 3$
+* Funksjonsverdi: $y = f(-4)$
 ::::
 
 <br>
 
 Deloppgave 2
-: Hva blir verdien programmet skriver ut? 📝 $\color{red}\xcancel{💻}$ 
-: Kjør programmet og sjekk om du forutså riktig.
+: Endre programmet slik at det regner ut $f(2)$. <br> Hva forventer du at svaret blir? Kjør programmmet og sjekk.
 
 
 ::::{admonition} Fasit
@@ -429,30 +454,33 @@ $$
 <br>
 
 Deloppgave 3
-: Endre programmet slik at det regner ut $f(-2)$ og bruk programmet til å bestemme verdien. 💻
+: Endre programmet slik at det regner ut $g(2)$ når $g(x) = 2x + 1$. <br> Kjør programmet og sjekk at svaret blir riktig.
 
 
 ::::{admonition} Fasit
 ---
 class: answer, dropdown
 ---
-Endret program:
+Vi kan bare overskrive definisjonen av `f(x)`{l=python}. <br> Endret program:
 ```{code-block} python
 ---
 linenos:
-emphasize-lines: 4
+emphasize-lines: 2
 ---
 def f(x):
-    return -x/2 + 3
+    return 2*x + 1
 
-y = f(-2)
+y = f(2)
 print(y)
 ```
 
 Funksjonsverdi:
 
 $$
-f(-2) = 4
+g(2) = 5
 $$
 ::::
 :::::
+
+---
+
