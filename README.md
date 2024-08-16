@@ -9,7 +9,7 @@ jb build . --all
 ```
 
 html-kode for hele boka genereres og en link til root i html-filene skrives ut i terminalen. 
-html-koden vil ligge i `_build/html` mappen. Du må åpne `index.html` i nettleseren (på Windows, anyway) for å se på den lokale versjonen av boka. Denne pushes ikke opp til skyen - GitHub bygger boka når du pusher slik at vi ikke kan *breake* noe.
+html-koden vil ligge i `_build/html` mappen. Du må åpne `index.html` i nettleseren (på Windows, anyway) for å se på den lokale versjonen av boka. Denne pushes ikke opp til skyen - GitHub bygger boka når du pusher til skyen automatisk.
 
 ## git stuff
 
@@ -56,6 +56,8 @@ Typisk når du merger, gjør du det fra skyen som medfører at du kanskje må fi
 |$\lor$| `\lor`|
 |$\Leftrightarrow$| `\Leftrightarrow`|
 |$\Rightarrow$| `\Rightarrow`|
+|$\Leftarrow$| `\Leftarrow`|
+|$\Updownarrow$| `\Updownarrow`|
 |$\forall$| `\forall`|
 |$\langle a , b\rangle$| `\langle a, b \rangle`|
 |$\in$| `\in`|
@@ -93,9 +95,11 @@ Som vi ser i likning {eq}`eq:likning1`, så er [...]
 ## Sette inn figur
 For å sette inn en figur, brukes følgende syntaks:
 ````markdown
-```{figure} mappenavn/filnavn.svg
-:name: navn-på-figuren
-:width: 80%
+:::{figure} mappenavn/filnavn.svg
+---
+name: fig-path-til-figuren
+width: 80%
+---
 
 Figurtekst her. 
 ```
@@ -103,7 +107,7 @@ Figurtekst her.
 
 Man kan refere til figuren ved å skrive 
 ````markdown
-I {numref}`navn-på-figuren` ser vi [...]
+I {numref}`fig-path-til-figuren` ser vi [...]
 ````
 
 
@@ -128,14 +132,14 @@ som gir
 ### Punktliste
 For å lage en punktliste, brukes følgende syntaks:
 ````markdown
-- Første punkt
-- Andre punkt
-- Tredje punkt
+* Første punkt
+* Andre punkt
+* Tredje punkt
 ````
 som gir
-- Første punkt
-- Andre punkt
-- Tredje punkt
+* Første punkt
+* Andre punkt
+* Tredje punkt
 
 ### Nummerert liste
 For å lage en nummerert liste, brukes følgende syntaks:
@@ -152,35 +156,33 @@ som gir
 ## Bokser og farger
 For å lage bokser og farger, brukes følgende syntaks:
 ````markdown
-```{admonition} Tittel på boksen
-:class: klasse1, klasse2, ..., klasseN
+:::{admonition} Tittel på boksen
+---
+class: klasse1, klasse2, ..., klasseN
+---
+Tekstinnhold i boksen.
 
-Innholdet i boksen
-```
+:::
 ````
 
-| Klasse | Beskrivelse |
+| Klasse | Bruksområde |
 |:---|:---|
-|`note`| Mindre biter med informasjon |
 |`tip`| Læringsmål |
-|`theory`| Brukes for hovedbiter med teori. Setninger, algoritmer, lemmaer osv. |
-|`example`| Brukes ved eksempler |
-|`answer, dropdown`| Brukes for fasit |
-|`solution, dropdown`| Bruker for løsningsforslag |
-|`check`| Brukes for underveisoppgaver |
-|`hints, dropdown`| Brukes for hint |
-|`sidenote, margin`| Brukes for oppklaringer i margen |
-|`margin`| Brukes for å lage bokser i margen |
+|`theory`| Generell teori. |
+|`example`| Eksempler |
+|`solution`| Løsningsforslag uten dropdown meny. Brukes i eksempler. |
+|`answer, dropdown`| Fasit med dropdown meny |
+|`solution, dropdown`| Løsningsforslag med dropdown meny |
+|`check`| Underveisoppgaver |
+|`hints, dropdown`| Hint |
+|`sidenote, margin`| Oppklaring i sidemargen |
+|`problem-level-1`| Oppgaver: level 1 |
+|`problem-level-2`| Oppgaver: level 2 |
+|`problem-level-3`| Oppgaver: level 3 |
+
 
 Dropdown bokser kan brukes sammen med de andre klassene, for eksempel:
 
-
-````markdown
-```{admonition} Tittel på boksen
-:class: tip, dropdown
-Skjult innhold som kan åpnes ved å klikke på tittelboksen. 
-```
-````
 
 ## Kode
 For å sette inn kode, brukes følgende syntaks:
@@ -188,5 +190,25 @@ For å sette inn kode, brukes følgende syntaks:
 ```{code-block} python
 def f(x):
     return x**2
+```
+````
+
+Mulige konfigurasjoner for kodeblokker er:
+* `linenos: true` - Viser linjenummer
+* `emphasize-lines: 1, 3, 5-7` - Fremhever linje 1, lunje 3 og linjene 5 til 7. 
+
+For eksempel vil koden under ha linjenummer og fremheve linje 2:
+
+````markdown
+```{code-block} python
+---
+linenos: true
+emphasize-lines: 2
+---
+def f(x):
+    return x**2 - 2*x + 1
+
+y = f(2)
+print(y)
 ```
 ````
