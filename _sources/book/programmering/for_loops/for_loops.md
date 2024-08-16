@@ -29,45 +29,27 @@ Vi starter med en sammenlikning av `for`{l=python}-løkker og `while`{l=python}-
 ---
 class: explore,
 ---
-Under vises to interaktive kodevinduer. Begge kodene skriver ut de 5 første naturlige tallene, men den éne bruker en `for`{l=python}-løkke og den andre bruker en `while`{l=python}-løkke.
+Her skal du bli kjent med kommandoen
+
+```{code-block} python
+for i in range(a, b, c):
+    ...
+```
+
+som ofte brukes til å lage `for`{l=python}-løkker. Under vises et interaktivt kodevindu. 
 
 ```{raw} html
 ---
-file: interaktiv_kode/utforsk/utforsk_1_for_loop.html
+file: interaktiv_kode/utforsk/utforsk_1.html
 ---
 ```
 
-<!-- ::::{grid}
----
 
-gutter: 1
----
-
-:::{grid-item-card} 
-`for`{l=python}-løkke
-```{raw} html
----
-file: interaktiv_kode/utforsk/utforsk_1_for_loop.html
----
-```
-:::
-
-:::{grid-item-card} 
-`while`{l=python}-løkke
-```{raw} html
----
-file: interaktiv_kode/utforsk/utforsk_1_while_loop.html
----
-```
-:::
-:::: -->
-
-
-
+<br>
 
 Deloppgave 1
 : Undersøk hva de tre tallene i `range(1, 6, 1)`{l=python} gjør for noe ved å prøve ut forskjellige kombinasjoner av tall. Kan du forklare rollen til de tre tallene?
-: *Tips*: Prøv ut ett tall av gangen! Du kan også bruke negative tall.
+: *Tips*: Prøv å endre på *ett* tall av gangen! Du kan også bruke negative tall.
 
 
 <br>
@@ -187,7 +169,7 @@ Under vises en kode som regner ut summen av de 5 første naturlige tallene.
 
 ```{raw} html
 ---
-file: interaktiv_kode/utforsk/utforsk_2_for_loop.html
+file: interaktiv_kode/utforsk/utforsk_2.html
 ---
 ```
 

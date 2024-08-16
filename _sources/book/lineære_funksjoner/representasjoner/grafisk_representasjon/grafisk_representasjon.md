@@ -271,3 +271,80 @@ $$
 ````
 
 
+## Oppgaver
+
+:::::{admonition} Oppgave 1
+---
+class: problem-level-1
+---
+
+Grafen til en lineær funksjon $f$ er vist i {numref}`fig-lineære-funksjoner-grafisk-representasjon-oppgave-1`.
+
+:::{figure} ./figurer/oppgaver/oppgave_1.svg
+---
+name: fig-lineære-funksjoner-grafisk-representasjon-oppgave-1
+width: 80%
+---
+Viser grafen til en lineær funksjon $f$.
+:::
+
+
+Deloppgave 1
+: Bruk grafen til å bestemme $f(-1)$. 
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+f(-1) = 0
+$$
+:::
+
+<br>
+
+
+Deloppgave 2
+: Bruk grafen til å bestemme koordinatene til punktet $(2, f(2))$. 
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+(2, f(2)) = (2, -3)
+$$
+:::
+
+<br>
+
+
+Deloppgave 3
+: Bruk grafen til å bestemme stigningstallet og konstantleddet til $f$. 
+
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+Stigningstall
+: $a = -1$
+
+Konstantledd
+: $b = -1$
+:::
+
+<br>
+
+Deloppgave 4
+: Bestem $f(x)$. 
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+f(x) = -x - 1
+$$
+:::
+:::::
