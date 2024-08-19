@@ -375,13 +375,7 @@ class: problem-level-2
 Under vises et program som regner ut funksjonsuttrykket til et lineær funksjon $f$. <br> Men! Kodelinjene er plassert i tilfeldig rekkefølge. 
 
 Deloppgave 1
-: Løs puslespillet ved å sette kodelinjene i riktig rekkefølge. <br> Lim koden inn i det interaktive kodevinduet og kjør programmet. Hvilken funksjon finner programmet?
-
-:::{raw} html
----
-file: parsons_puzzle/oppgaver/oppgave_5.html
----
-:::
+: Løs puslespillet ved å sette kodelinjene i riktig rekkefølge. <br> Forutsi hva som skrives ut av programmet. Kjør programmet og sjekk svaret! 
 
 <br>
 

@@ -1,11 +1,9 @@
-let codeString = null; // Global variable to store code temporarily
-
-
 class ParsonsPuzzle {
-    constructor(puzzleContainerId, codeString) {
+    constructor(puzzleContainerId, codeString, onSolvedCallback = null) {
         this.puzzleContainerId = puzzleContainerId;
         this.puzzleContainer = document.getElementById(puzzleContainerId);
         this.codeString = codeString;
+        this.onSolvedCallback = onSolvedCallback;
 
         this.generateHTML();
 
@@ -14,6 +12,7 @@ class ParsonsPuzzle {
         this.resetButton = document.getElementById(this.resetButtonId);
         this.feedback = document.getElementById(this.feedbackId);
         this.draggableCodeContainer = document.getElementById(this.draggableId);
+        this.toast = document.getElementById(this.toastId);
 
         this.solutionModal = this.createSolutionModal(puzzleContainerId);
         this.fullCodeElement = this.solutionModal.querySelector(`#fullCode-${puzzleContainerId}`);
@@ -27,6 +26,14 @@ class ParsonsPuzzle {
         this.createPlaceholder(this.dropArea);
         this.enableDragAndDrop(this.draggableCodeContainer, this.dropArea);
 
+
+        this.isSolved = false;
+        
+        this.addEventListeners();
+    }
+
+
+    addEventListeners() {
         this.checkButton.addEventListener('click', () => this.checkSolution());
         this.resetButton.addEventListener('click', () => {
             this.reset();
@@ -38,6 +45,12 @@ class ParsonsPuzzle {
                 alert('Du har kopiert koden!');
             });
         });
+
+        document.addEventListener('mousemove', (event) => {
+            this.cursorX = event.clientX;
+            this.cursorY = event.clientY;
+        });
+
     }
 
     generateHTML() {
@@ -53,6 +66,7 @@ class ParsonsPuzzle {
         this.resetButtonId = `reset-button-${uniqueId}`;
         this.feedbackId = `feedback-${uniqueId}`;
         this.draggableId = `draggable-code-${uniqueId}`;
+        this.toastId = `toast-${uniqueId}`;
 
 
         const checkSolutionIcon = `
@@ -68,6 +82,9 @@ class ParsonsPuzzle {
         `;
 
         const html = `
+            <div id="${this.toastId}" class="toast" style="display: none;">
+                <p>Riktig! Bra jobba! 🔥</p>
+            </div>
             <div id="${this.draggableId}" class="draggable-code"></div>
             <div id="${this.dropAreaId}" class="drop-area"></div>
             <div class="button-container">
@@ -132,16 +149,63 @@ class ParsonsPuzzle {
         const droppedOrder = droppedItems.map(item => parseInt(item.dataset.order));
         const fullCode = this.codeBlocks.sort((a, b) => a.order - b.order).map(obj => obj.block).join('\n');
         this.fullCodeElement.textContent = fullCode;
+        console.log("fullCode: \n", fullCode);
+
+
         hljs.highlightElement(this.fullCodeElement);
         const correctOrder = this.codeBlocks.filter(obj => !obj.isEmpty).sort((a, b) => a.order - b.order).map(obj => obj.order);
         if (JSON.stringify(droppedOrder) === JSON.stringify(correctOrder)) {
             this.feedback.textContent = 'Riktig!';
             this.feedback.style.color = 'green';
-            this.solutionModal.style.display = 'block';
+
+            console.log("onSolvedCallback: ", this.onSolvedCallback);
+            if (this.onSolvedCallback) {
+                this.showToast();
+                console.log("Calling callback function now!");
+                this.onSolvedCallback(fullCode);
+            }
+            else {
+                this.solutionModal.style.display = 'block';
+            }
+            return true;
         } else {
             this.feedback.textContent = 'Prøv igjen!';
             this.feedback.style.color = 'red';
+            return false;
         }
+    }
+
+    showToast() {
+        const toast = this.createToast();
+        console.log("toast: ", toast);
+
+        console.log("X = ", this.cursorX);
+        console.log("Y = ", this.cursorY);
+
+        toast.style.top = `${this.cursorY - 150}px`;
+        toast.style.left = `${this.cursorX}px`;
+
+        toast.style.display = 'block';
+
+        
+
+        setTimeout(() => {
+            toast.style.display = 'none';
+        }, 2500); // Display for 2.5 seconds (2000 ms)
+
+    }
+
+    createToast() {
+        const toast = document.createElement('div');
+        toast.id = `toast-${this.puzzleContainerId}`;
+        toast.className = 'toast';
+        toast.style.display = 'none';
+        toast.innerHTML = `
+            <p>Riktig! Bra jobba! 🔥</p>
+        `;
+
+        document.body.appendChild(toast);
+        return toast;
     }
 
     createSolutionModal(puzzleContainerId) {
@@ -300,4 +364,17 @@ class ParsonsPuzzle {
 
 function makeParsonsPuzzle(puzzleContainerId, codeString) {
     new ParsonsPuzzle(puzzleContainerId, codeString);
+}
+
+
+function makeCallbackFunction(puzzleContainerId, editorId) {
+    function callbackFunction(fullCode) {
+        document.getElementById(puzzleContainerId).style.display = 'none';
+        let editorContainer = document.getElementById(editorId);
+        editorContainer.style.display = 'block';
+
+        makeInteractiveCode(editorId, fullCode);
+    }
+
+    return callbackFunction;
 }

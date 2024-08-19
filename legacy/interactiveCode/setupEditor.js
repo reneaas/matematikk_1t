@@ -154,13 +154,14 @@ function initializeWorker(outputId) {
 async function runCode(editor, outputId, errorBoxId) {
     let code = editor.getValue();
     console.log("Initial code: ", code);
+
     // Search code for input statements
     const inputStatements = findInputStatements(code);
     if (inputStatements.length > 0) {
         // If input statements are found, prompt the user for input
         let userValues = await getUserInputs(inputStatements);
 
-        save_eval_code = `
+        safeEvalCode = `
 def safe_eval(user_input):
     try:
         return float(user_input) if '.' in user_input else int(user_input)
@@ -170,7 +171,7 @@ def safe_eval(user_input):
 `;
 
         code = replaceInputStatements(code, userValues);
-        code = save_eval_code + code;
+        code = safeEvalCode + code;
         console.log("Modified code: ", code);
     }
 
@@ -192,11 +193,12 @@ def safe_eval(user_input):
     
         if (type === 'stdout') {
             // Check if stdout contains error messages like SyntaxError
-            if (/Error/.test(msg)) {
-                outputElement.innerHTML += formatErrorMessage(msg, errorBoxId); // Treat as error message
+            let escapedMsg = msg.replace(/</g, '&lt;').replace(/>/g, '&gt;'); //Escape the symbols '<' and '>'
+            if (/Error/.test(escapedMsg)) {
+                outputElement.innerHTML += formatErrorMessage(escapedMsg, errorBoxId); // Treat as error message
                 scrollToBottom(outputElement);
             } else {
-                outputElement.innerHTML += formatErrorMessage(msg, errorBoxId);  // Append regular output
+                outputElement.innerHTML += formatErrorMessage(escapedMsg, errorBoxId);  // Append regular output
                 scrollToBottom(outputElement);
             }
         } else if (type === 'stderr') {
@@ -350,10 +352,10 @@ function createAdmonition(title, content) {
 
 function extractPackageNames(code) {
     // Matches "import <package> as <alias>" and "import <package>"
-    const importRegex = /^\s*import\s+([^;\s]+)\s*/g;
+    const importRegex = /^\s*import\s+([^;\s]+)\s*/gm;
 
     // Matches "from <package> import <something>"
-    const fromImportRegex = /^\s*from\s+([^;\s]+)\s+import/g;
+    const fromImportRegex = /^\s*from\s+([^;\s]+)\s+import/gm;
 
     const packages = new Set();
     let match;
@@ -369,6 +371,8 @@ function extractPackageNames(code) {
         // Capture the complete module/package path before the import
         packages.add(match[1].split('.')[0]);
     }
+
+    console.log("Packages to load:", Array.from(packages));
 
     return Array.from(packages);
 }

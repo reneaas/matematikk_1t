@@ -10,6 +10,7 @@ Målet med denne seksjonen er at du skal kunne:
 * Kunne lage en verditabell og tegne grafen til en lineær funksjon i et koordinatssystem.
 * Ved å lese av stigningstall og skjæring med $y$-aksen fra en graf.
 :::
+
 ---
 
 Når vi kjenner formelen til en lineær funksjon $f(x) = ax + b$ kan vi tegne **grafen** til funksjonen. I mange tilfeller, er det nyttig å bruke grafen til å få oversikt over egenskapene til en funksjon og for å løse problemer i praksis. 
@@ -53,7 +54,7 @@ Hvis vi har et punkt $(x, y)$ i koordinatsystemet, betyr det at vi går $x$ enhe
 
 :::{figure} ./figurer/teori/koordinatsystem.svg
 ---
-name: koordinatsystem
+name: fig-lineære-funksjoner-representasjoner-grafisk-representasjon-teori-koordinatsystem
 width: 80%
 ---
 

@@ -1,12 +1,24 @@
-<div id="container-kode-programmering-for-løkker-oppgave-2"></div>
+<div id="container-parsons-puzzle-programmering-for-løkker-oppgave-2" class="puzzle-container"></div>
+<div id="container-kode-programmering-for-løkker-oppgave-2" style="display: none"></div>
+
 <script type="text/javascript">
-    code = `
-# FYLL INN: kopier koden fra løsningen av puslespillet og lim inn her
-`;   
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`p = 1
 
-    generateInteractiveCode(
-        "container-kode-programmering-for-løkker-oppgave-2",
-        code,
-    );
+for n in range(1, 5, 1):
+    p = p * n 
+
+print(f"{p = }")
+`;
+        const puzzleContainerId = 'container-parsons-puzzle-programmering-for-løkker-oppgave-2';
+        const editorId = 'container-kode-programmering-for-løkker-oppgave-2';
+
+        const switchToCodeEditor = makeCallbackFunction(puzzleContainerId, editorId);
+        const puzzle = new ParsonsPuzzle(
+            puzzleContainerId,
+            code,
+            switchToCodeEditor,
+        );
+    });    
 </script>
-
