@@ -348,3 +348,86 @@ f(x) = -x - 1
 $$
 :::
 :::::
+
+:::::{admonition} Oppgave 2
+---
+class: problem-level-1
+---
+
+Funksjonsuttrykket til $f$ er gitt som 
+
+$$ f(x) = 2x - 3 $$
+
+Deloppgave 1
+: Fyll ut verditabellen for $f$ under: 
+
+| x | f(x) | y|
+|:---:|:---:|:---:|
+| $- 1$ | $f(-1) = 2\cdot (-1) - 3$ | $-5$ |
+| $0 $ | | |
+| $1 $ | | | 
+| $2 $ | | |
+| $3 $ | | |
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+| x | f(x) | y|
+|:---:|:---:|:---:|
+| $- 1$ | $f(-1) = 2\cdot (-1) - 3 = -5$ | $-5$ |
+| $0 $ | $f(-1) = 2\cdot 0 - 3 = -3$  | $-3$ |
+| $1 $ | $f(1) = 2\cdot (1) - 3 = -1$ | $-1$ | 
+| $2 $ | $f(2) = 2\cdot (2) - 3 = 1$  | $1$ |
+| $3 $ | $f(3) = 2\cdot (3) - 3 = 3$  | $3$ |
+:::
+
+<br>
+
+
+Deloppgave 2
+: Finn frem papir og blyant. Tegn opp et passende koordinatsystem for grafen til $f$. 
+
+:::{admonition} Hint
+---
+class: hints, dropdown
+---
+Se på verdiene regnet ut i deloppgave 1. 
+* Hva er den minste og den største verdien for x?
+* Hva er den minste og den største verdien for y?
+:::
+
+<br>
+
+
+Deloppgave 3
+: Tegn grafen til $f$ i koordinatsystemet du akkurat laget. 
+
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+:::{figure} ./figurer/oppgaver/oppgave_2.svg
+---
+name: fig-lineære-funksjoner-grafisk-representasjon-oppgave-2
+width: 80%
+---
+Viser grafen til $f(x)= 2x - 3$.
+:::
+
+:::
+
+<br>
+
+Deloppgave 4
+: Bruk grafen til å bestemme stigningstallet og konstantleddet til funksjonen. Sjekk svarene dine ved å studere funksjonsuttrykket. 
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+:$a = 2$
+:$b = -3$
+:::
+:::::
