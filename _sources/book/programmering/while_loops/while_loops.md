@@ -340,13 +340,6 @@ $$
 Deloppgave 1
 : Under vises et program som regner ut $4!$ i tilfeldig rekkefølge. <br> Plasser kodelinjene i riktig rekkefølge for å få tilgang til det ferdige programmet. <br> Lim inn programmet i et interaktivt kodevindu og kjør det.
 
-<br>
-
-:::{raw} html
----
-file: ./parsons_puzzle/oppgaver/oppgave_2.html
----
-:::
 
 <br>
 

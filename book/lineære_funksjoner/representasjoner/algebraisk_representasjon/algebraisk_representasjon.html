@@ -38,14 +38,14 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css?v=4c969af8" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/static_code_blocks.css?v=b6831e29" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/parsonsPuzzle.css?v=d67bb409" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/admonitions.css?v=7fe56572" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/misc.css?v=e32fe212" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/code_mirror.css?v=1471ef31" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/code_mirror.css?v=73e49c55" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/code_mirror_themes/github_dark_high_contrast_cm.css?v=4c0c1b0f" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/code_mirror_themes/github_dark_cm.css?v=d1235728" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/code_mirror_themes/github_light_cm.css?v=facc8b7a" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/code_mirror_themes/one_dark_cm.css?v=3ae52176" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/parsons_puzzle/parsonsPuzzle.css?v=101dc3ff" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -74,14 +74,16 @@
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/lineære_funksjoner/representasjoner/algebraisk_representasjon/algebraisk_representasjon';</script>
     <script>mermaid.initialize({"startOnLoad": true})</script>
-    <script src="../../../../_static/theme-switcher.js?v=c0cdcaac"></script>
     <script src="../../../../_static/geogebra-setup.js?v=c67998b1"></script>
     <script src="../../../../_static/static_code_blocks.js?v=d0b96be4"></script>
     <script src="../../../../_static/utils.js?v=8e047c30"></script>
-    <script src="../../../../_static/setupEditor.js?v=d4cbd883"></script>
-    <script src="../../../../_static/parsonsPuzzle.js?v=121dc86c"></script>
-    <script src="../../../../_static/generateInteractiveCode.js?v=b5d19ef6"></script>
     <script src="../../../../_static/serviceWorker.js?v=9d61c2b7"></script>
+    <script src="../../../../_static/interactiveCode/codeEditor.js?v=743e152a"></script>
+    <script src="../../../../_static/interactiveCode/workerManager.js?v=11d52826"></script>
+    <script src="../../../../_static/interactiveCode/interactiveCodeSetup.js?v=b243d8d1"></script>
+    <script src="../../../../_static/interactiveCode/pythonRunner.js?v=309bc2ed"></script>
+    <script src="../../../../_static/parsons_puzzle/theme-switcher.js?v=c0cdcaac"></script>
+    <script src="../../../../_static/parsons_puzzle/parsonsPuzzle.js?v=357b076a"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="2.2. Grafisk representasjon av lineære funksjoner" href="../grafisk_representasjon/grafisk_representasjon.html" />
@@ -113,10 +115,12 @@
 <link rel="stylesheet" href="../../../../_static/code_mirror_themes/github_dark_cm.css">
 <link rel="stylesheet" href="../../../../_static/code_mirror_themes/one_dark_cm.css">
 
+
 <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/night.min.css"> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
 
 
 <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css"> -->
@@ -327,9 +331,9 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../../programmering/variabler/variabler.html">Variabler</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../programmering/regning/regning.html">Regning med Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../programmering/for_loops/for_loops.html"><code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../programmering/if_else/if_else.html"><code class="code docutils literal highlight highlight-python"><span class="k">if</span></code>-<code class="code docutils literal highlight highlight-python"><span class="k">else</span></code>-setninger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../programmering/while_loops/while_loops.html"><code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkker</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../programmering/for_loops/for_loops.html"><code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../programmering/feilmeldinger/feilmeldinger.html">Feilmeldinger</a></li>
 </ul>
 
@@ -781,18 +785,21 @@ f(x) = 3x - 1,
 <p>i <span class="math notranslate nohighlight">\(x = 2\)</span>. Programmet regner altså ut <span class="math notranslate nohighlight">\(f(2)\)</span>.</p>
 <div id="container-lineære-funksjoner-algebraisk-representasjon-utforsk-1"></div>
 <script type="text/javascript">
-    code = `
-def f(x):
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`def f(x):
     return 3*x - 1
 
 y = f(2)
 print(y)
 `; 
 
-    generateInteractiveCode(
-        "container-lineære-funksjoner-algebraisk-representasjon-utforsk-1",
-        code,
-    );
+        makeInteractiveCode(
+            "container-lineære-funksjoner-algebraisk-representasjon-utforsk-1",
+            code,
+        );
+    });
 </script>
 
 <br>
@@ -834,40 +841,34 @@ print(y)
 <p class="admonition-title">Underveisoppgave 3: funksjoner i Python</p>
 <p>Under vises et program i tilfeldig rekkefølge som regner ut funksjonsverdien til en funksjon.</p>
 <dl class="simple myst">
-<dt>Deloppgave 1</dt><dd><p>Pusle sammmen programmet i riktig rekkefølge, og kopier programmet i den interaktive kodecellen under.</p>
+<dt>Deloppgave 1</dt><dd><p>Pusle sammen programmet i riktig rekkefølge for å få det fullstendige programmet. <br> Hva forventer du at programmet skriver ut? Kjør programmet og sjekk svaret!</p>
 </dd>
 </dl>
 <br>
 <div id="container-parsons-puzzle-lineære-funksjoner-algebraisk-representasjon-underveisoppgave-3" class="puzzle-container"></div>
+<div id="container-kode-lineære-funksjoner-algebraisk-representasjon-underveisoppgave-3" style="display: none"></div>
 
 <script type="text/javascript">
-
-    codeString = 
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
 `def g(x):
     return -2*x + 3
 
 y = g(-2)
 print(y)
 `;
-    
-    // Initialize the puzzle
-    makeParsonsPuzzle('container-parsons-puzzle-lineære-funksjoner-algebraisk-representasjon-underveisoppgave-3', codeString);
+
+        const puzzleContainerId = 'container-parsons-puzzle-lineære-funksjoner-algebraisk-representasjon-underveisoppgave-3';
+        const editorId = 'container-kode-lineære-funksjoner-algebraisk-representasjon-underveisoppgave-3';
+
+        const switchToCodeEditor = makeCallbackFunction(puzzleContainerId, editorId);
+        const puzzle = new ParsonsPuzzle(
+            puzzleContainerId,
+            code,
+            switchToCodeEditor,
+        );
+    });    
 </script>
-<br>
-<br>
-<div id="container-lineære-funksjoner-algebraisk-representasjon-underveisoppgave-3"></div>
-<script type="text/javascript">
-    code = `
-# TODO: lim inn koden fra puslespillet her!
-`;
-
-    generateInteractiveCode(
-        "container-lineære-funksjoner-algebraisk-representasjon-underveisoppgave-3",
-        code,
-    );
-</script>
-
-
 
 
 <br>
@@ -1067,39 +1068,34 @@ g(\textcolor{red}{-2}) = -2\cdot (\textcolor{red}{-2}) + 3 = 4 + 3 = 7.
 <p class="admonition-title">Oppgave 3</p>
 <p>Under vises et program i tilfeldig rekkefølge som regner ut funksjonsverdien til en lineær funksjon.</p>
 <dl class="simple myst">
-<dt>Deloppgave 1</dt><dd><p>Pusle sammen programmet i riktig rekkefølge og kopier programmet i den interaktive kodecellen under.</p>
+<dt>Deloppgave 1</dt><dd><p>Pusle sammen programmet i riktig rekkefølge for å få det fullstendige programmet. <br> Hva forventer du at programmet skriver ut? Kjør programmet og sjekk svaret!</p>
 </dd>
 </dl>
 <br>
 <div id="container-parsons-puzzle-lineære-funksjoner-algebraisk-representasjon-oppgave-3" class="puzzle-container"></div>
+<div id="container-kode-lineære-funksjoner-algebraisk-representasjon-oppgave-3" style="display: none"></div>
 
 <script type="text/javascript">
-
-    codeString = 
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
 `def f(x):
     return -x/2 + 3
 
 y = f(-4)
 print(y)
 `;
-    
-    // Initialize the puzzle
-    makeParsonsPuzzle('container-parsons-puzzle-lineære-funksjoner-algebraisk-representasjon-oppgave-3', codeString);
+
+        const puzzleContainerId = 'container-parsons-puzzle-lineære-funksjoner-algebraisk-representasjon-oppgave-3';
+        const editorId = 'container-kode-lineære-funksjoner-algebraisk-representasjon-oppgave-3';
+
+        const switchToCodeEditor = makeCallbackFunction(puzzleContainerId, editorId);
+        const puzzle = new ParsonsPuzzle(
+            puzzleContainerId,
+            code,
+            switchToCodeEditor,
+        );
+    });    
 </script>
-<br>
-<div id="container-lineære-funksjoner-algebraisk-representasjon-oppgave-3"></div>
-<script type="text/javascript">
-    code = `
-# FYLL INN: lim inn koden fra puslespillet her!
-`;
-
-    generateInteractiveCode(
-        "container-lineære-funksjoner-algebraisk-representasjon-oppgave-3",
-        code,
-    );
-</script>
-
-
 <br>
 <dl class="simple myst">
 <dt>Deloppgave 2</dt><dd><p>Hvilken funksjon er det programmet regner ut funksjonsverdien til? Og hvilken funksjonsverdi?</p>
