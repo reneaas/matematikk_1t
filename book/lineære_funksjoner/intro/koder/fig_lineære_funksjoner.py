@@ -68,8 +68,10 @@ for i in range(2):
 
 plt.tight_layout()
 
-# Lagrer figuren i vektorformat
-plt.savefig("../figurer/lineære_funksjoner.svg")
 
-plt.show()
-[i, j]
+try:
+    plt.savefig("book/lineære_funksjoner/intro/figurer/lineære_funksjoner.svg")
+    plt.close()
+except:
+    plt.savefig("../figurer/lineære_funksjoner.svg")
+    plt.show()

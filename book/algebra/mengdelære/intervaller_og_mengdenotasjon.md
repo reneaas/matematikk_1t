@@ -132,6 +132,22 @@ Under vises noen eksempler på uendelige intervaller:
 | $\langle 0, \to\rangle$ | Alle reelle tall større enn $0$. |
 | $\langle \gets, -1\rangle$ | Alle reelle tall mindre enn $-1$. |
 
+::::
 
+Så er det **din tur**!
+
+::::{admonition} Underveisoppgave 2
+---
+class: check
+---
+Fyll ut tabellen under:
+
+| Intervall | Beskrivelse |
+|:---:|---|
+| $[0, \to\rangle$| |
+| | Alle reelle tall større enn $-2$. |
+| $\langle \gets, 3]$| |
+| | Alle reelle tall større enn $-2$. |
+ 
 
 ::::
