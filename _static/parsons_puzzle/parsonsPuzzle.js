@@ -232,18 +232,51 @@ class ParsonsPuzzle {
 
 
     // Ensure placeholder is not moved when moving blocks back to draggable area
+    // enableDragAndDrop(draggableContainer, dropArea) {
+    //     const draggables = draggableContainer.querySelectorAll('.draggable');
+    //     draggables.forEach(draggable => {
+    //         draggable.addEventListener('dragstart', (e) => this.dragStart(e));
+    //         draggable.addEventListener('dragend', (e) => this.dragEnd(e, dropArea));  // Always pass dropArea to manage the placeholder correctly
+    //     });
+
+    //     [dropArea, draggableContainer].forEach(container => {
+    //         container.addEventListener('dragover', (e) => this.dragOver(e, container));
+    //         container.addEventListener('drop', (e) => this.drop(e, container, this.dropArea.querySelector('.placeholder')));  // Always manage placeholder from dropArea
+    //     });
+    // }
+
     enableDragAndDrop(draggableContainer, dropArea) {
         const draggables = draggableContainer.querySelectorAll('.draggable');
+        
+        // Event listeners for drag start and drag end
         draggables.forEach(draggable => {
             draggable.addEventListener('dragstart', (e) => this.dragStart(e));
             draggable.addEventListener('dragend', (e) => this.dragEnd(e, dropArea));  // Always pass dropArea to manage the placeholder correctly
         });
-
+    
+        // Event listeners for drop area and draggable area
         [dropArea, draggableContainer].forEach(container => {
             container.addEventListener('dragover', (e) => this.dragOver(e, container));
             container.addEventListener('drop', (e) => this.drop(e, container, this.dropArea.querySelector('.placeholder')));  // Always manage placeholder from dropArea
         });
+    
+        // New event listeners to ensure no lingering active state after a drop
+        dropArea.addEventListener('drop', () => {
+            // Temporarily disable pointer events on all draggables to clear active state
+            const allDraggables = document.querySelectorAll('.draggable');
+            allDraggables.forEach(item => {
+                item.style.pointerEvents = 'none';
+            });
+    
+            // Re-enable pointer events after a short delay
+            setTimeout(() => {
+                allDraggables.forEach(item => {
+                    item.style.pointerEvents = '';
+                });
+            }, 100); // Short delay to allow the active state to clear
+        });
     }
+    
 
     dragStart(e) {
         e.dataTransfer.setData('text/plain', e.target.dataset.order);

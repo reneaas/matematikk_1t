@@ -41,7 +41,7 @@ I {numref}`fig-lineære-funksjoner-intro-eksempler` ser vi fire eksempler på li
 name: fig-lineære-funksjoner-intro-eksempler
 width: 100%
 ---
-Viser 4 eksempeler på lineære funksjoner med ulike stigningstall og skjæringspunkt med $y$-aksen.
+viser 4 eksempeler på lineære funksjoner med ulike stigningstall og skjæring med $y$-aksen.
 :::
 
 
