@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-plt.rc("text", usetex=True)
+#  plt.rc("text", usetex=True)
 
 def f(x):
     return 2*x - 4
