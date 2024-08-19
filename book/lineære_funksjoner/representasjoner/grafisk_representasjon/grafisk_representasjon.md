@@ -374,7 +374,7 @@ Deloppgave 1
 ---
 class: answer, dropdown
 ---
-| x | f(x) | y|
+| $x$ | Utregning | $f(x)$|
 |:---:|:---:|:---:|
 | $- 1$ | $f(-1) = 2\cdot (-1) - 3 = -5$ | $-5$ |
 | $0 $ | $f(-1) = 2\cdot 0 - 3 = -3$  | $-3$ |
@@ -431,4 +431,122 @@ class: answer, dropdown
 :$a = 2$
 :$b = -3$
 :::
+:::::
+
+:::::{admonition} Oppgave 3
+---
+class: problem-level-1
+---
+
+I hver deloppgave skal du bestemme $a$ og $b$ ut fra grafen. 
+
+Deloppgave 1
+: Bestem stigningstallet $a$ og konstantleddet $b$ ved hjelp av grafen. 
+
+:::{figure} ./figurer/oppgaver/oppgave_3_1.svg
+---
+name: fig-lineære-funksjoner-grafisk-representasjon-oppgave-3-1
+width: 80%
+---
+Viser grafen til en lineær funksjon $f$.
+:::
+
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+
+$f(x) = x + 4 $
+
+:::
+
+<br>
+
+Deloppgave 2
+: Bestem stigningstallet $a$ og konstantleddet $b$ ved hjelp av grafen. 
+
+:::{figure} ./figurer/oppgaver/oppgave_3_2.svg
+---
+name: fig-lineære-funksjoner-grafisk-representasjon-oppgave-3-2
+width: 80%
+---
+Viser grafen til en lineær funksjon $f$.
+:::
+
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+
+$f(x) = -2x $
+
+:::
+:::::
+
+<br>
+
+:::::{admonition} Oppgave 4
+---
+class: problem-level-2
+---
+
+Finn frem papir og blyant. Skisser grafen til funksjonene under ved å ta utgangspunkt i stigningstallet $a$ og konstantleddet $b$. 
+
+Deloppgave 1
+: $f(x)=-2x+1$
+
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+
+:::{figure} ./figurer/oppgaver/oppgave_4_1.svg
+---
+name: fig-lineære-funksjoner-grafisk-representasjon-oppgave-4-1
+width: 80%
+---
+Viser grafen til en lineær funksjon $f$.
+:::
+::::
+
+
+<br>
+
+Deloppgave 2
+: $g(x) = 3x - 4$
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+:::{figure} ./figurer/oppgaver/oppgave_4_2.svg
+---
+name: fig-lineære-funksjoner-grafisk-representasjon-oppgave-4-2
+width: 80%
+---
+Viser grafen til en lineær funksjon $f$.
+:::
+::::
+
+<br>
+
+Deloppgave 3
+: $h(x)=\dfrac{1}{2}x + 2$
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+:::{figure} ./figurer/oppgaver/oppgave_4_3.svg
+---
+name: fig-lineære-funksjoner-grafisk-representasjon-oppgave-4-3
+width: 80%
+---
+Viser grafen til en lineær funksjon $f$.
+:::
+::::
+
 :::::
