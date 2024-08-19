@@ -1,11 +1,13 @@
 # Mengder
 
-```{admonition} Læringsmål: mengder
-:class: tip
-Etter å gått gjennom dette delkapittelet, er målet at du skal kunne:
-* Kunne forklare hva en mengde er og bruke notasjon for mengder.
+:::{admonition} Læringsmål: mengder
+---
+class: tip
+---
+Etter dette delkapittelet, er målet at du skal kunne:
+* Kunne forklare hva en mengde er og bruke notasjon for å beskrive om et tall er en del av en mengde eller ikke.
 * Forklare mengdene $\mathbb{N}$, $\mathbb{Z}$, $\mathbb{Q}$ og $\mathbb{R}$ og gi eksempler på tall som er inneholdt i hver mengde. 
-```
+:::
 
 
 ## De spesielle tallmengdene
@@ -13,38 +15,47 @@ Etter å gått gjennom dette delkapittelet, er målet at du skal kunne:
 En **mengde** er rett og slett en samling objekter. En **tallmengde** er derfor en samling med tall. Noen ganger er tall i en mengde gruppert sammen fordi de har like egenskaper, andre ganger fordi vi ønsker å beskrive en samling tall, for eksempel som løsningen til en likning. 
 Vi starter med å introdusere fire *spesielle* tallmengder:
 
-| Symbol | Navn | Eksempel | Forklaring | 
+| Symbol | Navn | Eksempler | Forklaring | 
 | :---: | --- | --- |--- |
 | $\mathbb{N}$ | De **naturlige** tallene. | $1, 2, 3, 8 $| Alle de positive heltallene. |
 | $\mathbb{Z}$ | **Heltallene** | $-3, -2, -1, 0, 1, 2$| Alle heltallene, inkludert 0. |
-| $\mathbb{Q}$ | De **rasjonale** tallene | $-\frac{1}{2}, \frac{1}{2}, \frac{10}{5}, 2$| Alle tall som kan skrives som en brøk der teller og nevner er heltall. |
-| $\mathbb{R}$ | De **reelle** tallene | $\pi, \sqrt{2}, \frac{10}{2}$ | Alle tallene på tallinja. | 
+| $\mathbb{Q}$ | De **rasjonale** tallene | $-\dfrac{1}{2}, \dfrac{1}{3}, \dfrac{7}{4}, 2$| Alle tall som kan skrives som en brøk der teller og nevner er heltall. |
+| $\mathbb{R}$ | De **reelle** tallene | $\pi, \sqrt{2}, \dfrac{10}{2}$ | Alle tallene på tallinja. | 
 
-La du merke til noe ved tabellen over? Alle de naturlige tallene er inkludert i heltallene. På samme måte er alle heltallene (og dermed også de naturlige tallene) inkludert i de rasjonale tallene. Og alle disse tallene er igjen inkludert i den reelle tallmengden. 
+Kanskje la du merke til at alle de naturlige tallene er inkludert i heltallene. Og på samme måte er alle heltallene (og dermed også de naturlige tallene) inkludert i de rasjonale tallene. Og alle disse tallene er igjen inkludert i den reelle tallmengden. 
 Vi kan derfor illustrere sammenhengen mellom tallmengdene som i {numref}`mengder_venndiagram` under. 
 
-```{figure} ./figurer/mengder_venndiagram.svg
-:name: mengder_venndiagram
-:width: 80%
-
-Figuren viser hvordan de ulike tallmengdene henger sammen. Diagrammet illustrerer at $\mathbb{N}$ er inkludert i $\mathbb{Z}$, som igjen er inkludert i $\mathbb{Q}$, som igjen er inkludert i $\mathbb{R}$.
-```
+:::{figure} ./figurer/mengder_venndiagram.svg
+---
+name: mengder_venndiagram
+width: 80%
 ---
 
-Legg merke til at vi sier at $2$ tilhører $\mathbb{N}$. Det betyr selvsagt at $2$ også tilhører alle de andre tallmengdene. Vi velger altså alltid den **minste** mulige tallmengden et tall kan tilhøre. 
+viser hvordan de ulike tallmengdene henger sammen. Diagrammet illustrerer at $\mathbb{N}$ er inkludert i $\mathbb{Z}$, som igjen er inkludert i $\mathbb{Q}$, som igjen er inkludert i $\mathbb{R}$.
+:::
 
-`````{admonition} Underveisoppgave 1
-:class: check
+---
+
+Selv om vi kan si at $2$ tilhører $\mathbb{Z}$, så er ikke dette den "minste" mulige mengden vi kan bruke til å beskrive tallet. Vi Vi velger vanligvis den minste mulige mengden for å beskrive hvor tallet "hører hjemme". Derfor sier vi at $2$ tilhører de naturlige tallene $\mathbb{N}$. 
+
+Men nå bør teste forståelsen din!
+
+:::::{admonition} Underveisoppgave 1
+---
+class: check
+---
 Plasser tallene under i riktig tallmengde (husk: den *minste* mulige mengden):
 
-| Tall | $-6$ | $4$ | $0$ | $120$ | $\frac{5}{2}$ | $\frac{15}{5}$ | $\sqrt{3}$ | $-8$ | $\sqrt{16}$ |
+| Tall | $-6$ | $4$ | $0$ | $120$ | $\dfrac{5}{2}$ | $\dfrac{15}{5}$ | $\sqrt{3}$ | $-8$ | $\sqrt{16}$ |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | 
 | **Mengde** | | | | | | | | | | 
 
 
 
-````{admonition} Løsning
-:class: solution, dropdown
+::::{admonition} Løsning
+---
+class: solution, dropdown
+---
 Merk først at noen av tallene er ikke skrevet så enkelt som mulig. Spesielt kan vi merke oss at:
 
 $$
@@ -56,12 +67,12 @@ Deretter kan vi fylle ut tabellen:
 | Tall | $-6$ | $4$ | $0$ | $120$ | $\frac{5}{2}$ | $\frac{15}{5}$ | $\sqrt{3}$ | $-8$ | $\sqrt{16}$ |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | 
 | **Mengde** | $\mathbb{Z}$ | $\mathbb{N}$ | $\mathbb{Z}$ | $\mathbb{N}$ | $\mathbb{Q}$ | $\mathbb{N}$ | $\mathbb{R}$ | $\mathbb{Z}$ | $\mathbb{N}$ |
-````
+::::
 
-`````
+:::::
 
 ## En mer generell definisjon av en mengde
-Som vi nevnte i innledningen, er en mengde bare en samling objekter. I de fleste tilfeller vil objektene i mengden være tall, men de vil i blant være punkter. Men foreløpig skal vi formulere en generell nok definisjon av mengde som består av tall:
+Vi gjentar: en mengde bare en *samling objekter*. I de fleste tilfeller vil objektene i mengden være tall, men de vil i blant også være punkter. Vi skal foreløpig bare fokusere på tallmengder.
 
 ```{admonition} Definisjon: Mengde
 :class: theory
