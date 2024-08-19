@@ -419,7 +419,7 @@ class: answer, dropdown
 
 <br>
 
-Deloppgave 2
+Deloppgave 3
 : Endre programmet slik at det regner ut $f(2)$. <br> Hva forventer du at svaret blir? Kjør programmmet og sjekk.
 
 
@@ -435,7 +435,7 @@ $$
 
 <br>
 
-Deloppgave 3
+Deloppgave 4
 : Endre programmet slik at det regner ut $g(2)$ når $g(x) = 2x + 1$. <br> Kjør programmet og sjekk at svaret blir riktig.
 
 
