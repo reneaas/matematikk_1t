@@ -1,11 +1,5 @@
 # `for`{l=python}-løkker
 
-:::{admonition} Gjør dette først!
----
-class: warning, margin
----
-Du bør ha lest om [while-løkker](../while_loops/while_loops.md) før du leser dette kapittelet, eller være godt kjent med bruken av `while`{l=python}-løkker.
-:::
 
 :::{admonition} Læringsmål: `for`{l=python}-løkker
 ---
@@ -18,11 +12,7 @@ Etter å ha gått gjennom dette delkapittelet, er målet at du skal kunne:
 :::
 
 
-En `for`{l=python}-løkke kan tenkes på som en *spesiell* type `while`{l=python}-løkke som automatiserer tellingen for deg. Det finnes mange typer `for`{l=python}-løkker, men vi skal konsentrere oss om en som er mest nyttig i matematikk. 
-
-Vi starter med en sammenlikning av `for`{l=python}-løkker og `while`{l=python}-løkker:
-
-
+En `for`{l=python}-løkke er noe som brukes til å gjenta en eller flere linjer med kode et bestemt antall ganger som er forhåndsbestemt. For å oppnå dette, brukes ofte `range`{l=python}-funksjonen.
 
 
 :::::{admonition} Utforsk 1
@@ -59,12 +49,12 @@ Deloppgave 1
 ---
 class: solution, dropdown 
 ---
-De tre tallene har følgende betydning:
-* Det første tallet er startverdien til tellingen.
-* Det andre tallet er slutten på tellingen. Men det siste tallet er aldri inkludert.
-* Det tredje tallet er avstanden mellom hvert tall, kalt for steglengden. 
+Vi bruker notasjonen `range(a, b, c)`{l=python} for å gjøre det enklere å beskrive de ulike tallene.
+* `a`{l=python} beskriver startverdien til `i`{l=python} i løkka.
+* `b`{l=python} beskriver sluttverdien, men er *ikke* inkludert. Vi stopper alltid før sluttverdien. 
+* `c`{l=python} er steglengden (avstanden mellom hvert tall). 
 
-Vi kan altså tenke på de det som at vi skriver `range(start, stopp, steglengde)`{l=python}. 
+Vi kan altså tenke på de det som at vi skriver `range(start, slutt, steglengde)`{l=python}. 
 ::::
 
 Deloppgave 2
@@ -77,8 +67,8 @@ Deloppgave 2
 ---
 class: solution, dropdown
 ---
-* Hvis du bare bruker ett tall, som `range(6)`{l=python}, så vil startverdien være 0 og steglengden være 1. Det er det samme som å skrive `range(0, 6, 1)`{l=python}. Mer generelt kan vi skrive `range(stopp)`{l=python}. Da vil vi automatisk ha startverdien 0 og steglengden 1.
-* Hvis vi bruker to tall, som `range(1, 6)`{l=python}, så vil startverdien være 1 og steglengden være 1. Det er det samme som å skrive `range(1, 6, 1)`{l=python}. Mer generelt kan vi skrive `range(start, stopp)`{l=python}. Da vil vi automatisk ha steglengden 1.
+* Hvis du bare bruker ett tall, som `range(6)`{l=python}, så vil startverdien være 0 og steglengden være 1. Det er det samme som å skrive `range(0, 6, 1)`{l=python}. Mer generelt kan vi skrive `range(slutt)`{l=python}. Da vil vi automatisk ha startverdien 0 og steglengden 1.
+* Hvis vi bruker to tall, som `range(1, 6)`{l=python}, så vil startverdien være 1 og steglengden være 1. Det er det samme som å skrive `range(1, 6, 1)`{l=python}. Mer generelt kan vi skrive `range(start, slutt)`{l=python}. Da vil vi automatisk ha steglengden 1.
 ::::
 
 <br>
@@ -156,15 +146,16 @@ for i in range(10, 0, -1):
 
 :::::
 
+---
 
-Nå har du fått litt oversikt over hvordan en enkel `for`{l=python}-løkke fungerer. Nå skal du se på hvordan du kan få en `for`{l=python}-løkke til å løse tilsvarende problemer som du løste når du så på `while`{l=python}-løkker.
+Nå har du fått litt oversikt over hvordan en enkel `for`{l=python}-løkke fungerer. Nå skal du se på noen matematiske problemer du kan løse ved hjelp av `for`{l=python}-løkker.
 
 
 :::::{admonition} Utforsk 2
 ---
 class: explore
 ---
-Under vises en kode som regner ut summen av de 5 første naturlige tallene. 
+Under vises et som regner ut summen av de 5 første naturlige tallene.
 
 
 ```{raw} html
@@ -173,9 +164,10 @@ file: interaktiv_kode/utforsk/utforsk_2.html
 ---
 ```
 
+<br>
 
 Deloppgave 1
-: Endre programet slik at det regner ut summen av de 10 første naturlige tallene. 
+: Kan du endre programmet slik at det regner ut summen av de 10 første naturlige tallene?
 
 
 ::::{admonition} Løsning
@@ -293,8 +285,13 @@ print(f"Summen ble: {s = }")
 ---
 class: problem-level-1
 ---
-Vi husker at $x$ er et kvadrattall dersom $x = n^2$ for et tall $n \in \mathbb{N}$. <br>
-Under vises et uferdig program som skal bruke en `for`{l=python}-løkke til å legge sammen de 5 første kvadrattallene. 
+Et tall $x$ er et kvadrattall hvis det kan skrives på formen $x = n^2$ der $n \in \mathbb{N}$. <br> 
+Under vises et program i tilfeldig rekkefølge som regner ut summen av noen kvadrattall. 
+
+Deloppgave 1
+: Plasser kodelinjene i riktig rekkefølge for å få tilgang til det ferdig programmet. <br> Kan du forutsi hva programmet skriver ut? Kjør programmet og sjekk! 
+
+<br>
 
 :::{raw} html
 ---
@@ -302,11 +299,7 @@ file: ./interaktiv_kode/oppgaver/oppgave_1.html
 ---
 :::
 
-
-Deloppgave 1
-: Gjør ferdig koden og kjør programmet. <br> Sjekk at utskriften stemmer ved regning.
-
-
+<br>
 
 Delopppgave 2
 : Endre programmet slik at det regner ut summen av de 10 første kvadrattallene. <br> Stemmer svaret du får ved å kjøre programmet?
@@ -317,6 +310,9 @@ Deloppgave 3
 
 
 :::::
+
+
+
 
 
 
@@ -340,13 +336,6 @@ $$
 
 Deloppgave 1
 : Under vises et program som regner ut $4!$ der kodelinjene er plassert i tilfeldig rekkefølge. <br> Plasser kodelinjene i riktig rekkefølge for å få tilgang til det ferdige programmet. <br> Lim inn programmet i det interaktivt kodevinduet og kjør det.  <br> Blir svaret riktig?
-
-
-:::{raw} html
----
-file: ./parsons_puzzle/oppgaver/oppgave_2.html
----
-:::
 
 <br>
 
@@ -373,3 +362,45 @@ Deloppgave 3
 
     Endre programmet slik at det regner ut $6!!$ <br> Stemmer svaret overens med svaret over?
 :::::
+
+
+
+:::{admonition} Oppgave 5
+---
+class: problem-level-3
+---
+I denne oppgaven skal du jobbe med summer av oddetall:
+
+\begin{align*}
+    S_1 &= 1, \\
+    S_2 &= 1 + 3, \\
+    S_3 &= 1 + 3 + 5, \\
+    S_4 &= 1 + 3 + 5 + 7, \\
+    S_5 &= 1 + 3 + 5 + 7 + 9, \\
+\end{align*}
+
+og så videre. Vi lar $S_N$ være summen av de $N$ første oddetallene.
+
+<br>
+
+Deloppgave 1
+: La $a_n$ være det $n$-te leddet i summen. Finn en formel for $a_n$. 
+
+<br>
+
+Under vises et interaktivt kodevindu med en uferdig kode. 
+
+Deloppgave 2
+: Fullfør programmet slik at det regner ut $S_5$. <br> Sjekk at svaret stemmer for hånd.
+
+<br>
+
+::::{raw} html
+---
+file: ./interaktiv_kode/oppgaver/oppgave_5.html
+---
+::::
+
+<br>
+
+:::

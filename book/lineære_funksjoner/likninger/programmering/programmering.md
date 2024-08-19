@@ -39,30 +39,6 @@ file: interaktiv_kode/utforsk/utforsk_1.html
 ---
 :::
 
-<!-- :::{raw} html
-<div id="code-lineære-funksjoner-lineære-likninger-programmering-utforsk-1"></div>
-<script type="text/javascript">
-    const code = `
-def f(x):
-    return x - 3
-
-x = -10
-dx = 0.001
-
-while abs(f(x)) > 0.00001:
-    x = x + dx
-
-print(f"{x = :.2f}")
-`
-    const Id = "lineære-funksjoner-lineære-likninger-programmering-utforsk-1";
-    generateInteractiveCode(
-        "code-lineære-funksjoner-lineære-likninger-programmering-utforsk-1",
-        code,
-        Id
-    );
-</script>
-::: -->
-
 
 <br>
 
@@ -96,7 +72,14 @@ Dermed vil løsningen av likningen $f(x) = g(x)$ være det samme som nullpunktet
 ---
 class: explore
 ---
-Under vises et program som regner ut løsningen av en likning $f(x) = g(x)$. 
+Under vises et program som finner en tilnærmet løsning til likningen $f(x) = g(x)$ ved å bruke strategien beskrevet over. <br>
+Programmet er i tilfeldig rekkefølge.
+
+
+Deloppgave 1
+: Sorter programmet i riktig rekkefølge for å få det fullstendige programmet. <br> Kan du forutsi hva utskriften til programmet blir? Sjekk svaret ved å kjøre koden! 
+
+<br>
 
 :::{raw} html
 ---
@@ -104,22 +87,13 @@ file: interaktiv_kode/utforsk/utforsk_2.html
 ---
 :::
 
-<br>
-
-Deloppgave 1
-: Hvilken likning er det programmet løser? Hva er løsningen? <br> Sjekk om programmet får samme svar som du får ved å løse likningen for hånd.
-
 
 <br>
 
 Deloppgave 2
-: Endre programmet slik at det løser likningen $2x + 3 = -x + 6$. <br> Sjekk at svaret stemmer.
+: Endre programmet slik at det løser likningen $2x + 3 = -x + 6$. <br> Sjekk at svaret stemmer ved regning.
 
 
-<br>
-
-Deloppgave 3
-: Endre programmet slik at det skriver ut verdien til `x`{l=python}. Endre startverdien til 
 
 
 

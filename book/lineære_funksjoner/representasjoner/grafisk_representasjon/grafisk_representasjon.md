@@ -10,6 +10,7 @@ Målet med denne seksjonen er at du skal kunne:
 * Kunne lage en verditabell og tegne grafen til en lineær funksjon i et koordinatssystem.
 * Ved å lese av stigningstall og skjæring med $y$-aksen fra en graf.
 :::
+
 ---
 
 Når vi kjenner formelen til en lineær funksjon $f(x) = ax + b$ kan vi tegne **grafen** til funksjonen. I mange tilfeller, er det nyttig å bruke grafen til å få oversikt over egenskapene til en funksjon og for å løse problemer i praksis. 
@@ -53,7 +54,7 @@ Hvis vi har et punkt $(x, y)$ i koordinatsystemet, betyr det at vi går $x$ enhe
 
 :::{figure} ./figurer/teori/koordinatsystem.svg
 ---
-name: koordinatsystem
+name: fig-lineære-funksjoner-representasjoner-grafisk-representasjon-teori-koordinatsystem
 width: 80%
 ---
 
@@ -347,4 +348,205 @@ $$
 f(x) = -x - 1
 $$
 :::
+:::::
+
+:::::{admonition} Oppgave 2
+---
+class: problem-level-1
+---
+
+Funksjonsuttrykket til $f$ er gitt som 
+
+$$ f(x) = 2x - 3 $$
+
+Deloppgave 1
+: Fyll ut verditabellen for $f$ under: 
+
+| x | f(x) | y|
+|:---:|:---:|:---:|
+| $- 1$ | $f(-1) = 2\cdot (-1) - 3$ | $-5$ |
+| $0 $ | | |
+| $1 $ | | | 
+| $2 $ | | |
+| $3 $ | | |
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+| $x$ | Utregning | $f(x)$|
+|:---:|:---:|:---:|
+| $- 1$ | $f(-1) = 2\cdot (-1) - 3 = -5$ | $-5$ |
+| $0 $ | $f(-1) = 2\cdot 0 - 3 = -3$  | $-3$ |
+| $1 $ | $f(1) = 2\cdot (1) - 3 = -1$ | $-1$ | 
+| $2 $ | $f(2) = 2\cdot (2) - 3 = 1$  | $1$ |
+| $3 $ | $f(3) = 2\cdot (3) - 3 = 3$  | $3$ |
+:::
+
+<br>
+
+
+Deloppgave 2
+: Finn frem papir og blyant. Tegn opp et passende koordinatsystem for grafen til $f$. 
+
+:::{admonition} Hint
+---
+class: hints, dropdown
+---
+Se på verdiene regnet ut i deloppgave 1. 
+* Hva er den minste og den største verdien for x?
+* Hva er den minste og den største verdien for y?
+:::
+
+<br>
+
+
+Deloppgave 3
+: Tegn grafen til $f$ i koordinatsystemet du akkurat laget. 
+
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+:::{figure} ./figurer/oppgaver/oppgave_2.svg
+---
+name: fig-lineære-funksjoner-grafisk-representasjon-oppgave-2
+width: 80%
+---
+Viser grafen til $f(x)= 2x - 3$.
+:::
+
+:::
+
+<br>
+
+Deloppgave 4
+: Bruk grafen til å bestemme stigningstallet og konstantleddet til funksjonen. Sjekk svarene dine ved å studere funksjonsuttrykket. 
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+:$a = 2$
+:$b = -3$
+:::
+:::::
+
+:::::{admonition} Oppgave 3
+---
+class: problem-level-1
+---
+
+I hver deloppgave skal du bestemme $a$ og $b$ ut fra grafen. 
+
+Deloppgave 1
+: Bestem stigningstallet $a$ og konstantleddet $b$ ved hjelp av grafen. 
+
+:::{figure} ./figurer/oppgaver/oppgave_3_1.svg
+---
+name: fig-lineære-funksjoner-grafisk-representasjon-oppgave-3-1
+width: 80%
+---
+Viser grafen til en lineær funksjon $f$.
+:::
+
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+
+$f(x) = x + 4 $
+
+:::
+
+<br>
+
+Deloppgave 2
+: Bestem stigningstallet $a$ og konstantleddet $b$ ved hjelp av grafen. 
+
+:::{figure} ./figurer/oppgaver/oppgave_3_2.svg
+---
+name: fig-lineære-funksjoner-grafisk-representasjon-oppgave-3-2
+width: 80%
+---
+Viser grafen til en lineær funksjon $f$.
+:::
+
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+
+$f(x) = -2x $
+
+:::
+:::::
+
+<br>
+
+:::::{admonition} Oppgave 4
+---
+class: problem-level-2
+---
+
+Finn frem papir og blyant. Skisser grafen til funksjonene under ved å ta utgangspunkt i stigningstallet $a$ og konstantleddet $b$. 
+
+Deloppgave 1
+: $f(x)=-2x+1$
+
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+
+:::{figure} ./figurer/oppgaver/oppgave_4_1.svg
+---
+name: fig-lineære-funksjoner-grafisk-representasjon-oppgave-4-1
+width: 80%
+---
+Viser grafen til en lineær funksjon $f$.
+:::
+::::
+
+
+<br>
+
+Deloppgave 2
+: $g(x) = 3x - 4$
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+:::{figure} ./figurer/oppgaver/oppgave_4_2.svg
+---
+name: fig-lineære-funksjoner-grafisk-representasjon-oppgave-4-2
+width: 80%
+---
+Viser grafen til en lineær funksjon $f$.
+:::
+::::
+
+<br>
+
+Deloppgave 3
+: $h(x)=\dfrac{1}{2}x + 2$
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+:::{figure} ./figurer/oppgaver/oppgave_4_3.svg
+---
+name: fig-lineære-funksjoner-grafisk-representasjon-oppgave-4-3
+width: 80%
+---
+Viser grafen til en lineær funksjon $f$.
+:::
+::::
+
 :::::
