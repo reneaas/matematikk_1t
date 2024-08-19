@@ -1,21 +1,21 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-#plt.rc("text", usetex=True)
+plt.rc("text", usetex=True)
 
 
 def f(x):
-    return 0.5*x + 2
+    return 0.5 * x + 2
 
 
-a = -6
-b = 6
+a = -10
+b = 10
 
 
 x = np.linspace(a, b, 1024)
 
 fig, ax = plt.subplots()
-ax.plot(x, f(x), color="teal", lw=2, alpha=0.7, label="$f$")
+ax.plot(x, f(x), color="teal", lw=2, alpha=0.7, label="$h$")
 
 ax.spines["left"].set_position("zero")
 ax.spines["right"].set_color("none")
@@ -28,11 +28,11 @@ ax.plot(0, 1, "^k", transform=ax.get_xaxis_transform(), clip_on=False)
 ax.set_xlabel(r"$x$", fontsize=16, loc="right")
 ax.set_ylabel(r"$y$", fontsize=16, loc="top", rotation="horizontal")
 
-xticks = list(np.arange(-6, 6, 1))
+xticks = list(np.arange(-6, 7, 1))
 xticks.remove(0)
 plt.xticks(xticks, fontsize=16)
 
-yticks = list(np.arange(-1, 6, 1))
+yticks = list(np.arange(-1, 7, 1))
 yticks.remove(0)
 plt.yticks(yticks, fontsize=16)
 

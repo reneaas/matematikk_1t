@@ -1,15 +1,15 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-#plt.rc("text", usetex=True)
+plt.rc("text", usetex=True)
 
 
 def f(x):
     return x + 4
 
 
-a = -7
-b = 2
+a = -10
+b = 10
 
 
 x = np.linspace(a, b, 1024)

@@ -259,7 +259,7 @@ Under vises grafen til en lineær funksjon $g$. Bruk grafen til å bestemme $g(x
 
 Stigningstallet
 : Når vi går fra $x = 0$ til $x = 1$, går $y$-verdien fra $g(0) = -2$ til $g(1) = 1$ som er en økning på $3$. Dermed er stigningstallet $a = 3$.
-
+git 
 Konstantleddet
 : Når $x = 0$ er $y = g(0) = -2$. Dermed er konstantleddet $b = -2$.
 
@@ -357,37 +357,39 @@ class: problem-level-1
 
 Funksjonsuttrykket til $f$ er gitt som 
 
-$$ f(x) = 2x - 3 $$
+$$ 
+f(x) = 2x - 3. 
+$$
 
 Deloppgave 1
 : Fyll ut verditabellen for $f$ under: 
 
-| x | f(x) | y|
-|:---:|:---:|:---:|
-| $- 1$ | $f(-1) = 2\cdot (-1) - 3$ | $-5$ |
-| $0 $ | | |
-| $1 $ | | | 
-| $2 $ | | |
-| $3 $ | | |
+| $x$ | Utregning |$f(x)$|
+|:---:|:---|:---:|
+| $-1$ | $f(-1) = 2\cdot (-1) - 3 = -5$ | $-5$ |
+| $0$ | | |
+| $1$ | | | 
+| $2$ | | |
+| $3$ | | |
 
 :::{admonition} Fasit
 ---
 class: answer, dropdown
 ---
 | $x$ | Utregning | $f(x)$|
-|:---:|:---:|:---:|
-| $- 1$ | $f(-1) = 2\cdot (-1) - 3 = -5$ | $-5$ |
-| $0 $ | $f(-1) = 2\cdot 0 - 3 = -3$  | $-3$ |
-| $1 $ | $f(1) = 2\cdot (1) - 3 = -1$ | $-1$ | 
-| $2 $ | $f(2) = 2\cdot (2) - 3 = 1$  | $1$ |
-| $3 $ | $f(3) = 2\cdot (3) - 3 = 3$  | $3$ |
+|:---:|:---|:---:|
+| $-1$ | $f(-1) = 2\cdot (-1) - 3 = -5$ | $-5$ |
+| $0$ | $f(-1) = 2\cdot 0 - 3 = -3$  | $-3$ |
+| $1$ | $f(1) = 2\cdot (1) - 3 = -1$ | $-1$ | 
+| $2$ | $f(2) = 2\cdot (2) - 3 = 1$  | $1$ |
+| $3$ | $f(3) = 2\cdot (3) - 3 = 3$  | $3$ |
 :::
 
 <br>
 
 
-Deloppgave 2
-: Finn frem papir og blyant. Tegn opp et passende koordinatsystem for grafen til $f$. 
+Deloppgave 2 
+: Tegn opp et passende koordinatsystem for grafen til $f$. (med penn og papir!)
 
 :::{admonition} Hint
 ---
@@ -428,8 +430,11 @@ Deloppgave 4
 ---
 class: answer, dropdown
 ---
-:$a = 2$
-:$b = -3$
+Stigningstall:
+: $a = 2$
+
+Konstantledd:
+: $b = -3$
 :::
 :::::
 
@@ -438,17 +443,17 @@ class: answer, dropdown
 class: problem-level-1
 ---
 
-I hver deloppgave skal du bestemme $a$ og $b$ ut fra grafen. 
+I hver deloppgave skal du bestemme funksjonsuttrykket ved hjelp av figurene.
 
 Deloppgave 1
-: Bestem stigningstallet $a$ og konstantleddet $b$ ved hjelp av grafen. 
+: Bestem $f(x)$ fra grafen i {numref}`fig-lineære-funksjoner-grafisk-representasjon-oppgave-3-1`.
 
 :::{figure} ./figurer/oppgaver/oppgave_3_1.svg
 ---
 name: fig-lineære-funksjoner-grafisk-representasjon-oppgave-3-1
 width: 80%
 ---
-Viser grafen til en lineær funksjon $f$.
+viser grafen til en lineær funksjon $f$.
 :::
 
 
@@ -457,21 +462,23 @@ Viser grafen til en lineær funksjon $f$.
 class: answer, dropdown
 ---
 
-$f(x) = x + 4 $
+$$
+f(x) = x + 4.
+$$
 
 :::
 
 <br>
 
 Deloppgave 2
-: Bestem stigningstallet $a$ og konstantleddet $b$ ved hjelp av grafen. 
+: Bestem $g(x)$ fra grafen i {numref}`fig-lineære-funksjoner-grafisk-representasjon-oppgave-3-2`.
 
 :::{figure} ./figurer/oppgaver/oppgave_3_2.svg
 ---
 name: fig-lineære-funksjoner-grafisk-representasjon-oppgave-3-2
 width: 80%
 ---
-Viser grafen til en lineær funksjon $f$.
+viser grafen til en lineær funksjon $g$.
 :::
 
 
@@ -480,7 +487,9 @@ Viser grafen til en lineær funksjon $f$.
 class: answer, dropdown
 ---
 
-$f(x) = -2x $
+$$
+g(x) = -2x.
+$$
 
 :::
 :::::
@@ -491,8 +500,8 @@ $f(x) = -2x $
 ---
 class: problem-level-2
 ---
-
-Finn frem papir og blyant. Skisser grafen til funksjonene under ved å ta utgangspunkt i stigningstallet $a$ og konstantleddet $b$. 
+Finn frem penn og papir! <br>
+Skisser grafen til funksjonene under ved å ta utgangspunkt i stigningstallet $a$ og konstantleddet $b$. 
 
 Deloppgave 1
 : $f(x)=-2x+1$
@@ -506,9 +515,9 @@ class: answer, dropdown
 :::{figure} ./figurer/oppgaver/oppgave_4_1.svg
 ---
 name: fig-lineære-funksjoner-grafisk-representasjon-oppgave-4-1
-width: 80%
+width: 100%
 ---
-Viser grafen til en lineær funksjon $f$.
+viser grafen til $f$.
 :::
 ::::
 
@@ -525,9 +534,9 @@ class: answer, dropdown
 :::{figure} ./figurer/oppgaver/oppgave_4_2.svg
 ---
 name: fig-lineære-funksjoner-grafisk-representasjon-oppgave-4-2
-width: 80%
+width: 100%
 ---
-Viser grafen til en lineær funksjon $f$.
+viser grafen til $g$.
 :::
 ::::
 
@@ -543,9 +552,9 @@ class: answer, dropdown
 :::{figure} ./figurer/oppgaver/oppgave_4_3.svg
 ---
 name: fig-lineære-funksjoner-grafisk-representasjon-oppgave-4-3
-width: 80%
+width: 100%
 ---
-Viser grafen til en lineær funksjon $f$.
+viser grafen til $h$.
 :::
 ::::
 
