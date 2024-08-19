@@ -2,7 +2,7 @@ let code = null; // Global variable to store code temporarily
 
 
 
-function generateInteractiveCode(containerId, code) {
+function makeInteractiveCode(containerId, code) {
     const uniqueId = generateUUID();
     const container = document.getElementById(containerId);
 

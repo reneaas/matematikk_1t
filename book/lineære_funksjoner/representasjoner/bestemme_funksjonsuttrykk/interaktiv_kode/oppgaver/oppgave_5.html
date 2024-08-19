@@ -1,14 +1,29 @@
-<div id="container-kode-lineære-funksjoner-bestemme-funksjonsuttrykk-oppgave-5"></div>
+<div id="container-parsons-puzzle-lineære-funksjoner-bestemme-funksjonsuttrykk-oppgave-5" class="puzzle-container"></div>
+<div id="container-kode-lineære-funksjoner-bestemme-funksjonsuttrykk-oppgave-5" style="display: none"></div>
+
 <script type="text/javascript">
-    code = `
-# TODO: Lim inn koden fra puslespillet når du har løst det!
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`(x1, y1) = (-1, 3) ;(x2, y2) = (2, 6)
 
-`;   
+dx = x2 - x1 ;dy = y2 - y1
 
-    generateInteractiveCode(
-        "container-kode-lineære-funksjoner-bestemme-funksjonsuttrykk-oppgave-5",
-        code,
-    );
+a = dy / dx
+b = y1 - a * x1
+
+print(f" f(x) = {a}x + {b} ")
+`;
+
+        const puzzleContainerId = 'container-parsons-puzzle-lineære-funksjoner-bestemme-funksjonsuttrykk-oppgave-5';
+        const editorId = 'container-kode-lineære-funksjoner-bestemme-funksjonsuttrykk-oppgave-5';
+
+        const switchToCodeEditor = makeCallbackFunction(puzzleContainerId, editorId);
+        const puzzle = new ParsonsPuzzle(
+            puzzleContainerId,
+            code,
+            switchToCodeEditor,
+        );
+    });    
 </script>
 
 

@@ -250,18 +250,7 @@ Under vises et program i tilfeldig rekkefølge som regner ut funksjonsverdien ti
 
 
 Deloppgave 1
-: Pusle sammmen programmet i riktig rekkefølge, og kopier programmet i den interaktive kodecellen under.
-
-
-<br>
-
-:::{raw} html
----
-file: parsons_puzzle/underveisoppgaver/underveisoppgave_3.html
----
-:::
-
-<br>
+: Pusle sammen programmet i riktig rekkefølge for å få det fullstendige programmet. <br> Hva forventer du at programmet skriver ut? Kjør programmet og sjekk svaret!
 
 
 <br>
@@ -404,15 +393,8 @@ name: lineære-funksjoner-algebraisk-representasjon-oppgave-3
 Under vises et program i tilfeldig rekkefølge som regner ut funksjonsverdien til en lineær funksjon.
 
 Deloppgave 1
-: Pusle sammen programmet i riktig rekkefølge og kopier programmet i den interaktive kodecellen under.
+: Pusle sammen programmet i riktig rekkefølge for å få det fullstendige programmet. <br> Hva forventer du at programmet skriver ut? Kjør programmet og sjekk svaret!
 
-<br>
-
-:::{raw} html
----
-file: parsons_puzzle/oppgaver/oppgave_3.html
----
-:::
 
 
 <br>
