@@ -281,6 +281,8 @@ class ParsonsPuzzle {
     dragStart(e) {
         e.dataTransfer.setData('text/plain', e.target.dataset.order);
         e.target.classList.add('dragging');
+
+
         setTimeout(() => {
             e.target.style.display = 'none';
         }, 0);
@@ -290,6 +292,11 @@ class ParsonsPuzzle {
     dragEnd(e, dropArea) {
         e.target.style.display = 'block';
         e.target.classList.remove('dragging');
+
+        // e.target.style.visibility = '';
+        // e.target.style.position = '';
+        // e.target.style.opacity= '1';
+
         this.updatePlaceholderVisibility(this.dropArea, this.draggableCodeContainer);  // Ensure placeholder visibility is updated based on both areas
     }
 
