@@ -1,5 +1,5 @@
 # Hva er en lineær funksjon? 
-
+<!-- 
 :::{admonition} Læringsmål: Lineære funksjoner
 ---
 class: tip
@@ -15,7 +15,7 @@ Etter ha gått gjennom temaet om lineære funksjoner, er målet at du skal kunne
 * Kunne løse lineære likninger, ulikheter og likningssystemer algebraisk, grafisk, med CAS og med programmering.
 
 
-:::
+::: -->
 
 
 På ungdomsskolen har du lært om rette linjer og hvordan du kan beskrive dem ved hjelp av en likning på formen
@@ -24,7 +24,7 @@ $$
 y = ax + b.
 $$
 
-Du har også vært borti lineære funksjoner og lært at disse kan skrives som 
+Du har også sett at vi kan beskrive skrå og horisontale linjer som lineære funksjoner og har lært at disse kan skrives som 
 
 $$
 f(x) = ax + b,
