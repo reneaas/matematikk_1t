@@ -1,6 +1,5 @@
 # Regning med Python
 
-
 :::{admonition} Læringsmål: regning med Python
 ---
 class: tip
@@ -89,7 +88,33 @@ file: interaktiv_kode/utforsk/utforsk_2.html
 
 :::::
 
+## Formler i Python
+Ofte vil vi ha behov for å regne ut en formel i Python der vi bruker variabler for alle størrelsene i formelen. 
 
+
+::::{admonition} Utforsk 3
+---
+class: explore
+---
+I programmet under vises en formel som regner ut arealet av et rektangel.
+
+:::{raw} html
+---
+file: ./interaktiv_kode/utforsk/utforsk_3.html
+---
+:::
+
+<br>
+
+Deloppgave 1
+: Prøv å bestemme hva arealet av rektangelet blir *før* du kjører programmet!
+
+<br>
+
+Deloppgave 2
+: Et annet rektangel har lengdene $l = 5$ og $b = 3$. <br> Endre programmet og bruk det til å regne ut arealet av dette rektangelet.
+
+::::
 
 
 ## Oppgaver
@@ -137,6 +162,7 @@ print(f"{a = } \n{b = } \n{c = } \n{d = }")
 
 :::::
 
+---
 
 :::::{admonition} Oppgave 2
 ---
@@ -180,20 +206,13 @@ print(f"{a = } \n{b = } \n{c = } \n{d = }")
 
 :::::
 
+---
 
 :::::{admonition} Oppgave 3
 ---
-class: problem-level-3
+class: problem-level-2
 ---
-En elev har forsøkt å regne ut
-
-$$
-r = \dfrac{2^3}{4\cdot 2} + \dfrac{1}{2}\cdot (1 + 3)
-$$
-
-ved å skrive koden under. Koden inneholder **to feil**. 
-
-Finn feilene og rett de opp.
+Under vises et program som ber deg skrive inn et tall for `a`{l=python} og `b`{l=python} *først* når du kjører koden.
 
 :::{raw} html
 ---
@@ -201,21 +220,97 @@ file: interaktiv_kode/oppgaver/oppgave_3.html
 ---
 :::
 
+<br>
+
+Deloppgave 1
+: Les programmet og forutsi hva utskriften blir dersom du skriver inn $a = 3$ og $b = 2$. <br> Kjør programmet og sjekk om svaret ditt stemmer.
 
 :::{admonition} Fasit
 ---
 class: answer, dropdown
 ---
-Feilene:
-1. `2 * 3`{l=python} skal være `2**3`{l=python}
-2. `3 / 4 * 2`{l=python} skal være `3 / (4 * 2)`{l=python}
-
-```{code-block} python
----
-linenos:true
----
-r = 2**3 / (4 * 2) + 1 / 2 * (1 + 3)           # FIKS MEG
-
-print(f"{r = }")
+Utskrift:
+```console
+p = 5 
+q = 1 
+r = 6 
+s = 1.5 
+t = 9
 ```
+:::
+
+<br>
+
+Deloppgave 2
+: Finn to tall for `a`{l=python} og `b`{l=python} slik at `p`{l=python} og `r`{l=python} blir like.
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+a = 2 \quad \text{og} \quad b = 2.
+$$
+
+:::
+
+<br>
+
+Deloppgave 3
+: Finn to tall for `a`{l=python} og `b`{l=python} slik at `q`{l=python} og `s`{l=python} blir like.
+
+:::{admonition} Fasit
+---
+class: answer, dropdown 
+---
+$$
+a = 4 \quad \text{og} \quad b = 2.
+$$
+
+:::
+
+<br>
+
+Deloppgave 4
+: Finn to tall for `a`{l=python} og `b`{l=python} slik at `t`{l=python} blir lik $8$. 
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+a = 2 \quad \text{og} \quad b = 3.
+$$
+
+:::
+
 :::::
+
+---
+
+::::{admonition} Oppgave 4
+---
+class: problem-level-2
+---
+Sammenhengen mellom temperatur i Celsius $C$ og temperatur i Fahrenheit $F$, er gitt ved formelen
+
+$$
+C = \dfrac{5}{9} \cdot (F - 32).
+$$
+
+Under vises et uferdig program som du skal bruke til å regne ut temperaturen i Celsius gitt en temperatur i Fahrenheit.
+
+
+:::{raw} html
+---
+file: interaktiv_kode/oppgaver/oppgave_4.html
+---
+:::
+
+<br>
+
+Deloppgave 1
+: Skriv ferdig programmet slik at det regner ut temperaturen i Celsius gitt en temperatur i Fahrenheit. <br> Prøv ut programmet med $F = 32$. Hva blir temperaturen i Celsius?
+
+
+::::

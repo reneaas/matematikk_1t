@@ -4,9 +4,9 @@
 ---
 class: tip
 ---
-Etter dette delkapittelet, er målet at du skal kunne:
+Etter dette delkapittelet, er målet at du skal:
 * Kunne forklare hva en mengde er og bruke notasjon for å beskrive om et tall er en del av en mengde eller ikke.
-* Forklare mengdene $\mathbb{N}$, $\mathbb{Z}$, $\mathbb{Q}$ og $\mathbb{R}$ og gi eksempler på tall som er inneholdt i hver mengde. 
+* Kunne beskrive mengdene $\mathbb{N}$, $\mathbb{Z}$, $\mathbb{Q}$ og $\mathbb{R}$ og gi eksempler på tall som er inneholdt i hver mengde. 
 :::
 
 
@@ -15,12 +15,19 @@ Etter dette delkapittelet, er målet at du skal kunne:
 En **mengde** er rett og slett en samling objekter. En **tallmengde** er derfor en samling med tall. Noen ganger er tall i en mengde gruppert sammen fordi de har like egenskaper, andre ganger fordi vi ønsker å beskrive en samling tall, for eksempel som løsningen til en likning. 
 Vi starter med å introdusere fire *spesielle* tallmengder:
 
-| Symbol | Navn | Eksempler | Forklaring | 
+::::{admonition} De spesielle tallmengdene
+---
+class: theory
+---
+
+| Symbol | Navn | Eksempler | Beskrivelse | 
 | :---: | --- | --- |--- |
 | $\mathbb{N}$ | De **naturlige** tallene. | $1, 2, 3, 8 $| Alle de positive heltallene. |
 | $\mathbb{Z}$ | **Heltallene** | $-3, -2, -1, 0, 1, 2$| Alle heltallene, inkludert 0. |
 | $\mathbb{Q}$ | De **rasjonale** tallene | $-\dfrac{1}{2}, \dfrac{1}{3}, \dfrac{7}{4}, 2$| Alle tall som kan skrives som en brøk der teller og nevner er heltall. |
 | $\mathbb{R}$ | De **reelle** tallene | $\pi, \sqrt{2}, \dfrac{10}{2}$ | Alle tallene på tallinja. | 
+
+::::
 
 Kanskje la du merke til at alle de naturlige tallene er inkludert i heltallene. Og på samme måte er alle heltallene (og dermed også de naturlige tallene) inkludert i de rasjonale tallene. Og alle disse tallene er igjen inkludert i den reelle tallmengden. 
 Vi kan derfor illustrere sammenhengen mellom tallmengdene som i {numref}`mengder_venndiagram` under. 
