@@ -311,7 +311,7 @@ Oppad begrenset
     name: fig-algebra-lister-ulikheter-intervaller-teori-oppad-begrenset-mengde
     width: 90%
     ---
-    viser ubegrensede mender som er oppad begrenset. Avhengig av hvilket ulikhetstegn som er brukt er endepunktet inkludert ($\leq$) eller ekskludert ($<$).
+    viser en ubegrenset mengde som er oppad begrenset. Avhengig av hvilket ulikhetstegn som er brukt er endepunktet inkludert ($\leq$) eller ekskludert ($<$).
     :::
 
 <br>
@@ -331,7 +331,7 @@ Nedad begrenset
     name: fig-algebra-lister-ulikheter-intervaller-teori-nedad-begrenset-mengde
     width: 90%
     ---
-    viser ubegrensede mender som er nedad begrenset. Avhengig av hvilket ulikhetstegn som er brukt er endepunktet inkludert ($\leq$) eller ekskludert ($<$).
+    viser en ubegrenset mengde som er nedad begrenset. Avhengig av hvilket ulikhetstegn som er brukt er endepunktet inkludert ($\leq$) eller ekskludert ($<$).
     :::
 
 
@@ -466,9 +466,6 @@ class: answer, dropdown
 
 
 ::::
-
-
-
 ---
 
 ### Ubegrensede mengder
