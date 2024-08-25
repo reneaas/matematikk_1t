@@ -55,11 +55,9 @@ class WorkerManager {
             };
         `;
 
-        // const workerBlob = new Blob([workerScript], { type: 'application/javascript' });
-        // this.worker = new Worker(URL.createObjectURL(workerBlob));
+        const workerBlob = new Blob([workerScript], { type: 'application/javascript' });
+        this.worker = new Worker(URL.createObjectURL(workerBlob));
 
-
-        this.worker = new Worker("/_static/interactiveCode/worker.js");
 
         this.worker.onmessage = this.handleMessage.bind(this);
         this.worker.onerror = this.handleError.bind(this);
