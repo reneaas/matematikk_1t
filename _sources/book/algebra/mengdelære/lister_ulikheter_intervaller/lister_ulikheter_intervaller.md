@@ -261,11 +261,11 @@ class: answer, dropdown
 
 | Ulikhet | Beskrivelse |
 |:---:|:---|
-| $-1 < x \leq 3$ | |
-| | Alle reelle tall $x$ mellom $2$ og $4$. Her er $2$ inkludert, men ikke $4$. |
-| $0 \leq x < 2$ |  |
-| | Alle reelle tall $x$ mellom $-3$ og $1$. Hverken $-3$ eller $1$ er inkludert |
-| $-2 \leq x \leq 4$ |  | 
+| $-1 < x \leq 3$ | Alle tall større enn $-1$ og mindre enn eller lik $3$. |
+| $2 \leq x < -4$ | Alle reelle tall $x$ mellom $2$ og $4$. Her er $2$ inkludert, men ikke $4$. |
+| $0 \leq x < 2$ | Alle reelle tall $x$ større enn eller lik $0$ og mindre enn $2$. |
+| $-3 < x < 1$ | Alle reelle tall $x$ mellom $-3$ og $1$. Hverken $-3$ eller $1$ er inkludert. |
+| $-2 \leq x \leq 4$ | Alle reelle tall $x$ som er større enn eller lik $-2$ og mindre enn eller lik $4$.  | 
 
 :::
 
@@ -311,7 +311,7 @@ Oppad begrenset
     name: fig-algebra-lister-ulikheter-intervaller-teori-oppad-begrenset-mengde
     width: 90%
     ---
-    viser ubegrensede mender som er oppad begrenset. Avhengig av hvilket ulikhetstegn som er brukt er endepunktet inkludert ($\leq$) eller ekskludert ($<$).
+    viser en ubegrenset mengde som er oppad begrenset. Avhengig av hvilket ulikhetstegn som er brukt er endepunktet inkludert ($\leq$) eller ekskludert ($<$).
     :::
 
 <br>
@@ -331,7 +331,7 @@ Nedad begrenset
     name: fig-algebra-lister-ulikheter-intervaller-teori-nedad-begrenset-mengde
     width: 90%
     ---
-    viser ubegrensede mender som er nedad begrenset. Avhengig av hvilket ulikhetstegn som er brukt er endepunktet inkludert ($\leq$) eller ekskludert ($<$).
+    viser en ubegrenset mengde som er nedad begrenset. Avhengig av hvilket ulikhetstegn som er brukt er endepunktet inkludert ($\leq$) eller ekskludert ($<$).
     :::
 
 
@@ -466,9 +466,6 @@ class: answer, dropdown
 
 
 ::::
-
-
-
 ---
 
 ### Ubegrensede mengder
@@ -482,12 +479,12 @@ class: theory
 Et **uendelig intervall** er en mengde reelle tall som strekker seg uendelig langt i en eller begge retninger på tallinja. Vi kan møte på fire typer uendelige intervaller:
 
 
-| Intervall | Beskrivelse |
+| Intervall | Ulikhet |
 | :---: | --- |
-| $[a, \to\rangle$ | Alle reelle tall større enn eller lik $a$. |
-| $\langle \gets, b]$ | Alle reelle tall mindre enn eller lik $b$. |
-| $\langle a, \to\rangle$ | Alle reelle tall større enn $a$. |
-| $\langle \gets, b\rangle$ | Alle reelle tall mindre enn $b$. |
+| $[a, \to\rangle$ | $x \geq a$ |
+| $\langle \gets, b]$ | $x \leq b$ |
+| $\langle a, \to\rangle$ | $x < a$|
+| $\langle \gets, b\rangle$ | $x > b$ |
 
 ::::
 

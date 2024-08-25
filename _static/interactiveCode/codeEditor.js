@@ -77,7 +77,8 @@ class CodeEditor {
     }
 
     /**
-     * Adds a custom overlay for highlighting specific comments (like TODOs) in the code.
+     * Adds a custom overlay for highlighting specific comments for 
+     * Supports # TODO, # FIKS MEG, # FYLL INN, # NOTE, # FIKSMEG
      * @returns {Object} - The overlay mode configuration for CodeMirror.
      */
     addCommentOverlay(editor) {
@@ -137,25 +138,6 @@ class CodeEditor {
         for (let i = 0; i < this.editor.lineCount(); i++) {
             this.editor.removeLineClass(i, "background", "cm-highlight");
         }
-    }
-
-    /**
-     * Adds breakpoints or markers in the editor (useful for interactive debugging).
-     * @param {number} line - The line number to mark (0-indexed).
-     */
-    addBreakpoint(line) {
-        const marker = document.createElement("div");
-        marker.style.color = "#ff0000";
-        marker.innerHTML = "●";
-        this.editor.setGutterMarker(line, "breakpoints", marker);
-    }
-
-    /**
-     * Removes a breakpoint or marker from a specified line.
-     * @param {number} line - The line number to clear (0-indexed).
-     */
-    removeBreakpoint(line) {
-        this.editor.setGutterMarker(line, "breakpoints", null);
     }
 
     /**
