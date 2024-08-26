@@ -1,233 +1,148 @@
+/* Define color variables for each mode */
+:root {
+    --background-color: #f9f9f9;
+    --border-color: #ccc;
+    --draggable-background-color: #ffffff;
+    --drop-area-background-color: #ffffff;
+    --drop-area-border-color: #007bff;
+    --text-color: #24292f;
+    --hover-background-color: #e9ecef;
+    --hover-border-color: #0056b3;
+    --placeholder-background-color: #bcbbbb;
+    --placeholder-border-color: #999;
+    --button-background-color-check: #28a745;
+    --button-background-color-reset: #ffc107;
+    --button-text-color: black;
+    --modal-background-color: #fefefe;
+    --modal-border-color: #888;
+    --draggable-item-background-color: #ffffff;
+    --draggable-item-border-color: #007bff;
+    --toast-background-color: rgba(0, 128, 128, 0.9);
+}
+
+/* Dark mode variables */
+[data-mode="dark"] {
+    --background-color: #202020;
+    --border-color: #ccc;
+    --draggable-background-color: #141923;
+    --drop-area-background-color: #3b3b3b;
+    --drop-area-border-color: #007bff;
+    --text-color: #ffffff;
+    --hover-background-color: #333333;
+    --hover-border-color: #0056b3;
+    --placeholder-background-color: #000000;
+    --placeholder-border-color: #999;
+    --button-background-color-check: #28a745;
+    --button-background-color-reset: #ffc107;
+    --button-text-color: black;
+    --modal-background-color: #181818;
+    --modal-border-color: #888;
+    --draggable-item-background-color: #252d40;
+    --draggable-item-border-color: #1b1b1b;
+    --toast-background-color: rgba(0, 128, 128, 0.9);
+}
+
+/* Auto mode using system preferences */
+@media (prefers-color-scheme: light) {
+    [data-mode="auto"] {
+        --background-color: #f9f9f9;
+        --border-color: #ccc;
+        --draggable-background-color: #ffffff;
+        --drop-area-background-color: #ffffff;
+        --drop-area-border-color: #007bff;
+        --text-color: #24292f;
+        --hover-background-color: #e9ecef;
+        --hover-border-color: #0056b3;
+        --placeholder-background-color: #bcbbbb;
+        --placeholder-border-color: #999;
+        --button-background-color-check: #28a745;
+        --button-background-color-reset: #ffc107;
+        --button-text-color: black;
+        --modal-background-color: #fefefe;
+        --modal-border-color: #888;
+        --draggable-item-background-color: #ffffff;
+        --draggable-item-border-color: #007bff;
+        --toast-background-color: rgba(0, 128, 128, 0.9);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    [data-mode="auto"] {
+        --background-color: #202020;
+        --border-color: #ccc;
+        --draggable-background-color: #141923;
+        --drop-area-background-color: #3b3b3b;
+        --drop-area-border-color: #007bff;
+        --text-color: #ffffff;
+        --hover-background-color: #333333;
+        --hover-border-color: #0056b3;
+        --placeholder-background-color: #000000;
+        --placeholder-border-color: #999;
+        --button-background-color-check: #28a745;
+        --button-background-color-reset: #ffc107;
+        --button-text-color: black;
+        --modal-background-color: #181818;
+        --modal-border-color: #888;
+        --draggable-item-background-color: #252d40;
+        --draggable-item-border-color: #1b1b1b;
+        --toast-background-color: rgba(0, 128, 128, 0.9);
+    }
+}
+
 /* Main container for Parsons puzzle */
-[data-mode=light] .puzzle-container {
+.puzzle-container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding: 20px;
-    border: 1px solid #ccc; /* Border around the whole puzzle container */
-    border-radius: 8px; /* Rounded corners for the puzzle container */
-    background-color: #f9f9f9; /* Light background for contrast */
-}
-
-@media (prefers-color-scheme: light) {
-    .puzzle-container {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 20px;
-        border: 1px solid #ccc; /* Border around the whole puzzle container */
-        border-radius: 8px; /* Rounded corners for the puzzle container */
-        background-color: #f9f9f9; /* Light background for contrast */
-    }
-}
-
-[data-mode=dark] .puzzle-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px;
-    border: 1px solid #ccc; /* Border around the whole puzzle container */
-    border-radius: 8px; /* Rounded corners for the puzzle container */
-    background-color: #202020; /* Light background for contrast */
-}
-
-@media (prefers-color-scheme: dark) {
-    .puzzle-container {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 20px;
-        border: 1px solid #ccc; /* Border around the whole puzzle container */
-        border-radius: 8px; /* Rounded corners for the puzzle container */
-        background-color: #202020; /* Light background for contrast */
-    }
-}
-
-
-/* Draggable code area */
-[data-mode=light] .draggable-code {
-    width: 100%;
-    background-color: #ffffff; /* Background for draggable area */
-    padding: 10px;
-    border: 1px solid #ccc; /* Border around the draggable area */
-    border-radius: 8px; /* Rounded corners */
-    margin-bottom: 15px; /* Space below the draggable area */
-}
-
-@media (prefers-color-scheme: light) {
-    .draggable-code {
-        width: 100%;
-        background-color: #ffffff; /* Background for draggable area */
-        padding: 10px;
-        border: 1px solid #ccc; /* Border around the draggable area */
-        border-radius: 8px; /* Rounded corners */
-        margin-bottom: 15px; /* Space below the draggable area */
-    }
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--background-color);
 }
 
 /* Draggable code area */
-[data-mode=dark] .draggable-code {
+.draggable-code {
     width: 100%;
-    background-color: #202020; /* Background for draggable area */
+    background-color: var(--draggable-background-color);
     padding: 10px;
-    border: 1px solid #ccc; /* Border around the draggable area */
-    border-radius: 8px; /* Rounded corners */
-    margin-bottom: 15px; /* Space below the draggable area */
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 15px;
 }
-
-@media (prefers-color-scheme: dark) {
-    .draggable-code {
-        width: 100%;
-        background-color: #202020; /* Background for draggable area */
-        padding: 10px;
-        border: 1px solid #ccc; /* Border around the draggable area */
-        border-radius: 8px; /* Rounded corners */
-        margin-bottom: 15px; /* Space below the draggable area */
-    }
-}
-
 
 /* Drop area */
-[data-mode=light] .drop-area {
+.drop-area {
     width: 100%;
-    background-color: #ffffff; /* Background for the drop area */
-    border: 2px dashed #007bff; /* Distinct dashed border for the drop area */
+    background-color: var(--drop-area-background-color);
+    border: 2px dashed var(--drop-area-border-color);
     min-height: 150px;
     padding: 10px;
-    border-radius: 8px; /* Rounded corners */
-    position: relative; /* For positioning the placeholder text */
-    margin-bottom: 15px; /* Space below the drop area */
-}
-
-@media (prefers-color-scheme: light) {
-    .drop-area {
-        width: 100%;
-        background-color: #ffffff; /* Background for the drop area */
-        border: 2px dashed #007bff; /* Distinct dashed border for the drop area */
-        min-height: 150px;
-        padding: 10px;
-        border-radius: 8px; /* Rounded corners */
-        position: relative; /* For positioning the placeholder text */
-        margin-bottom: 15px; /* Space below the drop area */
-    }
-}
-
-[data-mode=dark] .drop-area {
-    width: 100%;
-    background-color: #3b3b3b; /* Background for the drop area */
-    border: 2px dashed #007bff; /* Distinct dashed border for the drop area */
-    min-height: 150px;
-    padding: 10px;
-    border-radius: 8px; /* Rounded corners */
-    position: relative; /* For positioning the placeholder text */
-    margin-bottom: 15px; /* Space below the drop area */
-}
-
-@media (prefers-color-scheme: dark) {
-    .drop-area {
-        width: 100%;
-        background-color: #3b3b3b; /* Background for the drop area */
-        border: 2px dashed #007bff; /* Distinct dashed border for the drop area */
-        min-height: 150px;
-        padding: 10px;
-        border-radius: 8px; /* Rounded corners */
-        position: relative; /* For positioning the placeholder text */
-        margin-bottom: 15px; /* Space below the drop area */
-    }
+    border-radius: 8px;
+    position: relative;
+    margin-bottom: 15px;
 }
 
 /* General draggable item styles */
-[data-mode=light] .draggable {
-    background-color: #ffffff; /* Background for draggable elements */
-    color: #24292f; /* Text color for draggable elements */
-    border: 1px solid #1b1b1b; /* Border color for draggable elements */
+.draggable {
+    background-color: var(--draggable-item-background-color);
+    color: var(--text-color);
+    border: 1px solid var(--draggable-item-border-color);
     padding: 5px;
     margin-bottom: 5px;
     border-radius: 3px;
     cursor: grab;
-}
-
-@media (prefers-color-scheme: light) {
-    .draggable {
-        background-color: #ffffff; /* Background for draggable elements */
-        color: #24292f; /* Text color for draggable elements */
-        border: 1px solid #1b1b1b; /* Border color for draggable elements */
-        padding: 5px;
-        margin-bottom: 5px;
-        border-radius: 3px;
-        cursor: grab;
-    }
-}
-
-[data-mode=dark] .draggable {
-    background-color: #444444; /* Background for draggable elements */
-    color: #24292f; /* Text color for draggable elements */
-    border: 1px solid #1b1b1b; /* Border color for draggable elements */
-    padding: 5px;
-    margin-bottom: 5px;
-    border-radius: 3px;
-    cursor: grab;
-}
-
-@media (prefers-color-scheme: dark) {
-    .draggable {
-        background-color: #444444; /* Background for draggable elements */
-        color: #24292f; /* Text color for draggable elements */
-        border: 1px solid #1b1b1b; /* Border color for draggable elements */
-        padding: 5px;
-        margin-bottom: 5px;
-        border-radius: 3px;
-        cursor: grab;
-    }
 }
 
 /* Placeholder in drop area */
-[data-mode=light] .placeholder {
-    height: 50px; /* Controls the vertical size of the placeholder */
-    margin-bottom: 5px; /* Space below the placeholder */
-    background-color: #bcbbbb; /* Background color to differentiate the placeholder */
-    border: 1px dashed #999; /* Border style to indicate it's a placeholder */
-    width: 100%; /* Width of the placeholder, usually matching the drop area width */
-    padding: 5px; /* Internal padding, can adjust for larger or smaller placeholders */
-    box-sizing: border-box; /* Ensures padding and border are included in the width and height */
-    text-align: center; /* Center the text in the placeholder */
-}
-
-@media (prefers-color-scheme: light) {
-    .placeholder {
-        height: 50px; /* Controls the vertical size of the placeholder */
-        margin-bottom: 5px; /* Space below the placeholder */
-        background-color: #bcbbbb; /* Background color to differentiate the placeholder */
-        border: 1px dashed #999; /* Border style to indicate it's a placeholder */
-        width: 100%; /* Width of the placeholder, usually matching the drop area width */
-        padding: 5px; /* Internal padding, can adjust for larger or smaller placeholders */
-        box-sizing: border-box; /* Ensures padding and border are included in the width and height */
-        text-align: center; /* Center the text in the placeholder */
-    }
-}
-
-[data-mode=dark] .placeholder {
-    height: 50px; /* Controls the vertical size of the placeholder */
-    margin-bottom: 5px; /* Space below the placeholder */
-    background-color: #000000; /* Background color to differentiate the placeholder */
-    border: 1px dashed #999; /* Border style to indicate it's a placeholder */
-    width: 100%; /* Width of the placeholder, usually matching the drop area width */
-    padding: 5px; /* Internal padding, can adjust for larger or smaller placeholders */
-    box-sizing: border-box; /* Ensures padding and border are included in the width and height */
-    text-align: center; /* Center the text in the placeholder */
-}
-
-@media (prefers-color-scheme: dark) {
-    .placeholder {
-        height: 50px; /* Controls the vertical size of the placeholder */
-        margin-bottom: 5px; /* Space below the placeholder */
-        background-color: #000000; /* Background color to differentiate the placeholder */
-        border: 1px dashed #999; /* Border style to indicate it's a placeholder */
-        width: 100%; /* Width of the placeholder, usually matching the drop area width */
-        padding: 5px; /* Internal padding, can adjust for larger or smaller placeholders */
-        box-sizing: border-box; /* Ensures padding and border are included in the width and height */
-        text-align: center; /* Center the text in the placeholder */
-    }
+.placeholder {
+    height: 50px;
+    margin-bottom: 5px;
+    background-color: var(--placeholder-background-color);
+    border: 1px dashed var(--placeholder-border-color);
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    text-align: center;
 }
 
 .draggable:active {
@@ -242,11 +157,10 @@
     opacity: 0.9;
 }
 
-
 /* Drop area hover effect */
 .drop-area.dragover {
-    background-color: #e9ecef; /* Slightly darker background when dragging */
-    border-color: #0056b3; /* Darker border color */
+    background-color: var(--hover-background-color);
+    border-color: var(--hover-border-color);
 }
 
 /* Feedback when dragging */
@@ -259,92 +173,58 @@
     opacity: 0.9 !important;
 }
 
-
 /* Code block styles */
 pre.highlight {
     margin: 0;
     padding: 0;
-    background: transparent; /* Ensure no background to blend with the draggable item */
-    border: none; /* Remove any borders */
-    font-family: inherit; /* Inherit the font from the draggable element */
-    white-space: pre-wrap; /* Preserve whitespace */
-    word-wrap: break-word; /* Break long lines */
+    background: transparent;
+    border: none;
+    font-family: inherit;
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
 
 /* Button styles */
 .button {
     padding: 10px 20px;
-    margin-right: 10px; /* Space between buttons */
+    margin-right: 10px;
     border-radius: 5px;
     border: none;
     cursor: pointer;
 }
 
 .button-check-solution {
-    background-color: #28a745; /* Green background */
-    color: black !important; /* Black text */
+    background-color: var(--button-background-color-check);
+    color: var(--button-text-color) !important;
 }
 
 .button-reset-puzzle {
-    background-color: #ffc107; /* Orange background */
-    color: black !important; /* Black text */
+    background-color: var(--button-background-color-reset);
+    color: var(--button-text-color) !important;
 }
 
 /* Modal container (hidden by default) */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1000; /* Sit on top */
+    display: none;
+    position: fixed;
+    z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
 }
 
 /* Modal content */
-[data-mode=light] .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+.modal-content {
+    background-color: var(--modal-background-color);
+    margin: 15% auto;
     padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    border: 1px solid var(--modal-border-color);
+    width: 80%;
     border-radius: 5px;
 }
-
-@media (prefers-color-scheme: light) {
-    .modal-content {
-        background-color: #fefefe;
-        margin: 15% auto; /* 15% from the top and centered */
-        padding: 20px;
-        border: 1px solid #888;
-        width: 80%; /* Could be more or less, depending on screen size */
-        border-radius: 5px;
-    }
-}
-
-
-[data-mode=dark] .modal-content {
-    background-color: #181818;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-    border-radius: 5px;
-}
-
-@media (prefers-color-scheme: dark) {
-    .modal-content {
-        background-color: #181818;
-        margin: 15% auto; /* 15% from the top and centered */
-        padding: 20px;
-        border: 1px solid #888;
-        width: 80%; /* Could be more or less, depending on screen size */
-        border-radius: 5px;
-    }
-}
-
 
 /* Close button */
 .close {
@@ -378,29 +258,19 @@ pre.highlight {
 
 .button-container {
     display: flex;
-    gap: 10px; /* Space between the buttons */
-    margin-top: 5px; /* Space above the buttons */
+    gap: 10px;
+    margin-top: 5px;
 }
 
-
-
+/* Toast Notification */
 .toast {
-    position: fixed; 
-    background-color: rgba(0, 128, 128, 0.9);
+    position: fixed;
+    background-color: var(--toast-background-color);
     color: #fff;
     padding: 30px;
     border-radius: 12px;
     font-size: 20px;
     z-index: 1000;
-    display: block; /* or display: inline-block; */
+    display: block;
     text-align: center;
 }
-
-/* .draggable.dragging {
-    opacity: 0.9 !important;
-    background-color: #e0f7fa; 
-    color: #000; 
-    border: 2px dashed #007bff; 
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); 
-    cursor: grabbing; 
-} */

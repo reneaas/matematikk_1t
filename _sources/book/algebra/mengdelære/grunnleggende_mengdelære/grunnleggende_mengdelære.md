@@ -29,8 +29,8 @@ class: theory
 
 ::::
 
-Kanskje la du merke til at alle de naturlige tallene er inkludert i heltallene. Og på samme måte er alle heltallene (og dermed også de naturlige tallene) inkludert i de rasjonale tallene. Og alle disse tallene er igjen inkludert i den reelle tallmengden. 
-Vi kan derfor illustrere sammenhengen mellom tallmengdene som i {numref}`mengder_venndiagram` under. 
+Fra tabellen over kan det hende du la merke til at alle de naturlige tallene også er hele tall, og dermed er alle naturlige tall inkludert i heltallsmengden. På tilsvarende måte vil alle heltall også være rasjonale tall der nevneren er $1$. Derfor er heltallene inkludert i mengden av rasjonale tall. Dette argumentet kan vi føre videre, fordi alle de rasjonale tallene må være reelle tall siden de ligger på tallinja.
+Vi kan illustrere sammenhnegen mellom tallmengdene som i {numref}`mengder_venndiagram`. 
 
 :::{figure} ./figurer/mengder_venndiagram.svg
 ---
@@ -43,15 +43,17 @@ viser hvordan de ulike tallmengdene henger sammen. Diagrammet illustrerer at $\m
 
 ---
 
-Selv om vi kan si at $2$ tilhører $\mathbb{Z}$, så er ikke dette den "minste" mulige mengden vi kan bruke til å beskrive tallet. Vi Vi velger vanligvis den minste mulige mengden for å beskrive hvor tallet "hører hjemme". Derfor sier vi at $2$ tilhører de naturlige tallene $\mathbb{N}$. 
+Vi kan altså si at $2$ tilhører både $\mathbb{N}$, $\mathbb{Z}$, $\mathbb{Q}$ og $\mathbb{R}$, mens $2/3$ kun tilhører $\mathbb{Q}$ og $\mathbb{R}$. 
 
-Men nå bør teste forståelsen din!
+
+
+
 
 :::::{admonition} Underveisoppgave 1
 ---
 class: check
 ---
-Plasser tallene under i riktig tallmengde (husk: den *minste* mulige mengden):
+Skriv av og fyll ut tabellen med en mengde som tallet tilhører.
 
 | Tall | $-6$ | $4$ | $0$ | $120$ | $\dfrac{5}{2}$ | $\dfrac{15}{5}$ | $\sqrt{3}$ | $-8$ | $\sqrt{16}$ |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | 
@@ -79,7 +81,7 @@ Deretter kan vi fylle ut tabellen:
 :::::
 
 ## En mer generell definisjon av en mengde
-Vi gjentar: en mengde bare en *samling objekter*. I de fleste tilfeller vil objektene i mengden være tall, men de vil i blant også være punkter. Vi skal foreløpig bare fokusere på tallmengder.
+Vi gjentar: En mengde er bare en *samling objekter*. I de fleste tilfeller vil objektene i mengden være tall, men de vil i blant også være punkter. Vi skal foreløpig bare fokusere på tallmengder.
 
 ```{admonition} Definisjon: Mengde
 :class: theory
@@ -102,7 +104,7 @@ Fyll ut tabellen under der du uttrykker om tallet er et element i mengden eller 
 |:---:|:---:|:---:|
 | $3$ | | $\mathbb{N}$ |
 | $-2$ | | $\mathbb{Z}$ |
-| $\frac{1}{2}$ | | $\mathbb{N}$ |
+| $\dfrac{1}{2}$ | | $\mathbb{N}$ |
 | $\sqrt{2}$ | | $\mathbb{Q}$ |
 | $\pi$ | | $\mathbb{Q}$ |
 | $0$ | | $\mathbb{R}$ |
@@ -116,7 +118,7 @@ Fyll ut tabellen under der du uttrykker om tallet er et element i mengden eller 
 |:---:|:---:|:---:|
 | $3$ | $\in$ | $\mathbb{N}$ |
 | $-2$ | $\in$ | $\mathbb{Z}$ |
-| $\frac{1}{2}$ | $\notin$ | $\mathbb{N}$ |
+| $\dfrac{1}{2}$ | $\notin$ | $\mathbb{N}$ |
 | $\sqrt{2}$ | $\in$ | $\mathbb{Q}$ |
 | $\pi$ | $\notin$ | $\mathbb{Q}$ |
 | $0$ | $\in$ | $\mathbb{R}$ |

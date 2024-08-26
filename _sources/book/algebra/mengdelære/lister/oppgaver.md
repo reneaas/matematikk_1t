@@ -44,11 +44,35 @@ Skriv av og fyll ut tabellen under:
 
 | Mengde | Beskrivelse eller formel |
 |:---:|:---|
-| \{-5, -4, -3, -2, -1, 0\}$ |  |
+| $\{-5, -4, -3, -2, -1, 0\}$ |  |
 | | Mengden av de fem første negative oddetallene. |
 | $\{1, 5, 9, 13, \ldots\}$ |  |
 | | Mengden av alle positive oddetall som er mindre enn 20. |
-| $\{1, \dfrac{1}{2}, \dfrac{1}{4}, \dfrac{1}{8}, \ldots\} |  |
+| $\left\{1, \dfrac{1}{2}, \dfrac{1}{4}, \dfrac{1}{8}, \ldots \right\}$ |  |
  
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+| Mengde | Beskrivelse eller formel |
+|:---:|:---|
+| $\{-5, -4, -3, -2, -1, 0\}$ | De fem første negative tallene inkludert $0$. |
+| $\{-1, -3, -5, -7, -9\}$ | Mengden av de fem første negative oddetallene. |
+| $\{1, 5, 9, 13, \ldots\}$ | $\{x \in \mathbb{R} \mid x = 4n - 3, \quad n  \in \mathbb{N}\}$|
+| | Mengden av alle positive oddetall som er mindre enn 20. |
+| $\left\{1, \dfrac{1}{2}, \dfrac{1}{4}, \dfrac{1}{8}, \ldots \right\}$ |  |
+
+:::
+
+::::
+
+
+---
+
+::::{admonition} Oppgave 3
+---
+class: problem-level-1
+---
+
 
 ::::

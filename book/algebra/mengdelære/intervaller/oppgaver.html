@@ -45,7 +45,8 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/code_mirror_themes/github_dark_cm.css?v=d1235728" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/code_mirror_themes/github_light_cm.css?v=facc8b7a" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/code_mirror_themes/one_dark_cm.css?v=3ae52176" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/parsons_puzzle/parsonsPuzzle.css?v=ac347e8b" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/parsons_puzzle/parsonsPuzzle.css?v=68ead074" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pairPuzzle/game.css?v=4c86657d" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -69,24 +70,26 @@
     <script async="async" src="../../../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3.2/es5/tex-mml-chtml.js"></script>
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/algebra/mengdelære/intervaller/oppgaver';</script>
     <script>mermaid.initialize({"startOnLoad": true})</script>
     <script src="../../../../_static/geogebra-setup.js?v=c67998b1"></script>
     <script src="../../../../_static/static_code_blocks.js?v=d0b96be4"></script>
     <script src="../../../../_static/utils.js?v=8e047c30"></script>
-    <script src="../../../../_static/serviceWorker.js?v=9d61c2b7"></script>
+    <script src="../../../../_static/serviceWorker.js?v=19bb19ce"></script>
     <script src="../../../../_static/interactiveCode/codeEditor.js?v=c31f5c90"></script>
     <script src="../../../../_static/interactiveCode/workerManager.js?v=afad59ba"></script>
     <script src="../../../../_static/interactiveCode/interactiveCodeSetup.js?v=b243d8d1"></script>
-    <script src="../../../../_static/interactiveCode/worker.js?v=7156b72e"></script>
     <script src="../../../../_static/interactiveCode/pythonRunner.js?v=309bc2ed"></script>
     <script src="../../../../_static/parsons_puzzle/theme-switcher.js?v=c0cdcaac"></script>
-    <script src="../../../../_static/parsons_puzzle/parsonsPuzzle.js?v=6e111d05"></script>
+    <script src="../../../../_static/parsons_puzzle/parsonsPuzzle.js?v=14c80051"></script>
+    <script src="../../../../_static/pairPuzzle/game.js?v=376aba04"></script>
+    <script src="../../../../_static/pairPuzzle/draggableItem.js?v=b0d48f0c"></script>
+    <script src="../../../../_static/pairPuzzle/dropZone.js?v=eff15de2"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="2.5. Setningslogikk" href="../setningslogikk.html" />
-    <link rel="prev" title="2.4. Mengder som intervaller" href="intervaller.html" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="norwegian"/>
@@ -111,6 +114,8 @@
     <link id="highlight-theme-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github-dark.min.css">
     <script src="../../../../_static/theme-switcher.js"></script>
 </head>
+
+
 
 
 <script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
@@ -181,6 +186,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -229,7 +236,7 @@
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">I. Algebra</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../regning/intro.html">1. Regning</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../regning/regnerekkef%C3%B8lgen/regnerekkef%C3%B8lgen.html">1.1. Regnerekkefølgen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../regning/regnerekkef%C3%B8lgen/oppgaver.html">Oppgaver</a></li>
@@ -241,25 +248,13 @@
 </details></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../intro_mengdel%C3%A6re.html">2. Mengdelære</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 has-children"><a class="reference internal" href="../grunnleggende_mengdel%C3%A6re/grunnleggende_mengdel%C3%A6re.html">2.1. Mengder</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="../grunnleggende_mengdel%C3%A6re/oppgaver.html">Oppgaver</a></li>
-</ul>
-</details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../lister/lister.html">2.2. Mengder som lister</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="../lister/oppgaver.html">Oppgaver</a></li>
-</ul>
-</details></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../ulikheter/ulikheter.html">2.3. Mengder som ulikheter</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="../ulikheter/oppgaver.html">Oppgaver</a></li>
-</ul>
-</details></li>
-<li class="toctree-l2 current active has-children"><a class="reference internal" href="intervaller.html">2.4. Mengder som intervaller</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l3 current active"><a class="current reference internal" href="#">Oppgaver</a></li>
-</ul>
-</details></li>
-<li class="toctree-l2"><a class="reference internal" href="../setningslogikk.html">2.5. Setningslogikk</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../sammensatte_mengder.html">2.6. Sammensatte mengder</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../intro_mengdel%C3%A6re.html">2. Mengdelære</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../grunnleggende_mengdel%C3%A6re/grunnleggende_mengdel%C3%A6re.html">2.1. Mengder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lister/lister.html">2.2. Mengder som lister</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ulikheter/ulikheter.html">2.3. Mengder som ulikheter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intervaller.html">2.4. Mengder som intervaller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../setningslogikk/setningslogikk.html">2.5. Setningslogikk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../oppgavesamling/oppgavesamling.html">2.6. Oppgavesamling</a></li>
 </ul>
 </details></li>
 </ul>
@@ -457,6 +452,124 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="oppgaver">
 <h1>Oppgaver<a class="headerlink" href="#oppgaver" title="Link to this heading">#</a></h1>
+<div class="problem-level-1 admonition">
+<p class="admonition-title">Oppgave 1</p>
+<p>Sorter hvilke ulikheter og intervaller som hører sammen.</p>
+<div id="container-pair-puzzle-algebra-mengdelære-intervaller-oppgave-1" class="pairing-puzzle-container"></div>
+
+<!-- Include KaTeX -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/auto-render.min.js"></script>
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", () => {
+
+        const pairs = [
+            ['$3 \\leq x < 4$', '$x \\in [3, 4\\rangle $'],
+            ['$x \\geq 3$', '$x \\in [3, \\to \\rangle $'],
+            ['$-1 < x \\leq \\dfrac{3}{2}$', '$x \\in \\left \\langle -1, \\dfrac{3}{2} \\right]$'],
+            ['$-\\dfrac{3}{2} < x$', '$x \\in \\left \\langle -\\dfrac{3}{2}, \\to \\right \\rangle$'],
+            ['$x < 4$', '$x \\in \\langle \\gets, 4 \\rangle $']
+        ];
+
+        // Initialize the puzzle
+        initGame('container-pair-puzzle-algebra-mengdelære-intervaller-oppgave-1', pairs);
+    });
+</script>
+<div class="answer dropdown admonition">
+<p class="admonition-title">Fasit</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Ulikhet</p></th>
+<th class="head text-center"><p>Intervall</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(x &lt; 4\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(x\in \langle \gets, 4\rangle\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><span class="math notranslate nohighlight">\(x \geq 3\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(x \in [3, \to\rangle\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(-\dfrac{3}{2} &lt; x\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(x\in \left\langle -\dfrac{3}{2}, \to\right\rangle\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><span class="math notranslate nohighlight">\(3 \leq x &lt; 4\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(x\in [3, 4\rangle\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(-1 &lt; x \leq \dfrac{3}{2}\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(x \in \left\langle -1, \dfrac{3}{2}\right]\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="problem-level-1 admonition">
+<p class="admonition-title">Oppgave 2</p>
+<p>Skriv av og fyll ut tabellen under:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Ulikhet</p></th>
+<th class="head text-center"><p>Intervall</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(-1 &lt; x \leq 3\)</span></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(x\in \langle -1, 3]\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(0 \leq x &lt; 2\)</span></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(x\in \left\langle-\dfrac{1}{3}, 1\right\rangle\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(-2 \leq x \leq 4\)</span></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="docutils">
+</div>
+</div>
+<hr class="docutils" />
+<div class="problem-level-1 admonition">
+<p class="admonition-title">Oppgave 3</p>
+<p>Skriv av og fyll ut tabellen under:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Ulikhet</p></th>
+<th class="head text-center"><p>Intervall</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(1 \leq x \leq 5\)</span></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(x\in \langle -4, 2]\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(x &lt; 1\)</span></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(x \geq \dfrac{1}{6}\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><span class="math notranslate nohighlight">\(0 \leq x\)</span></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="docutils">
+</div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -489,24 +602,6 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="intervaller.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">2.4. </span>Mengder som intervaller</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="../setningslogikk.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.5. </span>Setningslogikk</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
