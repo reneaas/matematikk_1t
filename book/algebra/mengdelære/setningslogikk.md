@@ -3,10 +3,10 @@
 
 ```{admonition} Læringsmål: setningslogikk
 :class: tip
-Etter å ha gått gjennom dette delkapittelet, er målet at du skal kunne:
-* Forklare hva en påstand er i matematikken.
-* Forklare implikasjon og ekvivalens, og bruke disse i praksis for å uttrykke sammenhenger mellom påstander.
-* Forklare konjunksjon og disjunksjon, og bruke disse i praksis for å uttrykke sammensatte påstander.
+Etter å ha gått gjennom dette delkapittelet, er målet at du skal:
+* Kunne forklare hva en påstand er i matematikken.
+* Kunne forklare begrepene *implikasjon* og *ekvivalens*, og bruke disse for å uttrykke sammenhenger mellom påstander.
+* Kunne forklare begrepene *logisk og*, og *logisk eller*, og bruke disse for å uttrykke sammensatte påstander.
 ```
 
 Setningslogikken er i grenseland mellom matematikk og filosofi, og er utviklet for å kunne uttrykke sammenhenger mellom påstander på en presis måte. Vi skal forholde oss til nytteverdien det har for å beskrive sammenhenger i matematikken på en presis og kompakt måte. 

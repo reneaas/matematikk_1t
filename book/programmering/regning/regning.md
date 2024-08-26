@@ -314,3 +314,30 @@ Deloppgave 1
 
 
 ::::
+
+
+---
+
+::::{admonition} Oppgave 5
+---
+class: problem-level-3
+---
+
+Under vises et program som regner ut noen brøker.
+
+:::{raw} html
+---
+file: interaktiv_kode/oppgaver/oppgave_5.html
+---
+:::
+
+Deloppgave 1
+: Kjør koden og studer utskriften. <br> Kan du ut ifra utskriften forutsi hva du får dersom du regner ut følgende brøker for hånd?
+  1. $\dfrac{16}{99}$
+  2. $\dfrac{713}{999}$
+  3. $\dfrac{6712}{9999}$
+  Endre på programmet og kjør det for å sjekke svaret ditt.
+
+Deloppgave 2
+: Endre programmet 
+::::

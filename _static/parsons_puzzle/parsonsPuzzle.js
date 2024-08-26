@@ -231,20 +231,6 @@ class ParsonsPuzzle {
     }
 
 
-    // Ensure placeholder is not moved when moving blocks back to draggable area
-    // enableDragAndDrop(draggableContainer, dropArea) {
-    //     const draggables = draggableContainer.querySelectorAll('.draggable');
-    //     draggables.forEach(draggable => {
-    //         draggable.addEventListener('dragstart', (e) => this.dragStart(e));
-    //         draggable.addEventListener('dragend', (e) => this.dragEnd(e, dropArea));  // Always pass dropArea to manage the placeholder correctly
-    //     });
-
-    //     [dropArea, draggableContainer].forEach(container => {
-    //         container.addEventListener('dragover', (e) => this.dragOver(e, container));
-    //         container.addEventListener('drop', (e) => this.drop(e, container, this.dropArea.querySelector('.placeholder')));  // Always manage placeholder from dropArea
-    //     });
-    // }
-
     enableDragAndDrop(draggableContainer, dropArea) {
         const draggables = draggableContainer.querySelectorAll('.draggable');
         
