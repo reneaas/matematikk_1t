@@ -5,7 +5,7 @@
 ---
 class: tip
 ---
-Etter å arbeidet med dette delkapittelet, er målet at du skal:
+Etter å ha jobbet med dette delkapittelet, er målet at du skal:
 * Kunne uttrykke tallmengder ved hjelp av listeform.
 * Kunne uttrykke mengder med punkter ved hjelp av listeform.
 :::
@@ -54,6 +54,7 @@ Tabellen under viser eksempler på mengder skrevet på listeform.
 |:---|:---|
 | $\mathbb{N} = \{1, 2, 3, \ldots\}$| De naturlige tallene. |
 | $\mathbb{Z} = \{\ldots, -2, -1, 0, 1, 2, \ldots\}$ | Heltallene. |
+| $\emptyset = \{\}$ | Den tomme mengden. |
 | $\{1, 2, 3, 4, 5\}$ | Mengden bestående av de fem første naturlige tallene. |
 | $\{1, 3, 5, 7, 9, \ldots, 21\}$ | Mengden bestående av alle positive oddetall opp til og med $21$. |
 | $\{2, 4, 6, 8, 10, \ldots\}$ | Mengden bestående av alle positive partall. |
