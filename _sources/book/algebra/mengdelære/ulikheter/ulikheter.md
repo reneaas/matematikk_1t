@@ -178,6 +178,7 @@ I tabellen under vises noen eksempler på ubegrensede mengder beskrevet med ulik
 | $x \leq 4$ | Alle reelle tall mindre enn eller lik $4$. |
 | $x > 0$ | Alle reelle tall større enn $0$. |
 | $x < -3$ | Alle reelle tall mindre enn $-3$. |
+| $-1 < x$ | Alle reelle tall større enn $-1$. |
 
 :::
 

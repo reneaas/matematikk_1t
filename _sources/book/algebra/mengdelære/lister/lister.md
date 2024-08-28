@@ -83,38 +83,7 @@ file: ./pair_puzzles/underveisoppgaver/underveisoppgave_1.html
 
 ::::
 
-<!-- ::::{admonition} Underveisoppgave 1
 ---
-class: check
----
-Skriv av og fyll ut tabellen under: 
-
-| Mengde | Beskrivelse |
-|:---|:---|
-| $\{1, 3, 5, 7\}$ |  |
-| | Mengden av de fire første positive partallene. |
-| $\{1, 3, 9, 27, 81, \ldots \}$ |  |
-| | Mengden av alle positive kubikktall. |
-| $\{-1, 3, 5\}$ |  |
-| | Mengden bestående av tallene $-2$ og $0$. |
-
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-| Mengde | Beskrivelse |
-|:---|:---|
-| $\{1, 3, 5, 7\}$ | Mengden av de fire første positive oddetallene. |
-| $\{2, 4, 6, 8\}$ | Mengden av de fire første partallene. |
-| $\{1, 3, 9, 27, 81, \ldots \}$ | Mengden av potenser med grunntall $3$. |
-| $\{1^3, 2^3, 3^3, 4^3, \ldots\}$ eller $\{1, 8, 27, 64, \ldots\}$ | Mengden av alle positive kubikktall. |
-| $\{-1, 3, 5\}$ | Mengden av tallene $-1$, $3$ og $5$. |
-| $\{-2, 0\}$ | Mengden bestående av tallene $-2$ og $0$. |
-:::
-:::: -->
-
-
 
 ### Lister med punkter
 
@@ -148,7 +117,7 @@ Skriv av og fyll ut tabellen under:
 | Mengde | Beskrivelse |
 |:---|:---|
 | $\{(0, 1)\}$ |  |
-| | Mengden bestående punktet $(-3, 2)$. |
+| | Mengden bestående av punktet $(-3, 2)$. |
 | $\{(0, 0), (1, 0)\}$ | |
 | | Mengden av punktene $(-2, 0)$ og $(0, 1)$. |
 | $\left\{(-2, 1), (2, 4), \left(\dfrac{1}{2}, -1\right)\right\}$ |  |
