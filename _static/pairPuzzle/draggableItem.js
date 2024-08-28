@@ -13,15 +13,25 @@ class DraggableItem {
     div.dataset.id = this.id;
     div.dataset.pairId = this.pairId;
 
-    // Set the inner HTML content
+    // Set the inner HTML content directly
     div.innerHTML = this.content;
     this.element = div;
 
-    // Render LaTeX content after setting the inner HTML
+    // Apply syntax highlighting if there is a <pre><code> block
+    if (this.containsCodeBlock(this.content)) {
+      hljs.highlightElement(div.querySelector('code'));
+    }
+
+    // Render LaTeX math
     this.renderMath();
 
     this.addDragEvents();
     return div;
+  }
+
+  containsCodeBlock(content) {
+    // Check if the content contains a <pre><code> block
+    return /<pre><code[\s\S]*<\/code><\/pre>/.test(content);
   }
 
   renderMath() {

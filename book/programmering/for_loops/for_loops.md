@@ -148,6 +148,23 @@ for i in range(10, 0, -1):
 
 ---
 
+::::{admonition} Underveisoppgave 1
+---
+class: check
+---
+
+Under vises noen `for`{l=python}-løkker og lister med tall. Tallene som skrives ut i løkkene hører til listene. <br> Pusle sammen riktig løkke med riktig liste.
+:::{raw} html
+---
+file: ./pair_puzzles/underveisoppgave_1.html
+---
+:::
+
+::::
+
+
+---
+
 Nå har du fått litt oversikt over hvordan en enkel `for`{l=python}-løkke fungerer. Nå skal du se på noen matematiske problemer du kan løse ved hjelp av `for`{l=python}-løkker.
 
 
