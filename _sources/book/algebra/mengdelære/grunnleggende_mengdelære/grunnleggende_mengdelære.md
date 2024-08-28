@@ -6,7 +6,7 @@ class: tip
 ---
 Etter dette delkapittelet, er målet at du skal:
 * Kunne forklare hva en mengde er og bruke notasjon for å beskrive om et tall er en del av en mengde eller ikke.
-* Kunne beskrive mengdene $\mathbb{N}$, $\mathbb{Z}$, $\mathbb{Q}$ og $\mathbb{R}$ og gi eksempler på tall som er inneholdt i hver mengde. 
+* Kunne beskrive mengdene $\mathbb{N}$, $\mathbb{Z}$, $\mathbb{Q}$, $\mathbb{R}$ og $\emptyset$, og gi eksempler på tall som er inneholdt i hver mengde. 
 :::
 
 
@@ -26,6 +26,7 @@ class: theory
 | $\mathbb{Z}$ | **Heltallene** | $-3, -2, -1, 0, 1, 2$| Alle heltallene, inkludert 0. |
 | $\mathbb{Q}$ | De **rasjonale** tallene | $-\dfrac{1}{2}, \dfrac{1}{3}, \dfrac{7}{4}, 2$| Alle tall som kan skrives som en brøk der teller og nevner er heltall. |
 | $\mathbb{R}$ | De **reelle** tallene | $\pi, \sqrt{2}, \dfrac{10}{2}$ | Alle tallene på tallinja. | 
+| $\emptyset$ | Den **tomme** mengden | - | Mengden uten noen elementer. |
 
 ::::
 
