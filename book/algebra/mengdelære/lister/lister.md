@@ -67,7 +67,22 @@ Når et mønster gjentar seg bruker vi en *ellipse* (tre prikker $\ldots$) for �
 
 Så er det **din tur**!
 
+
 ::::{admonition} Underveisoppgave 1
+---
+class: check
+---
+Under vises noen lister og beskrivelser som parvis hører sammen. <br> Pusle sammen parene. 
+
+:::{raw} html
+---
+file: ./pair_puzzles/underveisoppgaver/underveisoppgave_1.html
+---
+:::
+
+::::
+
+<!-- ::::{admonition} Underveisoppgave 1
 ---
 class: check
 ---
@@ -96,9 +111,7 @@ class: answer, dropdown
 | $\{-1, 3, 5\}$ | Mengden av tallene $-1$, $3$ og $5$. |
 | $\{-2, 0\}$ | Mengden bestående av tallene $-2$ og $0$. |
 :::
-
-
-::::
+:::: -->
 
 
 

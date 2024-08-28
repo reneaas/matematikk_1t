@@ -1,11 +1,15 @@
 # Oppgavesamling
 
+```{contents} Oversikt
+```
+
 ## Mengder
 
 
 ::::{admonition} Oppgave 1
 ---
 class: problem-level-1
+name: algebra-mengdelære-oppgavesamling-oppgave-1
 ---
 
 Skriv og fyll ut tabellen med $\in$ eller $\notin$.

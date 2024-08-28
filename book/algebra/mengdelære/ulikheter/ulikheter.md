@@ -54,6 +54,21 @@ Så er det **din tur**!
 ---
 class: check
 ---
+Under vises ulikheter og beskrivelser som parvis hører sammen. Pusle sammen parene.
+
+:::{raw} html
+---
+file: ./pair_puzzles/underveisoppgave_1.html
+---
+:::
+
+::::
+
+
+<!-- ::::{admonition} Underveisoppgave 1
+---
+class: check
+---
 Skriv av og fyll ut tabellen:
 
 | Ulikhet | Beskrivelse |
@@ -79,7 +94,7 @@ class: answer, dropdown
 
 :::
 
-::::
+:::: -->
 
 
 ### Ubegrensede mengder 
@@ -173,6 +188,20 @@ Så er det **din tur**!
 ---
 class: check
 ---
+Under vises ulikheter og beskrivelser som parvis hører sammen. Pusle sammen parene.
+
+:::{raw} html
+---
+file: ./pair_puzzles/underveisoppgave_2.html
+---
+:::
+
+:::: 
+
+<!-- ::::{admonition} Underveisoppgave 2
+---
+class: check
+---
 Skriv av og fyll ut tabellen:
 
 | Ulikhet | Beskrivelse |
@@ -199,4 +228,4 @@ class: answer, dropdown
 
 :::
 
-::::
+:::: -->

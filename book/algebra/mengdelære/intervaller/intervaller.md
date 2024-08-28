@@ -44,6 +44,19 @@ Så er det **din tur**!
 ---
 class: check
 ---
+Undervises intervaller og ulikheter som parvis hører sammen. Pusle sammen parene.
+
+:::{raw} html
+---
+file: ./pair_puzzles/underveisoppgave_1.html
+---
+:::
+::::
+
+<!-- ::::{admonition} Underveisoppgave 1
+---
+class: check
+---
 Skriv av og fyll ut tabellen under:
 
 | Ulikhet | Intervall |
@@ -69,9 +82,9 @@ class: answer, dropdown
 | $-2 \leq x \leq 4$ |  $x \in [-2, 4]$ |
 
 :::
+:::: -->
 
 
-::::
 ---
 
 ### Ubegrensede mengder
@@ -107,14 +120,28 @@ Under vises noen eksempler på ulikheter og hvilke intervaller de tilsvarer:
 | $x \leq 4$ | $x\in \langle \gets, 4]$ |
 | $x > 0$ | $x\in \langle 0, \to\rangle$ |
 | $x < -3$ | $x\in \langle \gets, -3\rangle$ |
+| $4 < x$ | $x \in \langle 4, \to\rangle$ |
 
 
 ::::
 
 Så er det **din tur**!
 
-
 ::::{admonition} Underveisoppgave 2
+---
+class: check
+---
+Under vises intervaller og ulikheter som parvis hører sammen. Pusle sammen parene.
+
+:::{raw} html
+---
+file: ./pair_puzzles/underveisoppgave_2.html
+---
+:::
+
+::::
+
+<!-- ::::{admonition} Underveisoppgave 2
 ---
 class: check
 ---
@@ -144,4 +171,4 @@ class: answer, dropdown
 
 :::
 
-::::
+:::: -->
