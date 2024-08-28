@@ -96,10 +96,24 @@ class DropZone {
     this.element.innerHTML = ''; // Clear all children elements
     this.element.appendChild(this.placeholder); // Re-add the placeholder
     this.updatePlaceholderVisibility();
+    this.resetColor();
   }
 
   isCorrect() {
     if (this.items.length !== 2) return false;
     return this.items[0].pairId === this.items[1].pairId;
+  }
+
+  // Add color feedback to the drop zone
+  setCorrect() {
+    this.element.style.backgroundColor = 'lightgreen';
+  }
+
+  setIncorrect() {
+    this.element.style.backgroundColor = 'red';
+  }
+
+  resetColor() {
+    this.element.style.backgroundColor = '';
   }
 }

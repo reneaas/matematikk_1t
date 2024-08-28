@@ -90,16 +90,37 @@ class Game {
     return document.getElementById(`draggable-container-${this.uniqueId}`);
   }
 
+  // async checkAnswer() {
+  //   const results = await Promise.all(this.dropZones.map((zone) => zone.isCorrect()));
+  //   const allCorrect = results.every(result => result);
+  //   if (allCorrect) {
+  //     this.showToast();
+  //   }
+  //   else {
+  //     alert('Prøv igjen!');
+  //   }
+  // }
+
   async checkAnswer() {
     const results = await Promise.all(this.dropZones.map((zone) => zone.isCorrect()));
+    results.forEach((isCorrect, index) => {
+        const dropZone = this.dropZones[index];
+        if (isCorrect) {
+            dropZone.setCorrect(); // Set drop zone to green
+        } else {
+            dropZone.setIncorrect(); // Set drop zone to red
+        }
+    });
+
     const allCorrect = results.every(result => result);
-    if (allCorrect) {
-      this.showToast();
-    }
-    else {
-      alert('Prøv igjen!');
-    }
-  }
+    setTimeout(() => {
+      if (allCorrect) {
+          this.showToast();
+      } else {
+          alert('Prøv igjen!');
+      }
+    }, 100); // 100ms delay to ensure colors are rendered
+}
 
   resetPuzzle() {
     // Reset puzzle by returning all items back to the draggable container

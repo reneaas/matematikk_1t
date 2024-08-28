@@ -31,7 +31,7 @@ class: theory
 ::::
 
 Fra tabellen over kan det hende du la merke til at alle de naturlige tallene også er hele tall, og dermed er alle naturlige tall inkludert i heltallsmengden. På tilsvarende måte vil alle heltall også være rasjonale tall der nevneren er $1$. Derfor er heltallene inkludert i mengden av rasjonale tall. Dette argumentet kan vi føre videre, fordi alle de rasjonale tallene må være reelle tall siden de ligger på tallinja.
-Vi kan illustrere sammenhnegen mellom tallmengdene som i {numref}`mengder_venndiagram`. 
+Vi kan illustrere sammenhengen mellom tallmengdene som i {numref}`mengder_venndiagram`. 
 
 :::{figure} ./figurer/mengder_venndiagram.svg
 ---
