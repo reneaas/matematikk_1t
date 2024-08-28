@@ -90,16 +90,6 @@ class Game {
     return document.getElementById(`draggable-container-${this.uniqueId}`);
   }
 
-  // async checkAnswer() {
-  //   const results = await Promise.all(this.dropZones.map((zone) => zone.isCorrect()));
-  //   const allCorrect = results.every(result => result);
-  //   if (allCorrect) {
-  //     this.showToast();
-  //   }
-  //   else {
-  //     alert('Prøv igjen!');
-  //   }
-  // }
 
   async checkAnswer() {
     const results = await Promise.all(this.dropZones.map((zone) => zone.isCorrect()));
@@ -113,13 +103,16 @@ class Game {
     });
 
     const allCorrect = results.every(result => result);
-    setTimeout(() => {
-      if (allCorrect) {
-          this.showToast();
-      } else {
-          alert('Prøv igjen!');
-      }
-    }, 100); // 100ms delay to ensure colors are rendered
+    if (allCorrect) {
+        this.showToast();
+    }
+    // setTimeout(() => {
+    //   if (allCorrect) {
+    //       this.showToast();
+    //   } else {
+    //       alert('Prøv igjen!');
+    //   }
+    // }, 100); 
 }
 
   resetPuzzle() {
