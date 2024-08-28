@@ -150,7 +150,7 @@ for i in range(10, 0, -1):
 
 ::::{admonition} Underveisoppgave 1
 ---
-class: check
+class: check, full-width
 ---
 
 Under vises noen `for`{l=python}-løkker og lister med tall. Tallene som skrives ut i løkkene hører til listene. <br> Pusle sammen riktig løkke med riktig liste.
