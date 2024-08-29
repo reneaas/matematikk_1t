@@ -28,6 +28,8 @@ $$
 
 Listen kan ha endelig mange elementer, eller den kan være uendelig lang.
 
+Når et mønster gjentar seg bruker vi en *ellipse* (tre prikker $\ldots$) for å indikere at mønsteret fortsetter. Hvis det ikke står et tall både *før* og *etter* ellipsen, betyr det at mønsteret fortsetter i det uendelige.
+
 ::::
 
 ### Lister med tall
@@ -63,7 +65,7 @@ Tabellen under viser eksempler på mengder skrevet på listeform.
 
 <br>
 
-Når et mønster gjentar seg bruker vi en *ellipse* (tre prikker $\ldots$) for å indikere at mønsteret fortsetter. Hvis det ikke står et tall både *før* og *etter* ellipsen, betyr det at mønsteret fortsetter i det uendelige.
+
 ::::
 
 Så er det **din tur**!
