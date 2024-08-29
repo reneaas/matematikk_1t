@@ -1,6 +1,6 @@
 ## Implikasjon og Ekvivalens
 
-Ofte er det en sammenheng mellom to påstander. Noen vil en sann påstand medføre at en annen påstand er sann, andre ganger vil de begge medføre at den andre er sann samtidig. Vi har to måter å uttrykke slike sammenhenger på: 
+Ofte er det en sammenheng mellom to påstander. Noen ganger vil en sann påstand medføre at en annen påstand er sann, andre ganger vil de begge medføre at den andre er sann samtidig. Vi har to måter å uttrykke slike sammenhenger på: 
 
 
 ### Implikasjon
@@ -19,7 +19,6 @@ class: theory
 La $p$ og $q$ være to påstander. Hvis det er slik at når $p$ er sann, så er automatisk $q$ sann, sier vi at $p$ **impliserer** $q$. 
 
 Vi skriver
-
 $$
 p \Rightarrow q
 $$
@@ -47,7 +46,7 @@ $$
 \text{Kari bor i Oslo} \quad \Rightarrow \quad \text{Kari bor i Norge}.
 $$
 
-Det motsatte er ikke tilfellet, for hvis Kari bor i Norge, kan hun bo mange andre steder enn Oslo. Dermed har vi at $p \not \Leftarrow q$ (vi kan skrive begge veier).
+Det motsatte er ikke tilfellet, for hvis Kari bor i Norge, kan hun bo mange andre steder enn Oslo. Dermed har vi at    $p \not \Leftarrow q$    (vi kan skrive begge veier).
 :::
 
 Vi tar et eksempel som er mer matematisk orientert:
@@ -88,11 +87,26 @@ Skriv av og fyll ut tabellen:
 |:-----------:|:----------------------------------:|:-----------:|
 | $x = 3$ |  | $x^2 = 9$ |
 | $y \in \langle -3, 5 \rangle$ |  | $y \in \langle -4, 6\rangle$ |
+|$y \in \langle -4, 6\rangle$|  |$y \in [-4, 6 ]$|
 | $z = 2$ |  | $z \in \mathbb{N}$ |
 | $r \in \mathbb{Z}$ |  | $r \in \mathbb{Q}$ |
 | $s \in \mathbb{R}$ |  | $s \in \mathbb{Q}$ |
 | $t \in \mathbb{N}$ |  | $t \in \mathbb{Z}$ |
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+| $x = 3$ | \in \rangle | $x^2 = 9$ |
+| $y \in \langle -3, 5 \rangle$ | \in \langle | $y \in \langle -4, 6\rangle$ |
+|$y \in \langle -4, 6\rangle$| \in \langle |$y \in [-4, 6 ]$|
+| $z = 2$ | \in \rangle | $z \in \mathbb{N}$ |
+| $r \in \mathbb{Z}$ | \in \rangle | $r \in \mathbb{Q}$ |
+| $s \in \mathbb{R}$ | \in \langle | $s \in \mathbb{Q}$ |
+| $t \in \mathbb{N}$ | \in \rangle | $t \in \mathbb{Z}$ |
+:::
 ::::
+
 
 ### Ekvivalens
 
