@@ -153,7 +153,7 @@ for i in range(10, 0, -1):
 class: check, full-width
 ---
 
-Under vises noen `for`{l=python}-løkker og lister med tall. Tallene som skrives ut i løkkene hører til listene. <br> Pusle sammen riktig løkke med riktig liste.
+Under vises noen `for`{l=python}-løkker og noen følger med tall. <br> Pusle sammen riktig løkke med riktig tallfølge.
 :::{raw} html
 ---
 file: ./pair_puzzles/underveisoppgave_1.html
@@ -380,9 +380,9 @@ Deloppgave 3
     Endre programmet slik at det regner ut $6!!$ <br> Stemmer svaret overens med svaret over?
 :::::
 
+---
 
-
-:::{admonition} Oppgave 5
+:::{admonition} Oppgave 3
 ---
 class: problem-level-3
 ---

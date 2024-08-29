@@ -16,7 +16,7 @@ $$
 p \lor q
 $$
 
-som betyr at enten så er $p$ sann, eller så er $q$ sann, eller så begge er sanne.
+som betyr at enten så er $p$ sann, eller så er $q$ sann, eller så er begge sanne. Vi leser gjerne $p \lor q$ som $p$ er sann *eller* $q$ er sann.
 :::
 
 Vi tar et eksempel som vi kommer til å se gjentatte ganger senere:
