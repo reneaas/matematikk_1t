@@ -13,9 +13,9 @@ Vi kan skrive en begrenset mengde av reelle tall på følgende måter:
 | Ulikhet | Beskrivelse |
 |:---:|---|
 | $a \leq x \leq b$ | Alle reelle tall mellom $a$ og $b$. Både $a$ og $b$ er inkludert. |
-| $a < x < b$ | Alle reelle tall mellom $a$ og $b$. Hverken $a$ eller $b$ er ikke inkludert. |
-| $a \leq x < b$ | Alle reelle tall mellom $a$ og $b$. Her er $a$ er inkludert, mens $b$ er ikke inkludert. |
-| $a < x \leq b$ | Alle reelle tall mellom $a$ og $b$. Her er $a$ er ikke inkludert, mens $b$ er inkludert. |
+| $a < x < b$ | Alle reelle tall mellom $a$ og $b$. $a$ og $b$ er ikke inkludert. |
+| $a \leq x < b$ | Alle reelle tall mellom $a$ og $b$. Her er $a$ inkludert, mens ikke $b$. |
+| $a < x \leq b$ | Alle reelle tall mellom $a$ og $b$. Her er ikke $a$ inkludert, mens $b$ er inkludert. |
 
 <br>
 
