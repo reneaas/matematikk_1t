@@ -47,7 +47,7 @@ $$
 \text{Kari bor i Oslo} \quad \Rightarrow \quad \text{Kari bor i Norge}.
 $$
 
-Det motsatte er ikke tilfellet, for hvis Kari bor i Norge, kan hun bo mange andre steder enn Oslo. Dermed har vi at $p \not \Leftarrow q$ (vi kan skrive begge veier).
+Det motsatte er ikke tilfellet, for hvis Kari bor i Norge, kan hun bo mange andre steder enn Oslo. Dermed har vi at $p \not \Leftarrow q$ (vi kan skrive implikasjonstegnet begge veier).
 :::
 
 Vi tar et eksempel som er mer matematisk orientert:
