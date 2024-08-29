@@ -14,12 +14,6 @@ Fundamentet for all algebra er de algebraiske lovene. Vi kan til sammen formuler
 
 ## De kommutative lovene
 
-De kommutative lovene forteller oss at rekkefølgene
-* Rekkefølgen til leddene i addisjon er likegyldig.
-* Rekkefølgen til faktorene i multiplikasjon er likegyldig.
-
-Vi sier at addisjon og multiplikasjon *kommuterer*.
-
 :::{admonition} De kommutative lovene
 ---
 class: theory
@@ -33,7 +27,11 @@ Multiplikasjon
 : $a \cdot b = b \cdot a$
 :::
 
-Vi tar et eksempel:
+Fra dette får vi at
+* Rekkefølgen til leddene i addisjon er likegyldig.
+* Rekkefølgen til faktorene i multiplikasjon er likegyldig.
+
+Vi sier at addisjon og multiplikasjon *kommuterer*.
 
 ::::{admonition} Eksempel 1: kommutativ lov for addisjon
 ---
@@ -68,3 +66,36 @@ viser grafisk en tolkning av regnestykket $\textcolor{blue}{2} + \textcolor{gree
 Som vi kan se fra figurene, så lander vi på samme posisjon på tallinja uavhengig av rekkefølgen vi velger - altså er addisjon kommutativ.
 
 ::::
+
+
+## Den assosiative lov
+:::{admonition} De kommutative lovene
+---
+class: theory
+---
+For tre tall $a$, $b$ og $c$ gjelder:
+
+Addisjon: 
+: $ a+b+c = (a+b)+c = a+(b+c) $
+
+Multiplikasjon
+: $ a \cdot b \cdot c = (a \cdot b)\cdot c = a \cdot (b \cdot c) $
+
+:::
+
+Fra dette får vi at 
+:rekkefølgen som vi legger sammen tallene på er likegyldig
+:rekkefølgen som vi ganger sammen tallene på er likegyldig
+
+Dette gjelder ikke for subtraksjon hvor rekkefølgen på tallene er viktig.
+:::{admonition} Eksempel 2
+---
+class: example
+---
+For tre tall $a$, $b$ og $c$ gjelder:
+$$ : $ a-b-c = (a-b)-c = a-(b+c) $
+:::
+
+## Den distributive lov
+Denne loven soer hvordan en parentes skal multipliseres ut, men blir mye brukt baklengs for å faktorisere et uttrykk:
+:$ a \cdot (b+c) $
