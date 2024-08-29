@@ -46,7 +46,15 @@ $$
 \text{Kari bor i Oslo} \quad \Rightarrow \quad \text{Kari bor i Norge}.
 $$
 
-Det motsatte er ikke tilfellet, for hvis Kari bor i Norge, kan hun bo mange andre steder enn Oslo. Dermed har vi at    $p \not \Leftarrow q$    (vi kan skrive begge veier).
+
+Det motsatte er ikke tilfellet, for hvis Kari bor i Norge, kan hun bo mange andre steder enn Oslo. Dermed har vi at 
+
+$$
+\text{Kari bor i Oslo} \quad \not \Leftarrow \quad \text{Kari bor i Norge}.
+$$
+
+
+Her kan vi merke oss at vi kan skrive implikasjonspilen mot venstre også. Når det *ikke* er en implikasjon, skriver vi en strek gjennom pilen. Pilen leses da som "impliserer ikke".
 :::
 
 Vi tar et eksempel som er mer matematisk orientert:

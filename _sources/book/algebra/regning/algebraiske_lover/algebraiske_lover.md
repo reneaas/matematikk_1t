@@ -67,35 +67,85 @@ Som vi kan se fra figurene, så lander vi på samme posisjon på tallinja uavhen
 
 ::::
 
+---
 
-## Den assosiative lov
-:::{admonition} De kommutative lovene
+## De assosiative lovene
+
+De assosiative lovene forteller oss at 
+* Rekkefølgen på hvilke ledd som adderes i en sum med tre eller flere ledd er likegyldig.
+* Rekkefølgen på hvilke faktorer som multipliseres i et produkt med tre eller flere faktorer er likegyldig.
+
+:::{admonition} De assosiative lovene
 ---
 class: theory
 ---
-For tre tall $a$, $b$ og $c$ gjelder:
+Gitt tre tall $a$, $b$ og $c$ gjelder:
 
-Addisjon: 
-: $ a+b+c = (a+b)+c = a+(b+c) $
+Addisjon
+: $(a + b) + c = a + (b + c)$
 
 Multiplikasjon
-: $ a \cdot b \cdot c = (a \cdot b)\cdot c = a \cdot (b \cdot c) $
+: $(a \cdot b) \cdot c = a \cdot (b \cdot c)$
 
 :::
 
-Fra dette får vi at 
-:rekkefølgen som vi legger sammen tallene på er likegyldig
-:rekkefølgen som vi ganger sammen tallene på er likegyldig
+Vi tar et eksempel:
 
-Dette gjelder ikke for subtraksjon hvor rekkefølgen på tallene er viktig.
-:::{admonition} Eksempel 2
+::::{admonition} Eksempel 2: assosiative lov for addisjon
 ---
 class: example
 ---
-For tre tall $a$, $b$ og $c$ gjelder:
-$$ : $ a-b-c = (a-b)-c = a-(b+c) $
-:::
+Vi setter prøve på de to lovene:
 
-## Den distributive lov
-Denne loven soer hvordan en parentes skal multipliseres ut, men blir mye brukt baklengs for å faktorisere et uttrykk:
-:$ a \cdot (b+c) $
+Addisjon
+: Vi ser på regnestykket 
+
+    $$
+    2 + 3 + 5
+    $$
+
+    Vi regner det ut på de to måtene:
+
+    $$
+    (2 + 3) + 5 = 5 + 5 = 10 \quad \text{og} \quad 2 + (3 + 5) = 2 + 8 = 10
+    $$
+
+    Vi får altså samme svar uansett hvilke to ledd vi legger sammen først.
+
+<br>
+
+Multiplikasjon
+: Vi ser på regnestykket
+    
+    $$
+    2 \cdot 3 \cdot 5
+    $$
+
+    Vi regner det ut på to måter:
+
+    $$
+    (2 \cdot 3) \cdot 5 = 6 \cdot 5 = 30 \quad \text{og} \quad 2 \cdot (3 \cdot 5) = 2 \cdot 15 = 30
+    $$
+
+    Vi får altså det samme svar uansett hvilke to faktorer vi multipliserer først.
+::::
+
+---
+
+## De distributive lovene
+
+De distributive lovene forteller oss hvordan vi skal åpne parenteser:
+
+:::{admonition} De distributive lovene
+---
+class: theory
+---
+Gitt tre tall $a$, $b$ og $c$, gjelder:
+
+Addisjon
+: $a + (b - c) = a + b - c$
+: $ a - (b - c) = a - b + c$
+
+Multiplikasjon
+: $a \cdot (b + c) = a \cdot b + a \cdot c$
+:::
