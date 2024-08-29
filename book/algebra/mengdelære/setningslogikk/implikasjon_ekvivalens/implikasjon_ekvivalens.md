@@ -97,13 +97,13 @@ Skriv av og fyll ut tabellen:
 ---
 class: answer, dropdown
 ---
-| $x = 3$ | \in \rangle | $x^2 = 9$ |
-| $y \in \langle -3, 5 \rangle$ | \in \langle | $y \in \langle -4, 6\rangle$ |
-|$y \in \langle -4, 6\rangle$| \in \langle |$y \in [-4, 6 ]$|
-| $z = 2$ | \in \rangle | $z \in \mathbb{N}$ |
-| $r \in \mathbb{Z}$ | \in \rangle | $r \in \mathbb{Q}$ |
-| $s \in \mathbb{R}$ | \in \langle | $s \in \mathbb{Q}$ |
-| $t \in \mathbb{N}$ | \in \rangle | $t \in \mathbb{Z}$ |
+| $x = 3$ |  \Rightarrow | $x^2 = 9$ |
+| $y \in \langle -3, 5 \rangle$ | \Leftarrow | $y \in \langle -4, 6\rangle$ |
+|$y \in \langle -4, 6\rangle$| \Leftarrow |$y [-4, 6 ]$|
+| $z = 2$ |  \Rightarrow | $z \in \mathbb{N}$ |
+| $r \in \mathbb{Z}$ | \Rightarrow | $r \in \mathbb{Q}$ |
+| $s \in \mathbb{R}$ | \Leftarrow | $s \in \mathbb{Q}$ |
+| $t \in \mathbb{N}$ | \Rightarrow | $t \in \mathbb{Z}$ |
 :::
 ::::
 
