@@ -14,12 +14,6 @@ Fundamentet for all algebra er de algebraiske lovene. Vi kan til sammen formuler
 
 ## De kommutative lovene
 
-De kommutative lovene forteller oss at rekkefølgene
-* Rekkefølgen til leddene i addisjon er likegyldig.
-* Rekkefølgen til faktorene i multiplikasjon er likegyldig.
-
-Vi sier at addisjon og multiplikasjon *kommuterer*.
-
 :::{admonition} De kommutative lovene
 ---
 class: theory
@@ -33,7 +27,11 @@ Multiplikasjon
 : $a \cdot b = b \cdot a$
 :::
 
-Vi tar et eksempel:
+Fra dette får vi at
+* Rekkefølgen til leddene i addisjon er likegyldig.
+* Rekkefølgen til faktorene i multiplikasjon er likegyldig.
+
+Vi sier at addisjon og multiplikasjon *kommuterer*.
 
 ::::{admonition} Eksempel 1: kommutativ lov for addisjon
 ---
