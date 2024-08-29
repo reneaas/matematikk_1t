@@ -59,7 +59,7 @@ Tabellen under viser eksempler på mengder skrevet på listeform.
 | $\{1, 3, 5, 7, 9, \ldots, 21\}$ | Mengden bestående av alle positive oddetall opp til og med $21$. |
 | $\{2, 4, 6, 8, 10, \ldots\}$ | Mengden bestående av alle positive partall. |
 | $\{1, 4, 9, 16, 25, \ldots\}$ eller $\{1^2, 2^2, 3^2, 4^2, 5^2, \ldots \}$ | Mengden bestående av kvadrattallene. |
-| $\{1, 2, 4, 8, 16, 32, \ldots\}$ | Mengden av alle potenser av med grunntall $2$. |
+| $\{1, 2, 4, 8, 16, 32, \ldots\}$ | Mengden av alle potenser med grunntall $2$. |
 
 <br>
 
