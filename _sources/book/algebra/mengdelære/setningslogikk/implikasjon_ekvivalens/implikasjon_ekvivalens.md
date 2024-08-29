@@ -173,6 +173,20 @@ Fyll ut tabellen under med $\Leftrightarrow$, $\Leftarrow$ eller $\Rightarrow$ s
 | $-2 < x < 3$ | | $x \in \langle -2, 3 \rangle$ |
 | $x = -5$ |  | $\|x\| = 5$ |
 
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+| Påstand $p$ |  $\Leftrightarrow$, $\Leftarrow$ eller $\Rightarrow$ | Påstand $q$ |
+|:-----------:|:-------------------------------------------------------:|:-----------:|
+| $x = 3$ |  \Rightarrow | $x^2 = 9$ |
+| $y \in \langle -3, 5 \rangle$ | \Leftrightarrow | $y \in \langle -4, 6\rangle$ |
+|$y \in \langle -4, 6\rangle$| \Leftarrow |$y [-4, 6]$|
+| $z = 2$ |  \Rightarrow | $z \in \mathbb{N}$ |
+| $r \in \mathbb{Z}$ | \Leftrightarrow | $r \in \mathbb{Q}$ |
+| $s \in \mathbb{R}$ | \Leftrightarrow | $s \in \mathbb{Q}$ |
+| $t \in \mathbb{N}$ | \Rightarrow | $t \in \mathbb{Z}$ |
+:::
 ::::
 
 
