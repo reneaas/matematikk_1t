@@ -44,7 +44,7 @@ Så er det **din tur**!
 ---
 class: check
 ---
-Undervises intervaller og ulikheter som parvis hører sammen. Pusle sammen parene.
+Under vises intervaller og ulikheter som parvis hører sammen. Pusle sammen parene.
 
 :::{raw} html
 ---
