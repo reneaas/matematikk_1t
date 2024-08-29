@@ -97,9 +97,11 @@ Skriv av og fyll ut tabellen:
 ---
 class: answer, dropdown
 ---
+| Påstand $p$ |  $\Leftarrow$ eller $\Rightarrow$| Påstand $q$ |
+|:-----------:|:----------------------------------:|:-----------:|
 | $x = 3$ |  \Rightarrow | $x^2 = 9$ |
 | $y \in \langle -3, 5 \rangle$ | \Leftarrow | $y \in \langle -4, 6\rangle$ |
-|$y \in \langle -4, 6\rangle$| \Leftarrow |$y [-4, 6 ]$|
+|$y \in \langle -4, 6\rangle$| \Leftarrow |$y [-4, 6]$|
 | $z = 2$ |  \Rightarrow | $z \in \mathbb{N}$ |
 | $r \in \mathbb{Z}$ | \Rightarrow | $r \in \mathbb{Q}$ |
 | $s \in \mathbb{R}$ | \Leftarrow | $s \in \mathbb{Q}$ |
