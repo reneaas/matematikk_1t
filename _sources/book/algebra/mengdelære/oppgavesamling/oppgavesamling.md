@@ -211,8 +211,6 @@ Her er noen eksempler:
 x = 2 \quad &\Leftrightarrow \quad L = \{2\} && \text{Likning med én løsning} \\
 \\
 x = -1 \, \lor \, x = 3 \quad &\Leftrightarrow \quad L = \{-1, 3\} && \text{Likning med to løsninger} \\
-\\
-x = -2 \, \land \, y = 3 \quad &\Leftrightarrow \quad L = \{(-2, 3)\} && \text{Likningssystem med én løsning}
 \end{align*}
 
 <br>

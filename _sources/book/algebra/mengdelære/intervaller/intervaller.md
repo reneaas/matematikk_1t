@@ -1,5 +1,15 @@
 
 ## Mengder som intervaller
+
+:::{admonition} Læringsmål
+---
+class: tip
+---
+Etter å ha gått gjennom dette delkapittelet, er målet at du skal:
+* Kunne beskrive begrensede og ubegrensede mengder av reelle tall ved hjelp av intervaller.
+:::
+
+
 Når vi skal uttrykke en mengde reelle tall som ligger på en sammenhengende del av tallinja, bruker vi ofte **intervaller**. Vi skal illustrere notasjonen ved å sammenlikne med de tilsvarende ulikhetene.
 
 ### Begrensede mengder

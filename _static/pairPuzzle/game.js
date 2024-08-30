@@ -133,7 +133,7 @@ class Game {
       toast.className = 'toast';
       toast.style.display = 'none';
       toast.innerHTML = `
-          <p>Riktig! Bra jobba! 🔥</p>
+          <p>Riktig! 🔥</p>
       `;
 
       document.body.appendChild(toast);

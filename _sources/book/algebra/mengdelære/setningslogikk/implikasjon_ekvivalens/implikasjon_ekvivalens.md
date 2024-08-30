@@ -9,21 +9,22 @@ Ofte er det en sammenheng mellom to påstander. Noen ganger vil en sann påstand
 ---
 class: sidenote, margin
 ---
-Det er vanlig å bruke symbolene $p$ og $q$ for påstander. 
+Det er vanlig å bruke symbolene $P$ og $Q$ for påstander. 
 :::
 
 :::{admonition} Implikasjon
 ---
 class: theory
 ---
-La $p$ og $q$ være to påstander. Hvis det er slik at når $p$ er sann, så er automatisk $q$ sann, sier vi at $p$ **impliserer** $q$. 
+La $P$ og $Q$ være to påstander. Hvis det er slik at når $P$ er sann, så er automatisk $Q$ sann, sier vi at $P$ **impliserer** $Q$. 
 
 Vi skriver
+
 $$
-p \Rightarrow q
+P \Rightarrow Q
 $$
 
-Hvis $p$ *ikke* impliserer $q$, skriver vi $p \not \Rightarrow q$.
+Hvis $P$ *ikke* impliserer $Q$, skriver vi $P \not \Rightarrow Q$.
 :::
 
 Vi går løs på et eksempel:
@@ -34,13 +35,13 @@ class: example
 ---
 To har to påstander som følger:
 
-Vi har to påstander $p$ og $q$ som følger:
+Vi har to påstander $P$ og $Q$ som følger:
 
 $$
-p = \text{Kari bor i Oslo} \quad \text{og} \quad q = \text{Kari bor i Norge}.
+P = \text{Kari bor i Oslo} \quad \text{og} \quad Q = \text{Kari bor i Norge}.
 $$
 
-Hvis $p$ er sann, så er også $q$ sann. Derfor kan vi skrive $p \Rightarrow q$, eller mer eksplisitt:
+Hvis $P$ er sann, så er også $Q$ sann. Derfor kan vi skrive $P \Rightarrow Q$, eller mer eksplisitt:
 
 $$
 \text{Kari bor i Oslo} \quad \Rightarrow \quad \text{Kari bor i Norge}.
@@ -65,13 +66,13 @@ class: example
 ---
 Vi tenker oss to påstander:
 
-| Påstand $p$ | Påstand $q$ |
+| Påstand $P$ | Påstand $Q$ |
 |:-----------:|:-----------:|
 | $x = 4$ | $x^2 = 16$ |
 
 <br>
 
-Hvis $p$ er sann, så er også $q$ sann siden $4^2 = 16$. Derfor kan vi skrive at 
+Hvis $P$ er sann, så er også $Q$ sann siden $4^2 = 16$. Derfor kan vi skrive at 
 
 $$
 x = 4 \quad \Rightarrow \quad x^2 = 16.
@@ -91,7 +92,7 @@ class: check
 ---
 Skriv av og fyll ut tabellen: 
 
-| Påstand $p$ |  $\Leftarrow$ eller $\Rightarrow$| Påstand $q$ |
+| Påstand $P$ |  $\Leftarrow$ eller $\Rightarrow$| Påstand $Q$ |
 |:-----------:|:----------------------------------:|:-----------:|
 | $x = 3$ |  | $x^2 = 9$ |
 | $y \in \langle -3, 5 \rangle$ |  | $y \in \langle -4, 6\rangle$ |
@@ -105,15 +106,15 @@ Skriv av og fyll ut tabellen:
 ---
 class: answer, dropdown
 ---
-| Påstand $p$ |  $\Leftarrow$ eller $\Rightarrow$| Påstand $q$ |
+| Påstand $P$ |  $\Leftarrow$ eller $\Rightarrow$| Påstand $Q$ |
 |:-----------:|:----------------------------------:|:-----------:|
-| $x = 3$ |  \Rightarrow | $x^2 = 9$ |
-| $y \in \langle -3, 5 \rangle$ | \Leftarrow | $y \in \langle -4, 6\rangle$ |
-|$y \in \langle -4, 6\rangle$| \Leftarrow |$y [-4, 6]$|
-| $z = 2$ |  \Rightarrow | $z \in \mathbb{N}$ |
-| $r \in \mathbb{Z}$ | \Rightarrow | $r \in \mathbb{Q}$ |
-| $s \in \mathbb{R}$ | \Leftarrow | $s \in \mathbb{Q}$ |
-| $t \in \mathbb{N}$ | \Rightarrow | $t \in \mathbb{Z}$ |
+| $x = 3$ |  $\Rightarrow$ | $x^2 = 9$ |
+| $y \in \langle -3, 5 \rangle$ | $\Leftarrow$ | $y \in \langle -4, 6\rangle$ |
+|$y \in \langle -4, 6\rangle$| $\Leftarrow$ |$y \in [-4, 6]$|
+| $z = 2$ |  $\Rightarrow$ | $z \in \mathbb{N}$ |
+| $r \in \mathbb{Z}$ | $\Rightarrow$ | $r \in \mathbb{Q}$ |
+| $s \in \mathbb{R}$ | $\Leftarrow$ | $s \in \mathbb{Q}$ |
+| $t \in \mathbb{N}$ | $\Rightarrow$ | $t \in \mathbb{Z}$ |
 :::
 ::::
 
@@ -124,14 +125,14 @@ class: answer, dropdown
 ---
 class: theory
 ---
-La $p$ og $q$ være to påstander. Hvis det er slik at $p$ er sann bare hvis $q$ er sann, og $q$ er sann bare hvis $p$ er sann, så sier vi at $p$ og $q$ er **ekvivalente** påstander.
+La $P$ og $Q$ være to påstander. Hvis det er slik at $P$ er sann bare hvis $Q$ er sann, og $Q$ er sann bare hvis $P$ er sann, så sier vi at $P$ og $Q$ er **ekvivalente** påstander.
 Vi skriver
 
 $$
-p \Leftrightarrow q
+P \Leftrightarrow Q
 $$
 
-Vi leser dette som "$p$ er sann hvis og bare hvis $q$ er sann".
+Vi leser dette som "$P$ er sann hvis og bare hvis $Q$ er sann".
 ::::
 
 
@@ -148,15 +149,15 @@ En mye brukt størrelse i matematikken kalles for **absoluttverdien** av et tall
 ---
 class: example
 ---
-Vi har to påstander $p$ og $q$ som følger:
+Vi har to påstander $P$ og $Q$ som følger:
 
-| Påstand $p$ | Påstand $q$ |
+| Påstand $P$ | Påstand $Q$ |
 |:-----------:|:-----------:|
 | $\|x\| = 4$ | $x^2 = 16$ |
 
 <br>
 
-Vi kan merke oss at $|x| = 4$ er sann hvis og bare hvis $x = 4$ eller $x = -4$. Men det samme er sant for $x^2 = 16$. Derfor har vi at påstand $p$ er kun sann hvis $q$ er sann, og motsatt. Men da betyr dette at de to påstandene er ekvivalente. Derfor kan vi skrive at 
+Vi kan merke oss at $|x| = 4$ er sann hvis og bare hvis $x = 4$ eller $x = -4$. Men det samme er sant for $x^2 = 16$. Derfor har vi at påstand $P$ er kun sann hvis $Q$ er sann, og motsatt. Men da betyr dette at de to påstandene er ekvivalente. Derfor kan vi skrive at 
 
 $$
 |x| = 4 \quad \Leftrightarrow \quad x^2 = 16.
@@ -172,7 +173,7 @@ class: check
 ---
 Fyll ut tabellen under med $\Leftrightarrow$, $\Leftarrow$ eller $\Rightarrow$ slik at hver rad blir en sann påstand.
 
-| Påstand $p$ |  $\Leftrightarrow$, $\Leftarrow$ eller $\Rightarrow$ | Påstand $q$ |
+| Påstand $P$ |  $\Leftrightarrow$, $\Leftarrow$ eller $\Rightarrow$ | Påstand $Q$ |
 |:-----------:|:-------------------------------------------------------:|:-----------:|
 | $x = 3$ |  | $x^2 = 9$ |
 | $x = -2$ eller $x = 2$ |  | $x^2 = 4$ |
@@ -185,7 +186,7 @@ Fyll ut tabellen under med $\Leftrightarrow$, $\Leftarrow$ eller $\Rightarrow$ s
 ---
 class: answer, dropdown
 ---
-| Påstand $p$ |  $\Leftrightarrow$, $\Leftarrow$ eller $\Rightarrow$ | Påstand $q$ |
+| Påstand $P$ |  $\Leftrightarrow$, $\Leftarrow$ eller $\Rightarrow$ | Påstand $Q$ |
 |:-----------:|:-------------------------------------------------------:|:-----------:|
 | $x = 3$ |  \Rightarrow | $x^2 = 9$ |
 | $y \in \langle -3, 5 \rangle$ | \Leftrightarrow | $y \in \langle -4, 6\rangle$ |
