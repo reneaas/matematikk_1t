@@ -10,13 +10,15 @@ Logisk *eller* brukes når en av to påstander er sanne, eller begge.
 ---
 class: theory
 ---
-La $p$ og $q$ være to påstander. Da kan vi lage oss en ny påstand ved å skrive 
+La $P$ og $Q$ være to påstander. Da kan vi lage oss en ny påstand ved å skrive 
 
 $$
-p \lor q
+P \lor Q
 $$
 
-som betyr at enten så er $p$ sann, eller så er $q$ sann, eller så er begge sanne. Vi leser gjerne $p \lor q$ som $p$ er sann *eller* $q$ er sann.
+som betyr at enten så er $P$ sann, eller så er $Q$ sann, eller så er begge sanne. 
+
+Vi leser $P \lor Q$ som "$P$ er sann *eller* $Q$ er sann".
 :::
 
 Vi tar et eksempel som vi kommer til å se gjentatte ganger senere:
@@ -79,13 +81,15 @@ Logisk *og* bruker vi når vi skal kombinere to påstander sammen, der begge to 
 ---
 class: theory
 ---
-La $p$ og $q$ være to påstander. Da kan vi lage oss en ny påstand ved å skrive
+La $P$ og $Q$ være to påstander. Da kan vi lage oss en ny påstand ved å skrive
 
 $$
-p \land q
+P \land Q
 $$
 
-som uttrykker at $p$ og $q$ må være sanne *samtidig*. Vi leser gjerne $p \land q$ som $p$ er sann *og samtidig* er $q$ sann.
+som uttrykker at $P$ og $Q$ må være sanne *samtidig*. 
+
+Vi leser $P \land Q$ som "$P$ er sann *og samtidig* er $Q$ sann".
 :::
 
 Vi tar et eksempel på en typisk tilfelle der vi får bruk for dette:

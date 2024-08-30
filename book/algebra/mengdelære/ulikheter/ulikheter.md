@@ -1,5 +1,13 @@
 # Mengder som ulikheter
 
+:::{admonition} Læringsmål
+---
+class: tip
+---
+Etter å ha gått gjennom dette delkapittelet, er målet at du skal:
+* Kunne beskrive begrensede og ubegrensede mengder av reelle tall ved hjelp av ulikheter.
+:::
+
 Når vi har en mengde som består av reelle tall på en avgrenset del av tallinja, kan vi beskrive denne mengden ved hjelp av ulikheter. Dette kan både være begrensede og ubegrensede mengder. 
 
 ### Begrensede mengder
@@ -12,10 +20,10 @@ Vi kan skrive en begrenset mengde av reelle tall på følgende måter:
 
 | Ulikhet | Beskrivelse |
 |:---:|---|
-| $a \leq x \leq b$ | Alle reelle tall mellom $a$ og $b$. Både $a$ og $b$ er inkludert. |
-| $a < x < b$ | Alle reelle tall mellom $a$ og $b$. $a$ og $b$ er ikke inkludert. |
-| $a \leq x < b$ | Alle reelle tall mellom $a$ og $b$. Her er $a$ inkludert, mens ikke $b$. |
-| $a < x \leq b$ | Alle reelle tall mellom $a$ og $b$. Her er ikke $a$ inkludert, mens $b$ er inkludert. |
+| $a \leq x \leq b$ | Alle reelle tall større enn eller lik $a$ og mindre enn eller lik $b$. |
+| $a < x < b$ | Alle reelle tall større enn $a$ og mindre enn $b$. |
+| $a \leq x < b$ | Alle reelle tall større enn eller lik $a$ og mindre enn $b$. |
+| $a < x \leq b$ | Alle reellle tall større enn $a$ og mindre enn eller lik $b$. |
 
 <br>
 
@@ -41,10 +49,10 @@ I tabellen vises ulike eksempler på ulikheter og hvilke intervaller de tilsvare
 
 | Ulikhet | Beskrivelse |
 | :---: | --- |
-| $-1 \leq x \leq 1$ | Alle reelle tall $x$ mellom $-1$ og $1$. Både $-1$ og $1$ er inkludert.|
-| $0 < x < 3$ | Alle reelle tall $x$ mellom $0$ og $3$. Hverken $0$ eller $3$ er inkludert. |
-| $2 \leq x < 5$ | Alle reelle tall $x$ mellom $2$ og $5$. Her er $2$ inkludert, men ikke $5$. |
-| $-4 < x \leq 1$ | Alle reelle tall $x$ mellom $-4$ og $1$. Her er $1$ inkludert, men ikke $-4$. |
+| $-1 \leq x \leq 1$ | Alle reelle tall større enn eller lik $-1$ og mindre enn eller lik $1$.|
+| $0 < x < 3$ | Alle reelle tall større enn $0$ og mindre enn $3$. |
+| $2 \leq x < 5$ | Alle reelle tall større enn eller lik $2$ og mindre enn $5$. |
+| $-4 < x \leq 1$ | Alle reelle tall større enn $-4$ og mindre enn eller lik $1$. |
 ::::
 
 Så er det **din tur**!
@@ -124,12 +132,12 @@ Ubegrensende mengder som kan beskrives med ulikheter kommer i to varianter:
 Oppad begrenset
 : | Ulikhet | Beskrivelse |
     |:---:|:---|
-    | $x < b$ | Alle reelle tall $x$ som er mindre enn $b$. Endepunktet $b$ er ekskludert. |
-    | $x \leq b$ | Alle reelle tall $x$ som er mindre enn eller lik $b$. Endepunktet $b$ er altså inkludert. |
+    | $x < b$ | Alle reelle tall $x$ som er mindre enn $b$ |
+    | $x \leq b$ | Alle reelle tall $x$ som er mindre enn eller lik $b$. |
     
     <br>
 
-    Mengden er begrenset *ovenfra*, men ikke nedenfra. {numref}`fig-algebra-lister-ulikheter-intervaller-teori-oppad-begrenset-mengde` illustrerer betydningen av notasjonen grafisk.
+    Mengden er begrenset *ovenfra*, men ikke nedenfra. {numref}`fig-algebra-lister-ulikheter-intervaller-teori-oppad-begrenset-mengde` illustrerer grafisk hvilken del av tallinja det er snakk om.
 
     :::{figure} ./figurer/teori/oppad_begrenset_mengde.svg
     ---
@@ -144,12 +152,12 @@ Oppad begrenset
 Nedad begrenset
 : | Ulikhet | Beskrivelse | 
     |:---:|:---|
-    | $x > a$ |  Alle reelle tall $x$ som er større enn $a$. |
-    | $x \geq a$ | Alle reelle tall $x$ som er større enn eller lik $a$. Altså er endepunktet $a$ inkludert. |
+    | $x > a$ |  Alle reelle tall $x$ som er større enn $a$. Skrives iblant som $a < x$. |
+    | $x \geq a$ | Alle reelle tall $x$ som er større enn eller lik $a$. Skrives iblant som $a \leq x$. |
 
     <br>
 
-    Mengden er begrenset nedenfra, men ikke ovenfra. {numref}`fig-algebra-lister-ulikheter-intervaller-teori-nedad-begrenset-mengde` illustrerer betydningen av notasjonen grafisk.
+    Mengden er begrenset nedenfra, men ikke ovenfra. {numref}`fig-algebra-lister-ulikheter-intervaller-teori-nedad-begrenset-mengde` illustrerer grafisk hvilken del av tallinja det er snakk om.
 
     :::{figure} ./figurer/teori/nedad_begrenset_mengde.svg
     ---

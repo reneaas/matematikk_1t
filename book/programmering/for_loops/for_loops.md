@@ -6,7 +6,7 @@
 class: tip
 ---
 Etter å ha gått gjennom dette delkapittelet, er målet at du skal kunne:
-* Lese og forstå `for`{l=python}-løkker som brukes `range`{l=python}-funksjonen.
+* Lese og forstå `for`{l=python}-løkker som bruker `range`{l=python}-funksjonen.
 * Skrive grunnleggende `for`{l=python}-løkker som bruker `range`{l=python}-funksjonen til å løse matematiske problemer.
 
 :::
@@ -17,16 +17,18 @@ En `for`{l=python}-løkke er noe som brukes til å gjenta en eller flere linjer 
 
 :::::{admonition} Utforsk 1
 ---
-class: explore,
+class: explore
 ---
-Her skal du bli kjent med kommandoen
+Her skal du bli kjent med `for`{l=python}-løkker på formen:
 
 ```{code-block} python
 for i in range(a, b, c):
     ...
 ```
 
-som ofte brukes til å lage `for`{l=python}-løkker. Under vises et interaktivt kodevindu. 
+som ofte brukes når man løser matematiske problemer med Pythonkode.
+
+Under vises et interaktivt kodevindu. Her kan du kjøre kode. 
 
 ```{raw} html
 ---

@@ -7,14 +7,18 @@ class: tip
 ---
 Etter å ha jobbet med dette delkapittelet, er målet at du skal:
 * Kunne uttrykke tallmengder ved hjelp av listeform.
-* Kunne uttrykke mengder med punkter ved hjelp av listeform.
 :::
 
-Når vi jobber med mengder som består av utvalgte tall eller tall som følger et mønster, bruker vi **listeform** for å uttrykke tallene i mengden. Andre ganger vil vi ønske å uttrykke en mengde med punkter ved hjelp av listeform.
-* **Lister med tall**
-* **Lister med punkter**
+Når vi jobber med mengder som består av utvalgte tall eller tall som følger et mønster, bruker vi **listeform** for å uttrykke tallene i mengden. Vi kan ha en begrenset mengde tall der vi har et endelig antall elementer, eller vi kan ha en ubegrenset mengde der vi har uendelig mange elementer.
 
 Før vi ser på konkrete eksempler, skal vi se på den generelle notasjonen.
+
+::::{admonition} Notasjon: ellipse ($\ldots$)
+---
+class: sidenote, margin
+---
+Når et mønster gjentar seg bruker vi en *ellipse*. Dette er tre prikker ($\ldots$) som forteller oss at mønsteret fortsetter. Hvis det ikke står et tall både *før* og *etter* ellipsen, betyr det at mønsteret fortsetter i det uendelige.
+::::
 
 ::::{admonition} Listeform for mengder
 ---
@@ -27,8 +31,6 @@ L = \{\text{Element 1}, \text{Element 2}, \text{Element 3}, \ldots, \text{Elemen
 $$
 
 Listen kan ha endelig mange elementer, eller den kan være uendelig lang.
-
-Når et mønster gjentar seg bruker vi en *ellipse* (tre prikker $\ldots$) for å indikere at mønsteret fortsetter. Hvis det ikke står et tall både *før* og *etter* ellipsen, betyr det at mønsteret fortsetter i det uendelige.
 
 ::::
 
@@ -43,7 +45,7 @@ Vi går løs på et eksempel for å illustrere notasjonen:
 ---
 class: sidenote, margin
 ---
-Når vi jobber med likninger og likningssystemer kommer vi til å få nytte av å uttrykke løsningene ved hjelp av lister - spesielt når det er mer enn én løsning til likningen eller likningssystemet.
+Lister med tall blir nyttig når vi ønsker å uttrykke løsningene til en likning som har mer enn én løsning. 
 :::
 
 ::::{admonition} Eksempel 1
@@ -85,59 +87,4 @@ file: ./pair_puzzles/underveisoppgaver/underveisoppgave_1.html
 
 ::::
 
----
 
-### Lister med punkter
-
-I blant får vi også bruk for å lage lister som består av punkter. Dette vil spesielt dukke opp når vi jobber med likningssystemer. 
-
-Vi tar et eksempel:
-
-::::{admonition} Eksempel 2
----
-class: example
----
-Tabellen under viser noen eksempler på mengder som består av punkter:
-
-| Mengde | Beskrivelse |
-|:---|:---|
-| $\{(0, 2)\}$ | Mengden som inneholder punktet $(0, 2)$. |
-| $\{(1, 2), (3, 4)\}$ | Mengden av punktene $(1, 2)$ og $(3, 4)$. |
-| $\{(1, 2), (3, 4), (5, 6)\}$ | Mengden av punktene $(1, 2)$, $(3, 4)$ og $(5, 6)$. |
-| $\{(1, 2), (3, 4), (5, 6), \ldots\}$ | Mengden av punktene $(1, 2)$, $(3, 4)$, $(5, 6)$ og så videre. |
-::::
-
-
-Så er det **din tur**!
-
-::::{admonition} Underveisoppgave 2
----
-class: check
----
-Skriv av og fyll ut tabellen under:
-
-| Mengde | Beskrivelse |
-|:---|:---|
-| $\{(0, 1)\}$ |  |
-| | Mengden bestående av punktet $(-3, 2)$. |
-| $\{(0, 0), (1, 0)\}$ | |
-| | Mengden av punktene $(-2, 0)$ og $(0, 1)$. |
-| $\left\{(-2, 1), (2, 4), \left(\dfrac{1}{2}, -1\right)\right\}$ |  |
-| | Mengden som består av punktene $(1, 0)$, $(0, 1)$, $(-1, 2)$ og så videre. |
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-| Mengde | Beskrivelse |
-|:---|:---|
-| $\{(0, 1)\}$ | Mengden bestående av punktet $(0, 1)$ |
-| $\{(-3, 2)\}$ | Mengden bestående punktet $(-3, 2)$. |
-| $\{(0, 0), (1, 0)\}$ | Mengden av punktene $(0, 0)$ og $(1, 0)$ |
-| $\{(-2, 0), (0, 1)\}$ | Mengden av punktene $(-2, 0)$ og $(0, 1)$. |
-| $\left\{(-2, 1), (2, 4), \left(\dfrac{1}{2}, -1\right)\right\}$ | Mengden av punktene $(-2, 1)$, $(2, 4)$ og $\left(\dfrac{1}{2}, -1\right)$.   |
-| $\{(1, 0), (0, 1), (-1, 2), \ldots\}$ | Mengden som består av punktene $(1, 0)$, $(0, 1)$, $(-1, 2)$ og så videre. |
-
-:::
-
-::::

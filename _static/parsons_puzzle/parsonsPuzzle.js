@@ -83,7 +83,7 @@ class ParsonsPuzzle {
 
         const html = `
             <div id="${this.toastId}" class="toast" style="display: none;">
-                <p>Riktig! Bra jobba! 🔥</p>
+                <p>Riktig! 🔥</p>
             </div>
             <div id="${this.draggableId}" class="draggable-code"></div>
             <div id="${this.dropAreaId}" class="drop-area"></div>
