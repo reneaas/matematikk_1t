@@ -1,11 +1,11 @@
 
 ## Mengder som intervaller
 
-:::{admonition} Læringsmål
+:::{admonition} Læringsmål: mengder som intervaller
 ---
 class: tip
 ---
-Etter å ha gått gjennom dette delkapittelet, er målet at du skal:
+Etter dette delkapittelet, er målet at du skal:
 * Kunne beskrive begrensede og ubegrensede mengder av reelle tall ved hjelp av intervaller.
 :::
 
@@ -22,12 +22,13 @@ class: theory
 For begrensede mengder kan vi bruke følgende notasjon for å uttrykke dem som intervaller:
 
 
-| Type intervall | Notasjon | Ulikhet |
-| :---: | :---: | :---: |
-| Lukket | $x \in [a, b]$ | $a \leq x \leq b$ |
-| Åpent | $x \in \langle a, b\rangle$ | $a < x < b$ |
-| Halvåpent | $x \in [a, b\rangle$| $a \leq x < b$ |
-| Halvåpent | $x \in \langle a, b]$| $a < x \leq b$ |
+| Notasjon | Ulikhet |
+| :---: | :---: |
+| $x \in [a, b]$ | $a \leq x \leq b$ |
+| $x \in \langle a, b\rangle$ | $a < x < b$ |
+| $x \in [a, b\rangle$| $a \leq x < b$ |
+| $x \in \langle a, b]$| $a < x \leq b$ |
+
 
 ::::
 
@@ -39,12 +40,12 @@ La oss se på et eksempel:
 class: example
 ---
 
-| Ulikhet | Intervall |
+| Intervall | Ulikhet |
 |:---:|:---:|
-| $-1 \leq x \leq 1$ | $x\in [-1, 1]$ |
-| $0 < x < 3$ | $x\in \langle 0, 3\rangle$ |
-| $2 \leq x < 5$ | $x\in [2, 5\rangle$ |
-| $-4 < x \leq 1$ | $x\in \langle -4, 1]$ |
+| $x\in [-1, 1]$ | $-1 \leq x \leq 1$ |
+| $x\in \langle 0, 3\rangle$ | $0 < x < 3$ |
+| $x\in [2, 5\rangle$ | $2 \leq x < 5$ |
+| $x\in \langle -4, 1]$ | $-4 < x \leq 1$ |
 
 ::::
 
@@ -98,22 +99,21 @@ class: answer, dropdown
 ---
 
 ### Ubegrensede mengder
-Ofte må vi beskrive deler av tallinja som strekker seg uendelige langt i én eller begge retninger. Dette kalles for **ubegrensede mengder**. For å beskrive disse, bruker vi **ubegrensede intervaller**.
 
 
 ::::{admonition} Ubegrensede intervaller
 ---
 class: theory
 ---
-Vi kan beskrive ubegrensede intervaller med følgende skrivemåter:
+Vi kan beskrive ubegrensede mengder med intervaller på følgende måte:
 
 
 | Intervall | Ulikhet |
 | :---: | --- |
-| $[a, \to\rangle$ | $x \geq a$ |
-| $\langle \gets, b]$ | $x \leq b$ |
-| $\langle a, \to\rangle$ | $x < a$|
-| $\langle \gets, b\rangle$ | $x > b$ |
+| $[a, \to\rangle$ | $x \geq a$ eller $a \leq x$. |
+| $\langle \gets, b]$ | $x \leq b$. |
+| $\langle a, \to\rangle$ | $x > a$ eller $a < x$. |
+| $\langle \gets, b\rangle$ | $x < b$. |
 
 ::::
 
@@ -124,13 +124,13 @@ class: example
 ---
 Under vises noen eksempler på ulikheter og hvilke intervaller de tilsvarer:
 
-| Ulikhet | Intervall |
+| Intervall | Ulikhet |
 | :---: | :---: |
-| $x \geq 2$ | $x\in [2, \to\rangle$ |
-| $x \leq 4$ | $x\in \langle \gets, 4]$ |
-| $x > 0$ | $x\in \langle 0, \to\rangle$ |
-| $x < -3$ | $x\in \langle \gets, -3\rangle$ |
-| $4 < x$ | $x \in \langle 4, \to\rangle$ |
+| $x\in [2, \to\rangle$ | $x \geq 2$ |
+| $x\in \langle \gets, 4]$ | $x \leq 4$ |
+| $x\in \langle 0, \to\rangle$ | $x > 0$ |
+| $x\in \langle \gets, -3\rangle$ | $x < -3$ |
+| $x \in \langle 4, \to\rangle$ | $4 < x$ |
 
 
 ::::

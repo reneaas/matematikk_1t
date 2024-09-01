@@ -16,6 +16,7 @@ x = np.linspace(a, b, 1024)
 fig, ax = plt.subplots()
 ax.plot(x, f(x), color="teal", lw=2, alpha=0.7)
 
+
 ax.spines["left"].set_position("zero")
 ax.spines["right"].set_color("none")
 ax.spines["bottom"].set_position("zero")

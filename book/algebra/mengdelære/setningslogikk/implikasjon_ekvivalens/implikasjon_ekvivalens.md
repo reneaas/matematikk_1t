@@ -1,30 +1,41 @@
 ## Implikasjon og Ekvivalens
 
-Ofte er det en sammenheng mellom to påstander. Noen ganger vil en sann påstand medføre at en annen påstand er sann, andre ganger vil de begge medføre at den andre er sann samtidig. Vi har to måter å uttrykke slike sammenhenger på: 
+Noen ganger er det en logisk sammenheng mellom to påstander. Hvis en påstand er sann og dette gjør at en annen påstand også må være sann, kaller vi det for en **implikasjon**. Hvis det derimot er slik at begge påstandene må være sanne for at den ene skal være sann, snakker vi om **ekvivalens**.
 
 
 ### Implikasjon
 
-:::{admonition} Vanlige symboler for påstander
+:::{admonition} Hva med motsatt?
 ---
 class: sidenote, margin
 ---
-Det er vanlig å bruke symbolene $P$ og $Q$ for påstander. 
+
+Hvis $P$ impliseres *av* $Q$, kan vi skrive pilen motsatt vei:
+
+$$
+P \impliedby Q
+$$
+
+eller bare skrive
+
+$$
+Q \implies P
+$$
 :::
 
 :::{admonition} Implikasjon
 ---
 class: theory
 ---
-La $P$ og $Q$ være to påstander. Hvis det er slik at når $P$ er sann, så er automatisk $Q$ sann, sier vi at $P$ **impliserer** $Q$. 
+La oss si $P$ og $Q$ er to påstander. Hvis det er slik at når $P$ er sann, så betyr dette automatisk også at $Q$ er sann, sier vi at $P$ **impliserer** $Q$. 
 
-Vi skriver
+Da skriver vi:
 
 $$
-P \Rightarrow Q
+P \implies Q
 $$
 
-Hvis $P$ *ikke* impliserer $Q$, skriver vi $P \not \Rightarrow Q$.
+som vi leser som "hvis $P$ er sann, så er $Q$ sann" - eller bare "hvis $P$, så $Q$". 
 :::
 
 Vi går løs på et eksempel:
@@ -41,83 +52,74 @@ $$
 P = \text{Kari bor i Oslo} \quad \text{og} \quad Q = \text{Kari bor i Norge}.
 $$
 
-Hvis $P$ er sann, så er også $Q$ sann. Derfor kan vi skrive $P \Rightarrow Q$, eller mer eksplisitt:
+Vi kan være enig om at hvis Kari bor i Oslo, så bor hun også i Norge. Derfor må det være slik at hvis $P$ er sann, så er $Q$ også sann. Derfor kan vi skrive
 
 $$
-\text{Kari bor i Oslo} \quad \Rightarrow \quad \text{Kari bor i Norge}.
-$$
-
-
-Det motsatte er ikke tilfellet, for hvis Kari bor i Norge, kan hun bo mange andre steder enn Oslo. Dermed har vi at 
-
-$$
-\text{Kari bor i Oslo} \quad \not \Leftarrow \quad \text{Kari bor i Norge}.
+\text{Kari bor i Oslo} \implies \text{Kari bor i Norge}.
 $$
 
 
-Her kan vi merke oss at vi kan skrive implikasjonspilen mot venstre også. Når det *ikke* er en implikasjon, skriver vi en strek gjennom pilen. Pilen leses da som "impliserer ikke".
+Det motsatte er ikke tilfellet. Hvis Kari bor i Norge, kan hun bo mange andre steder enn Oslo. Derfor er *ikke* slik at hvis $Q$ er sann, så er også nødvendigvis $P$ sann. Vi skriver dette som
+
+$$
+\text{Kari bor i Norge} \quad \not\!\!\!\!\implies \quad \text{Kari bor i Oslo}
+$$
+
+Vi slenger altså en skråstrek gjennom pilen hvis vi vil uttrykke at implikasjonen ikke gjelder.
 :::
 
-Vi tar et eksempel som er mer matematisk orientert:
+Vi tar noen eksempler som er litt mer matematiske:
 
 :::{admonition} Eksempel 3: implikasjon
 ---
 class: example
 ---
-Vi tenker oss to påstander:
+Under vises noen påstander $P$ og $Q$. Her vises vi noen eksempler hvor $P \implies Q$, og noen hvor $P \impliedby Q$.
 
-| Påstand $P$ | Påstand $Q$ |
-|:-----------:|:-----------:|
-| $x = 4$ | $x^2 = 16$ |
+| Påstand $P$ |  | Påstand $Q$ |  Forklaring |
+|:---:|:---:|:---:|:---|
+| $x = 2$ | $\implies$ | $x \in \{1, 2, 5\}$ | Hvis $x = 2$, så er $x$ også et element i mengden $\{1, 2, 5\}$. |
+| $n \in \mathbb{N}$ | $\implies$ | $n \in \mathbb{Z}$ | Hvis $n$ er et naturlig tall, er det også et heltall. |
+| $x > 3$ | $\impliedby$ | $x > 6$ | Hvis $x$ er større enn $6$, må også $x$ være større enn $3$ siden $6 > 3$. |
+| $x \in \langle -10, 10 \rangle$ | $\impliedby$ | $x \in \langle -5, 5 \rangle$ | Hvis $x$ ligger mellom $-5$ og $5$, ligger $x$ også mellom $-10$ og $10$. |
+
 
 <br>
 
-Hvis $P$ er sann, så er også $Q$ sann siden $4^2 = 16$. Derfor kan vi skrive at 
+Legg merke til at implikasjonene i tabellen over ikke går motsatt vei. For eksempel er det ikke slik at hvis $x \in \{1, 2, 5\}$, så må ikke $x = 2$ siden $x$ kan også være en av de to andre tallene i mengden.
 
-$$
-x = 4 \quad \Rightarrow \quad x^2 = 16.
-$$
-
-Men hvis $x^2 = 16$, kan også $x = -4$ være tilfellet. Derfor er det ikke sånn at hvis $x^2 = 16$ er sant, så er også $x = 4$ sant. Dermed kan vi også skrive at 
-
-$$
-x^2 = 16 \quad \not \Rightarrow \quad x = 4.
-$$
 :::
 
+Så er det **din tur**!
 
 ::::{admonition} Underveisoppgave 1
 ---
 class: check
 ---
-Skriv av og fyll ut tabellen: 
+Fyll ut tabellen under med $\impliedby$ eller $\implies$ for å uttrykke den logiske sammenhengen mellom påstandene. 
 
-| Påstand $P$ |  $\Leftarrow$ eller $\Rightarrow$| Påstand $Q$ |
+| Påstand $P$ |  $\impliedby$ eller $\implies$| Påstand $Q$ |
 |:-----------:|:----------------------------------:|:-----------:|
-| $x = 3$ |  | $x^2 = 9$ |
-| $y \in \langle -3, 5 \rangle$ |  | $y \in \langle -4, 6\rangle$ |
-|$y \in \langle -4, 6\rangle$|  |$y \in [-4, 6 ]$|
-| $z = 2$ |  | $z \in \mathbb{N}$ |
-| $r \in \mathbb{Z}$ |  | $r \in \mathbb{Q}$ |
-| $s \in \mathbb{R}$ |  | $s \in \mathbb{Q}$ |
-| $t \in \mathbb{N}$ |  | $t \in \mathbb{Z}$ |
+| $m = -2$ | | $m \in \mathbb{Z}$ |
+| $n \in \mathbb{R}$ | | $n \in \mathbb{Q}$ |
+| $x < -2$ | | $x < 0$ |
+| $x \in \langle -4, 6 \rangle$ | | $x \in \langle -3, 5 \rangle$|
+| $-1 \leq x \leq 1$  |  | $-3 < x < 3$ |
 
 :::{admonition} Fasit
 ---
 class: answer, dropdown
 ---
-| Påstand $P$ |  $\Leftarrow$ eller $\Rightarrow$| Påstand $Q$ |
+
+| Påstand $P$ |  $\impliedby$ eller $\implies$| Påstand $Q$ |
 |:-----------:|:----------------------------------:|:-----------:|
-| $x = 3$ |  $\Rightarrow$ | $x^2 = 9$ |
-| $y \in \langle -3, 5 \rangle$ | $\Leftarrow$ | $y \in \langle -4, 6\rangle$ |
-|$y \in \langle -4, 6\rangle$| $\Leftarrow$ |$y \in [-4, 6]$|
-| $z = 2$ |  $\Rightarrow$ | $z \in \mathbb{N}$ |
-| $r \in \mathbb{Z}$ | $\Rightarrow$ | $r \in \mathbb{Q}$ |
-| $s \in \mathbb{R}$ | $\Leftarrow$ | $s \in \mathbb{Q}$ |
-| $t \in \mathbb{N}$ | $\Rightarrow$ | $t \in \mathbb{Z}$ |
+| $m = -2$ | $\implies$ | $m \in \mathbb{Z}$ |
+| $n \in \mathbb{R}$ | $\impliedby$ | $n \in \mathbb{Q}$ |
+| $x < -2$ | $\implies$ | $x < 0$ |
+| $x \in \langle -4, 6 \rangle$ | $\impliedby$ | $x \in \langle -3, 5 \rangle$|
+| $-1 \leq x \leq 1$  | $\implies$ | $-3 < x < 3$ |
 :::
 ::::
-
 
 ### Ekvivalens
 
@@ -129,14 +131,18 @@ La $P$ og $Q$ være to påstander. Hvis det er slik at $P$ er sann bare hvis $Q$
 Vi skriver
 
 $$
-P \Leftrightarrow Q
+P \iff Q
 $$
 
-Vi leser dette som "$P$ er sann hvis og bare hvis $Q$ er sann".
+Vi leser dette som "$P$ er sann hvis og bare hvis $Q$ er sann". Sammenhengen med implikasjon er at både
+
+$$
+P \implies Q \quad \text{og} \quad P \impliedby Q
+$$
 ::::
 
 
-Vi tar et eksempel:
+Vi tar et eksempel der noen påstander er ekvivalente, mens andre kun impliserer den éne veien.
 
 :::{admonition} Absoluttverdien
 ---
@@ -149,19 +155,14 @@ En mye brukt størrelse i matematikken kalles for **absoluttverdien** av et tall
 ---
 class: example
 ---
-Vi har to påstander $P$ og $Q$ som følger:
+Under vises noen påstander $P$ og $Q$. I noen tilfeller er påstandene ekvivalente, i andre tilfeller er det bare implikasjon én vei.
 
-| Påstand $P$ | Påstand $Q$ |
-|:-----------:|:-----------:|
-| $\|x\| = 4$ | $x^2 = 16$ |
-
-<br>
-
-Vi kan merke oss at $|x| = 4$ er sann hvis og bare hvis $x = 4$ eller $x = -4$. Men det samme er sant for $x^2 = 16$. Derfor har vi at påstand $P$ er kun sann hvis $Q$ er sann, og motsatt. Men da betyr dette at de to påstandene er ekvivalente. Derfor kan vi skrive at 
-
-$$
-|x| = 4 \quad \Leftrightarrow \quad x^2 = 16.
-$$
+| Påstand $P$ |  | Påstand $Q$ |  Forklaring |
+|:---:|:---:|:---:|:---|
+| $x \in \{-2, 2\}$ | $\iff$ | $x^2 = 4$ | Hvis $x$ er enten $-2$ eller $2$, så er $x^2 = 4$. Og motsatt, hvis $x^2 = 4$, så må $x$ være enten $-2$ eller $2$. |
+| $x = 3$ | $\implies$ | $x^2 = 9$ | $x = -3$ kan også være tilfellet når $x^2 = 9$. Derfor er ikke påstandene ekvivalente. |
+| $-2 < x < 2$ | $\iff$ | $x \in \langle -2, 2 \rangle$ | To måter å skrive akkurat det samme på. | 
+| $x^2 > 0 $ | $\impliedby$ | $x > 0$ | $x^2 > 0$ når $x < 0$ også. Derfor er ikke påstandene ekvivalente. |
 
 ::::
 
@@ -171,30 +172,29 @@ Så er det **din tur**!
 ---
 class: check
 ---
-Fyll ut tabellen under med $\Leftrightarrow$, $\Leftarrow$ eller $\Rightarrow$ slik at hver rad blir en sann påstand.
+Fyll ut tabellen under med $\iff$, $\impliedby$ eller $\implies$ slik at sammenhengene mellom påstandene stemmer.
 
-| Påstand $P$ |  $\Leftrightarrow$, $\Leftarrow$ eller $\Rightarrow$ | Påstand $Q$ |
+| Påstand $P$ |  $\iff$, $\impliedby$ eller $\implies$ | Påstand $Q$ |
 |:-----------:|:-------------------------------------------------------:|:-----------:|
-| $x = 3$ |  | $x^2 = 9$ |
-| $x = -2$ eller $x = 2$ |  | $x^2 = 4$ |
+| $x = 5$ |  | $x^2 = 25$ |
+| $x \in \{-3, 3\}$ |  | $\|x\| = 3$ |
 | $x^2 = 25$ |  | $x = -5$ |
-| $\|x\| = 3$ |  | $x = 3$ eller $x = -3$ |
+| $x^3 > 0$ | | $x > 0$ | 
 | $-2 < x < 3$ | | $x \in \langle -2, 3 \rangle$ |
-| $x = -5$ |  | $\|x\| = 5$ |
+| $x > 2$ |  | $x\in [2, \to \rangle$ |
 
 :::{admonition} Fasit
 ---
 class: answer, dropdown
 ---
-| Påstand $P$ |  $\Leftrightarrow$, $\Leftarrow$ eller $\Rightarrow$ | Påstand $Q$ |
+| Påstand $P$ |  $\iff$, $\impliedby$ eller $\implies$ | Påstand $Q$ |
 |:-----------:|:-------------------------------------------------------:|:-----------:|
-| $x = 3$ |  \Rightarrow | $x^2 = 9$ |
-| $y \in \langle -3, 5 \rangle$ | \Leftrightarrow | $y \in \langle -4, 6\rangle$ |
-|$y \in \langle -4, 6\rangle$| \Leftarrow |$y [-4, 6]$|
-| $z = 2$ |  \Rightarrow | $z \in \mathbb{N}$ |
-| $r \in \mathbb{Z}$ | \Leftrightarrow | $r \in \mathbb{Q}$ |
-| $s \in \mathbb{R}$ | \Leftrightarrow | $s \in \mathbb{Q}$ |
-| $t \in \mathbb{N}$ | \Rightarrow | $t \in \mathbb{Z}$ |
+| $x = 5$ | $\implies$ | $x^2 = 25$ |
+| $x \in \{-3, 3\}$ | $\iff$ | $\|x\| = 3$ |
+| $x^2 = 25$ | $\impliedby$ | $x = -5$ |
+| $x^3 > 0$ | $\iff$ | $x > 0$ | 
+| $-2 < x < 3$ | $\iff$ | $x \in \langle -2, 3 \rangle$ |
+| $x > 2$ | $\implies$ | $x \in [2, \to \rangle$ |
 :::
 ::::
 

@@ -1,4 +1,4 @@
-# Oppgavesamling
+# Oppgaver: mengdelære
 
 ```{contents} Oversikt
 ```
@@ -12,7 +12,7 @@ class: problem-level-1
 name: algebra-mengdelære-oppgavesamling-oppgave-1
 ---
 
-Skriv og fyll ut tabellen med $\in$ eller $\notin$.
+Fyll ut tabellen med $\in$ eller $\notin$.
 
 | Tall | $\in$ eller $\notin$ | Mengde |
 |:---:|:---:|:---:| 
@@ -45,7 +45,7 @@ class: answer, dropdown
 ---
 class: problem-level-1
 ---
-Fyll inn i tabellen under med symbolene $\in$, $\notin$, $>$ eller $<$ slik at det blir hver rad gir en sann påstand.
+Fyll ut tabellen med symbolene $\in$, $\notin$, $>$ eller $<$ slik at det blir hver rad gir en sann påstand.
 
 |Tall| Symbol | Mengde |
 |:---:|:---:|:---:|
@@ -81,7 +81,7 @@ class: answer, dropdown
 
 ::::{admonition} Oppgave 3
 ---
-class: problem-level-1
+class: problem-level-1, interactive
 ---
 Under vises noen beskrivelser og mengder som parvis hører sammen. <br> Pusle sammen riktig mengde med riktig beskrivelse.
 
@@ -97,7 +97,7 @@ file: ./pair_puzzles/oppgave_3.html
 
 ::::{admonition} Oppgave 4
 ---
-class: problem-level-1
+class: problem-level-1, interactive
 ---
 Under vises noen ulikheter og beskrivelser som parvis hører sammen. <br> Pusle sammen riktig ulikhet med riktig beskrivelse.
 
@@ -113,7 +113,7 @@ file: ./pair_puzzles/oppgave_4.html
 
 ::::{admonition} Oppgave 5
 ---
-class: problem-level-1
+class: problem-level-1, interactive
 ---
 Under vises noen ulikheter og intervaller som parvis hører sammen. <br> Pusle sammen riktig ulikhet med riktig intervall.
 
@@ -132,7 +132,7 @@ file: ./pair_puzzles/oppgave_5.html
 ---
 class: problem-level-2
 ---
-Skriv av og fyll ut tabellen.
+Fyll ut tabellen.
 
 | Ulikhet | Intervall |
 |:---:|:---:|
@@ -162,55 +162,90 @@ class: answer, dropdown
 
 ## Setningslogikk
 
-::::{admonition} Oppgave X
+::::{admonition} Oppgave 7
 ---
 class: problem-level-1
 ---
+Fyll ut tabellen under med $\iff$, $\impliedby$ eller $\implies$ slik at sammenhengene mellom påstandene stemmer.
 
-Skriv av og fyll ut tabellen under med $\Rightarrow$ eller $\Leftarrow$ eller $\Leftrightarrow$ slik at hver rad uttrykker en sann påstand.
-
-|Påstand $p$| Symbol | Påstand $q$ |
-|:---:|:---:|:---:|
-| $x \in \mathbb{Z}$ | | $x \in \mathbb{R}$ |
-| $y \in \mathbb{Z}$ | | $y \in \mathbb{N}$ |
-| $z \in \mathbb{R}$ | | $z \in \mathbb{Q}$ | 
-| $r^2 > 0$ | | $r > 0$ |
-| $s^2 = 16$ | | $\|s\| = 4$ |
-| $t < 5$ | | $t \leq 5$ |
-| $w \in \langle 2, 8 \rangle$ | | $w \in \langle 3, 7 \rangle$ |
+| Påstand $P$ |  $\iff$, $\impliedby$ eller $\implies$ | Påstand $Q$ |
+|:-----------:|:-------------------------------------------------------:|:-----------:|
+| $x = -4$ |  | $x^2 = 16$ |
+| $y \in \{-2, 2\}$ |  | $\|y\| = 2$ |
+| $z^2 = 36$ |  | $z = 6$ |
+| $p^3 < 0$ | | $p < 0$ | 
+| $-3 < r \leq 5$ | | $r \in \langle -3, 5]$ |
+| $s \geq 4$ |  | $s\in \langle4, \to \rangle$ |
 
 :::{admonition} Fasit
 ---
 class: answer, dropdown
 ---
-|Påstand $p$| Symbol | Påstand $q$ |
-|:---:|:---:|:---:|
-| $x \in \mathbb{Z}$ | $\Rightarrow$ | $x \in \mathbb{R}$ |
-| $y \in \mathbb{Z}$ | $\Leftarrow$ | $y \in \mathbb{N}$ |
-| $z \in \mathbb{R}$ | $\Leftarrow$ | $z \in \mathbb{Q}$ | 
-| $r^2 > 0$ | $\Leftarrow$ | $r > 0$ |
-| $s^2 = 16$ | $\Leftrightarrow$ | $\|s\| = 4$ |
-| $t < 5$ | $\Rightarrow$ | $t \leq 5$ |
-| $w \in \langle 2, 8 \rangle$ | $\Leftarrow$ | $w \in \langle 3, 7 \rangle$ |
+| Påstand $P$ |  $\iff$, $\impliedby$ eller $\implies$ | Påstand $Q$ |
+|:-----------:|:-------------------------------------------------------:|:-----------:|
+| $x = -4$ | $\iff$ | $x^2 = 16$ |
+| $y \in \{-2, 2\}$ | $\iff$ | $\|y\| = 2$ |
+| $z^2 = 36$ | $\impliedby$ | $z = 6$ |
+| $p^3 < 0$ | $\iff$ | $p < 0$ | 
+| $-3 < r \leq 5$ | $\iff$ | $r \in \langle -3, 5]$ |
+| $s \geq 4$ | $\impliedby$ | $s\in \langle4, \to \rangle$ |
+:::
+::::
+
+---
+
+::::{admonition} Oppgave 8
+---
+class: problem-level-2
+---
+Fyll ut tabellen under slik at hver rad gir en sann logisk sammenheng. 
+
+| Påstand $P$ |  $\iff$, $\impliedby$ eller $\implies$ | Påstand $Q$ |
+|:-----------:|:-------------------------------------------------------:|:-----------:|
+| $x \in \{-1, 1\}$ |  | $x = 1$ |
+| $y \in \{-1, 1\}$ | $\implies$ | | 
+| $z \in \mathbb{Z}$ |  | $z \in \mathbb{Q}$ |
+| | $\impliedby$ | $w \in \langle -2, 3]$ |
+| $p < -2$ | $\iff$ | |
+| $-3 < r $ | $\implies$ | |
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+Her finnes det flere muligheter. Men én løsning er:
+
+| Påstand $P$ |  $\iff$, $\impliedby$ eller $\implies$ | Påstand $Q$ |
+|:-----------:|:-------------------------------------------------------:|:-----------:|
+| $x \in \{-1, 1\}$ | $\impliedby$ | $x = 1$ |
+| $y \in \{-1, 1\}$ | $\implies$ | $y \in \mathbb{Z}$ | 
+| $z \in \mathbb{Z}$ | $\implies$  | $z \in \mathbb{Q}$ |
+| $w \in \langle -4, 4\rangle$ | $\impliedby$ | $w \in \langle -2, 3]$ |
+| $p < -2$ | $\iff$ | $p^3 < -8$ |
+| $-3 < r $ | $\implies$ | $r^2 > 9$ |
 :::
 
 ::::
 
 
+
 ---
 
-::::{admonition} Oppgave Z
+
 ---
-class: problem-level-1
+
+::::{admonition} Oppgave 9
+---
+class: problem-level-1, interactive
 ---
 Når vi jobber med likninger og likningssystemer, oppgir vi ofte løsningene som en mengde. Da kaller vi mengden for en **løsningsmengde** og bruker symbolet gjerne $L$ (for **L**øsning) som navn på mengden. 
 
 Her er noen eksempler:
 
 \begin{align*}
-x = 2 \quad &\Leftrightarrow \quad L = \{2\} && \text{Likning med én løsning} \\
+x = 2 \quad &\iff \quad L = \{2\} && \text{Likning med én løsning} \\
 \\
-x = -1 \, \lor \, x = 3 \quad &\Leftrightarrow \quad L = \{-1, 3\} && \text{Likning med to løsninger} \\
+x = -1 \, \lor \, x = 3 \quad &\iff \quad L = \{-1, 3\} && \text{Likning med to løsninger} \\
 \end{align*}
 
 <br>
@@ -225,12 +260,55 @@ file: ./pair_puzzles/oppgave_Z.html
 
 ::::
 
+---
+
+
+::::{admonition} Oppgave 10
+---
+class: problem-level-2
+---
+
+Her skal du lære om en alternativ måte å beskrive begrensende mengder ved hjelp av ulikheter. Denne skrivemåten er også brukt en del.
+
+:::{admonition} Alternativ skrivemåte for ulikheter
+---
+class: theory
+---
+
+Når vi har beskrevet begrensede mengder med ulikheter, har vi uttrykt dem på formen $a < x < b$. En alternativ måte å beskrive disse er ved bruk av logisk *og*:
+
+$$
+a < x < b \quad \iff \quad x > a \, \land \, x < b.
+$$
+
+For eksempel har vi
+
+$$
+-2 < x < 5 \quad \iff \quad x > -2 \, \land \, x < 5.
+$$
+
+Tilsvarende sammenhenger gjelder for de andre ulikhetstegnene. 
+
+:::
+
+Under vises ulikheter skrevet på de to forskjellige måtene som parvis hører sammen. <br> Pusle sammen ekvivalente ulikheter.
+
+:::{raw} html
+---
+file: ./pair_puzzles/oppgave_10.html
+---
+:::
+
+::::
+
+---
+
 
 ## Blandede oppgaver
 
-::::{admonition} Oppgave XX
+::::{admonition} Oppgave 11
 ---
-class: problem-level-1
+class: problem-level-1, interactive
 ---
 Begrepene og symbolene under hører parvis sammen. Pusle sammen riktig symbol med definisjon. 
 
@@ -242,9 +320,9 @@ file: ./pair_puzzles/oppgave_XX.html
 
 ::::
 
-::::{admonition} Oppgave Y
+::::{admonition} Oppgave 12
 ---
-class: problem-level-3
+class: problem-level-3, interactive
 ---
 I denne oppgaven skal du studere egenskapene til noen spesielle rasjonale tall. <br> Under kan du se et interaktivt kodevindu der du kan kjøre Pythonkode. 
 

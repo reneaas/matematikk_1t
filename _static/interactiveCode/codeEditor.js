@@ -23,6 +23,19 @@ class CodeEditor {
             indentUnit: 4,                 // Number of spaces per indentation level
             extraKeys: {
                 Tab: cm => this.replaceTabWithSpaces(cm), // Replace tab key press with spaces
+                "Enter": function(cm) {
+                    var cursor = cm.getCursor();
+                    var line = cm.getLine(cursor.line);
+                    var currentIndent = line.match(/^\s*/)[0];  // Get current indentation level
+
+                    if (/:\s*$/.test(line)) {
+                        // If line ends with a colon, add an extra indent
+                        cm.replaceSelection("\n" + currentIndent + Array(cm.getOption("indentUnit") + 1).join(" "), "end");
+                    } else {
+                        // Otherwise, maintain the current indent level
+                        cm.replaceSelection("\n" + currentIndent, "end");
+                    }
+                    }
             },
         });
     }

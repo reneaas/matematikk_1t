@@ -1,15 +1,18 @@
 # Mengder som lister
 
 
-:::{admonition} Læringsmål
+:::{admonition} Læringsmål: mengder som lister
 ---
 class: tip
 ---
-Etter å ha jobbet med dette delkapittelet, er målet at du skal:
+Etter dette delkapittelet, er målet at du skal:
 * Kunne uttrykke tallmengder ved hjelp av listeform.
 :::
 
-Når vi jobber med mengder som består av utvalgte tall eller tall som følger et mønster, bruker vi **listeform** for å uttrykke tallene i mengden. Vi kan ha en begrenset mengde tall der vi har et endelig antall elementer, eller vi kan ha en ubegrenset mengde der vi har uendelig mange elementer.
+Når vi jobber med mengder som består av utvalgte tall eller tall som følger et mønster, bruker vi **listeform** for å uttrykke tallene i mengden. Slike mengder kan være en:
+
+* **Begrenset mengde**: en liste med tall der vi har et endelig antall elementer, 
+* **Ubegrenset mengde**: en liste med tall der vi har uendelig mange elementer.
 
 Før vi ser på konkrete eksempler, skal vi se på den generelle notasjonen.
 

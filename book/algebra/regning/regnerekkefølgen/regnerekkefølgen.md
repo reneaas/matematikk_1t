@@ -1,10 +1,10 @@
 # Regnerekkefølgen
 
-:::{admonition} Læringsmål
+:::{admonition} Læringsmål: regnerekkefølgen
 ---
 class: tip
 ---
-Etter å ha gått gjennom dette kapittelet, er målet at du skal:
+Etter dette delkapittelet, er målet at du skal:
 * Kunne bruke regnerekkefølgen til å regne ut uttrykk med parenteser, potenser, multiplikasjon, divisjon, addisjon og subtraksjon.
 :::
 

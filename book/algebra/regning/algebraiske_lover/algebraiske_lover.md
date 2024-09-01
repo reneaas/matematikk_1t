@@ -1,151 +1,56 @@
 # Algebraiske lover
 
-:::{admonition} Læringsmål
+:::{admonition} Læringsmål: algebraiske lover
 ---
 class: tip
 ---
-Etter å ha gått gjennom dette kapittelet, er målet at du skal:
-* Kunne regne med de algebraiske lovene med tall.
-* Kunne regne med de algebraiske lovene med bokstaver.
-* Kunne gi praktiske tolkninger for de algebraiske lovene.
+Etter dette delkapittelet, er målet at du skal:
+* Kunne bruke de algebraiske lovene til å skrive om uttrykk med tall.
+* Kunne bruke de algebraiske lovene til å skrive om algebraiske uttrykk.
 :::
 
-Fundamentet for all algebra er de algebraiske lovene. Vi kan til sammen formulere 10 lover, som vi skal se nærmere på i dette kapittelet. Noen av disse lovene vil du trolig tenke på som selvfølgeligheter - andre kan det hende du ikke har sett eller tenkt over før.
+Alle regneregler du har sett tidligere, er basert på noen grunnleggende algebraiske lover. 
 
-## De kommutative lovene
 
-:::{admonition} De kommutative lovene
+::::{admonition} De algebraiske lovene
 ---
-class: theory
+class: theory 
 ---
-For to tall $a$ og $b$ gjelder:
+Gitt tall $a$, $b$, $c$ og $d$, så gjelder følgende regneregler:
 
-Addisjon: 
-: $a + b = b + a$
+| Nr. | Regneregel |
+|:---:|:---------------|
+| 1. | $a + (b + c) = a + b + c$ |
+| 2. | $a - (b - c) = a - b + c$ |
+| 3. | $a \cdot (b + c) = a \cdot b + a \cdot c$ |
+| 4. | $(a + b)\cdot (c + d) = a \cdot c + a \cdot d + b \cdot c + b \cdot d$ |
+| 5. | $\dfrac{a}{c} + \dfrac{b}{c} - \dfrac{d}{c} = \dfrac{a + b - d}{c}$ |
+| 6. | $\dfrac{a}{c} - \dfrac{b - d}{c} = \dfrac{a - b + d}{c}$ |
+| 7. | $\dfrac{a}{b} + \dfrac{c}{d} = \dfrac{a \cdot d + b \cdot c}{b \cdot d}$ |
+| 8. | $a\cdot \dfrac{b}{c} = \dfrac{a\cdot b}{c} = \dfrac{a}{c} \cdot b$ |
+| 9. | $\dfrac{a}{c} \cdot \dfrac{b}{d} = \dfrac{a\cdot b}{c\cdot d}$ |
+| 10. | $\dfrac{a}{c} : \dfrac{b}{d} = \dfrac{a}{c}\cdot \dfrac{d}{b}$ |
 
-Multiplikasjon
-: $a \cdot b = b \cdot a$
-:::
-
-Fra dette får vi at
-* Rekkefølgen til leddene i addisjon er likegyldig.
-* Rekkefølgen til faktorene i multiplikasjon er likegyldig.
-
-Vi sier at addisjon og multiplikasjon *kommuterer*.
-
-::::{admonition} Eksempel 1: kommutativ lov for addisjon
----
-class: example
----
-At addisjon er kommutativ kan vi se ved å se på regnestykkene
-
-$$
-3 + 2 \quad \text{og} \quad 2 + 3
-$$
-
-En begrunnelse kan vi finne grafisk. Det første regnestykke er illustrert i {numref}`fig-algebra-algebraiske-lover-eksempel-1a`. 
-
-:::{figure} ./figurer/eksempler/eksempel_1a.svg
----
-name: fig-algebra-algebraiske-lover-eksempel-1a
-width: 80%
----
-viser grafisk en tolkning av regnestykket $\textcolor{green}{3} + \textcolor{blue}{2}$. Vi starter i $0$ og flytter oss først $\textcolor{green}{3}$ plasser, etterfulgt av $\textcolor{blue}{2}$ plasser, mot høyre. Vi lander på $5$.
-:::
-
-Det andre regnestykke er illustrert i {numref}`fig-algebra-algebraiske-lover-eksempel-1b`.
-
-:::{figure} ./figurer/eksempler/eksempel_1b.svg
----
-name: fig-algebra-algebraiske-lover-eksempel-1b
-width: 80%
----
-viser grafisk en tolkning av regnestykket $\textcolor{blue}{2} + \textcolor{green}{3}$. Vi starter i $0$ og flytter oss først $\textcolor{blue}{2}$ plasser, etterfulgt av $\textcolor{green}{3}$ plasser, mot høyre. Vi lander på $5$.
-:::
-
-Som vi kan se fra figurene, så lander vi på samme posisjon på tallinja uavhengig av rekkefølgen vi velger - altså er addisjon kommutativ.
 
 ::::
 
----
+Vi tar et eksempel som viser hvordan hver regneregel fungerer med tall.
 
-## De assosiative lovene
-
-De assosiative lovene forteller oss at 
-* Rekkefølgen på hvilke ledd som adderes i en sum med tre eller flere ledd er likegyldig.
-* Rekkefølgen på hvilke faktorer som multipliseres i et produkt med tre eller flere faktorer er likegyldig.
-
-:::{admonition} De assosiative lovene
----
-class: theory
----
-Gitt tre tall $a$, $b$ og $c$ gjelder:
-
-Addisjon
-: $(a + b) + c = a + (b + c)$
-
-Multiplikasjon
-: $(a \cdot b) \cdot c = a \cdot (b \cdot c)$
-
-:::
-
-Vi tar et eksempel:
-
-::::{admonition} Eksempel 2: assosiative lov for addisjon
+::::{admonition} Eksempel 1
 ---
 class: example
 ---
-Vi setter prøve på de to lovene:
+| Regneregel nr. | Eksempel | 
+|:---:|:---|
+| 1. | $2 + (3 + 4) = 2 + 3 + 4$ |
+| 2. | $2 - (3 - 4) = 2 - 3 + 4$ |
+| 3. | $2 \cdot (3 + 4) = 2 \cdot 3 + 2 \cdot 4$ |
+| 4. | $(2 + 3)\cdot (4 + 5) = 2 \cdot 4 + 2 \cdot 5 + 3 \cdot 4 + 3 \cdot 5$ |
+| 5. | $\dfrac{2}{3} + \dfrac{4}{3} - \dfrac{5}{3} = \dfrac{2 + 4 - 5}{3}$ |
+| 6. | $\dfrac{2}{3} - \dfrac{4 - 5}{3} = \dfrac{2 - 4 + 5}{3}$ |
+| 7. | $\dfrac{2}{3} + \dfrac{4}{5} = \dfrac{2 \cdot 5 + 3 \cdot 4}{3 \cdot 5}$ |
+| 8. | $2\cdot \dfrac{3}{4} = \dfrac{2\cdot 3}{4} = \dfrac{2}{4} \cdot 3$ |
+| 9. | $\dfrac{2}{3} \cdot \dfrac{4}{5} = \dfrac{2\cdot 4}{3\cdot 5}$ |
+| 10. | $\dfrac{2}{3} : \dfrac{4}{5} = \dfrac{2}{3}\cdot \dfrac{5}{4}$ |
 
-Addisjon
-: Vi ser på regnestykket 
-
-    $$
-    2 + 3 + 5
-    $$
-
-    Vi regner det ut på de to måtene:
-
-    $$
-    (2 + 3) + 5 = 5 + 5 = 10 \quad \text{og} \quad 2 + (3 + 5) = 2 + 8 = 10
-    $$
-
-    Vi får altså samme svar uansett hvilke to ledd vi legger sammen først.
-
-<br>
-
-Multiplikasjon
-: Vi ser på regnestykket
-    
-    $$
-    2 \cdot 3 \cdot 5
-    $$
-
-    Vi regner det ut på to måter:
-
-    $$
-    (2 \cdot 3) \cdot 5 = 6 \cdot 5 = 30 \quad \text{og} \quad 2 \cdot (3 \cdot 5) = 2 \cdot 15 = 30
-    $$
-
-    Vi får altså det samme svar uansett hvilke to faktorer vi multipliserer først.
 ::::
-
----
-
-## De distributive lovene
-
-De distributive lovene forteller oss hvordan vi skal åpne parenteser:
-
-:::{admonition} De distributive lovene
----
-class: theory
----
-Gitt tre tall $a$, $b$ og $c$, gjelder:
-
-Addisjon
-: $a + (b - c) = a + b - c$
-: $ a - (b - c) = a - b + c$
-
-Multiplikasjon
-: $a \cdot (b + c) = a \cdot b + a \cdot c$
-:::

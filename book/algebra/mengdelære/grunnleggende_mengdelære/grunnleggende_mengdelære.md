@@ -5,15 +5,15 @@
 class: tip
 ---
 Etter dette delkapittelet, er målet at du skal:
-* Kunne forklare hva en mengde er og bruke notasjon for å beskrive om et tall er en del av en mengde eller ikke.
-* Kunne beskrive mengdene $\mathbb{N}$, $\mathbb{Z}$, $\mathbb{Q}$, $\mathbb{R}$ og $\emptyset$, og gi eksempler på tall som er inneholdt i hver mengde. 
+* Kunne forklare hva en mengde er og bruke matematisk notasjon for å uttrykke om et tall er et element i en mengde eller ikke.
+* Kunne beskrive mengdene $\mathbb{N}$, $\mathbb{Z}$, $\mathbb{Q}$, $\mathbb{R}$ og $\emptyset$, og gi eksempler på tall som er element i hver mengde. 
 :::
 
 
 ## De spesielle tallmengdene
 
 En **mengde** er rett og slett en samling objekter. En **tallmengde** er derfor en samling med tall. Noen ganger er tall i en mengde gruppert sammen fordi de har like egenskaper, andre ganger fordi vi ønsker å beskrive en samling tall, for eksempel som løsningen til en likning. 
-Vi starter med å introdusere fire *spesielle* tallmengder:
+Vi starter med å introdusere fire *spesielle* tallmengder.
 
 ::::{admonition} De spesielle tallmengdene
 ---
@@ -54,29 +54,21 @@ Vi kan altså si at $2$ tilhører både $\mathbb{N}$, $\mathbb{Z}$, $\mathbb{Q}$
 ---
 class: check
 ---
-Skriv av og fyll ut tabellen med en mengde som tallet tilhører.
+Fyll ut tabellen med alle mengdene tallene tilhører.
 
-| Tall | $-6$ | $4$ | $0$ | $120$ | $\dfrac{5}{2}$ | $\dfrac{15}{5}$ | $\sqrt{3}$ | $-8$ | $\sqrt{16}$ |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | 
-| **Mengde** | | | | | | | | | | 
+| Tall | $-6$ | $4$ | $0$ | $\dfrac{5}{2}$| $\sqrt{5}$ |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| **Mengder** | | | |
 
 
-
-::::{admonition} Løsning
+::::{admonition} Fasit
 ---
-class: solution, dropdown
+class: answer, dropdown
 ---
-Merk først at noen av tallene er ikke skrevet så enkelt som mulig. Spesielt kan vi merke oss at:
 
-$$
-\frac{15}{5} = \frac{3 \cdot 5}{5} = 3  \quad \text{og} \quad \sqrt{16} = 4.
-$$
-
-Deretter kan vi fylle ut tabellen:
-
-| Tall | $-6$ | $4$ | $0$ | $120$ | $\frac{5}{2}$ | $\frac{15}{5}$ | $\sqrt{3}$ | $-8$ | $\sqrt{16}$ |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | 
-| **Mengde** | $\mathbb{Z}$ | $\mathbb{N}$ | $\mathbb{Z}$ | $\mathbb{N}$ | $\mathbb{Q}$ | $\mathbb{N}$ | $\mathbb{R}$ | $\mathbb{Z}$ | $\mathbb{N}$ |
+| Tall | $-6$ | $4$ | $0$ | $\dfrac{5}{2}$| $\sqrt{5}$ |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| **Mengder** | $\mathbb{Z}, \mathbb{Q}, \mathbb{R}$ | $\mathbb{N}, \mathbb{Z}, \mathbb{Q}, \mathbb{R}$ | $\mathbb{Z}, \mathbb{Q}, \mathbb{R}$ | $\mathbb{Q}, \mathbb{R}$ | $\mathbb{R}$ |
 ::::
 
 :::::
@@ -84,9 +76,10 @@ Deretter kan vi fylle ut tabellen:
 ## En mer generell definisjon av en mengde
 Vi gjentar: En mengde er bare en *samling objekter*. I de fleste tilfeller vil objektene i mengden være tall, men de vil iblant også være punkter. Vi skal foreløpig bare fokusere på tallmengder.
 
-```{admonition} Definisjon: Mengde
-:class: theory
-
+```{admonition} Definisjon: mengde
+---
+class: theory
+---
 En **mengde** $A$ er en samling tall. Dersom et tall $x$ er en del av mengden $A$, skriver vi $x \in A$. Vi leser dette som "$x$ er *et element i* $A$". 
 
 Dersom et tall $y$ *ikke* er er en del av mengden $A$, skriver vi $y \notin A$. Vi leser dette som "$y$ er *ikke* et element i $A$". 
@@ -99,6 +92,7 @@ Her kan du få prøve å anvende definisjonen på noen eksempler:
 :class: check
 
 Vi skriver $2 \in \mathbb{N}$ fordi $2$ er et element i den naturlige mengden. Samtidig kan vi skrive $\pi \notin \mathbb{Z}$ siden $\pi$ ikke er et element i heltallsmengden. 
+
 Fyll ut tabellen under der du uttrykker om tallet er et element i mengden eller ikke:
 
 |Tall| $\in$ eller $\notin$ | Mengde |
@@ -120,7 +114,7 @@ Fyll ut tabellen under der du uttrykker om tallet er et element i mengden eller 
 | $3$ | $\in$ | $\mathbb{N}$ |
 | $-2$ | $\in$ | $\mathbb{Z}$ |
 | $\dfrac{1}{2}$ | $\notin$ | $\mathbb{N}$ |
-| $\sqrt{2}$ | $\in$ | $\mathbb{Q}$ |
+| $\sqrt{2}$ | $\notin$ | $\mathbb{Q}$ |
 | $\pi$ | $\notin$ | $\mathbb{Q}$ |
 | $0$ | $\in$ | $\mathbb{R}$ |
 | $-3$ | $\in$ | $\mathbb{R}$ |
