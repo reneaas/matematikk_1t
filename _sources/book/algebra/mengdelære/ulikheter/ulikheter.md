@@ -1,14 +1,17 @@
 # Mengder som ulikheter
 
-:::{admonition} Læringsmål
+:::{admonition} Læringsmål: mengder som ulikheter
 ---
 class: tip
 ---
-Etter å ha gått gjennom dette delkapittelet, er målet at du skal:
+Etter dette delkapittelet, er målet at du skal:
 * Kunne beskrive begrensede og ubegrensede mengder av reelle tall ved hjelp av ulikheter.
 :::
 
-Når vi har en mengde som består av reelle tall på en avgrenset del av tallinja, kan vi beskrive denne mengden ved hjelp av ulikheter. Dette kan både være begrensede og ubegrensede mengder. 
+Når vi har en mengde som består av reelle tall på en avgrenset del av tallinja, kan vi beskrive denne mengden ved hjelp av ulikheter. Dette kan både være begrensede og ubegrensede mengder. Betydningen av disse begrepene skiller seg litt fra hvordan de brukes for lister:
+
+* **Begrensede mengder**: En del av tallinja som ligger mellom to tall $a$ og $b$.
+* **Ubegrensede mengder**: En del av tallinja som kun kan være avgrenset av et tall $a$ nedenfra eller et tall $b$ ovenfra. Delen av tallinja strekker seg altså i det uendelige minst én retning.  
 
 ### Begrensede mengder
 
@@ -60,7 +63,7 @@ Så er det **din tur**!
 
 ::::{admonition} Underveisoppgave 1
 ---
-class: check
+class: check, full-width
 ---
 Under vises ulikheter og beskrivelser som parvis hører sammen. Pusle sammen parene.
 
@@ -132,7 +135,7 @@ Ubegrensende mengder som kan beskrives med ulikheter kommer i to varianter:
 Oppad begrenset
 : | Ulikhet | Beskrivelse |
     |:---:|:---|
-    | $x < b$ | Alle reelle tall $x$ som er mindre enn $b$ |
+    | $x < b$ | Alle reelle tall $x$ som er mindre enn $b$. |
     | $x \leq b$ | Alle reelle tall $x$ som er mindre enn eller lik $b$. |
     
     <br>
@@ -195,7 +198,7 @@ Så er det **din tur**!
 
 ::::{admonition} Underveisoppgave 2
 ---
-class: check
+class: check, full-width
 ---
 Under vises ulikheter og beskrivelser som parvis hører sammen. Pusle sammen parene.
 

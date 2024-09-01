@@ -4,10 +4,11 @@
 ---
 class: tip
 ---
-Etter å ha gått gjennom dette delkapittelet, er målet at du skal:
+Etter dette delkapittelet, er målet at du skal:
 * Kunne forklare hva en påstand er i matematikken.
 * Kunne forklare begrepene *implikasjon* og *ekvivalens*, og bruke disse for å uttrykke sammenhenger mellom påstander.
 * Kunne forklare begrepene *logisk og*, og *logisk eller*, og bruke disse for å uttrykke sammensatte påstander.
+* Kunne bruke matematisk notasjon for implikasjon, ekvivalens, logisk *og* - og logisk *eller*.
 :::
 
 Setningslogikk handler om å uttrykke påstander på en presis måte. Vi skal introdusere et par nyttige begreper og skrivemåter som vi kommer til å bruke mye.

@@ -9,7 +9,7 @@ class: example
 La oss se på noen eksempler på påstander i matematikken:
 
 | Påstand | Beskrivelse |
-| :---: | :---: |
+| :---: | :--- |
 | $2x + 1 = 3$ | $2x + 1$ er lik $3$. |
 | $x > 4$ |  $x$ er større enn 4. |
 | $x \in [1, 2]$ | $x$ er et tall i intervallet $[1, 2]$. |
