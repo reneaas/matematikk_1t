@@ -174,7 +174,7 @@ Nå har du fått litt oversikt over hvordan en enkel `for`{l=python}-løkke fung
 ---
 class: explore
 ---
-Under vises et som regner ut summen av de 5 første naturlige tallene.
+Under vises et program som regner ut summen av de 5 første naturlige tallene.
 
 
 ```{raw} html
