@@ -340,7 +340,7 @@ Deloppgave 3
 class: problem-level-2
 ---
 
-Vi minner om at $n$-fakultet er definert som
+En matematisk størrelse som dukker opp i mange sammenhenger er $n$-fakultet, som vi skiver som $n!$ - vi har definert $n!$ som produktet av alle heltall fra $1$ til $n$:
 
 $$
 n! = 1 \cdot 2 \cdot \ldots \cdot (n - 1) \cdot n.
