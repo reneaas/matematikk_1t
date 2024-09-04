@@ -58,6 +58,7 @@ class WorkerManager {
         const workerBlob = new Blob([workerScript], { type: 'application/javascript' });
         this.worker = new Worker(URL.createObjectURL(workerBlob));
 
+
         this.worker.onmessage = this.handleMessage.bind(this);
         this.worker.onerror = this.handleError.bind(this);
 

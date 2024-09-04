@@ -6,7 +6,7 @@
 class: tip
 ---
 Etter å ha gått gjennom dette delkapittelet, er målet at du skal kunne:
-* Lese og forstå `for`{l=python}-løkker som brukes `range`{l=python}-funksjonen.
+* Lese og forstå `for`{l=python}-løkker som bruker `range`{l=python}-funksjonen.
 * Skrive grunnleggende `for`{l=python}-løkker som bruker `range`{l=python}-funksjonen til å løse matematiske problemer.
 
 :::
@@ -17,16 +17,18 @@ En `for`{l=python}-løkke er noe som brukes til å gjenta en eller flere linjer 
 
 :::::{admonition} Utforsk 1
 ---
-class: explore,
+class: explore
 ---
-Her skal du bli kjent med kommandoen
+Her skal du bli kjent med `for`{l=python}-løkker på formen:
 
 ```{code-block} python
 for i in range(a, b, c):
     ...
 ```
 
-som ofte brukes til å lage `for`{l=python}-løkker. Under vises et interaktivt kodevindu. 
+som ofte brukes når man løser matematiske problemer med Pythonkode.
+
+Under vises et interaktivt kodevindu. Her kan du kjøre kode. 
 
 ```{raw} html
 ---
@@ -148,6 +150,23 @@ for i in range(10, 0, -1):
 
 ---
 
+::::{admonition} Underveisoppgave 1
+---
+class: check, full-width
+---
+
+Under vises noen `for`{l=python}-løkker og noen følger med tall. <br> Pusle sammen riktig løkke med riktig tallfølge.
+:::{raw} html
+---
+file: ./pair_puzzles/underveisoppgave_1.html
+---
+:::
+
+::::
+
+
+---
+
 Nå har du fått litt oversikt over hvordan en enkel `for`{l=python}-løkke fungerer. Nå skal du se på noen matematiske problemer du kan løse ved hjelp av `for`{l=python}-løkker.
 
 
@@ -155,7 +174,7 @@ Nå har du fått litt oversikt over hvordan en enkel `for`{l=python}-løkke fung
 ---
 class: explore
 ---
-Under vises et som regner ut summen av de 5 første naturlige tallene.
+Under vises et program som regner ut summen av de 5 første naturlige tallene.
 
 
 ```{raw} html
@@ -321,7 +340,7 @@ Deloppgave 3
 class: problem-level-2
 ---
 
-Vi minner om at $n$-fakultet er definert som
+En matematisk størrelse som dukker opp i mange sammenhenger er $n$-fakultet, som vi skiver som $n!$ - vi har definert $n!$ som produktet av alle heltall fra $1$ til $n$:
 
 $$
 n! = 1 \cdot 2 \cdot \ldots \cdot (n - 1) \cdot n.
@@ -363,9 +382,9 @@ Deloppgave 3
     Endre programmet slik at det regner ut $6!!$ <br> Stemmer svaret overens med svaret over?
 :::::
 
+---
 
-
-:::{admonition} Oppgave 5
+:::{admonition} Oppgave 3
 ---
 class: problem-level-3
 ---

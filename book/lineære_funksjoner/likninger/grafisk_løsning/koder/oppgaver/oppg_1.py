@@ -1,12 +1,11 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-# plt.rc("text", usetex=True)
+plt.rc("text", usetex=True)
+
 
 def f(x):
     return x + 3
-
-
 
 
 a = -7
@@ -16,6 +15,7 @@ x = np.linspace(a, b, 1024)
 
 fig, ax = plt.subplots()
 ax.plot(x, f(x), color="teal", lw=2, alpha=0.7)
+
 
 ax.spines["left"].set_position("zero")
 ax.spines["right"].set_color("none")
@@ -27,8 +27,6 @@ ax.plot(0, 1, "^k", transform=ax.get_xaxis_transform(), clip_on=False)
 
 ax.set_xlabel(r"$x$", fontsize=16, loc="right")
 ax.set_ylabel(r"$y$", fontsize=16, loc="top", rotation="horizontal")
-
-
 
 
 xticks = list(np.arange(-5, 6, 1))

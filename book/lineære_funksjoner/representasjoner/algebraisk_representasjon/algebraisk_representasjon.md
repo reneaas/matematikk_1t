@@ -5,21 +5,20 @@
 ---
 class: tip
 ---
-Målet med denne seksjonen er at du skal kunne:
-* Ha en grunnleggende forståelse av funksjonsbegrepet.
-* Kjenne til den algebraiske representasjonen av lineære funksjoner.
+Etter dette delkapittelet, er målet at du skal:
+* Kunne representere en lineær funksjon algebraisk, og lese av stigningstall og konstantledd.
 * Kunne regne ut funksjonsverdier for en lineær funksjon.
 * Kunne bruke Python til å regne ut funksjonsverdier for en lineær funksjon.
 :::
 ---
 
-En representasjon er en måte å uttrykke noe på. Når vi jobber med rette linjer, er de to vanligste måtene å representere linjer på, algebraisk og grafisk. Med algebraisk representasjon, mener vi en formel som beskriver linja. Med grafisk representasjon, mener vi en tegning av linja i et koordinatsystem.
+En representasjon er en måte å uttrykke noe på. Når vi jobber med rette linjer, er de to vanligste måtene å representere linjer på, algebraisk og grafisk. Med algebraisk representasjon mener vi en formel som beskriver linja. Med grafisk representasjon mener vi en tegning av linja i et koordinatsystem.
 
 ---
 
 
 ## Algebraisk representasjon av lineære funksjoner
-En lineær funksjon er en spesiell rett linje der $y$-verdien er bestemt av $x$-verdien. Vi skal komme mer presist tilbake til funksjonsbegrepet senere. For nå holder følgende definisjon:
+En lineær funksjon er en rett linje der $y$-verdien er bestemt av $x$-verdien. 
 
 ::::{admonition} Begrep: *Koeffisienter*
 ---
@@ -101,7 +100,8 @@ class: solution, dropdown
 ::::
 
 ## Funksjonsverdier
-Vi har sagt at $f(x)$ er funksjonsverdien til $f$ for en bestemt $x$-verdi. Her skal vi bli bedre kjent med skrivemåten og betydningen.
+Som nevnt er $f(x)$ funksjonsverdien til $f$ for en bestemt $x$-verdi. Når vi lar $x$ variere, tenker vi på $f(x)$ som *funksjonsuttrykket* til $f$. Når vi har en bestemt $x$-verdi, tenker vi på det som en *funksjonsverdi*.
+Her skal vi bli bedre kjent med skrivemåten og betydningen.
 
 :::{admonition} Funksjonsverdier
 ---
@@ -204,7 +204,13 @@ Deloppgave 2
 
 
 Deloppgave 3
-: Prøv å endre funksjonsuttrykket i `f(x)`{l=python} slik at programmet ut $f(-1)$ for $f(x) = 4x + 2$. Kjør koden og sjekk at svaret blir riktig.
+: Prøv å endre funksjonsuttrykket i `f(x)`{l=python} slik at programmet ut $f(-1)$ for 
+
+    $$
+    f(x) = 4x + 2.
+    $$ 
+
+    Kjør koden og sjekk at svaret blir riktig.
 
 :::::
 
@@ -313,156 +319,4 @@ Deloppgave 2
 <br>
 
 :::::
-
----
-
-## Oppgaver
-
-:::::{admonition} Oppgave 1
----
-class: problem-level-1
-name: lineære-funksjoner-algebraisk-representasjon-oppgave-1
----
-Fyll ut tabellen under.
-
-| Funksjonsnavn | Funksjonsuttrykk | Stigningstall | Konstantledd |
-| :---: | :---: | :---: | :---: |
-| $f$ | $f(x) = 2x - 3$ |  |  |
-| $g$ | $g(x) = -3x + 4$ |  |  |
-| $h$ | $h(x) = 4x + 1$ |  |  |
-| $r$ | $r(x) = 3$ |  |  |
-| $s$ | $s(x) = -\dfrac{1}{3}x + \dfrac{3}{2}$ |  |  |
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-
-| Funksjonsnavn | Funksjonsuttrykk | Stigningstall | Konstantledd |
-| :---: | :---: | :---: | :---: |
-| $f$ | $f(x) = 2x - 3$ | $2$ | $-3$ |
-| $g$ | $g(x) = -3x + 4$ | $-3$ | $4$ |
-| $h$ | $h(x) = 4x + 1$ | $4$ | $1$ |
-| $r$ | $r(x) = 3$ | $0$ | $3$ |
-| $s$ | $s(x) = -\dfrac{1}{3}x + \dfrac{3}{2}$ | $-\dfrac{1}{3}$ | $\dfrac{3}{2}$ |
-
-::::
-
-:::::
-
-
-:::::{admonition} Oppgave 2
----
-class: problem-level-1
-name: lineære-funksjoner-algebraisk-representasjon-oppgave-2
----
-
-Regn ut funksjonsverdiene i tabellen under.
-
-| Funksjonsuttrykk | $\quad x \quad$ | Funksjonsverdi $f(x)$ |
-| :--- | :---: | :--- |
-| $f(x) = 2x - 3$ | $1$ |  |
-| $g(x) = -3x + 4$ | $2$ |  |
-| $h(x) = 4x + 1$ | $0$ |  |
-| $r(x) = 3$ | $-1$ |  |
-| $s(x) = -\dfrac{1}{3}x + \dfrac{3}{2}$ | $3$ |  |
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-
-| Funksjonsuttrykk | $\quad x \quad$ | Funksjonsverdi $f(x)$ |
-| :--- | :---: | :--- |
-| $f(x) = 2x - 3$ | $1$ | $-1$ |    
-| $g(x) = -3x + 4$ | $2$ | $-2$ |
-| $h(x) = 4x + 1$ | $0$ | $1$ |
-| $r(x) = 3$ | $-1$ | $3$ |
-| $s(x) = -\dfrac{1}{3}x + \dfrac{3}{2}$ | $3$ | $\dfrac{5}{2}$ |
-::::
-
-:::::
-
-
-:::::{admonition} Oppgave 3
----
-class: problem-level-1
-name: lineære-funksjoner-algebraisk-representasjon-oppgave-3
----
-
-Under vises et program i tilfeldig rekkefølge som regner ut funksjonsverdien til en lineær funksjon.
-
-Deloppgave 1
-: Pusle sammen programmet i riktig rekkefølge for å få det fullstendige programmet. <br> Hva forventer du at programmet skriver ut? Kjør programmet og sjekk svaret!
-
-
-
-<br>
-
-:::{raw} html
----
-file: interaktiv_kode/oppgaver/oppgave_3.html
----
-:::
-
-<br>
-
-Deloppgave 2
-: Hvilken funksjon er det programmet regner ut funksjonsverdien til? Og hvilken funksjonsverdi? 
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-* Funksjon: $f(x)= -\dfrac{1}{2}x + 3$
-* Funksjonsverdi: $y = f(-4)$
-::::
-
-<br>
-
-Deloppgave 3
-: Endre programmet slik at det regner ut $f(2)$. <br> Hva forventer du at svaret blir? Kjør programmmet og sjekk.
-
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-$$
-f(2) = 2
-$$
-::::
-
-
-<br>
-
-Deloppgave 4
-: Endre programmet slik at det regner ut $g(2)$ når $g(x) = 2x + 1$. <br> Kjør programmet og sjekk at svaret blir riktig.
-
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-Vi kan bare overskrive definisjonen av `f(x)`{l=python}. <br> Endret program:
-```{code-block} python
----
-linenos:
-emphasize-lines: 2
----
-def f(x):
-    return 2*x + 1
-
-y = f(2)
-print(y)
-```
-
-Funksjonsverdi:
-
-$$
-g(2) = 5
-$$
-::::
-:::::
-
----
 

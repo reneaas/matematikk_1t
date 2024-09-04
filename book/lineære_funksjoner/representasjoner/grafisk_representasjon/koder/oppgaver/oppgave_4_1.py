@@ -1,15 +1,15 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-#plt.rc("text", usetex=True)
+plt.rc("text", usetex=True)
 
 
 def f(x):
-    return -2*x+1
+    return -2 * x + 1
 
 
-a = -5
-b = 5
+a = -10
+b = 10
 
 
 x = np.linspace(a, b, 1024)
@@ -28,15 +28,15 @@ ax.plot(0, 1, "^k", transform=ax.get_xaxis_transform(), clip_on=False)
 ax.set_xlabel(r"$x$", fontsize=16, loc="right")
 ax.set_ylabel(r"$y$", fontsize=16, loc="top", rotation="horizontal")
 
-xticks = list(np.arange(-5, 5, 1))
+xticks = list(np.arange(-5, 6, 1))
 xticks.remove(0)
 plt.xticks(xticks, fontsize=16)
 
-yticks = list(np.arange(-10, 10, 2))
+yticks = list(np.arange(-7, 8, 1))
 yticks.remove(0)
 plt.yticks(yticks, fontsize=16)
 
-plt.ylim(-12, 12)
+plt.ylim(-8, 8)
 plt.xlim(-6, 6)
 
 plt.grid(True, linestyle="--", alpha=0.6)
