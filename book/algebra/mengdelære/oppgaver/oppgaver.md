@@ -81,7 +81,7 @@ class: answer, dropdown
 
 ::::{admonition} Oppgave 3
 ---
-class: problem-level-1, interactive
+class: problem-level-1, interactive, full-width
 ---
 Under vises noen beskrivelser og mengder som parvis hører sammen. <br> Pusle sammen riktig mengde med riktig beskrivelse.
 
@@ -97,7 +97,7 @@ file: ./pair_puzzles/oppgave_3.html
 
 ::::{admonition} Oppgave 4
 ---
-class: problem-level-1, interactive
+class: problem-level-1, interactive, full-width
 ---
 Under vises noen ulikheter og beskrivelser som parvis hører sammen. <br> Pusle sammen riktig ulikhet med riktig beskrivelse.
 
@@ -113,7 +113,7 @@ file: ./pair_puzzles/oppgave_4.html
 
 ::::{admonition} Oppgave 5
 ---
-class: problem-level-1, interactive
+class: problem-level-1, interactive, full-width
 ---
 Under vises noen ulikheter og intervaller som parvis hører sammen. <br> Pusle sammen riktig ulikhet med riktig intervall.
 
@@ -127,12 +127,46 @@ file: ./pair_puzzles/oppgave_5.html
 
 ---
 
-
 ::::{admonition} Oppgave 6
+---
+class: problem-level-1
+---
+Fyll ut tabellen med $\in$ eller $\notin$.
+
+| Tall | $\in$ eller $\notin$ | Intervall |
+|:---:|:---:|:---:|
+| $-4$ | | $\langle -3, 5 \rangle$ |
+| $0$ | | $\langle -1, 1 \rangle$ |
+| $3$ | | $\langle 2, 4 \rangle$ |
+| $-1$ | | $\langle -1, 1 \rangle$ |
+| $4$ | | $\langle 2, 4]$ |
+| $2$ | | $\langle 2, 4 \rangle$ |
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+
+| Tall | $\in$ eller $\notin$ | Intervall |
+|:---:|:---:|:---:|
+| $-4$ | $\notin$ | $\langle -3, 5 \rangle$ |
+| $0$ | $\in$ | $\langle -1, 1 \rangle$ |
+| $3$ | $\in$ | $\langle 2, 4 \rangle$ |
+| $-1$ | $\notin$ | $\langle -1, 1 \rangle$ |
+| $4$ | $\in$ | $\langle 2, 4]$ |
+| $2$ | $\notin$ | $\langle 2, 4 \rangle$ |
+
+:::
+::::
+
+---
+
+
+::::{admonition} Oppgave 7
 ---
 class: problem-level-2
 ---
-Fyll ut tabellen.
+Fyll ut tabellen med intervallene og ulikhetene som mangler.
 
 | Ulikhet | Intervall |
 |:---:|:---:|
@@ -157,12 +191,13 @@ class: answer, dropdown
 | $-1 < x < 2$ | $x \in \langle -1, 2 \rangle$ |
 :::
 
-
 ::::
+
+---
 
 ## Setningslogikk
 
-::::{admonition} Oppgave 7
+::::{admonition} Oppgave 8
 ---
 class: problem-level-1
 ---
@@ -194,7 +229,7 @@ class: answer, dropdown
 
 ---
 
-::::{admonition} Oppgave 8
+::::{admonition} Oppgave 9
 ---
 class: problem-level-2
 ---
@@ -231,10 +266,91 @@ Her finnes det flere muligheter. Men én løsning er:
 
 ---
 
+---
+
+
+## Blandede oppgaver
+
+::::{admonition} Oppgave 10
+---
+class: problem-level-1, interactive
+---
+Begrepene og symbolene under hører parvis sammen. Pusle sammen riktig symbol med definisjon. 
+
+:::{raw} html
+---
+file: ./pair_puzzles/oppgave_11.html
+---
+:::
+
+::::
+
+:::{admonition} Merknad: oppgave 11
+---
+class: sidenote, margin
+---
+I oppgave 10 skal du jobbe med rasjonale tall som har uendelig sifferutvikling. Men fordi vi ikke kan skrive uendelig mange sifre, vil datamaskinen runde av tallet som skrives ut. Derfor vil du ende opp med at det **siste** sifferet typisk ikke stemmer overens med det du forventer! Ignorer derfor det aller siste sifferet i utskriften.
+:::
+
+::::{admonition} Oppgave 11
+---
+class: problem-level-3, interactive
+---
+I denne oppgaven skal du utforske egenskapene til noen spesielle rasjonale tall. <br> Under kan du se et interaktivt kodevindu der du kan kjøre Pythonkode. 
+
+:::{raw} html
+---
+file: ./interaktiv_kode/oppgave_10.html
+---
+:::
+
+<br>
+
+Deloppgave 1
+: Kjør koden og undersøk utskriften. Kan du se sammenheng mellom mønsteret i tallet som skrives ut og brøkene? <br> Prøv å forutsi hva som vil skrives ut dersom du skriver ut brøkene $\dfrac{21}{99}$, $\dfrac{321}{999}$ og $\dfrac{4321}{9999}$. <br> Test hypotesen din ved å endre på programmet og kjøre med de nye brøkene.
+
+
+<br>
+
+Deloppgave 2
+: Endre programmet slik at du i stedet regner ut brøkene $\dfrac{21}{990}$, $\dfrac{321}{9990}$ og $\dfrac{4321}{99990}$. <br> Kan du forklare hva som skjer med brøkene når det står en $0$ på slutten av nevneren?
+
+
+<br>
+
+Selv om programmet over skriver ut et endelig antall med desimaler, vil mønsteret fortsette i det uendelige i matematikken.
+
+Deloppgave 3
+: Bruk observasjonene du har gjort til å fylle ut tabellen under. <br> Prøv deretter kjøre programmet med brøkene du forutsier for å se om du har forutsagt riktig. 
+
+| Desimalrepresentasjon | Brøkrepresentasjon |
+|:---|:---|
+| $0.7777\ldots$ | |
+| $0.003636\ldots$ | |
+| $0.0789789\ldots$ | |
+| $0.01234512345\ldots$ | |
+
+
+:::{admonition} Spoiler Warning! (Fasit)
+---
+class: answer, dropdown
+---
+| Desimalrepresentasjon | Brøkrepresentasjon |
+|:---|:---|
+| $0.7777\ldots$ | $\dfrac{7}{9}$ |
+| $0.003636\ldots$ | $\dfrac{36}{9900}$ |
+| $0.0789789\ldots$ | $\dfrac{789}{9990}$ |
+| $0.01234512345\ldots$ | $\dfrac{12345}{999990}$ |
+:::
+
+::::
+
 
 ---
 
-::::{admonition} Oppgave 9
+## Utvidelser
+
+::::{admonition} Oppgave 12
 ---
 class: problem-level-1, interactive
 ---
@@ -250,11 +366,11 @@ x = -1 \, \lor \, x = 3 \quad &\iff \quad L = \{-1, 3\} && \text{Likning med to 
 
 <br>
 
-Under vises noen løsninger av likninger og likningssystemer - og tilsvarende løsningsmengder som parvis hører sammen. <br> Pusle sammen riktig løsning med riktig løsningsmengde.
+Under vises noen løsninger av likninger og tilsvarende løsningsmengder. 
 
 :::{raw} html
 ---
-file: ./pair_puzzles/oppgave_Z.html
+file: ./pair_puzzles/oppgave_12.html
 ---
 :::
 
@@ -263,7 +379,7 @@ file: ./pair_puzzles/oppgave_Z.html
 ---
 
 
-::::{admonition} Oppgave 10
+::::{admonition} Oppgave 13
 ---
 class: problem-level-2
 ---
@@ -295,67 +411,8 @@ Under vises ulikheter skrevet på de to forskjellige måtene som parvis hører s
 
 :::{raw} html
 ---
-file: ./pair_puzzles/oppgave_10.html
+file: ./pair_puzzles/oppgave_13.html
 ---
 :::
-
-::::
-
----
-
-
-## Blandede oppgaver
-
-::::{admonition} Oppgave 11
----
-class: problem-level-1, interactive
----
-Begrepene og symbolene under hører parvis sammen. Pusle sammen riktig symbol med definisjon. 
-
-:::{raw} html
----
-file: ./pair_puzzles/oppgave_XX.html
----
-:::
-
-::::
-
-::::{admonition} Oppgave 12
----
-class: problem-level-3, interactive
----
-I denne oppgaven skal du studere egenskapene til noen spesielle rasjonale tall. <br> Under kan du se et interaktivt kodevindu der du kan kjøre Pythonkode. 
-
-:::{raw} html
----
-file: ./interaktiv_kode/oppgave_Y.html
----
-:::
-
-<br>
-
-Deloppgave 1
-: Kjør koden og undersøk utskriften. Kan du se sammenheng mellom mønsteret i tallet som skrives ut og brøkene? <br> Prøv å forutsi hva som vil skrives ut dersom du skriver ut brøkene $\dfrac{21}{99}$, $\dfrac{321}{999}$ og $\dfrac{4321}{9999}$. <br> Test hypotesen din ved å endre på programmet og kjøre med de nye brøkene.
-
-
-<br>
-
-Deloppgave 2
-: Endre programmet slik at du i stedet regner ut brøkene $\dfrac{21}{990}$, $\dfrac{321}{9990}$ og $\dfrac{4321}{99990}$. <br> Kan du forklare hva som skjer med brøkene når det står en $0$ på slutten av nevneren?
-
-
-<br>
-
-Selv om programmet over skriver ut et endelig antall med desimaler, vil mønsteret fortsette i det uendelige i matematikken.
-
-Deloppgave 3
-: Bruk observasjonene du har gjort til å fylle ut tabellen under. <br> Prøv deretter kjøre programmet med brøkene du forutsier for å se om du har forutsagt riktig. 
-
-| Desimalrepresentasjon | Brøk |
-|:---:|:---:|
-| $0.7777\ldots$ | |
-| $0.003636\ldots$ | |
-| $0.0789789\ldots$ | |
-| $0.01234512345\ldots$ | |
 
 ::::
