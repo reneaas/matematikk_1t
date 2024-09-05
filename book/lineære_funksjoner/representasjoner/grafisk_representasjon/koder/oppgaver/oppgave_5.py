@@ -5,17 +5,35 @@ plt.rc("text", usetex=True)
 
 
 def f(x):
-    return 3 * x + 4
+    return -2 * x - 4
+
+
+def g(x):
+    return -2 * x + 2
+
+
+def h(x):
+    return -x + 2
+
+
+def r(x):
+    return x + 2
 
 
 a = -10
 b = 10
 
+xmin, xmax = -7, 7
+ymin, ymax = -9, 9
 
 x = np.linspace(a, b, 1024)
 
 fig, ax = plt.subplots()
-ax.plot(x, f(x), color="teal", lw=2, alpha=0.7, label="$g$")
+ax.plot(x, f(x), color="purple", lw=2, alpha=0.7)
+ax.plot(x, g(x), color="blue", lw=2, alpha=0.7)
+ax.plot(x, h(x), color="red", lw=2, alpha=0.7)
+ax.plot(x, r(x), color="teal", lw=2, alpha=0.7)
+
 
 ax.spines["left"].set_position("zero")
 ax.spines["right"].set_color("none")
@@ -28,22 +46,17 @@ ax.plot(0, 1, "^k", transform=ax.get_xaxis_transform(), clip_on=False)
 ax.set_xlabel(r"$x$", fontsize=16, loc="right")
 ax.set_ylabel(r"$y$", fontsize=16, loc="top", rotation="horizontal")
 
-xticks = list(np.arange(-4, 5, 1))
-xticks.remove(0)
-plt.xticks(xticks, fontsize=16)
 
-yticks = list(np.arange(-8, 16, 2))
-yticks.remove(0)
-plt.yticks(yticks, fontsize=16)
-
-plt.ylim(-10, 16)
-plt.xlim(-5, 5)
+plt.ylim(ymin, ymax)
+plt.xlim(xmin, xmax)
+plt.xticks([])
+plt.yticks([])
 
 plt.grid(True, linestyle="--", alpha=0.6)
-plt.legend(fontsize=16)
+# plt.legend(fontsize=16)
 plt.tight_layout()
 
 # Lagrer figuren i vektorformat
-plt.savefig("../../figurer/oppgaver/oppgave_4_2.svg")
-
+fname = __file__.split("/")[-1].replace(".py", ".svg")
+plt.savefig(f"../../figurer/oppgaver/{fname}")
 plt.show()

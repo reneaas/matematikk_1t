@@ -5,12 +5,14 @@ plt.rc("text", usetex=True)
 
 
 def f(x):
-    return -x - 1
+    return -x + 1
 
 
 a = -10
 b = 10
 
+xmin, xmax = -5, 5
+ymin, ymax = -5, 5
 
 x = np.linspace(a, b, 1024)
 
@@ -28,22 +30,24 @@ ax.plot(0, 1, "^k", transform=ax.get_xaxis_transform(), clip_on=False)
 ax.set_xlabel(r"$x$", fontsize=16, loc="right")
 ax.set_ylabel(r"$y$", fontsize=16, loc="top", rotation="horizontal")
 
-xticks = list(np.arange(-4, 5, 1))
-xticks.remove(0)
+xticks = list(np.arange(xmin + 1, xmax, 1))
+if 0 in xticks:
+    xticks.remove(0)
 plt.xticks(xticks, fontsize=16)
 
-yticks = list(np.arange(-6, 7, 1))
-yticks.remove(0)
+yticks = list(np.arange(ymin + 1, ymax, 1))
+if 0 in yticks:
+    yticks.remove(0)
 plt.yticks(yticks, fontsize=16)
 
-plt.ylim(-7, 7)
-plt.xlim(-5, 5)
+plt.ylim(ymin, ymax)
+plt.xlim(xmin, xmax)
 
 plt.grid(True, linestyle="--", alpha=0.6)
 plt.legend(fontsize=16)
 plt.tight_layout()
 
 # Lagrer figuren i vektorformat
-plt.savefig("../../figurer/oppgaver/oppgave_1.svg")
-
+fname = __file__.split("/")[-1].replace(".py", ".svg")
+plt.savefig(f"../../figurer/oppgaver/{fname}")
 plt.show()
