@@ -300,7 +300,7 @@ $$ a = \dfrac{y_2 - y_1}{x_2 - x_1} = \dfrac{6-2}{3-1}=\dfrac{4}{2}=2 $$
 
 Deretter bruker vi ettpunktsformelen og får: 
 
-\begin{align}
+\begin{align*}
 y - y_1 &= a (x - x_1) \\
 \\
 y - 2 &= 2(x-1)\\
@@ -310,7 +310,7 @@ y - 2 &= 2x - 2 \\
 y - 2 \textcolor{red}{+2} &= 2x - 2\textcolor{red}{+2} \\
 \\
 y &= 2x
-\end{align}
+\end{align*}
 
 Vi ser at det gir funksjonen $y = f(x) = 2x$.
 :::
