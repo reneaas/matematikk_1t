@@ -326,7 +326,7 @@ I denne oppgaven skal du utforske egenskapene til noen spesielle rasjonale tall.
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/oppgave_5.html
+file: ./interaktiv_kode/oppgaver/oppgave_5.html
 ---
 :::
 
