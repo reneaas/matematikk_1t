@@ -1,4 +1,4 @@
-# Oppgaver
+# Oppgaver: algebraisk representasjon av lineære funksjoner
 
 :::::{admonition} Oppgave 1
 ---
@@ -33,6 +33,8 @@ class: answer, dropdown
 :::::
 
 
+---
+
 :::::{admonition} Oppgave 2
 ---
 class: problem-level-1
@@ -65,6 +67,7 @@ class: answer, dropdown
 
 :::::
 
+---
 
 :::::{admonition} Oppgave 3
 ---
@@ -145,5 +148,4 @@ g(2) = 5
 $$
 ::::
 :::::
-
 
