@@ -34,7 +34,7 @@ class: example
 Regn ut uttrykket
 
 $$
-6 + 3\cdot \dfrac{3\cdot(2^3 - 4)^2}{2}
+6 + 5\cdot \dfrac{3\cdot(2^3 - 6)^2}{2}
 $$
 
 

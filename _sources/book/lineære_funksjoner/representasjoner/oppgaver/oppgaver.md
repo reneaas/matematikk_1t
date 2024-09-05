@@ -1,4 +1,9 @@
-# Oppgaver
+# Oppgaver: representasjoner av lineære funksjoner
+
+:::{contents} Innhold
+:::
+
+## Algebraisk representasjon
 
 :::::{admonition} Oppgave 1
 ---
@@ -33,6 +38,8 @@ class: answer, dropdown
 :::::
 
 
+---
+
 :::::{admonition} Oppgave 2
 ---
 class: problem-level-1
@@ -65,6 +72,7 @@ class: answer, dropdown
 
 :::::
 
+---
 
 :::::{admonition} Oppgave 3
 ---
@@ -147,3 +155,10 @@ $$
 :::::
 
 
+
+
+## Grafisk representasjon
+
+## Bestemme funksjonsuttrykk
+
+## Blandede oppgaver
