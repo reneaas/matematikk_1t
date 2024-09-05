@@ -242,7 +242,7 @@ Fyll ut tabellen under slik at hver rad gir en sann logisk sammenheng.
 | $z \in \mathbb{Z}$ |  | $z \in \mathbb{Q}$ |
 | | $\impliedby$ | $w \in \langle -2, 3]$ |
 | $p < -2$ | $\iff$ | |
-| $-3 < r $ | $\implies$ | |
+| $r < -3 $ | $\implies$ | |
 
 :::{admonition} Fasit
 ---
@@ -257,7 +257,7 @@ Her finnes det flere muligheter. Men én løsning er:
 | $z \in \mathbb{Z}$ | $\implies$  | $z \in \mathbb{Q}$ |
 | $w \in \langle -4, 4\rangle$ | $\impliedby$ | $w \in \langle -2, 3]$ |
 | $p < -2$ | $\iff$ | $p^3 < -8$ |
-| $-3 < r $ | $\implies$ | $r^2 > 9$ |
+| $r < -3 $ | $\implies$ | $r^2 > 9$ |
 :::
 
 ::::
