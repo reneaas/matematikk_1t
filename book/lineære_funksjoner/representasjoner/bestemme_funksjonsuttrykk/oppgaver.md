@@ -302,13 +302,17 @@ Deretter bruker vi ettpunktsformelen og får:
 
 \begin{align}
 y - y_1 &= a (x - x_1) \\
+\\
 y - 2 &= 2(x-1)\\
+\\
 y - 2 &= 2x - 2 \\
+\\
 y - 2 \textcolor{red}{+2} &= 2x - 2\textcolor{red}{+2} \\
+\\
 y &= 2x
 \end{align}
 
-Vi ser at det gir funksjonen $y = 2x$.
+Vi ser at det gir funksjonen $y = f(x) = 2x$.
 :::
 <br>
 
