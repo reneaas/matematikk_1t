@@ -1,5 +1,8 @@
 # Lineære likninger
 
+:::{tableofcontents}
+:::
+
 En likning kan beskrives som at to størrelser er like, eller at de er de samme.
 En **lineær likning** er en likning hvor de algebraiske uttrykkene er funksjonsuttrykkene til lineære funksjoner.
 Et eksempel på en lineær likning er
