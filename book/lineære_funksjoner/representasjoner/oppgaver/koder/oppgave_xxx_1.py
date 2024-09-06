@@ -44,6 +44,6 @@ plt.legend(fontsize=16)
 plt.tight_layout()
 
 # Lagrer figuren i vektorformat
-plt.savefig("../../figurer/oppgaver/oppgave_4_1.svg")
+plt.savefig("../../figurer/oppgave_4_1.svg")
 
 plt.show()

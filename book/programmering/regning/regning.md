@@ -320,24 +320,53 @@ Deloppgave 1
 
 ::::{admonition} Oppgave 5
 ---
-class: problem-level-3
+class: problem-level-3, interactive
 ---
-
-Under vises et program som regner ut noen brøker.
+I denne oppgaven skal du utforske egenskapene til noen spesielle rasjonale tall. <br> Under kan du se et interaktivt kodevindu der du kan kjøre Pythonkode. 
 
 :::{raw} html
 ---
-file: interaktiv_kode/oppgaver/oppgave_5.html
+file: ./interaktiv_kode/oppgaver/oppgave_5.html
 ---
 :::
 
+<br>
+
 Deloppgave 1
-: Kjør koden og studer utskriften. <br> Kan du ut ifra utskriften forutsi hva du får dersom du regner ut følgende brøker for hånd?
-  1. $\dfrac{16}{99}$
-  2. $\dfrac{713}{999}$
-  3. $\dfrac{6712}{9999}$
-  Endre på programmet og kjør det for å sjekke svaret ditt.
+: Kjør koden og undersøk utskriften. Kan du se sammenheng mellom mønsteret i tallet som skrives ut og brøkene? <br> Prøv å forutsi hva som vil skrives ut dersom du skriver ut brøkene $\dfrac{21}{99}$, $\dfrac{321}{999}$ og $\dfrac{4321}{9999}$. <br> Test hypotesen din ved å endre på programmet og kjøre med de nye brøkene.
+
+
+<br>
 
 Deloppgave 2
-: Endre programmet 
+: Endre programmet slik at du i stedet regner ut brøkene $\dfrac{21}{990}$, $\dfrac{321}{9990}$ og $\dfrac{4321}{99990}$. <br> Kan du forklare hva som skjer med brøkene når det står en $0$ på slutten av nevneren?
+
+
+<br>
+
+Selv om programmet over skriver ut et endelig antall med desimaler, vil mønsteret fortsette i det uendelige i matematikken.
+
+Deloppgave 3
+: Bruk observasjonene du har gjort til å fylle ut tabellen under. <br> Prøv deretter kjøre programmet med brøkene du forutsier for å se om du har forutsagt riktig. 
+
+| Desimalrepresentasjon | Brøkrepresentasjon |
+|:---|:---|
+| $0.7777\ldots$ | |
+| $0.003636\ldots$ | |
+| $0.0789789\ldots$ | |
+| $0.01234512345\ldots$ | |
+
+
+:::{admonition} Spoiler Warning! (Fasit)
+---
+class: answer, dropdown
+---
+| Desimalrepresentasjon | Brøkrepresentasjon |
+|:---|:---|
+| $0.7777\ldots$ | $\dfrac{7}{9}$ |
+| $0.003636\ldots$ | $\dfrac{36}{9900}$ |
+| $0.0789789\ldots$ | $\dfrac{789}{9990}$ |
+| $0.01234512345\ldots$ | $\dfrac{12345}{999990}$ |
+:::
+
 ::::

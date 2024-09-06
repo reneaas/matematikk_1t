@@ -5,19 +5,19 @@ plt.rc("text", usetex=True)
 
 
 def f(x):
-    return x + 4
+    return 3 * x - 1
 
 
 a = -10
 b = 10
 
-xmin, xmax = -8, 4
-ymin, ymax = -4, 8
+xmin, xmax = -6, 6
+ymin, ymax = -6, 6
 
 x = np.linspace(a, b, 1024)
 
 fig, ax = plt.subplots()
-ax.plot(x, f(x), color="teal", lw=2, alpha=0.7, label="$f$")
+ax.plot(x, f(x), color="blue", lw=2, alpha=0.7, label="$h$")
 
 ax.spines["left"].set_position("zero")
 ax.spines["right"].set_color("none")

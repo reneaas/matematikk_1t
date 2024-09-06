@@ -6,9 +6,9 @@
 class: tip
 ---
 Etter dette delkapittelet, er målet at du skal:
-* Kunne representere en lineær funksjon algebraisk, og lese av stigningstall og konstantledd.
-* Kunne regne ut funksjonsverdier for en lineær funksjon.
-* Kunne bruke Python til å regne ut funksjonsverdier for en lineær funksjon.
+* Kunne representere en lineær funksjon algebraisk, og kunne lese av stigningstall og konstantledd.
+* Kunne regne ut funksjonsverdier med funksjonsuttrykket til en lineær funksjon.
+* Kunne bruke Python til å regne ut funksjonsverdier til en lineær funksjon.
 :::
 ---
 
@@ -68,7 +68,7 @@ Under vises eksempler på lineære funksjoner.
 Og så er det **din tur**!
 
 
-::::{admonition} Underveisoppgave 1: algebraisk representasjon av lineære funksjoner
+::::{admonition} Underveisoppgave 1
 ---
 class: check
 name: lineære-funksjoner-algebraisk-representasjon-underveisoppgave-1
@@ -102,6 +102,14 @@ class: solution, dropdown
 ## Funksjonsverdier
 Som nevnt er $f(x)$ funksjonsverdien til $f$ for en bestemt $x$-verdi. Når vi lar $x$ variere, tenker vi på $f(x)$ som *funksjonsuttrykket* til $f$. Når vi har en bestemt $x$-verdi, tenker vi på det som en *funksjonsverdi*.
 Her skal vi bli bedre kjent med skrivemåten og betydningen.
+
+:::{admonition} Gjenbruk av variabelnavn
+---
+class: sidenote, margin
+---
+Her kan du se at vi bruker $a$ med en helt annen betydning enn forrige avsnitt. I dette tilfellet er $a$ et tall på $x$-aksen, mens når vi snakker om funksjonsuttrykket til en lineær funksjon, er $a$ stigningstallet til linja. Dette kan være litt uvant, men over tid vil du bli mer og mer komfortabel med å tolke betydning av et variabelnavn ut ifra konteksten det brukes i.
+:::
+
 
 :::{admonition} Funksjonsverdier
 ---
@@ -193,12 +201,37 @@ file: interaktiv_kode/utforsk/utforsk_1.html
 Deloppgave 1
 : Kjør programmet og sjekk at det regner ut riktig verdi for $f(2)$. Hva blir svaret? 
 
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+f(2) = 5.
+$$
+:::
 
 <br>
 
 Deloppgave 2
 : Kan du endre programmet slik at det regner ut $f(-1)$? Kjør koden og sjekk at svaret blir riktig.
 
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+
+```{code-block} python
+---
+linenos: true
+emphasize-lines: 4
+---
+def f(x):
+    return 3 * x - 1
+
+y = f(-1)
+print(y)
+```
+:::
 
 <br>
 
@@ -211,6 +244,25 @@ Deloppgave 3
     $$ 
 
     Kjør koden og sjekk at svaret blir riktig.
+
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+
+```{code-block} python
+---
+linenos: true
+emphasize-lines: 2
+---
+def f(x):
+    return 4 * x + 2
+
+y = f(-1)
+print(y)
+```
+:::
 
 :::::
 
@@ -240,7 +292,9 @@ def funksjonsnavn(x):
 ```
 
 * `def`{l=python} er et nøkkelord som forteller Python at vi skal lage en funksjon.
-* `return`{l=python} er et nøkkelord som gir tilbake verdien av funksjonsuttrykket til brukeren. Uten dette nøkkelordet, skjer ingenting når vi bruker funksjonen.
+* `return`{l=python} er et nøkkelord som gir tilbake verdien av funksjonsuttrykket når vi bruker funksjonen. Uten dette nøkkelordet, skjer ingenting når vi bruker funksjonen. 
+
+Vi sier forresten at det "å bruke" funksjonen er "å kalle på" funksjonen. Vi kaller dette for et "funksjonskall".
 ::::
 
 
@@ -252,7 +306,7 @@ Nå skal du prøve å lage et program som regner ut en funksjonsverdi i Python.
 class: check
 name: lineære-funksjoner-algebraisk-representasjon-underveisoppgave-3
 ---
-Under vises et program i tilfeldig rekkefølge som regner ut funksjonsverdien til en funksjon. 
+Under vises et program i tilfeldig rekkefølge som regner ut funksjonsverdien til en funksjon $g$.
 
 
 Deloppgave 1
@@ -267,13 +321,25 @@ file: interaktiv_kode/underveisoppgaver/underveisoppgave_3.html
 ---
 :::
 
+
+:::{admonition} Fasit
+---
+class: dropdown, answer
+---
+Programmet skriver ut funksjonsverdien
+
+$$
+g(1) = -2\cdot 1 + 3 = -2 + 3 = 1.
+$$
+:::
+
 <br>
 
-Deloppgave 1
+Deloppgave 2
 : Fiks programmet slik at det regner ut $g(-2)$. Sjekk at programmet gir riktig svar ved å regne for hånd.
 
 
-:::{admonition} Løsning:
+:::{admonition} Løsning
 ---
 class: solution, dropdown
 ---
@@ -295,7 +361,7 @@ linenos:
 emphasize-lines: 2, 4
 ---
 def g(x):
-    return -2*x + 3
+    return -2 * x + 3
 
 y = g(-2)
 
@@ -312,11 +378,37 @@ Så programmet funker som det skal.
 
 <br>
 
-Deloppgave 2
+Deloppgave 3
 : Bruk programmet til å regne ut $g(3)$. 
 
 
 <br>
+
+:::{admonition} Løsning
+---
+class: solution, dropdown
+---
+Dersom vi endrer linje 4 i programmet til `y = g(3)`{l=python}, vil programmet regne ut $g(3)$. 
+
+```{code-block} python
+---
+linenos: true
+emphasize-lines: 4
+---
+def g(x):
+    return -2 * x + 3
+
+y = g(3)
+print(y)
+```
+
+Da forventer vi å få følgende verdi i utskriften:
+
+$$
+g(3) = -2\cdot 3 + 3 = -6 + 3 = -3.
+$$
+:::
+
 
 :::::
 

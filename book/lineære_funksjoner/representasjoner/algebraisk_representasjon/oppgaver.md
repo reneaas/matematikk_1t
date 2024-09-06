@@ -1,4 +1,4 @@
-# Oppgaver
+# Oppgaver: algebraisk representasjon av lineære funksjoner
 
 :::::{admonition} Oppgave 1
 ---
@@ -33,6 +33,8 @@ class: answer, dropdown
 :::::
 
 
+---
+
 :::::{admonition} Oppgave 2
 ---
 class: problem-level-1
@@ -60,11 +62,12 @@ class: answer, dropdown
 | $g(x) = -3x + 4$ | $2$ | $-2$ |
 | $h(x) = 4x + 1$ | $0$ | $1$ |
 | $r(x) = 3$ | $-1$ | $3$ |
-| $s(x) = -\dfrac{1}{3}x + \dfrac{3}{2}$ | $3$ | $\dfrac{5}{2}$ |
+| $s(x) = -\dfrac{1}{3}x + \dfrac{3}{2}$ | $3$ | $\dfrac{1}{2}$ |
 ::::
 
 :::::
 
+---
 
 :::::{admonition} Oppgave 3
 ---
@@ -145,5 +148,4 @@ g(2) = 5
 $$
 ::::
 :::::
-
 
