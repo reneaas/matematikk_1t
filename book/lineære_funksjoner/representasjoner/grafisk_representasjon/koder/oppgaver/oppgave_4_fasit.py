@@ -1,78 +1,71 @@
-import numpy as np
-import matplotlib.pyplot as plt
+def main(dirname, save=False):
 
-plt.rc("text", usetex=True)
+    # Define functions
+    def f(x):
+        return 4 * x - 2
 
+    def g(x):
+        return -3 * x + 1
 
-def f(x):
-    return 4 * x - 2
+    def h(x):
+        return -0.5 * x + 1
 
+    def r(x):
+        return x - 2
 
-def g(x):
-    return -3 * x + 1
+    # List of functions and their labels.
+    functions = [f, g, h, r]
+    fn_labels = [r"$f$", r"$g$", r"$h$", r"$r$"]
 
+    # Create the math figure
+    fig, ax = make_figure(
+        functions=functions,
+        fn_labels=fn_labels,  # Set `None` hvis du ikke vil ha labels.
+        xmin=-2,
+        xmax=6,
+        ymin=-6,
+        ymax=5,
+        ticks=False,
+    )
 
-def h(x):
-    return -0.5 * x + 1
+    # Select an appropriate `dirname` to save the figure.
+    # The directory `dirname` will be created automatically if it does not exist already.
+    if save:
+        fname = __file__.split("/")[-1].replace(".py", ".svg")
+        savefig(dirname=dirname, fname=fname)  # Lagrer figuren i `dirname`-directory
 
+    if not save:
+        import matplotlib.pyplot as plt
 
-def r(x):
-    return x - 2
-
-
-a = -10
-b = 10
-
-xmin, xmax = -6, 5
-ymin, ymax = -5, 5
-
-x = np.linspace(a, b, 1024)
-
-fig, ax = plt.subplots()
-ax.plot(x, f(x), color="teal", lw=2, alpha=0.7, label="$f(x) = 4x - 2$")
-ax.plot(x, g(x), color="purple", lw=2, alpha=0.7, label="$g(x) = -3x + 1$")
-ax.plot(
-    x,
-    h(x),
-    color="blue",
-    lw=2,
-    alpha=0.7,
-    label="$h(x) = -\\displaystyle{\\frac{1}{2}}x + 1$",
-)
-ax.plot(x, r(x), color="red", lw=2, alpha=0.7, label="$r(x) = x - 2$")
+        plt.show()
 
 
-ax.spines["left"].set_position("zero")
-ax.spines["right"].set_color("none")
-ax.spines["bottom"].set_position("zero")
-ax.spines["top"].set_color("none")
+if __name__ == "__main__":
 
-ax.plot(1, 0, ">k", transform=ax.get_yaxis_transform(), clip_on=False)
-ax.plot(0, 1, "^k", transform=ax.get_xaxis_transform(), clip_on=False)
+    import sys
+    import os
 
-ax.set_xlabel(r"$x$", fontsize=16, loc="right")
-ax.set_ylabel(r"$y$", fontsize=16, loc="top", rotation="horizontal")
+    def find_repo_root(current_path):
+        while current_path != os.path.dirname(
+            current_path
+        ):  # Stop when you reach the filesystem root
+            if os.path.isdir(os.path.join(current_path, ".git")):
+                return current_path
+            current_path = os.path.dirname(current_path)
+        raise FileNotFoundError("No .git directory found in any parent directories.")
 
-# xticks = list(np.arange(xmin + 1, xmax, 1))
-# if 0 in xticks:
-#     xticks.remove(0)
-# plt.xticks(xticks, fontsize=16)
+    # Get the directory where the script is located
+    current_dir = os.path.dirname(os.path.abspath(__file__))
 
-# yticks = list(np.arange(ymin + 1, ymax, 1))
-# if 0 in yticks:
-#     yticks.remove(0)
-# plt.yticks(yticks, fontsize=16)
+    # Find the root of the GitHub repository (where .git is located)
+    repo_root = find_repo_root(current_dir)
 
-plt.ylim(ymin, ymax)
-plt.xlim(xmin, xmax)
-plt.xticks([])
-plt.yticks([])
+    # Add the GitHub repository root to sys.path
+    sys.path.append(repo_root)
 
-plt.grid(True, linestyle="--", alpha=0.6)
-plt.legend(fontsize=16)
-plt.tight_layout()
+    # Now you can import modules from the GitHub repo root
+    from python_templates.plot_utils import make_figure, savefig
 
-# Lagrer figuren i vektorformat
-fname = __file__.split("/")[-1].replace(".py", ".svg")
-plt.savefig(f"../../figurer/oppgaver/{fname}")
-plt.show()
+    # Set `save=True` to save figure. `save=False` to display figure.
+    dirname = "../../figurer/oppgaver/"
+    main(dirname=dirname, save=True)

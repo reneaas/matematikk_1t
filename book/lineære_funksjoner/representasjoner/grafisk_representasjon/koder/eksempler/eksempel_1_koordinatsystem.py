@@ -3,8 +3,9 @@ import matplotlib.pyplot as plt
 
 plt.rc("text", usetex=True)
 
+
 def f(x):
-    return 2*x - 4
+    return 2 * x - 4
 
 
 a = -4
@@ -34,10 +35,23 @@ y_vals = [f(i) for i in x_vals]
 for i in range(len(x_vals)):
     ax.plot(x_vals[i], y_vals[i], color="black", alpha=0.7, marker="o")
     if x_vals[i] == 0:
-        ax.text(x_vals[i]+0.1, y_vals[i] - 0.1, f"({x_vals[i]}, {y_vals[i]})", fontsize=16, ha="left", va="center")
+        ax.text(
+            x_vals[i] + 0.1,
+            y_vals[i] - 0.1,
+            f"({x_vals[i]}, {y_vals[i]})",
+            fontsize=16,
+            ha="left",
+            va="center",
+        )
     else:
-        ax.text(x_vals[i], y_vals[i] + 0.1, f"({x_vals[i]}, {y_vals[i]})", fontsize=16, ha="right", va="bottom")
-
+        ax.text(
+            x_vals[i],
+            y_vals[i] + 0.1,
+            f"({x_vals[i]}, {y_vals[i]})",
+            fontsize=16,
+            ha="right",
+            va="bottom",
+        )
 
 
 xticks = list(np.arange(-1, 4, 1))

@@ -1,62 +1,76 @@
-import numpy as np
-import matplotlib.pyplot as plt
+def main(dirname, save=False):
 
-plt.rc("text", usetex=True)
+    # Define functions
+    def f(x):
+        return -2 * x + 4
 
+    def g(x):
+        return -2 * x + 2
 
-def f(x):
-    return -2 * x - 4
+    def h(x):
+        return -x + 2
 
+    def r(x):
+        return x + 2
 
-def g(x):
-    return -2 * x + 2
+    # List of functions and their labels.
+    import numpy as np
 
+    np.random.seed(1000)
+    idx = np.random.permutation(4)
+    functions = [f, g, h, r]
+    functions = [functions[i] for i in idx]
+    fn_labels = None
 
-def h(x):
-    return -x + 2
+    # Create the math figure
+    fig, ax = make_figure(
+        functions=functions,
+        fn_labels=fn_labels,  # Set `None` hvis du ikke vil ha labels.
+        xmin=-3,
+        xmax=4,
+        ymin=-3,
+        ymax=5,
+        ticks=False,
+    )
 
+    # Select an appropriate `dirname` to save the figure.
+    # The directory `dirname` will be created automatically if it does not exist already.
+    if save:
+        fname = __file__.split("/")[-1].replace(".py", ".svg")
+        savefig(dirname=dirname, fname=fname)  # Lagrer figuren i `dirname`-directory
 
-def r(x):
-    return x + 2
+    if not save:
+        import matplotlib.pyplot as plt
 
-
-a = -10
-b = 10
-
-xmin, xmax = -7, 7
-ymin, ymax = -9, 9
-
-x = np.linspace(a, b, 1024)
-
-fig, ax = plt.subplots()
-ax.plot(x, f(x), color="purple", lw=2, alpha=0.7)
-ax.plot(x, g(x), color="blue", lw=2, alpha=0.7)
-ax.plot(x, h(x), color="red", lw=2, alpha=0.7)
-ax.plot(x, r(x), color="teal", lw=2, alpha=0.7)
-
-
-ax.spines["left"].set_position("zero")
-ax.spines["right"].set_color("none")
-ax.spines["bottom"].set_position("zero")
-ax.spines["top"].set_color("none")
-
-ax.plot(1, 0, ">k", transform=ax.get_yaxis_transform(), clip_on=False)
-ax.plot(0, 1, "^k", transform=ax.get_xaxis_transform(), clip_on=False)
-
-ax.set_xlabel(r"$x$", fontsize=16, loc="right")
-ax.set_ylabel(r"$y$", fontsize=16, loc="top", rotation="horizontal")
+        plt.show()
 
 
-plt.ylim(ymin, ymax)
-plt.xlim(xmin, xmax)
-plt.xticks([])
-plt.yticks([])
+if __name__ == "__main__":
 
-plt.grid(True, linestyle="--", alpha=0.6)
-# plt.legend(fontsize=16)
-plt.tight_layout()
+    import sys
+    import os
 
-# Lagrer figuren i vektorformat
-fname = __file__.split("/")[-1].replace(".py", ".svg")
-plt.savefig(f"../../figurer/oppgaver/{fname}")
-plt.show()
+    def find_repo_root(current_path):
+        while current_path != os.path.dirname(
+            current_path
+        ):  # Stop when you reach the filesystem root
+            if os.path.isdir(os.path.join(current_path, ".git")):
+                return current_path
+            current_path = os.path.dirname(current_path)
+        raise FileNotFoundError("No .git directory found in any parent directories.")
+
+    # Get the directory where the script is located
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+
+    # Find the root of the GitHub repository (where .git is located)
+    repo_root = find_repo_root(current_dir)
+
+    # Add the GitHub repository root to sys.path
+    sys.path.append(repo_root)
+
+    # Now you can import modules from the GitHub repo root
+    from python_templates.plot_utils import make_figure, savefig
+
+    # Set `save=True` to save figure. `save=False` to display figure.
+    dirname = "../../figurer/oppgaver/"
+    main(dirname=dirname, save=True)

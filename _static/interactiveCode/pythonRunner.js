@@ -429,14 +429,15 @@ sys.stderr = PyConsole()
 
         codeLines = codeLines.map(line => {
             for (let variable in userValues) {
-                const inputRegex = new RegExp(`\\s*${variable}\\s*=\\s*(float|eval)?\\(?input\\(.*?\\)\\)?`, 'g');
+                const inputRegex = new RegExp(`\\s*${variable}\\s*=\\s*(float|int|eval)?\\(?input\\(.*?\\)\\)?`, 'g');
                 
 
                 if (inputRegex.test(line)) {
                     //Perform safe evaluation of user input. 
                     // TODO: add possibility to use strings as well.                  
                     const userValue = JSON.stringify(userValues[variable]);
-                    line = `${variable} = float(${userValue}) if '.' in ${userValue} else int(${userValue})`.trim();
+                    // line = `${variable} = eval(${userValue})`.trim();
+                    line = `${variable} = eval(${userValue})`.trim();
                     // line = `${variable} = safe_eval(${userValue})`;
                 }
             }

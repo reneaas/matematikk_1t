@@ -4,21 +4,28 @@
 ---
 class: problem-level-1
 ---
-I {numref}`lineære-likninger-grafisk-løsning-oppg-1` er grafen til $f(x) = x + 3$ tegnet inn. 
+I {numref}`lineære-likninger-grafisk-løsning-oppgave-1` vises grafen til
 
-```{figure} ./figurer/oppgaver/oppg_1.svg
+$$
+f(x) = x + 3.
+$$
+
+```{figure} ./figurer/oppgaver/oppgave_1.svg
 ---
-name: lineære-likninger-grafisk-løsning-oppg-1
+name: lineære-likninger-grafisk-løsning-oppgave-1
 width: 80%
 ---
 
-Grafen til $f(x) = x + 3$.
+viser grafen til $f(x) = x + 3$.
 ```
 
-Bruk grafen til å løse likningene under.
 
-Oppgave 1a
-: $$x + 3 = 0$$
+Deloppgave 1
+: Bruk {numref}`lineære-likninger-grafisk-løsning-oppgave-1` til å løse likningen 
+
+$$
+x + 3 = 0
+$$
 
 :::{admonition} Fasit
 ---
@@ -39,8 +46,12 @@ Grafen skjærer $x$-aksen i $x = -3$, som betyr at løsningen av likningen er $x
 
 <br>
 
-Oppgave 1b
-: $$x + 3 = 4$$
+Deloppgave 2
+: Bruk {numref}`lineære-likninger-grafisk-løsning-oppgave-1` til å løse likningen
+
+$$
+x + 3 = 4
+$$
 
 :::{admonition} Fasit
 ---
@@ -61,8 +72,12 @@ Grafen skjærer linja $y = 4$ i $(x, y) = (1, 4)$, som betyr at løsningen av li
 
 <br>
 
-Oppgave 1c
-: $$x + 3 = -2$$
+Deloppgave 3
+: Bruk {numref}`lineære-likninger-grafisk-løsning-oppgave-1` til å løse likningen
+
+$$
+x + 3 = -2
+$$
 
 :::{admonition} Fasit
 ---
@@ -92,17 +107,17 @@ file: ./figurer/interaktive_plot/lineær_likning_2x+1=k.html
 ---
 ```
 
-Oppgave 2a
+Deloppgave 1
 : Bestem hvilken verdi av $k$ som gir løsningen $x = -2$. 
 
-:::{admonition} Fasit: 2a
+:::{admonition} Fasit
 ---
 class: answer, dropdown
 ---
 $k = -3$. 
 :::
 
-:::{admonition} Løsning: 2a
+:::{admonition} Løsning
 ---
 class: solution, dropdown
 ---
@@ -112,7 +127,7 @@ Justerer vi linja $y = k$ til $y = -3$, så skjærer grafen til $f$ linja i $(x,
 
 <br>
 
-Oppgave 2b
+Deloppgave 2
 : Bruk grafen til å forklare hvorfor likningen $2x + 1 = k$ har en løsning for alle $k \in \mathbb{R}$.
 
 
@@ -124,11 +139,12 @@ Oppgave 2b
 ---
 class: problem-level-1
 ---
-I figur {numref}`lineære-likninger-grafisk-løsning-oppg-3` er grafene til to lineære funksjoner $f$ og $g$ tegnet inn. 
+I figur {numref}`lineære-likninger-grafisk-løsning-oppgave-3` er grafene til to lineære funksjoner $f$ og $g$ tegnet inn. 
 
-:::{figure} ./figurer/oppgaver/oppg_3.svg
+:::{figure} ./figurer/oppgaver/oppgave_3.svg
 ---
-name: lineære-likninger-grafisk-løsning-oppg-3
+name: lineære-likninger-grafisk-løsning-oppgave-3
+width: 80%
 ---
 Grafene til to lineære funksjoner $f$ og $g$.
 
@@ -137,7 +153,7 @@ Grafene til to lineære funksjoner $f$ og $g$.
 Oppgave 3a
 : Bestem likningen som svarer til skjæringen mellom grafene til $f$ og $g$. 
 
-::::{admonition} Fasit: 3a
+::::{admonition} Fasit
 ---
 class: answer, dropdown
 ---
@@ -153,7 +169,7 @@ Oppgave 3b
 
 
 
-::::{admonition} Fasit: 3b
+::::{admonition} Fasit
 ---
 class: answer, dropdown
 ---
@@ -170,82 +186,101 @@ $$
 class: problem-level-2
 ---
 
-I {numref}`lineære-likninger-grafisk-løsning-oppg-4` vises grafene til to lineære funksjoner. 
-Bruk figuren til å lage
-* En likning på formen $ax + b = 0$
-* En likning på formen $ax + b = k$
-* En likning på formen $ax + b = cx + d$
+I {numref}`lineære-likninger-grafisk-løsning-oppgave-4` vises grafene til to lineære funksjoner $f$ og $g$. 
 
-Løs likningene ved hjelp av figuren.
-
-```{figure} ./figurer/oppgaver/oppg_4.svg
+:::{figure} ./figurer/oppgaver/oppgave_4.svg
 ---
-name: lineære-likninger-grafisk-løsning-oppg-4
+name: lineære-likninger-grafisk-løsning-oppgave-4
 width: 80%
 ---
 
 Grafene til to lineære funksjoner.
-``` 
+:::
+
+
+Deloppgave 1
+: Bruk minst én av grafene {numref}`lineære-likninger-grafisk-løsning-oppgave-4` til å lage en likning på formen $ax + b = 0$. <br> Løs likningen ved hjelp av figuren.
 
 :::{admonition} Hint
 ---
 class: hints, dropdown
 ---
-For å lage likningene, må du bestemme funksjonsuttrykkene til de to lineære funksjonene ut ifra grafene.
+For å lage likningen, må du bestemme funksjonsuttrykkene til de to lineære funksjonene ut ifra grafene.
 :::
 
-::::{admonition} Fasit
+
+:::{admonition} Fasit
 ---
 class: answer, dropdown
 ---
-Det finnes flere muligheter enn de som er listet her.
+Det holder med én av alternativene under:
+````{tab-set}
+```{tab-item} Med $f$
+Likning:
+: $x - 1 = 0$.
 
-Likning 1
-: $$-x + 3 = 0 \quad \Leftrightarrow \quad x = 3$$
+Løsning:
+: $x = 1$ eller $x \in \{1\}$. 
+```
 
-Likning 2
-: $$3x - 1 = 5 \quad \Leftrightarrow \quad x = 2 $$
+```{tab-item} Med $g$
+Likning:
+: $-x + 3 = 0$.
 
-Likning 2
-: $$-x + 3 = 3x - 1 \quad \Leftrightarrow \quad x = 1$$
-::::
-
-:::::{admonition} Løsning
----
-class: solution, dropdown
----
-
-Vi må bestemme funksjonsuttrykkene til de to grafene først. Vi lar den grønne grafen væren $f$ og den lilla være $g$. 
-Vi bruker tabellen under til å bestemme funksjonsuttrykkene
-
-| Funksjon | $(x_1, y_1)$ | $(x_2, y_2)$ | $\Delta x$ | $\Delta y$ | $a = \dfrac{\Delta y}{\Delta x}$ | $b$ | 
-|:--------:|:------------:|:------------:|:----------:|:----------:|:--------------------------------:|:---:|
-| $f$      | $(0, 3)$     | $(1, 2)$     | $1$        | $-1$       | $-1$                             | $3$ |
-| $g$      | $(0, -1)$    | $(1, 2)$     | $1$        | $3$        | $3$                              | $-1$|
+Løsning:
+: $x = 3$ eller $x \in \{3\}$.
+```
+````
+:::
 
 <br>
 
-Dermed er funksjonsuttrykkene til $f$ og $g$ gitt ved
-
-$$
-f(x) = -x + 3 \quad \text{og} \quad g(x) = 3x - 1.
-$$
+Deloppgave 2
+: Bruk minst én av grafene {numref}`lineære-likninger-grafisk-løsning-oppgave-4` til å lage en likning på formen $ax + b = k$. <br> Løs likningen ved hjelp av figuren.
 
 
-Nå kan vi lage tre likninger.
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+Her er det mange muligheter. Vi viser to muligheter under - én med grafen til $f$ og én med grafen til $g$.
 
-Likning 1
-: $$-x + 3 = 0$$
-: Likningen svarer til $x$-verdien til der grafen til $g$ skjærer $x$-aksen. Grafen skjærer $x$-aksen i $(x, y) = (3, 0)$, så løsningen av likningen er $x = 3$.
+````{tab-set}
+```{tab-item} Med $f$
+Likning:
+: $x - 1 = 3$.
 
-Likning 2
-: $$3x - 1 = 5$$
-: Likningen svarer $x$-verdien til skjæringen mellom grafen til $f$ og linja $y = 5$. Skjæringen skjer i $(x, y) = (2, 5)$, så løsningen av likningen er $x = 2$.
+Løsning:
+: $x = 4$ eller $x \in \{4\}$. 
+```
 
-Likning 2
-: $$-x + 3 = 3x - 1$$
-: Likningen svarer til $x$-verdien til skjæringen mellom grafene til $f$ og $g$. De skjærer hverandre i $(x, y) = (1, 2)$, så løsningen av likningen er $x = 1$.
-:::::
+```{tab-item} Med $g$
+Likning:
+: $-x + 3 = -1$.
+
+Løsning:
+: $x = 4$ eller $x \in \{4\}$.
+```
+````
+::: 
+
+
+<br>
+
+Deloppgave 3
+: Bruk grafene i {numref}`lineære-likninger-grafisk-løsning-oppgave-4` til å skrive ned en likning på formen $ax + b = cx + d$. <br> Løs likningen ved hjelp av figuren.
+
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+Likning: 
+: $x - 1 = -x + 3$.
+
+Løsning:
+: $x = 2$ eller $x \in \{2\}$.
+:::
 
 ::::::
 
