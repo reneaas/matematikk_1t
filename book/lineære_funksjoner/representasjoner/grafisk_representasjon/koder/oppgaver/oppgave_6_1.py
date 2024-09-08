@@ -1,8 +1,8 @@
-def main(dirname, save):
+def main(dirname, save=False):
 
     # Define functions
     def f(x):
-        return -x + 2
+        return x + 4
 
     # List of functions and their labels.
     functions = [f]
@@ -12,14 +12,14 @@ def main(dirname, save):
     fig, ax = make_figure(
         functions=functions,
         fn_labels=fn_labels,  # Set `None` hvis du ikke vil ha labels.
-        xmin=-6,
-        xmax=6,
-        ymin=-6,
-        ymax=6,
+        xmin=-8,
+        xmax=4,
+        ymin=-4,
+        ymax=8,
         ticks=True,
     )
 
-    # NOTE: Select an appropriate `dirname` to save the figure.
+    # Select an appropriate `dirname` to save the figure.
     # The directory `dirname` will be created automatically if it does not exist already.
     if save:
         fname = __file__.split("/")[-1].replace(".py", ".svg")

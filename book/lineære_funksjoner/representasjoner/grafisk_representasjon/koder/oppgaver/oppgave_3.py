@@ -2,22 +2,41 @@ def main(dirname, save):
 
     # Define functions
     def f(x):
-        return -x + 2
+        return x + 2
+
+    def g(x):
+        return -0.5 * x + 2
+
+    def h(x):
+        return 0.5 * x - 1
+
+    def p(x):
+        return 2 * x - 1
+
+    def r(x):
+        return -2 * x + 3
 
     # List of functions and their labels.
-    functions = [f]
-    fn_labels = [r"$f$"]
+
+    import numpy as np
+
+    np.random.seed(3)
+
+    functions = [f, g, h, p, r]
+    fn_labels = [f"${fn.__name__}$" for fn in functions]
 
     # Create the math figure
     fig, ax = make_figure(
         functions=functions,
         fn_labels=fn_labels,  # Set `None` hvis du ikke vil ha labels.
-        xmin=-6,
+        xmin=-4,
         xmax=6,
         ymin=-6,
         ymax=6,
         ticks=True,
     )
+
+    ax.legend(loc="lower right", fontsize=16)
 
     # NOTE: Select an appropriate `dirname` to save the figure.
     # The directory `dirname` will be created automatically if it does not exist already.

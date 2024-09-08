@@ -1,4 +1,4 @@
-# Oppgaver: representasjoner av lineære funksjoner
+# Oppgaver: <br> representasjoner av lineære funksjoner
 
 ## Innhold
 

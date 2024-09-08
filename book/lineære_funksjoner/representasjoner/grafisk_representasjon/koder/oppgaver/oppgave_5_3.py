@@ -2,7 +2,7 @@ def main(dirname, save):
 
     # Define functions
     def f(x):
-        return -x + 2
+        return 2 * x - 3
 
     # List of functions and their labels.
     functions = [f]
@@ -12,12 +12,18 @@ def main(dirname, save):
     fig, ax = make_figure(
         functions=functions,
         fn_labels=fn_labels,  # Set `None` hvis du ikke vil ha labels.
-        xmin=-6,
-        xmax=6,
+        xmin=-4,
+        xmax=5,
         ymin=-6,
         ymax=6,
         ticks=True,
     )
+
+    x_vals = [i for i in range(-1, 4)]
+    y_vals = [f(i) for i in x_vals]
+
+    for x, y in zip(x_vals, y_vals):
+        ax.plot(x, y, "ko", markersize=8, alpha=0.7)
 
     # NOTE: Select an appropriate `dirname` to save the figure.
     # The directory `dirname` will be created automatically if it does not exist already.

@@ -41,42 +41,6 @@ def main(dirname, save):
             va="bottom",
         )
 
-    # ax.text(
-    #     s=r"$A$",
-    #     x=A[0] + 0.2,
-    #     y=A[1] + 0.2,
-    #     fontsize=16,
-    #     ha="left",
-    #     va="bottom",
-    # )
-
-    # ax.text(
-    #     s=r"$B$",
-    #     x=B[0] - 0.2,
-    #     y=B[1] + 0.2,
-    #     fontsize=16,
-    #     ha="right",
-    #     va="bottom",
-    # )
-
-    # ax.text(
-    #     s=r"$C$",
-    #     x=C[0] + 0.2,
-    #     y=C[1] - 0.2,
-    #     fontsize=16,
-    #     ha="left",
-    #     va="top",
-    # )
-
-    # ax.text(
-    #     s=r"$C$",
-    #     x=C[0] + 0.2,
-    #     y=C[1] - 0.2,
-    #     fontsize=16,
-    #     ha="left",
-    #     va="top",
-    # )
-
     # NOTE: Select an appropriate `dirname` to save the figure.
     # The directory `dirname` will be created automatically if it does not exist already.
     if save:

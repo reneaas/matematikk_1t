@@ -2,20 +2,11 @@ def main(dirname, save=False):
 
     # Define functions
     def f(x):
-        return 4 * x - 2
-
-    def g(x):
-        return -3 * x + 1
-
-    def h(x):
-        return -0.5 * x + 1
-
-    def r(x):
-        return x - 2
+        return -x + 1
 
     # List of functions and their labels.
-    functions = [f, g, h, r]
-    fn_labels = None
+    functions = [f]
+    fn_labels = [r"$f$"]
 
     # Create the math figure
     fig, ax = make_figure(
@@ -25,7 +16,7 @@ def main(dirname, save=False):
         xmax=6,
         ymin=-6,
         ymax=5,
-        ticks=False,
+        ticks=True,
     )
 
     # Select an appropriate `dirname` to save the figure.
@@ -43,19 +34,22 @@ def main(dirname, save=False):
 if __name__ == "__main__":
 
     import sys
-    import os
+    import pathlib
 
     def find_repo_root(current_path):
-        while current_path != os.path.dirname(
+        current_path = pathlib.Path(
             current_path
+        ).resolve()  # Convert to an absolute Path object
+        while (
+            current_path != current_path.parent
         ):  # Stop when you reach the filesystem root
-            if os.path.isdir(os.path.join(current_path, ".git")):
-                return current_path
-            current_path = os.path.dirname(current_path)
+            if (current_path / ".git").is_dir():  # Check if the .git directory exists
+                return str(current_path)
+            current_path = current_path.parent  # Move one level up
         raise FileNotFoundError("No .git directory found in any parent directories.")
 
     # Get the directory where the script is located
-    current_dir = os.path.dirname(os.path.abspath(__file__))
+    current_dir = str(pathlib.Path(__file__).resolve().parent)
 
     # Find the root of the GitHub repository (where .git is located)
     repo_root = find_repo_root(current_dir)
@@ -66,6 +60,6 @@ if __name__ == "__main__":
     # Now you can import modules from the GitHub repo root
     from python_templates.plot_utils import make_figure, savefig
 
-    # Set `save=True` to save figure. `save=False` to display figure.
-    dirname = "../../figurer/oppgaver/"
+    # NOTE: Set `save=True` to save figure. `save=False` to display figure.
+    dirname = current_dir.replace("koder", "figurer")
     main(dirname=dirname, save=True)

@@ -2,7 +2,7 @@ def main(dirname, save):
 
     # Define functions
     def f(x):
-        return -x + 2
+        return 2 * x + 1
 
     # List of functions and their labels.
     functions = [f]
@@ -12,7 +12,7 @@ def main(dirname, save):
     fig, ax = make_figure(
         functions=functions,
         fn_labels=fn_labels,  # Set `None` hvis du ikke vil ha labels.
-        xmin=-6,
+        xmin=-4,
         xmax=6,
         ymin=-6,
         ymax=6,

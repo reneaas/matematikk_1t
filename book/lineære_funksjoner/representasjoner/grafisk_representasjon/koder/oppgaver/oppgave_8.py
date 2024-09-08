@@ -1,25 +1,38 @@
-def main(dirname, save):
+def main(dirname, save=False):
 
     # Define functions
     def f(x):
+        return -2 * x + 4
+
+    def g(x):
+        return -2 * x + 2
+
+    def h(x):
         return -x + 2
 
+    def p(x):
+        return x + 2
+
     # List of functions and their labels.
-    functions = [f]
-    fn_labels = [r"$f$"]
+    import numpy as np
+
+    np.random.seed(8)
+    functions = [f, g, h, p]
+    functions = np.random.permutation(functions)
+    fn_labels = None
 
     # Create the math figure
     fig, ax = make_figure(
         functions=functions,
         fn_labels=fn_labels,  # Set `None` hvis du ikke vil ha labels.
-        xmin=-6,
-        xmax=6,
-        ymin=-6,
-        ymax=6,
-        ticks=True,
+        xmin=-3,
+        xmax=4,
+        ymin=-3,
+        ymax=5,
+        ticks=False,
     )
 
-    # NOTE: Select an appropriate `dirname` to save the figure.
+    # Select an appropriate `dirname` to save the figure.
     # The directory `dirname` will be created automatically if it does not exist already.
     if save:
         fname = __file__.split("/")[-1].replace(".py", ".svg")

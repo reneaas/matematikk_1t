@@ -1,12 +1,12 @@
-def main(dirname, save):
+def main(dirname, save=False):
 
     # Define functions
     def f(x):
-        return -x + 2
+        return 0.5 * x + 1
 
     # List of functions and their labels.
     functions = [f]
-    fn_labels = [r"$f$"]
+    fn_labels = [r"$r$"]
 
     # Create the math figure
     fig, ax = make_figure(
@@ -19,7 +19,7 @@ def main(dirname, save):
         ticks=True,
     )
 
-    # NOTE: Select an appropriate `dirname` to save the figure.
+    # Select an appropriate `dirname` to save the figure.
     # The directory `dirname` will be created automatically if it does not exist already.
     if save:
         fname = __file__.split("/")[-1].replace(".py", ".svg")

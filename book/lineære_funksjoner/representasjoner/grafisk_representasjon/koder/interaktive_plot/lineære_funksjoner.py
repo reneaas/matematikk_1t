@@ -1,29 +1,36 @@
 def main(dirname, save):
 
     # Define functions
-    def f(x):
-        return -x + 2
+
+    def f(x, a, b):
+        return a * x + b
 
     # List of functions and their labels.
-    functions = [f]
-    fn_labels = [r"$f$"]
 
-    # Create the math figure
-    fig, ax = make_figure(
-        functions=functions,
-        fn_labels=fn_labels,  # Set `None` hvis du ikke vil ha labels.
-        xmin=-6,
-        xmax=6,
-        ymin=-6,
-        ymax=6,
-        ticks=True,
-    )
+    for a in range(-10, 11):
+        for b in range(-10, 11):
+            functions = [lambda x: f(x, a=a, b=b)]
+            fn_labels = [f"$f(x) = {a}x + {b}$"]
 
-    # NOTE: Select an appropriate `dirname` to save the figure.
-    # The directory `dirname` will be created automatically if it does not exist already.
-    if save:
-        fname = __file__.split("/")[-1].replace(".py", ".svg")
-        savefig(dirname=dirname, fname=fname)  # Lagrer figuren i `dirname`-directory
+            # Create the math figure
+            fig, ax = make_figure(
+                functions=functions,
+                fn_labels=fn_labels,  # Set `None` hvis du ikke vil ha labels.
+                xmin=-6,
+                xmax=6,
+                ymin=-6,
+                ymax=6,
+                ticks=True,
+            )
+
+            if save:
+                fname = f"{a=}_{b=}.svg"
+                savefig(
+                    dirname=dirname, fname=fname
+                )  # Lagrer figuren i `dirname`-directory
+                import matplotlib.pyplot as plt
+
+                plt.close()
 
     if not save:
         import matplotlib.pyplot as plt

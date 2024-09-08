@@ -1,18 +1,18 @@
 def main(dirname, save):
 
     # Define functions
-    def f(x):
-        return -x + 2
+    def p(x):
+        return x - 2
 
     # List of functions and their labels.
-    functions = [f]
-    fn_labels = [r"$f$"]
+    functions = [p]
+    fn_labels = [r"$p$"]
 
     # Create the math figure
     fig, ax = make_figure(
         functions=functions,
         fn_labels=fn_labels,  # Set `None` hvis du ikke vil ha labels.
-        xmin=-6,
+        xmin=-4,
         xmax=6,
         ymin=-6,
         ymax=6,
