@@ -1,4 +1,4 @@
-# Oppgaver: algebraisk representasjon av lineære funksjoner
+# Oppgaver: <br> Algebraisk representasjon av lineære funksjoner
 
 :::::{admonition} Oppgave 1
 ---
