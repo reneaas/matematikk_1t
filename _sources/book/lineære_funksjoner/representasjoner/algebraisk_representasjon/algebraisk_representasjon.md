@@ -43,7 +43,7 @@ $$ (eq:linear_funksjon)
 * $a$ er **stigningstallet** til linja.
 * $b$ er **konstantleddet** til linja. Også kalt for **skjæringen med $y$-aksen**.
 * $f$ er **navnet** til funksjonen.
-* $y = f(x)$ er **funksjonsverdien** til en bestemt $x$-verdi.
+* $y = f(x)$ er **funksjonsverdien** for en bestemt $x$-verdi.
 ::::
 
 Vi tar noen eksempler på lineære funksjoner med skrivemåten over:
