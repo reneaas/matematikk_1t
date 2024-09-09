@@ -10,22 +10,21 @@ Etter å ha gått gjennom dette delkapittelet, er målet at du skal kunne:
 
 Når vi jobber med lineære ulikheter, kan vi i stor grad bruke de samme metodene som vi bruker for å løse lineære likninger. Vi kan 
 * legge til og trekke fra et tall på begge sider av ulikheten
-* gange og dele med et tall på begge sider av ulikheten
+* gange og dele med et tall på begge sider av ulikheten/*
 
-Det er én fallgruve som vi skal se på etter hvert, men ellers er det egentlig ikke noe ny teori.
+/*Unntaket til dette er når vi skal gange eller dele med et negativt tall, da må vi snu ulikhetstegnet.
 
 
 ::::{admonition} Eksempel 1: ulikhet på formen $ax + b > 0$ 
 ---
 class: example
 ---
-Løs ulikheten 
+Løs ulikheten under algebraisk.
 
 $$
 2x - 3 > 0
 $$
 
-algebraisk.
 
 :::{admonition} Løsning
 ---
@@ -58,13 +57,13 @@ $$
 ---
 class: check
 ---
-Løs ulikheten 
+Løs ulikheten under algebraisk. Oppgi løsningen både som en ulikhet og en løsningsmengde.
 
 $$
 3x + 4 \leq 0
 $$
 
-algebraisk. Oppgi løsningen både som en ulikhet og en løsningsmengde.
+
 
 :::::{admonition} Fasit
 ---
@@ -158,9 +157,9 @@ class: solution
 & \Updownarrow \\
 -x &< -7 \\
 & \Updownarrow \\
--x \textcolor{red}{\cdot (-1)} &< -7 \textcolor{red}{\cdot (-1)} && \text{Ganger med $-1$ på hver side} \\
+-x \textcolor{red}{\cdot (-1)} &> -7 \textcolor{red}{\cdot (-1)} && \text{Snur ulikhetstegnet} \\
 & \Updownarrow \\
-x &> 7 && \text{Ulikhetstegnet må snus når vi ganger med et negativt tall}
+x &> 7
 \end{align*}
 :::::
 
@@ -236,6 +235,7 @@ $$
 ::::
 :::::
 ::::::
+
 
 ## Oppgaver 
 

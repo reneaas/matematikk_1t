@@ -6,7 +6,6 @@ import matplotlib.pyplot as plt
 colors = ["#029386", "#C875C4", "#E50000", "blue", "purple", "orange"]
 # colors = np.random.permutation(colors)
 plt.rcParams["axes.prop_cycle"] = plt.cycler(color=colors)
-plt.rc("text", usetex=True)
 
 
 def _get_figure_and_axis():

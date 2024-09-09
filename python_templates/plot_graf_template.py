@@ -1,17 +1,25 @@
+import matplotlib.pyplot as plt
+plt.rc("text", usetex=True)
+
+
 def main(dirname, save):
 
     # Define functions
     def f(x):
         return x - 2
+    
+    def g(x):
+        return x**2 - 2*x + 1
 
     # List of functions and their labels.
-    functions = [f]
-    fn_labels = [r"$f$"]
+    functions = [f, g]
+    fn_labels = [f"${fn.__name__}$" for fn in functions]
+
 
     # Create the math figure
     fig, ax = make_figure(
         functions=functions,
-        fn_labels=fn_labels,  # Set `None` hvis du ikke vil ha labels.
+        fn_labels=fn_labels,  # NOTE: Set `None` hvis du ikke vil ha labels.
         xmin=-4,
         xmax=6,
         ymin=-6,
@@ -26,7 +34,6 @@ def main(dirname, save):
         savefig(dirname=dirname, fname=fname)  # Lagrer figuren i `dirname`-directory
 
     if not save:
-        import matplotlib.pyplot as plt
 
         plt.show()
 
