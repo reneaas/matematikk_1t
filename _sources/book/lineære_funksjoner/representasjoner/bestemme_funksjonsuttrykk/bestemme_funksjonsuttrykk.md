@@ -4,11 +4,10 @@
 ---
 class: tip
 ---
-Etter å ha gått gjennom dette delkapittelet, er målet at du skal kunne:
+Etter dette delkapittelet, er målet at du skal:
 
-* Kjenne til hvor mye informasjon man trenger for å bestemme funksjonsuttrykket til en lineær funksjon.
-* Bestemme stigningstallet til en lineær funksjon med topunktsformelen.
-* Bestemme funksjonsuttrykket til en lineær funksjon med ettpunktsformelen.
+* Kunne bestemme stigningstallet til en lineær funksjon med topunktsformelen.
+* Kunne bestemme funksjonsuttrykket til en lineær funksjon med ettpunktsformelen.
 :::
 
 
@@ -19,24 +18,21 @@ Etter å ha gått gjennom dette delkapittelet, er målet at du skal kunne:
 ---
 class: theory
 ---
-Funksjonsuttrykket til en lineær funksjon $f$ er bestemt av en av de to følgende punktene:
-1. To punkter
-2. Stigningstallet og ett punkt
+Funksjonsuttrykket til en lineær funksjon $f$ er entydig bestemt av enten
+1. To punkter på grafen til $f$,
+
+    eller
+
+2. Stigningstallet og ett punkt på grafen til $f$.
 
 :::
 
-Vi kan altså bestemme funksjonsuttrykket dersom vi enten kjenner til to punkter på grafen til $f$, eller dersom vi kjenner til stigningstallet og ett punkt på grafen til $f$.
+Vi kan altså bestemme funksjonsuttrykket dersom vi enten kjenner til to punkter på grafen til $f$, eller dersom vi kjenner til stigningstallet og ett punkt på grafen til $f$. Typisk vil vi måtte bestemme stigningstallet med topunktsformelen først, etterfulgt av å bestemme funksjonsuttrykket med ettpunktsformelen.
 
 ## Topunktsformelen
-Typisk bestemmer vi funksjonsuttrykket til en lineær funksjon i to steg:
 
-Steg 1
-: Bestem stigningstallet $a$
+Når vi kjenner til to punkter på grafen til en lineær funksjon $f$, kan vi bestemme stigningstallet ved hjelp av det vi skal kalle for **topunktsformelen**.
 
-Steg 2
-: Bruk ettpunktsformelen til å bestemme funksjonsuttrykket (og dermed også konstantleddet $b$)
-
-For å bestemme stigningstallet, bruker vi **topunktsformelen**:
 
 :::{admonition} $\Delta$-symbolet
 ---
@@ -168,23 +164,29 @@ $$
 
 Stigningstallet vil være det samme uansett hvilke to punkter $a$ er regnet ut fra (siden det er en konstant). Dermed kan vi skrive om uttrykket som 
 
-$$
-a = \frac{y - y_1}{x - x_1} \quad \Leftrightarrow \quad y - y_1 = a(x - x_1)
-$$
+\begin{align*}
+a &= \frac{y - y_1}{x - x_1} \\
+\\
+a \cdot \textcolor{red}{(x - x_1)} &=  \frac{y - y_1}{\cancel{x - x_1}} \cdot  \cancel{\textcolor{red}{(x - x_1)}} && \text{Gang med $(x - x_1)$. Stryk nevner.} \\
+\\
+a(x - x_1) &= y - y_1.
+\end{align*}
 
 
-Dette er ettpunktsformelen.
+Vi har nå kommet fram til ettpunktsformelen.
 
 
 :::{admonition} Ettpunktsformelen
 ---
 class: theory
 ---
-Dersom vi kjenner stigningstallet $a$ og et punkt $(x_1, y_1)$ på grafen til en lineær funksjon, kan vi bestemme funksjonsuttrykket til funksjonen ved hjelp av ettpunktsformelen
+Dersom vi kjenner stigningstallet $a$ og et punkt $(x_1, y_1)$ på grafen til en lineær funksjon $f$, kan vi bestemme funksjonsuttrykket til funksjonen ved hjelp av ettpunktsformelen
 
 $$
-y - y_1 = a(x - x_1).
+y - y_1 = a(x - x_1) \, ,
 $$
+
+der $y = f(x)$.
 :::
 
 Vi tar et eksempel
