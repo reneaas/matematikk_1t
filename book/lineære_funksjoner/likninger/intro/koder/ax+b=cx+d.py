@@ -1,12 +1,16 @@
 def main(dirname, save):
 
     # Define functions
-    def f(x):
-        return x - 2
+    def f(x, a, b):
+        return a * x + b
 
     # List of functions and their labels.
-    functions = [f]
-    fn_labels = [r"$f$"]
+    a = 2
+    b = -1
+    c = 1
+    d = 1
+    functions = [lambda x: f(x, a, b), lambda x: f(x, c, d)]
+    fn_labels = [r"$f(x)=2x - 1$", r"$g(x) = x + 1$"]
 
     # Create the math figure
     fig, ax = make_figure(
@@ -14,9 +18,31 @@ def main(dirname, save):
         fn_labels=fn_labels,  # Set `None` hvis du ikke vil ha labels.
         xmin=-4,
         xmax=6,
-        ymin=-6,
-        ymax=6,
+        ymin=-4,
+        ymax=8,
         ticks=True,
+    )
+
+    x = (d - b) / (a - c)
+    y = f(x, a, b)
+
+    ax.plot(x, y, "ko", markersize=8, alpha=0.7)
+    ax.vlines(x, 0, y, color="red", lw=2, alpha=0.7, linestyle="--")
+
+    ax.annotate(
+        text="Løsning: $x$-koordinaten",
+        xy=(x, y),
+        xytext=(4, 1),
+        fontsize=16,
+        arrowprops=dict(
+            arrowstyle="->",
+            lw=2,
+            color="black",
+            alpha=0.7,
+            connectionstyle="arc3,rad=-0.2",
+        ),
+        horizontalalignment="center",
+        verticalalignment="center",
     )
 
     # NOTE: Select an appropriate `dirname` to save the figure.

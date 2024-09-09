@@ -4,13 +4,14 @@ import matplotlib.pyplot as plt
 
 def main(dirname, save):
 
-    x = sp.symbols("x")
-    f = -(x**2) + 3 * x + 4
+    x = sp.symbols("r")
+    f = -4 * x**2 + 1
 
     make_sign_chart(
         f=f,
         x=x,
-        fn_name="f(x)",
+        fn_name="D(r)",
+        include_factors=False,
     )
 
     if save:

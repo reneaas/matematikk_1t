@@ -58,7 +58,7 @@ if __name__ == "__main__":
     sys.path.append(repo_root)
 
     # Now you can import modules from the GitHub repo root
-    from python_templates.plot_utils import make_figure, savefig
+    from python_utils.plot_utils import make_figure, savefig
 
     # NOTE: Set `save=True` to save figure. `save=False` to display figure.
     dirname = current_dir.replace("koder", "figurer")
