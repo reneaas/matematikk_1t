@@ -281,7 +281,7 @@ og så ser vi på skjæringen mellom grafene til de to funksjonene. $x$-verdien 
 Grafen til $f(x) = x - 1$ og $g(x) = -x + 3$. 
 ```
 
-Grafene skjærer hverandre i punktet $(x, y) = (1, 2)$, som betyr at løsningen av likningen er $x = 1$. 
+Grafene skjærer hverandre i punktet $(x, y) = (2, 1)$, som betyr at løsningen av likningen er $x = 2$. 
 
 ````
 
