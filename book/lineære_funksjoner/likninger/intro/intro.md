@@ -1,7 +1,10 @@
 # Lineære likninger
 
 
-En **lineær likning**, er en likning der venstre side og høyre side er **lineære funksjoner**.
+En **lineær likning** kan representeres på flere måter. For eksempel:
+* Algebraisk: $f(x) = g(x)$ der $f$ og $g$ er lineære funksjoner.
+* Grafisk: $x$-koordinaten til skjæringen mellom grafene til to lineære funksjoner.
+* Programkode: Et program som søker etter en verdi for $x$ slik at $f(x) = g(x)$. 
 
 ::::::{admonition} Utforsk: lineære likninger
 ---
