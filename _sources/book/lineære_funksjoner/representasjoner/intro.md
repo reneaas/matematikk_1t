@@ -30,7 +30,7 @@ viser en grafisk representasjon av $f(x) = 2x$.
 ```
 ````
 
-````{tab} Progamkode
+````{tab} Programkode
 ```{code-block} python
 def f(x):
     return 2 * x
@@ -63,7 +63,7 @@ viser en grafisk representasjon av $g(x) = -x$.
 ```
 ````
 
-````{tab} Progamkode
+````{tab} Programkode
 ```{code-block} python
 def g(x):
     return -x
@@ -96,7 +96,7 @@ viser en grafisk representasjon av $h(x) = x + 2$.
 ```
 ````
 
-````{tab} Progamkode
+````{tab} Programkode
 ```{code-block} python
 def h(x):
     return x + 2
@@ -128,7 +128,7 @@ viser en grafisk representasjon av $p(x) = x - 2$.
 ```
 ````
 
-````{tab} Progamkode
+````{tab} Programkode
 ```{code-block} python
 def p(x):
     return x - 2
