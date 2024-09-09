@@ -11,6 +11,7 @@ def main(dirname, save):
         f=f,
         x=x,
         fn_name="f(x)",
+        include_factors=False,
     )
 
     if save:

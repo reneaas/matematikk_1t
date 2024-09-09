@@ -271,6 +271,88 @@ Vi får da at $g(x) = 4x-5$.
 ---
 class: problem-level-2
 ---
+Grafen til en lineær funksjon $f$ er vist i {numref}`fig-lineære-funksjoner-representasjoner-bestemme-funksjonsuttrykk-oppgave-6`.
+
+Bestem $f(x)$.
+
+:::{figure} ./figurer/oppgaver/oppgave_6.svg
+---
+name: fig-lineære-funksjoner-representasjoner-bestemme-funksjonsuttrykk-oppgave-6
+width: 80%
+---
+viser grafen til en lineær funksjon $f$ og to punkter på grafen.
+:::
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+f(x) = -2x + 1
+$$
+:::
+::::
+
+
+---
+
+::::{admonition} Oppgave 7
+---
+class: problem-level-2
+---
+Grafen til en lineær funksjon $g$ er vist i {numref}`fig-lineære-funksjoner-representasjoner-bestemme-funksjonsuttrykk-oppgave-7`.
+
+Bestem hvor grafen til $g$ skjærer $y$-aksen. 
+
+:::{figure} ./figurer/oppgaver/oppgave_7.svg
+---
+name: fig-lineære-funksjoner-representasjoner-bestemme-funksjonsuttrykk-oppgave-7
+width: 80%
+---
+viser grafen til en lineær funksjon $g$, og to punkter på grafen.
+:::
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+
+:::
+::::
+
+---
+
+::::{admonition} Oppgave 8
+---
+class: problem-level-2
+---
+Grafen til en lineær funksjon $h$ er vist i {numref}`fig-lineære-funksjoner-representasjoner-bestemme-funksjonsuttrykk-oppgave-8`.
+Stigningstallet til $h$ er $1/2$.
+
+Bestem $x_2$.
+
+:::{figure} ./figurer/oppgaver/oppgave_8.svg
+---
+name: fig-lineære-funksjoner-representasjoner-bestemme-funksjonsuttrykk-oppgave-8
+width: 80%
+---
+viser grafen til en lineær funksjon $h$ og to punkter på grafen.
+:::
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x_2 = 3
+$$
+:::
+::::
+
+::::{admonition} Oppgave 8
+---
+class: problem-level-2
+---
 
 Under vises et program som regner ut funksjonsuttrykket til et lineær funksjon $f$. <br> Men! Kodelinjene er plassert i tilfeldig rekkefølge. 
 
@@ -349,3 +431,4 @@ $$
 Linjen `b = y1 - a * x1`{l=python} regner derfor ut konstantleddet til funksjonen. 
 :::
 ::::
+

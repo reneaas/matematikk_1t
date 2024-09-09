@@ -1,27 +1,61 @@
-import sympy as sp
-import matplotlib.pyplot as plt
-
-
 def main(dirname, save):
 
-    x = sp.symbols("x")
-    f = -(x**2) + 3 * x + 4
+    # Define functions
+    def f(x):
+        return -2 * x + 1
 
-    make_sign_chart(
-        f=f,
-        x=x,
-        fn_name="f(x)",
+    # List of functions and their labels.
+    functions = [f]
+    fn_labels = [r"$f$"]
+
+    # Create the math figure
+    fig, ax = make_figure(
+        functions=functions,
+        fn_labels=fn_labels,  # Set `None` hvis du ikke vil ha labels.
+        xmin=-4,
+        xmax=6,
+        ymin=-6,
+        ymax=6,
+        ticks=False,
     )
 
+    x1 = -1
+    y1 = f(x1)
+    x2 = 2
+    y2 = f(x2)
+    ax.plot(x1, y1, "ko", markersize=8, alpha=0.7)
+    ax.plot(x2, y2, "ko", markersize=8, alpha=0.7)
+
+    ax.text(
+        s=f"$({x1},{y1})$",
+        x=x1,
+        y=y1,
+        fontsize=16,
+        ha="right",
+        va="top",
+    )
+
+    ax.text(
+        s=f"$({x2},{y2})$",
+        x=x2,
+        y=y2,
+        fontsize=16,
+        ha="right",
+        va="top",
+    )
+
+    # NOTE: Select an appropriate `dirname` to save the figure.
+    # The directory `dirname` will be created automatically if it does not exist already.
     if save:
         fname = __file__.split("/")[-1].replace(".py", ".svg")
-        savefig(dirname=dirname, fname=fname)
+        savefig(dirname=dirname, fname=fname)  # Lagrer figuren i `dirname`-directory
 
-    else:
+    if not save:
+        import matplotlib.pyplot as plt
+
         plt.show()
 
 
-# NOTE: Ikke endre på noe under denne linjen
 if __name__ == "__main__":
 
     import sys
@@ -49,8 +83,7 @@ if __name__ == "__main__":
     sys.path.append(repo_root)
 
     # Now you can import modules from the GitHub repo root
-    from python_utils.make_sign_chart import make_sign_chart
-    from python_utils.plot_utils import savefig
+    from python_utils.plot_utils import make_figure, savefig
 
     # NOTE: Set `save=True` to save figure. `save=False` to display figure.
     dirname = current_dir.replace("koder", "figurer")
