@@ -53,7 +53,7 @@ Løs likningene under og sett prøve på svaret.
 Oppgave 2a
 : $$ 2x = 4$$
 
-:::{admonition} Fasit: 2a
+:::{admonition} Fasit
 ---
 class: dropdown, answer
 ---
@@ -76,7 +76,7 @@ $$
 Oppgave 2b
 : $$2x + 2 = 4$$
 
-:::{admonition} Fasit: 2b
+:::{admonition} Fasit
 ---
 class: dropdown, answer
 ---
@@ -98,7 +98,7 @@ $$
 Oppgave 2c
 : $$2x + 2 = x + 4$$
 
-:::{admonition} Fasit: 2c
+:::{admonition} Fasit
 ---
 class: dropdown, answer
 ---
@@ -121,7 +121,7 @@ $$
 Oppgave 2d
 : $$2x - 2 = x + 4$$
 
-:::{admonition} Fasit: 2d
+:::{admonition} Fasit
 ---
 class: dropdown, answer
 ---
@@ -143,7 +143,7 @@ $$
 Oppgave 2e
 : $$\dfrac{x}{2} = 4$$
 
-:::{admonition} Fasit: 2e
+:::{admonition} Fasit
 ---
 class: dropdown, answer
 ---
@@ -166,7 +166,7 @@ Oppgave 2f
 : $$\dfrac{x}{2} + 3 = 4$$
 
 
-:::{admonition} Fasit: 2f
+:::{admonition} Fasit
 ---
 class: dropdown, answer
 ---
@@ -186,27 +186,100 @@ $$
 :::
 :::::
 
-
 :::::{admonition} Oppgave 3
+---
+class: problem-level-2
+---
+Løs likningene for hånd og med CAS.
+
+Oppgave 3a
+: $$ \dfrac{x}{2} = 1 + x $$
+
+:::{admonition} Fasit
+---
+class: dropdown, answer
+---
+````{tab-set}
+```{tab-item} Likning
+$$
+x = - 2
+$$
+```
+
+```{tab-item} Løsningsmengde
+$$
+x \in \left\{-2\right\}
+$$
+```
+````
+:::
+
+Oppgave 3b
+: $$ \dfrac{x-1}{3} + \dfrac{x+1}{2} = 1 $$
+
+:::{admonition} Fasit
+---
+class: dropdown, answer
+---
+````{tab-set}
+```{tab-item} Likning
+$$
+x = 1
+$$
+```
+
+```{tab-item} Løsningsmengde
+$$
+x \in \left\{1\right\}
+$$
+```
+````
+:::
+
+Oppgave 3c
+: $$ \dfrac{1}{6} \left(\dfrac{x}{2}− 2 \right) - 3 \left(\dfrac{x}{4} - 1 \right) = \dfrac{2}{3}$$
+
+:::{admonition} Fasit
+---
+class: dropdown, answer
+---
+````{tab-set}
+```{tab-item} Likning
+$$
+x = 3
+$$
+```
+
+```{tab-item} Løsningsmengde
+$$
+x \in \left\{3\right\}
+$$
+```
+````
+
+:::::
+
+
+:::::{admonition} Oppgave 4
 ---
 class: problem-level-2
 ---
 Løs likningene.
 
-Oppgave 3a
+Oppgave 4a
 : $$ 3x + 9 = 3(x + 3)$$
 
-:::{admonition} Fasit: 3a
+:::{admonition} Fasit
 ---
 class: dropdown, answer
 ---
 Likningen er en identitet, så løsningen er $x \in \mathbb{R}$. Venstre og høyre side er like for alle reelle tall.
 :::
 
-Oppgave 3b
+Oppgave 4b
 : $$ 3x - (x - 2) = (2x - 1) - (3x + 9)$$
 
-:::{admonition} Fasit: 3b
+:::{admonition} Fasit
 ---
 class: dropdown, answer
 ---
@@ -225,10 +298,10 @@ $$
 ````
 :::
 
-Oppgave 3c
+Oppgave 4c
 : $$ \dfrac{x}{2}−\left(\dfrac{x}{3}+\dfrac{1}{2}\right)=𝑥−2\left(\dfrac{x}{4}−1\right)$$
 
-:::{admonition} Fasit: 3c
+:::{admonition} Fasit
 ---
 class: dropdown, answer
 ---
@@ -248,10 +321,10 @@ $$
 :::
 
 
-Oppgave 3d
+Oppgave 4d
 : $$ \dfrac{1}{2} \left(x-4\right)-\left(\dfrac{2x}{3}-1\right)=\dfrac{1}{3} \left(x-1\right)+\dfrac{x}{6}$$
 
-:::{admonition} Fasit: 3d
+:::{admonition} Fasit
 ---
 class: dropdown, answer
 ---
@@ -270,3 +343,4 @@ $$
 ````
 :::
 :::::
+
