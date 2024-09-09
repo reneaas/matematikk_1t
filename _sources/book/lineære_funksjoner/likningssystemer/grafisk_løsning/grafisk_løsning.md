@@ -119,7 +119,7 @@ Et likningssystem er gitt ved
     x + y & = 4  \tag{2}\label{eq-lineære-likningssystemer-grafisk-eksempel-3b} \\
 \end{align*}
 
-For å løse likningssystemet grafisk, skriver om de to likningene til formen $y = ax + b$ så vi kan tolke de som lineære funksjoner:
+For å løse likningssystemet grafisk, skriver vi om de to likningene til formen $y = ax + b$ så vi kan tolke de som lineære funksjoner:
 
 For likning $\eqref{eq-lineære-likningssystemer-grafisk-eksempel-3a}$:
 
