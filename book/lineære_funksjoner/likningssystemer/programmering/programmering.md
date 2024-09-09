@@ -4,15 +4,8 @@
 ---
 class: tip
 ---
-Målet etter dette delkapittelet er at du skal kunne:
-* Lese og forstå enkle program som løser lineære likningssystemer. 
-* Kunne bruke og justere programkode for å løse lineære likningssystemer.
-:::
-
-:::{admonition} Bakgrunnsteori
----
-class: warning, margin
-Her kan det være lurt å ha vært borti minst én type løkke. Ta en titt på (`for`{l=python}-løkker)[../../../programmering/for_loops/for_loops.md]
+Målet etter dette delkapittelet er at du skal:
+* Kunne lese, tolke og endre på programkode som løser lineære likningssystemer. 
 :::
 
 

@@ -20,11 +20,11 @@ En representasjon er en måte å uttrykke noe på. Når vi jobber med rette linj
 ## Algebraisk representasjon av lineære funksjoner
 En lineær funksjon er en rett linje der $y$-verdien er bestemt av $x$-verdien. 
 
-::::{admonition} Begrep: *Koeffisienter*
+::::{admonition} Stigningstall og skjæring med $y$-aksen
 ---
 class: sidenote, margin
 ---
-Konstantene $a$ og $b$ kalles for **koeffisientene** til den lineære funksjonen.
+Vi skal se nærmere på betydningen av stigningstall og skjæring med $y$-aksen når vi ser på grafisk representasjon av lineære funksjoner i neste delkapittel.
 ::::
 
 
@@ -39,6 +39,7 @@ f(x) = ax + b.
 $$ (eq:linear_funksjon)
 
 
+* $a$ og $b$ konstanter som vi kaller for **koeffisientene** til den lineære funksjonen.
 * $a$ er **stigningstallet** til linja.
 * $b$ er **konstantleddet** til linja. Også kalt for **skjæringen med $y$-aksen**.
 * $f$ er **navnet** til funksjonen.
@@ -71,6 +72,21 @@ Og så er det **din tur**!
 ::::{admonition} Underveisoppgave 1
 ---
 class: check
+---
+Under vises noen funksjonsuttrykk og koeffisienter som parvis hører sammen. <br> Pusle sammen riktig funksjonsuttrykk med riktige koeffisienter.
+
+:::{raw} html
+---
+file: ./pair_puzzles/underveisoppgaver/underveisoppgave_1.html
+---
+:::
+
+::::
+
+
+<!-- ::::{admonition} Underveisoppgave 1
+---
+class: check
 name: lineære-funksjoner-algebraisk-representasjon-underveisoppgave-1
 ---
 
@@ -97,18 +113,12 @@ class: solution, dropdown
 | $q$ | $q(x) = 4$ | $0$ | $4$ |
 | $r$ | $r(x) = -2x$  | $-2$ | $0$ |
 :::
-::::
+:::: -->
 
 ## Funksjonsverdier
 Som nevnt er $f(x)$ funksjonsverdien til $f$ for en bestemt $x$-verdi. Når vi lar $x$ variere, tenker vi på $f(x)$ som *funksjonsuttrykket* til $f$. Når vi har en bestemt $x$-verdi, tenker vi på det som en *funksjonsverdi*.
 Her skal vi bli bedre kjent med skrivemåten og betydningen.
 
-:::{admonition} Gjenbruk av variabelnavn
----
-class: sidenote, margin
----
-Her kan du se at vi bruker $a$ med en helt annen betydning enn forrige avsnitt. I dette tilfellet er $a$ et tall på $x$-aksen, mens når vi snakker om funksjonsuttrykket til en lineær funksjon, er $a$ stigningstallet til linja. Dette kan være litt uvant, men over tid vil du bli mer og mer komfortabel med å tolke betydning av et variabelnavn ut ifra konteksten det brukes i.
-:::
 
 
 :::{admonition} Funksjonsverdier
@@ -116,7 +126,7 @@ Her kan du se at vi bruker $a$ med en helt annen betydning enn forrige avsnitt. 
 class: theory
 ---
 
-$f(a)$ er **funksjonsverdien** til $f$ i $x = a$ og regnes ut ved å sette $x = a$ i funksjonsuttrykket til $f$.
+$f(c)$ er **funksjonsverdien** til $f$ i $x = c$ og regnes ut ved å sette $x = c$ i funksjonsuttrykket til $f$.
 :::
 
 :::{admonition} Eksempel 2: funksjonsverdier
@@ -139,8 +149,33 @@ Under vises eksempler på utregning av funksjonsverdier. Vi bytter ut $x$-verdie
 
 Og så er det **din tur**!
 
+::::{admonition} Underveisoppgave 2
+---
+class: check
+---
 
-::::{admonition} Underveisoppgave 2: funksjonsverdier
+I tabellen under vises noen funksjonsuttrykk.
+| Funksjonsuttrykk |
+| :--- |
+| $f(x) = -3x + 2$ |
+| $g(x) = 2x + 3$ |
+| $h(x) = x + 8$ |
+| $p(x) = -x + 1$ |
+| $q(x) = 4$ |
+| $r(x) = -2x$ |
+
+<br>
+
+Under vises noen funksjonsverdier og tall som parvis hører sammen. <br> Pusle sammen riktig funksjonsverdi med riktig tall. 
+
+:::{raw} html
+---
+file: ./pair_puzzles/underveisoppgaver/underveisoppgave_2.html
+---
+:::
+::::
+
+<!-- ::::{admonition} Underveisoppgave 2: funksjonsverdier
 ---
 class: check
 name: lineære-funksjoner-algebraisk-representasjon-underveisoppgave-2
@@ -171,7 +206,7 @@ class: solution, dropdown
 | $r(x) = -2x$ | $5$ | $r(5) = -2\cdot 5 = -10$  |
 :::
 
-::::
+:::: -->
 
 ## Funksjonsverdier i Python
 Vi kan bruke Python som en kalkulator for å regne ut funksjonsverdier. 

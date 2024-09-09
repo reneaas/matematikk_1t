@@ -1,5 +1,8 @@
 # Lineære likningssystemer
 
+:::{tableofcontents}
+:::
+
 ```{admonition} Likningssystem vs likningssett
 :class: note, margin
 På ungdomsskolen har nok et likningssystem blitt kalt for et **likningssett**. Vi skal bruke begrepet **likningssystem** gjennom denne boken fordi dette er det mest brukte begrepet i matematikk på videregående skole og i høyere utdanning.

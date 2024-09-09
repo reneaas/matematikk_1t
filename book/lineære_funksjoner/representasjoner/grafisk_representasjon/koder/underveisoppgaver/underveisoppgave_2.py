@@ -1,47 +1,65 @@
-import numpy as np
-import matplotlib.pyplot as plt
+def main(dirname, save):
 
-plt.rc("text", usetex=True)
+    # Define functions
+    def f(x):
+        return x - 2
 
-def f(x):
-    return 3*x - 2
+    # List of functions and their labels.
+    functions = [f]
+    fn_labels = [r"$f$"]
+
+    # Create the math figure
+    fig, ax = make_figure(
+        functions=functions,
+        fn_labels=fn_labels,  # Set `None` hvis du ikke vil ha labels.
+        xmin=-4,
+        xmax=6,
+        ymin=-6,
+        ymax=6,
+        ticks=True,
+    )
+
+    # NOTE: Select an appropriate `dirname` to save the figure.
+    # The directory `dirname` will be created automatically if it does not exist already.
+    if save:
+        fname = __file__.split("/")[-1].replace(".py", ".svg")
+        savefig(dirname=dirname, fname=fname)  # Lagrer figuren i `dirname`-directory
+
+    if not save:
+        import matplotlib.pyplot as plt
+
+        plt.show()
 
 
-a = -4
-b = 6
+if __name__ == "__main__":
 
+    import sys
+    import pathlib
 
-x = np.linspace(a, b, 1024)
+    def find_repo_root(current_path):
+        current_path = pathlib.Path(
+            current_path
+        ).resolve()  # Convert to an absolute Path object
+        while (
+            current_path != current_path.parent
+        ):  # Stop when you reach the filesystem root
+            if (current_path / ".git").is_dir():  # Check if the .git directory exists
+                return str(current_path)
+            current_path = current_path.parent  # Move one level up
+        raise FileNotFoundError("No .git directory found in any parent directories.")
 
-fig, ax = plt.subplots()
-ax.plot(x, f(x), color="teal", lw=2, alpha=0.7)
+    # Get the directory where the script is located
+    current_dir = str(pathlib.Path(__file__).resolve().parent)
 
-ax.spines["left"].set_position("zero")
-ax.spines["right"].set_color("none")
-ax.spines["bottom"].set_position("zero")
-ax.spines["top"].set_color("none")
+    # Find the root of the GitHub repository (where .git is located)
+    repo_root = find_repo_root(current_dir)
 
-ax.plot(1, 0, ">k", transform=ax.get_yaxis_transform(), clip_on=False)
-ax.plot(0, 1, "^k", transform=ax.get_xaxis_transform(), clip_on=False)
+    # Add the GitHub repository root to sys.path
+    sys.path.append(repo_root)
 
-ax.set_xlabel(r"$x$", fontsize=16, loc="right")
-ax.set_ylabel(r"$g(x)$", fontsize=16, loc="top", rotation="horizontal")
+    # Now you can import modules from the GitHub repo root
+    from python_templates.plot_utils import make_figure, savefig
 
-xticks = list(np.arange(-1, 4, 1))
-xticks.remove(0)
-plt.xticks(xticks, fontsize=16)
-
-yticks = list(np.arange(-4, 7, 1))
-yticks.remove(0)
-plt.yticks(yticks, fontsize=16)
-
-plt.ylim(-5, 7)
-plt.xlim(-2, 4)
-
-plt.grid(True, linestyle="--", alpha=0.6)
-plt.tight_layout()
-
-# Lagrer figuren i vektorformat
-plt.savefig("../../figurer/underveisoppgaver/underveisoppgave_2.svg")
-
-plt.show()
+    # NOTE: Set `save=True` to save figure. `save=False` to display figure.
+    dirname = current_dir.replace("koder", "figurer")
+    main(dirname=dirname, save=True)
