@@ -39,15 +39,21 @@ file: interaktiv_kode/utforsk/utforsk_1.html
 
 <br>
 
-Deloppgave 1
-: Undersøk hva de tre tallene i `range(1, 6, 1)`{l=python} gjør for noe ved å prøve ut forskjellige kombinasjoner av tall. Kan du forklare rollen til de tre tallene?
-: *Tips*: Prøv å endre på *ett* tall av gangen! Du kan også bruke negative tall.
+````{tab-set}
+```{tab-item} Deloppgave 1
+Undersøk hva de tre tallene i `range(1, 6, 1)`{l=python} gjør for noe ved å prøve ut forskjellige kombinasjoner av tall. 
 
+Hva er rollen til de tre tallene?
 
-<br>
+:::{admonition} Hint
+---
+class: hints, dropdown
+---
+* Prøv å endre på **ett** tall av gangen!
+* Du kan også bruke negative tall.
+:::
 
-
-::::{admonition} Løsning
+:::{admonition} Løsning
 ---
 class: solution, dropdown 
 ---
@@ -57,26 +63,44 @@ Vi bruker notasjonen `range(a, b, c)`{l=python} for å gjøre det enklere å bes
 * `c`{l=python} er steglengden (avstanden mellom hvert tall). 
 
 Vi kan altså tenke på de det som at vi skriver `range(start, slutt, steglengde)`{l=python}. 
-::::
+:::
+```
 
-Deloppgave 2
-: Undersøk hva som skjer hvis du bare bruker ett tall, som `range(6)`{l=python}.  
-: Undersøk hva som skjer når du bruker to tall, som `range(1, 6)`{l=python}. 
-: Hva er sammenhengen med når du bruker tre tall? 
+```{tab-item} Deloppgave 2
+Undersøk hva som skjer hvis du bare bruker **ett** tall som `range(6)`{l=python}. 
 
+Hva er sammenhengen med når du bruker tre tall?
 
-::::{admonition} Løsning
+:::{admonition} Løsning
 ---
 class: solution, dropdown
 ---
-* Hvis du bare bruker ett tall, som `range(6)`{l=python}, så vil startverdien være 0 og steglengden være 1. Det er det samme som å skrive `range(0, 6, 1)`{l=python}. Mer generelt kan vi skrive `range(slutt)`{l=python}. Da vil vi automatisk ha startverdien 0 og steglengden 1.
-* Hvis vi bruker to tall, som `range(1, 6)`{l=python}, så vil startverdien være 1 og steglengden være 1. Det er det samme som å skrive `range(1, 6, 1)`{l=python}. Mer generelt kan vi skrive `range(start, slutt)`{l=python}. Da vil vi automatisk ha steglengden 1.
-::::
+Hvis du bare bruker ett tall, som `range(6)`{l=python}, så vil startverdien være 0 og steglengden være 1. Det er det samme som å skrive `range(0, 6, 1)`{l=python}. 
 
-<br>
+Mer generelt kan vi tolke det som at vi skriver `range(slutt)`{l=python}. Da vil vi automatisk ha startverdien 0 og steglengden 1.
+:::
 
-Deloppgave 3
-: Undersøk om du kan få `for`{l=python}-løkka til å skrive ut de 10 første naturlige tallene.
+```
+
+
+```{tab-item} Deloppgave 3
+Undersøk hva som skjer hvis du bruker **to** tall som `range(1, 6)`{l=python}. 
+
+Hva er sammenhengen når du bruker tre tall?
+
+:::{admonition} Løsning
+---
+class: solution, dropdown
+---
+Hvis vi bruker to tall, som `range(1, 6)`{l=python}, så vil startverdien være 1 og steglengden være 1. Det er det samme som å skrive `range(1, 6, 1)`{l=python}.
+
+Mer generelt kan vi skrive `range(start, slutt)`{l=python}. Da vil vi automatisk ha steglengden 1.
+:::
+```
+
+```{tab-item} Deloppgave 4
+Endre på `for`{l=python}-løkka slik at du skriver ut de 10 første naturlige tallene.
+
 
 ::::{admonition} Løsning
 ---
@@ -84,48 +108,22 @@ class: solution, dropdown
 ---
 Vi må endre stoppverdien til `11`{l=python} for å få med tallet 10. 
 
-```{code-block} python
+:::{code-block} python
 ---
 linenos: true
 emphasize-lines: 1
 ---
 for i in range(1, 11, 1):
     print(i)
-```
+:::
 
 Fra deloppgave 2, lærte vi også at vi ikke trenger å ta med steglengden når den er 1. Derfor kan vi skrive `range(1, 11)`{l=python} i stedet.
 ::::
 
-
-<br>
-
-Deloppgave 4
-: Undersøk om du kan få `for`{l=python}-løkka til å skrive ut alle partall fra 2 til 10. 
-
-
-::::{admonition} Løsning
----
-class: solution, dropdown
----
-Vi må sette følgende verdier:
-* Startverdi: 2
-* Stoppverdi: 11 (husk at vi aldri får med det siste tallet)
-* Steglengde: 2
-
-```{code-block} python
----
-linenos: true
-emphasize-lines: 1
----
-for i in range(2, 11, 2):
-    print(i)
 ```
-::::
 
-<br>
-
-Deloppgave 5
-: Kan du få `for`{l=python}-løkka til å skrive ut tallene fra 10 til 1 i synkende rekkefølge?
+```{tab-item} Deloppgave 5
+Endre på `for`{l=python}-løkka slik at du skriver ut de 10 første naturlige tallene i synkende rekkefølge.
 
 ::::{admonition} Løsning
 ---
@@ -136,15 +134,18 @@ Vi må sette følgende verdier:
 * Stoppverdi: 0 (husk at vi aldri får med det siste tallet)
 * Steglengde: -1
 
-```{code-block} python
+:::{code-block} python
 ---
 linenos: true
 emphasize-lines: 1
 ---
 for i in range(10, 0, -1):
     print(i)
-```
+:::
 ::::
+```
+
+````
 
 :::::
 

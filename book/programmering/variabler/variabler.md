@@ -50,16 +50,13 @@ class: example
 ---
 Under vises en kort Python-kode: 
 
-```{code-block} python
+:::{raw} html
 ---
-linenos: 
+file: ./interaktiv_kode/eksempler/eksempel_1.html
 ---
-a = 5                       # Definerer en variabel med navn `a` med verdi `5`
-print(f"{a = }")            # Skriver ut verdien til variabelen `a`
-print(f"{type(a) = }")      # Skriver ut datatypen til variabelen `a`
-```
+:::
 
-Kjører du koden over, får du utskriften:
+Kjør koden over og sjekk hva utskriften sier.
 
 ``` console
 a = 5

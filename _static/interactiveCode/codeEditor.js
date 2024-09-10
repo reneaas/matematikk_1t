@@ -91,13 +91,24 @@ class CodeEditor {
 
     /**
      * Adds a custom overlay for highlighting specific comments for 
-     * Supports # TODO, # FIKS MEG, # FYLL INN, # NOTE, # FIKSMEG
+     * Supports # TODO, # FIKS MEG, # FYLL INN, # NOTE, # FIKSMEG, # IGNORER
      * @returns {Object} - The overlay mode configuration for CodeMirror.
      */
     addCommentOverlay(editor) {
         editor.addOverlay({
             token: function(stream) {
-                const keywords = ["# TODO", "# FIKSMEG", "# FIKS MEG", "# NOTE", "# FYLL INN"];
+                const keywords = [
+                    "# TODO", 
+                    "# FIKSMEG", 
+                    "# FIKS MEG", 
+                    "# NOTE", 
+                    "# FYLL INN", 
+                    "# IGNORER", 
+                    "# IKKE RØR",
+                    "# FOKUS",
+                    "# FORKLARING",
+                ];
+
                 for (const keyword of keywords) {
                     if (stream.match(keyword)) {
                         return keyword.replace("# ", "").toLowerCase().replace(" ", "");
