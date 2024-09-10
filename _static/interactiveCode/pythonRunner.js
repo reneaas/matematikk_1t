@@ -23,6 +23,7 @@ class PythonRunner {
         if (inputStatements.length > 0) {
             const userValues = await this.getUserInputs(inputStatements);
             this.currentCode = this.replaceInputStatements(this.currentCode, userValues);
+            console.log("Modified code:", this.currentCode);
         }
  
         // Prepare the final code to be run (including custom eval functions, etc.)
@@ -424,28 +425,62 @@ sys.stderr = PyConsole()
      * @param {Object} userValues - A dictionary of user-provided values.
      * @returns {string} - The modified code with input statements replaced.
      */
+
     replaceInputStatements(code, userValues) {
         let codeLines = code.split('\n');
-
+    
         codeLines = codeLines.map(line => {
             for (let variable in userValues) {
-                const inputRegex = new RegExp(`\\s*${variable}\\s*=\\s*(float|int|eval)?\\(?input\\(.*?\\)\\)?`, 'g');
-                
-
+                console.log("Variable: ", variable);
+                // Adjust the regex to handle Unicode characters in variable names
+                const inputRegex = new RegExp(`\\b${variable}\\b\\s*=\\s*(float|int|eval)?\\(?input\\(.*?\\)\\)?`, 'gu');
+    
                 if (inputRegex.test(line)) {
-                    //Perform safe evaluation of user input. 
-                    // TODO: add possibility to use strings as well.                  
-                    const userValue = JSON.stringify(userValues[variable]);
-                    // line = `${variable} = eval(${userValue})`.trim();
-                    line = `${variable} = eval(${userValue})`.trim();
-                    // line = `${variable} = safe_eval(${userValue})`;
+                    let userValue = userValues[variable];
+    
+                    // Detect the type of the user input
+                    if (!isNaN(userValue)) {
+                        // Check if the input is a number (int or float)
+                        //userValue = Number(userValue); // Convert the string to a number
+                    } else if (typeof userValue === 'string') {
+                        // Check if the input is a string and doesn't contain only numbers
+                        userValue = `"${userValue}"`; // Add quotes around string inputs
+                    }
+                    
+                    line = line.replace(inputRegex, `${variable} = ${userValue}`);
+                    console.log("Line: ", line);
                 }
             }
             return line;
         });
-
+    
         return codeLines.join('\n');
     }
+    
+    // replaceInputStatements(code, userValues) {
+    //     let codeLines = code.split('\n');
+
+    //     codeLines = codeLines.map(line => {
+    //         for (let variable in userValues) {
+    //             console.log("Variabel: ", variable);    
+    //             const inputRegex = new RegExp(`\\s*${variable}\\s*=\\s*(float|int|eval)?\\(?input\\(.*?\\)\\)?`, 'g');
+                
+
+    //             if (inputRegex.test(line)) {
+    //                 //Perform safe evaluation of user input. 
+    //                 // TODO: add possibility to use strings as well.                  
+    //                 const userValue = JSON.stringify(userValues[variable]);
+    //                 line = `${variable} = eval('${userValue}')`.trim();
+    //                 console.log("Line: ", line);
+    //                 // line = `${variable} = eval(${userValue})`.trim();
+    //                 // line = `${variable} = safe_eval(${userValue})`;
+    //             }
+    //         }
+    //         return line;
+    //     });
+        
+    //     return codeLines.join('\n');
+    // }
 
 
     getsafeEvalCode() {
