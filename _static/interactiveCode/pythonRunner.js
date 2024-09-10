@@ -348,27 +348,6 @@ sys.stderr = PyConsole()
         `;
     }
 
-    /**
-     * Returns a list of known Python errors with explanations.
-     * @returns {Object} - A dictionary of known Python errors and their explanations.
-     */
-    getKnownErrors() {
-        return {
-            'SyntaxError': `
-                A SyntaxError occurs when you write code that does not follow the rules of Python. Common cases include:
-                <li> Forgetting a colon (:) after a for or while loop. </li>
-                <li> Forgetting to close parentheses, brackets, or string quotes. </li>
-                <li> Forgetting an operator. </li>
-            `,
-            'NameError': `
-                A NameError occurs when you try to use a variable that has not been defined.
-                Common cases include:
-                <li> Using a variable that is not yet defined. </li>
-                <li> Misspelling a variable name or using incorrect capitalization. </li>
-            `,
-            // Add more errors as needed...
-        };
-    }
 
     /**
      * Finds input statements in the code.
@@ -420,7 +399,7 @@ sys.stderr = PyConsole()
     }
 
     /**
-     * Replaces input statements in the code with user-provided values.
+     * Replaces input statements in the code with user-provided values. 
      * @param {string} code - The Python code.
      * @param {Object} userValues - A dictionary of user-provided values.
      * @returns {string} - The modified code with input statements replaced.
@@ -448,7 +427,6 @@ sys.stderr = PyConsole()
                     }
                     
                     line = line.replace(inputRegex, `${variable} = ${userValue}`);
-                    console.log("Line: ", line);
                 }
             }
             return line;
@@ -456,60 +434,4 @@ sys.stderr = PyConsole()
     
         return codeLines.join('\n');
     }
-    
-    // replaceInputStatements(code, userValues) {
-    //     let codeLines = code.split('\n');
-
-    //     codeLines = codeLines.map(line => {
-    //         for (let variable in userValues) {
-    //             console.log("Variabel: ", variable);    
-    //             const inputRegex = new RegExp(`\\s*${variable}\\s*=\\s*(float|int|eval)?\\(?input\\(.*?\\)\\)?`, 'g');
-                
-
-    //             if (inputRegex.test(line)) {
-    //                 //Perform safe evaluation of user input. 
-    //                 // TODO: add possibility to use strings as well.                  
-    //                 const userValue = JSON.stringify(userValues[variable]);
-    //                 line = `${variable} = eval('${userValue}')`.trim();
-    //                 console.log("Line: ", line);
-    //                 // line = `${variable} = eval(${userValue})`.trim();
-    //                 // line = `${variable} = safe_eval(${userValue})`;
-    //             }
-    //         }
-    //         return line;
-    //     });
-        
-    //     return codeLines.join('\n');
-    // }
-
-
-    getsafeEvalCode() {
-        return `
-def safe_eval(user_input):
-    try:
-        return float(user_input) if '.' in user_input else int(user_input)
-    except ValueError:
-        return user_input
-\n
-`;
-    }
-
-    /**
-     * Prepares the code for execution by adding any necessary helper functions or context.
-     * @param {string} code - The Python code to be prepared.
-     * @returns {string} - The prepared code.
-     */
-    prepareCodeForExecution(code) {
-        const safeEvalCode = `
-def safe_eval(user_input):
-    try:
-        return float(user_input) if '.' in user_input else int(user_input)
-    except ValueError:
-        return user_input
-\n
-`;
-        return safeEvalCode + code;
-    }
-
-
 }

@@ -1,6 +1,6 @@
 # Regning med Python
 
-:::{admonition} Læringsmål: regning med Python
+:::{admonition} Læringsmål: Regning med Python
 ---
 class: tip
 ---
@@ -36,7 +36,19 @@ class: theory
 
 ::::
 
-:::::{admonition} Utforsk 1
+:::{admonition} Variabler og tilordning
+---
+class: sidenote, margin
+---
+Kodenlinjen
+```{code-block} 
+a = -1 + 2
+```
+
+vil regne ut `-1 + 2`{l=python} og lagre svaret i variabelen `a`{l=python} slik at vi kan bruke det senere i programmet. I utforsk 1 skriver vi bare ut hva verdien er med en `print`{l=python}-setning.
+:::
+
+<!-- :::::{admonition} Utforsk 1
 ---
 class: explore
 ---
@@ -51,7 +63,30 @@ file: interaktiv_kode/utforsk/utforsk_1.html
 ---
 :::
 
-:::::
+::::: -->
+
+::::{admonition} Utforsk 1
+---
+class: explore
+---
+Når vi skriver en kodelinje som
+
+```{code-block} python
+print(2 + 2)
+```
+
+så vil programmet skrive ut svaret av regnestykket $2 + 2$ når det kjøres. 
+
+Under vises noen kodelinjer av denne typen og noen utskrifter som parvis hører sammen. <br> Pusle sammen riktig kodelinje med riktig utskrift.
+
+:::{raw} html
+---
+file: pair_puzzles/utforsk/utforsk_1.html
+---
+:::
+
+
+::::
 
 
 ## Regnerekkefølge
@@ -72,13 +107,31 @@ Regnerekkefølgen i Python er:
 
 ::::
 
-:::::{admonition} Utforsk 2
+
+::::{admonition} Utforsk 2
+---
+class: explore
+---
+Under vises kodelinjer som regner ut noen regnerstykker som bruker regnerekkefølgen. Kodelinjene hører parvis sammen med noen utskrifter. 
+
+Pusle sammen riktig kodelinje med riktig utskrift.
+
+:::{raw} html
+---
+file: pair_puzzles/utforsk/utforsk_2.html
+---
+:::
+
+
+::::
+
+<!-- :::::{admonition} Utforsk 2
 ---
 class: explore
 ---
 Under vises et interaktiv kodevindu der regneoperasjoner som bruker regnerekkefølgen utføres.
 
-Prøv å bruke regnerekkefølgen til å bestemme verdiene til variablene `a`{l=python}, `b`{l=python}, `c`{l=python}, `p`{l=python}, `q`{l=python} og `r`{l=python} før du kjører programmet. <br>
+Prøv å bruke regnerekkefølgen til å bestemme verdiene til variablene `a`{l=python}, `b`{l=python}, `c`{l=python}, `p`{l=python} og `q`{l=python} før du kjører programmet. <br> Kjør programmet og sjekk om svarene din stemmer.
 
 :::{raw} html
 ---
@@ -86,7 +139,7 @@ file: interaktiv_kode/utforsk/utforsk_2.html
 ---
 :::
 
-:::::
+::::: -->
 
 ## Formler i Python
 Ofte vil vi ha behov for å regne ut en formel i Python der vi bruker variabler for alle størrelsene i formelen. 
@@ -106,61 +159,34 @@ file: ./interaktiv_kode/utforsk/utforsk_3.html
 
 <br>
 
-Deloppgave 1
-: Prøv å bestemme hva arealet av rektangelet blir *før* du kjører programmet!
+````{tab-set}
+```{tab-item} Deloppgave 1
+Prøv å bestemme hva verdien til `areal`{l=python} blir **før** du kjører programmet. <br> Kjør programmet og sjekk om svaret ditt stemmer.
+```
 
-<br>
-
-Deloppgave 2
-: Et annet rektangel har lengdene $l = 5$ og $b = 3$. <br> Endre programmet og bruk det til å regne ut arealet av dette rektangelet.
+```{tab-item} Deloppgave 2
+Et annet rektangel har lengdene $l = 5$ og $b = 3$. <br> Endre programmet og bruk det til å regne ut arealet av dette rektangelet.
+```
+````
 
 ::::
 
 
 ## Oppgaver
 
-:::::{admonition} Oppgave 1
+::::{admonition} Oppgave 1 
 ---
-class: problem-level-1
+class: problem-level-1, full-width
 ---
-I tabellen under vises noen regnestykker. Fyll ut koden i det interaktive kodevinduet under for å regne ut svarene.
-
-| Variabel | Regnestykke |
-| --- | --- |
-| `a`{l=python} | $3 + 2 \cdot 4$ |
-| `b`{l=python} | $6 - 2 + 5$ |
-| `c`{l=python} | $\dfrac{9}{3} + 3$ |
-| `d`{l=python} | $5\cdot (-2) + 4$ |
-
-
-<br>
+Under vises noen kodelinjer og utskrifter som parvis hører sammen. <br> Pusle sammen riktig kodelinje med riktig utskrift.
 
 :::{raw} html
 ---
-file: interaktiv_kode/oppgaver/oppgave_1.html
+file: pair_puzzles/oppgaver/oppgave_1.html
 ---
 :::
 
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-```{code-block} python
----
-linenos: true
----
-a = 3 + 2*4
-b = 6 - 2 + 5
-c = 9/3 + 3
-d = 5*(-2) + 4
-
-# Skriver ut resultatet
-print(f"{a = } \n{b = } \n{c = } \n{d = }")
-```
-:::
-
-:::::
+:::: 
 
 ---
 
