@@ -162,7 +162,7 @@ I tabellen under vises noen funksjonsuttrykk.
 | $h(x) = x + 8$ |
 | $p(x) = -x + 1$ |
 | $q(x) = 4$ |
-| $r(x) = -2x$ |
+| $r(x) = -5x$ |
 
 <br>
 
