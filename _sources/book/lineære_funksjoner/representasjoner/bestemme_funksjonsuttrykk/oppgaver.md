@@ -32,6 +32,17 @@ class: answer, dropdown
 
 ---
 
+:::{admonition} Hint
+---
+class: hints, margin, dropdown
+---
+Bruk ettpunktsformelen:
+
+$$
+y - y_1 = a(x - x_1)
+$$
+:::
+
 ::::{admonition} Oppgave 2
 ---
 class: problem-level-1 
@@ -82,6 +93,19 @@ $$
 ::::
 
 ---
+
+:::{admonition} Nyttige formler
+---
+class: hints, margin, dropdown
+---
+$$
+a = \dfrac{y_2 - y_1}{x_2 - x_1}
+$$
+
+$$
+y - y_1 = a(x - x_1)
+$$
+:::
 
 ::::{admonition} Oppgave 3
 ---
@@ -316,7 +340,7 @@ viser grafen til en lineær funksjon $g$, og to punkter på grafen.
 ---
 class: answer, dropdown
 ---
-
+Grafen til $g$ skjærer $y$-aksen i $y = -2$. 
 :::
 ::::
 
@@ -344,33 +368,26 @@ viser grafen til en lineær funksjon $h$ og to punkter på grafen.
 class: answer, dropdown
 ---
 $$
-x_2 = 3
+x_2 = 6
 $$
 :::
 ::::
 
-::::{admonition} Oppgave 8
+::::{admonition} Oppgave 9
 ---
 class: problem-level-2
 ---
+Under vises et program som regner ut funksjonsuttrykket til en lineær funksjon $f$, men programmet er plassert i tilfeldig rekkefølge.
 
-Under vises et program som regner ut funksjonsuttrykket til et lineær funksjon $f$. <br> Men! Kodelinjene er plassert i tilfeldig rekkefølge. 
 
-Deloppgave 1
-: Løs puslespillet ved å sette kodelinjene i riktig rekkefølge. <br> Forutsi hva som skrives ut av programmet. Kjør programmet og sjekk svaret! 
+`````{tab-set}
+````{tab-item} Deloppgave 1
+Løs puslespillet ved å sette kodelinjene i riktig rekkefølge. <br> Forutsi hva som skrives ut av programmet. Kjør programmet og sjekk svaret! 
 
-<br>
+````
 
-:::{raw} html
----
-file: interaktiv_kode/oppgaver/oppgave_6.html
----
-:::
-
-<br>
-
-Deloppgave 2
-: Endre programmet slik at det finner funksjonsuttrykket til en lineær funksjon som går gjennom punktene $(1, 2)$ og $(3, 6)$. <br> Sjekk at programmet finner riktig funksjon ved regning.
+````{tab-item} Deloppgave 2
+Endre programmet slik at det finner funksjonsuttrykket til en lineær funksjon som går gjennom punktene $(1, 2)$ og $(3, 6)$. <br> Sjekk at programmet finner riktig funksjon ved regning.
 
 :::{admonition} Løsningsforslag
 ---
@@ -396,10 +413,10 @@ y &= 2x
 
 Vi ser at det gir funksjonen $y = f(x) = 2x$.
 :::
-<br>
+````
 
-Deloppgave 3
-: Kan du forklare kodelinjen `b = y1 - a * x1`{l=python}? <br> Hva representerer variabelen `b`{l=python}? <br> Kan du komme fram til formelen?
+````{tab-item} Deloppgave 3
+Kan du forklare kodelinjen `b = y1 - a * x1`{l=python}? <br> Hva representerer variabelen `b`{l=python}? <br> Kan du komme fram til formelen?
 
 :::{admonition} Løsningsforslag
 ---
@@ -413,22 +430,34 @@ y - y_1 \textcolor{green}{+ y_1} &= a(x - x_1) \textcolor{green}{+ y_1} && \text
 \\
 y &= a(x - x_1) + y_1 \\
 \\
-y &= ax + \textcolor{red}{(y_1 - a \cdot x_1)} && \text{Ganget ut parentesen}
+y &= ax + \underbrace{\textcolor{red}{(y_1 - a \cdot x_1)}}_{\displaystyle b} && \text{Ganget ut parentesen}
 \end{align*}
 
-Sammenligner vi med den generelle måten å skrive en lineær funksjon på:
+Vi kan se at det som står i rødt må være konstantleddet ved å sammenligne med den generelle formen:
 
 $$
-y = ax + b
+y = ax + b.
 $$
 
-må dette bety at det som står i rødt representerer konstantleddet $b$. Dermed har vi at
+Dermed har vi at
 
 $$
-b = y_1 - a \cdot x_1
+b = y_1 - a \cdot x_1.
 $$
 
 Linjen `b = y1 - a * x1`{l=python} regner derfor ut konstantleddet til funksjonen. 
 :::
+````
+
+`````
+
+
+:::{raw} html
+---
+file: interaktiv_kode/oppgaver/oppgave_9.html
+---
+:::
+
+
 ::::
 

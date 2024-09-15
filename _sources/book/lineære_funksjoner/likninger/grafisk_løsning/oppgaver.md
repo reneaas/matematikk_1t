@@ -1,6 +1,6 @@
 # Oppgaver: <br> Grafisk løsning av lineære likninger
 
-````{admonition} Oppgave 1
+::::{admonition} Oppgave 1
 ---
 class: problem-level-1
 ---
@@ -19,9 +19,9 @@ width: 80%
 viser grafen til $f(x) = x + 3$.
 ```
 
-
-Deloppgave 1
-: Bruk {numref}`lineære-likninger-grafisk-løsning-oppgave-1` til å løse likningen 
+````{tab-set}
+```{tab-item} Deloppgave 1
+Bruk {numref}`lineære-likninger-grafisk-løsning-oppgave-1` til å løse likningen 
 
 $$
 x + 3 = 0
@@ -35,19 +35,10 @@ $$
 x = -3
 $$
 :::
+```
 
-:::{admonition} Løsning
----
-class: dropdown, solution
----
-Grafen skjærer $x$-aksen i $x = -3$, som betyr at løsningen av likningen er $x = -3$.
-:::
-
-
-<br>
-
-Deloppgave 2
-: Bruk {numref}`lineære-likninger-grafisk-løsning-oppgave-1` til å løse likningen
+```{tab-item} Deloppgave 2
+Bruk {numref}`lineære-likninger-grafisk-løsning-oppgave-1` til å løse likningen
 
 $$
 x + 3 = 4
@@ -62,18 +53,10 @@ x = 1
 $$
 :::
 
-:::{admonition} Løsning
----
-class: dropdown, solution
----
-Grafen skjærer linja $y = 4$ i $(x, y) = (1, 4)$, som betyr at løsningen av likningen er $x = 1$.
-:::
+```
 
-
-<br>
-
-Deloppgave 3
-: Bruk {numref}`lineære-likninger-grafisk-løsning-oppgave-1` til å løse likningen
+```{tab-item} Deloppgave 3
+Bruk {numref}`lineære-likninger-grafisk-løsning-oppgave-1` til å løse likningen
 
 $$
 x + 3 = -2
@@ -88,50 +71,108 @@ x = -5
 $$
 :::
 
-:::{admonition} Løsning
----
-class: dropdown, solution
----
-Grafen skjærer linja $y = -2$ i $(x, y) = (-5, -2)$, som betyr at løsningen av likningen er $x = -2$.
-:::
-````
-
-
-::::{admonition} Oppgave 2
-:class: problem-level-1
-Under vises en interaktiv graf av funksjonen $f(x) = 2x + 1$ og en linje $y = k$. Du kan endre på verdien av $k$.
-
-```{raw} html
----
-file: ./figurer/interaktive_plot/lineær_likning_2x+1=k.html
----
 ```
 
-Deloppgave 1
-: Bestem hvilken verdi av $k$ som gir løsningen $x = -2$. 
+````
+
+::::
+
+---
+
+:::::{admonition} Oppgave 2
+---
+class: problem-level-1
+---
+I {numref}`fig-lineære-funksjoner-likninger-grafisk-oppgaver-oppgave-2` vises grafene til 
+
+$$
+f(x) = 2x - 1 \quad \text{og} \quad g(x) = 4x - 5.
+$$
+
+:::{figure} ./figurer/oppgaver/oppgave_2.svg
+---
+name: fig-lineære-funksjoner-likninger-grafisk-oppgaver-oppgave-2
+width: 80%
+---
+viser grafene til $f(x) = 2x - 1$ og $g(x) = 4x - 5$.
+:::
+
+````{tab-set}
+```{tab-item} Deloppgave 1
+Bruk {numref}`fig-lineære-funksjoner-likninger-grafisk-oppgaver-oppgave-2` til å løse likningen
+
+$$
+2x - 1 = 1.
+$$
 
 :::{admonition} Fasit
 ---
-class: answer, dropdown
+class: dropdown, answer
 ---
-$k = -3$. 
+$$
+x = 1
+$$
 :::
+```
 
-:::{admonition} Løsning
+```{tab-item} Deloppgave 2
+Bruk {numref}`fig-lineære-funksjoner-likninger-grafisk-oppgaver-oppgave-2` til å løse likningen
+
+$$
+f(x) = 3.
+$$
+
+:::{admonition} Fasit
 ---
-class: solution, dropdown
+class: dropdown, answer
 ---
-Justerer vi linja $y = k$ til $y = -3$, så skjærer grafen til $f$ linja i $(x, y) = (-2, -3)$. Dermed gir $k = -3$ løsningen $x = -2$. 
+$$
+x = 2
+$$
 :::
+```
+
+```{tab-item} Deloppgave 3
+Bruk {numref}`fig-lineære-funksjoner-likninger-grafisk-oppgaver-oppgave-2` til å løse likningen
+
+$$
+g(x) = -1.
+$$
+
+:::{admonition} Fasit
+---
+class: dropdown, answer
+---
+$$
+x = 1
+$$
+:::
+```
+
+```{tab-item} Deloppgave 4
+Bruk {numref}`fig-lineære-funksjoner-likninger-grafisk-oppgaver-oppgave-2` til å løse likningen
+
+$$
+2x - 1 = 4x - 5.
+$$
+
+:::{admonition} Fasit
+---
+class: dropdown, answer
+---
+$$
+x = 2
+$$
+:::
+```
+
+````
+
+:::::
+
+---
 
 
-<br>
-
-Deloppgave 2
-: Bruk grafen til å forklare hvorfor likningen $2x + 1 = k$ har en løsning for alle $k \in \mathbb{R}$.
-
-
-::::
 
 
 
@@ -139,15 +180,14 @@ Deloppgave 2
 ---
 class: problem-level-1
 ---
-I figur {numref}`lineære-likninger-grafisk-løsning-oppgave-3` er grafene til to lineære funksjoner $f$ og $g$ tegnet inn. 
+I figur {numref}`lineære-likninger-grafisk-løsning-oppgave-2` vises grafene til to lineære funksjoner $f$ og $g$.
 
 :::{figure} ./figurer/oppgaver/oppgave_3.svg
 ---
 name: lineære-likninger-grafisk-løsning-oppgave-3
 width: 80%
 ---
-Grafene til to lineære funksjoner $f$ og $g$.
-
+viser grafene til to lineære funksjoner $f$ og $g$.
 :::
 
 Oppgave 3a

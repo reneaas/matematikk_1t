@@ -77,23 +77,14 @@ name: lineære-funksjoner-algebraisk-representasjon-oppgave-3
 
 Under vises et program i tilfeldig rekkefølge som regner ut funksjonsverdien til en lineær funksjon $f$.
 
-Deloppgave 1
-: Pusle sammen programmet i riktig rekkefølge for å få det fullstendige programmet. <br> Hva forventer du at programmet skriver ut? Kjør programmet og sjekk svaret!
+`````{tab-set}
+````{tab-item} Deloppgave 1
+Pusle sammen programmet i riktig rekkefølge for å få det fullstendige programmet. <br> Hva forventer du at programmet skriver ut? Kjør programmet og sjekk svaret!
+````
 
+````{tab-item} Deloppgave 2
+Hva er funksjonsuttrykket til $f$ i programmet? <br> Hvilken funksjonsverdi er det programmet regner ut?
 
-
-<br>
-
-:::{raw} html
----
-file: interaktiv_kode/oppgaver/oppgave_3.html
----
-:::
-
-<br>
-
-Deloppgave 2
-: Hva er funksjonsuttrykket til $f$ i programmet? <br> Hvilken funksjonsverdi er det programmet regner ut?
 ::::{admonition} Fasit
 ---
 class: answer, dropdown
@@ -101,12 +92,10 @@ class: answer, dropdown
 * Funksjon: $f(x)= -\dfrac{1}{2}x + 3$
 * Funksjonsverdi: $y = f(-4)$
 ::::
+````
 
-<br>
-
-Deloppgave 3
-: Endre programmet slik at det regner ut $f(2)$. <br> Hva forventer du at svaret blir? Kjør programmmet og sjekk.
-
+````{tab-item} Deloppgave 3
+Endre programmet slik at det regner ut $f(2)$. <br> Hva forventer du at svaret blir? Kjør programmmet og sjekk.
 
 ::::{admonition} Fasit
 ---
@@ -116,12 +105,10 @@ $$
 f(2) = 2
 $$
 ::::
+````
 
-
-<br>
-
-Deloppgave 4
-: Endre programmet slik at det regner ut $g(2)$ når $g(x) = 2x + 1$. <br> Kjør programmet og sjekk at svaret blir riktig.
+````{tab-item} Deloppgave 4
+Endre programmet slik at det regner ut $f(2)$ når $f(x) = 2x + 1$. <br> Kjør programmet og sjekk at svaret blir riktig.
 
 
 ::::{admonition} Fasit
@@ -135,7 +122,7 @@ linenos:
 emphasize-lines: 2
 ---
 def f(x):
-    return 2*x + 1
+    return 2 * x + 1
 
 y = f(2)
 print(y)
@@ -144,8 +131,23 @@ print(y)
 Funksjonsverdi:
 
 $$
-g(2) = 5
+f(2) = 5
 $$
 ::::
+````
+`````
+
+<br>
+
+:::{raw} html
+---
+file: interaktiv_kode/oppgaver/oppgave_3.html
+---
+:::
+
+<br>
+
+
+
 :::::
 

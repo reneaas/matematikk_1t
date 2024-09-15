@@ -65,14 +65,14 @@ file: ./pair_puzzles/oppgaver/oppgave_2.html
 class: problem-level-1
 ---
 
-I {numref}`fig-lineære-funksjoner-representasjoner-oppgave-3` vises grafen til seks lineære funksjoner $f$, $g$, $h$, $p$ og $r$.
+I {numref}`fig-lineære-funksjoner-representasjoner-oppgave-3` vises grafen til fem lineære funksjoner $f$, $g$, $h$, $p$ og $r$.
 
 :::{figure} ./figurer/oppgaver/oppgave_3.svg
 ---
 name: fig-lineære-funksjoner-representasjoner-oppgave-3
 width: 80%
 ---
-viser grafen til seks lineære funksjoner $f$, $g$, $h$, $p$, $r$ og $s$. 
+viser grafen til fem lineære funksjoner $f$, $g$, $h$, $p$ og $r$. 
 :::
 
 Sett sammen riktig funksjonsuttrykk med riktig graf.
