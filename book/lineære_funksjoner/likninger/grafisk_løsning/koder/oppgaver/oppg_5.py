@@ -3,32 +3,34 @@ import matplotlib.pyplot as plt
 
 plt.rc("text", usetex=True)
 
+
 def f(x):
-    return -2*x + 6
+    return -2 * x + 6
 
 
 def make_graph(
-        functions: list[callable], 
-        x_min: float = -10,
-        x_max: float = 10,
-        xlabel: str = r"$x$",
-        ylabel: str = r"$y$",
-        labels: list[str] = None,
-    ) -> tuple[plt.Figure, plt.Axes]:
+    functions: list[callable],
+    x_min: float = -10,
+    x_max: float = 10,
+    xlabel: str = r"$x$",
+    ylabel: str = r"$y$",
+    labels: list[str] = None,
+) -> tuple[plt.Figure, plt.Axes]:
 
     x = np.linspace(x_min, x_max, 1024)
 
-    default_colors = ["teal", 
-        "purple", 
-        "red", 
-        "green", 
-        "blue", 
-        "orange", 
-        "olive", 
-        "magenta", 
-        "black"
+    default_colors = [
+        "teal",
+        "purple",
+        "red",
+        "green",
+        "blue",
+        "orange",
+        "olive",
+        "magenta",
+        "black",
     ]
-    
+
     fig, ax = plt.subplots()
 
     if labels:
@@ -45,13 +47,12 @@ def make_graph(
     ax.spines["top"].set_color("none")
 
     ax.plot(1, 0, ">k", transform=ax.get_yaxis_transform(), clip_on=False)
-    ax.plot(0, 1, "^k", transform=ax.get_xaxis_transform(), clip_on=False)  
+    ax.plot(0, 1, "^k", transform=ax.get_xaxis_transform(), clip_on=False)
 
     ax.set_xlabel(xlabel, fontsize=16, loc="right")
     ax.set_ylabel(ylabel, fontsize=16, loc="top", rotation="horizontal")
 
     return fig, ax
-
 
 
 fig, ax = make_graph(functions=[f], labels=["$f$", "$g$"])

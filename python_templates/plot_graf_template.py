@@ -1,20 +1,20 @@
 import matplotlib.pyplot as plt
-plt.rc("text", usetex=True)
+
+# plt.rc("text", usetex=True)
 
 
 def main(dirname, save):
-
+    #
     # Define functions
     def f(x):
         return x - 2
-    
+
     def g(x):
-        return x**2 - 2*x + 1
+        return x**2 - 2 * x + 1
 
     # List of functions and their labels.
     functions = [f, g]
     fn_labels = [f"${fn.__name__}$" for fn in functions]
-
 
     # Create the math figure
     fig, ax = make_figure(
@@ -67,6 +67,12 @@ if __name__ == "__main__":
     # Now you can import modules from the GitHub repo root
     from python_utils.plot_utils import make_figure, savefig
 
+    parts = current_dir.split("/")
+    for i in range(len(parts)):
+        if parts[~i] == "koder":
+            parts[~i] = "figurer"
+            break
+    dirname = "/".join(parts)
+
     # NOTE: Set `save=True` to save figure. `save=False` to display figure.
-    dirname = current_dir.replace("koder", "figurer")
     main(dirname=dirname, save=True)
