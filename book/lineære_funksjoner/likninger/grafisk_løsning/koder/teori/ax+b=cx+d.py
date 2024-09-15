@@ -4,50 +4,59 @@ plt.rc("text", usetex=True)
 
 
 def main(dirname, save):
-
+    #
     # Define functions
-    def f(x):
-        return 3 * x - 2
+    def f(x, a, b):
+        return a * x + b
 
     # List of functions and their labels.
-    functions = [f]
-    fn_labels = [r"$g$"]
+    a = 2
+    b = -1
+    c = -1
+    d = 4
+
+    x_skjæring = (d - b) / (a - c)
+    y_skjæring = a * x_skjæring + b
+
+    functions = [
+        lambda x: f(x, a=a, b=b),
+        lambda x: f(x, a=c, b=d),
+    ]
+    fn_labels = ["$f$", "$g$"]
 
     # Create the math figure
     fig, ax = make_figure(
         functions=functions,
-        fn_labels=fn_labels,  # Set `None` hvis du ikke vil ha labels.
-        xmin=-4,
+        fn_labels=fn_labels,  # NOTE: Set `None` hvis du ikke vil ha labels.
+        xmin=-2,
         xmax=6,
-        ymin=-7,
-        ymax=6,
+        ymin=-4,
+        ymax=10,
         ticks=False,
     )
 
-    x1 = -1
-    y1 = f(x1)
-    x2 = 2
-    y2 = f(x2)
-    ax.plot(x1, y1, "ko", markersize=8, alpha=0.7)
-    ax.plot(x2, y2, "ko", markersize=8, alpha=0.7)
+    ax.plot(x_skjæring, y_skjæring, "ko", markersize=8, alpha=0.7)
 
-    ax.text(
-        s=f"$({x1}, {y1})$",
-        x=x1 - 0.2,
-        y=y1,
+    plt.annotate(
+        text="$x$-koordinaten til skjæringspunktet\n løser likningen $f(x) = g(x)$",
+        xy=(x_skjæring, y_skjæring),
+        xytext=(0.2, 7.5),
         fontsize=16,
-        ha="right",
-        va="bottom",
+        arrowprops=dict(
+            arrowstyle="->",
+            lw=2,
+            color="black",
+            alpha=0.7,
+            connectionstyle="arc3,rad=+0.2",
+        ),
+        horizontalalignment="left",
+        verticalalignment="center",
     )
 
-    ax.text(
-        s=f"$({x2}, {y2})$",
-        x=x2 + 0.2,
-        y=y2 - 0.2,
-        fontsize=16,
-        ha="left",
-        va="top",
-    )
+    ax.vlines(x_skjæring, 0, y_skjæring, color="red", linestyle="--", alpha=0.7)
+
+    plt.xticks([x_skjæring], labels=[r"$x_0$"], fontsize=16)
+    plt.grid(False)
 
     # NOTE: Select an appropriate `dirname` to save the figure.
     # The directory `dirname` will be created automatically if it does not exist already.
@@ -56,7 +65,6 @@ def main(dirname, save):
         savefig(dirname=dirname, fname=fname)  # Lagrer figuren i `dirname`-directory
 
     if not save:
-        import matplotlib.pyplot as plt
 
         plt.show()
 
@@ -90,6 +98,13 @@ if __name__ == "__main__":
     # Now you can import modules from the GitHub repo root
     from python_utils.plot_utils import make_figure, savefig
 
+    parts = current_dir.split("/")
+    for i in range(len(parts)):
+        if parts[~i] == "koder":
+            parts[~i] = "figurer"
+            break
+
+    dirname = "/".join(parts)
+
     # NOTE: Set `save=True` to save figure. `save=False` to display figure.
-    dirname = current_dir.replace("koder", "figurer")
     main(dirname=dirname, save=True)
