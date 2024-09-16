@@ -295,17 +295,18 @@ Vi får da at $g(x) = 4x-5$.
 ---
 class: problem-level-2
 ---
-Grafen til en lineær funksjon $f$ er vist i {numref}`fig-lineære-funksjoner-representasjoner-bestemme-funksjonsuttrykk-oppgave-6`.
-
-Bestem $f(x)$.
+Grafene til to lineære funksjoner $f$ og $g$ er vist i {numref}`fig-lineære-funksjoner-representasjoner-bestemme-funksjonsuttrykk-oppgave-6`. Grafen til $f$ er parallell med grafen til $g$.
 
 :::{figure} ./figurer/oppgaver/oppgave_6.svg
 ---
 name: fig-lineære-funksjoner-representasjoner-bestemme-funksjonsuttrykk-oppgave-6
 width: 80%
 ---
-viser grafen til en lineær funksjon $f$ og to punkter på grafen.
+viser grafen til to lineære funksjoner $f$ og $g$. Grafen til $f$ og $g$ er parallelle.
 :::
+
+Deloppgave 1
+: Bestem $f(x)$.
 
 :::{admonition} Fasit
 ---
@@ -313,6 +314,17 @@ class: answer, dropdown
 ---
 $$
 f(x) = -2x + 1
+$$
+:::
+
+Deloppgave 2
+: Bestem $g(x)$.
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+g(x) = -2x - 3
 $$
 :::
 ::::
@@ -326,7 +338,6 @@ class: problem-level-2
 ---
 Grafen til en lineær funksjon $g$ er vist i {numref}`fig-lineære-funksjoner-representasjoner-bestemme-funksjonsuttrykk-oppgave-7`.
 
-Bestem hvor grafen til $g$ skjærer $y$-aksen. 
 
 :::{figure} ./figurer/oppgaver/oppgave_7.svg
 ---
@@ -336,11 +347,28 @@ width: 80%
 viser grafen til en lineær funksjon $g$, og to punkter på grafen.
 :::
 
+
+Deloppgave 1
+: Bestem hvor grafen til $g$ skjærer $y$-aksen. 
+
 :::{admonition} Fasit
 ---
 class: answer, dropdown
 ---
 Grafen til $g$ skjærer $y$-aksen i $y = -2$. 
+:::
+
+
+Deloppgave 2
+: En annen funksjon $h$ er parallell med grafen til $g$ og skjærer $y$-aksen i $y = 2$. <br> Bestem $h(x)$.
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+h(x) = 3x + 2
+$$
 :::
 ::::
 
@@ -348,19 +376,19 @@ Grafen til $g$ skjærer $y$-aksen i $y = -2$.
 
 ::::{admonition} Oppgave 8
 ---
-class: problem-level-2
+class: problem-level-3
 ---
-Grafen til en lineær funksjon $h$ er vist i {numref}`fig-lineære-funksjoner-representasjoner-bestemme-funksjonsuttrykk-oppgave-8`.
-Stigningstallet til $h$ er $1/2$.
+Grafene til to lineære funksjoner $f$ og $g$ er vist i {numref}`fig-lineære-funksjoner-representasjoner-bestemme-funksjonsuttrykk-oppgave-8`. 
+Avstanden fra origo til det nærmeste punktet på de to grafene er det samme. Grafene er parallelle.
 
-Bestem $x_2$.
+Bestem $f(x)$. 
 
 :::{figure} ./figurer/oppgaver/oppgave_8.svg
 ---
 name: fig-lineære-funksjoner-representasjoner-bestemme-funksjonsuttrykk-oppgave-8
 width: 80%
 ---
-viser grafen til en lineær funksjon $h$ og to punkter på grafen.
+viser grafene til to lineære funksjoner $f$ og $g$. Avstanden fra origo til det nærmeste punktet på de to grafene er det samme. Grafene er parallelle.
 :::
 
 :::{admonition} Fasit
@@ -368,7 +396,7 @@ viser grafen til en lineær funksjon $h$ og to punkter på grafen.
 class: answer, dropdown
 ---
 $$
-x_2 = 6
+f(x) = x + 2
 $$
 :::
 ::::
