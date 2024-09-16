@@ -488,7 +488,7 @@ I {numref}`fig-lineære-funksjoner-representasjoner-oppgave-7` vises grafene til
 \begin{align*}
     f(x) &= 4x - 2 &&& g(x) = -3x + 1 \\
     \\
-    h(x) &= -\dfrac{1}{2}x + 3 &&& r(x) = x - 2\\
+    h(x) &= -\dfrac{1}{2}x + 1 &&& r(x) = x - 2\\
 \end{align*}
 
 <br>
