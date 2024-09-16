@@ -245,10 +245,10 @@ Deloppgave 3
 ---
 class: answer, dropdown
 ---
-Grafen til $f$ vises i {numref}`fig-lineære-funksjoner-representasjoner-oppgave-2`.
-:::{figure} ./figurer/oppgaver/oppgave_2.svg
+Grafen til $f$ vises i {numref}`fig-lineære-funksjoner-representasjoner-oppgave-5-3`.
+:::{figure} ./figurer/oppgaver/oppgave_5_3.svg
 ---
-name: fig-lineære-funksjoner-representasjoner-oppgave-2-old
+name: fig-lineære-funksjoner-representasjoner-oppgave-5-3
 width: 100%
 ---
 viser grafen til $f(x)= 2x - 3$ og punktene fra verditabellen i deloppgave 1.
