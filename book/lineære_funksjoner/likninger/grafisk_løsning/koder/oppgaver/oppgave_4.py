@@ -1,24 +1,29 @@
-def main(dirname, save=False):
+import matplotlib.pyplot as plt
 
+plt.rc("text", usetex=True)
+
+
+def main(dirname, save):
+    #
     # Define functions
     def f(x):
-        return x - 1
+        return -x + 1
 
     def g(x):
-        return -x + 3
+        return x - 3
 
     # List of functions and their labels.
     functions = [f, g]
-    fn_labels = [r"$f$", r"$g$"]
+    fn_labels = [f"${fn.__name__}$" for fn in functions]
 
     # Create the math figure
     fig, ax = make_figure(
         functions=functions,
-        fn_labels=fn_labels,  # Set `None` hvis du ikke vil ha labels.
-        xmin=-5,
+        fn_labels=fn_labels,  # NOTE: Set `None` hvis du ikke vil ha labels.
+        xmin=-4,
         xmax=6,
-        ymin=-3,
-        ymax=6,
+        ymin=-6,
+        ymax=4,
         ticks=True,
     )
 
@@ -29,7 +34,6 @@ def main(dirname, save=False):
         savefig(dirname=dirname, fname=fname)  # Lagrer figuren i `dirname`-directory
 
     if not save:
-        import matplotlib.pyplot as plt
 
         plt.show()
 
@@ -37,19 +41,22 @@ def main(dirname, save=False):
 if __name__ == "__main__":
 
     import sys
-    import os
+    import pathlib
 
     def find_repo_root(current_path):
-        while current_path != os.path.dirname(
+        current_path = pathlib.Path(
             current_path
+        ).resolve()  # Convert to an absolute Path object
+        while (
+            current_path != current_path.parent
         ):  # Stop when you reach the filesystem root
-            if os.path.isdir(os.path.join(current_path, ".git")):
-                return current_path
-            current_path = os.path.dirname(current_path)
+            if (current_path / ".git").is_dir():  # Check if the .git directory exists
+                return str(current_path)
+            current_path = current_path.parent  # Move one level up
         raise FileNotFoundError("No .git directory found in any parent directories.")
 
     # Get the directory where the script is located
-    current_dir = os.path.dirname(os.path.abspath(__file__))
+    current_dir = str(pathlib.Path(__file__).resolve().parent)
 
     # Find the root of the GitHub repository (where .git is located)
     repo_root = find_repo_root(current_dir)
@@ -58,8 +65,15 @@ if __name__ == "__main__":
     sys.path.append(repo_root)
 
     # Now you can import modules from the GitHub repo root
-    from python_templates.plot_utils import make_figure, savefig
+    from python_utils.plot_utils import make_figure, savefig
 
-    # Set `save=True` to save figure. `save=False` to display figure.
-    dirname = "../../figurer/oppgaver/"
+    parts = current_dir.split("/")
+    for i in range(len(parts)):
+        if parts[~i] == "koder":
+            parts[~i] = "figurer"
+            break
+
+    dirname = "/".join(parts)
+
+    # NOTE: Set `save=True` to save figure. `save=False` to display figure.
     main(dirname=dirname, save=True)

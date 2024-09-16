@@ -10,7 +10,7 @@ def main(dirname, save):
         return x - 2
 
     def g(x):
-        return -x + 2
+        return -3 * x - 6
 
     # List of functions and their labels.
     functions = [f, g]
@@ -22,8 +22,8 @@ def main(dirname, save):
         fn_labels=fn_labels,  # NOTE: Set `None` hvis du ikke vil ha labels.
         xmin=-6,
         xmax=6,
-        ymin=-6,
-        ymax=6,
+        ymin=-7,
+        ymax=5,
         ticks=True,
     )
 
