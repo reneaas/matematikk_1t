@@ -300,7 +300,7 @@ viser grafen til en lineær funksjon $f$.
 class: answer, dropdown
 ---
 $$
-f(x) = x - 4
+f(x) = x + 4
 $$
 :::
 
