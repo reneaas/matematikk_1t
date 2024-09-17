@@ -569,6 +569,117 @@ Deloppgave d
 
 ::::
 
+---
+
+
+::::{admonition} Oppgave 6
+---
+class: problem-level-2, interactive
+---
+En lineær funksjon $f$ oppfyller likningen
+
+$$
+f(x) = 1 + a(x + 2).
+$$
+
+````{tab-set}
+```{tab-item} a
+Hvilket punkt er det grafen til $f$ går gjennom uansett hva verdien til $a$ er?
+
+:::{admonition} Fasit
+---
+class: dropdown, answer
+---
+$$
+(-2, 1)
+$$
+:::
+```
+
+```{tab-item} b
+Bestem $a$ slik at grafen til $f$ også går gjennom punktet $(1, -2)$.
+
+:::{admonition} Fasit
+---
+class: dropdown, answer
+---
+$$
+a = -1
+$$
+:::
+```
+
+```{tab-item} c
+Bestem hvor grafen til $f$ skjærer $y$-aksen.
+
+:::{admonition} Fasit
+---
+class: dropdown, answer
+---
+$$
+y = -1
+$$
+:::
+```
+
+```{tab-item} d
+Bestem hvor grafen til $f$ skjærer $x$-aksen.
+
+:::{admonition} Fasit
+---
+class: dropdown, answer
+---
+$$
+x = -1
+$$
+:::
+```
+
+```{tab-item} e
+Bestem koordinatene til skjæringspunktet til grafen til $f$ med linja $y = 6$.
+
+:::{admonition} Fasit
+---
+class: dropdown, answer
+---
+$$
+(-7, 6)
+$$
+:::
+```
+
+````
+::::
+
+
+::::{admonition} Oppgave 6
+---
+class: problem-level-2, noninteractive
+---
+
+En lineær funksjon $f$ oppfyller likningen
+
+$$
+f(x) = 1 + a(x + 2).
+$$
+
+Deloppgave a
+: Hvilket punkt er det grafen til $f$ går gjennom uansett hva verdien til $a$ er?
+
+Deloppgave b
+: Bestem $a$ slik at grafen til $f$ også går gjennom punktet $(1, -2)$.
+
+Deloppgave c
+: Bestem hvor grafen til $f$ skjærer $y$-aksen.
+
+Deloppgave d
+: Bestem hvor grafen til $f$ skjærer $x$-aksen.
+
+Deloppgave e
+: Bestem koordinatene til skjæringspunktet til grafen til $f$ med linja $y = 6$.
+
+::::
+
 
 
 
