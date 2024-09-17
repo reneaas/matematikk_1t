@@ -7,7 +7,7 @@ class: tip
 Etter dette kapittelet, er målet at du skal:
 * Kunne løse lineære likninger algebraisk.
 * Kunne koble sammen algebraiske problemer med grafiske tolkninger.
-* Kunne uttrykke løsningene som både likninger og løsningsmengder.
+* Kunne bestemme funksjonsuttrykket til lineære funksjoner ved hjelp av lineære likninger.
 :::
 
 ## Algebraisk løsning av lineære likninger
