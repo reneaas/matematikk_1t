@@ -306,6 +306,61 @@ $$
 
 ::::::
 
+---
+
+<!-- ::::::{admonition} Oppgave 5
+---
+class: problem-level-2
+---
+Fire alternativer for figurer som viser grafene til to lineære funksjoner $f$ og $g$ er vist under.
+
+`````{tab-set}
+
+````{tab-item} Figur A
+
+:::{figure} ./figurer/oppgaver/oppgave_5/figur_A.svg
+---
+width: 80%
+---
+:::
+
+````
+
+````{tab-item} Figur B
+
+:::{figure} ./figurer/oppgaver/oppgave_5/figur_B.svg
+---
+width: 80%
+---
+:::
+
+````
+
+````{tab-item} Figur C
+
+:::{figure} ./figurer/oppgaver/oppgave_5/figur_C.svg
+---
+width: 80%
+---
+:::
+
+````
+
+````{tab-item} Figur D
+
+:::{figure} ./figurer/oppgaver/oppgave_5/figur_D.svg
+---
+width: 80%
+---
+:::
+
+````
+`````
+
+
+
+:::::: -->
+
 
 
 

@@ -4,72 +4,65 @@
 ---
 class: tip
 ---
-Etter å gått gjennom dette delkapittelet, er målet at du skal kunne:
-* Løse lineære likninger algebraisk på formen
-    * $ax + b = 0$
-    * $ax + b = k$
-    * $ax + b = cx + d$
-* Kunne uttrykke løsningen av en likning som
-    * En likning
-    * En løsningsmengde
+Etter dette kapittelet, er målet at du skal:
+* Kunne løse lineære likninger algebraisk.
+* Kunne koble sammen algebraiske problemer med grafiske tolkninger.
+* Kunne uttrykke løsningene som både likninger og løsningsmengder.
 :::
 
-Å løse likninger algebraisk, handler om å jobbe med likningene symbolsk og bruke algebraiske lover til å isolere variabelen i likningen, hvis mulig. Vi kaller dette å bestemme løsningen. Grovt sett er det fire regneoperasjoner vi kan gjøre med likninger:
-1. Legge til noe på begge sider av likningen.
-2. Trekke fra noe på begge sider av likningen.
-3. Gange med noe på begge sider av likningen.
-4. Dele på noe på begge sider av likningen.
+## Algebraisk løsning av lineære likninger
 
-Det er viktig å understreke at vi må gjøre samme regneoperasjon på **begge sider**, i alle ledd.
+Å løse likninger algebraisk handler om å isolere variabelen i likningen ved hjelp av algebraisk regning. For å gjøre dette, har vi følgende regneregler å benytte oss av:
 
-
-## Likninger av typen $ax + b = 0$
-
-Vi tar et eksempel:
-
-:::{admonition} Flytte og bytte
+::::{admonition} Regneregler for likninger
 ---
-class: sidenote, margin
+class: theory
 ---
-I {ref}`eksempel 1 <lineære-likninger-algebraisk-løsning-example-1>` har vi trekt fra samme tall på hver side i første steg. Men tidligere har du kanskje lært "flytte og bytte"-regelen. Denne regelen kommer fra at man legger til eller trekker fra samme tall på hver side av likningen.  
-:::
+Når vi jobber med en likning algebraisk, kan vi:
+1. Legge til det samme på begge sider.
+2. Trekke fra det samme på begge sider.
+3. Gange med det samme på begge sider.
+4. Dele med det samme på begge sider.
+
+::::
+
+Vi tar et eksempel
 
 ::::{admonition} Eksempel 1
 ---
 class: example
-name: lineære-likninger-algebraisk-løsning-example-1
 ---
-Løs likningen
+Løs likningen 
 
 $$
-3x + 6 = 0.
+-x + 2 = 2x + 5.
 $$
 
-Målet vårt er å finne ut hvilken verdi av $x$ som gjør at likningen er sann. 
-
+:::{admonition} Løsning
+---
+class: solution
+---
+Målet er å bestemme hvilken verdi $x$ må ha for at likningen er sann. Typisk vil vi få alle ledd med $x$ på én side og alle ledd bestående av tall på den andre siden av likhetstegnet.
 
 \begin{align*}
-3x + 6 &= 0 \\
-& \Updownarrow \\
-3x + 6 \textcolor{red}{-6} &= 0 \textcolor{red}{-6} && \text{Trekker fra $6$ på begge sider}\\
-& \Updownarrow \\
-3x &= -6 \\
-& \Updownarrow \\
-\frac{\bcancel{3}x}{\bcancel{\textcolor{red}{3}}} &= \frac{\cancelto{\displaystyle \textcolor{teal}{-2}}{-6}}{\cancel{\textcolor{red}{3}}} && \text{Deler med 3 på begge sider}\\
-& \Updownarrow \\
-x &= -2
+-x + 2 &= 2x + 5 \\
+\\
+-x + 2 \textcolor{red}{- 2} &= 2x + 5 \textcolor{red}{- 2} && \text{Trekker fra 2 på begge sider}\\
+\\
+-x &= 2x + 3 \\
+\\
+-x \textcolor{red}{- 2x} &= 2x \textcolor{red}{- 2x} + 3 && \text{Trekker fra $2x$ på begge sider}\\
+\\
+-3x &= 3 \\
+\\
+\frac{\bcancel{-3}x}{\bcancel{\textcolor{red}{-3}}} &= \frac{3}{\textcolor{red}{-3}} && \text{Deler med $-3$ på begge sider}\\
+\\
+x &= -1
 \end{align*}
 
-Over har vi uttrykt løsningen vår som en likning. Noen ganger er dette ryddigst, andre ganger er det ryddigere å uttrykke løsningen som en løsningsmengde - spesielt når likningen har mer enn én løsning. Vi oppgir løsningen som enten som en likning eller som en løsningsmengde:
-
-$$
-\underbrace{x = -2}_{\text{likning}} \quad \Leftrightarrow \quad \underbrace{x \in \{-2\}}_{\text{løsningsmengde}}
-$$
-
-Vi velger oss typisk den skrivemåten som er enklest å lese.
+Altså er løsningen av likningen $x = -1$.
+:::
 ::::
-
-
 
 **Din tur!**
 
@@ -79,20 +72,16 @@ class: check
 ---
 Løs likningen
 
-$$ 
-4x - 2 = 0.
 $$
-
-Uttrykk løsningen som 
-* En likning
-* En løsningsmengde
+x + 2 = 3x - 2.
+$$
 
 :::{admonition} Fasit
 ---
 class: answer, dropdown
 ---
 $$
-x = \dfrac{1}{2} \quad \Leftrightarrow \quad x \in \left\{\dfrac{1}{2}\right\}.
+x = 2.
 $$
 :::
 
@@ -101,292 +90,256 @@ $$
 class: dropdown, solution
 ---
 \begin{align*}
-4x - 2 &= 0 \\
-& \Updownarrow \\
-4x - 2 \textcolor{red}{+2} &= 0 \textcolor{red}{+2} && \text{Legger til $2$ på begge sider}\\
-& \Updownarrow \\
-4x &= 2 \\
-& \Updownarrow \\
-\frac{\bcancel{4}x}{\bcancel{\textcolor{red}{4}}} &= \frac{2}{\textcolor{red}{4}} && \text{Deler med 4 på begge sider}\\
-& \Updownarrow \\
-x &= \dfrac{1}{2} \\
-& \Updownarrow \\
-x &\in \left\{\dfrac{1}{2}\right\}
+x + 2 &= 3x - 2 \\
+\\
+x + 2 \textcolor{red}{- 2} &= 3x - 2 \textcolor{red}{- 2} && \text{Trekker fra 2 på begge sider}\\
+\\
+x &= 3x - 4 \\
+\\
+x \textcolor{red}{- 3x} &= 3x \textcolor{red}{- 3x} - 4 && \text{Trekker fra $3x$ på begge sider}\\
+\\
+-2x &= -4 \\
+\\
+\frac{\bcancel{-2}x}{\bcancel{\textcolor{red}{-2}}} &= \frac{-4}{\textcolor{red}{-2}} && \text{Deler med $-2$ på begge sider}\\
+\\
+x &= 2
 \end{align*}
+
+Altså er løsningen av likningen $x = 2$.
 :::
-::::
-
-## Likninger på formen $ax + b = k$
-
-Vi går løs på et eksempel på denne typen lineære likning også:
-
-::::{admonition} Stryk med pil
----
-class: sidenote, margin
----
-Når du ser notasjonen 
-
-$$
-\cancelto{\displaystyle 2}{4}
-$$
-
-betyr dette at vi sitter igjen med en faktor $2$ etter å ha stryket $4$ mot noe. For eksempel:
-
-$$
-\frac{5}{2} \cdot \textcolor{red}{4} = \dfrac{5}{\cancel{2}} \cdot \cancelto{\displaystyle 2}{\textcolor{red}{4}} = 5\cdot \textcolor{red}{2}
-$$
 
 ::::
 
-:::::{admonition} Eksempel 2
+---
+
+## Lineære likninger og lineære funksjoner
+
+I mange tilfeller vil vi bestemme ulike egenskaper ved en lineær funksjon ved hjelp av regning algebraisk. Dette kan blant annet være å bestemme nullpunktet til en lineær funksjon, skjæring med en linje eller skjæring mellom grafene til to funksjoner.
+
+Vi tar et eksempel:
+
+::::{admonition} Eksempel 2
 ---
 class: example
-name: lineære-likninger-algebraisk-løsning-example-2
 ---
-Vi skal løse likningen
+En lineær funksjon er gitt ved 
 
 $$
-5x + 2 = -3.
+f(x) = 3x + 6.
 $$
 
-Målet vårt er å bestemme hvilken verdi av $x$ som gjør at likningen er sann, så vi skal isolere $x$ på en side av likningen.
+Bestem hvilket punkt grafen til $f$ skjærer $x$-aksen.
+
+:::{admonition} Løsning
+---
+class: solution
+---
+Når grafen til $f$ skjærer $x$-aksen, må $f(x) = 0$. Dermed må vi løse likningen
+
+$$
+f(x) = 0 \quad \iff \quad 3x + 6 = 0.
+$$
+
+Da finner vi:
 
 \begin{align*}
-5x + 2 &= -3 \\
-& \Updownarrow \\
-5x + 2 \textcolor{red}{-2} &= -3 \textcolor{red}{-2} && \text{Trekker fra $2$ på begge sider}\\
-& \Updownarrow \\
-5x &= -5 \\
-& \Updownarrow \\
-\frac{\bcancel{5}x}{\bcancel{\textcolor{red}{5}}} &= \frac{\cancelto{\displaystyle -1}{-5}}{\cancel{\textcolor{red}{5}}} && \text{Deler med 5 på begge sider}\\
-& \Updownarrow \\
-x &= -1
+3x + 6 &= 0 \\
+\\
+3x + 6 \textcolor{red}{- 6} &= 0 \textcolor{red}{- 6} && \text{Trekker fra 6 på begge sider}\\
+\\
+3x &= -6 \\
+\\
+\frac{\bcancel{3}x}{\bcancel{\textcolor{red}{3}}} &= \frac{-6}{\textcolor{red}{3}} && \text{Deler med 3 på begge sider}\\
+\\
+x &= -2
 \end{align*}
 
-Altså er løsningen
-
-::::{tab-set}
-:::{tab-item} Likning
-$$
-x = -1
-$$
-:::
-
-:::{tab-item} Løsningsmengde
-$$
-x \in \{-1\}
-$$
+Dermed skjærer grafen $x$-aksen i punktet $(-2, 0)$.
 :::
 ::::
-:::::
 
-Så er det **din tur**!
+---
 
-::::::{admonition} Underveisoppgave 2
+**Din tur!**
+
+::::{admonition} Underveisoppgave 2
 ---
 class: check
 ---
-Løs likningen 
+En lineær funksjon er gitt ved 
 
 $$
--3x + 5 = 4.
+g(x) = -2x + 4.
 $$
 
-Uttrykk løsningen som 
-* En likning
-* En løsningsmengde
+Bestem $x$-koordinaten til skjæringspunktet mellom grafen til $g$ og linja $y = 2$. 
 
-:::::{admonition} Fasit
----
-class: answer, dropdown
----
-::::{tab-set}
-:::{tab-item} Likning
-$$
-x = \dfrac{1}{3}
-$$
-:::
-
-:::{tab-item} Løsningsmengde
-$$
-x \in \left\{\dfrac{1}{3}\right\}
-$$
-:::
-::::
-
-:::::
-
-:::::{admonition} Løsning
----
-class: dropdown, solution
----
-
-\begin{align*}
--3x + 5 &= 4 \\
-& \Updownarrow \\
--3x + 5 \textcolor{red}{-5} &= 4 \textcolor{red}{-5} && \text{Trekker fra $5$ på begge sider}\\
-& \Updownarrow \\
--3x &= -1 \\
-& \Updownarrow \\
-\frac{\bcancel{-3}x}{\bcancel{\textcolor{red}{-3}}} &= \frac{-1}{\textcolor{red}{-3}} && \text{Deler med $-3$ på begge sider}\\
-& \Updownarrow \\
-x &= \dfrac{1}{3}
-\end{align*}
-
-Altså er løsningen
-
-::::{tab-set}
-:::{tab-item} Likning
-$$
-x = \dfrac{1}{3}
-$$
-:::
-
-:::{tab-item} Løsningsmengde
-$$
-x \in \left\{\dfrac{1}{3}\right\}
-$$
-:::
-::::
-:::::
-::::::
-
-## Likninger på formen $ax + b = cx + d$
-Vi går løs på den siste varianten av lineære likninger, men løsningsstrategien er fortsatt den samme! 
-
-
-:::::{admonition} Eksempel 3
----
-class: example
-name: lineære-likninger-algebraisk-løsning-example-3
----
-Vi skal løse likningen
-
-$$
-\dfrac{3x}{4} - \dfrac{1}{2} = x + \dfrac{3}{2}.
-$$
-
-Målet vårt er å få $x$ alene. Det betyr i praksis at vi får alle ledd med $x$ over på én side av likningen. Typisk når en likning inneholder brøker, er det lurt å gange bort alle brøkene først.  
-
-\begin{align*}
-\dfrac{3x}{4} - \dfrac{1}{2} &= x + \dfrac{3}{2} \\
-& \Updownarrow \\
-\dfrac{3x}{\cancel{4}} \cdot \cancel{\textcolor{red}{4}} - \dfrac{1}{\cancel{2}} \cdot \cancelto{\displaystyle 2}{\textcolor{red}{4}} &= \textcolor{red}{4}\cdot x + \dfrac{3}{\cancel{2}} \cdot \cancelto{\displaystyle 2}{\textcolor{red}{4}} && \text{Ganger med $4$ på begge sider}\\
-& \Updownarrow \\
-3x - 1\cdot \textcolor{red}{2} &= 4x + 3\cdot \textcolor{red}{2} && \text{Restfaktorer etter ganging med brøkene}\\
-& \Updownarrow \\
-3x \textcolor{red}{-3x} - 2 &= 4x \textcolor{red}{-3x} + 6 && \text{Trekker fra $3x$ på begge sider}\\
-& \Updownarrow \\
--2 &= x + 6 \\
-& \Updownarrow \\
--2 \textcolor{red}{-6} &= x + 6 \textcolor{red}{-6} && \text{Trekker fra $6$ på begge sider}\\
-& \Updownarrow \\
--8 &= x
-\end{align*}
-
-En god vane er å **sette prøve** på svaret når du har løst likningen. Det vil si å sette inn løsningen din i den opprinnelige likningen for å verifisere at du har regnet riktig.
-Vi gjør som følger, vi sette inn verdien av $x$ på venstre side (V.S) og høyre side (V.S) og sjekker at vi får samme verdi:
-
-::::{grid}
-:gutter: 1
-
-:::{grid-item-card} V.S: $\dfrac{3x}{4} - \dfrac{1}{2}$
-$$
-\dfrac{3\cdot \textcolor{red}{(-8)}}{4} - \dfrac{1}{2} = \dfrac{-24}{4} - \dfrac{2}{4} = -\dfrac{\cancelto{\displaystyle 13}{26}}{\cancelto{\displaystyle 2}{4}} = -\dfrac{13}{2}
-$$
-:::
-
-:::{grid-item-card} H.S: $x + \dfrac{3}{2}$
-$$
-\textcolor{red}{(-8)} + \dfrac{3}{2} = -\dfrac{16}{2} + \dfrac{3}{2} = -\dfrac{13}{2}
-$$
-:::
-::::
-
-Altså får vi samme verdi på begge sider av den opprinnelige likningen med $x = -8$, som betyr at løsningen er
-
-::::{tab-set}
-:::{tab-item} Likning
-$$
-x = -8
-$$
-:::
-
-:::{tab-item} Løsningsmengde
-$$
-x \in \{-8\}
-$$
-:::
-::::
-:::::
-
-**Din tur**!
-
-::::::{admonition} Underveisoppgave 3
----
-class: check
----
-Løs likningen 
-
-$$
--\dfrac{2x}{3} + 3 = x - 2.
-$$
-
-Sett prøve på svaret ditt.
-
-
-::::{admonition} Fasit
+:::{admonition} Fasit
 ---
 class: answer, dropdown
 ---
 $$
-x = 3
+x = 2.
 $$
-::::
 
+:::
 
-:::::{admonition} Løsning
+:::{admonition} Løsning
 ---
 class: dropdown, solution
 ---
+Når grafen til $g$ skjærer linja $y = 2$, må $g(x) = 2$. Dermed må vi løse likningen
+
+$$
+g(x) = 2 \quad \iff \quad -2x + 4 = 2.
+$$
+
+Da finner vi:
 
 \begin{align*}
--\dfrac{2x}{3} + 3 &= x - 2 \\
-& \Updownarrow \\
--\dfrac{2x}{\cancel{3}} \cancel{\textcolor{red}{\cdot 3}} + 3 \textcolor{red}{\cdot 3} &= x \textcolor{red}{\cdot 3} - 2 \textcolor{red}{\cdot 3} && \text{Ganger med 3 på begge sider}\\
-& \Updownarrow \\
--2x + 9 &= 3x - 6\\
-& \Updownarrow \\
--2x \textcolor{red}{- 3x} + 9 &= 3x \textcolor{red}{- 3x} - 6 && \text{Trekker fra $3x$ på begge sider}\\
-& \Updownarrow \\
--5x + 9 &= -6 \\
-& \Updownarrow \\
--5x + 9 \textcolor{red}{-9} &= -6 \textcolor{red}{-9} && \text{Trekker fra $9$ på begge sider}\\
-& \Updownarrow \\
--5x &= -15 \\
-& \Updownarrow \\
-\frac{\bcancel{-5}x}{\bcancel{\textcolor{red}{-5}}} &= \frac{\cancelto{\displaystyle 3}{-15}}{\cancel{\textcolor{red}{-5}}} && \text{Deler med $-5$ på begge sider}\\
-& \Updownarrow \\
-x &= 3
+-2x + 4 &= 2 \\
+\\
+-2x + 4 \textcolor{red}{- 4} &= 2 \textcolor{red}{- 4} && \text{Trekker fra 4 på begge sider}\\
+\\
+-2x &= -2 \\
+\\
+\frac{\bcancel{-2}x}{\bcancel{\textcolor{red}{-2}}} &= \frac{-2}{\textcolor{red}{-2}} && \text{Deler med $-2$ på begge sider}\\
+\\
+x &= 2
 \end{align*}
 
-Til slutt setter vi prøve på svaret:
-
-::::{grid}
-
-:::{grid-item-card} V.S: $-\dfrac{2x}{3} + 3$
-$$
--\dfrac{2\cdot \textcolor{red}{3}}{3} + 3 = -2 + 3 = 1
-$$
-:::
-
-:::{grid-item-card} H.S: $x - 2$
-$$
-\textcolor{red}{3} - 2 = 1
-$$
+Dermed skjærer grafen $g$ linja $y = 2$ i punktet $(2, 2)$. Dette har $x$-koordinaten $x = 2$. 
 :::
 ::::
-:::::
 
+---
 
-::::::
+Vi kan også bruke lineære likninger som en del av å bestemme funksjonsuttrykket til en lineær funksjon. La oss ta et eksempel:
+
+::::{admonition} Eksempel 3
+---
+class: example
+---
+En lineær funksjon $f$ går gjennom punktene $(1, 2)$ og $(3, 6)$. 
+
+Bestem $f(x)$.
+
+:::{admonition} Løsning
+---
+class: solution
+---
+En lineær funksjon kan alltid skrives på formen
+
+$$
+f(x) = ax + b.
+$$
+
+Først bestemmer vi stigningstallet ved topunktsformelen:
+
+$$
+a = \dfrac{y_2 - y_1}{x_2 - x_1} = \dfrac{6 - 2}{3 - 1} = \dfrac{4}{2} = 2.
+$$
+
+Det betyr at 
+
+$$
+f(x) = 2x + b.
+$$
+
+Nå kan vi sette opp en lineær likning der $b$ er den ukjente. Bruker vi punktet $(1, 2)$ vet vi at 
+
+$$
+f(1) = 2 \quad \iff \quad 2 = 2 \cdot 1 + b.
+$$
+
+Dermed har kan vi bestemme $b$ ved å løse likningen:
+
+\begin{align*}
+2 &= 2 \cdot 1 + b \\
+\\
+2 &= 2 + b \\
+\\
+2 \textcolor{red}{-2} &= 2 + b \textcolor{red}{-2} && \text{Trekker fra 2 på begge sider}\\
+\\
+0 &= b
+\end{align*}
+
+Dermed er $b = 0$ og funksjonsuttrykket til $f$ er
+
+$$
+f(x) = 2x.
+$$
+:::
+
+::::
+
+---
+
+**Din tur!**
+
+::::{admonition} Underveisoppgave 3
+---
+class: check
+---
+
+En lineær funksjon $g$ går gjennom punktene $(2, 3)$ og $(4, 5)$ på samme måte som i eksempel 3.
+
+Bestem $g(x)$.
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+g(x) = x + 1.
+$$
+
+:::
+
+:::{admonition} Løsning
+---
+class: dropdown, solution
+---
+En lineær funksjon kan alltid skrives på formen
+
+$$
+g(x) = ax + b.
+$$
+
+Først bestemmer vi stigningstallet ved topunktsformelen:
+
+$$
+a = \dfrac{y_2 - y_1}{x_2 - x_1} = \dfrac{5 - 3}{4 - 2} = \dfrac{2}{2} = 1.
+$$
+
+Det betyr at
+
+$$
+g(x) = x + b.
+$$
+
+Nå kan vi sette opp en lineær likning der $b$ er den ukjente. Bruker vi punktet $(2, 3)$ vet vi at
+
+$$
+g(2) = 3 \quad \iff \quad 3 = 2 + b.
+$$
+
+Dermed har kan vi bestemme $b$ ved å løse likningen:
+
+\begin{align*}
+3 &= 2 + b \\
+\\
+3 \textcolor{red}{-2} &= 2 + b \textcolor{red}{-2} && \text{Trekker fra 2 på begge sider}\\
+\\
+1 &= b
+\end{align*}
+
+Dermed er $b = 1$ og funksjonsuttrykket til $g$ er
+
+$$
+g(x) = x + 1.
+$$
+
+:::
+::::
+
