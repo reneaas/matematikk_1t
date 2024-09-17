@@ -324,7 +324,7 @@ $$
 g(2) = 3 \quad \iff \quad 3 = 2 + b.
 $$
 
-Dermed har kan vi bestemme $b$ ved å løse likningen:
+Dermed kan vi bestemme $b$ ved å løse likningen:
 
 \begin{align*}
 3 &= 2 + b \\
