@@ -70,7 +70,13 @@ $$
 class: solution
 ---
 
-For å løse denne likningen grafisk, tegner vi grafen til funksjonen $f(x) = 2x - 4$, og undersøker hvor grafen skjærer $x$-aksen (vi finner nullpunktet!). 
+For å løse denne likningen grafisk, tegner vi grafen til funksjonen 
+
+$$
+f(x) = 2x - 4,
+$$
+
+og undersøker hvor grafen skjærer $x$-aksen (vi finner nullpunktet!). 
 
 Vi kan se grafen til $f$ i {numref}`fig-lineære-funksjoner-likninger-grafisk-eksempel-1`. 
 
@@ -100,13 +106,13 @@ Så er det **din tur**!
 ---
 class: check
 ---
-I {numref}`lineære-likninger-grafisk-underveisoppgave-1` vises grafen til en lineær funksjon $g$ som er gitt ved
+I {numref}`lineære-likninger-grafisk-underveisoppgave-1` vises grafen til en lineær funksjon $f$ som er gitt ved
 
 $$
-g(x) = -2x + 6.
+f(x) = -2x + 6.
 $$ 
 
-Bestem nullpunktet til $g$.
+Bestem nullpunktet til $f$.
 
 :::{figure} ./figurer/underveisoppgaver/underveisoppgave_1.svg
 ---
@@ -114,7 +120,7 @@ name: lineære-likninger-grafisk-underveisoppgave-1
 width: 80%
 ---
 
-Viser grafen til $g(x) = -2x + 6$. 
+Viser grafen til $f(x) = -2x + 6$. 
 :::
 
 :::{admonition} Fasit
@@ -130,7 +136,7 @@ $$
 ---
 class: solution, dropdown
 ---
-Vi må bestemme hvor grafen til $g$ skjærer $x$-aksen. I {numref}`fig-lineære-funksjoner-likninger-grafisk-underveisoppgave-1-løsning` har vi annotert hvor grafen skjærer $x$-aksen. 
+Vi må bestemme hvor grafen til $f$ skjærer $x$-aksen. I {numref}`fig-lineære-funksjoner-likninger-grafisk-underveisoppgave-1-løsning` har vi annotert hvor grafen skjærer $x$-aksen. 
 
 
 :::{figure} ./figurer/underveisoppgaver/underveisoppgave_1_løsning.svg
@@ -138,10 +144,10 @@ Vi må bestemme hvor grafen til $g$ skjærer $x$-aksen. I {numref}`fig-lineære-
 name: fig-lineære-funksjoner-likninger-grafisk-underveisoppgave-1-løsning
 width: 90%
 ---
-viser en annotert versjon av {numref}`lineære-likninger-grafisk-underveisoppgave-1` som tydelig viser skjæringen mellom grafen til $g$ og $x$-aksen. Grafen skjærer $x$-aksen i $x = 3$.
+viser en annotert versjon av {numref}`lineære-likninger-grafisk-underveisoppgave-1` som tydelig viser skjæringen mellom grafen til $f$ og $x$-aksen. Grafen skjærer $x$-aksen i $x = 3$.
 :::
 
-Vi kan se at grafen skjærer $x$-aksen i $x = 3$. Dermed er nullpunktet til $g$ gitt ved $x = 3$.
+Vi kan se at grafen skjærer $x$-aksen i $x = 3$. Dermed er nullpunktet til $f$ gitt ved $x = 3$.
 ::::
 
 :::::

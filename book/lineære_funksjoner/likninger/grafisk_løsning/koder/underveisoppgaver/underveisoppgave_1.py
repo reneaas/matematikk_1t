@@ -6,11 +6,11 @@ plt.rc("text", usetex=True)
 def main(dirname, save):
     #
     # Define functions
-    def g(x):
+    def f(x):
         return -2 * x + 6
 
     # List of functions and their labels.
-    functions = [g]
+    functions = [f]
     fn_labels = [f"${fn.__name__}$" for fn in functions]
 
     # Create the math figure
