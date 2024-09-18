@@ -217,7 +217,7 @@ Deloppgave 3
 class: answer, dropdown
 ---
 $$
-h(x) = -3x + 12
+h(x) = -2x + 8
 $$
 :::
 
