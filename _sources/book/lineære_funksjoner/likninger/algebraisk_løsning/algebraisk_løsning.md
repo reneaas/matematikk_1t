@@ -179,7 +179,7 @@ Bestem $x$-koordinaten til skjæringspunktet mellom grafen til $g$ og linja $y =
 class: answer, dropdown
 ---
 $$
-x = 2.
+x = 1.
 $$
 
 :::
@@ -205,7 +205,7 @@ Da finner vi:
 \\
 \frac{\bcancel{-2}x}{\bcancel{\textcolor{red}{-2}}} &= \frac{-2}{\textcolor{red}{-2}} && \text{Deler med $-2$ på begge sider}\\
 \\
-x &= 2
+x &= 1
 \end{align*}
 
 Dermed skjærer grafen $g$ linja $y = 2$ i punktet $(2, 2)$. Dette har $x$-koordinaten $x = 2$. 
@@ -306,7 +306,7 @@ $$
 g(x) = ax + b.
 $$
 
-Først bestemmer vi stigningstallet ved topunktsformelen:
+Først bestemmer vi stigningstallet med topunktsformelen:
 
 $$
 a = \dfrac{y_2 - y_1}{x_2 - x_1} = \dfrac{5 - 3}{4 - 2} = \dfrac{2}{2} = 1.
