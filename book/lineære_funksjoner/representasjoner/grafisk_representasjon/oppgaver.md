@@ -534,7 +534,7 @@ I {numref}`fig-lineære-funksjoner-representasjoner-oppgave-8` grafene til fire 
 * Grafene til $f$ og $g$ har samme stigningstall.
 * Grafene til $h$ og $p$ har samme konstantledd.
 * Stigningstallet til $h$ er større enn stigningstallet til $p$.
-* $f(0) > g(0)$. 
+* $f(2) = h(2)$
 
 Bestem hvilken graf som hører til hvilken funksjon.
 
