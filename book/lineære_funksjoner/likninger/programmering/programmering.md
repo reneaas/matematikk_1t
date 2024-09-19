@@ -13,88 +13,141 @@ Etter å ha gått gjennom denne delen, er målet at du skal kunne:
 ## Numerisk løsning av likninger
 
 
-Å løse likninger **numerisk** betyr å finne en tilnærmet tallverdi for løsningen ved hjelp av et program. For å bestemme løsningen av en likning numerisk, bruker man gjerne en systematisk metode for å gradvis nærme seg løsningen. En slik metode kalles for en **numerisk metode**. En numerisk metode kan oftest formuleres ved hjelp av en **algoritme**. En algoritme er en oppskrift som forteller oss nøyaktig hvilke steg vi skal gjøre for å utføre en bestemt numerisk metode.
+Å løse en likning **numerisk**, betyr å finne en tilnærmet tallverdi for løsningen. For å gjøre dette bruker vi gjerne en strategi som er formulert som en oppskrift som vi kan følge for å nærme oss løsningen. En slik oppskrift kalles for en **algoritme**. Når vi har en algoritme, er målet vårt å oversette denne til et program som datamaskinen kan utføre for oss så vi kan *kick back, relax* og la datamaskinen gjøre jobben for oss. 
 
-Når man løser numeriske likninger, jobber man oftest med likninger som har null på høyre side. En slik likning kan skrives som $f(x) = 0$. Numerisk løsning av likninger handler derfor om å finne nullpunktene til en funksjon $f$.
-
-::::{admonition} `abs`{l=python}-funksjonen
----
-class: sidenote, margin
----
-I programmet i {ref}`utforsk 1 <lineære-funksjoner-likninger-programmering-utforsk-1>` brukes `abs`{l=python}-funksjonen. Denne funksjonen gir absoluttverdien $|x|$ av et tall $x$. For eksempel er `abs(-3)`{l=python} lik 3. I programmet brukes `abs(f(x))`{l=python} som er det samme som å skrive $|f(x)|$. Dette gir absoluttverdien av funksjonsverdien!
-
-::::
-
+Her skal vi se på hvordan vi kan gjøre dette med likninger. I utforsk 1 skal du gradvis bygge opp et program som løser en lineær likning.
 
 :::::{admonition} Utforsk 1
 ---
 class: explore
-name: lineære-funksjoner-likninger-programmering-utforsk-1
 ---
-Under vises en kode som finner en tilnærmet verdi til løsningen av en lineær likning. Vi kaller dette for en *numerisk løsning*.
+Vi skal ta utgangspunkt i at vi skal bestemme nullpunktet til 
+
+$$
+f(x) = 2x - 4.
+$$
+
+Under vises et interaktivt kodevindu. 
+
+````{tab-set}
+```{tab-item} Steg 1
+Se på koden i det interaktive kodevinduet. <br> Forutsi hvilke verdier av `x`{l=python} som skrives ut av programmet før du kjører det. 
+
+Kjør koden og sjekk svaret ditt!
+```
+
+```{tab-item} Steg 2
+For å bestemme nullpunktet til $f$, må vi løse likningen $f(x) = 0$. <br> Det betyr at vi trenger en funksjon som vi kan regne ut funksjonsverdier med. Kopier koden under og lim inn i kodevinduet. Erstatt `funksjonsuttrykk` med riktig funksjonsuttrykk. 
+:::{code-block} python
+---
+linenos: true
+---
+def f(x):
+    return funksjonsuttrykk # FYLL INN: skriv inn funksjonsuttrykket her
+
+print(f(6))
+:::
+
+Kan du forklare hva programmet skriver ut?
+
+::::{admonition} Fasit
+---
+class: dropdown, answer
+---
+Koden med riktig funksjonsuttrykk:
+:::{code-block} python
+---
+linenos: true
+---
+def f(x):
+    return 2 * x - 4
+
+print(f(6))
+:::
+
+Programmet skrives ut funksjonsverdien $f(6)$ som er $8$.
+::::
+
+```
+
+```{tab-item} Steg 3
+En strategi for å bestemme nullpunktet til $f$ er å prøve ut mange verdier av $x$ og sjekke om $f(x) = 0$ eller ikke. 
+
+For å sjekke om $f(x) = 0$, kan vi skrive `f(x) == 0`{l=python} der `x`{l=python} har en bestemt verdi. Typisk vil denne verdien være bestemt av en `for`{l=python}-løkke.
+
+* Hvis påstanden $f(x) = 0$ ikke er sann, så vil `f(x) == 0`{l=python} gi `False`{l=python}. 
+* Hvis påstanden $f(x) = 0$ er sann, vil `f(x) == 0`{l=python} gi `True`{l=python}.
+
+Kopier programmet under og kjør det i kodevinduet med riktig funksjon fra steg 2.
+:::{code-block} python
+---
+linenos: true
+---
+# TODO: bytt ut med funksjonen din fra steg 2
+def f(x):
+    return funksjonsuttrykk
+
+for x in range(-5, 6):
+    print(f(x) == 0)
+:::
+
+Kan du ut ifra utskriften fra programmet tenke deg fram til nullpunktet til $f$? 
+
+::::{admonition} Fasit
+---
+class: dropdown, answer
+---
+I `for`{l=python}-løkken prøver vi ut alle heltallene $x \in \{-5, -4, \ldots, 4, 5\}$.
+
+Ved å kjøre programmet får vi en utskrift med `True`{l=python} når $f(x) = 0$ stemmer og `False`{l=python} ellers. Under har vi markert hvilken linje det er 
+
+:::{code-block} sh
+False               # x = -5
+False               # x = -4
+False               # x = -3
+False               # x = -2
+False               # x = -1
+False               # x = 0
+False               # x = 1
+True                # <-- nullpunktet! Her er x = 2
+False               # x = 3
+False               # x = 4
+False               # x = 5
+:::
+
+Ut ifra programmet kan vi derfor konkludere at nullpunktet til $f$ er $x = 2$.
+
+:::: 
+
+```
+
+```{tab-item} Steg 4
+Det er fryktelig tungvint å måtte lese av en lang liste med `True`{l=python} og `False`{l=python} for å finne nullpunktet manuelt. Vi er jo strengt tatt ikke interessert i vite når det *ikke* er sant. Men det finnes heldigvis en innebygd måte å få programmet til å fortelle oss når det er sant, og ellers la være og si noe.
+
+Vi kan bruke en såkalt `if`{l=python}-setning for å sjekke om en påstand er sann eller ikke. Hvis en påstand er sann, så kjøres programmet med innrykk under `if`{l=python}-setningen. Hvis påstanden er usann, så hopper programmet over kodelinjen. 
+
+Vi kan derfor skrive om programmet fra steg 3 ved å legge inn en `if`{l=python}-setning slik:
+
+:::{code-block} python
+---
+linenos: true
+---
+for x in range(-5, 6):
+    if f(x) == 0:     # <-- Hvis f(x) = 0 er `True`, så skriver vi ut `x`
+        print(x)
+:::
+
+Kopier programmet over og endre på programmet ditt slik at det skriver ut nullpunktet til $f(x) = 2x - 4$. 
+
+Stemmer svaret?
+```
+````
+
 
 :::{raw} html
 ---
-file: interaktiv_kode/utforsk/utforsk_1.html 
+file: ./interaktiv_kode/utforsk/utforsk_1.html
 ---
 :::
-
-
-<br>
-
-Deloppgave 1
-: Hvilken likning er det programmet løser? Hva er løsningen? <br> Sjekk om programmet får samme svar som du får ved å løse likningen for hånd.
-
-<br>
-
-Deloppgave 2
-: Kan du forklare hva programmet gjør? Hva er prinsippet bak den numeriske metoden som brukes?
-
-<br>
-
-Deloppgave 3
-: Bruk programmet til å løse likningen $2x - 4 = 0$. <br> Sjekk at svaret stemmer. 
-
-:::::
-
-
-Men hvis numerisk løsning handler om å løse likninger på formen $f(x) = 0$, hvordan kan man løse likninger numerisk når høyre siden ikke er null? 
-
-Tenk deg at vi har likningen $f(x) = g(x)$ for to lineære funksjoner $f$ og $g$. Da kan vi skrive likningen som
-
-$$
-f(x) = g(x) \quad \Leftrightarrow \quad \underbrace{f(x) - g(x)}_{=h(x)} = 0 \quad \Leftrightarrow \quad h(x) = 0.
-$$
-
-Dermed vil løsningen av likningen $f(x) = g(x)$ være det samme som nullpunktet til funksjonen $h(x) = f(x) - g(x)$.
-
-:::::{admonition} Utforsk 2
----
-class: explore
----
-Under vises et program som finner en tilnærmet løsning til likningen $f(x) = g(x)$ ved å bruke strategien beskrevet over. <br>
-Programmet er i tilfeldig rekkefølge.
-
-
-Deloppgave 1
-: Sorter programmet i riktig rekkefølge for å få det fullstendige programmet. <br> Kan du forutsi hva utskriften til programmet blir? Sjekk svaret ved å kjøre koden! 
-
-<br>
-
-:::{raw} html
----
-file: interaktiv_kode/utforsk/utforsk_2.html
----
-:::
-
-
-<br>
-
-Deloppgave 2
-: Endre programmet slik at det løser likningen $2x + 3 = -x + 6$. <br> Sjekk at svaret stemmer ved regning.
-
-
-
-
 
 :::::
