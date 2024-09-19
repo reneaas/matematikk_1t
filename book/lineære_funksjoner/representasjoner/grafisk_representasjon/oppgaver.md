@@ -65,14 +65,14 @@ file: ./pair_puzzles/oppgaver/oppgave_2.html
 class: problem-level-1
 ---
 
-I {numref}`fig-lineære-funksjoner-representasjoner-oppgave-3` vises grafen til seks lineære funksjoner $f$, $g$, $h$, $p$ og $r$.
+I {numref}`fig-lineære-funksjoner-representasjoner-oppgave-3` vises grafen til fem lineære funksjoner $f$, $g$, $h$, $p$ og $r$.
 
 :::{figure} ./figurer/oppgaver/oppgave_3.svg
 ---
 name: fig-lineære-funksjoner-representasjoner-oppgave-3
 width: 80%
 ---
-viser grafen til seks lineære funksjoner $f$, $g$, $h$, $p$, $r$ og $s$. 
+viser grafen til fem lineære funksjoner $f$, $g$, $h$, $p$ og $r$. 
 :::
 
 Sett sammen riktig funksjonsuttrykk med riktig graf.
@@ -245,10 +245,10 @@ Deloppgave 3
 ---
 class: answer, dropdown
 ---
-Grafen til $f$ vises i {numref}`fig-lineære-funksjoner-representasjoner-oppgave-2`.
-:::{figure} ./figurer/oppgaver/oppgave_2.svg
+Grafen til $f$ vises i {numref}`fig-lineære-funksjoner-representasjoner-oppgave-5-3`.
+:::{figure} ./figurer/oppgaver/oppgave_5_3.svg
 ---
-name: fig-lineære-funksjoner-representasjoner-oppgave-2-old
+name: fig-lineære-funksjoner-representasjoner-oppgave-5-3
 width: 100%
 ---
 viser grafen til $f(x)= 2x - 3$ og punktene fra verditabellen i deloppgave 1.
@@ -300,7 +300,7 @@ viser grafen til en lineær funksjon $f$.
 class: answer, dropdown
 ---
 $$
-f(x) = x - 4
+f(x) = x + 4
 $$
 :::
 
@@ -488,7 +488,7 @@ I {numref}`fig-lineære-funksjoner-representasjoner-oppgave-7` vises grafene til
 \begin{align*}
     f(x) &= 4x - 2 &&& g(x) = -3x + 1 \\
     \\
-    h(x) &= -\dfrac{1}{2}x + 3 &&& r(x) = x - 2\\
+    h(x) &= -\dfrac{1}{2}x + 1 &&& r(x) = x - 2\\
 \end{align*}
 
 <br>

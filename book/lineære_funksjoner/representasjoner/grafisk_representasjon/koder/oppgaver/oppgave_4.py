@@ -1,3 +1,8 @@
+import matplotlib.pyplot as plt
+
+plt.rc("text", usetex=True)
+
+
 def main(dirname, save=False):
 
     # Define functions
@@ -62,4 +67,4 @@ if __name__ == "__main__":
 
     # NOTE: Set `save=True` to save figure. `save=False` to display figure.
     dirname = current_dir.replace("koder", "figurer")
-    main(dirname=dirname, save=True)
+    main(dirname=dirname, save=False)

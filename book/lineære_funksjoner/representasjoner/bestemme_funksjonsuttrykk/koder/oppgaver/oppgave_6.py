@@ -1,12 +1,20 @@
+import matplotlib.pyplot as plt
+
+plt.rc("text", usetex=True)
+
+
 def main(dirname, save):
 
     # Define functions
     def f(x):
         return -2 * x + 1
 
+    def g(x):
+        return -2 * x - 3
+
     # List of functions and their labels.
-    functions = [f]
-    fn_labels = [r"$f$"]
+    functions = [f, g]
+    fn_labels = [r"$f$", r"$g$"]
 
     # Create the math figure
     fig, ax = make_figure(
@@ -23,8 +31,11 @@ def main(dirname, save):
     y1 = f(x1)
     x2 = 2
     y2 = f(x2)
+    x3 = 1
+    y3 = g(x3)
     ax.plot(x1, y1, "ko", markersize=8, alpha=0.7)
     ax.plot(x2, y2, "ko", markersize=8, alpha=0.7)
+    ax.plot(x3, y3, "ko", markersize=8, alpha=0.7)
 
     ax.text(
         s=f"$({x1},{y1})$",
@@ -40,8 +51,17 @@ def main(dirname, save):
         x=x2,
         y=y2,
         fontsize=16,
-        ha="right",
-        va="top",
+        ha="left",
+        va="bottom",
+    )
+
+    ax.text(
+        s=f"$({x3},{y3})$",
+        x=x3,
+        y=y3,
+        fontsize=16,
+        ha="left",
+        va="bottom",
     )
 
     # NOTE: Select an appropriate `dirname` to save the figure.

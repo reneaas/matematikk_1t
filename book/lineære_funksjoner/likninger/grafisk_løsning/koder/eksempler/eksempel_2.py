@@ -1,45 +1,118 @@
-import numpy as np
 import matplotlib.pyplot as plt
 
 plt.rc("text", usetex=True)
 
-def f(x):
-    return 2*x + 3
 
-a = -7
-b = 10
+def main(dirname, save):
+    #
+    # Define functions
+    def f(x):
+        return 2 * x + 3
 
-x = np.linspace(a, b, 1024)
+    def g(x):
+        if isinstance(x, (int, float)):
+            return 5
+        else:
+            return [5 for _ in x]
 
-fig, ax = plt.subplots()
-ax.plot(x, f(x), color="teal", lw=2, alpha=0.7)
-ax.hlines(y=5, xmin=-7, xmax=10, color="red", lw=2, alpha=0.7)
+    # List of functions and their labels.
+    functions = [f, g]
+    fn_labels = [f"${fn.__name__}$" for fn in functions]
 
-ax.spines["left"].set_position("zero")
-ax.spines["right"].set_color("none")
-ax.spines["bottom"].set_position("zero")
-ax.spines["top"].set_color("none")
+    # Create the math figure
+    fig, ax = make_figure(
+        functions=functions,
+        fn_labels=fn_labels,  # NOTE: Set `None` hvis du ikke vil ha labels.
+        xmin=-3,
+        xmax=5,
+        ymin=-3,
+        ymax=8,
+        ticks=True,
+    )
 
-ax.plot(1, 0, ">k", transform=ax.get_yaxis_transform(), clip_on=False)
-ax.plot(0, 1, "^k", transform=ax.get_xaxis_transform(), clip_on=False)
+    ax.plot(1, 5, "ko", markersize=8, alpha=0.7)
 
-ax.set_xlabel(r"$x$", fontsize=16, loc="right")
-ax.set_ylabel(r"$f(x)$", fontsize=16, loc="top", rotation="horizontal")
+    ax.annotate(
+        text="Skjæringspunkt",
+        xy=(1, 5),
+        xytext=(2, 3),
+        fontsize=16,
+        arrowprops=dict(
+            arrowstyle="->",
+            lw=2,
+            color="black",
+            alpha=0.7,
+            connectionstyle="arc3,rad=-0.2",
+        ),
+        horizontalalignment="left",  # Changed to left alignment
+        verticalalignment="center",
+    )
 
-xticks = list(np.arange(-2, 5, 1))
-xticks.remove(0)
-plt.xticks(xticks, fontsize=16)
+    ax.annotate(
+        text="Løsning av likningen",
+        xy=(1, 0),
+        xytext=(1.2, -2),
+        fontsize=16,
+        arrowprops=dict(
+            arrowstyle="->",
+            lw=2,
+            color="black",
+            alpha=0.7,
+            connectionstyle="arc3,rad=-0.2",
+        ),
+        horizontalalignment="left",  # Changed to left alignment
+        verticalalignment="center",
+    )
 
-yticks = list(np.arange(-4, 10, 1))
-yticks.remove(0)
-plt.yticks(yticks, fontsize=16)
+    ax.vlines(1, 0, 5, color="red", linestyle="--", alpha=0.7)
 
-plt.ylim(-2, 10)
-plt.xlim(-3, 5)
+    # NOTE: Select an appropriate `dirname` to save the figure.
+    # The directory `dirname` will be created automatically if it does not exist already.
+    if save:
+        fname = __file__.split("/")[-1].replace(".py", ".svg")
+        savefig(dirname=dirname, fname=fname)  # Lagrer figuren i `dirname`-directory
 
-plt.grid(True, linestyle="--", alpha=0.6)
-plt.tight_layout()
+    if not save:
 
-plt.savefig("../../figurer/eksempler/eksempel_2.svg")
+        plt.show()
 
-plt.show()
+
+if __name__ == "__main__":
+
+    import sys
+    import pathlib
+
+    def find_repo_root(current_path):
+        current_path = pathlib.Path(
+            current_path
+        ).resolve()  # Convert to an absolute Path object
+        while (
+            current_path != current_path.parent
+        ):  # Stop when you reach the filesystem root
+            if (current_path / ".git").is_dir():  # Check if the .git directory exists
+                return str(current_path)
+            current_path = current_path.parent  # Move one level up
+        raise FileNotFoundError("No .git directory found in any parent directories.")
+
+    # Get the directory where the script is located
+    current_dir = str(pathlib.Path(__file__).resolve().parent)
+
+    # Find the root of the GitHub repository (where .git is located)
+    repo_root = find_repo_root(current_dir)
+
+    # Add the GitHub repository root to sys.path
+    sys.path.append(repo_root)
+
+    # Now you can import modules from the GitHub repo root
+    from python_utils.plot_utils import make_figure, savefig
+
+    parts = current_dir.split("/")
+    for i in range(len(parts)):
+        if parts[~i] == "koder":
+            parts[~i] = "figurer"
+            break
+
+    dirname = "/".join(parts)
+
+    # NOTE: Set `save=True` to save figure. `save=False` to display figure.
+    main(dirname=dirname, save=True)

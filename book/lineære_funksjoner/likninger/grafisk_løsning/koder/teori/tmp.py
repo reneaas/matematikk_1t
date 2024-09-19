@@ -4,12 +4,9 @@ import sympy as sp
 
 plt.rc("text", usetex=True)
 
+
 def f(x, a, b):
-    return a*x + b
-
-
-
-
+    return a * x + b
 
 
 x_min = -8
@@ -18,14 +15,14 @@ x_max = 8
 
 x = np.linspace(x_min, x_max, 1024)
 
-a = 2   # Stigningstall graf 1
+a = 2  # Stigningstall graf 1
 b = -1  # Konstantledd graf 1
 
 c = -1  # Stigningstall graf 2
-d = 3   # Konstantledd graf 2
+d = 3  # Konstantledd graf 2
 
-x_skjæring = (d-b)/(a-c)
-y_skjæring = a*x_skjæring + b
+x_skjæring = (d - b) / (a - c)
+y_skjæring = a * x_skjæring + b
 
 
 fig, ax = plt.subplots()
@@ -46,18 +43,17 @@ ax.set_xlabel(r"$x$", fontsize=16, loc="right")
 ax.set_ylabel(r"$y$", fontsize=16, loc="top", rotation="horizontal")
 
 
-
 plt.annotate(
     text="Skjæringen mellom $f$ og $g$",
     xy=(x_skjæring, y_skjæring),
     xytext=(1.6, 6),
     fontsize=16,
-    arrowprops=dict(arrowstyle="->", lw=2, color="black", alpha=0.7, connectionstyle="arc3,rad=+0.2"),
+    arrowprops=dict(
+        arrowstyle="->", lw=2, color="black", alpha=0.7, connectionstyle="arc3,rad=+0.2"
+    ),
     horizontalalignment="center",
     verticalalignment="center",
 )
-
-
 
 
 plt.xticks([x_skjæring], labels=[r"$x_1$"], fontsize=16)

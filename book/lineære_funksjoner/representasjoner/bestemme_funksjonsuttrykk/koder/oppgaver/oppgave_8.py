@@ -1,12 +1,21 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+plt.rc("text", usetex=True)
+
+
 def main(dirname, save):
 
     # Define functions
     def f(x):
-        return 0.5 * x - 1
+        return x + 2
+
+    def g(x):
+        return x - 2
 
     # List of functions and their labels.
-    functions = [f]
-    fn_labels = [r"$h$"]
+    functions = [f, g]
+    fn_labels = [r"$f$", r"$g$"]
 
     # Create the math figure
     fig, ax = make_figure(
@@ -21,8 +30,8 @@ def main(dirname, save):
 
     x1 = -2
     y1 = int(f(x1))
-    x2 = 6
-    y2 = int(f(x2))
+    x2 = 4
+    y2 = int(g(x2))
     print(x2, y2)
     ax.plot(x1, y1, "ko", markersize=8, alpha=0.7)
     ax.plot(x2, y2, "ko", markersize=8, alpha=0.7)
@@ -37,7 +46,7 @@ def main(dirname, save):
     )
 
     ax.text(
-        s=rf"$({{x_2}},{y2})$",
+        s=f"$({x2},{y2})$",
         x=x2,
         y=y2,
         fontsize=16,

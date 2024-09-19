@@ -1,8 +1,13 @@
+import matplotlib.pyplot as plt
+
+plt.rc("text", usetex=True)
+
+
 def main(dirname, save):
 
     # Define functions
     def f(x):
-        return -3 * x + 2
+        return 3 * x - 2
 
     # List of functions and their labels.
     functions = [f]
@@ -14,7 +19,7 @@ def main(dirname, save):
         fn_labels=fn_labels,  # Set `None` hvis du ikke vil ha labels.
         xmin=-4,
         xmax=6,
-        ymin=-6,
+        ymin=-7,
         ymax=6,
         ticks=False,
     )
@@ -27,20 +32,20 @@ def main(dirname, save):
     ax.plot(x2, y2, "ko", markersize=8, alpha=0.7)
 
     ax.text(
-        s=f"$({x1},{y1})$",
-        x=x1,
+        s=f"$({x1}, {y1})$",
+        x=x1 - 0.2,
         y=y1,
         fontsize=16,
         ha="right",
-        va="top",
+        va="bottom",
     )
 
     ax.text(
-        s=f"$({x2},{y2})$",
-        x=x2,
-        y=y2,
+        s=f"$({x2}, {y2})$",
+        x=x2 + 0.2,
+        y=y2 - 0.2,
         fontsize=16,
-        ha="right",
+        ha="left",
         va="top",
     )
 

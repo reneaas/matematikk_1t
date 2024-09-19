@@ -5,9 +5,9 @@
 class: tip
 ---
 Etter dette delkapittelet, er målet at du skal:
+* Kunne lese av koordinater i et koordinatsystem.
 * Kunne lese av funksjonsverdier fra grafen til en lineær funksjon.
 * Kunne lese av koeffisientene til en lineær funksjon fra grafen. 
-* Kunne tegne grafen til en lineær funksjon.
 :::
 
 ## Koordinatsystemet
