@@ -42,7 +42,7 @@ $$x + 2 = -3x - 2$$
 class: dropdown, answer
 ---
 $$
-x = -2
+x = -1
 $$
 :::
 ````
