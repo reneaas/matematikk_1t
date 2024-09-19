@@ -216,7 +216,7 @@ Bestem nullpunktet til $f$.
 class: answer, dropdown
 ---
 $$
-x = -2
+x = 2
 $$
 ```
 
