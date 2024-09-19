@@ -107,12 +107,14 @@ class CodeEditor {
                     "# IKKE RØR",
                     "# FOKUS",
                     "# FORKLARING",
+                    "# <--",
                 ];
 
                 for (const keyword of keywords) {
                     if (stream.match(keyword)) {
                         return keyword.replace("# ", "").toLowerCase().replace(" ", "");
                     }
+
                 }
                 while (stream.next() != null && !keywords.some(keyword => stream.match(keyword, false))) {}
                 return null;
