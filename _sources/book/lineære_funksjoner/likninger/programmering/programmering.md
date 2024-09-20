@@ -41,7 +41,10 @@ $$
 
 
 ````{tab-set}
-```{tab-item} Steg 1: <br> Lage ulike tall
+---
+class: tabs-custom
+---
+```{tab-item} Steg 1: <br> Lage ulike verdier for $x$
 *Her skal du repetere hvordan en `for`{l=python}-løkke med `range`{l=python} fungerer.*
 
 Se på koden og forutsi hvilke tall som skrives ut.
@@ -406,3 +409,45 @@ class: dropdown, answer
 ````
 
 :::::
+
+
+---
+
+::::{admonition} Utforsk 2
+---
+class: explore
+---
+Her skal vi ta utgangspunkt i at vi skal bestemme nullpunktet til 
+
+$$
+f(x) = 2x - 1.
+$$
+
+````{tab-set}
+---
+class: tabs-custom
+---
+```{tab-item} Steg 1: <br> Hvorfor finner vi ikke svaret?
+Bruker vi strategien fra utforsk 1, vil vi oppdage at vi ikke får noen løsning.
+
+Bestem nullpunktet til $f$. <br> Bruk svaret ditt til å forklare hvorfor strategien fra utforsk 1 ikke vil gi oss nullpunktet til $f$.
+:::{admonition} Fasit
+---
+class: dropdown, answer
+---
+Nullpunktet er 
+$$
+x = \dfrac{1}{2}
+$$
+
+Med strategien fra utforsk 1 vil vi ikke programmet finne løsningen siden vi bare prøver ut heltallsverdier for $x$.
+:::
+```
+
+```{tab-item} Steg 2: <br> Justere strategi
+Vi trenger en måte å komme nærme nullpunktet til $f$ når nullpunktet ikke er et heltall.
+
+
+```
+
+````
