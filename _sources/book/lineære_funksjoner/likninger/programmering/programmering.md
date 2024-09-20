@@ -41,7 +41,7 @@ $$
 
 
 ````{tab-set}
-```{tab-item} Steg 1: Lage ulike tall
+```{tab-item} Steg 1: <br> Lage ulike tall
 *Her skal du repetere hvordan en `for`{l=python}-løkke med `range`{l=python} fungerer.*
 
 Se på koden og forutsi hvilke tall som skrives ut.
@@ -67,7 +67,7 @@ Tenk ut en forutsigelse - deretter endre på programmet og kjør det for å sjek
 :::
 ```
 
-```{tab-item} Steg 2: Lage en funksjon
+```{tab-item} Steg 2: <br> Lage en funksjon
 *Her skal du lære hvordan man lager en funksjon i Python, og hvordan man bruker den til å regne ut funksjonsverdier.*
 
 Hvis vi skal kunne regne ut funksjonsverdier som i matematikken, må vi lage en funksjon i Python. 
@@ -125,7 +125,7 @@ Forutsi hva du tror skjer - deretter endre på programmet og kjør det for å sj
 
 ```
 
-```{tab-item} Steg 3: Sjekke om $f(x) = 0$
+```{tab-item} Steg 3: <br> Sjekke om $f(x) = 0$
 *Her skal du lære hvordan man sjekker om en funksjonsverdi er lik null.*
 
 I eksempelkoden under vises en sjekk der $f(x) = -3x + 6$ og vi spør programmet om $f(2) = 0$ og $f(3) = 0$.
@@ -172,7 +172,7 @@ $$
 :::
 ```
 
-```{tab-item} Steg 4: Regne ut mange funksjonsverdier
+```{tab-item} Steg 4: <br> Regne ut mange funksjonsverdier
 *Her skal du lære hvordan vi kan kombinere `for`{l=python}-løkker og funksjoner til å regne ut mange funksjonsverdier.*
 
 Vi kan bruke en `for`{l=python}-løkke til å regne ut funksjonsverdier for mange verdier av $x$.
@@ -236,7 +236,7 @@ Forutsi hva du tror skjer - deretter endre på programmet og kjør det for å sj
 ::::
 ```
 
-```{tab-item} Steg 5: Prøv ut mange verdier for $f(x) = 0$
+```{tab-item} Steg 5: <br> Prøv ut mange verdier for $f(x) = 0$
 *Her skal du lære hvordan vi kan sjekke om en funksjonsverdi er null for mange verdier av $x$.*
 
 Nå skal vi prøve ut mange verdier for $x$ for å sjekke om $f(x) = 0$ for noen av dem.
@@ -292,7 +292,7 @@ Ut ifra programmet kan vi derfor konkludere at nullpunktet til $f$ er $x = 2$.
 ```
 
 
-```{tab-item} Steg 6: Automatisere søket etter nullpunktet
+```{tab-item} Steg 6: <br> Automatisere søket etter nullpunktet
 *Her skal du lære hvordan vi kan få programmet til å fortelle oss når $f(x) = 0$ uten at vi må sjekke det manuelt.*
 
 Å lese gjennom en lang liste med `True`{l=python} og `False`{l=python} for å finne nullpunktet er fryktelig tungvint, spesielt hvis vi tester ut mange verdier av $x$. Heldigvis kan vi da bruke noe som kalles for en `if`{l=python}-setning som sjekker om likningen er sann, og *kun* skriver ut verdien til $x$ hvis den er sann.
@@ -354,7 +354,7 @@ Hvis programmet ikke gir noen utskrift, men du *vet* at den har en løsning $x \
 ::::
 ```
 
-```{tab-item} Steg 7: Prøv ut andre funksjoner
+```{tab-item} Steg 7: <br> Prøv ut andre funksjoner
 *Her skal du prøve å anvende det du har lært med andre funksjoner.*
 
 Prøv ut metoden du har lært på disse funksjonene
@@ -388,7 +388,7 @@ Hvorfor kan du ikke bruke strategien du har lært her til å finne nullpunktet t
 
 ```
 
-```{tab-item} Steg 8: Oppsummering
+```{tab-item} Steg 8: <br> Oppsummering
 *Her skal du oppsummere hva du har lært og tenke over bruksområdene til det du har lært.*
 
 * Gi en beskrivelse av løsningsstrategien du har brukt for å finne nullpunktet til en funksjon.
