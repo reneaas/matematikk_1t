@@ -142,7 +142,7 @@ print(f(2) == 0)    # <-- Er f(2) = 0?
 print(f(3) == 0)    # <-- Er f(3) = 0?
 :::
 
-For en bestem verdi av $x$, så vil programmet gi:
+For en bestemt verdi av $x$, så vil programmet gi:
 * `True`{l=python} hvis $f(x) = 0$ er sant
 * `False`{l=python} hvis $f(x) = 0$ er usant 
 
@@ -191,7 +191,7 @@ for x in range(-1, 2):
     print(y)
 :::
 
-Fyll inn programmet under slik at det regner ut $f(x) = 2x - 4$ for $x \in {-1, 0, 1}$ og skriver ut hver verdi. 
+Fyll inn programmet under slik at det regner ut $f(x) = 2x - 4$ for $x \in \{-1, 0, 1\}$ og skriver ut hver verdi. 
 
 Forutsi hvilke verdier programmet skriver ut først. Kjør deretter programmet og sjekk svaret ditt!
 
@@ -270,7 +270,7 @@ class: dropdown, answer
 ---
 I `for`{l=python}-løkken prøver vi ut alle heltallene $x \in \{-5, -4, \ldots, 4, 5\}$.
 
-Ved å kjøre programmet får vi en utskrift med `True`{l=python} når $f(x) = 0$ er sant og `False`{l=python} ellers. Under har vi hvilke verdier av `x`{l=python} hver linje tilsvarer og hvilken linje som tilsvarer nullpunktet.
+Ved å kjøre programmet får vi en utskrift med `True`{l=python} når $f(x) = 0$ er sant og `False`{l=python} ellers. Under har vi lagt til hvilke verdier av `x`{l=python} hver linje tilsvarer og hvilken linje som tilsvarer nullpunktet.
 
 :::{code-block} sh
 False               # x = -5
@@ -295,7 +295,7 @@ Ut ifra programmet kan vi derfor konkludere at nullpunktet til $f$ er $x = 2$.
 ```{tab-item} Steg 6: Automatisere søket etter nullpunktet
 *Her skal du lære hvordan vi kan få programmet til å fortelle oss når $f(x) = 0$ uten at vi må sjekke det manuelt.*
 
-Å lese gjennom en lang liste med `True`{l=python} og `False`{l=python} for å finne nullpunktet er fryktelig tungvint, spesielt hvis vi tester ut mange verdier av $x$. Heldigvis kan vi da bruke noe som kalles for en `if`{l=python}-setning som sjekker om likningen er sann, og *kun* skrives ut hvis den er sann.
+Å lese gjennom en lang liste med `True`{l=python} og `False`{l=python} for å finne nullpunktet er fryktelig tungvint, spesielt hvis vi tester ut mange verdier av $x$. Heldigvis kan vi da bruke noe som kalles for en `if`{l=python}-setning som sjekker om likningen er sann, og *kun* skriver ut verdien til $x$ hvis den er sann.
 
 Under vises en eksempelkode som finner nullpunktet til $f(x) = -3x + 6$.
 
