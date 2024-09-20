@@ -28,6 +28,11 @@ document.addEventListener("DOMContentLoaded", function() {
             block.style.color = '#ff0000';
             block.style.fontWeight = 'bold';
         }
+
+        if (block.textContent.trim().startsWith('# MERK')) {
+            block.style.color = '#ff0000';
+            block.style.fontWeight = 'bold';
+        }
     });
 });
 
