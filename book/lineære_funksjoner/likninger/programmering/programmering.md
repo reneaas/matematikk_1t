@@ -25,8 +25,8 @@ Her skal vi se på hvordan vi kan gjøre dette med likninger. I utforsk 1 skal d
 class: sidenote, margin
 ---
 Vi minner om at nullpunktet til en funksjon $f$ er:
-* Verdien $x$ slik at $f(x) = 0$.
-* Grafisk er dette punktet der grafen til $f$ skjærer $x$-aksen.
+* $x$-verdien som medfører at $f(x) = 0$.
+* $x$-koordinaten der hvor grafen til $f$ skjærer $x$-aksen.
 :::
 
 :::::{admonition} Utforsk 1
