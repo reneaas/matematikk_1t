@@ -38,7 +38,6 @@ $$
 f(x) = 2x - 4.
 $$
 
-Under vises et interaktivt kodevindu. 
 
 ````{tab-set}
 ```{tab-item} Steg 1: Lage ulike tall
