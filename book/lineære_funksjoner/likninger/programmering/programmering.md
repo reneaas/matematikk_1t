@@ -350,7 +350,6 @@ linenos: false
 Dette betyr at nullpunktet til $f(x) = 2x - 4$ er $x = 2$.
 
 **Refleksjonsspørsmål:** <br>
-
 Hvis programmet ikke gir noen utskrift, men du *vet* at den har en løsning $x \in \mathbb{Z}$ (løsningen er et heltall), hva kan være årsaken til dette?
 ::::
 ```
