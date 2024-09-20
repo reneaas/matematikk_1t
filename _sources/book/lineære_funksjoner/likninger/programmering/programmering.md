@@ -13,6 +13,13 @@ Etter å ha gått gjennom denne delen, er målet at du skal kunne:
 ## Numerisk løsning av likninger
 
 
+
+I mange tilfeller kan vi bare løse en likning algebraisk for å finne verdien til $x$ slik at en likning er sann - da finner vi det eksakte svaret. Men det finnes mange likninger hvor dette dessverre ikke lar seg gjøre. I disse tilfellene klarer vi bare ikke å få $x$ alene, uansett hvor hardt vi prøver. Da kan vi ty til noe som kalles får å løse likningen numerisk.
+
+Å løse en likning **numerisk**, betyr å finne en tilnærmet tallverdi for løsningen. For å gjøre dette bruker vi gjerne en strategi som er formulert som en oppskrift som vi kan følge for å nærme oss løsningen. En slik oppskrift kalles for en **algoritme**. Når vi har en algoritme, er målet vårt å oversette denne til et program som datamaskinen kan utføre for oss så vi kan *kick back, relax* og la datamaskinen gjøre jobben for oss. 
+
+Her skal vi se på hvordan vi kan gjøre dette med likninger. I utforsk 1 skal du gradvis bygge opp et program som løser en lineær likning.
+
 :::{admonition} Påminnelse: nullpunkt
 ---
 class: sidenote, margin
@@ -21,12 +28,6 @@ Vi minner om at nullpunktet til en funksjon $f$ er:
 * Verdien $x$ slik at $f(x) = 0$.
 * Grafisk er dette punktet der grafen til $f$ skjærer $x$-aksen.
 :::
-
-I mange tilfeller kan vi bare løse en likning algebraisk for å finne verdien til $x$ slik at en likning er sann - da finner vi det eksakte svaret. Men det finnes mange likninger hvor dette dessverre ikke lar seg gjøre. I disse tilfellene klarer vi bare ikke å få $x$ alene, uansett hvor hardt vi prøver. Da kan vi ty til noe som kalles får å løse likningen numerisk.
-
-Å løse en likning **numerisk**, betyr å finne en tilnærmet tallverdi for løsningen. For å gjøre dette bruker vi gjerne en strategi som er formulert som en oppskrift som vi kan følge for å nærme oss løsningen. En slik oppskrift kalles for en **algoritme**. Når vi har en algoritme, er målet vårt å oversette denne til et program som datamaskinen kan utføre for oss så vi kan *kick back, relax* og la datamaskinen gjøre jobben for oss. 
-
-Her skal vi se på hvordan vi kan gjøre dette med likninger. I utforsk 1 skal du gradvis bygge opp et program som løser en lineær likning.
 
 :::::{admonition} Utforsk 1
 ---
@@ -38,7 +39,6 @@ $$
 f(x) = 2x - 4.
 $$
 
-Under vises et interaktivt kodevindu. 
 
 ````{tab-set}
 ```{tab-item} Steg 1: Lage ulike tall
