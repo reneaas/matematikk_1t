@@ -78,7 +78,7 @@
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/lineære_funksjoner/likninger/programmering/programmering';</script>
     <script>mermaid.initialize({"startOnLoad": true})</script>
-    <script src="../../../../_static/static_code_blocks.js?v=a2dff43b"></script>
+    <script src="../../../../_static/static_code_blocks.js?v=504f0e91"></script>
     <script src="../../../../_static/utils.js?v=8e047c30"></script>
     <script src="../../../../_static/geogebra-setup.js?v=c67998b1"></script>
     <script src="../../../../_static/serviceWorker.js?v=19bb19ce"></script>
@@ -89,7 +89,7 @@
     <script src="../../../../_static/pairPuzzle/game.js?v=56c2b5af"></script>
     <script src="../../../../_static/interactiveCode/interactiveCodeSetup.js?v=b243d8d1"></script>
     <script src="../../../../_static/interactiveCode/pythonRunner.js?v=93a24605"></script>
-    <script src="../../../../_static/interactiveCode/codeEditor.js?v=59d071d9"></script>
+    <script src="../../../../_static/interactiveCode/codeEditor.js?v=c932cffe"></script>
     <script src="../../../../_static/interactiveCode/workerManager.js?v=afad59ba"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -493,6 +493,15 @@ document.write(`
 </div>
 <section id="numerisk-losning-av-likninger">
 <h2>Numerisk løsning av likninger<a class="headerlink" href="#numerisk-losning-av-likninger" title="Link to this heading">#</a></h2>
+<div class="sidenote margin admonition">
+<p class="admonition-title">Påminnelse: nullpunkt</p>
+<p>Vi minner om at nullpunktet til en funksjon <span class="math notranslate nohighlight">\(f\)</span> er:</p>
+<ul class="simple">
+<li><p>Verdien <span class="math notranslate nohighlight">\(x\)</span> slik at <span class="math notranslate nohighlight">\(f(x) = 0\)</span>.</p></li>
+<li><p>Grafisk er dette punktet der grafen til <span class="math notranslate nohighlight">\(f\)</span> skjærer <span class="math notranslate nohighlight">\(x\)</span>-aksen.</p></li>
+</ul>
+</div>
+<p>I mange tilfeller kan vi bare løse en likning algebraisk for å finne verdien til <span class="math notranslate nohighlight">\(x\)</span> slik at en likning er sann - da finner vi det eksakte svaret. Men det finnes mange likninger hvor dette dessverre ikke lar seg gjøre. I disse tilfellene klarer vi bare ikke å få <span class="math notranslate nohighlight">\(x\)</span> alene, uansett hvor hardt vi prøver. Da tyr vi til noe som kalles får å løse en likningen numerisk.</p>
 <p>Å løse en likning <strong>numerisk</strong>, betyr å finne en tilnærmet tallverdi for løsningen. For å gjøre dette bruker vi gjerne en strategi som er formulert som en oppskrift som vi kan følge for å nærme oss løsningen. En slik oppskrift kalles for en <strong>algoritme</strong>. Når vi har en algoritme, er målet vårt å oversette denne til et program som datamaskinen kan utføre for oss så vi kan <em>kick back, relax</em> og la datamaskinen gjøre jobben for oss.</p>
 <p>Her skal vi se på hvordan vi kan gjøre dette med likninger. I utforsk 1 skal du gradvis bygge opp et program som løser en lineær likning.</p>
 <div class="explore admonition">
@@ -506,56 +515,229 @@ f(x) = 2x - 4.
 <div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-0">
-Steg 1</label><div class="sd-tab-content docutils">
-<p>Se på koden i det interaktive kodevinduet. <br> Forutsi hvilke verdier av <code class="code docutils literal highlight highlight-python"><span class="n">x</span></code> som skrives ut av programmet før du kjører det.</p>
+Steg 1: Lage ulike tall</label><div class="sd-tab-content docutils">
+<p>Her skal du repetere hvordan en <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkke med <code class="code docutils literal highlight highlight-python"><span class="nb">range</span></code> fungerer.</p>
+<p>Se på koden og forutsi hvilke tall som skrives ut.</p>
 <p>Kjør koden og sjekk svaret ditt!</p>
+<div id="container-lineære-funksjoner-lineære-likninger-programmering-utforsk-1-steg-1"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`for x in range(-5, 6):
+    print(x)
+`;   
+
+        makeInteractiveCode(
+            "container-lineære-funksjoner-lineære-likninger-programmering-utforsk-1-steg-1",
+            code,
+        );
+    });
+</script>
+<div class="dropdown answer admonition">
+<p class="admonition-title">Fasit</p>
+<p>Koden skriver ut heltallene <span class="math notranslate nohighlight">\(x \in \{-5, -4, \ldots, 4, 5\}\)</span>.</p>
+<p><strong>Refleksjonsspørsmål:</strong> <br>
+Hvordan hadde blitt hvis vi i stedet brukte <code class="code docutils literal highlight highlight-python"><span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span></code>?</p>
+<p>Tenk ut en forutsigelse - deretter endre på programmet og kjør det for å sjekke svaret ditt!</p>
+</div>
 </div>
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-1">
-Steg 2</label><div class="sd-tab-content docutils">
-<p>For å bestemme nullpunktet til <span class="math notranslate nohighlight">\(f\)</span>, må vi løse likningen <span class="math notranslate nohighlight">\(f(x) = 0\)</span>. <br> Det betyr at vi trenger en funksjon som vi kan regne ut funksjonsverdier med. Kopier koden under og lim inn i kodevinduet. Erstatt <code class="docutils literal notranslate"><span class="pre">funksjonsuttrykk</span></code> med riktig funksjonsuttrykk.</p>
+Steg 2: Lage en funksjon</label><div class="sd-tab-content docutils">
+<p>Her skal du lære hvordan man lager en funksjon i Python, og hvordan man bruker den til å regne ut funksjonsverdier.</p>
+<p>Hvis vi skal kunne regne ut funksjonsverdier som i matematikken, må vi lage en funksjon i Python.</p>
+<p>Under vises en eksempelkode på hvordan man lager funksjonen <span class="math notranslate nohighlight">\(f(x) = -3x + 1\)</span> som regner ut funksjonsverdien <span class="math notranslate nohighlight">\(f(6)\)</span> og skriver ut svaret.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="linenos">2</span>    <span class="k">return</span> <span class="n">funksjonsuttrykk</span> <span class="c1"># FYLL INN: skriv inn funksjonsuttrykket her</span>
+<span class="linenos">2</span>    <span class="k">return</span> <span class="o">-</span><span class="mi">3</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
 <span class="linenos">3</span>
-<span class="linenos">4</span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">6</span><span class="p">))</span>
+<span class="linenos">4</span><span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Kan du forklare hva programmet skriver ut?</p>
+<p>Fyll ut programmet under slik at det regner ut lager en funksjon for <span class="math notranslate nohighlight">\(f(x) = 2x - 4\)</span> og skriver ut funksjonsverdien <span class="math notranslate nohighlight">\(f(3)\)</span>.</p>
+<p>Kjør programmet og sjekk at du får riktig verdi!</p>
+<div id="container-lineære-funksjoner-lineære-likninger-programmering-utforsk-1-steg-2"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`def f(x):
+    return funksjonsuttrykk     # FYLL INN: skriv inn funksjonsuttrykket
+
+y =     # FYLL INN: regn ut f(3)
+print(y)
+`;   
+
+        makeInteractiveCode(
+            "container-lineære-funksjoner-lineære-likninger-programmering-utforsk-1-steg-2",
+            code,
+        );
+    });
+</script>
 <div class="dropdown answer admonition">
 <p class="admonition-title">Fasit</p>
 <p>Koden med riktig funksjonsuttrykk:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
 <span class="linenos">2</span>    <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">4</span>
 <span class="linenos">3</span>
-<span class="linenos">4</span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">6</span><span class="p">))</span>
+<span class="linenos">4</span><span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Programmet skrives ut funksjonsverdien <span class="math notranslate nohighlight">\(f(6)\)</span> som er <span class="math notranslate nohighlight">\(8\)</span>.</p>
+<p>Når programmet kjøres, skal det skrive ut funksjonsverdien</p>
+<div class="math notranslate nohighlight">
+\[
+f(3) = 2 \cdot 3 - 4 = 6 - 4 = 2.
+\]</div>
+<p><strong>Refleksjonsspørsmål:</strong> <br>
+Hva skjer hvis du i stedet bare skriver <code class="code docutils literal highlight highlight-python"><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span></code> i stedet for å lagre funksjonsverdien i variabelen <code class="code docutils literal highlight highlight-python"><span class="n">y</span></code> først?</p>
+<p>Forutsi hva du tror skjer - deretter endre på programmet og kjør det for å sjekke svaret ditt!</p>
 </div>
 </div>
 <input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-2">
-Steg 3</label><div class="sd-tab-content docutils">
-<p>En strategi for å bestemme nullpunktet til <span class="math notranslate nohighlight">\(f\)</span> er å prøve ut mange verdier av <span class="math notranslate nohighlight">\(x\)</span> og sjekke om <span class="math notranslate nohighlight">\(f(x) = 0\)</span> eller ikke.</p>
-<p>For å sjekke om <span class="math notranslate nohighlight">\(f(x) = 0\)</span>, kan vi skrive <code class="code docutils literal highlight highlight-python"><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span></code> der <code class="code docutils literal highlight highlight-python"><span class="n">x</span></code> har en bestemt verdi. Typisk vil denne verdien være bestemt av en <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkke.</p>
-<ul class="simple">
-<li><p>Hvis påstanden <span class="math notranslate nohighlight">\(f(x) = 0\)</span> ikke er sann, så vil <code class="code docutils literal highlight highlight-python"><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span></code> gi <code class="code docutils literal highlight highlight-python"><span class="kc">False</span></code>.</p></li>
-<li><p>Hvis påstanden <span class="math notranslate nohighlight">\(f(x) = 0\)</span> er sann, vil <code class="code docutils literal highlight highlight-python"><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span></code> gi <code class="code docutils literal highlight highlight-python"><span class="kc">True</span></code>.</p></li>
-</ul>
-<p>Kopier programmet under og kjør det i kodevinduet med riktig funksjon fra steg 2.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># TODO: bytt ut med funksjonen din fra steg 2</span>
-<span class="linenos">2</span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="linenos">3</span>    <span class="k">return</span> <span class="n">funksjonsuttrykk</span>
-<span class="linenos">4</span>
-<span class="linenos">5</span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
-<span class="linenos">6</span>    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+Steg 3: Sjekke om <span class="math notranslate nohighlight">\(f(x) = 0\)</span></label><div class="sd-tab-content docutils">
+<p>Her skal du lære hvordan man sjekker om en funksjonsverdi er lik null.</p>
+<p>I eksempelkoden under vises en sjekk der <span class="math notranslate nohighlight">\(f(x) = -3x + 6\)</span> og vi spør programmet om <span class="math notranslate nohighlight">\(f(2) = 0\)</span> og <span class="math notranslate nohighlight">\(f(3) = 0\)</span>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="linenos">2</span>    <span class="k">return</span> <span class="o">-</span><span class="mi">3</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">6</span>
+<span class="linenos">3</span>
+<span class="linenos">4</span><span class="c1"># MERK: `==` sjekker om to verdier er like!</span>
+<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>    <span class="c1"># &lt;-- Er f(2) = 0? </span>
+<span class="linenos">6</span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>    <span class="c1"># &lt;-- Er f(3) = 0?</span>
 </pre></div>
 </div>
-<p>Kan du ut ifra utskriften fra programmet tenke deg fram til nullpunktet til <span class="math notranslate nohighlight">\(f\)</span>?</p>
+<p>For en bestem verdi av <span class="math notranslate nohighlight">\(x\)</span>, så vil programmet gi:</p>
+<ul class="simple">
+<li><p><code class="code docutils literal highlight highlight-python"><span class="kc">True</span></code> hvis <span class="math notranslate nohighlight">\(f(x) = 0\)</span> er sant</p></li>
+<li><p><code class="code docutils literal highlight highlight-python"><span class="kc">False</span></code> hvis <span class="math notranslate nohighlight">\(f(x) = 0\)</span> er usant</p></li>
+</ul>
+<p>Forutsi hva utskriften blir fra programmet. Kopier programmet og kjør det under for å sjekke svaret ditt!</p>
+<div id="container-lineære-funksjoner-lineære-likninger-programmering-utforsk-1-steg-3"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`# TODO: 1. Forutsi hva eksempelkoden over skriver ut
+# TODO: 2. kopier eksempelkoden og kjør den for å sjekke svaret ditt!
+`;   
+
+        makeInteractiveCode(
+            "container-lineære-funksjoner-lineære-likninger-programmering-utforsk-1-steg-3",
+            code,
+        );
+    });
+</script>
+<div class="dropdown answer admonition">
+<p class="admonition-title">Fasit</p>
+<ul class="simple">
+<li><p><code class="code docutils literal highlight highlight-python"><span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span></code> gir <code class="code docutils literal highlight highlight-python"><span class="kc">True</span></code> siden</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+f(2) = -3 \cdot 2 + 6 = -6 + 6 = 0
+\]</div>
+<ul class="simple">
+<li><p><code class="code docutils literal highlight highlight-python"><span class="n">f</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span></code> gir <code class="code docutils literal highlight highlight-python"><span class="kc">False</span></code> siden</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+f(3) = -3 \cdot 3 + 6 = -9 + 6 = -3
+\]</div>
+</div>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
+Steg 4: Regne ut mange funksjonsverdier</label><div class="sd-tab-content docutils">
+<p>Her skal du lære hvordan vi kan kombinere <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker og funksjoner til å regne ut mange funksjonsverdier.</p>
+<p>Vi kan bruke en <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkke til å regne ut funksjonsverdier for mange verdier av <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>Under vises en eksempelkode som regner ut <span class="math notranslate nohighlight">\(f(x) = -3x + 6\)</span> for <span class="math notranslate nohighlight">\(x \in \{-1, 0, 1\}\)</span> og skriver ut hver verdi.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="linenos">2</span>    <span class="k">return</span> <span class="o">-</span><span class="mi">3</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">6</span>
+<span class="linenos">3</span>
+<span class="linenos">4</span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+<span class="linenos">5</span>    <span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="linenos">6</span>    <span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Fyll inn programmet under slik at det regner ut <span class="math notranslate nohighlight">\(f(x) = 2x - 4\)</span> for <span class="math notranslate nohighlight">\(x \in {-1, 0, 1}\)</span> og skriver ut hver verdi.</p>
+<p>Forutsi hvilke verdier programmet skriver ut først. Kjør deretter programmet og sjekk svaret ditt!</p>
+<div id="container-lineære-funksjoner-lineære-likninger-programmering-utforsk-1-steg-4"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`# TODO: 1. Kopier koden over og endre på funksjonsuttrykket til f
+
+# TODO: 2. Forutsi verdiene programmet skriver ut.
+
+# TODO: 3. Kjør programmet og sjekk svaret ditt!
+`;   
+
+        makeInteractiveCode(
+            "container-lineære-funksjoner-lineære-likninger-programmering-utforsk-1-steg-4",
+            code,
+        );
+    });
+</script>
+<div class="dropdown answer admonition">
+<p class="admonition-title">Fasit</p>
+<p>Koden med riktig funksjonsuttrykk:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="linenos">2</span>    <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">4</span>
+<span class="linenos">3</span>
+<span class="linenos">4</span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+<span class="linenos">5</span>    <span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="linenos">6</span>    <span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Utskriften vi får er</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>-6
+-4
+-2
+</pre></div>
+</div>
+<p><strong>Refleksjonsspørsmål:</strong> <br>
+Hva hadde den første og siste verdien som blir skrevet ut blitt hvis vi i stedet brukte <code class="code docutils literal highlight highlight-python"><span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span></code> i <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkken?</p>
+<p>Forutsi hva du tror skjer - deretter endre på programmet og kjør det for å sjekke svaret ditt!</p>
+</div>
+</div>
+<input id="sd-tab-item-4" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
+Steg 5: Prøv ut mange verdier for <span class="math notranslate nohighlight">\(f(x) = 0\)</span></label><div class="sd-tab-content docutils">
+<p>Her skal du lære hvordan vi kan sjekke om en funksjonsverdi er null for mange verdier av <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>Nå skal vi prøve ut mange verdier for <span class="math notranslate nohighlight">\(x\)</span> for å sjekke om <span class="math notranslate nohighlight">\(f(x) = 0\)</span> for noen av dem.</p>
+<p>Under vises en eksempelkode som prøver ut alle heltallene <span class="math notranslate nohighlight">\(x \in \{-5, -4, \ldots, 4, 5\}\)</span> og skriver ut om <span class="math notranslate nohighlight">\(f(x) = 0\)</span> eller ikke.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="linenos">2</span>    <span class="k">return</span> <span class="o">-</span><span class="mi">3</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">6</span>
+<span class="linenos">3</span>
+<span class="linenos">4</span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+<span class="linenos">5</span>    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Kopier programmet under og endre på programmet ditt slik at det gjør det samme for <span class="math notranslate nohighlight">\(f(x) = 2x - 4\)</span>.</p>
+<p>Tolk programmet og se om du kan forklare hva nullpunktet til <span class="math notranslate nohighlight">\(f\)</span> er ved hjelp av utskriften.</p>
+<div id="container-lineære-funksjoner-lineære-likninger-programmering-utforsk-1-steg-5"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`# TODO: 1. Kopier koden over og endre på funksjonsuttrykket til f
+
+# TODO: 2. Kjør programmet og prøv å bestemme hvilken x som er nullpunktet til f
+`;   
+
+        makeInteractiveCode(
+            "container-lineære-funksjoner-lineære-likninger-programmering-utforsk-1-steg-5",
+            code,
+        );
+    });
+</script>
 <div class="dropdown answer admonition">
 <p class="admonition-title">Fasit</p>
 <p>I <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkken prøver vi ut alle heltallene <span class="math notranslate nohighlight">\(x \in \{-5, -4, \ldots, 4, 5\}\)</span>.</p>
-<p>Ved å kjøre programmet får vi en utskrift med <code class="code docutils literal highlight highlight-python"><span class="kc">True</span></code> når <span class="math notranslate nohighlight">\(f(x) = 0\)</span> stemmer og <code class="code docutils literal highlight highlight-python"><span class="kc">False</span></code> ellers. Under har vi markert hvilken linje det er</p>
+<p>Ved å kjøre programmet får vi en utskrift med <code class="code docutils literal highlight highlight-python"><span class="kc">True</span></code> når <span class="math notranslate nohighlight">\(f(x) = 0\)</span> er sant og <code class="code docutils literal highlight highlight-python"><span class="kc">False</span></code> ellers. Under har vi hvilke verdier av <code class="code docutils literal highlight highlight-python"><span class="n">x</span></code> hver linje tilsvarer og hvilken linje som tilsvarer nullpunktet.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>False<span class="w">               </span><span class="c1"># x = -5</span>
 False<span class="w">               </span><span class="c1"># x = -4</span>
 False<span class="w">               </span><span class="c1"># x = -3</span>
@@ -572,36 +754,98 @@ False<span class="w">               </span><span class="c1"># x = 5</span>
 <p>Ut ifra programmet kan vi derfor konkludere at nullpunktet til <span class="math notranslate nohighlight">\(f\)</span> er <span class="math notranslate nohighlight">\(x = 2\)</span>.</p>
 </div>
 </div>
-<input id="sd-tab-item-3" name="sd-tab-set-0" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-3">
-Steg 4</label><div class="sd-tab-content docutils">
-<p>Det er fryktelig tungvint å måtte lese av en lang liste med <code class="code docutils literal highlight highlight-python"><span class="kc">True</span></code> og <code class="code docutils literal highlight highlight-python"><span class="kc">False</span></code> for å finne nullpunktet manuelt. Vi er jo strengt tatt ikke interessert i vite når det <em>ikke</em> er sant. Men det finnes heldigvis en innebygd måte å få programmet til å fortelle oss når det er sant, og ellers la være og si noe.</p>
-<p>Vi kan bruke en såkalt <code class="code docutils literal highlight highlight-python"><span class="k">if</span></code>-setning for å sjekke om en påstand er sann eller ikke. Hvis en påstand er sann, så kjøres programmet med innrykk under <code class="code docutils literal highlight highlight-python"><span class="k">if</span></code>-setningen. Hvis påstanden er usann, så hopper programmet over kodelinjen.</p>
-<p>Vi kan derfor skrive om programmet fra steg 3 ved å legge inn en <code class="code docutils literal highlight highlight-python"><span class="k">if</span></code>-setning slik:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
-<span class="linenos">2</span>    <span class="k">if</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>     <span class="c1"># &lt;-- Hvis f(x) = 0 er `True`, så skriver vi ut `x`</span>
-<span class="linenos">3</span>        <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<input id="sd-tab-item-5" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-5">
+Steg 6: Automatisere søket etter nullpunktet</label><div class="sd-tab-content docutils">
+<p>Her skal du lære hvordan vi kan få programmet til å fortelle oss når <span class="math notranslate nohighlight">\(f(x) = 0\)</span> uten at vi må sjekke det manuelt.</p>
+<p>Å lese gjennom en lang liste med <code class="code docutils literal highlight highlight-python"><span class="kc">True</span></code> og <code class="code docutils literal highlight highlight-python"><span class="kc">False</span></code> for å finne nullpunktet er fryktelig tungvint, spesielt hvis vi tester ut mange verdier av <span class="math notranslate nohighlight">\(x\)</span>. Heldigvis kan vi da bruke noe som kalles for en <code class="code docutils literal highlight highlight-python"><span class="k">if</span></code>-setning som sjekker om likningen er sann, og <em>kun</em> skrives ut hvis den er sann.</p>
+<p>Under vises en eksempelkode som finner nullpunktet til <span class="math notranslate nohighlight">\(f(x) = -3x + 6\)</span>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="linenos">2</span>    <span class="k">return</span> <span class="o">-</span><span class="mi">3</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">6</span>
+<span class="linenos">3</span>
+<span class="linenos">4</span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+<span class="linenos">5</span>    <span class="k">if</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>       <span class="c1"># &lt;-- Sjekker om f(x) = 0</span>
+<span class="linenos">6</span>        <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>        <span class="c1"># &lt;-- Skriver ut x kun hvis f(x) = 0 er sant!</span>
 </pre></div>
 </div>
-<p>Kopier programmet over og endre på programmet ditt slik at det skriver ut nullpunktet til <span class="math notranslate nohighlight">\(f(x) = 2x - 4\)</span>.</p>
-<p>Stemmer svaret?</p>
-</div>
-</div>
-<div id="container-lineære-funksjoner-lineære-likninger-programmering-utforsk-1"></div>
+<p>Kopier programmet over og endre på programmet slik at det finner nullpunktet til <span class="math notranslate nohighlight">\(f(x) = 2x - 4\)</span>.</p>
+<p>Kjør programmet og sjekk at det gir riktig svar! <br> Kan du gi en forklaring på hvordan alle bitene av programmet fungerer nå?</p>
+<div id="container-lineære-funksjoner-lineære-likninger-programmering-utforsk-1-steg-6"></div>
 <script type="text/javascript">
 
     document.addEventListener("DOMContentLoaded", () => {
         const code = 
-`for x in range(-5, 6):
-    print(x)
+`# TODO: 1. Kopier koden over og endre på funksjonsuttrykket til f
+
+# TODO: 2. Kjør programmet og sjekk at det gir riktig svar!
 `;   
 
         makeInteractiveCode(
-            "container-lineære-funksjoner-lineære-likninger-programmering-utforsk-1",
+            "container-lineære-funksjoner-lineære-likninger-programmering-utforsk-1-steg-6",
             code,
         );
     });
 </script>
+<div class="dropdown answer admonition">
+<p class="admonition-title">Fasit</p>
+<p>Koden med riktig funksjonsuttrykk:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="linenos">2</span>    <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">4</span>
+<span class="linenos">3</span>
+<span class="linenos">4</span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+<span class="linenos">5</span>    <span class="k">if</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="linenos">6</span>        <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>som gir utskriften</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="m">2</span>
+</pre></div>
+</div>
+<p>Dette betyr at nullpunktet til <span class="math notranslate nohighlight">\(f(x) = 2x - 4\)</span> er <span class="math notranslate nohighlight">\(x = 2\)</span>.</p>
+<p><strong>Refleksjonsspørsmål:</strong> <br></p>
+<p>Hvis programmet ikke gir noen utskrift, men du <em>vet</em> at den har en løsning <span class="math notranslate nohighlight">\(x \in \mathbb{Z}\)</span> (løsningen er et heltall), hva kan være årsaken til dette?</p>
+</div>
+</div>
+<input id="sd-tab-item-6" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-6">
+Steg 7: Prøv ut andre funksjoner</label><div class="sd-tab-content docutils">
+<p>Her skal du prøve å anvende det du har lært med andre funksjoner.</p>
+<p>Prøv ut metoden du har lært på disse funksjonene</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(f(x) = 3x - 9\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f(x) = -2x + 8\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f(x) = 4x - 12\)</span></p></li>
+</ol>
+<p>For hver av funksjonene, finn nullpunktet ved å bruke programmet du har laget.</p>
+<p>Hva er nullpunktet til hver av funksjonene?</p>
+<div id="container-lineære-funksjoner-lineære-likninger-programmering-utforsk-1-steg-7"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`# TODO: 1. Kopier koden din fra steg 6
+
+# TODO 2. Endre på programmet for å finne nullpunktet til de ulike funksjonene
+`;   
+
+        makeInteractiveCode(
+            "container-lineære-funksjoner-lineære-likninger-programmering-utforsk-1-steg-7",
+            code,
+        );
+    });
+</script>
+<div class="dropdown answer admonition">
+<p class="admonition-title">Fasit</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(f(x) = 3x - 9\)</span> har nullpunktet <span class="math notranslate nohighlight">\(x = 3\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(f(x) = -2x + 8\)</span> har nullpunktet <span class="math notranslate nohighlight">\(x = 4\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(f(x) = 4x - 12\)</span> har nullpunktet <span class="math notranslate nohighlight">\(x = 3\)</span>.</p></li>
+</ol>
+<p><strong>Refleksjonsspørsmål:</strong> <br>
+Hvorfor kan du ikke bruke strategien du har lært her til å finne nullpunktet til <span class="math notranslate nohighlight">\(f(x) = 3x - 1\)</span>?</p>
+</div>
+</div>
+</div>
 </div>
 </section>
 </section>
