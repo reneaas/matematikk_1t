@@ -387,6 +387,22 @@ Hvorfor kan du ikke bruke strategien du har lært her til å finne nullpunktet t
 :::
 
 ```
+
+```{tab-item} Steg 8: Oppsummering
+Her skal du oppsummere hva du har lært og tenke over bruksområdene til det du har lært.
+
+* Gi en beskrivelse av løsningsstrategien du har brukt for å finne nullpunktet til en funksjon.
+* Hvilke lineære funksjoner kan du bruke strategien på for å finne nullpunktet?
+* Hvilke lineære funksjoner kan du *ikke* bruke strategien på for å finne nullpunktet?
+
+:::{admonition} Fasit
+---
+class: dropdown, answer
+---
+* Strategien tester ut mange verdier av $x$ og sjekker om $f(x) = 0$ for noen av dem. Hvis det er sant, skriver programmet ut verdien av $x$.
+* Strategien kan brukes på alle lineære funksjoner der hvor nullpunktet er en heltallsverdi.
+* Strategien kan *ikke* brukes på lineære funksjoner der nullpunktet ikke er et heltall.
+:::
 ````
 
 :::::
