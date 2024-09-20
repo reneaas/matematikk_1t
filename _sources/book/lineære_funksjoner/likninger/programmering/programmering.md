@@ -22,7 +22,7 @@ Vi minner om at nullpunktet til en funksjon $f$ er:
 * Grafisk er dette punktet der grafen til $f$ skjærer $x$-aksen.
 :::
 
-I mange tilfeller kan vi bare løse en likning algebraisk for å finne verdien til $x$ slik at en likning er sann - da finner vi det eksakte svaret. Men det finnes mange likninger hvor dette dessverre ikke lar seg gjøre. I disse tilfellene klarer vi bare ikke å få $x$ alene, uansett hvor hardt vi prøver. Da kan vi ty til noe som kalles får å løse en likningen numerisk.
+I mange tilfeller kan vi bare løse en likning algebraisk for å finne verdien til $x$ slik at en likning er sann - da finner vi det eksakte svaret. Men det finnes mange likninger hvor dette dessverre ikke lar seg gjøre. I disse tilfellene klarer vi bare ikke å få $x$ alene, uansett hvor hardt vi prøver. Da kan vi ty til noe som kalles får å løse likningen numerisk.
 
 Å løse en likning **numerisk**, betyr å finne en tilnærmet tallverdi for løsningen. For å gjøre dette bruker vi gjerne en strategi som er formulert som en oppskrift som vi kan følge for å nærme oss løsningen. En slik oppskrift kalles for en **algoritme**. Når vi har en algoritme, er målet vårt å oversette denne til et program som datamaskinen kan utføre for oss så vi kan *kick back, relax* og la datamaskinen gjøre jobben for oss. 
 
