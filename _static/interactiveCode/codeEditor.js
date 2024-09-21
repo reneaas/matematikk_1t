@@ -109,6 +109,7 @@ class CodeEditor {
                     "# FOKUS",
                     "# FORKLARING",
                     "# <--",
+                    "# MERK",
                 ];
 
                 for (const keyword of keywords) {
