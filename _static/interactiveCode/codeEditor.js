@@ -4,6 +4,7 @@ class CodeEditor {
         this.editor = this.initializeEditor(editorId); // Initialize the CodeMirror editor instance
         this.editor = this.addCommentOverlay(this.editor); // Add custom overlay for highlighting comments
         this.setupThemeListener();         // Set up a listener to detect and apply theme changes
+        this.refreshOnVisibilityChange(); // Add this line
     }
 
     /**
@@ -107,13 +108,16 @@ class CodeEditor {
                     "# IKKE RØR",
                     "# FOKUS",
                     "# FORKLARING",
+                    "# <--",
+                    "# MERK",
                 ];
 
                 for (const keyword of keywords) {
-                    if (stream.match(keyword)) {
+                    if (stream.match(keyword) || (keyword === "# TODO" && stream.match("# <--"))) {
                         return keyword.replace("# ", "").toLowerCase().replace(" ", "");
                     }
                 }
+                
                 while (stream.next() != null && !keywords.some(keyword => stream.match(keyword, false))) {}
                 return null;
             }
@@ -170,5 +174,18 @@ class CodeEditor {
      */
     scrollToLine(line) {
         this.editor.scrollIntoView({ line: line, ch: 0 }, 200);
+    }
+
+    refreshOnVisibilityChange() {
+        const editorElement = this.editor.getWrapperElement();
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    this.editor.refresh();
+                }
+            });
+        }, { threshold: 0.1 });
+    
+        observer.observe(editorElement);
     }
 }
