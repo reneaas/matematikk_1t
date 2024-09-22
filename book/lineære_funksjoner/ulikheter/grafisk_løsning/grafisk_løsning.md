@@ -16,9 +16,9 @@ Etter å ha gått gjennom dette delkapittelet, er målet at du skal kunne:
 :::
 
 
-## Ulikheter: type 1
+## Ulikheter på formen $ax + b > 0$
 
-::::{admonition} Ulikhet: type 1
+::::{admonition} Ulikheter på formen $ax + b > 0$
 ---
 class: theory
 ---
@@ -160,10 +160,10 @@ $$
 ::::::
 
 
-## Ulikheter: type 2
+## Ulikheter  på formen $ax + b > k$
 Vi kan i prinsippet alltid skrive om en lineær ulikhet til formen $ax + b > 0$. Men når vi jobber grafisk, kan vi også løse ulikheter på formen $ax + b > k$ direkte.
 
-::::{admonition} Ulikheter: type 2
+::::{admonition} Ulikheter  på formen $ax + b > k$
 ---
 class: theory
 ---
@@ -305,12 +305,12 @@ $$
 ::::::
 
 
-## Ulikheter: type 3
+## Ulikheter  på formen $ax + b > cx+d$
 
 Vi kan også løse ulikheter av typen $ax + b > cx + d$ grafisk.
 
 
-:::::{admonition} Ulikheter: type 3
+:::::{admonition} Ulikheter  på formen $ax + b > cx+d$
 ---
 class: theory
 ---

@@ -20,7 +20,7 @@ $$
 2^x = 6x
 $$
 
-Da kan vi ty til noe som kalles får å løse likningen numerisk. Å løse en likning **numerisk**, betyr å finne en tilnærmet tallverdi for løsningen. For å gjøre dette bruker vi gjerne en strategi som er formulert som en oppskrift som vi kan følge for å nærme oss løsningen. En slik oppskrift kalles for en **algoritme**. Når vi har en algoritme, er målet vårt å oversette denne til et program som datamaskinen kan utføre for oss så vi kan *kick back, relax* og la datamaskinen gjøre jobben for oss. 
+Da kan vi ty til noe som kalles for å løse likningen numerisk. Å løse en likning **numerisk**, betyr å finne en tilnærmet tallverdi for løsningen. For å gjøre dette bruker vi gjerne en strategi som er formulert som en oppskrift som vi kan følge for å nærme oss løsningen. En slik oppskrift kalles for en **algoritme**. Når vi har en algoritme, er målet vårt å oversette denne til et program som datamaskinen kan utføre for oss så vi kan *kick back, relax* og la datamaskinen gjøre jobben for oss. 
 
 Her skal vi se på hvordan vi kan gjøre dette med likninger. I utforsk 1 skal du gradvis bygge opp et program som løser en lineær likning.
 
@@ -70,7 +70,7 @@ Koden skriver ut heltallene $x \in \{-5, -4, \ldots, 4, 5\}$.
 **Refleksjonsspørsmål:** <br>
 Hvordan hadde blitt hvis vi i stedet brukte `range(-3, 7)`{l=python}?
 
-Tenk ut en forutsigelse - deretter endre på programmet og kjør det for å sjekke svaret ditt!
+Lag en hypotese, endre og kjør programmet og sjekk svaret ditt!
 :::
 ```
 
@@ -497,7 +497,7 @@ class: tabs-custom
 ````{tab-item} Steg 1: <br> Hvorfor finner vi ikke svaret?
 Bruker vi strategien fra utforsk 1, vil vi oppdage at vi ikke får noen løsning.
 
-Bestem nullpunktet til $f$. <br> Bruk svaret ditt til å forklare hvorfor strategien fra utforsk 1 ikke vil gi oss nullpunktet til $f$.
+Bestem nullpunktet til $f$ ved regning. <br> Bruk svaret ditt til å forklare hvorfor strategien fra utforsk 1 ikke vil gi oss nullpunktet til $f$.
 :::{admonition} Fasit
 ---
 class: dropdown, answer

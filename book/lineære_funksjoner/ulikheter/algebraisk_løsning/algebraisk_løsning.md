@@ -157,7 +157,7 @@ class: solution
 & \Updownarrow \\
 -x &< -7 \\
 & \Updownarrow \\
--x \textcolor{red}{\cdot (-1)} &> -7 \textcolor{red}{\cdot (-1)} && \text{Snur ulikhetstegnet} \\
+-x \textcolor{red}{\cdot (-1)} &> -7 \textcolor{red}{\cdot (-1)} && \text{Ganger med (-1) og snur ulikhetstegnet} \\
 & \Updownarrow \\
 x &> 7
 \end{align*}
