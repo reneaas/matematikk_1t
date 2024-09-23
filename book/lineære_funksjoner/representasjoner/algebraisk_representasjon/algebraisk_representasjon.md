@@ -217,45 +217,29 @@ Vi kan bruke Python som en kalkulator for å regne ut funksjonsverdier.
 class: explore
 name: lineære-funksjoner-algebraisk-representasjon-utforsk-1
 ---
-Programmet under regner ut funksjonsverdien til 
+Programmet under regner ut funksjonsverdien $f(2)$ for funksjonen
 
 $$
-f(x) = 3x - 1,
+f(x) = 3x - 1.
 $$
 
-i $x = 2$. Programmet regner altså ut $f(2)$. 
 
-:::{raw} html
----
-file: interaktiv_kode/utforsk/utforsk_1.html
----
-:::
+````{tab-set}
+```{tab-item} a
+Les programmet og forutsi hvilken verdi programmet skriver ut. Skriv det inn under for å sjekke! 
+```
 
-<br>
+```{tab-item} b
+Endre på programmet slik at det i stedet regner ut $f(-1)$. <br>
 
-Deloppgave 1
-: Kjør programmet og sjekk at det regner ut riktig verdi for $f(2)$. Hva blir svaret? 
+Kjør programmet for å sjekke svaret ditt.
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-$$
-f(2) = 5.
-$$
-:::
-
-<br>
-
-Deloppgave 2
-: Kan du endre programmet slik at det regner ut $f(-1)$? Kjør koden og sjekk at svaret blir riktig.
-
-:::{admonition} Fasit
+::::{admonition} Fasit
 ---
 class: answer, dropdown
 ---
 
-```{code-block} python
+:::{code-block} python
 ---
 linenos: true
 emphasize-lines: 4
@@ -265,28 +249,25 @@ def f(x):
 
 y = f(-1)
 print(y)
-```
 :::
+::::
+```
 
-<br>
+```{tab-item} c
+Prøv å endre funksjonsuttrykket i `f(x)`{l=python} slik at programmet ut $f(-1)$ for 
 
+$$
+f(x) = 4x + 2.
+$$ 
 
-Deloppgave 3
-: Prøv å endre funksjonsuttrykket i `f(x)`{l=python} slik at programmet ut $f(-1)$ for 
+Kjør koden og sjekk at svaret blir riktig.
 
-    $$
-    f(x) = 4x + 2.
-    $$ 
-
-    Kjør koden og sjekk at svaret blir riktig.
-
-
-:::{admonition} Fasit
+::::{admonition} Fasit
 ---
 class: answer, dropdown
 ---
 
-```{code-block} python
+:::{code-block} python
 ---
 linenos: true
 emphasize-lines: 2
@@ -296,7 +277,16 @@ def f(x):
 
 y = f(-1)
 print(y)
+:::
+::::
 ```
+
+````
+
+:::{raw} html
+---
+file: interaktiv_kode/utforsk/utforsk_1.html
+---
 :::
 
 :::::

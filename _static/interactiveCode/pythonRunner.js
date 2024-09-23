@@ -12,11 +12,15 @@ class PythonRunner {
      * Prepares and runs the code provided in the editor.
      * @param {Object} editor - The CodeMirror editor instance containing the code.
      */
-    async run(editor) {
+    async run(editor, outputId = null) {
         this.editorInstance = editor;
         this.editorInstance.clearLineHighlights();
         let code = editor.getValue();
         this.currentCode = code;
+
+        if (outputId) {
+            this.outputId = outputId;
+        }
 
         // Handle input statements and modify the code accordingly
         const inputStatements = this.findInputStatements(this.currentCode);
