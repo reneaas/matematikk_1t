@@ -20,7 +20,7 @@ $$
 2^x = 6x
 $$
 
-Da kan vi ty til noe som kalles for å løse likningen numerisk. Å løse en likning **numerisk**, betyr å finne en tilnærmet tallverdi for løsningen. For å gjøre dette bruker vi gjerne en strategi som er formulert som en oppskrift som vi kan følge for å nærme oss løsningen. En slik oppskrift kalles for en **algoritme**. Når vi har en algoritme, er målet vårt å oversette denne til et program som datamaskinen kan utføre for oss så vi kan *kick back, relax* og la datamaskinen gjøre jobben for oss. 
+Da kan vi ty til noe som kalles for å løse likningen numerisk. Å løse en likning **numerisk**, betyr å finne en tilnærmet tallverdi for løsningen. For å gjøre dette bruker vi gjerne en strategi som er formulert som en oppskrift som vi kan følge for å nærme oss løsningen. En slik oppskrift kalles for en **algoritme**. Når vi har utformet en algoritme, er målet vårt å oversette denne til et program som datamaskinen kan utføre for oss så vi kan lene oss tilbake og la datamaskinen gjøre jobben for oss. 
 
 Her skal vi se på hvordan vi kan gjøre dette med likninger. I utforsk 1 skal du gradvis bygge opp et program som løser en lineær likning.
 
@@ -79,35 +79,15 @@ Lag en hypotese, endre og kjør programmet og sjekk svaret ditt!
 
 Hvis vi skal kunne regne ut funksjonsverdier som i matematikken, må vi lage en funksjon i Python. 
 
+::::{tab-set}
+:::{tab-item} a
+Under vises et program som regner ut en funksjonsverdi for $f(x) = -3x + 6$. 
 
-::::{admonition} Eksempelkode
----
-class: examplecode
----
-Under vises en eksempelkode på hvordan man lager funksjonen
-
-$$
-f(x) = -3x + 1
-$$
-
-Programmet regner så ut $f(6)$ og skriver ut svaret. 
-:::{code-block} python
----
-linenos: true
----
-def f(x):
-    return -3 * x + 1
-
-y = f(6)
-print(y)
+Les programmet og forutsi hvilken verdi programmet skriver ut. <br> Skriv det inn under for å sjekke!
 :::
-
 ::::
 
-**Prøv selv!** <br>
-Fyll ut programmet under slik at det lager en funksjon for $f(x) = 2x - 4$ og skriver ut funksjonsverdien $f(3)$. 
-
-Kjør programmet og sjekk at du får riktig verdi!
+<br>
 
 :::{raw} html
 ---
