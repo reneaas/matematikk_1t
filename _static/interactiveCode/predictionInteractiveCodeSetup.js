@@ -32,8 +32,8 @@ class PredictionInteractiveCodeSetup extends InteractiveCodeSetup {
         // Build the prediction input HTML
         const predictionHtml = `
             <div id="${this.predictionContainerId}" class="prediction-container">
-                <textarea id="${this.predictionInputId}" rows="4" placeholder="Skriv inn prediksjon her!"></textarea>
-                <button id="${this.lockPredictionButtonId}" class="button button-lock-prediction">Sjekk prediksjon!</button>
+                <textarea id="${this.predictionInputId}" rows="3" placeholder="Skriv inn svaret ditt her! \n \nTrykk Shift + Enter for en ny linje."></textarea>
+                <button id="${this.lockPredictionButtonId}" class="button button-lock-prediction">Sjekk svaret!</button>
             </div>
         `;
 
@@ -50,7 +50,7 @@ class PredictionInteractiveCodeSetup extends InteractiveCodeSetup {
         const predictionDisplay = document.createElement('div');
         predictionDisplay.className = 'prediction-display';
         predictionDisplay.innerHTML = `
-            <h3>Din prediksjon:</h3>
+            <h3>Ditt svar:</h3>
             <pre id="${this.predictionDisplayId}"></pre>
         `;
 
@@ -58,7 +58,7 @@ class PredictionInteractiveCodeSetup extends InteractiveCodeSetup {
         const outputDisplay = document.createElement('div');
         outputDisplay.className = 'output-display';
         outputDisplay.innerHTML = `
-            <h3>Faktiske utskrift:</h3>
+            <h3>Faktisk utskrift:</h3>
             <pre id="${this.predictionOutputId}" class="pythonoutput"></pre>
         `;
 
@@ -120,6 +120,7 @@ class PredictionInteractiveCodeSetup extends InteractiveCodeSetup {
         if (this.predictionDisplayed) {
             // Replace with a new InteractiveCodeSetup instance
             this.replaceWithInteractiveCodeSetup();
+
         } else {
             // First run after prediction is locked in
             this.clearOutput();

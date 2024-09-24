@@ -465,3 +465,90 @@ sys.stderr = PyConsole()
         return codeLines.join('\n');
     }
 }
+
+
+
+// stepByStepPythonRunner.js
+
+class StepByStepPythonRunner extends PythonRunner {
+    constructor(outputId, errorBoxId, codeSetupInstance) {
+        super(outputId, errorBoxId);
+        this.codeSetupInstance = codeSetupInstance;
+        this.pyodide = null;
+        this.initializePyodide();
+    }
+
+    async initializePyodide() {
+        this.pyodide = await loadPyodide();
+    }
+
+    async run(editor) {
+        const code = editor.getValue();
+        await this.executeCodeStepByStep(code);
+    }
+
+    async executeCodeStepByStep(code) {
+        try {
+            const executionStates = await this.getExecutionStates(code);
+            this.codeSetupInstance.updateExecutionStates(executionStates);
+        } catch (err) {
+            this.handleExecutionError(err);
+        }
+    }
+
+    async getExecutionStates(code) {
+        // Import necessary modules in Pyodide
+        await this.pyodide.loadPackage('micropip');
+        await this.pyodide.runPythonAsync(`
+            import sys
+            sys.setrecursionlimit(1000)
+            import json
+            import sys
+            sys.modules['_pydevd_frame_eval'] = None
+        `);
+
+        // Define the code to extract execution states
+        const traceScript = `
+def trace_calls(frame, event, arg):
+    if event != 'line':
+        return
+    co = frame.f_code
+    func_name = co.co_name
+    line_no = frame.f_lineno
+    locals_copy = frame.f_locals.copy()
+    execution_state = {
+        'lineNumber': line_no,
+        'locals': locals_copy
+    }
+    execution_states.append(execution_state)
+    return trace_calls
+
+execution_states = []
+sys.settrace(trace_calls)
+try:
+    exec(code, {})
+except Exception as e:
+    execution_states.append({'error': str(e)})
+finally:
+    sys.settrace(None)
+`;
+        // Inject the user code into the script
+        const fullScript = `code = """${code}"""\n` + traceScript + `\njson.dumps(execution_states)`;
+
+        // Run the script in Pyodide
+        const result = await this.pyodide.runPythonAsync(fullScript);
+
+        // Parse the result
+        const executionStates = JSON.parse(result);
+        return executionStates;
+    }
+
+    handleExecutionError(error) {
+        const errorBoxElement = document.getElementById(this.errorBoxId);
+        if (errorBoxElement) {
+            errorBoxElement.textContent = error.message;
+        }
+    }
+}
+
+
