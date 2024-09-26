@@ -33,14 +33,14 @@ Vi minner om at nullpunktet til en funksjon $f$ er:
 * $x$-koordinaten der hvor grafen til $f$ skjærer $x$-aksen.
 :::
 
-:::::{admonition} Utforsk 1
+::::::::{admonition} Utforsk 1
 ---
 class: explore
 ---
 Vi skal ta utgangspunkt i at vi skal bestemme nullpunktet til 
 
 $$
-f(x) = 2x - 4.
+f(x) = 2x + 4.
 $$
 
 
@@ -51,41 +51,105 @@ class: tabs-custom
 ```{tab-item} Steg 1: <br> Lage ulike verdier for $x$
 *Her skal du repetere hvordan en `for`{l=python}-løkke med `range`{l=python} fungerer.*
 
-Se på koden under og forutsi hvilke tall som skrives ut **før** du kjører programmet.
+::::::{tab-set}
+:::::{tab-item} a
+Les programmet under og prøv å forutsi hva programmet skriver ut. <br> Skriv det inn under for å sjekke svaret ditt!
+:::::
 
-Kjør koden og sjekk svaret ditt!
+:::::{tab-item} b
+Endre på programmet slik at det skriver ut tallene $x \in \{-5, -4, \ldots, 4, 5\}$. <br>
+::::{admonition} Fasit
+---
+class: dropdown, answer
+---
+:::{code-block} python
+---
+linenos: true
+---
+for x in range(-5, 6):
+    print(x)
+:::
+::::
+:::::
+::::::
+
+<br>
 
 :::{raw} html
 ---
 file: ./interaktiv_kode/utforsk/utforsk_1/steg_1.html
 ---
 :::
-
-:::{admonition} Fasit
----
-class: dropdown, answer
----
-Koden skriver ut heltallene $x \in \{-5, -4, \ldots, 4, 5\}$.
-
-**Refleksjonsspørsmål:** <br>
-Hvordan hadde blitt hvis vi i stedet brukte `range(-3, 7)`{l=python}?
-
-Lag en hypotese, endre og kjør programmet og sjekk svaret ditt!
-:::
 ```
 
 ```{tab-item} Steg 2: <br> Lage en funksjon
 *Her skal du lære hvordan man lager en funksjon i Python, og hvordan man bruker den til å regne ut funksjonsverdier.*
 
-Hvis vi skal kunne regne ut funksjonsverdier som i matematikken, må vi lage en funksjon i Python. 
+Hvis vi skal kunne regne ut funksjonsverdier som i matematikken, kan vi lage en funksjon i Python. 
 
-::::{tab-set}
-:::{tab-item} a
+::::::{tab-set}
+:::::{tab-item} a
 Under vises et program som regner ut en funksjonsverdi for $f(x) = -3x + 6$. 
 
 Les programmet og forutsi hvilken verdi programmet skriver ut. <br> Skriv det inn under for å sjekke!
+:::::
+
+:::::{tab-item} b
+Endre på programmet slik at det i stedet regner ut $f(-2)$. <br> Sjekk om svaret gir mening ved regning!
+
+::::{admonition} Fasit
+---
+class: dropdown, answer
+---
+:::{code-block} python
+---
+linenos: true
+emphasize-lines: 4
+---
+def f(x):
+    return -3 * x + 6
+
+y = f(-2)
+print(y)
 :::
+
+$$
+f(-2) = -3 \cdot (-2) + 6 = 6 + 6 = 12
+$$
 ::::
+:::::
+
+:::::{tab-item} c
+Endre på programmet slik det regner ut $f(-1)$ for 
+
+$$
+f(x) = 2x + 4.
+$$
+
+Kjør programmet og sjekk at svaret stemmer.
+
+::::{admonition} Fasit
+---
+class: dropdown, answer
+---
+:::{code-block} python
+---
+linenos: true
+emphasize-lines: 2
+---
+def f(x):
+    return 2 * x + 4
+
+y = f(-1)
+print(y)
+:::
+
+$$
+f(-1) = 2 \cdot (-1) + 4 = -2 + 4 = 2
+$$
+::::
+:::::
+::::::
 
 <br>
 
@@ -95,67 +159,91 @@ file: ./interaktiv_kode/utforsk/utforsk_1/steg_2.html
 ---
 :::
 
-::::{admonition} Fasit
----
-class: dropdown, answer
----
-Koden med riktig funksjonsuttrykk:
-:::{code-block} python
----
-linenos: true
----
-def f(x):
-    return 2 * x - 4
-
-y = f(3)
-print(y)
-:::
-
-Når programmet kjøres, skal det skrive ut funksjonsverdien
-
-$$
-f(3) = 2 \cdot 3 - 4 = 6 - 4 = 2.
-$$
-
-
-**Refleksjonsspørsmål:** <br>
-Hva skjer hvis du i stedet bare skriver `print(f(3))`{l=python} i stedet for å lagre funksjonsverdien i variabelen `y`{l=python} først?
-
-Forutsi hva du tror skjer - deretter endre på programmet og kjør det for å sjekke svaret ditt!
-::::
-
 ```
 
 ```{tab-item} Steg 3: <br> Sjekke om $f(x) = 0$
 *Her skal du lære hvordan man sjekker om en funksjonsverdi er lik null.*
 
-Hvis vi skal finne nullpunktet til $f$, må vi ha en måte å sjekke om $f(x) = 0$ på. Man skulle tro at man da kanskje bare kunne skrevet `f(x) = 0`{l=python}, men likhetstegnet i Python betyr å "tilordne" en verdi til en variabel - *ikke* å sjekke om to verdier er like. <br> Man har derfor innført skrivemåten `a == b`{l=python} for å sjekke om `a`{l=python} og `b`{l=python} er like.
+Hvis vi skal få et program til å finne nullpunktet for oss, må vi kjenne til hvordan vi kan be et program sjekke at $f(x) = 0$. 
+
+For å sjekke om $f(x) = 0$ med et program, skriver vi `f(x) == 0`{l=python}. Dette vil gi
+* `True`{l=python} hvis det er sant
+* `False`{l=python} hvis det er usant
 
 
-::::{admonition} Eksempelkode
+::::::{tab-set}
+:::::{tab-item} a
+Les programmet og forutsi hva programmet skriver ut. <br> Skriv det inn under for å sjekke svaret ditt!
+:::::
+
+:::::{tab-item} b
+Hva må verdien av $x$ være for at programmet skal skrive ut `True`{l=python}? <br> 
+
+Endre på programmet og sjekk at du får det du forventer!
+
+::::{admonition} Fasit
 ---
-class: examplecode
+class: dropdown, answer
 ---
-I eksempelkoden under lager vi en funksjon for $f(x) = -3x + 6$, så spør vi programmet om $f(2) = 0$ og $f(3) = 0$, og skriver ut svarene.
-
+Programkode:
 :::{code-block} python
 ---
 linenos: true
+emphasize-lines: 4
 ---
 def f(x):
     return -3 * x + 6
 
-print(f(1) == 0)    # <-- Er f(2) = 0? 
-print(f(2) == 0)    # <-- Er f(3) = 0?
+x = 2 
+print(f(x) == 0)
 :::
 
-For en bestemt verdi av $x$, så vil programmet gi:
-* `True`{l=python} hvis $f(x) = 0$ er sant
-* `False`{l=python} hvis $f(x) = 0$ er usant 
-::::
+Dette stemmer fordi
 
-**Prøv selv!** <br>
-Forutsi hva utskriften blir fra programmet. Kopier programmet og kjør det under for å sjekke svaret ditt!
+$$
+f(2) = -3 \cdot 2 + 6 = -6 + 6 = 0
+$$
+::::
+:::::
+
+:::::{tab-item} c
+Endre på programmet slik at du sjekker om $f(x) = 0$ for 
+
+$$
+f(x) = 2x + 4.
+$$
+
+Finn også hvilken verdi av $x$ du må sette inn for at programmet skal skrive ut `True`{l=python}.
+
+::::{admonition} Fasit
+---
+class: dropdown, answer
+---
+Programkode:
+
+:::{code-block} python
+---
+linenos: true
+emphasize-lines: 2, 4
+---
+def f(x):
+    return 2 * x + 4
+
+x = -2
+print(f(x) == 0)
+:::
+
+Dette stemmer fordi
+
+$$
+f(-2) = 2 \cdot (-2) + 4 = -4 + 4 = 0
+$$
+::::
+:::::
+::::::
+
+
+<br>
 
 :::{raw} html
 ---
@@ -163,23 +251,6 @@ file: ./interaktiv_kode/utforsk/utforsk_1/steg_3.html
 ---
 :::
 
-:::{admonition} Fasit
----
-class: dropdown, answer
----
-* `f(2) == 0`{l=python} gir `False`{l=python} siden 
-
-$$
-f(1) = -3 \cdot 1 + 6 = -3 + 6 = 3
-$$
-
-* `f(3) == 0`{l=python} gir `True`{l=python} siden 
-
-$$
-f(2) = -3 \cdot 2 + 6 = -6 + 6 = 0
-$$
-
-:::
 ```
 
 ```{tab-item} Steg 4: <br> Regne ut mange funksjonsverdier
@@ -441,7 +512,7 @@ class: dropdown, answer
 :::
 ````
 
-:::::
+::::::::
 
 
 ---
