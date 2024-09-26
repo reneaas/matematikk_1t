@@ -256,33 +256,20 @@ file: ./interaktiv_kode/utforsk/utforsk_1/steg_3.html
 ```{tab-item} Steg 4: <br> Regne ut mange funksjonsverdier
 *Her skal du lære hvordan vi kan kombinere `for`{l=python}-løkker og funksjoner til å regne ut mange funksjonsverdier.*
 
-En måte å finne nullpunktet til $f$ er å prøve ut mange forskjellige verdier av $x$ og sjekke om $f(x) = 0$ for noen av dem.
-Da må vi kunne regne ut $f(x)$ for mange forskjellige verdier av $x$, noe vi kan oppnå med en `for`{l=python}-løkke.
+Når vi leter etter nullpunktet til $f$, er det litt tungvint å endre på verdien til $x$ manuelt. I stedet kan vi bruke en `for`{l=python}-løkke til å lage mange verdier for $x$ og prøve ut om $f(x) = 0$ for hver av dem. 
 
+::::::{tab-set}
+:::::{tab-item} a
+Les programmet under og forutsi verdiene programmet skriver ut. <br> Skriv det inn under for å sjekke svaret ditt!
+:::::
 
-::::{admonition} Eksempelkode
----
-class: examplecode
----
-Under vises en eksempelkode som regner ut $f(x) = -3x + 6$ for $x \in \{-1, 0, 1\}$ og skriver ut hver verdi.
+:::::{tab-item} b
+Endre på programmet slik at det regner ut $f(x) = -3x + 6$ for $x \in \{-3, -2, \ldots, 2, 3\}$. <br> Kjør programmet og sjekk at du får det du forventer!
+:::::
 
-:::{code-block} python
----
-linenos: true
----
-def f(x):
-    return -3 * x + 6
+::::::
 
-for x in range(-1, 2):
-    y = f(x)
-    print(y)
-:::
-::::
-
-**Prøv selv!** <br>
-Fyll inn programmet under slik at det regner ut $f(x) = 2x - 4$ for $x \in \{-1, 0, 1\}$ og skriver ut hver verdi. 
-
-Forutsi hvilke verdier programmet skriver ut **før** du tester ut programmet. <br> Kjør deretter programmet og sjekk svaret ditt!
+<br>
 
 :::{raw} html
 ---
@@ -290,70 +277,29 @@ file: ./interaktiv_kode/utforsk/utforsk_1/steg_4.html
 ---
 :::
 
-::::{admonition} Fasit
----
-class: dropdown, answer
----
-Koden med riktig funksjonsuttrykk:
-:::{code-block} python
----
-linenos: true
----
-def f(x):
-    return 2 * x - 4
-
-for x in range(-1, 2):
-    y = f(x)
-    print(y)
-:::
-
-Utskriften vi får er 
-
-:::{code-block} sh
----
-linenos: false
----
--6
--4
--2
-:::
-
-**Refleksjonsspørsmål:** <br>
-Hva hadde den første og siste verdien som blir skrevet ut blitt hvis vi i stedet brukte `range(-4, 3)`{l=python} i `for`{l=python}-løkken?
-
-Forutsi hva du tror skjer - deretter endre på programmet og kjør det for å sjekke svaret ditt!
-::::
 ```
 
 ```{tab-item} Steg 5: <br> Prøv ut mange verdier for $f(x) = 0$
-*Her skal du lære hvordan vi kan sjekke om en funksjonsverdi er null for mange verdier av $x$.*
+*Her skal du lære hvordan vi kan få et program til å fortelle oss om $f(x) = 0$.*
 
-Nå skal vi prøve ut mange verdier for $x$ for å sjekke om $f(x) = 0$ for noen av dem.
-
-
-::::{admonition} Eksempelkode
----
-class: examplecode
----
-Under vises en eksempelkode som prøver ut alle heltallene $x \in \{-5, -4, \ldots, 4, 5\}$ og skriver ut om $f(x) = 0$ eller ikke.
-
-:::{code-block} python
----
-linenos: true
----
-def f(x):
-    return -3 * x + 6
-
-for x in range(-5, 6):
-    print(f(x) == 0)
-:::
-::::
+Nå skal vi prøve ut mange verdier for $x$ for å sjekke om $f(x) = 0$ for hver av dem.
 
 
-**Prøv selv!** <br>
-Kopier programmet under og endre på programmet ditt slik at det gjør det samme for $f(x) = 2x - 4$.
+::::::{tab-set}
+:::::{tab-item} a
+Kjør programmet under og se om du kan lese av nullpunktet til funksjonen i programmet.
+:::::
 
-Tolk programmet og se om du kan forklare hva nullpunktet til $f$ er ved hjelp av utskriften.
+:::::{tab-item} b
+Endre på programmet og bruk det til å bestemme nullpunktene til 
+
+1. $f(x) = 3x - 9$
+2. $f(x) = -2x + 8$
+3. $f(x) = 4x + 12$
+:::::
+::::::
+
+<br>
 
 :::{raw} html
 ---
@@ -361,66 +307,33 @@ file: ./interaktiv_kode/utforsk/utforsk_1/steg_5.html
 ---
 :::
 
-::::{admonition} Fasit
----
-class: dropdown, answer
----
-I `for`{l=python}-løkken prøver vi ut alle heltallene $x \in \{-5, -4, \ldots, 4, 5\}$.
-
-Ved å kjøre programmet får vi en utskrift med `True`{l=python} når $f(x) = 0$ er sant og `False`{l=python} ellers. Under har vi lagt til hvilke verdier av `x`{l=python} hver linje tilsvarer og hvilken linje som tilsvarer nullpunktet.
-
-:::{code-block} sh
-False               # x = -5
-False               # x = -4
-False               # x = -3
-False               # x = -2
-False               # x = -1
-False               # x = 0
-False               # x = 1
-True                # <-- nullpunktet! Her er x = 2
-False               # x = 3
-False               # x = 4
-False               # x = 5
-:::
-
-Ut ifra programmet kan vi derfor konkludere at nullpunktet til $f$ er $x = 2$.
-
-:::: 
 ```
 
 
 ```{tab-item} Steg 6: <br> Automatisere søket etter nullpunktet
-*Her skal du lære hvordan vi kan få programmet til å fortelle oss når $f(x) = 0$ uten at vi må sjekke det manuelt.*
+*Her skal du lære hvordan vi kan få programmet til å fortelle oss når $f(x) = 0$ uten at vi må lese det av manuelt.*
 
-Å lese gjennom en lang liste med `True`{l=python} og `False`{l=python} for å finne nullpunktet er fryktelig tungvint, spesielt hvis vi tester ut mange verdier av $x$. Heldigvis kan vi da bruke noe som kalles for en `if`{l=python}-setning som sjekker om likningen er sann, og *kun* skriver ut verdien til $x$ hvis den er sann.
+Å lese gjennom en lang liste med `True`{l=python} og `False`{l=python} for å finne nullpunktet er tungvint, spesielt hvis vi tester ut mange verdier av $x$. Heldigvis kan vi da bruke noe som kalles for en `if`{l=python}-setning.
 
-::::{admonition} Eksempelkode
----
-class: examplecode
----
-Under vises en eksempelkode som finner nullpunktet til $f(x) = -3x + 6$.
+En `if`{l=python}-setning lar oss sjekke om $f(x) = 0$ og skrive ut verdien *kun* hvis det er sant.
 
-:::{code-block} python
----
-linenos: true
----
-def f(x):
-    return -3 * x + 6
+::::::{tab-set}
+:::::{tab-item} a
+Les programmet under og forutsi hva programmet skriver ut. <br> Skriv det inn under for å sjekke svaret ditt!
+:::::
 
-for x in range(-5, 6):
-    if f(x) == 0:       # <-- Sjekker om f(x) = 0
-        print(x)        # <-- Skriver ut x hvis f(x) = 0 er sant!
-:::
-::::
+:::::{tab-item} b
+Endre på programmet slik at du kan bruke det til å finne nullpunktene til
 
-**Prøv selv!** <br>
-Kopier programmet over og endre på programmet slik at det finner nullpunktet til 
+1. $f(x) = 3x - 9$
+2. $f(x) = -2x + 8$
+3. $f(x) = 4x + 12$
 
-$$
-f(x) = 2x - 4
-$$
+Kjør programmet og sjekk at du får det du forventer!
+:::::
+::::::
 
-Kjør programmet og sjekk at det gir riktig svar! <br> Kan du gi en forklaring på hvordan alle bitene av programmet fungerer nå?
+<br>
 
 :::{raw} html
 ---
@@ -428,74 +341,11 @@ file: ./interaktiv_kode/utforsk/utforsk_1/steg_6.html
 ---
 ::: 
 
-::::{admonition} Fasit
----
-class: dropdown, answer
----
-Koden med riktig funksjonsuttrykk:
-:::{code-block} python
----
-linenos: true
----
-def f(x):
-    return 2 * x - 4
-
-for x in range(-5, 6):
-    if f(x) == 0:
-        print(x)
-:::
-
-som gir utskriften
-
-:::{code-block} sh
----
-linenos: false
----
-2
-:::
-
-Dette betyr at nullpunktet til $f(x) = 2x - 4$ er $x = 2$.
-
-**Refleksjonsspørsmål:** <br>
-Hvis programmet ikke gir noen utskrift, men du *vet* at den har en løsning $x \in \mathbb{Z}$ (husk: $\mathbb{Z} er heltallene), hva kan være årsaken til dette?
-::::
-```
-
-```{tab-item} Steg 7: <br> Prøv ut andre funksjoner
-*Her skal du prøve å anvende det du har lært med andre funksjoner.*
-
-Prøv ut metoden du har lært på disse funksjonene
-
-1. $f(x) = 3x - 9$
-2. $f(x) = -2x + 8$
-3. $f(x) = 4x + 12$
-
-For hver av funksjonene, finn nullpunktet ved å bruke programmet du har laget.
-
-Hva er nullpunktet til hver av funksjonene?
-
-:::{raw} html
----
-file: ./interaktiv_kode/utforsk/utforsk_1/steg_7.html
----
-::: 
-
-:::{admonition} Fasit
----
-class: dropdown, answer
----
-1. $f(x) = 3x - 9$ har nullpunktet $x = 3$.
-2. $f(x) = -2x + 8$ har nullpunktet $x = 4$.
-3. $f(x) = 4x + 12$ har nullpunktet $x = -3$.
-
-
-**Refleksjonsspørsmål:** <br>
-Hvorfor kan du ikke bruke strategien du har lært her til å finne nullpunktet til $f(x) = 3x - 1$?
-:::
 
 ```
 
-```{tab-item} Steg 8: <br> Oppsummering
+
+```{tab-item} Steg 7: <br> Oppsummering
 *Her skal du oppsummere strategien du har lært om og reflektere over bruksområde til metoden.*
 
 1. Gi en beskrivelse av løsningsstrategien du har brukt for å finne nullpunktet til en funksjon.
