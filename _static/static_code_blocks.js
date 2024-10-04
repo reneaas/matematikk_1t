@@ -33,6 +33,11 @@ document.addEventListener("DOMContentLoaded", function() {
             block.style.color = '#ff0000';
             block.style.fontWeight = 'bold';
         }
+
+        if (block.textContent.trim().startsWith('# IKKE RØR')) {
+            block.style.color = '#ff0000';
+            block.style.fontWeight = 'bold';
+        }
     });
 });
 
