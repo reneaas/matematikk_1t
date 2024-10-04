@@ -1,5 +1,27 @@
 # Grafisk løsning 
 
+:::::{admonition} Oppsummering
+---
+class: summary, dropdown
+---
+Skrå linjer i planet
+: Skrå linjer i planet kan skrives på to måter:
+    * $y = ax + b$
+    * $Ax + By = C$
+
+Grafisk løsning av likningssystemer
+: Løsningen til et lineært likningssystem er koordinatene til skjæringspunktene mellom linjene som representerer likningene i likningssystemet.
+
+Logisk *og*
+: Hvis linjene definert av likningene i et likningssystem skjærer hverandre i punktet $(x_1, y_1)$, skriver vi løsningen av likningssystemet som
+
+    $$
+    x = x_1 \quad \land \quad y = y_1
+    $$
+
+    der vi leser $\land$ som "*og samtidig*".
+:::::
+
 På samme måte som vi løste likninger, kan vi også løse likningssystemer grafisk. 
 
 

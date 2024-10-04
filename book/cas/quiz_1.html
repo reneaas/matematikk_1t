@@ -1,0 +1,83 @@
+<!-- Container for the quiz -->
+<div id="quiz-container-lineære-funksjoner-likninger-programmering-quiz-1" class="quiz-main-container"></div>
+
+<!-- Include KaTeX for LaTeX rendering -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/auto-render.min.js"></script>
+
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", () => {
+
+        // Define your questions and answers
+        const questionsData = [
+            {
+                content: 'Hvilken av programkodene under vil skrive ut verdiene $x \\in \\{-6, -5, ..., 6\\}$?',
+                answers: [
+                    { content: '<pre><code class="python">for x in range(-6, 7):\n    print(x)</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">for x in range(-6, 6):\n    print(x)</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">for x in range(-5, 7):\n    print(x)</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">for x in range(-6, 5):\n    print(x)</code></pre>', isCorrect: false }
+                ]
+            },
+            {
+                content: 'Hvilket program skriver ut $f(-1)$ for $f(x) = 2x + 4$?',
+                answers: [
+                    { content: '<pre><code class="python">def f(x):\n    return 2 * x + 4\n\nx = -1\nprint(f(x))</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">def f(x):\n    return 2 * x + 4\n\nx = 1\nprint(f(x))</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">def f(x):\n    return 2 * x - 4\n\nx = -1\nprint(f(x))</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">def f(x):\n    return -2 * x + 4\n\nx = -1\nprint(f(x))</code></pre>', isCorrect: false }
+                ]
+            },
+            {
+                content: 'Hvilket program vil skrive ut <code class="python">True</code>?',
+                answers: [
+                    { content: '<pre><code class="python">def f(x):\n    return 3 * x - 9\n\nx = 3\nprint(f(x) == 0)</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">def f(x):\n    return 3 * x - 9\n\nx = 2\nprint(f(x) == 0)</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">def f(x):\n    return 3 * x - 9\n\nx = 1\nprint(f(x) == 0)</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">def f(x):\n    return 3 * x - 9\n\nx = 0\nprint(f(x) == 0)</code></pre>', isCorrect: false }
+                ]
+            },
+            {
+                content: 'Hva må verdien til <code class="python">x</code> være for at utskriften skal bli <code class="python">True</code>? <pre><code class="python">def f(x):\n    return x + 3\n\nx = ??\nprint(f(x) == 0)</code></pre>',
+                answers: [
+                    { content: '<code class="python">x = 1</code>', isCorrect: false },
+                    { content: '<code class="python">x = -2</code>', isCorrect: false },
+                    { content: '<code class="python">x = -3</code>', isCorrect: true },
+                    { content: '<code class="python">x = 3</code>', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hvilket program skriver ut $f(x) = -3x + 6$ for $x \\in \\{-3, -2, ..., 3\\}$?',
+                answers: [
+                    { content: '<pre><code class="python">def f(x):\n    return -3 * x + 6\n\nfor x in range(-3, 4):\n    print(f(x))</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">def f(x):\n    return -3 * x + 6\n\nfor x in range(-3, 3):\n    print(f(x))</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">def f(x):\n    return 3 * x - 6\n\nfor x in range(-3, 4):\n    print(f(x))</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">def f(x):\n    return -3 * x + 6\n\nfor x in range(-4, 4):\n    print(f(x))</code></pre>', isCorrect: false }
+                ]
+            },
+            {
+                content: 'Hvilke programkode(r) vil finne nullpunktet til $f(x) = 5x - 10$?',
+                answers: [
+                    { content: '<pre><code class="python">def f(x):\n    return 5 * x - 10  \n\nfor x in range(-5, 3):\n    if f(x) == 0:\n        print(x)</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">def f(x):\n    return 5 * x - 10  \n\nfor x in range(4):\n    if f(x) == 0:\n        print(x)</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">def f(x):\n    return 5 * x - 10  \n\nfor x in range(-3, 2):\n    if f(x) == 0:\n        print(x)</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">def f(x):\n    return 5 * x - 10  \n\nfor x in range(-5, 1):\n    if f(x) == 0:\n        print(x)</code></pre>', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hvilken av følgende koder vil korrekt finne nullpunktet til $f(x) = 2x + 4$?',
+                answers: [
+                    { content: '<pre><code class="python">def f(x):\n    return 2 * x + 4  \n\nfor x in range(-5, 1):\n    if f(x) == 0:\n        print(x)</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">def f(x):\n    return 2 * x - 4  \n\nfor x in range(-5, 6):\n    if f(x) == 0:\n        print(x)</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">def f(x):\n    return -2 * x + 4 \n\nfor x in range(-5, 6):\n    if f(x) == 0:\n        print(x)</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">def f(x):\n    return 2 * x + 4 \n\nfor x in range(-2, 4):\n    if f(x) == 0:\n        print(x)</code></pre>', isCorrect: true }
+                ]
+            },
+        ];
+
+        // Initialize the multiple-choice quiz
+        const quiz = new SequentialMultipleChoiceQuiz('quiz-container-lineære-funksjoner-likninger-programmering-quiz-1', questionsData);
+    });
+</script>
