@@ -114,7 +114,7 @@ class SequentialMultipleChoiceQuiz {
         // Clear the container and display a completion message
         this.container.innerHTML = `
             <div class="quiz-completion-message">
-                <p>Da var quizen ferdig! Supert! 🎉</p>
+                <p>Da var quizen ferdig! 🎉</p>
             </div>
         `;
     }
