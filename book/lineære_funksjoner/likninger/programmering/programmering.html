@@ -39,11 +39,11 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/pdf_custom.css?v=a874a063" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/static_code_blocks.css?v=b6831e29" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/admonitions.css?v=f1d13629" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/admonitions.css?v=ebd96b21" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/parsons_puzzle/parsonsPuzzle.css?v=12d87ba9" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/multipleChoiceQuiz/style.css?v=041db16c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/multipleChoiceQuiz/style.css?v=e08e59c6" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/misc_styles/figures.css?v=c6b7c59c" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/misc_styles/tabs.css?v=d0756f9e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/misc_styles/tabs.css?v=a3d84b3c" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/misc_styles/misc.css?v=55d93a12" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/misc_styles/mathjax.css?v=54189cd9" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/code_mirror_themes/github_dark_default_cm.css?v=3beebd47" />
@@ -97,7 +97,7 @@
     <script src="../../../../_static/pairPuzzle/game.js?v=56c2b5af"></script>
     <script src="../../../../_static/interactiveCode/interactiveCodeSetup.js?v=b243d8d1"></script>
     <script src="../../../../_static/interactiveCode/pythonRunner.js?v=20da586f"></script>
-    <script src="../../../../_static/interactiveCode/predictionInteractiveCodeSetup.js?v=12884769"></script>
+    <script src="../../../../_static/interactiveCode/predictionInteractiveCodeSetup.js?v=6fbb5d7b"></script>
     <script src="../../../../_static/interactiveCode/codeEditor.js?v=b8f7352c"></script>
     <script src="../../../../_static/interactiveCode/workerManager.js?v=afad59ba"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
@@ -485,7 +485,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerisk-losning-av-likninger">Numerisk løsning av likninger</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerisk-losning-av-lineaere-likninger">Numerisk løsning av lineære likninger</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#repetisjon-av-nodvendige-verktoy">Repetisjon av nødvendige verktøy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bestemme-nullpunkter-ved-hjelp-av-programmering">Bestemme nullpunkter ved hjelp av programmering</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hvordan-sjekke-om-f-x-0-med-et-program">Hvordan sjekke om <span class="math notranslate nohighlight">\(f(x) = 0\)</span> med et program</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hvordan-automatisere-soket-etter-nullpunkter">Hvordan automatisere søket etter nullpunkter</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -507,422 +513,22 @@ document.write(`
 <li><p>Justere og tilpasse programmer for å løse dine egne likninger</p></li>
 </ul>
 </div>
-<section id="numerisk-losning-av-likninger">
-<h2>Numerisk løsning av likninger<a class="headerlink" href="#numerisk-losning-av-likninger" title="Link to this heading">#</a></h2>
-<p>I mange tilfeller kan vi bare løse en likning algebraisk for å finne verdien til <span class="math notranslate nohighlight">\(x\)</span> slik at en likning er sann - da finner vi det eksakte svaret. Når vi kan løse en likning slik kaller vi det for en <strong>analytisk løsning</strong>. Men det finnes mange likninger hvor dette dessverre ikke lar seg gjøre. I disse tilfellene klarer vi bare ikke å få <span class="math notranslate nohighlight">\(x\)</span> alene, uansett hvor hardt vi prøver. Et eksempel på en slik likning er</p>
+<section id="numerisk-losning-av-lineaere-likninger">
+<h2>Numerisk løsning av lineære likninger<a class="headerlink" href="#numerisk-losning-av-lineaere-likninger" title="Link to this heading">#</a></h2>
+<p>Mange likninger man møter på i det virkelige liv, har ingen <strong>analytisk løsning</strong> - det vil si, vi kan ikke få <span class="math notranslate nohighlight">\(x\)</span> alene. Et eksempel slik likning er</p>
 <div class="math notranslate nohighlight">
 \[
-2^x = 6x
+2^x = 6x + 5
 \]</div>
-<p>Da kan vi ty til noe som kalles for å løse likningen numerisk. Å løse en likning <strong>numerisk</strong>, betyr å finne en tilnærmet tallverdi for løsningen. For å gjøre dette bruker vi gjerne en strategi som er formulert som en oppskrift som vi kan følge for å nærme oss løsningen. En slik oppskrift kalles for en <strong>algoritme</strong>. Når vi har utformet en algoritme, er målet vårt å oversette denne til et program som datamaskinen kan utføre for oss så vi kan lene oss tilbake og la datamaskinen gjøre jobben for oss.</p>
-<p>Her skal vi se på hvordan vi kan gjøre dette med likninger. I utforsk 1 skal du gradvis bygge opp et program som løser en lineær likning.</p>
-<div class="sidenote margin admonition">
-<p class="admonition-title">Påminnelse: nullpunkt</p>
-<p>Vi minner om at nullpunktet til en funksjon <span class="math notranslate nohighlight">\(f\)</span> er:</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(x\)</span>-verdien som medfører at <span class="math notranslate nohighlight">\(f(x) = 0\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(x\)</span>-koordinaten der hvor grafen til <span class="math notranslate nohighlight">\(f\)</span> skjærer <span class="math notranslate nohighlight">\(x\)</span>-aksen.</p></li>
-</ul>
-</div>
-<div class="explore admonition">
-<p class="admonition-title">Utforsk 1</p>
-<p>Vi skal ta utgangspunkt i at vi skal bestemme nullpunktet til en lineær funksjon <span class="math notranslate nohighlight">\(f\)</span>. Vi husker på at nullpunktet til en funksjon er <span class="math notranslate nohighlight">\(x\)</span>-verdien som medfører at <span class="math notranslate nohighlight">\(f(x) = 0\)</span>.</p>
-<p>For å bygge opp et program som kan gjøre dette, skal vi gå gjennom flere steg som vil gradvis hjelpe oss å bygge opp et program som kan bestemme nullpunktet til en lineær funksjon.</p>
-<div class="sd-tab-set tabs-custom docutils">
-<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-0">
-Steg 1: <br> Lage ulike verdier for <span class="math notranslate nohighlight">\(x\)</span></label><div class="sd-tab-content docutils">
-<p><em>Her skal du repetere hvordan en <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkke med <code class="code docutils literal highlight highlight-python"><span class="nb">range</span></code> fungerer.</em></p>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-7" name="sd-tab-set-1" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-7">
-a</label><div class="sd-tab-content docutils">
-<p>Les programmet under og prøv å forutsi hva programmet skriver ut.</p>
-<p>Skriv inn hypotesen din under for å sjekke svaret ditt!</p>
-</div>
-<input id="sd-tab-item-8" name="sd-tab-set-1" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-8">
-b</label><div class="sd-tab-content docutils">
-<p>Endre på programmet slik at det skriver ut tallene <span class="math notranslate nohighlight">\(x \in \{-5, -4, \ldots, 4, 5\}\)</span>. <br></p>
-<div class="dropdown answer admonition">
-<p class="admonition-title">Fasit</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="linenos">1</span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
-</span><span class="linenos">2</span>    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<br>
-<div id="container-lineære-funksjoner-lineære-likninger-programmering-utforsk-1-steg-1"></div>
-<script type="text/javascript">
-
-    document.addEventListener("DOMContentLoaded", () => {
-        const code = 
-`for x in range(-2, 3):
-    print(x)
-`;   
-
-        makePredictionInteractiveCode(
-            "container-lineære-funksjoner-lineære-likninger-programmering-utforsk-1-steg-1",
-            code,
-        );
-    });
-</script>
-</div>
-<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-1">
-Steg 2: <br> Lage en funksjon</label><div class="sd-tab-content docutils">
-<p><em>Her skal du lære hvordan man lager en funksjon i Python, og hvordan man bruker den til å regne ut funksjonsverdier.</em></p>
-<p>Hvis vi skal kunne regne ut funksjonsverdier som i matematikken, kan vi lage en funksjon i Python.</p>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-9" name="sd-tab-set-2" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-9">
-a</label><div class="sd-tab-content docutils">
-<p>Under vises et program som regner ut en funksjonsverdi for <span class="math notranslate nohighlight">\(f(x) = -3x + 6\)</span>.</p>
-<p>Les programmet og forutsi hvilken verdi programmet skriver ut. <br> Skriv det inn under for å sjekke!</p>
-</div>
-<input id="sd-tab-item-10" name="sd-tab-set-2" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-10">
-b</label><div class="sd-tab-content docutils">
-<p>Endre på programmet slik at det i stedet regner ut <span class="math notranslate nohighlight">\(f(-1)\)</span>. <br> Sjekk om svaret gir mening ved regning!</p>
-<div class="dropdown answer admonition">
-<p class="admonition-title">Fasit</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="linenos">2</span>    <span class="k">return</span> <span class="o">-</span><span class="mi">3</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">6</span>
-<span class="linenos">3</span>
-<span class="hll"><span class="linenos">4</span><span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-</span><span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="math notranslate nohighlight">
-\[
-f(-1) = -3 \cdot (-1) + 6 = 3 + 6 = 9
-\]</div>
-</div>
-</div>
-<input id="sd-tab-item-11" name="sd-tab-set-2" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-11">
-c</label><div class="sd-tab-content docutils">
-<p>Endre på programmet slik det regner ut <span class="math notranslate nohighlight">\(f(-1)\)</span> for</p>
-<div class="math notranslate nohighlight">
-\[
-f(x) = 2x + 4.
-\]</div>
-<p>Kjør programmet og sjekk at svaret stemmer.</p>
-<div class="dropdown answer admonition">
-<p class="admonition-title">Fasit</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="hll"><span class="linenos">2</span>    <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">4</span>
-</span><span class="linenos">3</span>
-<span class="linenos">4</span><span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="math notranslate nohighlight">
-\[
-f(-1) = 2 \cdot (-1) + 4 = -2 + 4 = 2
-\]</div>
-</div>
-</div>
-</div>
-<br>
-<div id="container-lineære-funksjoner-lineære-likninger-programmering-utforsk-1-steg-2"></div>
-<script type="text/javascript">
-
-    document.addEventListener("DOMContentLoaded", () => {
-        const code = 
-`def f(x):
-    return -3 * x + 6
-
-y = f(3)
-print(y)
-`;   
-
-        makePredictionInteractiveCode(
-            "container-lineære-funksjoner-lineære-likninger-programmering-utforsk-1-steg-2",
-            code,
-        );
-    });
-</script>
-</div>
-<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-2">
-Steg 3: <br> Sjekke om <span class="math notranslate nohighlight">\(f(x) = 0\)</span></label><div class="sd-tab-content docutils">
-<p><em>Her skal du lære hvordan man sjekker om en funksjonsverdi er lik null.</em></p>
-<p>Hvis vi skal få et program til å finne nullpunktet for oss, må vi kjenne til hvordan vi kan be et program sjekke at <span class="math notranslate nohighlight">\(f(x) = 0\)</span>.</p>
-<p>For å sjekke om <span class="math notranslate nohighlight">\(f(x) = 0\)</span> med et program, skriver vi <code class="code docutils literal highlight highlight-python"><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span></code>. Dette vil gi</p>
-<ul class="simple">
-<li><p><code class="code docutils literal highlight highlight-python"><span class="kc">True</span></code> hvis det er sant</p></li>
-<li><p><code class="code docutils literal highlight highlight-python"><span class="kc">False</span></code> hvis det er usant</p></li>
-</ul>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-12" name="sd-tab-set-3" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-12">
-a</label><div class="sd-tab-content docutils">
-<p>Les programmet og forutsi hva programmet skriver ut. <br> Skriv det inn under for å sjekke svaret ditt!</p>
-</div>
-<input id="sd-tab-item-13" name="sd-tab-set-3" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-13">
-b</label><div class="sd-tab-content docutils">
-<p>Hva må verdien av <span class="math notranslate nohighlight">\(x\)</span> være for at programmet skal skrive ut <code class="code docutils literal highlight highlight-python"><span class="kc">True</span></code>? <br></p>
-<p>Endre på programmet og sjekk at du får det du forventer!</p>
-<div class="dropdown answer admonition">
-<p class="admonition-title">Fasit</p>
-<p>Programkode:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="linenos">2</span>    <span class="k">return</span> <span class="o">-</span><span class="mi">3</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">6</span>
-<span class="linenos">3</span>
-<span class="hll"><span class="linenos">4</span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span> 
-</span><span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Dette stemmer fordi</p>
-<div class="math notranslate nohighlight">
-\[
-f(2) = -3 \cdot 2 + 6 = -6 + 6 = 0
-\]</div>
-</div>
-</div>
-<input id="sd-tab-item-14" name="sd-tab-set-3" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-14">
-c</label><div class="sd-tab-content docutils">
-<p>Endre på programmet slik at du sjekker om <span class="math notranslate nohighlight">\(f(x) = 0\)</span> for</p>
-<div class="math notranslate nohighlight">
-\[
-f(x) = 2x + 4.
-\]</div>
-<p>Finn også hvilken verdi av <span class="math notranslate nohighlight">\(x\)</span> du må sette inn for at programmet skal skrive ut <code class="code docutils literal highlight highlight-python"><span class="kc">True</span></code>.</p>
-<div class="dropdown answer admonition">
-<p class="admonition-title">Fasit</p>
-<p>Programkode:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="hll"><span class="linenos">2</span>    <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">4</span>
-</span><span class="linenos">3</span>
-<span class="hll"><span class="linenos">4</span><span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>
-</span><span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Dette stemmer fordi</p>
-<div class="math notranslate nohighlight">
-\[
-f(-2) = 2 \cdot (-2) + 4 = -4 + 4 = 0
-\]</div>
-</div>
-</div>
-</div>
-<br>
-<div id="container-lineære-funksjoner-lineære-likninger-programmering-utforsk-1-steg-3"></div>
-<script type="text/javascript">
-
-    document.addEventListener("DOMContentLoaded", () => {
-        const code = 
-`def f(x):
-    return -3 * x + 6
-
-x = 1
-print(f(x) == 0)    # <-- Er f(x) = 0? 
-`;   
-
-        makePredictionInteractiveCode(
-            "container-lineære-funksjoner-lineære-likninger-programmering-utforsk-1-steg-3",
-            code,
-        );
-    });
-</script>
-</div>
-<input id="sd-tab-item-3" name="sd-tab-set-0" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-3">
-Steg 4: <br> Regne ut mange funksjonsverdier</label><div class="sd-tab-content docutils">
-<p><em>Her skal du lære hvordan vi kan kombinere <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker og funksjoner til å regne ut mange funksjonsverdier.</em></p>
-<p>Når vi leter etter nullpunktet til <span class="math notranslate nohighlight">\(f\)</span>, er det litt tungvint å endre på verdien til <span class="math notranslate nohighlight">\(x\)</span> manuelt. I stedet kan vi bruke en <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkke til å lage mange verdier for <span class="math notranslate nohighlight">\(x\)</span> og prøve ut om <span class="math notranslate nohighlight">\(f(x) = 0\)</span> for hver av dem.</p>
-<p>Men! Først skal vi bare se på hvordan vi kan bruke en <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkke til å regne ut mange funksjonsverdier.</p>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-15" name="sd-tab-set-4" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-15">
-a</label><div class="sd-tab-content docutils">
-<p>Les programmet under og forutsi verdiene programmet skriver ut.</p>
-<p>Skriv inn hypotesen din under for å sjekke svaret ditt!</p>
-</div>
-<input id="sd-tab-item-16" name="sd-tab-set-4" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-16">
-b</label><div class="sd-tab-content docutils">
-<p>Endre på programmet slik at det regner ut <span class="math notranslate nohighlight">\(f(x) = -3x + 6\)</span></p>
-<div class="math notranslate nohighlight">
-\[
-f(x) = -3x + 6 \quad \text{for} \quad x \in \{-3, -2, \ldots, 2, 3\}.
-\]</div>
-<p>Kjør programmet og sjekk at du får det du forventer!</p>
-<div class="dropdown answer admonition">
-<p class="admonition-title">Fasit</p>
-<p>Programkode:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="linenos">2</span>    <span class="k">return</span> <span class="o">-</span><span class="mi">3</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">6</span>
-<span class="linenos">3</span>
-<span class="hll"><span class="linenos">4</span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
-</span><span class="linenos">5</span>    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<br>
-<div id="container-lineære-funksjoner-lineære-likninger-programmering-utforsk-1-steg-4"></div>
-<script type="text/javascript">
-
-    document.addEventListener("DOMContentLoaded", () => {
-        const code = 
-`def f(x):
-    return -3 * x + 6
-
-for x in range(-1, 2):
-    print(f(x))
-`;   
-
-        makePredictionInteractiveCode(
-            "container-lineære-funksjoner-lineære-likninger-programmering-utforsk-1-steg-4",
-            code,
-        );
-    });
-</script>
-</div>
-<input id="sd-tab-item-4" name="sd-tab-set-0" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-4">
-Steg 5: <br> Prøv ut mange verdier for <span class="math notranslate nohighlight">\(f(x) = 0\)</span></label><div class="sd-tab-content docutils">
-<p><em>Her skal du lære hvordan vi kan få et program til å fortelle oss om <span class="math notranslate nohighlight">\(f(x) = 0\)</span> eller ikke.</em></p>
-<p>Nå skal vi prøve ut mange verdier for <span class="math notranslate nohighlight">\(x\)</span> for å sjekke om <span class="math notranslate nohighlight">\(f(x) = 0\)</span> for hver av dem.</p>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-17" name="sd-tab-set-5" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-17">
-a</label><div class="sd-tab-content docutils">
-<p>Kjør programmet under og se om du kan lese av nullpunktet til funksjonen i programmet.</p>
-<div class="dropdown answer admonition">
-<p class="admonition-title">Fasit</p>
-<p>Kjører vi programmet, får vi utskriften:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mi">5</span>	<span class="kc">False</span>
-<span class="o">-</span><span class="mi">4</span>	<span class="kc">False</span>
-<span class="o">-</span><span class="mi">3</span>	<span class="kc">False</span>
-<span class="o">-</span><span class="mi">2</span>	<span class="kc">False</span>
-<span class="o">-</span><span class="mi">1</span>	<span class="kc">False</span>
-<span class="mi">0</span>	<span class="kc">False</span>
-<span class="mi">1</span>	<span class="kc">False</span>
-<span class="mi">2</span>	<span class="kc">True</span>            <span class="c1"># &lt;-- Her er f(x) = 0</span>
-<span class="mi">3</span>	<span class="kc">False</span>
-<span class="mi">4</span>	<span class="kc">False</span>
-<span class="mi">5</span>	<span class="kc">False</span>
-</pre></div>
-</div>
-<p>Dermed er nullpunktet til <span class="math notranslate nohighlight">\(f\)</span> gitt ved <span class="math notranslate nohighlight">\(x = 2\)</span>.</p>
-</div>
-</div>
-<input id="sd-tab-item-18" name="sd-tab-set-5" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-18">
-b</label><div class="sd-tab-content docutils">
-<p>Endre på programmet og bruk det til å bestemme nullpunktene til</p>
-<ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(f(x) = 3x - 9\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(f(x) = -2x + 8\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(f(x) = 4x + 12\)</span></p></li>
-</ol>
-<div class="dropdown answer admonition">
-<p class="admonition-title">Fasit</p>
-<p>Vi må endre på funksjonsuttrykket i <code class="code docutils literal highlight highlight-python"><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></code> i programmet. Kjører vi programmet kan vi lese av fra utskriften at:</p>
-<ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(x = 3\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(x = 4\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(x = -3\)</span></p></li>
-</ol>
-</div>
-</div>
-</div>
-<br>
-<div id="container-lineære-funksjoner-lineære-likninger-programmering-utforsk-1-steg-5"></div>
-<script type="text/javascript">
-
-    document.addEventListener("DOMContentLoaded", () => {
-        const code = 
-`def f(x):
-    return -3 * x + 6
-
-for x in range(-5, 6):
-    print(F"{x} \t {f(x) == 0} ") # <-- "\t" gir tabellformat
-`;   
-
-        makeInteractiveCode(
-            "container-lineære-funksjoner-lineære-likninger-programmering-utforsk-1-steg-5",
-            code,
-        );
-    });
-</script>
-</div>
-<input id="sd-tab-item-5" name="sd-tab-set-0" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-5">
-Steg 6: <br> Automatisere søket etter nullpunktet</label><div class="sd-tab-content docutils">
-<p><em>Her skal du lære hvordan vi kan få programmet til å fortelle oss når <span class="math notranslate nohighlight">\(f(x) = 0\)</span> uten at vi må lese det av manuelt.</em></p>
-<p>Å lese gjennom en lang liste med <code class="code docutils literal highlight highlight-python"><span class="kc">True</span></code> og <code class="code docutils literal highlight highlight-python"><span class="kc">False</span></code> for å finne nullpunktet er tungvint, spesielt hvis vi tester ut mange verdier av <span class="math notranslate nohighlight">\(x\)</span>. Heldigvis kan vi da bruke noe som kalles for en <code class="code docutils literal highlight highlight-python"><span class="k">if</span></code>-setning.</p>
-<p>En <code class="code docutils literal highlight highlight-python"><span class="k">if</span></code>-setning lar oss sjekke om <span class="math notranslate nohighlight">\(f(x) = 0\)</span> og skrive ut verdien <em>kun</em> hvis det er sant.</p>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-19" name="sd-tab-set-6" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-19">
-a</label><div class="sd-tab-content docutils">
-<p>Les programmet under og forutsi hva programmet skriver ut. <br> Skriv det inn under for å sjekke svaret ditt!</p>
-</div>
-<input id="sd-tab-item-20" name="sd-tab-set-6" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-20">
-b</label><div class="sd-tab-content docutils">
-<p>Endre på programmet slik at du kan bruke det til å finne nullpunktene til</p>
-<ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(f(x) = 3x - 9\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(f(x) = -2x + 8\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(f(x) = 4x + 12\)</span></p></li>
-</ol>
-<p>Kjør programmet og sjekk at du får det du forventer!</p>
-</div>
-</div>
-<br>
-<div id="container-lineære-funksjoner-lineære-likninger-programmering-utforsk-1-steg-6"></div>
-<script type="text/javascript">
-
-    document.addEventListener("DOMContentLoaded", () => {
-        const code = 
-`def f(x):
-    return -3 * x + 6
-
-for x in range(-5, 6):
-    if f(x) == 0:   # <-- Sjekker om f(x) == 0
-        print(x)    # <-- Skriver ut 'x' hvis f(x) == 0 er sant
-`;   
-
-        makePredictionInteractiveCode(
-            "container-lineære-funksjoner-lineære-likninger-programmering-utforsk-1-steg-6",
-            code,
-        );
-    });
-</script>
-</div>
-<input id="sd-tab-item-6" name="sd-tab-set-0" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-6">
-Steg 7: <br> Oppsummering</label><div class="sd-tab-content docutils">
-<p><em>Her skal du oppsummere strategien du har lært om og reflektere over bruksområde til metoden.</em></p>
-<ol class="arabic simple">
-<li><p>Gi en beskrivelse av løsningsstrategien du har brukt for å finne nullpunktet til en funksjon.</p></li>
-<li><p>Hvilke lineære funksjoner kan du bruke strategien på for å finne nullpunktet?</p></li>
-<li><p>Hvilke lineære funksjoner kan du <em>ikke</em> bruke strategien på for å finne nullpunktet?</p></li>
-</ol>
-<div class="dropdown answer admonition">
-<p class="admonition-title">Fasit</p>
-<ol class="arabic simple">
-<li><p>Strategien tester ut mange verdier av <span class="math notranslate nohighlight">\(x\)</span> og sjekker om <span class="math notranslate nohighlight">\(f(x) = 0\)</span> for noen av dem. Hvis det er sant, skriver programmet ut verdien av <span class="math notranslate nohighlight">\(x\)</span>.</p></li>
-<li><p>Strategien kan brukes på alle lineære funksjoner der hvor nullpunktet er en heltallsverdi.</p></li>
-<li><p>Strategien kan <em>ikke</em> brukes på lineære funksjoner der nullpunktet ikke er et heltall.</p></li>
-</ol>
-</div>
-</div>
-</div>
-</div>
+<p>Men vi kan alltid prøve å finne en verdi for <span class="math notranslate nohighlight">\(x\)</span> slik at likningen er oppfylt - dette kaller vi å bestemme løsningen <strong>numerisk</strong>. Her skal vi se på én strategi for å gjøre dette med lineære likninger.</p>
+</section>
 <hr class="docutils" />
-<div class="check admonition">
-<p class="admonition-title">Quiz 1</p>
+<section id="repetisjon-av-nodvendige-verktoy">
+<h2>Repetisjon av nødvendige verktøy<a class="headerlink" href="#repetisjon-av-nodvendige-verktoy" title="Link to this heading">#</a></h2>
+<p>Først må vi repetere noen verktøy vi trenger for å få løst en likning numerisk.</p>
+<div class="reminder admonition">
+<p class="admonition-title">Repetisjon 1: nullpunkter og likninger</p>
+<p>Ta quizen!</p>
 <!-- Container for the quiz -->
 <div id="quiz-container-lineære-funksjoner-likninger-programmering-quiz-1" class="quiz-main-container"></div>
 
@@ -938,23 +544,872 @@ Steg 7: <br> Oppsummering</label><div class="sd-tab-content docutils">
         // Define your questions and answers
         const questionsData = [
             {
-                content: 'Hvilken av programkodene under vil skrive ut verdiene $x \\in \\{-6, -5, ..., 6\\}$?',
+                content: 'Nullpunktet til en funksjon $f$ er ...',
                 answers: [
-                    { content: '<pre><code class="python">for x in range(-6, 7):\n    print(x)</code></pre>', isCorrect: true },
-                    { content: '<pre><code class="python">for x in range(-6, 6):\n    print(x)</code></pre>', isCorrect: false },
-                    { content: '<pre><code class="python">for x in range(-5, 7):\n    print(x)</code></pre>', isCorrect: false },
-                    { content: '<pre><code class="python">for x in range(-6, 5):\n    print(x)</code></pre>', isCorrect: false }
+                    { content: '$x$-koordinaten der grafen til $f$ skjærer $x$-aksen.', isCorrect: true },
+                    { content: 'Den verdien av $x$ som gjør at $f(x) = 0$', isCorrect: true },
+                    { content: 'Løsningen av likningen $f(x) = 0$', isCorrect: true },
+                    { content: 'Skjæringspunktet med $y$-aksen', isCorrect: false },
                 ]
             },
             {
-                content: 'Hvilket program skriver ut $f(-1)$ for $f(x) = 2x + 4$?',
+                content: 'Hva er nullpunktet til $f$? <img src="../../../../_static/figurer/lineære_funksjoner/likninger/programmering/quiz/quiz_1/spm_1.svg" width="80%" style="display: block; margin-left: auto; margin-right: auto;">',
                 answers: [
-                    { content: '<pre><code class="python">def f(x):\n    return 2 * x + 4\n\nx = -1\nprint(f(x))</code></pre>', isCorrect: true },
-                    { content: '<pre><code class="python">def f(x):\n    return 2 * x + 4\n\nx = 1\nprint(f(x))</code></pre>', isCorrect: false },
-                    { content: '<pre><code class="python">def f(x):\n    return 2 * x - 4\n\nx = -1\nprint(f(x))</code></pre>', isCorrect: false },
-                    { content: '<pre><code class="python">def f(x):\n    return -2 * x + 4\n\nx = -1\nprint(f(x))</code></pre>', isCorrect: false }
+                    { content: '$x = -2$', isCorrect: true },
+                    { content: '$x = 2$', isCorrect: false },
+                    { content: '$x = 1$', isCorrect: false },
+                    { content: '$x = -1$', isCorrect: false },
                 ]
             },
+            {
+                content: 'Hva er nullpunktet til $g$? <img src="../../../../_static/figurer/lineære_funksjoner/likninger/programmering/quiz/quiz_1/spm_2.svg" width="80%" style="display: block; margin-left: auto; margin-right: auto;">',
+                answers: [
+                    { content: '$x = 2$', isCorrect: true },
+                    { content: '$x = -3$', isCorrect: false },
+                    { content: '$x = 3$', isCorrect: false },
+                    { content: '$x = -2$', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hva er løsningen av likningen $f(x) = 0$? <img src="../../../../_static/figurer/lineære_funksjoner/likninger/programmering/quiz/quiz_1/spm_3.svg" width="80%" style="display: block; margin-left: auto; margin-right: auto;">',
+                answers: [
+                    { content: '$x = -4$', isCorrect: true },
+                    { content: '$x = 4$', isCorrect: false },
+                    { content: '$x = -2$', isCorrect: false },
+                    { content: '$x = 2$', isCorrect: false },
+                ]
+            },
+            {
+                content: 'En funksjon er gitt ved $$f(x) = 3x - 6.$$ <br> Hvilket alternativ løser likningen $f(x) = 0$?',
+                answers: [
+                    { content: '$x = 2$', isCorrect: true },
+                    { content: '$x = -2$', isCorrect: false },
+                    { content: '$x = -\\dfrac{1}{3}$', isCorrect: false },
+                    { content: '$x = 3$', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hvilket alternativ er nullpunktet til $f(x) = 4x - 2$?',
+                answers: [
+                    { content: '$x = \\dfrac{1}{2}$', isCorrect: true },
+                    { content: '$x = -2$', isCorrect: false },
+                    { content: '$x = -\\dfrac{1}{2}$', isCorrect: false },
+                    { content: '$x = 2$', isCorrect: false },
+                ]
+            },
+
+        ];
+
+        // Initialize the multiple-choice quiz
+        const quiz = new SequentialMultipleChoiceQuiz('quiz-container-lineære-funksjoner-likninger-programmering-quiz-1', questionsData);
+    });
+</script>
+</div>
+<hr class="docutils" />
+<div class="dropdown summary admonition">
+<p class="admonition-title">Oppsummering: nullpunkter og likninger</p>
+<p>For en funksjon <span class="math notranslate nohighlight">\(f\)</span>, så er følgende ekvivalent:</p>
+<ul class="simple">
+<li><p>Nullpunktet til <span class="math notranslate nohighlight">\(f\)</span></p></li>
+<li><p>Skjæringen mellom grafen til <span class="math notranslate nohighlight">\(f\)</span> og <span class="math notranslate nohighlight">\(x\)</span>-aksen</p></li>
+<li><p>Løsningen til likningen <span class="math notranslate nohighlight">\(f(x) = 0\)</span></p></li>
+</ul>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="../../../../_images/ax+b=0.svg"><img alt="../../../../_images/ax%2Bb%3D0.svg" src="../../../../_images/ax%2Bb%3D0.svg" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.11 </span><span class="caption-text">viser grafisk nullpunktet for en lineær funksjon <span class="math notranslate nohighlight">\(f(x) = ax + b\)</span>.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<hr class="docutils" />
+<p>Så bør du nok repetere litt om <code class="docutils literal notranslate"><span class="pre">for</span></code>-løkker.</p>
+<div class="reminder admonition">
+<p class="admonition-title">Repetisjon 2: <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker</p>
+<div class="sd-tab-set tabs-parts docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+a</label><div class="sd-tab-content docutils">
+<p>Ta quizen!</p>
+<!-- Container for the quiz -->
+<div id="quiz-container-lineære-funksjoner-likninger-programmering-quiz-2" class="quiz-main-container"></div>
+
+<!-- Include KaTeX for LaTeX rendering -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/auto-render.min.js"></script>
+
+
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", () => {
+
+        // Define your questions and answers
+        const questionsData = [
+            {
+                content: 'Hvilke tall skrives ut av programmet? <pre><code class="python">for x in range(1, 5, 1): \n    print(x)</code></pre>',
+                answers: [
+                    { content: '$1, 2, 3, 4$', isCorrect: true },
+                    { content: '$1, 2, 3, 4, 5$', isCorrect: false },
+                    { content: '$1, 2, 3$', isCorrect: false },
+                    { content: '$1, 2, 3, 4, 5, 6$', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hvilke tall skrives ut av programmet? <pre><code class="python">for x in range(1, 5, 2): \n    print(x)</code></pre>',
+                answers: [
+                    { content: '$1, 3$', isCorrect: true },
+                    { content: '$1, 3, 5$', isCorrect: false },
+                    { content: '$1, 3, 4$', isCorrect: false },
+                    { content: '$0, 2, 4$', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hva er det første tallet som skrives ut av programmet? <pre><code class="python">for x in range(7, -1, -2): \n    print(x)</code></pre>',
+                answers: [
+                    { content: '$7$', isCorrect: true },
+                    { content: '$6$', isCorrect: false },
+                    { content: '$-2$', isCorrect: false },
+                    { content: '$-1$', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hva er det siste tallet som skrives ut av programmet? <pre><code class="python">for x in range(4, 11, 3): \n    print(x)</code></pre>',
+                answers: [
+                    { content: '$10$', isCorrect: true },
+                    { content: '$7$', isCorrect: false },
+                    { content: '$11$', isCorrect: false },
+                    { content: '$9$', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hvilket program gir utskriften <pre><code class="console">-4 \n-2 \n0 \n2 \n4</code></pre>',
+                answers: [
+                    { content: '<pre><code class="python">for x in range(-4, 5, 2): \n    print(x)</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">for x in range(-4, 4, 2): \n    print(x)</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">for x in range(-4, 2, 4): \n    print(x)</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">for x in range(-4, 2, 5): \n    print(x)</code></pre>', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hvilke to programmer gir samme utskrift?',
+                answers: [
+                    { content: '<pre><code class="python">for x in range(-2, 4, 1): \n    print(x)</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">for x in range(-2, 4): \n    print(x)</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">for x in range(4, -2, 1): \n    print(x)</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">for x in range(4, 2, -1): \n    print(x)</code></pre>', isCorrect: false },
+                ]
+            },
+
+            {
+                content: 'Hvilke tall skrives ut av programmet? <pre><code class="python">for x in range(10, 0): \n    print(x)</code></pre>',
+                answers: [
+                    { content: 'Ingen', isCorrect: true },
+                    { content: '$10, 9, \\ldots, 3, 2, 1$', isCorrect: false },
+                    { content: '$10, 9, \\ldots, 3, 2, 1, 0$', isCorrect: false },
+                    { content: '$0, 1, 2, \\ldots, 9$', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hvilke(t) program gir utskriften <pre><code class="console">0 \n10 \n20 \n30 \n40 \n50</code></pre>',
+                answers: [
+                    { content: '<pre><code class="python">for x in range(0, 60, 10): \n    print(x)</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">for x in range(0, 6, 1): \n    print(10 * x)</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">for x in range(0, 50, 10): \n    print(x)</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">for x in range(0, 51, 10): \n    print(x)</code></pre>', isCorrect: true },
+                ]
+            },
+        ];
+
+        // Initialize the multiple-choice quiz
+        const quiz = new SequentialMultipleChoiceQuiz('quiz-container-lineære-funksjoner-likninger-programmering-quiz-2', questionsData);
+    });
+</script>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+b</label><div class="sd-tab-content docutils">
+<p>For hvert av programmene under:</p>
+<ol class="arabic simple">
+<li><p>Les programmet og forutsi hva det vil skrive ut.</p></li>
+<li><p>Skriv inn hypotesen din for å sjekke svaret ditt.</p></li>
+</ol>
+<div class="sd-tab-set tabs-parts docutils">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+Program 1</label><div class="sd-tab-content docutils">
+<div id="container-kode-lineære-funksjoner-likninger-programmering-repetisjon-2-program-1"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`for x in range(3, 6, 2):
+    print(x)
+`;
+
+        makePredictionInteractiveCode(
+            "container-kode-lineære-funksjoner-likninger-programmering-repetisjon-2-program-1",
+            code,
+        );
+    });
+</script>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
+Program 2</label><div class="sd-tab-content docutils">
+<div id="container-kode-lineære-funksjoner-likninger-programmering-repetisjon-2-program-2"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`for y in range(-4, 2, 3):
+    print(y)
+`;
+
+        makePredictionInteractiveCode(
+            "container-kode-lineære-funksjoner-likninger-programmering-repetisjon-2-program-2",
+            code,
+        );
+    });
+</script>
+</div>
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
+Program 3</label><div class="sd-tab-content docutils">
+<div id="container-kode-lineære-funksjoner-likninger-programmering-repetisjon-2-program-3"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`for z in range(0, 1000, 200):
+    print(z)
+`;
+
+        makePredictionInteractiveCode(
+            "container-kode-lineære-funksjoner-likninger-programmering-repetisjon-2-program-3",
+            code,
+        );
+    });
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="summary dropdown admonition">
+<p class="admonition-title">Oppsummering: <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker</p>
+<p>Når vi bruker <code class="code docutils literal highlight highlight-python"><span class="nb">range</span></code>-funksjonen til å lage en liste med tall kan vi enten bruke den som:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-5">
+<code class="code docutils literal highlight highlight-python"><span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stopp</span><span class="p">,</span> <span class="n">steglengde</span><span class="p">)</span></code></label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stopp</span><span class="p">,</span> <span class="n">steglengde</span><span class="p">):</span>
+    <span class="c1"># kode som skal gjentas</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="code docutils literal highlight highlight-python"><span class="n">start</span></code> er det første tallet i listen.</p></li>
+<li><p><code class="code docutils literal highlight highlight-python"><span class="n">stopp</span></code> er stoppekriteriet. Vi stopper alltid <em>før</em> dette tallet.</p></li>
+<li><p><code class="code docutils literal highlight highlight-python"><span class="n">steglengde</span></code> er hvor mye vi skal endre på løkkevariabelen <code class="code docutils literal highlight highlight-python"><span class="n">x</span></code> på hver runde i løkken.</p></li>
+<li><p><code class="code docutils literal highlight highlight-python"><span class="n">x</span></code> kalles for <strong>løkkevariabelen</strong> fordi den lages av løkka og endres for hver runde i løkka automatisk.</p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Eksempel</p></th>
+<th class="head"><p>Liste med tall</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="code docutils literal highlight highlight-python"><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(1, 2, 3, 4\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="code docutils literal highlight highlight-python"><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(1, 3, 5, 7, 9\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="code docutils literal highlight highlight-python"><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(5, 4, 3, 2\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<input id="sd-tab-item-6" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-6">
+<code class="code docutils literal highlight highlight-python"><span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stopp</span><span class="p">)</span></code></label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stopp</span><span class="p">):</span>
+    <span class="c1"># kode som skal gjentas</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="code docutils literal highlight highlight-python"><span class="n">start</span></code> er det første tallet i listen.</p></li>
+<li><p><code class="code docutils literal highlight highlight-python"><span class="n">stopp</span></code> er stoppekriteriet. Vi stopper alltid <em>før</em> dette tallet.</p></li>
+<li><p><code class="code docutils literal highlight highlight-python"><span class="n">steglengde</span></code> er satt fast til <code class="code docutils literal highlight highlight-python"><span class="mi">1</span></code> som standardverdi her.</p></li>
+<li><p><code class="code docutils literal highlight highlight-python"><span class="n">y</span></code> kalles for <strong>løkkevariabelen</strong> fordi den lages av løkka og endres for hver runde i løkka automatisk.</p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Eksempel</p></th>
+<th class="head"><p>Liste med tall</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="code docutils literal highlight highlight-python"><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(1, 2, 3, 4\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="code docutils literal highlight highlight-python"><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span></code></p></td>
+<td><p><span class="math notranslate nohighlight">\(1, 2, 3, 4, 5, 6, 7, 8, 9\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="code docutils literal highlight highlight-python"><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span></code></p></td>
+<td><p>Ingen tall lages</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="reminder admonition">
+<p class="admonition-title">Repetisjon 3: funksjoner i Python</p>
+<div class="sd-tab-set tabs-parts docutils">
+<input checked="checked" id="sd-tab-item-7" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-7">
+a</label><div class="sd-tab-content docutils">
+<p>Ta quizen!</p>
+<!-- Container for the quiz -->
+<div id="quiz-container-lineære-funksjoner-likninger-programmering-quiz-3" class="quiz-main-container"></div>
+
+<!-- Include KaTeX for LaTeX rendering -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/auto-render.min.js"></script>
+
+
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", () => {
+
+        // Define your questions and answers
+        const questionsData = [
+            {
+                content: 'Hvilket program definerer en funksjon for $f(x) = 3x + 2$?',
+                answers: [
+                    { content: '<pre><code class="python">def f(x): \n    return 3 * x + 2</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">def f(x): \n    return -3 * x + 2</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">def f(x): \n    return -3 * x - 2</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">def f(x): \n    return 3 * x - 2</code></pre>', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hvilket program definerer en funksjon for $f(x) = -x + 4$?',
+                answers: [
+                    { content: '<pre><code class="python">def f(x): \n    return -x + 4</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">def f(x): \n    return x + 4</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">def f(x): \n    return -x - 4</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">def f(x): \n    return x - 4</code></pre>', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hvilken funksjon er definert i programmet under? <pre><code class="python">def f(x): \n    return 4 * x + 1</code></pre>',
+                answers: [
+                    { content: '$$f(x) = 4x + 1$$', isCorrect: true },
+                    { content: '$$f(x) = 4x - 1$$', isCorrect: false },
+                    { content: '$$f(x) = -4x - 1$$', isCorrect: false },
+                    { content: '$$f(x) = -4x + 1$$', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hvilket program regner ut $f(-2)$?',
+                answers: [
+                    { content: '<pre><code class="python">def f(x): \n    return 5 * x - 4 \n\ny = f(-2) \nprint(y)</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">def f(x): \n    return 5 * x - 4 \n\ny = f(3) \nprint(y)</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">def f(x): \n    return 5 * x - 4 \n\ny = f(-1) \nprint(y)</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">def f(x): \n    return 5 * x - 4 \n\ny = f(2) \nprint(y)</code></pre>', isCorrect: false },
+                ]
+            },
+        ];
+
+        // Initialize the multiple-choice quiz
+        const quiz = new SequentialMultipleChoiceQuiz('quiz-container-lineære-funksjoner-likninger-programmering-quiz-3', questionsData);
+    });
+</script>
+</div>
+<input id="sd-tab-item-8" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-8">
+b</label><div class="sd-tab-content docutils">
+<p>For hvert av programmene under:</p>
+<ol class="arabic simple">
+<li><p>Les programmet og forutsi hva det vil skrive ut.</p></li>
+<li><p>Skriv inn hypotesen din for å sjekke svaret ditt.</p></li>
+</ol>
+<div class="sd-tab-set tabs-parts docutils">
+<input checked="checked" id="sd-tab-item-10" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-10">
+Program 1</label><div class="sd-tab-content docutils">
+<div id="container-kode-lineære-funksjoner-likninger-programmering-repetisjon-3-b-program-1"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`def f(x):
+    return 2 * x - 1
+
+y = f(2)
+print(y)
+`;
+
+        makePredictionInteractiveCode(
+            "container-kode-lineære-funksjoner-likninger-programmering-repetisjon-3-b-program-1",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<input id="sd-tab-item-11" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-11">
+Program 2</label><div class="sd-tab-content docutils">
+<div id="container-kode-lineære-funksjoner-likninger-programmering-repetisjon-3-b-program-2"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`def g(x):
+    return -3 * x + 2
+
+y = g(1)
+print(y)
+`;
+
+        makePredictionInteractiveCode(
+            "container-kode-lineære-funksjoner-likninger-programmering-repetisjon-3-b-program-2",
+            code,
+        );
+    });
+</script>
+</div>
+<input id="sd-tab-item-12" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-12">
+Program 3</label><div class="sd-tab-content docutils">
+<div id="container-kode-lineære-funksjoner-likninger-programmering-repetisjon-3-b-program-3"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`def h(x):
+    return 0.5 * x + 2
+
+y = h(-2)
+print(y)
+`;
+
+        makePredictionInteractiveCode(
+            "container-kode-lineære-funksjoner-likninger-programmering-repetisjon-3-b-program-3",
+            code,
+        );
+    });
+</script>
+</div>
+</div>
+</div>
+<input id="sd-tab-item-9" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-9">
+c</label><div class="sd-tab-content docutils">
+<p>Her generaliserer vi programmene litt slik at vi jobber med en variabel <code class="code docutils literal highlight highlight-python"><span class="n">x</span></code> i stedet.</p>
+<p>For hvert av programmene under:</p>
+<ol class="arabic simple">
+<li><p>Les programmet og forutsi hva det vil skrive ut.</p></li>
+<li><p>Skriv inn hypotesen din for å sjekke svaret ditt.</p></li>
+</ol>
+<div class="sd-tab-set tabs-parts docutils">
+<input checked="checked" id="sd-tab-item-13" name="sd-tab-set-5" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-13">
+Program 1</label><div class="sd-tab-content docutils">
+<div id="container-kode-lineære-funksjoner-likninger-programmering-repetisjon-3-c-program-1"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`def f(x):
+    return 2 * x - 1
+
+x = -1
+y = f(x)
+print(y)
+`;
+
+        makePredictionInteractiveCode(
+            "container-kode-lineære-funksjoner-likninger-programmering-repetisjon-3-c-program-1",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<input id="sd-tab-item-14" name="sd-tab-set-5" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-14">
+Program 2</label><div class="sd-tab-content docutils">
+<div id="container-kode-lineære-funksjoner-likninger-programmering-repetisjon-3-c-program-2"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`def g(x):
+    return -3 * x + 2
+
+x = 3
+y = g(x)
+print(y)
+`;
+
+        makePredictionInteractiveCode(
+            "container-kode-lineære-funksjoner-likninger-programmering-repetisjon-3-c-program-2",
+            code,
+        );
+    });
+</script>
+</div>
+<input id="sd-tab-item-15" name="sd-tab-set-5" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-15">
+Program 3</label><div class="sd-tab-content docutils">
+<div id="container-kode-lineære-funksjoner-likninger-programmering-repetisjon-3-c-program-3"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`def h(x):
+    return 0.5 * x + 2
+
+x = 0
+y = h(x)
+print(y)
+`;
+
+        makePredictionInteractiveCode(
+            "container-kode-lineære-funksjoner-likninger-programmering-repetisjon-3-c-program-3",
+            code,
+        );
+    });
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="summary dropdown admonition">
+<p class="admonition-title">Oppsummering: funksjoner i Python</p>
+<p>Generell skrivemåte:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">funksjonsnavn</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">funksjonsuttrykk</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">tall</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sd-tab-set tabs-parts docutils">
+<input checked="checked" id="sd-tab-item-16" name="sd-tab-set-6" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-16">
+Eksempel 1</label><div class="sd-tab-content docutils">
+<ul class="simple">
+<li><p>Funksjon: <span class="math notranslate nohighlight">\(f(x) = 2x + 1\)</span>.</p></li>
+<li><p>Funksjonsverdi: <span class="math notranslate nohighlight">\(f(2)\)</span>.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="linenos">2</span>    <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="linenos">3</span>
+<span class="linenos">4</span><span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-17" name="sd-tab-set-6" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-17">
+Eksempel 2</label><div class="sd-tab-content docutils">
+<ul class="simple">
+<li><p>Funksjon: <span class="math notranslate nohighlight">\(g(x) = -x + 5\)</span>.</p></li>
+<li><p>Funksjonsverdi: <span class="math notranslate nohighlight">\(g(3)\)</span>.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="linenos">2</span>    <span class="k">return</span> <span class="o">-</span><span class="n">x</span> <span class="o">+</span> <span class="mi">5</span>
+<span class="linenos">3</span>
+<span class="linenos">4</span><span class="nb">print</span><span class="p">(</span><span class="n">g</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-18" name="sd-tab-set-6" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-18">
+Eksempel 3</label><div class="sd-tab-content docutils">
+<ul class="simple">
+<li><p>Funksjon: <span class="math notranslate nohighlight">\(h(x) = \dfrac{1}{2}x + 2\)</span>.</p></li>
+<li><p>Funksjonsverdi: <span class="math notranslate nohighlight">\(h(-4)\)</span>.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">h</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="linenos">2</span>    <span class="k">return</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="linenos">3</span>
+<span class="linenos">4</span><span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">4</span>
+<span class="linenos">5</span><span class="n">y</span> <span class="o">=</span> <span class="n">h</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="linenos">6</span><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="bestemme-nullpunkter-ved-hjelp-av-programmering">
+<h2>Bestemme nullpunkter ved hjelp av programmering<a class="headerlink" href="#bestemme-nullpunkter-ved-hjelp-av-programmering" title="Link to this heading">#</a></h2>
+<p>Alle likninger kan alltid skrives om til formen <span class="math notranslate nohighlight">\(f(x) = 0\)</span>. Vi skal derfor fokusere på hvordan vi løser likninger av denne typen - altså likninger der vi skal finne nullpunktene til en funksjon <span class="math notranslate nohighlight">\(f(x)\)</span>.</p>
+<section id="hvordan-sjekke-om-f-x-0-med-et-program">
+<h3>Hvordan sjekke om <span class="math notranslate nohighlight">\(f(x) = 0\)</span> med et program<a class="headerlink" href="#hvordan-sjekke-om-f-x-0-med-et-program" title="Link to this heading">#</a></h3>
+<div class="explore admonition">
+<p class="admonition-title">Utforsk 1: hvordan sjekker vi om <span class="math notranslate nohighlight">\(f(x) = 0\)</span>?</p>
+<div class="sd-tab-set tabs-parts docutils">
+<input checked="checked" id="sd-tab-item-19" name="sd-tab-set-7" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-19">
+a</label><div class="sd-tab-content docutils">
+<p>Bestem nullpunktene til funksjonene</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f(x) = x - 2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(g(x) = 2x + 4\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(h(x) = -3x + 6\)</span></p></li>
+</ul>
+</div>
+<input id="sd-tab-item-20" name="sd-tab-set-7" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-20">
+b</label><div class="sd-tab-content docutils">
+<p>Når vi skal sjekke om en funksjonsverdi <span class="math notranslate nohighlight">\(f(x) = 0\)</span>, kan vi skrive <code class="code docutils literal highlight highlight-python"><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span></code> i Python.</p>
+<ul class="simple">
+<li><p>Hvis <code class="code docutils literal highlight highlight-python"><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></code> er lik 0, vil dette gi <code class="code docutils literal highlight highlight-python"><span class="kc">True</span></code>.</p></li>
+<li><p>Hvis <code class="code docutils literal highlight highlight-python"><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></code> ikke en lik 0, vil dette gi <code class="code docutils literal highlight highlight-python"><span class="kc">False</span></code>.</p></li>
+</ul>
+<p>Under vises tre programkoder som tester ut om en funksjonsverdi er lik 0 og skriver ut svaret (som er enten <code class="code docutils literal highlight highlight-python"><span class="kc">True</span></code> eller <code class="code docutils literal highlight highlight-python"><span class="kc">False</span></code>).</p>
+<p>For hvert av programmene under:</p>
+<ol class="arabic simple">
+<li><p>Les programmet og forutsi hva det vil skrive ut.</p></li>
+<li><p>Skriv inn hypotesen din for å sjekke svaret ditt.</p></li>
+</ol>
+<div class="sd-tab-set tabs-parts docutils">
+<input checked="checked" id="sd-tab-item-22" name="sd-tab-set-8" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-22">
+Program 1</label><div class="sd-tab-content docutils">
+<div id="container-lineære-funksjoner-lineære-likninger-programmering-utforsk-1-b-program-1"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`def f(x):
+    return x - 2
+
+x = 1
+print(f(x) == 0)    # <-- Er f(x) = 0? 
+`;   
+
+        makePredictionInteractiveCode(
+            "container-lineære-funksjoner-lineære-likninger-programmering-utforsk-1-b-program-1",
+            code,
+        );
+    });
+</script>
+</div>
+<input id="sd-tab-item-23" name="sd-tab-set-8" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-23">
+Program 2</label><div class="sd-tab-content docutils">
+<div id="container-lineære-funksjoner-lineære-likninger-programmering-utforsk-1-b-program-2"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`def g(x):
+    return 2 * x + 4
+
+x = -2
+print(g(x) == 0)    # <-- Er g(x) = 0? 
+`;   
+
+        makePredictionInteractiveCode(
+            "container-lineære-funksjoner-lineære-likninger-programmering-utforsk-1-b-program-2",
+            code,
+        );
+    });
+</script>
+</div>
+<input id="sd-tab-item-24" name="sd-tab-set-8" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-24">
+Program 3</label><div class="sd-tab-content docutils">
+<div id="container-lineære-funksjoner-lineære-likninger-programmering-utforsk-1-b-program-3"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`def h(x):
+    return -3 * x + 6
+
+x = 2
+print(h(x) == 0)    # <-- Er h(x) = 0? 
+`;   
+
+        makePredictionInteractiveCode(
+            "container-lineære-funksjoner-lineære-likninger-programmering-utforsk-1-b-program-3",
+            code,
+        );
+    });
+</script>
+</div>
+</div>
+</div>
+<input id="sd-tab-item-21" name="sd-tab-set-7" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-21">
+c</label><div class="sd-tab-content docutils">
+<p>For hvert av programmene under:</p>
+<ol class="arabic simple">
+<li><p>Les programmet og forutsi på <em>hvilken linje</em> i utskriften det vil skrives ut <code class="code docutils literal highlight highlight-python"><span class="kc">True</span></code>.</p></li>
+<li><p>Skriv inn hypotesen din for å sjekke svaret.</p></li>
+</ol>
+<div class="sd-tab-set tabs-parts docutils">
+<input checked="checked" id="sd-tab-item-25" name="sd-tab-set-9" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-25">
+Program 1</label><div class="sd-tab-content docutils">
+<div id="container-lineære-funksjoner-lineære-likninger-programmering-utforsk-1-c-program-1"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`def f(x):
+    return x - 2
+
+for x in range(-4, 5, 1):
+    print(f(x) == 0)
+`;   
+
+        makePredictionInteractiveCode(
+            "container-lineære-funksjoner-lineære-likninger-programmering-utforsk-1-c-program-1",
+            code,
+        );
+    });
+</script>
+</div>
+<input id="sd-tab-item-26" name="sd-tab-set-9" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-26">
+Program 2</label><div class="sd-tab-content docutils">
+<div id="container-lineære-funksjoner-lineære-likninger-programmering-utforsk-1-c-program-2"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`def g(x):
+    return 2 * x + 4
+
+for x in range(-4, 5, 1):
+    print(g(x) == 0)
+`;   
+
+        makePredictionInteractiveCode(
+            "container-lineære-funksjoner-lineære-likninger-programmering-utforsk-1-c-program-2",
+            code,
+        );
+    });
+</script>
+</div>
+<input id="sd-tab-item-27" name="sd-tab-set-9" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-27">
+Program 3</label><div class="sd-tab-content docutils">
+<div id="container-lineære-funksjoner-lineære-likninger-programmering-utforsk-1-c-program-3"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`def h(x):
+    return -3 * x + 6
+
+for x in range(-4, 5, 1):
+    print(h(x) == 0)
+`;   
+
+        makePredictionInteractiveCode(
+            "container-lineære-funksjoner-lineære-likninger-programmering-utforsk-1-c-program-3",
+            code,
+        );
+    });
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="check admonition">
+<p class="admonition-title">Underveisoppgave 1</p>
+<p>Ta quizen!</p>
+<!-- Container for the quiz -->
+<div id="quiz-container-lineære-funksjoner-likninger-programmering-quiz-4" class="quiz-main-container"></div>
+
+<!-- Include KaTeX for LaTeX rendering -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/auto-render.min.js"></script>
+
+
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", () => {
+
+        // Define your questions and answers
+        const questionsData = [
             {
                 content: 'Hvilket program vil skrive ut <code class="python">True</code>?',
                 answers: [
@@ -974,239 +1429,246 @@ Steg 7: <br> Oppsummering</label><div class="sd-tab-content docutils">
                 ]
             },
             {
-                content: 'Hvilket program skriver ut $f(x) = -3x + 6$ for $x \\in \\{-3, -2, ..., 3\\}$?',
+                content: 'Hva må verdien til <code class="python">x</code> være for at utskriften skal bli <code class="python">True</code>? <pre><code class="python">def f(x):\n    return 0.5 * x + 2\n\nx = ??\nprint(f(x) == 0)</code></pre>',
                 answers: [
-                    { content: '<pre><code class="python">def f(x):\n    return -3 * x + 6\n\nfor x in range(-3, 4):\n    print(f(x))</code></pre>', isCorrect: true },
-                    { content: '<pre><code class="python">def f(x):\n    return -3 * x + 6\n\nfor x in range(-3, 3):\n    print(f(x))</code></pre>', isCorrect: false },
-                    { content: '<pre><code class="python">def f(x):\n    return 3 * x - 6\n\nfor x in range(-3, 4):\n    print(f(x))</code></pre>', isCorrect: false },
-                    { content: '<pre><code class="python">def f(x):\n    return -3 * x + 6\n\nfor x in range(-4, 4):\n    print(f(x))</code></pre>', isCorrect: false }
+                    { content: '<code class="python">x = -4</code>', isCorrect: true },
+                    { content: '<code class="python">x = -2</code>', isCorrect: false },
+                    { content: '<code class="python">x = 2</code>', isCorrect: false },
+                    { content: '<code class="python">x = 4</code>', isCorrect: false },
                 ]
             },
             {
-                content: 'Hvilke programkode(r) vil finne nullpunktet til $f(x) = 5x - 10$?',
+                content: 'Hvilket program gir utskriften <pre><code class="console">False\nFalse\nTrue\nFalse</code></pre>',
                 answers: [
-                    { content: '<pre><code class="python">def f(x):\n    return 5 * x - 10  \n\nfor x in range(-5, 3):\n    if f(x) == 0:\n        print(x)</code></pre>', isCorrect: true },
-                    { content: '<pre><code class="python">def f(x):\n    return 5 * x - 10  \n\nfor x in range(4):\n    if f(x) == 0:\n        print(x)</code></pre>', isCorrect: true },
-                    { content: '<pre><code class="python">def f(x):\n    return 5 * x - 10  \n\nfor x in range(-3, 2):\n    if f(x) == 0:\n        print(x)</code></pre>', isCorrect: false },
-                    { content: '<pre><code class="python">def f(x):\n    return 5 * x - 10  \n\nfor x in range(-5, 1):\n    if f(x) == 0:\n        print(x)</code></pre>', isCorrect: false },
-                ]
-            },
-            {
-                content: 'Hvilken av følgende koder vil korrekt finne nullpunktet til $f(x) = 2x + 4$?',
-                answers: [
-                    { content: '<pre><code class="python">def f(x):\n    return 2 * x + 4\n\nfor x in range(-5, 1):\n    if f(x) == 0:\n        print(x)</code></pre>', isCorrect: true },
-                    { content: '<pre><code class="python">def f(x):\n    return 2 * x - 4\n\nfor x in range(-5, 6):\n    if f(x) == 0:\n        print(x)</code></pre>', isCorrect: false },
-                    { content: '<pre><code class="python">def f(x):\n    return -2 * x + 4\n\nfor x in range(-5, 6):\n    if f(x) == 0:\n        print(x)</code></pre>', isCorrect: false },
-                    { content: '<pre><code class="python">def f(x):\n    return 2 * x + 4\n\nfor x in range(-2, 4):\n    if f(x) == 0:\n        print(x)</code></pre>', isCorrect: true }
+                    { content: '<pre><code class="python">def f(x):\n    return x - 1\n\nfor x in range(-1, 3, 1):\n    print(f(x) == 0))</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">def f(x):\n    return x + 1\n\nfor x in range(-1, 3, 1):\n    print(f(x) == 0))</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">def f(x):\n    return 2 * x - 4\n\nfor x in range(-1, 3, 1):\n    print(f(x) == 0))</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">def f(x):\n    return 2 * x + 4\n\nfor x in range(-1, 3, 1):\n    print(f(x) == 0))</code></pre>', isCorrect: false },
                 ]
             },
         ];
 
         // Initialize the multiple-choice quiz
-        const quiz = new SequentialMultipleChoiceQuiz('quiz-container-lineære-funksjoner-likninger-programmering-quiz-1', questionsData);
+        const quiz = new SequentialMultipleChoiceQuiz('quiz-container-lineære-funksjoner-likninger-programmering-quiz-4', questionsData);
     });
 </script>
 </div>
+</section>
 <hr class="docutils" />
-<p>Så langt har du lært om <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker og hvordan vi kan bruke disse til å lage mange heltallsverdier for <span class="math notranslate nohighlight">\(x\)</span>. Men det er ikke alltid tilstrekkelig å bare jobbe med heltallsverdier når vi skal løse likninger - for likningen kan jo ha en løsning som ikke er et heltall. Vi trenger derfor en annen type løkke som lar oss lage vilkårlige verdier for <span class="math notranslate nohighlight">\(x\)</span> før vi kan gå videre med å løse likninger. Denne typen løkke kalles for en <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkke.</p>
+<section id="hvordan-automatisere-soket-etter-nullpunkter">
+<h3>Hvordan automatisere søket etter nullpunkter<a class="headerlink" href="#hvordan-automatisere-soket-etter-nullpunkter" title="Link to this heading">#</a></h3>
+<p>Siste steg er å få et program til å fortelle oss når <span class="math notranslate nohighlight">\(f(x) = 0\)</span> automatisk uten at vi må lete gjennom en liste med <code class="code docutils literal highlight highlight-python"><span class="kc">True</span></code> og <code class="code docutils literal highlight highlight-python"><span class="kc">False</span></code>. For da kunne vi vel egentlig strengt tatt tatt bare gått gjennom en liste med tall i stedet. Denne automatiseringen skal vi se på nå!</p>
 <div class="explore admonition">
-<p class="admonition-title">Utforsk 2</p>
-<p>En <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkke lar oss gjenta en eller flere utregninger eller handlinger så lenge “noe” er sant. For å forstå hva en <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkke gjør, kan vi sammenligne den med en <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkke som skriver ut heltallverdier for <span class="math notranslate nohighlight">\(x\)</span>.</p>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-21" name="sd-tab-set-7" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-21">
+<p class="admonition-title">Utforsk 2: automatisere søket etter nullpunkter</p>
+<p>For å automatisere søket etter nullpunkter, kan vi bruke:</p>
+<ol class="arabic simple">
+<li><p>En <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkke som går gjennom en liste med mulige verdier for <span class="math notranslate nohighlight">\(x\)</span>.</p></li>
+<li><p>For hver verdi av <span class="math notranslate nohighlight">\(x\)</span>, sjekker vi om <span class="math notranslate nohighlight">\(f(x) = 0\)</span>.</p></li>
+<li><p><em>Hvis</em> <span class="math notranslate nohighlight">\(f(x) = 0\)</span> er sant, skriver vi ut verdien til <span class="math notranslate nohighlight">\(x\)</span>.</p></li>
+</ol>
+<p>Så langt har vi sett på punkt 1 og 2 - nå må vi utvide verktøykassa vår så vi kan få til punkt 3. Dette kan vi få til med å bruke en <code class="code docutils literal highlight highlight-python"><span class="k">if</span></code>-setning. Dette er en setning som gjør noe <em>hvis</em> noe er sant!</p>
+<div class="sd-tab-set tabs-parts docutils">
+<input checked="checked" id="sd-tab-item-28" name="sd-tab-set-10" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-28">
 a</label><div class="sd-tab-content docutils">
-<p>Under vises to programkoder som gjør det samme. Den ene bruker en <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkke, mens den andre bruker en <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkke.</p>
-<p>Les begge programmer og prøve å forstå hva de ulike linjene i <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkken gjør. <br> Forutsi hva programmet skriver ut, og skriv det inn under for å sjekke svaret ditt!</p>
+<p>Under vises tre eksempelkoder som bruker en <code class="code docutils literal highlight highlight-python"><span class="k">if</span></code>-setning for å bestemme nullpunktet til en funksjon.</p>
+<p>For hvert av programmene under:</p>
+<ol class="arabic simple">
+<li><p>Les programmet og forutsi hva det vil skrive ut.</p></li>
+<li><p>Skriv inn hypotesen din for å sjekke svaret ditt.</p></li>
+</ol>
+<div class="sd-tab-set tabs-parts docutils">
+<input checked="checked" id="sd-tab-item-30" name="sd-tab-set-11" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-30">
+Program 1</label><div class="sd-tab-content docutils">
+<div id="container-kode-lineære-funksjoner-likninger-programmering-utforsk-2-a-program-1"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`def f(x):
+    return x - 2
+
+for x in range(-5, 6):
+    if f(x) == 0:       # <-- Hvis f(x) == 0 er sant...
+        print(x)        # <-- Skriv ut verdien til 'x', aka nullpunktet
+`;
+
+        makePredictionInteractiveCode(
+            "container-kode-lineære-funksjoner-likninger-programmering-utforsk-2-a-program-1",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<input id="sd-tab-item-31" name="sd-tab-set-11" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-31">
+Program 2</label><div class="sd-tab-content docutils">
+<div id="container-kode-lineære-funksjoner-likninger-programmering-utforsk-2-a-program-2"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`def g(x):
+    return 2 * x + 4
+
+for x in range(-10, 11):
+    if g(x) == 0:       # <-- Hvis g(x) == 0 er sant...
+        print(x)        # <-- Skriv ut verdien til 'x', aka nullpunktet
+`;
+
+        makePredictionInteractiveCode(
+            "container-kode-lineære-funksjoner-likninger-programmering-utforsk-2-a-program-2",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<input id="sd-tab-item-32" name="sd-tab-set-11" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-32">
+Program 3</label><div class="sd-tab-content docutils">
+<div id="container-kode-lineære-funksjoner-likninger-programmering-utforsk-2-a-program-3"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`def h(x):
+    return -3 * x + 6
+
+for x in range(-100, 101):
+    if h(x) == 0:       # <-- Hvis h(x) == 0 er sant...
+        print(x)        # <-- Skriv ut verdien til 'x', aka nullpunktet
+`;
+
+        makePredictionInteractiveCode(
+            "container-kode-lineære-funksjoner-likninger-programmering-utforsk-2-a-program-3",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+<input id="sd-tab-item-29" name="sd-tab-set-10" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-29">
+b</label><div class="sd-tab-content docutils">
+<div class="sd-tab-set tabs-parts docutils">
+<input checked="checked" id="sd-tab-item-33" name="sd-tab-set-12" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-33">
+I</label><div class="sd-tab-content docutils">
+<p>Under vises et program som søker etter nullpunktet til en funksjon <span class="math notranslate nohighlight">\(f\)</span>, men kodelinjene er plassert i tilfeldig rekkefølge.</p>
+<p>Plasser kodelinjene i riktig rekkefølge.</p>
+</div>
+<input id="sd-tab-item-34" name="sd-tab-set-12" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-34">
+II</label><div class="sd-tab-content docutils">
+<p>Endre på programmet slik at det finner nullpunktet til</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = 4x + 12
+\]</div>
+<p>Kjør programmet og sjekk at du finner nullpunktet til <span class="math notranslate nohighlight">\(f\)</span>.</p>
+</div>
+<input id="sd-tab-item-35" name="sd-tab-set-12" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-35">
+III</label><div class="sd-tab-content docutils">
+<p>Endre på programmet slik at det søker etter nullpunktet til</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = -x + 16
+\]</div>
 <div class="dropdown hints admonition">
 <p class="admonition-title">Hint</p>
-<p>Du kan se på <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkka hvis du trenger et hint på hva som foregår.</p>
+<p>Hvis du ikke får noen utskrift, kan det hende du må endre på <em>mer</em> enn bare funksjonsuttrykket! <br> Hvilke <span class="math notranslate nohighlight">\(x\)</span>-verdier sjekker du? Og hva er nullpunktet til <span class="math notranslate nohighlight">\(f\)</span>?</p>
 </div>
-</div>
-<input id="sd-tab-item-22" name="sd-tab-set-7" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-22">
-b</label><div class="sd-tab-content docutils">
-<p>Endre på linje 4 slik at det står <code class="code docutils literal highlight highlight-python"><span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span></code>.</p>
-<ol class="arabic simple">
-<li><p>Forutsi hva som blir skrevet ut, og kjør deretter programmet for å sjekke svaret ditt!</p></li>
-<li><p>Endre på <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkken slik at den skriver ut de samme verdiene som <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkken.</p></li>
-</ol>
-</div>
-<input id="sd-tab-item-23" name="sd-tab-set-7" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-23">
-c</label><div class="sd-tab-content docutils">
-<p>Endre på linje 4 slik at det står <code class="code docutils literal highlight highlight-python"><span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mf">0.5</span></code>. <br> Forutsi hva som blir skrevet ut, og kjør deretter programmet for å sjekke svaret ditt!</p>
 </div>
 </div>
 <br>
-<div class="tab-set docutils">
-<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1"><code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkke</label><div class="tab-content docutils">
-<div id="container-lineære-funksjoner-lineære-likninger-programmering-utforsk-2-steg-2-while-loop"></div>
-<script type="text/javascript">
+<div id="container-parsons-puzzle-lineære-funksjoner-likninger-programmering-utforsk-2-" class="puzzle-container"></div>
+<div id="container-kode-lineære-funksjoner-likninger-programmering-utforsk-2-" style="display: none"></div>
 
+<script type="text/javascript">
     document.addEventListener("DOMContentLoaded", () => {
         const code = 
-`x = -2          # <-- Startverdien til 'x'
-while x < 3:    # <-- Så lenge 'x < 3' er sant, skal vi gjenta...
-    print(x)    # <-- Skrive ut verdien til 'x'
-    x = x + 1   # <-- Øke verdien til 'x' med 1
-`;   
+`def f(x):
+    return 3 * x - 12
 
-        makePredictionInteractiveCode(
-            "container-lineære-funksjoner-lineære-likninger-programmering-utforsk-2-steg-2-while-loop",
+for x in range(-5, 6):
+    if f(x) == 0:
+        print(x)
+`;
+
+        const puzzleContainerId = 'container-parsons-puzzle-lineære-funksjoner-likninger-programmering-utforsk-2-';
+        const editorId = 'container-kode-lineære-funksjoner-likninger-programmering-utforsk-2-';
+
+        const switchToCodeEditor = makeCallbackFunction(puzzleContainerId, editorId);
+        const puzzle = new ParsonsPuzzle(
+            puzzleContainerId,
             code,
+            switchToCodeEditor,
         );
-    });
+    });    
 </script>
-</div>
-<input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--2"><code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkke</label><div class="tab-content docutils">
-<div id="container-lineære-funksjoner-lineære-likninger-programmering-utforsk-2-steg-2-for-loop"></div>
-<script type="text/javascript">
 
-    document.addEventListener("DOMContentLoaded", () => {
-        const code = 
-`for x in range(-2, 3):
-    print(x)
-`;   
 
-        makeInteractiveCode(
-            "container-lineære-funksjoner-lineære-likninger-programmering-utforsk-2-steg-2-for-loop",
-            code,
-        );
-    });
-</script>
-</div>
-</div>
-<div class="docutils">
-</div>
-</div>
-<hr class="docutils" />
-<p>Før du går videre, kan det være lurt å teste deg selv!</p>
-<div class="check full-width admonition">
-<p class="admonition-title">Underveisoppgave 1: <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker og <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkker</p>
-<p>Under vises noen <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker og <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkker som parvis skriver ut det samme. <br> Pusle sammen løkkene som skriver ut det samme.</p>
-<div id="container-pair-puzzle-lineære-funksjoner-likninger-programmering-underveisoppgave-1" class="pairing-puzzle-container"></div>
 
-<!-- Include KaTeX -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
-<script defer src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/auto-render.min.js"></script>
 
-<script type="text/javascript">
-    document.addEventListener("DOMContentLoaded", () => {
 
-        const pairs = [
-            ['<pre><code class="python">for x in range(1, 10):\n    print(x)</code></pre>', '<pre><code class="python">x = 1 \nwhile x < 10:\n    print(x)\n    x = x + 1</code></pre>'],
-            ['<pre><code class="python">for x in range(-5, 6):\n    print(x)</code></pre>', '<pre><code class="python">x = -5 \nwhile x < 6:\n    print(x)\n    x = x + 1</code></pre>'],
-            ['<pre><code class="python">for x in range(-3, 2, 3):\n    print(x)</code></pre>', '<pre><code class="python">x = -3 \nwhile x < 2:\n    print(x)\n    x = x + 3</code></pre>'],
-            ['<pre><code class="python">for x in range(-3, 3, 2):\n    print(x)</code></pre>', '<pre><code class="python">x = -3 \nwhile x < 3:\n    print(x)\n    x = x + 2</code></pre>'],
-            ['<pre><code class="python">for x in range(3, -3, -2):\n    print(x)</code></pre>', '<pre><code class="python">x = 3 \nwhile x > -3:\n    print(x)\n    x = x - 2</code></pre>'],
-        ];
 
-        // Initialize the puzzle
-        initGame('container-pair-puzzle-lineære-funksjoner-likninger-programmering-underveisoppgave-1', pairs);
-    });
-</script>
-</div>
-<hr class="docutils" />
-<div class="sidenote margin admonition">
-<p class="admonition-title">Symbolet <span class="math notranslate nohighlight">\(\approx\)</span></p>
-<p>I utforsk 2 vil du møte på symbolet <span class="math notranslate nohighlight">\(\approx\)</span>. Når vi skriver</p>
-<div class="math notranslate nohighlight">
-\[
-a \approx b
-\]</div>
-<p>leser vi dette som at <span class="math notranslate nohighlight">\(a\)</span> er “tilnærmet lik” <span class="math notranslate nohighlight">\(b\)</span>. Verdiene til de to tallene er derfor nokså nærme hverandre, men hva som er “nærme” vil ofte være avhengig av hvilken sammenheng vi ser på.</p>
-</div>
-<div class="explore admonition">
-<p class="admonition-title">Utforsk 3</p>
-<p>Her skal vi ta utgangspunkt i at vi skal bestemme nullpunktet til</p>
-<div class="math notranslate nohighlight">
-\[
-f(x) = 2x - 1.
-\]</div>
-<div class="sd-tab-set tabs-custom docutils">
-<input checked="checked" id="sd-tab-item-24" name="sd-tab-set-8" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-24">
-Steg 1: <br> Hvorfor finner vi ikke svaret?</label><div class="sd-tab-content docutils">
-<p>Bruker vi strategien fra utforsk 1, vil vi oppdage at vi ikke får noen løsning.</p>
-<p>Bestem nullpunktet til <span class="math notranslate nohighlight">\(f\)</span> ved regning. <br> Bruk svaret ditt til å forklare hvorfor strategien fra utforsk 1 ikke vil gi oss nullpunktet til <span class="math notranslate nohighlight">\(f\)</span>.</p>
-<div class="dropdown answer admonition">
-<p class="admonition-title">Fasit</p>
-<p>Nullpunktet er</p>
-<div class="math notranslate nohighlight">
-\[
-x = \dfrac{1}{2}
-\]</div>
-<p>Med strategien fra utforsk 1 vil ikke programmet finne løsningen siden vi bare prøver ut heltallsverdier for <span class="math notranslate nohighlight">\(x\)</span>.</p>
-</div>
-</div>
-<input id="sd-tab-item-25" name="sd-tab-set-8" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-25">
-Steg 2: <br> Justere strategi</label><div class="sd-tab-content docutils">
-<p><em>Her skal du lære hvordan vi kan bruke en <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkke til å lage mange verdier for <span class="math notranslate nohighlight">\(x\)</span> som ikke bare er heltall</em>.</p>
-<p>En <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkke lar oss gjenta noe en utregning eller handling så lenge noe er sant. For å forstå hvordan en <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkke fungerer, kan vi sammenligne den med en <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkke.</p>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-26" name="sd-tab-set-9" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-26">
-a</label><div class="sd-tab-content docutils">
-<p>Under vises to programkoder som gjør det samme. Den ene bruker en <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkke, mens den andre bruker en <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkke.</p>
-<p>Les programmet med <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkken og forutsi hva programmet skriver ut. <br> Skriv det inn under for å sjekke svaret ditt!</p>
-</div>
-<input id="sd-tab-item-27" name="sd-tab-set-9" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-27">
-b</label><div class="sd-tab-content docutils">
-<p>Endre på linje 4 slik at det står <code class="code docutils literal highlight highlight-python"><span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span></code>. <br> Forutsi hva som blir skrevet ut, og kjør deretter programmet for å sjekke svaret ditt!</p>
-</div>
-<input id="sd-tab-item-28" name="sd-tab-set-9" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-28">
-c</label><div class="sd-tab-content docutils">
-<p>Endre på linje 4 slik at det står <code class="code docutils literal highlight highlight-python"><span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mf">0.5</span></code>. <br> Forutsi hva som blir skrevet ut, og kjør deretter programmet for å sjekke svaret ditt!</p>
-</div>
-</div>
-<br>
-<div class="tab-set docutils">
-<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1"><code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkke</label><div class="tab-content docutils">
-<div id="container-lineære-funksjoner-lineære-likninger-programmering-utforsk-2-steg-2-while-loop"></div>
-<script type="text/javascript">
 
-    document.addEventListener("DOMContentLoaded", () => {
-        const code = 
-`x = -2          # <-- Startverdien til 'x'
-while x < 3:    # <-- Så lenge 'x < 3' er sant, skal vi gjenta...
-    print(x)    # <-- Skrive ut verdien til 'x'
-    x = x + 1   # <-- Øke verdien til 'x' med 1
-`;   
 
-        makePredictionInteractiveCode(
-            "container-lineære-funksjoner-lineære-likninger-programmering-utforsk-2-steg-2-while-loop",
-            code,
-        );
-    });
-</script>
-</div>
-<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--2"><code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkke</label><div class="tab-content docutils">
-<div id="container-lineære-funksjoner-lineære-likninger-programmering-utforsk-2-steg-2-for-loop"></div>
-<script type="text/javascript">
 
-    document.addEventListener("DOMContentLoaded", () => {
-        const code = 
-`for x in range(-2, 3):
-    print(x)
-`;   
 
-        makeInteractiveCode(
-            "container-lineære-funksjoner-lineære-likninger-programmering-utforsk-2-steg-2-for-loop",
-            code,
-        );
-    });
-</script>
+
+
+
+
 </div>
 </div>
 </div>
-</div>
-</div>
-<hr class="docutils" />
+</section>
 </section>
 </section>
 
@@ -1274,7 +1736,13 @@ while x < 3:    # <-- Så lenge 'x < 3' er sant, skal vi gjenta...
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerisk-losning-av-likninger">Numerisk løsning av likninger</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerisk-losning-av-lineaere-likninger">Numerisk løsning av lineære likninger</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#repetisjon-av-nodvendige-verktoy">Repetisjon av nødvendige verktøy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bestemme-nullpunkter-ved-hjelp-av-programmering">Bestemme nullpunkter ved hjelp av programmering</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hvordan-sjekke-om-f-x-0-med-et-program">Hvordan sjekke om <span class="math notranslate nohighlight">\(f(x) = 0\)</span> med et program</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hvordan-automatisere-soket-etter-nullpunkter">Hvordan automatisere søket etter nullpunkter</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
