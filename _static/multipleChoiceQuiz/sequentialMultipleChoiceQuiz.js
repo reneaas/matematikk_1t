@@ -100,7 +100,7 @@ class SequentialMultipleChoiceQuiz {
         const toast = document.getElementById(toastId);
 
         // Position the toast near the cursor
-        toast.style.top = `${this.cursorY - 150}px`;
+        toast.style.top = `${this.cursorY-100}px`;
         toast.style.left = `${this.cursorX}px`;
         toast.style.display = 'block';
 
@@ -109,6 +109,7 @@ class SequentialMultipleChoiceQuiz {
             toast.style.display = 'none';
         }, 1500); // Display for 1.5 seconds
     }
+    
 
     finishQuiz() {
         // Clear the container and display a completion message

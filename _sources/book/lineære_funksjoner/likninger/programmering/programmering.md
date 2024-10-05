@@ -620,3 +620,13 @@ file: ./interaktiv_kode/utforsk/utforsk_2/b.html
 
 
 :::::::
+
+---
+
+:::::{admonition} Underveisoppgave 2
+---
+class: check 
+---
+
+
+:::::
