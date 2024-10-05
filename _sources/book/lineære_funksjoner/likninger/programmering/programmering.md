@@ -372,18 +372,22 @@ Alle likninger kan alltid skrives om til formen $f(x) = 0$. Vi skal derfor fokus
 
 
 ### Hvordan sjekke om $f(x) = 0$ med et program
+Vi starter med å se på hvordan vi kan sjekke om $f(x) = 0$ med et program uten å vite verdien til $x$ direkte. Målet vårt er til slutt å automatisere søk etter nullpunkter ved hjelp av programmering. 
 
 ::::::{admonition} Utforsk 1: hvordan sjekker vi om $f(x) = 0$? 
 ---
 class: explore
 ---
+Når vi skal sjekke om en funksjonsverdi $f(x) = 0$, kan vi skrive `f(x) == 0`{l=python} i Python. 
+* Hvis `f(x)`{l=python} er lik 0, vil dette gi `True`{l=python}.
+* Hvis `f(x)`{l=python} ikke en lik 0, vil dette gi `False`{l=python}.
 
 :::::{tab-set}
 ---
 class: tabs-parts
 ---
 ::::{tab-item} a
-Bestem nullpunktene til funksjonene
+Før vi anvender dette, bestem nullpunktene til funksjonene:
 
 * $f(x) = x - 2$
 * $g(x) = 2x + 4$
@@ -391,10 +395,6 @@ Bestem nullpunktene til funksjonene
 ::::
 
 ::::{tab-item} b
-
-Når vi skal sjekke om en funksjonsverdi $f(x) = 0$, kan vi skrive `f(x) == 0`{l=python} i Python. 
-* Hvis `f(x)`{l=python} er lik 0, vil dette gi `True`{l=python}.
-* Hvis `f(x)`{l=python} ikke en lik 0, vil dette gi `False`{l=python}.
 
 Under vises tre programkoder som tester ut om en funksjonsverdi er lik 0 og skriver ut svaret (som er enten `True`{l=python} eller `False`{l=python}).
 
