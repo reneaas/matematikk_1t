@@ -368,7 +368,7 @@ print(y)
 
 ## Bestemme nullpunkter ved hjelp av programmering
 
-Alle likninger kan alltid skrives om til formen $f(x) = 0$. Vi skal derfor fokusere på hvordan vi løser likninger av denne typen - altså likninger der vi skal finne nullpunktene til en funksjon $f(x)$.
+Alle likninger kan alltid skrives om til formen $f(x) = 0$. Vi skal derfor fokusere på hvordan vi løser likninger av denne typen - altså likninger der vi skal finne nullpunktene til en funksjon $f$.
 
 
 ### Hvordan sjekke om $f(x) = 0$ med et program
@@ -379,8 +379,8 @@ Vi starter med å se på hvordan vi kan sjekke om $f(x) = 0$ med et program uten
 class: explore
 ---
 Når vi skal sjekke om en funksjonsverdi $f(x) = 0$, kan vi skrive `f(x) == 0`{l=python} i Python. 
-* Hvis `f(x)`{l=python} er lik 0, vil dette gi `True`{l=python}.
-* Hvis `f(x)`{l=python} ikke en lik 0, vil dette gi `False`{l=python}.
+* Hvis `f(x)`{l=python} er lik 0, vil dette gi `True`{l=python} (sant).
+* Hvis `f(x)`{l=python} ikke en lik 0, vil dette gi `False`{l=python} (usant).
 
 :::::{tab-set}
 ---
@@ -392,6 +392,32 @@ Før vi anvender dette, bestem nullpunktene til funksjonene:
 * $f(x) = x - 2$
 * $g(x) = 2x + 4$
 * $h(x) = -3x + 6$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+````{tab-set}
+```{tab-item} $f(x) = x - 2$
+$$
+x = 2
+$$
+```
+
+```{tab-item} $g(x) = 2x + 4$
+$$
+x = -2
+$$
+```
+
+```{tab-item} $h(x) = -3x + 6$
+$$
+x = 2
+$$
+```
+````
+:::
+
 ::::
 
 ::::{tab-item} b
@@ -627,6 +653,12 @@ file: ./interaktiv_kode/utforsk/utforsk_2/b.html
 ---
 class: check 
 ---
+Ta quizen!
 
+:::{raw} html
+---
+file: ./quiz/quiz_5/quiz_5.html
+:::
 
 :::::
+
