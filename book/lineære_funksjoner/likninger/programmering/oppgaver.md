@@ -1,1 +1,0 @@
-# Oppgaver: <br> Programmering av lineære likninger
