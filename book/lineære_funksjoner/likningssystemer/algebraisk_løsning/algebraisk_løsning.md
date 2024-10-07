@@ -2,79 +2,84 @@
 
 Du har kanskje tidligere lært om ulike løsningsstrategier for å løse lineære likningssystemer algebraisk. I dette kapittelet skal vi ta for oss to løsningsmetoder for likningssystemer.
 
-```{admonition} Læringsmål: algebraisk løsning av lineære likningssystemer
-:class: tip
-Etter dette delkapittelet, er målet at du skal kunne:
-* Løse lineære likningssystemer med to variabler ved hjelp av innsettingsmetoden.
-* Løse lineære likningssystemer med to variabler ved hjelp av addisjonsmetoden.
-* Kunne uttrykke løsningen av et lineært likningssystem som et likningssystem eller som en løsningsmengde.
-* Kunne anvende likningssystemer til å
-    * Bestemme koeffisientene til en lineær funksjon.
-    * Løse praktiske problemer.
-```
+::::{admonition} Læringsmål: algebraisk løsning av lineære likningssystemer
+---
+class: tip
+---
+Etter dette delkapittelet, er målet at du skal:
+* Kunne løse lineære likningssystemer med to variabler ved hjelp av innsettingsmetoden og addisjonsmetoden.
+* Kunne sette opp lineære likningssystemer for koeffisientene til en lineær funksjon.
+* Kunne sette opp lineære likningssystemer for praktiske situasjoner.
+::::
 
 
 ## Innsettingsmetoden
 
 Før vi går løs på et eksempel, skal vi gi en kort beskrivelse av innsettingsmetoden.
 
-````{admonition} Innsettingsmetoden
-:class: theory
+::::{admonition} Innsettingsmetoden
+---
+class: theory
+---
 Gitt to lineære likninger med to variabler $x$ og $y$, gjør vi følgende:
 
 Steg 1:
 : Løs én av likningene med hensyn på $y$. 
 
 Steg 2
-: Plugg uttrykket for $y$ inn i den andre likningen og løs likningen for $x$.
+: Sett uttrykket for $y$ inn i den andre likningen og løs likningen for $x$.
 
 Steg 3
-: Plugg verdien for $x$ inn i én av likningene og regn ut verdien til $y$.
+: Sett verdien for $x$ inn i én av likningene og regn ut verdien til $y$.
 
 
-Merk at beskrivelsen over fungerer også motsatt (bytt rollen til $x$ og $y$ i alle stegene).
+Merk at beskrivelsen over fungerer også motsatt vei (bytt rollen til $x$ og $y$ i alle stegene).
+::::
 
-````
-
-Vi starter med å se på et eksempel på hvordan vi kan løse et likningssystem med to variabler ved hjelp av innsettingsmetoden. Vi skal gi en 
+Vi starter med å se på et eksempel på hvordan vi kan løse et likningssystem med to variabler ved hjelp av innsettingsmetoden.
 
 `````{admonition} Eksempel 1: innsettingsmetoden
-:class: example
-Vi tar for oss likningssystemet
-```{math}
+---
+class: example
+---
+Løs likningssystemet med innsettingsmetoden:
+
 \begin{align*}
 2x + y & = 5 \label{1a} \quad\quad\quad \tag{1a} \\
 x - y & = 1 \label{1b} \quad\quad\quad \tag{1b} 
 \end{align*}
-```
 
-**Løsning:**<br>
+
+::::{admonition} Løsning
+---
+class: solution
+---
 
 Steg 1
 : Vi løser likningen $\eqref{1b}$ med hensyn på $y$:
 
 $$
-x - y = 1 \quad \Leftrightarrow \quad y = x - 1.
+x - y = 1 \quad \iff \quad y = x - 1.
 $$
 
 Steg 2
-: Vi plugger inn $y = x - 1$ i likning $\eqref{1a}$ som gir:
+: Vi setter inn $y = x - 1$ i likning $\eqref{1a}$ som gir:
 
-$$
-2x + \underbrace{x - 1}_{y} = 5
-$$
-
-som vi kan skrive om enklere som
-
-$$
-2x = 6 \quad \Leftrightarrow \quad x = 3.
-$$
+\begin{align*}
+2x + \underbrace{x - 1}_{y} & = 5 \\
+\\
+3x - 1 & = 5 \\
+\\
+3x & = 6 \\
+\\
+x & = 2.
+\end{align*}
 
 Steg 3
-: Nå plugger vi inn løsningen vår for $x$ i enten likning $\eqref{1a}$ eller $\eqref{1b}$ (det spiller ingen rolle hvilken, så vi velger den som gir minst regning). Vi velger å plugge inn i likning $\eqref{1b}$ siden vi allerede løst denne likningen for $y$:
+: Nå setter vi inn løsningen vår for $x$ i enten likning $\eqref{1a}$ eller $\eqref{1b}$ (det spiller ingen rolle hvilken, så vi velger den som gir minst regning). Vi velger å sette inn i likning $\eqref{1b}$ siden vi allerede har løst denne likningen for $y$:
 
 $$
-y = 3 - 1 = 2.
+y = 2 - 1 = 1.
 $$
 
 Vi kan uttrykke løsningen av likningsystemet på to måter, enten som et likningssystem eller som en løsningsmengde:
@@ -82,23 +87,25 @@ Vi kan uttrykke løsningen av likningsystemet på to måter, enten som et liknin
 ````{tab-set}
 ```{tab-item} Løsning som likningssystem
 $$
-x = -1 \quad \land \quad y = 4.
+x = 2 \quad \land \quad y = 1.
 $$
 ```
 
 ```{tab-item} Løsningsmengde
 $$
-(x, y) \in \{(-1, 4)\}.
+(x, y) \in \{(2, 1)\}.
 $$
 ```
 ````
+::::
 `````
 
 Så er det **din tur**!
 
 ``````{admonition} Underveisoppgave 1
-:class: check
-
+---
+class: check
+---
 Bruk innsettingsmetoden til å løse likningssystemet
 
 $$
@@ -110,7 +117,9 @@ $$
 
 
 `````{admonition} Fasit
-:class: dropdown, solution
+---
+class: dropdown, answer
+---
 ````{tab-set}
 ```{tab-item} Løsning som likningssystem
 $$
@@ -127,8 +136,9 @@ $$
 `````
 
 `````{admonition} Løsning
-:class: dropdown, solution
-
+---
+class: dropdown, solution
+---
 Steg 1
 : Vi løser likning $\eqref{2b}$ med hensyn på $y$:
 
@@ -174,7 +184,7 @@ $$
 Addisjonsmetoden er en annen måte for å løse lineære likningssystemer med to variabler. 
 
 ```{admonition} Begrepsforklaring: multiplum
-:class: note, margin
+:class: sidenote, margin
 Begrepet **multiplum** betyr så så mange ganger av noe. For eksempel er $2x$ et multiplum av $x$ der $2$ er multiplumet. Men det er også $x/2$, der $1/2$ er multiplumet. Noen definisjoner begrenser det til å bare gjelde heltall, men vi skal ta oss friheten til å bruke det for alle reelle tall.
 ```
 
@@ -186,18 +196,18 @@ Steg 1:
 : Legg til et **multiplum** av en av likningene til den andre likningen slik at én av variablene forsvinner. Løs likningen for den gjenværende variabelen.
 
 Steg 2
-: Plugg inn løsningene i én av likningene for å bestemme verdien til den siste variabelen.
+: Sett inn løsningene i én av likningene for å bestemme verdien til den siste variabelen.
 ```
 
 
 Vi går løs på et eksempel:
 
 ```{admonition} Forkortelser: V.S. og H.S.
-:class: note, margin
+:class: sidenote, margin
 Forkortelsene under står for:
 
 V.S.
-: Venste side.
+: Venstre side.
 
 H.S. 
 : Høyre side.
@@ -216,7 +226,10 @@ $$
 
 Bruk addisjonsmetoden til å løse likningssystemet.
 
-**Løsning:**<br>
+::::{admonition} Løsning
+---
+class: solution
+---
 
 Steg 1
 : Vi kan ta likning $\eqref{3a}$ og gange den med $3$ for å så trekke det fra likning $\eqref{3b}$ for at $x$ skal forsvinne:
@@ -238,7 +251,7 @@ $$
 $$
 
 Steg 2
-: Vi plugger inn verdien for $y$ inn i en av likningene for å bestemme verdien til $x$. Vi velger likning $\eqref{3a}$:
+: Vi setter inn verdien for $y$ inn i en av likningene for å bestemme verdien til $x$. Vi velger likning $\eqref{3a}$:
 
 $$
 x + 3\cdot(-3) = -7 \quad \Leftrightarrow \quad x - 9 = -7 \quad \Leftrightarrow \quad x = 2.
@@ -247,13 +260,17 @@ $$
 Dermed er løsningen av likningssystemet
 
 $$
-(x, y) \in \{(2, -3)\}.
+x = 2 \quad \land \quad y = -3.
 $$
+
+::::
 ````
 Så er det **din tur**!
 
 ``````{admonition} Underveisoppgave 2
-:class: check
+---
+class: check
+---
 Bruk addisjonsmetoden til å løse likningssystemet
 
 $$
@@ -266,7 +283,9 @@ $$
 
 
 `````{admonition} Fasit
-:class: dropdown, solution
+---
+class: dropdown, solution
+---
 ````{tab-set}
 ```{tab-item} Løsning som likningssystem
 $$
@@ -283,7 +302,9 @@ $$
 `````
 
 `````{admonition} Løsning
-:class: dropdown, solution
+---
+class: dropdown, solution
+---
 Vi kan legge til et multiplum av likning $\eqref{4a}$ til likning $\eqref{4b}$ for at $x$ skal forsvinne. Legger vi til $5$ ganget med likning $\eqref{4a}$ til likning $\eqref{4b}$ oppnår vi dette:
 
 $$
@@ -299,13 +320,13 @@ $$
 som vi kan skrive om til
 
 $$
-20x + 5y - 2x - 5y = 9 \quad \Leftrightarrow \quad 18x = 9 \quad \Leftrightarrow \quad x = \frac{9}{18} = \frac{1}{2}.
+20x + 5y - 2x - 5y = 9 \quad \iff \quad 18x = 9 \quad \iff \quad x = \frac{9}{18} = \frac{1}{2}.
 $$
 
 Så plugger vi verdien inn i likning $\eqref{4a}$ for å finne verdien til $y$:
 
 $$
-4\cdot \frac{1}{2} + y = 1 \quad \Leftrightarrow \quad 2 + y = 1 \quad \Leftrightarrow \quad y = -1.
+4\cdot \frac{1}{2} + y = 1 \quad \iff \quad 2 + y = 1 \quad \iff \quad y = -1.
 $$
 
 Altså er løsningen av likningssystemet gitt ved 
@@ -327,7 +348,7 @@ class: example
 ---
 Anna skal plante trær i en park. Hun skal plante to forskjellige typer som tar opp ulik plass. Eiketrær trenger 4 kvadratmeter plass, mens bjørketrær trenger 2 kvadratmeter plass. Anna har totalt 100 kvadratmeter til rådighet. Hun har bestemt seg for å plante 40 trær. 
 
-Hvor mange av hver type tre skal hun plante?
+Sett opp et likningssystem som beskriver den praktiske situasjonen.
 
 
 :::{admonition} Løsning
@@ -346,7 +367,7 @@ Ett eiketre tar opp 4 kvadratmeter og bjørketrær tar opp 2 kvadratmeter. Vi ha
 \underbrace{4x}_\text{Plass for eiketrær} + \underbrace{2y}_\text{Plass for bjørketrær} &= 100 && \text{(Totalt antall kvadratmeter)}
 \end{align*}
 
-Vi har altså likningssystemet
+Dette gir oss likningssystemet
 
 \begin{align*}
 x + y & = 40 \\

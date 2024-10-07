@@ -1,6 +1,22 @@
 # Oppgaver: <br> Grafisk løsning av likningssystemer
 
 
+:::::{admonition} Oppgave 1
+---
+class: problem-level-1
+---
+Ta quizen!
+
+:::{raw} html
+---
+file: quiz/quiz_1/quiz_1.html
+---
+:::
+
+:::::
+
+
+
 ``````{admonition} Oppgave 1
 ---
 class: problem-level-1
