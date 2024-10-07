@@ -1,5 +1,10 @@
 <!-- Container for the quiz -->
-<div id="quiz-container-tema-undertema-oppgavetype-oppgavenummer" class="quiz-main-container"></div>
+<div id="quiz-container-tema-undertema-oppgavetype-oppgavenummer" class="quiz-main-container">
+    <!-- Placeholder content -->
+    <div id="quiz-placeholder-tema-undertema-oppgavetype-oppgavenummer" style="height: 300px; background-color: #f0f0f0; display: flex; align-items: center; justify-content: center;">
+        <p>Laster inn quiz...⏳</p>
+    </div>
+</div>
 
 <!-- Include KaTeX for LaTeX rendering -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
@@ -41,15 +46,41 @@
             },
         ];
 
-        // Initialize the multiple-choice quiz
-        const quiz = new SequentialMultipleChoiceQuiz('quiz-container-tema-undertema-oppgavetype-oppgavenummer', questionsData);
+        // Function to initialize the quiz
+        function initializeQuiz() {
+            const quizContainerId = 'quiz-container-tema-undertema-oppgavetype-oppgavenummer';
+            const quiz = new SequentialMultipleChoiceQuiz(quizContainerId, questionsData);
+
+            // Remove the placeholder after initializing the quiz
+            const placeholder = document.getElementById('quiz-placeholder-tema-undertema-oppgavetype-oppgavenummer');
+            if (placeholder) {
+                placeholder.remove();
+            }
+
+            // Disconnect the observer since we don't need it anymore
+            observer.disconnect();
+        }
+
+        // Set up the IntersectionObserver
+        const observerOptions = {
+            root: null, // Use the viewport as the root
+            rootMargin: '100px', // Start loading before the user reaches the quiz
+            threshold: 0.1 // Adjust as needed
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // The placeholder is in view, initialize the quiz
+                    initializeQuiz();
+                }
+            });
+        }, observerOptions);
+
+        // Start observing the placeholder
+        const placeholder = document.getElementById('quiz-placeholder-tema-undertema-oppgavetype-oppgavenummer');
+        if (placeholder) {
+            observer.observe(placeholder);
+        }
     });
-
-    
-
 </script>
-
-
-
-
-
