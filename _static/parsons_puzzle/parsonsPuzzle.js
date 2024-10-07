@@ -10,7 +10,6 @@ class ParsonsPuzzle {
         this.dropArea = document.getElementById(this.dropAreaId);
         this.checkButton = document.getElementById(this.checkSolutionId);
         this.resetButton = document.getElementById(this.resetButtonId);
-        this.feedback = document.getElementById(this.feedbackId);
         this.draggableCodeContainer = document.getElementById(this.draggableId);
         this.toast = document.getElementById(this.toastId);
 
@@ -45,12 +44,6 @@ class ParsonsPuzzle {
                 alert('Du har kopiert koden!');
             });
         });
-
-        document.addEventListener('mousemove', (event) => {
-            this.cursorX = event.clientX;
-            this.cursorY = event.clientY;
-        });
-
     }
 
     generateHTML() {
@@ -59,16 +52,15 @@ class ParsonsPuzzle {
             console.error(`Container with ID ${this.puzzleContainerId} not found.`);
             return;
         }
-
+    
         const uniqueId = generateUUID();
         this.dropAreaId = `drop-area-${uniqueId}`;
         this.checkSolutionId = `check-solution-${uniqueId}`;
         this.resetButtonId = `reset-button-${uniqueId}`;
-        this.feedbackId = `feedback-${uniqueId}`;
         this.draggableId = `draggable-code-${uniqueId}`;
-        this.toastId = `toast-${uniqueId}`;
-
-
+        this.toastSuccessId = `toast-success-${uniqueId}`;
+        this.toastErrorId = `toast-error-${uniqueId}`;
+    
         const checkSolutionIcon = `
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
@@ -80,10 +72,14 @@ class ParsonsPuzzle {
             <path fill-rule="evenodd" d="M9.53 2.47a.75.75 0 0 1 0 1.06L4.81 8.25H15a6.75 6.75 0 0 1 0 13.5h-3a.75.75 0 0 1 0-1.5h3a5.25 5.25 0 1 0 0-10.5H4.81l4.72 4.72a.75.75 0 1 1-1.06 1.06l-6-6a.75.75 0 0 1 0-1.06l6-6a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
         </svg>
         `;
-
+    
         const html = `
-            <div id="${this.toastId}" class="toast" style="display: none;">
-                <p>Riktig! 🔥</p>
+            <!-- Toast Notifications -->
+            <div id="${this.toastSuccessId}" class="toast toast-success" style="display: none;">
+                <p>Riktig! 🎉</p>
+            </div>
+            <div id="${this.toastErrorId}" class="toast toast-error" style="display: none;">
+                <p>Prøv igjen!</p>
             </div>
             <div id="${this.draggableId}" class="draggable-code"></div>
             <div id="${this.dropAreaId}" class="drop-area"></div>
@@ -91,11 +87,15 @@ class ParsonsPuzzle {
                 <button id="${this.checkSolutionId}" class="button button-check-solution">Sjekk løsning ${checkSolutionIcon}</button>
                 <button id="${this.resetButtonId}" class="button button-reset-puzzle">Reset puslespill ${resetIcon}</button>
             </div>
-            <div id="${this.feedbackId}" class="feedback"></div>
         `;
-
+    
         container.innerHTML = html;
+    
+        // Get references to the toast elements
+        this.toastSuccess = document.getElementById(this.toastSuccessId);
+        this.toastError = document.getElementById(this.toastErrorId);
     }
+    
 
     preprocessCode(codeString) {
         const lines = codeString.split('\n');
@@ -155,58 +155,53 @@ class ParsonsPuzzle {
         hljs.highlightElement(this.fullCodeElement);
         const correctOrder = this.codeBlocks.filter(obj => !obj.isEmpty).sort((a, b) => a.order - b.order).map(obj => obj.order);
         if (JSON.stringify(droppedOrder) === JSON.stringify(correctOrder)) {
-            this.feedback.textContent = 'Riktig!';
-            this.feedback.style.color = 'green';
-
+            this.showToast('success');
             console.log("onSolvedCallback: ", this.onSolvedCallback);
             if (this.onSolvedCallback) {
-                this.showToast();
+                
                 console.log("Calling callback function now!");
-                this.onSolvedCallback(fullCode);
+                setTimeout(() => {
+                    this.onSolvedCallback(fullCode);
+                }, 1500); // Display for 2.5 seconds
             }
             else {
                 this.solutionModal.style.display = 'block';
             }
             return true;
         } else {
-            this.feedback.textContent = 'Prøv igjen!';
-            this.feedback.style.color = 'red';
+            this.showToast('error');
             return false;
         }
     }
 
-    showToast() {
-        const toast = this.createToast();
-        console.log("toast: ", toast);
+    showToast(type) {
+        const toast = type === 'success' ? this.toastSuccess : this.toastError;
 
-        console.log("X = ", this.cursorX);
-        console.log("Y = ", this.cursorY);
-
-        toast.style.top = `${this.cursorY - 150}px`;
-        toast.style.left = `${this.cursorX}px`;
-
+        console.log("Toast: ", toast);
+        if (!toast) {
+            console.error(`Toast element not found for type ${type}.`);
+            return;
+        }
+    
+        // Ensure the puzzle container is positioned relatively
+        const containerStyle = getComputedStyle(this.puzzleContainer);
+        if (containerStyle.position === 'static') {
+            this.puzzleContainer.style.position = 'relative';
+        }
+    
+        // Position the toast in the center of the puzzle container
+        toast.style.position = 'absolute';
+        toast.style.top = '50%';
+        toast.style.left = '50%';
+        toast.style.transform = 'translate(-50%, -50%)';
         toast.style.display = 'block';
-
-        
-
+    
+        // Hide the toast after a delay
         setTimeout(() => {
             toast.style.display = 'none';
-        }, 2500); // Display for 2.5 seconds (2000 ms)
-
+        }, 2500); // Display for 2.5 seconds
     }
-
-    createToast() {
-        const toast = document.createElement('div');
-        toast.id = `toast-${this.puzzleContainerId}`;
-        toast.className = 'toast';
-        toast.style.display = 'none';
-        toast.innerHTML = `
-            <p>Riktig! 🔥</p>
-        `;
-
-        document.body.appendChild(toast);
-        return toast;
-    }
+    
 
     createSolutionModal(puzzleContainerId) {
         const modal = document.createElement('div');
