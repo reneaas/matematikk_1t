@@ -6,12 +6,12 @@ plt.rc("text", usetex=True)
 def main(dirname, save):
     #
     # Define functions
-    def f(x):
-        return 2 - (4 / 3) * (x + 1)
+    def f(x, k=3):
+        return [k for _ in x]
 
     # List of functions and their labels.
     functions = [f]
-    fn_labels = [f"$4x + 3y = 2$"]
+    fn_labels = [r"$y = \mathrm{konstant}$"]
 
     # Create the math figure
     fig, ax = make_figure(
@@ -21,7 +21,7 @@ def main(dirname, save):
         xmax=6,
         ymin=-6,
         ymax=6,
-        ticks=True,
+        ticks=False,
     )
 
     # NOTE: Select an appropriate `dirname` to save the figure.

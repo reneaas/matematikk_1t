@@ -4,14 +4,10 @@ plt.rc("text", usetex=True)
 
 
 def main(dirname, save):
-    #
-    # Define functions
-    def f(x):
-        return 2 - (4 / 3) * (x + 1)
 
     # List of functions and their labels.
-    functions = [f]
-    fn_labels = [f"$4x + 3y = 2$"]
+    functions = []
+    fn_labels = None
 
     # Create the math figure
     fig, ax = make_figure(
@@ -21,8 +17,19 @@ def main(dirname, save):
         xmax=6,
         ymin=-6,
         ymax=6,
-        ticks=True,
+        ticks=False,
     )
+
+    ax.vlines(
+        x=-2,
+        ymin=-6,
+        ymax=6,
+        color="teal",
+        lw=2,
+        label="$x = \\mathrm{konstant}$",
+        alpha=0.7,
+    )
+    plt.legend(fontsize=16)
 
     # NOTE: Select an appropriate `dirname` to save the figure.
     # The directory `dirname` will be created automatically if it does not exist already.

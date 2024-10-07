@@ -7,20 +7,23 @@ def main(dirname, save):
     #
     # Define functions
     def f(x):
-        return 2 - (4 / 3) * (x + 1)
+        return -x - 2
+
+    def g(x):
+        return x + 4
 
     # List of functions and their labels.
-    functions = [f]
-    fn_labels = [f"$4x + 3y = 2$"]
+    functions = [f, g]
+    fn_labels = None
 
     # Create the math figure
     fig, ax = make_figure(
         functions=functions,
         fn_labels=fn_labels,  # NOTE: Set `None` hvis du ikke vil ha labels.
-        xmin=-6,
-        xmax=6,
-        ymin=-6,
-        ymax=6,
+        xmin=-7,
+        xmax=7,
+        ymin=-7,
+        ymax=7,
         ticks=True,
     )
 

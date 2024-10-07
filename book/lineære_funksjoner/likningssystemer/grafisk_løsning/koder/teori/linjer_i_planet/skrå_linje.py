@@ -11,7 +11,7 @@ def main(dirname, save):
 
     # List of functions and their labels.
     functions = [f]
-    fn_labels = [f"$4x + 3y = 2$"]
+    fn_labels = [f"$Ax + By = C$"]
 
     # Create the math figure
     fig, ax = make_figure(
@@ -21,7 +21,7 @@ def main(dirname, save):
         xmax=6,
         ymin=-6,
         ymax=6,
-        ticks=True,
+        ticks=False,
     )
 
     # NOTE: Select an appropriate `dirname` to save the figure.
