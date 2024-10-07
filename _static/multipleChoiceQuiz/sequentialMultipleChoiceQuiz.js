@@ -149,17 +149,16 @@ class SequentialMultipleChoiceQuiz {
             return;
         }
     
-        // Position the toast in the center of the container
-        const containerRect = this.container.getBoundingClientRect();
-        const toastWidth = toast.offsetWidth;
-        const toastHeight = toast.offsetHeight;
+        // Ensure the container is positioned relatively
+        if (getComputedStyle(this.container).position === 'static') {
+            this.container.style.position = 'relative';
+        }
     
-        const topPosition = containerRect.top + (containerRect.height - toastHeight) / 2;
-        const leftPosition = containerRect.left - (containerRect.width - toastWidth) / 2;
-    
+        // Display the toast in the center of the container
         toast.style.position = 'absolute';
-        toast.style.top = `${topPosition}px`;
-        toast.style.left = `${leftPosition}px`;
+        toast.style.top = '50%';
+        toast.style.left = '50%';
+        toast.style.transform = 'translate(-50%, -50%)';
         toast.style.display = 'block';
     
         // Hide the toast after a delay
@@ -167,6 +166,7 @@ class SequentialMultipleChoiceQuiz {
             toast.style.display = 'none';
         }, 1500); // Display for 1.5 seconds
     }
+    
     
     
 
