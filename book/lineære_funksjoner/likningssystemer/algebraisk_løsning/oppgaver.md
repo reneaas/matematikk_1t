@@ -202,39 +202,62 @@ Vi ser da at vi får løsningen $v = 10 \vee u = 6$. Altså har laget vunnet $10
 :::
 ::::
 
-::::{admonition} Oppgave 4 **Flyttes til etter CAS**
+::::{admonition} Oppgave 4
 ---
-class: problem-level-3
+class: problem-level-2
 ---
-På en fotballkamp er det tre kategorier billetter: barn, voksne og pensjonister. 
 
-Publikumstallet på kampen var 2100. Barnebilletten kostet 50 kr, voksenbilletten 200 kr og pensjonistbilletten 100 kr. Billettinntektene ble på 315 000 kr. Det var dobbelt så mange pensjonister som barn på kampen. 
+Sett opp likningssystemer og løs. 
 
-Bestem antallet barn, voksne og pensjonister på kampen.
+Deloppgave 1
+: Alex og Bella er med i samme idrettslag. Sammen med treneren har de en total alder på 54 år. Bella er dobbelt så gammel som Alex, og treneren er tre ganger så gammel som Bella. Finn ut hvor gamle Alex, Bella og treneren er. 
 
 :::{admonition} Fasit
 ---
 class: answer, dropdown
 ---
-Det var 300 barn, 600 pensjonister og 1200 voksne på kampen. 
+Alex er 6 år, Bella er 12 år, treneren er 36 år. 
 :::
-:::{admonition} Løsningsforslag
+
+
+Deloppgave 2
+: I en liten landsby bor det tre generasjoner: en mor, hennes sønn Kåre, og bestefaren. Moren er tre ganger så gammel som Kåre, og bestefaren er dobbel så gammel som moren. Sammen har de en total alder på 120 år. Finn ut hvor gamle Kåre, moren, og bestefaren er.
+
+:::{admonition} Fasit
 ---
-class: solution, dropdown
+class: answer, dropdown
 ---
-Vi starter med å sette opp likninger. Vi har tre ukjente, som vi kaller $b$ (barn), $v$ (voksne) og $p$ (pensjonister). Ut fra teksten vet vi følgende: 
-
-1) Det totale billettantallet er $2100$. 
-Det kan vi uttrykke som 
-$$b + v + p = 2100$$
-
-2) De totale billettinntektene er $315 000$ kr, og det koster $50$ kr for en barnebillett, $200$ kr for en voksenbillett og $100$ kr for en pensjonistbillett. Det kan vi uttrykke som
-$$50 b + 200 v + 100 p = 315 000$$
-
-3) Sist, men ikke minst vet vi at det er dobbelt så mange pensjonister som voksne. Det kan vi uttrykke som 
-$$ 2b = p$$
-
-Da har vi tre likninger. Disse kan vi løse for hånd, men i dette tilfellet vil det være enklere å bruke CAS. Vi får da at det var 300 barn, 600 pensjonister og 1200 voksne på kampen. 
-
+Kåre er 12 år, mor er 36 år og bestefar er 72 år.
 :::
+
+
+Deloppgave 3
+: I en by bor en tante og hennes nevø. Tanten var 22 år da nevøen ble født. I dag er hun dobbelt så gammel som nevøen. Finn ut hvor gamle tanten og nevøen er.
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+Nevøen er 22, tante er 44.
+:::
+
+Deloppgave 4
+: Sara, og hennes far og onkel Lars er i selskap. Faren er tre ganger så gammel som Sara, og han er seks år eldre enn onkel Lars. Sammen har de tre en total alder på 92 år. Finn ut hvor gamle Sara, faren og onkel Lars er.
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+Sara er 14 år, far er 42 år, onkel Lars er 36 år.
+:::
+
+Deloppgave 5
+: Mor er 21 år eldre enn datter. Bestefar er tre ganger så gammel som mor. Om to år vil deres totale alder være 100 år. Finn ut hvor gamle datter, mor og bestefar er.
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+Datter er 2 år, mor er 23 år, bestefar er 69 år. 
+:::
+
 ::::

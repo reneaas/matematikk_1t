@@ -475,96 +475,43 @@ class: problem-level-2, full-width
 Sett opp likninger og løs ved hjelp av CAS
 
 Deloppgave 1
-: Stian, Erik og Øyvind delte en pizza. Stian spiste en tredel, Erik spiste to femtedeler, og Øyvind spiste resten. Hvor mye spiste Øyvind? 
+: Amna, Berit og Celine delte en boks is. Amna spiste en tredel, Berit spiste to femtedeler, og Celine spiste resten. Hvor mye spiste Celine? 
 
 :::{admonition} Fasit
 ---
 class: answer, dropdown
 ---
-Øyvind spiste $\dfrac{4}{15}$
+Celine spiste $\dfrac{4}{15}$
 :::
 
 Deloppgave 2
-: Kristin, Anette og Ellen har til sammen 1 100 kroner. Ellen har dobbelt så mange penger som Anette, og Kristin har 100 kroner mindre enn Ellen. Hvor mye penger harr hver av de tre jentene?
+: Tre venner, Emma, Sophie og Sara, har til sammen 110 bøker. Sara har dobbelt så mange bøker som Sophie, og Emma har 10 bøker mindre enn Sara. Finn ut hvor mange bøker hver av de tre vennene har.
 
 :::{admonition} Fasit
 ---
 class: answer, dropdown
 ---
-Anette har 240 kr, Ellen har 480 kroner, Kristin har 380 kroner.
+Sophie har 24 bøker, Sara har 48 bøker, og Emma har 38 bøker.
 :::
 
 Deloppgave 3
-: På en aktivitetsdag ved skolen valgte 60 % av elevene fotball. En tredel valgte volleyball. De siste 12 elevene hadde fått fritak. Hvor mange elever er det ved skolen? 
+: På en vinteraktivitetsdag ved skolen valgte 60 % av elevene skøyting. En tredel valgte aking. De siste 15 elevene hadde fått fritak. Hvor mange elever er det ved skolen? 
 
 :::{admonition} Fasit
 ---
 class: answer, dropdown
 ---
-Det var $180$ elever ved skolen.
+Det var $225$ elever ved skolen.
 :::
 
 Deloppgave 4
-: Per, Pål og Espen er til sammen 66 år. Per er dobbelt så gammel som Espen, og Pål er 6 år eldre enn Espen. Finn ut hvor gamle de tre guttene er. 
+: Ole, Dole og Doffen er til sammen 66 år. Ole er dobbelt så gammel som Doffen, og Dole er 6 år eldre enn Doffen. Finn ut hvor gamle de tre guttene er. 
 
 :::{admonition} Fasit
 ---
 class: answer, dropdown
 ---
-Espen er 15 år, Per er 30 år og Pål er 21 år. 
-:::
-
-
-Deloppgave 5
-: Ari, Anette og far er til sammen 54 år. Anette er dobbelt så gammel som Ari, og far er tre ganger så gammel som Anette. Hvor gamle er Ari, Annette og far? 
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-Ari er 6 år, Anette er 12 år, Far er 36 år. 
-:::
-
-
-Deloppgave 6
-: Far er tre ganger så gammel som Per, og bestefar er dobbelt så gammel som far. Til sammen er de 120 år. Hvor gamle er de?
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-Per er 12 år, far er 36 år og bestefar er 72 år.
-:::
-
-
-Oppgave 7
-: Mormor var 22 år da mor ble født. I dag er hun dobbelt så gammel som mor. Hvor gamle er mor og mormor?
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-Mor er 22, mormor er 44.
-:::
-
-Deloppgave 8
-: Far er tre ganger så gammel som Camilla. Far er seks år eldre enn onkel Kåre. Til sammen er de tre 92 år. Hvor gamle er Camilla, far og onkel Kåre? 
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-Camilla er 14 år, far er 42 år, Kåre er 36 år.
-:::
-
-Deloppgave 9
-: Mor er 21 år eldre enn Maja. Bestefar er tre ganger så gammel som mor. Om to år er de til sammen 100 år. Hvor gamle er de?
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-Maja er 2 år, mor er 23 år, bestefar er 69 år. 
+Doffen er 15 år, Ole er 30 år og Dole er 21 år. 
 :::
 
 ::::
