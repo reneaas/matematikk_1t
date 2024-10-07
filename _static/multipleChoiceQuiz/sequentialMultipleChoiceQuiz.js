@@ -104,6 +104,9 @@ class SequentialMultipleChoiceQuiz {
     
         if (isCorrect) {
             this.showToast('success');
+            console.log("Showing success toast at");
+            console.log("X = ", this.cursorX);
+            console.log("Y = ", this.cursorY);
             // Move to the next question after a short delay
             setTimeout(() => {
                 this.currentQuestionIndex++;
