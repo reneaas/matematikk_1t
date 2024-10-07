@@ -1,9 +1,88 @@
 # Grafisk løsning 
 
-:::::{admonition} Oppsummering
+:::::::{admonition} Oppsummering
 ---
 class: summary, dropdown
 ---
+
+::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::{tab-item} Linjer i planet
+
+Linjer i planet kan generelt skrives på formen 
+
+$$
+Ax + By = C,
+$$
+
+der $A, B, C \in \mathbb{R}$ er konstanter.
+
+````{tab-set}
+---
+class: tabs-parts
+---
+
+```{tab-item} Skrå linjer
+
+Likningen kan skrives på to måter:
+
+$$
+Ax + By = C \quad \text{eller} \quad y = ax + b.
+$$
+
+:::{figure} ./figurer/teori/linjer_i_planet/skrå_linje.svg
+---
+width: 80%
+---
+:::
+
+```
+
+```{tab-item} Horisontale linjer
+
+Kan skrives på formen
+
+$$
+y = \text{konstant}.
+$$
+
+:::{figure} ./figurer/teori/linjer_i_planet/horisontal_linje.svg
+---
+width: 80%
+---
+::: 
+
+```
+
+```{tab-item} Vertikale linjer
+
+Kan skrives på formen
+
+$$
+x = \text{konstant}.
+$$
+
+:::{figure} ./figurer/teori/linjer_i_planet/vertikal_linje.svg
+---
+width: 80%
+---
+::: 
+
+```
+````
+:::::
+
+
+::::::
+
+Linjer i planet
+: Skrå linjer i planet kan skrives på to måter:
+    * $y = ax + b$
+    * $Ax + By = C$
+
+: Horisontale linjer kan skrives på formen $y = \text{konstant}$ og vertikale linjer på formen $x = \text{konstant}$.
 Skrå linjer i planet
 : Skrå linjer i planet kan skrives på to måter:
     * $y = ax + b$
@@ -20,7 +99,8 @@ Logisk *og*
     $$
 
     der vi leser $\land$ som "*og samtidig*".
-:::::
+
+:::::::
 
 På samme måte som vi løste likninger, kan vi også løse likningssystemer grafisk. 
 
@@ -86,19 +166,19 @@ $$
 class: example
 name: lineære-likningssystemer-grafisk-eksempel-2
 ---
-En fordel med den generelle formen på likningen $Ax + Bx = C$, er at den lar oss beskrive alle type linjer:
+En fordel med den generelle formen på likningen $Ax + By = C$, er at den lar oss beskrive alle type linjer:
 
 ````{tab-set}
 ```{tab-item} Skrå linjer
 Form på likning:
-: $y = ax + b$
+: $Ax + By = C$ eller $y = ax + b$
 
 :::{figure} ./figurer/eksempler/eksempel_2/skrå_linje.svg 
 ---
 width: 80%
 name: fig-lineære-likningssystemer-grafisk-eksempel-2a
 ---
-viser en skrå linje $y = -\dfrac{1}{2}x + 3$ som også kan skrives på formen $x + 2y = 6$.
+viser en skrå linje $y = -\dfrac{4}{3}x + \\dfrac{2}{3}$ som også kan skrives på formen $4x + 3y = 2$.
 :::
 
 ```

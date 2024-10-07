@@ -15,15 +15,91 @@ file: quiz/quiz_1/quiz_1.html
 
 :::::
 
+---
 
+:::::{admonition} Oppgave 2
+---
+class: problem-level-1
+---
+Skriv om likningene til formen $y = ax + b$.
 
-``````{admonition} Oppgave 1
+````{tab-set}
+---
+class: tabs-parts
+---
+```{tab-item} a
+$$
+2x - y = 4
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+y = 2x - 4
+$$
+:::
+```
+
+```{tab-item} b
+$$
+4x + 2y = -6
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+y = -2x - 3
+$$
+:::
+```
+
+```{tab-item} c
+$$
+3x - 2y = 5
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+y = \frac{3}{2}x - \frac{5}{2}
+$$
+:::
+```
+
+```{tab-item} d
+$$
+-2x + 3y = 7
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+y = \frac{2}{3}x + \frac{7}{3}
+$$
+:::
+```
+````
+
+:::::
+
+---
+
+::::::{admonition} Oppgave 3
 ---
 class: problem-level-1
 ---
 Bruk figuren under til å løse likningssystemet 
 \begin{align*} 
-x - 2y &=2 \\
+x - 2y &=2 \\ 
+\\
 x + 4y & =8 \\
 \end{align*}
 
@@ -56,64 +132,149 @@ $$
 ```
 ````
 `````
-``````
+::::::
 
 ---
 
-::::{admonition} Oppgave 2
+::::{admonition} Oppgave 4
 ---
-class: problem-level-1
+class: problem-level-2
 ---
-Under vises en interaktiv grafisk representasjon av likningssystemet
+Under vises tre likningssystemer $\mathrm{I}$, $\mathrm{II}$ og $\mathrm{III}$ og tre figurer $\mathrm{A}$, $\mathrm{B}$ og $\mathrm{C}$ som parvis hører sammen.
 
+
+````{tab-set}
+---
+class: tabs-parts
+---
+
+```{tab-item} Oppgave a
+Bestem hvilken figur som hører til likningssystem $\mathrm{I}$. 
+
+Bruk figuren til å løse likningssystemet.
+
+:::{admonition} Fasit
+---
+class: dropdown, answer
+---
+Likningssystem $\mathrm{I}$ hører til figur $\mathrm{C}$. 
+
+Løsningen av likningssystemet er
+
+$$
+x = -2 \quad \land \quad y = -1.
+$$
+:::
+```
+
+```{tab-item} Oppgave b
+Bruk figurene til å bestemme hvilket likningssystem som hører til figur $\mathrm{B}$. 
+
+Løs likningssystemet ved hjelp av figuren.
+
+:::{admonition} Fasit
+---
+class: dropdown, answer
+---
+Likningssystem $\mathrm{III}$ hører til figur $\mathrm{B}$.
+
+Løsningen av likningssystemet er
+
+$$
+x = 0 \quad \land \quad y = 4.
+$$
+:::
+```
+
+```{tab-item} Oppgave c
+Løs likningssystemet som gjenstår ved hjelp av den gjenværende figuren. 
+
+:::{admonition} Fasit
+---
+class: dropdown, answer
+---
+Likningssystem $\mathrm{II}$ hører til figur $\mathrm{A}$.
+
+Løsningen av likningssystemet er
+
+$$
+x = -3 \quad \land \quad y = 1.
+$$
+```
+````
+
+---
+
+````{tab-set}
+---
+class: tabs-parts
+---
+```{tab-item} $\mathrm{I}$
+$$
+x + 2y &= -4 \\
+\\
+x + \dfrac{2}{3}y &= -\dfrac{8}{3}
+$$
+```
+
+```{tab-item} $\mathrm{II}$
 \begin{align*}
--2x + 3y &= 5 \\
-x + y &= k
+x + y &= -2 \\
+\\
+-x + y &= 4
 \end{align*}
+```
 
-der $k$ kan varieres.
+```{tab-item} $\mathrm{III}$
+\begin{align*}
+x + 2y &= -4 \\
+\\
+\dfrac{5}{2}x - y &= -4
+\end{align*}
+```
 
-:::{raw} html
+````
+
+````{tab-set}
 ---
-file: ./figurer/oppgaver/oppgave_2.html
+class: tabs-parts
+---
+```{tab-item} $\mathrm{A}$
+
+:::{figure} ./figurer/oppgaver/oppgave_4/figur_A.svg
+---
+width: 80%
 ---
 :::
 
-<br>
+```
 
+```{tab-item} $\mathrm{B}$
 
-Bestem $k$ slik at likningssystemet har
-
-Oppgave 2a
-: Løsningen $x = -4 \, \land \, y = -1$.
-
-:::{admonition} Fasit: 2a
+:::{figure} ./figurer/oppgaver/oppgave_4/figur_B.svg
 ---
-class: answer, dropdown
+width: 80%
 ---
-$$
-k = 5
-$$
-
 :::
 
-Oppgave 2b
-: Løsningsmengden $(x, y) \in \{(2, 3)\}$.
+```
 
-:::{admonition} Fasit: 2b
+```{tab-item} $\mathrm{C}$
+
+:::{figure} ./figurer/oppgaver/oppgave_4/figur_C.svg
 ---
-class: answer, dropdown
+width: 80%
 ---
-$$
-k = -5
-$$
 :::
+
+```
+````
 ::::
 
 ---
 
 
-::::::{admonition} Oppgave 3
+::::::{admonition} Oppgave 5
 ---
 class: problem-level-2
 ---
@@ -166,12 +327,3 @@ $$
 
 
 ::::::
-
----
-
-
-:::{raw} html
----
-file: quiz/quiz_2/quiz_2.html
----
-:::
