@@ -64,9 +64,44 @@ class SequentialMultipleChoiceQuiz {
         this.currentQuestion.render(`question-container-${this.uniqueId}`);
     }
 
-    submitAnswer() {
-        const isCorrect = this.currentQuestion.checkAnswers(false); // Pass 'false' to suppress alerts
+    // submitAnswer() {
+    //     const isCorrect = this.currentQuestion.checkAnswers(false); // Pass 'false' to suppress alerts
 
+    //     if (isCorrect) {
+    //         this.showToast('success');
+    //         // Move to the next question after a short delay
+    //         setTimeout(() => {
+    //             this.currentQuestionIndex++;
+    //             if (this.currentQuestionIndex < this.totalQuestions) {
+    //                 this.showQuestion();
+    //             } else {
+    //                 this.finishQuiz();
+    //             }
+    //         }, 1000); // Delay to allow the user to see the feedback
+    //     } else {
+    //         this.showToast('error');
+    //         // Optionally, allow the user to retry or move on
+    //         // For immediate move to next question, uncomment below
+    //         /*
+    //         setTimeout(() => {
+    //             this.currentQuestionIndex++;
+    //             if (this.currentQuestionIndex < this.totalQuestions) {
+    //                 this.showQuestion();
+    //             } else {
+    //                 this.finishQuiz();
+    //             }
+    //         }, 1500);
+    //         */
+    //     }
+    // }
+
+    submitAnswer() {
+        // Disable the submit button to prevent multiple clicks
+        const submitButton = document.getElementById(`submit-answer-${this.uniqueId}`);
+        submitButton.disabled = true;
+    
+        const isCorrect = this.currentQuestion.checkAnswers(false); // Pass 'false' to suppress alerts
+    
         if (isCorrect) {
             this.showToast('success');
             // Move to the next question after a short delay
@@ -74,26 +109,21 @@ class SequentialMultipleChoiceQuiz {
                 this.currentQuestionIndex++;
                 if (this.currentQuestionIndex < this.totalQuestions) {
                     this.showQuestion();
+                    // Re-enable the submit button for the next question
+                    submitButton.disabled = false;
                 } else {
                     this.finishQuiz();
                 }
             }, 1000); // Delay to allow the user to see the feedback
         } else {
             this.showToast('error');
-            // Optionally, allow the user to retry or move on
-            // For immediate move to next question, uncomment below
-            /*
+            // Re-enable the submit button so the user can try again
             setTimeout(() => {
-                this.currentQuestionIndex++;
-                if (this.currentQuestionIndex < this.totalQuestions) {
-                    this.showQuestion();
-                } else {
-                    this.finishQuiz();
-                }
-            }, 1500);
-            */
+                submitButton.disabled = false;
+            }, 1500); // Match the toast display time
         }
     }
+    
 
     showToast(type) {
         const toastId = type === 'success' ? `toast-success-${this.uniqueId}` : `toast-error-${this.uniqueId}`;
