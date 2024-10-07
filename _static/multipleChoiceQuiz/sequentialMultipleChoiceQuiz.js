@@ -38,10 +38,10 @@ class SequentialMultipleChoiceQuiz {
         document.getElementById(`submit-answer-${this.uniqueId}`).addEventListener('click', () => this.submitAnswer());
 
         // Initialize cursor position for toast
-        document.addEventListener('mousemove', (event) => {
-            this.cursorX = event.clientX;
-            this.cursorY = event.clientY;
-        });
+        // document.addEventListener('mousemove', (event) => {
+        //     this.cursorX = event.clientX;
+        //     this.cursorY = event.clientY;
+        // });
     }
 
     showQuestion() {
@@ -104,9 +104,6 @@ class SequentialMultipleChoiceQuiz {
     
         if (isCorrect) {
             this.showToast('success');
-            console.log("Showing success toast at");
-            console.log("X = ", this.cursorX);
-            console.log("Y = ", this.cursorY);
             // Move to the next question after a short delay
             setTimeout(() => {
                 this.currentQuestionIndex++;
@@ -128,20 +125,49 @@ class SequentialMultipleChoiceQuiz {
     }
     
 
+    // showToast(type) {
+    //     const toastId = type === 'success' ? `toast-success-${this.uniqueId}` : `toast-error-${this.uniqueId}`;
+    //     const toast = document.getElementById(toastId);
+
+    //     // Position the toast near the cursor
+    //     toast.style.top = `${this.cursorY-100}px`;
+    //     toast.style.left = `${this.cursorX}px`;
+    //     toast.style.display = 'block';
+
+    //     // Hide the toast after a delay
+    //     setTimeout(() => {
+    //         toast.style.display = 'none';
+    //     }, 1500); // Display for 1.5 seconds
+    // }
+
     showToast(type) {
         const toastId = type === 'success' ? `toast-success-${this.uniqueId}` : `toast-error-${this.uniqueId}`;
         const toast = document.getElementById(toastId);
-
-        // Position the toast near the cursor
-        toast.style.top = `${this.cursorY-100}px`;
-        toast.style.left = `${this.cursorX}px`;
+    
+        if (!toast) {
+            console.error(`Toast element with ID ${toastId} not found.`);
+            return;
+        }
+    
+        // Position the toast in the center of the container
+        const containerRect = this.container.getBoundingClientRect();
+        const toastWidth = toast.offsetWidth;
+        const toastHeight = toast.offsetHeight;
+    
+        const topPosition = containerRect.top + (containerRect.height - toastHeight) / 2;
+        const leftPosition = containerRect.left - (containerRect.width - toastWidth) / 2;
+    
+        toast.style.position = 'absolute';
+        toast.style.top = `${topPosition}px`;
+        toast.style.left = `${leftPosition}px`;
         toast.style.display = 'block';
-
+    
         // Hide the toast after a delay
         setTimeout(() => {
             toast.style.display = 'none';
         }, 1500); // Display for 1.5 seconds
     }
+    
     
 
     finishQuiz() {
