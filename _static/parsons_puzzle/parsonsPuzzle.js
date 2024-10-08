@@ -395,3 +395,247 @@ function makeCallbackFunction(puzzleContainerId, editorId) {
 
     return callbackFunction;
 }
+
+
+class IndentationParsonsPuzzle extends ParsonsPuzzle {
+    constructor(puzzleContainerId, codeString, onSolvedCallback = null) {
+        super(puzzleContainerId, codeString, onSolvedCallback);
+
+        // Override codeBlocks with preprocessed code
+        this.codeBlocks = this.preprocessCodeWithIndentation(codeString);
+
+        // Determine the maximum indentation level required by the code
+        this.maxIndentationLevel = Math.max(...this.codeBlocks.map(obj => obj.expectedIndentation));
+
+        // Initialize indentation settings
+        this.indentationWidth = 40; // Pixels per indentation level
+
+        // Shuffle the code blocks
+        this.shuffledCodeBlocks = this.shuffleArray(this.codeBlocks.slice());
+
+        // Render the draggable code lines
+        this.renderDraggableCodeLines(this.draggableCodeContainer, this.shuffledCodeBlocks);
+
+        // Add visual guides for indentation levels
+        this.addIndentationGuides(this.dropArea);
+
+        // Enable custom drag-and-drop functionality
+        this.enableCustomDragAndDrop();
+    }
+
+    // Override the preprocessCode method to handle indentation
+    preprocessCodeWithIndentation(codeString) {
+        const lines = codeString.split('\n');
+        return lines.map((line, index) => {
+            const leadingSpaces = line.match(/^\s*/)[0].length;
+            const indentLevel = leadingSpaces / 4; // Assuming 4 spaces per indent level
+            const trimmedLine = line.trim();
+            return {
+                block: trimmedLine,
+                order: index,
+                expectedIndentation: indentLevel,
+                isEmpty: trimmedLine === ''
+            };
+        });
+    }
+
+    // Render draggable code lines
+    renderDraggableCodeLines(container, codeBlockObjects) {
+        container.innerHTML = '';
+        codeBlockObjects.forEach((obj) => {
+            if (!obj.isEmpty) {
+                const lineElement = document.createElement('div');
+                lineElement.className = 'code-line';
+                lineElement.dataset.order = obj.order;
+                lineElement.dataset.expectedIndentation = obj.expectedIndentation;
+                lineElement.dataset.currentIndentation = 0; // Initialize current indentation to 0
+
+                // Code content
+                const codeContent = document.createElement('pre');
+                codeContent.className = 'highlight python code-content';
+                codeContent.innerHTML = `<code>${this.escapeHTML(obj.block)}</code>`;
+
+                // Assemble line element
+                lineElement.appendChild(codeContent);
+
+                container.appendChild(lineElement);
+                hljs.highlightElement(codeContent.querySelector('code'));
+            }
+        });
+    }
+
+    // Add visual indentation guides to the drop area
+    addIndentationGuides(container) {
+        container.style.position = 'relative';
+        for (let i = 1; i <= this.maxIndentationLevel; i++) {
+            const guide = document.createElement('div');
+            guide.className = 'indentation-guide';
+            guide.style.left = `${i * this.indentationWidth}px`;
+            container.appendChild(guide);
+        }
+    }
+
+    // Enable custom drag-and-drop functionality
+    enableCustomDragAndDrop() {
+        const codeLines = this.puzzleContainer.querySelectorAll('.code-line');
+        codeLines.forEach(codeLine => {
+            codeLine.addEventListener('mousedown', (e) => this.dragStart(e, codeLine));
+        });
+    }
+
+    dragStart(e, codeLine) {
+        e.preventDefault();
+        this.currentCodeLine = codeLine;
+        this.startX = e.clientX;
+        this.startY = e.clientY;
+
+        this.originalParent = codeLine.parentElement;
+        this.placeholder = document.createElement('div');
+        this.placeholder.className = 'placeholder-code-line';
+        this.placeholder.style.height = `${codeLine.offsetHeight}px`;
+
+        // Insert placeholder
+        codeLine.parentElement.insertBefore(this.placeholder, codeLine.nextSibling);
+
+        // Move code line to body for absolute positioning
+        document.body.appendChild(codeLine);
+        codeLine.style.position = 'absolute';
+        codeLine.style.zIndex = 1000;
+        codeLine.classList.add('dragging');
+
+        this.moveAt(e.pageX, e.pageY);
+
+        document.addEventListener('mousemove', this.dragMove.bind(this));
+        document.addEventListener('mouseup', this.dragEnd.bind(this));
+    }
+
+    moveAt(pageX, pageY) {
+        this.currentCodeLine.style.left = pageX - this.currentCodeLine.offsetWidth / 2 + 'px';
+        this.currentCodeLine.style.top = pageY - this.currentCodeLine.offsetHeight / 2 + 'px';
+    }
+
+    dragMove(e) {
+        e.preventDefault();
+        this.moveAt(e.pageX, e.pageY);
+
+        // Check for potential drop targets
+        const elementsBelow = document.elementsFromPoint(e.clientX, e.clientY);
+        const dropArea = this.dropArea;
+        const draggableArea = this.draggableCodeContainer;
+
+        let newParent = null;
+        if (elementsBelow.includes(dropArea)) {
+            newParent = dropArea;
+        } else if (elementsBelow.includes(draggableArea)) {
+            newParent = draggableArea;
+        }
+
+        if (newParent && this.currentCodeLine.parentElement !== newParent) {
+            this.placeholder.remove();
+            newParent.appendChild(this.placeholder);
+        }
+
+        // Adjust placeholder position within new parent
+        const codeLines = Array.from(newParent.querySelectorAll('.code-line:not(.dragging)'));
+        let insertBeforeElement = null;
+        for (let codeLine of codeLines) {
+            const rect = codeLine.getBoundingClientRect();
+            if (e.clientY < rect.top + rect.height / 2) {
+                insertBeforeElement = codeLine;
+                break;
+            }
+        }
+
+        if (insertBeforeElement) {
+            newParent.insertBefore(this.placeholder, insertBeforeElement);
+        } else {
+            newParent.appendChild(this.placeholder);
+        }
+    }
+
+    dragEnd(e) {
+        e.preventDefault();
+        document.removeEventListener('mousemove', this.dragMove.bind(this));
+        document.removeEventListener('mouseup', this.dragEnd.bind(this));
+
+        // Snap to indentation level
+        const dropAreaRect = this.dropArea.getBoundingClientRect();
+        const relativeX = e.clientX - dropAreaRect.left;
+        let indentLevel = Math.round(relativeX / this.indentationWidth);
+        indentLevel = Math.max(0, Math.min(indentLevel, this.maxIndentationLevel));
+
+        this.currentCodeLine.dataset.currentIndentation = indentLevel;
+        this.currentCodeLine.style.paddingLeft = `${indentLevel * this.indentationWidth}px`;
+
+        // Remove styles added during dragging
+        this.currentCodeLine.style.position = '';
+        this.currentCodeLine.style.left = '';
+        this.currentCodeLine.style.top = '';
+        this.currentCodeLine.style.zIndex = '';
+        this.currentCodeLine.classList.remove('dragging');
+
+        // Insert the code line into the new parent
+        this.placeholder.parentElement.insertBefore(this.currentCodeLine, this.placeholder);
+        this.placeholder.remove();
+
+        this.currentCodeLine = null;
+    }
+
+    // Override the checkSolution method to include indentation
+    checkSolution() {
+        const droppedItems = Array.from(this.dropArea.querySelectorAll('.code-line'));
+        const droppedOrder = droppedItems.map(item => ({
+            order: parseInt(item.dataset.order),
+            indentation: parseInt(item.dataset.currentIndentation)
+        }));
+
+        // Get the expected order and indentation
+        const correctOrder = this.codeBlocks.filter(obj => !obj.isEmpty).map(obj => ({
+            order: obj.order,
+            indentation: obj.expectedIndentation
+        }));
+
+        // Compare the student's solution with the correct one
+        const isCorrect = this.compareSolutions(droppedOrder, correctOrder);
+
+        // Prepare the full code with student's indentation for display
+        const fullCode = droppedItems.map(item => {
+            const numSpaces = parseInt(item.dataset.currentIndentation) * 4; // Assuming 4 spaces per indent level
+            const indentation = ' '.repeat(numSpaces);
+            const codeLine = this.codeBlocks.find(obj => obj.order === parseInt(item.dataset.order)).block;
+            return indentation + codeLine;
+        }).join('\n');
+
+        this.fullCodeElement.textContent = fullCode;
+        hljs.highlightElement(this.fullCodeElement);
+
+        if (isCorrect) {
+            this.showToast('success');
+            if (this.onSolvedCallback) {
+                setTimeout(() => {
+                    this.onSolvedCallback(fullCode);
+                }, 1500);
+            } else {
+                this.solutionModal.style.display = 'block';
+            }
+            return true;
+        } else {
+            this.showToast('error');
+            return false;
+        }
+    }
+
+    // Helper method to compare solutions
+    compareSolutions(droppedOrder, correctOrder) {
+        if (droppedOrder.length !== correctOrder.length) {
+            return false;
+        }
+        for (let i = 0; i < droppedOrder.length; i++) {
+            if (droppedOrder[i].order !== correctOrder[i].order ||
+                droppedOrder[i].indentation !== correctOrder[i].indentation) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
