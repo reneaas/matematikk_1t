@@ -8,6 +8,23 @@ Målet etter dette delkapittelet er at du skal:
 * Kunne lese, tolke og endre på programkode som løser lineære likningssystemer. 
 :::
 
+---
+
+
+:::::{admonition} Repetisjon 1
+---
+class: reminder
+---
+Svar på så mange spørsmål du kan innen tiden er ute!
+
+:::{raw} html
+---
+file: quiz/quiz_2/quiz_2.html
+---
+:::
+
+:::::
+
 
 Akkurat som med likninger, kan vi bruke numeriske metoder for å finne omtrentlige løsninger til likningssystemer. I fåtall av tilfeller kan vi bestemme de eksakt, men i den virkelige verden må man som oftest si seg fornøyd med omtrentlige løsninger.
 
