@@ -6,6 +6,7 @@ class: tip
 ---
 Målet etter dette delkapittelet er at du skal:
 * Kunne lese, tolke og endre på programkode som løser lineære likningssystemer. 
+* Kunne lese, tolke og lage nøstede `for`{l=python}-løkker for å lage punkter i et rutenett og bruke dette til å løse likningssystemer.
 :::
 
 ---
