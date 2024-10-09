@@ -6,6 +6,7 @@ class: tip
 ---
 Målet etter dette delkapittelet er at du skal:
 * Kunne lese, tolke og endre på programkode som løser lineære likningssystemer. 
+* Kunne lese, tolke og lage nøstede `for`{l=python}-løkker for å lage punkter i et rutenett og bruke dette til å løse likningssystemer.
 :::
 
 ---
@@ -60,24 +61,25 @@ file: quiz/quiz_2/quiz_2.html
 ---
 class: explore
 ---
-I mange tilfeller kan vi skrive om et likningssystem fra den generelle formen 
+I mange tilfeller kan vi skrive om et likningssystem fra dens generelle form til en form som svarer til to lineære funksjoner. Da kan vi tolke likningssystemet som at vi skal bestemme koordinatene til skjæringspunktet $(x, y)$ mellom grafene til de to funksjonene. 
+
+::::{admonition} Eksempel
+---
+class: example
+---
 
 $$
-Ax + By = C \, \land \, Dx + Ey = F
+5x + y = 2 \quad \land \quad 3x - y = 2
 $$
 
-til 
+kan skrives om ved å løse begge likninger for $y$ til:
 
 $$
-y = ax + b \quad \land \quad y = cx + d
+y = \underbrace{-5x + 2}_{\displaystyle f(x)} \quad \land \quad y = \underbrace{3x - 2}_{\displaystyle g(x)}
 $$
 
-Ved å løse hver av likningene for $y$. Da kan vi tolke problemet som at vi skal finne skjæringspunktet mellom grafene til de to lineære funksjonene 
-
-$$
-y = f(x) \quad \land \quad y = g(x)
-$$
-
+Løsningen av likningssystemet er da bare koordinatene til skjæringspunktet mellom grafene til $f$ og $g$.
+::::
 
 ::::::{tab-set}
 ---
@@ -539,6 +541,8 @@ Under vises det tre eksemplekoder der man sjekker om et likningssystem er oppfyl
 :::::{tab-set}
 ::::{tab-item} Eksempel 1
 
+> ⚠️ Merk at nøkkelordet `and`{l=python} = $\land$ (*og samtidig*)
+
 :::{raw} html
 ---
 file: interaktiv_kode/utforsk/utforsk_3/a/eksempel_1.html
@@ -549,6 +553,8 @@ file: interaktiv_kode/utforsk/utforsk_3/a/eksempel_1.html
 
 ::::{tab-item} Eksempel 2
 
+> ⚠️ Merk at nøkkelordet `and`{l=python} = $\land$ (*og samtidig*)
+
 :::{raw} html
 ---
 file: interaktiv_kode/utforsk/utforsk_3/a/eksempel_2.html
@@ -558,6 +564,8 @@ file: interaktiv_kode/utforsk/utforsk_3/a/eksempel_2.html
 ::::
 
 ::::{tab-item} Eksempel 3
+
+> ⚠️ Merk at nøkkelordet `and`{l=python} = $\land$ (*og samtidig*)
 
 :::{raw} html
 ---
