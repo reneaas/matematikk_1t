@@ -104,7 +104,7 @@ Logisk *og*
 
 På samme måte som vi løste likninger, kan vi også løse likningssystemer grafisk.  -->
 
-
+:::{admonition} Læringsmål
 ---
 class: tip
 ---
@@ -177,7 +177,7 @@ Form på likning:
 width: 80%
 name: fig-lineære-likningssystemer-grafisk-eksempel-2a
 ---
-viser en skrå linje $y = -\dfrac{4}{3}x + \\dfrac{2}{3}$ som også kan skrives på formen $4x + 3y = 2$.
+viser en skrå linje $y = -\dfrac{4}{3}x + \dfrac{2}{3}$ som også kan skrives på formen $4x + 3y = 2$.
 :::
 
 ```
