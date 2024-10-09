@@ -1,6 +1,6 @@
 # Grafisk løsning 
 
-:::::::{admonition} Oppsummering
+<!-- :::::::{admonition} Oppsummering
 ---
 class: summary, dropdown
 ---
@@ -102,10 +102,9 @@ Logisk *og*
 
 :::::::
 
-På samme måte som vi løste likninger, kan vi også løse likningssystemer grafisk. 
+På samme måte som vi løste likninger, kan vi også løse likningssystemer grafisk.  -->
 
 
-:::{admonition} Læringsmål: grafisk løsning av lineære likningssystemer
 ---
 class: tip
 ---

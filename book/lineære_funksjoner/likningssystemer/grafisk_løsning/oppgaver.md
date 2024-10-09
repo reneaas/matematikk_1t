@@ -140,7 +140,7 @@ $$
 ---
 class: problem-level-2
 ---
-Under vises tre likningssystemer $\mathrm{I}$, $\mathrm{II}$ og $\mathrm{III}$ og tre figurer $\mathrm{A}$, $\mathrm{B}$ og $\mathrm{C}$ som parvis hører sammen.
+Under vises tre likningssystemer $\mathrm{I}$, $\mathrm{II}$ og $\mathrm{III}$ og tre figurer $\mathrm{A}$, $\mathrm{B}$ og $\mathrm{C}$ som parvis hører sammen. *Merk at figurene ikke nødvendigvis er i samme rekkefølge som likningssystemene.*
 
 
 ````{tab-set}

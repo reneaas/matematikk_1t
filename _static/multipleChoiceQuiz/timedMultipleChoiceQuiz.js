@@ -127,6 +127,11 @@ class TimedMultipleChoiceQuiz {
 
     showQuestion() {
         // Increment the number of questions attempted
+        if (this.currentQuestionIndex >= this.questionsData.length) {
+            this.endQuiz();
+            return;
+        }
+
         this.questionsAttempted++;
 
         if (this.currentQuestionIndex >= this.questionsData.length) {
@@ -193,10 +198,18 @@ class TimedMultipleChoiceQuiz {
         // Stop the timer
         clearInterval(this.timerInterval);
 
+        // Determine the appropriate message
+        let completionMessage;
+        if (this.remainingTime <= 0) {
+            completionMessage = `Tiden er ute! Du svarte riktig på ${this.correctAnswers} av ${this.questionsAttempted} spørsmål. 🎉`;
+        } else {
+            completionMessage = `Du har fullført quizen! Du svarte riktig på ${this.correctAnswers} av ${this.questionsAttempted} spørsmål. 🎉`;
+        }
+
         // Clear the container and display the final score
         this.container.innerHTML = `
             <div class="quiz-completion-message">
-                <p>Tiden er ute! Du svarte riktig på ${this.correctAnswers} av ${this.questionsAttempted} spørsmål. 🎉</p>
+                <p>${completionMessage}</p>
                 <button id="restart-quiz-${this.uniqueId}" class="button button-run">Start på nytt</button>
             </div>
         `;
