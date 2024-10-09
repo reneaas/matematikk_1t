@@ -7,11 +7,11 @@ def main(dirname, save):
     #
     # Define functions
     def f(x):
-        return -0.5 * x + 3
+        return 2 - (4 / 3) * (x + 1)
 
     # List of functions and their labels.
     functions = [f]
-    fn_labels = [f"$x + 2y = 6$"]
+    fn_labels = [f"$4x + 3y = 2$"]
 
     # Create the math figure
     fig, ax = make_figure(

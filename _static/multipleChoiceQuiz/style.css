@@ -23,6 +23,14 @@
     --toast-success-text-color: #ffffff;
     --toast-error-background-color: rgba(220, 53, 69, 0.9); /* Red */
     --toast-error-text-color: #ffffff;
+
+    /* Timer Variables */
+    --timer-background-color: #e9ecef;
+    --timer-text-color: #212529;
+    --progress-bar-background-color: #28a745; /* Green */
+    --progress-bar-warning-color: #ffc107;    /* Yellow */
+    --progress-bar-danger-color: #dc3545;     /* Red */
+    --progress-bar-transition: width 1s linear;
 }
 
 /* Dark Mode Variables */
@@ -48,6 +56,14 @@
     --toast-success-text-color: #ffffff;
     --toast-error-background-color: rgba(220, 53, 69, 0.9); /* Red */
     --toast-error-text-color: #ffffff;
+
+    /* Timer variables */
+    --timer-background-color: #343a40;
+    --timer-text-color: #f8f9fa;
+    --progress-bar-background-color: #28a745; /* Green */
+    --progress-bar-warning-color: #ffc107;    /* Yellow */
+    --progress-bar-danger-color: #dc3545;     /* Red */
+    --progress-bar-transition: width 1s linear;
 }
 
 /* Auto Mode Variables */
@@ -79,6 +95,14 @@
         --toast-success-text-color: #ffffff;
         --toast-error-background-color: rgba(220, 53, 69, 0.9); /* Red */
         --toast-error-text-color: #ffffff;
+
+        /* Timer Variables */
+        --timer-background-color: #343a40;
+        --timer-text-color: #f8f9fa;
+        --progress-bar-background-color: #28a745; /* Green */
+        --progress-bar-warning-color: #ffc107;    /* Yellow */
+        --progress-bar-danger-color: #dc3545;     /* Red */
+        --progress-bar-transition: width 1s linear;
     }
 }
 
@@ -86,6 +110,7 @@
 /* Multiple Choice Quiz Container */
 .mcq-container {
     margin: 20px 0;
+    position: relative;
 }
 
 /* Question Card Styles */
@@ -198,13 +223,13 @@
 
 /* Toast Notification */
 .toast {
-    position: relative;
+    position: absolute;
     padding: 15px;
     border-radius: 8px;
     z-index: 1000;
     display: none;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transform: translate(-50%, -50%) ;
+    /* transform: translate(-50%, -50%); */
 }
 
 
@@ -264,3 +289,50 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+
+
+/* Styles for the timed multiple choice quiz */
+
+/* Timer Container */
+.timer-container {
+    position: relative;
+    width: 100%;
+    height: 30px;
+    background-color: var(--timer-background-color);
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+/* Progress Bar */
+.progress-bar {
+    height: 100%;
+    background-color: var(--progress-bar-background-color);
+    width: 100%;
+    transition: var(--progress-bar-transition);
+}
+
+/* Timer Text */
+.timer-text {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    line-height: 30px;
+    font-weight: bold;
+    color: var(--timer-text-color);
+}
+
+
+/* Warning State */
+.progress-bar-warning {
+    background-color: var(--progress-bar-warning-color) !important;
+}
+
+/* Danger State */
+.progress-bar-danger {
+    background-color: var(--progress-bar-danger-color) !important;
+}
+
+
