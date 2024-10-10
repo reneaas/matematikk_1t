@@ -80,11 +80,11 @@ ax.set_ylabel(r"$y$", fontsize=fontsize, loc="top", rotation="horizontal")
 # ax.plot(x, -x + 1, label=r"$x + y = 1$", lw=2, color="purple", alpha=0.7)
 # ax.legend(fontsize=16)
 
-xticks = list(np.arange(-3, 4, 1))
+xticks = list(np.arange(-2, 3, 1))
 xticks.remove(0)
 plt.xticks(xticks, fontsize=fontsize)
 
-yticks = list(np.arange(-3, 4, 1))
+yticks = list(np.arange(-2, 3, 1))
 yticks.remove(0)
 plt.yticks(yticks, fontsize=fontsize)
 
@@ -92,8 +92,8 @@ plt.yticks(yticks, fontsize=fontsize)
 # Point to animate (initially empty)
 (point,) = ax.plot([], [], "ko", markersize=10)
 
-plt.xlim(-4, 4)
-plt.ylim(-4, 4)
+plt.xlim(-3, 3)
+plt.ylim(-3, 3)
 
 
 # Initialize the animation
@@ -124,8 +124,8 @@ def update(frame):
     bbox_props = dict(
         boxstyle="round,pad=0.3", edgecolor="black", facecolor="white", alpha=0.7
     )
-    x_coord = 3
-    y_coord = -3.5
+    x_coord = 2
+    y_coord = -2.5
     if x[0] < 0:
         plt.text(
             s=f"$(x, y) = ({x[-1]:.0f}, {y[-1]:.0f})$",
