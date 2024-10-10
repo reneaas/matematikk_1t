@@ -42,9 +42,18 @@ class: answer, dropdown
 ---
 Ifølge modellen vil det selges 112 iskrem dersom temperaturen er 23 $^\circ C$. 
 :::
+
+Deloppgave 4
+: Vurder gyldighetsområdet til modellen.  
+:::{admonition} Løsningsforslag
+---
+class: solution, dropdown
+---
+Vi kan regne med at modellen er en god modell for $D_I = [15, 30]. Antakelig kan modellen fortelle oss noe om issalget også ut over dette. Likevel, for temperaturer under - 30 og over 40 er modellen ikke være gyldig, ettersom dette ikke er realistiske temperaturer i Norge. Antakeligvis vil modellen være ugyldig også før dette, ettersom issalget antakeligvis vil være lavt når temperaturen er nær eller under 0. 
+:::
 ````
 
-````{admonition} Oppgave 2
+::::{admonition} Oppgave 2
 ---
 class: problem-level-2
 ---
@@ -85,7 +94,7 @@ class: answer, dropdown
 Nei, det er ikke så sannsynlig, for planten vil ikke ha lineær vekst hele tiden. 
 
 :::
-````
+::::
 
 ::::{admonition} Oppgave 3
 ---

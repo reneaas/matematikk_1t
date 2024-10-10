@@ -78,6 +78,8 @@
     <script async="async" src="../../../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3.2/es5/tex-mml-chtml.js"></script>
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/lineære_funksjoner/modellering/regresjon/regresjon';</script>
     <script>mermaid.initialize({"startOnLoad": true})</script>
@@ -493,7 +495,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regresjon">Regresjon</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gyldighetsomradet-til-en-modell">Gyldighetsområdet til en modell</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hvor-god-er-modellen">Hvor god er modellen?</a></li>
 </ul>
             </nav>
         </div>
@@ -507,7 +509,10 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="modeller-basert-pa-data">
 <h1><span class="section-number">7.2. </span>Modeller basert på data<a class="headerlink" href="#modeller-basert-pa-data" title="Link to this heading">#</a></h1>
-<p>Ofte ønsker vi å lage modeller basert på data. For eksempel kan vi lage en modell for antall kilometer vi har kjørt som funksjon av tiden vi har brukt, som vist i eksempelet under:</p>
+<p>Ofte ønsker vi å lage modeller av situasjoner fra virkeligheten gjennom å bruke flere datapunkter. Hvert datapunkt består av en <span class="math notranslate nohighlight">\(x-verdi\)</span> og en <span class="math notranslate nohighlight">\(y-verdi\)</span>. En viktig del av modellering er å lage slike modeller og deretter vurdere hvor gode modellene er.</p>
+<div class="example admonition">
+<p class="admonition-title">Eksempel 1: Modeller basert på data</p>
+<p>Vi har data for antall kilometer vi har kjørt som funksjon av tiden vi har brukt:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Tid</p></th>
@@ -536,13 +541,18 @@ document.write(`
 </tbody>
 </table>
 </div>
-<p>Basert på dataene over kan vi lage en figur og forsøke å finne den linja som passer best. Hvilken av linjene mener du passer best til dataene?</p>
+<p>Basert på dataene over kan vi lage en figur og forsøke å finne den linja som passer best. Hvilken av linjene passer best til dataene?</p>
 <figure class="align-default" id="datamod">
-<a class="reference internal image-reference" href="../../../../_images/datamodellering.svg"><img alt="../../../../_images/datamodellering.svg" src="../../../../_images/datamodellering.svg" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../../../../_images/datamodellering.svg"><img alt="../../../../_images/datamodellering.svg" src="../../../../_images/datamodellering.svg" style="width: 80%;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 7.2 </span><span class="caption-text">Datamodellering</span><a class="headerlink" href="#datamod" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
+<div class="solution admonition">
+<p class="admonition-title">Løsning</p>
+<p>I eksempelet ser vi at den grønne linja og den rød linja stiger raskere enn alle punktene, mens den blå linja har omtrent halvparten av punktene over og halvparten av punktene under linja. Den blå linja vil dermed være den beste modellen.</p>
+</div>
+</div>
 <section id="regresjon">
 <h2>Regresjon<a class="headerlink" href="#regresjon" title="Link to this heading">#</a></h2>
 <p>I modellen over så vi at en av linjene passet bedre enn de andre. Vi kan finne linja som passer best ved å bruke regresjon. Til regresjon bruker vi alltid et digitalt verktøy, enten python eller GeoGebra. Dersom vi velger GeoGebra, ser det ut som på figuren under.</p>
@@ -553,9 +563,26 @@ document.write(`
 </figcaption>
 </figure>
 <p>GeoGebra har mange ulike modeller vi kan velge i tillegg til lineære modeller. Vi skal bruke flere av de andre modellene senere i 1T.</p>
+<p>[Her bør vi ha et eksempel]</p>
 </section>
-<section id="gyldighetsomradet-til-en-modell">
-<h2>Gyldighetsområdet til en modell<a class="headerlink" href="#gyldighetsomradet-til-en-modell" title="Link to this heading">#</a></h2>
+<section id="hvor-god-er-modellen">
+<h2>Hvor god er modellen?<a class="headerlink" href="#hvor-god-er-modellen" title="Link to this heading">#</a></h2>
+<p>En viktig del av matematisk modellering handler om å vurdere hvor god modellen er. For å gjøre det, må vi vurdere modellen vår opp mot situasjonen vi forsøkte å modellere. Vi kan for eksempel vurdere:</p>
+<ul class="simple">
+<li><p>Kan den matematiske funksjonen vi har valgt (lineær funksjon) virkelig beskrive situasjonen?</p></li>
+<li><p>For hvilken definisjonsmengde er modellen vår en god modell?</p></li>
+<li><p>Når har vi grunn til å anta at modellen vår ikke er gyldig?</p></li>
+</ul>
+<div class="example admonition">
+<p class="admonition-title">Eksempel 2: Gyldighetsområdet til en modell</p>
+<p>Modellen under beskriver folketallet i bygda Oppvik. Vurder gyldighetsområdet til modellen.</p>
+<p>[Trenger hjelp til å lage en figur med datapunkter og en lineær funksjon, og der modellen strekker seg langt utover punktene i både positiv og negativ retning. La gjerne datapunktene øke eksponensielt, slik at de siste punktene passer dårligere]</p>
+<div class="solution admonition">
+<p class="admonition-title">Løsning</p>
+<p>Vi ser fra modellen at ser ut til å være en nokså god beskrivelse av utviklingen av folketallet. Men modellen kan neppe brukes til å beskrive folketallet før datatellingen starter. Når det har gått lang tid, er det også grunn til å ikke stole på modellen.</p>
+<p>Vi ser også at de siste punktene passer dårligere med modellen enn de første. Ser vi nøye på modellen, kan det se ut til at økningen ikke er lineær, men øker raskere og raskere. Vi skal se nærmere på slike modeller senere i matematikk 1T.</p>
+</div>
+</div>
 </section>
 </section>
 
@@ -624,7 +651,7 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regresjon">Regresjon</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gyldighetsomradet-til-en-modell">Gyldighetsområdet til en modell</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hvor-god-er-modellen">Hvor god er modellen?</a></li>
 </ul>
   </nav></div>
 

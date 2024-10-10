@@ -1,21 +1,30 @@
 # Oppgaver: Lage en matematisk modell
-
-````{admonition} Oppgave 1
+::::{admonition} Oppgave 1
 ---
 class: problem-level-1
 ---
-I [denne](https://www.tek.no/nyheter/guide/i/XgPoLm/leie-sparkesykkel-dette-selskapet-er-best-og-billigst) saken fra tek.no finner du priser for ulike sparkesykkelselskap. 
+Lise handler på en perlebutikk der man kan velge perler i løsvekt. For å lage et smykke trenger man et kjede, det koster 15 kroner. I tillegg velger man selv hvor mange perler man vil ha på kjedet. Hver perle koster 2 kroner. 
 
 Deloppgave 1
-: Ta utgangspunkt i oppstartsprisen og prisen per minutt, og lag en modell som viser prisen per selskap. 
+: Sett opp en funksjon som beskriver prisen per ferdige smykke som funksjon av antall perler du kjøper. 
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$P(p) = 15 + 2p$
+:::
 
 Deloppgave 2
-: Bruk modellen til å bestemme hvilket selskap som er billigst dersom du bruker sparkesykkelen i 8 minutter. 
+: Det er maksimalt plass til 60 perler på et smykke. Sett opp en definisjonsmengde og en verdimengde for funksjon fra deloppgave 1. 
 
-Deloppgave 3
-: I tabellen finner du også pris per 10 minutter. Vurder hvor godt dette tilbudet er i hvert tilfelle.
-````
+:::{admonition} Fasit
 ---
+class: answer, dropdown
+---
+D_P = [0, 60]
+V_P = [15, 135] 
+:::
 
 ````{admonition} Oppgave 2
 ---
@@ -23,7 +32,8 @@ class: problem-level-1
 ---
 I 1987 kostet en kroneis 6 kr. I 2022 hadde prisen steget til 27 kroner. Vi antar at prisutviklingen har vært tilnærmet lineær i perioden fra 1987 til 2022. 
 
-Sett opp en lineær modell som beskriver prissstigningen. 
+Deloppgave 1
+: Sett opp en lineær modell som beskriver prissstigningen. 
 
 :::{admonition} Løsningsforslag
 ---
@@ -38,6 +48,19 @@ $$ a = \frac{\Delta y}{\Delta x} = \frac{21}{35} = \frac{3}{5}$$
 Vi kan da sette opp den lineære modellen $y = \frac{3}{5} + 6$. 
 :::
 ````
+Deloppgave 2
+: Bestem definisjonsmengden og verdimengden til modellen. 
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$D_f = [0, \to \rangle $ 
+
+$V_f = [6, \to \rangle $
+
+:::
+
 
 ````{admonition} Oppgave 3
 ---
