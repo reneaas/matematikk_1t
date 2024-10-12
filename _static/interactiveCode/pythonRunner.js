@@ -1,8 +1,8 @@
 class PythonRunner {
-    constructor(outputId, errorBoxId) {
+    constructor(outputId, errorBoxId, preloadPackages = null) {
         this.outputId = outputId;            // ID of the HTML element where output will be displayed
         this.errorBoxId = errorBoxId;        // ID of the HTML element for displaying errors
-        this.workerManager = new WorkerManager();
+        this.workerManager = new WorkerManager(preloadPackages);
         this.workerManager.setMessageCallback(this.handleWorkerMessage.bind(this)); // Set the message callback
         this.workerManager.setErrorCallback(this.handleWorkerError.bind(this));     // Set the error callback
         this.pyConsoleScript = this.getPyConsoleScript();  // Load the Python console script
@@ -59,9 +59,18 @@ class PythonRunner {
         }
 
         if (type === 'stdout') {
-            let escapedMsg = msg.replace(/</g, '&lt;').replace(/>/g, '&gt;'); //Escape the symbols '<' and '>'
-            outputElement.innerHTML += this.formatErrorMessage(escapedMsg);
-            this.highlightLine(this.editorInstance, escapedMsg);
+            // Replace "&" with "∧", "oo" with "∞", and "|" with "∨"
+            let formattedMsg = msg
+            .replace(/And\(([^)]+)\)/g, (match, p1) => {
+                // Split conditions by comma, trim spaces, and wrap each in parentheses
+                const conditions = p1.split(',').map(cond => cond.trim());
+                return conditions.map(cond => `(${cond})`).join(' ∧ ');
+            })
+            // .replace(/&/g, '∧')
+            .replace(/oo/g, '∞')
+            .replace(/\|/g, '∨');
+            outputElement.innerHTML += this.formatErrorMessage(formattedMsg);
+            this.highlightLine(this.editorInstance, formattedMsg);
             this.scrollToBottom(outputElement);
 
         } else if (type === 'stderr') {
@@ -71,7 +80,9 @@ class PythonRunner {
             // After loading packages, execute the code
             console.log("Packages loaded successfully.");
             this.workerManager.runCode(this.pyConsoleScript);
-            this.workerManager.runCode(this.currentCode);
+            if (this.currentCode) {
+                this.workerManager.runCode(this.currentCode);
+            }
         }
     }
 
@@ -466,87 +477,3 @@ sys.stderr = PyConsole()
     }
 }
 
-
-
-// stepByStepPythonRunner.js
-
-class StepByStepPythonRunner extends PythonRunner {
-    constructor(outputId, errorBoxId, codeSetupInstance) {
-        super(outputId, errorBoxId);
-        this.codeSetupInstance = codeSetupInstance;
-        this.pyodide = null;
-        this.initializePyodide();
-    }
-
-    async initializePyodide() {
-        this.pyodide = await loadPyodide();
-    }
-
-    async run(editor) {
-        const code = editor.getValue();
-        await this.executeCodeStepByStep(code);
-    }
-
-    async executeCodeStepByStep(code) {
-        try {
-            const executionStates = await this.getExecutionStates(code);
-            this.codeSetupInstance.updateExecutionStates(executionStates);
-        } catch (err) {
-            this.handleExecutionError(err);
-        }
-    }
-
-    async getExecutionStates(code) {
-        // Import necessary modules in Pyodide
-        await this.pyodide.loadPackage('micropip');
-        await this.pyodide.runPythonAsync(`
-            import sys
-            sys.setrecursionlimit(1000)
-            import json
-            import sys
-            sys.modules['_pydevd_frame_eval'] = None
-        `);
-
-        // Define the code to extract execution states
-        const traceScript = `
-def trace_calls(frame, event, arg):
-    if event != 'line':
-        return
-    co = frame.f_code
-    func_name = co.co_name
-    line_no = frame.f_lineno
-    locals_copy = frame.f_locals.copy()
-    execution_state = {
-        'lineNumber': line_no,
-        'locals': locals_copy
-    }
-    execution_states.append(execution_state)
-    return trace_calls
-
-execution_states = []
-sys.settrace(trace_calls)
-try:
-    exec(code, {})
-except Exception as e:
-    execution_states.append({'error': str(e)})
-finally:
-    sys.settrace(None)
-`;
-        // Inject the user code into the script
-        const fullScript = `code = """${code}"""\n` + traceScript + `\njson.dumps(execution_states)`;
-
-        // Run the script in Pyodide
-        const result = await this.pyodide.runPythonAsync(fullScript);
-
-        // Parse the result
-        const executionStates = JSON.parse(result);
-        return executionStates;
-    }
-
-    handleExecutionError(error) {
-        const errorBoxElement = document.getElementById(this.errorBoxId);
-        if (errorBoxElement) {
-            errorBoxElement.textContent = error.message;
-        }
-    }
-}

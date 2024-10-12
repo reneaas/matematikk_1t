@@ -6,9 +6,71 @@ file: velkommen.html
 ---
 :::
 
+<br>
+
+:::::{grid} 1 1 2 3
+---
+gutter: 3
+---
+
+::::{grid-item-card}
+---
+link: book/algebra/regning/intro
+link-type: doc
+---
+**Grunnleggende regning** ➕➖✖️➗
 
 
-## Innhold
-:::{tableofcontents}
-:::
+^^^
+$$
+2 \cdot(3^2 + 4) = 26
+$$
 
+$$
+a(b + c) = ab + ac
+$$
+::::
+
+::::{grid-item-card}
+---
+link: book/algebra/mengdelære/intro_mengdelære
+link-type: doc
+---
+**Mengdelære** 
+
+^^^
+
+\begin{align*}
+    x &\in \mathbb{R} \\
+    \\
+    n &\in \{1, 2, 5\} \\
+    \\
+    y &\in \langle 2, 5] \\
+    \\
+    -2 &< z \leq  5
+\end{align*}
+::::
+
+
+::::{grid-item-card}
+---
+link: book/lineære_funksjoner/intro
+link-type: doc
+---
+**Lineære funksjoner** 📈
+
+
+^^^
+
+$$
+f(x) = ax + b
+$$
+
+$$
+y - y_1 = a(x - x_1)
+$$
+
+::::
+
+
+:::::
