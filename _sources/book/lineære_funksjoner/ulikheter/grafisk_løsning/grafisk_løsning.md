@@ -4,15 +4,10 @@
 ---
 class: tip
 ---
-Etter å ha gått gjennom dette delkapittelet, er målet at du skal kunne:
-* Løse lineære ulikheter grafisk av typene
-    * $ax + b > 0$
-    * $ax + b > k$
-    * $ax + b > cx + d$
-* Løse tilsvarende ulikheter med sammenlikningsoperatorene $\geq$, $<$ og $\leq$.
-* Kunne oppgi løsningen til en ulikhet som
-    * En ulikhet
-    * En løsningsmengde
+Etter dette delkapittelet, er målet at du skal:
+* Kunne løse lineære ulikheter grafisk
+* Kunne tegne fortegnslinjer for lineære funksjoner, og bruke disse til å løse ulikheter
+* Kunne uttrykke løsningen av en ulikhet som en ulikhet eller som en løsningsmengde
 :::
 
 
@@ -22,28 +17,34 @@ Etter å ha gått gjennom dette delkapittelet, er målet at du skal kunne:
 ---
 class: theory
 ---
-Gitt en lineær funksjon $f(x) = ax + b$, kan vi sette opp fire ulikheter som vist i tabellen under. Løsningsmengden til ulikheten vil variere avhengig av type ulikhet.
+Gitt en lineær funksjon $f(x) = ax + b$, kan vi løse en ulikheter av typene under grafisk. 
 
-| Ulikhet | Løsningsmengde |
-|---------|----------------|
-| $ax + b > 0$ | $x \in L$ der grafen til $f$ er **over** $x$-aksen |
-| $ax + b \geq 0$ | $x \in L$ der grafen til $f$ er **på** eller **over** $x$-aksen |
-| $ax + b < 0$ | $x \in L$ der grafen til $f$ er **under** $x$-aksen |
-| $ax + b \leq 0$ | $x \in L$ der grafen til $f$ er **på** eller **under** $x$-aksen |
+`````{tab-set}
+````{tab-item} $ax + b > 0$ eller $ax + b \geq 0$
+Løsningen av denne typen ulikhet er alle $x$-verdier der grafen til $f$ ligger **over** $x$-aksen. I tilfellet der vi løser $f(x) \geq 0$, så inkluderer vi også punktet der $f$ er **på** $x$-aksen.
 
-<br>
-
-Løsningen til en ulikhet oppgis enten som en ulikhet eller som en løsningsmengde.
-
-Figuren under illustrerer de fire tilfellene.
-
-:::{figure} ./figurer/teori/ulikhet_type_1.svg
+:::{figure} ./figurer/teori/ulikhet_type_1/ax+b>0.svg
 ---
-name: lineære-ulikhter-grafisk-teori-1
-width: 100%
+width: 80%
 ---
-Figuren til venstre viser løsningsmengden for ulikhetene $ax + b < 0$ og $ax + b \leq 0$. Figuren til høyre viser løsningsmengden for ulikhetene $ax + b > 0$ og $ax + b \geq 0$. Nullpunktet til $f$ er inkludert i løsningsmengden når likhet er tillatt.
+viser løsningsmengden for ulikhetene $ax + b > 0$ og $ax + b \geq 0$. Nullpunktet til $f$ er ikke inkludert i løsningsmengden når vi løser $f(x) \geq 0$. 
 :::
+
+````
+
+````{tab-item} $ax + b < 0$ eller $ax + b \leq 0$
+Løsningen av denne typen ulikhet er alle $x$-verdier der grafen til $f$ ligger **under** $x$-aksen. I tilfellet der vi løser $f(x) \leq 0$, så inkluderer vi også punktet der $f$ er **på** $x$-aksen.
+
+:::{figure} ./figurer/teori/ulikhet_type_1/ax+b<0.svg
+---
+width: 80%
+---
+viser løsningsmengden for ulikhetene $ax + b < 0$ og $ax + b \leq 0$. Nullpunktet til $f$ er inkludert i løsningsmengden når vi løser $f(x) \leq 0$.
+:::
+
+````
+
+`````
 ::::
 
 
@@ -80,9 +81,19 @@ Fra grafen til $f$, kan vi se at så lenge $x < 2$, så ligger grafen på oversi
 
 Vi oppgir løsningen av en ulikhet enten som en ulikhet eller som en løsningsmengde. Dermed blir løsningen av ulikheten her
 
+````{tab-set}
+```{tab-item} Ulikhet
 $$
-\underbrace{x < 2}_\text{Ulikhet} \quad \text{eller} \quad \underbrace{x \in \langle \gets, 2\rangle}_\text{Løsningsmengde}
+x < 2
 $$
+```
+```{tab-item} Løsningsmengde
+$$
+x \in \langle \gets, 2 \rangle
+$$
+```
+
+````
 ::::
 :::::
 
