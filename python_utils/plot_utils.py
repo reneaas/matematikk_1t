@@ -48,6 +48,7 @@ def make_figure(
     ticks=True,
     alpha=0.7,
     grid=True,
+    domain=None,
 ):
     fig, ax = _get_figure_and_axis()
 
@@ -57,8 +58,12 @@ def make_figure(
         plt.xticks([])
         plt.yticks([])
 
-    a = -50
-    b = 50
+    if domain:
+        a, b = domain
+    else:
+        a = -50
+        b = 50
+
     x = np.linspace(a, b, 1024)
 
     if fn_labels is not None:
