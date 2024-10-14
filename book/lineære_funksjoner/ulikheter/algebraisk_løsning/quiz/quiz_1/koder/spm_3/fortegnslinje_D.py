@@ -5,12 +5,14 @@ import matplotlib.pyplot as plt
 def main(dirname, save):
 
     x = sp.symbols("x")
-    f = x**2 - 4
+    f = x - 1
 
     make_sign_chart(
         f=f,
         x=x,
         fn_name="f(x)",
+        include_factors=False,
+        small_figsize=True,
     )
 
     if save:

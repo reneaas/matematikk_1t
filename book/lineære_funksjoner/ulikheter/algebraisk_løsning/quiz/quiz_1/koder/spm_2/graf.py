@@ -1,27 +1,40 @@
-import sympy as sp
 import matplotlib.pyplot as plt
+
+plt.rc("text", usetex=True)
 
 
 def main(dirname, save):
+    #
+    # Define functions
+    def f(x):
+        return 2 * x + 4
 
-    x = sp.symbols("x")
-    f = x**2 - 4
+    # List of functions and their labels.
+    functions = [f]
+    fn_labels = [f"${fn.__name__}$" for fn in functions]
 
-    make_sign_chart(
-        f=f,
-        x=x,
-        fn_name="f(x)",
+    # Create the math figure
+    fig, ax = make_figure(
+        functions=functions,
+        fn_labels=fn_labels,  # NOTE: Set `None` hvis du ikke vil ha labels.
+        xmin=-6,
+        xmax=6,
+        ymin=-6,
+        ymax=6,
+        ticks=True,
     )
 
+    # NOTE: Select an appropriate `dirname` to save the figure.
+    # The directory `dirname` will be created automatically if it does not exist already.
     if save:
         fname = __file__.split("/")[-1].replace(".py", ".svg")
-        savefig(dirname=dirname, fname=fname)
+        savefig(dirname=dirname, fname=fname)  # Lagrer figuren i `dirname`-directory
 
-    else:
+    if not save:
+
         plt.show()
 
 
-# NOTE: Ikke endre på noe under denne linjen
 if __name__ == "__main__":
 
     import sys
@@ -49,9 +62,15 @@ if __name__ == "__main__":
     sys.path.append(repo_root)
 
     # Now you can import modules from the GitHub repo root
-    from python_utils.make_sign_chart import make_sign_chart
-    from python_utils.plot_utils import savefig
+    from python_utils.plot_utils import make_figure, savefig
+
+    parts = current_dir.split("/")
+    for i in range(len(parts)):
+        if parts[~i] == "koder":
+            parts[~i] = "figurer"
+            break
+
+    dirname = "/".join(parts)
 
     # NOTE: Set `save=True` to save figure. `save=False` to display figure.
-    dirname = current_dir.replace("koder", "figurer")
     main(dirname=dirname, save=True)
