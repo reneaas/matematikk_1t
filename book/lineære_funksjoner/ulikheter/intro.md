@@ -1,33 +1,52 @@
 # Lineære ulikheter
 
-En ulikhet kan beskrives som at en størrelse er større eller mindre enn en annen størrelse. En **lineær ulikhet** er en ulikhet hvor de algebraiske uttrykkene er funksjonsuttrykkene til lineære funksjoner. Et eksempel på en lineær ulikhet er
+:::::{grid} 1 1 2 2
+---
+gutter: 3
+---
 
-$$
-x + 3 > 2x - 1.
-$$ (eq:ulikhet_intro_eksempel)
+::::{grid-item-card}
+---
+link: ./grafisk_løsning/grafisk_løsning
+link-type: doc
+---
+**Grafisk løsning** 📈
 
-Vi trenger en oversikt over betydningen av noen nye matematiske symboler for å kunne lese ulikheter og uttrykke løsningen av en ulikhet: 
+^^^
+:::{figure} ./grafisk_løsning/figurer/teori/ulikhet_type_1/ax+b>0.svg
+---
+width: 100%
+---
+:::
+::::
 
-| Symbol | Betydning | Eksempel | Leses som... |
-|:------:|:---------:|:-------:|:-------:|
-| $<$    | Mindre enn | $2 < 3$  | $2$ er _mindre enn_ $3$ |
-| $>$    | Større enn | $3 > 2$ | $3$ er _større enn_ $2$ |
-| $\leq$ | Mindre enn eller lik | $2 \leq 3$ | $2$ er _mindre enn eller lik_ $3$
-| $\geq$ | Større enn eller lik | $3 \geq 2$ | $3$ er _større enn eller lik_ $2$ |
+::::{grid-item-card}
+---
+link: algebraisk_løsning/algebraisk_løsning
+link-type: doc
+---
+**Algebraisk løsning** ✍🏼
 
-Vi kan altså lese ulikheten {eq}`eq:ulikhet_intro_eksempel` som at den uttrykker at $x + 3$ er større enn $2x - 1$. Men dette er slettes ikke sant for _alle_ verdier av $x$. 
+^^^
+\begin{align*}
+    2x - 3 &> -3x + 5 \\
+    \\
+    2x + 3x &> 5 + 3 \\
+    \\
+    5x &> 8 \\
+    \\
+    x &> \frac{8}{5}
+\end{align*}
 
-_Målet_ er å bestemme hvilke verdier av $x$ som gjør at ulikheten er sann. Løsningen av ulikheten er oftest en mengde av mulige verdier for $x$. Nå vet vi målet, så la oss formulere noen konkrete læringsmål for dette kapittelet.
+---
 
-```{admonition} Læringsmål: lineære ulikheter
-:class: tip
+:::{figure} ./algebraisk_løsning/figurer/teori/fortegnslinjer.svg
+---
+width: 100%
+---
+:::
 
-* Du skal kunne løse lineære ulikheter ved hjelp ulike løsningsstrategier. Du skal kunne løse lineære ulikheter med:
-    1. Grafisk løsning.
-    2. Algebraisk løsning.
-    3. Ved programmering.
-* Du skal kunne uttrykke løsningen av en lineær ulikhet på to forskjellige måter:
-    1. Som en ulikhet.
-    2. Som en mengde.
-```
+::::
+
+:::::
 
