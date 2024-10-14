@@ -27,7 +27,7 @@ Løsningen av denne typen ulikhet er alle $x$-verdier der grafen til $f$ ligger 
 ---
 width: 80%
 ---
-viser løsningsmengden for ulikhetene $ax + b > 0$ og $ax + b \geq 0$. Nullpunktet til $f$ er ikke inkludert i løsningsmengden når vi løser $f(x) \geq 0$. 
+viser løsningsmengden for ulikhetene $ax + b > 0$ og $ax + b \geq 0$. Nullpunktet til $f$ er inkludert i løsningsmengden når vi løser $f(x) \geq 0$. 
 :::
 
 ````
