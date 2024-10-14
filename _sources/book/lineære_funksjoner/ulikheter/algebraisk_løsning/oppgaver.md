@@ -179,7 +179,24 @@ $$
 
 ---
 
-::::{Admonition} Oppgave 3
+::::{admonition} Oppgave 3
+---
+class: problem-level-1
+---
+Ta quizen! 
+
+:::{raw} html
+---
+file: quiz/quiz_1/quiz_1.html
+---
+:::
+
+::::
+
+---
+
+
+::::{Admonition} Oppgave 4
 ---
 class: problem-level-2
 ---
@@ -198,7 +215,7 @@ Tips: Hvis dette virker ulogisk, kan du forsøke å løse ulikheten grafisk!
 `````
 ::::
 
-::::{Admonition} Oppgave 4
+::::{Admonition} Oppgave 5
 ---
 class: problem-level-2
 ---
