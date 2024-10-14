@@ -1,146 +1,183 @@
 # Oppgaver: <br> Algebraisk løsning av lineære ulikheter
 
-::::{admonition} Oppgave 1 
+::::::::::::{admonition} Oppgave 1 
 ---
 class: problem-level-1
 ---
-Løs ulikhetene
+I hver av oppgavene skal du uttrykke løsningen som en *ulikhet*.
 
-Deloppgave 1
-: $ x - 1 > 0$
+:::::::::::{tab-set}
+---
+class: tabs-parts
+---
+::::::::::{tab-item} a
+Løs ulikheten 
 
-`````{admonition} Fasit
-:class: dropdown, answer
-````{tab-set}
-```{tab-item} Løsning som ulikhet
+$$
+x - 1 > 0
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
 $$
 x > 1
 $$
-```
+:::
 
-```{tab-item} Løsningsmengde
+::::::::::
+
+::::::::::{tab-item} b
+Løs ulikheten
+
 $$
-v \in \langle 1, \to \rangle
+2x - 3 \geq 1
 $$
-```
-````
-`````
 
-<br>
-
-Deloppgave 2
-: $ 2x - 3 \geq 1$
-
-`````{admonition} Fasit
-:class: dropdown, answer
-````{tab-set}
-```{tab-item} Løsning som ulikhet
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
 $$
 x \geq 2
 $$
-```
+:::
 
-```{tab-item} Løsningsmengde
-$$
-x \in [ 2, \to \rangle
-$$
-```
-````
-`````
+::::::::::
 
-<br>
+::::::::::{tab-item} c
 
-Deloppgave 3
-: $ -x - 2 > -1$
+Løs ulikheten 
 
-`````{admonition} Fasit
-:class: dropdown, answer
-````{tab-set}
-```{tab-item} Løsning som ulikhet
 $$
- x < -1
+-x - 2 > 2x - 1
 $$
-```
 
-```{tab-item} Løsningsmengde
-$$
-x \in \langle \gets, -1 \rangle
-$$
-```
-````
-`````
-::::
-
-::::{admonition} Oppgave 2 
+:::{admonition} Fasit
 ---
-class: problem-level-2
+class: answer, dropdown
 ---
-Løs ulikhetene.
-
-Deloppgave 1
-: $ x + 1 > 2x + 4 $
-
-`````{admonition} Fasit
-:class: dropdown, answer
-````{tab-set}
-```{tab-item} Løsning som ulikhet
 $$
-x < -3
+x < -\dfrac{1}{3}
 $$
-```
+:::
 
-```{tab-item} Løsningsmengde
+::::::::::
+
+::::::::::{tab-item} d
+Løs ulikheten 
+
+$$
+2x - 3 \leq -x + 5
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x \leq \dfrac{8}{3}
+$$
+:::
+
+::::::::::
+
+:::::::::::
+::::::::::::
+
+---
+
+
+
+::::::::::::{admonition} Oppgave 2 
+---
+class: problem-level-1
+---
+I hver av oppgavene skal du uttrykke løsningen som en *løsningsmengde*.
+
+:::::::::::{tab-set}
+---
+class: tabs-parts
+---
+::::::::::{tab-item} a
+Løs ulikheten
+
+$$
+x + 1 > 2x + 4
+$$
+
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
 $$
 x \in \langle \gets, -3 \rangle
 $$
-```
-````
-`````
-<br>
+:::
 
-Deloppgave 2
-: $ x + 1 < -x + 2 $
+::::::::::
 
-`````{admonition} Fasit
-:class: dropdown, answer
-````{tab-set}
-```{tab-item} Løsning som ulikhet
-$$
-x < \frac{1}{2}
-$$
-```
+::::::::::{tab-item} b
+Løs ulikheten
 
-```{tab-item} Løsningsmengde
 $$
-x \in \langle \gets, \frac{1}{2} \rangle
+x + 1 < -x + 2
 $$
-```
-````
-`````
-<br>
 
-Deloppgave 3
-
-: $1 - x < 1 + x$
-
-`````{admonition} Fasit
-:class: dropdown, answer
-````{tab-set}
-```{tab-item} Løsning som ulikhet
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
 $$
-x > 0
+x \in \left\langle \gets, \dfrac{1}{2} \right\rangle
 $$
-```
+:::
 
-```{tab-item} Løsningsmengde
-$$
-x \in \langle 0, \to \rangle
-$$
-```
-````
-`````
+::::::::::
 
-::::
+::::::::::{tab-item} c
+Løs ulikheten
+
+$$
+1 - x \leq 1 + x
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x \in [0, \to\rangle
+$$
+:::
+
+::::::::::
+
+::::::::::{tab-item} d
+Løs ulikheten
+
+$$
+-3x + 5 \geq \dfrac{1}{2}x + 3
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x \in \left[\dfrac{4}{7} ,\to\right\rangle
+$$
+:::
+
+::::::::::
+
+:::::::::::
+
+::::::::::::
+
+---
 
 ::::{Admonition} Oppgave 3
 ---

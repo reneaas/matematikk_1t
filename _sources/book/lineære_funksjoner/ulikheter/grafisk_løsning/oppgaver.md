@@ -289,3 +289,105 @@ viser grafene til $f(x) = -\dfrac{2}{3}x + 4$ og $g(x) = \dfrac{1}{3}x + 1$.
 ::::
 
 ::::::::::::
+
+
+---
+
+
+::::::::::::{admonition} Oppgave 4
+---
+class: problem-level-2
+---
+I {numref}`fig-lineære-funksjoner-ulikheter-grafisk-løsning-oppgaver-oppgave-4` vises grafene til to lineære funksjoner $f$ og $g$.
+:::::::::::{tab-set}
+---
+class: tabs-parts
+---
+::::::::::{tab-item} a
+Bruk én av funksjonsgrafene til å lage en ulikhet som har løsningen
+
+$$
+x \geq 2
+$$
+
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+f(x) \geq 3
+$$
+:::
+
+::::::::::
+
+::::::::::{tab-item} b
+Bruk én av funksjonsgrafene til å lage en ulikhet som har løsningen
+
+$$
+x \in \langle \gets, 2\rangle 
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+g(x) < 1
+$$
+:::
+
+::::::::::
+
+::::::::::{tab-item} c
+Bruk én av funksjonsgrafene til å lage en ulikhet som har løsningen
+
+$$
+x \in [-1, \to \rangle
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+f(x) \geq -2
+$$
+:::
+
+::::::::::
+
+::::::::::{tab-item} d
+Bruk én av funksjonsgrafene til å lage en ulikhet som har løsningen
+
+$$
+x \leq 3
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+g(x) \leq 2
+$$
+:::
+
+::::::::::
+
+
+
+:::::::::::
+
+
+:::{figure} ./figurer/oppgaver/oppgave_4.svg
+---
+name: fig-lineære-funksjoner-ulikheter-grafisk-løsning-oppgaver-oppgave-4
+width: 80%
+---
+viser grafen til to lineære funksjoner $f$ og $g$.
+:::
+
+
+::::::::::::
