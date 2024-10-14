@@ -4,8 +4,9 @@
 ---
 class: tip
 ---
-Etter å ha gått gjennom dette delkapittelet, er målet at du skal kunne:
+Etter dette delkapittelet, er målet at du skal:
 * Løse lineære ulikheter algebraisk.
+* Kunne tegne og tolke en fortegnslinje for en lineær funksjon.
 :::
 
 ---
