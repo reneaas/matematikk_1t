@@ -6,7 +6,9 @@ BASE_DIR = os.getcwd()
 STATIC_DIR = os.path.join(BASE_DIR, "_static")
 
 BASE_DIR = os.path.join(BASE_DIR, "book")
-print("BASE_DIR:", BASE_DIR)
+
+figur_dir = os.path.join(STATIC_DIR, "figurer")
+shutil.rmtree(figur_dir, ignore_errors=True)
 
 for root, dirs, files in os.walk(BASE_DIR):
     if "quiz" in dirs:
