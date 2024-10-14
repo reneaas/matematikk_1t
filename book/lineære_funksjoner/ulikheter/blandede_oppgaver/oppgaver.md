@@ -23,7 +23,7 @@ Absoluttverditegnet gir en ekstra utfordring her siden vi må løse ulikheten fo
 ````{tab-set}
 ```{tab-item} Løsning som ulikhet
 $$
-1 <= x <= 4
+1 ≤ x ≤ 4
 $$
 ```
 
