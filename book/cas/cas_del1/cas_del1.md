@@ -120,8 +120,12 @@ class: tabs-parts
 ::::::{tab-item} a
 For å løse en likning med Python, må vi først **lage** en likning som en variabel i Python. 
 
-Under vises tre eksempler på dette. Kjør koden for hvert eksempel og forklar hva `Eq`{l=python}-funksjonen gjør.
+Under vises tre eksempler på dette. For hvert av programmene:
 
+* Les og programmet.
+* Bestem hvilken likning programmet lager basert på utskriften.
+
+> Linje 4 i kodeeksemplene betyr: `likning = Eq(venstre_side, høyre_side)`{l=python}. 
 
 :::::{tab-set}
 ::::{tab-item} Eksempel 1
@@ -130,6 +134,26 @@ Under vises tre eksempler på dette. Kjør koden for hvert eksempel og forklar h
 file: ./interaktiv_kode/utforsk/utforsk_1/a/eksempel_1.html
 ---
 :::
+
+---
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+**Utskrift**:
+
+```console
+2*x + 4 = 0
+```
+
+**Likning**:
+
+$$
+2x + 4 = 0
+$$
+:::
+
 ::::
 
 ::::{tab-item} Eksempel 2
@@ -138,6 +162,26 @@ file: ./interaktiv_kode/utforsk/utforsk_1/a/eksempel_1.html
 file: ./interaktiv_kode/utforsk/utforsk_1/a/eksempel_2.html
 ---
 :::
+
+---
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+**Utskrift**:
+
+```console
+2*x + 5 = 8
+```
+
+**Likning**:
+
+$$
+2x + 5 = 8
+$$
+:::
+
 ::::
 
 ::::{tab-item} Eksempel 3
@@ -146,6 +190,28 @@ file: ./interaktiv_kode/utforsk/utforsk_1/a/eksempel_2.html
 file: ./interaktiv_kode/utforsk/utforsk_1/a/eksempel_3.html
 ---
 :::
+
+---
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+**Utskrift**:
+
+```console
+x            
+- - 6 = 2 - x
+2        
+```
+
+**Likning**:
+
+$$
+\dfrac{x}{2} - 6 = 2 - x
+$$
+:::
+
 ::::
 
 :::::
@@ -163,13 +229,14 @@ class: sidenote, dropdown
 ---
 class: summary, dropdown
 ---
+`Eq`{l=python}-funksjonen står for *Equation* som betyr *likning* på engelsk.
 For å lage en likning bruker vi `Eq`{l=python}-funksjonen på følgende måte:
 
 ```{code-block} python
 likning = Eq(venstre_side, høyre_side)
 ```
 
-For eksempel med likningen 
+For eksempel for likningen 
 
 $$
 5x + 2 = -3x + 7
@@ -1538,13 +1605,146 @@ class: check
 
 ````{tab} Geogebra
 
-sss
+Bruk CAS-vinduet under til å løse ulikhetene.
+:::::::::{tab-set}
+---
+class: tabs-parts
+---
+::::::::{tab-item} a
+$$
+2x + 5 < 0
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x < -\dfrac{5}{2}
+$$
+:::
+
+::::::::
+
+::::::::{tab-item} b
+$$
+2x - 3 \geq -2
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x \leq \dfrac{1}{2}
+$$
+:::
+
+::::::::
+
+::::::::{tab-item} c
+$$
+-3x + 2 \leq -x + 2
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x \geq 0
+$$
+:::
+
+::::::::
+
+:::::::::
+
+:::{raw} html
+---
+file: ./ggb/underveisoppgaver/oppgaver/underveisoppgave_3_tomt_cast_vindu.html
+---
+:::
+
 
 ````
 
 ````{tab} Python 
 
-sss
+Fyll inn programmene under og bestem løsningen av ulikhetene ved hjelp av programmene.
+
+:::::::::{tab-set}
+---
+class: tabs-parts
+---
+::::::::{tab-item} a
+$$
+2x + 5 < 0
+$$
+
+:::{raw} html
+---
+file: ./interaktiv_kode/underveisoppgaver/underveisoppgave_3/a.html
+---
+:::
+
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x < -\dfrac{5}{2}
+$$
+:::
+
+::::::::
+
+::::::::{tab-item} b
+$$
+2x - 3 \geq -2
+$$
+
+:::{raw} html
+---
+file: ./interaktiv_kode/underveisoppgaver/underveisoppgave_3/b.html
+---
+:::
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x \leq \dfrac{1}{2}
+$$
+:::
+
+::::::::
+
+::::::::{tab-item} c
+$$
+-3x + 2 \leq -x + 2
+$$
+
+:::{raw} html
+---
+file: ./interaktiv_kode/underveisoppgaver/underveisoppgave_3/c.html
+---
+:::
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x \geq 0
+$$
+:::
+
+::::::::
+
+:::::::::
 
 ````
 
@@ -1554,7 +1754,24 @@ sss
 
 ````{tab} Geogebra
 
-Når du løser oppgavene under, skal du bruke desktopversjonen av GeoGebra. Den åpner du ved å skrive "Geogebra 6" i søkefeltet på maskina di. For å få opp CAS, velger du *vis* i menyen til høyre, og huker av for CAS. 
+```{tab} Windows <span style="display: inline-block; width: 20px; height: 20px; background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/5f/Windows_logo_-_2012.svg'); background-size: cover;" aria-label="Windows-knappen"></span>
+ 
+
+Når du løser oppgavene under, skal du bruke desktopversjonen av GeoGebra. Den åpner du som følger:
+1. Trykk på Windows-knappen <span style="display: inline-block; width: 20px; height: 20px; background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/5f/Windows_logo_-_2012.svg'); background-size: cover;" aria-label="Windows-knappen"></span> på tastaturet.
+2. Søk etter "Geogebra 6" 
+3. Trykk på *enter* på tastaturet. &#9166;
+
+```
+
+```{tab} Mac 
+Når du løser oppgavene under, skal du bruke desktopversjonen av GeoGebra. Den åpner du som følger:
+1.  Trykk på *⌘* og ␣ *(mellomrom)* på tastaturet samtidig.
+
+2. Søk etter "Geogebra 6"
+3. Trykk på *enter* på tastaturet. &#9166;
+```
+
 
 ````
 
@@ -2145,8 +2362,11 @@ class: problem-level-1
 
 Løs likningene ved hjelp av CAS. 
 
-Deloppgave 1
-: $ 3\left(\dfrac{x}{2}-\dfrac{4}{3}\right)=2\left(\dfrac{3}{4}-\dfrac{x}{6}\right)$
+:::::::{tab-set}
+::::::{tab-item} a
+$$
+3\left(\dfrac{x}{2} - \dfrac{4}{3}\right) = 2\left(\dfrac{3}{4} - \dfrac{x}{6}\right)
+$$
 
 :::{admonition} Fasit
 ---
@@ -2154,9 +2374,12 @@ class: answer, dropdown
 ---
 $x = 3$
 :::
+::::::
 
-Deloppgave 2
-: $ 3\left(\dfrac{s}{4}-\dfrac{1}{10}\right)=2\left(w-\dfrac{1}{5}\right)$
+::::::{tab-item} b
+$$ 
+3\left(\dfrac{s}{4} - \dfrac{1}{10}\right) = 2\left(w-\dfrac{1}{5}\right)
+$$
 
 :::{admonition} Fasit
 ---
@@ -2164,9 +2387,12 @@ class: answer, dropdown
 ---
 $s = \dfrac{2}{25}$
 :::
+::::::
 
-Deloppgave 3
-: $\dfrac{3}{2}\left(t-1\right) - 2\left(\dfrac{1}{4}-t\right)=0$
+::::::{tab-item} c
+$$
+\dfrac{3}{2}\left(t - 1\right) - 2\left(\dfrac{1}{4} - t\right) = 0
+$$
 
 :::{admonition} Fasit
 ---
@@ -2174,9 +2400,12 @@ class: answer, dropdown
 ---
 $t = \dfrac{4}{7}$
 :::
+::::::
 
-Deloppgave 4
-: $ \dfrac{1}{3}y-2y + 3 = -\dfrac{1}{9}y + \dfrac{1}{9}$
+::::::{tab-item} d
+$$ 
+\dfrac{1}{3}y - 2y + 3 = -\dfrac{1}{9}y + \dfrac{1}{9}
+$$
 
 :::{admonition} Fasit
 ---
@@ -2184,12 +2413,68 @@ class: answer, dropdown
 ---
 $y = \dfrac{13}{7}$
 :::
+::::::
+
+:::::::
 
 ````
 
 ````{tab} Python
 
-sss
+:::::::{tab-set}
+::::::{tab-item} a
+$$
+3\left(\dfrac{x}{2} - \dfrac{4}{3}\right) = 2\left(\dfrac{3}{4} - \dfrac{x}{6}\right)
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$x = 3$
+:::
+::::::
+
+::::::{tab-item} b
+$$ 
+3\left(\dfrac{s}{4} - \dfrac{1}{10}\right) = 2\left(w-\dfrac{1}{5}\right)
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$s = \dfrac{2}{25}$
+:::
+::::::
+
+::::::{tab-item} c
+$$
+\dfrac{3}{2}\left(t - 1\right) - 2\left(\dfrac{1}{4} - t\right) = 0
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$t = \dfrac{4}{7}$
+:::
+::::::
+
+::::::{tab-item} d
+$$ 
+\dfrac{1}{3}y - 2y + 3 = -\dfrac{1}{9}y + \dfrac{1}{9}
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$y = \dfrac{13}{7}$
+:::
+::::::
+
+:::::::
 
 ````
 
