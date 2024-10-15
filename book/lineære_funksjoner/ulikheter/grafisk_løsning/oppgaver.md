@@ -123,7 +123,7 @@ $$
 Løs ulikheten 
 
 $$
-f(x) \geq 2
+f(x) \leq 2
 $$
 
 
@@ -132,7 +132,7 @@ $$
 class: answer, dropdown
 ---
 $$
-x \in [2, \to \rangle
+x \in \langle\gets, 4]
 $$
 :::
 
