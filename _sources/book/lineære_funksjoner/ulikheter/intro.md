@@ -40,7 +40,7 @@ link-type: doc
 
 ---
 
-:::{figure} ./algebraisk_løsning/figurer/teori/fortegnslinjer.svg
+:::{figure} ./algebraisk_løsning/figurer/teori/fortegnslinjer_intro.svg
 ---
 width: 100%
 ---

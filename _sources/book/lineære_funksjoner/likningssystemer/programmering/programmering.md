@@ -530,7 +530,7 @@ Her skal vi se hvordan vi kan bruke gridsøk til å finne løsningen av liknings
 class: tabs-parts
 ---
 ::::::{tab-item} a
-Vi trenger en måte å sjekke om et likningssystem er oppfylt for et punkt $(x, y)$. Med andre, vi må kunne sjekke om to likninger er sanne *samtidig*.
+Vi trenger en måte å sjekke om et likningssystem er oppfylt for et punkt $(x, y)$. Med andre ord, vi må kunne sjekke om to likninger er sanne *samtidig*.
 
 Under vises det tre eksemplekoder der man sjekker om et likningssystem er oppfylt for et bestemt punkt $(x, y)$. For hvert kodeeksempel: 
 
