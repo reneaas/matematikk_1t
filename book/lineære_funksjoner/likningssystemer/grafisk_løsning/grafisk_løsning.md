@@ -1,7 +1,7 @@
 # Grafisk løsning 
 
 
-På samme måte som vi løste likninger, kan vi også løse likningssystemer grafisk.  -->
+På samme måte som vi løste likninger, kan vi også løse likningssystemer grafisk.
 
 :::{admonition} Læringsmål
 ---
