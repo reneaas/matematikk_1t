@@ -1,11 +1,11 @@
+// pythonRunner.js
+
 class PythonRunner {
     constructor(outputId, errorBoxId, preloadPackages = null) {
         this.outputId = outputId;            // ID of the HTML element where output will be displayed
         this.errorBoxId = errorBoxId;        // ID of the HTML element for displaying errors
-        this.workerManager = new WorkerManager(preloadPackages);
-        this.workerManager.setMessageCallback(this.handleWorkerMessage.bind(this)); // Set the message callback
-        this.workerManager.setErrorCallback(this.handleWorkerError.bind(this));     // Set the error callback
-        this.pyConsoleScript = this.getPyConsoleScript();  // Load the Python console script
+        this.workerManager = WorkerManager.getInstance(preloadPackages);
+        this.preloadPackages = preloadPackages;
     }
 
     /**
@@ -29,8 +29,6 @@ class PythonRunner {
             this.currentCode = this.replaceInputStatements(this.currentCode, userValues);
             console.log("Modified code:", this.currentCode);
         }
- 
-        // Prepare the final code to be run (including custom eval functions, etc.)
 
         // Extract and load necessary packages
         const packages = this.extractPackageNames(this.currentCode);
@@ -38,10 +36,19 @@ class PythonRunner {
         console.log("Packages to load:", packages);
         if (packages.length > 0) {
             this.workerManager.loadPackages(packages);
-        } else {
-            this.workerManager.runCode(this.pyConsoleScript);
-            this.workerManager.runCode(this.currentCode);
         }
+
+        const callback = (data) => {
+            if (data.type === 'stdout' || data.type === 'stderr') {
+                this.handleWorkerMessage(data);
+            }
+            if (data.type === 'executionComplete') {
+                // Code execution is complete
+                console.log("Code execution complete for messageId:", data.messageId);
+            }
+        };
+
+        this.workerManager.runCode(this.currentCode, callback);
     }
 
     /**
@@ -75,14 +82,7 @@ class PythonRunner {
 
         } else if (type === 'stderr') {
             console.log("Error message:", msg);
-
-        } else if (type === 'packagesLoaded') {
-            // After loading packages, execute the code
-            console.log("Packages loaded successfully.");
-            this.workerManager.runCode(this.pyConsoleScript);
-            if (this.currentCode) {
-                this.workerManager.runCode(this.currentCode);
-            }
+            this.handleErrorMessage(msg);
         }
     }
 
@@ -91,24 +91,15 @@ class PythonRunner {
     }
 
     /**
-     * Handles errors from the WorkerManager.
-     * @param {ErrorEvent} error - The error event from the worker.
+     * Handles error messages from the worker.
+     * @param {string} msg - The error message.
      */
-    handleWorkerError(error) {
+    handleErrorMessage(msg) {
         const errorElement = document.getElementById(this.errorBoxId);
         if (errorElement) {
-            errorElement.textContent = `Error: ${error.message}`;
+            errorElement.innerHTML = this.formatErrorMessage(msg);
         }
-    }
-
-    /**
-     * Executes Python code using the worker.
-     * @param {string} code - The Python code to be executed.
-     */
-    executeCode(code) {
-        this.currentCode = code; // Store the current code for later use
-        this.workerManager.runCode(this.pyConsoleScript); // Load the Python console setup first
-        this.workerManager.runCode(code); // Execute the user’s code
+        this.highlightLine(this.editorInstance, msg);
     }
 
     /**
@@ -253,8 +244,6 @@ class PythonRunner {
             }
         }
     
-        
-    
         // Highlight the line number in the pattern 'File "<exec>", line <number>'
         const fileLinePattern = /File "&lt;exec&gt;", line (\d+)/g;
         formattedMessage = formattedMessage.replace(fileLinePattern, (match, p1) => {
@@ -337,58 +326,6 @@ class PythonRunner {
     
         return Array.from(packages);
     }
-
-    /**
-     * Prepares the Python console setup script.
-     * @returns {string} - The Python console setup script.
-     */
-    getPyConsoleScript() {
-        return `
-import sys
-from js import postMessage
-import json
-
-class PyConsole:
-    def __init__(self):
-        self.buffer = ""
-
-    def write(self, msg):
-        self.buffer += msg
-        if "\\n" in msg:
-            self.flush()
-
-    def flush(self):
-        if self.buffer:
-            try:
-                postMessage(json.dumps({'type': 'stdout', 'msg': self.buffer}))
-            except Exception as e:
-                self.handle_error(e)
-        self.buffer = ""
-
-    def handle_error(self, e):
-        error_message = str(e)
-        postMessage(json.dumps({'type': 'stderr', 'msg': error_message}))
-
-sys.stdout = PyConsole()
-sys.stderr = PyConsole()
-`;
-    }
-
-    /**
-     * Creates an admonition block for displaying known Python error explanations.
-     * @param {string} title - The title of the admonition block (e.g., "SyntaxError").
-     * @param {string} content - The content explaining the error.
-     * @returns {string} - The HTML content for the admonition block.
-     */
-    createAdmonition(title, content) {
-        return `
-        <div class="admonition pythonerror margin">
-            <p class="admonition-title">${title}</p>
-            <p>${content}</p>
-        </div>
-        `;
-    }
-
 
     /**
      * Finds input statements in the code.
@@ -476,4 +413,3 @@ sys.stderr = PyConsole()
         return codeLines.join('\n');
     }
 }
-

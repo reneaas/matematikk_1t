@@ -1,71 +1,113 @@
+// workerManager.js
+
 class WorkerManager {
+    static instance = null;
+
+    static getInstance(preloadPackages = null) {
+        if (!WorkerManager.instance) {
+            WorkerManager.instance = new WorkerManager(preloadPackages);
+        } else {
+            // If preloadPackages is provided later, ensure the packages are loaded
+            if (preloadPackages) {
+                WorkerManager.instance.loadPackages(preloadPackages);
+            }
+        }
+        return WorkerManager.instance;
+    }
+
     constructor(preloadPackages = null) {
-        this.isInitialized = false;
+        if (WorkerManager.instance) {
+            return WorkerManager.instance;
+        }
+
         this.worker = null;
-        this.pyoidideReadyPromise = null;
-        this.initialGlobals = new Set();
-        this.onMessageCallback = null;
-        this.onErrorCallback = null;
+        this.callbacks = {}; // For managing callbacks with message IDs
         this.preloadPackages = preloadPackages;
         console.log("Preload packages in WorkerManager:", this.preloadPackages);
         this.initWorker();
-        
-    }
 
+        WorkerManager.instance = this;
+    }
 
     initWorker() {
         const workerScript = `
-            importScripts('https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js');
+importScripts('https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js');
 
-            let pyodideReadyPromise = loadPyodide();
-            let pyodide;
-            let firstrun = true;
-            let initialGlobals = new Set();
+let pyodideReadyPromise = loadPyodide();
 
-            async function resetPyodide() {
-                const currentGlobals = new Set(pyodide.globals.keys());
-                const globalsToClear = Array.from(currentGlobals).filter(x => !initialGlobals.has(x));
-                for (const key of globalsToClear) {
-                    pyodide.globals.delete(key);
-                }
-                console.log("Globals cleared:", globalsToClear);
-            }
+async function resetPyodide(pyodide, initialGlobals) {
+    const currentGlobals = new Set(pyodide.globals.keys());
+    const globalsToClear = Array.from(currentGlobals).filter(x => !initialGlobals.has(x));
+    for (const key of globalsToClear) {
+        pyodide.globals.delete(key);
+    }
+}
 
+onmessage = async (event) => {
+    const messageId = event.data.messageId;
+    if (event.data.type === 'init') {
+        const pyodide = await pyodideReadyPromise;
+        const initialGlobals = new Set(pyodide.globals.keys());
+        postMessage(JSON.stringify({ type: 'initReady' }));
+    }
+    if (event.data.type === 'runCode') {
+        const { code } = event.data;
+        try {
+            const pyodide = await pyodideReadyPromise;
+            const initialGlobals = new Set(pyodide.globals.keys());
+            await resetPyodide(pyodide, initialGlobals);
 
-            onmessage = async (event) => {
-                await pyodideReadyPromise;
-                if (event.data.type === 'init') {
-                    pyodide = await pyodideReadyPromise;
-                    initialGlobals = new Set(pyodide.globals.keys());
-                    postMessage({ type: 'initReady' }); // Notify readiness
-                }
-                if (event.data.type === 'runCode') {
-                    const { code } = event.data;
-                    try {
-                        await resetPyodide();
-                        await pyodide.runPythonAsync(code);
-                    } catch (err) {
-                        postMessage({ type: 'stderr', 'msg': String(err) });
-                    }
-                }
+            // Prepare the Python code
+            const pyCode = \`
+import sys
+import json
+from js import postMessage
 
-                if (event.data.type === 'loadPackage') {
-                    const { packages } = event.data;
-                    try {
-                        console.log("Loading packages:", packages);
-                        await pyodide.loadPackage(packages);
-                        console.log("Packages loaded:", packages);
-                        postMessage(JSON.stringify({ type: 'packagesLoaded' }));
-                    } catch (err) {
-                        postMessage(JSON.stringify({ type: 'stderr', msg: String(err)}));
-                    }
-                }
-            };
-        `;
+class PyConsole:
+    def __init__(self, messageId):
+        self.messageId = messageId
+        self.buffer = ""
+
+    def write(self, msg):
+        self.buffer += msg
+        if "\\\\n" in msg:
+            self.flush()
+
+    def flush(self):
+        if self.buffer:
+            postMessage(json.dumps({'type': 'stdout', 'msg': self.buffer, 'messageId': self.messageId}))
+            self.buffer = ""
+
+sys.stdout = PyConsole("\${messageId}")
+sys.stderr = PyConsole("\${messageId}")
+\`;
+
+            await pyodide.runPythonAsync(pyCode);
+
+            await pyodide.runPythonAsync(code);
+            postMessage(JSON.stringify({ type: 'executionComplete', messageId }));
+        } catch (err) {
+            postMessage(JSON.stringify({ type: 'stderr', msg: String(err), messageId }));
+        }
+    }
+
+    if (event.data.type === 'loadPackage') {
+        const { packages } = event.data;
+        try {
+            const pyodide = await pyodideReadyPromise;
+            console.log("Loading packages:", packages);
+            await pyodide.loadPackage(packages);
+            console.log("Packages loaded:", packages);
+            postMessage(JSON.stringify({ type: 'packagesLoaded' }));
+        } catch (err) {
+            postMessage(JSON.stringify({ type: 'stderr', msg: String(err), messageId }));
+        }
+    }
+};
+`;
 
         const workerBlob = new Blob([workerScript], { type: 'application/javascript' });
         this.worker = new Worker(URL.createObjectURL(workerBlob));
-
 
         this.worker.onmessage = this.handleMessage.bind(this);
         this.worker.onerror = this.handleError.bind(this);
@@ -73,35 +115,15 @@ class WorkerManager {
         this.worker.postMessage({ type: 'init' });
     }
 
-    generateInitializationScript(packages) {
-        // Start building the initialization script
-        let script = `import sys\noriginal_stdout = sys.stdout\nsys.stdout = None\n`;
-
-        // For each package, add a corresponding import statement and a simple usage example to trigger compilation
-        packages.forEach(pkg => {
-            script += `\nimport ${pkg}\n`;
-            if (pkg === 'sympy') {
-                script += `from sympy import symbols\nx, y = symbols('x y')\n_ = ${pkg}.solve(x + y - 1, x)\n`;
-            } else if (pkg === 'numpy') {
-                script += `_ = ${pkg}.zeros((2, 2))\n`;
-            } else if (pkg === 'matplotlib') {
-                script += `${pkg}.use('Agg')\nimport matplotlib.pyplot as plt\nplt.plot([0, 1], [0, 1])\nplt.close()\n`;
-            } else if (pkg === 'scipy') {
-                script += `from scipy import optimize\n_ = optimize.minimize(lambda x: x**2, 0)\n`;
-            } else {
-                // Generic initialization for other packages
-                script += `# Simple operation to initialize ${pkg}\n`;
-                script += `_ = dir(${pkg})\n`;
-            }
-        });
-
-        // End of script: restore output
-        script += `\nsys.stdout = original_stdout\n`;
-        return script;
+    generateMessageId() {
+        return 'msg-' + Math.random().toString(36).substr(2, 9);
     }
 
-    runSilentInitialization(initScript) {
-        this.worker.postMessage({ type: 'runCode', code: initScript });
+    runCode(code, onMessageCallback) {
+        const messageId = this.generateMessageId();
+        this.callbacks[messageId] = onMessageCallback;
+        this.worker.postMessage({ type: 'runCode', code, messageId });
+        return messageId;
     }
 
     handleMessage(event) {
@@ -109,38 +131,31 @@ class WorkerManager {
         try {
             data = JSON.parse(event.data);
         } catch (e) {
-            data = event.data;
+            console.error("Failed to parse message from worker:", event.data);
+            return;
         }
 
-        if (data.type === 'initReady') {
-            if (this.preloadPackages && this.preloadPackages.length > 0) {
-                // Ensure packages are loaded after worker initialization
-                console.log("Preloading packages: ", this.preloadPackages);
-                this.loadPackages(this.preloadPackages);
+        const messageId = data.messageId;
+
+        if (messageId && this.callbacks[messageId]) {
+            this.callbacks[messageId](data);
+
+            // Optionally remove the callback if execution is complete
+            if (data.type === 'executionComplete') {
+                delete this.callbacks[messageId];
             }
-        }
-    
-        if (this.onMessageCallback) {
-            this.onMessageCallback(data);
-        }
-
-        // Trigger initialization only after receiving 'packagesLoaded'
-        if (data.type === 'packagesLoaded' && !this.isInitialized) {
-            console.log("Packages loaded successfully.");
-            const initScript = this.generateInitializationScript(this.preloadPackages);
-            this.runSilentInitialization(initScript);  // Run only after packages confirm as loaded
-            this.isInitialized = true;  // Mark initialization as done
+        } else {
+            // Handle messages without messageId, like 'initReady' or 'packagesLoaded'
+            if (data.type === 'initReady' || data.type === 'packagesLoaded') {
+                console.log("Worker initialization message:", data.type);
+            } else {
+                console.warn("Unhandled message from worker:", data);
+            }
         }
     }
 
     handleError(error) {
-        if (this.onErrorCallback) {
-            this.onErrorCallback(error);
-        }
-    }
-
-    runCode(code) {
-        this.worker.postMessage({ type: 'runCode', code });
+        console.error("Worker error:", error);
     }
 
     loadPackages(packages) {
@@ -154,13 +169,5 @@ class WorkerManager {
         }
 
         this.initWorker();
-    }
-
-    setMessageCallback(callback) {
-        this.onMessageCallback = callback;
-    }
-
-    setErrorCallback(callback) {
-        this.onErrorCallback = callback;
     }
 }
