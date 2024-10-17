@@ -195,7 +195,7 @@ def draw_function(
         if y0 > 0:
             plt.axhline(
                 y=y,
-                xmin=i / (len(roots) + 1) + 0.05,
+                xmin=i / (len(roots) + 1) + 0.1,
                 xmax=(i + 1) / (len(roots) + 1) - 0.05,
                 color=color_pos,
                 linestyle="-",
@@ -204,7 +204,7 @@ def draw_function(
         else:
             plt.axhline(
                 y=y,
-                xmin=i / (len(roots) + 1) + 0.05,
+                xmin=i / (len(roots) + 1) + 0.1,
                 xmax=(i + 1) / (len(roots) + 1) - 0.05,
                 color=color_neg,
                 linestyle="--",
@@ -272,14 +272,47 @@ def draw_vertical_lines(roots, factors, ax, include_factors=True, dy=-1):
             )
 
 
+# def make_axis():
+#     fig, ax = plt.subplots()
+
+#     # Create x-axis and remove y-axis
+#     ax.spines["left"].set_color("none")  # Remove the left y-axis
+#     ax.spines["right"].set_color("none")  # Remove the right y-axis
+#     ax.spines["bottom"].set_position("zero")  # Move the bottom x-axis to y=0
+#     ax.spines["top"].set_color("none")  # Remove the top x-axis
+
+#     # Attach arrow to the right end of the x-axis
+#     ax.plot(1, 0, ">k", transform=ax.get_yaxis_transform(), clip_on=False)
+
+#     # Label the x-axis
+#     ax.set_xlabel(r"$x$", fontsize=16, loc="right")
+
+#     # Remove tick labels on y-axis
+#     plt.yticks([])
+
+#     return fig, ax
+
+
 def make_axis():
     fig, ax = plt.subplots()
 
-    # Create x-axis and remove y-axis
+    # Remove y-axis spines
     ax.spines["left"].set_color("none")  # Remove the left y-axis
     ax.spines["right"].set_color("none")  # Remove the right y-axis
-    ax.spines["bottom"].set_position("zero")  # Move the bottom x-axis to y=0
+
+    # Move the x-axis to y=0
+    ax.spines["bottom"].set_position("zero")  # Position the bottom x-axis at y=0
     ax.spines["top"].set_color("none")  # Remove the top x-axis
+
+    # Move x-axis ticks and labels to the top
+    ax.xaxis.set_ticks_position("top")  # Move ticks to the top
+    ax.xaxis.set_label_position("top")  # Move labels to the top
+    ax.tick_params(
+        axis="x",
+        which="both",  # Hide bottom ticks and labels
+        bottom=False,
+        labelbottom=False,
+    )
 
     # Attach arrow to the right end of the x-axis
     ax.plot(1, 0, ">k", transform=ax.get_yaxis_transform(), clip_on=False)
@@ -300,6 +333,7 @@ def make_sign_chart(
     color: bool = True,
     include_factors: bool = True,
     generic_labels: bool = False,
+    small_figsize: bool = False,
 ) -> None:
     """Tegner fortegnsskjema for et polynom f.
 
@@ -355,9 +389,6 @@ def make_sign_chart(
         factors, roots, ax, color_pos, color_neg, x, f, fn_name, include_factors
     )
 
-    # Draw vertical lines to separate regions
-    draw_vertical_lines(roots, factors, ax, include_factors)
-
     # Remove tick labels on y-axis
     plt.yticks([])
 
@@ -366,8 +397,13 @@ def make_sign_chart(
 
     if include_factors:
         fig.set_size_inches(8, 2 + int(0.7 * len(factors)))
+
+    elif small_figsize:
+        fig.set_size_inches(4, 1.5)
     else:
         fig.set_size_inches(8, 2)
+
+    draw_vertical_lines(roots, factors, ax, include_factors)
 
     plt.tight_layout()
 

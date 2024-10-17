@@ -179,7 +179,24 @@ $$
 
 ---
 
-::::{Admonition} Oppgave 3
+::::{admonition} Oppgave 3
+---
+class: problem-level-1
+---
+Ta quizen! 
+
+:::{raw} html
+---
+file: quiz/quiz_1/quiz_1.html
+---
+:::
+
+::::
+
+---
+
+
+::::{Admonition} Oppgave 4
 ---
 class: problem-level-2
 ---
@@ -198,28 +215,100 @@ Tips: Hvis dette virker ulogisk, kan du forsøke å løse ulikheten grafisk!
 `````
 ::::
 
-::::{Admonition} Oppgave 4
+::::::::::::{Admonition} Oppgave 5
 ---
 class: problem-level-2
 ---
-Sett opp ulikheter som har følgende løsningsmengder: 
+I oppgavene under skal du lage deg ulikheter som den oppgitte løsningen. 
 
-`````{admonition} Tips
-:class: dropdown, hint
+:::{admonition} Hint
+---
+class: dropdown, hints
+---
 Her finnes det flere mulige svar på hver oppgave. 
 
-`````
-Deloppgave 1
-: $ \langle \gets, 4 \rangle $
+:::
 
-<br>
+---
 
-Deloppgave 2
-: $ [2, \to \rangle $
+:::::{tab-set}
+---
+class: tabs-parts
+---
+::::{tab-item} a
+Lag en ulikhet som har løsningsmengden
 
-<br>
+$$
+x \in \langle \gets, 4 \rangle
+$$
 
-Deloppgave 3
-: $ \langle \gets, -2]$
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+2x - 8 < 0
+$$
+:::
 
 ::::
+
+::::{tab-item} b
+Lag en ulikhet som har løsningen
+
+$$
+x \geq 2
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+-x + 4 \leq 6
+$$
+:::
+
+
+::::
+
+::::{tab-item} c
+Lag en ulikhet som har løsningsmengden
+
+
+$$
+x \in [-2, \to\rangle
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+-x + 2 \geq -4x - 4
+$$
+:::
+
+::::
+
+::::{tab-item} d
+Lag en ulikhet som har løsningen
+
+
+$$
+x \leq -4
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+3x + 4  \leq -x - 12
+$$
+:::
+
+::::
+:::::
+
+::::::::::::

@@ -1,6 +1,6 @@
 # Blandede oppgaver
 
-::::{admonition} Oppgave X
+::::{admonition} Oppgave 1
 ---
 class: problem-level-3
 ---

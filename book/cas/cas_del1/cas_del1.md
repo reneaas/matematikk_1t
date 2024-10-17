@@ -120,8 +120,12 @@ class: tabs-parts
 ::::::{tab-item} a
 For å løse en likning med Python, må vi først **lage** en likning som en variabel i Python. 
 
-Under vises tre eksempler på dette. Kjør koden for hvert eksempel og forklar hva `Eq`{l=python}-funksjonen gjør.
+Under vises tre eksempler på dette. For hvert av programmene:
 
+* Les og programmet.
+* Bestem hvilken likning programmet lager basert på utskriften.
+
+> Linje 4 i kodeeksemplene betyr: `likning = Eq(venstre_side, høyre_side)`{l=python}. 
 
 :::::{tab-set}
 ::::{tab-item} Eksempel 1
@@ -130,6 +134,26 @@ Under vises tre eksempler på dette. Kjør koden for hvert eksempel og forklar h
 file: ./interaktiv_kode/utforsk/utforsk_1/a/eksempel_1.html
 ---
 :::
+
+---
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+**Utskrift**:
+
+```console
+2*x + 4 = 0
+```
+
+**Likning**:
+
+$$
+2x + 4 = 0
+$$
+:::
+
 ::::
 
 ::::{tab-item} Eksempel 2
@@ -138,6 +162,26 @@ file: ./interaktiv_kode/utforsk/utforsk_1/a/eksempel_1.html
 file: ./interaktiv_kode/utforsk/utforsk_1/a/eksempel_2.html
 ---
 :::
+
+---
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+**Utskrift**:
+
+```console
+2*x + 5 = 8
+```
+
+**Likning**:
+
+$$
+2x + 5 = 8
+$$
+:::
+
 ::::
 
 ::::{tab-item} Eksempel 3
@@ -146,6 +190,28 @@ file: ./interaktiv_kode/utforsk/utforsk_1/a/eksempel_2.html
 file: ./interaktiv_kode/utforsk/utforsk_1/a/eksempel_3.html
 ---
 :::
+
+---
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+**Utskrift**:
+
+```console
+x            
+- - 6 = 2 - x
+2        
+```
+
+**Likning**:
+
+$$
+\dfrac{x}{2} - 6 = 2 - x
+$$
+:::
+
 ::::
 
 :::::
@@ -163,13 +229,14 @@ class: sidenote, dropdown
 ---
 class: summary, dropdown
 ---
+`Eq`{l=python}-funksjonen står for *Equation* som betyr *likning* på engelsk.
 For å lage en likning bruker vi `Eq`{l=python}-funksjonen på følgende måte:
 
 ```{code-block} python
 likning = Eq(venstre_side, høyre_side)
 ```
 
-For eksempel med likningen 
+For eksempel for likningen 
 
 $$
 5x + 2 = -3x + 7
@@ -1538,13 +1605,146 @@ class: check
 
 ````{tab} Geogebra
 
-sss
+Bruk CAS-vinduet under til å løse ulikhetene.
+:::::::::{tab-set}
+---
+class: tabs-parts
+---
+::::::::{tab-item} a
+$$
+2x + 5 < 0
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x < -\dfrac{5}{2}
+$$
+:::
+
+::::::::
+
+::::::::{tab-item} b
+$$
+2x - 3 \geq -2
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x \leq \dfrac{1}{2}
+$$
+:::
+
+::::::::
+
+::::::::{tab-item} c
+$$
+-3x + 2 \leq -x + 2
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x \geq 0
+$$
+:::
+
+::::::::
+
+:::::::::
+
+:::{raw} html
+---
+file: ./ggb/underveisoppgaver/oppgaver/underveisoppgave_3_tomt_cast_vindu.html
+---
+:::
+
 
 ````
 
 ````{tab} Python 
 
-sss
+Fyll inn programmene under og bestem løsningen av ulikhetene ved hjelp av programmene.
+
+:::::::::{tab-set}
+---
+class: tabs-parts
+---
+::::::::{tab-item} a
+$$
+2x + 5 < 0
+$$
+
+:::{raw} html
+---
+file: ./interaktiv_kode/underveisoppgaver/underveisoppgave_3/a.html
+---
+:::
+
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x < -\dfrac{5}{2}
+$$
+:::
+
+::::::::
+
+::::::::{tab-item} b
+$$
+2x - 3 \geq -2
+$$
+
+:::{raw} html
+---
+file: ./interaktiv_kode/underveisoppgaver/underveisoppgave_3/b.html
+---
+:::
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x \leq \dfrac{1}{2}
+$$
+:::
+
+::::::::
+
+::::::::{tab-item} c
+$$
+-3x + 2 \leq -x + 2
+$$
+
+:::{raw} html
+---
+file: ./interaktiv_kode/underveisoppgaver/underveisoppgave_3/c.html
+---
+:::
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x \geq 0
+$$
+:::
+
+::::::::
+
+:::::::::
 
 ````
 
@@ -1554,7 +1754,24 @@ sss
 
 ````{tab} Geogebra
 
-Når du løser oppgavene under, skal du bruke desktopversjonen av GeoGebra. Den åpner du ved å skrive "Geogebra 6" i søkefeltet på maskina di. For å få opp CAS, velger du *vis* i menyen til høyre, og huker av for CAS. 
+```{tab} Windows <span style="display: inline-block; width: 20px; height: 20px; background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/5f/Windows_logo_-_2012.svg'); background-size: cover;" aria-label="Windows-knappen"></span>
+ 
+
+Når du løser oppgavene under, skal du bruke desktopversjonen av GeoGebra. Den åpner du som følger:
+1. Trykk på Windows-knappen <span style="display: inline-block; width: 20px; height: 20px; background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/5f/Windows_logo_-_2012.svg'); background-size: cover;" aria-label="Windows-knappen"></span> på tastaturet.
+2. Søk etter "Geogebra 6" 
+3. Trykk på *enter* på tastaturet. &#9166;
+
+```
+
+```{tab} Mac 
+Når du løser oppgavene under, skal du bruke desktopversjonen av GeoGebra. Den åpner du som følger:
+1.  Trykk på *⌘* og ␣ *(mellomrom)* på tastaturet samtidig.
+
+2. Søk etter "Geogebra 6"
+3. Trykk på *enter* på tastaturet. &#9166;
+```
+
 
 ````
 
@@ -1894,9 +2111,10 @@ $$
 ::::::
 
 ::::::{tab-item} c
-$$
-x + 2y = 5 \quad \land \quad 4x = 2 - 3y
-$$
+\begin{align*}
+    x + 2y &= 5 \\
+    4x &= 6 - y
+\end{align*}
 
 :::{admonition} Fasit
 ---
@@ -2035,9 +2253,10 @@ $$
 ::::::
 
 ::::::{tab-item} c
-$$
-x + 2y = 5 \quad \land \quad 4x = 2 - 3y
-$$
+\begin{align*}
+    x + 2y &= 5 \\
+    4x &= 6 - y
+\end{align*}
 
 :::{raw} html
 ---
@@ -2084,9 +2303,10 @@ $$
 ::::::
 
 ::::::{tab-item} d
-$$
--2x + y = -1 \quad \land \quad 4x + 2y + 14 = 0
-$$
+\begin{align*}
+    -2x + y &= -1 \\
+    4x + 2y + 14 &= 0
+\end{align*}
 
 :::{raw} html
 ---
@@ -2136,175 +2356,954 @@ $$
 
 ::::::::
 
-::::::::{admonition} Oppgave X
+
+---
+
+::::::::::::{admonition} Oppgave 3
 ---
 class: problem-level-1
 ---
 
+
+````{tab} Geogebra
+Løs ulikhetene med CAS.
+
+:::::::::::{tab-set}
+---
+class: tabs-parts
+---
+::::::::::{tab-item} a
+$$
+-2x + 3 \geq x - 5
+$$
+
+::::{admonition} Fasit
+---
+class: dropdown, answer
+---
+
+$$
+x \leq \dfrac{8}{3}
+$$
+::::
+
+::::::::::
+
+::::::::::{tab-item} b
+$$
+2x - 1 < x + 4
+$$
+
+::::{admonition} Fasit
+---
+class: dropdown, answer
+---
+
+$$
+x < 5
+$$
+
+::::
+
+::::::::::
+
+::::::::::{tab-item} c
+$$
+\dfrac{1}{2}x + 3 > x - 1
+$$
+
+::::{admonition} Fasit
+---
+class: dropdown, answer
+---
+$$
+x < 8
+$$
+::::
+
+::::::::::
+
+::::::::::{tab-item} d
+$$
+\dfrac{x}{3} + \dfrac{1}{2} \leq -\dfrac{x}{2} + \dfrac{1}{3}
+$$
+
+::::{admonition} Fasit
+---
+class: dropdown, answer
+---
+$$
+x \leq -\dfrac{1}{5} 
+$$
+::::
+
+::::::::::
+:::::::::::
+
+````
+
+````{tab} Python
+Løs ulikhetene ved hjelp av `sympy`{l=python} i kodevinduet.
+
+
+:::::::::::{tab-set}
+---
+class: tabs-parts
+---
+::::::::::{tab-item} a
+$$
+-2x + 3 \geq x - 5
+$$
+
+:::{raw} html
+---
+file: ./interaktiv_kode/oppgaver/oppgave_3/a.html
+---
+:::
+
+::::{admonition} Fasit
+---
+class: dropdown, answer
+---
+**Programkode**:
+```{code-block} python
+---
+linenos: true
+---
+from sympy import *
+from sympy.abc import x
+
+ulikhet = (-2 * x + 3 >= x - 5)
+løsning = solve(ulikhet)
+
+pprint(løsning)
+```
+
+**Utskrift**:
+```console
+(x <= 8/3) ∧ (-∞ < x)
+```
+
+**Løsning**:
+
+$$
+x \leq \dfrac{8}{3}
+$$
+::::
+
+::::::::::
+
+::::::::::{tab-item} b
+$$
+2x - 1 < x + 4
+$$
+
+:::{raw} html
+---
+file: ./interaktiv_kode/oppgaver/oppgave_3/b.html
+---
+:::
+
+::::{admonition} Fasit
+---
+class: dropdown, answer
+---
+
+**Programkode**:
+```{code-block} python
+---
+linenos: true
+---
+from sympy import *
+from sympy.abc import x
+
+ulikhet = (2 * x - 1 < x + 4)
+løsning = solve(ulikhet)
+
+pprint(løsning)
+```
+
+**Utskrift**:
+```console
+(-∞ < x) ∧ (x < 5)
+```
+
+**Løsning**:
+
+$$
+x < 5
+$$
+
+::::
+
+::::::::::
+
+::::::::::{tab-item} c
+$$
+\dfrac{1}{2}x + 3 > x - 1
+$$
+
+:::{raw} html
+---
+file: ./interaktiv_kode/oppgaver/oppgave_3/c.html
+---
+:::
+
+::::{admonition} Fasit
+---
+class: dropdown, answer
+---
+
+**Programkode**:
+```{code-block} python
+---
+linenos: true
+---
+from sympy import *
+from sympy.abc import x
+
+ulikhet = (x / 2 + 3 > x - 1)
+løsning = solve(ulikhet)
+
+pprint(løsning)
+```
+
+**Utskrift**:
+```console
+(-∞ < x) ∧ (x < 8)
+```
+
+**Løsning**:
+
+$$
+x < 8
+$$
+::::
+
+::::::::::
+
+::::::::::{tab-item} d
+$$
+\dfrac{x}{3} + \dfrac{1}{2} \leq -\dfrac{x}{2} + \dfrac{1}{3}
+$$
+
+:::{raw} html
+---
+file: ./interaktiv_kode/oppgaver/oppgave_3/d.html
+---
+:::
+
+::::{admonition} Fasit
+---
+class: dropdown, answer
+---
+**Programkode**:
+
+```{code-block} python
+---
+linenos: true
+---
+from sympy import *
+from sympy.abc import x
+
+ulikhet = (x / 3 + 1 / 2 <= -x / 2 + 1 / 3)
+løsning = solve(ulikhet)
+
+pprint(løsning)
+
+```
+
+**Utskrift**:
+```console
+(x <= -0.2) ∧ (-∞ < x)
+```
+
+**Løsning**:
+
+$$
+x \leq -0.2 \quad \iff \quad x \leq -\dfrac{1}{5} 
+$$
+::::
+
+::::::::::
+:::::::::::
+````
+
+::::::::::::
+
+---
+
+
+::::::::::::{admonition} Oppgave 4
+---
+class: problem-level-2
+---
+
 ````{tab} Geogebra
 
-Løs likningene ved hjelp av CAS. 
+Bruk CAS til å løse oppgavene under.
 
-Deloppgave 1
-: $ 3\left(\dfrac{x}{2}-\dfrac{4}{3}\right)=2\left(\dfrac{3}{4}-\dfrac{x}{6}\right)$
+:::::::::::{tab-set} 
+---
+class: tabs-parts
+---
+::::::::::{tab-item} a
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-$x = 3$
-:::
+Løs likningen
 
-Deloppgave 2
-: $ 3\left(\dfrac{s}{4}-\dfrac{1}{10}\right)=2\left(w-\dfrac{1}{5}\right)$
+$$
+-3x + 2 = 4x - 9
+$$
 
-:::{admonition} Fasit
 ---
-class: answer, dropdown
----
-$s = \dfrac{2}{25}$
-:::
 
-Deloppgave 3
-: $\dfrac{3}{2}\left(t-1\right) - 2\left(\dfrac{1}{4}-t\right)=0$
+::::{admonition} Fasit
+---
+class: dropdown, answer
+---
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-$t = \dfrac{4}{7}$
-:::
+$$
+x = \dfrac{11}{7}
+$$
 
-Deloppgave 4
-: $ \dfrac{1}{3}y-2y + 3 = -\dfrac{1}{9}y + \dfrac{1}{9}$
+::::
 
-:::{admonition} Fasit
+::::::::::
+
+::::::::::{tab-item} b
+Løs likningssystemet
+
+\begin{align*}
+    2x + 3y &= -5 \\
+    -x + 2y &= 6
+\end{align*}
+
+::::{admonition} Fasit
 ---
-class: answer, dropdown
+class: dropdown, answer
 ---
-$y = \dfrac{13}{7}$
-:::
+
+$$
+x = -4 \quad \land \quad y = 1
+$$
+::::
+
+::::::::::
+
+::::::::::{tab-item} c
+Løs ulikheter
+
+$$
+-2x + 5 > -\dfrac{1}{4}x + 11
+$$
+
+---
+
+::::{admonition} Fasit
+---
+class: dropdown, answer
+---
+
+$$
+x < -\dfrac{24}{7}
+$$
+::::
+
+::::::::::
+
+::::::::::{tab-item} d
+Løs likningssystemet
+
+\begin{align*}
+    x + y + z &= 6 \\
+    2x - y + z &= 3 \\
+    3x + y - z &= 4
+\end{align*}
+
+::::{admonition} Fasit
+---
+class: dropdown, answer
+---
+
+$$
+x = \dfrac{7}{5} \quad \land \quad y = \dfrac{11}{5} \quad \land \quad z = \dfrac{12}{5}
+$$
+
+::::
+
+::::::::::
+
+:::::::::::
 
 ````
 
 ````{tab} Python
 
-sss
+> ⚠️ Her er det viktig at du prøver å **skrive koden** og ikke **bare kopierer** fra tidligere programmer. Du må få trent litt på å skrive koden selv så du blir rask og husker funksjonene bedre. Det står kommentarer i koden som hjelper deg på vei.
+
+:::::::::::{tab-set} 
+---
+class: tabs-parts
+---
+::::::::::{tab-item} a
+Skriv et program som løser likningen med `sympy`{l=python}
+
+$$
+-3x + 2 = 4x - 9
+$$
+
+:::{raw} html
+---
+file: ./interaktiv_kode/oppgaver/oppgave_4/a.html
+---
+:::
+
+---
+
+::::{admonition} Fasit
+---
+class: dropdown, answer
+---
+**Programkode**:
+
+```{code-block} python
+---
+linenos: true
+---
+from sympy import * 
+from sympy.abc import x
+
+likning = Eq(-3 * x + 2, 4 * x - 9)
+løsning = solve(likning)
+
+print(løsning)
+```
+
+**Utskrift**:
+```console
+[11/7]
+```
+
+**Løsning**:
+
+$$
+x = \dfrac{11}{7}
+$$
+
+::::
+
+::::::::::
+
+::::::::::{tab-item} b
+Skriv et program som løser likningssystemet med `sympy`{l=python}
+
+\begin{align*}
+    2x + 3y &= -5 \\
+    -x + 2y &= 6
+\end{align*}
+
+:::{raw} html
+---
+file: ./interaktiv_kode/oppgaver/oppgave_4/b.html
+---
+:::
+
+---
+
+::::{admonition} Fasit
+---
+class: dropdown, answer
+---
+**Programkode**:
+
+```{code-block} python
+---
+linenos: true
+---
+from sympy import * 
+from sympy.abc import x, y
+
+likning1 = Eq(2 * x + 3 * y, -5)
+likning2 = Eq(-x + 2 * y, 6)
+likningssystem = [likning1, likning2]
+
+løsning = solve(likningssystem)
+
+print(løsning)
+```
+
+**Utskrift**:
+```console
+{x: -4, y: 1}
+```
+
+**Løsning**:
+
+$$
+x = -4 \quad \land \quad y = 1
+$$
+::::
+
+::::::::::
+
+::::::::::{tab-item} c
+Skriv et program som løser ulikheten med `sympy`{l=python}
+
+$$
+-2x + 5 > -\dfrac{1}{4}x + 11
+$$
+
+:::{raw} html
+---
+file: ./interaktiv_kode/oppgaver/oppgave_4/c.html
+---
+:::
+
+---
+
+::::{admonition} Fasit
+---
+class: dropdown, answer
+---
+**Programkode**:
+
+```{code-block} python
+---
+linenos: true
+---
+from sympy import *
+from sympy.abc import x
+
+ulikhet = (-2 * x + 5 > -x / 4 + 11)
+løsning = solve(ulikhet)
+
+pprint(løsning)
+```
+
+**Utskrift**:
+```console
+(-∞ < x) ∧ (x < -24/7)
+```
+
+**Løsning**:
+
+$$
+x < -\dfrac{24}{7}
+$$
+::::
+
+::::::::::
+
+::::::::::{tab-item} d
+Skriv et program som løser likningssystemet med `sympy`{l=python}
+
+\begin{align*}
+    x + y + z &= 6 \\
+    2x - y + z &= 3 \\
+    3x + y - z &= 4
+\end{align*}
+
+:::{raw} html
+---
+file: ./interaktiv_kode/oppgaver/oppgave_4/d.html
+---
+:::
+
+
+::::{admonition} Fasit
+---
+class: dropdown, answer
+---
+**Programkode**:
+
+```{code-block} python
+---
+linenos: true
+---
+from sympy import *
+from sympy.abc import x, y, z
+
+likning1 = Eq(x + y + z, 6)
+likning2 = Eq(2 * x - y + z, 3)
+likning3 = Eq(3 * x + y - z, 4)
+
+likningssystem = [likning1, likning2, likning3]
+
+løsning = solve(likningssystem)
+
+print(løsning)
+
+```
+
+**Utskrift**:
+```console
+{x: 7/5, y: 11/5, z: 12/5}
+```
+
+**Løsning**:
+
+$$
+x = \dfrac{7}{5} \quad \land \quad y = \dfrac{11}{5} \quad \land \quad z = \dfrac{12}{5}
+$$
+::::
+
+::::::::::
+
+:::::::::::
 
 ````
 
-::::::::
+::::::::::::
 
-::::{admonition} Oppgave 3
 ---
-class: problem-level-1, 
----
-Løs likningssettene ved hjelp av CAS. 
 
-Deloppgave 1
-: \begin{align*}
-    3x+y &=7 \\
-    x−y &=1
+
+::::::::::::{admonition} Oppgave 5
+---
+class: problem-level-2
+---
+
+````{tab} Geogebra 
+Løs likningssystemene ved hjelp av CAS.
+
+:::::::::::{tab-set}
+---
+class: tabs-parts
+---
+
+::::::::::{tab-item} a
+\begin{align*}
+    x + y - z &= 1 \\
+    x - y - z &= -1 \\
+    x + y + z &= 3
 \end{align*}
 
-:::{admonition} Fasit
 ---
-class: answer, dropdown
----
-$x = 2, y= 1$
-:::
 
-Deloppgave 2
-: \begin{align*}
-    x-2y &=7 \\
-    x+y &=1
-\end{align*}
-
-:::{admonition} Fasit
+::::{admonition} Fasit
 ---
-class: answer, dropdown
+class: dropdown, answer
 ---
-$x=3, y=-2$
-:::
-
-Deloppgave 3
-: \begin{align*}
-    x+2y &=5 \\
-    4x &=6−y
-\end{align*}
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-$x = 1, y=2$
-:::
-
-Deloppgave 4
-: \begin{align*}
-    −2x+y &=−1 \\
-4x+2y+14 &=0
-\end{align*}
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-$x = -\dfrac{3}{2}, y= -4$
-:::
-
+$$
+x = 1 \quad \land \quad y = 1 \quad \land \quad z = 1
+$$
 ::::
 
-::::{admonition} Oppgave 4
----
-class: problem-level-1, 
----
-Løs ulikhetene ved hjelp av CAS. 
+::::::::::
 
-Deloppgave 1
-: $\dfrac{x}{3}+\dfrac{1}{2} \leq \dfrac{x}{2}+\dfrac{1}{3}$
+::::::::::{tab-item} b
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-$x \geq 1$
-:::
 
-Deloppgave 2
-: $−2x+3≥\geq x−5$
+\begin{align*}
+    2x + y - z &= 1 \\
+    x - y + z &= 2 \\
+    3x + 2y + z &= 3
+\end{align*}
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-$x \leq \dfrac{8}{3} $
-:::
 
-Deloppgave 3
-: $2x-1<x+4$
+---
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-$x < 5$
-:::
 
-Deloppgave 4
-: $\dfrac{x}{2}+3 >x-1$
-
-:::{admonition} Fasit
+::::{admonition} Fasit
 ---
-class: answer, dropdown
+class: dropdown, answer
 ---
-$x < 8$
-:::
+$$
+x = 1 \quad \land \quad y = -\dfrac{1}{3} \quad \land \quad z = \dfrac{2}{3}
+$$
 ::::
 
-::::{admonition} Oppgave 5
+::::::::::
+
+::::::::::{tab-item} c
+
+\begin{align*}
+    a - b + c &= -11 \\
+    a + b + c &= 11 \\
+    8a + 4b + 2c &= -4
+\end{align*}
+
+::::{admonition} Fasit
 ---
-class: problem-level-2, 
+class: dropdown, answer
+---
+$$
+a = -8 \quad \land \quad b = 11 \quad \land \quad c = 8
+$$
+::::
+
+
+::::::::::
+
+::::::::::{tab-item} d
+
+\begin{align*}
+    r + 2s - t &= 1 \\
+    2r - s + 3t &= 2 \\
+    3r + 2s + 2t &= 3
+\end{align*}
+
+::::{admonition} Fasit
+---
+class: dropdown, answer
+---
+$$
+r = 1 \quad \land \quad s = 0 \quad \land \quad t = 0
+$$
+::::
+
+::::::::::
+
+
+:::::::::::
+
+````
+
+````{tab} Python 
+
+Skriv et program som bruker `sympy`{l=python} til å løse likningssystemene. 
+
+> ⚠️ Viktig at du prøver å skrive programmet fra bunnen av og ikke kopierer fra tidligere programmer!
+
+:::::::::::{tab-set}
+---
+class: tabs-parts
+---
+
+::::::::::{tab-item} a
+\begin{align*}
+    x + y - z &= 1 \\
+    x - y - z &= -1 \\
+    x + y + z &= 3
+\end{align*}
+
+:::{raw} html
+---
+file: ./interaktiv_kode/oppgaver/oppgave_5/a.html
+---
+:::
+
+---
+
+::::{admonition} Fasit
+---
+class: dropdown, answer
+---
+**Programkode**:
+
+```{code-block} python
+---
+linenos: true
+---
+from sympy import *
+from sympy.abc import x, y, z
+
+likning1 = Eq(x + y - z, 1)
+likning2 = Eq(x - y - z, -1)
+likning3 = Eq(x + y + z, 3)
+
+likningssystem = [likning1, likning2, likning3]
+
+løsning = solve(likningssystem)
+
+print(løsning)
+```
+
+**Utskrift**:
+```console
+{x: 1, y: 1, z: 1}
+```
+
+**Løsning**:
+
+$$
+x = 1 \quad \land \quad y = 1 \quad \land \quad z = 1
+$$
+::::
+
+::::::::::
+
+::::::::::{tab-item} b
+
+
+\begin{align*}
+    2x + y - z &= 1 \\
+    x - y + z &= 2 \\
+    3x + 2y + z &= 3
+\end{align*}
+
+
+:::{raw} html
+---
+file: ./interaktiv_kode/oppgaver/oppgave_5/b.html
+---
+:::
+
+---
+
+::::{admonition} Fasit
+---
+class: dropdown, answer
+---
+**Programkode**:
+
+```{code-block} python
+---
+linenos: true
+---
+from sympy import *
+from sympy.abc import x, y, z
+
+likning1 = Eq(2 * x + y - z, 1)
+likning2 = Eq(x - y + z, 2)
+likning3 = Eq(3 * x + 2 * y + z, 3)
+
+likningssystem = [likning1, likning2, likning3]
+
+løsning = solve(likningssystem)
+
+print(løsning)
+```
+
+**Utskrift**:
+```console
+{x: 1, y: -1/3, z: 2/3}
+```
+
+**Løsning**:
+
+$$
+x = 1 \quad \land \quad y = -\dfrac{1}{3} \quad \land \quad z = \dfrac{2}{3}
+$$
+::::
+
+::::::::::
+
+::::::::::{tab-item} c
+
+\begin{align*}
+    a - b + c &= -11 \\
+    a + b + c &= 11 \\
+    8a + 4b + 2c &= -4
+\end{align*}
+
+:::{raw} html
+---
+file: ./interaktiv_kode/oppgaver/oppgave_5/c.html
+---
+:::
+
+---
+
+::::{admonition} Fasit
+---
+class: dropdown, answer
+---
+**Programkode**:
+
+```{code-block} python
+---
+linenos: true
+---
+from sympy import *
+from sympy.abc import a, b, c
+
+likning1 = Eq(a - b + c, -11)
+likning2 = Eq(a + b + c, 11)
+likning3 = Eq(8 * a + 4 * b + 2 * c, -4)
+
+likningssystem = [likning1, likning2, likning3]
+
+løsning = solve(likningssystem)
+
+print(løsning)
+
+```
+
+**Utskrift**:
+```console
+{a: -8, b: 11, c: 8}
+```
+
+**Løsning**:
+
+$$
+a = -8 \quad \land \quad b = 11 \quad \land \quad c = 8
+$$
+::::
+
+
+::::::::::
+
+::::::::::{tab-item} d
+
+\begin{align*}
+    r + 2s - t &= 1 \\
+    2r - s + 3t &= 2 \\
+    3r + 2s + 2t &= 3
+\end{align*}
+
+:::{raw} html
+---
+file: ./interaktiv_kode/oppgaver/oppgave_5/d.html
+---
+:::
+
+---
+
+::::{admonition} Fasit
+---
+class: dropdown, answer
+---
+**Programkode**:
+
+```{code-block} python
+---
+linenos: true
+---
+from sympy import *
+from sympy.abc import r, s, t
+
+likning1 = Eq(r + 2 * s - t, 1)
+likning2 = Eq(2 * r - s + 3 * t, 2)
+likning3 = Eq(3 * r + 2 * s + 2 * t, 3)
+
+likningssystem = [likning1, likning2, likning3]
+
+løsning = solve(likningssystem)
+
+print(løsning)
+```
+
+**Utskrift**:
+```console
+{r: 1, s: 0, t: 0}
+```
+
+**Løsning**:
+
+$$
+r = 1 \quad \land \quad s = 0 \quad \land \quad t = 0
+$$
+::::
+
+::::::::::
+
+
+:::::::::::
+
+
+````
+
+::::::::::::
+
+
+---
+
+
+<!-- ::::{admonition} Oppgave 6
+---
+class: problem-level-2
 ---
 Sett opp likninger og løs ved hjelp av CAS
 
@@ -2348,9 +3347,9 @@ class: answer, dropdown
 Doffen er 15 år, Ole er 30 år og Dole er 21 år. 
 :::
 
-::::
+:::: -->
 
-::::{admonition} Oppgave 6
+<!-- ::::{admonition} Oppgave 6
 ---
 class: problem-level-3, 
 ---
@@ -2366,24 +3365,4 @@ class: answer, dropdown
 ---
 Det var 300 barn, 600 pensjonister og 1200 voksne på kampen.
 :::
-::::
-
-::::{admonition} Oppgave 7
----
-class: problem-level-3, 
----
-
-Bestem $a, b, c$ når du vet at:
-\begin{align*}
-a - b + c &= -11 \\
-a + b + c &= 11 \\
-8a + 4b + 2c &= -4
-\end{align*}    
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-$a=-8, b=11, c=8$
-:::
-::::
+:::: -->

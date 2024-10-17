@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 def main(dirname, save):
 
     x = sp.symbols("x")
-    f = x**2 - 4 * x
+    f = x**2 - 4
 
     make_sign_chart(
         f=f,

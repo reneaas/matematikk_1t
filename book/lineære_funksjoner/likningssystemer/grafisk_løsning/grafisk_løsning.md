@@ -1,108 +1,7 @@
 # Grafisk løsning 
 
-<!-- :::::::{admonition} Oppsummering
----
-class: summary, dropdown
----
 
-::::::{tab-set}
----
-class: tabs-parts
----
-:::::{tab-item} Linjer i planet
-
-Linjer i planet kan generelt skrives på formen 
-
-$$
-Ax + By = C,
-$$
-
-der $A, B, C \in \mathbb{R}$ er konstanter.
-
-````{tab-set}
----
-class: tabs-parts
----
-
-```{tab-item} Skrå linjer
-
-Likningen kan skrives på to måter:
-
-$$
-Ax + By = C \quad \text{eller} \quad y = ax + b.
-$$
-
-:::{figure} ./figurer/teori/linjer_i_planet/skrå_linje.svg
----
-width: 80%
----
-:::
-
-```
-
-```{tab-item} Horisontale linjer
-
-Kan skrives på formen
-
-$$
-y = \text{konstant}.
-$$
-
-:::{figure} ./figurer/teori/linjer_i_planet/horisontal_linje.svg
----
-width: 80%
----
-::: 
-
-```
-
-```{tab-item} Vertikale linjer
-
-Kan skrives på formen
-
-$$
-x = \text{konstant}.
-$$
-
-:::{figure} ./figurer/teori/linjer_i_planet/vertikal_linje.svg
----
-width: 80%
----
-::: 
-
-```
-````
-:::::
-
-
-::::::
-
-Linjer i planet
-: Skrå linjer i planet kan skrives på to måter:
-    * $y = ax + b$
-    * $Ax + By = C$
-
-: Horisontale linjer kan skrives på formen $y = \text{konstant}$ og vertikale linjer på formen $x = \text{konstant}$.
-Skrå linjer i planet
-: Skrå linjer i planet kan skrives på to måter:
-    * $y = ax + b$
-    * $Ax + By = C$
-
-Grafisk løsning av likningssystemer
-: Løsningen til et lineært likningssystem er koordinatene til skjæringspunktene mellom linjene som representerer likningene i likningssystemet.
-
-Logisk *og*
-: Hvis linjene definert av likningene i et likningssystem skjærer hverandre i punktet $(x_1, y_1)$, skriver vi løsningen av likningssystemet som
-
-    $$
-    x = x_1 \quad \land \quad y = y_1
-    $$
-
-    der vi leser $\land$ som "*og samtidig*".
-
-:::::::
-
-På samme måte som vi løste likninger, kan vi også løse likningssystemer grafisk.  -->
+På samme måte som vi løste likninger, kan vi også løse likningssystemer grafisk.
 
 :::{admonition} Læringsmål
 ---
@@ -113,6 +12,14 @@ Etter dette delkapittelet, er målet at du skal:
 * Løse lineære likningssystemer grafisk.
 * Kunne uttrykke løsningen av et lineært likningssystem som et likningssystem eller som en løsningsmengde.
 :::
+
+:::{admonition} *Likningssystemer* vs *likningssett*
+---
+class: sidenote, margin 
+---
+På ungdomsskolen har du kanskje lært om *likningssett*. Det viser seg at begrepet *likningssystem* betyr akkurat det samme. Vi kommer til å bruke likningssystem gjennom denne boka fordi dette er begrepet som er brukt av Utdanningsdirektoratet i læreplanen, og fordi dette er begrepet som er brukt i høyere utdanning innenfor matematikktunge fag.
+:::
+
 
 ## Linjer på formen $Ax + By = C$
 
