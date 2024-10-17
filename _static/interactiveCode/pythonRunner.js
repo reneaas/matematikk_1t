@@ -13,6 +13,15 @@ class PythonRunner {
      * @param {Object} editor - The CodeMirror editor instance containing the code.
      */
     async run(editor, outputId = null) {
+        // Wait until worker is ready and preload packages are loaded
+        try {
+            await this.workerManager.workerReadyPromise;
+        } catch (error) {
+            console.error("Worker failed to initialize:", error);
+            this.handleErrorMessage("Failed to initialize Python environment.");
+            return;
+        }
+
         this.editorInstance = editor;
         this.editorInstance.clearLineHighlights();
         let code = editor.getValue();
@@ -35,7 +44,14 @@ class PythonRunner {
 
         console.log("Packages to load:", packages);
         if (packages.length > 0) {
-            this.workerManager.loadPackages(packages);
+            try {
+                await this.workerManager.loadPackages(packages);
+            } catch (error) {
+                // Handle package load error
+                console.error("Failed to load packages:", error);
+                this.handleErrorMessage(error.message);
+                return;
+            }
         }
 
         const callback = (data) => {
@@ -50,6 +66,7 @@ class PythonRunner {
 
         this.workerManager.runCode(this.currentCode, callback);
     }
+
 
     /**
      * Handles incoming messages from the WorkerManager.
