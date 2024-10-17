@@ -98,7 +98,7 @@ file: ggb/utforsk/utforsk_1_click_interface.html
 ````
 
 ````{tab} Python
-For å bruke CAS i Python til å løse likninger, må skrive disse to kodelinjene på starten av programmet:
+For å bruke CAS i Python til å løse likninger, må vi skrive disse to kodelinjene på starten av programmet:
 
 ```{code-block} python
 ---
@@ -1636,7 +1636,7 @@ $$
 class: answer, dropdown
 ---
 $$
-x \leq \dfrac{1}{2}
+x \geq \dfrac{1}{2}
 $$
 :::
 
@@ -1716,7 +1716,7 @@ file: ./interaktiv_kode/underveisoppgaver/underveisoppgave_3/b.html
 class: answer, dropdown
 ---
 $$
-x \leq \dfrac{1}{2}
+x \geq \dfrac{1}{2}
 $$
 :::
 
@@ -2121,7 +2121,7 @@ $$
 class: dropdown, answer
 ---
 $$
-x = -\dfrac{11}{5} \quad \land \quad y = \dfrac{18}{5}
+x = 1 \quad \land \quad y = 2
 $$
 :::
 
@@ -2295,7 +2295,7 @@ print(løsning)
 **Løsning**:
 
 $$
-x = -\dfrac{11}{5} \quad \land \quad y = \dfrac{18}{5}
+x = 1 \quad \land \quad y = 2
 $$
 
 :::
