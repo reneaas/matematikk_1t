@@ -97,6 +97,11 @@ file: ./ggb/utforsk/utforsk_1/utforsk_1.html
 ````
 
 ````{tab} Python
+I programmet under bruker vi en funksjon fra biblioteket `scipy.optimize`{l=python} som heter `curve_fit`{l=python} til å bestemme parameterne $a$ og $b$ i en lineær modell
+
+$$
+f(x) = ax + b
+$$
 
 :::{raw} html
 ---
@@ -128,11 +133,16 @@ class: summary, dropdown
 
 ````{tab} Python
 
-sss
+1. Importer `curve_fit`{l=python} fra `scipy.optimize`{l=python}
+2. Definer en funksjon som skal tilpasses dataene
+3. Bruk `curve_fit`{l=python} til å finne parametrene i funksjonen
+
 
 ````
 
 :::::::::::::::
+
+
 <!-- 
 ## Hvor god er modellen?
 En viktig del av matematisk modellering handler om å vurdere hvor god modellen er. For å gjøre det, må vi vurdere modellen vår opp mot situasjonen vi forsøkte å modellere. Vi kan for eksempel vurdere: 
