@@ -11,6 +11,8 @@ Etter dette delkapittelet, er målet at du skal:
 
 :::
 
+---
+
 CAS er en forkortelse for *Computer Algebra System*. CAS består av en samling funksjoner som er utviklet for å løse matematiske problemer symbolsk (algebraisk) på datamaskin på liknende vis som vi gjør når vi regner for hånd. Kan et problem løses for hånd, kan det også løses med CAS.
 
 Det finnes mange utgaver av CAS i det store Univers, så her skal du få velge sti selv. Du kan velge mellom å:
@@ -26,6 +28,8 @@ Hvis *jeg* er markert, vil du jobbe med CAS i **Geogebra**.
 ````{tab} Python
 Hvis *jeg* er markert, vil du jobbe med CAS i **Python**.
 ````
+
+---
 
 ## Likninger med CAS
 

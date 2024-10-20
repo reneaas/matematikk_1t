@@ -42,6 +42,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/admonitions.css?v=ebd96b21" />
     <link rel="stylesheet" type="text/css" href="../../../_static/pairPuzzle/style.css?v=c9cad18c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/interactiveCode/style.css?v=754a94b0" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mathjax/style.css?v=54189cd9" />
     <link rel="stylesheet" type="text/css" href="../../../_static/multipleChoiceQuiz/style.css?v=c92510f4" />
     <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_dark_cm.css?v=d1235728" />
     <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_light_default_cm.css?v=c880a553" />
@@ -51,7 +52,6 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/one_dark_cm.css?v=3ae52176" />
     <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/tabs.css?v=f94e6bdf" />
     <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/misc.css?v=55d93a12" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/mathjax.css?v=54189cd9" />
     <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/figures.css?v=c6b7c59c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/parsons_puzzle/indentationParsonsPuzzle.css?v=97270896" />
     <link rel="stylesheet" type="text/css" href="../../../_static/parsons_puzzle/parsonsPuzzle.css?v=0ac5e0d4" />
@@ -78,7 +78,7 @@
     <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"annotateAbove": ["\\mathrel{\\overset{\\substack{\\text{#2} \\\\ \\Bigg\\downarrow}}{#1}}", 2], "annotateBelow": ["\\mathrel{\\underset{\\substack{\\Bigg\\uparrow \\\\ \\text{#2}}}{#1}}", 2]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3.2/es5/tex-mml-chtml.js"></script>
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/cas/cas_del1/cas_del1_old';</script>
@@ -325,11 +325,11 @@
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../line%C3%A6re_funksjoner/modellering/modellering.html">7. Modellering</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../line%C3%A6re_funksjoner/modellering/lage_modeller/lage_modeller.html">7.1. Lag en matematisk modell</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../line%C3%A6re_funksjoner/modellering/regresjon/regresjon.html">7.2. Modeller basert på data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../line%C3%A6re_funksjoner/modellering/line%C3%A6re_modeller/line%C3%A6re_modeller.html">7.1. Lineære modeller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../line%C3%A6re_funksjoner/modellering/regresjon/regresjon.html">7.2. Regresjon</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../line%C3%A6re_funksjoner/modellering/oppgaver.html">7.3. Oppgaver</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../line%C3%A6re_funksjoner/modellering/lage_modeller/oppgaver.html">Lag en matematisk modell</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../line%C3%A6re_funksjoner/modellering/regresjon/oppgaver.html">Modeller basert på data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../line%C3%A6re_funksjoner/modellering/line%C3%A6re_modeller/oppgaver.html">Lineære modeller</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../line%C3%A6re_funksjoner/modellering/regresjon/oppgaver.html">Regresjon</a></li>
 </ul>
 </details></li>
 </ul>
@@ -568,8 +568,8 @@ document.write(`
 <h2>Likningssystemer<a class="headerlink" href="#likningssystemer" title="Link to this heading">#</a></h2>
 <p>Vi kan også løse likningssystemer i CAS. Da skriver vi inn hver likning for seg, markerer linjene og trykker på Løs-knappen.</p>
 <p>Vi prøver med likningssettet</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5fb81bb2-0b8e-4cc4-a429-44af0e2f62fc">
-<span class="eqno">()<a class="headerlink" href="#equation-5fb81bb2-0b8e-4cc4-a429-44af0e2f62fc" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-409daaeb-1013-4dfa-87cb-49fb5d016d90">
+<span class="eqno">()<a class="headerlink" href="#equation-409daaeb-1013-4dfa-87cb-49fb5d016d90" title="Permalink to this equation">#</a></span>\[\begin{align}
     2x+3y-4 &amp; =0
     2x+1 &amp;= 2-y
 \end{align}\]</div>
@@ -583,26 +583,26 @@ document.write(`
 <p class="admonition-title">Underveisoppgave 2</p>
 <p>Bruk CAS til å løse likningssettene:</p>
 <ol class="arabic">
-<li><div class="amsmath math notranslate nohighlight" id="equation-10a40ea0-830a-4dbb-b0ec-48247a8b3bd7">
-<span class="eqno">()<a class="headerlink" href="#equation-10a40ea0-830a-4dbb-b0ec-48247a8b3bd7" title="Permalink to this equation">#</a></span>\[\begin{align}
+<li><div class="amsmath math notranslate nohighlight" id="equation-344dda1e-66e2-4eef-b341-fecdbfea7e3a">
+<span class="eqno">()<a class="headerlink" href="#equation-344dda1e-66e2-4eef-b341-fecdbfea7e3a" title="Permalink to this equation">#</a></span>\[\begin{align}
      3x+y &amp;=7 \\
      x−y &amp;=1 \\
  \end{align}\]</div>
 </li>
-<li><div class="amsmath math notranslate nohighlight" id="equation-df5b8e0d-7f0a-4575-a662-ede1efe3c433">
-<span class="eqno">()<a class="headerlink" href="#equation-df5b8e0d-7f0a-4575-a662-ede1efe3c433" title="Permalink to this equation">#</a></span>\[\begin{align}
+<li><div class="amsmath math notranslate nohighlight" id="equation-34916fdc-3db0-45aa-a0e8-9c1a1a594cf7">
+<span class="eqno">()<a class="headerlink" href="#equation-34916fdc-3db0-45aa-a0e8-9c1a1a594cf7" title="Permalink to this equation">#</a></span>\[\begin{align}
      x−2y &amp;= 7 \\
      2x+y &amp;= 1 \\
  \end{align}\]</div>
 </li>
-<li><div class="amsmath math notranslate nohighlight" id="equation-8d28f3e8-8537-4f5b-970d-e79ff13b4ec5">
-<span class="eqno">()<a class="headerlink" href="#equation-8d28f3e8-8537-4f5b-970d-e79ff13b4ec5" title="Permalink to this equation">#</a></span>\[\begin{align}
+<li><div class="amsmath math notranslate nohighlight" id="equation-0547bf9f-eae1-46c3-b4f4-8c0a221198c0">
+<span class="eqno">()<a class="headerlink" href="#equation-0547bf9f-eae1-46c3-b4f4-8c0a221198c0" title="Permalink to this equation">#</a></span>\[\begin{align}
      x+2y &amp;= 5 \\
      4x &amp;= 6−y \\
  \end{align}\]</div>
 </li>
-<li><div class="amsmath math notranslate nohighlight" id="equation-eee57b64-a380-4318-ae11-3ba7fe9df94c">
-<span class="eqno">()<a class="headerlink" href="#equation-eee57b64-a380-4318-ae11-3ba7fe9df94c" title="Permalink to this equation">#</a></span>\[\begin{align}
+<li><div class="amsmath math notranslate nohighlight" id="equation-e072e6e3-c91a-4a9c-83c8-1bf1e2492db0">
+<span class="eqno">()<a class="headerlink" href="#equation-e072e6e3-c91a-4a9c-83c8-1bf1e2492db0" title="Permalink to this equation">#</a></span>\[\begin{align}
      −2x+y &amp;= −1 \\
      4x+2y+14 &amp;= 0 \\
  \end{align}\]</div>
@@ -625,8 +625,8 @@ document.write(`
 <div class="note admonition">
 <p class="admonition-title">Underveisoppgave 4</p>
 <p>Løs likningssystemet</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6868e2ca-36c0-4eab-83ce-24511796cd06">
-<span class="eqno">()<a class="headerlink" href="#equation-6868e2ca-36c0-4eab-83ce-24511796cd06" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f0064bf4-7faf-400d-a6bd-0f8cbcc298ed">
+<span class="eqno">()<a class="headerlink" href="#equation-f0064bf4-7faf-400d-a6bd-0f8cbcc298ed" title="Permalink to this equation">#</a></span>\[\begin{align}
     a - b + c &amp;= -11
     a + b + c &amp;= 11
     8a + 4b + 2c &amp;= -4
