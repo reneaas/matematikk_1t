@@ -1,4 +1,4 @@
-# Lag en matematisk modell
+# Lineære modeller
 
 Ettersom det finnes mange ulike matematiske modeller, finnes det også flere ulike metoder for å komme frem til matematiske modeller. Første steg er å velge ut hvilke variabler som er relevante for problemet. Men måten vi går frem for å bestemme en matematisk modell kan variere fra situasjon til situasjon. Typisk kan vi kategorisere dette inn i to hovedmetoder:
 * Vi antar en rimelig sammenheng mellom den uavhengige og avhengige variabelen, og setter opp en funksjon som beskriver denne sammenhengen.
@@ -6,39 +6,59 @@ Ettersom det finnes mange ulike matematiske modeller, finnes det også flere uli
 
 Men i alle tilfeller må vi velge ut en funksjonstype. Her skal vi naturligvis begrense oss til at alle modeller vi ser på beskrives som lineære funksjoner.
 
-## Identifisere variablene og sette opp funksjon
-I noen tilfeller holder det å identifisere hva som er uavhengig og avhengig variabel, og sette opp en funksjon. 
+## Identifisere variablene og sette opp en funksjon
+I noen tilfeller velger å vi ut to variabler som vi tror har en sammenheng mellom seg, og så lager vi en funksjon som uttrykker denne sammenhengen. 
 
-````{admonition} Underveisoppgave
+::::{admonition} Eksempel 1
+---
+class: example
+---
+Hvis du skal leie en el-sparkesykkel fra Voi, må du betale $10$ kr for å låse opp sparkesykkelen og $3$ kr per minutt du leier den. 
+
+Sett opp en modell som gir hvor mye du må betale for å leie en el-sparkesykkel i $x$ minutter.
+
+:::{admonition} Løsning
+---
+class: solution
+---
+En passende modell vil være en lineær modell der $f(x)$ gir prisen i kroner for å leie i $x$ minutter. Modellen vår er derfor på formen
+
+$$
+f(x) = ax + b.
+$$
+
+Siden startprisen er $10$ kr, vet vi at $f(0) = 10$. Dette gir oss at $b = 10$. Videre vet vi at prisen øker med $3$ kr for hvert minutt som betyr at stigningstallet er $a = 10$. Dermed er modellen vår beskrevet av 
+
+$$
+f(x) = 3x + 10.
+$$
+
+:::
+
+::::
+
+---
+
+:::::{admonition} Underveisoppgave 1
 ---
 class: check
 ---
-Sparkesykkelfirmaet *Lemon* har en prismodell der du betaler 10 kr for å låse opp en sparkesykkel, og deretter 2 kr per minutt du bruker sparkesykkelen. 
+Et annen el-sparkesykkelselskap har en annen prismodell. For å leie en el-sparkesykkel hos dette selskapet i $x$ minutter, er prisen i kroner gitt ved
 
-1. Sett opp en matematisk modell som beskriver sammenhengen mellom prisen, $P$ og antall minutter du har kjørt sparkesykkelen $t$.
-2. Bruk modellen din til å finne ut hva det koster dersom du har kjørt sparkesykkelen i 8 minutter. 
+$$
+f(x) = 8x + 12.
+$$
 
-**Prøv selv før du ser på løsningsforslaget. Det kan hende du bør lese gjennom forklaringene over et par ganger for å forstå den godt.**
+Hvor mye koster det å låse opp sparkesykkelen, og hvor mye koster det å leie sparesykkelen per minutt? 
 
-```{admonition} Løsningsforslag
+::::{admonition} Fasit
 ---
-class: solution, dropdown
+class: answer, dropdown
 ---
-1. I dette tilfellet er $t$ en uavhengig variabel, mens $P$ er en avhengig variabel som avhenger av $t$. Vi setter da opp funksjonsuttrykket
+Stigningstallet er $a = 8$ som betyr at det koster $8$ kr per minutt å leie sparkesykkelen. Konstantleddet er $b = 12$ kr som betyr at det koster $12$ kr å låse opp sparkesykkelen.
+::::
+:::::
 
-    $$
-    P(t) = 10 + 2\cdot t
-    $$
-
-2. For å bestemme prisen dersom vi kjører sparkesykkelen i 8 minutter, setter vi inn $t=8$ i uttrykket for $P(t)$. Vi får da 
-
-    $$
-    P(t) = 10 + 2\cdot 8 = 10 + 16 = 26
-    $$
-
-    Dermed koster det 26 kr å kjøre sparkesykkelen i 10 minutter. 
-```
-````
 
 ## Definisjonsmengde og verdimengde
 
@@ -81,7 +101,7 @@ $$
 D_f = \langle 3, 8]  \quad \text{og} \quad V_f = \langle 1, 6]
 $$ 
 
-:::{figure} ./figurer/eksempler/eksempel_1/figur_1.svg
+:::{figure} ./figurer/eksempler/eksempel_2/figur_1.svg
 ---
 width: 80%
 ---
@@ -97,7 +117,7 @@ $$
 D_g = [2, 6] \quad \text{og} \quad V_g = [4, 8]
 $$
 
-:::{figure} ./figurer/eksempler/eksempel_1/figur_2.svg
+:::{figure} ./figurer/eksempler/eksempel_2/figur_2.svg
 ---
 width: 80%
 ---
@@ -112,7 +132,7 @@ $$
 \displaystyle{D_h = \langle 2, 6 \rangle \quad \text{og} \quad V_h = \langle 3, 5 \rangle}
 $$
 
-:::{figure} ./figurer/eksempler/eksempel_1/figur_3.svg
+:::{figure} ./figurer/eksempler/eksempel_2/figur_3.svg
 ---
 width: 80%
 ---

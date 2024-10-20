@@ -14,6 +14,10 @@ def savefig(dirname, fname):
     return None
 
 
+def show():
+    plt.show()
+
+
 def get_factors(polynomial: sp.Expr, x: sp.Symbol) -> list[dict]:
     polynomial = sp.expand(polynomial)
     factor_list = sp.factor_list(polynomial)
@@ -45,8 +49,12 @@ def sort_factors(factors: list[dict]) -> list[dict]:
     return factors
 
 
-def draw_factors(factors, roots, ax, color_pos, color_neg, x, dy=-1, dx=0.1) -> None:
-    # Draw horisontal sign lines for each factor
+def draw_factors(
+    factors, roots, root_positions, ax, color_pos, color_neg, x, dy=-1, dx=0.02
+) -> None:
+    x_min = -0.05
+    x_max = 1.05
+    # Draw horizontal sign lines for each factor
     for i, factor in enumerate(factors):
         expression = str(factor.get("expression"))
         exponent = factor.get("exponent")
@@ -65,46 +73,44 @@ def draw_factors(factors, roots, ax, color_pos, color_neg, x, dy=-1, dx=0.1) -> 
             s = f"${expression}$"
 
         plt.text(
-            x=-1,
+            x=-0.1,
             y=(i + 1) * dy,
             s=s,
             fontsize=16,
-            ha="center",
+            ha="right",
             va="center",
         )
         if factor.get("root") == -np.inf:
-            if sp.sympify(factor.get("expression")).evalf(subs={x: 0}) > 0:
-                # plt.axhline(y=(i+1)*dy, xmin=0.05, xmax=1, color="blue", linestyle="-", lw=2)
+            y_value = sp.sympify(factor.get("expression")).evalf(subs={x: 0})
+            if y_value > 0:
                 ax.plot(
-                    [-0.7, len(roots)],
+                    [x_min, x_max],
                     [(i + 1) * dy, (i + 1) * dy],
                     color=color_pos,
                     linestyle="-",
                     lw=2,
                 )
             else:
-                # plt.axhline(y=(i+1)*dy, xmin=0.05, xmax=1, color="red", linestyle="--", lw=2)
                 ax.plot(
-                    [-0.7, len(roots)],
+                    [x_min, x_max],
                     [(i + 1) * dy, (i + 1) * dy],
                     color=color_neg,
                     linestyle="--",
                     lw=2,
                 )
-
         elif factor.get("exponent") % 2 == 0:
             root = factor.get("root")
-            root_idx = roots.index(root)
+            root_pos = root_positions[root]
 
             ax.plot(
-                [-0.7, root_idx - dx],
+                [x_min, root_pos - dx],
                 [(i + 1) * dy, (i + 1) * dy],
                 color=color_pos,
                 linestyle="-",
                 lw=2,
             )
             ax.plot(
-                [root_idx + dx, len(roots)],
+                [root_pos + dx, x_max],
                 [(i + 1) * dy, (i + 1) * dy],
                 color=color_pos,
                 linestyle="-",
@@ -112,27 +118,26 @@ def draw_factors(factors, roots, ax, color_pos, color_neg, x, dy=-1, dx=0.1) -> 
             )
 
             plt.text(
-                x=root_idx,
+                x=root_pos,
                 y=(i + 1) * dy,
                 s=f"$0$",
                 fontsize=20,
                 ha="center",
                 va="center",
             )
-
         else:
             root = factor.get("root")
-            root_idx = roots.index(root)
+            root_pos = root_positions[root]
 
             ax.plot(
-                [-0.7, root_idx - dx],
+                [x_min, root_pos - dx],
                 [(i + 1) * dy, (i + 1) * dy],
                 color=color_neg,
                 linestyle="--",
                 lw=2,
             )
             ax.plot(
-                [root_idx + dx, len(roots)],
+                [root_pos + dx, x_max],
                 [(i + 1) * dy, (i + 1) * dy],
                 color=color_pos,
                 linestyle="-",
@@ -140,7 +145,7 @@ def draw_factors(factors, roots, ax, color_pos, color_neg, x, dy=-1, dx=0.1) -> 
             )
 
             plt.text(
-                x=root_idx,
+                x=root_pos,
                 y=(i + 1) * dy,
                 s=f"$0$",
                 fontsize=20,
@@ -152,6 +157,7 @@ def draw_factors(factors, roots, ax, color_pos, color_neg, x, dy=-1, dx=0.1) -> 
 def draw_function(
     factors,
     roots,
+    root_positions,
     ax,
     color_pos,
     color_neg,
@@ -160,80 +166,79 @@ def draw_function(
     fn_name=None,
     include_factors=True,
     dy=-1,
-    dx=0.1,
+    dx=0.02,
 ):
+    x_min = -0.05
+    x_max = 1.05
 
     if include_factors:
         y = (len(factors) + 1) * dy
     else:
         y = dy
-    dy = -1
-    dx = 0.1
     plt.text(
-        x=-1,
+        x=-0.1,
         y=y,
-        s=f"${fn_name}$" if fn_name else f"$f(x)$",
+        s=f"${fn_name}$" if fn_name else f"$f({str(x)})$",
         fontsize=16,
-        ha="center",
+        ha="right",
         va="center",
     )
 
-    for i, root in enumerate(roots):
+    intervals = []
+    interval_positions = []
 
-        plt.text(
-            x=i,
-            y=y,
-            s=f"${0}$",
-            fontsize=20,
-            ha="center",
-            va="center",
+    # Intervals before first root
+    intervals.append((roots[0] - 1, roots[0] - 0.1))
+    interval_positions.append((x_min, root_positions[roots[0]] - dx))
+
+    # Intervals between roots
+    for i in range(len(roots) - 1):
+        intervals.append((roots[i] + 0.1, roots[i + 1] - 0.1))
+        interval_positions.append(
+            (root_positions[roots[i]] + dx, root_positions[roots[i + 1]] - dx)
         )
 
-        x0 = root - dx
+    # Interval after last root
+    intervals.append((roots[-1] + 0.1, roots[-1] + 1))
+    interval_positions.append((root_positions[roots[-1]] + dx, x_max))
+
+    for i, (x0_interval, pos_interval) in enumerate(zip(intervals, interval_positions)):
+        x0 = (x0_interval[0] + x0_interval[1]) / 2
         y0 = sp.sympify(f).evalf(subs={x: x0})
 
         if y0 > 0:
-            plt.axhline(
-                y=y,
-                xmin=i / (len(roots) + 1) + 0.1,
-                xmax=(i + 1) / (len(roots) + 1) - 0.05,
+            ax.plot(
+                [pos_interval[0], pos_interval[1]],
+                [y, y],
                 color=color_pos,
                 linestyle="-",
                 lw=2,
             )
         else:
-            plt.axhline(
-                y=y,
-                xmin=i / (len(roots) + 1) + 0.1,
-                xmax=(i + 1) / (len(roots) + 1) - 0.05,
+            ax.plot(
+                [pos_interval[0], pos_interval[1]],
+                [y, y],
                 color=color_neg,
                 linestyle="--",
                 lw=2,
             )
 
-    x0 = roots[-1] + dx
-    y0 = sp.sympify(f).evalf(subs={x: x0})
-    if y0 > 0:
-        plt.axhline(
+    # Plot zeros at root positions
+    for root in roots:
+        root_pos = root_positions[root]
+        plt.text(
+            x=root_pos,
             y=y,
-            xmin=(len(roots)) / (len(roots) + 1) + 0.05,
-            xmax=1,
-            color=color_pos,
-            linestyle="-",
-            lw=2,
-        )
-    else:
-        plt.axhline(
-            y=y,
-            xmin=(len(roots)) / (len(roots) + 1) + 0.05,
-            xmax=1,
-            color=color_neg,
-            linestyle="--",
-            lw=2,
+            s=f"$0$",
+            fontsize=20,
+            ha="center",
+            va="center",
         )
 
 
-def draw_vertical_lines(roots, factors, ax, include_factors=True, dy=-1):
+def draw_vertical_lines(
+    roots, root_positions, factors, ax, include_factors=True, dy=-1
+):
     # Draw vertical lines to separate regions
     offset_dy = 0.2
 
@@ -244,17 +249,18 @@ def draw_vertical_lines(roots, factors, ax, include_factors=True, dy=-1):
     if include_factors:
         offset = 1
         for i, root in enumerate(roots):
+            root_pos = root_positions[root]
             ax.plot(
-                [i, i],
-                [-0.4, (i + n_factors_without_roots + offset) * dy + offset_dy],
+                [root_pos, root_pos],
+                [-0.4, (n_factors_without_roots + offset) * dy + offset_dy],
                 color="black",
                 linestyle="-",
                 lw=1,
             )
             ax.plot(
-                [i, i],
+                [root_pos, root_pos],
                 [
-                    (i + n_factors_without_roots + offset) * dy - offset_dy,
+                    (n_factors_without_roots + offset) * dy - offset_dy,
                     (len(factors) + 1) * dy + offset_dy,
                 ],
                 color="black",
@@ -263,8 +269,9 @@ def draw_vertical_lines(roots, factors, ax, include_factors=True, dy=-1):
             )
     else:
         for i, root in enumerate(roots):
+            root_pos = root_positions[root]
             ax.plot(
-                [i, i],
+                [root_pos, root_pos],
                 [-0.3, 0.8 * dy],
                 color="black",
                 linestyle="-",
@@ -272,28 +279,7 @@ def draw_vertical_lines(roots, factors, ax, include_factors=True, dy=-1):
             )
 
 
-# def make_axis():
-#     fig, ax = plt.subplots()
-
-#     # Create x-axis and remove y-axis
-#     ax.spines["left"].set_color("none")  # Remove the left y-axis
-#     ax.spines["right"].set_color("none")  # Remove the right y-axis
-#     ax.spines["bottom"].set_position("zero")  # Move the bottom x-axis to y=0
-#     ax.spines["top"].set_color("none")  # Remove the top x-axis
-
-#     # Attach arrow to the right end of the x-axis
-#     ax.plot(1, 0, ">k", transform=ax.get_yaxis_transform(), clip_on=False)
-
-#     # Label the x-axis
-#     ax.set_xlabel(r"$x$", fontsize=16, loc="right")
-
-#     # Remove tick labels on y-axis
-#     plt.yticks([])
-
-#     return fig, ax
-
-
-def make_axis():
+def make_axis(x):
     fig, ax = plt.subplots()
 
     # Remove y-axis spines
@@ -318,42 +304,56 @@ def make_axis():
     ax.plot(1, 0, ">k", transform=ax.get_yaxis_transform(), clip_on=False)
 
     # Label the x-axis
-    ax.set_xlabel(r"$x$", fontsize=16, loc="right")
+    ax.set_xlabel(f"${str(x)}$", fontsize=16, loc="right")
 
     # Remove tick labels on y-axis
     plt.yticks([])
+
+    # Set x-limits
+    ax.set_xlim(-0.05, 1.05)
 
     return fig, ax
 
 
 def make_sign_chart(
     f: sp.Expr,
-    x: sp.symbols,
+    x: sp.symbols = None,
     fn_name: str = None,
     color: bool = True,
     include_factors: bool = True,
     generic_labels: bool = False,
     small_figsize: bool = False,
 ) -> None:
-    """Tegner fortegnsskjema for et polynom f.
+    """Draws a sign chart for a polynomial f.
 
     Args:
-        f (sp.Expr):
-            Polynomet f(x)
-        x (sp.symbols):
-            Symbolet som representerer variabelen i polynomet
+        f (sp.Expr, str):
+            Polynomial. May be a sympy.Expr or str.
+        x (sp.symbols, str, optional):
+            Variable in the polynomial
         fn_name (str, optional):
             Navn på funksjonen. Defaults `None`.
         color (bool, optional):
-            Farge på fortegnslinjene. Default: `True`.
+            Enables coloring of sign chart. Default: `True`.
         include_factors (bool, optional):
-            Inkluderer alle faktorene til f(x). Default: `True`.
+            Includes all linear factors of f(x). Default: `True`.
         generic_label (bool, optional):
-            Bruker generiske labels for røttene: x_1, x_2, ..., x_N. Default: `False`.
+            Uses generic labels for roots: x_1, x_2, ..., x_N. Default: `False`.
+        small_figsize (bool, optional):
+            Enables rescaling of the figure for a smaller figure size. Default: `False`.
 
     Returns:
-        None
+        fig (plt.figure)
+            matplotlib figure.
+        ax (plt.Axis)
+            matplotlib axis.
     """
+    if isinstance(f, str):
+        f = sp.sympify(f)
+
+    original_variable = list(f.free_symbols)[0]
+    x = sp.symbols(str(original_variable), real=True)
+    f = f.subs(original_variable, x)
 
     if color:
         color_pos = "red"
@@ -367,12 +367,21 @@ def make_sign_chart(
     print(f"Creating sign chart for f(x) = {f} = {f.factor()}")
 
     # Create figure
-    fig, ax = make_axis()
+    fig, ax = make_axis(x)
 
-    # Set tick marks to roots of the polynomial
+    # Extract roots
     roots = [factor.get("root") for factor in factors if factor.get("root") != -np.inf]
+
+    # Map roots to positions
+    num_roots = len(roots)
+    x_min = -0.05
+    x_max = 1.05
+    positions = np.linspace(0, 1, num_roots + 2)[1:-1]  # Exclude 0 and 1
+    root_positions = dict(zip(roots, positions))
+
+    # Set tick marks for roots of the polynomial
     plt.xticks(
-        ticks=[i for i in range(len(roots))],
+        ticks=positions,
         labels=[
             f"${root}$" if not generic_labels else f"$x_{i + 1}$"
             for i, root in enumerate(roots)
@@ -382,18 +391,26 @@ def make_sign_chart(
 
     # Draw factors
     if include_factors:
-        draw_factors(factors, roots, ax, color_pos, color_neg, x)
+        draw_factors(factors, roots, root_positions, ax, color_pos, color_neg, x)
 
     # Draw sign lines for function
     draw_function(
-        factors, roots, ax, color_pos, color_neg, x, f, fn_name, include_factors
+        factors,
+        roots,
+        root_positions,
+        ax,
+        color_pos,
+        color_neg,
+        x,
+        f,
+        fn_name,
+        include_factors,
     )
 
     # Remove tick labels on y-axis
     plt.yticks([])
 
-    # plt.ylim(-4, 4)
-    plt.xlim(-1, len(roots))
+    plt.xlim(x_min, x_max)
 
     if include_factors:
         fig.set_size_inches(8, 2 + int(0.7 * len(factors)))
@@ -403,7 +420,7 @@ def make_sign_chart(
     else:
         fig.set_size_inches(8, 2)
 
-    draw_vertical_lines(roots, factors, ax, include_factors)
+    draw_vertical_lines(roots, root_positions, factors, ax, include_factors)
 
     plt.tight_layout()
 
@@ -411,16 +428,18 @@ def make_sign_chart(
 
 
 if __name__ == "__main__":
+    f = "(x**2 - 4)**3 * (x - 1)**2 * (x + 4)"
+    make_sign_chart(f=f, include_factors=True)
+    show()
 
-    # Eksempel på bruk
-    x = sp.symbols("x", real=True)
-    f = -2 * (x**2 - 1) ** 4 * (x - 3) * (x - 1)
+    f = "x + 4"
+    make_sign_chart(f=f, include_factors=True)
+    show()
 
-    # Gir fortegnsskjema med fargede linjer og alle faktorer tegnet inn
-    make_sign_chart(f=f, x=x, color=True, include_factors=True)
+    f = "(x - 1) * (x + 2)"
+    make_sign_chart(f=f, include_factors=True)
+    show()
 
-    # Gir fortegnsskjema for f(x) uten faktorer. Fargede linjer
-    make_sign_chart(f=f, x=x, color=True, include_factors=False)
-
-    # Gir fortegnsskjema for f(x) med alle faktorer. Uten farger
-    make_sign_chart(f=f, x=x, color=False, include_factors=True)
+    f = "-3 * (x + 2) * (x + 3)"
+    make_sign_chart(f=f, include_factors=True)
+    show()
