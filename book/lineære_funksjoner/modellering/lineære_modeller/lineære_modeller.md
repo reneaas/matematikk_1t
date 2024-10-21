@@ -1,13 +1,26 @@
 # Lineære modeller
 
-Ettersom det finnes mange ulike matematiske modeller, finnes det også flere ulike metoder for å komme frem til matematiske modeller. Første steg er å velge ut hvilke variabler som er relevante for problemet. Men måten vi går frem for å bestemme en matematisk modell kan variere fra situasjon til situasjon. Typisk kan vi kategorisere dette inn i to hovedmetoder:
-* Vi antar en rimelig sammenheng mellom den uavhengige og avhengige variabelen, og setter opp en funksjon som beskriver denne sammenhengen.
-* Vi bruker datamateriale til å bestemme en matematisk modell.
+::::{admonition} Læringsmål
+---
+class: tip
+---
+Etter det delkapitlet, er målet at du skal:
+* Kunne forklare og lage lineære modeller for praktiske situasjoner.
+* Kunne beskrive og bestemme definisjonsmengden og verdimengden til en lineær funksjon i en praktisk situasjon.
 
-Men i alle tilfeller må vi velge ut en funksjonstype. Her skal vi naturligvis begrense oss til at alle modeller vi ser på beskrives som lineære funksjoner.
+::::
 
-## Identifisere variablene og sette opp en funksjon
-I noen tilfeller velger å vi ut to variabler som vi tror har en sammenheng mellom seg, og så lager vi en funksjon som uttrykker denne sammenhengen. 
+Lineære modeller er en type matematisk modell som beskriver en sammenheng mellom to variabler $x$ og $y$ der vi antar at sammenhengen mellom dem er lineær, som vil si at 
+
+$$
+y = ax + b
+$$
+
+der $a$ og $b$ er koeffisientene til modellen. Når vi snakker om lineære modeller, kaller vi ofte koeffisientene for **parametere**. 
+
+## Lage lineære modeller for praktiske situasjoner
+
+I en del tilfeller er det rimelig å anta en lineær sammenhengen mellom to variabler $x$ og $y$. Vi ser på en slik situasjon i eksempel 1.
 
 ::::{admonition} Eksempel 1
 ---
@@ -15,13 +28,13 @@ class: example
 ---
 Hvis du skal leie en el-sparkesykkel fra Voi, må du betale $10$ kr for å låse opp sparkesykkelen og $3$ kr per minutt du leier den. 
 
-Sett opp en modell som gir hvor mye du må betale for å leie en el-sparkesykkel i $x$ minutter.
+Sett opp en lineær modell $f$ slik at $f(x)$ gir prisen i kroner for å leie sparkesykkelen i $x$ minutter.
 
 :::{admonition} Løsning
 ---
 class: solution
 ---
-En passende modell vil være en lineær modell der $f(x)$ gir prisen i kroner for å leie i $x$ minutter. Modellen vår er derfor på formen
+Modellen vår har formen
 
 $$
 f(x) = ax + b.
@@ -43,7 +56,7 @@ $$
 ---
 class: check
 ---
-Et annen el-sparkesykkelselskap har en annen prismodell. For å leie en el-sparkesykkel hos dette selskapet i $x$ minutter, er prisen i kroner gitt ved
+Et annet el-sparkesykkelselskap har en annen prismodell. For å leie en el-sparkesykkel hos dette selskapet i $x$ minutter, er prisen i kroner gitt ved
 
 $$
 f(x) = 8x + 12.
@@ -59,43 +72,57 @@ Stigningstallet er $a = 8$ som betyr at det koster $8$ kr per minutt å leie spa
 ::::
 :::::
 
-
-## Definisjonsmengde og verdimengde
-
-Funksjonene vi har arbeidet så langt med i 1T, har stort sett vært definert for alle mulige verdier av $x$ - vi tenker da på det som at så lenge vi ikke gjør en regneoperasjon som er udefinert (som å dele på null eller ta roten av et negativt tall), så kan vi regne ut $f(x)$. For lineære funksjoner, finnes det ingen $x$-verdier for vi ikke kan regne ut $f(x)$, men det finnes likevel praktiske situasjoner hvor det ikke gir mening å bruke alle mulige verdier av $x$ - spesielt i en situasjon hvor $x$ har en praktisk betydning. På tilsvarende vis finnes det funksjonsverdier $f(x)$ som heller ikke nødvendigvis gir mening ut ifra en praktisk situasjon. Dette gir opphav til begrepene **definisjonsmengde** og **verdimengde**, som vi ser nærmere på i boksen under.
-
-:::::{admonition} Definisjonsmengde og Verdimengde
 ---
-class: theory
----
-Definisjonsmengde $D_f$
-: Mengden av alle verdier $x$ som vi kan bruke til å regne ut funksjonsverdier $f(x)$.
 
-Verdimengde $V_f$
-: Mengden av alle funksjonsverdier $f(x)$ som vi kan få fra $x$-verdiene i definisjonsmengden.
+Når vi skriver $y = f(x)$, antar vi at $x$ bestemmer verdien til $y$. Da sier vi at $x$ er den **uavhengige** variabelen og $y$ er den **avhengige** variabelen.
 
-::::{figure} ./figurer/teori/teori_1.svg
+:::::{admonition} Oppsummering: lage lineære modeller
 ---
-name: fig-lineære-funksjoner-modellering-lage-modell-teori
-width: 80%
+class: summary
 ---
-viser grafisk hva som er definisjonsmengden $D_f$ og verdimengden $V_f$ til en lineær funksjon $f$. 
-::::
+Gitt en **uavhengig** variabel $x$ og en **avhengig** variabel $y$, kan vi lage en lineær modell $f$ som beskriver sammenhengen mellom $x$ og $y$ på formen
+
+$$
+f(x) = ax + b
+$$
+
+der $y = f(x)$. 
+
+> Når vi jobber med lineære modeller, kaller vi ofte koeffisientene $a$ og $b$ for **parameterne** til modellen. 
+
 :::::
 
 ---
+
+
+## Definisjonsmengde og verdimengde
+
+To nye typer mengder som hører til en funksjon $f$ er **definisjonsmengden** $D_f$ og **verdimengden** $V_f$. Rent praktisk betyr dette at hvis vi har grafen til $f$, vil de to mengdene inneholde følgende tall:
+
+* **Definisjonsmengde $D_f$** – Mengden av alle $x$-verdier som ligger på grafen til $f$.
+* **Verdimengde $V_f$** – Mengden av alle $f(x)$-verdier ($y$-verdier) som ligger på grafen til $f$.
+
+La oss prøve å forstå dette gjennom et par eksempler.
 
 :::::{admonition} Eksempel 1
 ---
 class: example
 ---
-Under vises tre eksempler på lineære funksjoner og deres definisjonsmengde og verdimengde. Legg merke til symbolene for de to mengdene for hver funksjon.
+Under vises tre eksempler på lineære funksjoner og deres definisjonsmengde og verdimengde. I figurene har vi marker med klammeparentes hvis endepunktet er inkludert i mengden, og vinkelparentes hvis ikke. 
 
 `````{tab-set}
 ---
 class: tabs-parts
 ---
 ````{tab-item} Figur 1
+
+For grafen til $f$ har vi at 
+
+$$
+x \in \langle 3, 8] \quad \text{og} \quad f(x) \in \langle 1, 6]
+$$
+
+Dermed er definisjonsmengden og verdimengden til $f$ gitt ved
 
 $$
 D_f = \langle 3, 8]  \quad \text{og} \quad V_f = \langle 1, 6]
@@ -113,6 +140,14 @@ viser en lineær funksjon $f$ som har definisjonsmengde $D_f = \langle 3, 8]$ og
 
 ````{tab-item} Figur 2
 
+Fra grafen til $g$ kan vi se at 
+
+$$
+x \in [2, 6] \quad \text{og} \quad g(x) \in [4, 8].
+$$
+
+Derfor er definisjonsmengden og verdimengden til $g$ gitt ved
+
 $$
 D_g = [2, 6] \quad \text{og} \quad V_g = [4, 8]
 $$
@@ -127,6 +162,14 @@ viser en lineær funksjon $g$ som har definisjonsmengde $D_g = [2, 6]$ og verdim
 ````
 
 ````{tab-item} Figur 3
+
+Fra grafen til $h$ kan vi se at 
+
+$$
+x \in \langle 2, 6 \rangle \quad \text{og} \quad h(x) \in \langle 3, 5 \rangle.
+$$
+
+Dermed er definisjonsmengden og verdimengden til $h$ gitt ved
 
 $$
 \displaystyle{D_h = \langle 2, 6 \rangle \quad \text{og} \quad V_h = \langle 3, 5 \rangle}
@@ -145,24 +188,31 @@ viser en lineær funksjon $h$ som har definisjonsmengde $D_h = \langle 2, 6 \ran
 
 :::::
 
+
 ---
 
-::::{admonition} Eksempel 2
+:::::{admonition} Oppsummering: Definisjonsmengde og Verdimengde
 ---
-class: example
+class: summary
 ---
-Alle lineære funksjoner vi har sett på opptil nå, har vært definert for alle verdier av $x$. Dermed kan vi skrive at definisjonsmengden til disse lineære funksjonene $f$ er 
+For en funksjon $f$, kan vi gi flere tolkninger av definisjonsmengde og verdimengde ut ifra hvilken representasjon vi bruker. 
 
-$$
-D_f = \mathbb{R}.
-$$
+Definisjonsmengde $D_f$
+: Mengden av alle verdier $x$-verdier som vi kan bruke til å regne ut funksjonsverdier $f(x)$.
+: Mengden av alle $x$-verdier som ligger på grafen til $f$. 
 
-Ved å bruke *alle* mulige $x \in \mathbb{R}$, vil man kunne lage alle mulige funksjonsverdier $f(x) \in \mathbb{R}$. Derfor kan vi også konkludere at verdimengden er
+Verdimengde $V_f$
+: Mengden av alle funksjonsverdier $f(x)$-verdier som vi kan få fra $x$-verdiene i definisjonsmengden.
+: Mengden av alle $f(x)$-verdier ($y$-verdier) som ligger på grafen til $f$.  
 
-$$
-V_f = \mathbb{R}. 
-$$
+::::{figure} ./figurer/teori/teori_1.svg
+---
+name: fig-lineære-funksjoner-modellering-lage-modell-teori
+width: 80%
+---
+viser grafisk hva som er definisjonsmengden $D_f$ og verdimengden $V_f$ til en lineær funksjon $f$. 
 ::::
+:::::
 
 ---
 
@@ -183,36 +233,51 @@ file: quiz/quiz_1/quiz_1.html
 ---
 
 ## Praktisk betydning av definisjonsmengde og verdimengde
-I praktiske situasjoner finnes det ofte begrensninger på hva som gir mening å bruke som $x$-verdier, og hva som gir mening som $f(x)$-verdier. Da setter vi opp definisjonsmengde og verdimengde ut ifra hva som gir mening i den praktiske situasjonen. 
+I praktiske situasjoner finnes det ofte begrensninger på hva som gir mening å bruke som $x$-verdier, og hva som gir mening som $f(x)$-verdier. Da setter vi opp definisjonsmengden og verdimengden ut ifra hva som gir mening i den praktiske situasjonen. 
 
 ::::{admonition} Eksempel 3
 ---
 class: example
 ---
-Prisen $P(t)$ for å leie en elsparkesykkel i $t$ minutter er beskrevet av funksjonen
+Prisen i $f(x)$ kroner for å leie en el-sparkesykkel i $x$ minutter var i eksempel 1 gitt ved funksjonen
 
 $$
-P(t) = 10 + 2t.
+f(x) = 3x + 10.
 $$
 
-Bestem definisjonsmengden og verdimengden til $P$.
+Sparkesykkelselskapet tillatter bare at du leier sparkesykkelen i inntil 90 minutter.
+
+Hva er definisjonsmengden og verdimengden til $f$ i denne situasjonen?
 
 :::{admonition} Løsning
 ---
 class: solution
 ---
-Vi kan ikke leie sparkesykkelen et negativt antall minutter som betyr at $t \geq 0$ . Definisjonsmengden blir derfor 
+Den minste mulige tiden vi kan leie en sparkesykkel må være $0$ minutter som betyr at $x \geq 0$. Men vi kan heller ikke leie sparkesykkelen i mer enn 90 minutter, som betyr at $x \leq 90$. Dette betyr derfor at
 
 $$
-D_P = [0, \to \rangle.
-$$ 
-
-Fra $P(t)$ kan vi se at $P(0) = 10$ (startprisen for å leie sparkesykkelen). Verdien til $P(t)$ vil bare øke når vi øker verdien til $t$. Derfor vil verdimengden til $P$ være 
-
-$$
-V_P = [10, \to \rangle.
+x \geq 0 \, \land \, x \leq 90 \quad \iff \quad 0 \leq x \leq 90 \quad \iff \quad x \in [0, 90].
 $$
 
+Derfor blir definisjonsmengden
+
+$$
+D_f = [0, 90]. 
+$$
+
+For å bestemme den tilhørende verdimengden, kan vi merke oss at $f$ vokser hele tiden og vi kan derfor se at verdimengden blir avgrenset av $f(0)$ og $f(90)$. Dette gir oss begrensningene
+
+$$
+f(0) = 10 \quad \text{og} \quad f(90) = 280.
+$$
+
+Derfor er verdimengden
+
+$$
+V_f = [10, 280]. 
+$$
+
+Den praktiske tolkningen av dette er at vi kan ikke betale mindre enn 10 kroner (hvis vi leier i 0 minutter) og ikke mer enn 280 kroner (hvis vi leier i 90 minutter).
 :::
 
 ::::
