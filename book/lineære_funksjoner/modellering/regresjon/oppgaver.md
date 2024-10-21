@@ -22,7 +22,7 @@ class: tabs-parts
 ---
 
 ::::::::::{tab-item} a
-Lag en modell for iskremsalget ved hjelp av regresjon som gir oss $f(x)$ iskrem solgt når temperaturen er $x$ grader Celsius.
+Lag en lineær modell for iskremsalget ved hjelp av regresjon som gir oss $f(x)$ iskrem solgt når temperaturen er $x$ grader Celsius.
 
 :::{admonition} Fasit
 ---

@@ -60,27 +60,59 @@ Regresjon kan gjøres både med Geogebra og Python – her får du selv velge hv
 
 ````{tab} Geogebra
 Hvis *jeg* er markert, vil du jobbe med regresjon i **Geogebra**.
+
+Og i Geogebra kan du også velge mellom å bruke **regneark** eller **CAS**! 
+
+
+```{tab} CAS
+Hvis *jeg* er markert, vil du jobbe med regresjon i **CAS**.
+
+```
+
+```{tab} Regneark
+Hvis *jeg* er markert, vil du jobbe med regresjon ved hjelp av **regneark**. 
+
+```
+
 ````
 
 ````{tab} Python
+
 Hvis *jeg* er markert, vil du jobbe med regresjon i **Python**.
+
 ````
 
-
-
+---
 
 :::::::::::::::{admonition} Utforsk 1
 ---
 class: explore, full-width
 ---
 
-I eksempelet under skal vi se på en lineær funksjon bestemt ved hjelp av regresjon til datasettet
+Et datasett er gitt ved 
 
 | $x$ | $0$ | $1$ | $2$ | $3$ |
 | :---: | :---: | :---: | :---: | :---: |
 | $y$ | $-1$ | $1$ | $3$ | $5$ |
 
+
 ````{tab} Geogebra
+
+```{tab} CAS
+I CAS vinduet under vises det hvordan man kan bestemme en lineær modell ved hjelp av regresjon. Vi gjør dette i to steg:
+
+1. Vi lager en liste med punktene $(x, y)$. 
+2. Vi bruker `LinReg`-funksjonen som gir oss en lineær modell (Lin = lineær og Reg = regresjon). 
+
+:::{raw} html
+---
+file: ./ggb/utforsk/utforsk_1/cas/utforsk_1.html
+---
+:::
+
+```
+
+```{tab} Regneark
 
 Du kan bestemme en regresjonsmodell ved å følge disse stegene i vinduet under:
 
@@ -96,15 +128,21 @@ file: ./ggb/utforsk/utforsk_1/utforsk_1.html
 ---
 :::
 
+```
+
+
 ````
 
-````{tab} Python
+````{tab} Python 
+
 For å bestemme en modell med Python, kan vi bruke en funksjon fra biblioteket `scipy.optimize`{l=python} som heter `curve_fit`{l=python}. Vi må gå i fire "enkle" steg:
 
 1. Importer `curve_fit`{l=python} fra `scipy.optimize`{l=python}.
 2. Definer en funksjon skal tilpasses dataene.
 3. Definer lister for dataene.
 4. Finn de beste parameterne med `curve_fit`{l=python}. 
+
+> Når vi skriver ut `parametere`{l=python} i programmet under, vil det skrives ut en liste med verdier som har samme rekkefølge som i `modell(x , a,  b)`{l=python}. 
 
 
 :::{raw} html
@@ -117,7 +155,7 @@ file: ./interaktiv_kode/utforsk/utforsk_1/utforsk_1.html
 
 :::::::::::::::
 
----
+
 
 :::::::::::::::{admonition} Oppsummering: oppskrift på regresjon
 ---
@@ -145,30 +183,3 @@ class: summary, dropdown
 ````
 
 :::::::::::::::
-
-
-<!-- 
-## Hvor god er modellen?
-En viktig del av matematisk modellering handler om å vurdere hvor god modellen er. For å gjøre det, må vi vurdere modellen vår opp mot situasjonen vi forsøkte å modellere. Vi kan for eksempel vurdere: 
-* Kan den matematiske funksjonen vi har valgt (lineær funksjon) virkelig beskrive situasjonen?
-* For hvilken definisjonsmengde er modellen vår en god modell?
-* Når har vi grunn til å anta at modellen vår ikke er gyldig?
-
-::::{admonition} Eksempel 2: Gyldighetsområdet til en modell
----
-class: example
----
-Modellen under beskriver folketallet i bygda Oppvik. Vurder gyldighetsområdet til modellen. 
-
-[Trenger hjelp til å lage en figur med datapunkter og en lineær funksjon, og der modellen strekker seg langt utover punktene i både positiv og negativ retning. La gjerne datapunktene øke eksponensielt, slik at de siste punktene passer dårligere]
-
-:::{admonition} Løsning
----
-class: solution
----
-Vi ser fra modellen at ser ut til å være en nokså god beskrivelse av utviklingen av folketallet. Men modellen kan neppe brukes til å beskrive folketallet før datatellingen starter. Når det har gått lang tid, er det også grunn til å ikke stole på modellen. 
-
-Vi ser også at de siste punktene passer dårligere med modellen enn de første. Ser vi nøye på modellen, kan det se ut til at økningen ikke er lineær, men øker raskere og raskere. Vi skal se nærmere på slike modeller senere i matematikk 1T. 
-
-:::
-:::: -->
