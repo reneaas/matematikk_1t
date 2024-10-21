@@ -43,6 +43,7 @@ class WorkerManager {
 importScripts('https://cdn.jsdelivr.net/pyodide/v0.26.2/full/pyodide.js');
 
 let pyodideReadyPromise = loadPyodide();
+let initialGlobals = new Set();
 
 async function resetPyodide(pyodide, initialGlobals) {
     const currentGlobals = new Set(pyodide.globals.keys());
@@ -50,20 +51,20 @@ async function resetPyodide(pyodide, initialGlobals) {
     for (const key of globalsToClear) {
         pyodide.globals.delete(key);
     }
+    console.log("Globals cleared:", globalsToClear);
 }
 
 onmessage = async (event) => {
     const messageId = event.data.messageId;
     if (event.data.type === 'init') {
         const pyodide = await pyodideReadyPromise;
-        const initialGlobals = new Set(pyodide.globals.keys());
+        initialGlobals = new Set(pyodide.globals.keys());
         postMessage(JSON.stringify({ type: 'initReady' }));
     }
     if (event.data.type === 'runCode') {
         const { code } = event.data;
         try {
             const pyodide = await pyodideReadyPromise;
-            const initialGlobals = new Set(pyodide.globals.keys());
             await resetPyodide(pyodide, initialGlobals);
 
             // Prepare the Python code

@@ -1,15 +1,17 @@
 # Regresjon 
-Det er ikke alltid en opplagt sammenhengen mellom to størrelser. I slike tilfeller kan vi: 
-* Gjøre målinger og samle inn et datasett.
-* Bruke regresjon som en *metode* for å finne en funksjon som passer best til dataene.
 
-Hvert datapunkt i et datasett består av en $x$-verdi og en tilhørende $y$-verdi. Men når man gjør målinger, vil det alltid være en viss usikkerhet knyttet til målingene. Antakelsen er da det finnes en funksjon $f$ slik at en måling $(x, y)$ henger sammen ved
+:::::{admonition} Læringsmål: regresjon
+---
+class: tip
+---
+Etter dette delkapitlet, er målet at du skal:
+* Kunne bruke regresjon til å bestemme en lineær modell basert på et datasett.
 
-$$
-y = f(x) + \mathrm{støy}. 
-$$
+:::::
 
-Målet vårt er å praksis å finne $f(x)$, men det klarer vi sjeldent å gjøre nøyaktig. En viktig ferdighet blir derfor å kunne både lage modeller, og vurdere påliteligheten til disse.
+I mange praktiske situasjoner, er det ikke helt opplagt hva sammenhengen mellom to størrelser er. En strategi for å prøve å finne en modell som beskriver sammenhengen mellom de to variablene er å samle inn data og lage en modell basert på dataene. 
+
+Måten vi lager en modell basert på dataene kalles for **regresjon**.
 
 ::::{admonition} Eksempel 1: Modeller basert på data
 ---
@@ -97,11 +99,13 @@ file: ./ggb/utforsk/utforsk_1/utforsk_1.html
 ````
 
 ````{tab} Python
-I programmet under bruker vi en funksjon fra biblioteket `scipy.optimize`{l=python} som heter `curve_fit`{l=python} til å bestemme parameterne $a$ og $b$ i en lineær modell
+For å bestemme en modell med Python, kan vi bruke en funksjon fra biblioteket `scipy.optimize`{l=python} som heter `curve_fit`{l=python}. Vi må gå i fire "enkle" steg:
 
-$$
-f(x) = ax + b
-$$
+1. Importer `curve_fit`{l=python} fra `scipy.optimize`{l=python}.
+2. Definer en funksjon skal tilpasses dataene.
+3. Definer lister for dataene.
+4. Finn de beste parameterne med `curve_fit`{l=python}. 
+
 
 :::{raw} html
 ---

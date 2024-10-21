@@ -93,7 +93,7 @@
     <script src="../../../../_static/interactiveCode/interactiveCodeSetup.js?v=f3b54ace"></script>
     <script src="../../../../_static/interactiveCode/pythonRunner.js?v=5501d0d8"></script>
     <script src="../../../../_static/interactiveCode/predictionInteractiveCodeSetup.js?v=6fbb5d7b"></script>
-    <script src="../../../../_static/interactiveCode/workerManager.js?v=1c8bea65"></script>
+    <script src="../../../../_static/interactiveCode/workerManager.js?v=0c8c5351"></script>
     <script src="../../../../_static/interactiveCode/codeEditor.js?v=b8f7352c"></script>
     <script src="../../../../_static/multipleChoiceQuiz/timedMultipleChoiceQuiz.js?v=79e3619c"></script>
     <script src="../../../../_static/multipleChoiceQuiz/utils.js?v=2c6f871c"></script>
@@ -509,17 +509,15 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="regresjon">
 <h1><span class="section-number">7.2. </span>Regresjon<a class="headerlink" href="#regresjon" title="Link to this heading">#</a></h1>
-<p>Det er ikke alltid en opplagt sammenhengen mellom to størrelser. I slike tilfeller kan vi:</p>
+<div class="tip admonition">
+<p class="admonition-title">Læringsmål: regresjon</p>
+<p>Etter dette delkapitlet, er målet at du skal:</p>
 <ul class="simple">
-<li><p>Gjøre målinger og samle inn et datasett.</p></li>
-<li><p>Bruke regresjon som en <em>metode</em> for å finne en funksjon som passer best til dataene.</p></li>
+<li><p>Kunne bruke regresjon til å bestemme en lineær modell basert på et datasett.</p></li>
 </ul>
-<p>Hvert datapunkt i et datasett består av en <span class="math notranslate nohighlight">\(x\)</span>-verdi og en tilhørende <span class="math notranslate nohighlight">\(y\)</span>-verdi. Men når man gjør målinger, vil det alltid være en viss usikkerhet knyttet til målingene. Antakelsen er da det finnes en funksjon <span class="math notranslate nohighlight">\(f\)</span> slik at en måling <span class="math notranslate nohighlight">\((x, y)\)</span> henger sammen ved</p>
-<div class="math notranslate nohighlight">
-\[
-y = f(x) + \mathrm{støy}. 
-\]</div>
-<p>Målet vårt er å praksis å finne <span class="math notranslate nohighlight">\(f(x)\)</span>, men det klarer vi sjeldent å gjøre nøyaktig. En viktig ferdighet blir derfor å kunne både lage modeller, og vurdere påliteligheten til disse.</p>
+</div>
+<p>I mange praktiske situasjoner, er det ikke helt opplagt hva sammenhengen mellom to størrelser er. En strategi for å prøve å finne en modell som beskriver sammenhengen mellom de to variablene er å samle inn data og lage en modell basert på dataene.</p>
+<p>Måten vi lager en modell basert på dataene kalles for <strong>regresjon</strong>.</p>
 <div class="example admonition">
 <p class="admonition-title">Eksempel 1: Modeller basert på data</p>
 <p>Vi har data for antall kilometer vi har kjørt som funksjon av tiden vi har brukt:</p>
@@ -656,11 +654,13 @@ Men den rød linja har en tendens til å ligge på oversiden av punktene, mens d
 </html>
 </div>
 <input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--2">Python</label><div class="tab-content docutils">
-<p>I programmet under bruker vi en funksjon fra biblioteket <code class="code docutils literal highlight highlight-python"><span class="n">scipy</span><span class="o">.</span><span class="n">optimize</span></code> som heter <code class="code docutils literal highlight highlight-python"><span class="n">curve_fit</span></code> til å bestemme parameterne <span class="math notranslate nohighlight">\(a\)</span> og <span class="math notranslate nohighlight">\(b\)</span> i en lineær modell</p>
-<div class="math notranslate nohighlight">
-\[
-f(x) = ax + b
-\]</div>
+<p>For å bestemme en modell med Python, kan vi bruke en funksjon fra biblioteket <code class="code docutils literal highlight highlight-python"><span class="n">scipy</span><span class="o">.</span><span class="n">optimize</span></code> som heter <code class="code docutils literal highlight highlight-python"><span class="n">curve_fit</span></code>. Vi må gå i fire “enkle” steg:</p>
+<ol class="arabic simple">
+<li><p>Importer <code class="code docutils literal highlight highlight-python"><span class="n">curve_fit</span></code> fra <code class="code docutils literal highlight highlight-python"><span class="n">scipy</span><span class="o">.</span><span class="n">optimize</span></code>.</p></li>
+<li><p>Definer en funksjon skal tilpasses dataene.</p></li>
+<li><p>Definer lister for dataene.</p></li>
+<li><p>Finn de beste parameterne med <code class="code docutils literal highlight highlight-python"><span class="n">curve_fit</span></code>.</p></li>
+</ol>
 <div id="container-kode-lineære-funksjoner-modellering-regresjon-utforsk-1"></div>
 <script type="text/javascript">
 

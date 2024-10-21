@@ -1,6 +1,6 @@
 # Oppgaver: Regresjon
 
-::::::::::::{admonition} Oppgave 2
+::::::::::::{admonition} Oppgave 1
 ---
 class: problem-level-1
 ---
