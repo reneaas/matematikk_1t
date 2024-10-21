@@ -572,16 +572,26 @@ Men den rød linja har en tendens til å ligge på oversiden av punktene, mens d
 </ol>
 <p>Regresjon kan gjøres både med Geogebra og Python – her får du selv velge hvilken læringssti du vil følge. Husk at du alltid kan bytte sti underveis.</p>
 <div class="tab-set docutils">
-<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Geogebra</label><div class="tab-content docutils">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">Geogebra</label><div class="tab-content docutils">
 <p>Hvis <em>jeg</em> er markert, vil du jobbe med regresjon i <strong>Geogebra</strong>.</p>
+<p>Og i Geogebra kan du også velge mellom å bruke <strong>regneark</strong> eller <strong>CAS</strong>!</p>
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">CAS</label><div class="tab-content docutils">
+<p>Hvis <em>jeg</em> er markert, vil du jobbe med regresjon i <strong>CAS</strong>.</p>
 </div>
-<input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--2">Python</label><div class="tab-content docutils">
+<input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--2">Regneark</label><div class="tab-content docutils">
+<p>Hvis <em>jeg</em> er markert, vil du jobbe med regresjon ved hjelp av <strong>regneark</strong>.</p>
+</div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--2">Python</label><div class="tab-content docutils">
 <p>Hvis <em>jeg</em> er markert, vil du jobbe med regresjon i <strong>Python</strong>.</p>
 </div>
 </div>
+<hr class="docutils" />
 <div class="explore full-width admonition">
 <p class="admonition-title">Utforsk 1</p>
-<p>I eksempelet under skal vi se på en lineær funksjon bestemt ved hjelp av regresjon til datasettet</p>
+<p>Et datasett er gitt ved</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
@@ -602,7 +612,60 @@ Men den rød linja har en tendens til å ligge på oversiden av punktene, mens d
 </table>
 </div>
 <div class="tab-set docutils">
-<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">Geogebra</label><div class="tab-content docutils">
+<input checked="True" class="tab-input" id="tab-set--3-input--1" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--1">Geogebra</label><div class="tab-content docutils">
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">CAS</label><div class="tab-content docutils">
+<p>I CAS vinduet under vises det hvordan man kan bestemme en lineær modell ved hjelp av regresjon. Vi gjør dette i to steg:</p>
+<ol class="arabic simple">
+<li><p>Vi lager en liste med punktene <span class="math notranslate nohighlight">\((x, y)\)</span>.</p></li>
+<li><p>Vi bruker <code class="docutils literal notranslate"><span class="pre">LinReg</span></code>-funksjonen som gir oss en lineær modell (Lin = lineær og Reg = regresjon).</p></li>
+</ol>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <!-- Bytt ut `container-id` med unik id. -->
+    <div id="ggb-container-lineære-funksjoner-modellering-regresjon-utforsk-1-cas"></div>
+
+    <script>
+        // Define options for the GeoGebra applet
+        var options = {
+            appName: 'classic',
+            width: 1000,
+            height: 500,
+            showMenuBar: true,
+            showAlgebraInput: false,
+            showToolBar: false,
+            enableLabelDrags: false,
+            enableShiftDragZoom: true,
+            enableRightClick: false,
+            errorDialogsActive: false,
+            useBrowserForJS: false,
+            language: "nb",
+            "ggbBase64":"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",
+
+
+
+            appletOnLoad: function(api) {
+                // Example event handler: listen for 'update' events from the applet
+                api.registerUpdateListener(function(objName) {
+                    console.log(objName + ' was updated.');
+                });
+
+                // Example of defining a new button in GeoGebra that triggers custom JavaScript
+                api.evalCommand('Button("Click Me!", "javascript:alert(\'Button clicked!\')")');
+            }
+        };
+
+        setupGeogebra('ggb-container-lineære-funksjoner-modellering-regresjon-utforsk-1-cas', options);
+    </script>
+</body>
+</html>
+</div>
+<input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--2">Regneark</label><div class="tab-content docutils">
 <p>Du kan bestemme en regresjonsmodell ved å følge disse stegene i vinduet under:</p>
 <ol class="arabic simple">
 <li><p>Åpne regneark <img alt="../../../../_images/menu_view_spreadsheet.svg" class="inline-image" src="../../../../_images/menu_view_spreadsheet.svg" /> og skriv inn tallene i to kolonner nedover.</p></li>
@@ -653,7 +716,9 @@ Men den rød linja har en tendens til å ligge på oversiden av punktene, mens d
 </body>
 </html>
 </div>
-<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--2">Python</label><div class="tab-content docutils">
+</div>
+</div>
+<input class="tab-input" id="tab-set--3-input--2" name="tab-set--3" type="radio"><label class="tab-label" for="tab-set--3-input--2">Python</label><div class="tab-content docutils">
 <p>For å bestemme en modell med Python, kan vi bruke en funksjon fra biblioteket <code class="code docutils literal highlight highlight-python"><span class="n">scipy</span><span class="o">.</span><span class="n">optimize</span></code> som heter <code class="code docutils literal highlight highlight-python"><span class="n">curve_fit</span></code>. Vi må gå i fire “enkle” steg:</p>
 <ol class="arabic simple">
 <li><p>Importer <code class="code docutils literal highlight highlight-python"><span class="n">curve_fit</span></code> fra <code class="code docutils literal highlight highlight-python"><span class="n">scipy</span><span class="o">.</span><span class="n">optimize</span></code>.</p></li>
@@ -661,6 +726,9 @@ Men den rød linja har en tendens til å ligge på oversiden av punktene, mens d
 <li><p>Definer lister for dataene.</p></li>
 <li><p>Finn de beste parameterne med <code class="code docutils literal highlight highlight-python"><span class="n">curve_fit</span></code>.</p></li>
 </ol>
+<blockquote>
+<div><p>Når vi skriver ut <code class="code docutils literal highlight highlight-python"><span class="n">parametere</span></code> i programmet under, vil det skrives ut en liste med verdier som har samme rekkefølge som i <code class="code docutils literal highlight highlight-python"><span class="n">modell</span><span class="p">(</span><span class="n">x</span> <span class="p">,</span> <span class="n">a</span><span class="p">,</span>  <span class="n">b</span><span class="p">)</span></code>.</p>
+</div></blockquote>
 <div id="container-kode-lineære-funksjoner-modellering-regresjon-utforsk-1"></div>
 <script type="text/javascript">
 
@@ -702,11 +770,10 @@ print(parametere)
 </div>
 </div>
 </div>
-<hr class="docutils" />
 <div class="summary dropdown admonition">
 <p class="admonition-title">Oppsummering: oppskrift på regresjon</p>
 <div class="tab-set docutils">
-<input checked="True" class="tab-input" id="tab-set--2-input--1" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--1">Geogebra</label><div class="tab-content docutils">
+<input checked="True" class="tab-input" id="tab-set--4-input--1" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--1">Geogebra</label><div class="tab-content docutils">
 <ol class="arabic simple">
 <li><p>Åpne regneark <img alt="../../../../_images/menu_view_spreadsheet.svg" class="inline-image" src="../../../../_images/menu_view_spreadsheet.svg" /> og skriv inn tallene i to kolonner nedover.</p></li>
 <li><p>Trykk på rullemenyen med ikonet <img alt="../../../../_images/mode_onevarstats.svg" class="inline-image" src="../../../../_images/mode_onevarstats.svg" /> og bla ned og velg regresjonsanalyse <img alt="../../../../_images/mode_twovarstats.svg" class="inline-image" src="../../../../_images/mode_twovarstats.svg" /></p></li>
@@ -714,7 +781,7 @@ print(parametere)
 <li><p>Trykk på <img alt="../../../../_images/export.svg" class="inline-image" src="../../../../_images/export.svg" /> og velg “Kopier til grafikkfeltet”</p></li>
 </ol>
 </div>
-<input class="tab-input" id="tab-set--2-input--2" name="tab-set--2" type="radio"><label class="tab-label" for="tab-set--2-input--2">Python</label><div class="tab-content docutils">
+<input class="tab-input" id="tab-set--4-input--2" name="tab-set--4" type="radio"><label class="tab-label" for="tab-set--4-input--2">Python</label><div class="tab-content docutils">
 <ol class="arabic simple">
 <li><p>Importer <code class="code docutils literal highlight highlight-python"><span class="n">curve_fit</span></code> fra <code class="code docutils literal highlight highlight-python"><span class="n">scipy</span><span class="o">.</span><span class="n">optimize</span></code></p></li>
 <li><p>Definer en funksjon som skal tilpasses dataene</p></li>
@@ -723,31 +790,6 @@ print(parametere)
 </div>
 </div>
 </div>
-<!-- 
-## Hvor god er modellen?
-En viktig del av matematisk modellering handler om å vurdere hvor god modellen er. For å gjøre det, må vi vurdere modellen vår opp mot situasjonen vi forsøkte å modellere. Vi kan for eksempel vurdere: 
-* Kan den matematiske funksjonen vi har valgt (lineær funksjon) virkelig beskrive situasjonen?
-* For hvilken definisjonsmengde er modellen vår en god modell?
-* Når har vi grunn til å anta at modellen vår ikke er gyldig?
-
-::::{admonition} Eksempel 2: Gyldighetsområdet til en modell
----
-class: example
----
-Modellen under beskriver folketallet i bygda Oppvik. Vurder gyldighetsområdet til modellen. 
-
-[Trenger hjelp til å lage en figur med datapunkter og en lineær funksjon, og der modellen strekker seg langt utover punktene i både positiv og negativ retning. La gjerne datapunktene øke eksponensielt, slik at de siste punktene passer dårligere]
-
-:::{admonition} Løsning
----
-class: solution
----
-Vi ser fra modellen at ser ut til å være en nokså god beskrivelse av utviklingen av folketallet. Men modellen kan neppe brukes til å beskrive folketallet før datatellingen starter. Når det har gått lang tid, er det også grunn til å ikke stole på modellen. 
-
-Vi ser også at de siste punktene passer dårligere med modellen enn de første. Ser vi nøye på modellen, kan det se ut til at økningen ikke er lineær, men øker raskere og raskere. Vi skal se nærmere på slike modeller senere i matematikk 1T. 
-
-:::
-:::: -->
 </section>
 </section>
 
