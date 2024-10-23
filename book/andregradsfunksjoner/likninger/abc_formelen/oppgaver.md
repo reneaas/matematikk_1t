@@ -1,22 +1,53 @@
 # Oppgaver: <br> $abc$-formelen
 
-:::::{admonition} Oppsummering: $abc$-formelen
+:::::::::::::::{admonition} Oppsummering
 ---
 class: summary
 ---
-Når en andregradslikning er skrevet på formen 
+
+::::::::::::::{tab-set}
+
+:::::::::::::{tab-item} $abc$-formelen
+
+For en andregradslikning som er skrevet på formen
 
 $$
-ax^2 + bx + c = 0,
+ax^2 + bx + c = 0
 $$
 
 er løsningen
 
 $$
-x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.
+x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a}
 $$
 
-:::::
+:::::::::::::
+
+:::::::::::::{tab-item} Antall løsninger og diskriminanten
+
+For en andregradslikning som er skrevet på formen
+
+$$
+ax^2 + bx + c = 0
+$$
+
+kan vi bestemme antall løsninger ved å regne ut diskriminanten
+
+$$
+D = b^2 - 4ac
+$$
+
+| Antall løsninger |Diskriminant $D$ |
+|-------------------|---------------------|
+| To løsninger      | $D > 0$             |
+| Én løsning        | $D = 0$             |
+| Ingen løsninger   | $D < 0$             |
+
+:::::::::::::
+
+::::::::::::::
+
+:::::::::::::::
 
 ---
 
@@ -148,3 +179,90 @@ $$
 
 :::::::::::::::
 
+---
+
+:::::::::::::::{admonition} Oppgave 3
+---
+class: problem-level-1
+---
+For hver av likningene, bestem hvor mange løsninger likningen har ved hjelp av diskriminanten.
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+
+:::::::::::::{tab-item} a
+
+$$
+x^2 - 8x + 16 = 0
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+Én løsning siden $D = 0$. 
+:::
+
+:::::::::::::
+
+:::::::::::::{tab-item} b
+
+$$
+x^2 - 10x + 24 = 0
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+To løsninger siden $D > 0$.
+:::
+
+:::::::::::::
+
+:::::::::::::{tab-item} c
+
+$$
+4x^2 + 5x + 8 = 0
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+Ingen løsning siden $D < 0$.
+:::
+
+:::::::::::::
+
+
+::::::::::::::
+:::::::::::::::
+
+
+---
+
+
+::::{admonition} Oppgave X
+---
+class: problem-level-2
+---
+Bestem $k$ slik at andregradslikningen
+
+$$
+x^2 + kx + 6 = 0
+$$
+
+har én løsning. 
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+k = \pm 2\sqrt{6}
+$$
+:::
+::::

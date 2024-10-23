@@ -12,15 +12,15 @@ link-type: doc
 ---
 **Algebraisk representasjon**
 
-
 ^^^
-$$
-f(x) = 2x + 6
-$$
+:::{figure} ./algebraisk_representasjon/figurer/teori/algebraisk_uttrykk.svg
+---
+width: 100%
+class: no-click
+---
+:::
 
-$$
-f(3) = 2 \cdot 3 + 6 = 12
-$$
+
 ::::
 
 ::::{grid-item-card}
