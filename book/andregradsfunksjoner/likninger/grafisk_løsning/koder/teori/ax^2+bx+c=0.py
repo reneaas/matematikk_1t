@@ -7,7 +7,7 @@ def main(dirname, save):
     #
     # Define functions
     def f(x):
-        return x**2 - x - 6
+        return x**2 - x - 2
 
     # List of functions and their labels.
     functions = [f]
@@ -17,14 +17,63 @@ def main(dirname, save):
     fig, ax = make_figure(
         functions=functions,
         fn_labels=fn_labels,  # NOTE: Set `None` hvis du ikke vil ha labels.
-        xmin=-6,
-        xmax=6,
-        ymin=-7,
+        xmin=-4,
+        xmax=4,
+        ymin=-4,
         ymax=8,
-        ticks=True,
+        ticks=False,
     )
 
-    yticks = [i for i in range(-8, 8, 2)]
+    annotation_text = (
+        "Skjæring med $x$-aksen \nNullpunkt \n $x$-koordinatene løser $f(x) = 0$"
+    )
+    plt.annotate(
+        text=annotation_text,
+        xy=(-1, 0),
+        xytext=(0.5 * (-1 + 2), 5),
+        fontsize=16,
+        bbox=dict(
+            boxstyle="round,pad=0.3", edgecolor="black", facecolor="white", alpha=0.7
+        ),
+        arrowprops=dict(
+            arrowstyle="->",
+            lw=2,
+            color="black",
+            alpha=0.7,
+            connectionstyle="arc3,rad=-0.2",
+        ),
+        horizontalalignment="left",
+        verticalalignment="center",
+    )
+
+    plt.annotate(
+        text=annotation_text,
+        xy=(2, 0),
+        xytext=(0.5 * (-1 + 2), 5),
+        fontsize=16,
+        bbox=dict(
+            boxstyle="round,pad=0.3", edgecolor="black", facecolor="white", alpha=0.7
+        ),
+        arrowprops=dict(
+            arrowstyle="->",
+            lw=2,
+            color="black",
+            alpha=0.7,
+            connectionstyle="arc3,rad=+0.2",
+        ),
+        horizontalalignment="left",
+        verticalalignment="center",
+    )
+
+    ax.plot(2, 0, "ko", markersize=8, alpha=0.7)
+    ax.plot(-1, 0, "ko", markersize=8, alpha=0.7)
+
+    x1 = -1
+    x2 = 2
+
+    plt.xticks([x1, x2], ["$x_1$", "$x_2$"], fontsize=16)
+
+    plt.grid(False)
 
     # NOTE: Select an appropriate `dirname` to save the figure.
     # The directory `dirname` will be created automatically if it does not exist already.

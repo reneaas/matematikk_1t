@@ -7,24 +7,82 @@ def main(dirname, save):
     #
     # Define functions
     def f(x):
-        return x**2 - x - 6
+        return x**2 - 4 * x + 5
+
+    def g(x):
+        return x + 1
 
     # List of functions and their labels.
-    functions = [f]
+    functions = [f, g]
     fn_labels = [f"${fn.__name__}$" for fn in functions]
 
     # Create the math figure
     fig, ax = make_figure(
         functions=functions,
         fn_labels=fn_labels,  # NOTE: Set `None` hvis du ikke vil ha labels.
-        xmin=-6,
-        xmax=6,
-        ymin=-7,
-        ymax=8,
-        ticks=True,
+        xmin=-2,
+        xmax=7,
+        ymin=-1,
+        ymax=10,
+        ticks=False,
     )
 
-    yticks = [i for i in range(-8, 8, 2)]
+    annotation_text = (
+        "$x$-koordinatene til skjæringene \n løser likningen $f(x) = g(x)$"
+    )
+    plt.annotate(
+        text=annotation_text,
+        xy=(1, 2),
+        xytext=(0, 8),
+        fontsize=16,
+        bbox=dict(
+            boxstyle="round,pad=0.3", edgecolor="black", facecolor="white", alpha=0.7
+        ),
+        arrowprops=dict(
+            arrowstyle="->",
+            lw=2,
+            color="black",
+            alpha=0.7,
+            connectionstyle="arc3,rad=-0.2",
+        ),
+        horizontalalignment="left",
+        verticalalignment="center",
+    )
+
+    plt.annotate(
+        text=annotation_text,
+        xy=(4, 5),
+        xytext=(0, 8),
+        fontsize=16,
+        bbox=dict(
+            boxstyle="round,pad=0.3", edgecolor="black", facecolor="white", alpha=0.7
+        ),
+        arrowprops=dict(
+            arrowstyle="->",
+            lw=2,
+            color="black",
+            alpha=0.7,
+            connectionstyle="arc3,rad=+0.2",
+        ),
+        horizontalalignment="left",
+        verticalalignment="center",
+    )
+
+    ax.plot(4, 5, "ko", markersize=8, alpha=0.7)
+    ax.plot(1, 2, "ko", markersize=8, alpha=0.7)
+
+    x1, y1 = 4, 5
+    x2, y1 = 1, 2
+
+    plt.xticks([x1, x2], ["$x_1$", "$x_2$"], fontsize=16)
+
+    ax.vlines(x=4, ymin=0, ymax=5, color="black", linestyle="--", alpha=0.5)
+    ax.vlines(x=1, ymin=0, ymax=2, color="black", linestyle="--", alpha=0.5)
+
+    plt.legend(fontsize=16, loc="center right")
+    plt.grid(False)
+
+    plt.legend(fontsize=16, loc="center right")
 
     # NOTE: Select an appropriate `dirname` to save the figure.
     # The directory `dirname` will be created automatically if it does not exist already.
