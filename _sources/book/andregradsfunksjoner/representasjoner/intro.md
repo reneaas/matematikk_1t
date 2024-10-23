@@ -14,17 +14,13 @@ link-type: doc
 
 ^^^
 
-$$
-f(x) = x^2 + 4x + 4
-$$
+:::{figure} ./algebraisk_representasjon/figurer/teori/algebraisk_uttrykk.svg
+---
+width: 100%
+class: no-click
+---
+:::
 
-$$
-g(x) = -x^2 + 3x
-$$
-
-$$
-h(x) = x^2 - 9
-$$
 
 ::::
 
@@ -39,6 +35,7 @@ link-type: doc
 :::{figure} ./grafisk_representasjon/figurer/teori/intro_tre_andregradsfunksjoner.svg
 ---
 width: 100%
+class: no-click
 ---
 :::
 ::::

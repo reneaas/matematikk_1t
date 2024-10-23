@@ -8,17 +8,13 @@ Vi skal ta en kort titt på den algebraiske definisjonen av en andregradsfunksjo
 :class: theory
 En andregradsfunksjon $f(x)$ er en funksjon på formen
 
-$$
-f(x) = ax^2 + bx + c,
-$$
+:::{figure} ./figurer/teori/algebraisk_uttrykk.svg
+---
+width: 30%
+class: no-click
+---
+:::
 
-der $a, b, c \in \mathbb{R}$ er koeffisientene til andregradsfunksjonen. 
-
-Merknad 1
-: Merk **spesielt** at $a$ kalles for den **ledende koeffisienten** til andregradsfunksjonen. En *ledende koeffisient* er koeffisienten til den høyeste potensen av $x$ i et algebraisk uttrykk. 
-
-Merknad 2
-: La oss understreke at $a$ **ikke** er stigningstall. Dette er **kun** tilfelle for lineære funksjoner $g(x) = ax + b$.
 ```
 
 ````{admonition} Eksempel 1: Andregradsfunksjoner
