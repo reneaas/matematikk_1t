@@ -12,7 +12,7 @@ class: reminder, dropdown
 * Programmering av likninger og likningssystemer
 ::::
 
-> Oppgaver som er markert med (*) er oppgaver som er litt vanskeligere enn de andre oppgavene og passer ikke nødvendigvis med hva som er gjort i timene i alle klasser. Spør faglærer om du er usikker på om du skal gjøre disse oppgavene.
+> Oppgaver som er markert med (*) er oppgaver som kan være litt vanskeligere enn de andre oppgavene og passer ikke nødvendigvis med hva som er gjort i timene i alle klasser. Spør faglærer om du er usikker på om du skal gjøre disse oppgavene.
 
 ---
 
@@ -427,7 +427,7 @@ class: dropdown, answer
 
 :::::::::::::::{admonition} Oppgave 7
 ---
-class: problem-level-1
+class: problem-level-2
 ---
 Fortegnslinja til en lineær funksjon $f$ er gitt vist under.
 
