@@ -20,30 +20,21 @@ En representasjon er en måte å uttrykke noe på. Når vi jobber med rette linj
 ## Algebraisk representasjon av lineære funksjoner
 En lineær funksjon er en rett linje der $y$-verdien er bestemt av $x$-verdien. 
 
-::::{admonition} Stigningstall og skjæring med $y$-aksen
----
-class: sidenote, margin
----
-Vi skal se nærmere på betydningen av stigningstall og skjæring med $y$-aksen når vi ser på grafisk representasjon av lineære funksjoner i neste delkapittel.
-::::
-
-
 ::::{admonition} Definisjon: lineær funksjon
 ---
 class: theory
 ---
-En **lineær funksjon** $f$ er en formel som kan skrives som en likning på formen 
+En lineær funksjon $f$ er en funksjon på formen
 
-$$
-f(x) = ax + b.
-$$ (eq:linear_funksjon)
+:::{figure} ./figurer/teori/algebraisk_uttrykk.svg
+---
+width: 60%
+class: no-click
+---
+:::
 
 
-* $a$ og $b$ konstanter som vi kaller for **koeffisientene** til den lineære funksjonen.
-* $a$ er **stigningstallet** til linja.
-* $b$ er **konstantleddet** til linja. Også kalt for **skjæringen med $y$-aksen**.
-* $f$ er **navnet** til funksjonen.
-* $y = f(x)$ er **funksjonsverdien** for en bestemt $x$-verdi.
+
 ::::
 
 Vi tar noen eksempler på lineære funksjoner med skrivemåten over:
