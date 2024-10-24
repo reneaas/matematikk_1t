@@ -202,7 +202,7 @@ class: sidenote, margin
 Med diskriminanten kan vi skrive $abc$-formelen på en annen måte:
 
 \begin{align*}
-x & = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+x & = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \\
 \\
 x & = \frac{-b \pm \sqrt{D}}{2a}
 \end{align*}
@@ -211,31 +211,37 @@ De ulike tilfellene handler altså om hva som skjer når vi tar roten av $D$. Sp
 < 0$ fordi vi ikke kan ta roten av et negativt tall. 
 ::::
 
-:::{admonition} Setning: Antall løsninger for en andregradslikning
+::::{admonition} Setning: Antall løsninger for en andregradslikning
 ---
 class: theory
 ---
 For en andregradslikning 
 
-$$
-ax^2 + bx + c = 0
-$$
+:::{figure} ./figurer/teori/andregradslikning.svg
+---
+width: 30%
+class: no-click
+---
+:::
 
 definerer vi **diskriminanten** $D$ som
 
-$$
-D = b^2 - 4ac
-$$
+:::{figure} ./figurer/teori/diskriminant.svg
+---
+width: 40%
+class: no-click
+---
+:::
 
 Antall løsninger likningen har er bestemt av betingelsene i tabellen under.
 
 | Antall løsninger | Betingelse |
-|------------------|------------|
-| To løsninger | $D > 0$ |
-| Én løsning | $D = 0$ |
-| Ingen løsninger | $D < 0$ | 
+|:------------------:|:------------:|
+| 2 | $D > 0$ |
+| 1 | $D = 0$ |
+| Ingen | $D < 0$ | 
 
-:::
+::::
 
 Vi tar et eksempel.
 

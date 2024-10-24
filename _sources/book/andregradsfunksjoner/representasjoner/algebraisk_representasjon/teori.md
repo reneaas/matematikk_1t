@@ -6,11 +6,11 @@ Vi skal ta en kort titt på den algebraiske definisjonen av en andregradsfunksjo
 
 ```{admonition} Definisjon (algebraisk): Andregradsfunksjon
 :class: theory
-En andregradsfunksjon $f(x)$ er en funksjon på formen
+En andregradsfunksjon $f$ er en funksjon på formen
 
 :::{figure} ./figurer/teori/algebraisk_uttrykk.svg
 ---
-width: 30%
+width: 35%
 class: no-click
 ---
 :::

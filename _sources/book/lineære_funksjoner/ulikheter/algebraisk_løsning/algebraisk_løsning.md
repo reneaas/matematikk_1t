@@ -62,7 +62,7 @@ class: solution
 \begin{align*}
 2x + 3 &< 3x - 4 \\
 \\
-2x \textcolor{red}{ - 3x} + 3 \textcolor{red}{ - 2x} &< 3x \textcolor{red}{ - 3x} - 4 && \text{Trekk fra $3x$ på hver side} \\
+2x \textcolor{red}{ - 3x} + 3 &< 3x \textcolor{red}{ - 3x} - 4 && \text{Trekk fra $3x$ på hver side} \\
 \\
 -x + 3 &< -4 \\
 \\
