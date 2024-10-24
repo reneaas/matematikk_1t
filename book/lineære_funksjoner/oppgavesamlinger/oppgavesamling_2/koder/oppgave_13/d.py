@@ -3,7 +3,7 @@ import signchart
 
 def main(dirname, save):
 
-    f = "x / 3 + 1"
+    f = "-1 * (x - 1) * (x + 2) * (x - 3)"
 
     signchart.make_sign_chart(
         f=f,
