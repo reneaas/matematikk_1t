@@ -10,10 +10,12 @@ En andregradsfunksjon $f$ er en funksjon på formen
 
 :::{figure} ./figurer/teori/algebraisk_uttrykk.svg
 ---
-width: 35%
+width: 80%
 class: no-click
 ---
 :::
+
+Vi merker oss at koeffisienten $a$ kalles for **ledende koeffisient** fordi det er koeffisienten foran den største potensen av $x$. Altså er **ikke** $a$ "stigningstall" når vi snakker om andregradsfunksjoner.
 
 ```
 
