@@ -277,7 +277,7 @@ class: tabs-parts
 class: dropdown, answer
 ---
 $$
-x = 7 \quad \land \quad y = 8
+x = 3 \quad \land \quad y = 2
 $$
 :::::
 :::::::::::::
@@ -336,20 +336,72 @@ class: tabs-parts
 
 :::::::::::::{tab-item} a
 Sett opp en funksjon $f$ som gir prisen i $f(x)$ kroner når du har kjørt $x$ turer.
+
+:::::{admonition} Fasit
+---
+class: dropdown, answer
+---
+$$
+f(x) = 200 + 30x
+$$
+:::::
 :::::::::::::
 
 :::::::::::::{tab-item} b
 Hvor mye må du betale hvis du kjører $5$ turer?
+
+:::::{admonition} Fasit
+---
+class: dropdown, answer
+---
+$$
+f(5) = 200 + 30\cdot 5 = 200 + 150 = 350
+$$
+
+Du må betale 350 kr. 
+:::::
 :::::::::::::
 
 :::::::::::::{tab-item} c
 Hvor mange turer må du kjøre før du betaler mer enn 500 kr?
+
+
+:::::{admonition} Fasit
+---
+class: dropdown, answer
+---
+For å løse problemet må vi løse likninga $f(x)> 500$
+\begin{align*}
+200 + 30x &> 500 \\
+30 x &> 300 \\
+x &> \frac{300}{30} \\
+x &> 10
+\end{align*}
+Du må kjøre mer enn 10 turer før du betaler mer enn 500 kr. 
+:::::
 :::::::::::::
 
 :::::::::::::{tab-item} d
 En kjøretur tar 5 minutter. Tivoli er åpent i 3 timer.
 
 Sett opp en definisjonsmengde og verdimengde for $f$ som passer med den praktiske situasjonen.
+:::::{admonition} Fasit
+---
+class: dropdown, answer
+---
+$x$ representerer antall turer. Det minste antallet turer du kan ta er 0. På 3 timer kan du maksimalt rekke 36 turer. Vi får derfor
+
+$$
+D_f = [0, 36]
+$$
+
+Det minste beløpet du kan betale er 200 kr, dersom du ikke tar noen kjøreturer. Det største antallet er $f(36) = 200 + 30\cdot 36 = 1280 $. Vi får da verdimengden
+
+$$
+V_f = [200, 1280]
+$$
+:::::
+
 :::::::::::::
 
 ::::::::::::::
@@ -380,23 +432,71 @@ class: tabs-parts
 ---
 :::::::::::::{tab-item} a
 Bruk opplysningene i tabellen til å bestemme en lineær modell $f$ der $f(x)$ gir antall dekar med omdisponert jord $x$ år etter 2011. 
+
+:::::{admonition} Fasit
+---
+class: dropdown, answer
+---
+Bruker regresjon og får modellen
+
+$$
+f(5) = -340x + 7222
+$$
+
+
+:::::
 :::::::::::::
 
 :::::::::::::{tab-item} b
 Gi en praktisk tolkning av stigningstallet og konstantleddet til modellen. 
 
 Er de praktisk rimelige?
+
+:::::{admonition} Fasit
+---
+class: dropdown, answer
+---
+Stigningstallet til modellen er $-340 \quad \mathrm{ dekar/år}$ og representerer den årlige nedgangen i omdisponering. Det er rimelig at stigningstallet er negativt ettersom vi ser at omdisponeringen synker i perioden vi studerer. Konstantleddet til modellen er $7222\quad \mathrm{ dekar}$. Dette representerer omdisponeringen ved modellens start, dvs i 2011. Vi ser at tallet ikke er nøyaktig likt tallet i tabellen, men i nærheten. Det er ikke unormalt, ettersom den lineære modellen er linja som passer best med alle punktene, og ikke bare det første. 
+:::::
 :::::::::::::
 
 :::::::::::::{tab-item} c
 Bestem hvor mye jord som vil brukes til andre formål enn jordbruk – ifølge modellen din – i årene
 * 2030.
 * 2050. 
+:::::{admonition} Fasit
+---
+class: dropdown, answer
+---
+2030 tilsvarer $x = 19$ og 2050 tilsvarer $x=39$ i modellen. Vi får da
+
+$$
+f(19) = -340\cdot 19 + 7222 = 762
+$$
+
+Ifølge modellen vil det altså være 762 dekar som er omdisponert i 2030. 
+
+$$
+f(39) = -340\cdot 39 + 7222 = -6038
+$$
+
+Ifølge modellen vil det altså være -6038 dekar som er omdisponert i 2050. 
+
+:::::
 
 :::::::::::::
 
 :::::::::::::{tab-item} d
 Vurder gyldighetsområdet til modellen ut ifra opplysningene du har funnet i oppgaven.
+
+:::::{admonition} Fasit
+---
+class: dropdown, answer
+---
+
+Ut fra svarene i oppgave c) ser vi at det er mulig at modellen kan være gyldig i 2030, men at den ikke er gyldig i 2050 ettersom vi får et negativt antall omdisponert areal. 
+
+:::::
 :::::::::::::
 ::::::::::::::
 
