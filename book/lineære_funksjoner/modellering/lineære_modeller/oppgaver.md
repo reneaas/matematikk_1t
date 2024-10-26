@@ -167,10 +167,10 @@ Hvor mye vil en kroneis koste i 2030, ifølge modellen?
 class: answer, dropdown
 ---
 $$
-f(2030 - 1987) = \dfrac{3}{5} \cdot 43 + 6 \approx -4.2
+f(2030 - 1987) = \dfrac{3}{5} \cdot 43 + 6 \approx 32
 $$
 
-Prisen blir negativ som ikke gir praktisk mening. Modellen fungerer altså ikke så langt tilbake i tid. 
+Isen koster 32 kroner, noe som kan være rimelig. Modellen ser dermed ut til å fungere greit fremover i tid.
 :::
 
 ::::::::::
@@ -227,16 +227,28 @@ Hvis du ser lynglimtet, og hører det tordner $6$ sekunder etterpå – hvor lan
 class: answer, dropdown
 ---
 $$
-f(x) = 343x
+f(6) = 343\cdot 6 = 2058
 $$
+
+Lynnedslaget skjedde dermed 2058 m unna der du stod, noe som tilsvarer litt over 2 km. 
 :::
 ::::::::::
 
 ::::::::::{tab-item} c
 Hvor lang tid vil det ta før du hører torden dersom du er $4 \, \mathrm{km}$ unna lynnedslaget?
+
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+For å finne svaret må vi løse likningen 
+$ 343x = 4000 $
+
+Vi finner da at $x \approx 11,66$. Du hører altså lynnedslaget etter 11,7 sekunder. 
+
+:::
 ::::::::::
-
-
 :::::::::::
 
 ::::::::::::
@@ -395,6 +407,20 @@ Bilene møter hverandre etter 1 time.
 Bilene skal kun kjøre fram til din destinasjon. 
 
 Hva er en passende definisjonsmengde og verdimengde for $f$ og $g$?
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$ D_f = [0, 2.25] $
+
+$ V_f = [0, 180] $
+
+$ D_g = [0, 1.8] $
+
+$ V_g = [0, 180] $
+
+:::
 ::::::::::
 
 
