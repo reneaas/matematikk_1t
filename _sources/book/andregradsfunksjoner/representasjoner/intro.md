@@ -7,14 +7,23 @@ gutter: 3
 
 ::::{grid-item-card}
 ---
-link: ./algebraisk_representasjon/teori
+link: ./standardrepresentasjon/teori
 link-type: doc
 ---
-**Algebraisk representasjon** ✍🏼
+**Standardform** 
 
 ^^^
 
-:::{figure} ./algebraisk_representasjon/figurer/teori/algebraisk_uttrykk.svg
+:::{figure} ./standardrepresentasjon/figurer/teori/algebraisk_uttrykk.svg
+---
+width: 100%
+class: no-click
+---
+:::
+
+---
+
+:::{figure} ./standardrepresentasjon/figurer/teori/grafisk_representasjon.svg
 ---
 width: 100%
 class: no-click
@@ -26,18 +35,55 @@ class: no-click
 
 ::::{grid-item-card}
 ---
-link: ./grafisk_representasjon/teori
+link: ./nullpunktsrepresentasjon/teori
 link-type: doc
 ---
-**Grafisk representasjon** 📈
+**Nullpunktsform** 
 
 ^^^
-:::{figure} ./grafisk_representasjon/figurer/teori/intro_tre_andregradsfunksjoner.svg
+
+:::{figure} ./nullpunktsrepresentasjon/figurer/teori/algebraisk_uttrykk.svg
 ---
 width: 100%
 class: no-click
 ---
 :::
+
+---
+
+:::{figure} ./nullpunktsrepresentasjon/figurer/teori/grafisk_representasjon.svg
+---
+width: 100%
+class: no-click
+---
+:::
+::::
+
+::::{grid-item-card}
+---
+link: ./ekstremalrepresentasjon/teori
+link-type: doc
+---
+**Ekstremalform** 
+
+^^^
+:::{figure} ./ekstremalrepresentasjon/figurer/teori/algebraisk_uttrykk.svg
+---
+width: 100%
+class: no-click
+---
+:::
+
+---
+
+:::{figure} ./ekstremalrepresentasjon/figurer/teori/grafisk_representasjon.svg
+---
+width: 100%
+class: no-click
+---
+:::
+
+
 ::::
 
 

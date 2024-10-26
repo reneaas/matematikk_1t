@@ -1,5 +1,16 @@
 # Kvadratsetningene
 
+---
+
+:::{admonition} HUSK
+---
+class: warning
+---
+Ta med at kvadratsetningene svarer til andregradsfunksjoner der ekstremalformen og nullpunktsformen av $f(x)$ er den samme. 
+:::
+
+---
+
 Kvadratsetningene er viktige setninger i algebra som lar oss faktorisere andregradsuttrykk. Oftest vil vi bruke dem i sammenhenger der vi skal analysere andregradsfunksjoner.
 
 ```{admonition} Læringsmål

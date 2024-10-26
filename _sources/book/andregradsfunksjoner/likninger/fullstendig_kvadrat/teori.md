@@ -1,6 +1,7 @@
-# Fullstendige kvadraters metode
+# Nullpunkter og ekstremalpunkter
 
-Fullstendige kvadraters metode er en metode for å skrive om andregradsuttrykk på en spesiell form. 
+
+
 
 ```{admonition} Læringsmål: Fullstendig kvadraters metode
 :class: tip
@@ -20,10 +21,21 @@ Vi har allerede sett at vi kan skrive om et andregradsuttrykk på formen $ax^2 +
 Viser 1.kvadratsetning grafisk. Et kvadrat med areal $(p + q)^2$ har samme areal som summen av arealene til to kvadrater med areal $p^2$ og $q^2$, og to rektangler med areal $pq$. Dermed får vi $(p + q)^2 = p^2 + 2pq + q^2$. Det er herfra begrepet *fullstendig kvadrat* kommer fra.
 ```
 
+:::::{admonition} Bestemme nullpunkter og ekstremalpunkter til $f(x) = ax^2 + bx + c$
+---
+class: theory
+---
+
+$$
+f(x) = ax^2 + bx + c \xarrow{\text{fullstendig kvadraters metode}} a(x + r)^2 + k \xarrow{\text{konjugatsetningen}} a(x - x_1)(x - x_2)
+$$
+
+:::::
+
 
 ## Fullstendige kvadraters metode
 
-Fullstendig kvadraters metode er en måte å skrive om et andregradsuttrykk på formen $x^2 + bx + c$ til en form som består av et fullstendig kvadrat pluss et potensielt tilleggsledd som forteller oss hvor mye andregradsuttrykket avviker fra et kvadrat.
+Fullstendig kvadraters metode er en måte å skrive om et andregradsuttrykk om fra standardform til ekstremalform. Da kan vi lese av ekstremalpunktet til funksjonen. Bruker 
 
 
 ```{admonition} Fullstendige kvadraters metode
