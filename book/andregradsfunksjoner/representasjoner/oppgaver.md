@@ -1,4 +1,4 @@
-# Representasjoner
+# Oppgaver
 
 :::::{grid} 1 1 2 2
 ---
@@ -7,7 +7,7 @@ gutter: 3
 
 ::::{grid-item-card}
 ---
-link: ./standardrepresentasjon/teori
+link: ./standardrepresentasjon/oppgaver
 link-type: doc
 ---
 **Standardform** 
@@ -35,7 +35,7 @@ class: no-click
 
 ::::{grid-item-card}
 ---
-link: ./nullpunktsrepresentasjon/teori
+link: ./nullpunktsrepresentasjon/oppgaver
 link-type: doc
 ---
 **Nullpunktsform** 
@@ -61,7 +61,7 @@ class: no-click
 
 ::::{grid-item-card}
 ---
-link: ./ekstremalrepresentasjon/teori
+link: ./ekstremalrepresentasjon/oppgaver
 link-type: doc
 ---
 **Ekstremalform** 

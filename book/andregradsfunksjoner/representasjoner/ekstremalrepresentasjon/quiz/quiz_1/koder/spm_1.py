@@ -5,13 +5,10 @@ def main(dirname, save):
     #
     # Define functions
     def f(x):
-        return x - 2
-
-    def g(x):
-        return x**2 - 2 * x + 1
+        return (x - 1) ** 2 + 2
 
     # List of functions and their labels.
-    functions = [f, g]
+    functions = [f]
 
     fig, ax = plotmath.make_figure(
         functions=functions,
