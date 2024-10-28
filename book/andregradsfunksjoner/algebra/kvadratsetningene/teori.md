@@ -1,25 +1,13 @@
 # Kvadratsetningene
 
+:::{admonition} Læringsmål
 ---
-
-:::{admonition} HUSK
+class: tip
 ---
-class: warning
----
-Ta med at kvadratsetningene svarer til andregradsfunksjoner der ekstremalformen og nullpunktsformen av $f(x)$ er den samme. 
+* Kunne bruke kvadratsetningene til å skrive om veksle mellom standardformen og nullpunktsformen til andregradsfunksjoner. 
 :::
 
----
-
-Kvadratsetningene er viktige setninger i algebra som lar oss faktorisere andregradsuttrykk. Oftest vil vi bruke dem i sammenhenger der vi skal analysere andregradsfunksjoner.
-
-```{admonition} Læringsmål
-:class: tip
-
-* Kjenne til de tre kvadratsetningene, og kunne bruke dem til å faktorisere andregradsuttrykk.
-* Kunne bruke kvadratsetningene til å bestemme nullpunktene til andregradsfunksjoner.
-* Kunne bruke kvadratsetningene til å bestemme koeffisienter til identiteter.
-```
+En del andregradsfunksjoner vil ha samme nullpunktsform og ekstremalform. Da kan vi bruke kvadratsetningene til å veksle mellom standardformen, nullpunktsformen og ekstremalformen. 
 
 Det finnes til sammen tre kvadratsetninger. Vi skal begrunne de to første geometrisk, og den siste algebraisk.
 

@@ -2,6 +2,8 @@
 
 :::{admonition} Læringsmål
 ---
+class: tip
+---
 * Kunne representere en andregradsfunksjon på nullpunktsform.
 * Kunne finne standardform fra nullpunktsform.
 * Kunne bestemme $f(x)$ på nullpunktsform fra graf. 

@@ -3,12 +3,13 @@ import signchart
 
 def main(dirname, save):
 
-    f = "x**2 - 4"
+    f = "x**2 - x - 6"
 
     signchart.plot(
         f=f,
         fn_name="f(x)",
         include_factors=True,
+        small_figsize=True,
     )
 
     if save:

@@ -1,14 +1,17 @@
-# Nullpunkter og ekstremalpunkter
+# Fullstendige kvadraters metode
 
 
 
 
-```{admonition} Læringsmål: Fullstendig kvadraters metode
-:class: tip
-Etter denne seksjonen, er målet at du skal kunne:
-* Bruke fullstendig kvadraters metode til å fullføre kvadrater.
-* Bruke fullstendig kvadraters metode til å løse andregradslikninger, og avgjøre om en andregradslikning har reelle løsninger eller ikke.
-```
+:::{admonition} Læringsmål: Fullstendig kvadraters metode
+---
+class: tip
+---
+Etter denne seksjonen, er målet at du skal:
+* Kunne bruke fullstendig kvadraters metode til å skrive om et andregradsuttrykk fra standardform til ekstremalform. 
+* Kunne bruke konjugatsetningen til å skrive om et andregradsuttrykk fra ekstremalform til nullpunktsform.
+* Kunne bestemme om en andregradsfunksjon har nullpunkter ved hjelp av fullstendig kvadraters metode og konjugatsetningen.
+:::
 
 
 ## Fullstendige kvadrater
