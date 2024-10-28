@@ -1,5 +1,15 @@
 # Ekstremalform
 
+:::{admonition} Læringsmål
+---
+class: tip
+---
+* Kunne representere en andregradsfunksjon på ekstremalform, og lese av ekstremalpunktet fra funksjonsuttrykket.
+* Kunne finne standardform fra ekstremalform.
+* Kunne bestemme $f(x)$ på ekstremalform fra graf. 
+* Kunne bestemme om et ekstremalpunkt er et topp- eller bunnpunkt fra ekstremalformen til en andregradsfunksjon.
+::: 
+
 Før vi ser på hva ekstremalformen til en andregradsfunksjon er, må vi først definere noen nye begreper. 
 
 :::::::::::::::{admonition} Ekstremalpunkter, toppunkter og bunnpunkter

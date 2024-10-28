@@ -73,4 +73,33 @@ $$
 ::::
 
 
+::::{grid-item-card}
+---
+link: book/andregradsfunksjoner/intro
+link-type: doc
+---
+**Andregradsfunksjoner** 📈
+
+
+^^^
+
+:::{figure} ./book/andregradsfunksjoner/representasjoner/standardrepresentasjon/figurer/teori/algebraisk_uttrykk.svg
+---
+width: 100%
+class: no-click
+---
+:::
+
+---
+
+:::{figure} ./book/andregradsfunksjoner/representasjoner/standardrepresentasjon/figurer/teori/grafisk_representasjon.svg
+---
+width: 100%
+class: no-click
+---
+:::
+
+::::
+
+
 :::::

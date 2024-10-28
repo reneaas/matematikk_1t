@@ -1,0 +1,1 @@
+# Oppgaver: Fullstendig kvadraters metode

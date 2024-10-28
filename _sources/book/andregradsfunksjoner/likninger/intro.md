@@ -21,28 +21,6 @@ width: 100%
 ::::
 
 
-::::{grid-item-card}
----
-link: ./kvadratsetningene/teori
-link-type: doc
----
-**Kvadratsetningene** ⃞
-
-^^^
-
-$$
-(x + 2)^2 = x^2 + 4x + 4 
-$$
-
-$$
-(x - 3)^2 = x^2 - 6x + 9
-$$
-
-$$
-x^2 - 4 = (x + 2)(x - 2)
-$$
-
-::::
 
 ::::{grid-item-card}
 ---
@@ -65,6 +43,24 @@ $$
 x^2 - 16 = 0
 $$
 
+
+::::
+
+
+::::{grid-item-card}
+---
+link: ./abc_formelen/teori
+link-type: doc
+---
+**$abc$-formelen** ✍🏼
+
+^^^
+
+:::{figure} ./abc_formelen/figurer/teori/abc-formel.svg
+---
+width: 100%
+---
+:::
 
 ::::
 
