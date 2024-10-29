@@ -31,7 +31,7 @@ def main(dirname, save):
 
     fontsize = 22
     plt.annotate(
-        text="Ekstremalpunkt",
+        text="Ekstremalpunkt $(x_0, y_0)$",
         xy=(xmin, ymin),
         xytext=(xmin + 0.5, ymin - 4),
         fontsize=fontsize,
