@@ -36,6 +36,24 @@ class: dropdown, answer
 
 ---
 
+:::::::::::::::{admonition} Oppgave 2 
+---
+class: problem-level-1
+---
+Ta quizen! Flere svaralternativer kan være riktig.
+
+:::{raw} html
+---
+file: ./quiz/quiz_1/quiz_1.html
+---
+:::
+
+
+:::::::::::::::
+
+
+---
+
 
 :::::::::::::::{admonition} Oppgave 2
 ---
