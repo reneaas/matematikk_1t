@@ -19,10 +19,46 @@ b = 0.3
 # plt.plot([0, 0], [0, a + b], 'k')
 
 
-rect_1 = patches.Rectangle(xy=(0, 0), width=a, height=a, fill=True, edgecolor="teal", facecolor="teal", alpha=0.2, lw=2)
-rect_2 = patches.Rectangle(xy=(a, 0), width=b, height=a, fill=True, edgecolor="black", facecolor="blue", alpha=0.2, lw=2)
-rect_3 = patches.Rectangle(xy=(0, a), width=a, height=b, fill=True, edgecolor="black", facecolor="blue", alpha=0.2, lw=2)
-rect_4 = patches.Rectangle(xy=(a, a), width=b, height=b, fill=True, edgecolor="red", facecolor="red", alpha=0.2, lw=2)
+rect_1 = patches.Rectangle(
+    xy=(0, 0),
+    width=a,
+    height=a,
+    fill=True,
+    edgecolor="teal",
+    facecolor="teal",
+    alpha=0.2,
+    lw=2,
+)
+rect_2 = patches.Rectangle(
+    xy=(a, 0),
+    width=b,
+    height=a,
+    fill=True,
+    edgecolor="black",
+    facecolor="blue",
+    alpha=0.2,
+    lw=2,
+)
+rect_3 = patches.Rectangle(
+    xy=(0, a),
+    width=a,
+    height=b,
+    fill=True,
+    edgecolor="black",
+    facecolor="blue",
+    alpha=0.2,
+    lw=2,
+)
+rect_4 = patches.Rectangle(
+    xy=(a, a),
+    width=b,
+    height=b,
+    fill=True,
+    edgecolor="red",
+    facecolor="red",
+    alpha=0.2,
+    lw=2,
+)
 plt.gca().add_patch(rect_1)
 plt.gca().add_patch(rect_2)
 plt.gca().add_patch(rect_3)
@@ -31,7 +67,7 @@ plt.gca().add_patch(rect_4)
 plt.text(
     x=0.5 * a,
     y=-0.1,
-    s="$p$",
+    s="$a$",
     fontsize=20,
     color="teal",
 )
@@ -39,7 +75,7 @@ plt.text(
 plt.text(
     x=-0.1,
     y=0.5 * a,
-    s="$p$",
+    s="$a$",
     fontsize=20,
     color="teal",
 )
@@ -48,7 +84,7 @@ plt.text(
 plt.text(
     x=a + 0.5 * b,
     y=-0.1,
-    s="$q$",
+    s="$b$",
     fontsize=20,
     color="blue",
 )
@@ -56,7 +92,7 @@ plt.text(
 plt.text(
     x=-0.1,
     y=a + 0.5 * b,
-    s="$q$",
+    s="$b$",
     fontsize=20,
     color="blue",
 )

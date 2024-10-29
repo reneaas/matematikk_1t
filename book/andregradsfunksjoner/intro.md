@@ -14,7 +14,7 @@ link-type: doc
 
 ^^^
 
-:::{figure} ./representasjoner/standardrepresentasjon/figurer/teori/algebraisk_uttrykk.svg
+:::{figure} ./representasjoner/nullpunktsform/figurer/teori/algebraisk_uttrykk.svg
 ---
 width: 100%
 class: no-click
@@ -23,7 +23,7 @@ class: no-click
 
 ---
 
-:::{figure} ./representasjoner/nullpunktsrepresentasjon/figurer/teori/algebraisk_uttrykk.svg
+:::{figure} ./representasjoner/nullpunktsform/figurer/teori/grafisk_representasjon.svg
 ---
 width: 100%
 class: no-click
@@ -34,7 +34,7 @@ class: no-click
 ---
 
 
-:::{figure} ./representasjoner/ekstremalrepresentasjon/figurer/teori/algebraisk_uttrykk.svg
+:::{figure} ./representasjoner/ekstremalform/figurer/teori/algebraisk_uttrykk.svg
 ---
 width: 100%
 class: no-click
@@ -48,11 +48,11 @@ class: no-click
 link: algebra/intro
 link-type: doc
 ---
-**Likninger**
+**Algebra**
 
 ^^^
 
-:::{figure} ./likninger/fullstendig_kvadrat/figurer/teori/fullstendig_kvadrat.svg
+:::{figure} ./algebra/fullstendig_kvadraters_metode/figurer/teori/fullstendig_kvadrat.svg
 ---
 width: 100%
 class: no-click
@@ -61,12 +61,6 @@ class: no-click
 
 ---
 
-:::{figure} ./likninger/abc_formelen/figurer/teori/abc-formel.svg
----
-width: 70%
-class: no-click
----
-:::
 
 
 ::::

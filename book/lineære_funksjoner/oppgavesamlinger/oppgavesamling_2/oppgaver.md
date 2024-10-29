@@ -440,7 +440,7 @@ class: dropdown, answer
 Bruker regresjon og får modellen
 
 $$
-f(5) = -340x + 7222
+f(x) = -340x + 7222
 $$
 
 
