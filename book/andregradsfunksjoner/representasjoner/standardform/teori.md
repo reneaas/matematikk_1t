@@ -5,8 +5,6 @@
 ---
 class: tip
 ---
-Etter dette delkapittelet, er målet at du skal:
-
 * Kunne representere en andregradsfunksjon på standardform, og kunne lese av koeffisientene.
 * Kunne avgjøre den grafiske formen til en andregradsfunksjon ut fra koeffisientene.
 * Kunne bestemme koeffisientene til en andregradsfunksjon ved hjelp av lineære likningssystemer.

@@ -5,8 +5,9 @@
 class: tip
 ---
 * Kunne representere en andregradsfunksjon på ekstremalform, og lese av ekstremalpunktet fra funksjonsuttrykket.
-* Kunne finne standardform fra ekstremalform.
 * Kunne bestemme $f(x)$ på ekstremalform fra graf. 
+* Kunne finne standardform fra ekstremalform.
+* Kunne finne ekstremalform fra nullpunktsform, og kunne beskrive sammenhengen mellom nullpunkter og symmetrilinje.
 * Kunne bestemme om et ekstremalpunkt er et topp- eller bunnpunkt fra ekstremalformen til en andregradsfunksjon.
 ::: 
 
