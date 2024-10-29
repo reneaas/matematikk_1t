@@ -14,7 +14,7 @@ Etter denne seksjonen, er målet at du skal:
 ---
 class: reminder, full-width
 ---
-Til nå har vi sett at ulike måtenr å skrive en andregradsfunksjon på gir oss ulik informasjon om funksjonen:
+Til nå har vi sett at ulike måter å skrive en andregradsfunksjon på gir oss ulik informasjon om funksjonen:
 
 ::::::::::::::{grid}
 ---
@@ -68,7 +68,7 @@ width: 100%
 
 Så langt har vi sett av vi kan gå fra nullpunktsformen og fra ekstremalformen til standardformen – men å gå motsatt vei er ikke like rett frem. Her skal vi utvikle verktøy for å gå motsatt vei!
 
-## Fullstendige kvadraters metode
+## Fra standardform til ekstremalform – fullstendige kvadraters metode
 
 Fullstendige kvadraters metode lar oss skrive om et andregradsuttrykk på formen
 
@@ -210,7 +210,7 @@ $$
 
 ---
 
-:::::{admonition} Fullstendige kvadraters metode
+:::::{admonition} Sjekk meg⚠️ – Oppsummering: Fullstendige kvadraters metode
 ---
 class: summary, dropdown
 ---
@@ -226,214 +226,267 @@ Med andre ord, vi gjør følgende:
 
 :::::
 
+## Fra ekstremalform til nullpunktsform
+
+Nå vet vi hvordan vi kan bruke fullstendige kvadraters metode til å gå fra standardform til ekstremalform. Det neste steget i prosessen er å gå fra ekstremalform til nullpunktsform – dette oppnår vi ved å bruke konjugatsetningen.
 
 
-
-Nå er det **din tur**!
-
-````{admonition} Underveisoppgave 1
-:class: check
-Bruk fullstendig kvadraters metode til å skrive om andregradsfunksjonen
-
-$$
-g(x) = x^2 - 4x + 2.
-$$
-
-```{admonition} Løsning
-:class: solution, dropdown
-Vi har 
-
-\begin{equation*}
-\begin{split}
-x^2 - 4x + 2 & = x^2 - 4x + \underbrace{\left(\frac{-4}{2}\right)^2 - \left(\frac{-4}{2}\right)^2}_{\text{Legger til og trekker fra }(b/2)^2} + 2 \\
-\\
-&= \underbrace{x^2 - 4x + 2^2}_{\text{2.kvadratsetning}} - 2^2 + 2 = (x - 2)^2 - 4 + 2 \\
-\\
-& = (x - 2)^2 - 2.
-\end{split}
-\end{equation*}
-```
-````
-
-## Fullstendig kvadraters metode for å løse andregradslikninger
-Vi kan bruke fullstendig kvadraters metode for å løse andregradslikninger av typen
+::::{admonition} Repetisjon: konjugatsetningen
+---
+class: reminder
+---
+For to tall $a, b \in \mathbb{R}$ har vi at
 
 $$
-x^2 + bx + c = 0.
+(a + b)(a - b) = a^2 - b^2. 
 $$
+::::
 
-Metoden funker som følger:
+Vi tar et eksempel.
 
-Steg 1:
-: Skriv om andregradsuttrykket med fullstendig kvadraters metode.
-
-Steg 2:
-: Prøv å bruke konjugatsetningen til å faktorisere uttrykket. Hvis tilleggsleddet er positivt, er dette umulig og likningen har ingen reelle løsninger. Hvis tilleggsleddet er negativt, kan vi faktorisere uttrykket og løse likningen. Hvis tilleggsleddet er null, har du allerede faktorisert uttrykket fullstendig.
-
-Steg 3:
-: Bruk produktregelen til å løse likningen $x^2 + bx + c = 0$ med det faktoriserte uttrykket.
-
-
-```{admonition} Påminnelse: konjugatsetningen
-:class: note, margin
-$$
-p^2 - q^2 = (p - q)(p + q)
-$$
-```
-
-
-Vi tar et eksempel:
-
-```{admonition} Eksempel 2: Fullstendig kvadraters metode og andregradslikninger
-:class: example
-
-La oss si vi vil løse likningen
+:::::{admonition} Eksempel 1
+---
+class: example
+---
+En andregradsfunksjon er skrevet på ekstremalform:
 
 $$
-f(x) = x^2 - 4x - 5 = 0, 
+f(x) = (x + 3)^2 - 4 
 $$
 
-Steg 1:
-: Vi bruker fullstendig kvadraters metode for å skrive om andregradsuttrykket:
-\begin{equation*}
-\begin{split}
-x^2 - 4x - 5 & = x^2 - 4x + \underbrace{\left(\frac{-4}{2}\right)^2 - \left(\frac{-4}{2}\right)^2}_{\text{Legger til og trekker fra }(b/2)^2} - 5 \\
-\\
-&= \underbrace{x^2 - 4x + 2^2}_{\text{2.kvadratsetning}} - 2^2 - 5 = (x - 2)^2 - 4 - 5 \\
-\\
-& = (x - 2)^2 - 9.
-\end{split}
-\end{equation*}
+Bestem nullpunktsformen til $f(x)$. 
 
-Steg 2:
-: Vi kan merke oss at her er tilleggsleddet negativt, som betyr at vi kan faktorisere uttrykket ved å bruke konjugatsetningen som følger:
+::::{admonition} Løsning
+---
+class: solution
+---
+Vi bruker konjugatsetningen:
 
 $$
-f(x) = (x - 2)^2 - 9 = \underbrace{(x - 2)^2}_{p^2} - \underbrace{3^2}_{q^2}= \underbrace{(x - 2 - 3)}_{(p - q)} \cdot \underbrace{(x - 2 + 3)}_{(p + q)} = (x - 5)(x + 1).
+a^2 - b^2 = (a + b)(a - b) 
 $$
 
-Steg 3:
-: Nå bruker vi produktregelen til å løse likningen $f(x) = 0$:
+til å skrive om uttrykket:
+
+\begin{align*}
+    f(x) &= (x + 3)^2 - 4 \\
+    \\
+    &= \underbrace{(x + 3)^2}_{\displaystyle a^2} - \underbrace{2^2}_{\displaystyle b^2} && \text{Setter $a = x + 3$ og $b = 2$}\\
+    \\
+    &= \underbrace{(x + 3 + 2)}_{\displaystyle (a + b)} \cdot \underbrace{(x + 3 - 2)}_{\displaystyle (a - b)} && \text{Konjugatsetningen}\\
+    \\
+    &= (x + 5)(x + 1).
+\end{align*}
+
+Altså er nullpunktsformen til $f(x)$ gitt ved 
 
 $$
-(x - 5)(x + 1) = 0 \quad \Leftrightarrow \quad x - 5 = 0 \quad \lor \quad x + 1 = 0,
+f(x) = (x + 5)(x + 1).
 $$
+::::
+:::::
 
-som gir løsningene 
+---
 
-$$
-x = 5 \quad \lor \quad x = -1.
-$$
-```
-
-**Din tur**!
-
-````{admonition} Underveisoppgave 2
-:class: check
-Løs likningen 
+:::::{admonition} Underveisoppgave 2
+---
+class: check 
+---
+Skriv om $f(x)$ fra ekstremalformen 
 
 $$
-x^2 - x - 2 = 0.
+f(x) = (x - 2)^2 - 9
 $$
 
+til nullpunktsform.
 
-```{admonition} Løsning
-:class: solution, dropdown
-Steg 1:
-: Vi bruker fullstendig kvadraters metode for å skrive om andregradsuttrykket:
-
-\begin{equation*}
-\begin{split}
-x^2 - x - 2 & = x^2 - x + \left(\frac{-1}{2}\right)^2 - \left(\frac{-1}{2}\right)^2 - 2 \\
-\\
-& = \underbrace{x^2 - x + \left(\frac{1}{2}\right)^2}_{=(x - 1/2)^2} - \left(\frac{1}{2}\right)^2 - 2 = \left(x - \frac{1}{2}\right)^2 - \frac{1}{4} - 2 \\
-\\
-& = \left(x - \frac{1}{2}\right)^2 - \frac{9}{4}.
-\end{split}
-\end{equation*}
-
-Steg 2:
-: Vi bruker konjugatsetningen for å faktorisere andregradsuttrykket fullstendig:
-
-\begin{equation*}
-\begin{split}
-\left(x-\frac{1}{2}\right)^2 - \frac{9}{4} & = \left(x-\frac{1}{2}\right)^2 - \left(\frac{3}{2}\right)^2 \\
-\\
-& = \left(x-\frac{1}{2} - \frac{3}{2}\right)\left(x-\frac{1}{2} + \frac{3}{2}\right) \\
-\\
-& = (x-2)(x+1).
-\end{split}
-\end{equation*}
-
-Steg 3
-: Nå er andregradsuttrykket fullstendig faktorisert, så vi kan løse likningen ved å bruke produktregelen:
-
+:::{admonition} Fasit
+---
+class: dropdown, answer
+---
 $$
-(x - 2)(x + 1) = 0 \quad \Leftrightarrow \quad x - 2 = 0 \quad \lor \quad x + 1 = 0,
+f(x) = (x + 1)(x - 5)
 $$
+:::
 
-som gir løsningene
+:::{admonition} Løsning
+---
+class: dropdown, solution
+---
+\begin{align*}
+    f(x) &= (x - 2)^2 - 9 \\
+    \\
+    &= \underbrace{(x - 2)^2}_{\displaystyle a^2} - \underbrace{3^2}_{\displaystyle b^2} && \text{Setter $a = x - 2$ og $b = 3$}\\
+    \\
+    &= \underbrace{(x - 2 + 3)}_{\displaystyle (a + b)} \cdot \underbrace{(x - 2 - 3)}_{\displaystyle (a - b)} && \text{Konjugatsetningen}\\
+    \\
+    &= (x + 1)(x - 5).
+\end{align*}
+:::
 
-$$
-x = 2 \quad \lor \quad x = -1.
-$$
-```
-````
+:::::
+
+
 
 ## Antall løsninger
 
-Vi kan bruke fullstendig kvadraters metode til å avgjøre hvor mange løsninger en andregradslikning har, eller sagt på en annen måte, hvor mange nullpunkter en andregradsfunksjon har.
+Vi kan bruke strategiene vi har sett på her til å bestemme om hvor mange nullpunkter en andregradsfunksjon har. Vi tar et eksempel med to, én og ingen løsninger.
 
-```{admonition} Setning: Antall løsninger for en andregradslikning
-:class: theory
-Gitt en andregradsfunksjon på formen
+:::::::::::::::{admonition} Eksempel 2
+---
+class: example 
+---
+::::::::::::::{tab-set}
 
-$$
-f(x) = x^2 + bx + c,
-$$
-
-så har likningen $f(x) = 0$:
-* To løsninger hvis $c - (b/2)^2 < 0$.
-* Én løsning hvis $c - (b/2)^2 = 0$.
-* Ingen løsninger hvis $c - (b/2)^2 > 0$.
-```
-
-
-La oss se på et eksempel der vi ser alle tre tilfellene oppstå:
-
-```{admonition} Eksempel 3: Antall løsninger for en andregradslikning
-:class: example
-
-To løsninger
-: Vi tar for oss andregradslikningen $x^2 + x - 6 = 0$. Fullfører vi kvadratet, får vi
+:::::::::::::{tab-item} To løsninger
+En andregradsfunksjon er gitt ved
 
 $$
-x^2 + x - 6 = x^2 + x + \left(\frac{1}{2}\right)^2 - \left(\frac{1}{2}\right)^2 - 6 = \left(x + \frac{1}{2}\right)^2 - \frac{1}{4} - 6 = \left(x + \frac{1}{2}\right)^2 - \frac{25}{4}.
+f(x) = x^2 + 2x - 3
 $$
 
-Siden tilleggsleddet er negativt, kan vi bruke konjugatsetningen og må nødvendigvis ende opp med to forskjellige lineære faktorer. Dermed har likningen to løsninger.
+Vi bruker først fullstendig kvadraters metode til å bestemme ekstremalformen:
 
-Én løsning
-: Vi tar for oss andregradslikningen $x^2 - 4x + 4 = 0$. Fullfører vi kvadratet, får vi
+\begin{align*}
+    f(x) &= x^2 + 2x - 3 \\
+    \\
+    &= x^2 + 2x + 1 - 1 - 3 && \text{Legger til og trekker fra $1$}\\
+    \\
+    &= (x + 1)^2 - 4 && \text{Faktoriserte med 1.kvadratsetning}.
+\end{align*}
+
+Så prøver vi å bruke konjugatsetningen:
+
+\begin{align*}
+    f(x) &= (x + 1)^2 - 4 \\
+    \\
+    &= (x + 1)^2 - 2^2\\
+    \\
+    &= (x + 1 + 2)(x + 1 - 2) && \text{Konjugatsetningen}\\
+    \\
+    &= (x + 3)(x - 1).
+\end{align*}
+
+Altså ser vi at $f$ har nullpunktene 
 
 $$
-x^2 - 4x + 4 = x^2 - 4x + 2^2 - 2^2 + 4 = (x - 2)^2 - 4 + 4 = (x - 2)^2.
+x = -3 \quad \lor \quad x = 1.
+$$
+:::::::::::::
+
+:::::::::::::{tab-item} Én løsning
+En andregradsfunksjon er gitt ved 
+
+$$
+f(x) = x^2 + 4x + 4
 $$
 
-Her er tilleggsleddet null, så vi har bare én løsning. Dette er ikke så overraskende siden vi effektivt her har bare gjort en tungvint måte å bruke 2.kvadratsetning på. 
+Vi bruker først fullstendig kvadraters metode til å bestemme ekstremalformen:
 
-Ingen løsninger
-: Vi tar for oss andregradslikningen $x^2 + 2x + 2 = 0$. Fullfører vi kvadratet, får vi
+\begin{align*}
+    f(x) &= x^2 + 4x + 4 \\
+    \\
+    &= x^2 + 4x + 2^2 - 2^2 + 4 && \text{Legger til og trekker fra $4^2$}\\
+    \\
+    &= (x + 4)^2 && \text{Faktoriserte med 1.kvadratsetning}.
+\end{align*}
+
+Prøver vi å bruke konjugatsetingen her, får vi
+
+\begin{align*}
+    f(x) &= (x + 4)^2 \\
+    \\
+    &= (x + 4)^2 - 0^2 \\
+    \\
+    &= (x + 4 + 0)(x + 4 - 0) && \text{Konjugatsetningen}\\
+    \\
+    &= (x + 4)^2.
+\end{align*}
+
+Dermed har $f$ bare $x = -4$ som nullpunkt.
+:::::::::::::
+
+:::::::::::::{tab-item} Ingen løsninger
+
+En andregradsfunksjon er gitt ved
 
 $$
-x^2 + 2x + 1 - 1 + 2 = (x + 1)^2 - 1 + 2 = (x + 1)^2 + 1.
+f(x) = x^2 + 2x + 3
 $$
 
-Her kan vi ikke bruke konjugatsetningen fordi tilleggsleddet er positivt. Dermed har likningen ingen reelle løsninger.
+Vi bruker først fullstendig kvadraters metode til å bestemme ekstremalformen:
 
-```
+\begin{align*}
+    f(x) &= x^2 + 2x + 3 \\
+    \\
+    &= x^2 + 2x + 1 - 1 + 3 && \text{Legger til og trekker fra $1$}\\
+    \\
+    &= (x + 1)^2 + 2 && \text{Faktoriserte med 1.kvadratsetning}.
+\end{align*}
+
+Her kan vi ikke skrive om uttrykket ved hjelp av konjugatsetningen $a^2 - b^2 = (a + b)(a - b)$ siden konstantleddet ikke er positivt. Dermed har $f$ ingen nullpunkter.
+:::::::::::::
+::::::::::::::
+
+:::::::::::::::
 
 ---
+
+:::::::::::::::{admonition} Underveisoppgave 3
+---
+class: check
+---
+For hver av andregradsfunksjonene under, bestem hvor mange nullpunkter funksjonen har.
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+
+:::::::::::::{tab-item} a
+$$
+f(x) = x^2 + 6x + 9
+$$
+
+:::{admonition} Fasit
+---
+class: dropdown, answer
+---
+Ett nullpunkt.
+:::
+:::::::::::::
+
+:::::::::::::{tab-item} b
+$$
+g(x) = x^2 - 4x - 5
+$$
+
+:::{admonition} Fasit
+---
+class: dropdown, answer
+---
+To nullpunkter.
+:::
+:::::::::::::
+
+:::::::::::::{tab-item} c
+$$
+h(x) = x^2 - 4x + 5
+$$
+
+:::{admonition} Fasit
+---
+class: dropdown, answer
+---
+Ingen nullpunkter.
+:::
+:::::::::::::
+::::::::::::::
+
+
+:::::::::::::::
+
+
+<!-- ---
 
 ## Fullstendige kvadrater
 
@@ -444,4 +497,4 @@ Vi har allerede sett at vi kan skrive om et andregradsuttrykk på formen $ax^2 +
 width: 80%
 ---
 Viser 1.kvadratsetning geometrisk. Et kvadrat med areal $(a + b)^2$ har samme areal som summen av arealene til to kvadrater med areal $a^2$ og $b^2$, og to rektangler med areal $ab$. Dermed får vi $(a + b)^2 = a^2 + 2ab + b^2$. Det er herfra begrepet *fullstendig kvadrat* kommer fra.
-:::
+::: -->
