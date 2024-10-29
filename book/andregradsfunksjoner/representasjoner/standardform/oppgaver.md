@@ -1,4 +1,4 @@
-# Oppgaver: <br> Standardform av andregradsfunksjoner
+# Oppgaver: Standardform
 
 :::::::::::::::{admonition} Oppgave 1
 ---
