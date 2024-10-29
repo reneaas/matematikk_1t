@@ -222,3 +222,107 @@ Bestem $r(x)$.
 :::::::::::::
 ::::::::::::::
 :::::::::::::::
+
+---
+
+:::::::::::::::{admonition} Oppgave 5
+---
+class: problem-level-1
+---
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+En andregradsfunksjon er gitt ved 
+
+$$
+f(x) = (x - 1)(x + 3)
+$$
+
+Bestem standardformen til $f(x)$.
+:::::::::::::
+
+:::::::::::::{tab-item} b
+En andregradsfunksjon er gitt ved
+
+$$
+g(x) = 2(x - 2)(x + 4)
+$$
+
+Bestem standardformen til $g(x)$.
+:::::::::::::
+
+:::::::::::::{tab-item} c
+En andregradsfunksjon er gitt ved
+
+$$
+h(x) = -\dfrac{1}{2}(x - 1)(x + 1)
+$$
+
+Bestem standardformen til $h(x)$.
+
+:::::::::::::
+
+:::::::::::::{tab-item} d
+
+En andregradsfunksjon er gitt ved
+
+$$
+r(x) = -\left(x + \dfrac{1}{3}\right)(x - 3)
+$$
+
+Bestem standardformen til $r(x)$.
+:::::::::::::
+
+
+
+::::::::::::::
+
+
+:::::::::::::::
+
+---
+
+:::::::::::::::{admonition} Oppgave 6
+---
+class: problem-level-2
+---
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+
+:::::::::::::{tab-item} a
+En andregradsfunksjon $f$ skjærer $x$-aksen i $x = -1$ og $x = 3$. I tillegg skjærer grafen i $y$-aksen i $y = 6$.
+
+Bestem nullpunktsformen til $f(x)$. 
+:::::::::::::
+
+:::::::::::::{tab-item} b
+En andregradsfunksjon $g$ har nullpunktene $x = 1$ og $x = 4$. Grafen går gjennom punktet $(2, 3)$.
+
+Bestem nullpunktsformen til $g(x)$.
+:::::::::::::
+
+:::::::::::::{tab-item} c
+En andregradsfunksjon $h$ har nullpunktene $x = -1$ og $x = 2$. Grafen går gjennom punktet $(3, 4)$.
+
+Bestem nullpunktsformen til $h(x)$.
+:::::::::::::
+
+:::::::::::::{tab-item} d
+En andregradsfunksjon $r$ går gjennom punktene $\left(-\dfrac{1}{2}, 0\right)$ og $(2, 0)$ og $(0, 2)$.
+
+Bestem nullpunktsformen til $r(x)$.
+
+:::::::::::::
+
+::::::::::::::
+
+
+:::::::::::::::
+
+
+

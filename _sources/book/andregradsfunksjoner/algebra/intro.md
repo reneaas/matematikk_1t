@@ -31,7 +31,7 @@ $$
 
 ::::{grid-item-card}
 ---
-link: ./kvadratsetningene/teori
+link: ./fullstendig_kvadraters_metode/teori
 link-type: doc
 ---
 **Fullstendig kvadraters metode**

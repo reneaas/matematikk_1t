@@ -1,8 +1,5 @@
 # Fullstendige kvadraters metode
 
-
-
-
 :::{admonition} Læringsmål: Fullstendig kvadraters metode
 ---
 class: tip
@@ -13,107 +10,224 @@ Etter denne seksjonen, er målet at du skal:
 * Kunne bestemme om en andregradsfunksjon har nullpunkter ved hjelp av fullstendig kvadraters metode og konjugatsetningen.
 :::
 
-
-## Fullstendige kvadrater
-
-Vi har allerede sett at vi kan skrive om et andregradsuttrykk på formen $ax^2 + bx + c$ til en form som er lettere å jobbe med. Dette gjør vi ved å fullføre kvadrater. 1. og 2.kvadratsetning er eksempler på fullstendige kvadrater. Det kan vi se i {numref}`fullstendig_kvadrat`.
-
-```{figure} ./figurer/teori/fullstendig_kvadrat.svg
-:name: fullstendig_kvadrat
-:width: 80%
-Viser 1.kvadratsetning grafisk. Et kvadrat med areal $(p + q)^2$ har samme areal som summen av arealene til to kvadrater med areal $p^2$ og $q^2$, og to rektangler med areal $pq$. Dermed får vi $(p + q)^2 = p^2 + 2pq + q^2$. Det er herfra begrepet *fullstendig kvadrat* kommer fra.
-```
-
-:::::{admonition} Bestemme nullpunkter og ekstremalpunkter til $f(x) = ax^2 + bx + c$
+:::::::::::::::{admonition} Repetisjon
 ---
-class: theory
+class: reminder, full-width
+---
+Til nå har vi sett at ulike måtene å skrive en andregradsfunksjon på gir oss ulik informasjon om funksjonen:
+
+::::::::::::::{grid}
+---
+gutter: 1
 ---
 
+:::::::::::::{grid-item-card} Standardform
+
+:::{figure} ./figurer/teori/standardform/algebraisk_uttrykk.svg
+---
+width: 100%
+---
+:::
+
+* $a$ forteller om grafen er konveks $\smile$ eller konkav $\frown$.
+* $b$ gir forskyvningen til grafen langs $x$-aksen.
+* $c$ forteller hvor grafen skjærer $y$-aksen.
+
+:::::::::::::
+
+:::::::::::::{grid-item-card} Nullpunktsform
+
+:::{figure} ./figurer/teori/nullpunktsform/algebraisk_uttrykk.svg
+---
+width: 100%
+---
+:::
+
+* $a$ forteller om grafen er konveks $\smile$ eller konkav $\frown$.
+* $x_1$ og $x_2$ forteller hvor grafen skjærer $x$-aksen.
+
+:::::::::::::
+
+:::::::::::::{grid-item-card} Ekstremalform
+
+:::{figure} ./figurer/teori/ekstremalform/algebraisk_uttrykk.svg
+---
+width: 100%
+---
+:::
+
+* $a$ forteller om grafen er konveks $\smile$ eller konkav $\frown$.
+* Gir oss ekstremalpunktet $(x_1, y_1)$.
+* Gir oss symmetrilinja $x = x_1$.
+
+:::::::::::::
+
+
+
+:::::::::::::::
+
+Så langt har vi sett av vi kan gå fra nullpunktsformen og fra ekstremalformen til standardformen – men å gå motsatt vei er ikke like rett frem. Her skal vi utvikle verktøy for å gå motsatt vei!
+
+## Fullstendige kvadraters metode
+
+Fullstendige kvadraters metode lar oss skrive om et andregradsuttrykk på formen
+
 $$
-f(x) = ax^2 + bx + c \xarrow{\text{fullstendig kvadraters metode}} a(x + r)^2 + k \xarrow{\text{konjugatsetningen}} a(x - x_1)(x - x_2)
+x^2 + bx + c
 $$
+
+fra standardform til ekstremalform. Det er ikke et uhell at $a = 1$ i uttrykket – men det kommer vi tilbake til senere. 
+
+Den fungerer i to steg:
+1. Legg til og trekk fra et tall så du får inn en kvadratsetning.
+2. Faktoriser med kvadratsetningen. 
+
+:::::::::::::::{admonition} Utforsk 1
+---
+class: explore
+---
+Under følger tre eksempler på bruk av fullstendig kvadraters metode. Les gjennom eksemplene nøye og prøv å svare på følgende spørsmål:
+
+1. Hvilket tall er det man legger til og trekker fra?
+2. Kan du gi en beskrivelse av metoden?
+3. Kan du finne en generell formel for hvordan man metoden funker med $x^2 + bx + c$?
+
+Se i oppsummeringsboksen når du har lest eksemplene og prøvd å komme fram til en generell beskrivelse av metoden.
+
+::::::::::::::{tab-set}
+:::::::::::::{tab-item} Eksempel 1
+\begin{align*}
+    x^2 + 6x + 8 &= x^2 + 6x + \textcolor{red}{\left(\dfrac{6}{2}\right)^2} - \textcolor{red}{\left(\dfrac{6}{2}\right)^2} + 8 && \text{Legger til $0$}\\
+    \\
+    &= \underbrace{x^2 + 6x + \textcolor{red}{3^2}}_{\text{1.kvadratsetning}} - \textcolor{red}{3^2} + 8 && \text{Forenkler}\\
+    \\
+    &= (x + 3)^2 - 9 + 8 && \text{Faktoriserte med 1.kvadratsetning}\\
+    \\
+    &= (x + 3)^2 - 1.
+\end{align*}
+
+:::::::::::::
+
+:::::::::::::{tab-item} Eksempel 2
+\begin{align*}
+    x^2 - 4x + 1 &= x^2 - 4x + \textcolor{red}{\left(\dfrac{-4}{2}\right)^2} - \textcolor{red}{\left(\dfrac{-4}{2}\right)^2} + 1 && \text{Legger til $0$}\\
+    \\
+    &= \underbrace{x^2 - 4x + \textcolor{red}{2^2}}_{\text{2.kvadratsetning}} - \textcolor{red}{2^2} + 1 && \text{Forenkler}\\
+    \\
+    &= (x - 2)^2 - 4 + 1 && \text{Faktoriserte med 2.kvadratsetning}\\
+    \\
+    &= (x - 2)^2 - 3.
+\end{align*}
+:::::::::::::
+
+:::::::::::::{tab-item} Eksempel 3
+\begin{align*}
+    x^2 + 3x - 2 &= x^2 + 3x + \textcolor{red}{\left(\dfrac{3}{2}\right)^2} - \textcolor{red}{\left(\dfrac{3}{2}\right)^2} - 2 && \text{Legger til $0$}\\
+    \\
+    &= \underbrace{x^2 + 3x + \textcolor{red}{\left(\dfrac{3}{2}\right)^2}}_{\text{1.kvadratsetning}} - \textcolor{red}{\left(\dfrac{3}{2}\right)^2} - 2 && \text{Forenkler}\\
+    \\
+    &= (x + 3/2)^2 - 9/4 - 2 && \text{Faktoriserte med 1.kvadratsetning}\\
+    \\
+    &= (x + 3/2)^2 - 17/4.
+\end{align*}
+
+:::::::::::::
+
+::::::::::::::
+
+
+::::::::::::::
+
+
+:::::::::::::::
+
+Før du leser oppsummeringsboksen under, kan du prøve å anvende metoden i underveisoppgaven under!
+
+:::::::::::::::{admonition} Underveisoppgave 1
+---
+class: check
+---
+Bruk fullstendige kvadraters metode på andregradsuttrykkene under.
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+$$
+x^2 + 2x + 3
+$$
+
+:::{admonition} Fasit
+---
+class: dropdown, answer
+---
+$$
+(x + 1)^2 + 2
+$$
+:::
+
+:::::::::::::
+
+:::::::::::::{tab-item} b
+$$
+x^2 - 10x + 3
+$$
+
+:::{admonition} Fasit
+---
+class: dropdown, answer
+---
+$$
+(x - 5)^2 - 22
+$$
+:::
+:::::::::::::
+
+:::::::::::::{tab-item} c
+$$
+x^2 + 12x + 17
+$$
+
+:::{admonition} Fasit
+---
+class: dropdown, answer
+---
+$$
+(x + 6)^2 - 19
+$$
+:::
+:::::::::::::
+
+::::::::::::::
+
+
+:::::::::::::::
+
+
+
+---
+
+---
+
+:::::{admonition} Fullstendige kvadraters metode
+---
+class: summary, dropdown
+---
+For et andregradsuttrykk $x^2 + bx + c$ kan vi skrive skrive om uttrykket til ekstremalform med følgende omskrivning:
+
+$$
+x^2 + \textcolor{red}{b}x + c = \underbrace{x^2 + \textcolor{red}{b}x + \left(\dfrac{\textcolor{red}{b}}{2}\right)^2}_{\text{kvadratsetning}} - \left(\dfrac{\textcolor{red}{b}}{2}\right)^2 + c = \left(x + \dfrac{b}{2}\right)^2 - \left(\dfrac{b}{2}\right)^2 + c.
+$$
+
+Med andre ord, vi gjør følgende:
+1. Legger til og trekker fra $\left(\dfrac{b}{2}\right)^2$.
+2. Faktoriserer med 1. eller 2.kvadratsetning.
 
 :::::
 
 
-## Fullstendige kvadraters metode
 
-Fullstendig kvadraters metode er en måte å skrive om et andregradsuttrykk om fra standardform til ekstremalform. Da kan vi lese av ekstremalpunktet til funksjonen. Bruker 
-
-
-```{admonition} Fullstendige kvadraters metode
-:class: theory
-Gitt en andregradsfunksjon
-
-$$
-f(x) = ax^2 + bx + c,
-$$
-
-kan vi alltid skrive om funksjonsuttrykket som
-
-$$
-f(x) = a(x + r)^2 + k,
-$$
-
-der 
-
-$$
-r = \frac{b}{2a} \quad \text{og} \quad k = c - \left(\frac{b}{2a}\right)^2.
-$$
-```
-
-
-```{admonition} Algoritme: Fullstendige kvadraters metode
-:class: theory
-Gitt et andregradsuttrykk $x^2 + bx + c$. For å skrive dette uttrykket som et fullstendig kvadrat, gjør vi følgende:
-
-Steg 1
-: Legg til og trekk fra $(b / 2)^2$
-
-$$
-x^2 + bx + c = x^2 + bx + \underbrace{\left(\frac{b}{2}\right)^2 - \left(\frac{b}{2}\right)^2}_{\text{Legg til og trekk fra } (b/2)^2} + c.
-$$
-
-Steg 2
-: Bruk 1. eller 2.kvadratsetning til å faktorisere deler eller hele uttrykket.
-
-$$
-\underbrace{x^2 + bx + \left(\frac{b}{2}\right)^2}_{\text{1. eller 2.kvadratsetning}} - \left(\frac{b}{2}\right)^2 + c = \left(x + \frac{b}{2}\right)^2 - \left(\frac{b}{2}\right)^2 + c.
-$$
-
-Samlet, får vi
-
-$$
-x^2 + bx + c = \left(x + \frac{b}{2}\right)^2 - \left(\frac{b}{2}\right)^2 + c.
-$$
-
-```
-
-Ser ut som skumle greier, så la oss ta et eksempel:
-
-
-```{admonition} Eksempel 1: fullstendig kvadraters metode
-:class: example
-Gitt andregradsfunksjonen
-
-$$
-f(x) = x^2 + 6x + 8,
-$$
-
-så kan vi fullføre kvadratet som følger:
-
-\begin{equation*}
-\begin{split}
-x^2 + 6x + 10 & = x^2 + 6x + \underbrace{\left(\frac{6}{2}\right)^2 - \left(\frac{6}{2}\right)^2}_{\text{Legger til og trekker fra }(b/2)^2} + 8 \\
-\\
-&= \underbrace{x^2 + 6x + 3^2}_{\text{1.kvadratsetning}} - 3^2 + 8 = (x + 3)^2 - 9 + 8 \\
-\\
-& = (x + 3)^2 - 1.
-\end{split}
-\end{equation*}
-
-Vi kan altså skrive $f(x)$ som et fullstendig kvadrat minus et tilleggsledd. 
-```
 
 Nå er det **din tur**!
 
@@ -318,3 +432,16 @@ $$
 Her kan vi ikke bruke konjugatsetningen fordi tilleggsleddet er positivt. Dermed har likningen ingen reelle løsninger.
 
 ```
+
+---
+
+## Fullstendige kvadrater
+
+Vi har allerede sett at vi kan skrive om et andregradsuttrykk på formen $ax^2 + bx + c$ til en form som er lettere å jobbe med. Dette gjør vi ved å fullføre kvadrater. 1. og 2.kvadratsetning er eksempler på fullstendige kvadrater. Det kan vi se i {numref}`fullstendig_kvadrat`.
+
+:::{figure} ./figurer/teori/fullstendig_kvadrat.svg
+---
+width: 80%
+---
+Viser 1.kvadratsetning geometrisk. Et kvadrat med areal $(a + b)^2$ har samme areal som summen av arealene til to kvadrater med areal $a^2$ og $b^2$, og to rektangler med areal $ab$. Dermed får vi $(a + b)^2 = a^2 + 2ab + b^2$. Det er herfra begrepet *fullstendig kvadrat* kommer fra.
+:::

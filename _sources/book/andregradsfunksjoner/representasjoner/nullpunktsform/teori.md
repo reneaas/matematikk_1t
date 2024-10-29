@@ -314,5 +314,97 @@ $$
 
 ::::::::::::
 
+## Fra nullpunktsform til standardform
 
+Vi kan gå fra nullpunktsformen til standardformen til en andregradsfunksjon.
+
+::::::::::::{admonition} Eksempel 4
+---
+class: example
+---
+En andregradsfunksjon er gitt ved 
+
+$$
+f(x) = (x - 1)(x + 3)
+$$
+
+Bestem standardformen til $f(x)$.
+
+::::{admonition} Hint: Algebraisk lov
+---
+class: hints, dropdown
+---
+Vi bruker den algebraiske loven for multiplikasjon av to parenteser i utregningen under:
+
+$$
+(a + b)(c + d) = ac + ad + bc + bd
+$$
+::::
+
+:::::{admonition} Løsning
+---
+class: solution
+---
+\begin{align*}
+    f(x) &= (x - 1)(x + 3) \\
+    \\
+    &= x^2 + 3x - x - 3 \\
+    \\
+    &= x^2 + 2x - 3
+\end{align*}
+
+Dermed er standardformen til $f(x)$ gitt ved 
+
+$$
+f(x) = x^2 + 2x - 3
+$$
+:::::
+::::::::::::
+
+---
+
+
+::::::::::::{admonition} Underveisoppgave 3
+---
+class: check
+---
+En andregradsfunksjon er gitt ved 
+
+$$
+f(x) = (x + 2)(x - 4)
+$$
+
+Bestem standardformen til $f(x)$.
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+
+$$
+f(x) = x^2 - 2x - 8
+$$
+
+::::
+
+::::{admonition} Løsning
+---
+class: solution, dropdown
+---
+\begin{align*}
+    f(x) &= (x + 2)(x - 4) \\
+    \\
+    &= x^2 - 4x + 2x - 8 \\
+    \\
+    &= x^2 - 2x - 8
+\end{align*}
+
+Dermed er standardformen til $f(x)$ gitt ved 
+
+$$
+f(x) = x^2 - 2x - 8
+$$
+::::
+
+::::::::::::
 

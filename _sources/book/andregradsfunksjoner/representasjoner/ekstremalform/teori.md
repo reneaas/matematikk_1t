@@ -80,7 +80,7 @@ class: solution
 ---
 
 
-## Algebraisk representasjon
+## Ekstremalform: algebraisk og grafisk
 
 Ekstremalformen til en andregradsfunksjon er en tredje måte å skrive en andregradsfunksjon på. Ekstremalformen inneholder informasjon om ekstremalpunktet til funksjonen.
 
@@ -97,8 +97,18 @@ class: no-click
 ---
 :::
 
-* Hvis $a > 0$ er grafen til $f$ konveks $\smile$ har et bunnpunkt.
+* Hvis $a > 0$ er grafen til $f$ konveks $\smile$ og har et bunnpunkt.
 * Hvis $a < 0$ er grafen til $f$ konkav $\frown$ og har et toppunkt.
+* Linja $x = x_1$ er symmetrilinja til $f$. Grafen er speilet rundt denne linja!
+---
+
+::::{figure} ./figurer/teori/grafisk_representasjon.svg
+---
+width: 80%
+class: no-click
+---
+:::
+
 :::::
 
 ---
@@ -114,7 +124,7 @@ Under vises noen eksempler på andregradsfunksjoner med grafen og tilhørende fu
 class: tabs-parts
 ---
 :::::::::::::{tab-item} $f$
-Grafen til $f$ har et bunnpunkt i $(-1, -3)$. Ekstremalformen til $f$ er gitt ved
+Grafen til $f$ har et bunnpunkt i $(-1, -3)$ og har derfor en symmetrilinje $x = -1$. <br> Ekstremalformen til $f$ er gitt ved
 
 $$
 f(x) = (x + 1)^2 - 3
@@ -130,7 +140,7 @@ class: no-click
 :::::::::::::
 
 :::::::::::::{tab-item} $g$
-Grafen til $g$ har et toppunkt i $(2, 1)$. Ekstremalformen til $g$ er gitt ved 
+Grafen til $g$ har et toppunkt i $(2, 1)$ og har derfor en symmetrilinje $x = 2$. <br> Ekstremalformen til $g$ er gitt ved 
 
 $$
 g(x) = -\dfrac{1}{2}(x - 2)^2 + 1
@@ -146,7 +156,7 @@ class: no-click
 :::::::::::::
 
 :::::::::::::{tab-item} $h$
-Grafen til $h$ har et bunnpunkt i $(-1, 1)$. Ekstremalformen til $h$ er gitt ved
+Grafen til $h$ har et bunnpunkt i $(-1, 1)$ og har derfor symmetrilinje $x = -1$. <br> Ekstremalformen til $h$ er gitt ved
 
 $$
 h(x) = 2(x + 1)^2 + 1
@@ -319,4 +329,114 @@ $$
 :::
 
 :::::::::::::::
+
+## Fra ekstremalform til standardform
+
+Vi skal nå se på hvordan vi kan gå fra ekstremalformen til standardformen til en andregradsfunksjon.
+
+
+
+::::{admonition} Eksempel 4
+---
+class: example
+---
+En andregradsfunksjon er gitt ved 
+
+$$
+f(x) = (x - 1)^2 + 3
+$$
+
+Bestem standardformen til $f(x)$. 
+
+:::{admonition} Hint: Algebraisk lov 1
+---
+class: hints, dropdown
+---
+Vi bruker den algebraiske loven for multiplikasjon av to parenteser i utregningen under:
+
+$$
+(a + b)^2 = (a + b)(a + b)
+$$
+:::
+
+:::{admonition} Hint: Algebraisk lov 2
+---
+class: hints, dropdown
+---
+Vi bruker den algebraiske loven for multiplikasjon av to parenteser i utregningen under:
+
+$$
+(a + b)(c + d) = ac + ad + bc + bd
+$$
+:::
+
+:::{admonition} Løsning
+---
+class: solution
+---
+\begin{align*}
+f(x) &= (x - 1)^2 + 3 \\
+\\
+&= \textcolor{red}{(x - 1)(x - 1)} + 3 \\
+\\ 
+&= \textcolor{red}{x^2 - x - x + (-1)\cdot (-1)} + 3 \\
+\\
+&= x^2 - 2x + 1 + 3 \\
+\\
+&= x^2 - 2x + 4
+\end{align*}
+
+Dermed er standardformen til $f(x)$ gitt ved 
+
+$$
+f(x) = x^2 - 2x + 4
+$$
+:::
+::::
+
+---
+
+::::{admonition} Underveisoppgave 3
+---
+class: check
+---
+Bestem standardformen til 
+
+$$
+f(x) = (x + 3)^2 + 4.
+$$
+
+:::{admonition} Fasit
+---
+class: dropdown, answer
+---
+$$
+f(x) = x^2 + 6x + 13
+$$
+:::
+
+:::{admonition} Løsning
+---
+class: dropdown, solution
+---
+\begin{align*}
+    f(x) &= (x + 3)^2 + 4 \\
+    \\
+    &= \textcolor{red}{(x + 3)(x + 3)} + 4 \\
+    \\
+    &= \textcolor{red}{x^2 + 3x + 3x + 3^2} + 4 \\
+    \\
+    &= \textcolor{red}{x^2 + 6x + 9} + 4 \\
+    \\
+    &= x^2 + 6x + 13
+\end{align*}
+
+Dermed er standardformen til $f(x)$ gitt ved 
+
+$$
+f(x) = x^2 + 6x + 13
+$$
+:::
+
+::::
 
