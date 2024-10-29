@@ -99,7 +99,7 @@ class: no-click
 
 * Hvis $a > 0$ er grafen til $f$ konveks $\smile$ og har et bunnpunkt.
 * Hvis $a < 0$ er grafen til $f$ konkav $\frown$ og har et toppunkt.
-* Linja $x = x_1$ er symmetrilinja til $f$. Grafen er speilet rundt denne linja!
+* Linja $x = x_0$ er symmetrilinja til $f$. Grafen er speilet rundt denne linja!
 ---
 
 ::::{figure} ./figurer/teori/grafisk_representasjon.svg
@@ -309,7 +309,6 @@ $$
 Vi trenger ett punkt til for å bestemme $a$. Vi kan se at grafen går gjennom punkt $(-1, 1)$ som gir 
 
 \begin{align*}
-
     f(-1) &= 1 \\
     \\
     a(-1 + 2)^2 + 4 &= 1 \\
@@ -328,6 +327,196 @@ f(x) = -3(x + 2)^2 + 4
 $$
 :::
 
+:::::::::::::::
+
+
+## Fra nullpunktsform til ekstremalform
+
+Vi skal nå se på hvordan vi kan gå fra nullpunktsformen til ekstremalformen til en andregradsfunksjon. 
+
+
+:::::::::::::::{admonition} Utforsk 1
+---
+class: explore
+---
+Her skal du utforske sammenhengen mellom nullpunktsformen og ekstremalformen til en andregradsfunksjon.
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Se på grafene under. 
+
+1. Kan du se en sammenheng om hvor nullpunktene ligger i forhold til symmetrilinja? 
+2. Kan du beskrive sammenhengen generelt? 
+
+::::::::::::{tab-set}
+:::::::::::{tab-item} Graf A
+:::{figure} ./figurer/utforsk/utforsk_1/a/graf_A.svg
+---
+width: 80%
+class: no-click
+---
+:::
+:::::::::::
+
+:::::::::::{tab-item} Graf B
+:::{figure} ./figurer/utforsk/utforsk_1/a/graf_B.svg
+---
+width: 80%
+class: no-click
+---
+:::
+:::::::::::
+
+:::::::::::{tab-item} Graf C
+:::{figure} ./figurer/utforsk/utforsk_1/a/graf_C.svg
+---
+width: 80%
+class: no-click
+---
+:::
+:::::::::::
+::::::::::::
+
+:::{admonition} a: Oppsummering
+---
+class: dropdown, summary
+---
+1. Det er like lang avstand fra symmetrilinja til hvert nullpunkt på $x$-aksen.
+2. Symmetrilinja ligger **midt** mellom nullpunktene.
+:::
+
+:::::::::::::
+
+:::::::::::::{tab-item} b
+Under vises funksjonsuttrykkene til grafene skrevet på nullpunktsform og ekstremalform.
+Se på uttrykkene. 
+
+1. Kan du finne en formel for symmetrilinja til grafene ut ifra nullpunktene?
+2. Kan du bruke dette til å regne ut ekstremalpunktet også?
+
+::::::::::::{tab-set}
+:::::::::::{tab-item} Graf A
+
+$$
+f(x) = (x - 1)(x + 3) = (x + 1)^2 - 4
+$$
+
+:::::::::::
+
+:::::::::::{tab-item} Graf B
+
+$$
+f(x) = -\dfrac{1}{2}(x + 3)(x - 5) = -\dfrac{1}{2}(x - 1)^2 + \dfrac{9}{2}
+$$
+
+:::::::::::
+
+:::::::::::{tab-item} Graf C
+$$
+f(x) = \dfrac{1}{4}(x + 2)(x - 4) = \dfrac{1}{4}(x - 1)^2 - 4
+$$
+:::::::::::
+::::::::::::
+
+:::{admonition} b: Oppsummering
+---
+class: dropdown, summary
+---
+1. Symmetrilinja $x_0$ er gjennomsnittet av nullpunktene $x_1$ og $x_2$. Det vil si at
+
+$$
+x_0 = \dfrac{x_1 + x_2}{2}
+$$
+
+2. For å finne ekstremalpunktet, regner vi ut $y_0 = f(x_0)$. Da har vi ekstremalpunktet $(x_0, y_0)$.
+:::
+
+:::::::::::::
+
+::::::::::::::
+
+:::::::::::::::
+
+---
+
+> Jobb med Utforsk 1 **før** du ser på oppsummeringen under!
+
+:::::::::::::::{admonition} Oppsummering: fra nullpunktsform til ekstremalform
+---
+class: summary, dropdown
+---
+For å bytte fra nullpunktsformen til ekstremalformen til en andregradsfunksjon, følger vi disse stegene:
+
+1. Bestem symmetrilinja $x_0$ til funksjonen ved å regne ut gjennomsnittet av nullpunktene $x_1$ og $x_2$:
+
+:::{figure} ./figurer/teori/nullpunkter_og_symmetrilinje.svg
+---
+width: 40%
+class: no-click
+---
+:::
+
+2. Regn ut $y_0 = f(x_0)$ for å finne $y$-koordinaten til ekstremalpunktet.
+
+:::::::::::::::
+
+---
+
+:::::::::::::::{admonition} Underveisoppgave 3
+---
+class: check
+---
+Nullpunktsformen til en andregradsfunksjon er gitt ved
+
+$$
+f(x) = -2(x - 1)(x + 3)
+$$
+
+Bestem ekstremalformen til $f(x)$. 
+
+::::::::::::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+
+$$
+f(x) = -2(x + 1)^2 - 8
+$$
+
+::::::::::::::
+
+
+::::::::::::::{admonition} Løsning
+---
+class: solution, dropdown
+---
+Nullpunktene til $f(x)$ er 
+
+$$
+x = 1 \quad \lor \quad x = -3
+$$
+
+Symmetrilinja er gjennomsnittet av nullpunktene som gir 
+
+$$
+x_0 = \dfrac{1 + (-3)}{2} = \dfrac{-2}{2} = -1.
+$$
+
+$y$-koordinaten til ekstremalpunktet er
+
+$$
+y_0 = f(x_0) = f(-1) = -2\cdot (-1 - 1) \cdot (-1 + 3) = -2\cdot (-2)\cdot (2) = -8.
+$$
+
+Dermed er ekstremalformen til $f(x)$ gitt ved
+
+$$
+f(x) = -2(x + 1)^2 - 8
+$$
+::::::::::::::
 :::::::::::::::
 
 ## Fra ekstremalform til standardform
@@ -396,7 +585,7 @@ $$
 
 ---
 
-::::{admonition} Underveisoppgave 3
+::::{admonition} Underveisoppgave 4
 ---
 class: check
 ---
