@@ -14,7 +14,7 @@ Etter denne seksjonen, er målet at du skal:
 ---
 class: reminder, full-width
 ---
-Til nå har vi sett at ulike måtene å skrive en andregradsfunksjon på gir oss ulik informasjon om funksjonen:
+Til nå har vi sett at ulike måtenr å skrive en andregradsfunksjon på gir oss ulik informasjon om funksjonen:
 
 ::::::::::::::{grid}
 ---
