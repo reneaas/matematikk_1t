@@ -90,7 +90,7 @@ Under følger tre eksempler på bruk av fullstendig kvadraters metode. Les gjenn
 
 1. Hvilket tall er det man legger til og trekker fra?
 2. Kan du gi en beskrivelse av metoden?
-3. Kan du finne en generell formel for hvordan man metoden funker med $x^2 + bx + c$?
+3. Kan du finne en generell formel for hvordan metoden funker med $x^2 + bx + c$?
 
 Se i oppsummeringsboksen når du har lest eksemplene og prøvd å komme fram til en generell beskrivelse av metoden.
 
