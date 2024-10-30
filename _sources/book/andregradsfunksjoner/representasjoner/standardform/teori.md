@@ -114,25 +114,57 @@ class: summary, dropdown
 :::::::::::::
 
 :::::::::::::{tab-item} Koeffisient: $b$
+Effekten til $b$ er påvirket av fortegnet til $a$. Du finner ett vindu med $a > 0$ og ett med $a < 0$.
 
 1. Hva skjer med grafen når $b = 0$?
 2. Hva skjer med grafen når $b > 0$? 
 3. Hva skjer med grafen når $b < 0$?
 
+::::::::::::{tab-set}
+:::::::::::{tab-item} Når $a > 0$
+
 :::{raw} html
 ---
-file: ./ggb/utforsk/utforsk_1/b.html
+file: ./ggb/utforsk/utforsk_1/b_1.html
 ---
 :::
+
+:::::::::::
+
+:::::::::::{tab-item} Når $a < 0$
+
+:::{raw} html
+---
+file: ./ggb/utforsk/utforsk_1/b_2.html
+---
+:::
+
+:::::::::::
+
+::::::::::::
+
 
 :::{admonition} Oppsummering: Koeffisient $b$
 ---
 class: summary, dropdown
 ---
+
+````{tab} $a > 0$
 1. Når $b = 0$, vil grafen være symmetrisk om $y$-aksen. 
 2. Når $b > 0$, skifter vi grafen til venstre for $y$-aksen.
 3. Når $b < 0$, skrifter vi grafen til høyre for $y$-aksen. 
+
+````
+
+````{tab} $a < 0$
+1. Når $b = 0$, vil grafen være symmetrisk om $y$-aksen. 
+2. Når $b > 0$, skifter vi grafen til høyre for $y$-aksen.
+3. Når $b < 0$, skifter vi grafen til venstre for $y$-aksen. 
+````
+
+Effekten til $b$ er altså motsatt når $a < 0$ sammenlignet med når $a > 0$.
 :::
+
 
 :::::::::::::
 
@@ -162,6 +194,81 @@ class: summary, dropdown
 ::::::::::::::
 
 :::::::::::::::
+
+---
+
+> Jobb med Utforsk 1 **før** du ser på oppsummeringen under.
+
+:::::::::::::::{admonition} Oppsummering: koeffisienter og graf
+---
+class: summary, dropdown
+---
+Påvirkningen til koeffisientene til en andregradsfunksjon $f(x) = ax^2 + bx + c$ kan oppsummeres som:
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} Koeffisient $a$
+
+$a$ bestemmer om grafen er konveks (smiler $\smile$ ) eller konkav (surt fjes $\frown$). 
+
+:::{figure} ./figurer/utforsk/utforsk_1/a.svg
+---
+width: 100%
+class: no-click
+---
+:::
+
+:::::::::::::
+
+:::::::::::::{tab-item} Koeffisient $b$
+Bestemmer forskyvningen av grafen fra $y$-aksen. Fortegnet til $a$ bestemmer hvilken retning $b > 0$ og $b < 0$ gir.
+
+
+::::::::::::{tab-set}
+:::::::::::{tab-item} $a > 0$
+
+:::{figure} ./figurer/utforsk/utforsk_1/b_1.svg
+---
+width: 100%
+class: no-click
+---
+:::
+
+:::::::::::
+
+:::::::::::{tab-item} $a < 0$
+
+:::{figure} ./figurer/utforsk/utforsk_1/b_2.svg
+---
+width: 100%
+class: no-click
+---
+:::
+
+:::::::::::
+
+::::::::::::
+
+:::::::::::::
+
+:::::::::::::{tab-item} Koeffisient $c$
+Bestemmer hvor grafen skjærer $y$-aksen.
+
+:::{figure} ./figurer/utforsk/utforsk_1/c.svg
+---
+width: 100%
+class: no-click
+---
+:::
+
+:::::::::::::
+::::::::::::::
+
+
+:::::::::::::::
+
 
 ---
 
