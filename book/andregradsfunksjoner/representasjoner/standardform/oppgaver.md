@@ -599,6 +599,8 @@ $$
 
 ---
 
+> Løs oppgavene med CAS – enten med Geogebra eller Python.
+
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
@@ -608,24 +610,60 @@ class: tabs-parts
 Grafen til en andregradsfunksjon $f$ går gjennom punktene $(-2, 3)$ og $(1, 3)$ og $(-3, 7)$. 
 
 Bestem $f(x)$. 
+
+:::{admonition} Fasit
+---
+class: dropdown, answer
+---
+$$
+f(x) = x^2 + x + 1
+$$
+:::
 :::::::::::::
 
 :::::::::::::{tab-item} b
 Grafen til en andregradsfunksjon $g$ går gjennom punktene $(-1, 3)$ og $(1, -5)$ og $(-2, 1)$. 
 
 Bestem $g(x)$. 
+
+:::{admonition} Fasit
+---
+class: dropdown, answer
+---
+$$
+g(x) = -2x^2 - 4x + 1
+$$
+:::
 :::::::::::::
 
 :::::::::::::{tab-item} c
 Grafen til en andregradsfunksjon $h$ går gjennom punktene $(2, 2)$ og $(4, -2)$ og $(-2, -2)$.
 
 Bestem $h(x)$.
+
+:::{admonition} Fasit
+---
+class: dropdown, answer
+---
+$$
+h(x) = -\dfrac{1}{2}x^2 + x^2 + 2
+$$
+:::
 :::::::::::::
 
 :::::::::::::{tab-item} d
-Grafen til en andregradsfunksjon $r$ går gjennom punktene $(-3, -1)$ og $(2, -6)$ og $(-1, -3)$. 
+Grafen til en andregradsfunksjon $r$ går gjennom punktene $(-3, -1)$ og $(2, -6)$ og $(1, -3)$. 
 
 Bestem $r(x)$.
+
+:::{admonition} Fasit
+---
+class: dropdown, answer
+---
+$$
+r(x) = -\dfrac{1}{2}x^2 - \dfrac{3}{2}x - 1
+$$
+:::
 :::::::::::::
 
 ::::::::::::::

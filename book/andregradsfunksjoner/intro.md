@@ -74,14 +74,13 @@ link-type: doc
 
 ^^^
 
-:::{figure} ./likninger/fullstendig_kvadrat/figurer/teori/fullstendig_kvadrat.svg
----
-width: 100%
-class: no-click
----
-:::
+$$
+x^2 - 4 = 0
+$$
 
----
+$$
+x^2 + 2x = 0
+$$
 
 :::{figure} ./likninger/abc_formelen/figurer/teori/abc-formel.svg
 ---
