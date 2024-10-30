@@ -4,13 +4,13 @@ import plotmath
 def main(dirname, save):
     #
     # Define functions
-    def h(x):
-        return 3 * (x - 1) * (x + 1)
+    def g(x):
+        return x**2 - x - 2
 
     # List of functions and their labels.
-    functions = [h]
+    functions = [g]
 
-    fig, ax = plotmath.make_figure(
+    fig, ax = plotmath.plot(
         functions=functions,
         fn_labels=True,
         xmin=-6,

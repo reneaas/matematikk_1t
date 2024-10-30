@@ -54,12 +54,157 @@ file: ./quiz/quiz_1/quiz_1.html
 
 ---
 
-
-:::::::::::::::{admonition} Oppgave 2
+:::::::::::::::{admonition} Oppgave 3
 ---
 class: problem-level-1
 ---
-> Tips: bruk gjerne CAS for å løse oppgavene. 
+Grafen til en andregradsfunksjon $f$ er vist i {numref}`fig-andregradsfunksjoner-representasjoner-standardform-oppgave-3`.
+
+
+:::{figure} ./figurer/oppgaver/oppgave_3.svg
+---
+name: fig-andregradsfunksjoner-representasjoner-standardform-oppgave-3
+width: 80%
+class: no-click
+---
+viser grafen til en andregradsfunksjon $f$.
+:::
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Sett opp en likningssystem for koeffisientene til $f(x)$. 
+
+
+:::{admonition} Fasit
+---
+class: dropdown, answer
+---
+Det finnes flere muligheter, men én mulighet er
+
+\begin{align*}
+    f(0) &= 2 \\
+    \\
+    f(-1) &= -2 \\
+    \\
+    f(4) &= -2 
+\end{align*}
+
+som gir likningssystemet
+
+\begin{align*}
+    c &= 2 \\
+    \\
+    a - b + c &= -2 \\
+    \\
+    16a + 4b + c &= -2
+\end{align*}
+
+:::
+:::::::::::::
+
+:::::::::::::{tab-item} b
+> Bruk CAS for å løse denne oppgaven.
+
+Bestem $f(x)$.
+
+:::{admonition} Fasit
+---
+class: dropdown, answer
+---
+$$
+f(x) = -x^2 + 3x + 2
+$$
+:::
+
+:::::::::::::
+
+::::::::::::::
+
+:::::::::::::::
+
+---
+
+:::::::::::::::{admonition} Oppgave 4
+---
+class: problem-level-1
+---
+Grafen til en andregradsfunksjon $g$ er vist i {numref}`fig-andregradsfunksjoner-representasjoner-standardform-oppgave-4`.
+
+
+:::{figure} ./figurer/oppgaver/oppgave_4.svg
+---
+name: fig-andregradsfunksjoner-representasjoner-standardform-oppgave-4
+width: 80%
+class: no-click
+---
+viser grafen til en andregradsfunksjon $g$.
+:::
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Sett opp en likningssystem for koeffisientene til $g(x)$. 
+
+:::{admonition} Fasit
+---
+class: dropdown, answer
+---
+Her er det flere muligheter, men én mulighet er 
+
+\begin{align*}
+    g(-1) &= 0 \\
+    \\
+    g(2) &= 0 \\
+    \\
+    g(3) &= 4
+\end{align*}
+
+som gir 
+
+\begin{align*}
+    a - b + c &= 0 \\
+    \\
+    4a + 2b + c &= 0 \\
+    \\
+    9a + 3b + c &= 4
+\end{align*}
+:::
+:::::::::::::
+
+:::::::::::::{tab-item} b
+> Bruk CAS for å løse denne oppgaven.
+
+Bestem $g(x)$.
+
+:::{admonition} Fasit
+---
+class: dropdown, answer
+---
+$$
+g(x) = x^2 - x - 2
+$$
+:::
+:::::::::::::
+
+::::::::::::::
+
+:::::::::::::::
+
+
+---
+
+
+
+:::::::::::::::{admonition} Oppgave 5
+---
+class: problem-level-2
+---
+> Tips: bruk gjerne CAS for å løse oppgavene – sjekk svaret ditt med CAS hvis du velger å regne for hånd. 
 
 ::::::::::::::{tab-set}
 ---
@@ -67,13 +212,13 @@ class: tabs-parts
 ---
 
 :::::::::::::{tab-item} a
-Grafen til en andregradsfunksjon $f$ er vist i {numref}`fig-andregradsfunksjoner-representasjoner-standardform-oppgave-2-a`. 
+Grafen til en andregradsfunksjon $f$ er vist i {numref}`fig-andregradsfunksjoner-representasjoner-standardform-oppgave-5-a`. 
 
 Bestem $f(x)$. 
 
-:::{figure} ./figurer/oppgaver/oppgave_2/a.svg
+:::{figure} ./figurer/oppgaver/oppgave_5/a.svg
 ---
-name: fig-andregradsfunksjoner-representasjoner-standardform-oppgave-2-a
+name: fig-andregradsfunksjoner-representasjoner-standardform-oppgave-5-a
 width: 80%
 class: no-click
 ---
@@ -94,13 +239,13 @@ $$
 
 
 :::::::::::::{tab-item} b
-Grafen til en andregradsfunksjon $g$ er vist i {numref}`fig-andregradsfunksjoner-representasjoner-standardform-oppgave-2-b`. 
+Grafen til en andregradsfunksjon $g$ er vist i {numref}`fig-andregradsfunksjoner-representasjoner-standardform-oppgave-5-b`. 
 
 Bestem $g(x)$. 
 
-:::{figure} ./figurer/oppgaver/oppgave_2/b.svg
+:::{figure} ./figurer/oppgaver/oppgave_5/b.svg
 ---
-name: fig-andregradsfunksjoner-representasjoner-standardform-oppgave-2-b
+name: fig-andregradsfunksjoner-representasjoner-standardform-oppgave-5-b
 width: 80%
 class: no-click
 ---
@@ -120,13 +265,13 @@ $$
 
 
 :::::::::::::{tab-item} c
-Grafen til en andregradsfunksjon $h$ er vist i {numref}`fig-andregradsfunksjoner-representasjoner-standardform-oppgave-2-c`. 
+Grafen til en andregradsfunksjon $h$ er vist i {numref}`fig-andregradsfunksjoner-representasjoner-standardform-oppgave-5-c`. 
 
 Bestem $h(x)$. 
 
-:::{figure} ./figurer/oppgaver/oppgave_2/c.svg
+:::{figure} ./figurer/oppgaver/oppgave_5/c.svg
 ---
-name: fig-andregradsfunksjoner-representasjoner-standardform-oppgave-2-c
+name: fig-andregradsfunksjoner-representasjoner-standardform-oppgave-5-c
 width: 80%
 class: no-click
 ---
@@ -153,11 +298,11 @@ $$
 ---
 
 
-:::::::::::::::{admonition} Oppgave 3
+:::::::::::::::{admonition} Oppgave 6
 ---
-class: problem-level-1
+class: problem-level-2
 ---
-> Tips: bruk gjerne CAS for å løse oppgavene.
+> Tips: bruk gjerne CAS for å løse oppgavene – sjekk svaret ditt med CAS hvis du velger å regne for hånd.
 
 
 ::::::::::::::{tab-set}
@@ -217,9 +362,9 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 4
+:::::::::::::::{admonition} Oppgave 7
 ---
-class: problem-level-1
+class: problem-level-2
 ---
 En andregradsfunksjon er gitt ved 
 
@@ -238,7 +383,7 @@ columns: 6
 ---
 **Graf A**
 
-:::{figure} ./figurer/oppgaver/oppgave_4/A.svg
+:::{figure} ./figurer/oppgaver/oppgave_7/A.svg
 ---
 width: 100%
 class: no-click
@@ -254,7 +399,7 @@ columns: 6
 ---
 **Graf B**
 
-:::{figure} ./figurer/oppgaver/oppgave_4/B.svg
+:::{figure} ./figurer/oppgaver/oppgave_7/B.svg
 ---
 width: 100%
 class: no-click
@@ -270,7 +415,7 @@ columns: 6
 ---
 **Graf C**
 
-:::{figure} ./figurer/oppgaver/oppgave_4/C.svg
+:::{figure} ./figurer/oppgaver/oppgave_7/C.svg
 ---
 width: 100%
 class: no-click
@@ -286,7 +431,7 @@ columns: 6
 ---
 **Graf D**
 
-:::{figure} ./figurer/oppgaver/oppgave_4/D.svg
+:::{figure} ./figurer/oppgaver/oppgave_7/D.svg
 ---
 width: 100%
 class: no-click
@@ -309,15 +454,15 @@ Graf B
 
 ---
 
-:::::::::::::::{admonition} Oppgave 5
+:::::::::::::::{admonition} Oppgave 8
 ---
-class: problem-level-1
+class: problem-level-2
 ---
-Grafen til en andregradsfunksjon er vist i {numref}`fig-andregradsfunksjoner-representasjoner-standardform-oppgave-5`.
+Grafen til en andregradsfunksjon er vist i {numref}`fig-andregradsfunksjoner-representasjoner-standardform-oppgave-8`.
 
-:::{figure} ./figurer/oppgaver/oppgave_5.svg
+:::{figure} ./figurer/oppgaver/oppgave_8.svg
 ---
-name: fig-andregradsfunksjoner-representasjoner-standardform-oppgave-5
+name: fig-andregradsfunksjoner-representasjoner-standardform-oppgave-8
 width: 80%
 class: no-click
 ---
@@ -389,6 +534,102 @@ class: dropdown, answer
 ---
 Funksjon A
 :::
+
+:::::::::::::::
+
+---
+
+:::::::::::::::{admonition} Oppgave 9
+---
+class: problem-level-3
+---
+> Her får du se en ny måte å bruke CAS på til å bestemme $f(x)$. Som vanlig kan du velge mellom Geogebra eller Python.
+
+::::{admonition} Eksempel 
+---
+class: example
+---
+Grafen til en andregradsfunksjon $f$ går gjennom punktene $(-1, 2)$ og $(2, 2)$ og $(1, -1)$. 
+
+Bestem $f(x)$. 
+
+
+````{tab} Geogebra
+
+:::{raw} html
+---
+file: ./ggb/oppgaver/oppgave_9/eksempel.html
+---
+:::
+
+Fra Geogebra-vinduet, kan vi se at 
+
+$$
+f(x) = \dfrac{3}{2}x^2 - \dfrac{3}{2}x - 1
+$$
+
+````
+
+````{tab} Python
+
+> Skrivemåten `f.subs(x, 1)`{l=python} betyr $f(1)$. Å skrive `subs`{l=python} er en forkortelse for "substitute" som betyr "erstatt". Vi erstatter altså $x$ med $1$. 
+
+
+:::{raw} html
+---
+file: ./python/oppgaver/oppgave_9/eksempel.html
+---
+:::
+
+Kjører vi programmet får vi utskriften 
+
+```console
+{a: 3/2, b: -3/2, c: -1}
+```
+
+Dermed er 
+
+$$
+f(x) = \dfrac{3}{2}x^2 - \dfrac{3}{2}x - 1
+$$
+
+````
+
+::::
+
+---
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+
+:::::::::::::{tab-item} a
+Grafen til en andregradsfunksjon $f$ går gjennom punktene $(-2, 3)$ og $(1, 3)$ og $(-3, 7)$. 
+
+Bestem $f(x)$. 
+:::::::::::::
+
+:::::::::::::{tab-item} b
+Grafen til en andregradsfunksjon $g$ går gjennom punktene $(-1, 3)$ og $(1, -5)$ og $(-2, 1)$. 
+
+Bestem $g(x)$. 
+:::::::::::::
+
+:::::::::::::{tab-item} c
+Grafen til en andregradsfunksjon $h$ går gjennom punktene $(2, 2)$ og $(4, -2)$ og $(-2, -2)$.
+
+Bestem $h(x)$.
+:::::::::::::
+
+:::::::::::::{tab-item} d
+Grafen til en andregradsfunksjon $r$ går gjennom punktene $(-3, -1)$ og $(2, -6)$ og $(-1, -3)$. 
+
+Bestem $r(x)$.
+:::::::::::::
+
+::::::::::::::
+
 
 :::::::::::::::
 
