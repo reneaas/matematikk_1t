@@ -1,4 +1,4 @@
-# Oppgaver: <br> Nullpunktsform av andregradsfunksjoner
+# Oppgaver:  Nullpunktsform
 
 :::::::::::::::{admonition} Oppgave 1
 ---
