@@ -112,7 +112,7 @@ sys.stderr = PyConsole("\${messageId}")
             
             if (packages.includes('casify')) {
                 await pyodide.loadPackage("micropip");
-                await pyodide.runPythonAsync("import micropip; await micropip.install('casify')");
+                await pyodide.runPythonAsync("import micropip; await micropip.install('casify==0.1.10')");
             }
 
             console.log("Packages loaded:", packages);

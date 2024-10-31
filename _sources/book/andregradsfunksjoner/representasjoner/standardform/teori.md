@@ -151,15 +151,15 @@ class: summary, dropdown
 
 ````{tab} $a > 0$
 1. Når $b = 0$, vil grafen være symmetrisk om $y$-aksen. 
-2. Når $b > 0$, skifter vi grafen til venstre for $y$-aksen.
-3. Når $b < 0$, skrifter vi grafen til høyre for $y$-aksen. 
+2. Når $b > 0$, forskyver vi grafen til venstre for $y$-aksen.
+3. Når $b < 0$, forskyver vi grafen til høyre for $y$-aksen. 
 
 ````
 
 ````{tab} $a < 0$
 1. Når $b = 0$, vil grafen være symmetrisk om $y$-aksen. 
-2. Når $b > 0$, skifter vi grafen til høyre for $y$-aksen.
-3. Når $b < 0$, skifter vi grafen til venstre for $y$-aksen. 
+2. Når $b > 0$, forskyver vi grafen til høyre for $y$-aksen.
+3. Når $b < 0$, forskyver vi grafen til venstre for $y$-aksen. 
 ````
 
 Effekten til $b$ er altså motsatt når $a < 0$ sammenlignet med når $a > 0$.
