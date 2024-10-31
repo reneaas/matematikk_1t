@@ -42,7 +42,7 @@ def main(dirname, save):
     plt.text(
         x=3,
         y=3,
-        s="$b > 0$ \n høyre for $y$-aksen",
+        s="$b < 0$ \n høyre for $y$-aksen",
         fontsize=18,
         ha="center",
         color="black",
@@ -57,7 +57,7 @@ def main(dirname, save):
     plt.text(
         x=-3,
         y=3,
-        s="$b < 0$ \n venstre for $y$-aksen",
+        s="$b > 0$ \n venstre for $y$-aksen",
         fontsize=18,
         ha="center",
         color="black",

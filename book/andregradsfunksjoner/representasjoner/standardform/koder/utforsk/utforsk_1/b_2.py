@@ -12,7 +12,7 @@ def main(dirname, save):
         return -((x + 3) ** 2) + 2
 
     # List of functions and their labels.
-    functions = [f, g]
+    functions = [g, f]
 
     fig, ax = plotmath.plot(
         functions=functions,
@@ -42,12 +42,12 @@ def main(dirname, save):
     plt.text(
         x=3,
         y=3,
-        s="$b < 0$ \n høyre for $y$-aksen",
+        s="$b > 0$ \n høyre for $y$-aksen",
         fontsize=18,
         ha="center",
         color="black",
         bbox=dict(
-            facecolor="teal",
+            facecolor="#C875C4",
             alpha=0.5,
             edgecolor="black",
             boxstyle="round,pad=0.3",
@@ -57,12 +57,12 @@ def main(dirname, save):
     plt.text(
         x=-3,
         y=3,
-        s="$b > 0$ \n venstre for $y$-aksen",
+        s="$b < 0$ \n venstre for $y$-aksen",
         fontsize=18,
         ha="center",
         color="black",
         bbox=dict(
-            facecolor="#C875C4",
+            facecolor="teal",
             alpha=0.5,
             edgecolor="black",
             boxstyle="round,pad=0.3",
