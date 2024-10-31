@@ -1,5 +1,19 @@
 # Digital lærebok i matematikk 1T
 
+<br>
+
+Klikk på meg $\to$ <a href="https://reneaas.github.io/matematikk_1t/">
+    <img src="./logo/evg_logo_med_1T.jpg" alt="Munchboka badge" width="120" height="auto" style="vertical-align: middle;">
+</a>
+$\gets$
+
+<br>
+
+<!-- [![Munchboka badge](./logo/evg_logo_med_1T.jpg)](https://reneaas.github.io/matematikk_1t/)
+
+-->
+
+
 En digital lærebok i matematikk med interaktive oppgaver og aktiviteter, inkludert interaktive kodeproblemer og øvelser designet for å forbedre læring og designet rundt læreplanen for matematikk 1T. 
 
 ## Innholdsfortegnelse
