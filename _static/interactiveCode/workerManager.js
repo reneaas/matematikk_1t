@@ -110,6 +110,7 @@ sys.stderr = PyConsole("\${messageId}")
             const filteredPackages = packages.filter(pkg => pkg !== "casify");
             await pyodide.loadPackage(filteredPackages);
             
+            // Custom installation of casify package if present in the package list.
             if (packages.includes('casify')) {
                 await pyodide.loadPackage("micropip");
                 await pyodide.runPythonAsync("import micropip; await micropip.install('casify')");
