@@ -71,6 +71,7 @@ onmessage = async (event) => {
             const pyCode = \`
 import sys
 import json
+import micropip
 from js import postMessage
 
 class PyConsole:
@@ -106,7 +107,14 @@ sys.stderr = PyConsole("\${messageId}")
         try {
             const pyodide = await pyodideReadyPromise;
             console.log("Loading packages:", packages);
-            await pyodide.loadPackage(packages);
+            const filteredPackages = packages.filter(pkg => pkg !== "casify");
+            await pyodide.loadPackage(filteredPackages);
+            
+            if (packages.includes('casify')) {
+                await pyodide.loadPackage("micropip");
+                await pyodide.runPythonAsync("import micropip; await micropip.install('casify')");
+            }
+
             console.log("Packages loaded:", packages);
             postMessage(JSON.stringify({ type: 'packagesLoaded', packageRequestId }));
         } catch (err) {
