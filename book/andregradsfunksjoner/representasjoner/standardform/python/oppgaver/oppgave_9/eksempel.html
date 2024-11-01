@@ -3,18 +3,12 @@
 
     document.addEventListener("DOMContentLoaded", () => {
         const code = 
-`from sympy import *
-from sympy.abc import a, b, c, x
+`from casify import *
 
-f = a * x**2 + b * x + c
+f = funksjon("a * x**2 + b * x + c")
 
-likning1 = Eq(f.subs(x, -1), 2)     # (-1, 2) --> f(-1) = 2
-likning2 = Eq(f.subs(x, 2), 2)      # (2, 2) --> f(2) = 2
-likning3 = Eq(f.subs(x, 1), -1)     # (1, -1) --> f(1) = -1
+løsning = løs("f(-1) = 2", "f(2) = 2", "f(1) = -1")
 
-likningssystem = [likning1, likning2, likning3]
-
-løsning = solve(likningssystem)
 print(løsning)
 `;
 

@@ -4,11 +4,11 @@ import plotmath
 def main(dirname, save):
     #
     # Define functions
-    def g(x):
-        return -0.5 * (x + 1) * (x - 2)
+    def r(x):
+        return 5 * (x**2 - 1)
 
     # List of functions and their labels.
-    functions = [g]
+    functions = [r]
 
     fig, ax = plotmath.plot(
         functions=functions,

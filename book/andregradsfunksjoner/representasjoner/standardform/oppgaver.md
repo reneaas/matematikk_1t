@@ -362,107 +362,16 @@ $$
 
 ---
 
+
 :::::::::::::::{admonition} Oppgave 7
 ---
 class: problem-level-2
 ---
-En andregradsfunksjon er gitt ved 
+Grafen til en andregradsfunksjon er vist i {numref}`fig-andregradsfunksjoner-representasjoner-standardform-oppgave-7`.
 
-$$
-f(x) = -x^2 + 3x + 3.
-$$
-
-Bestem hvilken graf som hører til $f$. 
-
-::::::::::::::{grid}
-
-:::::::::::::{grid-item}
+:::{figure} ./figurer/oppgaver/oppgave_7.svg
 ---
-outline: true
-columns: 6
----
-**Graf A**
-
-:::{figure} ./figurer/oppgaver/oppgave_7/A.svg
----
-width: 100%
-class: no-click
----
-:::
-
-:::::::::::::
-
-:::::::::::::{grid-item}
----
-outline: true
-columns: 6
----
-**Graf B**
-
-:::{figure} ./figurer/oppgaver/oppgave_7/B.svg
----
-width: 100%
-class: no-click
----
-:::
-
-:::::::::::::
-
-:::::::::::::{grid-item}
----
-outline: true
-columns: 6
----
-**Graf C**
-
-:::{figure} ./figurer/oppgaver/oppgave_7/C.svg
----
-width: 100%
-class: no-click
----
-:::
-
-:::::::::::::
-
-:::::::::::::{grid-item}
----
-outline: true
-columns: 6
----
-**Graf D**
-
-:::{figure} ./figurer/oppgaver/oppgave_7/D.svg
----
-width: 100%
-class: no-click
----
-:::
-
-:::::::::::::
-
-::::::::::::::
-
-:::{admonition} Fasit
----
-class: dropdown, answer
----
-Graf B
-:::
-
-
-:::::::::::::::
-
----
-
-:::::::::::::::{admonition} Oppgave 8
----
-class: problem-level-2
----
-Grafen til en andregradsfunksjon er vist i {numref}`fig-andregradsfunksjoner-representasjoner-standardform-oppgave-8`.
-
-:::{figure} ./figurer/oppgaver/oppgave_8.svg
----
-name: fig-andregradsfunksjoner-representasjoner-standardform-oppgave-8
+name: fig-andregradsfunksjoner-representasjoner-standardform-oppgave-7
 width: 80%
 class: no-click
 ---
@@ -539,7 +448,7 @@ Funksjon A
 
 ---
 
-:::::::::::::::{admonition} Oppgave 9
+:::::::::::::::{admonition} Oppgave 8
 ---
 class: problem-level-3
 ---
@@ -572,8 +481,9 @@ $$
 
 ````{tab} Python
 
-> Skrivemåten `f.subs(x, 1)`{l=python} betyr $f(1)$. Å skrive `subs`{l=python} er en forkortelse for "substitute" som betyr "erstatt". Vi erstatter altså $x$ med $1$. 
+> Her vil du se en ny Python-pakke som heter `casify`{l=python}. Denne pakken kommer vi til å erstatte `sympy`{l=python} med videre fordi den gir oss mindre kode å skrive for å løse oppgavene! Den er skrevet av oss for å gjøre det så enkelt som mulig å bruke CAS i Python.
 
+Kjør programmet og se på utskriften for å se sammenhengen med svaret under!
 
 :::{raw} html
 ---
@@ -581,11 +491,7 @@ file: ./python/oppgaver/oppgave_9/eksempel.html
 ---
 :::
 
-Kjører vi programmet får vi utskriften 
-
-```console
-{a: 3/2, b: -3/2, c: -1}
-```
+<br>
 
 Dermed er 
 

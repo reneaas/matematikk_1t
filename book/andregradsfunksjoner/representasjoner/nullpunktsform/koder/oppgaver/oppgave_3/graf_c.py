@@ -4,15 +4,15 @@ import plotmath
 def main(dirname, save):
     #
     # Define functions
-    def f(x):
-        return -(x**2) + 3 * x + 3
+    def h(x):
+        return -(x - 1) * (x + 3)
 
     # List of functions and their labels.
-    functions = [f]
+    functions = [h]
 
     fig, ax = plotmath.plot(
         functions=functions,
-        fn_labels=False,
+        fn_labels=True,
         xmin=-6,
         xmax=6,
         ymin=-6,
