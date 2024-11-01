@@ -474,4 +474,185 @@ $$
 
 :::::::::::::::
 
+---
+
+:::::::::::::::{admonition} Oppgave 7
+---
+class: problem-level-3
+---
+> Mange andregradsfunksjoner har ikke noen nullpunkter. Likevel kan vi bruke nullpunktsform som del av en strategi for å bestemme funksjonsuttrykket til funksjonen. I denne oppgaven skal du lære hvordan vi kan gjøre dette.
+
+::::::::::::::{admonition} Eksempel
+---
+class: example
+---
+Grafen til en andregradsfunksjon $f$ er vist i {numref}`fig-andregradsfunksjoner-representasjoner-nullpunktsform-oppgave-7-eksempel`. 
+
+Bestem standardformen til $f(x)$.
+
+:::{figure} ./figurer/oppgaver/oppgave_7/eksempel.svg
+---
+name: fig-andregradsfunksjoner-representasjoner-nullpunktsform-oppgave-7-eksempel
+width: 80%
+class: no-click
+---
+viser grafen til en andregradsfunksjon $f$.
+:::
+
+:::::::::::::{admonition} Løsning
+---
+class: solution
+---
+Vi kan merke oss at grafen til $f$ skjærer linja $y = 2$ i punktene $(-3, 2)$ og $(-1, 2)$ Hvis vi hadde forskjøvet grafen *ned* med $2$ enheter, ville grafen skjært $x$-aksen i $x = -2$ og $x = -1$. Derfor kan vi skrive $f(x)$ som
+
+$$
+f(x) = a\underbrace{(x + 3)(x + 1)}_{\text{Skjæring med } y = 2} + 2
+$$
+
+Vi kan se at grafen skjærer $y$-aksen i $y = 5$ som betyr at 
+
+\begin{align*}
+    f(0) &= 5 \\
+    \\
+    a(0 + 3)(0 + 1) + 2 &= 5 \\
+    \\
+    3a + 2 &= 5 \\
+    \\
+    3a &= 3 \\
+    \\
+    a &= 1 
+\end{align*}
+
+Dermed er standardformen til $f(x)$ gitt ved
+
+\begin{align*}
+    f(x) &= (x + 3)(x + 1) + 2 \\
+    \\
+    &= x^2 + 4x + 3 + 2 \\
+    \\
+    &= x^2 + 4x + 5
+\end{align*}
+
+:::::::::::::
+::::::::::::::
+
+Bruk strategien over til å bestemme funksjonsuttrykkene under.
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Grafen til en andregradsfunksjon $f$ er vist i {numref}`fig-andregradsfunksjoner-representasjoner-nullpunktsform-oppgave-7-a`.
+
+
+Bestem standardformen til $f(x)$.
+
+:::{figure} ./figurer/oppgaver/oppgave_7/a.svg
+---
+name: fig-andregradsfunksjoner-representasjoner-nullpunktsform-oppgave-7-a
+width: 80%
+class: no-click
+---
+viser grafen til en andregradsfunksjon $f$.
+:::
+
+:::{admonition} Fasit
+---
+class: dropdown, answer
+---
+$$
+f(x) = x^2 - 2x + 3
+$$
+:::
+
+:::::::::::::
+
+:::::::::::::{tab-item} b
+En andregradsfunksjon $g$ er vist i {numref}`fig-andregradsfunksjoner-representasjoner-nullpunktsform-oppgave-7-b`.
+
+
+Bestem standardformen til $g(x)$.
+
+:::{figure} ./figurer/oppgaver/oppgave_7/b.svg
+---
+name: fig-andregradsfunksjoner-representasjoner-nullpunktsform-oppgave-7-b
+width: 80%
+class: no-click
+---
+viser grafen til en andregradsfunksjon $g$.
+:::
+
+:::{admonition} Fasit
+---
+class: dropdown, answer
+---
+$$
+g(x) = -x^2 + 4x - 5
+$$
+:::
+:::::::::::::
+
+:::::::::::::{tab-item} c
+En andregradsfunksjon $h$ er vist i {numref}`fig-andregradsfunksjoner-representasjoner-nullpunktsform-oppgave-7-c`.
+
+
+Bestem standardformen til $h(x)$.
+
+:::{figure} ./figurer/oppgaver/oppgave_7/c.svg
+---
+name: fig-andregradsfunksjoner-representasjoner-nullpunktsform-oppgave-7-c
+width: 80%
+class: no-click
+---
+viser grafen til en andregradsfunksjon $h$.
+:::
+
+:::{admonition} Fasit
+---
+class: dropdown, answer
+---
+$$
+h(x) = 2x^2 + 12x + 21
+$$
+:::
+
+:::::::::::::
+
+:::::::::::::{tab-item} d
+
+En andregradsfunksjon $r$ er vist i {numref}`fig-andregradsfunksjoner-representasjoner-nullpunktsform-oppgave-7-d`.
+
+
+Bestem standardformen til $r(x)$.
+
+:::{figure} ./figurer/oppgaver/oppgave_7/d.svg
+---
+name: fig-andregradsfunksjoner-representasjoner-nullpunktsform-oppgave-7-d
+width: 80%
+class: no-click
+---
+viser grafen til en andregradsfunksjon $r$.
+:::
+
+:::{admonition} Fasit
+---
+class: dropdown, answer
+---
+$$
+r(x) = -\dfrac{1}{2}x^2 - 2x - 6
+$$
+:::
+
+:::::::::::::
+
+
+::::::::::::::
+
+
+
+
+
+
+:::::::::::::::
 
