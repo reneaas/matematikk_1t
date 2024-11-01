@@ -443,17 +443,17 @@ file: ./ggb/underveisoppgaver/underveisoppgave_2.html
 
 ````{tab} Python
 
+> Her vil du se at vi bruker `casify`{l=python} i stedet for `sympy`{l=python} for å løse oppgaven. Herfra og utover vil vi erstatte `sympy`{l=python} med `casify`{l=python} fordi det gir oss mindre kode å skrive for å løse oppgavene!
+
+Kjør programmet og se på utskriften for å se sammenhengen med svaret under!
+
 :::{raw} html
 ---
 file: ./python/underveisoppgaver/underveisoppgave_2.html
 ---
 :::
 
-Kjører vi programmet, får vi utskriften 
 
-```console
-{a: -1, b: 1, c: 2}
-```
 
 ````
 
