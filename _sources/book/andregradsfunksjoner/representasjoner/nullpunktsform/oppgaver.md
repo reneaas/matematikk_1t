@@ -482,9 +482,35 @@ class: problem-level-3
 ---
 > Mange andregradsfunksjoner har ikke noen nullpunkter. Likevel kan vi bruke nullpunktsform som del av en strategi for å bestemme funksjonsuttrykket til funksjonen. I denne oppgaven skal du lære hvordan vi kan gjøre dette.
 
+::::::::::::::{admonition} Strategi
+---
+class: summary
+---
+Hvis en andregradsfunksjon skjærer linja $y = y_0$ i $x = x_1$ og $x = x_2$, kan vi uttrykke $f(x)$ som 
+
+:::{figure} ./figurer/oppgaver/oppgave_7/nullpunktsform_forskyvning.svg
+---
+width: 60%
+class: no-click
+---
+:::
+
+---
+
+:::{figure} ./figurer/oppgaver/oppgave_7/teori.svg
+---
+width: 80%
+class: no-click
+---
+:::
+
+::::::::::::::
+
+Du kan prøve å anvende strategien på oppgavene under direkte, eller du kan lese eksempelet under hvis du trenger litt mer detaljer for å komme i gang!
+
 ::::::::::::::{admonition} Eksempel
 ---
-class: example
+class: example, dropdown
 ---
 Grafen til en andregradsfunksjon $f$ er vist i {numref}`fig-andregradsfunksjoner-representasjoner-nullpunktsform-oppgave-7-eksempel`. 
 
@@ -503,10 +529,10 @@ viser grafen til en andregradsfunksjon $f$.
 ---
 class: solution
 ---
-Vi kan merke oss at grafen til $f$ skjærer linja $y = 2$ i punktene $(-3, 2)$ og $(-1, 2)$ Hvis vi hadde forskjøvet grafen *ned* med $2$ enheter, ville grafen skjært $x$-aksen i $x = -2$ og $x = -1$. Derfor kan vi skrive $f(x)$ som
+Grafen til $f$ skjærer linja $y = 2$ i $x = -3$ og $x = -1$. Dermed kan v
 
 $$
-f(x) = a\underbrace{(x + 3)(x + 1)}_{\text{Skjæring med } y = 2} + 2
+f(x) = a(x + 3)(x + 1) + 2
 $$
 
 Vi kan se at grafen skjærer $y$-aksen i $y = 5$ som betyr at 
