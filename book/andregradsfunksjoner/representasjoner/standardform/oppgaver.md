@@ -481,7 +481,7 @@ $$
 
 ````{tab} Python
 
-> Her vil du se en ny Python-pakke som heter `casify`{l=python}. Denne pakken kommer vi til å erstatte `sympy`{l=python} med videre fordi den gir oss mindre kode å skrive for å løse oppgavene! Den er skrevet av oss for å gjøre det så enkelt som mulig å bruke CAS i Python.
+> Her vil du se en ny Python-pakke som heter `casify`{l=python}. Denne pakken kommer vi til å erstatte `sympy`{l=python} med videre fordi den gir oss mindre kode å skrive for å løse oppgavene! 
 
 Kjør programmet og se på utskriften for å se sammenhengen med svaret under!
 
