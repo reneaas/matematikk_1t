@@ -58,6 +58,7 @@ onmessage = async (event) => {
     const messageId = event.data.messageId;
     if (event.data.type === 'init') {
         const pyodide = await pyodideReadyPromise;
+        await pyodide.loadPackage("micropip");
         initialGlobals = new Set(pyodide.globals.keys());
         postMessage(JSON.stringify({ type: 'initReady' }));
     }
