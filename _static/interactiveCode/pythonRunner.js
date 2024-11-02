@@ -54,15 +54,27 @@ class PythonRunner {
             }
         }
 
+        // const callback = (data) => {
+        //     if (data.type === 'stdout' || data.type === 'stderr') {
+        //         this.handleWorkerMessage(data);
+        //     }
+        //     if (data.type === 'executionComplete') {
+        //         // Code execution is complete
+        //         console.log("Code execution complete for messageId:", data.messageId);
+        //     }
+        // };
+
         const callback = (data) => {
-            if (data.type === 'stdout' || data.type === 'stderr') {
+            if (data.type === 'stdout') {
                 this.handleWorkerMessage(data);
+            } else if (data.type === 'stderr') {
+                this.handleErrorMessage(data.msg);  // Displays the error
             }
             if (data.type === 'executionComplete') {
-                // Code execution is complete
                 console.log("Code execution complete for messageId:", data.messageId);
             }
         };
+        
 
         this.workerManager.runCode(this.currentCode, callback);
     }
@@ -94,7 +106,7 @@ class PythonRunner {
             .replace(/oo/g, '∞')
             .replace(/\|/g, '∨');
             outputElement.innerHTML += this.formatErrorMessage(formattedMsg);
-            this.highlightLine(this.editorInstance, formattedMsg);
+            this.highlightLine(this.editorInstance, data.msg);
             this.scrollToBottom(outputElement);
 
         } else if (type === 'stderr') {
@@ -130,12 +142,13 @@ class PythonRunner {
 
 
     highlightLine(editor, msg) {
-        const linePattern = /File "&lt;exec&gt;", line (\d+)/g;
+        const linePattern = /File "<exec>", line (\d+)/;
         const match = linePattern.exec(msg);
         if (match) {
             const lineNumber = parseInt(match[1]) - 1;
             console.log("Highlighting line:", lineNumber);
             editor.highlightLine(lineNumber);
+            console.log("Highlighting error at line:", lineNumber);
         }
     }
 
@@ -255,14 +268,15 @@ class PythonRunner {
                 `;
                 knownError = true;
             }
-    
-            if (knownError) {
-                this.addAdmonitionToContainer(title, content, this.errorBoxId); 
-            }
+            
+            // Currently does not work as intended
+            // if (knownError) {
+            //     this.addAdmonitionToContainer(title, content, this.errorBoxId); 
+            // }
         }
     
         // Highlight the line number in the pattern 'File "<exec>", line <number>'
-        const fileLinePattern = /File "&lt;exec&gt;", line (\d+)/g;
+        const fileLinePattern = /File "<exec>", line (\d+)/g;
         formattedMessage = formattedMessage.replace(fileLinePattern, (match, p1) => {
             return match.replace(`line ${p1}`, `<span class="error-line">line ${p1}</span>`);
         });
