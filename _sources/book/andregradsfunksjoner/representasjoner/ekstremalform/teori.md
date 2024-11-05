@@ -72,7 +72,7 @@ viser grafen til en andregradsfunksjon $f$.
 ---
 class: solution
 ---
-1. Siden grafen til $f$ er *konkav* $\frown$, har $f$ et bunnpunkt.
+1. Siden grafen til $f$ er *konkav* $\frown$, har $f$ et toppunkt.
 2. Det høyeste punktet på grafen er $(-1, 2)$. Dette er ekstremalpunktet til $f$.
 :::
 
