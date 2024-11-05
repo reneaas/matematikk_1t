@@ -310,7 +310,13 @@ $$
 f(0) = -6 \quad \land \quad f(-2) = 0 \quad \land \quad f(3) = 0
 $$
 
-som gir oss likningssystemet:
+For eksempel betyr dette at 
+
+$$
+f(-2) = a \cdot (-2)^2 + b \cdot (-2) + c = = 4a - 2b + c = 0
+$$
+
+Gjør vi tilsvarende utregning for de to andre punktene, får vi likningssystemet:
 
 $$
 c = -6 \quad \land \quad 4a - 2b + c = 0 \quad \land \quad 9a + 3b + c = 0
