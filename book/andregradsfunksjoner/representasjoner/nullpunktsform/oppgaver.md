@@ -171,7 +171,7 @@ viser grafen til en andregradsfunksjon $h$.
 class: dropdown, answer
 ---
 $$
-g(x) = -(x + 3)(x - 1)
+h(x) = -(x + 3)(x - 1)
 $$
 ::::
 :::::::::::::
