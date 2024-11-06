@@ -101,4 +101,4 @@ plt.text(
 plt.axis("equal")
 plt.axis("off")
 
-plt.savefig("../../figurer/oppgaver/oppgave_4.svg")
+plt.savefig("../../figurer/oppgaver/oppgave_8.svg")
