@@ -4,7 +4,6 @@
 ---
 class: tip
 ---
-Etter denne seksjonen, er målet at du skal:
 * Kunne bruke fullstendig kvadraters metode til å skrive om et andregradsuttrykk fra standardform til ekstremalform. 
 * Kunne bruke konjugatsetningen til å skrive om et andregradsuttrykk fra ekstremalform til nullpunktsform.
 * Kunne bestemme om en andregradsfunksjon har nullpunkter ved hjelp av fullstendig kvadraters metode og konjugatsetningen.
