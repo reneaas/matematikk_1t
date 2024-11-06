@@ -126,7 +126,7 @@ $$
 ---
 class: check
 ---
-Bruk kvadratsetningen til å skrive om andregradsuttrykkene til nullpunktsform.
+Bruk kvadratsetningene til å skrive om andregradsuttrykkene til nullpunktsform.
 
 ::::::::::::::{tab-set}
 ---
@@ -214,7 +214,7 @@ Men bare den positive løsningen gir oss en identitet, som betyr at vi må ha $s
 :::::::::::::::
 
 
-
+<!-- 
 ## Geometrisk begrunnelse for 1. og 2.kvadratsetning
 
 Du skal få prøve å begrunne de to første kvadratsetningene i underveisoppgavene under. Du starter med 1.kvadratsetning:
@@ -332,4 +332,4 @@ $$
 Dermed har vi vist konjugatsetningen algebraisk.
 ```
 
-````
+```` -->
