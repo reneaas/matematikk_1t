@@ -304,7 +304,9 @@ $$
 f(x) = ax^2 + bx + c.
 $$
 
-Vi har tre ukjente koeffisienter – vi må derfor ha tre likninger for å kunne bestemme $a$, $b$ og $c$. Fra grafen ser vi at 
+Vi har tre ukjente koeffisienter – vi må derfor ha tre likninger for å kunne bestemme $a$, $b$ og $c$. 
+
+Fra {numref}`fig-andregradsfunksjoner-representasjoner-standardform-eksempel-2`, kan vi lese av at grafen til $f$ går gjennom punktene $(0, -6)$ og $(-2, 0)$ og $(3, 0)$. Dette betyr at $f(x)$ må oppfylle likningssystemet:
 
 $$
 f(0) = -6 \quad \land \quad f(-2) = 0 \quad \land \quad f(3) = 0
@@ -312,63 +314,61 @@ $$
 
 For eksempel betyr dette at 
 
-$$
-f(-2) = a \cdot (-2)^2 + b \cdot (-2) + c = = 4a - 2b + c = 0
-$$
-
-Gjør vi tilsvarende utregning for de to andre punktene, får vi likningssystemet:
-
-$$
-c = -6 \quad \land \quad 4a - 2b + c = 0 \quad \land \quad 9a + 3b + c = 0
-$$
-
-Siden $c = -6$, kan vi redusere likningssystemet til to likninger:
-
 \begin{align*}
-    4a - 2b - 6 &= 0 \quad\quad (\mathrm{I})\\
+    f(-2) &= a \cdot (-2)^2 + b \cdot (-2) + c\\
     \\
-    9a + 3b - 6 &= 0 \quad\quad (\mathrm{II})\\
+    0 &= 4a - 2b + c
 \end{align*}
 
-Fra likning $\mathrm{I}$ får vi 
+Vi gjør tilsvarende utregninger for de to andre betingelsene:
 
 \begin{align*}
-    4a - 2b - 6 &= 0 \\
+    f(0) &= a \cdot 0^2 + b \cdot 0 + c \\
     \\
-    4a - 6 &= 2b \\
-    \\
-    \dfrac{4a}{2} - \dfrac{6}{2} &= \dfrac{2b}{2} \\
-    \\
-    2a - 3 &= b
+    -6 &= c
 \end{align*}
 
-Setter vi dette inn i likning $\mathrm{II}$ får vi
+og
 
 \begin{align*}
-    9a + 3(2a - 3) - 6 &= 0 \\
+    f(3) &= a \cdot 3^2 + b \cdot 3 + c \\
     \\
-    9a + 6a - 9 - 6 &= 0 \\
-    \\
-    15a - 15 &= 0 \\
-    \\
-    15a &= 15 \\
-    \\
-    a &= 1
+    0 &= 9a + 3b + c
 \end{align*}
 
-Til slutt bestemmer vi $b$:
+Derfor får vi likningssystemet
 
-$$
-b = 2a - 3 = 2 \cdot 1 - 3 = -1.
-$$
+\begin{align*}
+    4a - 2b + c &= 0 && \mathrm{(I)} \\
+    \\
+    c &= -6 && \mathrm{(II)} \\
+    \\
+    9a + 3b + c &= 0 && \mathrm{(III)} \\
+\end{align*}
+
+Vi løser likningssystemet med CAS. 
+
+````{tab} Geogebra
+
+:::{raw} html
+---
+file: ./ggb/eksempler/eksempel_2.html
+---
+:::
+
+````
+
+````{tab} Python
+
+:::{raw} html
+---
+file: ./python/eksempler/eksempel_2.html
+---
+:::
+
+````
 
 Dermed er 
-
-$$
-a = 1 \quad \land \quad b = -1 \quad \land \quad c = -6
-$$
-
-som betyr at 
 
 $$
 f(x) = ax^2 + bx + c = x^2 - x - 6.
@@ -433,7 +433,7 @@ $$
 a - b + c = 0 \quad \land \quad 4a + 2b + c = 0 \quad \land \quad c = 2
 $$
 
-Denne gangen løser vi likningssystemet med CAS. 
+Vi løser likningssystemet med CAS. 
 
 
 ````{tab} Geogebra
