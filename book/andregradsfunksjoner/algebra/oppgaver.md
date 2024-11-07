@@ -31,43 +31,15 @@ $$
 
 ::::{grid-item-card}
 ---
-link: ./fullstendig_kvadraters_metode/oppgaver
+link: ./omgjøring_av_andregradsuttrykk/oppgaver
 link-type: doc
 ---
-**Oppgaver: Fullstendig kvadraters metode**
+**Oppgaver: Omgjøring av andregradsuttrykk**
 
 ^^^
 
-$$
-x^2 + 2x + 4 = (x + 1)^2 + 3
-$$
-
-$$
-x^2 - 4x - 9 = (x - 2)^2 - 13
-$$
-
-$$
-x^2 + 6x + 9 = (x + 3)^2 + 0
-$$
-
-::::
-
-
-::::{grid-item-card}
----
-link: ./blandet/oppgaver
-link-type: doc
----
-**Blandede oppgaver**
-
-^^^
-
-:::{figure} ./fullstendig_kvadraters_metode/figurer/teori/fullstendig_kvadrat.svg
----
-width: 100%
----
+:::{include} ./omgjøring_av_andregradsuttrykk/figurer/teori/representasjoner_diagram.md
 :::
 
-::::
 
-:::::
+::::
