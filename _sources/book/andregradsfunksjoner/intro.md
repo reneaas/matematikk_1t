@@ -52,11 +52,19 @@ link-type: doc
 
 ^^^
 
-:::{figure} ./algebra/fullstendig_kvadraters_metode/figurer/teori/fullstendig_kvadrat.svg
----
-width: 100%
-class: no-click
----
+$$
+(a + b)^2 = a^2 + 2ab + b^2
+$$
+
+$$
+(a - b)^2 = a^2 - 2ab + b^2
+$$
+
+$$
+a^2 - b^2 = (a + b)(a - b)
+$$
+
+:::{include} ./algebra/omgjøring_av_andregradsuttrykk/figurer/teori/representasjoner_diagram.md
 :::
 
 ---
