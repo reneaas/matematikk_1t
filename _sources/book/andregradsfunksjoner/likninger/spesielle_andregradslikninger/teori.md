@@ -4,7 +4,6 @@
 ---
 class: tip
 ---
-Etter å ha gått gjennom denne delen, er målet at du skal:
 * Kunne løse spesielle andregradslikninger algebraisk.
 :::
 

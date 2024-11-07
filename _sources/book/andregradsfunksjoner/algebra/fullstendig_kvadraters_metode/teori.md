@@ -1,12 +1,17 @@
-# Fullstendige kvadraters metode
+# Omgjøring av andregradsuttrykk
 
-:::{admonition} Læringsmål: Fullstendig kvadraters metode
+:::{admonition} Læringsmål
 ---
 class: tip
 ---
 * Kunne bruke fullstendig kvadraters metode til å skrive om et andregradsuttrykk fra standardform til ekstremalform. 
 * Kunne bruke konjugatsetningen til å skrive om et andregradsuttrykk fra ekstremalform til nullpunktsform.
-* Kunne bestemme om en andregradsfunksjon har nullpunkter ved hjelp av fullstendig kvadraters metode og konjugatsetningen.
+* Kunne avgjøre hvor mange nullpunkter en andregradsfunksjon har ved hjelp av algebraiske metoder.
+:::
+
+Vi har så langt utforsket ulike måter å skrive andregradsfunksjoner på og hvordan de gir oss ulik informasjon om en andregradsfunksjon. Så langt har vi klart å komme oss fra nullpunktsform og ekstremalform til standardform – men motsatt vei har vi ikke hatt noen strategi for å gjøre. Her skal vi utvikle verktøy for å gå motsatt vei!
+
+:::{include} ./figurer/teori/representasjoner_diagram.md
 :::
 
 :::::::::::::::{admonition} Repetisjon
@@ -65,9 +70,11 @@ width: 100%
 
 :::::::::::::::
 
-Så langt har vi sett av vi kan gå fra nullpunktsformen og fra ekstremalformen til standardformen – men å gå motsatt vei er ikke like rett frem. Her skal vi utvikle verktøy for å gå motsatt vei!
 
 ## Fra standardform til ekstremalform – fullstendige kvadraters metode
+
+:::{include} ./figurer/teori/standardform_til_ekstremalform.md
+:::
 
 Fullstendige kvadraters metode lar oss skrive om et andregradsuttrykk på formen
 
@@ -75,7 +82,7 @@ $$
 x^2 + bx + c
 $$
 
-fra standardform til ekstremalform. Det er ikke et uhell at $a = 1$ i uttrykket – men det kommer vi tilbake til senere. 
+fra standardform til ekstremalform. Det er ikke et uhell at $a = 1$ i uttrykket – men det kommer vi tilbake til i oppgavene. 
 
 Den fungerer i to steg:
 1. Legg til og trekk fra et tall så du får inn en kvadratsetning.
@@ -229,6 +236,9 @@ Med andre ord, vi gjør følgende:
 
 Nå vet vi hvordan vi kan bruke fullstendige kvadraters metode til å gå fra standardform til ekstremalform. Det neste steget i prosessen er å gå fra ekstremalform til nullpunktsform – dette oppnår vi ved å bruke konjugatsetningen.
 
+:::{include} ./figurer/teori/ekstremalform_til_nullpunktsform.md
+:::
+
 
 ::::{admonition} Repetisjon: konjugatsetningen
 ---
@@ -327,67 +337,8 @@ class: dropdown, solution
 
 ---
 
-## Andregradslikninger
 
-Når vi har lært oss å skrive om andregradsuttrykk fra standardform til nullpunktsform, har vi i praksis lært oss å løse **andregradslikninger**. La oss se på et eksempel
-
-:::::{admonition} Eksempel 2: andregradslikning
----
-class: example
----
-Løs likningen 
-
-$$
-x^2 + 3x - 5 = 4x - 3
-$$
-
-::::{admonition} Løsning
----
-class: solution
----
-Vi starter med å samle alle leddene på én side av likningen:
-
-\begin{align*}
-    x^2 + 3x - 5 &= 4x - 3 \\
-    \\
-    x^2 + 3x - 5 \textcolor{red}{- 4x + 3} &= 4x - 3  \textcolor{red}{- 4x + 3} \\
-    \\
-    x^2 - x - 2 &= 0.
-\end{align*}
-
-Løsningen av likningen er derfor det samme som å nullpunktene til $f(x) = x^2 - x - 2$. Hvis vi skriver om $f(x)$ til nullpunktsform, har vi derfor effektivt løst likningen. 
-
-Så skriver vi om andregradsuttrykket i likningen i følgende steg:
-1. Fra standardform til ekstremalform med fullstendige kvadraters metode
-2. Fra ekstremalform til nullpunktsform med konjugatsetningen
-
-
-\begin{align*}
-    x^2 - x - 2 &= \underbrace{x^2 - x + \textcolor{red}{\left(-\dfrac{1}{2}\right)^2}}_{\text{2.kvadratsetning}} - \textcolor{red}{\left(-\dfrac{1}{2}\right)^2} - 2 \\
-    \\
-    &= \left(x - \dfrac{1}{2}\right)^2 - \dfrac{1}{4} - 2 && \text{Brukte 2.kvadratsetning}\\
-    \\
-    &= \left(x - \dfrac{1}{2}\right)^2 - \dfrac{9}{4} \\
-    \\
-    &= \left(x - \dfrac{1}{2}\right)^2 - \left(\dfrac{3}{2}\right)^2 && \text{$a = x - \dfrac{1}{2}$ og $b = \dfrac{3}{2}$}\\
-    \\
-    &= \left(x - \dfrac{1}{2} + \dfrac{3}{2}\right)\left(x - \dfrac{1}{2} - \dfrac{3}{2}\right) && \text{Brukte konjugatsetning} \\
-    \\
-    &= \left(x + 1\right)\left(x - 2\right).
-\end{align*}
-
-Nå har vi uttrykket på nullpunktsform som gir oss løsningene til likningen:
-
-$$
-x = -1 \quad \lor \quad x = 2
-$$
-
-::::
-
-
-:::::
-
-## Antall løsninger
+## Antall nullpunkter
 
 Vi kan bruke strategiene vi har sett på her til å bestemme om hvor mange nullpunkter en andregradsfunksjon har. Vi tar et eksempel med to, én og ingen løsninger.
 
@@ -491,7 +442,7 @@ Her kan vi ikke skrive om uttrykket ved hjelp av konjugatsetningen $a^2 - b^2 = 
 
 ---
 
-:::::::::::::::{admonition} Underveisoppgave 3
+:::::::::::::::{admonition} Underveisoppgave 2
 ---
 class: check
 ---
@@ -543,17 +494,3 @@ Ingen nullpunkter.
 
 
 :::::::::::::::
-
-
-<!-- ---
-
-## Fullstendige kvadrater
-
-Vi har allerede sett at vi kan skrive om et andregradsuttrykk på formen $ax^2 + bx + c$ til en form som er lettere å jobbe med. Dette gjør vi ved å fullføre kvadrater. 1. og 2.kvadratsetning er eksempler på fullstendige kvadrater. Det kan vi se i {numref}`fullstendig_kvadrat`.
-
-:::{figure} ./figurer/teori/fullstendig_kvadrat.svg
----
-width: 80%
----
-Viser 1.kvadratsetning geometrisk. Et kvadrat med areal $(a + b)^2$ har samme areal som summen av arealene til to kvadrater med areal $a^2$ og $b^2$, og to rektangler med areal $ab$. Dermed får vi $(a + b)^2 = a^2 + 2ab + b^2$. Det er herfra begrepet *fullstendig kvadrat* kommer fra.
-::: -->
