@@ -325,13 +325,73 @@ class: dropdown, solution
 
 :::::
 
+---
 
+## Andregradslikninger
+
+Når vi har lært oss å skrive om andregradsuttrykk fra standardform til nullpunktsform, har vi i praksis lært oss å løse **andregradslikninger**. La oss se på et eksempel
+
+:::::{admonition} Eksempel 2: andregradslikning
+---
+class: example
+---
+Løs likningen 
+
+$$
+x^2 + 3x - 5 = 4x - 3
+$$
+
+::::{admonition} Løsning
+---
+class: solution
+---
+Vi starter med å samle alle leddene på én side av likningen:
+
+\begin{align*}
+    x^2 + 3x - 5 &= 4x - 3 \\
+    \\
+    x^2 + 3x - 5 \textcolor{red}{- 4x + 3} &= 4x - 3  \textcolor{red}{- 4x + 3} \\
+    \\
+    x^2 - x - 2 &= 0.
+\end{align*}
+
+Løsningen av likningen er derfor det samme som å nullpunktene til $f(x) = x^2 - x - 2$. Hvis vi skriver om $f(x)$ til nullpunktsform, har vi derfor effektivt løst likningen. 
+
+Så skriver vi om andregradsuttrykket i likningen i følgende steg:
+1. Fra standardform til ekstremalform med fullstendige kvadraters metode
+2. Fra ekstremalform til nullpunktsform med konjugatsetningen
+
+
+\begin{align*}
+    x^2 - x - 2 &= \underbrace{x^2 - x + \textcolor{red}{\left(-\dfrac{1}{2}\right)^2}}_{\text{2.kvadratsetning}} - \textcolor{red}{\left(-\dfrac{1}{2}\right)^2} - 2 \\
+    \\
+    &= \left(x - \dfrac{1}{2}\right)^2 - \dfrac{1}{4} - 2 && \text{Brukte 2.kvadratsetning}\\
+    \\
+    &= \left(x - \dfrac{1}{2}\right)^2 - \dfrac{9}{4} \\
+    \\
+    &= \left(x - \dfrac{1}{2}\right)^2 - \left(\dfrac{3}{2}\right)^2 && \text{$a = x - \dfrac{1}{2}$ og $b = \dfrac{3}{2}$}\\
+    \\
+    &= \left(x - \dfrac{1}{2} + \dfrac{3}{2}\right)\left(x - \dfrac{1}{2} - \dfrac{3}{2}\right) && \text{Brukte konjugatsetning} \\
+    \\
+    &= \left(x + 1\right)\left(x - 2\right).
+\end{align*}
+
+Nå har vi uttrykket på nullpunktsform som gir oss løsningene til likningen:
+
+$$
+x = -1 \quad \lor \quad x = 2
+$$
+
+::::
+
+
+:::::
 
 ## Antall løsninger
 
 Vi kan bruke strategiene vi har sett på her til å bestemme om hvor mange nullpunkter en andregradsfunksjon har. Vi tar et eksempel med to, én og ingen løsninger.
 
-:::::::::::::::{admonition} Eksempel 2
+:::::::::::::::{admonition} Eksempel 3
 ---
 class: example 
 ---
@@ -423,7 +483,7 @@ Vi bruker først fullstendig kvadraters metode til å bestemme ekstremalformen:
     &= (x + 1)^2 + 2 && \text{Faktoriserte med 1.kvadratsetning}.
 \end{align*}
 
-Her kan vi ikke skrive om uttrykket ved hjelp av konjugatsetningen $a^2 - b^2 = (a + b)(a - b)$ siden konstantleddet ikke er positivt. Dermed har $f$ ingen nullpunkter.
+Her kan vi ikke skrive om uttrykket ved hjelp av konjugatsetningen $a^2 - b^2 = (a + b)(a - b)$ siden konstantleddet er **positivt**. Dermed har $f$ ingen nullpunkter.
 :::::::::::::
 ::::::::::::::
 
