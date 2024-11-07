@@ -132,7 +132,7 @@ Bestem ekstremalformen til $g(x)$.
 class: dropdown, answer
 ---
 $$
-g(x) = -(x + 1)^2 + 2
+g(x) = -(x - 2)^2 + 1
 $$
 :::
 :::::::::::::
