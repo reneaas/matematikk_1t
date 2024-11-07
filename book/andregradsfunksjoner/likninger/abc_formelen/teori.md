@@ -4,10 +4,77 @@
 ---
 class: tip
 ---
-Etter dette delkapitlet, er målet at du skal:
+* Kunne løse andregradslikninger ved å skrive om et andregradsuttrykk fra standardform til nullpunktsform.
 * Kunne løse andregradslikninger med $abc$-formelen.
 * Kunne bestemme antall løsninger for en andregradslikning. 
 ::::
+
+## Andregradslikninger
+
+En **andregradslikning** er en likning som alltid kan skrives på formen 
+
+$$
+ax^2 + bx + c = 0.
+$$
+
+Vi kan gjenkjenne dette som å bestemme nullpunktene til en andregradsfunksjon $f(x) = ax^2 + bx + c$. Vi har allerede sett på hvordan vi kan skrive om et andregradsuttrykk fra standardform til ekstremalform og deretter til nullpunktsform – dette er første steg mot å bestemme den helt generelle løsningen av en andregradslikning.
+
+Vi tar et eksempel.
+
+:::::{admonition} Eksempel 1: andregradslikning
+---
+class: example
+---
+Løs likningen 
+
+$$
+x^2 + 3x - 5 = 4x - 3
+$$
+
+::::{admonition} Løsning
+---
+class: solution
+---
+Vi starter med å samle alle leddene på én side av likningen:
+
+\begin{align*}
+    x^2 + 3x - 5 &= 4x - 3 \\
+    \\
+    x^2 + 3x - 5 \textcolor{red}{- 4x + 3} &= 4x - 3  \textcolor{red}{- 4x + 3} \\
+    \\
+    x^2 - x - 2 &= 0.
+\end{align*}
+
+Løsningen av likningen er derfor det samme som å nullpunktene til $f(x) = x^2 - x - 2$. Hvis vi skriver om $f(x)$ til nullpunktsform, har vi derfor effektivt løst likningen. 
+
+Så skriver vi om andregradsuttrykket i likningen i følgende steg:
+1. Fra standardform til ekstremalform med fullstendige kvadraters metode
+2. Fra ekstremalform til nullpunktsform med konjugatsetningen
+
+
+\begin{align*}
+    x^2 - x - 2 &= \underbrace{x^2 - x + \textcolor{red}{\left(-\dfrac{1}{2}\right)^2}}_{\text{2.kvadratsetning}} - \textcolor{red}{\left(-\dfrac{1}{2}\right)^2} - 2 \\
+    \\
+    &= \left(x - \dfrac{1}{2}\right)^2 - \dfrac{1}{4} - 2 && \text{Brukte 2.kvadratsetning}\\
+    \\
+    &= \left(x - \dfrac{1}{2}\right)^2 - \dfrac{9}{4} \\
+    \\
+    &= \left(x - \dfrac{1}{2}\right)^2 - \left(\dfrac{3}{2}\right)^2 && \text{$a = x - \dfrac{1}{2}$ og $b = \dfrac{3}{2}$}\\
+    \\
+    &= \left(x - \dfrac{1}{2} + \dfrac{3}{2}\right)\left(x - \dfrac{1}{2} - \dfrac{3}{2}\right) && \text{Brukte konjugatsetning} \\
+    \\
+    &= \left(x + 1\right)\left(x - 2\right).
+\end{align*}
+
+Nå har vi uttrykket på nullpunktsform som gir oss løsningene til likningen:
+
+$$
+x = -1 \quad \lor \quad x = 2
+$$
+
+::::
+:::::
+
 
 På dette tidspunktet har vi gjort nok forberedelser til å kunne komme fram til en helt generell løsning for *alle* andregradslikninger når de er skrevet på formen
 
@@ -43,9 +110,6 @@ class: no-click
 ---
 :::
 
-<!-- $$
-ax^2 + bx + c = 0
-$$ -->
 
 er gitt ved
 
@@ -56,14 +120,11 @@ class: no-click
 ---
 ::::
 
-<!-- $$
-x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
-$$ -->
 :::
 
 Senere skal du få utlede denne formelen med litt hjelp – nå tar vi et eksempel på bruken av den.
 
-::::{admonition} Eksempel 1: $abc$-formelen
+::::{admonition} Eksempel 2: $abc$-formelen
 ---
 class: example
 ---
@@ -245,7 +306,7 @@ Antall løsninger likningen har er bestemt av betingelsene i tabellen under.
 
 Vi tar et eksempel.
 
-:::::::::::::::{admonition} Eksempel 2
+:::::::::::::::{admonition} Eksempel 3
 ---
 class: example
 ---

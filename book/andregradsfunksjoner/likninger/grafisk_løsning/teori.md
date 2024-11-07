@@ -4,7 +4,6 @@
 ---
 class: tip
 ---
-Etter dette delkapittelet, er målet at du skal:
 * Kunne løse andregradslikninger grafisk. 
 
 ::::
