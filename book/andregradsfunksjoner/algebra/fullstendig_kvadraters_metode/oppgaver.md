@@ -223,7 +223,7 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 3
+:::::::::::::::{admonition} Oppgave 4
 ---
 class: problem-level-2
 ---
@@ -264,7 +264,7 @@ $$
 ---
 
 
-:::::::::::::::{admonition} Oppgave 4
+:::::::::::::::{admonition} Oppgave 5
 ---
 class: problem-level-2
 ---
@@ -337,5 +337,89 @@ $$
 ::::::::::::::
 
 
+
+:::::::::::::::
+
+---
+
+
+
+:::::::::::::::{admonition} Oppgave 6
+---
+class: problem-level-3
+---
+Bestem de ukjente koeffisientene så sammenhengene blir **identiteter**.
+
+:::{admonition} Påminnelse: identitet
+---
+class: dropdown, hints
+---
+En **identitet** er en likning som er sann for **alle** verdier av variabelene i likningen.
+:::
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+$$
+(x + 2)(x - 4) = (x - a)^2 + b
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+a = 1 \quad \land \quad b = -9
+$$
+:::
+:::::::::::::
+
+:::::::::::::{tab-item} b
+$$
+(x + 2)^2 - 4 = (x - r)(x + s)
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+r = 0 \, \land \, s = 4 \quad \lor \quad r = -4 \, \land \, s = 0
+$$
+:::
+:::::::::::::
+
+:::::::::::::{tab-item} c
+$$
+(x - 1)(x - a) = \left(x + \dfrac{3}{2}\right)^2 + b
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+a = -4 \quad \land \quad b = -\dfrac{25}{4}
+$$
+:::
+:::::::::::::
+
+:::::::::::::{tab-item} d
+$$
+(x - k)^2 - 16 = (x + 2)(x - r)
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+k = -6 \, \land \, r = -10 \quad \lor \quad k = 2 \, \land \, r = 6
+$$
+:::
+:::::::::::::
+::::::::::::::
 
 :::::::::::::::
