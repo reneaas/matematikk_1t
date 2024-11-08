@@ -8,7 +8,7 @@ class: tip
 * Kunne forklare hva en matematisk identitet er, avgjøre om en sammenheng er en identitet, og gi konkrete eksempler på identiteter. 
 :::
 
-Vi har så langt sett på de tre ulike representasjonene til en andregradsfunksjon. 
+Vi har så langt sett på de tre ulike representasjonene til en andregradsfunksjon. Vi klarer å gå fra nullpunktsform eller fra ekstramalform til standardform, men vi har hittil ikke noen verktøy for å gå fra motsatt vei. Her skal vi starte prosessen med å bygge opp verktøykassa vår for å kunne gjøre dette ved å se på det vi kaller for **kvadratsetningene**. 
 
 Det finnes til sammen tre kvadratsetninger. Vi skal begrunne de to første geometrisk, og den siste algebraisk.
 
