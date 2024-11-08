@@ -14,13 +14,13 @@ Vi har så langt utforsket ulike måter å skrive andregradsfunksjoner på og hv
 :::{include} ./figurer/teori/representasjoner_diagram.md
 :::
 
-:::::::::::::::{admonition} Repetisjon
+:::::::::::::::{admonition} Repetisjon: representasjoner av andregradsfunksjoner
 ---
-class: reminder, full-width
+class: reminder, dropdown
 ---
 Til nå har vi sett at ulike måter å skrive en andregradsfunksjon på gir oss ulik informasjon om funksjonen:
 
-::::::::::::::{grid}
+::::::::::::::{grid} 1 1 2 2 
 ---
 gutter: 1
 ---
@@ -147,7 +147,6 @@ Se i oppsummeringsboksen når du har lest eksemplene og prøvd å komme fram til
 
 :::::::::::::::
 
-Før du leser oppsummeringsboksen under, kan du prøve å anvende metoden i underveisoppgaven under!
 
 :::::::::::::::{admonition} Underveisoppgave 1
 ---
@@ -211,8 +210,7 @@ $$
 :::::::::::::::
 
 
-
----
+Før du leser oppsummeringsboksen under, bør du prøve på underveisoppgave 1!
 
 ---
 
