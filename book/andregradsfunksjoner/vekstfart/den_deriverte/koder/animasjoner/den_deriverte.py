@@ -22,6 +22,8 @@ class DerivativeThroughSecants(Scene):
         dx_values = [2, 1, 0.5, 0.25, 0.1, 0.05, 0.01]  # Δx values approaching 0
 
         # Step 3: Animate secant lines with larger domain from x = -3 to x = 3
+        x_min = -5
+        x_max = 5
         secant_lines = []
         for dx in dx_values:
             # Calculate points A and B for the secant line
@@ -40,10 +42,10 @@ class DerivativeThroughSecants(Scene):
 
             # Calculate the start and end points of the secant line for x in [-3, 3]
             x_start, x_end = -3, 3
-            y_start = y_a + secant_slope * (x_start - x_val)
-            y_end = y_a + secant_slope * (x_end - x_val)
-            secant_start = axes.c2p(x_start, y_start)
-            secant_end = axes.c2p(x_end, y_end)
+            y_start = y_a + secant_slope * (x_min - x_val)
+            y_end = y_a + secant_slope * (x_max - x_val)
+            secant_start = axes.c2p(x_min, y_start)
+            secant_end = axes.c2p(x_max, y_end)
 
             # Create the secant line across the larger domain
             secant_line = Line(secant_start, secant_end, color=RED)
@@ -61,14 +63,16 @@ class DerivativeThroughSecants(Scene):
             secant_lines.append(secant_line)  # Keep secant line for fade out later
 
             # Remove the slope text and dots for the next iteration
-            self.play(FadeOut(slope_text), FadeOut(dot_b), run_time=0.5)
+            self.play(
+                FadeOut(slope_text), FadeOut(dot_b), FadeOut(secant_line), run_time=0.5
+            )
 
         # Step 4: Draw the tangent line as Δx approaches 0
         tangent_slope = 2 * x_val  # Derivative of x^2 at x_val is 2*x
-        y_start = y_a + tangent_slope * (x_start - x_val)
-        y_end = y_a + tangent_slope * (x_end - x_val)
+        y_start = y_a + tangent_slope * (x_min - x_val)
+        y_end = y_a + tangent_slope * (x_max - x_val)
         tangent_line = Line(
-            axes.c2p(x_start, y_start), axes.c2p(x_end, y_end), color=ORANGE
+            axes.c2p(x_min, y_start), axes.c2p(x_max, y_end), color=ORANGE
         )
         # tangent_slope_text = MathTex(
         #     f"\\text{{Tangent slope }} m = {tangent_slope:.2f}"
@@ -76,7 +80,7 @@ class DerivativeThroughSecants(Scene):
         slope_text = MathTex(f"a = {tangent_slope:.2f}").move_to(axes.c2p(1, 6))
 
         # Display the tangent line and final slope text
-        self.play(*[FadeOut(secant) for secant in secant_lines])
+        # self.play(*[FadeOut(secant) for secant in secant_lines])
         self.play(Create(tangent_line), Write(slope_text), run_time=2)
 
         # Clean up the scene

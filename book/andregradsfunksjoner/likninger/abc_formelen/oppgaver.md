@@ -266,3 +266,21 @@ k = \pm 2\sqrt{6}
 $$
 :::
 ::::
+
+---
+
+
+:::::::::::::::{admonition} Oppgave XX
+---
+class: problem-level-2
+---
+En elev har skrevet et program for å løse andregradslikninger med $abc$-formelen, men har rotet det til og har fått kodelinjene i tilfeldig rekkefølge.
+
+
+:::{raw} html
+---
+file: ./python/abc_formelen/abc_formelen.html
+---
+:::
+
+:::::::::::::::
