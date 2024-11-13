@@ -208,7 +208,7 @@ Da finner vi:
 x &= 1
 \end{align*}
 
-Dermed skjærer grafen $g$ linja $y = 2$ i punktet $(2, 2)$. Dette har $x$-koordinaten $x = 2$. 
+Dermed skjærer grafen $g$ linja $y = 2$ i punktet $(1, 2)$. Dette har $x$-koordinaten $x = 1$. 
 :::
 ::::
 
