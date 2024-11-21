@@ -175,6 +175,41 @@ $$
 
 :::::::::::::
 
+:::::::::::::{tab-item} c
+
+$$
+-x^2 + 9x + 12 = 0
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x = -1 \, \lor \, x = 4
+$$
+:::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} d
+
+$$
+\dfrac{1}{2}x^2 - \dfrac{3}{4}x - \dfrac{1}{2} = 0
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x = -\dfrac{1}{2} \, \lor \, x = 2
+$$
+:::
+
+:::::::::::::
+
 ::::::::::::::
 
 :::::::::::::::
@@ -182,6 +217,113 @@ $$
 ---
 
 :::::::::::::::{admonition} Oppgave 3
+---
+class: problem-level-1
+---
+Løs likningene med $abc$-formelen.
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+$$
+-x^2 + 2x - 2 = 0
+$$
+:::::::::::::
+
+:::::::::::::{tab-item} b
+$$
+2x^2 + 3x - 2 = 0
+$$
+:::::::::::::
+
+:::::::::::::{tab-item} c
+$$
+x^2 + 8x + 16 = 0
+$$
+:::::::::::::
+
+:::::::::::::{tab-item} d
+$$
+8x^2 - 4x + 2 = 0
+$$
+:::::::::::::
+
+::::::::::::::
+
+
+:::::::::::::::
+
+---
+
+
+:::::::::::::::{admonition} Oppgave 4
+---
+class: problem-level-2
+---
+Løs likningene med $abc$-formelen.
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+$$
+x^2 + x + 1 = x + 5
+$$
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x = -2 \, \lor \, x = 2
+$$
+::::
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+$$
+x^2 + x - 3 = -2x + 1
+$$
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x = -4 \, \lor \, x = 1
+$$
+::::
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+$$
+-x^2 + x + 3 = 3x - 1
+$$
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x = -2 \, \lor \, x = 1
+$$
+::::
+:::::::::::::
+
+::::::::::::::
+
+:::::::::::::::
+
+
+---
+
+
+:::::::::::::::{admonition} Oppgave 5
 ---
 class: problem-level-1
 ---
@@ -244,8 +386,87 @@ Ingen løsning siden $D < 0$.
 
 ---
 
+:::::::::::::::{admonition} Oppgave 6
+---
+class: problem-level-2
+---
+Bestem nullpunktene til funksjonene ved $abc$-formelen.
 
-::::{admonition} Oppgave X
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+$$
+f(x) = x^2 - 2x - 4
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x = 1 - \sqrt{5} \, \lor \, x = 1 + \sqrt{5}
+$$
+:::
+:::::::::::::
+
+:::::::::::::{tab-item} b
+$$
+g(x) = -x^2 + 4x - 3
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x = 1 \, \lor \, x = 3
+$$
+:::
+:::::::::::::
+
+:::::::::::::{tab-item} c
+$$
+h(x) = -x^2 + 4
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x = -2 \, \lor \, x = 2
+$$
+:::
+:::::::::::::
+
+:::::::::::::{tab-item} d
+$$
+p(x) = 2x^2 - 4x + 2
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x = 1
+$$
+:::
+
+:::::::::::::
+
+::::::::::::::
+
+
+:::::::::::::::
+
+
+---
+
+
+::::{admonition} Oppgave 6
 ---
 class: problem-level-2
 ---
