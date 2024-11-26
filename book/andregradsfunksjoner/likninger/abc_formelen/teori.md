@@ -326,7 +326,7 @@ $$
 **Koeffisienter**
 
 $$
-a = 1 \quad \text{og} \quad b = 2 \quad \text{og} \quad c = -8.
+a = 1 \quad \text{og} \quad b = -2 \quad \text{og} \quad c = -8.
 $$
 
 **Diskriminant**
