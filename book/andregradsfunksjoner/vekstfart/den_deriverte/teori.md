@@ -29,7 +29,7 @@ Den deriverte $f'(x)$ gir oss den momentane vekstfarten i et punkt $x$ på grafe
 ---
 class: explore
 ---
-Under vises en animasjon som viser sammenhengen mellom tangenter til grafen til $f(x) = x^2$, og grafen til den deriverte $f'$. 
+Under vises en animasjon som viser sammenhengen mellom tangenter til grafen til $f(x) = x^2 + 2$, og grafen til den deriverte $f'$. 
 
 Grafen til $f$ er vist til venstre og grafen til $f'$ blir tegnet til høyre ut ifra tangentene til $f$.
 
