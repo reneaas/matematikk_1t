@@ -151,7 +151,7 @@ Vi tar utgangspunkt i {numref}`fig-lineære-funksjoner-bestemme-funksjonsuttrykk
 :::{figure} ./figurer/teori/ettpunktsformelen.svg
 ---
 name: fig-lineære-funksjoner-bestemme-funksjonsuttrykk-ettpunktsformelen
-:width: 80%
+width: 80%
 ---
 Viser en lineær funksjon et kjent punkt $(x_1, y_1)$ og et vilkårlig punkt $(x, y)$ er tegnet inn.
 :::
