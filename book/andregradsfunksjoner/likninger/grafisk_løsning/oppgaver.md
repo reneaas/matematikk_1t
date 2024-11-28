@@ -206,7 +206,7 @@ $$
 
 ---
 
-<!-- 
+
 :::::::::::::::{admonition} Oppgave 3
 ---
 class: problem-level-1
@@ -216,8 +216,8 @@ class: problem-level-1
 class: tabs-parts
 ---
 
-:::::::::::::{tab-set} a
-I grafen under vises en andregradsfunksjon $f$ og en lineær funksjon $g$. Løs likningen
+:::::::::::::{tab-item} a
+I {numref}`fig-andregradsfunksjoner-likninger-grafisk-løsning-oppgave-3-a` vises grafene til en andregradsfunksjon $f$ og en lineær funksjon $g$. Løs likningen
 
 $$
 f(x) = g(x).
@@ -230,17 +230,76 @@ name: fig-andregradsfunksjoner-likninger-grafisk-løsning-oppgave-3-a
 width: 80%
 class: no-click
 ---
-viser grafen til en andregradsfunksjon $f$ og en lineær funksjon $g$.
+viser grafene til en andregradsfunksjon $f$ og en lineær funksjon $g$.
 :::
 
 
+::::{admonition} Fasit 
+---
+class: answer, dropdown
+---
+$$
+x = -3 \, \lor \, x = 0
+$$
+::::
+
+
 :::::::::::::
 
-:::::::::::::{tab-set} b
+:::::::::::::{tab-item} b
+
+I {numref}`fig-andregradsfunksjoner-likninger-grafisk-løsning-oppgave-3-b` vises grafene til en andregradsfunksjon $f$ og en lineær funksjon $g$. Løs likningen
+
+$$
+f(x) = g(x). 
+$$
+
+:::{figure} ./figurer/oppgaver/oppgave_3/b.svg
+---
+name: fig-andregradsfunksjoner-likninger-grafisk-løsning-oppgave-3-b
+width: 80%
+class: no-click
+---
+viser grafene til en andregradsfunksjon $f$ og en lineær funksjon $g$.
+:::
+
+::::{admonition} Fasit 
+---
+class: answer, dropdown
+---
+$$
+x = -1 \, \lor \, x = 2
+$$
+::::
 
 :::::::::::::
 
-:::::::::::::{tab-set} c
+:::::::::::::{tab-item} c
+
+I {numref}`fig-andregradsfunksjoner-likninger-grafisk-løsning-oppgave-3-c` vises grafene til en andregradsfunksjon $f$ og en lineær funksjon $g$. Løs likningen
+
+$$
+f(x) = g(x). 
+$$
+
+:::{figure} ./figurer/oppgaver/oppgave_3/c.svg
+---
+name: fig-andregradsfunksjoner-likninger-grafisk-løsning-oppgave-3-c
+width: 80%
+class: no-click
+---
+viser grafene til en andregradsfunksjon $f$ og en andregradsfunksjon $g$.
+:::
+
+
+::::{admonition} Fasit 
+---
+class: answer, dropdown
+---
+$$
+x = -2 \, \lor \, x = 0
+$$
+::::
 
 :::::::::::::
 
@@ -250,4 +309,4 @@ viser grafen til en andregradsfunksjon $f$ og en lineær funksjon $g$.
 :::::::::::::::
 
 
- -->
+

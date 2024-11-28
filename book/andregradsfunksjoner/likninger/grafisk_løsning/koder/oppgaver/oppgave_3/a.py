@@ -8,8 +8,10 @@ def main(dirname, save):
         return (x - 1) * (x + 3)
 
     def g(x):
-        slope = (0 - (-3)) / (1 - (-2))
-        return -3 + slope * (x - (-3))
+        x1, y1 = (-3, 0)
+        x2, y2 = (0, -3)
+        slope = (y2 - y1) / (x2 - x1)
+        return y1 + slope * (x - x1)
 
     # List of functions and their labels.
     functions = [f, g]

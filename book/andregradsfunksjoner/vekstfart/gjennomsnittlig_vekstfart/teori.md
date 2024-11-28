@@ -10,18 +10,19 @@ class: tip
 :::
 
 
-Når vi jobbet med lineære funksjoner, hadde vi en veldefinert tolkning av stigningene til funksjonen – gjennom stigningstallet til en rett linje. Stigningstallet til en lineær funksjon $f$ forteller oss hvor mye 
-funksjonsverdien $f(x)$ endrer seg når vi øker $x$ med én enhet. Dette er funksjonens **vekstfart**. 
+Når vi jobbet med lineære funksjoner, hadde vi en tydelig måte å tolke hvor mye $f(x)$ endrer seg når vi endrer på $x$ – gjennom stigningstallet til en rett linje. 
 
 ::::{admonition} Repetisjon: stigningstallet til en lineær funksjon
 ---
 class: reminder
 ---
-Stigningstallet til en lineær funksjon som går gjennom to punkter $(x_1, y_1)$ og $(x_2, y_2)$ er gitt ved
+Stigningstallet til en lineær funksjon $f$ som går gjennom to punkter $(x_1, y_1)$ og $(x_2, y_2)$ er gitt ved
 
 $$
 a = \dfrac{\Delta y}{\Delta x} = \dfrac{y_2 - y_1}{x_2 - x_1}
 $$
+
+Dette tallet forteller oss hvor mye $f(x)$ endrer seg når vi øker $x$ med 1.
 
 :::{figure} ./figurer/teori/topunktsformelen.svg
 ---
@@ -32,13 +33,38 @@ class: no-click
 
 ::::
 
-For en andregradsfunksjon har ikke koeffisientene en slik betydning, men vi har likevel behov for å kunne beskrive hvor raskt funksjonsverdien endrer seg når vi endrer $x$. Én slik beskrivelse er **gjennomsnittlig vekstfart**. Gjennomsnittlig vekstfart er tett knyttet til stigningstallet til en lineær funksjon. 
+For en andregradsfunksjon har ikke koeffisientene en slik betydning, men funksjonsverdien til en andregradsfunksjon endrer seg jo opplagt når vi endrer på verdien til $x$. 
+
+For å kunne sette tall på slike endringer, kan vi finne på en ny størrelse som gir oss informasjon om hvor mye funksjonsverdien endrer seg når vi endrer på $x$. Én slik størrelse er **gjennomsnittlig vekstfart**. Denne størrelsen tar (skamløst) direkte inspirasjon fra stigningstallet til en rett linje:
+
 
 :::::::::::::::{admonition} Gjennomsnittlig vekstfart
 ---
 class: summary
 ---
-Den **gjennomsnittlige vekstfarten** til en funksjon $f$ i intervallet $[a, b]$ er definert som
+Den **gjennomsnittlige vekstfarten** til en funksjon $f$ i intervallet $[a, b]$ er definert som stigningstallet til en rett linje som går gjennom punktene $(a, f(a))$ og $(b, f(b))$ på grafen til $f$.
+
+Denne linjen kaller vi for en **sekant**. Se {numref}`fig-teori-andregradsfunksjoner-vekstfart-gjennomsnittlig-vekstfart-sekanter`.
+
+<!-- :::{figure} ./figurer/teori/gjennomsnittlig_vekstfart.svg
+---
+name: fig-teori-andregradsfunksjoner-vekstfart-gjennomsnittlig-vekstfart-sekanter
+class: no-click
+width: 80%
+---
+viser grafen til en andregradsfunksjon $f$ og en sekant som går gjennom punktene $(a, f(a))$ og $(b, f(b))$. Den gjennomsnittlige vekstfarten til $f$ i intervallet $[a, b]$ er stigningstallet til sekanten.
+::: -->
+
+:::{figure} ./koder/animasjoner/gjennomsnittig_vekstfart/media/videos/gjennomsnittlig_vekstfart/1440p60/gjennomsnittlig_vekstfart.gif
+---
+name: fig-teori-andregradsfunksjoner-vekstfart-gjennomsnittlig-vekstfart-sekanter
+width: 100%
+class: no-click
+---
+viser grafen til en andregradsfunksjon (blå) og en sekant (rød) som går gjennom to punkter $(a, f(a))$ og $(b, f(b))$ og den tilsvarende formelen for gjennomsnittlig vekstfart i intervallet $[a, b]$.
+:::
+
+---
 
 :::{figure} ./figurer/teori/formel.svg
 ---
@@ -54,6 +80,40 @@ class: no-click
 ---
 class: example
 ---
+I {numref}`fig-andregradsfunksjoner-vekstfart-gjennomsnittlig-vekstfart-eksempel-1` vises grafen til en andregradsfunksjon $f$ og en sekant $s$ som går gjennom punktene $(-1, f(-1))$ og $(2, f(2))$ på grafen til $f$.
+
+Bruk sekanten til å bestemme den gjennomsnittlige vekstfarten til $f$ i intervallet $[-1, 2]$.
+
+:::{figure} ./figurer/eksempler/eksempel_1/graf.svg
+---
+name: fig-andregradsfunksjoner-vekstfart-gjennomsnittlig-vekstfart-eksempel-1
+width: 80%
+class: no-click
+---
+viser grafen til en andregradsfunksjon $f$ og en sekant $s$ som går gjennom to punkter på grafen til $f$. 
+:::
+
+::::{admonition} Løsning
+---
+class: solution
+---
+
+Den gjennomsnittlige vekstfarten til $f$ i intervallet $[-1, 2]$ svarer til stigningtallet til sekanten siden denne linja går gjennom punktene $(-1, f(-1))$ og $(2, f(2))$:
+
+$$
+\bar{v} = \dfrac{f(2) - f(-1)}{2 - (-1)} = \dfrac{3 - (-3)}{2 - (-1)} = \dfrac{6}{3} = 2.
+$$
+::::
+
+:::::
+
+---
+
+
+:::::{admonition} Eksempel 2
+---
+class: example
+---
 En andregradsfunksjon $f$ er gitt ved 
 
 $$
@@ -61,6 +121,8 @@ f(x) = x^2 - 2x + 1.
 $$
 
 Bestem den gjennomsnittlige vekstfarten i intervallet $[1, 3]$. 
+
+
 
 ::::{admonition} Løsning
 ---
@@ -84,63 +146,51 @@ $$
 
 ---
 
-## Tolkning av gjennomsnittlig vekstfart
-
-Gjennomsnittlig vekstfart gir oss hvor mye funksjonsverdien $f(x)$ endrer seg i **gjennomsnitt** når vi øker $x$ med én enhet i et intervall $[a, b]$. Vi kan knytte denne størrelsen til stigningstallet til en spesiell rett linje som vi kaller for en **sekant**. 
-
-:::::{admonition} Gjennomsnittlig vekstfart og sekanter
+:::::{admonition} Underveisoppgave 1
 ---
-class: summary
+class: check
 ---
-Den gjennomsnittlige vekstfarten til en funksjon $f$ i et intervall $[a, b]$ svarer til stigningstallet til en rett linje som går gjennom punktene $(a, f(a))$ og $(b, f(b))$ på grafen til $f$. 
-
-Denne linjen kaller vi for en **sekant**. Se {numref}`fig-teori-andregradsfunksjoner-vekstfart-gjennomsnittlig-vekstfart-sekanter`.
-
-:::{figure} ./figurer/teori/gjennomsnittlig_vekstfart.svg
----
-name: fig-teori-andregradsfunksjoner-vekstfart-gjennomsnittlig-vekstfart-sekanter
-class: no-click
-width: 80%
----
-viser grafen til en andregradsfunksjon $f$ og en sekant som går gjennom punktene $(a, f(a))$ og $(b, f(b))$. Den gjennomsnittlige vekstfarten til $f$ i intervallet $[a, b]$ er stigningstallet til sekanten.
-:::
-
-
-:::::
-
----
-
-:::::{admonition} Eksempel 2
----
-class: example
----
-I {numref}`fig-andregradsfunksjoner-vekstfart-gjennomsnittlig-vekstfart-eksempel-1` vises grafen til en andregradsfunksjon $f$ og en sekant $s$ som går gjennom to punkter på grafen til $f$.
-
-1. Bestem hvilket intervall du kan bruke for å bestemme den gjennomsnittlige vekstfarten til $f$ ved hjelp av sekanten.
-2. Finn den gjennomsnittlige vekstfarten til $f$ i intervallet.
-
-:::{figure} ./figurer/eksempler/eksempel_1/graf.svg
----
-name: fig-andregradsfunksjoner-vekstfart-gjennomsnittlig-vekstfart-eksempel-1
-width: 80%
-class: no-click
----
-viser grafen til en andregradsfunksjon $f$ og en sekant $s$ som går gjennom to punkter på grafen til $f$. 
-:::
-
-::::{admonition} Løsning
----
-class: solution
----
-1. Sekanten $s$ går gjennom punktene $(-1, -3)$ og $(2, 3)$ på grafen til $f$. Vi kan derfor bruke sekanten til å bestemme den gjennomsnittlige vekstfarten til $f$ i intervallet $[-1, 2]$.
-
-2. Den gjennomsnittlige vekstfarten svarer til stigningtallet til tangenten som gir
+En andregradsfunksjon $f$ er gitt ved 
 
 $$
-\bar{v} = \dfrac{y_2 - y_1}{x_2 - x_1} = \dfrac{3 - (-3)}{2 - (-1)} = \dfrac{6}{3} = 2.
+f(x) = -x^2 + 3x - 4
 $$
-::::
 
+Bestem den gjennomsnittlige vekstfarten i intervallet $[-2, 3]$. 
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+\bar{v} = 2
+$$
+:::
+
+:::{admonition} Løsning
+---
+class: solution, dropdown
+---
+Den gjennomsnittlige vekstfarten i intervallet $[-2, 3]$ er gitt ved 
+
+$$
+\bar{v} = \dfrac{f(3) - f(-2)}{3 - (-2)} = \dfrac{f(3) - f(-2)}{5}
+$$
+
+Vi regner ut funksjonsverdiene:
+
+\begin{align*}
+    f(3) &= -3^2 + 3\cdot 3 - 4 = -9 + 9 - 4 = -4, \\
+    \\
+    f(-2) &= -(-2)^2 + 3\cdot (-2) - 4 = -4 - 6 - 4 = -14.
+\end{align*}
+
+som gir 
+
+$$
+\bar{v} = \dfrac{f(3) - f(-2)}{5} = \dfrac{-4 - (-14)}{5} = \dfrac{10}{5} = 2.
+$$
+:::
 :::::
 
 ---
@@ -201,6 +251,69 @@ Vi bruker ettpunktsformelen med punktet $(1, 2)$ for å finne likningen til linj
     \\
     y &= 6x - 4.
 \end{align*}
+::::
+:::::
+
+---
+
+:::::{admonition} Underveisoppgave 2
+---
+class: check
+---
+En andregradsfunksjon $f$ er gitt ved
+
+$$
+f(x) = x^2 - 2x - 3.
+$$
+
+Bestem likningen for sekanten som går gjennom $(-1, f(-1))$ og $(2, f(2))$. 
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+y = -x - 1.
+$$
+::::
+
+::::{admonition} Løsning
+---
+class: dropdown, solution
+---
+Sekanten går gjennom punktene $(-1, f(-1))$ og $(2, f(2))$ som gir stigningstallet 
+
+$$
+a = \dfrac{f(2) - f(-1)}{2 - (-1)} = \dfrac{f(2) - f(-1)}{3}
+$$
+
+Vi regner ut funksjonsverdiene:
+
+\begin{align*}
+    f(2) &= 2^2 - 2\cdot 2 - 3 = -3, \\
+    \\
+    f(-1) &= (-1)^2 - 2\cdot (-1) - 3 = 0.
+\end{align*}
+
+Dermed har sekanten stigningstallet 
+
+$$
+a = \dfrac{f(2) - f(-1)}{3} = \dfrac{-3 - 0}{3} = -1.
+$$
+
+Vi bruker ettpunktsformelen for å bestemme likningen med punktet $(-1, f(-1)) = (-1, 0)$:
+
+\begin{align*}
+    y - y_1 &= a(x - x_1) \\
+    \\
+    y - 0 &= -1(x - (-1)) \\
+    \\
+    y &= -(x + 1) \\
+    \\
+    y &= -x - 1.
+\end{align*}
+
+
 ::::
 :::::
 

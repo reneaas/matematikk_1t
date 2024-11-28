@@ -5,11 +5,11 @@ def main(dirname, save):
     #
     # Define functions
     def f(x):
-        return -((x - 1) ** 2)
+        return -((x - 1) ** 2) + 2
 
     def g(x):
-        slope = (0 - (-3)) / (1 - (-2))
-        return -3 + slope * (x - (-3))
+        slope = (1 - (-2)) / (2 - (-1))
+        return slope * (x - (-1)) - 2
 
     # List of functions and their labels.
     functions = [f, g]

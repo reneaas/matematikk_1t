@@ -230,24 +230,57 @@ class: tabs-parts
 $$
 -x^2 + 2x - 2 = 0
 $$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+Ingen løsning.
+:::
+
 :::::::::::::
 
 :::::::::::::{tab-item} b
 $$
 2x^2 + 3x - 2 = 0
 $$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x = -2 \, \lor \, x = \dfrac{1}{2}
+$$
+:::
 :::::::::::::
 
 :::::::::::::{tab-item} c
 $$
 x^2 + 8x + 16 = 0
 $$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x = -4
+$$
+:::
 :::::::::::::
 
 :::::::::::::{tab-item} d
 $$
 8x^2 - 4x + 2 = 0
 $$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+Ingen løsning.
+:::
 :::::::::::::
 
 ::::::::::::::
@@ -484,6 +517,44 @@ class: answer, dropdown
 ---
 $$
 k = \pm 2\sqrt{6}
+$$
+:::
+::::
+
+
+---
+
+::::{admonition} Oppgave 7 
+---
+class: problem-level-3
+---
+Et tall er gitt ved 
+
+$$
+\sqrt{2 + \sqrt{2 + \sqrt{2 + \sqrt{2 + \dots }}}}
+$$
+
+Regn ut tallet.
+
+:::{admonition} Hint
+---
+class: hints, dropdown
+---
+Sett 
+
+$$
+x = \sqrt{2 + \sqrt{2 + \sqrt{2 + \sqrt{2 + \dots }}}}
+$$
+
+Hva er da $x^2$?
+:::
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+\sqrt{2 + \sqrt{2 + \sqrt{2 + \sqrt{2 + \dots }}}} = 2
 $$
 :::
 ::::

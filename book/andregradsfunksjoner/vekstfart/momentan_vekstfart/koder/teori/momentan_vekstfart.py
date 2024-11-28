@@ -31,6 +31,14 @@ def main(dirname, save):
     )
 
     ax.plot(a, f(a), "ko", markersize=8, alpha=0.7)
+    ax.text(
+        s="$(a, f(a))$",
+        x=a + 0.2,
+        y=f(a),
+        ha="left",
+        va="center",
+        fontsize=16,
+    )
 
     # NOTE: Select an appropriate `dirname` to save the figure.
     # The directory `dirname` will be created automatically if it does not exist already.
