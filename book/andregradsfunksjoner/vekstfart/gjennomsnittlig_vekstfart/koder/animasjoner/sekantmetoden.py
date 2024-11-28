@@ -102,5 +102,3 @@ class SekantMetoden(Scene):
         )
 
         # Stage 4: move point to graph
-
-        y_zero = f(x_zero)
