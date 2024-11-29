@@ -322,3 +322,139 @@ $$
 
 ---
 
+
+:::::::::::::::{admonition} Oppgave 6
+---
+class: problem-level-3
+---
+Lova syns ikke $abc$-formelen var så grei å bruke for å finne nullpunkter, så hun har lest seg opp på en annen strategi der hun kan bruke sekanter for å finne nullpunktene til en andregradsfunksjon.
+
+Hun har laget en animasjon for å illustrere strategien sin. 
+
+::::{video} ./koder/animasjoner/media/videos/sekantmetoden/1440p60/sekantmetoden.mp4
+---
+width: 95%
+---
+::::
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Se på animasjonen og forklar strategien til Lova.
+Hva vil skje hvis hun gjentar strategien mange ganger? 
+
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+Lova starter med to punkter $x_1$ og $x_2$. Deretter regner hun ut en sekant gjennom $(x_1, f(x_1))$ og $(x_2, f(x_2))$. 
+Hun finner nullpunktet til sekanten som hun kaller for $x_3$. Deretter lager hun en ny sekant ved å bruke $x_2$ og $x_3$. Så finner hun nullpunktet til denne sekanten som hun kaller for $x_4$. Dette gjentar hun flere ganger. 
+
+Hvis hun gjentar dette mange ganger, vil hun få en $x_n$ for et stort tall $n$ som vil være *veldig* nærme et av nullpunktene til andregradsfunksjonen.
+
+
+::::
+
+:::::::::::::
+
+:::::::::::::{tab-item} b
+En andregradsfunksjon $f$ er gitt ved 
+
+$$
+f(x) = x^2 - 4
+$$
+
+Bruk strategien til Lova i to steg til å regne ut $x_3$ og $x_4$. Start med $x_1 = 1$ og $x_2 = 5$.
+
+Kommer du nærme ett av nullpunktene til $f$?
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+\begin{align*}
+    x_3 &= \dfrac{3}{2} = 1.5 \\
+    \\
+    x_4 &= \dfrac{23}{13} \approx 1.77
+\end{align*}
+::::
+:::::::::::::
+
+:::::::::::::{tab-item} c
+Lova ønsker seg en generell algoritme for å finne nullpunktene med strategien og har funnet at man trenger en formel for nullpunktet til en sekant som er skrevet med ettpunktsformelen 
+
+$$
+y - y_1 = a(x - x_1)
+$$
+
+der $a$ er stigningstallet til sekanten som går gjennom et punkt $(x_1, y_1)$.
+
+
+Finn en formel for nullpunktet til sekanten. 
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x_\text{nullpunkt} = x_1 - \dfrac{y_1}{a}
+$$
+::::
+
+:::::::::::::
+
+:::::::::::::{tab-item} d
+Under vises et interaktivt kodevindu som må fylles ut.
+
+Fyll ut koden slik at det bruker strategien til Lova for å finne et av nullpunktene til $f(x) = x^2 - 4$. 
+
+
+:::{raw} html
+---
+file: ./python/oppgaver/oppgave_6.html
+---
+:::
+
+
+::::{admonition} Fasit
+---
+class: dropdown, answer
+---
+
+:::{code-block} python
+---
+linenos: true
+---
+def f(x):
+    return x**2 - 4
+
+x1 = 1
+x2 = 5
+
+antall_ganger = 10   # Hvor mange sekanter du skal lage sekanter
+for n in range(antall_ganger):
+    y1 = f(x1)
+    y2 = f(x2)
+
+    if x2 - x1 != 0: # Sjekk at vi ikke deler på null
+        a = (y2 - y1) / (x2 - x1)
+    else:
+        break # Hvis x2 - x1 = 0, så stopper vi så vi ikke deler på null
+
+    x_nullpunkt = x1 - y1 / a
+
+
+    x1, x2 = x2, x_nullpunkt # Setter x1 = x2 og x2 = x_nullpunkt
+
+print(x_nullpunkt) # Skriver ut nullpunktet til slutt
+:::
+
+::::
+:::::::::::::
+::::::::::::::
+
+
+:::::::::::::::
