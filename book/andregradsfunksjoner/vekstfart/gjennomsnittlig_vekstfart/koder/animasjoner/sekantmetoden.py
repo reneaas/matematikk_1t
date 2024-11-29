@@ -9,7 +9,7 @@ class SecantMethod(Scene):
         # Set up axes
         axes = Axes(
             x_range=[-5, 5, 1],
-            y_range=[-4, 8, 1],
+            y_range=[-5, 8, 1],
             x_length=10,
             y_length=6,
             axis_config={"include_numbers": False},
