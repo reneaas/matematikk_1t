@@ -1,0 +1,2 @@
+# Oppgaver: Momentan vekstfart
+
