@@ -44,16 +44,14 @@ class: summary
 ---
 Den **gjennomsnittlige vekstfarten** til en funksjon $f$ i intervallet $[a, b]$ er definert som stigningstallet til en rett linje som går gjennom punktene $(a, f(a))$ og $(b, f(b))$ på grafen til $f$.
 
-Denne linjen kaller vi for en **sekant**. Se {numref}`fig-teori-andregradsfunksjoner-vekstfart-gjennomsnittlig-vekstfart-sekanter`.
-
-<!-- :::{figure} ./figurer/teori/gjennomsnittlig_vekstfart.svg
+:::{figure} ./figurer/teori/formel.svg
 ---
-name: fig-teori-andregradsfunksjoner-vekstfart-gjennomsnittlig-vekstfart-sekanter
+width: 60%
 class: no-click
-width: 80%
 ---
-viser grafen til en andregradsfunksjon $f$ og en sekant som går gjennom punktene $(a, f(a))$ og $(b, f(b))$. Den gjennomsnittlige vekstfarten til $f$ i intervallet $[a, b]$ er stigningstallet til sekanten.
-::: -->
+:::
+
+Linjen som går gjennom de to punktene kaller vi for en **sekant**. Se {numref}`fig-teori-andregradsfunksjoner-vekstfart-gjennomsnittlig-vekstfart-sekanter`.
 
 :::{figure} ./koder/animasjoner/gjennomsnittig_vekstfart/media/videos/gjennomsnittlig_vekstfart/1440p60/gjennomsnittlig_vekstfart.gif
 ---
@@ -64,14 +62,6 @@ class: no-click
 viser grafen til en andregradsfunksjon (blå) og en sekant (rød) som går gjennom to punkter $(a, f(a))$ og $(b, f(b))$ og den tilsvarende formelen for gjennomsnittlig vekstfart i intervallet $[a, b]$.
 :::
 
----
-
-:::{figure} ./figurer/teori/formel.svg
----
-width: 60%
-class: no-click
----
-:::
 :::::::::::::::
 
 ---
