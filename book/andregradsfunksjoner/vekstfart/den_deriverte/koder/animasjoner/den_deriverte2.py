@@ -104,6 +104,8 @@ class QuadraticFunctionWithTangentAndDerivative(Scene):
         self.play(
             self.x_tracker.animate.set_value(-x_start), run_time=8, rate_func=linear
         )
+        self.wait(1)
+
         self.play(
             self.x_tracker.animate.set_value(x_start), run_time=8, rate_func=linear
         )

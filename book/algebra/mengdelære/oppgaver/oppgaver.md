@@ -289,7 +289,7 @@ file: ./pair_puzzles/oppgave_11.html
 ---
 class: sidenote, margin
 ---
-I oppgave 10 skal du jobbe med rasjonale tall som har uendelig sifferutvikling. Men fordi vi ikke kan skrive uendelig mange sifre, vil datamaskinen runde av tallet som skrives ut. Derfor vil du ende opp med at det **siste** sifferet typisk ikke stemmer overens med det du forventer! Ignorer derfor det aller siste sifferet i utskriften.
+I oppgave 11 skal du jobbe med rasjonale tall som har uendelig sifferutvikling. Men fordi vi ikke kan skrive uendelig mange sifre, vil datamaskinen runde av tallet som skrives ut. Derfor vil du ende opp med at det **siste** sifferet typisk ikke stemmer overens med det du forventer! Ignorer derfor det aller siste sifferet i utskriften.
 :::
 
 ::::{admonition} Oppgave 11
