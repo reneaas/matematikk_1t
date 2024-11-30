@@ -103,7 +103,7 @@ class GjennomsnittligVekstfart(Scene):
 
         # Add the average growth rate text with background
         gjennomsnittlig_vekstfart = MathTex(
-            "\\dfrac{\\Delta y}{\\Delta x} = \\dfrac{f(b) - f(a)}{b - a}",
+            "\\dfrac{\\Delta f(x)}{\\Delta x} = \\dfrac{f(b) - f(a)}{b - a}",
             color=TEAL_A,
         ).move_to(axes.coords_to_point(-2, 6))
         background3 = BackgroundRectangle(
