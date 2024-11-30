@@ -671,7 +671,7 @@ $$
 ---
 class: problem-level-2
 ---
-I {numref}`fig-andregradsfunksjoner-vekstfart-den-deriverte-oppgave-9` vises grafen til en andregradsfunksjon $f$ og en tangenter i punktene $(1, f(1))$ og $(3, f(3))$.
+I {numref}`fig-andregradsfunksjoner-vekstfart-den-deriverte-oppgave-9` vises grafen til en andregradsfunksjon $f$ og to tangenter i punktene $(1, f(1))$ og $(3, f(3))$.
 
 * Tangenten i $(1, f(1))$ har stigningstall $1$.
 * Tangenten i $(3, f(3))$ har stigningstall $-3$. 

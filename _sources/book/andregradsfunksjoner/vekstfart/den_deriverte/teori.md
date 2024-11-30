@@ -31,12 +31,13 @@ class: explore
 ---
 Under vises en animasjon som viser sammenhengen mellom tangenter til grafen til $f(x) = x^2 + 2$, og grafen til den deriverte $f'$. 
 
-Grafen til $f$ er vist til venstre og grafen til $f'$ blir tegnet til høyre ut ifra tangentene til $f$.
-
 1. Se på animasjonen.
 2. Hva er $f'(x)$ i symmetrilinja til $f$? 
 3. Overbevis deg selv om at du kan forklare sammenhengen mellom tangentene til grafen til $f$ og grafen til $f'$. 
 4. Kan du bestemme $f'(x)$ ut ifra grafen til animasjonen?
+
+
+Grafen til $f$ er vist til venstre og grafen til $f'$ blir tegnet til høyre ut ifra tangentene til $f$.
 
 :::{video} ./koder/animasjoner/media/videos/den_deriverte2/1440p60/den_deriverte2.mp4
 ---
