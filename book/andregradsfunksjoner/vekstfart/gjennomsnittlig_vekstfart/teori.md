@@ -42,9 +42,9 @@ For å kunne sette tall på slike endringer, kan vi finne på en ny størrelse s
 ---
 class: summary
 ---
-Den **gjennomsnittlige vekstfarten** til en funksjon $f$ i intervallet $[a, b]$ er definert som stigningstallet til en rett linje som går gjennom punktene $(a, f(a))$ og $(b, f(b))$ på grafen til $f$.
+Den **gjennomsnittlige vekstfarten** til en funksjon $f$ i intervallet $[x_1, x_2]$ er definert som stigningstallet til en rett linje som går gjennom punktene $(x_1, f(x_1))$ og $(x_2, f(x_2))$ på grafen til $f$.
 
-:::{figure} ./figurer/teori/formel.svg
+:::{figure} ./figurer/teori/formel2.svg
 ---
 width: 60%
 class: no-click
@@ -59,7 +59,7 @@ name: fig-teori-andregradsfunksjoner-vekstfart-gjennomsnittlig-vekstfart-sekante
 width: 100%
 class: no-click
 ---
-viser grafen til en andregradsfunksjon (blå) og en sekant (rød) som går gjennom to punkter $(a, f(a))$ og $(b, f(b))$ og den tilsvarende formelen for gjennomsnittlig vekstfart i intervallet $[a, b]$.
+viser grafen til en andregradsfunksjon (blå) og en sekant (rød) som går gjennom to punkter $(x_1, f(x_1))$ og $(x_2, f(x_2))$ og den tilsvarende formelen for gjennomsnittlig vekstfart i intervallet $[x_1, x_2]$.
 :::
 
 :::::::::::::::
@@ -91,7 +91,7 @@ class: solution
 Den gjennomsnittlige vekstfarten til $f$ i intervallet $[-1, 2]$ svarer til stigningtallet til sekanten siden denne linja går gjennom punktene $(-1, f(-1))$ og $(2, f(2))$:
 
 $$
-\bar{v} = \dfrac{f(2) - f(-1)}{2 - (-1)} = \dfrac{3 - (-3)}{2 - (-1)} = \dfrac{6}{3} = 2.
+\dfrac{\Delta f(x)}{\Delta x} = \dfrac{f(2) - f(-1)}{2 - (-1)} = \dfrac{3 - (-3)}{2 - (-1)} = \dfrac{6}{3} = 2.
 $$
 ::::
 
@@ -129,7 +129,7 @@ Intervallet er $[a, b] = [1, 3]$. Vi regner ut funksjonsverdiene i de to endepun
 Så bruker vi definisjonen av gjennomsnittlig vekstfart: 
 
 $$
-\bar{v} = \dfrac{f(3) - f(1)}{3 - 1} = \dfrac{4 - 0}{3 - 1} = \dfrac{4}{2} = 2.
+\dfrac{\Delta f(x)}{\Delta x} = \dfrac{f(3) - f(1)}{3 - 1} = \dfrac{4 - 0}{3 - 1} = \dfrac{4}{2} = 2.
 $$
 ::::
 :::::
@@ -153,7 +153,7 @@ Bestem den gjennomsnittlige vekstfarten i intervallet $[-2, 3]$.
 class: answer, dropdown
 ---
 $$
-\bar{v} = 2
+\dfrac{\Delta f(x)}{\Delta x} = 2
 $$
 :::
 
@@ -164,7 +164,7 @@ class: solution, dropdown
 Den gjennomsnittlige vekstfarten i intervallet $[-2, 3]$ er gitt ved 
 
 $$
-\bar{v} = \dfrac{f(3) - f(-2)}{3 - (-2)} = \dfrac{f(3) - f(-2)}{5}
+\dfrac{\Delta f(x)}{\Delta x} = \dfrac{f(3) - f(-2)}{3 - (-2)} = \dfrac{f(3) - f(-2)}{5}
 $$
 
 Vi regner ut funksjonsverdiene:
@@ -178,7 +178,7 @@ Vi regner ut funksjonsverdiene:
 som gir 
 
 $$
-\bar{v} = \dfrac{f(3) - f(-2)}{5} = \dfrac{-4 - (-14)}{5} = \dfrac{10}{5} = 2.
+\dfrac{\Delta f(x)}{\Delta x} = \dfrac{f(3) - f(-2)}{5} = \dfrac{-4 - (-14)}{5} = \dfrac{10}{5} = 2.
 $$
 :::
 :::::
@@ -229,7 +229,7 @@ Vi har at
 Den gjennomsnittlige vekstfarten – som svarer til stigningdstallet til den rette linja – er gitt ved 
 
 $$
-a = \dfrac{f(3) - f(1)}{3 - 1} = \dfrac{14 - 2}{3 - 1} = \dfrac{12}{2} = 6.
+a = \dfrac{\Delta f(x)}{\Delta x} = \dfrac{f(3) - f(1)}{3 - 1} = \dfrac{14 - 2}{3 - 1} = \dfrac{12}{2} = 6.
 $$
 
 Vi bruker ettpunktsformelen med punktet $(1, 2)$ for å finne likningen til linja:
@@ -274,7 +274,7 @@ class: dropdown, solution
 Sekanten går gjennom punktene $(-1, f(-1))$ og $(2, f(2))$ som gir stigningstallet 
 
 $$
-a = \dfrac{f(2) - f(-1)}{2 - (-1)} = \dfrac{f(2) - f(-1)}{3}
+a = \dfrac{\Delta f(x)}{\Delta x} = \dfrac{f(2) - f(-1)}{2 - (-1)} = \dfrac{f(2) - f(-1)}{3}
 $$
 
 Vi regner ut funksjonsverdiene:

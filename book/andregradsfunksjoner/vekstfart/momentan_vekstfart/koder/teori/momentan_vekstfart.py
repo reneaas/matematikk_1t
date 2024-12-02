@@ -32,7 +32,7 @@ def main(dirname, save):
 
     ax.plot(a, f(a), "ko", markersize=8, alpha=0.7)
     ax.text(
-        s="$(a, f(a))$",
+        s="$(x_1, f(x_1))$",
         x=a + 0.2,
         y=f(a),
         ha="left",

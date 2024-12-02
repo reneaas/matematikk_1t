@@ -44,7 +44,7 @@ class GjennomsnittligVekstfart(Scene):
             color=TEAL_A,
         )
         horisontal_line_text = MathTex(
-            "b - a",
+            "x_2 - x_1",
             color=TEAL_A,
         ).move_to(axes.coords_to_point(1, f(x1) - 0.5))
 
@@ -70,8 +70,8 @@ class GjennomsnittligVekstfart(Scene):
 
         self.add(vertical_line_fn)
 
-        vertical_line_text = MathTex("f(b) - f(a)", color=TEAL_A).next_to(
-            vertical_line_fn, RIGHT
+        vertical_line_text = MathTex("f(x_2) - f(x_1)", color=TEAL_A).next_to(
+            vertical_line_fn, 0.5 * RIGHT
         )
 
         vertical_line_data = VGroup(
@@ -82,7 +82,7 @@ class GjennomsnittligVekstfart(Scene):
 
         # Add labeled points with background rectangles
         punkt1 = MathTex(
-            "(a, f(a))",
+            "(x_1, f(x_1))",
             color=YELLOW,
         ).move_to(axes.coords_to_point(x1 - 0.7, f(x1) - 1))
         background1 = BackgroundRectangle(
@@ -91,9 +91,9 @@ class GjennomsnittligVekstfart(Scene):
         punkt1_group = VGroup(background1, punkt1)  # Group text and background together
 
         punkt2 = MathTex(
-            "(b, f(b))",
+            "(x_2, f(x_2))",
             color=YELLOW,
-        ).move_to(axes.coords_to_point(x2 + 1.1, f(x2)))
+        ).move_to(axes.coords_to_point(x2 + 1.3, f(x2)))
         background2 = BackgroundRectangle(
             punkt2, color=BLACK, fill_opacity=1, stroke_color=YELLOW, stroke_width=10
         )
@@ -103,7 +103,7 @@ class GjennomsnittligVekstfart(Scene):
 
         # Add the average growth rate text with background
         gjennomsnittlig_vekstfart = MathTex(
-            "\\dfrac{\\Delta f(x)}{\\Delta x} = \\dfrac{f(b) - f(a)}{b - a}",
+            "\\dfrac{\\Delta f(x)}{\\Delta x} = \\dfrac{f(x_2) - f(x_1)}{x_2 - x_1}",
             color=TEAL_A,
         ).move_to(axes.coords_to_point(-3, 6))
         background3 = BackgroundRectangle(
