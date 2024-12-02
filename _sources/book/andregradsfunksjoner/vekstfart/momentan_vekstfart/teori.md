@@ -25,7 +25,7 @@ Momentan vekstfart skal vi tenke på som stigningstallet til en linje som "sneie
 ---
 class: summary
 ---
-Den **momentane vekstfarten** til en andregradsfunksjon $f$ er stigningstallet til en rett linje som går gjennom punktet $(a, f(a))$ på grafen til $f$ og som "sneier" grafen til $f$ i punktet. Linjen har samme stigningstall som hvor "bratt" grafen er momentant ("akkurat i") det punktet. 
+Den **momentane vekstfarten** til en andregradsfunksjon $f$ er stigningstallet til en rett linje som går gjennom punktet $(x_1, f(x_1))$ på grafen til $f$ og som "sneier" grafen til $f$ i punktet. Linjen har samme stigningstall som hvor "bratt" grafen er momentant ("akkurat i") det punktet. 
 
 Denne linjen kaller vi for en **tangent** og vi sier at linjen **tangerer** grafen til $f$ i $(a, f(a))$.  Se {numref}`fig-teori-andregradsfunksjoner-vekstfart-momentan-vekstfart-tangenter`.
 
@@ -35,7 +35,7 @@ name: fig-teori-andregradsfunksjoner-vekstfart-momentan-vekstfart-tangenter
 class: no-click
 width: 80%
 ---
-viser grafen til en andregradsfunksjon $f$ og en tangent som "sneier" grafen til $f$ i punktet $(a, f(a))$. Stigningstallet til tangenten er den momentane vekstfarten til $f$ i punktet.
+viser grafen til en andregradsfunksjon $f$ og en tangent som "sneier" grafen til $f$ i punktet $(x_1, f(x_1))$. Stigningstallet til tangenten er den momentane vekstfarten til $f$ i punktet.
 :::
 
 :::::::::::::::

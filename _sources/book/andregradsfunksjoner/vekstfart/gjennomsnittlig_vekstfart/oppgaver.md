@@ -272,6 +272,41 @@ $$
 y = 2x - 2
 $$
 :::
+
+::::{admonition} Løsning
+---
+class: solution, dropdown
+---
+Vi regner ut stigningstallet til sekanten: 
+
+$$
+a = \dfrac{f(3) - f(1)}{3 - 1} 
+$$
+
+der funksjonsverdiene er 
+
+\begin{align*}
+    f(1) &= 1^2 - 2 \cdot 1 + 1 = 0 \\
+    \\
+    f(3) &= 3^2 - 2 \cdot 3 + 1 = 4
+\end{align*}
+
+Dermed er stigningstallet
+
+$$
+a = \dfrac{f(3) - f(1)}{2} = \dfrac{4 - 0}{2} = 2.
+$$
+
+Så bruker vi ettpunktsformelen med ett av punktene. Vi velger $(1, f(1)) = (1, 0)$ som gir
+
+\begin{align*}
+y - y_1 &= a(x - x_1) \\
+\\
+y - 0 &= 2(x - 1) \\
+\\
+y &= 2x - 2.
+\end{align*}
+::::
 :::::::::::::
 
 ::::::::::::{tab-item} b
@@ -308,6 +343,43 @@ $$
 y = -6x - 1
 $$
 :::
+
+::::{admonition} Løsning
+---
+class: solution, dropdown
+---
+Stigningstallet til sekanten er gitt ved:
+
+$$
+a = \dfrac{h(2) - h(0)}{2 - 0}
+$$
+
+Vi regner ut funksjonsverdiene først:
+
+\begin{align*}
+    h(2) &= -(2 + 2)^2 + 3 = -4^2 + 3 = -16 + 3 = -13 \\
+    \\
+    h(0) &= -(0 + 2)^2 + 3 = -2^2 + 3 = -4 + 3 = -1
+\end{align*}
+
+Stigningstallet til sekanten blir derfor
+
+\begin{align*}
+    a = \dfrac{h(2) - h(0)}{2} = \dfrac{-13 + 1}{2} = \dfrac{-12}{2} = -6.
+\end{align*}
+
+Så bruker vi ettpunktsformelen med et av punktene. Velger $(0, h(0)) = (0, -1)$ som gir
+
+\begin{align*}
+    y - y_1 &= a(x - x_1) \\
+    \\
+    y - (-1) &= -6(x - 0) \\
+    \\
+    y + 1 &= -6x \\
+    \\
+    y &= -6x - 1.
+\end{align*}
+::::
 :::::::::::::
 
 ::::::::::::{tab-item} d
@@ -357,6 +429,42 @@ $$
 f(x) = -(x - 1)(x - 3)
 $$
 :::
+
+::::{admonition} Løsning
+---
+class: solution, dropdown
+---
+Vi vet at nullpunktene til $f$ er $x = 1 \, \lor \, x = 3$ som betyr at vi kan skrive $f(x)$ på nullpunktsform:
+
+$$
+f(x) = a(x - 1)(x - 3).
+$$
+
+At den gjennomsnittlige vekstfarten i intervallet $[-1, 1]$ er $-4$ betyr at 
+
+$$
+\dfrac{f(1) - f(-1)}{1 - (-1)} = -4
+$$
+
+Vi setter inn $f(x)$ og regner ut:
+
+\begin{align*}
+    f(1) &= a(1 - 1)(1 - 3) = 0 \\
+    f(-1) &= a(-1 - 1)(-1 - 3) = a\cdot (-2)\cdot (-4) = 8a
+\end{align*}
+
+Dermed vet vi at 
+
+$$
+\dfrac{8a}{2} = -4  \quad \iff \quad a = -1.
+$$
+
+Dermed er 
+
+$$
+f(x) = -(x - 1)(x - 3).
+$$
+::::
 :::::::::::::
 
 :::::::::::::{tab-item} b
@@ -393,6 +501,46 @@ $$
 h(x) = \dfrac{2}{3}(x - 2)^2 - 6
 $$
 :::
+
+::::{admonition} Løsning
+---
+class: solution, dropdown
+---
+At den gjennomsnittlige vekstfarten i intervallet $[-2, 6]$ er $0$ betyr at symmetrilinja til $h$ er midtpunktet i intervallet som gir 
+
+$$
+x_0 = \dfrac{-2 + 6}{2} = \dfrac{4}{2} = 2.
+$$
+
+At verdimengden til $h$ er $V_h = [-6, \to\rangle$ betyr at den *minste* verdien til $h(x)$ er $-6$. Dette må skje i ekstremalpunktet som betyr at 
+
+$$
+h(x) = a(x - 2)^2 - 6.
+$$
+
+Vi kan bruke at $x = -1$ er et nullpunkt for å bestemme $a$, som gir oss 
+
+\begin{align*}
+    h(-1) &= a(-1 - 2)^2 - 6 = 0 \\
+    \\
+    0 &= a\cdot (-3)^2 - 6 \\
+    \\
+    0 &= 9a - 6 \\
+    \\
+    6 &= 9a \\
+    \\
+    \dfrac{6}{9} &= a \\
+    \\
+    \dfrac{2}{3} &= a
+\end{align*}
+
+
+Altså er 
+
+$$
+h(x) = \dfrac{2}{3}(x - 2)^2 - 6.
+$$
+::::
 :::::::::::::
 
 :::::::::::::{tab-item} d

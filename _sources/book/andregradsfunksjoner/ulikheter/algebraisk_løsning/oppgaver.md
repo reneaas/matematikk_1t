@@ -335,6 +335,15 @@ Løs ulikheten
 $$
 f(x) \geq 0
 $$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x \in [-1, 4]
+$$
+:::
 :::::::::::::
 
 :::::::::::::{tab-item} b
@@ -343,6 +352,15 @@ Løs ulikheten
 $$
 f(x) > 4
 $$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x \in \langle 0, 3\rangle
+$$
+:::
 :::::::::::::
 
 :::::::::::::{tab-item} c
@@ -351,14 +369,32 @@ Løs ulikheten
 $$
 f(x) \leq -6
 $$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x \in \mathbb{R} \setminus \langle -2, 5 \rangle
+$$
+:::
 :::::::::::::
 
 :::::::::::::{tab-item} d
 Løs ulikheten 
 
 $$
-f(x) > 6
+f(x) < 6
 $$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x \in \langle \gets, 1 \rangle \cup \langle 2, \to \rangle
+$$
+:::
 :::::::::::::
 ::::::::::::::
 :::::::::::::::
