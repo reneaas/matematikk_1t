@@ -556,6 +556,38 @@ $$
 
 ::::{admonition} Oppgave 8
 ---
+class: problem-level-2
+---
+En likning er gitt ved 
+
+$$
+x^4 - x^2 - 6 = 0.
+$$
+
+Løs likningen.
+
+:::{admonition} Hint
+---
+class: hints, dropdown
+---
+Gjør et variabelskifte der du setter $u = x^2$ og likningen, og løs likningen for $u$ først.
+:::
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x = -\sqrt{3} \, \lor \, x = \sqrt{3}.
+$$
+:::
+::::
+
+---
+
+
+::::{admonition} Oppgave 9
+---
 class: problem-level-3
 ---
 Et tall er gitt ved 
