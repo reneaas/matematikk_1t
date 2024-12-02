@@ -361,22 +361,70 @@ class: tabs-parts
 Om en andregradsfunksjon $f$ får vi vite at:
 * Grafen til $f$ skjærer $y$-aksen i $y = 2$.
 * En tangent til grafen til $f$ i punktet $(1, f(1))$ har likningen $y = 3x - 1$.
-* Gjennomsnittlig vekstfart i intervallet $[-2, 2]$ er $2$.
 
 Bestem $f(x)$. 
+
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+f(x) = 3x^2 - 3x + 2.
+$$
+:::
 :::::::::::::
 
 :::::::::::::{tab-item} b
+Om en andregradsfunksjon $g$ får vi vite at:
+* Den momentane vekstfarten til $g$ i punktet $(-1, g(-1)$ er $0$. 
+* En tangent til grafen til $g$ i punktet $(0, g(0))$ har likningen $y = 2x + 4$.
 
+Bestem $g(x)$. 
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+g(x) = (x + 1)^2 + 3.
+$$
+:::
 :::::::::::::
 
 :::::::::::::{tab-item} c
+Om en andregradsfunksjon $h$ får vi vite at:
+* Grafen til $h$ skjærer $x$-aksen i $x = 2$. 
+* En tangent til grafen til $g$ i punktet $(1, h(1))$ har likningen $y = -x + 2$. 
 
+Bestem $h(x)$.
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+h(x) = \dfrac{2}{3}\left(x + \dfrac{3}{2}\right)(x - 2).
+$$
+:::
 :::::::::::::
+
 
 :::::::::::::{tab-item} d
+Om en andregradsfunksjon $p$ får vi vite at:
+* Symmetrilinja til $p$ er $x = 2$. 
+* En tangent til grafen til $p$ i punktet $(-1, p(-1))$ har likningen $y = -2x + 4$.
 
-:::::::::::::
+Bestem $p(x)$.
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+p(x) = \dfrac{1}{3}(x - 2)^2 + 3.
+$$
+:::
 
 ::::::::::::::
 
@@ -407,6 +455,13 @@ class: tabs-parts
 :::::::::::::{tab-item} a
 Se på animasjonen og forklar strategien til Lova.
 
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+Lova starter med gjetning på nullpunktet som hun kaller for $x_1$. Deretter lager hun seg en tangent som går gjennom $(x_1, f(x_1))$. Hun finner nullpunktet til denne som hun kaller for $x_2$. Så gjentar hun ved å lage en tangent gjennom $(x_2, f(x_2))$ og finner nullpunktet til denne tangenten. Slik gjentar hun flere ganger frem til hun er nærme et av nullpunktene til $f$.
+:::
 :::::::::::::
 
 
@@ -421,6 +476,19 @@ Bruk strategien til Lova med $x_1 = 1$ og regn ut $x_2$ og $x_3$.
 
 Kommer du nærme et av nullpunktene til $f$? 
 
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+\begin{align*}
+    x_2 &= \dfrac{5}{2}\\
+    \\
+    x_3 &= \dfrac{41}{20} = 2.05.
+\end{align*}
+
+Et av nullpunktene til $f$ er $x = 2$, så vi kommer ganske nærme med disse to stegene.
+:::
 :::::::::::::
 
 
