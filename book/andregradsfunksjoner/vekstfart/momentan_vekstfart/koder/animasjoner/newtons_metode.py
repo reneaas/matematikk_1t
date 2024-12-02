@@ -80,7 +80,13 @@ class NewtonsMethod(Scene):
                 x_next_label = MathTex(f"x_{{{i+2}}}", color=RED).next_to(
                     axes.c2p(x_next, 0), UP
                 )
-            self.play(Create(dot_next), Write(x_next_label))
+            self.play(
+                Create(dot_next),
+                Write(x_next_label),
+                x_curr_label.animate.set_opacity(0.5),
+                dot_curr.animate.set_opacity(0.5),
+                vline_curr.animate.set_opacity(0.5),
+            )
 
             self.wait(2)
 
