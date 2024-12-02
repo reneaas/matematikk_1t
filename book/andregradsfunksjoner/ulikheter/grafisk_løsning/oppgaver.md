@@ -31,7 +31,7 @@ class: tabs-parts
 ---
 :::::::::::::{tab-item} a
 $$
-x \geq -4 \, \lor \, x > 1
+x \leq -4 \, \lor \, x > 1
 $$
 
 :::{admonition} Fasit
