@@ -1,6 +1,48 @@
 # Oppgaver: Gjennomsnittlig vekstfart
 
 
+:::::::::::::::{admonition} Oppsummering
+---
+class: summary
+---
+::::::::::::::{tab-set}
+:::::::::::::{tab-item} Gjennomsnittlig vekstfart
+Den **gjennomsnittlige vekstfarten** til en funksjon $f$ i intervallet $[x_1, x_2]$ er definert som stigningstallet til en rett linje som går gjennom punktene $(x_1, f(x_1))$ og $(x_2, f(x_2))$ på grafen til $f$.
+
+:::{figure} ./figurer/teori/formel2.svg
+---
+width: 60%
+class: no-click
+---
+:::
+
+Linjen som går gjennom de to punktene kaller vi for en **sekant**. Se {numref}`fig-teori-andregradsfunksjoner-vekstfart-gjennomsnittlig-vekstfart-sekanter`.
+
+:::{figure} ./koder/animasjoner/gjennomsnittig_vekstfart/media/videos/gjennomsnittlig_vekstfart/1440p60/gjennomsnittlig_vekstfart.gif
+---
+name: fig-teori-andregradsfunksjoner-vekstfart-gjennomsnittlig-vekstfart-sekanter
+width: 100%
+class: no-click
+---
+viser grafen til en andregradsfunksjon (blå) og en sekant (rød) som går gjennom to punkter $(x_1, f(x_1))$ og $(x_2, f(x_2))$ og den tilsvarende formelen for gjennomsnittlig vekstfart i intervallet $[x_1, x_2]$.
+:::
+:::::::::::::
+
+:::::::::::::{tab-item} Ettpunktsformelen
+En linje med stigningstall $a$ som går gjennom punktet $(x_1, y_1)$ kan skrives på formen
+
+$$
+y - y_1 = a(x - x_1).
+$$
+
+:::::::::::::
+
+::::::::::::::
+
+:::::::::::::::
+
+---
+
 :::::::::::::::{admonition} Oppgave 1
 ---
 class: problem-level-1
