@@ -105,7 +105,7 @@ class GjennomsnittligVekstfart(Scene):
         gjennomsnittlig_vekstfart = MathTex(
             "\\dfrac{\\Delta f(x)}{\\Delta x} = \\dfrac{f(b) - f(a)}{b - a}",
             color=TEAL_A,
-        ).move_to(axes.coords_to_point(-2, 6))
+        ).move_to(axes.coords_to_point(-3, 6))
         background3 = BackgroundRectangle(
             gjennomsnittlig_vekstfart,
             color=BLACK,

@@ -74,7 +74,7 @@ class SecantMethod(Scene):
             self.play(
                 Create(secant),
                 # rate_func=linear,
-                run_time=2,
+                run_time=4,
             )
 
             self.wait(2)

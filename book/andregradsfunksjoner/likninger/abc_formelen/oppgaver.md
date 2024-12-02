@@ -524,7 +524,37 @@ $$
 
 ---
 
-::::{admonition} Oppgave 7 
+::::{admonition} Oppgave 7
+---
+class: problem-level-2
+---
+Et likningssystem er gitt ved
+
+
+\begin{align*}
+    x^2 + 2y - y &= 1, \\
+    \\
+    x + y &= k. 
+\end{align*}
+
+
+Bestem $k$ slik at likningssysmemet har én løsning. 
+
+Hva er løsningen til dette likningssystemet?
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+k = 2 \quad \text{og} \quad x = 1 \, \land \, y = 0.
+$$
+:::
+::::
+
+---
+
+::::{admonition} Oppgave 8
 ---
 class: problem-level-3
 ---
