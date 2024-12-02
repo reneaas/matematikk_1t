@@ -112,6 +112,14 @@ $$
 f(x) = x^2 + 3x - 2
 $$
 
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+\dfrac{\Delta f(x)}{\Delta x} = 8
+$$
+:::
 :::::::::::::
 
 :::::::::::::{tab-item} b
@@ -121,6 +129,14 @@ $$
 g(x) = -x^2 + 4
 $$
 
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+\dfrac{\Delta g(x)}{\Delta x} = 0
+$$
+:::
 :::::::::::::
 
 :::::::::::::{tab-item} c
@@ -129,6 +145,16 @@ Bestem den gjennomsnittlige vekstfarten til $h$ i intervallet $[-1, 1]$.
 $$
 h(x) = -(x + 1)(x + 2)
 $$
+
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+\dfrac{\Delta h(x)}{\Delta x} = -3
+$$
+:::
 
 :::::::::::::
 
@@ -139,6 +165,16 @@ Bestem den gjennomsnittlige vekstfarten til $p$ i intervallet $[-2, 0]$.
 $$
 p(x) = (x - 2)^2 - 3
 $$
+
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+\dfrac{\Delta p(x)}{\Delta x} = -6
+$$
+:::
 
 :::::::::::::
 
@@ -166,18 +202,42 @@ class: tabs-parts
 :::::::::::::{tab-item} a
 Bestem den gjennomsnittlige vekstfarten til $f$ i intervallet $[-2, 1]$.
 
-
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+\dfrac{\Delta f(x)}{\Delta x} = 3
+$$
+:::
 :::::::::::::
 
 :::::::::::::{tab-item} b
 Bestem stigningstallet til sekanten som går gjennom punktene $(-2, f(-2))$ og $(1, f(1))$.
 
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+Stigningstallet til sekanten er det samme som den gjennomsnittlig vekstfarten til $f$ i intervallet $[-2, 1]$. Dermed er stigningstallet 
 
+$$
+a = 3
+$$
+:::
 :::::::::::::
 
 :::::::::::::{tab-item} c
 Bestem likningen for sekanten. 
 
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+y = 3x + 5.
+$$
+:::
 :::::::::::::
 
 
@@ -203,6 +263,15 @@ Bestem likningen for sekanten gjennom punktene $(1, f(1))$ og $(3, f(3))$ på gr
 $$
 f(x) = x^2 - 2x + 1.
 $$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+y = 2x - 2
+$$
+:::
 :::::::::::::
 
 ::::::::::::{tab-item} b
@@ -211,6 +280,16 @@ Bestem likningen for sekanten gjennom punktene $(-2, g(-2))$ og $(1, g(1))$ på 
 $$
 g(x) = (x - 1)(x + 3)
 $$
+
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+y = x - 1
+$$
+:::
 :::::::::::::
 
 
@@ -220,14 +299,32 @@ Bestem likningen for sekanten gjennom punktene $(0, h(0))$ og $(2, h(2))$ på gr
 $$
 h(x) = -(x + 2)^2 + 3
 $$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+y = -6x - 1
+$$
+:::
 :::::::::::::
 
 ::::::::::::{tab-item} d
-Bestem likningen for sekanten gjennom punktene $(-2, p(2))$ og $(0, p(0))$ på grafen til
+Bestem likningen for sekanten gjennom punktene $(-2, p(-2))$ og $(0, p(0))$ på grafen til
 
 $$
 p(x) = -x^2 + 16
 $$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+y = 2x + 16.
+$$
+:::
 :::::::::::::
 
 ::::::::::::::
