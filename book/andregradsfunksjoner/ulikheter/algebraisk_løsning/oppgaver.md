@@ -104,7 +104,7 @@ class: no-click
 class: answer, dropdown
 ---
 $$
-x \in \mathbb{R} \setminus \langle -5, 1 \rangle
+x \in \mathbb{R} \setminus \langle -5, -1 \rangle
 $$
 :::
 
