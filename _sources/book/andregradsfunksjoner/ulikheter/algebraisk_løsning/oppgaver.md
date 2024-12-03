@@ -319,6 +319,86 @@ $$
 ---
 class: problem-level-2
 ---
+::::::::::::::{tab-set} 
+---
+class: tabs-parts
+---
+
+:::::::::::::{tab-item} a
+Løs ulikheten
+
+$$
+x^2 + 3x - 4 > 4x - 2
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x \in \mathbb{R} \setminus [-1, 2]
+$$
+:::
+:::::::::::::
+
+:::::::::::::{tab-item} b
+Løs ulikheten
+
+$$
+-2x^2 + 5x + 1 \leq -3x + 7
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x \in \mathbb{R} \setminus \langle 1, 3 \rangle
+$$
+:::
+:::::::::::::
+
+:::::::::::::{tab-item} c
+Løs ulikheten
+
+$$
+-4x - 6 < -x^2 + x + 8
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x \in \mathbb{R} \setminus [-2, 7]
+$$
+:::
+:::::::::::::
+
+:::::::::::::{tab-item} d
+Løs ulikheten
+
+$$
+-x^2 + x + 12 \geq -3x^2 - x + 52
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x \in \mathbb{R} \setminus \langle -5, 4 \rangle
+$$
+:::
+:::::::::::::
+
+:::::::::::::::
+---
+
+:::::::::::::::{admonition} Oppgave 7
+---
+class: problem-level-2
+---
 En andregradsfunksjon $f$ er gitt ved 
 
 $$
@@ -402,7 +482,7 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 7
+:::::::::::::::{admonition} Oppgave 8
 ---
 class: problem-level-2
 ---
@@ -650,7 +730,7 @@ $$
 
 
 
-:::::::::::::::{admonition} Oppgave 8
+:::::::::::::::{admonition} Oppgave 9
 ---
 class: problem-level-3
 ---
