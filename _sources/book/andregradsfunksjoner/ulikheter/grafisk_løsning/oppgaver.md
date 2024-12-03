@@ -54,7 +54,7 @@ $$
 class: answer, dropdown
 ---
 $$
-x \in \langle \gets, -3] \cup [2, \to \rangle
+x \in \langle \gets, -3] \cap [2, \to \rangle
 $$
 :::
 :::::::::::::
@@ -85,7 +85,8 @@ $$
 class: answer, dropdown
 ---
 $$
-x \in \langle \gets, -3 \rangle \cup [4, \to \rangle
+Ingen løsning
+x \in Ø
 $$
 :::
 :::::::::::::
