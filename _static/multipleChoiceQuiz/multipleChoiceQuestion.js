@@ -7,71 +7,108 @@ function generateUUID() {
     });
 }
 
+
 class MultipleChoiceQuestion {
-    constructor({ id, content, answers }) {
+    constructor({ id, content, answers }, options = {}) {
         this.id = id;
         this.content = content;
-        this.answers = answers;
-        shuffleArray(this.answers); // Shuffle the answers
-        this.selectedAnswers = new Set();
+        this.options = options;
+        this.shuffleOptions = options.hasOwnProperty('shuffleOptions') ? options.shuffleOptions : true;
+        this.previousAnswers = options.previousAnswers || [];
+        this.correctlyAnswered = options.correctlyAnswered || false;
         this.elements = {}; // Store elements for easy access
+
+        // Assign IDs to answers if not present
+        this.answers = answers.map((answer) => {
+            if (!answer.hasOwnProperty('id')) {
+                answer.id = generateUUID();
+            }
+            return answer;
+        });
+
+        // Handle answers order
+        if (options.answersOrder) {
+            // Use the provided answers order
+            this.answers = options.answersOrder.map(answerId => this.answers.find(a => a.id === answerId));
+        } else if (this.shuffleOptions) {
+            // Shuffle the answers
+            shuffleArray(this.answers);
+        }
+        // Else, if shuffleOptions is false and no answersOrder provided, keep the current order
+
+        // Initialize selectedAnswers with previousAnswers
+        this.selectedAnswers = new Set(this.previousAnswers);
     }
 
     render(containerId) {
         const container = document.getElementById(containerId);
-    
+
         // Create question element
         const questionCard = document.createElement('div');
         questionCard.classList.add('question-card');
         questionCard.innerHTML = this.content;
-    
+
         // Append the question card to the container first
         container.appendChild(questionCard);
-    
+
         // Render LaTeX in the question
         this.renderMathInElement(questionCard);
-    
+
         // Apply syntax highlighting to the question card
         this.applySyntaxHighlighting(questionCard);
-    
+
         // Create answers container
         const answersGrid = document.createElement('div');
         answersGrid.classList.add('answers-grid');
-    
+
         // Append the answers grid to the container
         container.appendChild(answersGrid);
-    
+
         // Create answer elements
-        this.answers.forEach((answer, index) => {
+        this.answers.forEach((answer) => {
             const answerCard = document.createElement('div');
             answerCard.classList.add('answer-card');
             answerCard.innerHTML = answer.content;
-            answerCard.dataset.index = index;
-    
+            answerCard.dataset.answerId = answer.id;
+
             // Append the answer card to the answers grid first
             answersGrid.appendChild(answerCard);
-    
+
             // Render LaTeX in the answer
             this.renderMathInElement(answerCard);
-    
+
             // Apply syntax highlighting to the answer card
             this.applySyntaxHighlighting(answerCard);
-    
-            // Add click event to handle selection
-            answerCard.addEventListener('click', () => this.toggleSelection(answerCard));
+
+            // Mark as selected if previously selected
+            if (this.selectedAnswers.has(answer.id)) {
+                answerCard.classList.add('selected');
+            }
+
+            // Disable interaction if question is correctly answered
+            if (this.correctlyAnswered) {
+                answerCard.classList.add('disabled');
+            } else {
+                // Add click event to handle selection
+                answerCard.addEventListener('click', () => this.toggleSelection(answerCard));
+            }
         });
-    
+
         // Store elements for later access
         this.elements.container = container;
         this.elements.questionCard = questionCard;
         this.elements.answersGrid = answersGrid;
+
+        // Apply correct/incorrect class if previously answered
+        if (this.correctlyAnswered) {
+            this.elements.questionCard.classList.add('correct');
+        }
     }
-    
 
     toggleSelection(answerCard) {
-        const index = answerCard.dataset.index;
-        if (this.selectedAnswers.has(index)) {
-            this.selectedAnswers.delete(index);
+        const answerId = answerCard.dataset.answerId;
+        if (this.selectedAnswers.has(answerId)) {
+            this.selectedAnswers.delete(answerId);
             answerCard.classList.remove('selected');
         } else {
             // If single-choice, deselect other answers
@@ -80,33 +117,40 @@ class MultipleChoiceQuestion {
                 const allAnswerCards = this.elements.answersGrid.querySelectorAll('.answer-card');
                 allAnswerCards.forEach(card => card.classList.remove('selected'));
             }
-            this.selectedAnswers.add(index);
+            this.selectedAnswers.add(answerId);
             answerCard.classList.add('selected');
         }
     }
 
     checkAnswers(showAlert = true) {
-        // Compare selected answers with correct answers
-        const correctIndices = this.answers
-            .map((answer, index) => (answer.isCorrect ? index.toString() : null))
-            .filter(index => index !== null);
-    
+        // Get the correct answer IDs
+        const correctAnswerIds = this.answers
+            .filter(answer => answer.isCorrect)
+            .map(answer => answer.id);
+
+        // Compare selectedAnswers with correctAnswerIds
         const isCorrect =
-            this.selectedAnswers.size === correctIndices.length &&
-            [...this.selectedAnswers].every(index => correctIndices.includes(index));
-    
+            this.selectedAnswers.size === correctAnswerIds.length &&
+            [...this.selectedAnswers].every(id => correctAnswerIds.includes(id));
+
         // Provide visual feedback
         if (isCorrect) {
             this.elements.questionCard.classList.add('correct');
+            this.correctlyAnswered = true; // Mark question as correctly answered
+            // Disable further interaction
+            const allAnswerCards = this.elements.answersGrid.querySelectorAll('.answer-card');
+            allAnswerCards.forEach(card => {
+                card.classList.add('disabled');
+            });
         } else {
             this.elements.questionCard.classList.add('incorrect');
         }
-    
+
         // Optionally display feedback if showAlert is true
         if (showAlert) {
             alert(isCorrect ? 'Correct!' : 'Incorrect. Please try again.');
         }
-    
+
         return isCorrect;
     }
 
@@ -114,8 +158,12 @@ class MultipleChoiceQuestion {
         // Reset selections and visual feedback
         this.selectedAnswers.clear();
         const allAnswerCards = this.elements.answersGrid.querySelectorAll('.answer-card');
-        allAnswerCards.forEach(card => card.classList.remove('selected'));
+        allAnswerCards.forEach(card => {
+            card.classList.remove('selected');
+            card.classList.remove('disabled');
+        });
         this.elements.questionCard.classList.remove('correct', 'incorrect');
+        this.correctlyAnswered = false;
     }
 
     isSingleChoice() {
@@ -142,5 +190,13 @@ class MultipleChoiceQuestion {
         codeBlocks.forEach(block => {
             hljs.highlightElement(block);
         });
+    }
+
+    getSelectedOptions() {
+        return Array.from(this.selectedAnswers);
+    }
+
+    getAnswersOrder() {
+        return this.answers.map(answer => answer.id);
     }
 }

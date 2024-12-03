@@ -9,6 +9,8 @@ class SequentialMultipleChoiceQuiz {
         this.totalQuestions = questionsData.length;
         this.currentQuestionIndex = 0;
         this.uniqueId = generateUUID();
+        this.correctlyAnsweredQuestions = new Set(); // Track correctly answered questions
+        this.userAnswers = {}; // Store user's selected answers per question
         this.init();
     }
 
@@ -18,12 +20,14 @@ class SequentialMultipleChoiceQuiz {
     }
 
     generateHTML() {
-        // Set up the main structure
+        // Set up the main structure with Previous and Next buttons
         this.container.innerHTML = `
             <div id="question-counter-${this.uniqueId}" class="question-counter"></div>
             <div id="question-container-${this.uniqueId}" class="mcq-container"></div>
             <div class="button-container">
+                <button id="prev-question-${this.uniqueId}" class="button">Forrige</button>
                 <button id="submit-answer-${this.uniqueId}" class="button button-run">Sjekk svar</button>
+                <button id="next-question-${this.uniqueId}" class="button">Neste</button>
             </div>
             <!-- Toast Notifications -->
             <div id="toast-success-${this.uniqueId}" class="toast toast-success" style="display: none;">
@@ -34,14 +38,10 @@ class SequentialMultipleChoiceQuiz {
             </div>
         `;
 
-        // Add event listener for the submit button
+        // Add event listeners for the buttons
         document.getElementById(`submit-answer-${this.uniqueId}`).addEventListener('click', () => this.submitAnswer());
-
-        // Initialize cursor position for toast
-        // document.addEventListener('mousemove', (event) => {
-        //     this.cursorX = event.clientX;
-        //     this.cursorY = event.clientY;
-        // });
+        document.getElementById(`prev-question-${this.uniqueId}`).addEventListener('click', () => this.goToPreviousQuestion());
+        document.getElementById(`next-question-${this.uniqueId}`).addEventListener('click', () => this.goToNextQuestion());
     }
 
     showQuestion() {
@@ -59,50 +59,32 @@ class SequentialMultipleChoiceQuiz {
         const questionContainer = document.getElementById(`question-container-${this.uniqueId}`);
         questionContainer.innerHTML = ''; // Clear previous question
 
-        // Render the new question
-        this.currentQuestion = new MultipleChoiceQuestion(questionData);
+        // Get user's previous answers if any
+        const previousAnswers = this.userAnswers[this.currentQuestionIndex] || [];
+
+        // Render the new question with previous answers and prevent reshuffling
+        this.currentQuestion = new MultipleChoiceQuestion(questionData, {
+            previousAnswers: previousAnswers,
+            shuffleOptions: false
+        });
         this.currentQuestion.render(`question-container-${this.uniqueId}`);
+
+        // Update the state of navigation buttons
+        this.updateNavigationButtons();
     }
-
-    // submitAnswer() {
-    //     const isCorrect = this.currentQuestion.checkAnswers(false); // Pass 'false' to suppress alerts
-
-    //     if (isCorrect) {
-    //         this.showToast('success');
-    //         // Move to the next question after a short delay
-    //         setTimeout(() => {
-    //             this.currentQuestionIndex++;
-    //             if (this.currentQuestionIndex < this.totalQuestions) {
-    //                 this.showQuestion();
-    //             } else {
-    //                 this.finishQuiz();
-    //             }
-    //         }, 1000); // Delay to allow the user to see the feedback
-    //     } else {
-    //         this.showToast('error');
-    //         // Optionally, allow the user to retry or move on
-    //         // For immediate move to next question, uncomment below
-    //         /*
-    //         setTimeout(() => {
-    //             this.currentQuestionIndex++;
-    //             if (this.currentQuestionIndex < this.totalQuestions) {
-    //                 this.showQuestion();
-    //             } else {
-    //                 this.finishQuiz();
-    //             }
-    //         }, 1500);
-    //         */
-    //     }
-    // }
 
     submitAnswer() {
         // Disable the submit button to prevent multiple clicks
         const submitButton = document.getElementById(`submit-answer-${this.uniqueId}`);
         submitButton.disabled = true;
-    
+
+        // Store the user's selected answers
+        this.userAnswers[this.currentQuestionIndex] = this.currentQuestion.getSelectedOptions();
+
         const isCorrect = this.currentQuestion.checkAnswers(false); // Pass 'false' to suppress alerts
-    
+
         if (isCorrect) {
+            this.correctlyAnsweredQuestions.add(this.currentQuestionIndex); // Track correct answer
             this.showToast('success');
             // Move to the next question after a short delay
             setTimeout(() => {
@@ -123,52 +105,33 @@ class SequentialMultipleChoiceQuiz {
             }, 1500); // Match the toast display time
         }
     }
-    
-
-    // showToast(type) {
-    //     const toastId = type === 'success' ? `toast-success-${this.uniqueId}` : `toast-error-${this.uniqueId}`;
-    //     const toast = document.getElementById(toastId);
-
-    //     // Position the toast near the cursor
-    //     toast.style.top = `${this.cursorY-100}px`;
-    //     toast.style.left = `${this.cursorX}px`;
-    //     toast.style.display = 'block';
-
-    //     // Hide the toast after a delay
-    //     setTimeout(() => {
-    //         toast.style.display = 'none';
-    //     }, 1500); // Display for 1.5 seconds
-    // }
 
     showToast(type) {
         const toastId = type === 'success' ? `toast-success-${this.uniqueId}` : `toast-error-${this.uniqueId}`;
         const toast = document.getElementById(toastId);
-    
+
         if (!toast) {
             console.error(`Toast element with ID ${toastId} not found.`);
             return;
         }
-    
+
         // Ensure the container is positioned relatively
         if (getComputedStyle(this.container).position === 'static') {
             this.container.style.position = 'relative';
         }
-    
+
         // Display the toast in the center of the container
         toast.style.position = 'absolute';
         toast.style.top = '50%';
         toast.style.left = '50%';
         toast.style.transform = 'translate(-50%, -50%)';
         toast.style.display = 'block';
-    
+
         // Hide the toast after a delay
         setTimeout(() => {
             toast.style.display = 'none';
         }, 1500); // Display for 1.5 seconds
     }
-    
-    
-    
 
     finishQuiz() {
         // Clear the container and display a completion message
@@ -177,5 +140,36 @@ class SequentialMultipleChoiceQuiz {
                 <p>Da var quizen ferdig! 🎉</p>
             </div>
         `;
+    }
+
+    updateNavigationButtons() {
+        const prevButton = document.getElementById(`prev-question-${this.uniqueId}`);
+        const nextButton = document.getElementById(`next-question-${this.uniqueId}`);
+        const submitButton = document.getElementById(`submit-answer-${this.uniqueId}`);
+
+        const currentIndex = this.currentQuestionIndex;
+
+        // Enable or disable the Previous button
+        prevButton.disabled = currentIndex === 0 || !this.correctlyAnsweredQuestions.has(currentIndex - 1);
+
+        // Enable or disable the Next button
+        nextButton.disabled = !this.correctlyAnsweredQuestions.has(currentIndex);
+
+        // Disable the submit button if the question has been answered correctly
+        submitButton.disabled = this.correctlyAnsweredQuestions.has(currentIndex);
+    }
+
+    goToPreviousQuestion() {
+        if (this.currentQuestionIndex > 0 && this.correctlyAnsweredQuestions.has(this.currentQuestionIndex - 1)) {
+            this.currentQuestionIndex--;
+            this.showQuestion();
+        }
+    }
+
+    goToNextQuestion() {
+        if (this.correctlyAnsweredQuestions.has(this.currentQuestionIndex)) {
+            this.currentQuestionIndex++;
+            this.showQuestion();
+        }
     }
 }
