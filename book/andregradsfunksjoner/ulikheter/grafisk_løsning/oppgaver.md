@@ -46,7 +46,7 @@ $$
 
 :::::::::::::{tab-item} b
 $$
-x \leq -3 \, \land \, x \geq 2
+x \geq -3 \, \land \, x \leq 2
 $$
 
 :::{admonition} Fasit
@@ -54,7 +54,7 @@ $$
 class: answer, dropdown
 ---
 $$
-x \in \langle \gets, -3] \cap [2, \to \rangle
+x \in [-3, 2]
 $$
 :::
 :::::::::::::
@@ -77,7 +77,7 @@ $$
 
 :::::::::::::{tab-item} d
 $$
-x < -3 \, \land \, x \geq 4
+x > -3 \, \land \, x \leq 4
 $$
 
 :::{admonition} Fasit
@@ -85,7 +85,7 @@ $$
 class: answer, dropdown
 ---
 $$
-x \in \langle \gets, -3 \rangle \cap [4, \to \rangle
+x \in \langle -3, 4]
 $$
 :::
 :::::::::::::
