@@ -85,8 +85,7 @@ $$
 class: answer, dropdown
 ---
 $$
-Ingen løsning
-x \in Ø
+x \in \langle \gets, -3 \rangle \cap [4, \to \rangle
 $$
 :::
 :::::::::::::
