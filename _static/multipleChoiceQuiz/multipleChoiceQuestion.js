@@ -7,6 +7,13 @@ function generateUUID() {
     });
 }
 
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
 
 class MultipleChoiceQuestion {
     constructor({ id, content, answers }, options = {}) {
@@ -32,6 +39,7 @@ class MultipleChoiceQuestion {
             this.answers = options.answersOrder.map(answerId => this.answers.find(a => a.id === answerId));
         } else if (this.shuffleOptions) {
             // Shuffle the answers
+            console.log("Shuffling answers");
             shuffleArray(this.answers);
         }
         // Else, if shuffleOptions is false and no answersOrder provided, keep the current order
