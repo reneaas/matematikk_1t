@@ -14,38 +14,23 @@ function shuffleArray(array) {
     }
 }
 
-
 class MultipleChoiceQuestion {
-    constructor({ id, content, answers }, options = {}) {
+    constructor({ id, content, answers }) {
         this.id = id;
         this.content = content;
-        this.options = options;
-        this.shuffleOptions = options.hasOwnProperty('shuffleOptions') ? options.shuffleOptions : true;
-        this.previousAnswers = options.previousAnswers || [];
-        this.correctlyAnswered = options.correctlyAnswered || false;
-        this.elements = {}; // Store elements for easy access
-
-        // Assign IDs to answers if not present
         this.answers = answers.map((answer) => {
             if (!answer.hasOwnProperty('id')) {
                 answer.id = generateUUID();
             }
             return answer;
         });
+        this.selectedAnswers = new Set();
+        this.elements = {}; // Store elements for easy access
+        this.correctlyAnswered = false; // Track if the question is correctly answered
+    }
 
-        // Handle answers order
-        if (options.answersOrder) {
-            // Use the provided answers order
-            this.answers = options.answersOrder.map(answerId => this.answers.find(a => a.id === answerId));
-        } else if (this.shuffleOptions) {
-            // Shuffle the answers
-            console.log("Shuffling answers");
-            shuffleArray(this.answers);
-        }
-        // Else, if shuffleOptions is false and no answersOrder provided, keep the current order
-
-        // Initialize selectedAnswers with previousAnswers
-        this.selectedAnswers = new Set(this.previousAnswers);
+    shuffleAnswers() {
+        shuffleArray(this.answers);
     }
 
     render(containerId) {
@@ -56,7 +41,7 @@ class MultipleChoiceQuestion {
         questionCard.classList.add('question-card');
         questionCard.innerHTML = this.content;
 
-        // Append the question card to the container first
+        // Append the question card to the container
         container.appendChild(questionCard);
 
         // Render LaTeX in the question
@@ -79,7 +64,7 @@ class MultipleChoiceQuestion {
             answerCard.innerHTML = answer.content;
             answerCard.dataset.answerId = answer.id;
 
-            // Append the answer card to the answers grid first
+            // Append the answer card to the answers grid
             answersGrid.appendChild(answerCard);
 
             // Render LaTeX in the answer
@@ -107,7 +92,7 @@ class MultipleChoiceQuestion {
         this.elements.questionCard = questionCard;
         this.elements.answersGrid = answersGrid;
 
-        // Apply correct/incorrect class if previously answered
+        // Apply correct class if previously answered correctly
         if (this.correctlyAnswered) {
             this.elements.questionCard.classList.add('correct');
         }
@@ -162,16 +147,8 @@ class MultipleChoiceQuestion {
         return isCorrect;
     }
 
-    reset() {
-        // Reset selections and visual feedback
-        this.selectedAnswers.clear();
-        const allAnswerCards = this.elements.answersGrid.querySelectorAll('.answer-card');
-        allAnswerCards.forEach(card => {
-            card.classList.remove('selected');
-            card.classList.remove('disabled');
-        });
-        this.elements.questionCard.classList.remove('correct', 'incorrect');
-        this.correctlyAnswered = false;
+    markAsCorrectlyAnswered() {
+        this.correctlyAnswered = true;
     }
 
     isSingleChoice() {
@@ -188,6 +165,7 @@ class MultipleChoiceQuestion {
                 { left: '$', right: '$', display: false },
                 { left: '\\[', right: '\\]', display: true },
                 { left: '\\(', right: '\\)', display: false }
+                // ... other delimiters if needed ...
             ]
         });
     }
@@ -198,13 +176,5 @@ class MultipleChoiceQuestion {
         codeBlocks.forEach(block => {
             hljs.highlightElement(block);
         });
-    }
-
-    getSelectedOptions() {
-        return Array.from(this.selectedAnswers);
-    }
-
-    getAnswersOrder() {
-        return this.answers.map(answer => answer.id);
     }
 }
