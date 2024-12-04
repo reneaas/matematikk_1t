@@ -651,7 +651,7 @@ print(løsning)
 **Utskrift**:
 
 :::{code-block} console
-( (x < 1))  ∨  ((2 < x) )
+x < 1  ∨  2 < x 
 :::
 ::::
 
@@ -668,14 +668,34 @@ file: ./python/oppgaver/oppgave_7/b.html
 ---
 :::
 
-:::{admonition} Fasit
+::::{admonition} Fasit
 ---
 class: answer, dropdown
 ---
 $$
 x \in \mathbb{R} \setminus \langle 1, 3 \rangle
 $$
+
+**Programkode**:
+
+:::{code-block} python
+---
+linenos: true
+---
+from casify import *
+
+løsning = løs("-x**2 + 4*x - 3 <= 0")
+
+print(løsning)
 :::
+
+**Utskrift**:
+
+:::{code-block} console
+3 <= x  ∨  x <= 1
+:::
+
+::::
 :::::::::::::
 
 :::::::::::::{tab-item} c
@@ -689,14 +709,34 @@ file: ./python/oppgaver/oppgave_7/c.html
 ---
 :::
 
-:::{admonition} Fasit
+::::{admonition} Fasit
 ---
 class: answer, dropdown
 ---
 $$
-x \in \mathbb{R} \setminus \left[ 1 - 2\sqrt{2}, 1 + 2\sqrt{2} \right]
+x < 1 - 2\sqrt{2} \quad \lor \quad  1 + 2\sqrt{2} < x
 $$
+
+**Programkode**:
+
+:::{code-block} python
+---
+linenos: true
+---
+from casify import *
+
+løsning = løs("x**2 - 3*x - 3 > -x + 4")
+
+print(løsning)
 :::
+
+**Utskrift**:
+
+:::{code-block} console
+x < 1 - 2*sqrt(2)   ∨   1 + 2*sqrt(2) < x
+:::
+
+::::
 :::::::::::::
 
 :::::::::::::{tab-item} d
@@ -710,14 +750,34 @@ file: ./python/oppgaver/oppgave_7/d.html
 ---
 :::
 
-:::{admonition} Fasit
+::::{admonition} Fasit
 ---
 class: answer, dropdown
 ---
 $$
 x \in [1, 3]
 $$
+
+**Programkode**:
+
+:::{code-block} python
+---
+linenos: true
+---
+from casify import *
+
+løsning = løs("-x**2 + 3*x - 2 >= -x + 1")
+
+print(løsning)
 :::
+
+**Utskrift**:
+
+:::{code-block} console
+1 <= x   ∧   x <= 3
+:::
+
+::::
 :::::::::::::
 ::::::::::::::
 
