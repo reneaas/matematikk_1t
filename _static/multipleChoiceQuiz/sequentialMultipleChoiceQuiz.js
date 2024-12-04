@@ -10,6 +10,7 @@ class SequentialMultipleChoiceQuiz {
         this.currentQuestionIndex = 0;
         this.uniqueId = generateUUID();
         this.correctlyAnsweredQuestions = new Set(); // Track correctly answered questions
+        this.shuffledAnswers = {}; // Store shuffled answers per question
         this.userAnswers = {}; // Store user's selected answers per question
         this.init();
     }
@@ -25,9 +26,9 @@ class SequentialMultipleChoiceQuiz {
             <div id="question-counter-${this.uniqueId}" class="question-counter"></div>
             <div id="question-container-${this.uniqueId}" class="mcq-container"></div>
             <div class="button-container">
-                <button id="prev-question-${this.uniqueId}" class="button">Forrige</button>
+                <button id="prev-question-${this.uniqueId}" class="button button-prev">← Forrige</button>
                 <button id="submit-answer-${this.uniqueId}" class="button button-run">Sjekk svar</button>
-                <button id="next-question-${this.uniqueId}" class="button">Neste</button>
+                <button id="next-question-${this.uniqueId}" class="button button-next">Neste →</button>
             </div>
             <!-- Toast Notifications -->
             <div id="toast-success-${this.uniqueId}" class="toast toast-success" style="display: none;">
@@ -62,16 +63,31 @@ class SequentialMultipleChoiceQuiz {
         // Get user's previous answers if any
         const previousAnswers = this.userAnswers[this.currentQuestionIndex] || [];
 
+        if (previousAnswers.length <= this.currentQuestionIndex) {
+            this.currentQuestion = new MultipleChoiceQuestion(questionData, {
+                previousAnswers: previousAnswers,
+                shuffleOptions: true,
+            });
+            this.shuffledAnswers[this.currentQuestionIndex] = this.currentQuestion.answers.map((answer) => answer.id);
+        } else {
+            this.currentQuestion = new MultipleChoiceQuestion(questionData, {
+                previousAnswers: previousAnswers,
+                shuffleOptions: false,
+            });
+        }
+
         // Render the new question with previous answers and prevent reshuffling
-        this.currentQuestion = new MultipleChoiceQuestion(questionData, {
-            previousAnswers: previousAnswers,
-            shuffleOptions: false
-        });
+        // this.currentQuestion = new MultipleChoiceQuestion(questionData, {
+        //     previousAnswers: previousAnswers,
+        //     shuffleOptions: false
+        // });
         this.currentQuestion.render(`question-container-${this.uniqueId}`);
 
         // Update the state of navigation buttons
         this.updateNavigationButtons();
     }
+
+    
 
     submitAnswer() {
         // Disable the submit button to prevent multiple clicks
@@ -142,6 +158,7 @@ class SequentialMultipleChoiceQuiz {
         `;
     }
 
+
     updateNavigationButtons() {
         const prevButton = document.getElementById(`prev-question-${this.uniqueId}`);
         const nextButton = document.getElementById(`next-question-${this.uniqueId}`);
@@ -149,11 +166,19 @@ class SequentialMultipleChoiceQuiz {
 
         const currentIndex = this.currentQuestionIndex;
 
-        // Enable or disable the Previous button
-        prevButton.disabled = currentIndex === 0 || !this.correctlyAnsweredQuestions.has(currentIndex - 1);
+        // Show or hide the Previous button
+        if (currentIndex === 0 || !this.correctlyAnsweredQuestions.has(currentIndex - 1)) {
+            prevButton.style.display = 'none'; // Hide the button
+        } else {
+            prevButton.style.display = ''; // Show the button
+        }
 
-        // Enable or disable the Next button
-        nextButton.disabled = !this.correctlyAnsweredQuestions.has(currentIndex);
+        // Show or hide the Next button
+        if (this.correctlyAnsweredQuestions.has(currentIndex)) {
+            nextButton.style.display = ''; // Show the button
+        } else {
+            nextButton.style.display = 'none'; // Hide the button
+        }
 
         // Disable the submit button if the question has been answered correctly
         submitButton.disabled = this.correctlyAnsweredQuestions.has(currentIndex);
