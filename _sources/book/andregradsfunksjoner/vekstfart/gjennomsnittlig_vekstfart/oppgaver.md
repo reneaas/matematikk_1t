@@ -492,6 +492,7 @@ Vi setter inn $f(x)$ og regner ut:
 
 \begin{align*}
     f(1) &= a(1 - 1)(1 - 3) = 0 \\
+    \\
     f(-1) &= a(-1 - 1)(-1 - 3) = a\cdot (-2)\cdot (-4) = 8a
 \end{align*}
 
@@ -511,7 +512,7 @@ $$
 
 :::::::::::::{tab-item} b
 En andregradsfunksjon $g$ har følgende egenskaper:
-* Et ekstremalpunkt i $(2, 3)$. 
+* Et bunnpunkt i $(2, 3)$. 
 * Gjennomsnittlig vekstfart i intervallet $[1, 4]$ er $2$.
 
 Bestem $g(x)$. 
@@ -531,7 +532,7 @@ $$
 En andregradsfunksjon $h$ har følgende egenskaper:
 * Et nullpunkt i $x = -1$.
 * Gjennomsnittlig vekstfart i intervallet $[-2, 6]$ er $0$.
-* Verdimengden til $h$ er $V_h = [-6, \to\rangle$.
+* $h(x) \in [-6, \to\rangle$.
 
 Bestem $h(x)$. 
 
