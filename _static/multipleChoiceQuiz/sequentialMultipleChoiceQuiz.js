@@ -12,6 +12,7 @@ class SequentialMultipleChoiceQuiz {
         this.correctlyAnsweredQuestions = new Set(); // Track correctly answered questions
         this.shuffledAnswers = {}; // Store shuffled answers per question
         this.userAnswers = {}; // Store user's selected answers per question
+        this.questionInstances = {}; // Store instances of MultipleChoiceQuestion
         this.init();
     }
 
@@ -45,73 +46,134 @@ class SequentialMultipleChoiceQuiz {
         document.getElementById(`next-question-${this.uniqueId}`).addEventListener('click', () => this.goToNextQuestion());
     }
 
+    // showQuestion() {
+    //     const questionData = this.questionsData[this.currentQuestionIndex];
+    //     if (!questionData) {
+    //         this.finishQuiz();
+    //         return;
+    //     }
+
+    //     // Update the question counter
+    //     const counter = document.getElementById(`question-counter-${this.uniqueId}`);
+    //     counter.textContent = `Spørsmål ${this.currentQuestionIndex + 1} / ${this.totalQuestions}`;
+
+    //     // Clear the question container before rendering the new question
+    //     const questionContainer = document.getElementById(`question-container-${this.uniqueId}`);
+    //     questionContainer.innerHTML = ''; // Clear previous question
+
+    //     // Get user's previous answers if any
+    //     const previousAnswers = this.userAnswers[this.currentQuestionIndex] || [];
+
+    //     if (previousAnswers.length <= this.currentQuestionIndex) {
+    //         this.currentQuestion = new MultipleChoiceQuestion(questionData, {
+    //             previousAnswers: previousAnswers,
+    //             shuffleOptions: true,
+    //         });
+    //         this.shuffledAnswers[this.currentQuestionIndex] = this.currentQuestion.answers.map((answer) => answer.id);
+    //     } else {
+    //         this.currentQuestion = new MultipleChoiceQuestion(questionData, {
+    //             previousAnswers: previousAnswers,
+    //             shuffleOptions: false,
+    //         });
+    //     }
+
+    //     // Render the new question with previous answers and prevent reshuffling
+    //     // this.currentQuestion = new MultipleChoiceQuestion(questionData, {
+    //     //     previousAnswers: previousAnswers,
+    //     //     shuffleOptions: false
+    //     // });
+    //     this.currentQuestion.render(`question-container-${this.uniqueId}`);
+
+    //     // Update the state of navigation buttons
+    //     this.updateNavigationButtons();
+    // }
+
     showQuestion() {
         const questionData = this.questionsData[this.currentQuestionIndex];
         if (!questionData) {
             this.finishQuiz();
             return;
         }
-
+    
         // Update the question counter
         const counter = document.getElementById(`question-counter-${this.uniqueId}`);
         counter.textContent = `Spørsmål ${this.currentQuestionIndex + 1} / ${this.totalQuestions}`;
-
+    
         // Clear the question container before rendering the new question
         const questionContainer = document.getElementById(`question-container-${this.uniqueId}`);
         questionContainer.innerHTML = ''; // Clear previous question
-
-        // Get user's previous answers if any
-        const previousAnswers = this.userAnswers[this.currentQuestionIndex] || [];
-
-        if (previousAnswers.length <= this.currentQuestionIndex) {
-            this.currentQuestion = new MultipleChoiceQuestion(questionData, {
-                previousAnswers: previousAnswers,
-                shuffleOptions: true,
-            });
-            this.shuffledAnswers[this.currentQuestionIndex] = this.currentQuestion.answers.map((answer) => answer.id);
+    
+        // Check if we already have an instance of the question
+        if (this.questionInstances.hasOwnProperty(this.currentQuestionIndex)) {
+            // Retrieve the existing instance
+            this.currentQuestion = this.questionInstances[this.currentQuestionIndex];
         } else {
-            this.currentQuestion = new MultipleChoiceQuestion(questionData, {
-                previousAnswers: previousAnswers,
-                shuffleOptions: false,
-            });
+            // Create a new instance and store it
+            this.currentQuestion = new MultipleChoiceQuestion(questionData);
+            // Shuffle the answers on first creation
+            this.currentQuestion.shuffleAnswers();
+            this.questionInstances[this.currentQuestionIndex] = this.currentQuestion;
         }
-
-        // Render the new question with previous answers and prevent reshuffling
-        // this.currentQuestion = new MultipleChoiceQuestion(questionData, {
-        //     previousAnswers: previousAnswers,
-        //     shuffleOptions: false
-        // });
+    
+        // Render the question
         this.currentQuestion.render(`question-container-${this.uniqueId}`);
-
-        // Update the state of navigation buttons
+    
+        // Update navigation buttons and other UI elements
         this.updateNavigationButtons();
     }
+    
 
     
+
+    // submitAnswer() {
+    //     // Disable the submit button to prevent multiple clicks
+    //     const submitButton = document.getElementById(`submit-answer-${this.uniqueId}`);
+    //     submitButton.disabled = true;
+
+    //     // Store the user's selected answers
+    //     this.userAnswers[this.currentQuestionIndex] = this.currentQuestion.getSelectedOptions();
+
+    //     const isCorrect = this.currentQuestion.checkAnswers(false); // Pass 'false' to suppress alerts
+
+    //     if (isCorrect) {
+    //         this.correctlyAnsweredQuestions.add(this.currentQuestionIndex); // Track correct answer
+    //         this.showToast('success');
+    //         // Move to the next question after a short delay
+    //         setTimeout(() => {
+    //             this.currentQuestionIndex++;
+    //             if (this.currentQuestionIndex < this.totalQuestions) {
+    //                 this.showQuestion();
+    //                 // Re-enable the submit button for the next question
+    //                 submitButton.disabled = false;
+    //             } else {
+    //                 this.finishQuiz();
+    //             }
+    //         }, 1000); // Delay to allow the user to see the feedback
+    //     } else {
+    //         this.showToast('error');
+    //         // Re-enable the submit button so the user can try again
+    //         setTimeout(() => {
+    //             submitButton.disabled = false;
+    //         }, 1500); // Match the toast display time
+    //     }
+    // }
+
 
     submitAnswer() {
         // Disable the submit button to prevent multiple clicks
         const submitButton = document.getElementById(`submit-answer-${this.uniqueId}`);
         submitButton.disabled = true;
-
-        // Store the user's selected answers
-        this.userAnswers[this.currentQuestionIndex] = this.currentQuestion.getSelectedOptions();
-
+    
         const isCorrect = this.currentQuestion.checkAnswers(false); // Pass 'false' to suppress alerts
-
+    
         if (isCorrect) {
             this.correctlyAnsweredQuestions.add(this.currentQuestionIndex); // Track correct answer
             this.showToast('success');
-            // Move to the next question after a short delay
+            // Mark the question as correctly answered
+            this.currentQuestion.markAsCorrectlyAnswered();
+            // Update navigation buttons after a short delay
             setTimeout(() => {
-                this.currentQuestionIndex++;
-                if (this.currentQuestionIndex < this.totalQuestions) {
-                    this.showQuestion();
-                    // Re-enable the submit button for the next question
-                    submitButton.disabled = false;
-                } else {
-                    this.finishQuiz();
-                }
+                this.updateNavigationButtons();
             }, 1000); // Delay to allow the user to see the feedback
         } else {
             this.showToast('error');
@@ -121,6 +183,7 @@ class SequentialMultipleChoiceQuiz {
             }, 1500); // Match the toast display time
         }
     }
+    
 
     showToast(type) {
         const toastId = type === 'success' ? `toast-success-${this.uniqueId}` : `toast-error-${this.uniqueId}`;
