@@ -108,7 +108,7 @@ class: no-click
 class: dropdown, answer
 ---
 $$
-\dfrac{h(3) - h(0)}{3 - 0} = 1
+\dfrac{h(1) - h(-3)}{1 - (-3)} = - \dfrac{3}{2}
 $$
 :::
 :::::::::::::
