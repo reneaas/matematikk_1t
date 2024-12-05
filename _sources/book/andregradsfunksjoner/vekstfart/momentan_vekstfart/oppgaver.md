@@ -348,11 +348,106 @@ $$
 
 ---
 
-
 :::::::::::::::{admonition} Oppgave 4
 ---
 class: problem-level-2
 ---
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+I {numref}`fig-andregradsfunksjoner-vekstfart-momentan-vekstfart-oppgave-4-a` vises en andregradsfunksjon $f$ og en tangent til grafen til $f$ som går gjennom $(3, f(3))$ og har likningen $y = -4x + 13$.
+
+
+Bestem $f(x)$. 
+
+:::{figure} ./figurer/oppgaver/oppgave_4/a.svg
+---
+name: fig-andregradsfunksjoner-vekstfart-momentan-vekstfart-oppgave-4-a
+width: 80%
+class: no-click
+---
+viser en andregradsfunksjon $f$ og en tangent som går gjennom $(3, f(3))$ med likningen $y = -4x + 13$. 
+:::
+
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+f(x) = -x^2 + 2x + 4.
+$$
+:::
+:::::::::::::
+
+:::::::::::::{tab-item} b
+I {numref}`fig-andregradsfunksjoner-vekstfart-momentan-vekstfart-oppgave-4-b` vises en andregradsfunksjon $g$ og to tangenter til grafen til $g$. 
+
+
+Bestem $g(x)$. 
+
+
+:::{figure} ./figurer/oppgaver/oppgave_4/b.svg
+---
+name: fig-andregradsfunksjoner-vekstfart-momentan-vekstfart-oppgave-4-b
+width: 80%
+class: no-click
+---
+viser en andregradsfunksjon $g$, og to tangenter.
+:::
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+g(x) = (x + 2)(x + 4) = (x + 3)^2 - 1.
+$$
+:::
+:::::::::::::
+
+:::::::::::::{tab-item} c
+I {numref}`fig-andregradsfunksjoner-vekstfart-momentan-vekstfart-oppgave-4-c` vises en andregradsfunksjon $h$ og to tangenter til grafen til $h$. Tangentene skjærer hverandre i $(3, 9)$. Den momentane vekstfarten til $h$ i punktet $(4, h(4))$ er $-4$.
+
+Bestem $h(x)$.
+
+:::{figure} ./figurer/oppgaver/oppgave_4/c.svg
+---
+name: fig-andregradsfunksjoner-vekstfart-momentan-vekstfart-oppgave-4-c
+width: 80%
+class: no-click
+---
+viser en andregradsfunksjon $h$, en tangent (rød) gjennom $(2, h(2))$ og en tangent (blå) gjennom $(4, h(4))$. Tangentene skjærer hverandre i $(3, 9)$. Den momentane vekstfarten til $h$ i punktet $(4, h(4))$ er $-4$. 
+:::
+
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+h(x) = -(x - 2)^2 + 9.
+$$
+:::
+:::::::::::::
+
+:::::::::::::{tab-item} d
+
+:::::::::::::
+
+::::::::::::::
+:::::::::::::::
+
+---
+
+
+:::::::::::::::{admonition} Oppgave 5
+---
+class: problem-level-2
+---
+> I hver av oppgavene under, er det lurt å lage skisser tilsvarende de figurene du jobbet med i oppgave 4. Disse hjelper deg få en bedre forståelse av oppgaven ved å visualisere informasjonen som er oppgitt i oppgaven. 
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
@@ -436,7 +531,7 @@ $$
 ---
 
 
-:::::::::::::::{admonition} Oppgave 5
+:::::::::::::::{admonition} Oppgave 6
 ---
 class: problem-level-3
 ---
