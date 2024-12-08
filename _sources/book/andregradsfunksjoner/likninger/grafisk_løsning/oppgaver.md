@@ -276,7 +276,7 @@ $$
 
 :::::::::::::{tab-item} c
 
-I {numref}`fig-andregradsfunksjoner-likninger-grafisk-løsning-oppgave-3-c` vises grafene til en andregradsfunksjon $f$ og en lineær funksjon $g$. Løs likningen
+I {numref}`fig-andregradsfunksjoner-likninger-grafisk-løsning-oppgave-3-c` vises grafene til en andregradsfunksjon $f$ og en andregradsfunksjon $g$. Løs likningen
 
 $$
 f(x) = g(x). 

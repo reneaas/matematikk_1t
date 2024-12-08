@@ -15,14 +15,15 @@ link-type: doc
 ^^^
 
 $$
-\bar{v} = \dfrac{f(b) - f(a)}{b - a}
+\dfrac{\Delta f(x)}{\Delta x} = \dfrac{f(x_2) - f(x_1)}{x_2 - x_1}
 $$
 
 ---
 
-:::{figure} ./gjennomsnittlig_vekstfart/figurer/teori/gjennomsnittlig_vekstfart.svg
+:::{figure} ./gjennomsnittlig_vekstfart/koder/animasjoner/gjennomsnittig_vekstfart/media/videos/gjennomsnittlig_vekstfart/1440p60/gjennomsnittlig_vekstfart.gif
 ---
 width: 100%
+class: no-click
 ---
 :::
 ::::
@@ -65,12 +66,13 @@ $$
 f'(x) = 2ax + b
 $$
 
+
+:::{figure} ./den_deriverte/koder/animasjoner/media/videos/den_deriverte_card/720p30/den_deriverte_card.gif
 ---
-
-$$
-T(x) = f(a) + f'(a)(x - a)
-$$
-
+width: 100%
+class: no-click
+---
+:::
 
 ::::
 
