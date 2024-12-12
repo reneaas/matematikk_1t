@@ -75,7 +75,7 @@ def main(dirname, save):
     ax.text(
         x=-5.5,
         y=2,
-        s="$y = -2x + 3$",
+        s="$y = -2x - 3$",
         color="red",
         fontsize=18,
     )
