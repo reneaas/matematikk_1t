@@ -661,7 +661,7 @@ Vi starter med å få en oversikt over hva vi vet om $h$ – hva er kjent?
 | Hva er kjent? | Hva forteller det oss? |
 |---------------|------------------------|
 | $h$ er en andregradsfunksjon | $h(x) = \begin{cases} ax^2 + bx + c \\ \\ a(x - x_1)(x - x_2) \\ \\ a(x - x_0)^2 + y_0 \end{cases}$ |
-| Tangenten $y = -2x - 3$ går gjennom $(-3, h(-3))$ | <ul><li> $h(-3) = -2 \cdot (-3) + 3 = 6 - 3 = 3$</li><li>$h'(-3) = -2$ siden stigningstallet til tangenten er $-2$.</li></ul> |
+| Tangenten $y = -2x - 3$ går gjennom $(-3, h(-3))$ | <ul><li> $h(-3) = -2 \cdot (-3) - 3 = 6 - 3 = 3$</li><li>$h'(-3) = -2$ siden stigningstallet til tangenten er $-2$.</li></ul> |
 |Stigningstallet til den andre tangenten er $2$| Siden absoluttverdien til tangenten er den samme som den andre tangenten, så betyr det at: <ol><li>Tangenten går gjennom et punkt som har samme avstand fra symmetrilinja som den andre tangenten</li> <li>Tangentene skjærer hverandre i symmetrilinja som derfor er $x = -1$.</li> <li>Tangenten går derfor gjennom $(1, h(1))$ siden avstanden fra symmetrilinja til den andre tangenten er $\|-3 - (-1)\| = 2$. </li> </ol> |
 
 <br>
