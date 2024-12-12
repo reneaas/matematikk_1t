@@ -442,8 +442,300 @@ $$
 
 ---
 
-
 :::::::::::::::{admonition} Oppgave 5
+---
+class: problem-level-2
+---
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+I {numref}`fig-andregradsfunksjoner-vekstfart-momentan-vekstfart-oppgave-5-a` vises en andregradsfunksjon $f$ og en tangent til grafen til $f$ gjennom et nullpunkt som har likningen $y = -2x + 2$. 
+
+Bestem $f(x)$. 
+
+
+:::{figure} ./figurer/oppgaver/oppgave_5/a.svg
+---
+name: fig-andregradsfunksjoner-vekstfart-momentan-vekstfart-oppgave-5-a
+width: 80%
+class: no-click
+---
+viser en andregradsfunksjon $f$ og en tangent som går gjennom et punkt på grafen til $f$ med likningen $y = -2x + 2$.
+:::
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+f(x) = -\dfrac{1}{2}(x + 3)(x - 1)
+$$
+:::
+
+:::{admonition} Løsning
+---
+class: solution, dropdown
+---
+Vi starter med å få oversikt over hva vi vet om $f$ – med andre ord, hva er kjent?
+
+| Hva er kjent? | Hva forteller det oss? |
+|---------------|------------------------|
+| $f$ er en andregradsfunksjon | $f(x) = \begin{cases} ax^2 + bx + c \\ \\ a(x - x_1)(x - x_2) \\ \\ a(x - x_0)^2 + y_0 \end{cases}$ |
+| Tangenten $y = -2x + 2$ | Tangenten går gjennom et nullpunkt som betyr<br><ul><li>$-2x + 2 = 0$ gir oss nullpunktet til $f$.</li><li>$f'(x) = -2$ i dette punktet.</li></ul> |
+| $f$ går gjennom $(-3, 0)$ | $x = -3$ er et nullpunkt. |
+
+<br>
+
+Vi kan finne begge nullpunktene, så det er hensiktsmessig å velge nullpunktsform: 
+
+$$
+f(x) = a(x - x_1)(x - x_2). 
+$$
+
+Det ene nullpunktet er $x = -3$ og det andre får vi vet å finne skjæringen til tangenten med $x$-aksen:
+
+$$
+-2x + 2 = 0 \quad \iff \quad 2x = 2 \quad \iff \quad x = 1.
+$$
+
+Dette gir oss 
+
+$$
+f(x) = a(x - (-3))(x - 1) = a(x + 3)(x - 1).
+$$
+
+Til slutt kan vi bruke at $f'(1) = -2$. Vi bruker at 
+
+$$
+f'(1) = \dfrac{f(2) - f(0)}{2}
+$$
+
+Vi trenger funksjonsverdiene i disse punktene:
+
+\begin{align*}
+    f(2) &= a(2 + 3)\cdot (2 - 1) = 5a \\
+    \\
+    f(0) &= a(0 + 3) \cdot (0 - 1) = -3a
+\end{align*}
+
+Dermed har vi at 
+
+$$
+f'(1) = \dfrac{f(2) - f(0)}{2} = \dfrac{5a - (-3a)}{2} = \dfrac{8a}{2} = 4a \quad \land \quad f'(1) = -2
+$$
+
+som betyr at 
+
+$$
+4a = -2 \quad \iff \quad a = -\dfrac{1}{2}
+$$
+
+Altså er 
+
+$$
+f(x) = -\dfrac{1}{2}(x + 3)(x - 1)
+$$
+:::
+:::::::::::::
+
+:::::::::::::{tab-item} b
+I {numref}`fig-andregradsfunksjoner-vekstfart-momentan-vekstfart-oppgave-5-b` vises en andregradsfunksjon $g$ og to tangenter til grafen til $g$. 
+* Likningen til tangenten i $(0, g(0))$ er $y = -4x + 3$. 
+
+Bestem $g(x)$.
+
+
+:::{figure} ./figurer/oppgaver/oppgave_5/b.svg
+---
+name: fig-andregradsfunksjoner-vekstfart-momentan-vekstfart-oppgave-5-b
+width: 80%
+class: no-click
+---
+viser en andregradsfunksjon $g$ og to tangenter.
+:::
+
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+g(x) = (x - 2)^2 - 1
+$$
+:::
+
+:::{admonition} Løsning
+---
+class: solution, dropdown
+---
+Vi starter med å få en oversikt over hva vi vet om $g$ – hva er kjent?
+
+| Hva er kjent? | Hva forteller det oss? |
+|---------------|------------------------|
+| $g$ er en andregradsfunksjon | $g(x) = \begin{cases} ax^2 + bx + c \\ \\ a(x - x_1)(x - x_2) \\ \\ a(x - x_0)^2 + y_0 \end{cases}$ |
+| Tangenten $y = -4x + 3$ | Tangenten går gjennom grafen til $g$ på $y$-aksen som betyr<br><ul><li>$g(0) = -4\cdot 0 + 3 = 3$. </li><li>$g'(0) = -4$ siden stigningstallet til tangenten er $-4$.</li></ul> |
+|Tangenten i $(2, g(2))$ er en horisontal linje | Siden linja er horisontal, vet vi at tangenten går gjennom symmetrilinja til $g$. Dermed er symmetrilinja $x = 2$. |
+
+<br>
+
+Vi kjenner til symmetrilinja til $g$ som betyr at det er hensiktsmessig å bruke ekstremalformen til $g(x)$:
+
+$$
+g(x) = a(x - x_0)^2 + y_0 = a(x - 2)^2 + y_0.
+$$
+
+Vi vet også at 
+* $g(0) = 3$
+* $g'(0) = -4$
+
+Det er lurest å bruke $g'(0)$ først fordi vi da vil ende opp med å få en likning som **kun** inneholder $a$. Vi vet at 
+
+$$
+g'(0) = \dfrac{g(1) - g(-1)}{2}
+$$
+
+Vi trenger funksjonsverdiene som gir oss
+
+\begin{align*}
+    g(1) &= a(1 - 2)^2 + y_0 = a + y_0 \\
+    \\
+    g(-1) &= a(-1 - 2)^2 + y_0 = 9a + y_0
+\end{align*}
+
+Dermed får vi 
+
+$$
+g'(0) = \dfrac{g(1) - g(-1)}{2} = \dfrac{a + y_0 - (9a + y_0)}{2} = \dfrac{-8a}{2} = -4a \quad \land \quad g'(0) = -4
+$$
+
+Den logiske følgen er at 
+
+$$
+-4a = -4 \quad \iff \quad a = 1
+$$
+
+Dermed er 
+
+$$
+g(x) = (x - 2)^2 - 1
+$$
+:::
+
+:::::::::::::
+
+:::::::::::::{tab-item} c
+I {numref}`fig-andregradsfunksjoner-vekstfart-momentan-vekstfart-oppgave-5-c` vises en andregradsfunksjon $h$ og to tangenter.
+* Den ene tangenten går gjennom $(-3, h(-3))$ og har likningen $y = -2x - 3$.
+* Den andre tangenten har stigningstall $2$.
+* De to tangentene skjærer hverandre i $(-1, -1)$.
+
+Bestem $h(x)$.
+
+
+:::{figure} ./figurer/oppgaver/oppgave_5/c.svg
+---
+name: fig-andregradsfunksjoner-vekstfart-momentan-vekstfart-oppgave-5-c
+width: 80%
+class: no-click
+---
+viser en andregradsfunksjon $h$ og to tangenter.
+:::
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+h(x) = \dfrac{1}{2}(x + 1)^2 + 1
+$$
+:::
+
+:::{admonition} Løsning
+---
+class: solution, dropdown
+---
+Vi starter med å få en oversikt over hva vi vet om $h$ – hva er kjent?
+
+| Hva er kjent? | Hva forteller det oss? |
+|---------------|------------------------|
+| $h$ er en andregradsfunksjon | $h(x) = \begin{cases} ax^2 + bx + c \\ \\ a(x - x_1)(x - x_2) \\ \\ a(x - x_0)^2 + y_0 \end{cases}$ |
+| Tangenten $y = -2x - 3$ går gjennom $(-3, h(-3))$ | <ul><li> $h(-3) = -2 \cdot (-3) + 3 = 6 - 3 = 3$</li><li>$h'(-3) = -2$ siden stigningstallet til tangenten er $-2$.</li></ul> |
+|Stigningstallet til den andre tangenten er $2$| Siden absoluttverdien til tangenten er den samme som den andre tangenten, så betyr det at: <ol><li>Tangenten går gjennom et punkt som har samme avstand fra symmetrilinja som den andre tangenten</li> <li>Tangentene skjærer hverandre i symmetrilinja som derfor er $x = -1$.</li> <li>Tangenten går derfor gjennom $(1, h(1))$ siden avstanden fra symmetrilinja til den andre tangenten er $\|-3 - (-1)\| = 2$. </li> </ol> |
+
+<br>
+
+Vi kjenner til symmetrilinja, som betyr at det er hensiktsmessig å bruke ekstremalformen til $h(x)$:
+
+$$
+h(x) = a(x - x_0)^2 + y_0 = a(x + 1)^2 + y_0.
+$$
+
+Vi utnytter at $h'(-3) = -2$ vil gi oss en likning der hvor vi kun har $a$ som ukjent:
+
+$$
+h'(-3) = \dfrac{h(-2) - h(-4)}{2}
+$$
+
+Vi trenger funksjonsverdiene:
+
+\begin{align*}
+    h(-2) &= a(-2 + 1)^2 + y_0 = a + y_0 \\
+    \\
+    h(-4) &= a(-4 + 1)^2 + y_0 = 9a + y_0
+\end{align*}
+
+Dermed får vi
+
+$$
+h'(-3) = \dfrac{a + y_0 - (9a + y_0)}{2} = \dfrac{-8a}{2} = -4a \quad \land \quad h'(-3) = -2
+$$
+
+Det gir oss
+
+$$
+-4a = -2 \quad \iff \quad a = \dfrac{1}{2}
+$$
+
+Dermed er
+
+$$
+h(x) = \dfrac{1}{2}(x + 1)^2 + y_0
+$$
+
+Til slutt bruker vi at $h(-3) = 3$ som gir oss:
+
+$$
+h(-3) = \dfrac{1}{2}\cdot (-3 + 1)^2 + y_0 = 2 + y_0 \quad \land \quad h(-3) = 3
+$$
+
+som betyr at 
+
+$$
+2 + y_0 = 3 \quad \iff \quad y_0 = 1
+$$
+
+Altså er 
+
+$$
+h(x) = \dfrac{1}{2}(x + 1)^2 + 1
+$$
+:::
+
+:::::::::::::
+
+::::::::::::::
+
+:::::::::::::::
+
+
+---
+
+
+
+
+:::::::::::::::{admonition} Oppgave 6
 ---
 class: problem-level-2
 ---
@@ -531,7 +823,7 @@ $$
 ---
 
 
-:::::::::::::::{admonition} Oppgave 6
+:::::::::::::::{admonition} Oppgave 7
 ---
 class: problem-level-3
 ---

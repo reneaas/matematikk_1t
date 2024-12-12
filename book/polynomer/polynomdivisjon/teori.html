@@ -41,7 +41,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../../_static/pdf_custom.css?v=a874a063" />
     <link rel="stylesheet" type="text/css" href="../../../_static/static_code_blocks.css?v=b6831e29" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/admonitions.css?v=1d9617b2" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/admonitions.css?v=7e75f47c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/pairPuzzle/style.css?v=c9cad18c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/interactiveCode/style.css?v=754a94b0" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mathjax/style.css?v=54189cd9" />
@@ -81,10 +81,10 @@
     <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"tex": {"macros": {"annotateAbove": ["\\mathrel{\\overset{\\substack{\\text{#2} \\\\ \\Bigg\\downarrow}}{#1}}", 2], "annotateBelow": ["\\mathrel{\\underset{\\substack{\\Bigg\\uparrow \\\\ \\text{#2}}}{#1}}", 2]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"annotateAbove": ["\\mathrel{\\overset{\\substack{\\text{#2} \\\\ \\Bigg\\downarrow}}{#1}}", 2], "annotateBelow": ["\\mathrel{\\underset{\\substack{\\Bigg\\uparrow \\\\ \\text{#2}}}{#1}}", 2], "cline": ["\\underline{\\phantom{#1}}", 1]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3.2/es5/tex-mml-chtml.js"></script>
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'book/polynomer/polynomdivisjon/polynomdivisjon';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/polynomer/polynomdivisjon/teori';</script>
     <script>mermaid.initialize({"startOnLoad": true})</script>
     <script src="../../../_static/serviceWorker.js?v=19bb19ce"></script>
     <script src="../../../_static/utils.js?v=14803243"></script>
@@ -106,6 +106,7 @@
     <script src="../../../_static/parsons_puzzle/indentationParsonsPuzzle.js?v=4d1eaa92"></script>
     <script src="../../../_static/parsons_puzzle/parsonsPuzzle.js?v=6e8c8774"></script>
     <script src="../../../_static/parsons_puzzle/theme-switcher.js?v=c0cdcaac"></script>
+    <script src="../../../_static/escapeRoom/room.js?v=4e2586cf"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
 
@@ -453,7 +454,7 @@
       
       
       
-      <li><a href="../../../_sources/book/polynomer/polynomdivisjon/polynomdivisjon.md" target="_blank"
+      <li><a href="../../../_sources/book/polynomer/polynomdivisjon/teori.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Last ned kildefilen"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -516,9 +517,7 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -534,14 +533,6 @@
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Innhold </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -554,175 +545,28 @@
   <section class="tex2jax_ignore mathjax_ignore" id="polynomdivisjon">
 <h1>Polynomdivisjon<a class="headerlink" href="#polynomdivisjon" title="Link to this heading">#</a></h1>
 <div class="tip admonition">
-<p class="admonition-title">Læringsmål: polynomdivisjon</p>
-<p>Etter å gått gjennom dette kapittelet skal du kunne:</p>
+<p class="admonition-title">Læringsmål</p>
 <ul class="simple">
-<li><p>Utføre polynomdivisjon der nevneren er et førstegradspolynom.</p></li>
-<li><p>Kjenne til sammenhengen mellom nullpunkter, faktorer og rest, og kunne bruke dette til å bestemme nullpunktene til tredjegradspolynomer.</p></li>
+<li><p>Kunne beskrive og utføre polynomdivisjon.</p></li>
+<li><p>Kunne forklare hva som er kvotient og rest i en polynomdivisjon, og forklare hva resten forteller oss om dividenden.</p></li>
 </ul>
-<p>Vi starter med et konkret eksempel uten rest. Vi tar første eksempel grundig:</p>
 </div>
-<p>Polynomdivisjon er en algoritme som lar oss dele et polynom med et annet. Når vi deler et polynom <span class="math notranslate nohighlight">\(p(x)\)</span> med et annet polynom <span class="math notranslate nohighlight">\(q(x)\)</span>, vil vi få en <strong>kvotient</strong> <span class="math notranslate nohighlight">\(k(x)\)</span> og en <strong>rest</strong> <span class="math notranslate nohighlight">\(r(x)\)</span> slik at</p>
 <div class="math notranslate nohighlight">
-\[
-\frac{p(x)}{q(x)} = k(x) + \frac{r(x)}{q(x)}
-\]</div>
-<p>Det er ikke alltid vi får en rest. Da sier vi at polynomdivisjonen <strong>går opp</strong>. Ofte skriver vi polynomdivisjon som <span class="math notranslate nohighlight">\(p(x) \div q(x)\)</span> i stedet for som en brøk <span class="math notranslate nohighlight">\(p(x) / q(x)\)</span>. Men begge skrivemåter er meningsfulle og betyr det samme.</p>
-<div class="example admonition">
-<p class="admonition-title">Eksempel 1 (uten rest)</p>
-<p>Vi skal dele polynomet <span class="math notranslate nohighlight">\(x^3 + 2x^2 - 5x - 6\)</span> med <span class="math notranslate nohighlight">\(x - 2\)</span>. Først skal vi se hele resultatet:</p>
-<figure class="align-default">
-<a class="reference internal image-reference" href="../../../_images/eksempel1.svg"><img alt="../../../_images/eksempel1.svg" src="../../../_images/eksempel1.svg" style="width: 70%;" /></a>
-</figure>
-<p>Ser overveldende ut, men vi skal ta det stegvis under.</p>
-<dl class="simple myst">
-<dt>Steg 1</dt><dd><p>Vi starter med å se på leddet med høyest potens av <span class="math notranslate nohighlight">\(x\)</span> i <span class="math notranslate nohighlight">\(x^3 + 2x^2 - 5x - 6\)</span>, som er <span class="math notranslate nohighlight">\(x^3\)</span>. Vi deler dette leddet på høyeste potens av <span class="math notranslate nohighlight">\(x\)</span> i nevneren som er <span class="math notranslate nohighlight">\(x\)</span>, som gir <span class="math notranslate nohighlight">\(x^2\)</span>. Dette er første ledd i kvotienten. Deretter trekker vi fra <span class="math notranslate nohighlight">\(x^2\cdot(x - 2) = x^3 - 2x^2\)</span> fra polynomet i teller (legg merke til at fortegnet i hvert av leddene i uttrykket vi trekker fra har endret seg i diagrammet under):
-\begin{align*}
-&amp; (\quad , x^3 + 2x^2 - 5x - 6) \div (x - 2) = x^2 \
-&amp; -x^3 + 2x^2 &amp; \
-\hline
-&amp; \quad\quad\quad,,, 4x^2 - 5x &amp; \
-\end{align*}</p>
-</dd>
-<dt>Steg 2</dt><dd><p>Vi gjentar prosessen, men nå med <span class="math notranslate nohighlight">\(4x^2\)</span> siden dette er den høyeste potensen av <span class="math notranslate nohighlight">\(x\)</span> i det nye polynomet vi sitter igjen med. Vi deler med <span class="math notranslate nohighlight">\(x\)</span> som gir oss <span class="math notranslate nohighlight">\(4x\)</span>. Dette er andre ledd i kvotienten. Deretter trekker vi fra <span class="math notranslate nohighlight">\(4x^2(x - 2) = 4x^2 - 8x\)</span>:</p>
-</dd>
-</dl>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-&amp; (\quad \, x^3 + 2x^2 - 5x - 6) \div (x - 2) = x^2 + 4x \\
-&amp; -x^3 + 2x^2 &amp; \\
-\hline
-&amp; \quad\quad\quad\, 4x^2 - 5x &amp; \\
-&amp; \quad\quad\,\, -4x^2 + 8x &amp; \\
-\hline
-&amp; \quad\quad\quad\quad\quad\,\,\,\,\, 3x - 6 &amp; \\
-\end{align*}\]</div>
-<dl class="simple myst">
-<dt>Steg 3</dt><dd><p>Vi gjentar prosessen, men nå med <span class="math notranslate nohighlight">\(3x - 6\)</span>. Vi deler da <span class="math notranslate nohighlight">\(3x\)</span> med <span class="math notranslate nohighlight">\(x\)</span> som gir <span class="math notranslate nohighlight">\(3\)</span> til kvotienten. Deretter trekker vi fra <span class="math notranslate nohighlight">\(3(x - 2) = 3x - 6\)</span>:</p>
-</dd>
-</dl>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-&amp; (\quad \, x^3 + 2x^2 - 5x - 6) \div (x - 2) = x^2 + 4x + 3 \\
-&amp; -x^3 - 2x^2 &amp; \\
-\hline
-&amp; \quad\quad\quad\, 4x^2 - 5x &amp; \\
-&amp; \quad\quad\,\, -4x^2 + 8x &amp; \\
-\hline
-&amp; \quad\quad\quad\quad\quad\,\,\,\,\, 3x - 6 &amp; \\
-&amp; \quad\quad\quad\quad\quad\, -3x + 6 &amp; \\
-\hline
-&amp; \quad\quad\quad\quad\quad\quad\quad\quad\, 0 &amp; \\
-\end{align*}\]</div>
-<p>Konklusjonen vi kan trekke er at siden</p>
+\[\begin{split}
+\begin{array}{r&#64;{}r&#64;{}r&#64;{}r&#64;{}r&#64;{}r&#64;{}r&#64;{}r&#64;{}l}
+(&amp; x^3 &amp; + &amp; 2x^2 &amp; - &amp; 5x &amp; - &amp; 6 &amp; ) : (x + 2) = x^2 - 3x + 1 \\[4pt]
+&amp;  \cline{x^3 + 2x^2} \\[4pt]
+&amp; x^3 &amp; + &amp; 2x^2 &amp; &amp; &amp; &amp; &amp; \\[4pt]
+\end{array}
+\end{split}\]</div>
 <div class="math notranslate nohighlight">
-\[
-(x^3 + 2x^2 - 5x - 6) \div (x - 2) = x^2 + 4x + 3
-\]</div>
-<p>så kan vi skrive</p>
-<div class="math notranslate nohighlight">
-\[
-x^3 + 2x^2 - 5x - 6 = (x - 2)(x^2 + 4x + 3)
-\]</div>
-<dl class="simple myst">
-<dt>Merk</dt><dd><p>Siden vi får null i rest her, så sier vi at divisjonen <strong>går opp</strong>. Det betyr at <span class="math notranslate nohighlight">\(x - 2\)</span> er en faktor i <span class="math notranslate nohighlight">\(x^3 + 2x^2 - 5x - 6\)</span> og at <span class="math notranslate nohighlight">\(x = 2\)</span> er et nullpunkt for tredjegradspolynomet.</p>
-</dd>
-</dl>
-</div>
-<p>Nå er det <strong>din tur</strong>!</p>
-<div class="check admonition">
-<p class="admonition-title">Underveisoppgave 1</p>
-<p>Utfør polynomdivisjonen</p>
-<div class="math notranslate nohighlight">
-\[
-(x^3 -7x - 6) \div (x - 3)
-\]</div>
-<p><strong>Hint</strong>: Det kan være lurt å skrive <span class="math notranslate nohighlight">\(x^3 - 7x - 6\)</span> som <span class="math notranslate nohighlight">\(x^3 + 0x^2 - 7x - 6\)</span> slik at du kan følge algoritmen i eksempelet over. Eventuelt bare husk å legge til litt plass der det skulle stått et ledd med <span class="math notranslate nohighlight">\(x^2\)</span>.</p>
-</div>
-<div class="solution dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<figure class="align-default">
-<a class="reference internal image-reference" href="../../../_images/underveisoppgave1.svg"><img alt="../../../_images/underveisoppgave1.svg" src="../../../_images/underveisoppgave1.svg" style="width: 65%;" /></a>
-</figure>
-</div>
-<p>La oss ta et eksempel med rest også:</p>
-<div class="example admonition">
-<p class="admonition-title">Eksempel 2 (med rest)</p>
-<p>Vi skal se på polynomdivisjonen</p>
-<div class="math notranslate nohighlight">
-\[
-(x^3 - 5x - 2) \div (x + 1)
-\]</div>
-<p>Hvis vi utfører denne polynomdivisjonen, får vi:</p>
-<figure class="align-default">
-<a class="reference internal image-reference" href="../../../_images/eksempel2.svg"><img alt="../../../_images/eksempel2.svg" src="../../../_images/eksempel2.svg" style="width: 70%;" /></a>
-</figure>
-<p>Vi kan merke oss at når vi gikk gjennom alle stegene her, så endte vi ikke opp med <span class="math notranslate nohighlight">\(0\)</span> til slutt, men med <span class="math notranslate nohighlight">\(2\)</span>. Det betyr at vi har en <strong>rest</strong> på <span class="math notranslate nohighlight">\(2\)</span> etter divisjonen og vi legger derfor på et ledd <span class="math notranslate nohighlight">\(2/(x + 1)\)</span> til slutt.</p>
-</div>
-<p>Hvem sin tur er det nå da? <strong>Stemmer, din tur</strong>!</p>
-<div class="check admonition">
-<p class="admonition-title">Underveisoppgave 2</p>
-<p>Utfør polynomdivisjonen under:</p>
-<div class="math notranslate nohighlight">
-\[
-(x^3 + 5x^2 - 1) \div (x + 1)
-\]</div>
-<div class="hints dropdown admonition">
-<p class="admonition-title">Hint</p>
-<p>Skriv polynomet som <span class="math notranslate nohighlight">\(x^3 + 5x^2 + 0x - 1\)</span> når du utfører polynomdivisjonen. Eller etterlat en plass der hvor leddet til <span class="math notranslate nohighlight">\(x\)</span> mangler så du ikke glemmer å ta med det i divisjonen!</p>
-</div>
-<div class="solution dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<figure class="align-default">
-<a class="reference internal image-reference" href="../../../_images/underveisoppgave2.svg"><img alt="../../../_images/underveisoppgave2.svg" src="../../../_images/underveisoppgave2.svg" style="width: 70%;" /></a>
-</figure>
-</div>
-</div>
-<section id="oppgaver">
-<h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Link to this heading">#</a></h2>
-<div class="problem-level-1 admonition">
-<p class="admonition-title">Oppgave 1</p>
-<p>Utfør polynomdivisjonen</p>
-<div class="math notranslate nohighlight">
-\[
-(x^2 - x - 6) \div (x + 2)
-\]</div>
-<p>Kan du utifra resultatet si hvilke nullpunkter <span class="math notranslate nohighlight">\(f(x) = x^2 - x - 6\)</span> har?</p>
-<div class="solution dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<p>Ved å utføre polynomdivisjon, får vi:</p>
-<figure class="align-default">
-<a class="reference internal image-reference" href="../../../_images/polynomdivisjon_oppgave1.svg"><img alt="../../../_images/polynomdivisjon_oppgave1.svg" src="../../../_images/polynomdivisjon_oppgave1.svg" style="width: 50%;" /></a>
-</figure>
-<p>Siden</p>
-<div class="math notranslate nohighlight">
-\[
-(x^2 - x - 6) \div (x + 2) = x - 3,
-\]</div>
-<p>betyr det at</p>
-<div class="math notranslate nohighlight">
-\[
-x^2 - x - 6 = (x+2)(x-3).
-\]</div>
-<p>Etter produktregelen vil derfor</p>
-<div class="math notranslate nohighlight">
-\[
-f(x) = x^2 - x - 6 = 0 \quad \Leftrightarrow \quad (x+2)(x-3) = 0,
-\]</div>
-<p>bety at</p>
-<div class="math notranslate nohighlight">
-\[
-x+2 = 0 \quad \lor \quad x - 3 = 0,
-\]</div>
-<p>som igjen betyr at</p>
-<div class="math notranslate nohighlight">
-\[
-x = -2 \quad \lor \quad x = 3.
-\]</div>
-<p>Derfor er <span class="math notranslate nohighlight">\(x = -2\)</span> og <span class="math notranslate nohighlight">\(x = 3\)</span> nullpunkter til <span class="math notranslate nohighlight">\(f(x)\)</span>.</p>
-</div>
-</div>
-</section>
+\[\begin{split}
+\require{enclose}
+\begin{array}{r&#64;{}l}
+   &amp; x^{2} + 3x + 4 \\[-6pt]
+x - 3 \enclose{longdiv}{x^{3} + 0x^{2} - 5x + 15} &amp; 
+\end{array}
+\end{split}\]</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -761,22 +605,6 @@ x = -2 \quad \lor \quad x = 3.
             </div>
             
             
-              
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Innhold
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
