@@ -5,12 +5,22 @@ import numpy as np
 def main(dirname, save):
     #
     # Define functions
+
+    def p(x):
+        return (x - 1) ** 2
+
+    def q(x):
+        return x + 2
+
+    def skrå_asymptote(x):
+        return x - 4
+
     @np.vectorize
-    def f(x, vertical_asymptote=1, horisontal_asymptote=2, zero=-2):
-        if x == vertical_asymptote:
+    def f(x):
+        if q(x) == 0:
             return None
         else:
-            return horisontal_asymptote * (x - zero) / (x - vertical_asymptote)
+            return p(x) / q(x)
 
     # List of functions and their labels.
     functions = []
@@ -20,34 +30,27 @@ def main(dirname, save):
         fn_labels=False,
         xmin=-8,
         xmax=8,
-        ymin=-10,
+        ymin=-20,
         ymax=12,
         ticks=False,
     )
 
-    vertical_asymptote = 1
-    horisontal_asymptote = 2
-    zero = -2
+    vertical_asymptote = -2
 
     x1 = np.linspace(-10, vertical_asymptote, 1024)
     x2 = np.linspace(vertical_asymptote, 10, 1024)
 
     ax.plot(x1, f(x1), color="teal", lw=2, alpha=0.7, label="$f$")
     ax.plot(x2, f(x2), color="teal", lw=2, alpha=0.7)
+    ax.plot(1, 0, "ko", markersize=8, alpha=0.7)
 
-    ax.hlines(
-        y=horisontal_asymptote,
-        xmin=-10,
-        xmax=10,
-        linestyle="--",
-        lw=1.5,
-        color="blue",
-        alpha=0.7,
-    )
+    x = np.linspace(-10, 10, 1024)
+    ax.plot(x, skrå_asymptote(x), linestyle="--", color="blue", lw=1.5, alpha=0.7)
+
     ax.vlines(
         x=vertical_asymptote,
-        ymin=-12,
-        ymax=12,
+        ymin=-20,
+        ymax=20,
         linestyle="--",
         lw=1.5,
         color="red",
@@ -55,9 +58,25 @@ def main(dirname, save):
     )
 
     ax.annotate(
+        text="Skrå asymptote",
+        xy=(2, -2),
+        xytext=(1, -10),
+        fontsize=18,
+        arrowprops=dict(
+            arrowstyle="->",
+            lw=2,
+            color="black",
+            alpha=0.7,
+            connectionstyle="arc3,rad=+0.2",
+        ),
+        horizontalalignment="left",
+        verticalalignment="center",
+    )
+
+    ax.annotate(
         text="Vertikal asymptote \n $x = x_\\infty$",
-        xy=(vertical_asymptote, -3),
-        xytext=(vertical_asymptote + 2, -5),
+        xy=(-2, -2),
+        xytext=(-7, 4),
         fontsize=18,
         arrowprops=dict(
             arrowstyle="->",
@@ -71,25 +90,9 @@ def main(dirname, save):
     )
 
     ax.annotate(
-        text="Horisontal asymptote $y = a$",
-        xy=(-2, horisontal_asymptote),
-        xytext=(-8, horisontal_asymptote + 5),
-        fontsize=18,
-        arrowprops=dict(
-            arrowstyle="->",
-            lw=2,
-            color="black",
-            alpha=0.7,
-            connectionstyle="arc3,rad=-0.2",
-        ),
-        horizontalalignment="left",
-        verticalalignment="center",
-    )
-
-    ax.annotate(
-        text="Nullpunkt $x = x_1$",
-        xy=(zero, 0),
-        xytext=(zero - 5, -5),
+        text="Nullpunkt \n $x = x_1$",
+        xy=(1, 0),
+        xytext=(2, 6),
         fontsize=18,
         arrowprops=dict(
             arrowstyle="->",
@@ -102,7 +105,21 @@ def main(dirname, save):
         verticalalignment="center",
     )
 
-    ax.plot(zero, f(zero), "ko", markersize=8, alpha=0.7)
+    # ax.annotate(
+    #     text="Nullpunkt $x = x_1$",
+    #     xy=(x1, 0),
+    #     xytext=(x1 - 5, -5),
+    #     fontsize=18,
+    #     arrowprops=dict(
+    #         arrowstyle="->",
+    #         lw=2,
+    #         color="black",
+    #         alpha=0.7,
+    #         connectionstyle="arc3,rad=+0.2",
+    #     ),
+    #     horizontalalignment="left",
+    #     verticalalignment="center",
+    # )
 
     ax.legend(fontsize=16)
 

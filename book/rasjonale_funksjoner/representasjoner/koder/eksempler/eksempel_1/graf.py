@@ -18,22 +18,45 @@ def main(dirname, save):
     fig, ax = plotmath.plot(
         functions=functions,
         fn_labels=False,
-        xmin=-8,
-        xmax=8,
-        ymin=-10,
-        ymax=12,
-        ticks=False,
+        xmin=-6,
+        xmax=6,
+        ymin=-5,
+        ymax=7,
+        ticks=True,
     )
 
-    vertical_asymptote = 1
+    vertical_asymptote = -1
     horisontal_asymptote = 2
-    zero = -2
+    zero = 3
 
     x1 = np.linspace(-10, vertical_asymptote, 1024)
     x2 = np.linspace(vertical_asymptote, 10, 1024)
 
-    ax.plot(x1, f(x1), color="teal", lw=2, alpha=0.7, label="$f$")
-    ax.plot(x2, f(x2), color="teal", lw=2, alpha=0.7)
+    ax.plot(
+        x1,
+        f(
+            x1,
+            vertical_asymptote=vertical_asymptote,
+            horisontal_asymptote=horisontal_asymptote,
+            zero=zero,
+        ),
+        color="teal",
+        lw=2,
+        alpha=0.7,
+        label="$f$",
+    )
+    ax.plot(
+        x2,
+        f(
+            x2,
+            vertical_asymptote=vertical_asymptote,
+            horisontal_asymptote=horisontal_asymptote,
+            zero=zero,
+        ),
+        color="teal",
+        lw=2,
+        alpha=0.7,
+    )
 
     ax.hlines(
         y=horisontal_asymptote,
@@ -54,55 +77,7 @@ def main(dirname, save):
         alpha=0.7,
     )
 
-    ax.annotate(
-        text="Vertikal asymptote \n $x = x_\\infty$",
-        xy=(vertical_asymptote, -3),
-        xytext=(vertical_asymptote + 2, -5),
-        fontsize=18,
-        arrowprops=dict(
-            arrowstyle="->",
-            lw=2,
-            color="black",
-            alpha=0.7,
-            connectionstyle="arc3,rad=+0.2",
-        ),
-        horizontalalignment="left",
-        verticalalignment="center",
-    )
-
-    ax.annotate(
-        text="Horisontal asymptote $y = a$",
-        xy=(-2, horisontal_asymptote),
-        xytext=(-8, horisontal_asymptote + 5),
-        fontsize=18,
-        arrowprops=dict(
-            arrowstyle="->",
-            lw=2,
-            color="black",
-            alpha=0.7,
-            connectionstyle="arc3,rad=-0.2",
-        ),
-        horizontalalignment="left",
-        verticalalignment="center",
-    )
-
-    ax.annotate(
-        text="Nullpunkt $x = x_1$",
-        xy=(zero, 0),
-        xytext=(zero - 5, -5),
-        fontsize=18,
-        arrowprops=dict(
-            arrowstyle="->",
-            lw=2,
-            color="black",
-            alpha=0.7,
-            connectionstyle="arc3,rad=+0.2",
-        ),
-        horizontalalignment="left",
-        verticalalignment="center",
-    )
-
-    ax.plot(zero, f(zero), "ko", markersize=8, alpha=0.7)
+    ax.plot(zero, 0, "ko", markersize=8, alpha=0.7)
 
     ax.legend(fontsize=16)
 

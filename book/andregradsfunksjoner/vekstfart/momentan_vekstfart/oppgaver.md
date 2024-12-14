@@ -494,7 +494,7 @@ $$
 f(x) = a(x - x_1)(x - x_2). 
 $$
 
-Det ene nullpunktet er $x = -3$ og det andre får vi vet å finne skjæringen til tangenten med $x$-aksen:
+Det ene nullpunktet er $x = -3$ og det andre får vi ved å finne skjæringen til tangenten med $x$-aksen:
 
 $$
 -2x + 2 = 0 \quad \iff \quad 2x = 2 \quad \iff \quad x = 1.
