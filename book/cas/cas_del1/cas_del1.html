@@ -1759,54 +1759,29 @@ a</label><div class="sd-tab-content docutils">
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", () => {
 
-        code_question_1 = `from sympy import *
-from sympy.abc import x, y
+        code_question_1 = `from casify import *
 
-likning1 = Eq(3 * x - y, 2)
-likning2 = Eq(-x + y, 6)
-
-likningssystem = [likning1, likning2]
-
-løsning = solve(likningssystem)
+løsning = løs("3 * x - y = 2", "-x + y = 6")
 
 print(løsning)
 `
 
-        code_question_2 = `from sympy import *
-from sympy.abc import x, y
+        code_question_2 = `from casify import *
 
-likning1 = Eq(4 * x - y, 7)
-likning2 = Eq(2 * x + y, 3)
-
-likningssystem = [likning1, likning2]
-
-løsning = solve(likningssystem)
+løsning = løs("4 * x - y = 7", "2 * x + y = 3")
 
 print(løsning)
 `
 
-        code_question_3 = `from sympy import *
-from sympy.abc import x, y
-
-likning1 = Eq(-x + y, 4)
-likning2 = ??
-
-likningssystem = [likning1, likning2]
-
-løsning = solve(likningssystem)
+        code_question_3 = `from casify import *
+løsning = løs("-x + y = 4", "3 * x + 2 * y = 6")
 
 print(løsning)
 `
 
-        code_question_4 = `from sympy import *
-from sympy.abc import x, y
+        code_question_4 = `from casify import *
 
-likning1 = ??
-likning2 = Eq(2 * x - 4 * y, 7)
-
-likningssystem = [likning1, likning2]
-
-løsning = solve(likningssystem)
+løsning = løs("-3 * x + y = 10", "2 * x - 4 * y = 7")
 
 print(løsning)
 `
@@ -1833,21 +1808,21 @@ print(løsning)
                 ]
             },
             {
-                content: `Hva må byttes ut med <code class="python">likning2 = ??</code> for at programmet skal løse likningssystemet? $$-x + y = 4 \\quad \\land \\quad 3x + 2y = 6$$ <pre><code class="python">${code_question_3}</code></pre>`,
+                content: `Hvilket likningssystem er det programmet løser? <pre><code class="python">${code_question_3}</code></pre>`,
                 answers: [
-                    { content: '<code class="python">likning2 = Eq(3 * x + 2 * y, 6)</code>', isCorrect: true },
-                    { content: '<code class="python">likning2 = Eq(3 * x - 2 * y, 6)</code>', isCorrect: false },
-                    { content: '<code class="python">likning2 = Eq(3 * x + 2 * y, -6)</code>', isCorrect: false },
-                    { content: '<code class="python">likning2 = Eq(3 * x - 2 * y, -6)</code>', isCorrect: false },
+                    { content: '$$-x + y = 4 \\quad \\land \\quad 3x + 2y = 6$$', isCorrect: true },
+                    { content: '$$x + y = 4 \\quad \\land \\quad 3x + 2y = 6$$', isCorrect: false },
+                    { content: '$$-x + y = 4 \\quad \\land \\quad 3x - 2y = -6$$', isCorrect: false },
+                    { content: '$$x - y = 4 \\quad \\land \\quad 3x + 2y = -6$$', isCorrect: false },
                 ]
             },
             {
-                content: `Hva må byttes ut med <code class="python">likning2 = ??</code> for at programmet skal løse likningssystemet? $$-3x + y = 10 \\quad \\land \\quad 2x - 4y = 7$$ <pre><code class="python">${code_question_4}</code></pre>`,
+                content: `Hvilket likningssystem er det programmet løser? <pre><code class="python">${code_question_4}</code></pre>`,
                 answers: [
-                    { content: '<code class="python">likning1 = Eq(-3 * x + y, 10)</code>', isCorrect: true },
-                    { content: '<code class="python">likning1 = Eq(-3 * x - y, 10)</code>', isCorrect: false },
-                    { content: '<code class="python">likning1 = Eq(-3 * x + y, -10)</code>', isCorrect: false },
-                    { content: '<code class="python">likning1 = Eq(3 * x + y, 10)</code>', isCorrect: false },
+                    { content: '$$-3x + y = 10 \\quad \\land \\quad 2x - 4y = 7$$', isCorrect: true },
+                    { content: '$$-3x - y = 10 \\quad \\land \\quad 2x - 4y = 7$$', isCorrect: false },
+                    { content: '$$-3x + y = 10 \\quad \\land \\quad 2x + 4y = 7$$', isCorrect: false },
+                    { content: '$$3x - y = 10 \\quad \\land \\quad 2x - 4y = -7$$', isCorrect: false },
                 ]
             },
         ];
@@ -1903,6 +1878,71 @@ Oppgave 1</label><div class="sd-tab-content docutils">
 \[
 3x + y = 7 \quad \land \quad x - y = 1
 \]</div>
+<div id="container-kode-cas-kurs-del-1-underveisoppgave-2-oppgave-1">
+    <div id="code-editor-placeholder" style="height: 200px; background-color: #f0f0f0; display: flex; align-items: center; justify-content: center;">
+        <p>Laster inn kodeeditor...⏳</p>
+    </div>
+</div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`from casify import * 
+
+løsning = # FYLL INN: løs likningssystemet med 'løs'-funksjonen
+
+print(løsning)
+
+`;
+
+        // Function to initialize the interactive code editor
+        function initializeInteractiveCode() {
+            makeInteractiveCode(
+                "container-kode-cas-kurs-del-1-underveisoppgave-2-oppgave-1",
+                code,
+                // ["sympy"],
+            );
+
+            // Remove the placeholder
+            const placeholder = document.getElementById('code-editor-placeholder');
+            if (placeholder) {
+                placeholder.remove();
+            }
+
+            // Disconnect the observer
+            if (observer) {
+                observer.disconnect();
+            }
+        }
+
+        // Set up the IntersectionObserver
+        let observer;
+        if ('IntersectionObserver' in window) {
+            observer = new IntersectionObserver((entries, observerInstance) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Element is in view or close to it, initialize the code editor
+                        initializeInteractiveCode();
+                    }
+                });
+            }, {
+                root: null, // Use the viewport as the root
+                rootMargin: '200px', // Start loading when the element is within 200px of the viewport
+                threshold: 0.1 // Trigger when at least 10% of the element is visible
+            });
+
+            // Start observing the container element
+            const containerElement = document.getElementById("container-kode-cas-kurs-del-1-underveisoppgave-2-oppgave-1");
+            if (containerElement) {
+                observer.observe(containerElement);
+            }
+        } else {
+            // Fallback for browsers that don't support IntersectionObserver
+            // Initialize immediately
+            initializeInteractiveCode();
+        }
+    });
+</script>
 <hr class="docutils" />
 <div class="answer dropdown admonition">
 <p class="admonition-title">Fasit</p>
@@ -1937,6 +1977,40 @@ Oppgave 2</label><div class="sd-tab-content docutils">
 \[
 x - 2y = 7 \quad \land \quad 2x + y = 1
 \]</div>
+<div id="container-kode-cas-kurs-del-1-underveisoppgave-2-oppgave-2"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`from casify import * 
+
+løsning = # FYLL INN: løs likningssystemet med 'løs'-funksjonen
+
+print(løsning)
+
+`;
+
+        makeInteractiveCode(
+            "container-kode-cas-kurs-del-1-underveisoppgave-2-oppgave-2",
+            code,
+            // ["sympy"],
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <hr class="docutils" />
 <div class="answer dropdown admonition">
 <p class="admonition-title">Fasit</p>
@@ -1971,6 +2045,40 @@ Oppgave 3</label><div class="sd-tab-content docutils">
 \[
 x + 2y = 5 \quad \land \quad 4x = 6 - y
 \]</div>
+<div id="container-kode-cas-kurs-del-1-underveisoppgave-2-oppgave-3"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`from casify import * 
+
+løsning = # FYLL INN: løs likningssystemet med 'løs'-funksjonen
+
+print(løsning)
+
+`;
+
+        makeInteractiveCode(
+            "container-kode-cas-kurs-del-1-underveisoppgave-2-oppgave-3",
+            code,
+            // ["sympy"],
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <hr class="docutils" />
 <div class="answer dropdown admonition">
 <p class="admonition-title">Fasit</p>
@@ -2114,17 +2222,50 @@ Med <img alt="../../../_images/mode_solve.svg" class="inline-image" src="../../.
 </dl>
 </div>
 <input class="tab-input" id="tab-set--5-input--2" name="tab-set--5" type="radio"><label class="tab-label" for="tab-set--5-input--2">Python</label><div class="tab-content docutils">
-<p>Vi kan også løse ulikheter ved å bruke <code class="code docutils literal highlight highlight-python"><span class="n">solve</span></code>-funksjonen i <code class="code docutils literal highlight highlight-python"><span class="n">sympy</span></code>.</p>
-<div class="sd-tab-set tabs-parts docutils">
+<p>Vi kan også løse ulikheter ved å bruke <code class="code docutils literal highlight highlight-python"><span class="n">løs</span></code>-funksjonen i <code class="code docutils literal highlight highlight-python"><span class="n">casify</span></code>.</p>
+<p>Under vises tre eksempler.</p>
+<ol class="arabic simple">
+<li><p>Les og kjør koden.</p></li>
+<li><p>Bestem hvilken ulikhet programmet løser.</p></li>
+<li><p>Bestem løsningen til ulikheten ut ifra utskriften.</p></li>
+</ol>
+<div class="sd-tab-set docutils">
 <input checked="checked" id="sd-tab-item-32" name="sd-tab-set-13" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-32">
-a</label><div class="sd-tab-content docutils">
-<p>Under vises tre eksempler på hvordan man lager ulikheter med <code class="code docutils literal highlight highlight-python"><span class="n">sympy</span></code>.</p>
-<p>Les og kjør koden for hvert eksempel, og bestem hvilken ulikhet programmet lager.</p>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-34" name="sd-tab-set-14" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-34">
 Eksempel 1</label><div class="sd-tab-content docutils">
+<div id="container-kode-cas-kurs-utforsk-3-eksempel-1"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`from casify import *
+
+løsning = løs("2 * x + 4 > 0")
+
+print(løsning)
+`;
+
+        makeInteractiveCode(
+            "container-kode-cas-kurs-utforsk-3-eksempel-1",
+            code,
+            // ["sympy"],
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="answer dropdown admonition">
 <p class="admonition-title">Fasit</p>
 <div class="math notranslate nohighlight">
@@ -2133,9 +2274,42 @@ Eksempel 1</label><div class="sd-tab-content docutils">
 \]</div>
 </div>
 </div>
-<input id="sd-tab-item-35" name="sd-tab-set-14" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-35">
+<input id="sd-tab-item-33" name="sd-tab-set-13" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-33">
 Eksempel 2</label><div class="sd-tab-content docutils">
+<div id="container-kode-cas-kurs-utforsk-3-eksempel-2"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`from casify import *
+
+løsning = løs("-2 * x + 3 < 8")
+
+print(løsning)
+`;
+
+        makeInteractiveCode(
+            "container-kode-cas-kurs-utforsk-3-eksempel-2",
+            code,
+            // ["sympy"],
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="answer dropdown admonition">
 <p class="admonition-title">Fasit</p>
 <div class="math notranslate nohighlight">
@@ -2144,80 +2318,48 @@ Eksempel 2</label><div class="sd-tab-content docutils">
 \]</div>
 </div>
 </div>
-<input id="sd-tab-item-36" name="sd-tab-set-14" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-36">
+<input id="sd-tab-item-34" name="sd-tab-set-13" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-34">
 Eksempel 3</label><div class="sd-tab-content docutils">
+<div id="container-kode-cas-kurs-utforsk-3-eksempel-3"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`from casify import *
+
+løsning = løs("-x / 3 + 5 >= -x + 7")
+
+print(løsning)
+`;
+
+        makeInteractiveCode(
+            "container-kode-cas-kurs-utforsk-3-eksempel-3",
+            code,
+            // ["sympy"],
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="answer dropdown admonition">
 <p class="admonition-title">Fasit</p>
 <div class="math notranslate nohighlight">
 \[
 -\dfrac{x}{3} + 5 \geq -x + 7
 \]</div>
-</div>
-</div>
-</div>
-</div>
-<input id="sd-tab-item-33" name="sd-tab-set-13" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-33">
-b</label><div class="sd-tab-content docutils">
-<p>For å løse ulikheten, bruker vi <code class="code docutils literal highlight highlight-python"><span class="n">solve</span></code>-funksjonen akkurat som før!</p>
-<p>Her følger tre eksempler på dette – kjør koden for hvert eksempel og bestem løsningen av ulikhetene ved hjelp av utskriften.</p>
-<blockquote>
-<div><p>Her bruker vi <code class="code docutils literal highlight highlight-python"><span class="n">pprint</span></code> og ikke <code class="code docutils literal highlight highlight-python"><span class="nb">print</span></code> for å få en utskrift som likner på matematikken. Prøv gjerne å bruke <code class="code docutils literal highlight highlight-python"><span class="nb">print</span></code> i stedet. Da vil utskriften bruke “&amp;” i stedet for “<span class="math notranslate nohighlight">\(\land\)</span>”.</p>
-</div></blockquote>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-37" name="sd-tab-set-15" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-37">
-Eksempel 1</label><div class="sd-tab-content docutils">
-<div class="answer dropdown admonition">
-<p class="admonition-title">Fasit</p>
-<p><strong>Utskrift</strong>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(-2 &lt; x)</span> <span class="go">∧ (x &lt; ∞)</span>
-</pre></div>
-</div>
-<p><strong>Løsning av ulikheten</strong>:</p>
-<div class="math notranslate nohighlight">
-\[
--2 &lt; x \quad \land \quad x &lt; \infty \quad \iff \quad -2 &lt; x &lt; \infty \quad \iff \quad x &gt; -2
-\]</div>
-<p>(Det er overflødig å ta med at <span class="math notranslate nohighlight">\(x &lt; \infty\)</span> siden dette er underforstått når vi bare skriver <span class="math notranslate nohighlight">\(x &gt; -2\)</span> – men det ikke <em>feil</em> å gjøre det!).</p>
-<blockquote>
-<div><p>Merk at tegnet <span class="math notranslate nohighlight">\(\infty\)</span> betyr <em>uendelig</em>.</p>
-</div></blockquote>
-</div>
-</div>
-<input id="sd-tab-item-38" name="sd-tab-set-15" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-38">
-Eksempel 2</label><div class="sd-tab-content docutils">
-<div class="answer dropdown admonition">
-<p class="admonition-title">Fasit</p>
-<p><strong>Utskrift</strong>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(-5/2 &lt; x)</span> <span class="go">∧ (x &lt; ∞)</span>
-</pre></div>
-</div>
-<p><strong>Løsning av ulikheten</strong>:</p>
-<div class="math notranslate nohighlight">
-\[
--\dfrac{5}{2} &lt; x \quad \land \quad x &lt; \infty \quad \iff \quad x &gt; -\dfrac{5}{2}
-\]</div>
-</div>
-</div>
-<input id="sd-tab-item-39" name="sd-tab-set-15" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-39">
-Eksempel 3</label><div class="sd-tab-content docutils">
-<div class="answer dropdown admonition">
-<p class="admonition-title">Fasit</p>
-<p><strong>Utskrift</strong>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(3 &lt;= x)</span> <span class="go">∧ (x &lt; ∞)</span>
-</pre></div>
-</div>
-<p><strong>Løsning av ulikheten</strong>:</p>
-<div class="math notranslate nohighlight">
-\[
-3 \leq x \quad \land \quad x &lt; \infty \quad \iff \quad x \geq 3
-\]</div>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -2231,8 +2373,8 @@ Eksempel 3</label><div class="sd-tab-content docutils">
 <input checked="True" class="tab-input" id="tab-set--6-input--1" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--1">Geogebra</label><div class="tab-content docutils">
 <p>Bruk CAS-vinduet under til å løse ulikhetene.</p>
 <div class="sd-tab-set tabs-parts docutils">
-<input checked="checked" id="sd-tab-item-40" name="sd-tab-set-16" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-40">
+<input checked="checked" id="sd-tab-item-35" name="sd-tab-set-14" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-35">
 a</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
@@ -2246,8 +2388,8 @@ x &lt; -\dfrac{5}{2}
 \]</div>
 </div>
 </div>
-<input id="sd-tab-item-41" name="sd-tab-set-16" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-41">
+<input id="sd-tab-item-36" name="sd-tab-set-14" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-36">
 b</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
@@ -2261,8 +2403,8 @@ x \geq \dfrac{1}{2}
 \]</div>
 </div>
 </div>
-<input id="sd-tab-item-42" name="sd-tab-set-16" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-42">
+<input id="sd-tab-item-37" name="sd-tab-set-14" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-37">
 c</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
@@ -2322,13 +2464,46 @@ x \geq 0
 <input class="tab-input" id="tab-set--6-input--2" name="tab-set--6" type="radio"><label class="tab-label" for="tab-set--6-input--2">Python</label><div class="tab-content docutils">
 <p>Fyll inn programmene under og bestem løsningen av ulikhetene ved hjelp av programmene.</p>
 <div class="sd-tab-set tabs-parts docutils">
-<input checked="checked" id="sd-tab-item-43" name="sd-tab-set-17" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-43">
+<input checked="checked" id="sd-tab-item-38" name="sd-tab-set-15" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-38">
 a</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 2x + 5 &lt; 0
 \]</div>
+<div id="container-kode-cas-kurs-del-1-underveisoppgave-3-a"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`from casify import *
+
+løsning = # FYLL INN: løs ulikheten med 'løs'-funksjonen
+
+print(løsning)
+`;
+
+        makeInteractiveCode(
+            "container-kode-cas-kurs-del-1-underveisoppgave-3-a",
+            code,
+            // ["sympy"],
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="answer dropdown admonition">
 <p class="admonition-title">Fasit</p>
 <div class="math notranslate nohighlight">
@@ -2337,13 +2512,46 @@ x &lt; -\dfrac{5}{2}
 \]</div>
 </div>
 </div>
-<input id="sd-tab-item-44" name="sd-tab-set-17" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-44">
+<input id="sd-tab-item-39" name="sd-tab-set-15" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-39">
 b</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 2x - 3 \geq -2
 \]</div>
+<div id="container-kode-cas-kurs-del-1-underveisoppgave-3-b"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`from casify import *
+
+løsning = # FYLL INN: løs ulikheten med 'løs'-funksjonen
+
+print(løsning)
+`;
+
+        makeInteractiveCode(
+            "container-kode-cas-kurs-del-1-underveisoppgave-3-b",
+            code,
+            // ["sympy"],
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="answer dropdown admonition">
 <p class="admonition-title">Fasit</p>
 <div class="math notranslate nohighlight">
@@ -2352,13 +2560,46 @@ x \geq \dfrac{1}{2}
 \]</div>
 </div>
 </div>
-<input id="sd-tab-item-45" name="sd-tab-set-17" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-45">
+<input id="sd-tab-item-40" name="sd-tab-set-15" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-40">
 c</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 -3x + 2 \leq -x + 2
 \]</div>
+<div id="container-kode-cas-kurs-del-1-underveisoppgave-3-c"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`from casify import *
+
+løsning = # FYLL INN: løs ulikheten med 'løs'-funksjonen
+
+print(løsning)
+`;
+
+        makeInteractiveCode(
+            "container-kode-cas-kurs-del-1-underveisoppgave-3-c",
+            code,
+            // ["sympy"],
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="answer dropdown admonition">
 <p class="admonition-title">Fasit</p>
 <div class="math notranslate nohighlight">
@@ -2405,8 +2646,8 @@ x \geq 0
 <input checked="True" class="tab-input" id="tab-set--9-input--1" name="tab-set--9" type="radio"><label class="tab-label" for="tab-set--9-input--1">Geogebra</label><div class="tab-content docutils">
 <p>Løs likningene ved hjelp av CAS.</p>
 <div class="sd-tab-set tabs-parts docutils">
-<input checked="checked" id="sd-tab-item-46" name="sd-tab-set-18" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-46">
+<input checked="checked" id="sd-tab-item-41" name="sd-tab-set-16" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-41">
 a</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
@@ -2420,8 +2661,8 @@ x = \dfrac{2}{3}
 \]</div>
 </div>
 </div>
-<input id="sd-tab-item-47" name="sd-tab-set-18" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-47">
+<input id="sd-tab-item-42" name="sd-tab-set-16" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-42">
 b</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
@@ -2435,8 +2676,8 @@ x = \dfrac{3}{4}
 \]</div>
 </div>
 </div>
-<input id="sd-tab-item-48" name="sd-tab-set-18" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-48">
+<input id="sd-tab-item-43" name="sd-tab-set-16" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-43">
 c</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
@@ -2450,8 +2691,8 @@ x = -\dfrac{5}{7}
 \]</div>
 </div>
 </div>
-<input id="sd-tab-item-49" name="sd-tab-set-18" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-49">
+<input id="sd-tab-item-44" name="sd-tab-set-16" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-44">
 d</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
@@ -2470,27 +2711,59 @@ x = -\dfrac{8}{5}
 <input class="tab-input" id="tab-set--9-input--2" name="tab-set--9" type="radio"><label class="tab-label" for="tab-set--9-input--2">Python</label><div class="tab-content docutils">
 <p>Fyll ut programmet under og løs likningene.</p>
 <div class="sd-tab-set tabs-parts docutils">
-<input checked="checked" id="sd-tab-item-50" name="sd-tab-set-19" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-50">
+<input checked="checked" id="sd-tab-item-45" name="sd-tab-set-17" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-45">
 a</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 -3x + 2 = 0
 \]</div>
+<div id="container-kode-cas-kurs-del-1-oppgaver-oppgave-1-a"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`from casify import * 
+
+løsning = # FYLL INN
+
+print(løsning)
+
+`;
+
+        makeInteractiveCode(
+            "container-kode-cas-kurs-del-1-oppgaver-oppgave-1-a",
+            code,
+            // ["sympy"],
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="answer dropdown admonition">
 <p class="admonition-title">Fasit</p>
 <p><strong>Programkode</strong>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="linenos">2</span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
-<span class="linenos">3</span>
-<span class="hll"><span class="linenos">4</span><span class="n">likning</span> <span class="o">=</span> <span class="n">Eq</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-</span><span class="hll"><span class="linenos">5</span><span class="n">løsning</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">likning</span><span class="p">)</span>
-</span><span class="linenos">6</span>
-<span class="linenos">7</span><span class="nb">print</span><span class="p">(</span><span class="n">løsning</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">from</span> <span class="nn">casify</span> <span class="kn">import</span> <span class="o">*</span> 
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="n">løsning</span> <span class="o">=</span> <span class="n">løs</span><span class="p">(</span><span class="s2">&quot;-3*x + 2 = 0&quot;</span><span class="p">)</span> 
+<span class="linenos">4</span>
+<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="n">løsning</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>Utskrift</strong>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[2/3]</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x = 2/3</span>
 </pre></div>
 </div>
 <p><strong>Løsning</strong>:</p>
@@ -2500,27 +2773,59 @@ x = \dfrac{2}{3}
 \]</div>
 </div>
 </div>
-<input id="sd-tab-item-51" name="sd-tab-set-19" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-51">
+<input id="sd-tab-item-46" name="sd-tab-set-17" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-46">
 b</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 4x + 2 = 5
 \]</div>
+<div id="container-kode-cas-kurs-del-1-oppgaver-oppgave-1-b"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`from casify import * 
+
+løsning = # FYLL INN
+
+print(løsning)
+
+`;
+
+        makeInteractiveCode(
+            "container-kode-cas-kurs-del-1-oppgaver-oppgave-1-b",
+            code,
+            // ["sympy"],
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="answer dropdown admonition">
 <p class="admonition-title">Fasit</p>
 <p><strong>Programkode</strong>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="linenos">2</span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
-<span class="linenos">3</span>
-<span class="hll"><span class="linenos">4</span><span class="n">likning</span> <span class="o">=</span> <span class="n">Eq</span><span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-</span><span class="hll"><span class="linenos">5</span><span class="n">løsning</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">likning</span><span class="p">)</span>
-</span><span class="linenos">6</span>
-<span class="linenos">7</span><span class="nb">print</span><span class="p">(</span><span class="n">løsning</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">from</span> <span class="nn">casify</span> <span class="kn">import</span> <span class="o">*</span> 
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="n">løsning</span> <span class="o">=</span> <span class="n">løs</span><span class="p">(</span><span class="s2">&quot;4*x + 2 = 5&quot;</span><span class="p">)</span>
+<span class="linenos">4</span>
+<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="n">løsning</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>Utskrift</strong>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[3/4]</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x = 3/4</span>
 </pre></div>
 </div>
 <p><strong>Løsning</strong>:</p>
@@ -2530,27 +2835,59 @@ x = \dfrac{3}{4}
 \]</div>
 </div>
 </div>
-<input id="sd-tab-item-52" name="sd-tab-set-19" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-52">
+<input id="sd-tab-item-47" name="sd-tab-set-17" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-47">
 c</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 5x + 8 = -2x + 3
 \]</div>
+<div id="container-kode-cas-kurs-del-1-oppgaver-oppgave-1-c"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`from casify import * 
+
+løsning = # FYLL INN
+
+print(løsning)
+
+`;
+
+        makeInteractiveCode(
+            "container-kode-cas-kurs-del-1-oppgaver-oppgave-1-c",
+            code,
+            // ["sympy"],
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="answer dropdown admonition">
 <p class="admonition-title">Fasit</p>
 <p><strong>Programkode</strong>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="linenos">2</span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
-<span class="linenos">3</span>
-<span class="hll"><span class="linenos">4</span><span class="n">likning</span> <span class="o">=</span> <span class="n">Eq</span><span class="p">(</span><span class="mi">5</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span>
-</span><span class="hll"><span class="linenos">5</span><span class="n">løsning</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">likning</span><span class="p">)</span>
-</span><span class="linenos">6</span>
-<span class="linenos">7</span><span class="nb">print</span><span class="p">(</span><span class="n">løsning</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">from</span> <span class="nn">casify</span> <span class="kn">import</span> <span class="o">*</span> 
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="n">løsning</span> <span class="o">=</span> <span class="n">løs</span><span class="p">(</span><span class="s2">&quot;5*x + 8 = -2*x + 3&quot;</span><span class="p">)</span>
+<span class="linenos">4</span>
+<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="n">løsning</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>Utksrift</strong>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[-5/7]</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x = -5/7</span>
 </pre></div>
 </div>
 <p><strong>Løsning</strong>:</p>
@@ -2560,27 +2897,59 @@ x = -\dfrac{5}{7}
 \]</div>
 </div>
 </div>
-<input id="sd-tab-item-53" name="sd-tab-set-19" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-53">
+<input id="sd-tab-item-48" name="sd-tab-set-17" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-48">
 d</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 \dfrac{1}{2}x - 2 = 3x + 2
 \]</div>
+<div id="container-kode-cas-kurs-del-1-oppgaver-oppgave-1-d"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`from casify import * 
+
+løsning = # FYLL INN
+
+print(løsning)
+
+`;
+
+        makeInteractiveCode(
+            "container-kode-cas-kurs-del-1-oppgaver-oppgave-1-d",
+            code,
+            // ["sympy"],
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="answer dropdown admonition">
 <p class="admonition-title">Fasit</p>
 <p><strong>Programkode</strong>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="linenos">2</span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
-<span class="linenos">3</span>
-<span class="hll"><span class="linenos">4</span><span class="n">likning</span> <span class="o">=</span> <span class="n">Eq</span><span class="p">(</span><span class="n">x</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
-</span><span class="hll"><span class="linenos">5</span><span class="n">løsning</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">likning</span><span class="p">)</span>
-</span><span class="linenos">6</span>
-<span class="linenos">7</span><span class="nb">print</span><span class="p">(</span><span class="n">løsning</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">from</span> <span class="nn">casify</span> <span class="kn">import</span> <span class="o">*</span> 
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="n">løsning</span> <span class="o">=</span> <span class="n">løs</span><span class="p">(</span><span class="s2">&quot;x/2 - 2 = 3*x + 2&quot;</span><span class="p">)</span>
+<span class="linenos">4</span>
+<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="n">løsning</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>Utskrift</strong>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[-8/5]</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x = -8/5</span>
 </pre></div>
 </div>
 <p><strong>Løsning</strong>:</p>
@@ -2601,8 +2970,8 @@ x = -\dfrac{8}{5}
 <input checked="True" class="tab-input" id="tab-set--10-input--1" name="tab-set--10" type="radio"><label class="tab-label" for="tab-set--10-input--1">Geogebra</label><div class="tab-content docutils">
 <p>Løs likningssystemene ved hjelp av CAS.</p>
 <div class="sd-tab-set tabs-parts docutils">
-<input checked="checked" id="sd-tab-item-54" name="sd-tab-set-20" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-54">
+<input checked="checked" id="sd-tab-item-49" name="sd-tab-set-18" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-49">
 a</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
@@ -2616,8 +2985,8 @@ x = 2 \quad \land \quad y = 1
 \]</div>
 </div>
 </div>
-<input id="sd-tab-item-55" name="sd-tab-set-20" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-55">
+<input id="sd-tab-item-50" name="sd-tab-set-18" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-50">
 b</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
@@ -2631,8 +3000,8 @@ x = 3 \quad \land \quad y = -2
 \]</div>
 </div>
 </div>
-<input id="sd-tab-item-56" name="sd-tab-set-20" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-56">
+<input id="sd-tab-item-51" name="sd-tab-set-18" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-51">
 c</label><div class="sd-tab-content docutils">
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
@@ -2647,8 +3016,8 @@ x = 1 \quad \land \quad y = 2
 \]</div>
 </div>
 </div>
-<input id="sd-tab-item-57" name="sd-tab-set-20" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-57">
+<input id="sd-tab-item-52" name="sd-tab-set-18" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-52">
 d</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
@@ -2667,30 +3036,59 @@ x = -\dfrac{3}{2} \quad \land \quad y = -4
 <input class="tab-input" id="tab-set--10-input--2" name="tab-set--10" type="radio"><label class="tab-label" for="tab-set--10-input--2">Python</label><div class="tab-content docutils">
 <p>Fyll inn programmene og løs likningsystemene.</p>
 <div class="sd-tab-set tabs-parts docutils">
-<input checked="checked" id="sd-tab-item-58" name="sd-tab-set-21" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-58">
+<input checked="checked" id="sd-tab-item-53" name="sd-tab-set-19" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-53">
 a</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 3x + y = 7 \quad \land \quad x - y = 1
 \]</div>
+<div id="container-kode-cas-kurs-del-1-oppgaver-oppgave-2-a"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`from casify import * 
+
+løsning = # FYLL INN
+
+print(løsning)
+
+`;
+
+        makeInteractiveCode(
+            "container-kode-cas-kurs-del-1-oppgaver-oppgave-2-a",
+            code,
+            // ["sympy"],
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="answer dropdown admonition">
 <p class="admonition-title">Fasit</p>
 <p><strong>Programkode</strong>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="linenos"> 2</span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
-<span class="linenos"> 3</span>
-<span class="hll"><span class="linenos"> 4</span><span class="n">likning1</span> <span class="o">=</span> <span class="n">Eq</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
-</span><span class="hll"><span class="linenos"> 5</span><span class="n">likning2</span> <span class="o">=</span> <span class="n">Eq</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-</span><span class="hll"><span class="linenos"> 6</span><span class="n">likningssystem</span> <span class="o">=</span> <span class="p">[</span><span class="n">likning1</span><span class="p">,</span> <span class="n">likning2</span><span class="p">]</span>
-</span><span class="linenos"> 7</span>
-<span class="linenos"> 8</span><span class="n">løsning</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">likningssystem</span><span class="p">)</span>
-<span class="linenos"> 9</span>
-<span class="linenos">10</span><span class="nb">print</span><span class="p">(</span><span class="n">løsning</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">from</span> <span class="nn">casify</span> <span class="kn">import</span> <span class="o">*</span> 
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="n">løsning</span> <span class="o">=</span> <span class="n">løs</span><span class="p">(</span><span class="s2">&quot;3*x + y = 7&quot;</span><span class="p">,</span> <span class="s2">&quot;x - y = 1&quot;</span><span class="p">)</span>
+<span class="linenos">4</span>
+<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="n">løsning</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>Utskrift</strong>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">{x: 2, y: 1}</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x = 2 ∧ y = 1</span>
 </pre></div>
 </div>
 <p><strong>Løsning</strong>:</p>
@@ -2700,30 +3098,59 @@ x = 2 \quad \land \quad y = 1
 \]</div>
 </div>
 </div>
-<input id="sd-tab-item-59" name="sd-tab-set-21" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-59">
+<input id="sd-tab-item-54" name="sd-tab-set-19" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-54">
 b</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 x - 2y = 7 \quad \land \quad x + y = 1
 \]</div>
+<div id="container-kode-cas-kurs-del-1-oppgaver-oppgave-2-b"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`from casify import * 
+
+løsning = # FYLL INN
+
+print(løsning)
+
+`;
+
+        makeInteractiveCode(
+            "container-kode-cas-kurs-del-1-oppgaver-oppgave-2-b",
+            code,
+            // ["sympy"],
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="answer dropdown admonition">
 <p class="admonition-title">Fasit</p>
 <p><strong>Programkode</strong>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="linenos"> 2</span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
-<span class="linenos"> 3</span>
-<span class="hll"><span class="linenos"> 4</span><span class="n">likning1</span> <span class="o">=</span> <span class="n">Eq</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">y</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
-</span><span class="hll"><span class="linenos"> 5</span><span class="n">likning2</span> <span class="o">=</span> <span class="n">Eq</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-</span><span class="hll"><span class="linenos"> 6</span><span class="n">likningssystem</span> <span class="o">=</span> <span class="p">[</span><span class="n">likning1</span><span class="p">,</span> <span class="n">likning2</span><span class="p">]</span>
-</span><span class="linenos"> 7</span>
-<span class="linenos"> 8</span><span class="n">løsning</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">likningssystem</span><span class="p">)</span>
-<span class="linenos"> 9</span>
-<span class="linenos">10</span><span class="nb">print</span><span class="p">(</span><span class="n">løsning</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">from</span> <span class="nn">casify</span> <span class="kn">import</span> <span class="o">*</span> 
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="n">løsning</span> <span class="o">=</span> <span class="n">løs</span><span class="p">(</span><span class="s2">&quot;x - 2*y = 7&quot;</span><span class="p">,</span> <span class="s2">&quot;x + y = 1&quot;</span><span class="p">)</span>
+<span class="linenos">4</span>
+<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="n">løsning</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>Utskrift</strong>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">{x: 3, y: -2}</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x = 3 ∧ y = -2</span>
 </pre></div>
 </div>
 <p><strong>Løsning</strong>:</p>
@@ -2733,31 +3160,60 @@ x = 3 \quad \land \quad y = -2
 \]</div>
 </div>
 </div>
-<input id="sd-tab-item-60" name="sd-tab-set-21" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-60">
+<input id="sd-tab-item-55" name="sd-tab-set-19" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-55">
 c</label><div class="sd-tab-content docutils">
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
     x + 2y &amp;= 5 \\
     4x &amp;= 6 - y
 \end{align*}\]</div>
+<div id="container-kode-cas-kurs-del-1-oppgaver-oppgave-2-c"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`from casify import * 
+
+løsning = # FYLL INN
+
+print(løsning)
+
+`;
+
+        makeInteractiveCode(
+            "container-kode-cas-kurs-del-1-oppgaver-oppgave-2-c",
+            code,
+            // ["sympy"],
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="answer dropdown admonition">
 <p class="admonition-title">Fasit</p>
 <p><strong>Programkode</strong>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="linenos"> 2</span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
-<span class="linenos"> 3</span>
-<span class="hll"><span class="linenos"> 4</span><span class="n">likning1</span> <span class="o">=</span> <span class="n">Eq</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">y</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-</span><span class="hll"><span class="linenos"> 5</span><span class="n">likning2</span> <span class="o">=</span> <span class="n">Eq</span><span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">x</span><span class="p">,</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">y</span><span class="p">)</span>
-</span><span class="hll"><span class="linenos"> 6</span><span class="n">likningssystem</span> <span class="o">=</span> <span class="p">[</span><span class="n">likning1</span><span class="p">,</span> <span class="n">likning2</span><span class="p">]</span>
-</span><span class="linenos"> 7</span>
-<span class="linenos"> 8</span><span class="n">løsning</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">likningssystem</span><span class="p">)</span>
-<span class="linenos"> 9</span>
-<span class="linenos">10</span><span class="nb">print</span><span class="p">(</span><span class="n">løsning</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">from</span> <span class="nn">casify</span> <span class="kn">import</span> <span class="o">*</span> 
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="n">løsning</span> <span class="o">=</span> <span class="n">løs</span><span class="p">(</span><span class="s2">&quot;x + 2*y = 5&quot;</span><span class="p">,</span> <span class="s2">&quot;4*x = 6 - y&quot;</span><span class="p">)</span>
+<span class="linenos">4</span>
+<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="n">løsning</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>Utskrift</strong>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">{x: -11/5, y: 18/5}</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x = 1 ∧ y = 2</span>
 </pre></div>
 </div>
 <p><strong>Løsning</strong>:</p>
@@ -2767,31 +3223,60 @@ x = 1 \quad \land \quad y = 2
 \]</div>
 </div>
 </div>
-<input id="sd-tab-item-61" name="sd-tab-set-21" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-61">
+<input id="sd-tab-item-56" name="sd-tab-set-19" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-56">
 d</label><div class="sd-tab-content docutils">
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
     -2x + y &amp;= -1 \\
     4x + 2y + 14 &amp;= 0
 \end{align*}\]</div>
+<div id="container-kode-cas-kurs-del-1-oppgaver-oppgave-2-d"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`from casify import * 
+
+løsning = # FYLL INN
+
+print(løsning)
+
+`;
+
+        makeInteractiveCode(
+            "container-kode-cas-kurs-del-1-oppgaver-oppgave-2-d",
+            code,
+            // ["sympy"],
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="answer dropdown admonition">
 <p class="admonition-title">Fasit</p>
 <p><strong>Programkode</strong>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="linenos"> 2</span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
-<span class="linenos"> 3</span>
-<span class="hll"><span class="linenos"> 4</span><span class="n">likning1</span> <span class="o">=</span> <span class="n">Eq</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-</span><span class="hll"><span class="linenos"> 5</span><span class="n">likning2</span> <span class="o">=</span> <span class="n">Eq</span><span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-</span><span class="hll"><span class="linenos"> 6</span><span class="n">likningssystem</span> <span class="o">=</span> <span class="p">[</span><span class="n">likning1</span><span class="p">,</span> <span class="n">likning2</span><span class="p">]</span>
-</span><span class="linenos"> 7</span>
-<span class="linenos"> 8</span><span class="n">løsning</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">likningssystem</span><span class="p">)</span>
-<span class="linenos"> 9</span>
-<span class="linenos">10</span><span class="nb">print</span><span class="p">(</span><span class="n">løsning</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">from</span> <span class="nn">casify</span> <span class="kn">import</span> <span class="o">*</span> 
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="n">løsning</span> <span class="o">=</span> <span class="n">løs</span><span class="p">(</span><span class="s2">&quot;-2*x + y = -1&quot;</span><span class="p">,</span> <span class="s2">&quot;4*x + 2*y + 14 = 0&quot;</span><span class="p">)</span>
+<span class="linenos">4</span>
+<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="n">løsning</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>Utskrift</strong>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">{x: -3/2, y: -4}</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x = -3/2 ∧ y = -4</span>
 </pre></div>
 </div>
 <p><strong>Løsning</strong>:</p>
@@ -2812,8 +3297,8 @@ x = -\dfrac{3}{2} \quad \land \quad y = -4
 <input checked="True" class="tab-input" id="tab-set--11-input--1" name="tab-set--11" type="radio"><label class="tab-label" for="tab-set--11-input--1">Geogebra</label><div class="tab-content docutils">
 <p>Løs ulikhetene med CAS.</p>
 <div class="sd-tab-set tabs-parts docutils">
-<input checked="checked" id="sd-tab-item-62" name="sd-tab-set-22" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-62">
+<input checked="checked" id="sd-tab-item-57" name="sd-tab-set-20" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-57">
 a</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
@@ -2827,8 +3312,8 @@ x \leq \dfrac{8}{3}
 \]</div>
 </div>
 </div>
-<input id="sd-tab-item-63" name="sd-tab-set-22" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-63">
+<input id="sd-tab-item-58" name="sd-tab-set-20" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-58">
 b</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
@@ -2842,8 +3327,8 @@ x &lt; 5
 \]</div>
 </div>
 </div>
-<input id="sd-tab-item-64" name="sd-tab-set-22" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-64">
+<input id="sd-tab-item-59" name="sd-tab-set-20" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-59">
 c</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
@@ -2857,8 +3342,8 @@ x &lt; 8
 \]</div>
 </div>
 </div>
-<input id="sd-tab-item-65" name="sd-tab-set-22" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-65">
+<input id="sd-tab-item-60" name="sd-tab-set-20" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-60">
 d</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
@@ -2875,29 +3360,61 @@ x \leq -\dfrac{1}{5}
 </div>
 </div>
 <input class="tab-input" id="tab-set--11-input--2" name="tab-set--11" type="radio"><label class="tab-label" for="tab-set--11-input--2">Python</label><div class="tab-content docutils">
-<p>Løs ulikhetene ved hjelp av <code class="code docutils literal highlight highlight-python"><span class="n">sympy</span></code> i kodevinduet.</p>
+<p>Løs ulikhetene ved hjelp av <code class="code docutils literal highlight highlight-python"><span class="n">casify</span></code> i kodevinduet.</p>
 <div class="sd-tab-set tabs-parts docutils">
-<input checked="checked" id="sd-tab-item-66" name="sd-tab-set-23" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-66">
+<input checked="checked" id="sd-tab-item-61" name="sd-tab-set-21" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-61">
 a</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 -2x + 3 \geq x - 5
 \]</div>
+<div id="container-kode-cas-kurs-del-1-oppgaver-oppgave-3-a"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`from casify import * 
+
+løsning = # FYLL INN
+
+print(løsning)
+
+`;
+
+        makeInteractiveCode(
+            "container-kode-cas-kurs-del-1-oppgaver-oppgave-3-a",
+            code,
+            // ["sympy"],
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="dropdown answer admonition">
 <p class="admonition-title">Fasit</p>
 <p><strong>Programkode</strong>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="linenos">2</span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
-<span class="linenos">3</span>
-<span class="linenos">4</span><span class="n">ulikhet</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">&gt;=</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">5</span><span class="p">)</span>
-<span class="linenos">5</span><span class="n">løsning</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">ulikhet</span><span class="p">)</span>
-<span class="linenos">6</span>
-<span class="linenos">7</span><span class="n">pprint</span><span class="p">(</span><span class="n">løsning</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">from</span> <span class="nn">casify</span> <span class="kn">import</span> <span class="o">*</span> 
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="n">løsning</span> <span class="o">=</span> <span class="n">løs</span><span class="p">(</span><span class="s2">&quot;-2*x + 3 &gt;= x - 5&quot;</span><span class="p">)</span> 
+<span class="linenos">4</span>
+<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="n">løsning</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>Utskrift</strong>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(x &lt;= 8/3)</span> <span class="go">∧ (-∞ &lt; x)</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x &lt;= 8/3</span>
 </pre></div>
 </div>
 <p><strong>Løsning</strong>:</p>
@@ -2907,27 +3424,59 @@ x \leq \dfrac{8}{3}
 \]</div>
 </div>
 </div>
-<input id="sd-tab-item-67" name="sd-tab-set-23" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-67">
+<input id="sd-tab-item-62" name="sd-tab-set-21" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-62">
 b</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 2x - 1 &lt; x + 4
 \]</div>
+<div id="container-kode-cas-kurs-del-1-oppgaver-oppgave-3-b"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`from casify import * 
+
+løsning = # FYLL INN
+
+print(løsning)
+
+`;
+
+        makeInteractiveCode(
+            "container-kode-cas-kurs-del-1-oppgaver-oppgave-3-b",
+            code,
+            // ["sympy"],
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="dropdown answer admonition">
 <p class="admonition-title">Fasit</p>
 <p><strong>Programkode</strong>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="linenos">2</span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
-<span class="linenos">3</span>
-<span class="linenos">4</span><span class="n">ulikhet</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)</span>
-<span class="linenos">5</span><span class="n">løsning</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">ulikhet</span><span class="p">)</span>
-<span class="linenos">6</span>
-<span class="linenos">7</span><span class="n">pprint</span><span class="p">(</span><span class="n">løsning</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">from</span> <span class="nn">casify</span> <span class="kn">import</span> <span class="o">*</span> 
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="n">løsning</span> <span class="o">=</span> <span class="n">løs</span><span class="p">(</span><span class="s2">&quot;2*x - 1 &lt; x + 4&quot;</span><span class="p">)</span>
+<span class="linenos">4</span>
+<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="n">løsning</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>Utskrift</strong>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(-∞ &lt; x)</span> <span class="go">∧ (x &lt; 5)</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go"> x &lt; 5</span>
 </pre></div>
 </div>
 <p><strong>Løsning</strong>:</p>
@@ -2937,27 +3486,57 @@ x &lt; 5
 \]</div>
 </div>
 </div>
-<input id="sd-tab-item-68" name="sd-tab-set-23" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-68">
+<input id="sd-tab-item-63" name="sd-tab-set-21" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-63">
 c</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 \dfrac{1}{2}x + 3 &gt; x - 1
 \]</div>
+<div id="container-kode-cas-kurs-del-1-oppgaver-oppgave-3-c"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`from casify import * 
+
+løsning = # FYLL INN
+
+print(løsning)
+`;
+
+        makeInteractiveCode(
+            "container-kode-cas-kurs-del-1-oppgaver-oppgave-3-c",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="dropdown answer admonition">
 <p class="admonition-title">Fasit</p>
 <p><strong>Programkode</strong>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="linenos">2</span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
-<span class="linenos">3</span>
-<span class="linenos">4</span><span class="n">ulikhet</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">&gt;</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-<span class="linenos">5</span><span class="n">løsning</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">ulikhet</span><span class="p">)</span>
-<span class="linenos">6</span>
-<span class="linenos">7</span><span class="n">pprint</span><span class="p">(</span><span class="n">løsning</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">from</span> <span class="nn">casify</span> <span class="kn">import</span> <span class="o">*</span> 
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="n">løsning</span> <span class="o">=</span> <span class="n">løs</span><span class="p">(</span><span class="s2">&quot;x/2 + 3 &gt; x - 1&quot;</span><span class="p">)</span>
+<span class="linenos">4</span>
+<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="n">løsning</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>Utskrift</strong>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(-∞ &lt; x)</span> <span class="go">∧ (x &lt; 8)</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x &lt; 8</span>
 </pre></div>
 </div>
 <p><strong>Løsning</strong>:</p>
@@ -2967,33 +3546,64 @@ x &lt; 8
 \]</div>
 </div>
 </div>
-<input id="sd-tab-item-69" name="sd-tab-set-23" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-69">
+<input id="sd-tab-item-64" name="sd-tab-set-21" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-64">
 d</label><div class="sd-tab-content docutils">
 <div class="math notranslate nohighlight">
 \[
 \dfrac{x}{3} + \dfrac{1}{2} \leq -\dfrac{x}{2} + \dfrac{1}{3}
 \]</div>
+<div id="container-kode-cas-kurs-del-1-oppgaver-oppgave-3-d"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`from casify import * 
+
+løsning = # FYLL INN
+
+print(løsning)
+`;
+
+        makeInteractiveCode(
+            "container-kode-cas-kurs-del-1-oppgaver-oppgave-3-d",
+            code,
+            // ["sympy"],
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="dropdown answer admonition">
 <p class="admonition-title">Fasit</p>
 <p><strong>Programkode</strong>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="linenos">2</span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
-<span class="linenos">3</span>
-<span class="linenos">4</span><span class="n">ulikhet</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">/</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">&lt;=</span> <span class="o">-</span><span class="n">x</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
-<span class="linenos">5</span><span class="n">løsning</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">ulikhet</span><span class="p">)</span>
-<span class="linenos">6</span>
-<span class="linenos">7</span><span class="n">pprint</span><span class="p">(</span><span class="n">løsning</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">from</span> <span class="nn">casify</span> <span class="kn">import</span> <span class="o">*</span> 
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="n">løsning</span> <span class="o">=</span> <span class="n">løs</span><span class="p">(</span><span class="s2">&quot;x/3 + 1/2 &lt;= -x/2 + 1/3&quot;</span><span class="p">)</span>
+<span class="linenos">4</span>
+<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="n">løsning</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>Utskrift</strong>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(x &lt;= -0.2)</span> <span class="go">∧ (-∞ &lt; x)</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x &lt;= -1/5</span>
 </pre></div>
 </div>
 <p><strong>Løsning</strong>:</p>
 <div class="math notranslate nohighlight">
 \[
-x \leq -0.2 \quad \iff \quad x \leq -\dfrac{1}{5} 
+x \leq -\dfrac{1}{5} 
 \]</div>
 </div>
 </div>
@@ -3008,8 +3618,8 @@ x \leq -0.2 \quad \iff \quad x \leq -\dfrac{1}{5}
 <input checked="True" class="tab-input" id="tab-set--12-input--1" name="tab-set--12" type="radio"><label class="tab-label" for="tab-set--12-input--1">Geogebra</label><div class="tab-content docutils">
 <p>Bruk CAS til å løse oppgavene under.</p>
 <div class="sd-tab-set tabs-parts docutils">
-<input checked="checked" id="sd-tab-item-70" name="sd-tab-set-24" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-70">
+<input checked="checked" id="sd-tab-item-65" name="sd-tab-set-22" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-65">
 a</label><div class="sd-tab-content docutils">
 <p>Løs likningen</p>
 <div class="math notranslate nohighlight">
@@ -3025,8 +3635,8 @@ x = \dfrac{11}{7}
 \]</div>
 </div>
 </div>
-<input id="sd-tab-item-71" name="sd-tab-set-24" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-71">
+<input id="sd-tab-item-66" name="sd-tab-set-22" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-66">
 b</label><div class="sd-tab-content docutils">
 <p>Løs likningssystemet</p>
 <div class="amsmath math notranslate nohighlight">
@@ -3042,8 +3652,8 @@ x = -4 \quad \land \quad y = 1
 \]</div>
 </div>
 </div>
-<input id="sd-tab-item-72" name="sd-tab-set-24" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-72">
+<input id="sd-tab-item-67" name="sd-tab-set-22" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-67">
 c</label><div class="sd-tab-content docutils">
 <p>Løs ulikheter</p>
 <div class="math notranslate nohighlight">
@@ -3059,8 +3669,8 @@ x &lt; -\dfrac{24}{7}
 \]</div>
 </div>
 </div>
-<input id="sd-tab-item-73" name="sd-tab-set-24" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-73">
+<input id="sd-tab-item-68" name="sd-tab-set-22" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-68">
 d</label><div class="sd-tab-content docutils">
 <p>Løs likningssystemet</p>
 <div class="amsmath math notranslate nohighlight">
@@ -3084,29 +3694,56 @@ x = \dfrac{7}{5} \quad \land \quad y = \dfrac{11}{5} \quad \land \quad z = \dfra
 <div><p>⚠️ Her er det viktig at du prøver å <strong>skrive koden</strong> og ikke <strong>bare kopierer</strong> fra tidligere programmer. Du må få trent litt på å skrive koden selv så du blir rask og husker funksjonene bedre. Det står kommentarer i koden som hjelper deg på vei.</p>
 </div></blockquote>
 <div class="sd-tab-set tabs-parts docutils">
-<input checked="checked" id="sd-tab-item-74" name="sd-tab-set-25" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-74">
+<input checked="checked" id="sd-tab-item-69" name="sd-tab-set-23" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-69">
 a</label><div class="sd-tab-content docutils">
 <p>Skriv et program som løser likningen med <code class="code docutils literal highlight highlight-python"><span class="n">sympy</span></code></p>
 <div class="math notranslate nohighlight">
 \[
 -3x + 2 = 4x - 9
 \]</div>
+<div id="container-kode-cas-kurs-del-1-oppgaver-oppgave-4-a"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`# Skriv din kode her
+`;
+
+        makeInteractiveCode(
+            "container-kode-cas-kurs-del-1-oppgaver-oppgave-4-a",
+            code,
+            // ["sympy"],
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <hr class="docutils" />
 <div class="dropdown answer admonition">
 <p class="admonition-title">Fasit</p>
 <p><strong>Programkode</strong>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span> 
-<span class="linenos">2</span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
-<span class="linenos">3</span>
-<span class="linenos">4</span><span class="n">likning</span> <span class="o">=</span> <span class="n">Eq</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">9</span><span class="p">)</span>
-<span class="linenos">5</span><span class="n">løsning</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">likning</span><span class="p">)</span>
-<span class="linenos">6</span>
-<span class="linenos">7</span><span class="nb">print</span><span class="p">(</span><span class="n">løsning</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">from</span> <span class="nn">casify</span> <span class="kn">import</span> <span class="o">*</span> 
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="n">løsning</span> <span class="o">=</span> <span class="n">løs</span><span class="p">(</span><span class="s2">&quot;-3*x + 2 = 4*x - 9&quot;</span><span class="p">)</span>
+<span class="linenos">4</span>
+<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="n">løsning</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>Utskrift</strong>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[11/7]</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x = 11/7</span>
 </pre></div>
 </div>
 <p><strong>Løsning</strong>:</p>
@@ -3116,8 +3753,8 @@ x = \dfrac{11}{7}
 \]</div>
 </div>
 </div>
-<input id="sd-tab-item-75" name="sd-tab-set-25" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-75">
+<input id="sd-tab-item-70" name="sd-tab-set-23" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-70">
 b</label><div class="sd-tab-content docutils">
 <p>Skriv et program som løser likningssystemet med <code class="code docutils literal highlight highlight-python"><span class="n">sympy</span></code></p>
 <div class="amsmath math notranslate nohighlight">
@@ -3125,24 +3762,49 @@ b</label><div class="sd-tab-content docutils">
     2x + 3y &amp;= -5 \\
     -x + 2y &amp;= 6
 \end{align*}\]</div>
+<div id="container-kode-cas-kurs-del-1-oppgaver-oppgave-4-b"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`# Skriv din kode her
+
+`;
+
+        makeInteractiveCode(
+            "container-kode-cas-kurs-del-1-oppgaver-oppgave-4-b",
+            code,
+            // ["sympy"],
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <hr class="docutils" />
 <div class="dropdown answer admonition">
 <p class="admonition-title">Fasit</p>
 <p><strong>Programkode</strong>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span> 
-<span class="linenos"> 2</span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
-<span class="linenos"> 3</span>
-<span class="linenos"> 4</span><span class="n">likning1</span> <span class="o">=</span> <span class="n">Eq</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">y</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">)</span>
-<span class="linenos"> 5</span><span class="n">likning2</span> <span class="o">=</span> <span class="n">Eq</span><span class="p">(</span><span class="o">-</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">y</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
-<span class="linenos"> 6</span><span class="n">likningssystem</span> <span class="o">=</span> <span class="p">[</span><span class="n">likning1</span><span class="p">,</span> <span class="n">likning2</span><span class="p">]</span>
-<span class="linenos"> 7</span>
-<span class="linenos"> 8</span><span class="n">løsning</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">likningssystem</span><span class="p">)</span>
-<span class="linenos"> 9</span>
-<span class="linenos">10</span><span class="nb">print</span><span class="p">(</span><span class="n">løsning</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">from</span> <span class="nn">casify</span> <span class="kn">import</span> <span class="o">*</span> 
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="n">løsning</span> <span class="o">=</span> <span class="n">løs</span><span class="p">(</span><span class="s2">&quot;2*x + 3*y = -5&quot;</span><span class="p">,</span> <span class="s2">&quot;-x + 2*y = 6&quot;</span><span class="p">)</span>
+<span class="linenos">4</span>
+<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="n">løsning</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>Utskrift</strong>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">{x: -4, y: 1}</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x = -4 ∧ y = 1</span>
 </pre></div>
 </div>
 <p><strong>Løsning</strong>:</p>
@@ -3152,29 +3814,57 @@ x = -4 \quad \land \quad y = 1
 \]</div>
 </div>
 </div>
-<input id="sd-tab-item-76" name="sd-tab-set-25" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-76">
+<input id="sd-tab-item-71" name="sd-tab-set-23" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-71">
 c</label><div class="sd-tab-content docutils">
 <p>Skriv et program som løser ulikheten med <code class="code docutils literal highlight highlight-python"><span class="n">sympy</span></code></p>
 <div class="math notranslate nohighlight">
 \[
 -2x + 5 &gt; -\dfrac{1}{4}x + 11
 \]</div>
+<div id="container-kode-cas-kurs-del-1-oppgaver-oppgave-4-c"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`# Skriv din kode her
+
+`;
+
+        makeInteractiveCode(
+            "container-kode-cas-kurs-del-1-oppgaver-oppgave-4-c",
+            code,
+            // ["sympy"],
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <hr class="docutils" />
 <div class="dropdown answer admonition">
 <p class="admonition-title">Fasit</p>
 <p><strong>Programkode</strong>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="linenos">2</span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span>
-<span class="linenos">3</span>
-<span class="linenos">4</span><span class="n">ulikhet</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">&gt;</span> <span class="o">-</span><span class="n">x</span> <span class="o">/</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">11</span><span class="p">)</span>
-<span class="linenos">5</span><span class="n">løsning</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">ulikhet</span><span class="p">)</span>
-<span class="linenos">6</span>
-<span class="linenos">7</span><span class="n">pprint</span><span class="p">(</span><span class="n">løsning</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">from</span> <span class="nn">casify</span> <span class="kn">import</span> <span class="o">*</span> 
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="n">løsning</span> <span class="o">=</span> <span class="n">løs</span><span class="p">(</span><span class="s2">&quot;-2*x + 5 &gt; -x/4 + 11&quot;</span><span class="p">)</span>
+<span class="linenos">4</span>
+<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="n">løsning</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>Utskrift</strong>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(-∞ &lt; x)</span> <span class="go">∧ (x &lt; -24/7)</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go"> x &lt; -24/7</span>
 </pre></div>
 </div>
 <p><strong>Løsning</strong>:</p>
@@ -3184,8 +3874,8 @@ x &lt; -\dfrac{24}{7}
 \]</div>
 </div>
 </div>
-<input id="sd-tab-item-77" name="sd-tab-set-25" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-77">
+<input id="sd-tab-item-72" name="sd-tab-set-23" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-72">
 d</label><div class="sd-tab-content docutils">
 <p>Skriv et program som løser likningssystemet med <code class="code docutils literal highlight highlight-python"><span class="n">sympy</span></code></p>
 <div class="amsmath math notranslate nohighlight">
@@ -3194,25 +3884,48 @@ d</label><div class="sd-tab-content docutils">
     2x - y + z &amp;= 3 \\
     3x + y - z &amp;= 4
 \end{align*}\]</div>
+<div id="container-kode-cas-kurs-del-1-oppgaver-oppgave-4-d"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`# Skriv din kode her
+
+`;
+
+        makeInteractiveCode(
+            "container-kode-cas-kurs-del-1-oppgaver-oppgave-4-d",
+            code,
+            // ["sympy"],
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="dropdown answer admonition">
 <p class="admonition-title">Fasit</p>
 <p><strong>Programkode</strong>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="linenos"> 2</span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span>
-<span class="linenos"> 3</span>
-<span class="linenos"> 4</span><span class="n">likning1</span> <span class="o">=</span> <span class="n">Eq</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
-<span class="linenos"> 5</span><span class="n">likning2</span> <span class="o">=</span> <span class="n">Eq</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="linenos"> 6</span><span class="n">likning3</span> <span class="o">=</span> <span class="n">Eq</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">-</span> <span class="n">z</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="linenos"> 7</span>
-<span class="linenos"> 8</span><span class="n">likningssystem</span> <span class="o">=</span> <span class="p">[</span><span class="n">likning1</span><span class="p">,</span> <span class="n">likning2</span><span class="p">,</span> <span class="n">likning3</span><span class="p">]</span>
-<span class="linenos"> 9</span>
-<span class="linenos">10</span><span class="n">løsning</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">likningssystem</span><span class="p">)</span>
-<span class="linenos">11</span>
-<span class="linenos">12</span><span class="nb">print</span><span class="p">(</span><span class="n">løsning</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">from</span> <span class="nn">casify</span> <span class="kn">import</span> <span class="o">*</span> 
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="n">løsning</span> <span class="o">=</span> <span class="n">løs</span><span class="p">(</span><span class="s2">&quot;x + y + z = 6&quot;</span><span class="p">,</span> <span class="s2">&quot;2*x - y + z = 3&quot;</span><span class="p">,</span> <span class="s2">&quot;3*x + y - z = 4&quot;</span><span class="p">)</span>
+<span class="linenos">4</span>
+<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="n">løsning</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>Utskrift</strong>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">{x: 7/5, y: 11/5, z: 12/5}</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x = 7/5 ∧ y = 11/5 ∧ z = 12/5</span>
 </pre></div>
 </div>
 <p><strong>Løsning</strong>:</p>
@@ -3233,8 +3946,8 @@ x = \dfrac{7}{5} \quad \land \quad y = \dfrac{11}{5} \quad \land \quad z = \dfra
 <input checked="True" class="tab-input" id="tab-set--13-input--1" name="tab-set--13" type="radio"><label class="tab-label" for="tab-set--13-input--1">Geogebra</label><div class="tab-content docutils">
 <p>Løs likningssystemene ved hjelp av CAS.</p>
 <div class="sd-tab-set tabs-parts docutils">
-<input checked="checked" id="sd-tab-item-78" name="sd-tab-set-26" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-78">
+<input checked="checked" id="sd-tab-item-73" name="sd-tab-set-24" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-73">
 a</label><div class="sd-tab-content docutils">
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
@@ -3251,8 +3964,8 @@ x = 1 \quad \land \quad y = 1 \quad \land \quad z = 1
 \]</div>
 </div>
 </div>
-<input id="sd-tab-item-79" name="sd-tab-set-26" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-79">
+<input id="sd-tab-item-74" name="sd-tab-set-24" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-74">
 b</label><div class="sd-tab-content docutils">
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
@@ -3269,8 +3982,8 @@ x = 1 \quad \land \quad y = -\dfrac{1}{3} \quad \land \quad z = \dfrac{2}{3}
 \]</div>
 </div>
 </div>
-<input id="sd-tab-item-80" name="sd-tab-set-26" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-80">
+<input id="sd-tab-item-75" name="sd-tab-set-24" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-75">
 c</label><div class="sd-tab-content docutils">
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
@@ -3286,8 +3999,8 @@ a = -8 \quad \land \quad b = 11 \quad \land \quad c = 8
 \]</div>
 </div>
 </div>
-<input id="sd-tab-item-81" name="sd-tab-set-26" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-81">
+<input id="sd-tab-item-76" name="sd-tab-set-24" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-76">
 d</label><div class="sd-tab-content docutils">
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
@@ -3311,8 +4024,8 @@ r = 1 \quad \land \quad s = 0 \quad \land \quad t = 0
 <div><p>⚠️ Viktig at du prøver å skrive programmet fra bunnen av og ikke kopierer fra tidligere programmer!</p>
 </div></blockquote>
 <div class="sd-tab-set tabs-parts docutils">
-<input checked="checked" id="sd-tab-item-82" name="sd-tab-set-27" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-82">
+<input checked="checked" id="sd-tab-item-77" name="sd-tab-set-25" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-77">
 a</label><div class="sd-tab-content docutils">
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
@@ -3320,26 +4033,49 @@ a</label><div class="sd-tab-content docutils">
     x - y - z &amp;= -1 \\
     x + y + z &amp;= 3
 \end{align*}\]</div>
+<div id="container-kode-cas-kurs-del-1-oppgaver-oppgave-5-a"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`# Skriv din kode her
+
+`;
+
+        makeInteractiveCode(
+            "container-kode-cas-kurs-del-1-oppgaver-oppgave-5-a",
+            code,
+            // ["sympy"],
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <hr class="docutils" />
 <div class="dropdown answer admonition">
 <p class="admonition-title">Fasit</p>
 <p><strong>Programkode</strong>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="linenos"> 2</span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span>
-<span class="linenos"> 3</span>
-<span class="linenos"> 4</span><span class="n">likning1</span> <span class="o">=</span> <span class="n">Eq</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">-</span> <span class="n">z</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="linenos"> 5</span><span class="n">likning2</span> <span class="o">=</span> <span class="n">Eq</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span> <span class="o">-</span> <span class="n">z</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-<span class="linenos"> 6</span><span class="n">likning3</span> <span class="o">=</span> <span class="n">Eq</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="linenos"> 7</span>
-<span class="linenos"> 8</span><span class="n">likningssystem</span> <span class="o">=</span> <span class="p">[</span><span class="n">likning1</span><span class="p">,</span> <span class="n">likning2</span><span class="p">,</span> <span class="n">likning3</span><span class="p">]</span>
-<span class="linenos"> 9</span>
-<span class="linenos">10</span><span class="n">løsning</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">likningssystem</span><span class="p">)</span>
-<span class="linenos">11</span>
-<span class="linenos">12</span><span class="nb">print</span><span class="p">(</span><span class="n">løsning</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">from</span> <span class="nn">casify</span> <span class="kn">import</span> <span class="o">*</span> 
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="n">løsning</span> <span class="o">=</span> <span class="n">løs</span><span class="p">(</span><span class="s2">&quot;x + y - z = 1&quot;</span><span class="p">,</span> <span class="s2">&quot;x - y - z = -1&quot;</span><span class="p">,</span> <span class="s2">&quot;x + y + z = 3&quot;</span><span class="p">)</span>
+<span class="linenos">4</span>
+<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="n">løsning</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>Utskrift</strong>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">{x: 1, y: 1, z: 1}</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x = 1 ∧ y = 1 ∧ z = 1</span>
 </pre></div>
 </div>
 <p><strong>Løsning</strong>:</p>
@@ -3349,8 +4085,8 @@ x = 1 \quad \land \quad y = 1 \quad \land \quad z = 1
 \]</div>
 </div>
 </div>
-<input id="sd-tab-item-83" name="sd-tab-set-27" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-83">
+<input id="sd-tab-item-78" name="sd-tab-set-25" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-78">
 b</label><div class="sd-tab-content docutils">
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
@@ -3358,26 +4094,49 @@ b</label><div class="sd-tab-content docutils">
     x - y + z &amp;= 2 \\
     3x + 2y + z &amp;= 3
 \end{align*}\]</div>
+<div id="container-kode-cas-kurs-del-1-oppgaver-oppgave-5-b"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`# Skriv din kode her
+
+`;
+
+        makeInteractiveCode(
+            "container-kode-cas-kurs-del-1-oppgaver-oppgave-5-b",
+            code,
+            // ["sympy"],
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <hr class="docutils" />
 <div class="dropdown answer admonition">
 <p class="admonition-title">Fasit</p>
 <p><strong>Programkode</strong>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="linenos"> 2</span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span>
-<span class="linenos"> 3</span>
-<span class="linenos"> 4</span><span class="n">likning1</span> <span class="o">=</span> <span class="n">Eq</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">-</span> <span class="n">z</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="linenos"> 5</span><span class="n">likning2</span> <span class="o">=</span> <span class="n">Eq</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="linenos"> 6</span><span class="n">likning3</span> <span class="o">=</span> <span class="n">Eq</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="linenos"> 7</span>
-<span class="linenos"> 8</span><span class="n">likningssystem</span> <span class="o">=</span> <span class="p">[</span><span class="n">likning1</span><span class="p">,</span> <span class="n">likning2</span><span class="p">,</span> <span class="n">likning3</span><span class="p">]</span>
-<span class="linenos"> 9</span>
-<span class="linenos">10</span><span class="n">løsning</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">likningssystem</span><span class="p">)</span>
-<span class="linenos">11</span>
-<span class="linenos">12</span><span class="nb">print</span><span class="p">(</span><span class="n">løsning</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">from</span> <span class="nn">casify</span> <span class="kn">import</span> <span class="o">*</span> 
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="n">løsning</span> <span class="o">=</span> <span class="n">løs</span><span class="p">(</span><span class="s2">&quot;2*x + y - z = 1&quot;</span><span class="p">,</span> <span class="s2">&quot;x - y + z = 2&quot;</span><span class="p">,</span> <span class="s2">&quot;3*x + 2*y + z = 3&quot;</span><span class="p">)</span>
+<span class="linenos">4</span>
+<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="n">løsning</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>Utskrift</strong>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">{x: 1, y: -1/3, z: 2/3}</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x = 1 ∧ y = -1/3 ∧ z = 2/3</span>
 </pre></div>
 </div>
 <p><strong>Løsning</strong>:</p>
@@ -3387,8 +4146,8 @@ x = 1 \quad \land \quad y = -\dfrac{1}{3} \quad \land \quad z = \dfrac{2}{3}
 \]</div>
 </div>
 </div>
-<input id="sd-tab-item-84" name="sd-tab-set-27" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-84">
+<input id="sd-tab-item-79" name="sd-tab-set-25" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-79">
 c</label><div class="sd-tab-content docutils">
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
@@ -3396,26 +4155,49 @@ c</label><div class="sd-tab-content docutils">
     a + b + c &amp;= 11 \\
     8a + 4b + 2c &amp;= -4
 \end{align*}\]</div>
+<div id="container-kode-cas-kurs-del-1-oppgaver-oppgave-5-c"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`# Skriv din kode her
+
+`;
+
+        makeInteractiveCode(
+            "container-kode-cas-kurs-del-1-oppgaver-oppgave-5-c",
+            code,
+            // ["sympy"],
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <hr class="docutils" />
 <div class="dropdown answer admonition">
 <p class="admonition-title">Fasit</p>
 <p><strong>Programkode</strong>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="linenos"> 2</span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span>
-<span class="linenos"> 3</span>
-<span class="linenos"> 4</span><span class="n">likning1</span> <span class="o">=</span> <span class="n">Eq</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span><span class="p">,</span> <span class="o">-</span><span class="mi">11</span><span class="p">)</span>
-<span class="linenos"> 5</span><span class="n">likning2</span> <span class="o">=</span> <span class="n">Eq</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
-<span class="linenos"> 6</span><span class="n">likning3</span> <span class="o">=</span> <span class="n">Eq</span><span class="p">(</span><span class="mi">8</span> <span class="o">*</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">b</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">c</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">)</span>
-<span class="linenos"> 7</span>
-<span class="linenos"> 8</span><span class="n">likningssystem</span> <span class="o">=</span> <span class="p">[</span><span class="n">likning1</span><span class="p">,</span> <span class="n">likning2</span><span class="p">,</span> <span class="n">likning3</span><span class="p">]</span>
-<span class="linenos"> 9</span>
-<span class="linenos">10</span><span class="n">løsning</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">likningssystem</span><span class="p">)</span>
-<span class="linenos">11</span>
-<span class="linenos">12</span><span class="nb">print</span><span class="p">(</span><span class="n">løsning</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">from</span> <span class="nn">casify</span> <span class="kn">import</span> <span class="o">*</span> 
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="n">løsning</span> <span class="o">=</span> <span class="n">løs</span><span class="p">(</span><span class="s2">&quot;a - b + c = -11&quot;</span><span class="p">,</span> <span class="s2">&quot;a + b + c = 11&quot;</span><span class="p">,</span> <span class="s2">&quot;8*a + 4*b + 2*c = -4&quot;</span><span class="p">)</span>
+<span class="linenos">4</span>
+<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="n">løsning</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>Utskrift</strong>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">{a: -8, b: 11, c: 8}</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">a = -8 ∧ b = 11 ∧ c = 8</span>
 </pre></div>
 </div>
 <p><strong>Løsning</strong>:</p>
@@ -3425,8 +4207,8 @@ a = -8 \quad \land \quad b = 11 \quad \land \quad c = 8
 \]</div>
 </div>
 </div>
-<input id="sd-tab-item-85" name="sd-tab-set-27" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-85">
+<input id="sd-tab-item-80" name="sd-tab-set-25" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-80">
 d</label><div class="sd-tab-content docutils">
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
@@ -3434,26 +4216,48 @@ d</label><div class="sd-tab-content docutils">
     2r - s + 3t &amp;= 2 \\
     3r + 2s + 2t &amp;= 3
 \end{align*}\]</div>
+<div id="container-kode-cas-kurs-del-1-oppgaver-oppgave-5-d"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`# Skriv din kode her
+
+`;
+
+        makeInteractiveCode(
+            "container-kode-cas-kurs-del-1-oppgaver-oppgave-5-d",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <hr class="docutils" />
 <div class="dropdown answer admonition">
 <p class="admonition-title">Fasit</p>
 <p><strong>Programkode</strong>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="linenos"> 2</span><span class="kn">from</span> <span class="nn">sympy.abc</span> <span class="kn">import</span> <span class="n">r</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">t</span>
-<span class="linenos"> 3</span>
-<span class="linenos"> 4</span><span class="n">likning1</span> <span class="o">=</span> <span class="n">Eq</span><span class="p">(</span><span class="n">r</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">s</span> <span class="o">-</span> <span class="n">t</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="linenos"> 5</span><span class="n">likning2</span> <span class="o">=</span> <span class="n">Eq</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">r</span> <span class="o">-</span> <span class="n">s</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">t</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="linenos"> 6</span><span class="n">likning3</span> <span class="o">=</span> <span class="n">Eq</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">r</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">s</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">t</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="linenos"> 7</span>
-<span class="linenos"> 8</span><span class="n">likningssystem</span> <span class="o">=</span> <span class="p">[</span><span class="n">likning1</span><span class="p">,</span> <span class="n">likning2</span><span class="p">,</span> <span class="n">likning3</span><span class="p">]</span>
-<span class="linenos"> 9</span>
-<span class="linenos">10</span><span class="n">løsning</span> <span class="o">=</span> <span class="n">solve</span><span class="p">(</span><span class="n">likningssystem</span><span class="p">)</span>
-<span class="linenos">11</span>
-<span class="linenos">12</span><span class="nb">print</span><span class="p">(</span><span class="n">løsning</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">from</span> <span class="nn">casify</span> <span class="kn">import</span> <span class="o">*</span> 
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="n">løsning</span> <span class="o">=</span> <span class="n">løs</span><span class="p">(</span><span class="s2">&quot;r + 2*s - t = 1&quot;</span><span class="p">,</span> <span class="s2">&quot;2*r - s + 3*t = 2&quot;</span><span class="p">,</span> <span class="s2">&quot;3*r + 2*s + 2*t = 3&quot;</span><span class="p">)</span>
+<span class="linenos">4</span>
+<span class="linenos">5</span><span class="nb">print</span><span class="p">(</span><span class="n">løsning</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>Utskrift</strong>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">{r: 1, s: 0, t: 0}</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">r = 1 ∧ s = 0 ∧ t = 0</span>
 </pre></div>
 </div>
 <p><strong>Løsning</strong>:</p>
@@ -3467,71 +4271,6 @@ r = 1 \quad \land \quad s = 0 \quad \land \quad t = 0
 </div>
 </div>
 </div>
-<hr class="docutils" />
-<!-- ::::{admonition} Oppgave 6
----
-class: problem-level-2
----
-Sett opp likninger og løs ved hjelp av CAS
-
-Deloppgave 1
-: Amna, Berit og Celine delte en boks is. Amna spiste en tredel, Berit spiste to femtedeler, og Celine spiste resten. Hvor mye spiste Celine? 
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-Celine spiste $\dfrac{4}{15}$
-:::
-
-Deloppgave 2
-: Tre venner, Emma, Sophie og Sara, har til sammen 110 bøker. Sara har dobbelt så mange bøker som Sophie, og Emma har 10 bøker mindre enn Sara. Finn ut hvor mange bøker hver av de tre vennene har.
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-Sophie har 24 bøker, Sara har 48 bøker, og Emma har 38 bøker.
-:::
-
-Deloppgave 3
-: På en vinteraktivitetsdag ved skolen valgte 60 % av elevene skøyting. En tredel valgte aking. De siste 15 elevene hadde fått fritak. Hvor mange elever er det ved skolen? 
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-Det var $225$ elever ved skolen.
-:::
-
-Deloppgave 4
-: Ole, Dole og Doffen er til sammen 66 år. Ole er dobbelt så gammel som Doffen, og Dole er 6 år eldre enn Doffen. Finn ut hvor gamle de tre guttene er. 
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-Doffen er 15 år, Ole er 30 år og Dole er 21 år. 
-:::
-
-:::: -->
-<!-- ::::{admonition} Oppgave 6
----
-class: problem-level-3, 
----
-På en fotballkamp er det tre kategorier billetter: barn, voksne og pensjonister. 
-
-Publikumstallet på kampen var 2100. Barnebilletten kostet 50 kr, voksenbilletten 200 kr og pensjonistbilletten 100 kr. Billettinntektene ble på 315 000 kr. Det var dobbelt så mange pensjonister som barn på kampen. 
-
-Bestem antallet barn, voksne og pensjonister på kampen.
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-Det var 300 barn, 600 pensjonister og 1200 voksne på kampen.
-:::
-:::: -->
 </section>
 </section>
 
