@@ -15,54 +15,29 @@
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", () => {
 
-        code_question_1 = `from sympy import *
-from sympy.abc import x, y
+        code_question_1 = `from casify import *
 
-likning1 = Eq(3 * x - y, 2)
-likning2 = Eq(-x + y, 6)
-
-likningssystem = [likning1, likning2]
-
-løsning = solve(likningssystem)
+løsning = løs("3 * x - y = 2", "-x + y = 6")
 
 print(løsning)
 `
 
-        code_question_2 = `from sympy import *
-from sympy.abc import x, y
+        code_question_2 = `from casify import *
 
-likning1 = Eq(4 * x - y, 7)
-likning2 = Eq(2 * x + y, 3)
-
-likningssystem = [likning1, likning2]
-
-løsning = solve(likningssystem)
+løsning = løs("4 * x - y = 7", "2 * x + y = 3")
 
 print(løsning)
 `
 
-        code_question_3 = `from sympy import *
-from sympy.abc import x, y
-
-likning1 = Eq(-x + y, 4)
-likning2 = ??
-
-likningssystem = [likning1, likning2]
-
-løsning = solve(likningssystem)
+        code_question_3 = `from casify import *
+løsning = løs("-x + y = 4", "3 * x + 2 * y = 6")
 
 print(løsning)
 `
 
-        code_question_4 = `from sympy import *
-from sympy.abc import x, y
+        code_question_4 = `from casify import *
 
-likning1 = ??
-likning2 = Eq(2 * x - 4 * y, 7)
-
-likningssystem = [likning1, likning2]
-
-løsning = solve(likningssystem)
+løsning = løs("-3 * x + y = 10", "2 * x - 4 * y = 7")
 
 print(løsning)
 `
@@ -89,21 +64,21 @@ print(løsning)
                 ]
             },
             {
-                content: `Hva må byttes ut med <code class="python">likning2 = ??</code> for at programmet skal løse likningssystemet? $$-x + y = 4 \\quad \\land \\quad 3x + 2y = 6$$ <pre><code class="python">${code_question_3}</code></pre>`,
+                content: `Hvilket likningssystem er det programmet løser? <pre><code class="python">${code_question_3}</code></pre>`,
                 answers: [
-                    { content: '<code class="python">likning2 = Eq(3 * x + 2 * y, 6)</code>', isCorrect: true },
-                    { content: '<code class="python">likning2 = Eq(3 * x - 2 * y, 6)</code>', isCorrect: false },
-                    { content: '<code class="python">likning2 = Eq(3 * x + 2 * y, -6)</code>', isCorrect: false },
-                    { content: '<code class="python">likning2 = Eq(3 * x - 2 * y, -6)</code>', isCorrect: false },
+                    { content: '$$-x + y = 4 \\quad \\land \\quad 3x + 2y = 6$$', isCorrect: true },
+                    { content: '$$x + y = 4 \\quad \\land \\quad 3x + 2y = 6$$', isCorrect: false },
+                    { content: '$$-x + y = 4 \\quad \\land \\quad 3x - 2y = -6$$', isCorrect: false },
+                    { content: '$$x - y = 4 \\quad \\land \\quad 3x + 2y = -6$$', isCorrect: false },
                 ]
             },
             {
-                content: `Hva må byttes ut med <code class="python">likning2 = ??</code> for at programmet skal løse likningssystemet? $$-3x + y = 10 \\quad \\land \\quad 2x - 4y = 7$$ <pre><code class="python">${code_question_4}</code></pre>`,
+                content: `Hvilket likningssystem er det programmet løser? <pre><code class="python">${code_question_4}</code></pre>`,
                 answers: [
-                    { content: '<code class="python">likning1 = Eq(-3 * x + y, 10)</code>', isCorrect: true },
-                    { content: '<code class="python">likning1 = Eq(-3 * x - y, 10)</code>', isCorrect: false },
-                    { content: '<code class="python">likning1 = Eq(-3 * x + y, -10)</code>', isCorrect: false },
-                    { content: '<code class="python">likning1 = Eq(3 * x + y, 10)</code>', isCorrect: false },
+                    { content: '$$-3x + y = 10 \\quad \\land \\quad 2x - 4y = 7$$', isCorrect: true },
+                    { content: '$$-3x - y = 10 \\quad \\land \\quad 2x - 4y = 7$$', isCorrect: false },
+                    { content: '$$-3x + y = 10 \\quad \\land \\quad 2x + 4y = 7$$', isCorrect: false },
+                    { content: '$$3x - y = 10 \\quad \\land \\quad 2x - 4y = -7$$', isCorrect: false },
                 ]
             },
         ];
