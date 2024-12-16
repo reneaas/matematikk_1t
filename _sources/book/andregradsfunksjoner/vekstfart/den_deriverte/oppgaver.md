@@ -474,7 +474,7 @@ Bestem $f(x)$.
 class: dropdown, answer
 ---
 $$
-f(x) = \dfrac{1}{9}(x + 1)^2 + 2
+f(x) = -\dfrac{1}{9}(x + 1)^2 + 2
 $$
 ::::
 :::::::::::::
