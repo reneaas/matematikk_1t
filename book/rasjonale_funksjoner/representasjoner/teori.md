@@ -9,24 +9,90 @@ class: tip
 * Kunne bestemme horisontale, vertikale og skrå asymptoter for rasjonale funksjoner.
 ::::
 
+
 En rasjonal funksjon er en brøk av to polynomfunksjoner. 
-Vi skal gradvis bygge opp forståelsen vår av rasjonale funksjoner ved å starte med den enkleste typen og generalisere til mer komplekse tilfeller.
 
-## Rasjonale funksjoner: Type 1
+:::::{admonition} Rasjonale funksjoner
+---
+class: summary 
+---
+En rasjonal funksjon $f$ kan skrives som
 
-:::::{admonition} Rasjonal funksjon: Type 1
+$$
+f(x) = \dfrac{P(x)}{Q(x)}
+$$
+
+der $P$ og $Q$ er polynomfunksjoner. 
+:::::
+
+
+Vi starter med å utforske noen egenskaper ved en spesiell type rasjonal funksjon.
+
+
+:::::::::::::::{admonition} Utforsk 1
+---
+class: explore
+---
+En rasjonal funksjon $f = P / Q$ der $P$ og $Q$ er lineære funksjoner, kan skrives som
+
+$$
+f(x) = \dfrac{a(x - b)}{x - c}
+$$
+
+der $a, b, c \in \mathbb{R}$ er noen konstanter.
+
+I det interaktive vinduet under vises grafen til $f$. 
+
+1. Utforsk hva $a$ bestemmer for grafen til $f$.
+2. Utforsk hva $b$ bestemmer for grafen til $f$.
+3. Utforsk hva $c$ bestemmer for grafen til $f$. 
+
+> Husk at du kan zoome inn og ut i vinduet og flytte rundt på koordinatssystemet. 
+:::{raw} html
+---
+file: ./ggb/utforsk/utforsk_1/utforsk_1.html
+---
+:::
+
+::::::::::::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+:::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+::::::::::::{tab-item} 1. $a$
+$a$ bestemmer verdien til den horisontale linja $y = a$. Grafen til $f$ *nærmer* seg denne linja når $|x|$ er stor.
+::::::::::::
+
+::::::::::::{tab-item} 2. $b$
+$b$ bestemmer nullpunktet til $f$. Grafen til $f$ skjærer $x$-aksen i $x = b$. Vi kan merke oss at når $b = c$, så forsvinner nullpunktet og grafen til $f$ blir en horisontal linje. 
+::::::::::::
+
+::::::::::::{tab-item} 3. $c$
+Konstanten $c$ bestemmer den vertikale linje $x = c$. Grafen til $f$ nærmer seg denne linja når $x$ er i nærheten av $x = c$. Verdien til $|f(x)|$ blir veldig stor når $x$ er nærme $x = c$.
+::::::::::::
+
+:::::::::::::
+
+
+::::::::::::::
+
+:::::::::::::::
+
+
+Vi kan oppsummere det vi utforsket i Utforsk 1 med følgende resultat:
+
+:::::{admonition} Rasjonal funksjon: $\deg P = \deg Q = 1$
 ---
 class: summary
 ---
-En rasjonal funksjon $f$ der teller og nevner er lineære funksjoner kan skrives som
+En rasjonal funksjon $f = P/Q$ der $P$ og $Q$ er er polynomfunksjoner av grad 1, kan skrives som
 
 $$
-f(x) = \dfrac{a(x - x_1)}{x - x_\infty}
+f(x) = \dfrac{P(x)}{Q(x)} = \dfrac{a(x - x_1)}{x - x_\infty}
 $$
-
-* $a$ er den **horisontale asymptoten**.
-* $x_1$ er nullpunktet til $f$.
-* $x_\infty$ er den **vertikale asymptoten**.
 
 ::::{figure} ./figurer/teori/teori_1.svg
 ---
@@ -34,6 +100,13 @@ width: 80%
 class: no-click
 ---
 ::::
+
+
+| Konstant | Betydning |
+|:-----------:|------------|
+| $a$ | **Horisontal asymptote**. Verdien til $f(x)$ nærmere seg linja $y = a$ når $\|x\|$ blir stor. Vi skriver $f(x) \sim a$ og leser dette som at "$f(x)$ oppfører seg som $y = a$ når $\|x\|$ er stor". |
+| $x_1$ | Nullpunktet til $f$. Grafen til $f$ skjærer $x$-aksen i $x = x_1$. Nullpunktet er det samme som nullpunktet til polynomet $P$ i telleren. |
+| $x_\infty$ | **Vertikal asymptote**. Grafen til $f$ nærmer seg linja $x = x_\infty$ når $x$ er i nærheten av $x_\infty$. Verdien til $\|f(x)\|$ blir veldig stor når $x$ er nærme $x_\infty$. Vertikal asymptote er det samme som nullpunktet til polynomet $Q$ i nevneren. |
 
 :::::
 
@@ -159,6 +232,54 @@ $$
 
 :::::::::::::::
 
+
+## Bestemme egenskaper fra $f(x)$
+
+:::::{admonition} Eksempel 1
+---
+class: example
+---
+En rasjonal funksjon $f$ er gitt ved
+
+$$
+f(x) = \dfrac{2x + 1}{x - 1}
+$$
+
+Bestem nullpunktet og asymptotene til $f$.
+
+::::{admonition} Løsning
+---
+class: solution
+---
+Horisontal asymptote
+: Vi finner den horisontale asymptoten ved å undersøke oppførselen til $f(x)$ når $|x|$ er veldig stor
+
+    $$
+    f(x) = \dfrac{2x + 1}{x - 1} \sim \dfrac{2x + 0}{x + 0} = \dfrac{2x}{x} = 2
+    $$
+
+    Altså finner vi at $f(x) \sim 2$ som betyr at $y = 2$ er den horisontale asymptoten. Her har vi brukt at $2x + 1 \sim 2x$ når $|x|$ er stor og $x - 1 \sim x$ når $|x|$ er stor.
+
+Nullpunkt
+: Vi finner nullpunktet til $f$ ved å finne nullpunktet til polynomet i telleren:
+
+    $$
+    2x + 1 = 0 \quad \iff \quad x = -\dfrac{1}{2}
+    $$
+
+    Vi må bare sjekke at dette ikke også er et nullpunkt i telleren, noe det ikke er.
+
+Vertikal asymptote
+: Vi finner nullpunktet til polynomet i nevneren for å bestemme den vertikale asymptoten til $f$:
+
+    $$
+    x - 1 = 0 \quad \iff \quad x = 1
+    $$
+
+    Dermed har $f$ en vertikal asymptote $x = 1$.
+::::
+:::::
+
 ---
 
 
@@ -169,7 +290,7 @@ Vi skal nå sette fokus på rasjonale funksjoner der telleren er et andregradspo
 ---
 class: summary
 ---
-En rasjonal funksjon der telleren er et andregradspolynom og nevneren er en lineær funksjon, kan skrives som
+En rasjonal funksjon $f = P/Q$ der $P$ er en andregradsfunksjon og $Q$ er en lineær funksjon kan skrives på forskjellige måter avhengig av antall nullpunkter:
 
 | Antall nullpunkter | $f(x)$ |
 |---------------------|--------|
