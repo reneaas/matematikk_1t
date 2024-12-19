@@ -530,7 +530,7 @@ Bestem $p(x)$.
 class: answer, dropdown
 ---
 $$
-p(x) = \dfrac{1}{2}x^2 + 10.
+p(x) = \dfrac{1}{2}x^2 + \dfrac{7}{2}.
 $$
 :::
 :::::::::::::
