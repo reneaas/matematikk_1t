@@ -1,16 +1,16 @@
 def main():
     polylongdiv(
-        fname="filnavn",
-        p="x^3 + 2x^2 - 3x - 6",
-        q="x - 2",
+        fname="eksempel_1",
+        p="3x^2 + 3x - 6",
+        q="x + 2",
         stage=None,
     )
 
     for stage in range(0, 12):
         polylongdiv(
             fname=f"stage_{stage}",
-            p="x^3 + 2x^2 - 3x - 6",
-            q="x - 2",
+            p="3x^2 + 3x - 6",
+            q="x + 2",
             stage=stage,
         )
     return None
