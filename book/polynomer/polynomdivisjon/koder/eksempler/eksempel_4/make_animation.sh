@@ -1,0 +1,1 @@
+magick -delay 200 -loop 0 stage_1.png stage_2.png stage_3.png stage_4.png stage_5.png stage_6.png stage_7.png stage_8.png eksempel_4.png eksempel_4.gif

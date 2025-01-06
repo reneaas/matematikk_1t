@@ -1,7 +1,7 @@
 import os
 
 
-def polylongdiv(fname: str, p: str, q: str, stage: int = None):
+def polylongdiv(fname: str, p: str, q: str, stage: int = None, svg: bool = True):
     if stage is None:
         div_cmd = r"\polylongdiv[style=C, div=:]{{p}}{{q}}"
         div_cmd = div_cmd.replace("{p}", p).replace("{q}", q)
@@ -11,7 +11,7 @@ def polylongdiv(fname: str, p: str, q: str, stage: int = None):
             div_cmd.replace("{p}", p).replace("{q}", q).replace("{stage}", str(stage))
         )
 
-    s = f"""\\documentclass{{standalone}}
+    s = f"""\\documentclass[border=0.2cm]{{standalone}}
 \\usepackage{{polynom}}
 \\begin{{document}}
 {div_cmd}
@@ -25,7 +25,11 @@ def polylongdiv(fname: str, p: str, q: str, stage: int = None):
     if fname.endswith(".svg"):
         fname.strip(".svg")
 
-    os.system(f"pdf2svg tmp.pdf {fname}.svg")
+    if svg:
+        os.system(f"pdf2svg tmp.pdf {fname}.svg")
+    else:
+        os.system(f"mv tmp.pdf {fname}.pdf")
+
     os.system("rm tmp.*")
 
 
