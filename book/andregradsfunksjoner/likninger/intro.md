@@ -7,6 +7,24 @@ gutter: 3
 
 ::::{grid-item-card}
 ---
+link: ./abc_formelen/teori
+link-type: doc
+---
+**$abc$-formelen** ✍🏼
+
+^^^
+
+:::{figure} ./abc_formelen/figurer/teori/abc-formel.svg
+---
+width: 100%
+---
+:::
+
+::::
+
+
+::::{grid-item-card}
+---
 link: ./grafisk_løsning/teori
 link-type: doc
 ---
@@ -43,24 +61,6 @@ $$
 x^2 - 16 = 0
 $$
 
-
-::::
-
-
-::::{grid-item-card}
----
-link: ./abc_formelen/teori
-link-type: doc
----
-**$abc$-formelen** ✍🏼
-
-^^^
-
-:::{figure} ./abc_formelen/figurer/teori/abc-formel.svg
----
-width: 100%
----
-:::
 
 ::::
 

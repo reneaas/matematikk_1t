@@ -8,7 +8,7 @@ class: tip
 * Kunne løse andregradsulikheter grafisk.
 :::
 
-Prinsippet bak løsning av andregradsulikheter grafisk er tilsvarende som de vi har brukt når vi jobbet med lineære ulikheter. Vi tren
+Prinsippet bak løsning av andregradsulikheter grafisk er tilsvarende som de vi har brukt når vi jobbet med lineære ulikheter. Vi trenger imidlertid noen flere verktøy for å kunne uttrykke løsningene på en god måte. Derfor blir det først litt mer mengdelære her.
 
 ## Mengdelære
 Vi trenger litt mer teori om mengder for å kunne uttrykke løsningene til ulikheter på en god måte.

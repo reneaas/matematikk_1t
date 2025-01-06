@@ -326,13 +326,13 @@ $$
 **Koeffisienter**
 
 $$
-a = 1 \quad \text{og} \quad b = 2 \quad \text{og} \quad c = -8.
+a = 1 \quad \text{og} \quad b = -2 \quad \text{og} \quad c = -8.
 $$
 
 **Diskriminant**
 
 $$
-D = b^2 - 4ac = 2^2 - 4\cdot 1 \cdot (-8) = 4 + 32 = 36
+D = b^2 - 4ac = (-2)^2 - 4\cdot 1 \cdot (-8) = 4 + 32 = 36
 $$
 
 +++

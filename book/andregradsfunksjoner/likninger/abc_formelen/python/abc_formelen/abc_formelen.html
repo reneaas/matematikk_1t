@@ -1,0 +1,31 @@
+<div id="container-parsons-puzzle-oppgave-abc-formelen" class="puzzle-container"></div>
+<div id="container-kode-oppgave-abc-formelen" style="display: none"></div>
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`a = float(input("Skriv inn a: ")) ;b = float(input("Skriv inn b: ")) ;c = float(input("Skriv inn c: "))
+
+diskriminant = b**2 - 4*a*c
+
+if diskriminant > 0:
+    from math import sqrt # sqrt = kvadratrot ;    x1 = (-b + sqrt(diskriminant)) / (2*a) ;    x2 = (-b - sqrt(diskriminant)) / (2*a)
+    print(f"Løsningene er {x1 = } og {x2 = }")
+elif diskriminant == 0:
+    x = -b / (2*a)
+    print(f"Løsningen er {x = }")
+else:
+    print("Ingen løsning")
+`;
+
+        const puzzleContainerId = 'container-parsons-puzzle-oppgave-abc-formelen';
+        const editorId = 'container-kode-oppgave-abc-formelen';
+
+        const switchToCodeEditor = makeCallbackFunction(puzzleContainerId, editorId);
+        const puzzle = new ParsonsPuzzle(
+            puzzleContainerId,
+            code,
+            switchToCodeEditor,
+        );
+    });    
+</script>

@@ -1,0 +1,65 @@
+<div id="container-kode-cas-kurs-del-1-underveisoppgave-2-oppgave-1">
+    <div id="code-editor-placeholder" style="height: 200px; background-color: #f0f0f0; display: flex; align-items: center; justify-content: center;">
+        <p>Laster inn kodeeditor...⏳</p>
+    </div>
+</div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`from casify import * 
+
+løsning = # FYLL INN: løs likningssystemet med 'løs'-funksjonen
+
+print(løsning)
+
+`;
+
+        // Function to initialize the interactive code editor
+        function initializeInteractiveCode() {
+            makeInteractiveCode(
+                "container-kode-cas-kurs-del-1-underveisoppgave-2-oppgave-1",
+                code,
+                // ["sympy"],
+            );
+
+            // Remove the placeholder
+            const placeholder = document.getElementById('code-editor-placeholder');
+            if (placeholder) {
+                placeholder.remove();
+            }
+
+            // Disconnect the observer
+            if (observer) {
+                observer.disconnect();
+            }
+        }
+
+        // Set up the IntersectionObserver
+        let observer;
+        if ('IntersectionObserver' in window) {
+            observer = new IntersectionObserver((entries, observerInstance) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Element is in view or close to it, initialize the code editor
+                        initializeInteractiveCode();
+                    }
+                });
+            }, {
+                root: null, // Use the viewport as the root
+                rootMargin: '200px', // Start loading when the element is within 200px of the viewport
+                threshold: 0.1 // Trigger when at least 10% of the element is visible
+            });
+
+            // Start observing the container element
+            const containerElement = document.getElementById("container-kode-cas-kurs-del-1-underveisoppgave-2-oppgave-1");
+            if (containerElement) {
+                observer.observe(containerElement);
+            }
+        } else {
+            // Fallback for browsers that don't support IntersectionObserver
+            // Initialize immediately
+            initializeInteractiveCode();
+        }
+    });
+</script>

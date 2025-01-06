@@ -181,14 +181,14 @@ $$
 f(x) = (x - (-2))(x - 3) = (x + 2)(x - 3).
 $$
 
-Deretter tegner vi fortegnsskjema ved å tegne inn en fortegnslinje for *hver* lineære faktor i $f(x)$. Deretter ganger vi fortegnene sammen for å få fortegnslinja til $f(x)$. 
+Først tegner vi fortegnsskjema ved å tegne inn en fortegnslinje for *hver* lineære faktor i $f(x)$. Deretter ganger vi fortegnene sammen for å få fortegnslinja til $f(x)$. 
 Se {numref}`fig-andregradsulikheter-algebraisk-løsning-eksempel-2`.
 
 ```{figure} ./figurer/eksempler/eksempel_2.svg
 :name: fig-andregradsulikheter-algebraisk-løsning-eksempel-2
 :width: 100%
 
-viser fortegnsskjema til $f(x) = x^2 - x - 6 = (x + 2)(x - 3)$. Vi tegner en fortegnslinje for hver lineær faktor. For å få fortegnslinja til $f(x)$, ganger vi fortegnene til de lineære faktorene sammen. 
+viser fortegnsskjema til $f(x) = x^2 - x - 6 = (x + 2)(x - 3)$. Vi tegner en fortegnslinje for hver lineære faktor. For å få fortegnslinja til $f(x)$, ganger vi fortegnene til de lineære faktorene sammen. 
 ```
 
 Fra fortegnsskjema, kan vi se at $f(x) > 0$ når $x < -2$ eller $x > 3$. Løsningen kan derfor skrives som

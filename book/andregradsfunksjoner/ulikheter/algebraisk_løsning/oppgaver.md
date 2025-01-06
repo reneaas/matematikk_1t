@@ -104,7 +104,7 @@ class: no-click
 class: answer, dropdown
 ---
 $$
-x \in \mathbb{R} \setminus \langle -5, 1 \rangle
+x \in \mathbb{R} \setminus \langle -5, -1 \rangle
 $$
 :::
 
@@ -319,6 +319,86 @@ $$
 ---
 class: problem-level-2
 ---
+::::::::::::::{tab-set} 
+---
+class: tabs-parts
+---
+
+:::::::::::::{tab-item} a
+Løs ulikheten
+
+$$
+x^2 + 3x - 4 > 4x - 2
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x \in \mathbb{R} \setminus [-1, 2]
+$$
+:::
+:::::::::::::
+
+:::::::::::::{tab-item} b
+Løs ulikheten
+
+$$
+-2x^2 + 5x + 1 \leq -3x + 7
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x \in \mathbb{R} \setminus \langle 1, 3 \rangle
+$$
+:::
+:::::::::::::
+
+:::::::::::::{tab-item} c
+Løs ulikheten
+
+$$
+-4x - 6 < -x^2 + x + 8
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x \in \mathbb{R} \setminus [-2, 7]
+$$
+:::
+:::::::::::::
+
+:::::::::::::{tab-item} d
+Løs ulikheten
+
+$$
+-x^2 + x + 12 \geq -3x^2 - x + 52
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x \in \mathbb{R} \setminus \langle -5, 4 \rangle
+$$
+:::
+:::::::::::::
+
+:::::::::::::::
+---
+
+:::::::::::::::{admonition} Oppgave 7
+---
+class: problem-level-2
+---
 En andregradsfunksjon $f$ er gitt ved 
 
 $$
@@ -335,6 +415,15 @@ Løs ulikheten
 $$
 f(x) \geq 0
 $$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x \in [-1, 4]
+$$
+:::
 :::::::::::::
 
 :::::::::::::{tab-item} b
@@ -343,6 +432,15 @@ Løs ulikheten
 $$
 f(x) > 4
 $$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x \in \langle 0, 3\rangle
+$$
+:::
 :::::::::::::
 
 :::::::::::::{tab-item} c
@@ -351,14 +449,32 @@ Løs ulikheten
 $$
 f(x) \leq -6
 $$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x \in \mathbb{R} \setminus \langle -2, 5 \rangle
+$$
+:::
 :::::::::::::
 
 :::::::::::::{tab-item} d
 Løs ulikheten 
 
 $$
-f(x) > 6
+f(x) < 6
 $$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x \in \langle \gets, 1 \rangle \cup \langle 2, \to \rangle
+$$
+:::
 :::::::::::::
 ::::::::::::::
 :::::::::::::::
@@ -366,7 +482,7 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 7
+:::::::::::::::{admonition} Oppgave 8
 ---
 class: problem-level-2
 ---
@@ -535,7 +651,7 @@ print(løsning)
 **Utskrift**:
 
 :::{code-block} console
-( (x < 1))  ∨  ((2 < x) )
+x < 1  ∨  2 < x 
 :::
 ::::
 
@@ -552,14 +668,34 @@ file: ./python/oppgaver/oppgave_7/b.html
 ---
 :::
 
-:::{admonition} Fasit
+::::{admonition} Fasit
 ---
 class: answer, dropdown
 ---
 $$
 x \in \mathbb{R} \setminus \langle 1, 3 \rangle
 $$
+
+**Programkode**:
+
+:::{code-block} python
+---
+linenos: true
+---
+from casify import *
+
+løsning = løs("-x**2 + 4*x - 3 <= 0")
+
+print(løsning)
 :::
+
+**Utskrift**:
+
+:::{code-block} console
+3 <= x  ∨  x <= 1
+:::
+
+::::
 :::::::::::::
 
 :::::::::::::{tab-item} c
@@ -573,14 +709,34 @@ file: ./python/oppgaver/oppgave_7/c.html
 ---
 :::
 
-:::{admonition} Fasit
+::::{admonition} Fasit
 ---
 class: answer, dropdown
 ---
 $$
-x \in \mathbb{R} \setminus \left[ 1 - 2\sqrt{2}, 1 + 2\sqrt{2} \right]
+x < 1 - 2\sqrt{2} \quad \lor \quad  1 + 2\sqrt{2} < x
 $$
+
+**Programkode**:
+
+:::{code-block} python
+---
+linenos: true
+---
+from casify import *
+
+løsning = løs("x**2 - 3*x - 3 > -x + 4")
+
+print(løsning)
 :::
+
+**Utskrift**:
+
+:::{code-block} console
+x < 1 - 2*sqrt(2)   ∨   1 + 2*sqrt(2) < x
+:::
+
+::::
 :::::::::::::
 
 :::::::::::::{tab-item} d
@@ -594,14 +750,34 @@ file: ./python/oppgaver/oppgave_7/d.html
 ---
 :::
 
-:::{admonition} Fasit
+::::{admonition} Fasit
 ---
 class: answer, dropdown
 ---
 $$
 x \in [1, 3]
 $$
+
+**Programkode**:
+
+:::{code-block} python
+---
+linenos: true
+---
+from casify import *
+
+løsning = løs("-x**2 + 3*x - 2 >= -x + 1")
+
+print(løsning)
 :::
+
+**Utskrift**:
+
+:::{code-block} console
+1 <= x   ∧   x <= 3
+:::
+
+::::
 :::::::::::::
 ::::::::::::::
 
@@ -614,7 +790,7 @@ $$
 
 
 
-:::::::::::::::{admonition} Oppgave 8
+:::::::::::::::{admonition} Oppgave 9
 ---
 class: problem-level-3
 ---

@@ -175,6 +175,41 @@ $$
 
 :::::::::::::
 
+:::::::::::::{tab-item} c
+
+$$
+-x^2 + 9x + 12 = 0
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x = -1 \, \lor \, x = 4
+$$
+:::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} d
+
+$$
+\dfrac{1}{2}x^2 - \dfrac{3}{4}x - \dfrac{1}{2} = 0
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x = -\dfrac{1}{2} \, \lor \, x = 2
+$$
+:::
+
+:::::::::::::
+
 ::::::::::::::
 
 :::::::::::::::
@@ -182,6 +217,146 @@ $$
 ---
 
 :::::::::::::::{admonition} Oppgave 3
+---
+class: problem-level-1
+---
+Løs likningene med $abc$-formelen.
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+$$
+-x^2 + 2x - 2 = 0
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+Ingen løsning.
+:::
+
+:::::::::::::
+
+:::::::::::::{tab-item} b
+$$
+2x^2 + 3x - 2 = 0
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x = -2 \, \lor \, x = \dfrac{1}{2}
+$$
+:::
+:::::::::::::
+
+:::::::::::::{tab-item} c
+$$
+x^2 + 8x + 16 = 0
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x = -4
+$$
+:::
+:::::::::::::
+
+:::::::::::::{tab-item} d
+$$
+8x^2 - 4x + 2 = 0
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+Ingen løsning.
+:::
+:::::::::::::
+
+::::::::::::::
+
+
+:::::::::::::::
+
+---
+
+
+:::::::::::::::{admonition} Oppgave 4
+---
+class: problem-level-2
+---
+Løs likningene med $abc$-formelen.
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+$$
+x^2 + x + 1 = x + 5
+$$
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x = -2 \, \lor \, x = 2
+$$
+::::
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+$$
+x^2 + x - 3 = -2x + 1
+$$
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x = -4 \, \lor \, x = 1
+$$
+::::
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+$$
+-x^2 + x + 3 = 3x - 1
+$$
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x = -2 \, \lor \, x = 1
+$$
+::::
+:::::::::::::
+
+::::::::::::::
+
+:::::::::::::::
+
+
+---
+
+
+:::::::::::::::{admonition} Oppgave 5
 ---
 class: problem-level-1
 ---
@@ -244,8 +419,87 @@ Ingen løsning siden $D < 0$.
 
 ---
 
+:::::::::::::::{admonition} Oppgave 6
+---
+class: problem-level-2
+---
+Bestem nullpunktene til funksjonene ved $abc$-formelen.
 
-::::{admonition} Oppgave X
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+$$
+f(x) = x^2 - 2x - 4
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x = 1 - \sqrt{5} \, \lor \, x = 1 + \sqrt{5}
+$$
+:::
+:::::::::::::
+
+:::::::::::::{tab-item} b
+$$
+g(x) = -x^2 + 4x - 3
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x = 1 \, \lor \, x = 3
+$$
+:::
+:::::::::::::
+
+:::::::::::::{tab-item} c
+$$
+h(x) = -x^2 + 4
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x = -2 \, \lor \, x = 2
+$$
+:::
+:::::::::::::
+
+:::::::::::::{tab-item} d
+$$
+p(x) = 2x^2 - 4x + 2
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x = 1
+$$
+:::
+
+:::::::::::::
+
+::::::::::::::
+
+
+:::::::::::::::
+
+
+---
+
+
+::::{admonition} Oppgave 6
 ---
 class: problem-level-2
 ---
@@ -266,3 +520,121 @@ k = \pm 2\sqrt{6}
 $$
 :::
 ::::
+
+
+---
+
+::::{admonition} Oppgave 7
+---
+class: problem-level-2
+---
+Et likningssystem er gitt ved
+
+
+\begin{align*}
+    x^2 + 2y - y &= 1, \\
+    \\
+    x + y &= k. 
+\end{align*}
+
+
+Bestem $k$ slik at likningssysmemet har én løsning. 
+
+Hva er løsningen til dette likningssystemet?
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+k = 2 \quad \text{og} \quad x = 1 \, \land \, y = 0.
+$$
+:::
+::::
+
+---
+
+::::{admonition} Oppgave 8
+---
+class: problem-level-2
+---
+En likning er gitt ved 
+
+$$
+x^4 - x^2 - 6 = 0.
+$$
+
+Løs likningen.
+
+:::{admonition} Hint
+---
+class: hints, dropdown
+---
+Gjør et variabelskifte der du setter $u = x^2$ og likningen, og løs likningen for $u$ først.
+:::
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x = -\sqrt{3} \, \lor \, x = \sqrt{3}.
+$$
+:::
+::::
+
+---
+
+
+::::{admonition} Oppgave 9
+---
+class: problem-level-3
+---
+Et tall er gitt ved 
+
+$$
+\sqrt{2 + \sqrt{2 + \sqrt{2 + \sqrt{2 + \dots }}}}
+$$
+
+Regn ut tallet.
+
+:::{admonition} Hint
+---
+class: hints, dropdown
+---
+Sett 
+
+$$
+x = \sqrt{2 + \sqrt{2 + \sqrt{2 + \sqrt{2 + \dots }}}}
+$$
+
+Hva er da $x^2$?
+:::
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+\sqrt{2 + \sqrt{2 + \sqrt{2 + \sqrt{2 + \dots }}}} = 2
+$$
+:::
+::::
+
+---
+
+
+:::::::::::::::{admonition} Oppgave XX
+---
+class: problem-level-2
+---
+Lova har skrevet et program for å løse andregradslikninger med $abc$-formelen, men har rotet det til og har fått kodelinjene i tilfeldig rekkefølge.
+
+
+:::{raw} html
+---
+file: ./python/abc_formelen/abc_formelen.html
+---
+:::
+
+:::::::::::::::

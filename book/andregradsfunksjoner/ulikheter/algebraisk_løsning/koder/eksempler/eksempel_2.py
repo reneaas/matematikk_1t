@@ -1,18 +1,39 @@
-import sys
-import os
+import signchart
 
-import sympy as sp
 
-relative_path = "../utils/"
-absolute_path = os.path.join(os.getcwd(), relative_path)
-sys.path.append(absolute_path)
+def main(dirname, save):
 
-from make_sign_chart import make_sign_chart
+    f = "x**2 - x - 6"
 
+    signchart.plot(
+        f=f,
+        fn_name="f(x)",
+        include_factors=True,
+    )
+
+    if save:
+        fname = __file__.split("/")[-1].replace(".py", ".svg")
+        signchart.savefig(dirname=dirname, fname=fname)
+
+    else:
+        signchart.show()
+
+
+# NOTE: Ikke endre på noe under denne linjen
 if __name__ == "__main__":
-    x = sp.symbols("x", real=True)
-    f = x**2 - x - 6
-    fname = "../../figurer/eksempler/eksempel_2.svg"
-    make_sign_chart(f=f, x=x, fname=fname)
-    
 
+    import pathlib
+
+    # Get the directory where the script is located
+    current_dir = str(pathlib.Path(__file__).resolve().parent)
+
+    # NOTE: Set `save=True` to save figure. `save=False` to display figure.
+    parts = current_dir.split("/")
+    for i in range(len(parts)):
+        if parts[~i] == "koder":
+            parts[~i] = "figurer"
+            break
+
+    dirname = "/".join(parts)
+
+    main(dirname=dirname, save=True)

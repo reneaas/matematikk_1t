@@ -1,5 +1,7 @@
 # CAS-kurs: del 1
 
+> Dette CAS-kurset er oppdatert med en ny Pythonpakke kalt `casify`{l=python} som forenkler bruk av CAS i Python vesentlig. 
+
 :::{admonition} Læringsmål: CAS-kurs del 1
 ---
 class: tip
@@ -102,399 +104,47 @@ file: ggb/utforsk/utforsk_1_click_interface.html
 ````
 
 ````{tab} Python
-For å bruke CAS i Python til å løse likninger, må vi skrive disse to kodelinjene på starten av programmet:
+For å bruke CAS i Python til å løse likninger, må vi skrive denne kodelinjen på starten av programmet:
 
 ```{code-block} python
 ---
 linenos: true
 ---
-from sympy import *
-from sympy.abc import x
+from casify import * 
 ```
 
-* Linje 1 henter alle funksjonene fra `sympy`{l=python}-biblioteket som lar oss utføre matematiske utregninger som å løse likninger, lage likninger og mye mer.
-* Linje 2 henter en **symbolsk** (algebraisk) variabel som lar oss lage likninger med ukjente variabler.
+Denne kodelinjen importerer `casify`{l=python}-pakken og henter alle tilgjengelig funksjoner vi trenger.
 
----
-
-:::::::{tab-set}
----
-class: tabs-parts
----
-::::::{tab-item} a
-For å løse en likning med Python, må vi først **lage** en likning som en variabel i Python. 
-
-Under vises tre eksempler på dette. For hvert av programmene:
-
-* Les og programmet.
-* Bestem hvilken likning programmet lager basert på utskriften.
-
-> Linje 4 i kodeeksemplene betyr: `likning = Eq(venstre_side, høyre_side)`{l=python}. 
+Under vises tre eksempler på hvordan vi kan løse likninger med CAS i Python. 
 
 :::::{tab-set}
+
 ::::{tab-item} Eksempel 1
 :::{raw} html
 ---
-file: ./interaktiv_kode/utforsk/utforsk_1/a/eksempel_1.html
+file: ./python/utforsk/utforsk_1/eksempel_1.html
 ---
 :::
-
----
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-**Utskrift**:
-
-```console
-2*x + 4 = 0
-```
-
-**Likning**:
-
-$$
-2x + 4 = 0
-$$
-:::
-
 ::::
+
 
 ::::{tab-item} Eksempel 2
 :::{raw} html
 ---
-file: ./interaktiv_kode/utforsk/utforsk_1/a/eksempel_2.html
+file: ./python/utforsk/utforsk_1/eksempel_2.html
 ---
 :::
-
----
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-**Utskrift**:
-
-```console
-2*x + 5 = 8
-```
-
-**Likning**:
-
-$$
-2x + 5 = 8
-$$
-:::
-
 ::::
+
 
 ::::{tab-item} Eksempel 3
 :::{raw} html
 ---
-file: ./interaktiv_kode/utforsk/utforsk_1/a/eksempel_3.html
+file: ./python/utforsk/utforsk_1/eksempel_3.html
 ---
 :::
-
----
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-**Utskrift**:
-
-```console
-x            
-- - 6 = 2 - x
-2        
-```
-
-**Likning**:
-
-$$
-\dfrac{x}{2} - 6 = 2 - x
-$$
-:::
-
 ::::
-
 :::::
-
-:::{admonition} `pprint`{l=python} og ikke `print`{l=python} – hva skjer?
----
-class: sidenote, dropdown
----
-`pprint`{l=python} kommer fra `sympy`{l=python}-biblioteket. Det er en forkortelse for *pretty* `print`{l=python} og brukes for å skrive ut matematiske uttrykk i `sympy`{l=python} som likner på hvordan vi ville skrevet det for hånd. Prøv å bytt ut `pprint`{l=python} med `print`{l=python} for å se forskjellen.
-:::
-
----
-
-:::{admonition} Oppsummering: `Eq`{l=python}-funksjonen
----
-class: summary, dropdown
----
-`Eq`{l=python}-funksjonen står for *Equation* som betyr *likning* på engelsk.
-For å lage en likning bruker vi `Eq`{l=python}-funksjonen på følgende måte:
-
-```{code-block} python
-likning = Eq(venstre_side, høyre_side)
-```
-
-For eksempel for likningen 
-
-$$
-5x + 2 = -3x + 7
-$$ 
-
-skriver vi
-
-```{code-block} python
-likning = Eq(5 * x + 2, -3 * x + 7)
-```
-:::
-
-::::::
-
-
-::::::{tab-item} b
-
-Når man skal løse en likning med `sympy`{l=python}, bruker vi `solve`{l=python}-funksjonen.
-
-Under vises tre eksempler på dette. 
-
-Kjør koden for hvert eksempel og bestem løsningen til likningen ved hjelp av utskriften.
-
-:::::{tab-set}
-::::{tab-item} Eksempel 1
-:::{raw} html
----
-file: ./interaktiv_kode/utforsk/utforsk_1/b/eksempel_1.html
----
-:::
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-**Utskrift**:
-    
-```console
-[-2]
-```
-
-**Løsning av likningen**:
-
-$$
-x = -2
-$$
-:::
-::::
-
-::::{tab-item} Eksempel 2
-:::{raw} html
----
-file: ./interaktiv_kode/utforsk/utforsk_1/b/eksempel_2.html
----
-:::
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-**Utskrift**:
-
-```console
-[3/2]
-```
-
-**Løsning av likningen**:
-
-$$
-x = \dfrac{3}{2}
-$$
-:::
-
-::::
-
-::::{tab-item} Eksempel 3
-:::{raw} html
----
-file: ./interaktiv_kode/utforsk/utforsk_1/b/eksempel_3.html
----
-:::
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-**Utskrift**:
-
-```console
-[16/3]
-```
-
-**Løsning av likningen**:
-
-$$
-x = \dfrac{16}{3}
-$$
-:::
-::::
-
-::::::
-
-::::::{tab-item} c
-Fyll inn programmet under og løs likningene.
-
-:::::{tab-set}
-::::{tab-item} Likning 1 
-$$
-3x + 2 = 0
-$$
-
-:::{raw} html
----
-file: ./interaktiv_kode/utforsk/utforsk_1/c/oppgave_1.html
----
-:::
-
----
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-**Programkode**:
-
-```{code-block} python
----
-linenos: true
-emphasize-lines: 4
----
-from sympy import *
-from sympy.abc import x
-
-likning = Eq(3 * x + 2, 0)
-
-løsning = solve(likning)
-
-print(løsning)
-```
-
-**Utskrift**:
-    
-```console
-[-2/3]
-```
-
-**Løsning**:
-
-$$
-x = -\dfrac{2}{3}
-$$
-:::
-
-::::
-
-::::{tab-item} Likning 2
-$$
-4x + 2 = 7
-$$
-
-:::{raw} html
----
-file: ./interaktiv_kode/utforsk/utforsk_1/c/oppgave_2.html
----
-:::
-
----
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-**Programkode**:
-
-```{code-block} python
----
-linenos: true
-emphasize-lines: 4
----
-from sympy import *
-from sympy.abc import x
-
-likning = Eq(4 * x + 2, 7)
-
-løsning = solve(likning)
-
-print(løsning)
-```
-
-**Utskrift**:
-    
-```console
-[5/4]
-```
-
-**Løsning**:
-
-$$
-x = \dfrac{5}{4}
-$$
-:::
-
-::::
-
-::::{tab-item} Likning 3
-$$
-3x - 2 = -5x + 1
-$$
-
-:::{raw} html
----
-file: ./interaktiv_kode/utforsk/utforsk_1/c/oppgave_3.html
----
-:::
-
----
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-**Programkode**:
-
-```{code-block} python
----
-linenos: true
-emphasize-lines: 4
----
-from sympy import *
-from sympy.abc import x
-
-likning = Eq(3 * x - 2, -5 * x + 1)
-
-løsning = solve(likning)
-
-print(løsning)
-```
-
-**Utskrift**:
-    
-```console
-[3/8]
-```
-
-**Løsning**:
-
-$$
-x = \dfrac{3}{8}
-$$
-:::
-
-::::
-
-::::::
 
 
 ````
@@ -584,7 +234,7 @@ $$
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/underveisoppgaver/underveisoppgave_1/oppgave_1.html
+file: ./python/underveisoppgaver/underveisoppgave_1/oppgave_1.html
 ---
 :::
 
@@ -598,18 +248,16 @@ class: answer, dropdown
 ---
 linenos: true
 ---
-from sympy import *
-from sympy.abc import x
+from casify import *
 
-likning = Eq(3 * x + 1, 0)
-løsning = solve(likning)
+løsning = løs("3 * x + 1 = 0")
 
 print(løsning)
 ```
 **Utskrift**:
 
 ```console
-[-1/3]
+x = -1/3
 ```
 **Løsning**:
 
@@ -627,7 +275,7 @@ $$
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/underveisoppgaver/underveisoppgave_1/oppgave_2.html
+file: ./python/underveisoppgaver/underveisoppgave_1/oppgave_2.html
 ---
 :::
 
@@ -641,11 +289,9 @@ Programkode:
 ---
 linenos: true
 ---
-from sympy import *
-from sympy.abc import x
+from casify import *
 
-likning = Eq(-2 * x + 3, 1)
-løsning = solve(likning)
+løsning = løs("-2*x + 3 = 1")
 
 print(løsning)
 ```
@@ -653,7 +299,7 @@ print(løsning)
 Utskrift:
 
 ```console
-[1]
+x = 1
 ```
 
 Løsning:
@@ -672,7 +318,7 @@ $$
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/underveisoppgaver/underveisoppgave_1/oppgave_3.html
+file: ./python/underveisoppgaver/underveisoppgave_1/oppgave_3.html
 ---
 :::
 
@@ -686,11 +332,9 @@ class: answer, dropdown
 ---
 linenos: true
 ---
-from sympy import *
-from sympy.abc import x
+from casify import *
 
-likning = Eq(x + 2, -4 * x + 5)
-løsning = solve(likning)
+løsning = løs("x + 2 = -4*x + 5")
 
 print(løsning)
 ```
@@ -698,7 +342,7 @@ print(løsning)
 **Utskrift**:
 
 ```console
-[3/5]
+x = 3/5
 ```
 
 **Løsning**:
@@ -711,13 +355,6 @@ $$
 ::::
 :::::
 
-<br>
-
-:::{raw} html
----
-file: ./interaktiv_kode/underveisoppgaver/underveisoppgave_1.html
----
-:::
 
 ::::::
 
@@ -786,334 +423,56 @@ Deloppgave 2
 
 ````{tab} Python
 
-Vi kan også bruke `solve`{l=python}-funksjonen i `sympy`{l=python} til å løse likningssystemer. Men siden vi har mer enn én variabel, må vi nå hente alle variablene vi trenger fra `sympy.abc`{l=python}. 
+Vi kan bruke `løs`{l=python}-funksjonen til `casify`{l=python} til å løse likningssystemer i Python også.
 
-For et likningssystem med to variabler $x$ og $y$, skriver vi dette på toppen av programmet:
+Under vises tre eksempler på hvordan vi kan løse likningssystemer med CAS i Python.
 
-```{code-block} python
-from sympy import *
-from sympy.abc import x, y  # Henter en symbolsk variabel for x og y
-```
-
----
+1. Se på kodene og sjekk at du ser hvordan likningssystemene er skrevet inn i koden.
+2. Kjør koden og sjekk om utskriften stemmer.
 
 ::::::::{tab-set}
----
-class: tabs-parts
----
-::::::{tab-item} a
+:::::::{tab-item} Eksempel 1
 
-For å bruke `sympy`{l=python} til å løse likningssystemer, må vi først lage likningene som variabler og plassere dem i en liste.
-
-Under vises tre eksempler på dette. 
-
-Kjør koden for hvert eksempel og bestem hvilket likningssystem hvert program representerer.
-
-:::::{tab-set}
-::::{tab-item} Eksempel 1
-:::{raw} html
----
-file: ./interaktiv_kode/utforsk/utforsk_2/a/eksempel_1.html
----
-:::
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
 $$
 x + y = 2 \quad \land \quad x - y = 0
 $$
-:::
 
-::::
-
-::::{tab-item} Eksempel 2
 :::{raw} html
 ---
-file: ./interaktiv_kode/utforsk/utforsk_2/a/eksempel_2.html
+file: ./python/utforsk/utforsk_2/eksempel_1.html
 ---
 :::
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
+:::::::
+
+:::::::{tab-item} Eksempel 2
+
 $$
 x + 3y = -7 \quad \land \quad 3x - 2y = 12
 $$
-:::
-::::
 
-::::{tab-item} Eksempel 3
 :::{raw} html
 ---
-file: ./interaktiv_kode/utforsk/utforsk_2/a/eksempel_3.html
+file: ./python/utforsk/utforsk_2/eksempel_2.html
 ---
 :::
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-$$
--x + 2y = 5 \quad \land \quad 3x + y = -2
-$$
-:::
-::::
+:::::::
 
-
-::::::
-
-::::::{tab-item} b
-Når vi har laget et likningssystem, bruker vi `solve`{l=python}-funksjonen til å løse likningssystemet akkurat som vi gjorde med likninger!
-
-Her ser vi på tre eksempler på dette. 
-
-Kjør koden for hvert eksempel og bestem løsningen til likningssystemet ved hjelp av utskriften.
-
-:::::{tab-set}
-::::{tab-item} Eksempel 1
-:::{raw} html
----
-file: ./interaktiv_kode/utforsk/utforsk_2/b/eksempel_1.html
----
-:::
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-**Utskrift**:
-
-```console
-{x: 1, y: 1}
-```
-
-**Løsning av likningssystemet**:
+:::::::{tab-item} Eksempel 3
 
 $$
-x = 1 \quad \land \quad y = 1
-$$
-:::
-
-::::
-
-::::{tab-item} Eksempel 2
-:::{raw} html
----
-file: ./interaktiv_kode/utforsk/utforsk_2/b/eksempel_2.html
----
-:::
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-**Utskrift**:
-
-```console
-{x: 2, y: -3}
-```
-
-**Løsning av likningssystemet**:
-
-$$
-x = 2 \quad \land \quad y = -3
-$$
-:::
-::::
-
-::::{tab-item} Eksempel 3
-:::{raw} html
----
-file: ./interaktiv_kode/utforsk/utforsk_2/b/eksempel_3.html
----
-:::
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-**Utskrift**:
-
-```console
-{x: -9/7, y: 13/7}
-```
-
-**Løsning av likningssystemet**:
-
-$$
-x = -\dfrac{9}{7} \quad \land \quad y = \dfrac{13}{7}
-$$
-:::
-::::
-
-
-
-::::::
-
-::::::{tab-item} c
-Fyll inn programmet under og bruk programmet til å løse likningssystemene.
-
-:::::{tab-set}
-::::{tab-item} Oppgave 1
-
-$$
-x + 2y = 10 \quad \land \quad 3x - 2y = 1
+x + 2y = 5  \quad \land \quad 3x + y = -2
 $$
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/utforsk/utforsk_2/c/oppgave_1.html
+file: ./python/utforsk/utforsk_2/eksempel_3.html
 ---
 :::
 
----
+:::::::
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-**Programkode**:
-
-```{code-block} python
----
-linenos: true
-emphasize-lines: 4-6
----
-from sympy import *
-from sympy.abc import x, y
-
-likning1 = Eq(x + 2 * y, 10)
-likning2 = Eq(3 * x - 2 * y, 1)
-likningssystem = [likning1, likning2]
-
-løsning = solve(likningssystem)
-
-print(løsning)
-```
-
-**Utskrift**:
-
-```console
-{x: 11/4, y: 29/8}
-```
-
-**Løsning**:
-
-$$
-x = \dfrac{11}{4} \quad \land \quad y = \dfrac{29}{8}
-$$
-:::
-
-::::
-
-::::{tab-item} Oppgave 2
-
-$$
--2x + y = 1 \quad \land \quad 3x + 7y = -1
-$$
-
-:::{raw} html
----
-file: ./interaktiv_kode/utforsk/utforsk_2/c/oppgave_2.html
----
-:::
-
----
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-**Programkode**:
-
-```{code-block} python
----
-linenos: true
-emphasize-lines: 4-6
----
-from sympy import *
-from sympy.abc import x, y
-
-likning1 = Eq(-2 * x + y, 1)
-likning2 = Eq(3 * x + 7 * y, -1)
-likningssystem = [likning1, likning2]
-
-løsning = solve(likningssystem)
-
-print(løsning)
-```
-
-**Utskrift**:
-
-```console
-{x: -8/17, y: 1/17}
-```
-
-**Løsning**:
-
-$$
-x = -\dfrac{8}{17} \quad \land \quad y = \dfrac{1}{17}
-$$
-:::
-
-::::
-
-::::{tab-item} Oppgave 3
-
-$$
-2x - 5y = 3 \quad \land \quad 3x + 2y = 1
-$$
-
-:::{raw} html
----
-file: ./interaktiv_kode/utforsk/utforsk_2/c/oppgave_3.html
----
-:::
-
----
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-**Programkode**:
-
-```{code-block} python
----
-linenos: true
-emphasize-lines: 4-6
----
-from sympy import *
-from sympy.abc import x, y
-
-likning1 = Eq(2 * x - 5 * y, 3)
-likning2 = Eq(3 * x + 2 * y, 1)
-likningssystem = [likning1, likning2]
-
-løsning = solve(likningssystem)
-
-print(løsning)
-```
-
-**Utskrift**:
-
-```console
-{x: 11/19, y: -7/19}
-```
-
-**Løsning**:
-
-$$
-x = \dfrac{11}{19} \quad \land \quad y = -\dfrac{7}{19}
-$$
-:::
-
-::::
-
-::::::
 
 ::::::::
 
@@ -1232,7 +591,7 @@ $$
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/underveisoppgaver/underveisoppgave_2/oppgave_1.html
+file: ./python/underveisoppgaver/underveisoppgave_2/oppgave_1.html
 ---
 :::
 
@@ -1283,7 +642,7 @@ $$
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/underveisoppgaver/underveisoppgave_2/oppgave_2.html
+file: ./python/underveisoppgaver/underveisoppgave_2/oppgave_2.html
 ---
 :::
 
@@ -1335,7 +694,7 @@ $$
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/underveisoppgaver/underveisoppgave_2/oppgave_3.html
+file: ./python/underveisoppgaver/underveisoppgave_2/oppgave_3.html
 ---
 :::
 
@@ -1427,22 +786,20 @@ Deloppgave 2
 ````
 
 ````{tab} Python
-Vi kan også løse ulikheter ved å bruke `solve`{l=python}-funksjonen i `sympy`{l=python}.
+Vi kan også løse ulikheter ved å bruke `løs`{l=python}-funksjonen i `casify`{l=python}.
 
-:::::::{tab-set}
----
-class: tabs-parts
----
-::::::{tab-item} a
-Under vises tre eksempler på hvordan man lager ulikheter med `sympy`{l=python}. 
+Under vises tre eksempler.
 
-Les og kjør koden for hvert eksempel, og bestem hvilken ulikhet programmet lager.
+1. Les og kjør koden.
+2. Bestem hvilken ulikhet programmet løser.
+3. Bestem løsningen til ulikheten ut ifra utskriften.
 
 :::::{tab-set}
 ::::{tab-item} Eksempel 1
+
 :::{raw} html
 ---
-file: ./interaktiv_kode/utforsk/utforsk_3/a/eksempel_1.html
+file: ./python/utforsk/utforsk_3/eksempel_1.html
 ---
 :::
 
@@ -1460,7 +817,7 @@ $$
 ::::{tab-item} Eksempel 2
 :::{raw} html
 ---
-file: ./interaktiv_kode/utforsk/utforsk_3/a/eksempel_2.html
+file: ./python/utforsk/utforsk_3/eksempel_2.html
 ---
 :::
 
@@ -1478,7 +835,7 @@ $$
 ::::{tab-item} Eksempel 3
 :::{raw} html
 ---
-file: ./interaktiv_kode/utforsk/utforsk_3/a/eksempel_3.html
+file: ./python/utforsk/utforsk_3/eksempel_3.html
 ---
 :::
 
@@ -1495,105 +852,6 @@ $$
 
 :::::
 
-::::::
-
-::::::{tab-item} b
-For å løse ulikheten, bruker vi `solve`{l=python}-funksjonen akkurat som før! 
-
-Her følger tre eksempler på dette – kjør koden for hvert eksempel og bestem løsningen av ulikhetene ved hjelp av utskriften.
-
-> Her bruker vi `pprint`{l=python} og ikke `print`{l=python} for å få en utskrift som likner på matematikken. Prøv gjerne å bruke `print`{l=python} i stedet. Da vil utskriften bruke "&" i stedet for "$\land$". 
-
-:::::{tab-set}
-::::{tab-item} Eksempel 1
-:::{raw} html
----
-file: ./interaktiv_kode/utforsk/utforsk_3/b/eksempel_1.html
----
-:::
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-**Utskrift**: 
-
-```console
-(-2 < x) ∧ (x < ∞)
-```
-
-**Løsning av ulikheten**:
-
-$$
--2 < x \quad \land \quad x < \infty \quad \iff \quad -2 < x < \infty \quad \iff \quad x > -2
-$$
-
-(Det er overflødig å ta med at $x < \infty$ siden dette er underforstått når vi bare skriver $x > -2$ – men det ikke *feil* å gjøre det!). 
-
-> Merk at tegnet $\infty$ betyr *uendelig*. 
-
-:::
-
-::::
-
-::::{tab-item} Eksempel 2
-:::{raw} html
----
-file: ./interaktiv_kode/utforsk/utforsk_3/b/eksempel_2.html
----
-:::
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-**Utskrift**: 
-
-```console
-(-5/2 < x) ∧ (x < ∞)
-```
-
-**Løsning av ulikheten**:
-
-$$
--\dfrac{5}{2} < x \quad \land \quad x < \infty \quad \iff \quad x > -\dfrac{5}{2}
-$$
-
-:::
-
-::::
-
-::::{tab-item} Eksempel 3
-:::{raw} html
----
-file: ./interaktiv_kode/utforsk/utforsk_3/b/eksempel_3.html
----
-:::
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-**Utskrift**: 
-
-```console
-(3 <= x) ∧ (x < ∞)
-```
-
-**Løsning av ulikheten**:
-
-$$
-3 \leq x \quad \land \quad x < \infty \quad \iff \quad x \geq 3
-$$
-
-:::
-
-::::
-
-:::::
-::::::
-
-:::::::
 
 
 ````
@@ -1688,7 +946,7 @@ $$
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/underveisoppgaver/underveisoppgave_3/a.html
+file: ./python/underveisoppgaver/underveisoppgave_3/a.html
 ---
 :::
 
@@ -1711,7 +969,7 @@ $$
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/underveisoppgaver/underveisoppgave_3/b.html
+file: ./python/underveisoppgaver/underveisoppgave_3/b.html
 ---
 :::
 
@@ -1733,7 +991,7 @@ $$
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/underveisoppgaver/underveisoppgave_3/c.html
+file: ./python/underveisoppgaver/underveisoppgave_3/c.html
 ---
 :::
 
@@ -1881,7 +1139,7 @@ $$
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/oppgaver/oppgave_1/a.html
+file: ./python/oppgaver/oppgave_1/a.html
 ---
 :::
 
@@ -1894,13 +1152,10 @@ class: answer, dropdown
 ```{code-block} python
 ---
 linenos: true
-emphasize-lines: 4-5
 ---
-from sympy import *
-from sympy.abc import x
+from casify import * 
 
-likning = Eq(-3 * x + 2, 0)
-løsning = solve(likning)
+løsning = løs("-3*x + 2 = 0") 
 
 print(løsning)
 ```
@@ -1908,7 +1163,7 @@ print(løsning)
 **Utskrift**:
 
 ```console
-[2/3]
+x = 2/3
 ```
 
 **Løsning**:
@@ -1926,7 +1181,7 @@ $$
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/oppgaver/oppgave_1/b.html
+file: ./python/oppgaver/oppgave_1/b.html
 ---
 :::
 
@@ -1940,14 +1195,10 @@ class: answer, dropdown
 ```{code-block} python
 ---
 linenos: true
-emphasize-lines: 4-5
 ---
+from casify import * 
 
-from sympy import *
-from sympy.abc import x
-
-likning = Eq(4 * x + 2, 5)
-løsning = solve(likning)
+løsning = løs("4*x + 2 = 5")
 
 print(løsning)
 ```
@@ -1955,7 +1206,7 @@ print(løsning)
 **Utskrift**: 
 
 ```console
-[3/4]
+x = 3/4
 ```
 
 **Løsning**:
@@ -1974,7 +1225,7 @@ $$
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/oppgaver/oppgave_1/c.html
+file: ./python/oppgaver/oppgave_1/c.html
 ---
 :::
 
@@ -1988,13 +1239,10 @@ class: answer, dropdown
 ```{code-block} python
 ---
 linenos: true
-emphasize-lines: 4-5
 ---
-from sympy import *
-from sympy.abc import x
+from casify import * 
 
-likning = Eq(5 * x + 8, -2 * x + 3)
-løsning = solve(likning)
+løsning = løs("5*x + 8 = -2*x + 3")
 
 print(løsning)
 ```
@@ -2002,7 +1250,7 @@ print(løsning)
 **Utksrift**:
 
 ```console
-[-5/7]
+x = -5/7
 ```
 
 **Løsning**:
@@ -2021,7 +1269,7 @@ $$
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/oppgaver/oppgave_1/d.html
+file: ./python/oppgaver/oppgave_1/d.html
 ---
 :::
 
@@ -2035,13 +1283,10 @@ class: answer, dropdown
 ```{code-block} python
 ---
 linenos: true
-emphasize-lines: 4-5
 ---
-from sympy import *
-from sympy.abc import x
+from casify import * 
 
-likning = Eq(x / 2 - 2, 3 * x + 2)
-løsning = solve(likning)
+løsning = løs("x/2 - 2 = 3*x + 2")
 
 print(løsning)
 ```
@@ -2049,7 +1294,7 @@ print(løsning)
 **Utskrift**:
 
 ```console
-[-8/5]
+x = -8/5
 ```
 
 **Løsning**:
@@ -2165,7 +1410,7 @@ $$
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/oppgaver/oppgave_2/a.html
+file: ./python/oppgaver/oppgave_2/a.html
 ---
 :::
 
@@ -2178,23 +1423,17 @@ class: answer, dropdown
 ```{code-block} python
 ---
 linenos: true
-emphasize-lines: 4-6
 ---
-from sympy import *
-from sympy.abc import x, y
+from casify import * 
 
-likning1 = Eq(3 * x + y, 7)
-likning2 = Eq(x - y, 1)
-likningssystem = [likning1, likning2]
-
-løsning = solve(likningssystem)
+løsning = løs("3*x + y = 7", "x - y = 1")
 
 print(løsning)
 ```
 **Utskrift**:
 
 ```console
-{x: 2, y: 1}
+x = 2 ∧ y = 1
 ```
 
 **Løsning**:
@@ -2214,7 +1453,7 @@ $$
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/oppgaver/oppgave_2/b.html
+file: ./python/oppgaver/oppgave_2/b.html
 ---
 :::
 
@@ -2227,23 +1466,17 @@ class: answer, dropdown
 ```{code-block} python
 ---
 linenos: true
-emphasize-lines: 4-6
 ---
-from sympy import *
-from sympy.abc import x, y
+from casify import * 
 
-likning1 = Eq(x - 2 * y, 7)
-likning2 = Eq(x + y, 1)
-likningssystem = [likning1, likning2]
-
-løsning = solve(likningssystem)
+løsning = løs("x - 2*y = 7", "x + y = 1")
 
 print(løsning)
 ```
 **Utskrift**:
 
 ```console
-{x: 3, y: -2}
+x = 3 ∧ y = -2
 ```
 
 **Løsning**:
@@ -2264,7 +1497,7 @@ $$
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/oppgaver/oppgave_2/c.html
+file: ./python/oppgaver/oppgave_2/c.html
 ---
 :::
 
@@ -2277,23 +1510,17 @@ class: answer, dropdown
 ```{code-block} python
 ---
 linenos: true
-emphasize-lines: 4-6
 ---
-from sympy import *
-from sympy.abc import x, y
+from casify import * 
 
-likning1 = Eq(x + 2 * y, 5)
-likning2 = Eq(4 * x, 2 - 3 * y)
-likningssystem = [likning1, likning2]
-
-løsning = solve(likningssystem)
+løsning = løs("x + 2*y = 5", "4*x = 6 - y")
 
 print(løsning)
 ```
 **Utskrift**:
 
 ```console
-{x: -11/5, y: 18/5}
+x = 1 ∧ y = 2
 ```
 
 **Løsning**:
@@ -2314,7 +1541,7 @@ $$
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/oppgaver/oppgave_2/d.html
+file: ./python/oppgaver/oppgave_2/d.html
 ---
 :::
 
@@ -2327,23 +1554,17 @@ class: answer, dropdown
 ```{code-block} python
 ---
 linenos: true
-emphasize-lines: 4-6
 ---
-from sympy import *
-from sympy.abc import x, y
+from casify import * 
 
-likning1 = Eq(-2 * x + y, -1)
-likning2 = Eq(4 * x + 2 * y + 14, 0)
-likningssystem = [likning1, likning2]
-
-løsning = solve(likningssystem)
+løsning = løs("-2*x + y = -1", "4*x + 2*y + 14 = 0")
 
 print(løsning)
 ```
 **Utskrift**:
 
 ```console
-{x: -3/2, y: -4}
+x = -3/2 ∧ y = -4
 ```
 
 **Løsning**:
@@ -2447,7 +1668,7 @@ $$
 ````
 
 ````{tab} Python
-Løs ulikhetene ved hjelp av `sympy`{l=python} i kodevinduet.
+Løs ulikhetene ved hjelp av `casify`{l=python} i kodevinduet.
 
 
 :::::::::::{tab-set}
@@ -2461,7 +1682,7 @@ $$
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/oppgaver/oppgave_3/a.html
+file: ./python/oppgaver/oppgave_3/a.html
 ---
 :::
 
@@ -2474,18 +1695,16 @@ class: dropdown, answer
 ---
 linenos: true
 ---
-from sympy import *
-from sympy.abc import x
+from casify import * 
 
-ulikhet = (-2 * x + 3 >= x - 5)
-løsning = solve(ulikhet)
+løsning = løs("-2*x + 3 >= x - 5") 
 
-pprint(løsning)
+print(løsning)
 ```
 
 **Utskrift**:
 ```console
-(x <= 8/3) ∧ (-∞ < x)
+x <= 8/3
 ```
 
 **Løsning**:
@@ -2504,7 +1723,7 @@ $$
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/oppgaver/oppgave_3/b.html
+file: ./python/oppgaver/oppgave_3/b.html
 ---
 :::
 
@@ -2518,18 +1737,16 @@ class: dropdown, answer
 ---
 linenos: true
 ---
-from sympy import *
-from sympy.abc import x
+from casify import * 
 
-ulikhet = (2 * x - 1 < x + 4)
-løsning = solve(ulikhet)
+løsning = løs("2*x - 1 < x + 4")
 
-pprint(løsning)
+print(løsning)
 ```
 
 **Utskrift**:
 ```console
-(-∞ < x) ∧ (x < 5)
+ x < 5
 ```
 
 **Løsning**:
@@ -2549,7 +1766,7 @@ $$
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/oppgaver/oppgave_3/c.html
+file: ./python/oppgaver/oppgave_3/c.html
 ---
 :::
 
@@ -2563,18 +1780,16 @@ class: dropdown, answer
 ---
 linenos: true
 ---
-from sympy import *
-from sympy.abc import x
+from casify import * 
 
-ulikhet = (x / 2 + 3 > x - 1)
-løsning = solve(ulikhet)
+løsning = løs("x/2 + 3 > x - 1")
 
-pprint(løsning)
+print(løsning)
 ```
 
 **Utskrift**:
 ```console
-(-∞ < x) ∧ (x < 8)
+x < 8
 ```
 
 **Løsning**:
@@ -2593,7 +1808,7 @@ $$
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/oppgaver/oppgave_3/d.html
+file: ./python/oppgaver/oppgave_3/d.html
 ---
 :::
 
@@ -2607,25 +1822,22 @@ class: dropdown, answer
 ---
 linenos: true
 ---
-from sympy import *
-from sympy.abc import x
+from casify import * 
 
-ulikhet = (x / 3 + 1 / 2 <= -x / 2 + 1 / 3)
-løsning = solve(ulikhet)
+løsning = løs("x/3 + 1/2 <= -x/2 + 1/3")
 
-pprint(løsning)
-
+print(løsning)
 ```
 
 **Utskrift**:
 ```console
-(x <= -0.2) ∧ (-∞ < x)
+x <= -1/5
 ```
 
 **Løsning**:
 
 $$
-x \leq -0.2 \quad \iff \quad x \leq -\dfrac{1}{5} 
+x \leq -\dfrac{1}{5} 
 $$
 ::::
 
@@ -2758,7 +1970,7 @@ $$
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/oppgaver/oppgave_4/a.html
+file: ./python/oppgaver/oppgave_4/a.html
 ---
 :::
 
@@ -2774,18 +1986,16 @@ class: dropdown, answer
 ---
 linenos: true
 ---
-from sympy import * 
-from sympy.abc import x
+from casify import * 
 
-likning = Eq(-3 * x + 2, 4 * x - 9)
-løsning = solve(likning)
+løsning = løs("-3*x + 2 = 4*x - 9")
 
 print(løsning)
 ```
 
 **Utskrift**:
 ```console
-[11/7]
+x = 11/7
 ```
 
 **Løsning**:
@@ -2808,7 +2018,7 @@ Skriv et program som løser likningssystemet med `sympy`{l=python}
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/oppgaver/oppgave_4/b.html
+file: ./python/oppgaver/oppgave_4/b.html
 ---
 :::
 
@@ -2824,21 +2034,16 @@ class: dropdown, answer
 ---
 linenos: true
 ---
-from sympy import * 
-from sympy.abc import x, y
+from casify import * 
 
-likning1 = Eq(2 * x + 3 * y, -5)
-likning2 = Eq(-x + 2 * y, 6)
-likningssystem = [likning1, likning2]
-
-løsning = solve(likningssystem)
+løsning = løs("2*x + 3*y = -5", "-x + 2*y = 6")
 
 print(løsning)
 ```
 
 **Utskrift**:
 ```console
-{x: -4, y: 1}
+x = -4 ∧ y = 1
 ```
 
 **Løsning**:
@@ -2859,7 +2064,7 @@ $$
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/oppgaver/oppgave_4/c.html
+file: ./python/oppgaver/oppgave_4/c.html
 ---
 :::
 
@@ -2875,18 +2080,16 @@ class: dropdown, answer
 ---
 linenos: true
 ---
-from sympy import *
-from sympy.abc import x
+from casify import * 
 
-ulikhet = (-2 * x + 5 > -x / 4 + 11)
-løsning = solve(ulikhet)
+løsning = løs("-2*x + 5 > -x/4 + 11")
 
-pprint(løsning)
+print(løsning)
 ```
 
 **Utskrift**:
 ```console
-(-∞ < x) ∧ (x < -24/7)
+ x < -24/7
 ```
 
 **Løsning**:
@@ -2909,7 +2112,7 @@ Skriv et program som løser likningssystemet med `sympy`{l=python}
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/oppgaver/oppgave_4/d.html
+file: ./python/oppgaver/oppgave_4/d.html
 ---
 :::
 
@@ -2924,24 +2127,16 @@ class: dropdown, answer
 ---
 linenos: true
 ---
-from sympy import *
-from sympy.abc import x, y, z
+from casify import * 
 
-likning1 = Eq(x + y + z, 6)
-likning2 = Eq(2 * x - y + z, 3)
-likning3 = Eq(3 * x + y - z, 4)
-
-likningssystem = [likning1, likning2, likning3]
-
-løsning = solve(likningssystem)
+løsning = løs("x + y + z = 6", "2*x - y + z = 3", "3*x + y - z = 4")
 
 print(løsning)
-
 ```
 
 **Utskrift**:
 ```console
-{x: 7/5, y: 11/5, z: 12/5}
+x = 7/5 ∧ y = 11/5 ∧ z = 12/5
 ```
 
 **Løsning**:
@@ -3083,7 +2278,7 @@ class: tabs-parts
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/oppgaver/oppgave_5/a.html
+file: ./python/oppgaver/oppgave_5/a.html
 ---
 :::
 
@@ -3099,23 +2294,16 @@ class: dropdown, answer
 ---
 linenos: true
 ---
-from sympy import *
-from sympy.abc import x, y, z
+from casify import * 
 
-likning1 = Eq(x + y - z, 1)
-likning2 = Eq(x - y - z, -1)
-likning3 = Eq(x + y + z, 3)
-
-likningssystem = [likning1, likning2, likning3]
-
-løsning = solve(likningssystem)
+løsning = løs("x + y - z = 1", "x - y - z = -1", "x + y + z = 3")
 
 print(løsning)
 ```
 
 **Utskrift**:
 ```console
-{x: 1, y: 1, z: 1}
+x = 1 ∧ y = 1 ∧ z = 1
 ```
 
 **Løsning**:
@@ -3139,7 +2327,7 @@ $$
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/oppgaver/oppgave_5/b.html
+file: ./python/oppgaver/oppgave_5/b.html
 ---
 :::
 
@@ -3155,23 +2343,16 @@ class: dropdown, answer
 ---
 linenos: true
 ---
-from sympy import *
-from sympy.abc import x, y, z
+from casify import * 
 
-likning1 = Eq(2 * x + y - z, 1)
-likning2 = Eq(x - y + z, 2)
-likning3 = Eq(3 * x + 2 * y + z, 3)
-
-likningssystem = [likning1, likning2, likning3]
-
-løsning = solve(likningssystem)
+løsning = løs("2*x + y - z = 1", "x - y + z = 2", "3*x + 2*y + z = 3")
 
 print(løsning)
 ```
 
 **Utskrift**:
 ```console
-{x: 1, y: -1/3, z: 2/3}
+x = 1 ∧ y = -1/3 ∧ z = 2/3
 ```
 
 **Løsning**:
@@ -3193,7 +2374,7 @@ $$
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/oppgaver/oppgave_5/c.html
+file: ./python/oppgaver/oppgave_5/c.html
 ---
 :::
 
@@ -3209,24 +2390,16 @@ class: dropdown, answer
 ---
 linenos: true
 ---
-from sympy import *
-from sympy.abc import a, b, c
+from casify import * 
 
-likning1 = Eq(a - b + c, -11)
-likning2 = Eq(a + b + c, 11)
-likning3 = Eq(8 * a + 4 * b + 2 * c, -4)
-
-likningssystem = [likning1, likning2, likning3]
-
-løsning = solve(likningssystem)
+løsning = løs("a - b + c = -11", "a + b + c = 11", "8*a + 4*b + 2*c = -4")
 
 print(løsning)
-
 ```
 
 **Utskrift**:
 ```console
-{a: -8, b: 11, c: 8}
+a = -8 ∧ b = 11 ∧ c = 8
 ```
 
 **Løsning**:
@@ -3249,7 +2422,7 @@ $$
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/oppgaver/oppgave_5/d.html
+file: ./python/oppgaver/oppgave_5/d.html
 ---
 :::
 
@@ -3265,23 +2438,16 @@ class: dropdown, answer
 ---
 linenos: true
 ---
-from sympy import *
-from sympy.abc import r, s, t
+from casify import * 
 
-likning1 = Eq(r + 2 * s - t, 1)
-likning2 = Eq(2 * r - s + 3 * t, 2)
-likning3 = Eq(3 * r + 2 * s + 2 * t, 3)
-
-likningssystem = [likning1, likning2, likning3]
-
-løsning = solve(likningssystem)
+løsning = løs("r + 2*s - t = 1", "2*r - s + 3*t = 2", "3*r + 2*s + 2*t = 3")
 
 print(løsning)
 ```
 
 **Utskrift**:
 ```console
-{r: 1, s: 0, t: 0}
+r = 1 ∧ s = 0 ∧ t = 0
 ```
 
 **Løsning**:
@@ -3300,73 +2466,3 @@ $$
 ````
 
 ::::::::::::
-
-
----
-
-
-<!-- ::::{admonition} Oppgave 6
----
-class: problem-level-2
----
-Sett opp likninger og løs ved hjelp av CAS
-
-Deloppgave 1
-: Amna, Berit og Celine delte en boks is. Amna spiste en tredel, Berit spiste to femtedeler, og Celine spiste resten. Hvor mye spiste Celine? 
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-Celine spiste $\dfrac{4}{15}$
-:::
-
-Deloppgave 2
-: Tre venner, Emma, Sophie og Sara, har til sammen 110 bøker. Sara har dobbelt så mange bøker som Sophie, og Emma har 10 bøker mindre enn Sara. Finn ut hvor mange bøker hver av de tre vennene har.
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-Sophie har 24 bøker, Sara har 48 bøker, og Emma har 38 bøker.
-:::
-
-Deloppgave 3
-: På en vinteraktivitetsdag ved skolen valgte 60 % av elevene skøyting. En tredel valgte aking. De siste 15 elevene hadde fått fritak. Hvor mange elever er det ved skolen? 
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-Det var $225$ elever ved skolen.
-:::
-
-Deloppgave 4
-: Ole, Dole og Doffen er til sammen 66 år. Ole er dobbelt så gammel som Doffen, og Dole er 6 år eldre enn Doffen. Finn ut hvor gamle de tre guttene er. 
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-Doffen er 15 år, Ole er 30 år og Dole er 21 år. 
-:::
-
-:::: -->
-
-<!-- ::::{admonition} Oppgave 6
----
-class: problem-level-3, 
----
-På en fotballkamp er det tre kategorier billetter: barn, voksne og pensjonister. 
-
-Publikumstallet på kampen var 2100. Barnebilletten kostet 50 kr, voksenbilletten 200 kr og pensjonistbilletten 100 kr. Billettinntektene ble på 315 000 kr. Det var dobbelt så mange pensjonister som barn på kampen. 
-
-Bestem antallet barn, voksne og pensjonister på kampen.
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-Det var 300 barn, 600 pensjonister og 1200 voksne på kampen.
-:::
-:::: -->
