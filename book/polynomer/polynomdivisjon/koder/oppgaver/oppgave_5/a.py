@@ -1,16 +1,9 @@
 def main():
-    synthetic_div(
+    polylongdiv(
         fname=__file__.split("/")[-1].replace(".py", ""),
-        p="x^3 + x^2 - 5x + 3",
-        x=1,
+        p="x^3 + 2x - 1",
+        q="x + 2",
         stage=None,
-    )
-
-    synthetic_div(
-        fname=__file__.split("/")[-1].replace(".py", "") + "_tutor",
-        p="x^3 + x^2 - 5x + 3",
-        x=1,
-        stage=12,
     )
 
 
@@ -41,6 +34,6 @@ if __name__ == "__main__":
     # Add the GitHub repository root to sys.path
     sys.path.append(repo_root)
 
-    from python_util.synthetic_div import synthetic_div
+    from python_util.polydiv import polylongdiv
 
     main()

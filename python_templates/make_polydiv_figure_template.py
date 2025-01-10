@@ -34,6 +34,6 @@ if __name__ == "__main__":
     # Add the GitHub repository root to sys.path
     sys.path.append(repo_root)
 
-    from python_utils.polydiv import polylongdiv
+    from python_util.polydiv import polylongdiv
 
     main()
