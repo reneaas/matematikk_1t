@@ -15,7 +15,7 @@ Vi har allerede møtt på to polynomfunksjoner – lineære funksjoner og andreg
 ---
 class: theory
 ---
-Et **polynom** $f(x)$ er en sum av ledd på formen $a_n x^n$ der $a_n$ er koeffisienten til leddet og $n$ er et naturlig tall. 
+Et **polynom** $f(x)$ er en sum av ledd på formen $a_n x^n$ der $a_n$ er koeffisienten til leddet og $n \in \{0, 1, 2, \ldots\}$ 
 
 Den største verdien av $n$ i summen kalles for **graden** til polynomet.
 
@@ -269,20 +269,6 @@ class: no-click
 
 :::::::::::::::
 
-
-:::::::::::::::{admonition} Spesielle faktoriseringer av tredjegradspolynomer
----
-class: summary
----
-Et tredjegradspolynom kan skrives som et produkt av én lineær faktor og et andregradspolynom:
-
-$$
-f(x) = (x - x_1)(ax^2 + px + q),
-$$
-
-der andregradspolynomet kan ha ingen, ett eller to nullpunkter.
-
-:::::::::::::::
 
 
 
