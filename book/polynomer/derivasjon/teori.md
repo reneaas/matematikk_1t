@@ -158,19 +158,6 @@ som er tangenten til grafen til $f$ i $(2, f(2))$.
 
 :::::::::::::::
 
-
-
-$$
-\begin{array}{r|rrrr}
- & 1 & 2 & -1 & 3 \\ % Dividend coefficients
-    4    &   & 4 & -1 & -1 \\ % Linear term
-    -4   &   &  & -4 & 4 \\  % constant term
-\hline
-        & 1 & 6 &  0 & 4 \\ % Resulting coefficients
-\end{array}
-$$
-
-
 ---
 
 ## Den deriverte til en polynomfunksjon
