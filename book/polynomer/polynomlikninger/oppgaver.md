@@ -321,7 +321,85 @@ $$
 
 :::::::::::::
 
+:::::::::::::{tab-item} b
+Løs ulikheten 
+
+$$
+x^3 - x^2 - 2x + 2 > 0. 
+$$
+
+:::::::::::::
+
 ::::::::::::::
+
+:::::::::::::::
+
+
+---
+
+
+:::::::::::::::{admonition} Oppgave 5
+---
+class: problem-level-2
+---
+En likning er gitt ved
+
+$$
+x^3 - 3x - 2 = (x - r)(ax^2 + bx + c). 
+$$
+
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Bestem $a$, $b$, $c$ og $r$ slik at likningen er en **identitet**.
+
+
+:::{admonition} Fasit
+---
+class: dropdown, answer
+---
+Én mulighet er 
+
+$$
+x^3 - 3x - 2 = (x + 1)(x^2 - x - 2). 
+$$
+
+som gir
+
+$$
+r = -1 \and a = 1 \and b = -1 \and c = -2.
+$$
+
+
+:::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Løs ulikheten 
+
+$$
+x^3 - 3x - 2 < 0. 
+$$
+
+:::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x \in \langle \gets, 2\rangle \setminus \{-1\}. 
+$$
+:::
+
+:::::::::::::
+
+::::::::::::::
+
 
 :::::::::::::::
 
@@ -329,7 +407,10 @@ $$
 
 
 
-:::::::::::::::{admonition} Oppgave 5
+
+
+
+:::::::::::::::{admonition} Oppgave 6
 ---
 class: problem-level-2
 ---
@@ -379,7 +460,7 @@ class: dropdown, solution
 ---
 Vi bruker et Horner-skjema og sjekker verdier i lista fra **a**:
 
-:::{figure} ./koder/oppgaver/oppgave_4/b.svg
+:::{figure} ./koder/oppgaver/oppgave_6/b.svg
 ---
 width: 70%
 class: no-click
@@ -403,7 +484,7 @@ $$
 class: dropdown, hints
 ---
 
-:::{figure} ./koder/oppgaver/oppgave_4/b_tutor.svg
+:::{figure} ./koder/oppgaver/oppgave_6/b_tutor.svg
 ---
 width: 80%
 class: no-click
@@ -440,7 +521,7 @@ class: dropdown, solution
 ---
 Vi prøver ut flere verdier i lista fra **a**. Med $x = -2$, får vi følgende Horner-skjema:
 
-:::{figure} ./koder/oppgaver/oppgave_4/c.svg
+:::{figure} ./koder/oppgaver/oppgave_6/c.svg
 ---
 width: 70%
 class: no-click

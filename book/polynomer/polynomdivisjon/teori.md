@@ -16,7 +16,7 @@ Polynomdivisjon er en metode for å dele et polynom med et annet polynom og skri
 ---
 class: theory
 ---
-Et tredjegradspolynom $f$ kan alltid skrives som et produkt av en lineær faktor og et andregradspolynom
+Et tredjegradspolynom $f(x)$ kan alltid skrives som et produkt av et førstegradspolynom og et andregradspolynom
 
 $$
 f(x) = (x - r)(ax^2 + px + q). 
@@ -47,20 +47,7 @@ For å gjøre dette, følger vi disse stegene:
 
 ::::::::::::::{tab-set}
 :::::::::::::{tab-item} Steg 1
-Vi deler $3x^2$ fra $(3x^2 + 3x - 6)$ med $x$ fra $(x + 2)$ som gir $3x$. 
-
-::::{figure} ./koder/eksempler/eksempel_1/stage_2.svg
----
-width: 60%
-class: no-click
----
-::::
-
-
-:::::::::::::
-
-:::::::::::::{tab-item} Steg 2
-Vi ganger $3x$ med $(x + 2)$ som gir $3x^2 + 6x$. Deretter trekker vi fra dette fra $(3x^2 + 3x - 6)$: 
+Først finner vi hva vi må gange $(x + 2)$ slik at vi får $3x^2$ som høyeste potens av $x$. Dette er $3x$. Deretter trekker vi fra $3x(x + 2)$ fra $(3x^2 + 3x - 6)$.
 
 ::::{figure} ./koder/eksempler/eksempel_1/stage_3.svg
 ---
@@ -72,34 +59,24 @@ class: no-click
 
 :::::::::::::
 
+:::::::::::::{tab-item} Steg 2
+Nå er resten vår $-3x - 6$. Vi må derfor finne hva vi må gange $(x + 2)$ med for at vi skal få $-3x$ som ett av leddene. 
+
+Dette er $-3$. Deretter trekker vi fra $-3(x + 2)$ fra $(-3x - 6)$.
+
+::::{figure} ./koder/eksempler/eksempel_1/stage_6.svg
+---
+width: 60%
+class: no-click
+---
+::::
+
+
+:::::::::::::
+
+
 :::::::::::::{tab-item} Steg 3
-Vi trekker fra $(3x^2 + 3x - 6) - (3x^2 + 6x)$ som gir $-3x - 6$.
-
-::::{figure} ./koder/eksempler/eksempel_1/stage_4.svg
----
-width: 60%
-class: no-click
----
-::::
-
-
-:::::::::::::
-
-:::::::::::::{tab-item} Steg 4
-Vi deler $-3x$ fra $(-3x - 6)$ med $x$ fra $(x + 2)$ som gir $-3$.
-
-::::{figure} ./koder/eksempler/eksempel_1/stage_5.svg
----
-width: 60%
-class: no-click
----
-::::
-
-
-:::::::::::::
-
-:::::::::::::{tab-item} Steg 5
-Så ganger vi $-3$ med $(x + 2)$ som gir $-3x - 6$. Deretter trekker vi fra dette som gir $3x + 6$.
+Legger vi sammen de to linjene, så sitter vi igjen med $0$ i rest, og vi er ferdig med divisjonen.
 
 ::::{figure} ./koder/eksempler/eksempel_1/stage_7.svg
 ---
@@ -107,8 +84,6 @@ width: 60%
 class: no-click
 ---
 ::::
-
-Da sitter vi igjen med $0$ og er ferdig med divisjonen.
 
 :::::::::::::
 ::::::::::::::
