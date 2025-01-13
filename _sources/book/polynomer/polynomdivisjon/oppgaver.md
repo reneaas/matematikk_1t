@@ -1087,7 +1087,7 @@ class: solution, dropdown
 ---
 
 $$
-(x^3 + x^2 - 5x + 3) : (x + 3) = x^2 + 2x - 3.
+(x^3 + x^2 - 5x + 3) : (x + 3) = x^2 -2x + 1.
 $$
 
 <br>
