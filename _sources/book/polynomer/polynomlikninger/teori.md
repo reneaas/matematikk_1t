@@ -68,7 +68,38 @@ $$
 
 fordi $(-8)$ er delelig med alle disse tallene. 
 
-Vi prøver ut noen av verdiene i lista. Bruker vi et Horner-skjema, får vi utført polynomdivisjon samtidig som vi regner ut funksjonsverdiene: 
+
+
+Vi prøver ut noen av verdiene i lista. Vi kan enten 
+1. Regne ut funksjonsverdier og utføre polynomdivisjon når vi finner en rot.
+2. Bruke et Horner-skjema til å regne ut funksjonsverdier og utføre polynomdivisjon samtidig.
+
+````{tab} Vanlig polynomdivisjon
+Vi starter med å lete etter en rot ved å regne ut $f(x)$:
+
+\begin{align*}
+    f(1) &= 1^3 + 2\cdot 1^2 - 4\cdot 1 - 8 = -9, \\
+    \\
+    f(-1) &= (-1)^3 + 2\cdot (-1)^2 - 4\cdot (-1) - 8 = -3, \\
+    \\
+    f(2) &= 2^3 + 2\cdot 2^2 - 4\cdot 2 - 8 = 0.
+\end{align*}
+
+Så vi finner at $f(2) = 0$, som betyr at $(x - 2)$ er en faktor i $f(x)$. Dermed har vi
+
+:::{figure} ./koder/eksempler/eksempel_1/eksempel_1_polydiv.svg
+---
+width: 90%
+class: no-click
+---
+:::
+
+````
+
+
+````{tab} Horner-skjema
+
+Bruker vi et Horner-skjema, får vi utført polynomdivisjon samtidig som vi regner ut funksjonsverdiene: 
 
 :::{figure} ./koder/eksempler/eksempel_1/eksempel_1_syntetisk_1.svg
 ---
@@ -106,6 +137,9 @@ Dermed vet vi at $x = 2$ er en rot for $f$. Vi kan også lese av koeffisientene 
 $$
 f(x) : (x - 2) = x^2 + 4x + 4.
 $$
+
+````
+
 
 Vi kan derfor skrive $f(x)$ som
 
