@@ -41,14 +41,29 @@ $$
 :::::::::::::
 
 :::::::::::::{tab-item} b
-Ta utgangspunkt i listen fra **a** og bruk Horner-skjema til å utføre polynomdivisjon og teste ut funksjonsverdier for å finne en rot til $f$.
+Ta utgangspunkt i listen fra **a** og finn én rot til $f(x)$. 
 
+Bruk polynomdivisjon til å faktorisere $f(x)$. 
 
-::::{admonition} Fasit
+:::{admonition} Fasit
 ---
-class: answer, dropdown
+class: dropdown, answer
 ---
-En av røttene til $f$ er $x = 1$, som vi kan se med Horner-skjemaet under:
+Én mulighet er $x = 1$, som gir
+
+$$
+x^3 + 4x^2 + x - 6 = (x - 1)(x^2 + 5x + 6)
+$$
+
+:::
+
+::::{admonition} Løsning
+---
+class: solution, dropdown
+---
+En av røttene til $f(x)$ er $x = 1$. Det kan vi se enten med et Horner-skjema eller vanlig polynomdivisjon:
+
+````{tab} Horner-skjema
 
 :::{figure} ./koder/oppgaver/oppgave_1/b.svg
 ---
@@ -56,6 +71,19 @@ width: 50%
 class: no-click
 ---
 :::
+
+````
+
+````{tab} Vanlig polynomdivisjon
+
+:::{figure} ./koder/oppgaver/oppgave_1/b_polydiv.svg
+---
+width: 90%
+class: no-click
+---
+:::
+
+````
 
 Dette betyr at 
 
@@ -65,27 +93,13 @@ $$
 
 ::::
 
-
-::::{admonition} Løsning
----
-class: answer, dropdown
----
-Detaljert hvordan Horner-skjema lages:
-
-:::{figure} ./koder/oppgaver/oppgave_1/b_tutor.svg
----
-width: 50%
-class: no-click
----
-:::
-
-::::
 :::::::::::::
 
 :::::::::::::{tab-item} c
 Finn resten av nullpunktene til $f$. 
 
 Hvis nullpunktene er heltallige, sjekk at de også er en del av listen fra **a**.
+
 
 :::{admonition} Fasit
 ---
@@ -328,6 +342,15 @@ $$
 x^3 - x^2 - 2x + 2 > 0. 
 $$
 
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x \in \langle -\sqrt{2}, 1 \rangle \cup \langle \sqrt{2}, \to \rangle
+$$
+::::
+
 :::::::::::::
 
 ::::::::::::::
@@ -345,7 +368,7 @@ class: problem-level-2
 En likning er gitt ved
 
 $$
-x^3 - 3x - 2 = (x - r)(ax^2 + bx + c). 
+x^3 - 3x - 2 = (x + 1)(ax^2 + bx + c). 
 $$
 
 
@@ -355,7 +378,7 @@ $$
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
-Bestem $a$, $b$, $c$ og $r$ slik at likningen er en **identitet**.
+Bestem $a$, $b$ og $c$ slik at likningen er en **identitet**.
 
 
 :::{admonition} Fasit
@@ -371,7 +394,7 @@ $$
 som gir
 
 $$
-r = -1 \and a = 1 \and b = -1 \and c = -2.
+a = 1 \and b = -1 \and c = -2.
 $$
 
 
@@ -458,7 +481,9 @@ $$
 ---
 class: dropdown, solution
 ---
-Vi bruker et Horner-skjema og sjekker verdier i lista fra **a**:
+$x = 1$ er en løsning til likningen så vi kan se fra et Horner-skjema eller vanlig polynomdivisjon:
+
+````{tab} Horner-skjema
 
 :::{figure} ./koder/oppgaver/oppgave_6/b.svg
 ---
@@ -466,6 +491,19 @@ width: 70%
 class: no-click
 ---
 :::
+
+````
+
+````{tab} Vanlig polynomdivisjon
+
+:::{figure} ./koder/oppgaver/oppgave_6/b_polydiv.svg
+---
+width: 100%
+class: no-click
+---
+:::
+
+````
 
 som gir $0$ i rest og 
 
@@ -478,20 +516,6 @@ Dermed er
 $$
 (x^4 + 3x^3 - 15x^2 - 19x + 30) = (x - 1)(x^3 + 4x^2 - 11x - 30).
 $$
-
-::::{admonition} Detaljert Horner-skjema
----
-class: dropdown, hints
----
-
-:::{figure} ./koder/oppgaver/oppgave_6/b_tutor.svg
----
-width: 80%
-class: no-click
----
-:::
-
-::::
 
 :::::
 
@@ -508,7 +532,7 @@ Finn én rot i tredjegradspolynomet og faktoriser polynomet i én lineær faktor
 ---
 class: dropdown, answer
 ---
-$x = -2$ er en rot i tredjegradspolynomet $(x^3 + 4x^2 - 11x - 30)$. Polynomet kan derfor skrives som
+$x = -2$ er en rot i tredjegradspolynomet $(x^3 + 4x^2 - 11x - 30)$. Polynomet kan da skrives som
 
 $$
 (x^3 + 4x^2 - 11x - 30) = (x + 2)(x^2 + 2x - 15).
@@ -519,7 +543,9 @@ $$
 ---
 class: dropdown, solution
 ---
-Vi prøver ut flere verdier i lista fra **a**. Med $x = -2$, får vi følgende Horner-skjema:
+$x = -2$ løser likningen. Vi kan se dette fra et Horner-skjema eller vanlig polynomdivisjon:
+
+````{tab} Horner-skjema
 
 :::{figure} ./koder/oppgaver/oppgave_6/c.svg
 ---
@@ -527,6 +553,19 @@ width: 70%
 class: no-click
 ---
 :::
+
+````
+
+````{tab} Vanlig polynomdivisjon
+
+:::{figure} ./koder/oppgaver/oppgave_6/c_polydiv.svg
+---
+width: 90%
+class: no-click
+---
+:::
+
+````
 
 som gir $0$ i rest. Dermed er 
 
@@ -546,7 +585,7 @@ $$
 
 
 :::::::::::::{tab-item} d
-Bestem alle løsningene til likningen. Sjekk at alle heltallige løsninger er en del av listen fra **a**.
+Bestem alle løsningene til likningen.
 
 
 ::::{admonition} Fasit
