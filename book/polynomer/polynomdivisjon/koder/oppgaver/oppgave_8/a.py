@@ -2,14 +2,14 @@ def main():
     synthetic_div(
         fname=__file__.split("/")[-1].replace(".py", ""),
         p="x^3 + x^2 - 5x + 3",
-        x=1,
+        x=-3,
         stage=None,
     )
 
     synthetic_div(
         fname=__file__.split("/")[-1].replace(".py", "") + "_tutor",
         p="x^3 + x^2 - 5x + 3",
-        x=1,
+        x=-3,
         stage=12,
     )
 

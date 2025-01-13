@@ -240,6 +240,22 @@ $$
 
 :::::::::::::::
 
+
+---
+
+Vi kan også utføre polynomdivisjon når divisoren er et andregradspolynom.
+
+
+:::::::::::::::{admonition} Eksempel 3
+---
+class: example
+---
+
+
+:::::::::::::::
+
+
+
 ## Polynomdivisjon med rest
 
 Som vi så i begynnelsen av dette delkapittelet, så er $f(x)$ bare delelig med en faktor $(x - r)$ hvis faktoren er i $f(x)$. Hvis ikke vil vi få en **rest** i divisjonen. Vi skal ta et eksempel som viser hvordan dette ser ut:
