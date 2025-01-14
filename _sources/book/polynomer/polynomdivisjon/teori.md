@@ -243,7 +243,7 @@ $$
 
 ---
 
-Vi kan også utføre polynomdivisjon når divisoren er et andregradspolynom.
+<!-- Vi kan også utføre polynomdivisjon når divisoren er et andregradspolynom.
 
 
 :::::::::::::::{admonition} Eksempel 3
@@ -252,7 +252,7 @@ class: example
 ---
 
 
-:::::::::::::::
+::::::::::::::: -->
 
 
 

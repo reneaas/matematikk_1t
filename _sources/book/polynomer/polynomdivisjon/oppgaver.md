@@ -112,7 +112,7 @@ class: no-click
 Regn ut
 
 $$
-(x^3 + 2x^2 - 5x - 6) : (x + 2)
+(x^3 + 3x^2 - 4x - 12) : (x + 2)
 $$
 
 :::{admonition} Fasit
