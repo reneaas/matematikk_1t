@@ -4,19 +4,19 @@ import plotmath
 def main(dirname, save):
     #
     # Define functions
-    def f(x):
-        return (x - 2) * (x + 2)
+    def g(x, a=1):
+        return a * (x**3 / 3 + 1 / 2 * x**2 - 2 * x + 4)
 
     # List of functions and their labels.
-    functions = [f]
+    functions = [g]
 
     fig, ax = plotmath.plot(
         functions=functions,
-        fn_labels=["$g'$"],
+        fn_labels=True,
         xmin=-6,
         xmax=6,
-        ymin=-6,
-        ymax=6,
+        ymin=-2,
+        ymax=10,
         ticks=True,
     )
 

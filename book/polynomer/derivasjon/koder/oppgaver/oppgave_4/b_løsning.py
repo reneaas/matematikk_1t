@@ -1,38 +1,29 @@
-import plotmath
+import signchart
+import sympy
 
 
 def main(dirname, save):
-    #
-    # Define functions
-    def g(x, a=1):
-        return a * (x - 1) * (x + 2)
 
-    # List of functions and their labels.
-    functions = [g]
+    f = "1 / 3 * x**3 + 1 / 2 * x**2 - 2 * x - 2"
+    f = sympy.sympify(f)
 
-    fig, ax = plotmath.plot(
-        functions=functions,
-        fn_labels=["$g'$"],
-        xmin=-6,
-        xmax=6,
-        ymin=-6,
-        ymax=6,
-        ticks=True,
+    f = str(f.diff())
+
+    signchart.plot(
+        f=f,
+        fn_name="g'(x)",
+        include_factors=False,
     )
 
-    # NOTE: Select an appropriate `dirname` to save the figure.
-    # The directory `dirname` will be created automatically if it does not exist already.
     if save:
         fname = __file__.split("/")[-1].replace(".py", ".svg")
-        plotmath.savefig(
-            dirname=dirname, fname=fname
-        )  # Lagrer figuren i `dirname`-directory
+        signchart.savefig(dirname=dirname, fname=fname)
 
-    if not save:
-
-        plotmath.show()
+    else:
+        signchart.show()
 
 
+# NOTE: Ikke endre på noe under denne linjen
 if __name__ == "__main__":
 
     import pathlib
@@ -40,6 +31,7 @@ if __name__ == "__main__":
     # Get the directory where the script is located
     current_dir = str(pathlib.Path(__file__).resolve().parent)
 
+    # NOTE: Set `save=True` to save figure. `save=False` to display figure.
     parts = current_dir.split("/")
     for i in range(len(parts)):
         if parts[~i] == "koder":
@@ -48,5 +40,4 @@ if __name__ == "__main__":
 
     dirname = "/".join(parts)
 
-    # NOTE: Set `save=True` to save figure. `save=False` to display figure.
     main(dirname=dirname, save=True)

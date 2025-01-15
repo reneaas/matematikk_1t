@@ -5,14 +5,14 @@ def main(dirname, save):
     #
     # Define functions
     def f(x):
-        return -1 / 2 * x**2 + 2 * x + 2
+        return 2 * x - 2
 
     # List of functions and their labels.
     functions = [f]
 
     fig, ax = plotmath.plot(
-        functions=functions,
-        fn_labels=["$f$"],
+        functions=[f],
+        fn_labels=["$f'$"],
         xmin=-6,
         xmax=6,
         ymin=-6,
@@ -20,24 +20,17 @@ def main(dirname, save):
         ticks=False,
     )
 
-    ax.plot(2, f(2), "ko", markersize=8, alpha=0.7)
+    ax.plot(1, 0, "ko", markersize=8, alpha=0.7)
 
-    xticks = list(range(-6, 7))
-    xticks.remove(0)
-    ax.set_xticks(xticks)
-    ax.set_xticklabels([f"${x}$" for x in xticks], fontsize=16)
-
-    dy = 0.2
+    dx = dy = 0.2
     ax.text(
-        x=2,
-        y=f(2) + dy,
-        s="$(2, f(2))$",
+        x=1 + dx,
+        y=0 - dy,
+        s="$(1, 0)$",
         fontsize=16,
-        va="bottom",
-        ha="center",
+        va="top",
+        ha="left",
     )
-
-    ax.grid(False)
 
     # NOTE: Select an appropriate `dirname` to save the figure.
     # The directory `dirname` will be created automatically if it does not exist already.

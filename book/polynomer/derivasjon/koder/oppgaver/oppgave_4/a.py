@@ -5,7 +5,7 @@ def main(dirname, save):
     #
     # Define functions
     def f(x):
-        return (x - 1) ** 2 - 1
+        return -((x - 2) ** 2) + 1
 
     # List of functions and their labels.
     functions = [f]

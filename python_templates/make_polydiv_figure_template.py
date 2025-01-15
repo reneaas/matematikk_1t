@@ -1,6 +1,6 @@
 def main():
     polylongdiv(
-        fname="filnavn",
+        fname=__file__.split("/")[-1].replace(".py", ""),
         p="x^3 + 2x^2 - 3x - 6",
         q="x - 2",
         stage=None,

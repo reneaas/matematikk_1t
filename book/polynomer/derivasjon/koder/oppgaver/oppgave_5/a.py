@@ -5,14 +5,14 @@ def main(dirname, save):
     #
     # Define functions
     def f(x):
-        return -(x - 2)
+        return (x - 1) ** 2 - 1
 
     # List of functions and their labels.
     functions = [f]
 
     fig, ax = plotmath.plot(
         functions=functions,
-        fn_labels=["$f'$"],
+        fn_labels=True,
         xmin=-6,
         xmax=6,
         ymin=-6,
