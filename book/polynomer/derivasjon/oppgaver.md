@@ -826,7 +826,7 @@ viser en skisse av grafen til $p$.
 
 :::::::::::::::
 
----
+
 
 
 :::::::::::::::{admonition} Oppgave 7
@@ -839,6 +839,8 @@ class: problem-level-2
 * Den andre tangenten skjærer $y$-aksen i $(0, 12)$.
 
 
+Bestem $f(x)$ og $f'(x)$.
+
 :::{figure} ./figurer/oppgaver/oppgave_7/graf.svg
 ---
 name: fig-polynomfunksjoner-derivasjon-oppgave-7
@@ -849,44 +851,14 @@ viser grafen til en andregradsfunksjon $f$ og to tangenter. Den ene tangenten ha
 :::
 
 
-::::::::::::::{tab-set}
----
-class: tabs-parts
----
-:::::::::::::{tab-item} a
-Bestem $f'(x)$.
-
 :::{admonition} Fasit
 ---
 class: dropdown, answer
 ---
 $$
-f'(x) = -2x + 2.
+f(x) = -x^2 + 2x + 3 \quad \text{og} \quad f'(x) = -2x + 2.
 $$
 :::
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} b
-Grafen til $f$ skjærer $y$-aksen i $(0, 3)$. 
-
-Bestem $f(x)$. 
-
-
-:::{admonition} Fasit
----
-class: dropdown, answer
----
-$$
-f(x) = -x^2 + 2x + 3. 
-$$
-:::
-
-
-:::::::::::::
-
-::::::::::::::
 
 
 
@@ -940,7 +912,7 @@ Bestem $f(x)$.
 class: dropdown, answer
 ---
 $$
-f(x) = \dfrac{1}{3}x^3 - x^2 - 3x + \dfrac{11}{3}
+f(x) = \dfrac{1}{3}x^3 - x^2 - 3x + \dfrac{5}{3}
 $$
 :::
 
