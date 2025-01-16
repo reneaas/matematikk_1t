@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Optimering &#8212; Matematikk 1T</title>
+    <title>18. Optimering &#8212; Matematikk 1T</title>
   
   
   
@@ -81,6 +81,8 @@
     <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"annotateAbove": ["\\mathrel{\\overset{\\substack{\\text{#2} \\\\ \\Bigg\\downarrow}}{#1}}", 2], "annotateBelow": ["\\mathrel{\\underset{\\substack{\\Bigg\\uparrow \\\\ \\text{#2}}}{#1}}", 2], "cline": ["\\underline{\\phantom{#1}}", 1], "and": ["\\quad \\land \\quad"], "or": ["\\quad \\lor \\quad"], "liff": ["\\quad \\iff \\quad"], "limplies": ["\\quad \\implies \\quad"], "limpliedby": ["\\quad \\impliedby \\quad"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3.2/es5/tex-mml-chtml.js"></script>
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/polynomer/optimering/teori';</script>
     <script>mermaid.initialize({"startOnLoad": true})</script>
@@ -107,6 +109,8 @@
     <script src="../../../_static/escapeRoom/room.js?v=4e2586cf"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="19. Oppgaver: Polynomer" href="../intro_oppgaver.html" />
+    <link rel="prev" title="17. Den deriverte" href="../derivasjon/teori.html" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="norwegian"/>
@@ -198,8 +202,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <dialog id="pst-primary-sidebar-modal"></dialog>
       <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
@@ -387,12 +389,13 @@
 </details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">IV. Polynomer</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../polynomfunksjoner/teori.html">14. Polynomfunksjoner</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../polynomdivisjon/teori.html">15. Polynomdivisjon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../polynomlikninger/teori.html">16. Polynomlikninger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../derivasjon/teori.html">17. Den deriverte</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../intro_oppgaver.html">18. Oppgaver</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">18. Optimering</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../intro_oppgaver.html">19. Oppgaver</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../polynomfunksjoner/oppgaver.html">Polynomfunksjoner</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../polynomdivisjon/oppgaver.html">Polynomdivisjon</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../polynomlikninger/oppgaver.html">Polynomlikninger</a></li>
@@ -561,13 +564,112 @@
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="optimering">
-<h1>Optimering<a class="headerlink" href="#optimering" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">18. </span>Optimering<a class="headerlink" href="#optimering" title="Link to this heading">#</a></h1>
 <div class="tip admonition">
 <p class="admonition-title">Læringsmål</p>
 <ul class="simple">
 <li><p>Kunne bruke den deriverte til å bestemme topp- og bunnpunkter til polynomfunksjoner.</p></li>
 <li><p>Kunne bruke den deriverte til å finne maksimere eller minimere polynomfunksjoner.</p></li>
 </ul>
+</div>
+<p><strong>Optimering</strong> handler om å bestemme den største eller minste verdien av noe. Eksempler på dette kan være å bestemme det største mulige arealet av en trekant, det største overskuddet til en butikk, eller hvilken rute man bør ta for å bruke kortest mulig tid mellom to steder.</p>
+<p>I praksis handler optimering om å bestemme ekstremalpunktene til en funksjon <span class="math notranslate nohighlight">\(f\)</span>, der funksjonen <span class="math notranslate nohighlight">\(f\)</span> modellerer det vi ønsker å gjøre størst eller minst mulig.</p>
+<div class="theory admonition">
+<p class="admonition-title">Begreper: Maksimere og minimere</p>
+<p>Når en funksjon <span class="math notranslate nohighlight">\(f\)</span> modellerer noe, har vi to tilfeller:</p>
+<ul class="simple">
+<li><p>Hvis vi ønsker å gjøre noe <strong>størst mulig</strong>, sier vi at vi ønsker å <strong>maksimere</strong> <span class="math notranslate nohighlight">\(f\)</span>.</p></li>
+<li><p>Hvis vi ønsker å gjøre noe <strong>minst mulig</strong>, sier vi at vi ønsker å <strong>minimere</strong> <span class="math notranslate nohighlight">\(f\)</span>.</p></li>
+</ul>
+</div>
+<p>For å maksimere eller minimere en funksjon, finner vi ekstremalpunktene til <span class="math notranslate nohighlight">\(f\)</span>. Da får vi bruk for følgende setning:</p>
+<div class="summary admonition">
+<p class="admonition-title">Setning: Ekstremalpunkter</p>
+<p>Ekstremalpunktene til <span class="math notranslate nohighlight">\(f\)</span> er punkter der hvor <span class="math notranslate nohighlight">\(f'(x) = 0\)</span>.</p>
+</div>
+<p>Setningen forteller oss at når vi ønsker å maksimere eller minimere en funksjon, kan vi gjøre dette ved å lete etter nullpunktene til den deriverte.</p>
+<div class="example admonition">
+<p class="admonition-title">Eksempel 1</p>
+<p>Et rektangel har sidelengder <span class="math notranslate nohighlight">\(x\)</span> og <span class="math notranslate nohighlight">\(y\)</span>. Til sammen er omkretsen av rektangelet <span class="math notranslate nohighlight">\(100\)</span>.</p>
+<p>Bestem sidelengdene slik at arealet av rektangelet er størst mulig.</p>
+<figure class="align-default" id="fig-polynomer-optimering-eksempel-1">
+<a class="no-click reference internal image-reference" href="../../../_images/eksempel_14.svg"><img alt="../../../_images/eksempel_14.svg" class="no-click" src="../../../_images/eksempel_14.svg" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 18.1 </span><span class="caption-text">viser et rektangel med sidelenger <span class="math notranslate nohighlight">\(x\)</span> og <span class="math notranslate nohighlight">\(y\)</span>.</span><a class="headerlink" href="#fig-polynomer-optimering-eksempel-1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="solution admonition">
+<p class="admonition-title">Løsning</p>
+<p>Vi ønsker å bestemme sidelengdene slik at arealet til rektangelet blir størst mulig. Vi må derfor finne en formel for arealet til rektangelet.</p>
+<p>Først kan vi merke oss at omkretsen av rektangelet er <span class="math notranslate nohighlight">\(100\)</span> som betyr at</p>
+<div class="math notranslate nohighlight">
+\[
+x + y + x + y = 100 \liff 2x + 2y = 100 \liff x + y = 50
+\]</div>
+<p>Videre er arealet av et rektangel sidelengdene ganget sammen som betyr at arealet <span class="math notranslate nohighlight">\(A\)</span> er</p>
+<div class="math notranslate nohighlight">
+\[
+A = x\cdot y.
+\]</div>
+<p>Men her har vi to variabler, men vi vet også at</p>
+<div class="math notranslate nohighlight">
+\[
+x + y = 50 \liff y = 50 - x. 
+\]</div>
+<p>Erstatter vi <span class="math notranslate nohighlight">\(y\)</span> i formelen for arealet med denne likningen, får vi</p>
+<div class="math notranslate nohighlight">
+\[
+A(x) = x\cdot(50 - x) = -x^2 + 50x. 
+\]</div>
+<p>Dette er en andregradsfunksjon. For å bestemme når arealet er størst mulig kan vi enten finne symmetrilinja, eller vi kan løse <span class="math notranslate nohighlight">\(A'(x) = 0\)</span>. Den sistnevnte metoden er mer generell, så vi velger denne her for å illustrere den generelle strategien:</p>
+<div class="math notranslate nohighlight">
+\[
+A'(x) = 0 \liff -2x + 50 = 0 \liff x = 25.
+\]</div>
+<p>Altså er arealet størst når</p>
+<div class="math notranslate nohighlight">
+\[
+x = 25 \and y = 50 - 25 = 25.
+\]</div>
+<p>Altså blir arealet størst mulig dersom rektangelet er et <em>kvadrat</em>.</p>
+<p>Merk at vi også kunne fått dette ved å bestemme symmetrilinja som vi gjør via nullpunktene <span class="math notranslate nohighlight">\(x = 0\)</span> og <span class="math notranslate nohighlight">\(x = 50\)</span> som gir symmetrilinja</p>
+<div class="math notranslate nohighlight">
+\[
+x = \dfrac{0 + 50}{2} = 25.
+\]</div>
+</div>
+</div>
+<p>Vi tar et eksempel til som er litt mer teoretisk:</p>
+<div class="example admonition">
+<p class="admonition-title">Eksempel 2</p>
+<p>En andregradsfunksjon <span class="math notranslate nohighlight">\(f\)</span> er gitt ved</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = -x^2 + 9, \quad x \in [0, 3]. 
+\]</div>
+<p>Et rektangel har hjørnene <span class="math notranslate nohighlight">\((0, 0)\)</span>, <span class="math notranslate nohighlight">\((a, 0)\)</span>, <span class="math notranslate nohighlight">\((a, f(a))\)</span> og <span class="math notranslate nohighlight">\((0, f(a))\)</span>.</p>
+<p>Bestem <span class="math notranslate nohighlight">\(a\)</span> slik at arealet av rektangelet blir størst mulig.</p>
+<figure class="align-default" id="fig-polynomer-optimering-eksempel-2">
+<a class="no-click reference internal image-reference" href="../../../_images/eksempel_26.svg"><img alt="../../../_images/eksempel_26.svg" class="no-click" src="../../../_images/eksempel_26.svg" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 18.2 </span><span class="caption-text">viser grafen til en andregradsfunksjon <span class="math notranslate nohighlight">\(f\)</span>.</span><a class="headerlink" href="#fig-polynomer-optimering-eksempel-2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="solution admonition">
+<p class="admonition-title">Løsning</p>
+<p>Vi må starte med å finne en formel for arealet til rektangelet.</p>
+<p>Sidelengdene til rektangelet er <span class="math notranslate nohighlight">\(a\)</span> og <span class="math notranslate nohighlight">\(f(a)\)</span> som betyr at arealet er</p>
+<div class="math notranslate nohighlight">
+\[
+A(a) = a\cdot f(a) = a\cdot(-a^2 + 9) = -a^3 + 9a.
+\]</div>
+<p>For å finne når arealet er størst mulig, må vi finne nullpunktene til <span class="math notranslate nohighlight">\(A'(a)\)</span>. Dette gir</p>
+<div class="math notranslate nohighlight">
+\[
+A'(a) = -3a^2 + 9 = 0 \liff 3a^2 = 9 \liff a^2 = 3 \limplies a = \sqrt{3}. 
+\]</div>
+<p>Altså blir arealet av rektangelet størst mulig når <span class="math notranslate nohighlight">\(a = \sqrt{3}\)</span>.</p>
+</div>
 </div>
 </section>
 
@@ -601,6 +703,24 @@
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../derivasjon/teori.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">17. </span>Den deriverte</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../intro_oppgaver.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">19. </span>Oppgaver: Polynomer</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               

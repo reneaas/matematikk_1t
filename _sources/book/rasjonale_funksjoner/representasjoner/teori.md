@@ -29,7 +29,34 @@ der $P$ og $Q$ er polynomfunksjoner.
 Vi starter med å utforske noen egenskaper ved en spesiell type rasjonal funksjon.
 
 
+:::::{admonition} Balansert rasjonal funksjon
+---
+class: theory
+---
+En rasjonal funksjon $f$ der dividend og divisor er lineære polynomer, kan skrives som 
+
+$$
+f(x) = \dfrac{a(x - b)}{x - c}
+$$
+:::::
+
+
 :::::::::::::::{admonition} Utforsk 1
+---
+class: explore
+---
+
+:::{raw} html
+---
+file: ./python/utforsk/utforsk_1/a.html
+---
+:::
+
+:::::::::::::::
+
+
+
+:::::::::::::::{admonition} Utforsk 1.2
 ---
 class: explore
 ---

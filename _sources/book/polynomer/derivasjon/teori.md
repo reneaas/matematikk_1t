@@ -343,22 +343,3 @@ viser grafen til $f'$. Nullpunktene til $f'$ svarer til samme $x$-koordinater so
 
 :::::::::::::::
 
-
-
-<!-- 
-:::::::::::::::{admonition} Sammenheng 2 mellom $f(x)$ og $f'(x)$
----
-class: summary
----
-La $f$ være en polynomfunksjon. Da vil den deriverte $f'$ fortelle oss at:
-* Grafen til $f$ stiger når $f'(x) > 0$.
-* Grafen til $f$ synker når $f'(x) < 0$. 
-* Grafen til $f$ har et ekstremalpunkt der $f'(x) = 0$ hvis:
-    * $f'(x) > 0$ *rett før* ekstremalpunktet og $f'(x) < 0$ *rett etter*. Da er ekstremalpunktet et toppunkt.
-    * $f'(x) < 0$ *rett før* ekstremalpunktet og $f'(x) > 0$ *rett etter*. Da er ekstremalpunktet et bunnpunkt.
-* Hvis $f'(x)$ har samme fortegn *rett før* og *rett etter* et punkt hvor $f'(x) = 0$, er punktet et *terrassepunkt*.
-
-
-
-::::::::::::::: -->
-
