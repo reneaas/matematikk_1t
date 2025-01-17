@@ -42,9 +42,9 @@ def main(dirname, save):
         alpha=0.2,
     )
 
-    ax.plot([A[0], B[0]], [A[1], B[1]], color="black", lw=2)
-    ax.plot([B[0], C[0]], [B[1], C[1]], color="black", lw=2)
-    ax.plot([C[0], A[0]], [C[1], A[1]], color="black", lw=2)
+    ax.plot([A[0], B[0]], [A[1], B[1]], color="black", lw=1.5)
+    ax.plot([B[0], C[0]], [B[1], C[1]], color="black", lw=1.5)
+    ax.plot([C[0], A[0]], [C[1], A[1]], color="black", lw=1.5)
 
     ax.text(
         x=x0 + 0.05,
