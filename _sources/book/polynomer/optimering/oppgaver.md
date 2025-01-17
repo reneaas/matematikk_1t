@@ -862,7 +862,7 @@ $$
 r \in \{\pm 1, \pm 2, \pm 3\}
 $$
 
-løser tredjegradslikningen siden $-54 = -1\cdot 2\cdot 3^3$. Vi tester ut heltallene for å se noen om dem løser likningen:
+løser tredjegradslikningen siden $-54 = -1\cdot 2\cdot 3^3$. Vi tester ut heltallene for å se om noen av dem løser likningen:
 
 $r = 1$:
 : $5 - 36 + 81 - 54 = 5 - 36 + 81 - 54 = -4 \neq 0$
