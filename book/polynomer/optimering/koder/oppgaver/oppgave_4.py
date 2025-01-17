@@ -5,7 +5,7 @@ def main(dirname, save):
     #
     # Define functions
     def f(x):
-        return -(x**3) + 4 * x**2
+        return -(x**2) + 36
 
     # List of functions and their labels.
     functions = [f]
@@ -13,46 +13,60 @@ def main(dirname, save):
     fig, ax = plotmath.plot(
         functions=functions,
         fn_labels=True,
-        xmin=-1,
-        xmax=5,
-        ymin=-2,
-        ymax=10,
+        xmin=-7,
+        xmax=7,
+        ymin=-4,
+        ymax=38,
         ticks=False,
-        domain=[0, 4],
+        domain=[-6, 6],
     )
 
-    color = "blue"
-    x0 = 1
-    a = 0
-    b = 4
-    ax.plot([x0, b], [f(x0), 0], color=color, lw=1.5, alpha=0.7)
-    ax.plot([b, x0], [0, 0], color=color, lw=1.5, alpha=0.7)
-    ax.plot([x0, x0], [0, f(x0)], color=color, lw=1.5, alpha=0.7)
+    color = "teal"
+    x0 = 4
 
-    A = [b, 0]
-    B = [x0, f(x0)]
+    A = [-x0, 0]
+    B = [-x0, f(-x0)]
     C = [x0, 0]
+    D = [x0, f(x0)]
 
-    ax.fill([A[0], B[0], C[0]], [A[1], B[1], C[1]], color=color, alpha=0.1)
+    ax.fill([A[0], B[0], C[0], D[0]], [A[1], B[1], C[1], D[1]], color=color, alpha=0.1)
+
+    ax.plot([A[0], D[0]], [A[1], D[1]], color="black", lw=1.5, alpha=0.7)
+    ax.plot([C[0], D[0]], [C[1], D[1]], color="black", lw=1.5, alpha=0.7)
+    ax.plot([B[0], C[0]], [B[1], C[1]], color="black", lw=1.5, alpha=0.7)
+    ax.plot([A[0], B[0]], [A[1], B[1]], color="black", lw=1.5, alpha=0.7)
 
     ax.plot(*A, "ko", markersize=8, alpha=0.7)
     ax.plot(*B, "ko", markersize=8, alpha=0.7)
     ax.plot(*C, "ko", markersize=8, alpha=0.7)
+    ax.plot(*D, "ko", markersize=8, alpha=0.7)
 
     dy = 0.2
     dx = 0.2
 
     ax.text(
-        x=x0,
+        x=x0 + dx,
         y=f(x0) + dy,
-        s="$(1, f(1))$",
+        s="$(4, f(4))$",
+        color="black",
+        fontsize=16,
+        ha="left",
+        va="bottom",
+    )
+
+    ax.text(
+        x=-x0,
+        y=f(-x0) + dy,
+        s="$(-4, f(-4))$",
         color="black",
         fontsize=16,
         ha="right",
         va="bottom",
     )
 
-    ax.set_xticks([i for i in range(1, 5)])
+    ticks = [i for i in range(-6, 7, 1)]
+    ticks.remove(0)
+    ax.set_xticks(ticks)
     ax.tick_params(axis="x", labelsize=16)
     ax.grid(False)
 

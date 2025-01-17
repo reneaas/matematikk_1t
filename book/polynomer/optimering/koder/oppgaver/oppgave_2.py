@@ -7,7 +7,7 @@ def main(dirname, save):
 
     dx = 0.6
     x = 4
-    y = 1
+    y = 2
     dx = 0.4 * x
 
     A = (0, 0)
@@ -18,12 +18,14 @@ def main(dirname, save):
     # Lines
     plt.plot([A[0], B[0]], [A[1], B[1]], color="black", lw=2)
     plt.plot([B[0], C[0]], [B[1], C[1]], color="black", lw=2)
-    plt.plot([C[0], D[0]], [C[1], D[1]], color="black", lw=2)
+    # plt.plot([C[0], D[0]], [C[1], D[1]], color="red", lw=2)
     plt.plot([D[0], A[0]], [D[1], A[1]], color="black", lw=2)
+
+    plt.hlines(y=y, xmin=-10, xmax=10, color="red", lw=2)
 
     plt.text(
         x=0.5 * (A[0] + B[0]),
-        y=0.5 * (A[1] + B[1]) - 0.1,
+        y=0.5 * (A[1] + B[1]) - 0.3,
         s="$x$",
         fontsize=20,
         color="black",
@@ -37,9 +39,19 @@ def main(dirname, save):
         color="black",
     )
 
+    plt.text(
+        x=0.5 * x,
+        y=y + 0.1,
+        s="Fjellvegg",
+        fontsize=20,
+        ha="center",
+        va="bottom",
+        color="red",
+    )
+
     plt.axis("off")
-    plt.xlim(-0.3, 4.3)
-    plt.ylim(-0.1, 1.1)
+    plt.xlim(-1, x + 1)
+    plt.ylim(-0.5, y + 1)
     plt.tight_layout()
 
     # NOTE: Select an appropriate `dirname` to save the figure.

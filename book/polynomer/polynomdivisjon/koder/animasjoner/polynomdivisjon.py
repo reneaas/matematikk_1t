@@ -19,32 +19,25 @@ class PolynomialDivision(Scene):
 
         self.play(
             stage1[0][1:3].animate.set_color(RED),
-            stage1[0][-5].animate.set_color(RED),
+            # stage1[0][-5].animate.set_color(RED),
         )
 
         self.wait(1)
 
-        dividend = MathTex("x^3").set_color(RED).move_to(stage1[0][1:4])
-        divisor = MathTex("x").set_color(RED).move_to(stage1[0][-5])
+        # dividend = MathTex("x^3").set_color(RED).move_to(stage1[0][1:4])
+        # divisor = MathTex("x").set_color(RED).move_to(stage1[0][-5])
 
-        self.add(dividend)
-        self.add(divisor)
-
-        self.play(
-            dividend.animate.next_to(stage1[0][1:4], DOWN),
-            divisor.animate.next_to(stage1[0][-5], DOWN),
-        )
+        # self.add(dividend)
+        # self.add(divisor)
 
         self.wait(2)
 
-        division = MathTex("\\dfrac{x^3}{x}", color=RED).next_to(stage1[0][-1])
-        result = MathTex("x^2", color=RED).next_to(stage1[0][-1])
-        self.play(Transform(VGroup(divisor, dividend), division))
+        result = MathTex("x^2", color=RED).next_to(stage1, RIGHT)
 
         self.wait(2)
 
         self.play(
-            Transform(VGroup(divisor, dividend), result),
+            Create(result),
         )
 
         self.wait(2)
@@ -72,14 +65,14 @@ class PolynomialDivision(Scene):
         self.wait(2)
 
         # Multiply result back
-        stage2_part1 = MathTex("-x^2(x - 3)", color=RED).move_to(
+        stage2_part1 = MathTex("x^2(x - 3)", color=RED).move_to(
             stage1[0][1:7].get_center() + DOWN
         )
         self.play(Create(stage2_part1))
 
         self.wait(2)
 
-        stage2_part2 = MathTex("-x^3 + 3x^2", color=RED).move_to(stage2_part1)
+        stage2_part2 = MathTex("-(x^3 - 3x^2)", color=RED).move_to(stage2_part1)
         self.play(
             Transform(stage2_part1, stage2_part2),
         )

@@ -10,10 +10,9 @@ class: tip
 :::
 
 
-**Optimering** handler om å bestemme den største eller minste verdien av noe. Eksempler på dette kan være å bestemme det største mulige arealet av en trekant, det største overskuddet til en butikk, eller hvilken rute man bør ta for å bruke kortest mulig tid mellom to steder. 
+**Optimering** handler om å bestemme den største eller minste verdien av noe, for eksempel det største arealet til en trekant.
 
-I praksis handler optimering om å bestemme ekstremalpunktene til en funksjon $f$, der funksjonen $f$ modellerer det vi ønsker å gjøre størst eller minst mulig. 
-
+I praksis handler optimering om å bestemme ekstremalpunktene til en funksjon $f$, der funksjonen $f$ er en modell for det vi ønsker å maksimere eller minimere.
 :::::{admonition} Begreper: Maksimere og minimere
 ---
 class: theory
@@ -30,7 +29,11 @@ For å maksimere eller minimere en funksjon, finner vi ekstremalpunktene til $f$
 ---
 class: summary
 ---
-Ekstremalpunktene til $f$ er punkter der hvor $f'(x) = 0$. 
+Versjon 1:
+: Ekstremalpunktene til $f$ svarer til nullpunktene til den deriverte $f'$. 
+
+Versjon 2:
+: Ekstremalpunktene til $f$ er gitt ved løsningen til $f'(x) = 0$. 
 :::::
 
 Setningen forteller oss at når vi ønsker å maksimere eller minimere en funksjon, kan vi gjøre dette ved å lete etter nullpunktene til den deriverte.
@@ -51,7 +54,7 @@ name: fig-polynomer-optimering-eksempel-1
 width: 80%
 class: no-click
 ---
-viser et rektangel med sidelenger $x$ og $y$. 
+viser et rektangel med sidelenger $x$ og $y$. Omkretsen av rektangelet er $100$.
 :::
 
 

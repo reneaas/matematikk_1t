@@ -1,66 +1,67 @@
 import plotmath
+import numpy as np
 
 
 def main(dirname, save):
     #
     # Define functions
     def f(x):
-        return x * (x - 2) * (x - 5)
+        return -x * (x - 3) ** 3
 
     # List of functions and their labels.
-    functions = [f]
+    functions = []
 
     fig, ax = plotmath.plot(
         functions=functions,
-        fn_labels=True,
-        xmin=-1,
-        xmax=5,
-        ymin=-9,
+        fn_labels=False,
+        xmin=-0.5,
+        xmax=3.5,
+        ymin=-4,
         ymax=10,
         ticks=False,
-        domain=[0, 5],
     )
 
-    color = "blue"
-    x0 = 2
-    dx = 1
-    # ax.plot([x0, b], [f(x0), 0], color=color, lw=1.5, alpha=0.7)
-    # ax.plot([b, x0], [0, 0], color=color, lw=1.5, alpha=0.7)
-    # ax.plot([x0, x0], [0, f(x0)], color=color, lw=1.5, alpha=0.7)
+    x = np.linspace(0, 3, 1024)
+    y = f(x)
 
-    # Trekant ABC
+    ax.plot(x, y, color="teal", lw=2, alpha=0.7)
+
+    x0 = 2
     A = [0, 0]
     B = [x0, 0]
-    C = [x0 - dx, f(x0 - dx)]
+    C = [x0, f(x0)]
 
     ax.plot(*A, "ko", markersize=8, alpha=0.7)
     ax.plot(*B, "ko", markersize=8, alpha=0.7)
     ax.plot(*C, "ko", markersize=8, alpha=0.7)
 
-    D = [x0 + dx, 0]
-    E = [x0 + dx, f(x0 + dx)]
+    ax.fill(
+        [A[0], B[0], C[0]],
+        [A[1], B[1], C[1]],
+        color="teal",
+        alpha=0.2,
+    )
 
-    ax.plot(*D, "ko", markersize=8, alpha=0.7)
-    ax.plot(*E, "ko", markersize=8, alpha=0.7)
+    ax.plot([A[0], B[0]], [A[1], B[1]], color="black", lw=2)
+    ax.plot([B[0], C[0]], [B[1], C[1]], color="black", lw=2)
+    ax.plot([C[0], A[0]], [C[1], A[1]], color="black", lw=2)
 
-    ax.fill([A[0], B[0], C[0]], [A[1], B[1], C[1]], color=color, alpha=0.1)
+    ax.text(
+        x=x0 + 0.05,
+        y=f(x0),
+        s="$(2, f(2))$",
+        fontsize=16,
+        color="black",
+        ha="left",
+        va="bottom",
+    )
 
-    ax.fill([B[0], D[0], E[0]], [B[1], D[1], E[1]], color=color, alpha=0.1)
-
-    dy = 0.2
-    dx = 0.2
-
-    # ax.text(
-    #     x=x0,
-    #     y=f(x0) + dy,
-    #     s="$(1, f(1))$",
-    #     color="black",
-    #     fontsize=16,
-    #     ha="right",
-    #     va="bottom",
-    # )
-
-    ax.set_xticks([i for i in range(1, 5)])
+    ticks = [i for i in range(1, 4, 1)]
+    try:
+        ticks.remove(0)
+    except:
+        pass
+    ax.set_xticks(ticks)
     ax.tick_params(axis="x", labelsize=16)
     ax.grid(False)
 
@@ -93,4 +94,4 @@ if __name__ == "__main__":
     dirname = "/".join(parts)
 
     # NOTE: Set `save=True` to save figure. `save=False` to display figure.
-    main(dirname=dirname, save=False)
+    main(dirname=dirname, save=True)

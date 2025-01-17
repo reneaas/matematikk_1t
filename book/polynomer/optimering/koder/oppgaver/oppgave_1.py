@@ -21,7 +21,7 @@ def main(dirname, save):
         domain=[-4, 4],
     )
 
-    color = "blue"
+    color = "teal"
     x0 = 3
 
     A = [-x0, 0]
@@ -36,10 +36,10 @@ def main(dirname, save):
         alpha=0.1,
     )
 
-    ax.plot([A[0], B[0]], [A[1], B[1]], color=color, lw=1.5, alpha=0.7)
-    ax.plot([B[0], C[0]], [B[1], C[1]], color=color, lw=1.5, alpha=0.7)
-    ax.plot([C[0], D[0]], [C[1], D[1]], color=color, lw=1.5, alpha=0.7)
-    ax.plot([D[0], A[0]], [D[1], A[1]], color=color, lw=1.5, alpha=0.7)
+    ax.plot([A[0], B[0]], [A[1], B[1]], color="black", lw=1.5, alpha=0.7)
+    ax.plot([B[0], C[0]], [B[1], C[1]], color="black", lw=1.5, alpha=0.7)
+    ax.plot([C[0], D[0]], [C[1], D[1]], color="black", lw=1.5, alpha=0.7)
+    ax.plot([D[0], A[0]], [D[1], A[1]], color="black", lw=1.5, alpha=0.7)
 
     ax.plot(*A, "ko", markersize=8, alpha=0.7)
     ax.plot(*B, "ko", markersize=8, alpha=0.7)

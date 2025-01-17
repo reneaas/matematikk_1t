@@ -21,13 +21,13 @@ def main(dirname, save):
         domain=[0, 3],
     )
 
-    color = "blue"
+    color = "teal"
     x0 = 2
     a = 0
     b = 4
-    ax.plot([x0, 0], [f(x0), 0], color=color, lw=1.5, alpha=0.7)
-    ax.plot([0, x0], [0, 0], color=color, lw=1.5, alpha=0.7)
-    ax.plot([x0, x0], [0, f(x0)], color=color, lw=1.5, alpha=0.7)
+    ax.plot([x0, 0], [f(x0), 0], color="black", lw=1.5, alpha=0.7)
+    ax.plot([0, x0], [0, 0], color="black", lw=1.5, alpha=0.7)
+    ax.plot([x0, x0], [0, f(x0)], color="black", lw=1.5, alpha=0.7)
 
     A = [0, 0]
     B = [x0, f(x0)]

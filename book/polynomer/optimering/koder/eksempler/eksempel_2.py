@@ -7,7 +7,7 @@ def main(dirname, save):
     #
     # Define functions
     def f(x):
-        return -(x**2) + 16
+        return -(x**2) + 9
 
     # List of functions and their labels.
     functions = []
@@ -16,16 +16,16 @@ def main(dirname, save):
         functions=functions,
         fn_labels=False,
         xmin=-1,
-        xmax=5,
+        xmax=4,
         ymin=-2,
-        ymax=18,
+        ymax=10,
         ticks=False,
     )
 
-    x = np.linspace(0, 16, 1024)
+    x = np.linspace(0, 3, 1024)
     y = f(x)
 
-    x0 = 3
+    x0 = 2.5
     A = [0, 0]
     B = [x0, 0]
     C = [x0, f(x0)]
@@ -59,7 +59,9 @@ def main(dirname, save):
         va="bottom",
     )
 
-    ax.plot(x, y, color="teal", lw=2, alpha=0.7)
+    ax.plot(x, y, color="teal", lw=2, alpha=0.7, label="$f(x) = -x^2 + 9$")
+
+    plt.legend(fontsize=16)
 
     # NOTE: Select an appropriate `dirname` to save the figure.
     # The directory `dirname` will be created automatically if it does not exist already.

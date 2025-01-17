@@ -1,10 +1,12 @@
 import os
 
 
-def polylongdiv(fname: str, p: str, q: str, stage: int = None, svg: bool = True):
+def polylongdiv(
+    fname: str, p: str, q: str, stage: int = None, svg: bool = True, vars=None
+):
     if stage is None:
-        div_cmd = r"\polylongdiv[style=C, div=:]{{p}}{{q}}"
-        div_cmd = div_cmd.replace("{p}", p).replace("{q}", q)
+        div_cmd = r"\polylongdiv[style=C, div=:, vars=None]{{p}}{{q}}"
+        div_cmd = div_cmd.replace("{p}", p).replace("{q}", q).replace("None", str(vars))
     else:
         div_cmd = r"\polylongdiv[style=C, div=:, stage={stage}]{{p}}{{q}}"
         div_cmd = (
