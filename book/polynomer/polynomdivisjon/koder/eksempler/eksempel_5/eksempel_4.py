@@ -1,17 +1,41 @@
 def main():
+
     polylongdiv(
-        fname=__file__.split("/")[-1].replace(".py", ""),
-        p="x^3 - 8x^2 + 21x - 18",
-        q="x^2 - 6x + 9",
+        fname="eksempel_4_longdiv",
+        p="x^3 - 2x^2 - 5x + 6",
+        q="x + 1",
         stage=None,
-        vars="x",
+        svg=False,
     )
 
-    for stage in range(0, 12):
-        polylongdiv(
+    polylongdiv(
+        fname="eksempel_4_longdiv",
+        p="x^3 - 2x^2 - 5x + 6",
+        q="x + 1",
+        stage=None,
+        svg=True,
+    )
+
+    synthetic_div(
+        fname="eksempel_4",
+        p="x^3 - 2x^2 - 5x + 6",
+        x=-1,
+        stage=None,
+    )
+
+    synthetic_div(
+        fname="eksempel_4",
+        p="x^3 - 2x^2 - 5x + 6",
+        x=-1,
+        stage=None,
+        svg=False,
+    )
+
+    for stage in range(1, 12):
+        synthetic_div(
             fname=f"stage_{stage}",
-            p="x^3 - 8x^2 + 21x - 18",
-            q="x^2 - 6x + 9",
+            p="x^3 - 2x^2 - 5x + 6",
+            x=-1,
             stage=stage,
         )
     return None
@@ -45,6 +69,7 @@ if __name__ == "__main__":
     sys.path.append(repo_root)
     print(repo_root)
 
+    from python_util.synthetic_div import synthetic_div
     from python_util.polydiv import polylongdiv
 
     main()

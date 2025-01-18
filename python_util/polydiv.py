@@ -4,6 +4,9 @@ import os
 def polylongdiv(
     fname: str, p: str, q: str, stage: int = None, svg: bool = True, vars=None
 ):
+    if not vars:
+        vars = "x"
+
     if stage is None:
         div_cmd = r"\polylongdiv[style=C, div=:, vars=None]{{p}}{{q}}"
         div_cmd = div_cmd.replace("{p}", p).replace("{q}", q).replace("None", str(vars))
