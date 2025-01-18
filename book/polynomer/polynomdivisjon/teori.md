@@ -53,18 +53,22 @@ Vårt neste steg er derfor å se på en algoritme for å dele et polynom med en 
 
 ## Polynomdivisjon uten rest
 
-:::::::::::::::{admonition} Eksempel 1
+::::::::::::::::{admonition} Eksempel 1
 ---
 class: example
 ---
-Vi skal regne ut 
+Utfør polynomdivisjonen:
 
 $$
 (3x^2 + 3x - 6) : (x + 2). 
 $$
 
-For å gjøre dette, følger vi disse stegene:
 
+:::::::::::::::{admonition} Løsning
+---
+class: solution
+---
+For å utføre divisjonen, følger vi disse stegene: 
 
 ::::::::::::::{tab-set}
 :::::::::::::{tab-item} Steg 1
@@ -128,6 +132,7 @@ $$
 $$
 
 :::::::::::::::
+::::::::::::::::
 
 ---
 
@@ -285,18 +290,18 @@ class: solution
 
 :::{figure} ./koder/eksempler/eksempel_3/eksempel_3.svg
 ---
-width: 80%
+width: 85%
 class: no-click
 ---
 :::
 
-som betyr at 
+Utregningen forteller oss at
 
 $$
-(x^3 - 8x^2 + 21x - 18) : (x^2 - 6x + 9) = x - 2
+\dfrac{x^3 - 8x^2 + 21x - 18}{x^2 - 6x + 9} = x - 2
 $$
 
-eller hvis vi skriver det om:
+som betyr at vi kan skrive at
 
 $$
 x^3 - 8x^2 + 21x - 18 = (x - 2)(x^2 - 6x + 9).
