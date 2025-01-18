@@ -51,7 +51,7 @@ class: no-click
 
 ---
 
-:::{figure} ./polynomdivisjon/koder/eksempler/eksempel_4/eksempel_4.gif
+:::{figure} ./polynomdivisjon/koder/eksempler/eksempel_5/eksempel_5.gif
 ---
 width: 100%
 class: no-click
