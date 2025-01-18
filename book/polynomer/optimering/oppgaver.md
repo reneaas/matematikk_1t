@@ -1425,10 +1425,6 @@ som gir det største mulige arealet til trekanten.
 
 ::::
 
-
-
-
-
 :::::::::::::
 
 ::::::::::::::
