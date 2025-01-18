@@ -1,58 +1,79 @@
 import plotmath
-import matplotlib.pyplot as plt
-import numpy as np
 
 
 def main(dirname, save):
+    #
+    # Define functions
+    def f(x):
+        return -(x**2) + 16
 
-    dx = 0.6
-    x = 4
-    y = 2
-    dx = 0.4 * x
+    # List of functions and their labels.
+    functions = [f]
 
-    A = (0, 0)
-    B = (x, 0)
-    C = (x, y)
-    D = (0, y)
-
-    # Lines
-    plt.plot([A[0], B[0]], [A[1], B[1]], color="black", lw=2)
-    plt.plot([B[0], C[0]], [B[1], C[1]], color="black", lw=2)
-    # plt.plot([C[0], D[0]], [C[1], D[1]], color="red", lw=2)
-    plt.plot([D[0], A[0]], [D[1], A[1]], color="black", lw=2)
-
-    plt.hlines(y=y, xmin=-10, xmax=10, color="red", lw=2)
-
-    plt.text(
-        x=0.5 * (A[0] + B[0]),
-        y=0.5 * (A[1] + B[1]) - 0.3,
-        s="$x$",
-        fontsize=20,
-        color="black",
+    fig, ax = plotmath.plot(
+        functions=functions,
+        fn_labels=True,
+        xmin=-5,
+        xmax=5,
+        ymin=-2,
+        ymax=17,
+        ticks=False,
+        domain=[-4, 4],
     )
 
-    plt.text(
-        x=0.5 * (B[0] + C[0]) + 0.2,
-        y=0.5 * (B[1] + C[1]),
-        s="$y$",
-        fontsize=20,
-        color="black",
+    color = "teal"
+    x0 = 3
+
+    A = [-x0, 0]
+    C = [x0, f(x0)]
+    B = [x0, 0]
+    D = [-x0, f(-x0)]
+
+    ax.fill(
+        [A[0], B[0], C[0], D[0]],
+        [A[1], B[1], C[1], D[1]],
+        color=color,
+        alpha=0.1,
     )
 
-    plt.text(
-        x=0.5 * x,
-        y=y + 0.1,
-        s="Fjellvegg",
-        fontsize=20,
-        ha="center",
+    ax.plot([A[0], B[0]], [A[1], B[1]], color="black", lw=1.5, alpha=0.7)
+    ax.plot([B[0], C[0]], [B[1], C[1]], color="black", lw=1.5, alpha=0.7)
+    ax.plot([C[0], D[0]], [C[1], D[1]], color="black", lw=1.5, alpha=0.7)
+    ax.plot([D[0], A[0]], [D[1], A[1]], color="black", lw=1.5, alpha=0.7)
+
+    ax.plot(*A, "ko", markersize=8, alpha=0.7)
+    ax.plot(*B, "ko", markersize=8, alpha=0.7)
+    ax.plot(*C, "ko", markersize=8, alpha=0.7)
+    ax.plot(*D, "ko", markersize=8, alpha=0.7)
+
+    dy = 0.2
+    dx = 0.2
+
+    ax.text(
+        x=x0,
+        y=f(x0) + dy,
+        s="$(3, f(3))$",
+        color="black",
+        fontsize=16,
+        ha="left",
         va="bottom",
-        color="red",
     )
 
-    plt.axis("off")
-    plt.xlim(-1, x + 1)
-    plt.ylim(-0.5, y + 1)
-    plt.tight_layout()
+    ax.text(
+        x=-x0,
+        y=f(x0) + dy,
+        s="$(-3, f(-3))$",
+        color="black",
+        fontsize=16,
+        ha="right",
+        va="bottom",
+    )
+
+    ticks = [i for i in range(-4, 5, 1)]
+    ticks.remove(0)
+    ax.set_xticks(ticks)
+    ax.tick_params(axis="x", labelsize=16)
+    ax.grid(False)
 
     # NOTE: Select an appropriate `dirname` to save the figure.
     # The directory `dirname` will be created automatically if it does not exist already.

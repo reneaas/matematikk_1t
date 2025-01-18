@@ -102,4 +102,33 @@ class: no-click
 ::::
 
 
+::::{grid-item-card}
+---
+link: book/polynomer/intro
+link-type: doc
+---
+**Polynomer** 
+
+
+^^^
+
+$$
+ax^3 + bx^2 + cx + d
+$$
+
+$$
+(x - r)(ax^2 + px + q)
+$$
+---
+
+:::{figure} ./book/polynomer/polynomfunksjoner/figurer/teori/nullpunkter/tre_nullpunkter.svg
+---
+width: 100%
+class: no-click
+---
+:::
+
+::::
+
+
 :::::

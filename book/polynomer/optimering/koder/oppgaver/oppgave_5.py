@@ -5,7 +5,7 @@ def main(dirname, save):
     #
     # Define functions
     def f(x):
-        return -(x**3) + 4 * x**2
+        return -(x**2) + 9
 
     # List of functions and their labels.
     functions = [f]
@@ -14,22 +14,22 @@ def main(dirname, save):
         functions=functions,
         fn_labels=True,
         xmin=-1,
-        xmax=5,
+        xmax=4,
         ymin=-2,
         ymax=10,
         ticks=False,
-        domain=[0, 4],
+        domain=[0, 3],
     )
 
     color = "teal"
-    x0 = 1
+    x0 = 2
     a = 0
     b = 4
-    ax.plot([x0, b], [f(x0), 0], color="black", lw=1.5, alpha=0.7)
-    ax.plot([b, x0], [0, 0], color="black", lw=1.5, alpha=0.7)
+    ax.plot([x0, 0], [f(x0), 0], color="black", lw=1.5, alpha=0.7)
+    ax.plot([0, x0], [0, 0], color="black", lw=1.5, alpha=0.7)
     ax.plot([x0, x0], [0, f(x0)], color="black", lw=1.5, alpha=0.7)
 
-    A = [b, 0]
+    A = [0, 0]
     B = [x0, f(x0)]
     C = [x0, 0]
 
@@ -45,14 +45,14 @@ def main(dirname, save):
     ax.text(
         x=x0,
         y=f(x0) + dy,
-        s="$(1, f(1))$",
+        s="$(2, f(2))$",
         color="black",
         fontsize=16,
-        ha="right",
+        ha="left",
         va="bottom",
     )
 
-    ax.set_xticks([i for i in range(1, 5)])
+    ax.set_xticks([i for i in range(1, 4)])
     ax.tick_params(axis="x", labelsize=16)
     ax.grid(False)
 

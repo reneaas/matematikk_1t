@@ -1,60 +1,58 @@
 import plotmath
+import matplotlib.pyplot as plt
+import numpy as np
 
 
 def main(dirname, save):
-    #
-    # Define functions
-    def f(x):
-        return -(x**2) + 9
 
-    # List of functions and their labels.
-    functions = [f]
+    dx = 0.6
+    x = 4
+    y = 2
+    dx = 0.4 * x
 
-    fig, ax = plotmath.plot(
-        functions=functions,
-        fn_labels=True,
-        xmin=-1,
-        xmax=4,
-        ymin=-2,
-        ymax=10,
-        ticks=False,
-        domain=[0, 3],
-    )
+    A = (0, 0)
+    B = (x, 0)
+    C = (x, y)
+    D = (0, y)
 
-    color = "teal"
-    x0 = 2
-    a = 0
-    b = 4
-    ax.plot([x0, 0], [f(x0), 0], color="black", lw=1.5, alpha=0.7)
-    ax.plot([0, x0], [0, 0], color="black", lw=1.5, alpha=0.7)
-    ax.plot([x0, x0], [0, f(x0)], color="black", lw=1.5, alpha=0.7)
+    # Lines
+    plt.plot([A[0], B[0]], [A[1], B[1]], color="black", lw=2)
+    plt.plot([B[0], C[0]], [B[1], C[1]], color="black", lw=2)
+    # plt.plot([C[0], D[0]], [C[1], D[1]], color="red", lw=2)
+    plt.plot([D[0], A[0]], [D[1], A[1]], color="black", lw=2)
 
-    A = [0, 0]
-    B = [x0, f(x0)]
-    C = [x0, 0]
+    plt.hlines(y=y, xmin=-10, xmax=10, color="red", lw=2)
 
-    ax.fill([A[0], B[0], C[0]], [A[1], B[1], C[1]], color=color, alpha=0.1)
-
-    ax.plot(*A, "ko", markersize=8, alpha=0.7)
-    ax.plot(*B, "ko", markersize=8, alpha=0.7)
-    ax.plot(*C, "ko", markersize=8, alpha=0.7)
-
-    dy = 0.2
-    dx = 0.2
-
-    ax.text(
-        x=x0,
-        y=f(x0) + dy,
-        s="$(2, f(2))$",
+    plt.text(
+        x=0.5 * (A[0] + B[0]),
+        y=0.5 * (A[1] + B[1]) - 0.3,
+        s="$x$",
+        fontsize=20,
         color="black",
-        fontsize=16,
-        ha="left",
-        va="bottom",
     )
 
-    ax.set_xticks([i for i in range(1, 4)])
-    ax.tick_params(axis="x", labelsize=16)
-    ax.grid(False)
+    plt.text(
+        x=0.5 * (B[0] + C[0]) + 0.2,
+        y=0.5 * (B[1] + C[1]),
+        s="$y$",
+        fontsize=20,
+        color="black",
+    )
+
+    plt.text(
+        x=0.5 * x,
+        y=y + 0.1,
+        s="Fjellvegg",
+        fontsize=20,
+        ha="center",
+        va="bottom",
+        color="red",
+    )
+
+    plt.axis("off")
+    plt.xlim(-1, x + 1)
+    plt.ylim(-0.5, y + 1)
+    plt.tight_layout()
 
     # NOTE: Select an appropriate `dirname` to save the figure.
     # The directory `dirname` will be created automatically if it does not exist already.

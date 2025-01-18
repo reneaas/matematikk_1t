@@ -1,6 +1,58 @@
 # Oppgaver: Optimering
 
+
 :::::::::::::::{admonition} Oppgave 1
+---
+class: problem-level-1
+---
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+En polynomfunksjon $f$ er gitt ved 
+
+$$
+f(x) = x^2 - 4x + 1.
+$$
+
+Bestem $x$ slik at $f(x)$ er størst mulig.
+
+
+:::::::::::::
+
+:::::::::::::{tab-item} b
+En tredjegradsfunksjon $g$ er gitt ved 
+
+$$
+g(x) = x^3 - 3x + 5. 
+$$
+
+Bestem toppunktet og bunnpunktet til $g$.
+
+:::::::::::::
+
+:::::::::::::{tab-item} c
+En tredjegradsfunksjon $h$ er gitt ved 
+
+$$
+h(x) = -2x^3 + 3x^2 + 12x - 4. 
+$$
+
+Bestem ektremalpunktene til $h$.
+
+:::::::::::::
+
+
+::::::::::::::
+
+:::::::::::::::
+
+---
+
+
+:::::::::::::::{admonition} Oppgave 2
 ---
 class: problem-level-1
 ---
@@ -13,9 +65,9 @@ $$
 Et rektangel har hjørnene $(-3, 0)$, $(-3, f(-3))$, $(3, 0)$ og $(3, f(3))$.
 
 
-:::{figure} ./figurer/oppgaver/oppgave_1.svg
+:::{figure} ./figurer/oppgaver/oppgave_2.svg
 ---
-name: fig-polynomer-optimering-oppgave-1
+name: fig-polynomer-optimering-oppgave-2
 width: 80%
 class: no-click
 ---
@@ -145,17 +197,17 @@ $$
 ---
 
 
-:::::::::::::::{admonition} Oppgave 2
+:::::::::::::::{admonition} Oppgave 3
 ---
 class: problem-level-1
 ---
-Du skal bygge en innhegning for en rektangulær hage. På den ene siden er det en stor fjellvegg. Du har $100$ meter med gjerde som du skal bruke til å bygge innhegningen til hagen. Se {numref}`fig-polynomer-optimering-oppgave-2`.
+Du skal bygge en innhegning for en rektangulær hage. På den ene siden er det en stor fjellvegg. Du har $100$ meter med gjerde som du skal bruke til å bygge innhegningen til hagen. Se {numref}`fig-polynomer-optimering-oppgave-3`.
 
 Bestem sidelengdene slik at arealet av hagen blir størst mulig. 
 
-:::{figure} ./figurer/oppgaver/oppgave_2.svg
+:::{figure} ./figurer/oppgaver/oppgave_3.svg
 ---
-name: fig-polynomer-optimering-oppgave-2
+name: fig-polynomer-optimering-oppgave-3
 width: 80%
 class: no-click
 ---
@@ -261,10 +313,212 @@ $$
 
 :::::::::::::::
 
+---
+
+:::{admonition} Påminnelse: Definisjonsmengde
+---
+class: margin, reminder
+---
+Definisjonsmengden $D_f$ til en funksjon $f$ er mengden av alle $x$-verdier vi kan bruke til å regne ut $f(x)$ med.
+:::
+
+:::::::::::::::{admonition} Oppgave 4
+---
+class: problem-level-2
+---
+> I denne oppgaven skal vi bygge opp en strategi for å løse oppgave 3 med programmering. Denne strategien vil også kunne brukes på andre oppgaver som handler om å maksimere noe.
+
+Vi starter med en beskrivelse av strategien.
+
+:::::{admonition} Strategi 1: Maksimere en funksjon
+---
+class: summary
+---
+For en polynomfunksjon $f$ med en definisjonsmengde $D_f$ der et **heltall** $x$ gjør $f(x)$ størst mulig, kan vi lete etter heltallet $x$ med følgende strategi:
+1. Start med det laveste heltallet $x \in D_f$. 
+2. Øk verdien til $x$ med $1$ så lenge $f(x) < f(x + 1)$. 
+
+Når $f(x) \geq f(x + 1)$ er sant, har vi funnet heltallet $x$ som gjør $f(x)$ størst mulig.
+:::::
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+
+En `while`{l=python}-løkke er en løkke som kjører så lenge en betingelse er sann. 
+Under vises et program som bruker en `while`{l=python}-løkke til å lage noen verdier av $x$. 
+
+Les programmet og forutsi hva programmet skriver ut. Skriv inn hypotesen din og sjekk svaret ditt.
+
+
+:::{raw} html
+---
+file: ./python/oppgaver/oppgave_4/a.html
+---
+:::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Fyll ut programmet under slik at det skriver ut tallfølgen $1, 3, 5, 7, 9$. 
+
+:::{raw} html
+---
+file: ./python/oppgaver/oppgave_4/b.html
+---
+:::
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+:::{code-block} python
+---
+linenos: true
+---
+x = 1
+
+while x < 10:
+    print(x)
+    x = x + 2
+:::
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+Fyll ut programmet under slik at det skriver ut tallfølgen $0, 3, 6, 9, 12$. 
+
+:::{raw} html
+---
+file: ./python/oppgaver/oppgave_4/c.html
+---
+:::
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+:::{code-block} python
+---
+linenos: true
+---
+x = 0
+
+while x < 13:
+    print(x)
+    x = x + 3
+:::
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} d
+En polynomfunksjon $f$ er gitt ved 
+
+$$
+f(x) = -(x - 2)^2 + 4, \quad D_f = [0, 6]. 
+$$
+
+Bruk **Strategi 1** for å **maksimere en funksjon** med $\Delta x = 1$ og fyll ut programmet under slik at det finner den verdien av $x$ som gjør $f(x)$ størst mulig.
+
+:::{raw} html
+---
+file: ./python/oppgaver/oppgave_4/d.html
+---
+:::
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+**Programkode**:
+
+:::{code-block} python
+---
+linenos: true
+---
+def f(x):
+    return -(x - 2)**2 + 4
+
+x = 0
+
+while f(x) < f(x + 1):
+    x = x + 1
+    
+print(f"{x = } \t {f(x) = }")
+:::
+
+**Utskrift**:
+```console
+x = 2 	 f(x) = 4
+```
+
+som betyr at $f(x)$ er størst mulig når $x = 2$. Da er $f(x) = 4$. 
+
+::::
+
+
+:::::::::::::
+
+:::::::::::::{tab-item} e
+Bruk **Strategi 1** for å **maksimere en funksjon** til å fylle ut programmet under for å løse **oppgave 3**.
+
+:::{raw} html
+---
+file: ./python/oppgaver/oppgave_4/e.html
+---
+:::
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+**Programkode**:
+
+:::{code-block} python
+---
+linenos: true
+---
+def A(x):
+    y = (100 - x) / 2
+    return x * y
+
+x = 0
+
+while A(x) < A(x + 1): 
+    x = x + 1
+    
+print(f"{x = } 	 {A(x) = }")
+:::
+
+**Utskrift**:
+
+```console
+x = 50 	 A(x) = 1250.0
+```
+
+som betyr at arealet $A(x)$ er størst mulig når $x = 50$. Da er $A(x) = 1250$. 
+
+::::
+
+:::::::::::::
+
+::::::::::::::
+
+:::::::::::::::
+
+
+
 
 ---
 
-::::{admonition} Påminnelse: arealet til en trekant
+::::{admonition} Påminnelse: Arealet til en trekant
 ---
 class: margin, reminder
 ---
@@ -277,11 +531,11 @@ $$
 der $g$ er grunnlinjen og $h$ er høyden til trekanten.
 ::::
 
-:::::::::::::::{admonition} Oppgave 3
+:::::::::::::::{admonition} Oppgave 5
 ---
 class: problem-level-2
 ---
-I {numref}`fig-polynomer-optimering-oppgave-3` vises grafen til andregradsfunksjon $f$ som er gitt ved
+I {numref}`fig-polynomer-optimering-oppgave-5` vises grafen til andregradsfunksjon $f$ som er gitt ved
 
 $$
 f(x) = -x^2 + 9,
@@ -289,9 +543,9 @@ $$
 
 der $D_f = [0, 3]$, og en trekant som har hjørner i punktene $(0, 0)$, $(2, 0)$ og $(2, f(2))$.
 
-:::{figure} ./figurer/oppgaver/oppgave_3.svg
+:::{figure} ./figurer/oppgaver/oppgave_5.svg
 ---
-name: fig-polynomer-optimering-oppgave-3
+name: fig-polynomer-optimering-oppgave-5
 width: 80%
 class: no-click
 ---
@@ -401,11 +655,163 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 4
+
+:::::::::::::::{admonition} Oppgave 6
 ---
 class: problem-level-2
 ---
-I {numref}`fig-polynomer-optimering-oppgave-4` vises grafen til andregradsfunksjon $f$ gitt ved 
+> I denne oppgaven skal vi bygge opp en mer generell strategi for å maksimere en funksjon og anvende den på **oppgave 5**. Strategien er en variant av Strategi 1 som ble introdusert i Oppgave 4, men den vil nå også funke selv om løsningen **ikke** er et heltall.
+
+Vi starter med en beskrivelse av strategien:
+
+:::::{admonition} Strategi 2: Maksimere en funksjon
+---
+class: summary
+---
+For en polynomfunksjon $f$ med en definisjonsmengde $D_f$ kan vi bestemme $x$ slik at $f(x)$ er størst mulig med følgende strategi:
+1. Start med den laveste verdien av $x \in D_f$.
+2. Øk $x$ med en liten positiv endring $\Delta x$ så lenge $f(x) < f(x + \Delta x)$.
+
+Når $f(x) \geq f(x + \Delta x)$ er sant, har vi funnet $x$ slik at $f(x)$ er størst mulig.
+
+> I strategi 1 brukte vi $\Delta x = 1$. I strategi 2 kan vi bruke en annen verdi for $\Delta x$.
+:::::
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+En andregradsfunksjon $f$ er gitt ved 
+
+$$
+f(x) = -(x - 1)^2 + 9. 
+$$
+
+Fyll ut programmet og bruk **Strategi 1** til å bestemme $x$ slik at $f(x)$ blir størst mulig.
+
+:::{raw} html
+---
+file: ./python/oppgaver/oppgave_6/a.html
+---
+:::
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+:::{code-block} python
+---
+linenos: true
+---
+def f(x):
+    return -(x - 1)**2 + 9
+
+x = 0
+
+while f(x) < f(x + 1): 
+    x = x + 1
+
+print(f"{x = } \t {f(x) = }")
+:::
+
+::::
+
+:::::::::::::
+
+:::::::::::::{tab-item} b
+Fyll ut programmet slik at det i stedet bruker **Strategi 2** med $\Delta x = 0.5$ til å bestemme $x$ slik at $f(x)$ blir størst mulig.
+
+:::{raw} html
+---
+file: ./python/oppgaver/oppgave_6/b.html
+---
+:::
+
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+:::{code-block} python
+---
+linenos: true
+---
+def f(x):
+    return -(x - 1)**2 + 9
+
+x = 0
+
+while f(x) < f(x + 0.5): 
+    x = x + 0.5
+
+print(f"{x = } \t {f(x) = }")
+:::
+
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+Fyll ut programmet under slik at det bruker **Strategi 2** til å finne en løsning til **oppgave 5c**. 
+
+Bruk $\Delta x = 0.001$.
+
+:::{raw} html
+---
+file: ./python/oppgaver/oppgave_6/c.html
+---
+:::
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+**Programkode**:
+
+:::{code-block} python
+---
+linenos: true
+---
+def f(x):
+    return -x**2 + 9
+
+def A(x):
+    return x * f(x) / 2
+
+x = 0
+
+while A(x) < A(x + 0.001):
+    x = x + 0.001
+
+print(f"{x = :.3f} \t {A(x) = :.3f}")
+:::
+
+**Utskrift**:
+
+```console
+x = 1.732 	 A(x) = 5.196
+```
+
+som betyr at $x \approx 1.732$ gir størst mulig areal. Dette stemmer ganske bra med løsningen i oppgave 5c hvor $k = \sqrt{3} \approx 1.732$.
+
+::::
+
+:::::::::::::
+
+::::::::::::::
+
+:::::::::::::::
+
+---
+
+:::::::::::::::{admonition} Oppgave 7
+---
+class: problem-level-2
+---
+I {numref}`fig-polynomer-optimering-oppgave-6` vises grafen til andregradsfunksjon $f$ gitt ved 
 
 $$
 f(x) = -x^2 + 36, \quad D_f = [-6, 6],
@@ -415,9 +821,9 @@ og et fargelagt området med hjørner i punktene $(-4, 0)$, $(-4, f(-4))$, $(4, 
 
 
 
-::::{figure} ./figurer/oppgaver/oppgave_4.svg
+::::{figure} ./figurer/oppgaver/oppgave_6.svg
 ---
-name: fig-polynomer-optimering-oppgave-4
+name: fig-polynomer-optimering-oppgave-6
 width: 80%
 class: no-click
 ---
@@ -549,11 +955,11 @@ $$
 
 
 
-:::::::::::::::{admonition} Oppgave 5
+:::::::::::::::{admonition} Oppgave 8
 ---
 class: problem-level-2
 ---
-I {numref}`fig-polynomer-optimering-oppgave-5` vises grafen til tredjegradsfunksjon $f$ som er gitt ved
+I {numref}`fig-polynomer-optimering-oppgave-7` vises grafen til tredjegradsfunksjon $f$ som er gitt ved
 
 $$
 f(x) = -x^3 + 4x^2,
@@ -561,9 +967,9 @@ $$
 
 der $D_f = [0, 4]$, og en trekant som har hjørner i punktene $(1, 0)$, $(4, 0)$ og $(1, f(1))$. 
 
-:::{figure} ./figurer/oppgaver/oppgave_5.svg
+:::{figure} ./figurer/oppgaver/oppgave_7.svg
 ---
-name: fig-polynomer-optimering-oppgave-5
+name: fig-polynomer-optimering-oppgave-7
 width: 80%
 class: no-click
 ---
@@ -712,10 +1118,9 @@ Både $a = 0$ og $a = 4$ gir $A(a) = 0$ som betyr at $a = 2$ gir det største mu
 ::::::::::::::
 :::::::::::::::
 
-
 ---
 
-:::::::::::::::{admonition} Oppgave 6
+:::::::::::::::{admonition} Oppgave 9
 ---
 class: problem-level-3
 ---
@@ -727,9 +1132,9 @@ $$
 
 En trekant har hjørnene $(0, 0)$, $(2, 0)$ og $(2, f(2))$.
 
-:::{figure} ./figurer/oppgaver/oppgave_6.svg
+:::{figure} ./figurer/oppgaver/oppgave_9.svg
 ---
-name: fig-polynomer-optimering-oppgave-6
+name: fig-polynomer-optimering-oppgave-9
 width: 80%
 class: no-click
 ---
@@ -887,7 +1292,7 @@ $$
 
 for noen koeffisienter $a$, $b$ og $c$. Vi kan finne $a$, $b$ og $c$ ved å utføre polynomdivisjon:
 
-:::{figure} ./koder/oppgaver/oppgave_6_løsning.svg
+:::{figure} ./koder/oppgaver/oppgave_9_løsning.svg
 ---
 width: 80%
 class: no-click

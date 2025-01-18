@@ -1,46 +1,67 @@
 import plotmath
-import matplotlib.pyplot as plt
 import numpy as np
+import matplotlib.pyplot as plt
 
 
 def main(dirname, save):
+    #
+    # Define functions
+    def f(x):
+        return -(x**2) + 9
 
-    dx = 0.6
-    x = 4
-    y = 1
-    dx = 0.4 * x
+    # List of functions and their labels.
+    functions = []
 
-    A = (0, 0)
-    B = (x, 0)
-    C = (x, y)
-    D = (0, y)
+    fig, ax = plotmath.plot(
+        functions=functions,
+        fn_labels=False,
+        xmin=-1,
+        xmax=4,
+        ymin=-2,
+        ymax=10,
+        ticks=False,
+    )
 
-    # Lines
+    x = np.linspace(0, 3, 1024)
+    y = f(x)
+
+    x0 = 2.5
+    A = [0, 0]
+    B = [x0, 0]
+    C = [x0, f(x0)]
+    D = [0, f(x0)]
+
+    plt.plot(*A, "ko", markersize=8, alpha=0.7)
+    plt.plot(*B, "ko", markersize=8, alpha=0.7)
+    plt.plot(*C, "ko", markersize=8, alpha=0.7)
+    plt.plot(*D, "ko", markersize=8, alpha=0.7)
+
+    plt.fill(
+        [A[0], B[0], C[0], D[0]],
+        [A[1], B[1], C[1], D[1]],
+        color="teal",
+        alpha=0.2,
+    )
+
     plt.plot([A[0], B[0]], [A[1], B[1]], color="black", lw=2)
     plt.plot([B[0], C[0]], [B[1], C[1]], color="black", lw=2)
     plt.plot([C[0], D[0]], [C[1], D[1]], color="black", lw=2)
     plt.plot([D[0], A[0]], [D[1], A[1]], color="black", lw=2)
 
-    plt.text(
-        x=0.5 * (A[0] + B[0]),
-        y=0.5 * (A[1] + B[1]) - 0.1,
-        s="$x$",
-        fontsize=20,
+    dx = dy = 0.2
+    ax.text(
+        x=x0 + dx,
+        y=f(x0),
+        s="$(a, f(a))$",
+        fontsize=16,
         color="black",
+        ha="left",
+        va="bottom",
     )
 
-    plt.text(
-        x=0.5 * (B[0] + C[0]) + 0.2,
-        y=0.5 * (B[1] + C[1]),
-        s="$y$",
-        fontsize=20,
-        color="black",
-    )
+    ax.plot(x, y, color="teal", lw=2, alpha=0.7, label="$f(x) = -x^2 + 9$")
 
-    plt.axis("off")
-    plt.xlim(-0.3, 4.3)
-    plt.ylim(-0.1, 1.1)
-    plt.tight_layout()
+    plt.legend(fontsize=16)
 
     # NOTE: Select an appropriate `dirname` to save the figure.
     # The directory `dirname` will be created automatically if it does not exist already.
