@@ -25,10 +25,20 @@ Når en funksjon $f$ modellerer noe, har vi to tilfeller:
 
 For å maksimere eller minimere en funksjon, finner vi ekstremalpunktene til $f$. Da får vi bruk for følgende setning:
 
+:::{admonition} Begreper: Ekstremalpunkter og ekstremalverdier
+---
+class: sidenote, margin
+---
+Vi har tidligere jobbet med at **ekstremalpunkter** er en fellesbetegnelse for toppunkt eller bunnpunkt. I praksis er dette en *halv* sannhet fordi ekstremalpunkter beskriver **$x$-koordinaten** til disse punktene. Navnet på $y$-koordinaten til disse punktene kalles for **ekstremalverdier**.
+
+:::
+
 :::::{admonition} Setning: Ekstremalpunkter
 ---
 class: summary
 ---
+Ekstremalpunkter er $x$-koordinaten til et toppunkt eller bunnpunkt til en funksjon $f$.
+
 Versjon 1:
 : Ekstremalpunktene til $f$ svarer til nullpunktene til den deriverte $f'$. 
 

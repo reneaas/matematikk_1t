@@ -11,7 +11,7 @@ class: problem-level-1
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
-En polynomfunksjon $f$ er gitt ved 
+En andregradsfunksjon $f$ er gitt ved 
 
 $$
 f(x) = x^2 - 4x + 1.
@@ -19,6 +19,28 @@ $$
 
 Bestem $x$ slik at $f(x)$ er størst mulig.
 
+
+::::{admonition} Fasit
+---
+class: dropdown, answer
+---
+$$
+x = 2
+$$
+::::
+
+::::{admonition} Løsning
+---
+class: dropdown, answer
+---
+Siden ledende koeffisient $a < 0$, er $f(x)$ er størst mulig når $f'(x) = 0$. Vi kan derfor finne $x$ ved å løse $f'(x) = 0$:
+
+$$
+f'(x) = (x^2 - 4x + 1)' = 2x - 4 = 0 \liff 2x = 4 \liff x = 2.
+$$
+
+Altså er $f(x)$ størst mulig når $x = 2$.
+::::
 
 :::::::::::::
 
@@ -31,6 +53,40 @@ $$
 
 Bestem toppunktet og bunnpunktet til $g$.
 
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+Toppunktet er $(-1, 7)$ og bunnpunktet er $(1, 3)$.
+::::
+
+::::{admonition} Løsning
+---
+class: solution, dropdown
+---
+For å bestemme toppunktet og bunnpunktet til $g$, kan vi løse $g'(x) = 0$. Vi starter med å bestemme $g'(x)$:
+
+$$
+g'(x) = (x^3 - 3x + 5)' = 3x^2 - 3. 
+$$
+
+Deretter løser vi likningen $g'(x) = 0$:
+
+$$
+3x^2 - 3 = 0 \liff 3x^2 = 3 \liff x^2 = 1 \liff x = \pm 1.
+$$
+
+Altså må ekstremalpunktene til $g$ være $x = \pm 1$. For å bestemme hvilket som er et toppunkt og hvilket som er et bunnpunkt, kan vi se på fortegnet til den ledende koeffisienten. Siden denne er positiv vil det ekstremalpunktet med lavest $x$-verdi være et toppunkt og det med høyest $x$-verdi være et bunnpunkt. Dermed er toppunktet $(-1, g(-1))$ og bunnpunktet $(1, g(1))$. For å finne koordinatene til de to punktene trenger vi funksjonsverdiene i de to punktene:
+
+\begin{align*}
+    g(-1) &= (-1)^3 - 3(-1) + 5 = -1 + 3 + 5 = 7, \\
+    \\
+    g(1) &= 1^3 - 3(1) + 5 = 1 - 3 + 5 = 3.
+\end{align*}
+
+Dermed er toppunktet $(-1, 7)$ og bunnpunktet $(1, 3)$.
+::::
+
 :::::::::::::
 
 :::::::::::::{tab-item} c
@@ -41,6 +97,54 @@ h(x) = -2x^3 + 3x^2 + 12x - 4.
 $$
 
 Bestem ektremalpunktene til $h$.
+
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x = 2 \or x = -1.
+$$
+::::
+
+
+::::{admonition} Løsning
+---
+class: solution, dropdown
+---
+Ekstremalpunktene til $h$ er punktene hvor $h'(x) = 0$. Vi starter derfor med å bestemme $h'(x)$: 
+
+$$
+h'(x) = (-2x^3 + 3x^2 + 12x - 4)' = -6x^2 + 6x + 12.
+$$
+
+Deretter løser vi likningen $h'(x) = 0$:
+
+$$
+-6x^2 + 6x + 12 = 0 \liff -6(x^2 - x - 2) = 0 \liff x^2 - x - 2 = 0.
+$$
+
+Vi bruker $abc$-formelen for å bestemme røttene til andregradspolynomet:
+
+$$
+x = \dfrac{-(-1) \pm \sqrt{(-1)^2 - 4 \cdot 1 \cdot (-2)}}{2 \cdot 1} = \dfrac{1 \pm \sqrt{1 + 8}}{2} = \dfrac{1 \pm \sqrt{9}}{2} = \dfrac{1 \pm 3}{2} \, ,
+$$
+
+som gir 
+
+$$
+x = \dfrac{1 + 3}{2} = 2 \or x = \dfrac{1 - 3}{2} = -1.
+$$
+
+Dermed er ekstremalpunktene 
+
+$$
+x = 2 \or x = -1.
+$$
+::::
+
+
 
 :::::::::::::
 
@@ -214,102 +318,89 @@ class: no-click
 viser en rektangulær hage med sidelengder $x$ og $y$ der den ene siden er dekket av et stor fjellvegg. Gjerde som skal settes opp har til sammen en lengde på $100$ meter.
 :::
 
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Bestem arealet $A(x)$ av hagen for en gitt verdi av sidelengden $x$.
+
+
 ::::{admonition} Fasit
 ---
 class: answer, dropdown
 ---
 $$
-x = 50 \, \mathrm{m} \and y = 25 \, \mathrm{m}
+A(x) = -\dfrac{1}{2}x^2 + 50x
 $$
 ::::
 
-
-::::::::{admonition} Løsning
+::::{admonition} Løsning
 ---
-class: dropdown, solution
+class: solution, dropdown
 ---
-Først merker vi oss at vi har $100$ meter med gjerde til rådighet. Dette betyr at 
+Først kan vi observere at siden vi har $100$ meter med gjerde til rådighet, må 
 
 $$
-y + x + y = 100 \liff x + 2y = 100 \liff 2y = 100 - x
+y + x + y = 100 \liff x + 2y = 00 \liff 2y = 100 - x
 $$
 
 som vi kan skrive om til 
 
 $$
-y(x) = \dfrac{100 - x}{2}
+y(x) = \dfrac{100 - x}{2} = 50 - \dfrac{1}{2}x.
 $$
 
-I tillegg er arealet sidelengdene ganget sammen, som betyr at 
+Arealet $A(x)$ av rektangelet er bare produktet av sidelengdene $x$ og $y(x)$ som betyr at 
 
 $$
-A(x) = x \cdot y(x) = x \cdot \dfrac{100 - x}{2} = -\dfrac{1}{2}x(x - 100) = -\dfrac{1}{2}x^2 + 50x
+A(x) = x \cdot y(x) = x\cdot \left(50 - \dfrac{1}{2}x\right) = -\dfrac{1}{2}x^2 + 50x.
 $$
+::::
 
+:::::::::::::
 
-For å bestemme $x$ slik at arealet blir størst mulig, har vi to muligheter:
-1. Finne symmetrilinja til $A(x)$.
-2. Løse $A'(x) = 0$.
+:::::::::::::{tab-item} b
+Bestem sidelengdene slik at arealet blir størst mulig. 
 
-
-Vi viser begge strategier for kompletthet, men du trenger naturligvis bare å velge én av de. 
-
-
-:::::::{tab-set}
+::::{admonition} Fasit
 ---
-class: tabs-parts
+class: answer, dropdown
 ---
-::::::{tab-item} Finne symmetrilinje
-Vi kan først observere at nullpunktene til $A(x)$ er 
-
-$$
-x = 0 \or x = 100
-$$
-
-Symmetrilinja er gjennomsnittet av nullpunktene som gir
-
-$$
-x_0 = \dfrac{0 + 100}{2} = 50.
-$$
-
-Dermed vil $x = 50$ gi størst mulig areal. Derfor blir sidelengdene til hagen
-
-$$
-x = 50 \, \mathrm{m} \and y = \dfrac{100 - 50}{2} \, \mathrm{m} = 25 \, \mathrm{m}.
-$$
-::::::
-
-::::::{tab-item} Løse $A'(x) = 0$
-Vi starter med å gange ut $A(x)$: 
-
-$$
-A(x) = -\dfrac{1}{2}x^2 + 50x
-$$
-
-Så løser vi $A'(x) = 0$:
-
-$$
-A'(x) = -x + 50 = 0 \liff x = 50.
-$$
-
-Dermed vil $x = 50$ gi størst mulig areal. Derfor blir sidelengdene til hagen
-
-$$
-x = 50 \, \mathrm{m} \and y = \dfrac{100 - 50}{2} \, \mathrm{m} = 25 \, \mathrm{m}.
-$$
-::::::
-:::::::
-
-
-Vi får derfor størst mulig areal dersom sidelengdene til hagen er 
-
 $$
 x = 50 \, \mathrm{m} \and y = 25 \, \mathrm{m}.
 $$
+::::
 
+::::{admonition} Løsning
+---
+class: solution, dropdown
+---
+Arealet blir størst mulig dersom $A'(x) = 0$. Vi starter derfor med å bestemme $A'(x)$:
 
-::::::::
+$$
+A'(x) = (-\dfrac{1}{2}x^2 + 50x)' = -x + 50.
+$$
 
+Deretter løser vi likningen $A'(x) = 0$ som gir 
+
+$$
+-x + 50 = 0 \liff x = 50.
+$$
+
+Altså er arealet størst mulig dersom 
+
+$$
+x = 50 \and y = 50 - \dfrac{1}{2} \cdot 50 = 25.
+$$
+
+Sidelengdene i rektangelet er derfor $50$ meter og $25$ meter.
+::::
+
+:::::::::::::
+
+::::::::::::::
 
 :::::::::::::::
 
@@ -326,7 +417,7 @@ Definisjonsmengden $D_f$ til en funksjon $f$ er mengden av alle $x$-verdier vi k
 ---
 class: problem-level-2
 ---
-> I denne oppgaven skal vi bygge opp en strategi for å løse oppgave 3 med programmering. Denne strategien vil også kunne brukes på andre oppgaver som handler om å maksimere noe.
+> I denne oppgaven skal vi bygge opp en strategi for å løse oppgave 3b med programmering. Denne strategien vil også kunne brukes på andre oppgaver som handler om å maksimere noe.
 
 Vi starter med en beskrivelse av strategien.
 
@@ -467,7 +558,7 @@ som betyr at $f(x)$ er størst mulig når $x = 2$. Da er $f(x) = 4$.
 :::::::::::::
 
 :::::::::::::{tab-item} e
-Bruk **Strategi 1** for å **maksimere en funksjon** til å fylle ut programmet under for å løse **oppgave 3**.
+Bruk **Strategi 1** for å **maksimere en funksjon** til å fylle ut programmet under for å løse **oppgave 3b**.
 
 :::{raw} html
 ---
@@ -535,7 +626,7 @@ der $g$ er grunnlinjen og $h$ er høyden til trekanten.
 ---
 class: problem-level-2
 ---
-I {numref}`fig-polynomer-optimering-oppgave-5` vises grafen til andregradsfunksjon $f$ som er gitt ved
+I {numref}`fig-polynomer-optimering-oppgave-5` vises grafen til en andregradsfunksjon $f$ som er gitt ved
 
 $$
 f(x) = -x^2 + 9,
