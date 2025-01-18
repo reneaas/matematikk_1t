@@ -518,7 +518,7 @@ class: solution
 ---
 Vi utfører polynomdivisjon og får:
 
-:::{figure} ./koder/eksempler/eksempel_4/eksempel_4_longdiv.svg
+:::{figure} ./koder/eksempler/eksempel_5/eksempel_4_longdiv.svg
 ---
 width: 90%
 class: no-click
@@ -581,7 +581,7 @@ class: example
 ---
 Polynomdivisjonen fra eksempel 4 krever mye skriving:
 
-:::{figure} ./koder/eksempler/eksempel_4/eksempel_4_longdiv.svg
+:::{figure} ./koder/eksempler/eksempel_5/eksempel_4_longdiv.svg
 ---
 width: 80%
 class: no-click
@@ -590,7 +590,7 @@ class: no-click
 
 Vi kan se at mange av leddene forsvinner som en trapp, så vi trenger ikke holde styr på de leddene. Rent praktisk lager vi **Horner-skjemaet** slik:
 
-:::{figure} ./koder/eksempler/eksempel_4/eksempel_4.gif
+:::{figure} ./koder/eksempler/eksempel_5/eksempel_4.gif
 ---
 width: 60%
 class: no-click
@@ -601,9 +601,9 @@ viser hvordan vi algoritmisk regner ut verdiene i tabellen.
 Prøv å sammenligne med polynomdivisjonen for å gjenkjenne hvor tallene i Horner-skjemaet dukker opp i polynomdivisjonen.
 
 
-så vi kan oppsummere resultatet vi fikk med Horner-skjemaet som
+Vi kan oppsummere resultatet vi fikk med Horner-skjemaet som
 
-:::{figure} ./koder/eksempler/eksempel_4/eksempel_4.svg
+:::{figure} ./koder/eksempler/eksempel_5/eksempel_4.svg
 ---
 width: 60%
 class: no-click
