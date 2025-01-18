@@ -70,7 +70,7 @@ $$
 Vi bruker $abc$-formelen for å finne røttene til andregradspolynomet:
 
 $$
-x = \dfrac{-2 \pm \sqrt{2^2 - 4\cdot (-3) \cdot 1}}{2\cdot 1} = \dfrac{-2 \pm \sqrt{16}}{2} = \dfrac{-2 \pm 4}{2} = \begin{cases} x = 1 \\ x = -3 \end{cases}
+x = \dfrac{-2 \pm \sqrt{2^2 - 4\cdot (-3) \cdot 1}}{2\cdot 1} = \dfrac{-2 \pm \sqrt{16}}{2} = \dfrac{-2 \pm 4}{2} = \begin{cases} 1 \\ -3 \end{cases}
 $$
 
 Dermed har $f'(x)$ røttene $x = 1$ og $x = -3$. For å avgjøre hvilket punkt som gir et toppunkt og hvilket som gir et bunnpunkt kan vi bruke en fortegnslinje for $f'(x)$:
