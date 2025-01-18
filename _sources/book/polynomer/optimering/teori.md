@@ -39,8 +39,76 @@ Versjon 2:
 Setningen forteller oss at når vi ønsker å maksimere eller minimere en funksjon, kan vi gjøre dette ved å lete etter nullpunktene til den deriverte.
 
 
-
 :::::::::::::::{admonition} Eksempel 1
+---
+class: example
+---
+En polynomfunksjon $f$ er gitt ved 
+
+$$
+f(x) = x^3 + 3x^2 - 9x + 1.
+$$
+
+Bestem toppunktet og bunnpunktet til funksjonen $f$.
+
+:::::{admonition} Løsning
+---
+class: solution
+---
+For å bestemme toppunktet og bunnpunktet til $f$, løser vi likningen $f'(x) = 0$. Da trenger vi først den deriverte:
+
+$$
+f'(x) = (x^3 + 3x^2 - 9x + 1)' = 3x^2 + 6x - 9.
+$$
+
+Deretter løser vi likningen $f'(x) = 0$:
+
+$$
+3x^2 + 6x - 9 = 0 \liff x^2 + 2x - 3 = 0.
+$$
+
+Vi bruker $abc$-formelen for å finne røttene til andregradspolynomet:
+
+$$
+x = \dfrac{-2 \pm \sqrt{2^2 - 4\cdot (-3) \cdot 1}}{2\cdot 1} = \dfrac{-2 \pm \sqrt{16}}{2} = \dfrac{-2 \pm 4}{2} = \begin{cases} x = 1 \\ x = -3 \end{cases}
+$$
+
+Dermed har $f'(x)$ røttene $x = 1$ og $x = -3$. For å avgjøre hvilket punkt som gir et toppunkt og hvilket som gir et bunnpunkt kan vi bruke en fortegnslinje for $f'(x)$:
+
+:::{figure} ./figurer/eksempler/eksempel_1.svg
+---
+name: fig-polynomer-optimering-eksempel-1
+width: 100%
+class: no-click
+---
+viser fortegnsskjema til $f'(x)$. Vi kan lese av at $f'(x)$ er positiv rett før $x = -3$ og negativ rett etter, som betyr at grafen til $f$ stiger rett før punktet og synker rett etter. Det betyr at punktet er et toppunkt. Tilsvarende er $f'(x)$ negativ rett før $x = 1$ og positiv rett etter, som betyr at grafen til $f$ synker rett før punktet og stiger rett etter. Det betyr at punktet er et bunnpunkt.
+:::
+
+Fra fortegnsskjemaet kan vi altså konkludere at $x = -3$ gir et toppunkt og $x = 1$ gir et bunnpunkt. Koordinatene til de to punktene blir:
+
+
+\begin{align*}
+    f(-3) & = (-3)^3 + 3(-3)^2 - 9(-3) + 1 = -27 + 27 + 27 + 1 = 28 \\
+    \\
+    f(1) & = 1^3 + 3\cdot 1^2 - 9\cdot 1 + 1 = 1 + 3 - 9 + 1 = -4.
+\end{align*}
+
+
+så toppunktet er i $(-3, 28)$ og bunnpunktet er i $(1, -4)$.
+
+
+
+:::::
+
+
+:::::::::::::::
+
+
+---
+
+Vi tar et eksempel med en mer praktisk betydning:
+
+:::::::::::::::{admonition} Eksempel 2
 ---
 class: example
 ---
@@ -48,9 +116,9 @@ Et rektangel har sidelengder $x$ og $y$. Til sammen er omkretsen av rektangelet 
 
 Bestem sidelengdene slik at arealet av rektangelet er størst mulig.
 
-:::{figure} ./figurer/eksempler/eksempel_1.svg
+:::{figure} ./figurer/eksempler/eksempel_2.svg
 ---
-name: fig-polynomer-optimering-eksempel-1
+name: fig-polynomer-optimering-eksempel-2
 width: 80%
 class: no-click
 ---
@@ -115,9 +183,12 @@ $$
 :::::::::::::::
 
 
-Vi tar et eksempel til som er litt mer teoretisk: 
+---
 
-:::::::::::::::{admonition} Eksempel 2
+Vi tar med et annet "praktisk" eksempel der variabelen vi jobber med ikke lenger har merkelappen $x$. Strategien er fortsatt den samme, men det kan være litt uvant å
+måtte forholde seg til en funksjon som ikke har $x$ som variabel, slik som i eksempelet under.
+
+:::::::::::::::{admonition} Eksempel 3
 ---
 class: example
 ---
@@ -131,9 +202,9 @@ Et rektangel har hjørnene $(0, 0)$, $(a, 0)$, $(a, f(a))$ og $(0, f(a))$.
 
 Bestem $a$ slik at arealet av rektangelet blir størst mulig.
 
-:::{figure} ./figurer/eksempler/eksempel_2.svg
+:::{figure} ./figurer/eksempler/eksempel_3.svg
 ---
-name: fig-polynomer-optimering-eksempel-2
+name: fig-polynomer-optimering-eksempel-3
 width: 80%
 class: no-click
 ---
@@ -159,7 +230,9 @@ $$
 A'(a) = -3a^2 + 9 = 0 \liff 3a^2 = 9 \liff a^2 = 3 \limplies a = \sqrt{3}. 
 $$
 
-Altså blir arealet av rektangelet størst mulig når $a = \sqrt{3}$.
+Altså blir arealet av rektangelet størst mulig når $a = \sqrt{3}$. 
+
+> Vi forkastet $a = -\sqrt{3}$ i løsningen over på grunn av avgrensingen $a \in [0, 3]$.
 
 :::::
 
