@@ -174,13 +174,6 @@ Gitt et polynom $f(x)$ av grad $n$, vil den deriverte av polynomet $f'(x)$ være
 
 I praksis kan vi finne den deriverte algebraisk ved å følge noen bestemte regneregler som gjelder for alle polynomer.
 
-::::{admonition} Definisjon: $x^0$
----
-class: sidenote, margin
----
-Vi definerer $x^0 = 1$ for alle $x \neq 0$. 
-::::
-
 
 :::::::::::::::{admonition} Derivasjonsregler for polynomer
 ---
