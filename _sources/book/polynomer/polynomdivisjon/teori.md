@@ -10,6 +10,27 @@ class: tip
 * Kunne bruke polynomdivisjon til å regne ut funksjonsverdier.
 ::::
 
+::::{admonition} Divisjon: Begreper
+--- 
+class: theory
+---
+Når vi deler et tall $a$ med et tall $b$, kan vi alltid skrive utregningen som 
+
+
+$$
+\dfrac{a}{b} = k + \dfrac{r}{b}
+$$
+
+der 
+
+* $a$ kalles for **dividenden**
+* $b$ kalles for **divisoren**
+* $k$ kalles for **kvotienten**
+* $r$ kalles for **resten**
+
+Disse begrepene vil også gjelde dersom vi deler polynomer, som vi snart skal se på.
+::::
+
 Polynomdivisjon er en metode for å dele et polynom med et annet polynom og skrive det på en enklere måte. Før vi ser på dette, skal vi motivere hvorfor vi trenger polynomdivisjon i det hele tatt. Følgende setning forteller oss hvorfor. 
 
 :::::{admonition} Algebraens fundamentalsetning for tredjegradspolynomer
@@ -243,16 +264,47 @@ $$
 
 ---
 
-<!-- Vi kan også utføre polynomdivisjon når divisoren er et andregradspolynom.
+Vi kan også utføre polynomdivisjon når divisoren er et andregradspolynom.
 
 
 :::::::::::::::{admonition} Eksempel 3
 ---
 class: example
 ---
+Utfør polynomdivisjonen 
+
+$$
+(x^3 - 8x^2 + 21x - 18) : (x^2 - 6x + 9). 
+$$
 
 
-::::::::::::::: -->
+::::::::::::::{admonition} Løsning
+---
+class: solution
+---
+
+:::{figure} ./koder/eksempler/eksempel_3/eksempel_3.svg
+---
+width: 80%
+class: no-click
+---
+:::
+
+som betyr at 
+
+$$
+(x^3 - 8x^2 + 21x - 18) : (x^2 - 6x + 9) = x - 2
+$$
+
+eller hvis vi skriver det om:
+
+$$
+x^3 - 8x^2 + 21x - 18 = (x - 2)(x^2 - 6x + 9).
+$$
+
+::::::::::::::
+
+:::::::::::::::
 
 
 
@@ -261,7 +313,7 @@ class: example
 Som vi så i begynnelsen av dette delkapittelet, så er $f(x)$ bare delelig med en faktor $(x - r)$ hvis faktoren er i $f(x)$. Hvis ikke vil vi få en **rest** i divisjonen. Vi skal ta et eksempel som viser hvordan dette ser ut:
 
 
-:::::::::::::::{admonition} Eksempel 3
+:::::::::::::::{admonition} Eksempel 4
 ---
 class: example
 ---
@@ -278,7 +330,7 @@ class: solution
 Vi utfører polynomdivisjon:
 
 
-:::{figure} ./koder/eksempler/eksempel_3/eksempel_3.svg
+:::{figure} ./koder/eksempler/eksempel_4/eksempel_4.svg
 ---
 width: 90%
 class: no-click
@@ -297,7 +349,7 @@ Siden vi ikke har $0$ i rest, vil ikke $(x - 3)$ være en faktor i $x^3 - 5x^2 +
 :::::::::::::::
 
  
-I eksempel 1 og 2 utførte vi polynomdivisjon som ikke ga noen rest fordi $(x - r)$ var en faktor i telleren. I eksempel 3 fikk vi en rest som betydde at $(x - r)$ *ikke* var en faktor i telleren. Basert på eksemplene, kan vi formulere en setning: 
+I eksempel 1, 2 og 2 utførte vi polynomdivisjon som ikke ga noen rest fordi $(x - r)$ var en faktor i dividenden (telleren). I eksempel 3 fikk vi en rest som betydde at $(x - r)$ *ikke* var en faktor i dividenden. Basert på eksemplene, kan vi formulere en setning: 
 
 :::::::::::::::{admonition} Setning: Polynomdivisjonen $f(x) : (x - r)$
 ---
