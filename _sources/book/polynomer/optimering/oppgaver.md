@@ -380,7 +380,7 @@ class: solution, dropdown
 Arealet blir størst mulig dersom $A'(x) = 0$. Vi starter derfor med å bestemme $A'(x)$:
 
 $$
-A'(x) = (-\dfrac{1}{2}x^2 + 50x)' = -x + 50.
+A'(x) = \left(-\dfrac{1}{2}x^2 + 50x\right)' = -x + 50.
 $$
 
 Deretter løser vi likningen $A'(x) = 0$ som gir 
@@ -395,7 +395,7 @@ $$
 x = 50 \and y = 50 - \dfrac{1}{2} \cdot 50 = 25.
 $$
 
-Sidelengdene i rektangelet er derfor $50$ meter og $25$ meter.
+Sidelengdene til hagen som gir størst areal er derfor $50$ meter og $25$ meter.
 ::::
 
 :::::::::::::
@@ -577,7 +577,7 @@ class: answer, dropdown
 linenos: true
 ---
 def A(x):
-    y = (100 - x) / 2
+    y = 50 - x / 2
     return x * y
 
 x = 0
@@ -585,7 +585,7 @@ x = 0
 while A(x) < A(x + 1): 
     x = x + 1
     
-print(f"{x = } 	 {A(x) = }")
+print(f"{x = } 	\t  {A(x) = }")
 :::
 
 **Utskrift**:
@@ -902,7 +902,7 @@ som betyr at $x \approx 1.732$ gir størst mulig areal. Dette stemmer ganske bra
 ---
 class: problem-level-2
 ---
-I {numref}`fig-polynomer-optimering-oppgave-6` vises grafen til andregradsfunksjon $f$ gitt ved 
+I {numref}`fig-polynomer-optimering-oppgave-6` vises grafen til en andregradsfunksjon $f$ gitt ved 
 
 $$
 f(x) = -x^2 + 36, \quad D_f = [-6, 6],
@@ -1050,7 +1050,7 @@ $$
 ---
 class: problem-level-2
 ---
-I {numref}`fig-polynomer-optimering-oppgave-7` vises grafen til tredjegradsfunksjon $f$ som er gitt ved
+I {numref}`fig-polynomer-optimering-oppgave-7` vises grafen til en tredjegradsfunksjon $f$ som er gitt ved
 
 $$
 f(x) = -x^3 + 4x^2,
