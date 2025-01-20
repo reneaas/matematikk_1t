@@ -1106,7 +1106,7 @@ class: problem-level-2
 En tredjegradsfunksjon er gitt ved 
 
 $$
-f(x) = x^3 - 16x, \quad x \in [0, 4 \sqrt{2} \, ]. 
+f(x) = x^3 - 32x, \quad x \in [0, 4 \sqrt{2} \, ]. 
 $$
 
 En trekant har hjørnene $(0, 0)$, $(2, 0)$ og $(2, f(2))$. Se {numref}`fig-polynomer-oppgavesamling-oppgave-10`.
