@@ -50,7 +50,7 @@ def main(dirname, save):
     dx = dy = 0.1
     ax.text(
         x=B[0],
-        y=B[-1] + 5 * dy,
+        y=B[-1] + 10 * dy,
         s="$(2, 0)$",
         fontsize=16,
         ha="center",
