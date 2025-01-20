@@ -654,26 +654,6 @@ class: summary, dropdown
 ---
 Likningen til en tangent i $(r, f(r))$ kan bestemmes på to måter:
 
-<!-- :::::::::::::{tab-set}
-::::::::::::{tab-item} Strategi 1: Ettpunktsformelen og den deriverte
-1. Finn den deriverte $f'(x)$ og regn ut stigningstallet $a = f'(r)$. 
-2. Bruk ettpunktsformelen med $x_1 = r$ og $y_1 = f(r)$ til å finne likningen til tangenten
-
-$$
-y - y_1 = a(x - x_1)
-$$
-
-
-::::::::::::
-
-
-::::::::::::{tab-item} Strategi 2: Polynomdivisjon
-Resten i polynomdivisjonen $f(x) : (x - r)^2$ er likningen til tangenten i $(r, f(r))$.
-
-::::::::::::
-
-::::::::::::: -->
-
 1. **Strategi 1**: Den deriverte $f'(r)$ kombinert med ettpunktsformelen i $(r, f(r))$.
 2. **Strategi 2**: Resten i polynomdivisjonen $f(x) : (x - r)^2$ gir likningen til tangenten.
 
@@ -891,7 +871,7 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 9
+:::::::::::::::{admonition} Oppgave 8
 ---
 class: problem-level-2
 ---
@@ -1019,14 +999,14 @@ For en polynomfunksjon $f$ gjelder følgende:
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
-{numref}`fig-polynomer-oppgavesamling-oppgave-8-a` viser grafen til en andregradsfunksjon $f$. 
+{numref}`fig-polynomer-oppgavesamling-oppgave-9-a` viser grafen til en andregradsfunksjon $f$. 
 
 Lag en skisse av grafen til $f'$. 
 
 
-:::{figure} ./figurer/oppgaver/oppgave_8/a.svg
+:::{figure} ./figurer/oppgaver/oppgave_9/a.svg
 ---
-name: fig-polynomer-oppgavesamling-oppgave-8-a
+name: fig-polynomer-oppgavesamling-oppgave-9-a
 width: 80%
 class: no-click
 ---
@@ -1037,7 +1017,7 @@ viser grafen til en andregradsfunksjon $f$.
 ---
 class: answer, dropdown
 ---
-:::{figure} ./figurer/oppgaver/oppgave_8/a_løsning.svg
+:::{figure} ./figurer/oppgaver/oppgave_9/a_løsning.svg
 ---
 width: 100%
 class: no-click
@@ -1050,14 +1030,14 @@ viser en skisse av grafen til $f'$.
 
 
 :::::::::::::{tab-item} b
-{numref}`fig-polynomer-oppgavesamling-oppgave-8-b` viser grafen til en tredjegradsfunksjon $g$. 
+{numref}`fig-polynomer-oppgavesamling-oppgave-9-b` viser grafen til en tredjegradsfunksjon $g$. 
 
 Lag en skisse av grafen til $g'$. 
 
 
-:::{figure} ./figurer/oppgaver/oppgave_8/b.svg
+:::{figure} ./figurer/oppgaver/oppgave_9/b.svg
 ---
-name: fig-polynomer-oppgavesamling-oppgave-8-b
+name: fig-polynomer-oppgavesamling-oppgave-9-b
 width: 80%
 class: no-click
 ---
@@ -1068,7 +1048,7 @@ viser grafen til en tredjegradsfunksjon $g$.
 ---
 class: answer, dropdown
 ---
-:::{figure} ./figurer/oppgaver/oppgave_8/b_løsning.svg
+:::{figure} ./figurer/oppgaver/oppgave_9/b_løsning.svg
 ---
 width: 100%
 class: no-click
@@ -1082,14 +1062,14 @@ viser en skisse av grafen til $g'$.
 
 
 :::::::::::::{tab-item} c
-{numref}`fig-polynomer-oppgavesamling-oppgave-8-c` viser grafen til en tredjegradsfunksjon $h$. 
+{numref}`fig-polynomer-oppgavesamling-oppgave-9-c` viser grafen til en tredjegradsfunksjon $h$. 
 
 Lag en skisse av grafen til $h'$. 
 
 
-:::{figure} ./figurer/oppgaver/oppgave_8/c.svg
+:::{figure} ./figurer/oppgaver/oppgave_9/c.svg
 ---
-name: fig-polynomer-oppgavesamling-oppgave-8-c
+name: fig-polynomer-oppgavesamling-oppgave-9-c
 width: 80%
 class: no-click
 ---
@@ -1100,7 +1080,7 @@ viser grafen til en tredjegradsfunksjon $h$.
 ---
 class: answer, dropdown
 ---
-:::{figure} ./figurer/oppgaver/oppgave_8/c_løsning.svg
+:::{figure} ./figurer/oppgaver/oppgave_9/c_løsning.svg
 ---
 width: 100%
 class: no-click
