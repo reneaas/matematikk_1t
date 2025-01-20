@@ -111,7 +111,6 @@ function makeInteractiveCode(containerId, initialCode, preloadPackages = null) {
 }
 
 
-
 // predictionInteractiveCodeSetup.js
 
 class PredictionInteractiveCodeSetup extends InteractiveCodeSetup {
