@@ -1107,6 +1107,18 @@ viser en skisse av grafen til $h'$.
 ---
 class: problem-level-2
 ---
+
+::::::::::::::{admonition} Repetisjon: Optimering
+---
+class: summary, dropdown
+---
+Optimering handler om å finne maksimums- eller minimumsverdier til en funksjon.
+
+Hvis en $f$ er en polynomfunksjon, vil maksimums- eller minimumsverdien til $f$ være i et ekstremalpunkt. Vi bør derfor lete etter punkter hvor $f'(x) = 0$ når vi ønsker å maskimere eller minimere en polynomfunksjon $f$.
+::::::::::::::
+
+
+
 En tredjegradsfunksjon er gitt ved 
 
 $$
