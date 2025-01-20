@@ -1227,7 +1227,7 @@ Lag en skisse av grafen til $g$.
 
 :::{figure} ./figurer/oppgaver/oppgave_11/b.svg
 ---
-name: fig-polynomer-oppgavesamling-oppgave-10-b
+name: fig-polynomer-oppgavesamling-oppgave-11-b
 width: 80%
 class: no-click
 ---
@@ -1295,7 +1295,7 @@ Lag en skisse av grafen til $p$.
 
 :::{figure} ./figurer/oppgaver/oppgave_11/d.svg
 ---
-name: fig-polynomer-oppgavesamling-oppgave-10-d
+name: fig-polynomer-oppgavesamling-oppgave-11-d
 width: 80%
 class: no-click
 ---
