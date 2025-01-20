@@ -779,6 +779,10 @@ x^2 - x - 6 = (x - 3)(x + 2)
 $$
 
 en identitet siden venstre og høyre side er like for **alle** verdier av $x$. 
+
+Strategier vi kan bruke i oppgaver av denne typen er:
+* Prøve å bestemme røttene til polynomet direkte.
+* Bruk polynomdivisjon til å finne kvotienten dersom det ikke er noen rest.
 ::::::::::::::
 
 
