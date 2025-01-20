@@ -737,7 +737,7 @@ $$
 En tredjegradsfunksjon $p$ er gitt ved 
 
 $$
-p(x) = x^3 + 4x^2 - 5x + 6
+p(x) = x^4 - 16x + 2. 
 $$
 
 Bestem likningen til tangenten i $(0, p(0))$. 
@@ -748,7 +748,7 @@ Bestem likningen til tangenten i $(0, p(0))$.
 class: answer, dropdown
 ---
 $$
-y = -5x + 6.
+y = -16x + 2.
 $$
 ::::
 
