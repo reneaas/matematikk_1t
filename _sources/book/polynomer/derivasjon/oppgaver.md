@@ -857,7 +857,7 @@ viser grafen til en andregradsfunksjon $f$ og to tangenter. Den ene tangenten ha
 class: dropdown, answer
 ---
 $$
-f(x) = -x^2 + 2x + 3 \quad \text{og} \quad f'(x) = -2x + 2.
+f(x) = -x^2 - 2x - 3 \quad \text{og} \quad f'(x) = -2x - 2.
 $$
 :::
 
