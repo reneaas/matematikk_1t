@@ -1395,7 +1395,7 @@ $$
 
 
 :::::::::::::{tab-item} d
-En likningen er gitt ved 
+En likning er gitt ved 
 
 $$
 x^3 - 5x^2 - 8x + 12 = (x - 1)(x + a)(x - b). 
