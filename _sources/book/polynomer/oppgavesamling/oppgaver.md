@@ -1685,23 +1685,53 @@ x = -1 \or x = 3.
 $$
 ::::
 
-:::::::::::::
 
-
-:::::::::::::{tab-item} d
-Løs ulikheten 
-
-$$
-x^3 - 5x^2 + 8x - 4 \geq 0.
-$$
-
-::::{admonition} Fasit
+::::{admonition} Løsning
 ---
-class: answer, dropdown
+class: solution, dropdown
 ---
+La 
+
 $$
-x = 2 \or x \leq 1. 
+f(x) = x^3 - x^2 - 5x - 3.
+$$ 
+
+Vi starter med å liste opp alle mulige heltallige røtter $x$ vi kan få, som er alle verdier av $x$ som kan dele konstantleddet $-3$. Dette kan bare være 
+
 $$
+x \in \{\pm 1, \pm 3\}.
+$$
+
+Vi sjekker som om noen av mulighetene medfører at $f(x) = 0$. 
+
+$x = 1$: 
+: $f(1) = 1^3 - 1^2 - 5\cdot 1 - 3 = 1 - 1 - 5 - 3 = -8$. 
+
+$x = -1$:
+: $f(-1) = (-1)^3 - (-1)^2 - 5\cdot (-1) - 3 = -1 - 1 + 5 - 3 = 0$. 
+
+Dermed er $x = - 1$ en rot. Dette betyr at $f(x)$ er delelig med $(x + 1)$ som betyr at $f(x) : (x + 1)$ gir oss et andregradspolynom:
+
+:::{figure} ./koder/oppgaver/oppgave_8/c.svg
+---
+width: 80%
+class: no-click
+---
+:::
+
+Vi går videre med å finne røttene til andregradspolynomet, som vi kan oppnå med $abc$-formelen:
+
+$$
+x = \dfrac{-(-2) \pm \sqrt{(-2)^2 - 4 \cdot 1 \cdot (-3)}}{2 \cdot 1} = \dfrac{2 \pm \sqrt{4 + 12}}{2} = \dfrac{2 \pm 4}{2} = 1 \pm 2.
+$$
+
+som gir at røttene til andregradspolynomet er
+
+$$
+x = -1 \or x = 3.
+$$
+
+Siden $x = -1$ også var en rot for tredjegradspolynomet, betyr det at vi nå har funnet alle røttene til tredjegradspolynomet også.
 ::::
 
 :::::::::::::
@@ -1854,7 +1884,7 @@ Hvis en $f$ er en polynomfunksjon, vil maksimums- eller minimumsverdien til $f$ 
 En tredjegradsfunksjon er gitt ved 
 
 $$
-f(x) = x^3 - 32x, \quad x \in [0, 4 \sqrt{2} \, ]. 
+f(x) = x^3 - 32x, \quad x \in \left[0, 4 \sqrt{2} \, \right]. 
 $$
 
 En trekant har hjørnene $(0, 0)$, $(2, 0)$ og $(2, f(2))$. Se {numref}`fig-polynomer-oppgavesamling-oppgave-10`.
@@ -1885,6 +1915,31 @@ A = 56.
 $$
 :::
 
+
+
+:::{admonition} Fasit
+---
+class: solution, dropdown
+---
+Siden $f(x) < 0$ for alle $x \in \left[0, 4\sqrt{2} \right]$, vil høyden i trekanten nødvendigvis være $|f(x)|$ for en gitt grunnlinje $x$. Dette betyr at arealet av trekanten er 
+
+$$
+A = \dfrac{1}{2} \cdot 2 \cdot |f(2)| = |f(2)|. 
+$$
+
+Da gjenstår det bare å regne ut $f(2)$ som gir:
+
+$$
+f(2) = 2^3 - 32 \cdot 2 = 8 - 64 = -56.
+$$
+
+Dermed er 
+
+$$
+A = |f(2)| = |-56| = 56.
+$$
+:::
+
 :::::::::::::
 
 
@@ -1898,7 +1953,7 @@ Bestem arealet $A(k)$ til trekanten.
 class: answer, dropdown
 ---
 $$
-A(k) = -\dfrac{1}{2}k^4 + 16k^2.   
+A(k) = 16k^2 - \dfrac{1}{2}k^4. 
 $$
 :::
 
