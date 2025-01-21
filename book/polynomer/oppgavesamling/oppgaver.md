@@ -2269,7 +2269,7 @@ $$
 V'(r) = (-\pi r^3 + 12\pi r)' = -3\pi r^2 + 12\pi = 0 \liff r^2 = 4 \limplies r = 2.
 $$
 
-der vi har forkastet $r = -2$ som en mulig fordi radien $r > 0$. Dermed vil volumet bli størst mulig dersom
+der vi har forkastet $r = -2$ som en mulig løsning fordi radien $r > 0$. Dermed vil volumet bli størst mulig dersom
 
 $$
 r = 2. 
