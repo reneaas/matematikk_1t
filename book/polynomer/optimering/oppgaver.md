@@ -14,7 +14,7 @@ class: tabs-parts
 En andregradsfunksjon $f$ er gitt ved 
 
 $$
-f(x) = x^2 - 4x + 1.
+f(x) = -x^2 + 4x + 1.
 $$
 
 Bestem $x$ slik at $f(x)$ er størst mulig.
@@ -36,7 +36,7 @@ class: dropdown, answer
 Siden ledende koeffisient $a < 0$, er $f(x)$ er størst mulig når $f'(x) = 0$. Vi kan derfor finne $x$ ved å løse $f'(x) = 0$:
 
 $$
-f'(x) = (x^2 - 4x + 1)' = 2x - 4 = 0 \liff 2x = 4 \liff x = 2.
+f'(x) = (-x^2 + 4x + 1)' = -2x + 4 = 0 \liff 2x = 4 \liff x = 2.
 $$
 
 Altså er $f(x)$ størst mulig når $x = 2$.
