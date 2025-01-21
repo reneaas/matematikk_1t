@@ -837,6 +837,7 @@ class: problem-level-2
 {numref}`fig-polynomfunksjoner-derivasjon-oppgave-7` viser grafen til en andregradsfunksjon $f$ og to tangenter. Om tangentene får du vite at:
 * Den ene tangenten har likningen $y = 4x + 4$.
 * Den andre tangenten skjærer $y$-aksen i $(0, 12)$.
+* Grafen til $f$ skjærer $y$-aksen i $(0, 3)$. 
 
 
 Bestem $f(x)$ og $f'(x)$.
