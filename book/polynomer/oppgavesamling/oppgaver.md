@@ -2163,9 +2163,9 @@ class: dropdown, hints
 For å bestemme overflatearealet, kan du dele det opp i tre deler:
 1. Topp
 2. Bunn
-3. Side
+3. Sideflate
 
-For å bestemme en formel for arealet av siden, kan du tenke deg at du klipper opp sylinderen og bretter den ut. Hvilken form får du da? Kan du bestemme arealet av denne formen? 
+For å bestemme en formel for arealet av sideflaten, kan du tenke deg at du klipper opp sylinderen og bretter den ut. Hvilken form får du da? Kan du bestemme arealet av denne formen? 
 ::::
 
 ::::{admonition} Fasit
