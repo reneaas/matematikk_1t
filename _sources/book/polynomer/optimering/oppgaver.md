@@ -516,7 +516,7 @@ $$
 f(x) = -(x - 2)^2 + 4, \quad D_f = [0, 6]. 
 $$
 
-Bruk **Strategi 1** for å **maksimere en funksjon** med $\Delta x = 1$ og fyll ut programmet under slik at det finner den verdien av $x$ som gjør $f(x)$ størst mulig.
+Bruk **Strategi 1** for å **maksimere en funksjon** og fyll ut programmet under slik at det finner den verdien av $x$ som gjør $f(x)$ størst mulig.
 
 :::{raw} html
 ---
