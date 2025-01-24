@@ -2282,3 +2282,65 @@ $$
 
 :::::::::::::::
 
+
+---
+
+
+:::::::::::::::{admonition} Oppgave 13
+---
+class: problem-level-3
+---
+En funksjon $f$ er en tredjegradsfunksjon. 
+
+Under skal du vurdere ulike påstander og vurdere om de er sanne eller usanne.
+
+::::::::::::::{tab-set}
+---
+class: tab-parts
+---
+:::::::::::::{tab-item} Påstand 1
+$f'$ er en andregradsfunksjon.
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+Påstanden er sann.
+::::
+
+:::::::::::::
+
+
+
+:::::::::::::{tab-item} Påstand 2
+En linje $y = ax + b$ der $a, b \in \mathbb{R}$ vil alltid skjære grafen til $f$ i *minst* ett punkt.
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+Påstanden er sann.
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} Påstand 3
+Grafen til $f'$ har et ekstremalpunkt i $x = 1$. Da er $f'(1) = f'(5)$. 
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+Påstanden er sann.
+::::
+
+:::::::::::::
+
+::::::::::::::
+
+
+:::::::::::::::
+
+
+
