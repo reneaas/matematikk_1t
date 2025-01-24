@@ -241,21 +241,4 @@ sys.stderr = PyConsole("\${messageId}")
 
         this.initWorker();
     }
-
-
-    async registerModule(moduleName, moduleCode) {
-        const messageId = this.generateMessageId();
-        return new Promise((resolve, reject) => {
-            this.callbacks[messageId] = (data) => {
-                if (data.type === "executionComplete") {
-                    console.log(`Module "${moduleName}" registered successfully.`);
-                    resolve();
-                } else if (data.type === "stderr") {
-                    console.error(`Failed to register module "${moduleName}":`, data.msg);
-                    reject(new Error(data.msg));
-                }
-            };
-            this.worker.postMessage({ type: "runCode", code: moduleCode, messageId });
-        });
-    }
 }
