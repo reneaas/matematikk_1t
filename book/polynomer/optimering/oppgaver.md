@@ -343,7 +343,7 @@ class: solution, dropdown
 Først kan vi observere at siden vi har $100$ meter med gjerde til rådighet, må 
 
 $$
-y + x + y = 100 \liff x + 2y = 00 \liff 2y = 100 - x
+y + x + y = 100 \liff x + 2y = 100 \liff 2y = 100 - x
 $$
 
 som vi kan skrive om til 
