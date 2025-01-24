@@ -2326,7 +2326,7 @@ Påstanden er sann.
 
 
 :::::::::::::{tab-item} Påstand 3
-Grafen til $f'$ har et ekstremalpunkt i $x = 1$. Da er $f'(1) = f'(5)$. 
+Grafen til $f'$ har et ekstremalpunkt i $x = 3$. Da er $f'(1) = f'(5)$. 
 
 ::::{admonition} Fasit
 ---
