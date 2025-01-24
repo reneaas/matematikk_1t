@@ -1,12 +1,10 @@
 def main():
     polylongdiv(
-        fname="andregradsfunksjon",
-        p="ax^2 + bx + c",
-        q="(x - r)^2",
+        fname=__file__.split("/")[-1].replace(".py", ""),
+        p="x^3 - r^3",
+        q="x - r",
         stage=None,
-        svg=True,
     )
-    return None
 
 
 # NOTE: Ikke endre på noe under denne linjen
@@ -35,7 +33,6 @@ if __name__ == "__main__":
 
     # Add the GitHub repository root to sys.path
     sys.path.append(repo_root)
-    print(repo_root)
 
     from python_util.polydiv import polylongdiv
 

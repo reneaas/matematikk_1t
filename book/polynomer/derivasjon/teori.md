@@ -336,3 +336,211 @@ viser grafen til $f'$. Nullpunktene til $f'$ svarer til samme $x$-koordinater so
 
 :::::::::::::::
 
+
+---
+
+
+## Utledning av derivasjonsreglene (*)
+
+Vi har så langt bare påstått hva derivasjonsreglene for polynomer er. Her skal vi gå løs på å utlede noen av reglene.
+
+:::::::::::::::{admonition} Utforsk 2
+---
+class: explore
+---
+I {numref}`fig-polynomer-derivasjon-utforsk-2` vises grafen til en tredjegradsfunksjon $f$ og en sekant som går gjennom to punkter $(r, f(r))$ og $(x, f(x))$ der $x > r$.
+
+Vi antar her at $r$ er et fastholdt tall, mens $x$ kan variere.
+
+:::{figure} ./figurer/utforsk/utforsk_2/figur.svg
+---
+name: fig-polynomer-derivasjon-utforsk-2
+width: 80%
+class: no-click
+---
+viser grafen til en tredjegradsfunksjon $f$ og en sekant gjennom to punkter $(r, f(r))$ og $(x, f(x))$ der $x > r$.
+:::
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Forklar at den gjennomsnittlige vekstfarten til $f$ i intervallet $[r, x]$ er gitt ved
+
+$$
+\dfrac{f(x) - f(r)}{x - r}
+$$
+
+:::::::::::::
+
+:::::::::::::{tab-item} b
+
+Vi lar først $f(x) = x^3$. 
+
+Utfør polynomdivisjonen 
+
+$$
+K(x) = \dfrac{f(x) - f(r)}{x - r}
+$$
+
+for å finne en formel $K(x)$ for den gjennomsnittlige vekstfarten til $f$ i intervallet $[r, x]$.
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+
+$$
+K(x) = x^2 + rx + r^2. 
+$$
+
+::::
+
+
+::::{admonition} Løsning
+---
+class: answer, dropdown
+---
+Vi utfører polynomdivisjonen hvor $f(x) = x^3$ og $f(r) = r^3$
+
+:::{figure} ./koder/utforsk/utforsk_2/b.svg
+---
+width: 80%
+class: no-click
+---
+:::
+
+som betyr at kvotienten er 
+
+$$
+K(x) = x^2 + rx + r^2. 
+$$
+
+Denne funksjonen beskriver den gjennomsnittlige vekstfarten til $f$ i et intervall $[r, x]$.
+
+::::
+
+
+
+:::::::::::::
+
+:::::::::::::{tab-item} c
+Den momentane vekstfarten til $f(x) = x^3$ i punktet $r$ svarer i praksis til at vi lar $x = r$ i formelen for $K(x)$. Bruk dette til å bestemme en formel for $f'(r)$. 
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+
+$$
+f'(r) = 3r^2. 
+$$
+
+::::
+
+
+::::{admonition} Løsning
+---
+class: solution, dropdown
+---
+Vi har at $K(x)$ gir den gjennomsnittlige vekstfarten i $[r, x]$. For å finne den momentane vekstfarten i $r$, lar vi bare $x = r$ siden da beskriver vi stigningen i ett punkt. Da får vi:
+
+$$
+K(r) = r^2 + r\cdot r + r^2 = 3r^2.
+$$
+
+Siden dette er den momentane vekstfarten i $(r, f(r))$, betyr dette at 
+
+$$
+f'(r) = 3r^2. 
+$$
+
+::::
+
+:::::::::::::
+
+:::::::::::::{tab-item} d
+Vi lar i stedet $f(x) = ax^3$. 
+
+Bestem formelen for $K(x)$ nå.
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+K(x) = a(x^2 + rx + r^2).
+$$
+::::
+
+
+::::{admonition} Løsning
+---
+class: solution, dropdown
+---
+Hvis $f(x) = ax^3$, får vi 
+
+$$
+f(x) = ax^3 \quad \text{og} \quad f(r) = ar^3.
+$$
+
+som betyr at 
+
+$$
+K(x) = \dfrac{f(x) - f(r)}{x - r} = \dfrac{ax^3 - ar^3}{x - r} = \dfrac{a(x^3 - r^3)}{x - r} = a \cdot \dfrac{x^3 - r^3}{x - r}
+$$
+
+Siden vi allerede har funnet at 
+
+$$
+(x^3 - r^3) : (x - r) = x^2 + rx + r^2,
+$$
+
+får vi at
+
+$$
+K(x) = a(x^2 + rx + r^2).
+$$
+::::
+
+:::::::::::::
+
+:::::::::::::{tab-item} e
+Bruk svaret ditt fra **d** til å bestemme en formel for $f'(r)$ når $f(x) = ax^3$.
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+f'(r) = 3ar^2.
+$$
+::::
+
+
+::::{admonition} Løsning
+---
+class: solution, dropdown
+---
+Vi har at 
+
+$$
+K(x) = a(x^2 + rx + r^2).
+$$
+
+Siden $K(x)$ gir gjennomsnittlig vekstfart i $[r, x]$, vil $K(r)$ gi momentan vekstfart i $(r, f(r))$. Dermed får vi:
+
+$$
+f'(r) = a \cdot (r^2 + r\cdot r + r^2) = 3ar^2.
+$$
+::::
+
+:::::::::::::
+
+::::::::::::::
+
+
+
+:::::::::::::::
+
