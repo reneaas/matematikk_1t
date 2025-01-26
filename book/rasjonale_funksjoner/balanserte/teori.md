@@ -1,62 +1,34 @@
-# Representasjoner
+# Balanserte
 
 ::::{admonition} Læringsmål
 ---
 class: tip
 ---
 * Kunne representere rasjonale funksjoner algebraisk.
-* Kunne bestemme $f(x)$ for rasjonale funksjoner.
-* Kunne bestemme horisontale, vertikale og skrå asymptoter for rasjonale funksjoner.
+* Kunne bestemme $f(x)$ for for balanserte rasjonale funkjoner.
+* Kunne bestemme asymptotene til balanserte rasjonale funksjoner.
 ::::
 
 
-En rasjonal funksjon er en brøk av to polynomfunksjoner. 
+Kort forklart, er en **rasjonal funksjon** er en brøk der dividend og divisor er polynomer. 
 
 :::::{admonition} Rasjonale funksjoner
 ---
 class: summary 
 ---
-En rasjonal funksjon $f$ kan skrives som
+En rasjonal funksjon $f$ er en funksjon som kan skrives som
 
 $$
 f(x) = \dfrac{P(x)}{Q(x)}
 $$
 
-der $P$ og $Q$ er polynomfunksjoner. 
+der $P(x)$ og $Q(x)$ er polynomer. 
 :::::
 
 
 Vi starter med å utforske noen egenskaper ved en spesiell type rasjonal funksjon.
 
-
-:::::{admonition} Balansert rasjonal funksjon
----
-class: theory
----
-En rasjonal funksjon $f$ der dividend og divisor er lineære polynomer, kan skrives som 
-
-$$
-f(x) = \dfrac{a(x - b)}{x - c}
-$$
-:::::
-
-
 :::::::::::::::{admonition} Utforsk 1
----
-class: explore
----
-
-:::{raw} html
----
-file: ./python/utforsk/utforsk_1/a.html
----
-:::
-
-:::::::::::::::
-
-
-
-:::::::::::::::{admonition} Utforsk 1.2
 ---
 class: explore
 ---
@@ -108,6 +80,23 @@ Konstanten $c$ bestemmer den vertikale linje $x = c$. Grafen til $f$ nærmer seg
 
 :::::::::::::::
 
+---
+
+
+:::::::::::::::{admonition} Utforsk 1
+---
+class: explore
+---
+
+:::{raw} html
+---
+file: ./python/utforsk/utforsk_1/a.html
+---
+:::
+
+:::::::::::::::
+
+---
 
 Vi kan oppsummere det vi utforsket i Utforsk 1 med følgende resultat:
 
