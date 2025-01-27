@@ -26,7 +26,7 @@ def main(dirname, save):
     ax.text(
         x=-2,
         y=0 - dy,
-        s="$(0, -2)$",
+        s="$(-2, 0)$",
         fontsize=16,
         ha="left",
         va="top",
