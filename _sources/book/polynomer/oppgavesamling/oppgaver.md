@@ -1748,6 +1748,84 @@ Siden $x = -1$ også var en rot for tredjegradspolynomet, betyr det at vi nå ha
 ---
 class: problem-level-2
 ---
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} b
+Løs ulikheten 
+
+$$
+(x - 4)^2 (x + 2) > 0.
+$$
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x \in \langle -2, \to \rangle \setminus \{4\}.
+$$
+::::
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Løs ulikheten 
+
+$$
+x^3 + 4x^2 + x - 6 > 0. 
+$$
+
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x \in \langle -3, -2 \rangle \cup \langle 1, \to \rangle.
+$$
+::::
+
+:::::::::::::
+
+:::::::::::::{tab-item} c
+En tredjegradsfunksjon er gitt ved 
+
+$$
+f(x) = -x^3 - 3x^2 + 4.
+$$
+
+Løs ulikheten $f(x) > 0$.
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x \in \langle \gets, 1 \rangle \setminus \{-2\}. 
+$$
+::::
+
+:::::::::::::
+
+:::::::::::::{tab-item} d
+
+:::::::::::::
+
+
+::::::::::::::
+
+:::::::::::::::
+
+
+---
+
+
+:::::::::::::::{admonition} Oppgave 10
+---
+class: problem-level-2
+---
 
 ::::::::::::::{admonition} Repetisjon: Sammenheng mellom $f$ og $f'$
 ---
@@ -1765,14 +1843,14 @@ For en polynomfunksjon $f$ gjelder følgende:
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
-{numref}`fig-polynomer-oppgavesamling-oppgave-9-a` viser grafen til en andregradsfunksjon $f$. 
+{numref}`fig-polynomer-oppgavesamling-oppgave-10-a` viser grafen til en andregradsfunksjon $f$. 
 
 Lag en skisse av grafen til $f'$. 
 
 
-:::{figure} ./figurer/oppgaver/oppgave_9/a.svg
+:::{figure} ./figurer/oppgaver/oppgave_10/a.svg
 ---
-name: fig-polynomer-oppgavesamling-oppgave-9-a
+name: fig-polynomer-oppgavesamling-oppgave-10-a
 width: 80%
 class: no-click
 ---
@@ -1783,7 +1861,7 @@ viser grafen til en andregradsfunksjon $f$.
 ---
 class: answer, dropdown
 ---
-:::{figure} ./figurer/oppgaver/oppgave_9/a_løsning.svg
+:::{figure} ./figurer/oppgaver/oppgave_10/a_løsning.svg
 ---
 width: 100%
 class: no-click
@@ -1796,14 +1874,14 @@ viser en skisse av grafen til $f'$.
 
 
 :::::::::::::{tab-item} b
-{numref}`fig-polynomer-oppgavesamling-oppgave-9-b` viser grafen til en tredjegradsfunksjon $g$. 
+{numref}`fig-polynomer-oppgavesamling-oppgave-10-b` viser grafen til en tredjegradsfunksjon $g$. 
 
 Lag en skisse av grafen til $g'$. 
 
 
-:::{figure} ./figurer/oppgaver/oppgave_9/b.svg
+:::{figure} ./figurer/oppgaver/oppgave_10/b.svg
 ---
-name: fig-polynomer-oppgavesamling-oppgave-9-b
+name: fig-polynomer-oppgavesamling-oppgave-10-b
 width: 80%
 class: no-click
 ---
@@ -1814,7 +1892,7 @@ viser grafen til en tredjegradsfunksjon $g$.
 ---
 class: answer, dropdown
 ---
-:::{figure} ./figurer/oppgaver/oppgave_9/b_løsning.svg
+:::{figure} ./figurer/oppgaver/oppgave_10/b_løsning.svg
 ---
 width: 100%
 class: no-click
@@ -1828,14 +1906,14 @@ viser en skisse av grafen til $g'$.
 
 
 :::::::::::::{tab-item} c
-{numref}`fig-polynomer-oppgavesamling-oppgave-9-c` viser grafen til en tredjegradsfunksjon $h$. 
+{numref}`fig-polynomer-oppgavesamling-oppgave-10-c` viser grafen til en tredjegradsfunksjon $h$. 
 
 Lag en skisse av grafen til $h'$. 
 
 
-:::{figure} ./figurer/oppgaver/oppgave_9/c.svg
+:::{figure} ./figurer/oppgaver/oppgave_10/c.svg
 ---
-name: fig-polynomer-oppgavesamling-oppgave-9-c
+name: fig-polynomer-oppgavesamling-oppgave-10-c
 width: 80%
 class: no-click
 ---
@@ -1846,7 +1924,7 @@ viser grafen til en tredjegradsfunksjon $h$.
 ---
 class: answer, dropdown
 ---
-:::{figure} ./figurer/oppgaver/oppgave_9/c_løsning.svg
+:::{figure} ./figurer/oppgaver/oppgave_10/c_løsning.svg
 ---
 width: 100%
 class: no-click
@@ -1865,7 +1943,7 @@ viser en skisse av grafen til $h'$.
 
 
 
-:::::::::::::::{admonition} Oppgave 10
+:::::::::::::::{admonition} Oppgave 11
 ---
 class: problem-level-2
 ---
@@ -1887,12 +1965,12 @@ $$
 f(x) = x^3 - 32x, \quad x \in \left[0, 4 \sqrt{2} \, \right]. 
 $$
 
-En trekant har hjørnene $(0, 0)$, $(2, 0)$ og $(2, f(2))$. Se {numref}`fig-polynomer-oppgavesamling-oppgave-10`.
+En trekant har hjørnene $(0, 0)$, $(2, 0)$ og $(2, f(2))$. Se {numref}`fig-polynomer-oppgavesamling-oppgave-11`.
 
 
-:::{figure} ./figurer/oppgaver/oppgave_10/graf.svg
+:::{figure} ./figurer/oppgaver/oppgave_11/graf.svg
 ---
-name: fig-polynomer-oppgavesamling-oppgave-10
+name: fig-polynomer-oppgavesamling-oppgave-11
 width: 80%
 class: no-click
 ---
@@ -1980,7 +2058,7 @@ $$
 :::::::::::::::
 
 
-:::::::::::::::{admonition} Oppgave 11
+:::::::::::::::{admonition} Oppgave 12
 ---
 class: problem-level-2
 ---
@@ -1990,15 +2068,15 @@ class: problem-level-2
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
-{numref}`fig-polynomer-oppgavesamling-oppgave-11-a` viser grafen til en lineær funksjon $f'$. 
+{numref}`fig-polynomer-oppgavesamling-oppgave-12-a` viser grafen til en lineær funksjon $f'$. 
 
 Grafen til $f$ skjærer $x$-aksen i $x = 1$ og $x = 5$.  
 
 Lag en skisse av grafen til $f$. 
 
-:::{figure} ./figurer/oppgaver/oppgave_11/a.svg
+:::{figure} ./figurer/oppgaver/oppgave_12/a.svg
 ---
-name: fig-polynomer-oppgavesamling-oppgave-11-a
+name: fig-polynomer-oppgavesamling-oppgave-12-a
 width: 80%
 class: no-click
 ---
@@ -2010,7 +2088,7 @@ viser grafen til en lineær funksjon $f'$.
 ---
 class: dropdown, answer
 ---
-:::{figure} ./figurer/oppgaver/oppgave_11/a_løsning.svg
+:::{figure} ./figurer/oppgaver/oppgave_12/a_løsning.svg
 ---
 width: 100%
 class: no-click
@@ -2024,13 +2102,13 @@ viser en skisse av grafen til $f$.
 :::::::::::::
 
 :::::::::::::{tab-item} b
-{numref}`fig-polynomer-oppgavesamling-oppgave-11-b` viser grafen til en andregradsfunksjon $g'$. 
+{numref}`fig-polynomer-oppgavesamling-oppgave-12-b` viser grafen til en andregradsfunksjon $g'$. 
 
 Lag en skisse av grafen til $g$. 
 
-:::{figure} ./figurer/oppgaver/oppgave_11/b.svg
+:::{figure} ./figurer/oppgaver/oppgave_12/b.svg
 ---
-name: fig-polynomer-oppgavesamling-oppgave-11-b
+name: fig-polynomer-oppgavesamling-oppgave-12-b
 width: 80%
 class: no-click
 ---
@@ -2042,7 +2120,7 @@ viser grafen til en andregradsfunksjon $g'$.
 ---
 class: dropdown, answer
 ---
-:::{figure} ./figurer/oppgaver/oppgave_11/b_løsning.svg
+:::{figure} ./figurer/oppgaver/oppgave_12/b_løsning.svg
 ---
 width: 100%
 class: no-click
@@ -2056,15 +2134,15 @@ viser en skisse av grafen til $g$.
 :::::::::::::
 
 :::::::::::::{tab-item} c
-{numref}`fig-polynomer-oppgavesamling-oppgave-11-c` viser grafen til en andregradsfunksjon $h'$. 
+{numref}`fig-polynomer-oppgavesamling-oppgave-12-c` viser grafen til en andregradsfunksjon $h'$. 
 
 Funksjonen $h$ tilfredsstiller $h(-2) = h(1) = 0$. 
 
 Lag en skisse av grafen til $h$. 
 
-:::{figure} ./figurer/oppgaver/oppgave_11/c.svg
+:::{figure} ./figurer/oppgaver/oppgave_12/c.svg
 ---
-name: fig-polynomer-oppgavesamling-oppgave-11-c
+name: fig-polynomer-oppgavesamling-oppgave-12-c
 width: 80%
 class: no-click
 ---
@@ -2076,7 +2154,7 @@ viser grafen til en andregradsfunksjon $h'$.
 ---
 class: dropdown, answer
 ---
-:::{figure} ./figurer/oppgaver/oppgave_11/c_løsning.svg
+:::{figure} ./figurer/oppgaver/oppgave_12/c_løsning.svg
 ---
 width: 100%
 class: no-click
@@ -2090,15 +2168,15 @@ viser en skisse av grafen til $h$.
 :::::::::::::
 
 :::::::::::::{tab-item} d
-{numref}`fig-polynomer-oppgavesamling-oppgave-11-d` viser grafen til en tredjegradsfunksjon $p'$. Om $p$ får du vite at:
+{numref}`fig-polynomer-oppgavesamling-oppgave-12-d` viser grafen til en tredjegradsfunksjon $p'$. Om $p$ får du vite at:
 * $p(x)$ er et polynom med to negative røtter.
 * Grafen til $p$ skjærer $y$-aksen i et punkt $(0, y)$ der $y > 0$. 
 
 Lag en skisse av grafen til $p$. 
 
-:::{figure} ./figurer/oppgaver/oppgave_11/d.svg
+:::{figure} ./figurer/oppgaver/oppgave_12/d.svg
 ---
-name: fig-polynomer-oppgavesamling-oppgave-11-d
+name: fig-polynomer-oppgavesamling-oppgave-12-d
 width: 80%
 class: no-click
 ---
@@ -2110,7 +2188,7 @@ viser grafen til en tredjegradsfunksjon $p'$.
 ---
 class: dropdown, answer
 ---
-:::{figure} ./figurer/oppgaver/oppgave_11/d_løsning.svg
+:::{figure} ./figurer/oppgaver/oppgave_12/d_løsning.svg
 ---
 width: 100%
 class: no-click
@@ -2133,15 +2211,15 @@ viser en skisse av grafen til $p$.
 ---
 
 
-:::::::::::::::{admonition} Oppgave 12
+:::::::::::::::{admonition} Oppgave 13
 ---
 class: problem-level-3
 ---
-En sylinder med radius $r$ og høyde $h$ er vist i {numref}`fig-polynomer-oppgavesamling-oppgave-12-sylinder`.
+En sylinder med radius $r$ og høyde $h$ er vist i {numref}`fig-polynomer-oppgavesamling-oppgave-13-sylinder`.
 
-:::{figure} ./figurer/oppgaver/oppgave_12/figur.svg
+:::{figure} ./figurer/oppgaver/oppgave_13/figur.svg
 ---
-name: fig-polynomer-oppgavesamling-oppgave-12-sylinder
+name: fig-polynomer-oppgavesamling-oppgave-13-sylinder
 width: 80%
 class: no-click
 ---
@@ -2286,7 +2364,7 @@ $$
 ---
 
 
-:::::::::::::::{admonition} Oppgave 13
+:::::::::::::::{admonition} Oppgave 14
 ---
 class: problem-level-3
 ---
