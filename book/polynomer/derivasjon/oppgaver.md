@@ -956,7 +956,7 @@ Bestem $f'(x)$.
 class: dropdown, answer
 ---
 $$
-f'(x) = -x^2 + 2x + 3.
+f'(x) = -\dfrac{4}{9}(x + 2)(x - 4)
 $$
 :::
 
