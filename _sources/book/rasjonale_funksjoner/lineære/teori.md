@@ -1,13 +1,13 @@
-# Lineære rasjonale funksjoner
+# Lineære-til-lineære rasjonale funksjoner
 
 ::::{admonition} Læringsmål
 ---
 class: tip
 ---
-* Kunne representere lineære rasjonale funksjoner algebraisk, grafisk og med fortegnslinjer.
+* Kunne representere lineære-til-lineære rasjonale funksjoner algebraisk, grafisk og med fortegnslinjer.
 * Kunne bestemme $f(x)$ for rasjonale funksjoner der tellergrad og nevnergrad er 1.
-* Kunne bestemme asymptotene til lineære rasjonale funksjoner.
-* Kunne bestemme nullpunkter og løse ulikheter med lineære rasjonale funksjoner.
+* Kunne bestemme asymptotene til rasjonale funksjoner.
+* Kunne bestemme nullpunkter og løse ulikheter med rasjonale funksjoner.
 ::::
 
 En **rasjonal funksjon** er en funksjon som kan skrives som en brøk der telleren og nevneren er polynomer.
@@ -27,7 +27,8 @@ der $P(x)$ og $Q(x)$ er polynomer.
 Graden til $P$ kaller vi for **tellergraden** til $f$ og graden til $Q$ kaller vi for **nevnergraden** til $f$.
 :::::
 
-Vi skal først konsentrere oss om rasjonale funksjoner der tellergraden og nevnergraden er $1$. Det vil si der både teller og nevner er lineære polynomer. Vi skal kalle dette for **lineære** rasjonale funksjoner – eller mer presist *lineære-til-lineære* rasjonale funksjoner, men vi skal bruke den forkortede betegnelsen der det er underforstått at vi snakker om at både teller og nevner er lineære polynomer.
+Vi skal først konsentrere oss om rasjonale funksjoner der tellergraden og nevnergraden er $1$. 
+Det vil si der både teller og nevner er lineære polynomer. Vi skal kalle dette for **lineære-til-lineære** rasjonale funksjoner.
 
 
 ## Algebraisk og grafisk representasjon
@@ -249,7 +250,7 @@ $$
 
 ## Bestemme egenskaper fra $f(x)$
 
-:::::{admonition} Eksempel 1
+:::::{admonition} Eksempel 2
 ---
 class: example
 ---
