@@ -3,7 +3,7 @@ import numpy as np
 
 
 def main(dirname, save):
-    #
+
     # Define functions
     @np.vectorize
     def f(x, vertical_asymptote=1, horisontal_asymptote=2, zero=-2):
@@ -15,22 +15,27 @@ def main(dirname, save):
     # List of functions and their labels.
     functions = []
 
+    xmin = -16
+    xmax = 16
+    ymin = -16
+    ymax = 16
+
     fig, ax = plotmath.plot(
         functions=functions,
         fn_labels=False,
-        xmin=-6,
-        xmax=6,
-        ymin=-5,
-        ymax=7,
-        ticks=True,
+        xmin=xmin,
+        xmax=xmax,
+        ymin=ymin,
+        ymax=ymax,
+        ticks=False,
     )
 
-    vertical_asymptote = -1
-    horisontal_asymptote = 2
-    zero = 1 / 2
+    vertical_asymptote = -3
+    horisontal_asymptote = -2
+    zero = 2
 
-    x1 = np.linspace(-10, vertical_asymptote, 1024)
-    x2 = np.linspace(vertical_asymptote, 10, 1024)
+    x1 = np.linspace(xmin, vertical_asymptote, 1024)
+    x2 = np.linspace(vertical_asymptote, xmax, 1024)
 
     ax.plot(
         x1,
@@ -60,8 +65,8 @@ def main(dirname, save):
 
     ax.hlines(
         y=horisontal_asymptote,
-        xmin=-10,
-        xmax=10,
+        xmin=xmin,
+        xmax=xmax,
         linestyle="--",
         lw=1.5,
         color="blue",
@@ -69,8 +74,8 @@ def main(dirname, save):
     )
     ax.vlines(
         x=vertical_asymptote,
-        ymin=-12,
-        ymax=12,
+        ymin=ymin,
+        ymax=ymax,
         linestyle="--",
         lw=1.5,
         color="red",
@@ -78,6 +83,36 @@ def main(dirname, save):
     )
 
     ax.plot(zero, 0, "ko", markersize=8, alpha=0.7)
+
+    dx = dy = 1
+    ax.text(
+        x=zero,
+        y=0 + dy,
+        s=f"$({zero}, 0)$",
+        fontsize=16,
+        ha="center",
+        va="bottom",
+    )
+
+    ax.text(
+        x=-4,
+        y=5,
+        s=f"$x = {vertical_asymptote}$",
+        fontsize=16,
+        va="center",
+        ha="right",
+        color="red",
+    )
+
+    ax.text(
+        x=4,
+        y=-4,
+        s=f"$y = {horisontal_asymptote}$",
+        fontsize=16,
+        va="top",
+        ha="center",
+        color="blue",
+    )
 
     ax.legend(fontsize=16)
 
