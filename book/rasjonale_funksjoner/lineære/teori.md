@@ -88,15 +88,19 @@ Konstanten $c$ bestemmer den vertikale linje $x = c$. Grafen til $f$ nærmer seg
 
 Vi kan oppsummere det vi utforsket i Utforsk 1 med følgende resultat:
 
-:::::{admonition} Lineære rasjonale funksjoenr
+:::::{admonition} Lineære rasjonale funksjoner
 ---
 class: summary
 ---
-En rasjonal funksjon $f = P/Q$ der $P$ og $Q$ er er polynomfunksjoner av grad 1, kan alltid skrives osom
+En rasjonal funksjon $f$ der teller $P(x)$ og nevner $Q(x)$ er lineære polynomer kan alltid skrives som
 
-$$
-f(x) = \dfrac{P(x)}{Q(x)} = \dfrac{a(x - x_1)}{x - x_\infty}
-$$
+:::{figure} ./figurer/teori/annoterte_figurer/linear_rational_function.svg
+---
+width: 50%
+class: no-click
+---
+:::
+
 
 der definisjonsmengden er $D_f = \mathbb{R} \setminus \{x_\infty\}$ og verdimengden er $V_f = \mathbb{R} \setminus \{a\}$.
 
@@ -110,7 +114,7 @@ class: no-click
 
 | Konstant | Betydning |
 |:-----------:|------------|
-| $a$ | **Horisontal asymptote**. Verdien $f(x)$ nærmer seg når $|x|$ er veldig stor.|
+| $a$ | **Horisontal asymptote**. Verdien $f(x)$ nærmer seg når $\|x\|$ er veldig stor. |
 | $x_1$ | **Nullpunktet** til $f$. Samme som nullpunktet til telleren $P$. |
 | $x_\infty$ | **Vertikal asymptote**. Grafen til $f$ vokser mot uendeligheten når $x$ er nær linja $x = x_\infty$. Samme som nullpunktet til nevneren $Q$. |
 
