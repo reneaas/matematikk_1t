@@ -3,12 +3,12 @@ import signchart
 
 def main(dirname, save):
 
-    f = "3 * (x - 1) / (x + 2)"
+    f = "2*(x - 3) / (x + 1)"
 
     signchart.plot(
         f=f,
         fn_name="f(x)",
-        include_factors=False,
+        include_factors=True,
     )
 
     if save:

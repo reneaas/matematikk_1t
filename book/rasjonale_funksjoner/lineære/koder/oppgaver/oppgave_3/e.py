@@ -15,22 +15,24 @@ def main(dirname, save):
     # List of functions and their labels.
     functions = []
 
+    xmin = -15
+    xmax = 15
     fig, ax = plotmath.plot(
         functions=functions,
         fn_labels=False,
-        xmin=-6,
-        xmax=6,
-        ymin=-5,
-        ymax=7,
-        ticks=True,
+        xmin=xmin,
+        xmax=xmax,
+        ymin=-6,
+        ymax=10,
+        ticks=False,
     )
 
-    vertical_asymptote = -3
+    vertical_asymptote = -1
     horisontal_asymptote = 2
-    zero = 4
+    zero = 3
 
-    x1 = np.linspace(-10, vertical_asymptote, 1024)
-    x2 = np.linspace(vertical_asymptote, 10, 1024)
+    x1 = np.linspace(xmin, vertical_asymptote, 1024)
+    x2 = np.linspace(vertical_asymptote, xmax, 1024)
 
     ax.plot(
         x1,
@@ -60,8 +62,8 @@ def main(dirname, save):
 
     ax.hlines(
         y=horisontal_asymptote,
-        xmin=-10,
-        xmax=10,
+        xmin=xmin,
+        xmax=xmax,
         linestyle="--",
         lw=1.5,
         color="blue",
@@ -69,12 +71,42 @@ def main(dirname, save):
     )
     ax.vlines(
         x=vertical_asymptote,
-        ymin=-12,
-        ymax=12,
+        ymin=-20,
+        ymax=20,
         linestyle="--",
         lw=1.5,
         color="red",
         alpha=0.7,
+    )
+
+    ax.text(
+        x=vertical_asymptote - 1.5,
+        y=-3,
+        s=f"$x={vertical_asymptote}$",
+        fontsize=16,
+        va="center",
+        ha="right",
+        color="red",
+    )
+
+    ax.text(
+        x=5,
+        y=horisontal_asymptote + 1,
+        s=f"$y={horisontal_asymptote}$",
+        fontsize=16,
+        va="center",
+        ha="right",
+        color="blue",
+    )
+
+    ax.plot(zero, 0, "ko", markersize=8, alpha=0.7)
+    ax.text(
+        x=zero,
+        y=-0.5,
+        s=f"$({zero}, 0)$",
+        ha="left",
+        va="top",
+        fontsize=16,
     )
 
     ax.legend(fontsize=16)
