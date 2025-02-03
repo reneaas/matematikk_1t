@@ -1,10 +1,10 @@
-# Lineære-til-lineære rasjonale funksjoner
+# Lineære-over-lineære 
 
 ::::{admonition} Læringsmål
 ---
 class: tip
 ---
-* Kunne representere lineære-til-lineære rasjonale funksjoner algebraisk, grafisk og med fortegnslinjer.
+* Kunne representere lineære-over-lineære rasjonale funksjoner algebraisk, grafisk og med fortegnslinjer.
 * Kunne bestemme $f(x)$ for rasjonale funksjoner der tellergrad og nevnergrad er 1.
 * Kunne bestemme asymptotene til rasjonale funksjoner.
 * Kunne bestemme nullpunkter og løse ulikheter med rasjonale funksjoner.
@@ -28,7 +28,7 @@ Graden til $P$ kaller vi for **tellergraden** til $f$ og graden til $Q$ kaller v
 :::::
 
 Vi skal først konsentrere oss om rasjonale funksjoner der tellergraden og nevnergraden er $1$. 
-Det vil si der både teller og nevner er lineære polynomer. Vi skal kalle dette for **lineære-til-lineære** rasjonale funksjoner.
+Det vil si der både teller og nevner er lineære polynomer. Vi skal kalle dette for **lineære-over-lineære** rasjonale funksjoner.
 
 
 ## Algebraisk og grafisk representasjon
