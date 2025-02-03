@@ -89,19 +89,15 @@ Konstanten $c$ bestemmer den vertikale linje $x = c$. Grafen til $f$ nærmer seg
 
 Vi kan oppsummere det vi utforsket i Utforsk 1 med følgende resultat:
 
-:::::{admonition} Lineære rasjonale funksjoner
+:::::{admonition} Lineære-over-lineære rasjonale funksjoner
 ---
 class: summary
 ---
 En rasjonal funksjon $f$ der teller $P(x)$ og nevner $Q(x)$ er lineære polynomer kan alltid skrives som
 
-$$
-f(x) = \dfrac{a(x - b)}{x - c}
-$$
-
 :::{figure} ./figurer/teori/annoterte_figurer/linear_rational_function.svg
 ---
-width: 50%
+width: 60%
 class: no-click
 ---
 :::
@@ -288,7 +284,7 @@ som betyr at vi kan lese av nullpunktet og asymptotene til $f$:
 
 ---
 
-## Skissere grafen til en lineær rasjonal funksjon $f$
+## Skissere grafen til $f$
 
 Vi går løs på et eksempel der vi lager en skisse av grafen til en lineær rasjonal funksjon.
 

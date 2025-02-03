@@ -1,4 +1,4 @@
-# Oppgaver: <br> Lineære-til-lineære rasjonale funksjoner
+# Oppgaver: <br> Lineære-over-lineære
 
 :::::::::::::::{admonition} Oppgave 1
 ---
