@@ -290,7 +290,7 @@ Lag en skisse av grafen til $f$.
 ---
 class: answer, dropdown
 ---
-:::{figure} ./figurer/oppgaver/oppgave_5/c.svg
+:::{figure} ./figurer/oppgaver/oppgave_4/c.svg
 ---
 width: 100%
 class: no-click
@@ -550,7 +550,7 @@ Løs ulikheten $f(x) \geq 0$.
 class: answer, dropdown
 ---
 $$
-x \in \langle \gets, 2] \setminus \{-1\}.
+x \in \langle -1, 2]
 $$
 
 :::::::::::::
