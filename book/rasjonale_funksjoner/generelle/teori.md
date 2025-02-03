@@ -15,7 +15,7 @@ class: tip
 
 ## Nullpunkter
 
-Når vi jobbet med lineære-over-lineære rasjonale funksjoner $f$, så var det polynomet i telleren som bestemte nullpunktet. Dette var ikke tilfeldig, og dette kan vi generalisere til alle rasjonale funksjoner – med noen forsiktighetsregler. 
+Når vi jobbet med lineære-over-lineære rasjonale funksjoner, så var det polynomet i telleren som bestemte nullpunktet. Dette var ikke tilfeldig, og dette kan vi generalisere til alle rasjonale funksjoner – med én forsiktighetsregel. 
 
 :::::{admonition} Setning: Nullpunktene til rasjonale funksjoner
 ---
@@ -30,7 +30,7 @@ $$
 har $f$ og $P$ har samme nullpunkter så lenge det **ikke** er et nullpunkt for $Q$.
 :::::
 
-Setningen over forteller oss at hvis vi ønsker å lete etter nullpunktene til en rasjonal funksjon $f$, trenger vi bare å finne røttene til tellerpolynomet $P(x)$ og sjekke at nevnerpolynomet $Q(x)$ ikke er null i disse punktene – den siste sjekken er forsiktighetsregelen vi *må* passe på å gjennomføre.
+Setningen over forteller oss at hvis vi ønsker å lete etter nullpunktene til en rasjonal funksjon $f$, trenger vi bare å lete etter nullpunktene til $P$ og sørge for at $Q$ ikke har et felles nullpunkt med $P$. Dette er forsiktighetsregelen vi **må** følge.
 
 
 :::::{admonition} Eksempel 1
@@ -70,7 +70,7 @@ $$
 som betyr at 
 
 $$
-Q(x) = 0 \liff (x - 3)(x + 2) = 0 \liff x = -2 \lor x = 3
+Q(x) = 0 \liff (x - 3)(x + 2) = 0 \liff x = -2 \or x = 3
 $$
 
 Vi ser derfor at $x = 3$ også er et nullpunkt for $Q$ som betyr at det eneste nullpunktene til $f$ er $x = -3$. 
@@ -101,7 +101,7 @@ $$
 f(x) = K(x) + \dfrac{R(x)}{Q(x)} \, ,
 $$
 
-der $K(x)$ er kvotienten (som er et polynom) og $R(x)$ er restpolynomet. Da gjelder følgende påstander:
+der $K(x)$ er kvotienten (som er et polynom) og $R(x)$ er restpolynoet. Da gjelder følgende påstander:
 
 * Hvis **tellergraden og nevnergraden er like**, så er $K(x) = \mathrm{konstant}$ en horisontal asymptote til $f$.
 * Hvis **tellergraden er én større enn nevnergraden**, er $K(x)$ en skrå asymptote til $f$.
@@ -137,7 +137,7 @@ Med avlesning, kan vi se at $a = -2$ som betyr at den horisontale asymptoten til
 
 :::{figure} ./koder/eksempler/eksempel_2/eksempel_2.svg
 ---
-width: 50%
+width: 60%
 class: no-click
 ---
 :::
@@ -175,7 +175,7 @@ Siden tellergraden til $f$ er én grad høyere enn nevnergraden, kan vi forvente
 
 :::{figure} ./koder/eksempler/eksempel_3/eksempel_3.svg
 ---
-width: 60%
+width: 70%
 class: no-click
 ---
 :::
@@ -219,7 +219,7 @@ Når vi jobbet med lineære-over-lineære rasjonale funksjoner, kan det hende du
 Dette gjelder nokså generelt.
 
 
-::::{admonition} Noen spesialtilfeller
+::::{admonition} Noen spesialtilfeller kommer smygende i oppgavene
 ---
 class: sidenote, margin
 ---
@@ -237,7 +237,7 @@ $$
 f(x) = \dfrac{P(x)}{Q(x)}
 $$
 
-Da er de vertikale asymptotene til $f$ gitt ved røttene til nevnerpolynomet $Q(x)$. 
+Da er det de vertikale asymptotene gitt ved nullpunktene til nevnerpolynomet $Q$.
 
 :::::
 
@@ -259,6 +259,21 @@ Bestem eventuelle vertikale asymptoter til $f$.
 ---
 class: solution
 ---
+
+Nevnerpolynomet til $f$ er gitt ved 
+
+$$
+Q(x) = x^2 - 4 = x^2 - 2^2 = (x + 2)(x - 2)
+$$
+
+som betyr at 
+
+$$
+Q(x) = 0 \liff (x + 2)(x - 2) = 0 \liff x = -2 \or x = 2
+$$
+
+Dermed vil $x = -2$ og $x = 2$ gi vertikale asymptoter til $f$.
+
 
 ::::::::::::::
 
