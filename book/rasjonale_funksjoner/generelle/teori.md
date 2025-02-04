@@ -219,14 +219,6 @@ Når vi jobbet med lineære-over-lineære rasjonale funksjoner, kan det hende du
 Dette gjelder nokså generelt.
 
 
-::::{admonition} Noen spesialtilfeller kommer smygende i oppgavene
----
-class: sidenote, margin
----
-Det viser seg at helt generelt, så vil ikke røttene til nevnerpolynomet $Q(x)$ automatisk gi oss vertikale asymptoter for en rasjonal funksjon $f$.
-I oppgavene vil du møte på noen tilfeller der dette ikke er tilfellet.
-::::
-
 :::::{admonition} Setning: Vertikale asymptoter til rasjonale funksjoner
 ---
 class: summary
@@ -237,11 +229,17 @@ $$
 f(x) = \dfrac{P(x)}{Q(x)}
 $$
 
-Da er det de vertikale asymptotene gitt ved nullpunktene til nevnerpolynomet $Q$.
+Da er $x = r$ en vertikal asymptote hvis:
+* $x = r$ er et nullpunkt for $Q$. 
+* $Q(x)$ inneholder flere faktorer av $(x - r)$ enn $P(x)$ gjør.
 
 :::::
 
-Vi tar et eksempel der vi bestemmer de vertikale asymptotene til en rasjonal funksjon: 
+Setningen forteller oss at 
+1. Vi må finne nullpunktene til $Q$.
+2. Vi må nullpunktsfaktorisere både $P$ og $Q$ og sjekke om $Q$ har flere lineære faktorer av typen $(x - r)$ enn $P$ har for hvert nullpunkt $x = r$.
+
+Bare da vil et punkt $x = r$ være en vertikal asymptote til $f$.
 
 :::::::::::::::{admonition} Eksempel 5
 ---
