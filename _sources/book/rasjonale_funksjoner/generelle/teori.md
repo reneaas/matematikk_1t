@@ -8,10 +8,28 @@ class: tip
 * Kunne bestemme horisontale eller skrå asymptoter til en rasjonal funksjon. 
 * Kunne bestemme nullpunktene til en rasjonal funksjon. 
 * Kunne bestemme vertikale asymptoter til en rasjonal funksjon.
-* Kunne lage fortegnslinjer og skissere grafen til en rasjonal funksjon, og bruke disse til å løse rasjonale ulikheter.
+* Kunne lage fortegnslinjer og skissere grafen til en rasjonal funksjon, å bruke dette til å løse rasjonale ulikheter.
 :::::
 
 ---
+
+Vi starter med en definisjon av et begrep som vi kommer til å bruke stadig vekk og derfor trenger å ha en delt forståelse av: 
+
+:::::{admonition} Definisjon: Bruddpunkter
+---
+class: theory
+---
+For en rasjonal funksjon $f$ på formen 
+
+$$
+f(x) = \dfrac{P(x)}{Q(x)}
+$$
+
+vil alle punktene $x$ der nevnerpolynomet oppfyller $Q(x) = 0$ kalles for **bruddpunktene** til $f$. Dette betyr at:
+* Nullpunktene til nevnerpolynomet $Q$ er bruddpunktene til $f$.
+* Bruddpunkter er punkter der $f$ ikke er definert. Disse må ekskluderes fra definisjonsmengden $D_f$ til $f$.
+* Bruddpunkter er punkter $x$ der vi deler på $0$ i $f(x)$.
+:::::
 
 ## Nullpunkter
 
@@ -27,10 +45,10 @@ $$
 f(x) = \dfrac{P(x)}{Q(x)}
 $$
 
-har $f$ og $P$ har samme nullpunkter så lenge det **ikke** er et nullpunkt for $Q$.
+har $f$ og $P$ samme nullpunkter så lenge et nullpunkt **ikke** også er et nullpunkt for $Q$.
 :::::
 
-Setningen over forteller oss at hvis vi ønsker å lete etter nullpunktene til en rasjonal funksjon $f$, trenger vi bare å lete etter nullpunktene til $P$ og sørge for at $Q$ ikke har et felles nullpunkt med $P$. Dette er forsiktighetsregelen vi **må** følge.
+Setningen over forteller oss at hvis vi ønsker å lete etter nullpunktene til en rasjonal funksjon $f$, trenger vi først og fremst å lete etter nullpunktene til tellerpolynomet $P$. Deretter må vi ekskludere eventuelle nullpunkter som også er nullpunkter til nevnerpolynomet $Q$. Dette er forsiktighetsregelen vi **må følge**.
 
 
 :::::{admonition} Eksempel 1
@@ -58,10 +76,10 @@ $$
 som betyr at 
 
 $$
-P(x) = 0 \liff (x + 3)(x - 3) = 0 \liff x = \pm 3. 
+P(x) = 0 \liff (x + 3)(x - 3) = 0 \liff x = -3 \or x = 3. 
 $$
 
-Det betyr at $x = \pm 3$ er kandidater for nullpunktene til $f$. Vi må sjekke røttene til nevnerpolynomet $Q(x)$. Dette kan vi gjøre ved å faktorisere:
+Det betyr at $x = \pm 3$ er kandidater for nullpunktene til $f$. Vi må sjekke nullpunktene til nevnerpolynomet $Q(x)$ for å se om $Q$ har noen av disse til felles. Dette kan vi gjøre ved å faktorisere:
 
 $$
 Q(x) = x^2 - x - 6 = (x - 3)(x + 2)
@@ -101,7 +119,7 @@ $$
 f(x) = K(x) + \dfrac{R(x)}{Q(x)} \, ,
 $$
 
-der $K(x)$ er kvotienten (som er et polynom) og $R(x)$ er restpolynoet. Da gjelder følgende påstander:
+der $K(x)$ er kvotienten (som er et polynom) og $R(x)$ er restpolynomet. Da gjelder følgende påstander:
 
 * Hvis **tellergraden og nevnergraden er like**, så er $K(x) = \mathrm{konstant}$ en horisontal asymptote til $f$.
 * Hvis **tellergraden er én større enn nevnergraden**, er $K(x)$ en skrå asymptote til $f$.
@@ -109,13 +127,10 @@ der $K(x)$ er kvotienten (som er et polynom) og $R(x)$ er restpolynoet. Da gjeld
 
 :::::::::::::::
 
-Setningen over forteller oss hvis vi skal bestemme horisontale eller skrå asymptoter til en rasjonal funksjon $f$, så må vi utføre polynomdivisjon og lese av kvotienten. 
+Setningen over forteller oss hvis vi skal bestemme horisontale eller skrå asymptoter til en rasjonal funksjon $f$, så må vi utføre polynomdivisjon så vi kan lese av hva **kvotienten** er. 
 
 
-
----
-
-Vi tar et eksempel på en lineær-over-lineær rasjonal funksjon for å se at vi får samme resultat som ved avlesning:
+Vi tar et eksempel på en lineær-over-lineær rasjonal funksjon for å se at vi får samme resultat som ved avlesning slik vi har gjort så langt:
 
 :::::::::::::::{admonition} Eksempel 2: Horisontale asymptote $y \neq 0$
 ---
@@ -205,7 +220,9 @@ $$
 f(x) = \dfrac{x - 2}{x^2 + 1}
 $$
 
-Siden tellergraden er mindre enn nevnergraden, kan vi ikke utføre polynomdivisjon – det fungerer bare hvis vi har en tellergrad som er *minst* like stor som nevnergraden. Det betyr at tellerpolynomet er **resten** og kvotienten må derfor være $K(x) = 0$. Det betyr at denne rasjonale funksjonen har en horisontal asymptote ved $y = 0$ – som svarer til $x$-aksen. Dette er alltid sant så lenge tellergraden er mindre enn nevnergraden.
+Siden tellergraden er mindre enn nevnergraden, kan vi ikke utføre polynomdivisjon – det fungerer bare hvis vi har en tellergrad som er *minst* like stor som nevnergraden. Det betyr at tellerpolynomet er **resten** og kvotienten må derfor være $K(x) = 0$. Det betyr at denne rasjonale funksjonen har en horisontal asymptote ved $y = 0$. 
+
+> **Observasjon**: Den horisontale asymptoten er alltid $y = 0$ når tellergraden er mindre enn nevnergraden.
 
 :::::::::::::::
 
@@ -216,7 +233,7 @@ Siden tellergraden er mindre enn nevnergraden, kan vi ikke utføre polynomdivisj
 
 ## Vertikale asymptoter
 Når vi jobbet med lineære-over-lineære rasjonale funksjoner, kan det hende du oppdaget at den vertikale asymptoten egentlig bare svarte til at vi delte på $0$. Med andre ord at det svarte til nullpunktet til nevneren. 
-Dette gjelder nokså generelt.
+Dette gjelder nesten helt generelt, men noen **forsiktighetsregler**.
 
 
 :::::{admonition} Setning: Vertikale asymptoter til rasjonale funksjoner
@@ -237,7 +254,7 @@ Da er $x = r$ en vertikal asymptote hvis:
 
 Setningen forteller oss at 
 1. Vi må finne nullpunktene til $Q$.
-2. Vi må nullpunktsfaktorisere både $P$ og $Q$ og sjekke om $Q$ har flere lineære faktorer av typen $(x - r)$ enn $P$ har for hvert nullpunkt $x = r$.
+2. Vi må nullpunktsfaktorisere både $P(x)$ og $Q(x)$ og sjekke om $Q(x)$ har flere lineære faktorer av typen $(x - r)$ enn $P(x)$ har for hvert nullpunkt $x = r$.
 
 Bare da vil et punkt $x = r$ være en vertikal asymptote til $f$.
 
@@ -248,7 +265,7 @@ class: example
 En rasjonal funksjon $f$ er gitt ved 
 
 $$
-f(x) = \dfrac{x^2 - 9}{x^2 - 4}
+f(x) = \dfrac{x^2 - 3x + 2}{x^2 + 2x - 3}
 $$
 
 Bestem eventuelle vertikale asymptoter til $f$.
@@ -257,20 +274,62 @@ Bestem eventuelle vertikale asymptoter til $f$.
 ---
 class: solution
 ---
+For å bestemme de vertikale asymptotene til $f$, må vi først nullpunktsfaktorisere teller- og nevnerpolynomet. Ved å bruke $abc$-formelen for tellerpolynomet får vi
 
-Nevnerpolynomet til $f$ er gitt ved 
+\begin{align*}
+    x &= \dfrac{-(-3) \pm \sqrt{(-3)^2 - 4\cdot 1 \cdot 2}}{2 \cdot 1} \\
+    \\
+    &= \dfrac{3 \pm \sqrt{9 - 8}}{2} \\
+    \\
+    &= \dfrac{3 \pm 1}{2} \\
+\end{align*}
+
+som gir 
 
 $$
-Q(x) = x^2 - 4 = x^2 - 2^2 = (x + 2)(x - 2)
+x = 1 \or x = 2. 
 $$
 
-som betyr at 
+Dermed kan tellerpolynomet skrives som 
 
 $$
-Q(x) = 0 \liff (x + 2)(x - 2) = 0 \liff x = -2 \or x = 2
+x^2 - 3x + 2 = (x - 1)(x - 2)
 $$
 
-Dermed vil $x = -2$ og $x = 2$ gi vertikale asymptoter til $f$.
+Vi bruker samme strategi for nevnerpolynomet:
+
+\begin{align*}
+x &= \dfrac{-2 \pm \sqrt{2^2 - 4 \cdot 1 \cdot (-3)}}{2 \cdot 1} \\
+\\
+&= \dfrac{-2 \pm \sqrt{4 + 12}}{2} \\
+\\
+&= \dfrac{-2 \pm \sqrt{16}}{2} \\
+\\
+&= \dfrac{-2 \pm 4}{2} \\
+\\
+&= -1 \pm 2
+\end{align*}
+
+som gir 
+
+$$
+x = -3 \or x = 1.
+$$
+
+Dermed kan vi skrive 
+
+$$
+f(x) = \dfrac{x^2 - 3x + 2}{x^2 + 2x - 3} = \dfrac{(x - 1)(x - 2)}{(x + 3)(x - 1)} = \dfrac{x - 2}{x + 3} \, ,
+$$
+
+så lenge $x \neq 1$. Med det forenklede uttrykket til $f(x)$ kan vi nå lete etter nullpunktene til det gjenværende nevnerpolynomet for å finne vertikale asymptoter. Dette gir: 
+
+$$
+x + 3 = 0 \liff x = -3.
+$$
+
+Dermed er $x = -3$ en vertikal asymptote til $f$.
+
 
 
 ::::::::::::::
