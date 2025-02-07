@@ -131,11 +131,11 @@ Vi går løs på et eksempel.
 ---
 class: example
 ---
-I {numref}`fig-rasjonale-funksjoner-representasjoner-eksempel-1` vises grafen til en lineær rasjonal funksjon $f$. 
+I {numref}`fig-rasjonale-funksjoner-representasjoner-eksempel-1` vises grafen til en rasjonal funksjon $f$. 
 
 I figuren vises det at grafen til $f$ har
-* En horisontal asymptote $y = 1$.
-* En vertikal asymptote $x = -2$.
+* En horisontal asymptote $y = 2$.
+* En vertikal asymptote $x = -1$.
 * Et nullpunkt i $x = 3$.
 
 Bestem $f(x)$.
@@ -146,7 +146,7 @@ name: fig-rasjonale-funksjoner-representasjoner-eksempel-1
 width: 80%
 class: no-click
 ---
-viser grafen til en rasjonal funksjon $f$ med en horisontal asymptote $y = 1$ og en vertikal asymptote $x = -2$ og et nullpunkt i $x = 3$. 
+viser grafen til en rasjonal funksjon $f$ med en horisontal asymptote $y = 2$ og en vertikal asymptote $x = -1$ og et nullpunkt i $x = 3$. 
 :::
 
 ::::{admonition} Løsning
@@ -156,19 +156,19 @@ class: solution
 En rasjonal funksjon der teller og nevner er lineære polynomer, kan alltid skrives som
 
 $$
-f(x) = \dfrac{a(x - x_1)}{x - x_\infty}
+f(x) = \dfrac{a(x - b)}{x - c}
 $$
 
 der $a$ er den horisontale asympoten, $x_1$ er nullpunktet og $x_\infty$ er den vertikale asymptoten. 
 
-* Horisontal asymptote er $y = 1$, så $a = 1$.
-* Nullpunktet er $x = 3$, så $x_1 = 3$.
-* Vertikal asymptote er $x = -2$, så $x_\infty = -2$.
+* Horisontal asymptote er $y = 2$, så $a = 2$.
+* Nullpunktet er $x = 3$, så $b = 3$.
+* Vertikal asymptote er $x = -1$, så $c = -1$.
 
 Dermed er $f(x)$ gitt ved 
 
 $$
-f(x) = \dfrac{1\cdot (x - 3)}{x - (-2)} = \dfrac{x - 3}{x + 2}
+f(x) = \dfrac{2\cdot (x - 3)}{x - (-1)} = \dfrac{2x - 6}{x + 1}
 $$
 ::::
 
