@@ -55,7 +55,7 @@ def main(dirname, save):
     )
 
     ax.annotate(
-        text="Vertikal asymptote \n $x = x_\\infty$",
+        text="Vertikal asymptote \n $x = c$",
         xy=(vertical_asymptote, -3),
         xytext=(vertical_asymptote + 2, -5),
         fontsize=18,
@@ -87,7 +87,7 @@ def main(dirname, save):
     )
 
     ax.annotate(
-        text="Nullpunkt $x = x_1$",
+        text="Nullpunkt $x = b$",
         xy=(zero, 0),
         xytext=(zero - 5, -5),
         fontsize=18,
