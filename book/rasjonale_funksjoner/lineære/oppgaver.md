@@ -53,7 +53,7 @@ $$
 :::::::::::::{tab-item} b
 I {numref}`fig-rasjonale-funksjoner-representasjoner-oppgave-2-b` vises grafen til en rasjonal funksjon $g$.
 
-Bestem $f(x)$.
+Bestem $g(x)$.
 
 :::{figure} ./figurer/oppgaver/oppgave_2/b.svg
 ---
@@ -79,7 +79,7 @@ $$
 :::::::::::::{tab-item} c
 I {numref}`fig-rasjonale-funksjoner-representasjoner-oppgave-2-c` vises grafen til en rasjonal funksjon $h$.
 
-Bestem $f(x)$.
+Bestem $h(x)$.
 
 :::{figure} ./figurer/oppgaver/oppgave_2/c.svg
 ---
@@ -104,7 +104,7 @@ $$
 :::::::::::::{tab-item} d
 I {numref}`fig-rasjonale-funksjoner-representasjoner-oppgave-2-d` vises grafen til en rasjonal funksjon $p$.
 
-Bestem $f(x)$.
+Bestem $p(x)$.
 
 :::{figure} ./figurer/oppgaver/oppgave_2/d.svg
 ---
@@ -343,7 +343,7 @@ Bestem et mulig uttrykk for $f(x)$.
 class: answer, dropdown
 ---
 $$
-f(x) = \dfrac{2(x + 4)}{x - 1}
+f(x) = \dfrac{2(x - 1)}{x + 4}
 $$
 ::::
 
@@ -354,7 +354,7 @@ $$
 Om en rasjonal funksjon $g$ får du vite at:
 * Definisjonsmengden til $g$ er $D_g = \mathbb{R} \setminus \{-2\}$. 
 * Grafen til $g$ skjærer $x$-aksen i $x = 2$. 
-* Grafen til $g$ skjærer $y$-aksen i $y = 6$. 
+* Grafen til $g$ skjærer $y$-aksen i $y = -6$. 
 
 Bestem et mulig uttrykk for $g(x)$. 
 
@@ -373,7 +373,7 @@ $$
 
 :::::::::::::{tab-item} c
 Om en rasjonal funksjon $h$ får du vite at:
-* Verdimengden til $h$ er $D_h = \mathbb{R} \setminus \{4\}$. 
+* Verdimengden til $h$ er $V_h = \mathbb{R} \setminus \{4\}$. 
 * Grafen til $h$ skjærer $x$-aksen i $x = -3$. 
 * Grafen til $h$ har et bruddpunkt i $x = 2$. 
 
@@ -385,7 +385,7 @@ Bestem et mulig uttrykk for $h(x)$.
 class: answer, dropdown
 ---
 $$
-h(x) = \dfrac{4x + 12)}{x - 2}
+h(x) = \dfrac{4x + 12}{x - 2}
 $$
 ::::
 

@@ -22,8 +22,33 @@ $$
 class: answer, dropdown
 ---
 $$
-x = \pm 2. 
+x = -2 \or x = 2
 $$
+::::
+
+
+::::{admonition} Løsning
+---
+class: solution, dropdown
+---
+Vi leter først etter nullpunktene til tellerpolynomet:
+
+$$
+x^2 - 4 = 0 \liff (x + 2)(x - 2) = 0 \liff x = -2 \or x = 2.
+$$
+
+Til slutt vi må sjekke at sjekke nullpunktet til nevnerpolynomet og ekskludere nullpunkter de har til felles:
+
+$$
+x + 1 = 0 \liff x = -1.
+$$
+
+Teller- og nevnerpolynomet har ingen felles nullpunkter som betyr at $f$ har samme nullpunkter som tellerpolynomet. Dermed har vi at nullpunktene til $f$ er 
+
+$$
+x = -2 \or x = 2.
+$$
+
 ::::
 
 :::::::::::::
@@ -41,6 +66,14 @@ class: answer, dropdown
 $$
 x = 1
 $$
+::::
+
+
+::::{admonition} Løsning
+---
+class: solution, dropdown
+---
+
 ::::
 
 :::::::::::::
@@ -168,6 +201,16 @@ Fra divisjonen får vi at $K(x) = 4$ som betyr at likningen for den horisontale 
 $$
 h(x) = \dfrac{x^2 + x - 2}{x + 5}
 $$
+
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+y = x - 4.
+$$
+::::
 
 
 ::::{admonition} Løsning
@@ -865,17 +908,4 @@ $$
 ::::::::::::::
 
 :::::::::::::::
-
-
-
-
-
-
-
-
-
-
-
-
-
 
