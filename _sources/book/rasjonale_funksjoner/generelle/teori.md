@@ -316,7 +316,13 @@ $$
 x = -3 \or x = 1.
 $$
 
-Dermed kan vi skrive 
+Dette betyr at vi kan skrive nevnerpolynomet som 
+
+$$
+x^2 + 2x - 3 = (x + 3)(x - 1).
+$$
+
+Dermed kan vi skrive $f(x)$ om til
 
 $$
 f(x) = \dfrac{x^2 - 3x + 2}{x^2 + 2x - 3} = \dfrac{(x - 1)(x - 2)}{(x + 3)(x - 1)} = \dfrac{x - 2}{x + 3} \, ,
@@ -335,4 +341,9 @@ Dermed er $x = -3$ en vertikal asymptote til $f$.
 ::::::::::::::
 
 :::::::::::::::
+
+
+## Skissere grafen til en rasjonal funksjon $f$
+
+
 
