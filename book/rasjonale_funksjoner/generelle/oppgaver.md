@@ -810,7 +810,7 @@ class: no-click
 ---
 class: problem-level-2
 ---
-En rasjonal funksjon er gitt ved 
+En rasjonal funksjon $f$ er gitt ved 
 
 $$
 f(x) = \dfrac{x^2 - 16}{(x + 2)(x - 2)}
