@@ -343,7 +343,4 @@ Dermed er $x = -3$ en vertikal asymptote til $f$.
 :::::::::::::::
 
 
-## Skissere grafen til en rasjonal funksjon $f$
-
-
 
