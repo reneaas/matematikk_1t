@@ -524,7 +524,289 @@ Vi ser at selv om $x = -1$ er et bruddpunkt for $p$ siden det er nullpunktet til
 ---
 
 
+
 :::::::::::::::{admonition} Oppgave 4
+---
+class: problem-level-2
+---
+En rasjonal funksjon $f$ er gitt ved 
+
+$$
+f(x) = \dfrac{x^2 + 4x + 4}{x - 2}
+$$
+
+Nedenfor vises 4 figurer der én av dem viser grafen til $f$.
+
+Bestem hvilken graf som hører til $f$. 
+
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+Graf **C**. 
+::::
+
+:::::{grid}
+
+::::{grid-item}
+---
+outline:
+columns: 6
+---
+:::{figure} ./figurer/oppgaver/oppgave_4/A.svg
+---
+width: 100%
+class: no-click
+---
+:::
+::::
+::::{grid-item}
+---
+outline:
+columns: 6
+---
+:::{figure} ./figurer/oppgaver/oppgave_4/B.svg
+---
+width: 100%
+class: no-click
+---
+:::
+::::
+::::{grid-item}
+---
+outline:
+columns: 6
+---
+:::{figure} ./figurer/oppgaver/oppgave_4/C.svg
+---
+width: 100%
+class: no-click
+---
+:::
+::::
+::::{grid-item}
+---
+outline:
+columns: 6
+---
+:::{figure} ./figurer/oppgaver/oppgave_4/D.svg
+---
+width: 100%
+class: no-click
+---
+:::
+::::
+
+:::::
+
+
+:::::::::::::::
+
+
+---
+
+:::::::::::::::{admonition} Oppgave 5
+---
+class: problem-level-2
+---
+To rasjonale funksjoner $f$ og $g$ er gitt ved 
+
+$$
+f(x) = \dfrac{x^2 - 2x - 3}{x^2 + 2x + 1} \quad \text{og} \quad g(x) = \dfrac{x^2 - 2x + 1}{x^2 - 2x - 3}
+$$
+
+Nedenfor viser 4 figurer der én av dem viser grafen til $f$ og én av dem viser grafen til $g$.
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Bestem hvilken graf som tilhører $f$.
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+Graf **B**.
+::::
+
+:::::::::::::
+
+:::::::::::::{tab-item} b
+Bestem hvilken graf som tilhører $g$.
+
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+Graf **C**.
+::::
+
+:::::::::::::
+::::::::::::::
+
+:::::{grid}
+
+::::{grid-item}
+---
+outline:
+columns: 6
+---
+:::{figure} ./figurer/oppgaver/oppgave_5/A.svg
+---
+width: 100%
+class: no-click
+---
+:::
+::::
+::::{grid-item}
+---
+outline:
+columns: 6
+---
+:::{figure} ./figurer/oppgaver/oppgave_5/B.svg
+---
+width: 100%
+class: no-click
+---
+:::
+::::
+::::{grid-item}
+---
+outline:
+columns: 6
+---
+:::{figure} ./figurer/oppgaver/oppgave_5/C.svg
+---
+width: 100%
+class: no-click
+---
+:::
+::::
+::::{grid-item}
+---
+outline:
+columns: 6
+---
+:::{figure} ./figurer/oppgaver/oppgave_5/D.svg
+---
+width: 100%
+class: no-click
+---
+:::
+::::
+
+:::::
+
+:::::::::::::::
+
+---
+
+:::::::::::::::{admonition} Oppgave 6
+---
+class: problem-level-2
+---
+To rasjonale funksjoner $f$ og $g$ er gitt ved 
+
+$$
+f(x) = \dfrac{x - 2}{x^2 + 4x +4} \quad \text{og} \quad g(x) = \dfrac{x^2 + 2x + 1}{x - 1}
+$$
+
+Nedenfor vises 4 figurer. Én av dem viser grafen til $f$ og én av dem viser grafen til $g$.
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Bestem hvilken graf som tilhører $f$.
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+Graf **A**.
+::::
+
+:::::::::::::
+
+:::::::::::::{tab-item} b
+Bestem hvilken graf som tilhører $g$.
+
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+Graf **C**.
+::::
+
+:::::::::::::
+
+::::::::::::::
+
+
+:::::{grid}
+
+::::{grid-item}
+---
+outline:
+columns: 6
+---
+:::{figure} ./figurer/oppgaver/oppgave_6/A.svg
+---
+width: 100%
+class: no-click
+---
+:::
+::::
+::::{grid-item}
+---
+outline:
+columns: 6
+---
+:::{figure} ./figurer/oppgaver/oppgave_6/B.svg
+---
+width: 100%
+class: no-click
+---
+:::
+::::
+::::{grid-item}
+---
+outline:
+columns: 6
+---
+:::{figure} ./figurer/oppgaver/oppgave_6/C.svg
+---
+width: 100%
+class: no-click
+---
+:::
+::::
+::::{grid-item}
+---
+outline:
+columns: 6
+---
+:::{figure} ./figurer/oppgaver/oppgave_6/D.svg
+---
+width: 100%
+class: no-click
+---
+:::
+::::
+
+:::::
+
+:::::::::::::::
+
+---
+
+:::::::::::::::{admonition} Oppgave 7
 ---
 class: problem-level-2
 ---
@@ -589,7 +871,7 @@ class: solution, dropdown
 ---
 Vi utfører polynomdivisjon for å bestemme kvotienten $K(x)$: 
 
-:::{figure} ./koder/oppgaver/oppgave_4/b.svg
+:::{figure} ./koder/oppgaver/oppgave_7/b.svg
 ---
 width: 60%
 class: no-click
@@ -652,7 +934,7 @@ Tegn et fortegnsskjema for $f(x)$.
 ---
 class: answer, dropdown
 ---
-:::{figure} ./figurer/oppgaver/oppgave_4/d.svg
+:::{figure} ./figurer/oppgaver/oppgave_7/d.svg
 ---
 width: 100%
 class: no-click
@@ -676,7 +958,7 @@ Lag en skisse av grafen til $f$. Skissen skal inneholde:
 ---
 class: answer, dropdown
 ---
-:::{figure} ./figurer/oppgaver/oppgave_4/e.svg
+:::{figure} ./figurer/oppgaver/oppgave_7/e.svg
 ---
 width: 100%
 class: no-click
@@ -707,7 +989,7 @@ class: solution, dropdown
 ---
 Vi bruker fortegnslinja til $f(x)$ som vi tegnet i **d** til å bestemme hvor $f(x) \geq 0$:
 
-:::{figure} ./figurer/oppgaver/oppgave_4/f.svg
+:::{figure} ./figurer/oppgaver/oppgave_7/f.svg
 ---
 width: 100%
 class: no-click
@@ -730,7 +1012,7 @@ $$
 ---
 
 
-:::::::::::::::{admonition} Oppgave 5
+:::::::::::::::{admonition} Oppgave 8
 ---
 class: problem-level-2
 ---
@@ -836,7 +1118,7 @@ class: tabs-parts
 ::::::::::{tab-item} Horisontale/skrå asymptoter
 For å bestemme eventuelle horisontale eller skrå asymptoter, utfører polynomdivisjon for å bestemme kvotienten $K(x)$: 
 
-:::{figure} ./koder/oppgaver/oppgave_5/b.svg
+:::{figure} ./koder/oppgaver/oppgave_8/b.svg
 ---
 width: 80%
 class: no-click
@@ -894,7 +1176,7 @@ Lag en skisse av grafen til $f$. Skissen skal inneholde:
 ---
 class: answer, dropdown
 ---
-:::{figure} ./figurer/oppgaver/oppgave_5/c_graf.svg
+:::{figure} ./figurer/oppgaver/oppgave_8/c_graf.svg
 ---
 width: 100%
 class: no-click
@@ -914,7 +1196,7 @@ $$
 
 så lenge $x \neq 2$. I $x = 2$ vil grafen til $f$ ha et hull, men vil ellers oppføre som en lineær-over-lineær rasjonal funksjon slik som vi har uttrykt over. Vi kan tegne et fortegnsskjema for det forenklede uttrykket for $f(x)$ og så må vi huske på at $x = 2$ representerer et bruddpunkt.
 
-:::{figure} ./figurer/oppgaver/oppgave_5/c_fortegnslinje.svg
+:::{figure} ./figurer/oppgaver/oppgave_8/c_fortegnslinje.svg
 ---
 width: 100%
 class: no-click
@@ -923,7 +1205,7 @@ class: no-click
 
 Denne informasjonen om fortegnet til $f(x)$ sammen med asymptotene $y = 1$ og $x = -3$ kan vi skissere grafen til $f$ som følger:
 
-:::{figure} ./figurer/oppgaver/oppgave_5/c_graf.svg
+:::{figure} ./figurer/oppgaver/oppgave_8/c_graf.svg
 ---
 width: 100%
 class: no-click
@@ -954,7 +1236,7 @@ class: solution, dropdown
 ---
 For å løse ulikheten $f(x) \leq 0$ bruker vi fortegnslinja til $f(x)$ som vi tegnet i **c**: 
 
-:::{figure} ./figurer/oppgaver/oppgave_5/c_fortegnslinje.svg
+:::{figure} ./figurer/oppgaver/oppgave_8/c_fortegnslinje.svg
 ---
 width: 100%
 ---
@@ -981,189 +1263,139 @@ $$
 
 ---
 
+:::::::::::::::{admonition} Oppgave 9
+---
+class: problem-level-3
+---
+> I 1T skal du ikke lære å finne $f'(x)$ for den deriverte til en rasjonal funksjon $f$. Likevel kan vi finne ut mye om $f'$ fra grafen til $f$.
 
-:::::::::::::::{admonition} Oppgave 6
----
-class: problem-level-2
----
-En rasjonal funksjon $f$ er gitt ved 
+I {numref}`fig-generelle-rasjonale-funksjoner-oppgave-9-graf` vises grafen til en rasjonal funksjon $f$ gitt ved 
 
 $$
-f(x) = \dfrac{x^2 + 4x + 4}{x - 2}
+f(x) = \dfrac{x - 2}{x + 1}
 $$
 
-Nedenfor vises 4 figurer der én av dem viser grafen til $f$.
 
-Bestem hvilken graf som hører til $f$. 
-
-
-::::{admonition} Fasit
+:::{figure} ./figurer/oppgaver/oppgave_9/graf.svg
 ---
-class: answer, dropdown
----
-Graf **C**. 
-::::
-
-:::::{grid}
-
-::::{grid-item}
----
-outline:
-columns: 6
----
-:::{figure} ./figurer/oppgaver/oppgave_6/a.svg
----
+name: fig-generelle-rasjonale-funksjoner-oppgave-9-graf
 width: 100%
 class: no-click
 ---
+viser grafen til en rasjonal funksjon $f$.
 :::
-::::
-::::{grid-item}
----
-outline:
-columns: 6
----
-:::{figure} ./figurer/oppgaver/oppgave_6/b.svg
----
-width: 100%
-class: no-click
----
-:::
-::::
-::::{grid-item}
----
-outline:
-columns: 6
----
-:::{figure} ./figurer/oppgaver/oppgave_6/c.svg
----
-width: 100%
-class: no-click
----
-:::
-::::
-::::{grid-item}
----
-outline:
-columns: 6
----
-:::{figure} ./figurer/oppgaver/oppgave_6/D.svg
----
-width: 100%
-class: no-click
----
-:::
-::::
 
-:::::
-
-
-:::::::::::::::
-
-
----
-
-:::::::::::::::{admonition} Oppgave 7
----
-class: problem-level-2
----
-To rasjonale funksjoner $f$ og $g$ er gitt ved 
-
-$$
-f(x) = \dfrac{x^2 - 2x - 3}{x^2 + 2x + 1} \quad \text{og} \quad g(x) = \dfrac{x^2 - 2x + 1}{x^2 - 2x - 3}
-$$
-
-Nedenfor viser 4 figurer der én av dem viser grafen til $f$ og én av dem viser grafen til $g$.
 
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
-Bestem hvilken graf som tilhører $f$.
+Bestem nullpunktet og likningene til asymptotene til $f$.
 
-::::{admonition} Fasit
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Bruk grafen til $f$ til å bestemme den horisontale asymptoten til $f'$. 
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+Grafen til $f'$ har samme vertikal asymptote som $f$. 
+
+Tegn en fortegnslinje for $f'(x)$.
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} d
+Lag en skisse av grafen til $f'$. Skissen skal inneholde (hvis de eksisterer):
+
+* Nullpunktene til $f'$.
+* Vertikale asymptoter til $f'$.
+* Horisontale asymptoter til $f'$.
+
+:::::::::::::
+
+::::::::::::::
+
+
+:::::::::::::::
+
+
 ---
-class: answer, dropdown
+
+:::::::::::::::{admonition} Oppgave 10
 ---
-Graf **B**.
-::::
+class: problem-level-3
+---
+
+I {numref}`fig-generelle-rasjonale-funksjoner-oppgave-10-graf` vises grafen til en rasjonal funksjon $f$ gitt ved 
+
+$$
+f(x) = \dfrac{x^2 - 1}{x^2 - 4}
+$$
+
+:::{figure} ./figurer/oppgaver/oppgave_10/graf.svg
+---
+name: fig-generelle-rasjonale-funksjoner-oppgave-10-graf
+width: 100%
+class: no-click
+---
+viser grafen til en rasjonal funksjon $f$. 
+:::
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Bestem nullpunktene og likningene til asymptotene til $f$.
+
 
 :::::::::::::
 
 :::::::::::::{tab-item} b
-Bestem hvilken graf som tilhører $g$.
-
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-Graf **C**.
-::::
+Bruk grafen til å bestemme nullpunktene til $f'$. 
 
 :::::::::::::
+
+
+:::::::::::::{tab-item} c
+Bruk grafen til $f$ til å bestemme likningen til den horisontale asymptoten til $f'$. 
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} d
+En vertikal asymptote for $f'$ er også en vertikal asymptote for $f$. 
+
+Tegn en fortegnslinje for $f'(x)$. 
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} e
+Lag en skisse av grafen til $f'$. Skissen skal inneholde:
+
+* Nullpunktene til $f'$.
+* Vertikale asymptoter til $f'$.
+* Horisontale asymptoter til $f'$.
+
+:::::::::::::
+
 ::::::::::::::
-
-:::::{grid}
-
-::::{grid-item}
----
-outline:
-columns: 6
----
-:::{figure} ./figurer/oppgaver/oppgave_7/a.svg
----
-width: 100%
-class: no-click
----
-:::
-::::
-::::{grid-item}
----
-outline:
-columns: 6
----
-:::{figure} ./figurer/oppgaver/oppgave_7/b.svg
----
-width: 100%
-class: no-click
----
-:::
-::::
-::::{grid-item}
----
-outline:
-columns: 6
----
-:::{figure} ./figurer/oppgaver/oppgave_7/c.svg
----
-width: 100%
-class: no-click
----
-:::
-::::
-::::{grid-item}
----
-outline:
-columns: 6
----
-:::{figure} ./figurer/oppgaver/oppgave_7/D.svg
----
-width: 100%
-class: no-click
----
-:::
-::::
-
-:::::
 
 :::::::::::::::
 
+
 ---
 
 
-:::::::::::::::{admonition} Oppgave 8
+:::::::::::::::{admonition} Oppgave 11
 ---
 class: problem-level-3
 ---
