@@ -73,7 +73,17 @@ $$
 ---
 class: solution, dropdown
 ---
+Tellerpolynomet og nevnerpolynomet er allerede nullpunktsfaktorisert, og vi kan se at de ikke har noen felles faktorer. Derfor holder det å bestemme nullpunktene til tellerpolynomet:
 
+$$
+x - 1 = 0 \liff x = 1.
+$$
+
+Dermed er nullpunktet til $g$
+
+$$
+x = 1.
+$$
 ::::
 
 :::::::::::::
@@ -94,6 +104,36 @@ $$
 ::::
 
 
+::::{admonition} Løsning
+---
+class: solution, dropdown
+---
+Tellerpolynomet er nullpunktsfaktorisert allerede, men vi må nullpunktsfaktorisere nevnerpolynomet for å sjekke om de to polynomeme har noen lineære faktorer til felles. Vi bruker konjugatsetningen på nevnerpolynomet:
+
+$$
+x^2 - 4 = x^2 - 2^2 = (x + 2)(x - 2).
+$$
+
+Dermed kan vi skrive
+
+$$
+h(x) = \dfrac{(x - 2)(x + 3)}{(x + 2)(x - 2)} = \dfrac{x + 3}{x + 2}, \quad x \neq 2.
+$$
+
+Vi ser altså at $x = -2$ er et bruddpunkt for $h$ siden det er nullpunkt for både teller og nevner. Nå kan vi lete etter nullpunktene til $h$ ved å undersøke når tellerpolynomet er null:
+
+$$
+x + 3 = 0 \liff x = -3.
+$$
+
+Dermed er nullpunktet til $h$ gitt ved 
+
+$$
+x = -3.
+$$
+::::
+
+
 :::::::::::::
 
 
@@ -108,6 +148,36 @@ class: answer, dropdown
 ---
 $$
 x = -1 \or x = 2.
+$$
+::::
+
+
+::::{admonition} Løsning
+---
+class: solution, dropdown
+---
+Vi starter med å nullpunktsfaktorisere teller- og nevnerpolynomet for å sjekke om de har noen felles lineære faktorer. Vi bruker $abc$-formelen på tellerpolynomet:
+
+$$
+x = \dfrac{1 \pm \sqrt{1 \pm 8}}{2} = \dfrac{1 \pm 3}{2} = \begin{cases} 2 \\ -1 \end{cases}
+$$
+
+Dermed kan vi nullpunktsfaktorisere tellerpolynomet som
+
+$$
+x^2 - x - 2 = (x + 1)(x - 2). 
+$$
+
+Så nullpunktsfaktoriserer vi nevnerpolynomet med konjugatsetningen:
+
+$$
+x^2 - 9 = (x + 3)(x - 3). 
+$$
+
+De har ingen lineær faktor til felles, så holder det å bestemme nullpunktene til tellerpolynomet for å finne nullpunktene til $p$. Disse fant vi med $abc$-formelen som ga oss
+
+$$
+x = -1 \lor x = 2.
 $$
 ::::
 
@@ -718,7 +788,7 @@ $$
 (x - 2)(x + 3) = 0 \liff x = 2 \or x = -3.
 $$
 
-Dermed er $x = 2$ et felles nullpunkt for både teller- og nevnerpolynomet og dette kan derfor ikke være et nullpunkt for $f$. Dermed har $f$ kunn ett nullpunkt ved
+Dermed er $x = 2$ et felles nullpunkt for både teller- og nevnerpolynomet og dette kan derfor ikke være et nullpunkt for $f$. Dermed har $f$ kun ett nullpunkt i
 
 $$
 x = 6.
@@ -908,4 +978,254 @@ $$
 ::::::::::::::
 
 :::::::::::::::
+
+---
+
+
+:::::::::::::::{admonition} Oppgave 6
+---
+class: problem-level-2
+---
+En rasjonal funksjon $f$ er gitt ved 
+
+$$
+f(x) = \dfrac{x^2 + 4x + 4}{x - 2}
+$$
+
+Nedenfor vises 4 figurer der én av dem viser grafen til $f$.
+
+Bestem hvilken graf som hører til $f$. 
+
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+Graf **C**. 
+::::
+
+:::::{grid}
+
+::::{grid-item}
+---
+outline:
+columns: 6
+---
+:::{figure} ./figurer/oppgaver/oppgave_6/a.svg
+---
+width: 100%
+class: no-click
+---
+:::
+::::
+::::{grid-item}
+---
+outline:
+columns: 6
+---
+:::{figure} ./figurer/oppgaver/oppgave_6/b.svg
+---
+width: 100%
+class: no-click
+---
+:::
+::::
+::::{grid-item}
+---
+outline:
+columns: 6
+---
+:::{figure} ./figurer/oppgaver/oppgave_6/c.svg
+---
+width: 100%
+class: no-click
+---
+:::
+::::
+::::{grid-item}
+---
+outline:
+columns: 6
+---
+:::{figure} ./figurer/oppgaver/oppgave_6/D.svg
+---
+width: 100%
+class: no-click
+---
+:::
+::::
+
+:::::
+
+
+:::::::::::::::
+
+
+---
+
+:::::::::::::::{admonition} Oppgave 7
+---
+class: problem-level-2
+---
+To rasjonale funksjoner $f$ og $g$ er gitt ved 
+
+$$
+f(x) = \dfrac{x^2 - 2x - 3}{x^2 + 2x + 1} \quad \text{og} \quad g(x) = \dfrac{x^2 - 2x + 1}{x^2 - 2x - 3}
+$$
+
+Nedenfor viser 4 figurer der én av dem viser grafen til $f$ og én av dem viser grafen til $g$.
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Bestem hvilken graf som tilhører $f$.
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+Graf **B**.
+::::
+
+:::::::::::::
+
+:::::::::::::{tab-item} b
+Bestem hvilken graf som tilhører $g$.
+
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+Graf **C**.
+::::
+
+:::::::::::::
+::::::::::::::
+
+:::::{grid}
+
+::::{grid-item}
+---
+outline:
+columns: 6
+---
+:::{figure} ./figurer/oppgaver/oppgave_7/a.svg
+---
+width: 100%
+class: no-click
+---
+:::
+::::
+::::{grid-item}
+---
+outline:
+columns: 6
+---
+:::{figure} ./figurer/oppgaver/oppgave_7/b.svg
+---
+width: 100%
+class: no-click
+---
+:::
+::::
+::::{grid-item}
+---
+outline:
+columns: 6
+---
+:::{figure} ./figurer/oppgaver/oppgave_7/c.svg
+---
+width: 100%
+class: no-click
+---
+:::
+::::
+::::{grid-item}
+---
+outline:
+columns: 6
+---
+:::{figure} ./figurer/oppgaver/oppgave_7/D.svg
+---
+width: 100%
+class: no-click
+---
+:::
+::::
+
+:::::
+
+:::::::::::::::
+
+---
+
+
+:::::::::::::::{admonition} Oppgave 8
+---
+class: problem-level-3
+---
+En rasjonal funksjon $f$ er gitt ved 
+
+$$
+f(x) = \dfrac{x^2 - 2x - 8}{x^m + 8}, \quad m \in \mathbb{N}.
+$$
+
+Nedenfor følger noen påstander.
+
+1. Avgjør om påstanden er **sann** eller **usann**.
+2. Hvis påstanden er **usann**, rett opp i påstanden så den blir **sann**. 
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} Påstand 1
+Grafen til $f$ har én vertikal asymptote så lengde $m$ er et oddetall.
+
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+Påstanden er usann når $m = 3$. Påstanden er sann for alle andre oddetall. 
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} Påstand 2
+Grafen til $f$ skjærer $x$-aksen i to punkter for alle $m \in \mathbb{N}$. 
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+Påstanden er usann for $m = 3$. Påstanden er sann for alle $m \in \mathbb{N} \setminus \{3\}$.
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} Påstand 3
+Grafen til $f$ har en skrå asymptote **kun** når $m = 1$.
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+Påstanden er sann fordi det kun når $m = 1$ at tellerpolynomet er én grad høyere enn nevnerpolynomet.
+::::
+
+:::::::::::::
+
+
+::::::::::::::
+
+
+:::::::::::::::
+
+
 
