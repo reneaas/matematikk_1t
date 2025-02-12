@@ -9,12 +9,9 @@ def main(dirname, save):
     @np.vectorize
     def f(x):
         if x != -2:
-            return (x - 2) ** 2 / (x + 2)
+            return (x - 2) / (x + 2) ** 2
         else:
             return None
-
-    def g(x):
-        return x - 6
 
     # List of functions and their labels.
     functions = [f]
@@ -22,10 +19,10 @@ def main(dirname, save):
     fig, ax = plotmath.plot(
         functions=[],
         fn_labels=False,
-        xmin=-15,
-        xmax=15,
-        ymin=-30,
-        ymax=30,
+        xmin=-8,
+        xmax=8,
+        ymin=-8,
+        ymax=8,
         ticks=False,
     )
 
@@ -39,9 +36,6 @@ def main(dirname, save):
 
     # Draw vertical asymptotes
     ax.vlines(x=x1, ymin=-100, ymax=100, color="red", linestyle="--", lw=1.5)
-
-    x = np.linspace(-20, 20, 1024)
-    ax.plot(x, g(x), color="blue", linestyle="--", lw=1.5, alpha=0.7)
 
     ax.plot(2, 0, "ko", markersize=8, alpha=0.7)
 

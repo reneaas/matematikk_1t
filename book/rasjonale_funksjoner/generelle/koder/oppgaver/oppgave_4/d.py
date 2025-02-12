@@ -1,25 +1,65 @@
-import signchart
+import plotmath
+import numpy as np
+import matplotlib.pyplot as plt
 
 
 def main(dirname, save):
+    #
+    # Define functions
+    @np.vectorize
+    def f(x):
+        if x != 2:
+            return -((x + 2) ** 2) / (x - 2)
+        else:
+            return None
 
-    f = "(x**2 - 16) / ((x + 2) * (x - 2))"
+    def g(x):
+        return -(x + 6)
 
-    signchart.plot(
-        f=f,
-        fn_name="f(x)",
-        include_factors=True,
+    # List of functions and their labels.
+    functions = [f]
+
+    fig, ax = plotmath.plot(
+        functions=[],
+        fn_labels=False,
+        xmin=-15,
+        xmax=15,
+        ymin=-30,
+        ymax=30,
+        ticks=False,
     )
 
+    # Plot the function
+    x1 = 2
+    x_vals = np.linspace(-24, x1, 1024)
+    ax.plot(x_vals, f(x_vals), color="teal", lw=2, alpha=0.7, label="$\\mathrm{D}$")
+
+    x_vals = np.linspace(x1, 24, 1024)
+    ax.plot(x_vals, f(x_vals), color="teal", lw=2, alpha=0.7)
+
+    # Draw vertical asymptotes
+    ax.vlines(x=x1, ymin=-100, ymax=100, color="red", linestyle="--", lw=1.5)
+
+    x = np.linspace(-20, 20, 1024)
+    ax.plot(x, g(x), color="blue", linestyle="--", lw=1.5, alpha=0.7)
+
+    ax.plot(-2, 0, "ko", markersize=8, alpha=0.7)
+
+    ax.legend(fontsize=16)
+
+    # NOTE: Select an appropriate `dirname` to save the figure.
+    # The directory `dirname` will be created automatically if it does not exist already.
     if save:
         fname = __file__.split("/")[-1].replace(".py", ".svg")
-        signchart.savefig(dirname=dirname, fname=fname)
+        plotmath.savefig(
+            dirname=dirname, fname=fname
+        )  # Lagrer figuren i `dirname`-directory
 
-    else:
-        signchart.show()
+    if not save:
+
+        plotmath.show()
 
 
-# NOTE: Ikke endre på noe under denne linjen
 if __name__ == "__main__":
 
     import pathlib
@@ -27,7 +67,6 @@ if __name__ == "__main__":
     # Get the directory where the script is located
     current_dir = str(pathlib.Path(__file__).resolve().parent)
 
-    # NOTE: Set `save=True` to save figure. `save=False` to display figure.
     parts = current_dir.split("/")
     for i in range(len(parts)):
         if parts[~i] == "koder":
@@ -36,4 +75,5 @@ if __name__ == "__main__":
 
     dirname = "/".join(parts)
 
+    # NOTE: Set `save=True` to save figure. `save=False` to display figure.
     main(dirname=dirname, save=True)

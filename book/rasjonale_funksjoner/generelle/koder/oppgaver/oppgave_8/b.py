@@ -1,8 +1,8 @@
 def main():
     polylongdiv(
         fname=__file__.split("/")[-1].replace(".py", ""),
-        p="x^2 - 16",
-        q="(x + 2)(x - 2)",
+        p="x^2 - 8x + 12",
+        q="(x - 2)(x + 3)",
         stage=None,
     )
 
