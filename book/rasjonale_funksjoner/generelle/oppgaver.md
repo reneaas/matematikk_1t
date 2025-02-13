@@ -1550,7 +1550,7 @@ Grafen til $f$ har en skrå asymptote **kun** når $m = 1$.
 ---
 class: answer, dropdown
 ---
-Påstanden er sann fordi det kun når $m = 1$ at tellerpolynomet er én grad høyere enn nevnerpolynomet.
+Påstanden er sann fordi det er **kun** når $m = 1$ at tellerpolynomet er én grad høyere enn nevnerpolynomet.
 ::::
 
 :::::::::::::
