@@ -1293,19 +1293,49 @@ class: tabs-parts
 :::::::::::::{tab-item} a
 Bestem nullpunktet og likningene til asymptotene til $f$.
 
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+* Nullpunkt: $x = 2$. 
+* Vertikal asymptote: $x = -1$.
+* Horisontal asymptote: $y = 1$.
+::::
+
 :::::::::::::
 
 
 :::::::::::::{tab-item} b
 Bruk grafen til $f$ til å bestemme den horisontale asymptoten til $f'$. 
 
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+y = 0.
+$$
+::::
+
 :::::::::::::
 
 
 :::::::::::::{tab-item} c
-Grafen til $f'$ har samme vertikal asymptote som $f$. 
+> Grafen til $f'$ har samme vertikal asymptote som $f$. 
 
 Tegn en fortegnslinje for $f'(x)$.
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+:::{figure} ./figurer/oppgaver/oppgave_9/f_derivert_fortegnslinje.svg
+---
+width: 100%
+class: no-click
+---
+:::
+::::
 
 :::::::::::::
 
@@ -1316,6 +1346,23 @@ Lag en skisse av grafen til $f'$. Skissen skal inneholde (hvis de eksisterer):
 * Nullpunktene til $f'$.
 * Vertikale asymptoter til $f'$.
 * Horisontale asymptoter til $f'$.
+
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+* Ingen nullpunkter
+* Vertikal asymptote: $x = -1$.
+* Horisontal asymptote: $y = 0$ ($x$-aksen).
+
+:::{figure} ./figurer/oppgaver/oppgave_9/graf_derivert.svg
+---
+width: 100%
+class: no-click
+---
+:::
+::::
 
 :::::::::::::
 
@@ -1335,7 +1382,7 @@ class: problem-level-3
 I {numref}`fig-generelle-rasjonale-funksjoner-oppgave-10-graf` vises grafen til en rasjonal funksjon $f$ gitt ved 
 
 $$
-f(x) = \dfrac{x^2 - 1}{x^2 - 4}
+f(x) = \dfrac{-x^2 + 1}{x^2 - 4}
 $$
 
 :::{figure} ./figurer/oppgaver/oppgave_10/graf.svg
@@ -1355,11 +1402,29 @@ class: tabs-parts
 :::::::::::::{tab-item} a
 Bestem nullpunktene og likningene til asymptotene til $f$.
 
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+* Nullpunkter: $x = \pm 1$.
+* Vertikale asymptoter: $x = \pm 2$.
+* Horisontal asymptote: $y = -1$.
+::::
+
 
 :::::::::::::
 
 :::::::::::::{tab-item} b
 Bruk grafen til å bestemme nullpunktene til $f'$. 
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x = 0.
+$$
+::::
 
 :::::::::::::
 
@@ -1367,13 +1432,33 @@ Bruk grafen til å bestemme nullpunktene til $f'$.
 :::::::::::::{tab-item} c
 Bruk grafen til $f$ til å bestemme likningen til den horisontale asymptoten til $f'$. 
 
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+y = 0.
+$$
+::::
+
 :::::::::::::
 
 
 :::::::::::::{tab-item} d
-En vertikal asymptote for $f'$ er også en vertikal asymptote for $f$. 
-
 Tegn en fortegnslinje for $f'(x)$. 
+
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+:::{figure} ./figurer/oppgaver/oppgave_10/derivert_fortegnslinje.svg
+---
+width: 100%
+class: no-click
+---
+:::
+::::
 
 :::::::::::::
 
@@ -1384,6 +1469,23 @@ Lag en skisse av grafen til $f'$. Skissen skal inneholde:
 * Nullpunktene til $f'$.
 * Vertikale asymptoter til $f'$.
 * Horisontale asymptoter til $f'$.
+
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+* Nullpunkt: $x = 0$.
+* Vertikale asymptoter: $x = -2$ og $x = 2$.
+* Horisontal asymptote: $y = 0$.
+
+:::{figure} ./figurer/oppgaver/oppgave_10/derivert_graf.svg
+---
+width: 100%
+class: no-click
+---
+:::
+::::
 
 :::::::::::::
 
