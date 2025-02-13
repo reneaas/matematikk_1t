@@ -37,7 +37,7 @@ $$
 x^2 - 4 = 0 \liff (x + 2)(x - 2) = 0 \liff x = -2 \or x = 2.
 $$
 
-Til slutt vi må sjekke at sjekke nullpunktet til nevnerpolynomet og ekskludere nullpunkter de har til felles:
+Til slutt vi må sjekke nullpunktene til nevnerpolynomet og ekskludere nullpunkter de har til felles:
 
 $$
 x + 1 = 0 \liff x = -1.
