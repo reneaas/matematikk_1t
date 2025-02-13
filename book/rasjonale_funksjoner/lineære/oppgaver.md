@@ -449,7 +449,7 @@ Løs likningen $f(x) = 2$.
 class: answer, dropdown
 ---
 $$
-x = 2. 
+x = -8. 
 $$
 ::::
 
