@@ -134,4 +134,37 @@ class: no-click
 ::::
 
 
+::::{grid-item-card}
+---
+link: book/rasjonale_funksjoner/intro
+link-type: doc
+---
+**Rasjonale funksjoner** 
+
+
+^^^
+
+$$
+f(x) = \dfrac{a(x - b)}{x - c}
+$$
+
+---
+
+:::{figure} ./book/rasjonale_funksjoner/lineære/figurer/teori/teori_1.svg
+---
+width: 100%
+class: no-click
+---
+:::
+
+
+---
+
+$$
+f(x) = \dfrac{P(x)}{Q(x)}
+$$
+
+::::
+
+
 :::::

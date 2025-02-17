@@ -13,6 +13,78 @@ class: tip
 
 ---
 
+
+Når vi jobbet med lineære-over-lineære rasjonale funksjoner fant vi at funksjonen alltid hadde en horisontal asymptote, en vertikal asymptote og et nullpunkt. Men for rasjonale funksjoner generelt sett, vil antall nullpunkter og vertikale asymptoter variere, og det finnes også rasjonale funksjoner som ikke har noen av delene. Men disse tre egenskapene er likevel de mest sentrale egenskapene for rasjonale funksjoner.
+
+
+:::::::::::::::{admonition} Sentrale egenskaper ved rasjonale funksjoner
+---
+class: summary
+---
+For rasjonale funksjoner, er de mest sentrale egenskapene:
+* **Nullpunkter**
+* **Horisontale og skrå asymptoter**
+* **Vertikale asymptoter**
+
+:::::::::::::::
+
+Vi skal fokusere på hvordan vi finner disse egenskapene for rasjonale funksjoner generelt sett. Men først tar vi et eksempel som illustrerer hvor variert antallet av disse egenskapene kan være.
+
+:::::::::::::::{admonition} Eksempel 1
+---
+class: example
+---
+Nedenfor vises tre eksempler på rasjonale funksjoner med ulike egenskaper.
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} Funksjon 1
+
+::::{figure} ./figurer/teori/eksempel_1.svg
+---
+width: 80%
+class: no-click
+---
+viser grafen til en rasjonal funksjon $f(x) = \dfrac{(x - 2)(x + 3)}{x^2 - 1}$. Her har $f$ en horisontal asymptote $y = 1$, to vertikale asymptoter med likningene $x = \pm 1$, og to nullpunkter $x = -3$ og $x = 2$.
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} Funksjon 2
+
+::::{figure} ./figurer/teori/eksempel_2.svg
+---
+width: 80%
+class: no-click
+---
+viser grafen til $f(x) = \dfrac{x^2 - 4}{x - 1}$. Grafen har to nullpunkter $x = \pm 2$, en vertikal asymptote i $x = 1$ og en **skrå** asymptote $y = x + 1$. Grafen til $f$ nærmer seg altså en lineær funksjon når $|x|$ blir stor.
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} Funksjon 3
+
+::::{figure} ./figurer/teori/eksempel_3.svg
+---
+width: 80%
+class: no-click
+---
+viser grafen til $f(x) = \dfrac{1}{x - 2}$. Grafen har en vertikal asymptote i $x = 2$, men ingen nullpunkter. Grafen til $f$ har en horisontal asymptote $y = 0$.
+::::
+
+:::::::::::::
+
+::::::::::::::
+
+
+:::::::::::::::
+
+
+
 Vi starter med en definisjon av et begrep som vi kommer til å bruke stadig vekk og derfor trenger å ha en delt forståelse av: 
 
 :::::{admonition} Definisjon: Bruddpunkter
