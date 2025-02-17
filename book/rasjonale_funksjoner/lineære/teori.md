@@ -325,7 +325,7 @@ name: fig-lineære-rasjonale-funksjoner-eksempel-3-fortegnslinje
 width: 90%
 class: no-click
 ---
-viser fortegnsskjema for $f(x) = (-2x + 4) / (x + 3)$. 
+viser fortegnsskjema for $f(x) = (-2x + 4) / (x + 3)$. Bruddpunktene til $f(x)$ er markert med et kryss "$\times$" i fortegnslinja.
 ::: 
 
 Ut ifra fortegnslinja til $f(x)$ kan vi se at $f(x) < 0$ når $x < -3$ og $x > 2$ og at $f(x) > 0$ når $-2 < x < 3$. 
