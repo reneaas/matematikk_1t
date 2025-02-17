@@ -116,7 +116,7 @@ har $f$ og $P$ samme nullpunkter så lenge et nullpunkt **ikke** også er et nul
 Setningen over forteller oss at hvis vi ønsker å lete etter nullpunktene til en rasjonal funksjon $f$, trenger vi først og fremst å lete etter nullpunktene til tellerpolynomet $P$. Deretter må vi ekskludere eventuelle nullpunkter som også er nullpunkter til nevnerpolynomet $Q$. Dette er forsiktighetsregelen vi **må følge**.
 
 
-:::::{admonition} Eksempel 1
+:::::{admonition} Eksempel 2
 ---
 class: example
 ---
@@ -197,7 +197,7 @@ Setningen over forteller oss hvis vi skal bestemme horisontale eller skrå asymp
 
 Vi tar et eksempel på en lineær-over-lineær rasjonal funksjon for å se at vi får samme resultat som ved avlesning slik vi har gjort så langt:
 
-:::::::::::::::{admonition} Eksempel 2: Horisontale asymptote $y \neq 0$
+:::::::::::::::{admonition} Eksempel 3: Horisontale asymptote $y \neq 0$
 ---
 class: example
 ---
@@ -234,7 +234,7 @@ Fra polynomdivisjonen, kan vi se at $K(x) = -2$ som betyr at $y = -2$ er en hori
 Vi tar et eksempel der tellergraden er én større enn nevnergraden. 
 
 
-:::::::::::::::{admonition} Eksempel 3: Skrå asymptoter
+:::::::::::::::{admonition} Eksempel 4: Skrå asymptoter
 ---
 class: example
 ---
@@ -275,7 +275,7 @@ Dette vil være likningen til den skrå asymptoten. Grafen til $f$ vil nærme se
 
 Vi bør også diskutere hva som skjer når tellergraden er mindre enn nevnergraden. 
 
-:::::::::::::::{admonition} Eksempel 4: Horisontal asymptote $y = 0$
+:::::::::::::::{admonition} Eksempel 5: Horisontal asymptote $y = 0$
 ---
 class: example
 ---
@@ -347,7 +347,7 @@ Hvis $Q(x)$ har flere lineære faktorer enn $P(x)$, vil bruddpunktet $x = r$ ogs
 Vi går løs på et eksempel som viser tre spesialtilfeller som illustrerer dette poenget.
 
 
-:::::::::::::::{admonition} Eksempel 5
+:::::::::::::::{admonition} Eksempel 6
 ---
 class: example
 ---
@@ -414,7 +414,7 @@ Her har vi flere lineære faktorer $(x + 1)$ i nevneren, som betyr at $x = -1$ e
 
 Nå er det lurt at vi tar et eksempel der vi må faktorisere teller- og nevnerpolynomet for å finne vertikale asymptoter.
 
-:::::::::::::::{admonition} Eksempel 6
+:::::::::::::::{admonition} Eksempel 7
 ---
 class: example
 ---
