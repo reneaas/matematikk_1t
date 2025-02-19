@@ -73,7 +73,12 @@ onmessage = async (event) => {
 import sys
 import json
 import micropip
+import io
+import base64
 from js import postMessage
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
 
 class PyConsole:
     def __init__(self, messageId):
@@ -92,6 +97,22 @@ class PyConsole:
 
 sys.stdout = PyConsole("\${messageId}")
 sys.stderr = PyConsole("\${messageId}")
+
+# Override plt.show()
+def show_override(messageId):
+    buf = io.BytesIO()
+    plt.savefig(buf, format='png')
+
+    buf.seek(0)
+    image_base64 = base64.b64encode(buf.read()).decode('utf-8')
+    postMessage(json.dumps({
+        'type': 'plot',
+        'data': image_base64,
+        'messageId': messageId
+    }))
+    plt.clf() # Clear the figure after sending
+
+plt.show = lambda: show_override("\${messageId}")
 \`;
 
             await pyodide.runPythonAsync(pyCode);
@@ -110,11 +131,19 @@ sys.stderr = PyConsole("\${messageId}")
             console.log("Loading packages:", packages);
             const filteredPackages = packages.filter(pkg => pkg !== "casify");
             await pyodide.loadPackage(filteredPackages);
-            
+
             // Custom installation of casify package if present in the package list.
             if (packages.includes('casify')) {
                 await pyodide.loadPackage("micropip");
                 await pyodide.runPythonAsync("import micropip; await micropip.install('casify')");
+            }
+            if (packages.includes('plotmath')) {
+                await pyodide.loadPackage("micropip");
+                await pyodide.runPythonAsync("import micropip; await micropip.install('plotmath')");
+            }
+            if (packages.includes('signchart')) {
+                await pyodide.loadPackage("micropip");
+                await pyodide.runPythonAsync("import micropip; await micropip.install('signchart')");
             }
 
             console.log("Packages loaded:", packages);
@@ -179,7 +208,6 @@ sys.stderr = PyConsole("\${messageId}")
         if (messageId && this.callbacks[messageId]) {
             this.callbacks[messageId](data);
 
-            // Optionally remove the callback if execution is complete
             if (data.type === 'executionComplete') {
                 delete this.callbacks[messageId];
             }
