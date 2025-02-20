@@ -358,7 +358,7 @@ Graf **A**.
 
 
 :::::::::::::{tab-item} b
-Avgjør hvilken figur som viser grafen til $f$.
+Avgjør hvilken figur som viser grafen til $g$.
 
 ::::{admonition} Fasit
 ---
@@ -710,7 +710,7 @@ class: no-click
 :::::::::::::::
 
 ---
-
+<!-- 
 :::::::::::::::{admonition} Oppgave X
 ---
 class: problem-level-3
@@ -762,4 +762,4 @@ Hvis tellergraden og nevnergraden til $f$ er like, så har grafen til $f'$ en ho
 ::::::::::::::
 
 
-:::::::::::::::
+::::::::::::::: -->
