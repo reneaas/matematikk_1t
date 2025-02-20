@@ -1,7 +1,7 @@
 // pythonRunner.js
 
 class PythonRunner {
-    constructor(outputId, errorBoxId, preloadPackages = null) {
+    constructor(outputId, errorBoxId, preloadPackages = ['casify']) {
         this.outputId = outputId;            // ID of the HTML element where output will be displayed
         this.errorBoxId = errorBoxId;        // ID of the HTML element for displaying errors
         this.workerManager = WorkerManager.getInstance(preloadPackages);

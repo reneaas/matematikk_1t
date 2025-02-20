@@ -3,19 +3,45 @@
 class WorkerManager {
     static instance = null;
 
+    // static getInstance(preloadPackages = null) {
+    //     if (!WorkerManager.instance) {
+    //         // Include 'matplotlib' in the default preloadPackages
+    //         const defaultPreloadPackages = ['casify', 'matplotlib', 'micropip', 'numpy', 'scipy', 'sympy'];
+    //         const combinedPreloadPackages = preloadPackages
+    //             ? [...defaultPreloadPackages, ...preloadPackages]
+    //             : defaultPreloadPackages;
+    //         WorkerManager.instance = new WorkerManager(combinedPreloadPackages);
+    //     } else {
+    //         // If preloadPackages is provided later, ensure the packages are loaded
+    //         if (preloadPackages) {
+    //              // Include matplotlib in the set of packages.
+    //              const packagesToLoad = ['casify', 'matplotlib', 'micropip', 'numpy', 'scipy', 'sympy', ...preloadPackages];
+    //              WorkerManager.instance.loadPackages(packagesToLoad);
+    //         }
+    //     }
+    //     return WorkerManager.instance;
+    // }
+
     static getInstance(preloadPackages = null) {
         if (!WorkerManager.instance) {
-            WorkerManager.instance = new WorkerManager(preloadPackages);
-        } else {
-            // If preloadPackages is provided later, ensure the packages are loaded
-            if (preloadPackages) {
-                WorkerManager.instance.loadPackages(preloadPackages);
+            // Default PYODIDE packages (no custom packages here)
+            const defaultPreloadPackages = ['matplotlib', 'numpy', 'scipy', 'sympy', 'micropip'];
+            const combinedPreloadPackages = Array.from(new Set(preloadPackages ? [...defaultPreloadPackages, ...preloadPackages] : defaultPreloadPackages));
+            WorkerManager.instance = new WorkerManager(combinedPreloadPackages);
+        } else if (preloadPackages) {
+            // Only load packages that are NOT already loaded.
+            const packagesToLoad = preloadPackages.filter(pkg => !WorkerManager.instance.loadedPackages.has(pkg));
+             const combinedPreloadPackages = Array.from(new Set(['matplotlib', 'numpy', 'scipy', 'sympy', ...packagesToLoad])); // Pyodide packages
+            if (combinedPreloadPackages.length > 0) {
+    
+                WorkerManager.instance.loadPackages(combinedPreloadPackages);
             }
         }
         return WorkerManager.instance;
     }
 
-    constructor(preloadPackages = null) {
+
+    constructor(preloadPackages = null) { // Default to preloading matplotlib
         if (WorkerManager.instance) {
             return WorkerManager.instance;
         }
@@ -54,14 +80,30 @@ async function resetPyodide(pyodide, initialGlobals) {
     console.log("Globals cleared:", globalsToClear);
 }
 
+// Helper function to install packages via micropip
+async function installPackages(pyodide, packages) {
+    if (packages.length > 0) {
+        await pyodide.loadPackage("micropip"); // Load micropip
+        const micropip = pyodide.pyimport("micropip");
+        await micropip.install(packages);
+        await micropip.install("casify");
+        await micropip.install("plotmath");
+        await micropip.install("signchart");
+    }
+}
+
 onmessage = async (event) => {
     const messageId = event.data.messageId;
     if (event.data.type === 'init') {
         const pyodide = await pyodideReadyPromise;
         await pyodide.loadPackage("micropip");
+        // await installPackages(pyodide, event.data.preloadPackages || []);
+        
         initialGlobals = new Set(pyodide.globals.keys());
         postMessage(JSON.stringify({ type: 'initReady' }));
     }
+
+    
     if (event.data.type === 'runCode') {
         const { code } = event.data;
         try {
@@ -161,7 +203,7 @@ plt.show = lambda: show_override("\${messageId}")
         this.worker.onmessage = this.handleMessage.bind(this);
         this.worker.onerror = this.handleError.bind(this);
 
-        this.worker.postMessage({ type: 'init' });
+        this.worker.postMessage({ type: 'init', preloadPackages: this.preloadPackages });
     }
 
     generateMessageId() {
