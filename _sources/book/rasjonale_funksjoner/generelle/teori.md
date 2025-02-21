@@ -34,7 +34,18 @@ Målet vårt er å utvikle verktøy for å avgjøre hvilke egenskaper en rasjona
 ---
 class: example
 ---
-Nedenfor vises fire eksempler på rasjonale funksjoner med ulike egenskaper.
+Nedenfor vises fire eksempler på rasjonale funksjoner med ulike egenskaper. Det *ikke* meningen at du skal forstå *hvorfor* grafene ser ut som de gjør enda, men få et inntrykk av hvor stort mangfold rasjonale funksjoner kan ha.
+
+<!-- ::::{figure} ./figurer/teori/merged_figure.svg
+---
+width: 100%
+class: no-click
+---
+**Øverst til venstre**: $f(x) = \dfrac{(x - 2)(x + 3)}{x^2 - 1}$. Grafen har 2 nullpunkter, 2 vertikale asymptoter og 1 horisontal asymptote. <br>
+**Øverst til høyre**: $f(x) = \dfrac{x^2 - 4}{x - 1}$. Grafen har 2 nullpunkter, 1 vertikal asymptote og en **skrå** asymptote. <br>
+**Nederst til venstre**: $f(x) = \dfrac{1}{x - 2}$. Grafen har 0 nullpunkter, 1 vertikal asymptote og 1 horisontal asymptote $y = 0$. <br>
+**Nederst til høyre**: $f(x) = \dfrac{x - 1}{x^2 + 1}$. Grafen har 1 nullpunkt, 0 vertikale asymptoter og 1 horisontal asymptote $y = 0$.
+:::: -->
 
 ::::::::::::::{tab-set}
 ---

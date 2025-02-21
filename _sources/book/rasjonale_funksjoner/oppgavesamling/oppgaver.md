@@ -370,59 +370,12 @@ Graf **C**.
 :::::::::::::
 ::::::::::::::
 
-
-:::::{grid}
-
-::::{grid-item}
----
-outline:
-columns: 6
----
-:::{figure} ./figurer/oppgave_5/A.svg
+::::{figure} ./figurer/oppgave_5/merged_figure.svg
 ---
 width: 100%
 class: no-click
 ---
-:::
 ::::
-::::{grid-item}
----
-outline:
-columns: 6
----
-:::{figure} ./figurer/oppgave_5/B.svg
----
-width: 100%
-class: no-click
----
-:::
-::::
-::::{grid-item}
----
-outline:
-columns: 6
----
-:::{figure} ./figurer/oppgave_5/C.svg
----
-width: 100%
-class: no-click
----
-:::
-::::
-::::{grid-item}
----
-outline:
-columns: 6
----
-:::{figure} ./figurer/oppgave_5/D.svg
----
-width: 100%
-class: no-click
----
-:::
-::::
-
-:::::
 
 :::::::::::::::
 
@@ -452,59 +405,14 @@ class: answer, dropdown
 ::::
 
 
-
-:::::{grid}
-
-::::{grid-item}
----
-outline:
-columns: 6
----
-:::{figure} ./figurer/oppgave_6/A.svg
+::::{figure} ./figurer/oppgave_6/merged_figure.svg
 ---
 width: 100%
 class: no-click
 ---
-:::
-::::
-::::{grid-item}
----
-outline:
-columns: 6
----
-:::{figure} ./figurer/oppgave_6/B.svg
----
-width: 100%
-class: no-click
----
-:::
-::::
-::::{grid-item}
----
-outline:
-columns: 6
----
-:::{figure} ./figurer/oppgave_6/C.svg
----
-width: 100%
-class: no-click
----
-:::
-::::
-::::{grid-item}
----
-outline:
-columns: 6
----
-:::{figure} ./figurer/oppgave_6/D.svg
----
-width: 100%
-class: no-click
----
-:::
 ::::
 
-:::::
+
 
 :::::::::::::::
 

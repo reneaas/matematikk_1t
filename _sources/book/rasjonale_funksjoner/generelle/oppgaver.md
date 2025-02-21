@@ -547,58 +547,14 @@ class: answer, dropdown
 Graf **C**. 
 ::::
 
-:::::{grid}
 
-::::{grid-item}
----
-outline:
-columns: 6
----
-:::{figure} ./figurer/oppgaver/oppgave_4/A.svg
+::::{figure} ./figurer/oppgaver/oppgave_4/merged_figure.svg
 ---
 width: 100%
 class: no-click
 ---
-:::
-::::
-::::{grid-item}
----
-outline:
-columns: 6
----
-:::{figure} ./figurer/oppgaver/oppgave_4/B.svg
----
-width: 100%
-class: no-click
----
-:::
-::::
-::::{grid-item}
----
-outline:
-columns: 6
----
-:::{figure} ./figurer/oppgaver/oppgave_4/C.svg
----
-width: 100%
-class: no-click
----
-:::
-::::
-::::{grid-item}
----
-outline:
-columns: 6
----
-:::{figure} ./figurer/oppgaver/oppgave_4/D.svg
----
-width: 100%
-class: no-click
----
-:::
 ::::
 
-:::::
 
 
 :::::::::::::::
@@ -648,58 +604,13 @@ Graf **C**.
 :::::::::::::
 ::::::::::::::
 
-:::::{grid}
 
-::::{grid-item}
----
-outline:
-columns: 6
----
-:::{figure} ./figurer/oppgaver/oppgave_5/A.svg
+::::{figure} ./figurer/oppgaver/oppgave_5/merged_figure.svg
 ---
 width: 100%
 class: no-click
 ---
-:::
 ::::
-::::{grid-item}
----
-outline:
-columns: 6
----
-:::{figure} ./figurer/oppgaver/oppgave_5/B.svg
----
-width: 100%
-class: no-click
----
-:::
-::::
-::::{grid-item}
----
-outline:
-columns: 6
----
-:::{figure} ./figurer/oppgaver/oppgave_5/C.svg
----
-width: 100%
-class: no-click
----
-:::
-::::
-::::{grid-item}
----
-outline:
-columns: 6
----
-:::{figure} ./figurer/oppgaver/oppgave_5/D.svg
----
-width: 100%
-class: no-click
----
-:::
-::::
-
-:::::
 
 :::::::::::::::
 
@@ -749,58 +660,12 @@ Graf **C**.
 ::::::::::::::
 
 
-:::::{grid}
-
-::::{grid-item}
----
-outline:
-columns: 6
----
-:::{figure} ./figurer/oppgaver/oppgave_6/A.svg
+::::{figure} ./figurer/oppgaver/oppgave_6/merged_figure.svg
 ---
 width: 100%
 class: no-click
 ---
-:::
 ::::
-::::{grid-item}
----
-outline:
-columns: 6
----
-:::{figure} ./figurer/oppgaver/oppgave_6/B.svg
----
-width: 100%
-class: no-click
----
-:::
-::::
-::::{grid-item}
----
-outline:
-columns: 6
----
-:::{figure} ./figurer/oppgaver/oppgave_6/C.svg
----
-width: 100%
-class: no-click
----
-:::
-::::
-::::{grid-item}
----
-outline:
-columns: 6
----
-:::{figure} ./figurer/oppgaver/oppgave_6/D.svg
----
-width: 100%
-class: no-click
----
-:::
-::::
-
-:::::
 
 :::::::::::::::
 
