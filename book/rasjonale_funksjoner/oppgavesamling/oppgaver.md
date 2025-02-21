@@ -617,6 +617,112 @@ class: no-click
 
 :::::::::::::::
 
+
+---
+
+
+:::::::::::::::{admonition} Oppgave 9
+---
+class: problem-level-2
+---
+En rasjonal funksjon $f$ er gitt ved 
+
+$$
+f(x) = \dfrac{x^3 - 4x}{(x + 2)(x - 1)}
+$$
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Bestem nullpunktene til $f$, dersom de finnes.
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x = 0 \or x = 2.
+$$
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Bestem likningene til $f$ sine vertikale asymptoter, dersom de finnes.
+
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x = 1.
+$$
+::::
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+Bestem likningen til en eventuell skrå eller horisontal asymptote til $f$.
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+y = x - 1.
+$$
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} d
+Løs ulikheten $f(x) \geq 0$. 
+
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x \in [0, 1 \rangle \cup [2, \to \rangle
+$$
+::::
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} e
+Lag en skisse av grafen til $f$. 
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+:::{figure} ./figurer/oppgave_9/e.svg
+---
+width: 100%
+class: no-click
+---
+:::
+::::
+
+:::::::::::::
+
+
+
+::::::::::::::
+
+
+:::::::::::::::
+
 ---
 <!-- 
 :::::::::::::::{admonition} Oppgave X
