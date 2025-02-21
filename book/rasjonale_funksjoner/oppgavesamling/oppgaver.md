@@ -723,7 +723,8 @@ class: no-click
 
 :::::::::::::::
 
----
+
+
 <!-- 
 :::::::::::::::{admonition} Oppgave X
 ---

@@ -177,7 +177,7 @@ $$
 De har ingen lineær faktor til felles, så holder det å bestemme nullpunktene til tellerpolynomet for å finne nullpunktene til $p$. Disse fant vi med $abc$-formelen som ga oss
 
 $$
-x = -1 \lor x = 2.
+x = -1 \or x = 2.
 $$
 ::::
 
