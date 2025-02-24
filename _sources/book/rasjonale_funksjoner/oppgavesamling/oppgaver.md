@@ -61,7 +61,7 @@ Løs ulikheten $f(x) \geq 2$.
 class: answer, dropdown
 ---
 $$
-x \in \langle -1, 3]
+x \in \langle -1, 1]
 $$
 ::::
 
