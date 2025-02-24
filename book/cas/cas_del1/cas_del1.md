@@ -1,4 +1,4 @@
-# CAS-kurs: del 1
+# CAS-kurs: Del 1
 
 > Dette CAS-kurset er oppdatert med en ny Pythonpakke kalt `casify`{l=python} som forenkler bruk av CAS i Python vesentlig. 
 
