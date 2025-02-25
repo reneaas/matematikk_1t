@@ -45,7 +45,7 @@ Løs ulikheten $f(x) < 0$.
 class: answer, dropdown
 ---
 $$
-x \in \mathbb{R} \setminus \langle -1, 3\rangle
+x \in \mathbb{R} \setminus [-1, 3]
 $$
 ::::
 
@@ -216,7 +216,7 @@ Løs $f(x) > 0$.
 class: answer, dropdown
 ---
 $$
-x \in \mathbb{R} \setminus \langle -1, 2 \rangle.
+x \in \mathbb{R} \setminus [-1, 2].
 $$
 ::::
 
@@ -231,7 +231,7 @@ Løs $f(x) \leq 2$.
 class: answer, dropdown
 ---
 $$
-x \in [-2, 2\rangle .
+x \in [-7, 2\rangle .
 $$
 ::::
 
