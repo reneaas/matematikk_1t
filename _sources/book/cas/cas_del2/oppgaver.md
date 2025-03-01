@@ -808,18 +808,16 @@ class: tabs-parts
 
 
 :::::::::::::{tab-item} b
+Endre på likningssystemet i CAS-vinduet og bruk det til å løse likningssystemet
+
+
+\begin{align*}
+    
+\end{align*}
 
 :::::::::::::
 
 
-:::::::::::::{tab-item} c
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} d
-
-:::::::::::::
 
 ::::::::::::::
 
