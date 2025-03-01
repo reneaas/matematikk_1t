@@ -59,7 +59,7 @@ $$
 V = \dfrac{N}{G} \liff N = G \cdot V.
 $$
 
-Det kan da være naturlig å lure på om vi kan finne en generell beskrivelse av vekstfaktoren $V$ dersom vi vet hvor mange prosent $p$ en størrelse øker eller minker. Vi vet at verdien før endringen $G$ skal endres med en prosent $p$, så vi kan derfor skrive at verdien etter endringen er
+Det kan da være naturlig å lure på om vi kan finne en generell beskrivelse av vekstfaktoren $V$ dersom vi vet hvor mange prosent $p$ en størrelse øker eller minker med. Vi vet at verdien før endringen $G$ skal endres med en prosent $p$, så vi kan derfor skrive at verdien etter endringen er
 
 $$
 N = G + \underbrace{p \cdot G}_{\text{prosentvis endring}} = G \cdot (1 + p)
