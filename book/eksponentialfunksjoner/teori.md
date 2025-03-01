@@ -53,7 +53,7 @@ file: ./quiz/teori/quiz_1/quiz_1.html
 
 ## Vekstfaktor
 
-Når en størrelse øker eller minker med en viss prosent, vil forholdet mellom mellom den nye verdien $N$ og den gamle verdien $G$ være noe vi kaller for **vekstfaktoren** $V$ til endringen. Vi skriver
+Når en størrelse øker eller minker med en viss prosent, vil forholdet mellom den nye verdien $N$ og den gamle verdien $G$ være noe vi kaller for **vekstfaktoren** $V$ til endringen. Vi skriver
 
 $$
 V = \dfrac{N}{G} \liff N = G \cdot V.
@@ -65,7 +65,7 @@ $$
 N = G + \underbrace{p \cdot G}_{\text{prosentvis endring}} = G \cdot (1 + p)
 $$
 
-Sammenlikner vi de to likningene over, må vi nødvendigvis konkludere at vekstfaktoren generelt sett kan uttrykkes som 
+Sammenlikner vi de to likningene over, kan vi konkludere at vekstfaktoren generelt sett kan uttrykkes som 
 
 $$
 V = 1 + p. 
