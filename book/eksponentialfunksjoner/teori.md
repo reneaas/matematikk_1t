@@ -158,7 +158,7 @@ file: ./quiz/teori/quiz_2/quiz_2.html
 
 ---
 
-Prøv deg på Underveisoppgave 2 der du skal bruke vekstfaktor for å regne ut verdien etter en prosentvise endringer!
+Prøv deg på Underveisoppgave 2 der du skal bruke vekstfaktor for å regne ut verdien etter prosentvise endringer!
 
 :::::::::::::::{admonition} Underveisoppgave 2
 ---
