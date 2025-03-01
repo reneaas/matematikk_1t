@@ -145,10 +145,15 @@ def show_override(messageId):
         'height': height_px
     }))
     plt.clf()
+    # Add a newline after the plot
+    sys.stdout.write('\\\\n')
+    sys.stdout.write('\\\\n')
+    sys.stdout.flush()
 
 plt.show = lambda: show_override("\${messageId}")
 \`;
 
+            
             await pyodide.runPythonAsync(pyCode);
             await pyodide.runPythonAsync(code);
             postMessage(JSON.stringify({ type: 'executionComplete', messageId }));
