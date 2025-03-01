@@ -314,7 +314,7 @@ $$
 width: 100%
 class: no-click
 ---
-viser grafen til $f(x) = 100 \cdot \left(\dfrac{1}{2}\right)^x$. Vi kan se at $f(x)$ halverer seg for hver verdi av $x \in \mathbb{N}$ og at grafen skjærer $y$-aksen i $y = 100$.
+viser grafen til $f(x) = 100 \cdot \left(\dfrac{1}{2}\right)^x$. Vi kan se at $f(x)$ halveres for hver verdi av $x \in \mathbb{N}$ og at grafen skjærer $y$-aksen i $y = 100$.
 :::
 
 
