@@ -235,7 +235,7 @@ $$
 N_2 = N_1 \cdot V = \underbrace{a \cdot V}_{=N_1} \cdot V = a \cdot V^2.
 $$
 
-Vi tar med endringen etter tre endringer $N_3$ også:
+Vi tar med verdien etter tre endringer $N_3$ også:
 
 $$
 N_3 = N_2 \cdot V = \underbrace{a \cdot V^2}_{=N_2} \cdot V = a \cdot V^3.
