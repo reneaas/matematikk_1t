@@ -1,0 +1,33 @@
+<div id="container-eksponentialfunksjoner-eksempel-3"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`from casify import *
+
+# 1. Skriver inn datapunktene i to lister
+tid = [0, 5, 10, 15, 20, 25, 30]
+konsentrasjon = [3.00, 2.70, 2.43, 2.19, 1.97, 1.77, 1.59]
+
+# 2. Lager modellen med regresjon
+K = reg(
+    modell="a * b ** x",
+    xdata=tid,
+    ydata=konsentrasjon,
+)
+
+# 3. Skriver ut funksjonsuttrykket
+print(K)
+
+# 4. Løser likningen K(x) = 1 med "nløs"
+løsning = nløs("K(x) = 1")
+
+print(løsning)
+`;
+
+        makeInteractiveCode(
+            "container-eksponentialfunksjoner-eksempel-3",
+            code,
+        );
+    });
+</script>

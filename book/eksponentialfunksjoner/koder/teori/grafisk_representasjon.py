@@ -1,11 +1,13 @@
-import numpy as np 
+import numpy as np
 import matplotlib.pyplot as plt
-plt.rc('text', usetex=True)
+
+plt.rc("text", usetex=True)
 
 
 def lag_eksponential_fn(a, b):
     def f(x):
         return a * b**x
+
     return f
 
 
@@ -33,21 +35,25 @@ plt.ylabel("$y$", fontsize=18, loc="top", rotation="horizontal")
 
 dx = 0.3
 plt.text(
-    x=1+dx,
-    y=f1(1)-0.2, 
+    x=1 + dx,
+    y=f1(1) - 0.2,
     s="$b>1$",
     fontsize=18,
     color="white",
-    bbox=dict(facecolor="teal", alpha=alpha, edgecolor="black", boxstyle="round,pad=0.3"),
+    bbox=dict(
+        facecolor="teal", alpha=alpha, edgecolor="black", boxstyle="round,pad=0.3"
+    ),
 )
 
 plt.text(
-    x=1.5+dx,
-    y=0.8, 
+    x=1.5 + dx,
+    y=0.8,
     s="$0<b<1$",
     fontsize=18,
     color="white",
-    bbox=dict(facecolor="purple", alpha=alpha, edgecolor="black", boxstyle="round,pad=0.3"),
+    bbox=dict(
+        facecolor="purple", alpha=alpha, edgecolor="black", boxstyle="round,pad=0.3"
+    ),
 )
 
 
@@ -56,13 +62,12 @@ plt.annotate(
     xy=(0, 1),
     xytext=(-1, 3),
     fontsize=16,
-    arrowprops=dict(arrowstyle="->", lw=2, color="black", alpha=0.7, connectionstyle="arc3,rad=-0.2"),
+    arrowprops=dict(
+        arrowstyle="->", lw=2, color="black", alpha=0.7, connectionstyle="arc3,rad=-0.2"
+    ),
     horizontalalignment="center",
     verticalalignment="center",
 )
-
-
-
 
 
 plt.xlim(-2, 3)
