@@ -232,13 +232,13 @@ $$
 Etter to endringer blir verdien $N_2$
 
 $$
-N_2 = N_1 \cdot V = a \cdot V \cdot V = a \cdot V^2.
+N_2 = N_1 \cdot V = \underbrace{a \cdot V}_{=N_1} \cdot V = a \cdot V^2.
 $$
 
 Vi tar med endringen etter tre endringer $N_3$ også:
 
 $$
-N_3 = N_2 \cdot V = a \cdot V^2 \cdot V = a \cdot V^3.
+N_3 = N_2 \cdot V = \underbrace{a \cdot V^2}_{=N_2} \cdot V = a \cdot V^3.
 $$
 
 Fra regningen over, er det tydelig at vi kan generalisere mønsteret til at verdien etter $x$ endringer er
