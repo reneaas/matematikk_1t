@@ -247,7 +247,7 @@ $$
 N(x) = a \cdot V^x
 $$
 
-der $a$ er startverdien $N(0) = a$ og $V$ er vekstfaktoren for den faste prosentvise endringen.
+der $a$ er startverdien $N(0) = a$ og $V$ er vekstfaktoren for den faste prosentvise endringen. Utregningene over motiverer en generell definisjon av det vi kaller for en **eksponentialfunksjon**:
 
 
 :::::{admonition} Eksponentialfunksjoner
