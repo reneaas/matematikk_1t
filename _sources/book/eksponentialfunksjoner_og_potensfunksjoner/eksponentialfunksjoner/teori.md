@@ -7,8 +7,9 @@ class: tip
 ---
 * Kunne veksle mellom prosentvis endring og vekstfaktor. 
 * Kunne sette opp og tolke eksponentialfunksjoner i praktiske situasjoner.
+* Kunne lage matematiske modeller ved bruk av regresjon. 
 * Kunne skrive enkle programmer som bruker prosentvis endring og eksponentiell vekst. 
-* Kunne lage skreddersydde modeller som kombinerer eksponentiell vekst med andre modeller.
+<!-- * Kunne lage skreddersydde modeller som kombinerer eksponentiell vekst med andre modeller. -->
 :::::
 
 Eksponentialfunksjoner er en type funksjon som brukes til å beskrive prosesser der noe vokser eller minker med en fast prosentvis endring. Funksjonen dukker opp i mange sammenhenger i naturvitenskap, økonomi, samfunnsvitenskap og teknologi. 
