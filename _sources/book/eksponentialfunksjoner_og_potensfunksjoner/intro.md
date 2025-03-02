@@ -1,0 +1,1 @@
+# Eksponentialfunksjoner og potensfunksjoner
