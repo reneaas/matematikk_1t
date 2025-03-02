@@ -698,6 +698,245 @@ file: ./python/oppgaver/oppgave_7/d.html
 
 :::::::::::::::
 
+---
+
+
+:::::::::::::::{admonition} Oppgave 8 
+---
+class: problem-level-2
+---
+Kristin jobber som biolog og studerer veksten av en bakteriekultur i et laboratorium. Hun har målt antall bakterier ved forskjellige tidspunkter og mener antallet bakterier følger en eksponentiell vekst. Hun har samlet inn dataen i tabellen nedenfor.
+
+| Tid (timer) | Antall bakterier |
+|-------------|------------------|
+| 0           | 100              |
+| 1           | 150              |
+| 2           | 225              |
+| 3           | 337              |
+| 4           | 506              |
+
+
+<br>
+
+:::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+
+::::::::::::{tab-item} a
+Bruk opplysningene i tabellen ovenfor til å lage en eksponentiell modell $f$ som gir $f(x)$ bakterier etter $x$ timer.
+
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+
+
+````{tab} Geogebra
+
+**Svar**:
+
+$$
+f(x) = 100.01 \cdot 1.5^x
+$$
+
+
+**CAS-vindu med løsning**:
+
+:::{raw} html
+---
+file: ./ggb/oppgaver/oppgave_8/a_solution.html
+---
+:::
+
+> Du kan fint bare bruke `Reg`-kommandoen, men da er det ikke like lett å få lest av hva vekstfaktoren er. Du kan jo prøve å se hva som skjer!
+
+````
+
+````{tab} Python 
+
+**Svar**:
+
+$$
+f(x) = 99.965 \cdot 1.5^x
+$$
+
+**Programkode**:
+
+:::{code-block} python
+---
+linenos:
+---
+from casify import *
+
+xdata = [0, 1, 2, 3, 4]
+ydata = [100, 150, 225, 337, 506] 
+modell = "a * b ** x" 
+
+f = reg(
+    modell=modell,
+    xdata=xdata,
+    ydata=ydata,
+)
+
+print(f) # Skriv ut funksjonsuttrykket
+:::
+
+**Utskrift**:
+:::{code-block} console
+          x
+99.965*1.5 
+:::
+
+````
+::::
+
+::::::::::::
+
+
+::::::::::::{tab-item} b
+Bruk modellen til å anslå hvor mange bakterier det er etter $24$ timer.
+
+:::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+
+````{tab} Geogebra
+
+**Svar**:
+1 673 625 bakterier.
+
+
+**CAS-vindu med løsning**:
+
+:::{raw} html
+---
+file: ./ggb/oppgaver/oppgave_8/b_solution.html
+---
+:::
+
+
+````
+
+````{tab} Python 
+**Svar**: 
+
+1 682 822 bakterier.
+
+**Programkode**:
+Vi må utvide programmet fra oppgave **a** med følgende linje:
+
+:::{code-block} python
+print(f(24)) # antall bakterier etter 24 timer
+::: 
+
+**Utskrift**:
+
+:::{code-block} console
+1682822.02567596
+:::
+
+````
+:::::
+
+
+::::::::::::
+
+::::::::::::{tab-item} c
+Bruk modellen til å anslå hvor lang tid det tar før det er 10 millioner bakterier i kulturen.
+
+:::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+
+````{tab} Geogebra
+
+**Svar**:
+
+Litt over 28 timer. 
+
+
+**CAS-vindu med løsning**:
+:::{raw} html
+---
+file: ./ggb/oppgaver/oppgave_8/c_solution.html
+---
+:::
+
+````
+
+````{tab} Python 
+
+**Svar**:
+
+Litt over 28 timer.
+
+**Programkode**:
+Vi utvider det forrige programmet fra **a** og **b** med disse kodelinjene:
+
+:::{code-block} python
+løsning = nløs("f(x) = 10_000_000")
+
+print(løsning)
+:::
+
+**Utskrift**:
+
+:::{code-block} console
+x = 28.395
+:::
+
+
+````
+
+:::::
+
+
+::::::::::::
+
+
+
+
+
+:::::::::::::
+
+> I denne oppgaven trenger du digitale hjelpemidler for å løse oppgaven. Velg mellom Geogebra eller Python.
+
+````{tab} Geogebra
+
+<br>
+
+:::{raw} html 
+---
+file: ./ggb/oppgaver/oppgave_8/oppgave_8.html
+---
+:::
+
+````
+
+
+````{tab} Python 
+
+<br>
+
+:::{raw} html 
+---
+file: ./python/oppgaver/oppgave_8/oppgave_8.html
+---
+:::
+
+````
+
+
+
+:::::::::::::::
+
+
+
+
 
 
 
