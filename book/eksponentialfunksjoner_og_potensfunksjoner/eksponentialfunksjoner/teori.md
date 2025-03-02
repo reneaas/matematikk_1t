@@ -516,19 +516,14 @@ Vi tar et eksempel der vi bruker regresjon til å bestemme en eksponentiell mode
 
 :::::::::::::::{admonition} Eksempel 3
 ---
-class: example 
+class: example, full-width
 ---
 En pasient får en medisin. I tabellen nedenfor vises konsentrasjonen av medisinen i $\mathrm{mg}/\mathrm{mL}$ i blodet til pasienten ved ulike tidspunkter etter at pasienten fikk medisinen.
 
-| Tid (minutter) | Konsentrasjon ($\mathrm{mg}/\mathrm{mL}$) |
-|-------------|------------------------------------------|
-| 0           | 3.00                                      |
-| 5          | 2.70                                      |
-| 10          | 2.43                                      |
-| 15          | 2.19                                      |
-| 20          | 1.97                                      |
-| 25          | 1.77                                      |
-| 30          | 1.59                                      |
+
+| Tid (minutter) | $0$ | $5$ | $10$ | $15$ | $20$ | $25$ | $30$ |
+|----------------|---|---|----|----|----|----|----|
+| Konsentrasjon ($\mathrm{mg}/\mathrm{mL}$) | $3.00$ | $2.70$ | $2.43$ | $2.19$ | $1.97$ | $1.77$ | $1.59$ |
 
 <br>
 
@@ -543,9 +538,12 @@ class: solution
 
 ````{tab} Geogebra 
 
-* Vi definerer en liste med datapunktene i en liste med navn `data`.
-* Vi bruker `Reg`-kommandoen i CAS for å lage eksponentialfunksjon.
-* Vi løser likningen $K(x) = 1$ for å finne hvor mange minutter det tar før pasienten har mindre enn $1.5 \, \mathrm{mg}/\mathrm{mL}$ medisin i blodet.
+I CAS-vinduet nedenfor, gjør vi følgende:
+
+1. Vi definerer en liste med datapunktene i en liste med navn `data`.
+2. Vi bruker `Reg`-kommandoen i CAS for å lage eksponentialfunksjon.
+3. Skriver ut funksjonsuttrykket ved å skrive "$K(x)$". 
+4. Vi løser likningen $K(x) = 1$ for å finne hvor mange minutter det tar før pasienten har mindre enn $1.5 \, \mathrm{mg}/\mathrm{mL}$ medisin i blodet.
 
 :::{raw} html 
 ---
