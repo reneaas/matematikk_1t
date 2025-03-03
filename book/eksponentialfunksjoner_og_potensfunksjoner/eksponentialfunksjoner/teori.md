@@ -224,7 +224,7 @@ $$
 
 
 ## Eksponentialfunksjoner
-Vi tenker oss at en størrelse $a$ endres med en fast prosent $p$ gjentatte ganger. Vekstfaktoren blir da $V = 1 + p$ og er den samme for hver endring. Vi tenker oss at $N_0 = a$ er verdien *før* noen prosentvis endring har funnet sted. Verdien etter én endring $N_1$ blir da
+Vi tenker oss at en størrelse $a$ endres med en fast prosent $p$ gjentatte ganger. Vekstfaktoren blir da $V = 1 + p$ og er den samme for hver endring. Vi tenker oss at $N_0 = G$ er verdien *før* noen prosentvis endring har funnet sted. Verdien etter én endring $N_1$ blir da
 
 $$
 N_1 = N_0 \cdot V = a \cdot V
@@ -233,22 +233,22 @@ $$
 Etter to endringer blir verdien $N_2$
 
 $$
-N_2 = N_1 \cdot V = \underbrace{a \cdot V}_{=N_1} \cdot V = a \cdot V^2.
+N_2 = N_1 \cdot V = \underbrace{G \cdot V}_{=N_1} \cdot V = G \cdot V^2.
 $$
 
 Vi tar med verdien etter tre endringer $N_3$ også:
 
 $$
-N_3 = N_2 \cdot V = \underbrace{a \cdot V^2}_{=N_2} \cdot V = a \cdot V^3.
+N_3 = N_2 \cdot V = \underbrace{G \cdot V^2}_{=N_2} \cdot V = G \cdot V^3.
 $$
 
 Fra regningen over, er det tydelig at vi kan generalisere mønsteret til at verdien etter $x$ endringer er
 
 $$
-N(x) = a \cdot V^x
+N(x) = G \cdot V^x
 $$
 
-der $a$ er startverdien $N(0) = a$ og $V$ er vekstfaktoren for den faste prosentvise endringen. Utregningene over motiverer en generell definisjon av det vi kaller for en **eksponentialfunksjon**:
+der $a$ er startverdien $N(0) = G$ og $V$ er vekstfaktoren for den faste prosentvise endringen. Utregningene over motiverer en generell definisjon av det vi kaller for en **eksponentialfunksjon**:
 
 
 :::::{admonition} Eksponentialfunksjoner
@@ -262,7 +262,7 @@ f(x) = a \cdot b^x,
 $$
 
 der $a \in \mathbb{R} \setminus \{0\}$ og $b \in \langle 0, \to\rangle$ er konstanter. Den praktiske tolkningen av konstantene er:
-* $a$ er "startverdien" $f(0)$.
+* $a$ er **startverdien** $f(0)$.
 * $b$ er **vekstfaktoren**.
 
 :::{figure} ./figurer/teori/grafisk_representasjon.svg
@@ -275,7 +275,7 @@ viser den grafiske representasjonen av eksponentialfunksjoner for ulike verdier 
 :::
 :::::
 
-> Du merket kanskje at vi byttet ut $V$ med $b$ i den generelle definisjonen av eksponentialfunksjoner. Det er ikke noe spesiell grunn til dette annet at det er vanligere å bruke $b$ for vekstfaktoren i eksponentialfunksjoner, så vi skal også følge denne konvensjonen.
+> Du merket kanskje at vi byttet ut $G$ med $a$ og $V$ med $b$ i den generelle definisjonen av eksponentialfunksjoner. Det er ikke noe spesiell grunn til dette annet at det er vanligere å bruke $a$ og $b$ for konstantene.
 
 
 :::::::::::::::{admonition} Eksempel 1
