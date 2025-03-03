@@ -1,0 +1,35 @@
+<div id="container-kode-potensfunksjoner-eksempel-3"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`from casify import *
+
+avstand = [0.39, 0.72, 1.52, 5.2, 9.58]
+perioder = [0.24, 0.62, 1.88, 11.86, 29.46]
+modell = "a * x ** b"
+
+# Lager en modell P(x) = a * x ** b
+P = reg(
+    modell=modell,
+    xdata=avstand,
+    ydata=perioder,
+)
+
+print(P) # Skriver ut P(x)
+
+# Tegner grafen til P. 
+P.graf(
+    definisjonsmengde=(0, 10),
+    xstep=5,
+    ystep=10,
+)
+    
+`;
+
+        makeInteractiveCode(
+            "container-kode-potensfunksjoner-eksempel-3",
+            code,
+        );
+    });
+</script>

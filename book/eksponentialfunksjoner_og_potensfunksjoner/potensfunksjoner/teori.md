@@ -25,10 +25,51 @@ Nedenfor vises en oversikt over viktig regneregler for potenser.
 | 3. | $(x^m)^n = x^{m \cdot n}$ | $(x^2)^3 = x^{2 \cdot 3} = x^6$ |
 | 4. | $x^0 = 1$ | $1000^0 = 1$ |
 | 5. | $x^{-n} = \dfrac{1}{x^n}$ | $x^{-2} = \dfrac{1}{x^2}$ |
-| 6. | $\sqrt[n]{x^m} = x^{m / n}$ | $\sqrt[3]{x^6} = x^{6 / 3} = x^2$ |
-| 7. | $\sqrt[n]{x} = x^{1 / n}$ | $\sqrt[3]{x} = x^{1 / 3}$ |
+| 6. | $\sqrt[n]{x} = x^{1 / n}$ | $\sqrt[3]{x} = x^{1 / 3}$ |
 
 :::::::::::::::
+
+---
+
+
+:::::::::::::::{admonition} Eksempel 1
+---
+class: example
+---
+Skriv så enkelt som mulig. 
+
+$$
+\dfrac{(x^2)^3 \cdot x^{-2}}{x^3}
+$$
+
+::::::::::::::{admonition} Løsning
+---
+class: solution
+---
+
+\begin{align*}
+    \dfrac{(x^2)^3 \cdot x^{-2}}{x^3} &= \dfrac{x^{2 \cdot 3} \cdot x^{-2}}{x^3} \\
+    \\
+    &= \dfrac{x^6 \cdot x^{-2}}{x^3} \\
+    \\
+    &= x^{6-2} \cdot x^{-3} \\
+    \\
+    &= x^4 \cdot x^{-3} \\
+    \\
+    &= x^{4-3} \\
+    \\
+    &= x^1 \\
+    \\
+    &= x
+\end{align*}
+
+::::::::::::::
+
+
+:::::::::::::::
+
+
+
 
 
 
@@ -120,3 +161,82 @@ class: no-click
 ::::::::::::::
 
 :::::::::::::::
+
+
+---
+
+
+## Modellering med potensfunksjoner
+
+Potensfunksjoner er godt egnet for situasjoner der en størrelse er proporsjonal med en potens av en annen størrelse. I neste eksempel skal vi se på en slik situasjon. 
+
+
+:::::::::::::::{admonition} Eksempel
+---
+class: example 
+---
+Perioden til en planet er tiden det tar for en planet å gjennomføre et fullt omløp i banen sin rundt solen. 
+
+:::{figure} ./figurer/eksempler/eksempel_3/planetbane.svg
+---
+width: 50%
+class: no-click
+---
+:::
+
+Nedenfor vises en tabell over periodene til noen av planetene i solsystemet og deres avstand til solen. Avstandene er gitt i astronomiske enheter (AU) som er avstanden fra solen til jorden.
+
+| Planet | Avstand (AU) | Periode (år) |
+|--------|:--------------:|:--------------:|
+| Merkur | 0.39         | 0.24         |
+| Venus  | 0.72         | 0.62         |
+| Mars   | 1.52         | 1.88         |
+| Jupiter| 5.20         | 11.86        |
+| Saturn | 9.58         | 29.46        |
+<!-- | Uranus | 19.22        | 84.01        |
+| Neptun | 30.05        | 164.79       | -->
+
+<br>
+
+Lag en modell $P$ som gir perioden til en planet i $P(x)$ år når avstanden til solen er $x$ AU på formen 
+
+$$
+P(x) = a \cdot x^b. 
+$$
+
+::::::::::::::{admonition} Løsning
+---
+class: solution
+---
+
+
+````{tab} Geogebra
+
+<br>
+
+:::{raw} html
+---
+file: ./ggb/eksempler/eksempel_3/eksempel_3.html
+---
+:::
+
+````
+
+
+````{tab} Python 
+
+<br>
+
+:::{raw} html
+---
+file: ./python/eksempler/eksempel_3.html
+---
+:::
+
+````
+
+
+::::::::::::::
+:::::::::::::::
+
+
