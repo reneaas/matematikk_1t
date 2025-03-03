@@ -354,7 +354,7 @@ $$
 Om en rasjonal funksjon $g$ får du vite at:
 * Definisjonsmengden til $g$ er $D_g = \mathbb{R} \setminus \{-2\}$. 
 * Grafen til $g$ skjærer $x$-aksen i $x = 2$. 
-* Grafen til $g$ skjærer $y$-aksen i $y = -6$. 
+* Grafen til $g$ skjærer $y$-aksen i $y = 6$. 
 
 Bestem et mulig uttrykk for $g(x)$. 
 
