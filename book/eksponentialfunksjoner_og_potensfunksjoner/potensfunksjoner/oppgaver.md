@@ -654,11 +654,68 @@ $$
 
 som gir kokepunktet til vann i $f(x)$ $^\circ \mathrm{C}$ ved et lufttrykk på $x$ hPa.
 
-:::{raw} html
+
+:::::{admonition} Fasit
 ---
-file: ./python/oppgaver/oppgave_6/a.html
+class: answer, dropdown
+---
+Vi bruker regresjon til å bestemme $f(x)$. 
+
+
+````{tab} Geogebra
+
+:::{figure} ./ggb/oppgaver/oppgave_6/a_sol.png
+---
+width: 100%
+class: no-click
 ---
 :::
+
+````
+
+````{tab} Python 
+
+
+:::{code-block} python
+---
+linenos:
+---
+from casify import *
+
+xdata = [1000, 800, 600, 500, 100] # lufttrykk
+ydata = [100, 92.3, 84.9, 81.4, 48.9] # kokepunkt
+modell = "a * x ** b"
+
+
+f = reg(
+    modell=modell,
+    xdata=xdata,
+    ydata=ydata,
+)
+
+
+print(f) # Skriver ut f(x)
+:::
+
+som gir utskriften
+
+:::{code-block} console
+        0.308
+11.904*x     
+:::
+
+som betyr at 
+
+$$
+f(x) = 11.904 \cdot x^{0.308}
+$$
+
+````
+
+
+:::::
+
+
 
 :::::::::::::
 
@@ -668,22 +725,133 @@ Lufttrykket synker med ca. $12 \%$ per km i høyden.
 
 Bestem en modell $g$ som gir lufttrykket $g(x)$ hPa ved en høyde på $x$ km over havnivået.
 
+
+:::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+g(x) = 1000 \cdot 0.88^x
+$$
+:::::
+
 :::::::::::::
 
 :::::::::::::{tab-item} c
 Bestem hvor langt over bakken lufttrykket er $300$ hPa.
 
+
+:::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+Vi må løse likningen $g(x) = 300$ for å bestemme hvor langt over bakken lufttrykket er $300$ hPa. 
+
+````{tab} Geogebra  
+
+:::{figure} ./ggb/oppgaver/oppgave_6/c_sol.png
+---
+width: 100%
+class: no-click
+---
+:::
+
+````
+
+````{tab} Python 
+Vi utvider programmet fra **a** med kodelinjene:
+
+:::{code-block} python
+g = funksjon("1000 * 0.88 ** x")
+høyde = nløs("g(x) = 300")
+
+print(høyde)
+:::
+
+som gir utskriften:
+
+:::{code-block} console
+x = 9.418
+:::
+
+som betyr at lufttrykket er $300$ hPa ca. $9.42$ km over bakken.
+
+````
+
+:::::
+
 :::::::::::::
 
 
 :::::::::::::{tab-item} d
-Bestem hvor langt over bakken kokepunktet til vann er $30 ^\circ \mathrm{C}$.
+Bestem hvor langt over bakken kokepunktet til vann er $30 \, ^\circ \mathrm{C}$.
 
-:::::::::::::
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+Vi løser dette problemet i to steg:
+1. Vi finner ved hvilket trykk kokepunktet er $30 \, ^\circ \mathrm{C}$ med $f(x)$. Dette ved å løse likningen $f(x) = 30$.
+2. Vi finner hvor langt over bakken dette trykket er med $g(x)$. Dette ved å løse likningen $g(x) = \text{trykket fra steg 1}$.
 
 
-:::::::::::::{tab-item} e
-Bruk modellen fra **a** og **b** og lag en modell $K$ som gir kokepunktet $K(x)$ $^\circ \mathrm{C}$ ved $x$ km over havnivået.
+````{tab} Geogebra 
+
+<br>
+
+1. Vi løser først likning $f(x) = 30$ med CAS-vinduet som forteller oss hvor høyt trykket er for at kokepunktet til vann er $30 \, ^\circ \mathrm{C}$. Dette ga et lufttrykk på $20.44$ hPa.
+2. Deretter løser vi likningen $g(x) = 20.44$ som forteller oss hvor høyt over bakken dette trykket er. Dette ga en høyde på $30.43$ km.
+
+:::{figure} ./ggb/oppgaver/oppgave_6/d_sol.png
+---
+width: 100%
+class: no-click
+---
+:::
+
+Kokepunktet til vann er altså $30 \, ^\circ \mathrm{C}$ ca. $30.43$ km over bakken, ifølge modellene.
+
+````
+
+
+````{tab} Python 
+Først løser vi likningen $f(x) = 30$ med kodelinjene:
+
+:::{code-block} python
+trykk = nløs("f(x) = 30")
+print(trykk)
+:::
+
+som gir utskriften
+
+:::{code-block} console
+x = 20.107
+:::
+
+som betyr at kokepunktet til vann er $30 \, ^\circ \mathrm{C}$ ved et trykk på $20.107$ hPa. For å bestemme hvilken høyde dette svarer til, løser vi likningen
+
+$$
+g(x) = 20.107
+$$
+
+som vi kan gjøre med kodelinjene:
+
+:::{code-block} python
+høyde = nløs("g(x) = 20.107")
+print(høyde)
+:::
+
+som gir utskriften
+
+:::{code-block} console
+x = 30.561
+:::
+
+som betyr at kokepunktet til vann er $30 \, ^\circ \mathrm{C}$ ca. $30.56$ km over bakken, ifølge modellene.
+
+````
+
+::::
 
 :::::::::::::
 
@@ -691,6 +859,29 @@ Bruk modellen fra **a** og **b** og lag en modell $K$ som gir kokepunktet $K(x)$
 ::::::::::::::
 
 
+> Nedenfor kan du bruke Geogebra eller Python som hjelpemiddel.
+
+````{tab} Geogebra
+
+:::{raw} html
+---
+file: ./ggb/oppgaver/oppgave_6/cas.html
+---
+:::
+
+````
+
+
+````{tab} Python 
+
+:::{raw} html
+---
+file: ./python/oppgaver/oppgave_6/kode.html
+---
+:::
+
+
+````
 
 
 :::::::::::::::
