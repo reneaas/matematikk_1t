@@ -48,19 +48,11 @@ class: solution
 ---
 
 \begin{align*}
-    \dfrac{(x^2)^3 \cdot x^{-2}}{x^3} &= \dfrac{x^{2 \cdot 3} \cdot x^{-2}}{x^3} \\
+    \dfrac{(x^2)^3 \cdot x^{-2}}{x^3} &= \dfrac{x^{2 \cdot 3} \cdot x^{-2}}{x^3} = \dfrac{x^6 \cdot x^{-2}}{x^3} \\
     \\
-    &= \dfrac{x^6 \cdot x^{-2}}{x^3} \\
+    &= x^{6-2} \cdot x^{-3} = x^4 \cdot x^{-3} \\
     \\
-    &= x^{6-2} \cdot x^{-3} \\
-    \\
-    &= x^4 \cdot x^{-3} \\
-    \\
-    &= x^{4-3} \\
-    \\
-    &= x^1 \\
-    \\
-    &= x
+    &= x^{4-3} = x^1 = x \\
 \end{align*}
 
 ::::::::::::::
@@ -100,7 +92,7 @@ viser grafene til potensfunksjoner med samme verdi av $a$, men ulike verdier av 
 
 ---
 
-:::::::::::::::{admonition} Eksempel 
+:::::::::::::::{admonition} Eksempel 2
 ---
 class: example
 ---
@@ -171,7 +163,7 @@ class: no-click
 Potensfunksjoner er godt egnet for situasjoner der en størrelse er proporsjonal med en potens av en annen størrelse. I neste eksempel skal vi se på en slik situasjon. 
 
 
-:::::::::::::::{admonition} Eksempel
+:::::::::::::::{admonition} Eksempel 3
 ---
 class: example 
 ---
