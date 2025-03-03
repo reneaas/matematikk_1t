@@ -669,8 +669,13 @@ Det tar ca. 24 år før sparebeløpet er dobbelt så stort som det opprinnelige 
 :::::::::::::
 
 :::::::::::::{tab-item} c
-Nedenfor vises et program som regner på sparebeløpet.
+Nedenfor vises et program som skal regne ut sparebeløpet etter $10$ år ved å bruke følgende algoritme: 
 
+1. Sett `sparebeløp = 1000`{l=python}.
+2. Øk `sparebeløp`{l=python} med renten hvert år så lenge antall år er mindre enn $10$. 
+
+
+Skriv ferdig programmet og bruk det til å regne ut sparebeløpet etter $10$ år.
 
 :::{raw} html
 ---
@@ -681,9 +686,14 @@ file: ./python/oppgaver/oppgave_7/c.html
 :::::::::::::
 
 :::::::::::::{tab-item} d
-Du skal sette inn $1000 \, \mathrm{kr}$ hvert år på kontoen. 
+Nå skal du sette inn $1000 \, \mathrm{kr}$ hvert år på kontoen. For å regne ut sparebeløpet ditt hvert år, kan du bruke følgende strategi:
 
-Fyll ut programmet nedenfor og bruk det til å bestemme hvor mange år det tar å spare opp $10000 \, \mathrm{kr}$.
+1. Legg til renten først,
+2. Legg til innskuddet. 
+
+Gjenta dette hvert år.
+
+Fullfør programmet nedenfor og bruk det til å bestemme hvor mange år det tar å spare opp $100 000 \, \mathrm{kr}$.
 
 :::{raw} html
 ---
