@@ -227,7 +227,7 @@ $$
 Vi tenker oss at en størrelse $a$ endres med en fast prosent $p$ gjentatte ganger. Vekstfaktoren blir da $V = 1 + p$ og er den samme for hver endring. Vi tenker oss at $N_0 = G$ er verdien *før* noen prosentvis endring har funnet sted. Verdien etter én endring $N_1$ blir da
 
 $$
-N_1 = N_0 \cdot V = a \cdot V
+N_1 = N_0 \cdot V = G \cdot V
 $$
 
 Etter to endringer blir verdien $N_2$
@@ -248,7 +248,7 @@ $$
 N(x) = G \cdot V^x
 $$
 
-der $a$ er startverdien $N(0) = G$ og $V$ er vekstfaktoren for den faste prosentvise endringen. Utregningene over motiverer en generell definisjon av det vi kaller for en **eksponentialfunksjon**:
+der startverdien er $N(0) = G$ og $V$ er vekstfaktoren for den faste prosentvise endringen. Utregningene over motiverer en generell definisjon av det vi kaller for en **eksponentialfunksjon**:
 
 
 :::::{admonition} Eksponentialfunksjoner
