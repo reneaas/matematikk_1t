@@ -77,7 +77,7 @@ $$
 f(x) = a \cdot x^b,
 $$
 
-der $a$ og $b$ er konstanter. I {numref}`fig-potensfunksjoner-teori-graf` vises ulike potensfunksjoner for ulike verdier av $b$. 
+der $a, b \in \mathbb{R} \setminus \{0\}$ er konstanter. I {numref}`fig-potensfunksjoner-teori-graf` vises ulike potensfunksjoner for ulike verdier av $b$. 
 
 :::{figure} ./figurer/teori/grafisk_representasjon.svg
 ---
