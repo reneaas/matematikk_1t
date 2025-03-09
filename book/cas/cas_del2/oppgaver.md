@@ -2191,33 +2191,83 @@ file: ./ggb/oppgaver/oppgave_4/cas.html
 ---
 class: problem-level-2
 ---
+En rasjonal funksjon $f$ er gitt ved 
+
+$$
+f(x) = \dfrac{8}{x^2 + 16} \quad \text{der} \quad D_f = [0, \to\rangle
+$$
+
+Et rektangel har hjørner i $(0, 0)$, $(r, 0)$, $(r, f(r))$ og $(0, f(r))$.
+
+:::{figure} ./figurer/oppgaver/oppgave_5/graf.svg
+---
+name: fig-cas-del-2-oppgave-5
+width: 80%
+class: no-click
+---
+:::
+
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
+Lag en modell $A$ som beskriver arealet $A(r)$ til rektangelet.
 
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+:::{figure} ./ggb/oppgaver/oppgave_5/a.png
+---
+width: 100%
+class: no-click
+---
+:::
+
+**Svar**:
+
+$$
+A(r) = \dfrac{8r}{r^2 + 16}
+$$
+::::
 
 :::::::::::::
 
 
 :::::::::::::{tab-item} b
+Bestem $r$ slik at arealet blir **størst mulig**. 
 
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+:::{figure} ./ggb/oppgaver/oppgave_5/b.png
+---
+width: 100%
+class: no-click
+---
+:::
 
-:::::::::::::
+**Svar**:
 
-
-:::::::::::::{tab-item} c
-
-
-:::::::::::::
-
-:::::::::::::{tab-item} d
-
+$$
+r = 4.
+$$
+::::
 
 :::::::::::::
 
 ::::::::::::::
+
+<br>
+
+:::{raw} html
+---
+file: ./ggb/oppgaver/oppgave_5/cas.html
+---
+:::
 
 
 

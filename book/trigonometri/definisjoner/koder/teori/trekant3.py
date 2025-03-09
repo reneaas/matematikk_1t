@@ -11,7 +11,7 @@ def make_circle_arc(x0, y0, radius, start_angle, end_angle):
 
 
 def main(dirname, save):
-
+    fontsize = 20
     # List of functions and their labels.
     functions = []
 
@@ -28,7 +28,7 @@ def main(dirname, save):
         x=A[0] - dx,
         y=A[1],
         s="$A$",
-        fontsize=16,
+        fontsize=fontsize,
         verticalalignment="center",
         horizontalalignment="right",
     )
@@ -37,7 +37,7 @@ def main(dirname, save):
         x=B[0] + dx,
         y=B[1],
         s="$B$",
-        fontsize=16,
+        fontsize=fontsize,
         verticalalignment="center",
         horizontalalignment="left",
     )
@@ -46,7 +46,7 @@ def main(dirname, save):
         x=C[0] + dx,
         y=C[1],
         s="$C$",
-        fontsize=16,
+        fontsize=fontsize,
         verticalalignment="bottom",
         horizontalalignment="left",
     )
@@ -75,7 +75,7 @@ def main(dirname, save):
         x=0.5 * (A[0] + B[0]),
         y=-0.2,
         s="Hosliggende katet",
-        fontsize=16,
+        fontsize=fontsize,
         va="top",
         ha="center",
     )
@@ -84,7 +84,7 @@ def main(dirname, save):
         x=B[0] + 0.2,
         y=0.5 * (B[1] + C[1]),
         s="Motstående \n katet",
-        fontsize=16,
+        fontsize=fontsize,
         va="center",
         ha="left",
         rotation=0,
@@ -94,7 +94,7 @@ def main(dirname, save):
         x=0.5 * (A[0] + C[0]),
         y=0.5 * (A[1] + C[1]),
         s="Hypotenus",
-        fontsize=16,
+        fontsize=fontsize,
         va="bottom",
         ha="right",
     )

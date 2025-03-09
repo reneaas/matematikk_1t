@@ -12,7 +12,7 @@ def make_circle_arc(x0, y0, radius, start_angle, end_angle):
 
 
 def main(dirname, save):
-
+    fontsize = 22
     # List of functions and their labels.
     functions = []
 
@@ -29,7 +29,7 @@ def main(dirname, save):
         x=A[0] - dx,
         y=A[1],
         s="$A$",
-        fontsize=16,
+        fontsize=fontsize,
         verticalalignment="center",
         horizontalalignment="right",
     )
@@ -38,7 +38,7 @@ def main(dirname, save):
         x=B[0] + dx,
         y=B[1],
         s="$B$",
-        fontsize=16,
+        fontsize=fontsize,
         verticalalignment="center",
         horizontalalignment="left",
     )
@@ -47,7 +47,7 @@ def main(dirname, save):
         x=C[0] + dx,
         y=C[1],
         s="$C$",
-        fontsize=16,
+        fontsize=fontsize,
         verticalalignment="bottom",
         horizontalalignment="left",
     )
@@ -79,7 +79,7 @@ def main(dirname, save):
         s=f"${AB}$",
         ha="center",
         va="top",
-        fontsize=20,
+        fontsize=fontsize,
     )
 
     ax.text(
@@ -88,7 +88,7 @@ def main(dirname, save):
         s=f"${AC}$",
         ha="right",
         va="bottom",
-        fontsize=20,
+        fontsize=fontsize,
     )
 
     dx = 0.1
@@ -98,7 +98,7 @@ def main(dirname, save):
         s=f"${BC}$",
         ha="left",
         va="center",
-        fontsize=20,
+        fontsize=fontsize,
     )
 
     dx = dy = 0.3
