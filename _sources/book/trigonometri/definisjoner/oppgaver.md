@@ -203,6 +203,8 @@ I CAS-vinduet nedenfor vises det hvordan man kan bestemme vinkelen ved å løse 
 
 Bruk CAS-vinduet til å løse oppgavene nedenfor.
 
+> For å skrive $A^\circ$ i CAS-vinduet, kan du bruke "Alt" + "o" på Windows og "⌥" (option) + "o" på Mac for å få gradertegnet $^\circ$ 
+
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
