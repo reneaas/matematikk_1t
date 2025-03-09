@@ -635,9 +635,17 @@ class: no-click
 ---
 class: problem-level-3
 ---
-Nedenfor vises noen påstander for rettvinklede trekanter.
+Nedenfor vises en rettvinklet trekant med vinkler $u$ og $v$. 
 
-Avgjør om påstandene stemmer eller ikke.
+:::{figure} ./figurer/oppgaver/oppgave_9/figur.svg
+---
+width: 70%
+class: no-click
+---
+:::
+
+
+Avgjør om påstandene nedenfor stemmer eller ikke.
 
 
 ::::::::::::::{tab-set}
@@ -649,9 +657,7 @@ For en rettvinklet trekant, gjelder alltid
 
 $$
 \sin v = \cos u
-$$
-
-der $u + v = 90^\circ$. 
+$$ 
 
 ::::{admonition} Fasit
 ---
@@ -669,8 +675,6 @@ For en rettvinklet trekant, gjelder alltid
 $$
 \tan u \cdot \tan v = 1
 $$
-
-der $u + v = 90^\circ$. 
 
 
 ::::{admonition} Fasit
