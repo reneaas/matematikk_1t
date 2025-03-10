@@ -4,8 +4,7 @@ En trekant er en geometrisk figur som består av tre hjørner og tre sider. Vi s
 
 ### Spesielle trekanter
 
-Vi skal starte med å se på noen spesielle trekanter
-* **Rettvinklet trekant**: En trekant der en av vinklene er $90 \degree$.
+Vi skal starte med å se på to spesielle trekanter
 * **Likesidet trekant**: En trekant der alle sidene er like lange.
 * **Likebeint trekant**: En trekant der to av sidene er like lange.
 
@@ -99,7 +98,7 @@ Men siden $x + y + z = 180 \degree$, så betyr dette også at $a + b + c = 180 \
 
  
 ## Pytagoras' setning
-
+En **rettvinklet** trekant er en trekant der én av vinklene er $90 \degree$.
 Pytagoras' setning er en setning som forteller oss hvordan sidene i en rettvinklet trekant henger sammen. 
 
 :::::::::::::::{admonition} Pytagoras' setning
@@ -146,6 +145,15 @@ width: 80%
 class: no-click
 ---
 :::
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x = 6.
+$$
+::::
 
 :::::::::::::::
 
@@ -195,4 +203,22 @@ viser to formlike trekanter $\Delta ABC$ og $\Delta DEF$. Her er $\angle A = \an
 
 
 :::::::::::::::
+
+
+---
+
+
+:::::::::::::::{admonition} Underveisoppgave 2
+---
+class: check
+---
+
+
+:::::::::::::::
+
+
+
+
+
+
 

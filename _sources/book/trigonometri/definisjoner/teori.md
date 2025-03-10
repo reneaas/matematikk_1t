@@ -55,7 +55,7 @@ Bestem hvilke sidelengder som er motstående katet og hosliggende katet til vink
 
 :::{figure} ./figurer/underveisoppgaver/underveisoppgave_1/a.svg
 ---
-width: 60%
+width: 70%
 class: no-click
 ---
 :::
@@ -74,7 +74,7 @@ Bestem hvilke sidelenger som er motstående katet og hosliggende katet for vinke
 
 :::{figure} ./figurer/underveisoppgaver/underveisoppgave_1/b.svg
 ---
-width: 60%
+width: 70%
 class: no-click
 ---
 :::
@@ -112,7 +112,7 @@ $$
 
 :::{figure} ./figurer/teori/trekant3.svg
 ---
-width: 60%
+width: 70%
 class: no-click
 ---
 :::
@@ -132,7 +132,7 @@ En trekant er vist nedenfor.
 
 :::{figure} ./figurer/underveisoppgaver/underveisoppgave_2/trekant.svg
 ---
-width: 60%
+width: 70%
 class: no-click
 ---
 :::
@@ -218,7 +218,7 @@ I figuren nedenfor vises en rettvinklet trekant.
 
 :::{figure} ./figurer/utforsk/utforsk_1/trekant.svg
 ---
-width: 60%
+width: 70%
 class: no-click
 ---
 :::
@@ -255,7 +255,7 @@ Trekanten fra Utforsk 1 er vist nedenfor.
 
 :::{figure} ./figurer/utforsk/utforsk_1/trekant.svg
 ---
-width: 60%
+width: 70%
 class: no-click
 ---
 :::
@@ -404,7 +404,7 @@ Bestem $\tan A$ og $\tan C$ for trekanten nedenfor.
 
 :::{figure} ./figurer/underveisoppgaver/underveisoppgave_5/trekant.svg
 ---
-width: 60%
+width: 70%
 class: no-click
 ---
 :::
