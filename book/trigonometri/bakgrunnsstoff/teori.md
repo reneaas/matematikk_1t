@@ -138,7 +138,14 @@ $$
 ---
 class: check
 ---
+Bestem $x$ i trekanten nedenfor.
 
+:::{figure} ./figurer/underveisoppgaver/oppgave_1/figur.svg
+---
+width: 80%
+class: no-click
+---
+:::
 
 :::::::::::::::
 
