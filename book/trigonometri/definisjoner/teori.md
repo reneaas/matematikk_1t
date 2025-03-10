@@ -260,7 +260,7 @@ class: no-click
 ---
 :::
 
-Bruk CAS-vindu nedenfor til å bestemme vinkel $A$. 
+Bruk CAS-vindu nedenfor til å bestemme vinkel $C$. 
 
 :::{raw} html
 ---
@@ -283,7 +283,7 @@ class: no-click
 Fra utskriften kan lese av at vinkelen $A$ er
 
 $$
-A \approx 36.87^\circ
+C \approx 36.87^\circ
 $$
 
 siden dette er den eneste løsningen av likningen som ligger mellom $0$ og $90$ grader.
