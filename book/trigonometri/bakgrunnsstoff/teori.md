@@ -175,7 +175,7 @@ class: summary
 En trekant $\Delta ABC$ og en trekant $\Delta DEF$ er **formlike** dersom én av følgende betingelser er oppfylt:
 
 **SSS** (side-side-side): 
-: Forholdet mellom sidene i $\Delta ABC$ og de tilsvarende sidene i $\Delta DEF$ er like.
+: Forholdet mellom sidene i $\Delta ABC$ og de tilsvarende sidene i $\Delta DEF$ er én konstant.
 
 $$
 \dfrac{AB}{DE} = \dfrac{BC}{EF} = \dfrac{AC}{DF}
@@ -189,6 +189,8 @@ $$
 
 
 <br>
+
+De tre betingelsene ovenfor er **ekvivalente**.
 
 Hvis $\Delta ABC$ og $\Delta DEF$ er formlike, så skriver vi $\Delta ABC \sim \Delta DEF$.
 
@@ -212,6 +214,84 @@ viser to formlike trekanter $\Delta ABC$ og $\Delta DEF$. Her er $\angle A = \an
 ---
 class: check
 ---
+Nedenfor vises to trekanter.
+
+:::{figure} ./figurer/underveisoppgaver/oppgave_2/merged_figure.svg
+---
+width: 100%
+class: no-click
+---
+:::
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Forklar at $\Delta ABC \sim \Delta DEF$.
+
+
+::::{admonition} Løsning
+---
+class: solution, dropdown
+---
+Vi kan starte med å undersøke om VVV-kriteriet er oppfylt. I trekant $\Delta ABC$ er vinklene 
+
+$$
+\angle A = 63.43 \degree \and \angle B = 90 \degree \and \angle C = 180\degree - \angle A - \angle B
+$$
+
+Fra den siste delen av påstanden kan vi regne ut at
+
+$$
+\angle C = 180\degree - \angle A - \angle B = 180 \degree - 63.43 \degree - 90 \degree = 26.57 \degree. 
+$$
+
+Vi kan se at $\angle E = 90 \degree$ og $\angle F = 26.57 \degree$. Siden to av vinklene er like, betyr det automatisk at alle tre vinklene er oppfylt så VVV-kriteriet er oppfylt. Dermed er 
+
+$$
+\Delta ABC \sim \Delta DEF.
+$$
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Bestem de ukjente sidelengdene i trekanten $\Delta DEF$.
+
+
+::::{admonition} Løsning
+---
+class: solution, dropdown
+---
+Vi vet nå at $\Delta ABC \sim \Delta DEF$. Dermed er forholdet mellom to tilsvarende sider en konstant. De tilsvarende sidene i trekanten er $AB$ og $DE$, sidene $BC$ og $EF$, og sidene $AC$ og $DF$. Vi kan dermed skrive
+
+$$
+\dfrac{AB}{DE} = \dfrac{BC}{EF} = \dfrac{AC}{DF}.
+$$
+
+Fra $\Delta ABC$ har vi at $AC = \sqrt{5}$ og fra $\Delta DEF$ har vi at $DF = 2\sqrt{5}$. Dermed er 
+
+$$
+\dfrac{DF}{AC} = \dfrac{2\sqrt{5}}{\sqrt{5}} = 2.
+$$
+
+Dette betyr at alle sidene i $\Delta DEF$ er $2$ ganger så store som sidelengdene i $\Delta ABC$. Dermed er
+
+$$
+DE = 2\cdot AB = 2 \cdot 1 = 2 \and EF = 2\cdot BC = 2 \cdot 2 = 4. 
+$$
+::::
+
+:::::::::::::
+
+
+
+::::::::::::::
+
+
 
 
 :::::::::::::::
