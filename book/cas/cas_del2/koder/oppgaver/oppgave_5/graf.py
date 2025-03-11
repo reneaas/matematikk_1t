@@ -23,7 +23,7 @@ def main(dirname, save):
 
     x = np.linspace(0, 8, 1024)
     y = f(x)
-    ax.plot(x, y, color="teal", alpha=0.7, lw=2, label="$f$")
+    ax.plot(x, y, color=(0, 100 / 255, 140 / 255), alpha=0.7, lw=2, label="$f$")
 
     k = 2.6
     A = (0, 0)
@@ -36,7 +36,7 @@ def main(dirname, save):
     # ax.fill(x, y, color="teal", alpha=0.1)
     # ax.plot(x, y, color="black", alpha=1, lw=1.5)
     # ax.plot(x, y, "ko", markersize=8, alpha=0.7)
-    plotmath.plot_polygon(*points, ax=ax, color="teal", alpha=0.1, show_vertices=True)
+    plotmath.plot_polygon(*points, ax=ax, alpha=0.1, show_vertices=True)
 
     dx = dy = 0.1
 
