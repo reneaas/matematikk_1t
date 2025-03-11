@@ -1282,7 +1282,7 @@ class: no-click
 **Svar**:
 
 $$
-x < 2 \or x > 4.
+x < -2 \or x > 4.
 $$
 ::::
 
