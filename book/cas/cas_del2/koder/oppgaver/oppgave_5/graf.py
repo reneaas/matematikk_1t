@@ -32,10 +32,6 @@ def main(dirname, save):
     D = (0, f(k))
 
     points = [A, B, C, D]
-    # x, y = zip(*points)
-    # ax.fill(x, y, color="teal", alpha=0.1)
-    # ax.plot(x, y, color="black", alpha=1, lw=1.5)
-    # ax.plot(x, y, "ko", markersize=8, alpha=0.7)
     plotmath.plot_polygon(*points, ax=ax, alpha=0.1, show_vertices=True)
 
     dx = dy = 0.1
