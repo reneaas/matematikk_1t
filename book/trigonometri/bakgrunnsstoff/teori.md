@@ -1,6 +1,6 @@
 # Pytagoras' setning, formlikhet og vinkler
 
-En trekant er en geometrisk figur som består av tre hjørner og tre sider. Vi skal se på noen grunnleggende egenskaper ved trekanter, og vi skal se på noen viktige teorem som er nyttige når vi skal jobbe med trigonometri.
+En trekant er en geometrisk figur som består av tre hjørner og tre sider. Vi skal se på noen grunnleggende egenskaper ved trekanter, og vi skal se på noen viktige sammenhenger som er nyttige når vi skal jobbe med trigonometri.
 
 ### Spesielle trekanter
 
