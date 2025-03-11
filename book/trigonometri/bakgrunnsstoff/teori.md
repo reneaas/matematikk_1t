@@ -248,7 +248,7 @@ $$
 \angle C = 180\degree - \angle A - \angle B = 180 \degree - 63.43 \degree - 90 \degree = 26.57 \degree. 
 $$
 
-Vi kan se at $\angle E = 90 \degree$ og $\angle F = 26.57 \degree$. Siden to av vinklene er like, betyr det automatisk at alle tre vinklene er oppfylt så VVV-kriteriet er oppfylt. Dermed er 
+Vi kan se at $\angle E = 90 \degree$ og $\angle F = 26.57 \degree$. Siden to av vinklene er like, betyr det automatisk at alle tre vinklene er like, så da er VVV-kriteriet er oppfylt. Dermed er 
 
 $$
 \Delta ABC \sim \Delta DEF.
