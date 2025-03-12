@@ -4,6 +4,7 @@ from casify import *
 def main(dirname, save):
     # TODO: write code here
     import plotmath
+    import matplotlib.pyplot as plt
 
     ax = draw_triangle(
         asa=(60, 4, 30),
@@ -11,7 +12,7 @@ def main(dirname, save):
         radius=0.35,
         fontsize=20,
         label_angles=(False, True, False),
-        label_sides=(True, True, False),
+        label_sides=(False, True, False),
         vertex_labels=("A", "B", "C"),
     )
 
@@ -32,6 +33,24 @@ def main(dirname, save):
         fontsize=20,
         ha="left",
         va="bottom",
+    )
+
+    ax.annotate(
+        "",
+        xy=(0, -0.5),
+        xycoords="data",
+        xytext=(4, -0.5),
+        textcoords="data",
+        arrowprops=dict(arrowstyle="|-|,widthA=0.5,widthB=0.5", color="black"),
+    )
+
+    ax.text(
+        x=2,
+        y=-0.6,
+        s="$4$",
+        fontsize=20,
+        ha="center",
+        va="top",
     )
 
     # NOTE: Automatically saves with correct file format and filename.
