@@ -443,6 +443,137 @@ $$
 :::::::::::::::
 
 
+---
+
+
+
+:::::::::::::::{admonition} Oppgave 9
+---
+class: problem-level-2
+---
+Nedenfor vises to trekanter $\Delta ABC$ og $\Delta ADE$ der 
+
+$$
+BC = 2\sqrt{3} \quad\quad\quad AB = 4 \quad\quad\quad AE = 1. 
+$$
+
+:::{figure} ./figurer/oppgaver/oppgave_9/figur.svg
+---
+width: 80%
+class: no-click
+---
+:::
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Forklar at $\Delta ABC \sim \Delta ADE$.
+
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$\angle A$ er en felles vinkel i $\Delta ABC$ og $\Delta ADE$. Vi har også at $\angle E = \angle C = 90 \degree$. Siden to av vinklene er like, blir den siste også lik i hver av trekantene som betyr at trekantene oppfyller VVV-kriteriet og derfor er 
+
+$$
+\Delta ABC \sim \Delta ADE.
+$$
+::::
+
+:::::::::::::
+
+
+
+:::::::::::::{tab-item} b
+Bestem $DE$. 
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+DE = \sqrt{3}. 
+$$
+::::
+
+:::::::::::::
+
+::::::::::::::
+
+
+
+:::::::::::::::
+
+
+---
+
+
+:::::::::::::::{admonition} Oppgave 10
+---
+class: problem-level-3
+---
+Figuren nedenfor viser en trekant.
+
+Bestem $x$, $y$ og $z$.
+
+:::{figure} ./figurer/oppgaver/oppgave_10/figur.svg
+---
+width: 80%
+class: no-click
+---
+:::
+
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+x = 5 \and y = 5 \sqrt{3} \and z = \dfrac{5\sqrt{3}}{2}
+$$
+::::
+
+:::::::::::::::
+
+---
+
+:::::::::::::::{admonition} Oppgave 11
+---
+class: problem-level-3
+---
+Bestem $CM$ i figuren nedenfor.
+
+
+:::{figure} ./figurer/oppgaver/oppgave_11/figur.svg
+---
+width: 80%
+class: no-click
+---
+:::
+
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+CM = 2\sqrt{3}
+$$
+::::
+
+
+:::::::::::::::
+
+
+
+
+
+
+
 
 
 
