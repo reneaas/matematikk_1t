@@ -21,13 +21,13 @@ Fra geometri har du tidligere lært en måte å regne ut arealet av en trekant.
 ---
 class: summary
 ---
-En trekant med grunnlinje $g$ og høyde $h$ har areal $T$ gitt ved
+Arealet $T$ av en trekant med grunnlinje $g$ og høyde $h$ er gitt ved
 
 $$
 T = \dfrac{g\cdot h}{2}
 $$
 
-Dette stemmer både om vinkelene er **spisse** ($<90\degree$) eller om trekanten her en vinkel som er **stump** ($>90\degree$). Se figuren nedenfor. 
+Dette stemmer både om vinkelene er **spisse** ($<90\degree$) eller om trekanten har en vinkel som er **stump** ($>90\degree$). Se figuren nedenfor. 
 
 :::{figure} ./figurer/teori/areal/merged_figure.svg
 ---
@@ -86,12 +86,12 @@ $$
 ---
 
 
-## Nabovinkler
+## Supplementvinkler
 
 
-Vi trenger et nytt begrep for å 
+Vi trenger et nytt begrep for å beskrive sammenhengen mellom to vinkler. 
 
-:::::::::::::::{admonition} Supplementvinkler og nabovinkler
+:::::::::::::::{admonition} Supplementvinkler
 ---
 class: summary
 ---
@@ -100,11 +100,7 @@ Supplementvinkler
 : To vinkler $u$ og $v$ er **supplementvinkler** dersom $u + v = 180\degree$.
 
 
-Nabovinkler
-: To vinkler $u$ og $v$ er **nabovinkler** dersom de deler et vinkelben, har samme toppunkt og $u + v = 180\degree$.
-
-
-:::{figure} ./figurer/teori/vinkler/nabovinkler.svg
+:::{figure} ./figurer/teori/vinkler/supplementvinkler.svg
 ---
 width: 80%
 class: no-click
@@ -317,6 +313,8 @@ siden $g = AB$ og $h = AC \cdot \sin \angle A$.
 
 
 ::::::::::::::
+
+:::::::::::::::
 
 ---
 

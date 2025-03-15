@@ -6,9 +6,9 @@ def main(dirname, save):
     import plotmath
 
     ax = draw_triangle(
-        asa=(30, 2, 110),
+        asa=(100, 3, 45),
         show=False,
-        radius=0.5,
+        radius=1,
         fontsize=20,
         label_angles=(False, True, False),
         label_sides=(True, True, True),
@@ -42,4 +42,4 @@ if __name__ == "__main__":
     dirname = "/".join(parts)
 
     # NOTE: Set `save=True` to save figure. `save=False` to display figure.
-    main(dirname=dirname, save=False)
+    main(dirname=dirname, save=True)
