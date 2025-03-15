@@ -2,6 +2,30 @@
 
 En trekant er en geometrisk figur som består av tre hjørner og tre sider. Vi skal se på noen grunnleggende egenskaper ved trekanter, og vi skal se på noen viktige sammenhenger som er nyttige når vi skal jobbe med trigonometri.
 
+
+### Vinkler
+
+En **vinkel** er mål på hvor mange grader det er i en vinkelbue mellom to rette linjer.
+
+:::::::::::::::{admonition} Vinkler
+---
+class: summary
+---
+En vinkel $v$ kan deles inn i tre typer:
+
+Spiss vinkel
+: Vinkelen $v$ er en **spiss vinkel** dersom $v \in \langle 0, 90 \degree \rangle$.
+
+Rett vinkel
+: Vinkelen $v$ er en **rett vinkel** dersom $v = 90 \degree$.
+
+Stump vinkel
+: Vinkelen $v$ er en **stump vinkel** dersom $v \in \langle 90\degree, 180 \degree \rangle$.
+
+:::::::::::::::
+
+
+
 ### Spesielle trekanter
 
 Vi skal starte med å se på to spesielle trekanter

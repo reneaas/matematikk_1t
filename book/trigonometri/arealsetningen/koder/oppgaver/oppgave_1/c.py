@@ -6,14 +6,14 @@ def main(dirname, save):
     import plotmath
 
     ax = draw_triangle(
-        sas=(1, 60, 2),
+        sas=(3, 50, 5),
         show=False,
-        radius=0.3,
-        fontsize=16,
-        label_angles=(True, True, False),
-        label_sides=(True, True, True),
+        radius=0.6,
+        fontsize=20,
+        label_angles=(False, True, False),
+        label_sides=(True, True, False),
         vertex_labels=("A", "B", "C"),
-        numerical_len=False,
+        numerical_len=True,
     )
 
     # NOTE: Automatically saves with correct file format and filename.
@@ -42,4 +42,4 @@ if __name__ == "__main__":
     dirname = "/".join(parts)
 
     # NOTE: Set `save=True` to save figure. `save=False` to display figure.
-    main(dirname=dirname, save=False)
+    main(dirname=dirname, save=True)

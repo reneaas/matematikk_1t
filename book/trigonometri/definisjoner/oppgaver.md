@@ -629,15 +629,280 @@ class: no-click
 
 :::::::::::::::
 
+
 ---
 
+
 :::::::::::::::{admonition} Oppgave 9
+---
+class: problem-level-2
+---
+**Snells** lov forteller oss at når lys går fra luft til vann, vil lyset brytes slik at lysstrålen sin retning i luft og vann oppfyller
+
+$$
+\sin u = 1.33 \cdot \sin v
+$$
+
+:::{figure} ./figurer/oppgaver/oppgave_9/figur.svg
+---
+width: 70%
+class: no-click
+---
+:::
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Hvor stor vinkel $u$ må lyset ha for at vinkelen etter brytning i vannet skal være $v = 30^\circ$?
+
+::::{admonition} CAS-vindu
+---
+class: progging, dropdown
+---
+
+<br>
+
+:::{raw} html
+---
+file: ./ggb/oppgaver/oppgave_9/a.html
+---
+:::
+
+::::
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+:::{figure} ./ggb/oppgaver/oppgave_9/a.png
+---
+width: 100%
+class: no-click
+---
+:::
+
+$u \approx 41.68 \degree$.
+::::
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Hva blir retningen til lysstrålen i vannet når $u$ nærmer seg $0^\circ$. Gi en praktisk tolkning av svaret.
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+Når $u \approx 0^\circ$, vil $\sin u \approx 0$ og dermed $\sin v \approx 0$. Dermed vil lysstrålen gå parallelt med overflaten i vannet.
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+Hva blir retningen til lysstrålen i vannet når $u$ nærmer seg $90^\circ$. Gi en praktisk tolkning av svaret.
+
+:::::::::::::
+
+::::::::::::::
+
+
+
+:::::::::::::::
+
+
+
+
+---
+
+:::::::::::::::{admonition} Oppgave 10 
+---
+class: problem-level-3
+---
+En lysstråle har beveget seg fra et punkt $A(0, 1)$ i luft til et punkt $B(10, -1)$ i vann. Lyset traff vannoverflaten i et punkt $M(x, 0)$. Alle avstander er i kilometer.
+
+I figuren nedenfor vises en mulig bane for lysstrålen.
+
+:::{figure} ./figurer/oppgaver/oppgave_10/figur.svg
+---
+width: 100%
+class: no-click
+---
+:::
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+
+
+:::::::::::::{tab-item} a
+Lag en modell $L_\text{luft}$ som beskriver hvor mange kilometer $L_\text{luft}(x)$ lysstrålen har beveget seg i luft før den traff vannoverflaten i punktet $M(x, 0)$. 
+
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+L_\text{luft}(x) = \sqrt{x^2 + 1}
+$$
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Lag en modell $L_\text{vann}$ som beskriver hvor mange kilometer $L_\text{vann}(x)$ lysstrålen har beveget seg i vann etter at den traff vannoverflaten i punktet $M(x, 0)$ og endte opp i $B(10, -1)$.
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+L_\text{vann}(x) = \sqrt{(10 - x)^2 + 1}
+$$
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+Lys beveger seg med en fart på ca. 300 000 km/s i luft og ca. 225 000 km/s i vann. 
+
+Lag en modell $T$ som beskriver hvor mange sekunder $T(x)$ det tar for lysstrålen å bevege seg fra $A$ til $B$ via punktet $M(x, 0)$.
+
+::::{admonition} Hint: Vei-fart-tid
+---
+class: dropdown, hints
+---
+For en strekning $L$, en fart $v$ og en tid $t$, gjelder
+
+$$
+L = v \cdot t.
+$$
+::::
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+T(x) = \dfrac{L_\text{luft}(x)}{300000} + \dfrac{L_\text{vann}(x)}{225000}
+$$
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} d
+Bestem i hvilket punkt $M(x, 0)$ lysstrålen må ha truffet dersom lysstrålen skal bruke kortest mulig tid mellom $A$ og $B$. 
+
+::::{admonition} CAS-vindu
+---
+class: progging, dropdown
+---
+
+<br>
+
+:::{raw} html
+---
+file: ./ggb/oppgaver/oppgave_10/d.html
+---
+:::
+::::
+
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+:::{figure} ./ggb/oppgaver/oppgave_10/d.png
+---
+width: 100%
+class: no-click
+---
+:::
+
+Altså gikk vannstrålen gjennom $M(8.88, 0)$ hvis den skulle bruke kortest mulig tid fra $A$ til $B$.
+::::
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} e
+Bruk svaret ditt fra **d** til å vise at 
+
+$$
+\dfrac{\sin u}{\sin v} = 1.33
+$$
+
+:::{figure} ./figurer/oppgaver/oppgave_9/figur.svg
+---
+width: 80%
+class: no-click
+---
+:::
+
+
+::::{admonition} CAS-vindu
+---
+class: progging, dropdown
+---
+
+<br>
+
+:::{raw} html
+---
+file: ./ggb/oppgaver/oppgave_10/e.html
+---
+:::
+::::
+
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+:::{figure} ./ggb/oppgaver/oppgave_10/e.png
+---
+width: 100%
+class: no-click
+---
+:::
+::::
+
+
+:::::::::::::
+
+
+
+::::::::::::::
+
+
+
+
+
+:::::::::::::::
+
+
+
+---
+
+
+
+:::::::::::::::{admonition} Oppgave 11
 ---
 class: problem-level-3
 ---
 Nedenfor vises en rettvinklet trekant med vinkler $u$ og $v$. 
 
-:::{figure} ./figurer/oppgaver/oppgave_9/figur.svg
+:::{figure} ./figurer/oppgaver/oppgave_11/figur.svg
 ---
 width: 70%
 class: no-click

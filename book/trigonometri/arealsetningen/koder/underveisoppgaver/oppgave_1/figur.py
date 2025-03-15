@@ -4,17 +4,36 @@ from casify import *
 def main(dirname, save):
     # TODO: write code here
     import plotmath
+    import numpy as np
 
     ax = draw_triangle(
-        sas=(1, 60, 2),
+        sas=(2, 60, 4),
         show=False,
         radius=0.3,
-        fontsize=16,
-        label_angles=(True, True, False),
-        label_sides=(True, True, True),
+        fontsize=20,
+        label_angles=(False, False, False),
+        label_sides=(True, False, False),
         vertex_labels=("A", "B", "C"),
-        numerical_len=False,
     )
+
+    angle = np.radians(60)
+    h = 2 * np.sin(angle)
+    x = 2 * np.cos(angle)
+    ax.vlines(x=x, ymin=0, ymax=h, linestyle="--", color="black")
+
+    dx = 0.1
+    ax.text(
+        x=x + dx,
+        y=0.5 * h,
+        s=r"$1$",
+        fontsize=20,
+        ha="left",
+        va="center",
+    )
+
+    dx = dy = 0.2
+    ax.plot([x, x + dx], [dy, dy], color="black")
+    ax.plot([x + dx, x + dx], [0, dy], color="black")
 
     # NOTE: Automatically saves with correct file format and filename.
     if save:
@@ -42,4 +61,4 @@ if __name__ == "__main__":
     dirname = "/".join(parts)
 
     # NOTE: Set `save=True` to save figure. `save=False` to display figure.
-    main(dirname=dirname, save=False)
+    main(dirname=dirname, save=True)

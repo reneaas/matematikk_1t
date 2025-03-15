@@ -1,168 +1,126 @@
 import plotmath
-import matplotlib.pyplot as plt
 import numpy as np
-import sympy
+import matplotlib.pyplot as plt
 
 
-def make_circle_arc(x0, y0, radius, start_angle, end_angle):
-    theta = np.linspace(start_angle, end_angle, 1024)
-    x = x0 + radius * np.cos(theta)
-    y = y0 + radius * np.sin(theta)
+def make_circle_arc(center, radius, start_angle, end_angle, n=100):
+    import numpy as np
+
+    angles = np.linspace(start_angle, end_angle, n)
+    x = center[0] + radius * np.cos(angles)
+    y = center[1] + radius * np.sin(angles)
     return x, y
 
 
 def main(dirname, save):
-
-    # List of functions and their labels.
-    fontsize = 22
+    # TODO: write code here
 
     fig, ax = plt.subplots()
 
-    A = (0, 0)
-    B = (2, 0)
-    C = (2, 1)
-    triangle = sympy.Triangle(A, B, C)
-    points = triangle.vertices
-    print(points)
-    points = [(point.x, point.y) for point in points]
-    print(points)
-    angles = triangle.angles
-    angles = [angles.get(angle).evalf() for angle in angles]
-    # print(angles)
-    # angles = [round(angle * 180 / np.pi, 1) for angle in angles]
-    # print(angles)
+    xmin = -1.5
+    xmax = 1.5
+    ymin = -1.5
+    ymax = 1.5
+    ax.vlines(x=0, ymin=ymin, ymax=ymax, color="black")
+    ax.hlines(y=0, xmin=xmin, xmax=xmax, color="black")
 
-    A = points[0]
-    B = points[1]
-    C = points[2]
+    A = (xmin, 0)
+    B = (xmin, ymin)
+    C = (xmax, ymin)
+    D = (xmax, 0)
 
-    print(A, B, C)
+    x, y = zip(*[A, B, C, D])
 
-    plotmath.plot_polygon(*points, ax=ax, show_vertices=True)
-
-    dx = dy = 0.1
+    ax.fill(x, y, color="lightblue", alpha=0.5)
     ax.text(
-        x=A[0] - dx,
-        y=A[1],
-        s="$A$",
-        fontsize=fontsize,
-        verticalalignment="center",
-        horizontalalignment="right",
-    )
-
-    ax.text(
-        x=B[0] + dx,
-        y=B[1],
-        s="$B$",
-        fontsize=fontsize,
-        verticalalignment="center",
-        horizontalalignment="left",
-    )
-
-    ax.text(
-        x=C[0] + dx,
-        y=C[1],
-        s="$C$",
-        fontsize=fontsize,
-        verticalalignment="bottom",
-        horizontalalignment="left",
-    )
-
-    dy = C[1] - B[1]
-    dx = B[0] - A[0]
-    radius = 0.3
-    x, y = make_circle_arc(
-        x0=0,
-        y0=0,
-        radius=radius,
-        start_angle=0,
-        end_angle=float(angles[1]),
-    )
-    ax.plot(x, y, color="black")
-
-    angle = float(angles[1])
-    ax.text(
-        x=0.5 * 1.5 * radius * (np.cos(angle) + np.cos(0)),
-        y=0.5 * 1.5 * radius * (np.sin(angle) + np.sin(0)),
-        s="$u$",
-        fontsize=fontsize,
-        ha="center",
-        va="center",
-    )
-
-    radius = 0.2
-    x, y = make_circle_arc(
-        x0=C[0],
-        y0=C[1],
-        radius=radius,
-        start_angle=-np.pi / 2,
-        end_angle=-np.pi / 2 - float(angles[0]),
-    )
-    ax.plot(x, y, color="black")
-
-    angle = float(angles[0])
-    ax.text(
-        x=C[0] + 0.5 * 1.5 * radius * (np.cos(-np.pi / 2 - angle) + np.cos(-np.pi / 2)),
-        y=C[1] + 0.5 * 1.5 * radius * (np.sin(-np.pi / 2 - angle) + np.sin(-np.pi / 2)),
-        s="$v$",
-        fontsize=fontsize,
-        ha="center",
-        va="center",
-    )
-
-    AB = sympy.sqrt((B[0] - A[0]) ** 2 + (B[1] - A[1]) ** 2)
-    AC = sympy.sqrt((A[0] - C[0]) ** 2 + (A[1] - C[1]) ** 2)
-    BC = sympy.sqrt((C[0] - B[0]) ** 2 + (C[1] - B[1]) ** 2)
-    AB = sympy.latex(AB)
-    AC = sympy.latex(AC)
-    BC = sympy.latex(BC)
-
-    print(AB)
-    print(AC)
-    print(BC)
-
-    dx = dy = 0.1
-    ax.text(
-        x=0.5 * (A[0] + B[0]),
-        y=0.5 * (A[1] + B[1]) - dy,
-        s=f" ",
-        ha="center",
-        va="top",
-        fontsize=fontsize,
-    )
-
-    ax.text(
-        x=0.5 * (A[0] + C[0]),
-        y=0.5 * (A[1] + C[1]),
-        s=f" ",
-        ha="right",
-        va="bottom",
-        fontsize=fontsize,
-    )
-
-    dx = 0.1
-    ax.text(
-        x=0.5 * (B[0] + C[0]) + dx,
-        y=0.5 * (B[1] + C[1]),
-        s=f" ",
+        x=0 + 0.2,
+        y=1,
+        s="Innfallslodd",
+        fontsize=16,
         ha="left",
         va="center",
-        fontsize=fontsize,
     )
 
-    dx = dy = 0.1
-    plt.plot([B[0], B[0] - dx], [B[1] + dy, B[1] + dy], color="black")
-    plt.plot([B[0] - dx, B[0] - dx], [B[1], B[1] + dy], color="black")
+    angle_air = 150
+    x = (xmax**2 + ymax**2) ** 0.5 * np.cos(np.radians(angle_air))
+    y = (xmax**2 + ymax**2) ** 0.5 * np.sin(np.radians(angle_air))
 
-    # ax.set_xlim(0, 100)
-    # ax.axis("equal")
-    # plt.xlim(-1, max(A[0], B[0], C[0]) + 1)
-    plt.axis("equal")
-    plt.tight_layout()
+    ax.plot([0, x], [0, y], color="red")
+
+    ax.text(
+        x=x / 2,
+        y=y / 2,
+        s=r"Lysstråle",
+        fontsize=16,
+        ha="left",
+        va="bottom",
+        color="red",
+    )
+
+    angle_water = np.arcsin(np.sin(np.radians(angle_air - 90)) / 1.33)
+    print(np.degrees(angle_water))
+
+    x = 20 * np.cos(-np.pi / 2 + angle_water)
+    y = 20 * np.sin(-np.pi / 2 + angle_water)
+
+    ax.plot([0, x], [0, y], color="red")
+
+    start_angle = np.pi / 2
+    end_angle = np.radians(angle_air)
+    radius = 0.3
+    x, y = make_circle_arc(
+        center=(0, 0),
+        radius=radius,
+        start_angle=start_angle,
+        end_angle=end_angle,
+    )
+
+    ax.plot(x, y, color="black")
+
+    x_label = 1.5 * radius * 0.5 * (np.cos(start_angle) + np.cos(end_angle))
+    y_label = 1.5 * radius * 0.5 * (np.sin(start_angle) + np.sin(end_angle))
+
+    ax.text(
+        x=x_label,
+        y=y_label,
+        s=r"$u$",
+        fontsize=16,
+        ha="center",
+        va="center",
+    )
+
+    start_angle = -np.pi / 2
+    end_angle = -np.pi / 2 + angle_water
+    radius = 0.3
+    x, y = make_circle_arc(
+        center=(0, 0),
+        radius=radius,
+        start_angle=start_angle,
+        end_angle=end_angle,
+    )
+
+    x_label = 1.5 * radius * 0.5 * (np.cos(start_angle) + np.cos(end_angle))
+    y_label = 1.5 * radius * 0.5 * (np.sin(start_angle) + np.sin(end_angle))
+
+    ax.text(
+        x=x_label,
+        y=y_label,
+        s=r"$v$",
+        fontsize=16,
+        ha="center",
+        va="center",
+    )
+
+    ax.plot(x, y, color="black")
+
+    ax.set_xlim(xmin, xmax)
+    ax.set_ylim(ymin, xmax)
+
     ax.axis("off")
+    ax.set_aspect("equal")
+    plt.tight_layout()
 
-    # NOTE: Select an appropriate `dirname` to save the figure.
-    # The directory `dirname` will be created automatically if it does not exist already.
+    # NOTE: Automatically saves with correct file format and filename.
     if save:
         fname = __file__.split("/")[-1].replace(".py", ".svg")
         plotmath.savefig(

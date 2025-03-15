@@ -6,14 +6,14 @@ def main(dirname, save):
     import plotmath
 
     ax = draw_triangle(
-        sas=(1, 60, 2),
+        asa=(30, 2, 110),
         show=False,
-        radius=0.3,
-        fontsize=16,
-        label_angles=(True, True, False),
+        radius=0.5,
+        fontsize=20,
+        label_angles=(False, True, False),
         label_sides=(True, True, True),
         vertex_labels=("A", "B", "C"),
-        numerical_len=False,
+        numerical_len=True,
     )
 
     # NOTE: Automatically saves with correct file format and filename.
