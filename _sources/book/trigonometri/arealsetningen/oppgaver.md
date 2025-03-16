@@ -1091,7 +1091,7 @@ file: ./ggb/oppgaver/oppgave_8/cas.html
 ---
 class: problem-level-3
 ---
-I figuren nedenfor vises en regulær $12$-kant som innskrevet i en sirkel med radius $1$. 
+I figuren nedenfor vises en regulær $12$-kant som innskrevet i en sirkel med radius $r$. 
 
 :::{figure} ./figurer/oppgaver/oppgave_9/figur.svg
 ---
@@ -1105,7 +1105,7 @@ class: no-click
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
-Bestem en eksakt verdi for arealet av $12$-kanten.
+Bestem en eksakt verdi for arealet av $12$-kanten uttrykt ved $r$.
 
 
 ::::{admonition} Fasit
@@ -1115,7 +1115,7 @@ class: answer, dropdown
 Arealet av $12$-kanten er
 
 $$
-T = 3.
+T = 3r^2
 $$
 ::::
 
@@ -1123,14 +1123,14 @@ $$
 
 
 :::::::::::::{tab-item} b
-Bestem en formel for arealet av en regulær $n$-kant som er innskrevet i en sirkel med radius $1$.
+Bestem en formel for arealet av en regulær $n$-kant som er innskrevet i en sirkel med radius $r$.
 
 ::::{admonition} Fasit
 ---
 class: answer, dropdown
 ---
 $$
-T = \dfrac{n}{2} \cdot \sin \left( \dfrac{360\degree}{n} \right)
+T = \dfrac{n}{2} \cdot r^2 \cdot \sin \left( \dfrac{360\degree}{n} \right)
 $$
 ::::
 
@@ -1148,7 +1148,7 @@ Stemmer svaret ditt overens med det du forventer?
 class: answer, dropdown
 ---
 $$
-T \approx 3.14. 
+T \approx 3.14 r^2 
 $$
 ::::
 
@@ -1166,13 +1166,13 @@ class: no-click
 ---
 :::
 
-Altså er arealet av en regulær $4096$-kant som er innskrevet i en sirkel med radius $1$ ca.
+Altså er arealet av en regulær $4096$-kant som er innskrevet i en sirkel med radius $r$ ca.
 
 $$
-T \approx 3.14. 
+T \approx 3.14 r^2
 $$
 
-som stemmer godt overens med at arealet bør være ganske nærme arealet av en sirkel med radius $1$.
+som stemmer godt overens med at arealet bør være ganske nærme arealet av en sirkel med radius $r$.
 ::::
 
 
