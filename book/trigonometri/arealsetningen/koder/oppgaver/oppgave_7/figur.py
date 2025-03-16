@@ -23,43 +23,80 @@ def draw_circle_arc(center, radius, start_angle, end_angle, num_points=100):
 def main(dirname, save):
     # TODO: write code here
 
-    x, y = make_circle(center=(0, 0), radius=1)
-    plt.plot(x, y, color="black")
+    angle = 45
+    radius = 2
+    S = (0, 0)
+    A = (radius, 0)
+    B = (radius * np.cos(angle * np.pi / 180), radius * np.sin(angle * np.pi / 180))
+    C = (-radius * np.cos(angle * np.pi / 180), -radius * np.sin(angle * np.pi / 180))
 
-    n = 6
-    angles = [360 / n * i for i in range(n)]
-    angles = [np.radians(angle) for angle in angles]
-
-    points = [(np.cos(angle), np.sin(angle)) for angle in angles]
-
-    x, y = zip(*points)
-    plt.plot(x + x[:1], y + y[:1], color="teal", lw=2)
-
-    A = (0, 0)
-    B = (np.cos(angles[0]), np.sin(angles[0]))
-    C = (np.cos(angles[1]), np.sin(angles[1]))
-
+    points = [S, A, B]
     plotmath.plot_polygon(
-        A,
-        B,
-        C,
+        *points,
         show_vertices=True,
     )
 
+    points = [S, A, C]
+    plotmath.plot_polygon(
+        *points,
+        show_vertices=True,
+    )
+
+    x, y = make_circle(center=S, radius=2)
+
+    plt.plot(x, y, color="black")
+
     draw_circle_arc(
-        center=(0, 0),
-        radius=0.2,
-        start_angle=0,
-        end_angle=60,
+        center=C,
+        radius=0.7,
+        start_angle=45,
+        end_angle=22.5,
+    )
+
+    angle = 22.5
+    plt.text(
+        x=C[0] + 0.8,
+        y=C[1] + 0.5,
+        s=f"${angle}^\\circ$",
+        fontsize=20,
+        ha="left",
+        va="bottom",
     )
 
     plt.text(
-        x=0.3,
-        y=0.15,
-        s="$v$",
+        x=S[0] - 0.1,
+        y=S[1] + 0.1,
+        s=r"$S$",
         fontsize=20,
+        ha="left",
+        va="bottom",
+    )
+
+    plt.text(
+        x=A[0] + 0.1,
+        y=A[1],
+        s=r"$A$",
+        fontsize=20,
+        ha="left",
         va="center",
-        ha="center",
+    )
+
+    plt.text(
+        x=B[0] + 0.1,
+        y=B[1] + 0.2,
+        s=r"$B$",
+        fontsize=20,
+        ha="left",
+        va="top",
+    )
+
+    plt.text(
+        x=C[0] - 0.1,
+        y=C[1] - 0.1,
+        s=r"$C$",
+        fontsize=20,
+        ha="right",
+        va="center",
     )
 
     plt.axis("equal")

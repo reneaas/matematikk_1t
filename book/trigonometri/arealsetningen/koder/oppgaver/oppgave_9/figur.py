@@ -26,7 +26,7 @@ def main(dirname, save):
     x, y = make_circle(center=(0, 0), radius=1)
     plt.plot(x, y, color="black")
 
-    n = 6
+    n = 12
     angles = [360 / n * i for i in range(n)]
     angles = [np.radians(angle) for angle in angles]
 
@@ -34,33 +34,6 @@ def main(dirname, save):
 
     x, y = zip(*points)
     plt.plot(x + x[:1], y + y[:1], color="teal", lw=2)
-
-    A = (0, 0)
-    B = (np.cos(angles[1]), np.sin(angles[1]))
-    C = (np.cos(angles[2]), np.sin(angles[2]))
-
-    plotmath.plot_polygon(
-        A,
-        B,
-        C,
-        show_vertices=True,
-    )
-
-    draw_circle_arc(
-        center=(0, 0),
-        radius=0.2,
-        start_angle=60,
-        end_angle=120,
-    )
-
-    plt.text(
-        x=0,
-        y=0.3,
-        s="$v$",
-        fontsize=20,
-        va="center",
-        ha="center",
-    )
 
     plt.axis("equal")
     plt.axis("off")

@@ -10,6 +10,15 @@ def make_circle(center, radius, num_points=1024):
     return x, y
 
 
+def draw_right_angle(A, dx=0.1, dy=0.1):
+    ax = plt.gca()
+    x, y = A
+    ax.plot([x, x + dx], [y + dy, y + dy], color="black")
+    ax.plot([dx, dx], [y, y + dy], color="black")
+
+    return ax
+
+
 def draw_circle_arc(center, radius, start_angle, end_angle, num_points=100):
     ax = plt.gca()
     start_angle = np.radians(start_angle)
@@ -23,80 +32,103 @@ def draw_circle_arc(center, radius, start_angle, end_angle, num_points=100):
 def main(dirname, save):
     # TODO: write code here
 
-    angle = 45
-    radius = 2
-    S = (0, 0)
-    A = (radius, 0)
-    B = (radius * np.cos(angle * np.pi / 180), radius * np.sin(angle * np.pi / 180))
-    C = (-radius * np.cos(angle * np.pi / 180), -radius * np.sin(angle * np.pi / 180))
+    angle = -30
+    angle = np.radians(angle)
+    a = 1
+    A = (0, 0)
+    D = (0, a)
+    C = (3**0.5 * a, a)
+    B = (3**0.5 * a + 3**0.5 * a * np.cos(angle), a + 3**0.5 * a * np.sin(angle))
 
-    points = [S, A, B]
+    points = [A, B, C, D]
     plotmath.plot_polygon(
         *points,
         show_vertices=True,
     )
 
-    points = [S, A, C]
-    plotmath.plot_polygon(
-        *points,
-        show_vertices=True,
+    dx = dy = 0.05
+    plt.text(
+        x=A[0] - dx,
+        y=A[1] - dy,
+        s="$A$",
+        fontsize=20,
+        va="top",
+        ha="right",
     )
 
-    x, y = make_circle(center=S, radius=2)
+    plt.text(
+        x=B[0] + dx,
+        y=B[1] - dy,
+        s="$B$",
+        fontsize=20,
+        va="top",
+        ha="left",
+    )
 
-    plt.plot(x, y, color="black")
+    plt.text(
+        x=C[0] + dx,
+        y=C[1] + dy,
+        s="$C$",
+        fontsize=20,
+        va="bottom",
+        ha="left",
+    )
+
+    plt.text(
+        x=D[0] - dx,
+        y=D[1] + dy,
+        s="$D$",
+        fontsize=20,
+        va="bottom",
+        ha="right",
+    )
+
+    draw_right_angle(D, dx=0.15, dy=-0.15)
+
+    x, y = zip(A, C)
+    plt.plot(x, y, ls="--", color="black")
 
     draw_circle_arc(
         center=C,
-        radius=0.7,
-        start_angle=45,
-        end_angle=22.5,
-    )
-
-    angle = 22.5
-    plt.text(
-        x=C[0] + 0.8,
-        y=C[1] + 0.5,
-        s=f"${angle}^\\circ$",
-        fontsize=20,
-        ha="left",
-        va="bottom",
+        radius=0.2,
+        start_angle=180,
+        end_angle=180 + 150,
     )
 
     plt.text(
-        x=S[0] - 0.1,
-        y=S[1] + 0.1,
-        s=r"$S$",
+        x=C[0],
+        y=C[1] - 5 * dy,
+        s=r"$150^\circ$",
         fontsize=20,
-        ha="left",
-        va="bottom",
-    )
-
-    plt.text(
-        x=A[0] + 0.1,
-        y=A[1],
-        s=r"$A$",
-        fontsize=20,
-        ha="left",
-        va="center",
-    )
-
-    plt.text(
-        x=B[0] + 0.1,
-        y=B[1] + 0.2,
-        s=r"$B$",
-        fontsize=20,
-        ha="left",
         va="top",
+        ha="center",
     )
 
     plt.text(
-        x=C[0] - 0.1,
-        y=C[1] - 0.1,
-        s=r"$C$",
+        x=0.5 * (A[0] + C[0]),
+        y=0.5 * (A[1] + C[1]) + dy,
+        s="$2a$",
         fontsize=20,
-        ha="right",
+        va="bottom",
+        ha="center",
+    )
+
+    plt.text(
+        x=-dx,
+        y=0.5 * (A[1] + D[1]),
+        s="$a$",
+        fontsize=20,
         va="center",
+        ha="right",
+    )
+
+    plt.text(
+        x=0.5 * (C[0] + B[0]),
+        y=0.5 * (C[1] + B[1]) + dy,
+        s="$\\sqrt{3} a$",
+        fontsize=20,
+        va="bottom",
+        ha="left",
     )
 
     plt.axis("equal")
