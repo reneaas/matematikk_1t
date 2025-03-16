@@ -319,6 +319,22 @@ I en $\triangle ABC$ er $AB = 8$, $AC = 6$ og $\angle A = 30 \degree$.
 Bestem arealet av trekanten.
 
 
+::::{admonition} CAS-vindu
+---
+class: progging, dropdown
+---
+
+<br>
+
+:::{raw} html
+---
+file: ./ggb/oppgaver/oppgave_3/a.html
+---
+:::
+
+::::
+
+
 ::::{admonition} Fasit
 ---
 class: answer, dropdown
@@ -349,6 +365,16 @@ $$
 
 ::::
 
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+I en $\triangle ABC$ er $AB = 5$, $BC = 7$ og $\angle B = 45 \degree$.
+
+
+Bestem arealet av trekanten.
+
+
 ::::{admonition} CAS-vindu
 ---
 class: progging, dropdown
@@ -358,20 +384,11 @@ class: progging, dropdown
 
 :::{raw} html
 ---
-file: ./ggb/oppgaver/oppgave_3/a.html
+file: ./ggb/oppgaver/oppgave_3/b.html
 ---
 :::
 
 ::::
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} b
-I en $\triangle ABC$ er $AB = 5$, $BC = 7$ og $\angle B = 45 \degree$.
-
-
-Bestem arealet av trekanten.
 
 
 ::::{admonition} Fasit
@@ -397,6 +414,14 @@ class: no-click
 
 ::::
 
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+I en $\triangle ABC$ er $BC = 10$, $AC = 8$ og $\angle C = 120 \degree$.
+
+Bestem arealet av trekanten.
+
 
 ::::{admonition} CAS-vindu
 ---
@@ -407,18 +432,11 @@ class: progging, dropdown
 
 :::{raw} html
 ---
-file: ./ggb/oppgaver/oppgave_3/b.html
+file: ./ggb/oppgaver/oppgave_3/c.html
 ---
 :::
 
 ::::
-:::::::::::::
-
-
-:::::::::::::{tab-item} c
-I en $\triangle ABC$ er $BC = 10$, $AC = 8$ og $\angle C = 120 \degree$.
-
-Bestem arealet av trekanten.
 
 
 ::::{admonition} Fasit
@@ -438,22 +456,6 @@ class: solution, dropdown
 ---
 width: 100%
 class: no-click
----
-:::
-
-::::
-
-
-::::{admonition} CAS-vindu
----
-class: progging, dropdown
----
-
-<br>
-
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_3/c.html
 ---
 :::
 
@@ -658,15 +660,219 @@ file: ./ggb/oppgaver/oppgave_5/cas.html
 
 ---
 
-
-
 :::::::::::::::{admonition} Oppgave 6
+---
+class: problem-level-2
+---
+Nedenfor vises en firkant $\square ABCD$. 
+
+:::{figure} ./figurer/oppgaver/oppgave_6/figur.svg
+---
+width: 80%
+class: no-click
+---
+:::
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Bestem en eksakt verdi for lengden av $CD$ uttrykt ved $a$.
+
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+CD = \sqrt{3} \cdot a
+$$
+::::
+
+::::{admonition} Løsning
+---
+class: solution, dropdown
+---
+Vi kan observere at $\triangle ACD$ er en rettvinklet trekant slik at vi kan bruke Pytagoras' setning med:
+
+$$
+CD^2 + AD^2 = AC^2. 
+$$
+
+Vi regner ut med CAS:
+
+:::{figure} ./ggb/oppgaver/oppgave_6/a.png
+---
+width: 100%
+class: no-click
+---
+:::
+
+Vi må velge den positive løsningen siden dette er en lengde. Dermed har vi at 
+
+$$
+AD = \sqrt{3} \cdot a.
+$$
+
+::::
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Bestem en eksakt verdi for arealet av firkanten uttrykt ved $a$.
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+T_{\square ABCD} = \dfrac{1}{2}\left(3 + \sqrt{3}\right) \cdot a^2
+$$
+::::
+
+
+::::{admonition} Løsning
+---
+class: solution, dropdown
+---
+Først kan vi merke oss at $\square ABCD$ består av to trekanter $\triangle ACD$ og $\triangle ABC$. Vi kan derfor regne ut arealet av $\square ABCD$ ved å summere arealene til de to trekantene.
+
+Arealet av $\triangle ACD$ er gitt ved
+
+$$
+T_{\triangle ACD} = \dfrac{1}{2} \cdot AD \cdot CD
+$$
+
+Vi regner ut med CAS:
+
+:::{figure} ./ggb/oppgaver/oppgave_6/b_trekant_ACD.png
+---
+width: 100%
+class: no-click
+---
+:::
+
+Videre kan vi merke oss at $\triangle ACD$ er en $30\degree$-$60\degree$-$90\degree$ trekant siden $\angle ACD = 90\degree$ og den korteste kateten er halvparten så lang som hypotenusen. Det er $\angle ACD = 30 \degree$.
+
+Dermed følger det at 
+
+$$
+\angle ACD + \angle BCA = 150 \degree \liff \angle BCA = 150\degree - 30\degree = 120 \degree.
+$$
+
+Arealet av $\triangle ABC$ kan derfor regnes ut ved 
+
+$$
+T_{\triangle ABC} = \dfrac{1}{2} \cdot BC \cdot AC \cdot \sin(120 \degree).
+$$
+
+Vi regner ut med CAS:
+
+:::{figure} ./ggb/oppgaver/oppgave_6/b_trekant_ABC.png
+---
+width: 100%
+class: no-click
+---
+:::
+
+Til slutt summerer vi de to arealene for å finne arealet $T_{\square ABCD}$. Vi får:
+
+:::{figure} ./ggb/oppgaver/oppgave_6/b_firkant.png
+---
+width: 100%
+class: no-click
+---
+:::
+
+Altså er 
+
+$$
+T_{\square ABCD} = \dfrac{1}{2}\left(3 + \sqrt{3}\right) \cdot a^2
+$$
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+Bestem en eksakt verdi for $a$ slik at arealet av firkanten er $3$. 
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+a = \sqrt{3 - \sqrt{3}}
+$$
+::::
+
+
+::::{admonition} Løsning
+---
+class: solution, dropdown
+---
+Arealet $T_{\square ABCD}(a)$ er en funksjon av $a$ slik at vi kan bestemme $a$ ved å løse likningen
+
+$$
+T_{\square ABCD}(a) = 3. 
+$$
+
+Vi gjør dette med CAS:
+
+:::{figure} ./ggb/oppgaver/oppgave_6/c.png
+---
+width: 100%
+class: no-click
+---
+:::
+
+som betyr arealet til firkanten er $3$ dersom
+
+$$
+a = \sqrt{3 - \sqrt{3}}
+$$
+::::
+
+:::::::::::::
+
+::::::::::::::
+
+
+::::{admonition} CAS-vindu
+---
+class: progging, dropdown
+---
+
+<br>
+
+:::{raw} html
+---
+file: ./ggb/oppgaver/oppgave_6/cas.html
+---
+:::
+
+::::
+
+:::::::::::::::
+
+
+
+
+---
+
+
+
+:::::::::::::::{admonition} Oppgave 7
 ---
 class: problem-level-2
 ---
 Nedenfor vises en sirkel med radius $2$ og tre trekanter $\triangle SAB$, $\triangle CAS$ og $\triangle CAB$. Punktet $S$ er i sentrum av sirkelen og $\angle ACS = 22.5 \degree$.
 
-:::{figure} ./figurer/oppgaver/oppgave_6/figur.svg
+:::{figure} ./figurer/oppgaver/oppgave_7/figur.svg
 ---
 width: 80%
 class: no-click
@@ -708,7 +914,7 @@ $$
 
 Vi regner ut svaret med CAS:
 
-:::{figure} ./ggb/oppgaver/oppgave_6/a.png
+:::{figure} ./ggb/oppgaver/oppgave_7/a.png
 ---
 width: 100%
 class: no-click
@@ -765,7 +971,7 @@ $$
 
 Vi regner ut svaret med CAS:
 
-:::{figure} ./ggb/oppgaver/oppgave_6/b.png
+:::{figure} ./ggb/oppgaver/oppgave_7/b.png
 ---
 width: 100%
 class: no-click
@@ -796,7 +1002,7 @@ class: progging, dropdown
 
 :::{raw} html
 ---
-file: ./ggb/oppgaver/oppgave_6/cas.html
+file: ./ggb/oppgaver/oppgave_7/cas.html
 ---
 :::
 
@@ -807,15 +1013,15 @@ file: ./ggb/oppgaver/oppgave_6/cas.html
 ---
 
 
-:::::::::::::::{admonition} Oppgave 7
+:::::::::::::::{admonition} Oppgave 8
 ---
 class: problem-level-2
 ---
 En **regulær** $n$-kant er en $n$-kant hvor alle sider og vinkler er like store. 
 
-I figuren nedenfor vises en regulær $6$-kant som er **innskrevet** i en sirkel med radius $1$. En trekant er tegnet inn der det éne hjørnet er i sentrum av sirkelen og de to andre hjørnene er på sirkelen.
+I figuren nedenfor vises en regulær $6$-kant som er **innskrevet** i en sirkel med radius $6$. En trekant er tegnet inn der det éne hjørnet er i sentrum av sirkelen og de to andre hjørnene er på sirkelen.
 
-:::{figure} ./figurer/oppgaver/oppgave_7/figur.svg
+:::{figure} ./figurer/oppgaver/oppgave_8/figur.svg
 ---
 width: 80%
 class: no-click
@@ -835,7 +1041,7 @@ Bestem en eksakt verdi for arealet av trekanten.
 class: answer, dropdown
 ---
 $$
-T_\triangle = \dfrac{\sqrt{3}}{4}
+T_\triangle = 9\sqrt{3}
 $$
 ::::
 
@@ -850,7 +1056,7 @@ Bestem en eksakt verdi for arealet av 6-kanten.
 class: answer, dropdown
 ---
 $$
-T_{6-\mathrm{kant}} = \dfrac{3\sqrt{3}}{2}
+T_{6-\mathrm{kant}} = 54\sqrt{3}
 $$
 ::::
 
@@ -868,7 +1074,7 @@ class: progging, dropdown
 
 :::{raw} html
 ---
-file: ./ggb/oppgaver/oppgave_7/cas.html
+file: ./ggb/oppgaver/oppgave_8/cas.html
 ---
 :::
 
@@ -881,13 +1087,13 @@ file: ./ggb/oppgaver/oppgave_7/cas.html
 
 
 
-:::::::::::::::{admonition} Oppgave 8
+:::::::::::::::{admonition} Oppgave 9
 ---
 class: problem-level-3
 ---
 I figuren nedenfor vises en regulær $12$-kant som innskrevet i en sirkel med radius $1$. 
 
-:::{figure} ./figurer/oppgaver/oppgave_8/figur.svg
+:::{figure} ./figurer/oppgaver/oppgave_9/figur.svg
 ---
 width: 80%
 class: no-click
@@ -953,7 +1159,7 @@ class: solution, dropdown
 ---
 Vi bruker CAS til å regne ut arealet av den regulære $4096$-kanten:
 
-:::{figure} ./ggb/oppgaver/oppgave_8/c.png
+:::{figure} ./ggb/oppgaver/oppgave_9/c.png
 ---
 width: 100%
 class: no-click
@@ -985,7 +1191,7 @@ class: progging, dropdown
 
 :::{raw} html
 ---
-file: ./ggb/oppgaver/oppgave_8/cas.html
+file: ./ggb/oppgaver/oppgave_9/cas.html
 ---
 :::
 
