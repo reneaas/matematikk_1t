@@ -892,17 +892,103 @@ class: no-click
 
 
 
+
+---
+
+
+:::::::::::::::{admonition} Oppgave 11
+---
+class: problem-level-2
+---
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Månen har en radius på ca. 1737 km og er ca. 384 400 km unna jorden.
+
+Bestem hvor stor vinkel $v$ månen dekker på himmelen sett fra jorden.
+
+
+::::{admonition} CAS-vindu
+---
+class: progging, dropdown
+---
+:::{raw} html
+---
+file: ./ggb/oppgaver/oppgave_11/a.html
+---
+:::
+
+::::
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+v = 0.5 \degree
+$$  
+::::
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b 
+Andromedagalaksen er vår nærmeste nabogalakse. Den er er ca. 200 000 lysår i diameter og 2.5 millioner lysår unna oss.
+
+Bestem hvor stor vinkel $v$ Andromeda dekker på himmelen sett fra jorden.
+
+Dekker månen eller Andromedagalaksen størst vinkel på himmelen?
+
+
+
+::::{admonition} CAS-vindu
+---
+class: progging, dropdown
+---
+:::{raw} html
+---
+file: ./ggb/oppgaver/oppgave_11/b.html
+---
+:::
+
+::::
+
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+v = 4.58 \degree.
+$$  
+::::
+
+:::::::::::::
+
+::::::::::::::
+
+
+
+:::::::::::::::
+
+
 ---
 
 
 
-:::::::::::::::{admonition} Oppgave 11
+
+
+
+:::::::::::::::{admonition} Oppgave 12
 ---
 class: problem-level-3
 ---
 Nedenfor vises en rettvinklet trekant med vinkler $u$ og $v$. 
 
-:::{figure} ./figurer/oppgaver/oppgave_11/figur.svg
+:::{figure} ./figurer/oppgaver/oppgave_12/figur.svg
 ---
 width: 70%
 class: no-click
@@ -975,6 +1061,10 @@ Påstanden stemmer.
 
 
 :::::::::::::::
+
+
+
+
 
 
 
