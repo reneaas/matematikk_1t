@@ -397,6 +397,40 @@ $$
 :::::::::::::::
 
 
+Ut ifra resultatet i **c** Utforsk 2, så ser vi at det er rimelig å **definere** $\sin v$ for en **stump** vinkel som at 
+
+$$
+\sin v = \sin (180\degree - v).
+$$
+
+Dette valget gjør at vi kan bruke arealsetningen med alle vinkler $v\degree \in \langle 0, 180\rangle$.
+
+Det vi mener med dette er at dersom vi skal regne ut $\sin v$ til en stump vinkel på **innsiden** av en trekant, så gjør vi det ved å danne en rettvinklet trekant på **utsiden** og bruker supplementvinkele $180\degree - v$. Du kan sjekke nærmere i Utforsk 3 at kalkulatorer som regner ut $\sin v$ til en stump vinkel gjør nettopp dette.
+
+
+:::::::::::::::{admonition} Utforsk 3
+---
+class: explore
+---
+Bruk CAS-vinduet nedenfor til å undersøke verdien til $\sin v$ og $\sin (180\degree - v)$ for følgende stumpe vinkler:
+
+$$
+v\degree \in \{120, 135, 150\}
+$$
+
+
+
+:::{raw} html
+---
+file: ./ggb/utforsk/utforsk_3/cas_vindu.html
+---
+:::
+
+
+:::::::::::::::
+
+
+
 
 
 
