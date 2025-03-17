@@ -419,7 +419,6 @@ v\degree \in \{120, 135, 150\}
 $$
 
 
-
 :::{raw} html
 ---
 file: ./ggb/utforsk/utforsk_3/cas_vindu.html
