@@ -472,6 +472,112 @@ Dermed er $x = 4\sqrt{2}$.
 
 :::::::::::::
 
+:::::::::::::{tab-item} d
+I figuren nedenfor vises en rettvinklet trekant.
+
+Bruk CAS til å bestemme $x$.
+
+:::{figure} ./figurer/oppgaver/oppgave_5/d.svg
+---
+width: 70%
+class: no-click
+---
+:::
+
+:::{raw} html
+---
+file: ./ggb/oppgaver/oppgave_5/d.html
+---
+:::
+
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+:::{figure} ./ggb/oppgaver/oppgave_5/d.png
+---
+width: 100%
+class: no-click
+---
+:::
+
+Altså er $x = 4$.
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} e
+I figuren nedenfor vises en rettvinklet trekant.
+
+Bruk CAS til å bestemme $x$.
+
+:::{figure} ./figurer/oppgaver/oppgave_5/e.svg
+---
+width: 70%
+class: no-click
+---
+:::
+
+:::{raw} html
+---
+file: ./ggb/oppgaver/oppgave_5/e.html
+---
+:::
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+:::{figure} ./ggb/oppgaver/oppgave_5/e.png
+---
+width: 100%
+class: no-click
+---
+:::
+Altså er $x = 1.25$.
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} f
+I figuren nedenfor vises en rettvinklet trekant.
+
+Bruk CAS til å bestemme $x$.
+
+
+:::{figure} ./figurer/oppgaver/oppgave_5/f.svg
+---
+width: 70%
+class: no-click
+---
+:::
+
+
+:::{raw} html
+---
+file: ./ggb/oppgaver/oppgave_5/f.html
+---
+:::
+
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+:::{figure} ./ggb/oppgaver/oppgave_5/f.png
+---
+width: 100%
+class: no-click
+---
+:::
+Altså er $x = 3.22$.
+::::
+
+:::::::::::::
+
 ::::::::::::::
 
 
