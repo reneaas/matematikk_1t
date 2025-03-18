@@ -76,6 +76,7 @@ def draw_angle_arc_with_tangent_arrow(
 
 
 def main(dirname, save):
+
     fontsize = 20
 
     fig, ax = plotmath.plot(
@@ -83,53 +84,42 @@ def main(dirname, save):
         fn_labels=False,
         ticks=False,
         grid=False,
-        xmin=-1.5,
-        xmax=1.5,
-        ymin=-1.2,
-        ymax=1.2,
+        xmin=-1.35,
+        xmax=1.35,
+        ymin=-1.3,
+        ymax=1.3,
     )
     x, y = make_circle(radius=1)
 
     plt.plot(x, y, color="teal", lw=2, alpha=0.7)
 
-    # angle = 2 * np.pi / 3
-    angle = np.pi - np.pi / 6
+    angle = np.radians(37)
     x0 = np.cos(angle)
     y0 = np.sin(angle)
 
     plt.plot([0, x0], [0, y0], color="black", lw=2, alpha=0.7)
-    plt.vlines(x=x0, ymin=0, ymax=y0, color="black", ls="--", alpha=0.6)
-    plt.hlines(y=y0, xmin=0, xmax=x0, color="black", ls="--", alpha=0.6)
 
     ax.set_xlabel("$x$", fontsize=fontsize, loc="right")
     ax.set_ylabel("$y$", fontsize=fontsize, loc="top")
 
-    # draw_angle_arc_with_tangent_arrow(
-    #     ax=ax,
-    #     center=(0, 0),
-    #     start_angle=0,
-    #     end_angle=60,
-    #     radius=0.3,
-    #     arrow_length=0.1,
-    # )
-
     x, y = make_circle_arc(radius=0.2, stop=angle)
     plt.plot(x, y, color="black", lw=1, alpha=0.7)
 
-    plt.text(
-        x=0.5 * x0,
-        y=0.5 * y0 - 0.15,
-        s="$1$",
-        fontsize=fontsize,
-        ha="right",
-        va="bottom",
-    )
+    # plt.text(
+    #     x=0.5 * x0,
+    #     y=0.5 * y0,
+    #     s="$1$",
+    #     fontsize=fontsize,
+    #     ha="right",
+    #     va="bottom",
+    # )
 
-    r = 1
+    r = 0.4
+    dx = dy = 0.05
     plt.text(
-        x=r * 0.7 * (np.cos(angle) + 1),
-        y=r * 0.5 * (np.sin(angle) + 0),
-        s="$v$",
+        x=r * 0.5 * (np.cos(angle) + 1),
+        y=r * 0.5 * (np.sin(angle) + 0) - dy,
+        s=f"${np.degrees(angle) :.0f} ^\\circ$",
         fontsize=fontsize,
         ha="center",
         va="center",
@@ -137,12 +127,13 @@ def main(dirname, save):
 
     dx = dy = 0.1
     ax.plot(x0, y0, "ko", ms=8, alpha=0.7)
+
     plt.text(
-        x=x0 - dx,
+        x=x0 + dx,
         y=y0,
-        s="$P(\\cos v, \\sin v)$",
+        s=f"$P({x0 :.2f}, {y0 :.2f})$",
         fontsize=fontsize,
-        ha="right",
+        ha="left",
         va="bottom",
     )
 

@@ -76,6 +76,7 @@ def draw_angle_arc_with_tangent_arrow(
 
 
 def main(dirname, save):
+
     fontsize = 20
 
     fig, ax = plotmath.plot(
@@ -83,17 +84,16 @@ def main(dirname, save):
         fn_labels=False,
         ticks=False,
         grid=False,
-        xmin=-1.5,
-        xmax=1.5,
-        ymin=-1.2,
-        ymax=1.2,
+        xmin=-1.35,
+        xmax=1.35,
+        ymin=-1.3,
+        ymax=1.3,
     )
     x, y = make_circle(radius=1)
 
     plt.plot(x, y, color="teal", lw=2, alpha=0.7)
 
-    # angle = 2 * np.pi / 3
-    angle = np.pi - np.pi / 6
+    angle = np.pi / 4
     x0 = np.cos(angle)
     y0 = np.sin(angle)
 
@@ -118,16 +118,16 @@ def main(dirname, save):
 
     plt.text(
         x=0.5 * x0,
-        y=0.5 * y0 - 0.15,
+        y=0.5 * y0,
         s="$1$",
         fontsize=fontsize,
         ha="right",
         va="bottom",
     )
 
-    r = 1
+    r = 0.3
     plt.text(
-        x=r * 0.7 * (np.cos(angle) + 1),
+        x=r * 0.5 * (np.cos(angle) + 1),
         y=r * 0.5 * (np.sin(angle) + 0),
         s="$v$",
         fontsize=fontsize,
@@ -137,14 +137,22 @@ def main(dirname, save):
 
     dx = dy = 0.1
     ax.plot(x0, y0, "ko", ms=8, alpha=0.7)
+
     plt.text(
-        x=x0 - dx,
+        x=x0 + dx,
         y=y0,
-        s="$P(\\cos v, \\sin v)$",
+        s="$P(x, y)$",
         fontsize=fontsize,
-        ha="right",
+        ha="left",
         va="bottom",
     )
+
+    plt.vlines(x=x0, ymin=0, ymax=y0, color="black", ls="-", alpha=0.6)
+
+    dx = dy = 0.1
+    y0 = 0
+    plt.plot([x0, x0 - dx], [y0 + dy, y0 + dy], color="black", lw=1, alpha=1)
+    plt.plot([x0 - dx, x0 - dx], [y0, y0 + dy], color="black", lw=1, alpha=1)
 
     ax.set_aspect("equal")
 

@@ -101,8 +101,8 @@ def main(dirname, save):
     plt.vlines(x=x0, ymin=0, ymax=y0, color="black", ls="--", alpha=0.6)
     plt.hlines(y=y0, xmin=0, xmax=x0, color="black", ls="--", alpha=0.6)
 
-    ax.set_xlabel("$\\cos v$", fontsize=fontsize, loc="right")
-    ax.set_ylabel("$\\sin v$", fontsize=fontsize, loc="top")
+    ax.set_xlabel("$x$", fontsize=fontsize, loc="right")
+    ax.set_ylabel("$y$", fontsize=fontsize, loc="top")
 
     # draw_angle_arc_with_tangent_arrow(
     #     ax=ax,
@@ -115,6 +115,15 @@ def main(dirname, save):
 
     x, y = make_circle_arc(radius=0.2, stop=angle)
     plt.plot(x, y, color="black", lw=1, alpha=0.7)
+
+    plt.text(
+        x=0.5 * x0,
+        y=0.5 * y0,
+        s="$1$",
+        fontsize=fontsize,
+        ha="right",
+        va="bottom",
+    )
 
     r = 0.3
     plt.text(
@@ -132,7 +141,7 @@ def main(dirname, save):
     plt.text(
         x=x0 + dx,
         y=y0,
-        s="$(\\cos v, \\sin v)$",
+        s="$P(\\cos v, \\sin v)$",
         fontsize=fontsize,
         ha="left",
         va="bottom",
