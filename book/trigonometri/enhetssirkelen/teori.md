@@ -9,9 +9,61 @@ class: tip
 * Kunne bruke enhetssirkelen til å bestemme $\cos v$ og $\sin v$ for vinkler $v \in [0, 360\degree\rangle$.
 ::::
 
-Når vi jobbet med arealsetningen, så vi at når vi møtte på stumpe vinkler $v \in \langle 90\degree, 180\degree\rangle$ så kunne vi ikke lenger direkte bruke trekanten til å bestemme $\sin v$. Men vi fant at dersom vi brukte en rettvinklet trekant på *utsiden* av trekanten, så ville supplementvinkelen $180\degree - v$ gi en vinkel mellom $0\degree$ og $90\degree$ som ga oss høyden i trekanten. Da definerte vi at $\sin v = \sin(180\degree - v)$ når $v \in \langle 90\degree, 180\degree\rangle$.
+Så langt har vi brukt rettvinklede trekanter for å beskrive sinus og cosinus som forholdstallet mellom to sider. Når vi jobbet med arealsetningen, fant vi at vi også kunne gi en meningsfull definisjon av $\sin v$ selv om $v$ var en stump vinkel. Måten vi gjorde det på, var å bruke en rettvinklet trekant på utsiden av trekanten for å finne høyden i trekanten slik at vi kunne bruke definisjonen av sinus. 
 
-Her skal vi ta denne definisjonen på alvor og generalisere til hva dette betyr for $\cos v$ og $\sin v$ for alle vinkler $v$. Vi skal se at vi kan bruke **enhetssirkelen** til å bestemme $\cos v$ og $\sin v$ for alle vinkler $v \in [0, 360\degree\rangle$ på følgende måte:
+Men $\sin v$ og $\cos v$ forteller oss indirekte hvor stor en vinkelbue $v$ er. I Utforsk 1 nedenfor skal vi se hvordan vi kan uttrykke $\sin v$ og $\cos v$ dersom vi jobber med en rettvinklet trekant der hypotenusen er $1$.
+
+
+:::::::::::::::{admonition} Utforsk 1
+---
+class: explore
+---
+Nedenfor vises en rettvinklet trekant der hypotenusen er $1$. Den ene kateten har lengde $x$ og den andre kateten har lengde $y$.
+
+
+:::{figure} ./figurer/utforsk/utforsk_1/figur.svg
+---
+width: 80%
+class: no-click
+---
+:::
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Bestem $\cos v$ for trekanten.
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Bestem $\sin v$ for trekanten.
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+Forklar at 
+
+$$
+(\cos v)^2 + (\sin v)^2 = 1
+$$
+
+Hvorfor tror du dette kalles for **Pytagoras' identitet**?
+
+:::::::::::::
+
+::::::::::::::
+
+:::::::::::::::
+
+---
+
+Vi har nå sett at $\sin v$ og $\cos v$ får en spesielt enkel form dersom vi jobber med en rettvinklet trekant der hypotenusen er $1$. Men rettvinklede trekanter begrenser oss til å beskrive vinkelbuer som ligger mellom $0\degree$ og $90\degree$. For å kunne beskrive vinkelbuer som er større enn $90\degree$, kan vi utvide definisjonen vår ved å ta utgangspunkt i en sirkel som har radius $1$. Denne sirkelen kalles for **enhetssirkelen**. Denne definisjonen vil fortsatt gi akkurat de samme verdiene når vinkelen er mellom $0\degree$ og $90\degree$, men lar oss også definere $\sin v$ og $\cos v$ for vinkler $v \in [0\degree, 360\degree\rangle$.
+
 
 :::::::::::::::{admonition} Enhetssirkelen
 ---
@@ -35,16 +87,15 @@ class: no-click
 
 :::::::::::::::
 
-
 ---
 
-:::::::::::::::{admonition} Utforsk 1
+:::::::::::::::{admonition} Utforsk 2
 ---
 class: explore
 ---
-Nedenfor vises en enhetssirkelen med et punkt $P(x, y)$ tegnet inn på sirkelen. En trekant er tegnet inn der hypotenusen går fra origo opp til punktet $P$.
+Nedenfor vises enhetssirkelen med et punkt $P(x, y)$ tegnet inn på sirkelen. En trekant er tegnet inn der hypotenusen går fra origo opp til punktet $P$.
 
-:::{figure} ./figurer/utforsk/utforsk_1/enhetssirkelen.svg
+:::{figure} ./figurer/utforsk/utforsk_2/enhetssirkelen.svg
 ---
 width: 80%
 class: no-click

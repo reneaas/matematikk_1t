@@ -388,13 +388,13 @@ class: no-click
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
-Bruk figuren til å bestemme $\tan 50 \degree$. 
+Bruk figuren til å avgjøre om $\tan 50\degree > 1$.
 
 :::::::::::::
 
 
 :::::::::::::{tab-item} b
-Bruk figuren til å avgjøre om $\tan 40 \degree > \tan 50 \degree$
+Avgjør om $\tan 130 \degree > \tan 50\degree$. 
 
 :::::::::::::
 
@@ -402,6 +402,174 @@ Bruk figuren til å avgjøre om $\tan 40 \degree > \tan 50 \degree$
 
 
 :::::::::::::::
+
+---
+
+
+
+:::::::::::::::{admonition} Oppgave 7
+---
+class: problem-level-2
+---
+Nedenfor vises et interaktivt vindu hvor enhetssirkelen er tegnet inn med en vinkel $v$ som kan varieres.
+
+
+:::{raw} html
+---
+file: ./ggb/oppgaver/oppgave_7/enhetssirkelen.html
+---
+:::
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Hvis $\cos v = \dfrac{\sqrt{3}}{2} \approx 0.87$, hvilke verdier kan $v$ ha?
+
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+v = 30\degree \or v = 330\degree
+$$
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Ved hvilke vinkler $v$ er $\sin v = \cos v$? 
+
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+v = 45\degree \or v = 225\degree
+$$
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+Ved hvilke vinkler $v$ er $\tan v = 1$? 
+
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+v = 45\degree \or v = 225\degree
+$$
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} d
+Hvis $\sin v = -0.5$, hvilke verdier kan $\cos v$ ha?
+
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+v = 210\degree \or v = 330\degree
+$$
+::::
+
+:::::::::::::
+
+
+::::::::::::::
+
+
+:::::::::::::::
+
+
+---
+
+:::::::::::::::{admonition} Oppgave 8
+---
+class: problem-level-2
+---
+Nedenfor vises et interaktivt vindu hvor enhetssirkelen er tegnet inn med en vinkel $v$ som kan varieres.
+
+
+:::{raw} html
+---
+file: ./ggb/oppgaver/oppgave_8/enhetssirkelen.html
+---
+:::
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Løs ulikheten $\sin v > 0$. 
+
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+v \in \langle 0\degree, 180\degree \rangle
+$$
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Løs ulikheten $\sin v > \cos v$. 
+
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+v \in \langle 45\degree, 225\degree \rangle
+$$
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+Løs ulikheten $\tan v < 0$. 
+
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+v \in \langle 90\degree, 180\degree\rangle \cup \langle 270\degree, 360\degree \rangle
+$$
+::::
+
+:::::::::::::
+
+
+::::::::::::::
+
+
+
+:::::::::::::::
+
+
+
 
 
 
