@@ -14,6 +14,7 @@ Så langt har vi brukt rettvinklede trekanter for å beskrive sinus og cosinus s
 Men $\sin v$ og $\cos v$ forteller oss indirekte hvor stor en vinkelbue $v$ er. I Utforsk 1 nedenfor skal vi se hvordan vi kan uttrykke $\sin v$ og $\cos v$ dersom vi jobber med en rettvinklet trekant der hypotenusen er $1$.
 
 
+
 :::::::::::::::{admonition} Utforsk 1
 ---
 class: explore
