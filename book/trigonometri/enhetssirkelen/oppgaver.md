@@ -306,9 +306,7 @@ class: no-click
 ---
 class: problem-level-2
 ---
-Nedenfor vises en trekant innskrevet i en sirkel med radius $1$ der $P$ ligger på sirkelperiferien.
-
-Bestem arealet til trekanten.
+Nedenfor vises en trekant innskrevet i en sirkel med radius $1$ der $P$ ligger på sirkelen.
 
 :::{figure} ./figurer/oppgaver/oppgave_4/figur.svg
 ---
