@@ -180,7 +180,7 @@ class: no-click
 ---
 class: dropdown, hints
 ---
-Lag en likning ved å bestemme arealet av trekanten på to måter.
+Lag en likning ved å bestemme arealet av trekanten på to måter, og sett dem lik hverandre!
 ::::
 
 ::::{admonition} CAS-vindu
