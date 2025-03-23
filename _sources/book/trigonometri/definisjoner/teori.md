@@ -372,7 +372,7 @@ Den tredje trigonometriske størrelsen vi skal se på er **tangens** til en vink
 ---
 class: summary
 ---
-Tangens til en vinkel $u$ i en rettvinklet trekant er definert som forholdstallet:
+Tangens til en vinkel $v$ i en rettvinklet trekant er definert som forholdstallet:
 
 $$
 \tan v = \frac{\text{motstående katet}}{\text{hosliggende katet}}
