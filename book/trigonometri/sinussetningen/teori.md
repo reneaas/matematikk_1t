@@ -90,5 +90,139 @@ Dermed er de ukjente lengdene $x = 5$ og $y \approx 3.32$.
 :::::::::::::::
 
 
+---
+
+
+Nå skal vi se på hvorfor sinussetningen stemmer ved å ta utgangspunkt i arealsetningen. 
+
+
+
+:::::::::::::::{admonition} Utforsk 1
+---
+class: explore
+---
+I figuren nedenfor vises en trekant $\triangle ABC$.
+
+
+
+:::{figure} ./figurer/teori/sinussetningen.svg
+---
+width: 80%
+class: no-click
+---
+:::
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Skriv ned en formel for arealet til $\triangle ABC$ med utgangspunkt i vinkel $\angle A$. 
+
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+T = \dfrac{1}{2}bc \sin \angle A
+$$
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Skriv ned en formel for arealet til $\triangle ABC$ med utgangspunkt i vinkel $\angle B$.
+
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+T = \dfrac{1}{2}ac \sin \angle B
+$$
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+Skriv ned en formel for arealet til $\triangle ABC$ med utgangspunkt i vinkel $\angle C$. 
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+T = \dfrac{1}{2}ab \sin \angle C
+$$
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} d
+Forklar at 
+
+$$
+bc \sin \angle A = ac \sin \angle B = ab \sin \angle C
+$$
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+Vi har skrevet opp arealet $T$ på tre forskjellige måter ved å ta utgangspunkt i de tre vinklene. Dette arealet er likt uansett hvilken vinkel vi tar utgangspunkt i som betyr at 
+
+$$
+\dfrac{1}{2} bc \sin \angle A = \dfrac{1}{2} ac \sin \angle B = \dfrac{1}{2} ab \sin \angle C
+$$
+
+som derfor betyr at 
+
+$$
+bc \sin \angle A = ac \sin \angle B = ab \sin \angle C
+$$
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} e
+Bruk resultatet i **d** til å komme fram til sinussetningen.
+
+$$
+\dfrac{\sin \angle A}{a} = \dfrac{\sin \angle B}{b} = \dfrac{\sin \angle C}{c}
+$$
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+Deler vi med $abc$ i alle uttrykkene i likningene fra **d** får vi:
+
+$$
+\dfrac{bc \sin \angle A}{abc} = \dfrac{ac \sin \angle B}{abc} = \dfrac{ab \sin \angle C}{abc}
+$$
+
+som gir
+
+$$
+\dfrac{\sin \angle A}{a} = \dfrac{\sin \angle B}{b} = \dfrac{\sin \angle C}{c}
+$$
+::::
+
+:::::::::::::
+
+
+
+::::::::::::::
+
+
+:::::::::::::::
+
 
 
