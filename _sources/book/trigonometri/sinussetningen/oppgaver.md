@@ -475,6 +475,17 @@ $$
 
 ::::::::::::::
 
+::::{admonition} CAS-vindu
+---
+class: progging, dropdown
+---
+:::{raw} html
+---
+file: ./ggb/oppgaver/oppgave_7/cas.html
+---
+:::
+::::
+
 :::::::::::::::
 
 
