@@ -43,6 +43,7 @@ def main(dirname, save):
         *points,
         ax=None,
         show_vertices=True,
+        alpha=0.03,
     )
 
     plt.plot([B[0], D[0]], [B[1], D[1]], color="black", lw=1, ls="--")

@@ -150,6 +150,7 @@ def main(dirname, save):
         *points,
         ax=None,
         show_vertices=True,
+        alpha=0.03,
     )
 
     plt.axis("off")

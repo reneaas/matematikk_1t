@@ -422,6 +422,64 @@ file: ./ggb/oppgaver/oppgave_6/cas.html
 :::::::::::::::
 
 
+---
+
+
+
+:::::::::::::::{admonition} Oppgave 7
+---
+class: problem-level-2
+---
+I figuren nedenfor vises $\square ABCD$.
+
+:::{figure} ./figurer/oppgaver/oppgave_7/figur.svg
+---
+width: 80%
+class: no-click
+---
+:::
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Bestem lengden av diagonalen $BD$.
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+BD = 7.
+$$
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Bestem arealet $T$ av $\square ABCD$.
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+$$
+T \approx 11.98
+$$
+::::
+
+:::::::::::::
+
+::::::::::::::
+
+:::::::::::::::
+
+
+
+
 
 
 
