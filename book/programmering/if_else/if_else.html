@@ -79,6 +79,8 @@
     <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"annotateAbove": ["\\mathrel{\\overset{\\substack{\\text{#2} \\\\ \\Bigg\\downarrow}}{#1}}", 2], "annotateBelow": ["\\mathrel{\\underset{\\substack{\\Bigg\\uparrow \\\\ \\text{#2}}}{#1}}", 2], "cline": ["\\underline{\\phantom{#1}}", 1], "and": ["\\quad \\land \\quad"], "or": ["\\quad \\lor \\quad"], "liff": ["\\quad \\iff \\quad"], "limplies": ["\\quad \\implies \\quad"], "limpliedby": ["\\quad \\impliedby \\quad"], "lland": ["\\; \\land \\;"], "degree": ["^\\circ"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3.2/es5/tex-mml-chtml.js"></script>
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'book/programmering/if_else/if_else';</script>
     <script>mermaid.initialize({"startOnLoad": true})</script>
@@ -106,8 +108,6 @@
     <link rel="icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="while-løkker" href="../while_loops/while_loops.html" />
-    <link rel="prev" title="for-løkker" href="../for_loops/for_loops.html" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="norwegian"/>
@@ -201,6 +201,8 @@
     <div class="bd-container__inner bd-page-width">
       
       
+      
+        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -450,13 +452,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../../cas/cas_del2/oppgaver.html">CAS-kurs: Del 2</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Programmering</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../variabler/variabler.html">Variabler</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../variabler/variabler.html">Variabler og <code class="code docutils literal highlight highlight-python"><span class="nb">print</span></code>-funksjonen</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../regning/regning.html">Regning med Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../for_loops/for_loops.html"><code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#"><code class="code docutils literal highlight highlight-python"><span class="k">if</span></code>-<code class="code docutils literal highlight highlight-python"><span class="k">else</span></code>-setninger</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../while_loops/while_loops.html"><code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkker</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../feilmeldinger/feilmeldinger.html">Feilmeldinger</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Eksamensressurser</span></p>
 <ul class="nav bd-sidenav">
@@ -612,6 +612,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#betingelser">Betingelser</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-elif-else-setninger"><code class="code docutils literal highlight highlight-python"><span class="k">if</span></code>-<code class="code docutils literal highlight highlight-python"><span class="k">elif</span></code>-<code class="code docutils literal highlight highlight-python"><span class="k">else</span></code>-setninger</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
 </ul>
             </nav>
         </div>
@@ -627,10 +628,8 @@ document.write(`
 <h1><code class="code docutils literal highlight highlight-python"><span class="k">if</span></code>-<code class="code docutils literal highlight highlight-python"><span class="k">else</span></code>-setninger<a class="headerlink" href="#if-else-setninger" title="Link to this heading">#</a></h1>
 <div class="tip admonition">
 <p class="admonition-title">Læringsmål: <code class="code docutils literal highlight highlight-python"><span class="k">if</span></code>-<code class="code docutils literal highlight highlight-python"><span class="k">else</span></code>-setninger</p>
-<p>Etter å ha lest dette delkapittelet, er målet at du skal kunne:</p>
 <ul class="simple">
-<li><p>Forklare hva en <strong>betingelse</strong> er, og sette opp betingelser i Python.</p></li>
-<li><p>Forstå hva en <strong>boolsk</strong> variabel er, og kunne sette opp en sannhetstabell for ulike betingelser.</p></li>
+<li><p>Kunne forklare hva en <strong>betingelse</strong> er, og sette opp betingelser i Python.</p></li>
 <li><p>Kunne bruke <code class="code docutils literal highlight highlight-python"><span class="k">if</span></code>-<code class="code docutils literal highlight highlight-python"><span class="k">else</span></code>-setninger i Python.</p></li>
 </ul>
 </div>
@@ -641,10 +640,8 @@ document.write(`
 <p>Utforsk og kjør programmet, og forklar hva programmet gjør.</p>
 <div id="container-kode-programmering-if-else-utforsk-1"></div>
 <script type="text/javascript">
-
-    document.addEventListener("DOMContentLoaded", () => {
-        const code = 
-`x = float(input("Skriv inn en verdi for 'x': "))
+    code = `
+x = float(input("Skriv inn en verdi for 'x': "))
 
 if x > 0:
     print(f"{x} er større enn 0")
@@ -652,11 +649,10 @@ else:
     print(f"{x} er mindre enn eller lik 0")
 `;   
 
-        makeInteractiveCode(
-            "container-kode-programmering-if-else-utforsk-1",
-            code,
-        );
-    });
+    makeInteractiveCode(
+        "container-kode-programmering-if-else-utforsk-1",
+        code,
+    );
 </script>
 
 
@@ -678,48 +674,45 @@ else:
 <div class="explore admonition">
 <p class="admonition-title">Utforsk 2</p>
 <p>Under vises et interakivt program som skriver ut forskjellige betingelser.</p>
-<dl class="simple myst">
-<dt>Deloppgave 1</dt><dd><p>Prøv å bestemme hvilke av betingelsene som er <code class="code docutils literal highlight highlight-python"><span class="kc">True</span></code> og hvilke som er <code class="code docutils literal highlight highlight-python"><span class="kc">False</span></code> før du kjører programmet.</p>
-</dd>
-<dd><p>Skriv ned forutsigelsene dine og kjør programmet.</p>
-</dd>
-</dl>
-<br>
+<div class="sd-tab-set tabs-parts docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+a</label><div class="sd-tab-content docutils">
+<p>Les programmet og forutsi hva programmet skriver ut.</p>
+<p>Skriv inn hypotesen din og sjekk svaret under!</p>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+b</label><div class="sd-tab-content docutils">
+<p>Hvis du endrer på verdien til <code class="code docutils literal highlight highlight-python"><span class="n">a</span></code> og <code class="code docutils literal highlight highlight-python"><span class="n">b</span></code> slik at betingelsen <code class="code docutils literal highlight highlight-python"><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span></code> er <code class="code docutils literal highlight highlight-python"><span class="kc">True</span></code>, hvilke av de andre betingelsene vil da også være <code class="code docutils literal highlight highlight-python"><span class="kc">True</span></code>?</p>
+<p>Tenk ut først – prøv deretter ut med programmet!</p>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+c</label><div class="sd-tab-content docutils">
+<p>Hvilke verdier kan du sette <code class="code docutils literal highlight highlight-python"><span class="n">a</span></code> og <code class="code docutils literal highlight highlight-python"><span class="n">b</span></code> slik at <strong>flest mulig</strong> betingelser blir <code class="code docutils literal highlight highlight-python"><span class="kc">True</span></code>?</p>
+</div>
+</div>
 <div id="container-kode-programmering-if-else-utforsk-2"></div>
 <script type="text/javascript">
-    document.addEventListener("DOMContentLoaded", () => {
-        const code = 
-`a = 1
+    code = `a = 1
 b = 2
 
-print("a == b: ", a == b)       # Er a lik b?
-print("a != b: ", a != b)       # Er a ulik b?
-print("a < b: ", a < b)         # Er a mindre enn b?
-print("a > b: ", a > b)         # Er a større enn b?
-print("a <= b: ", a <= b)       # Er a mindre enn eller lik b?
-print("a >= b: ", a >= b)       # Er a større enn eller lik b?
+print(a == b)           # Er a lik b?
+print(a != b)           # Er a ulik b?
+print(a < b)            # Er a mindre enn b?
+print(a > b)            # Er a større enn b?
+print(a <= b)           # Er a mindre enn eller lik b?
+print(a >= b)           # Er a større enn eller lik b?
 `;   
 
-        makeInteractiveCode(
-            "container-kode-programmering-if-else-utforsk-2",
-            code,
-        );
-    });
+    makePredictionInteractiveCode(
+        "container-kode-programmering-if-else-utforsk-2",
+        code,
+    );
 </script>
 
 
-<br>
-<dl class="simple myst">
-<dt>Deloppgave 2</dt><dd><p>Hvis du endrer verdiene til <code class="code docutils literal highlight highlight-python"><span class="n">a</span></code> og <code class="code docutils literal highlight highlight-python"><span class="n">b</span></code> slik at betingelsen <code class="code docutils literal highlight highlight-python"><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span></code> er <code class="code docutils literal highlight highlight-python"><span class="kc">True</span></code>, hvilke av de andre betingelsene vil da også være <code class="code docutils literal highlight highlight-python"><span class="kc">True</span></code>?</p>
-</dd>
-<dd><p>Tenk ut først, deretter test ut med programmet!</p>
-</dd>
-</dl>
-<br>
-<dl class="simple myst">
-<dt>Deloppgave 3</dt><dd><p>Hva er det største antall betingelser som er <code class="code docutils literal highlight highlight-python"><span class="kc">True</span></code> du kan få ut ifra programmet bare ved å endre på verdiene til <code class="code docutils literal highlight highlight-python"><span class="n">a</span></code> og <code class="code docutils literal highlight highlight-python"><span class="n">b</span></code>?</p>
-</dd>
-</dl>
 </div>
 <p>I <span class="xref std std-ref">underveisoppgave 2</span> har vi brukt det vi kaller <strong>sammenlikningsoperatorer</strong> for å sette opp betingelser. Disse operatorene sammenlikner to verdier og returnerer <code class="code docutils literal highlight highlight-python"><span class="kc">True</span></code> eller <code class="code docutils literal highlight highlight-python"><span class="kc">False</span></code>.</p>
 <div class="theory admonition">
@@ -768,11 +761,27 @@ print("a >= b: ", a >= b)       # Er a større enn eller lik b?
 <div class="explore admonition">
 <p class="admonition-title">Utforsk 3</p>
 <p>Under vises et program som bruker en <code class="code docutils literal highlight highlight-python"><span class="k">if</span></code>-<code class="code docutils literal highlight highlight-python"><span class="k">elif</span></code>-<code class="code docutils literal highlight highlight-python"><span class="k">else</span></code>-setning.</p>
+<div class="sd-tab-set tabs-parts docutils">
+<input checked="checked" id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
+a</label><div class="sd-tab-content docutils">
+<p>Kjør programmet med varetype som “mat” og sett prisen til 50. <br> Kan du forutsi verdien programmet skriver ut? Kjør programmet og sjekk svaret ditt!</p>
+</div>
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
+b</label><div class="sd-tab-content docutils">
+<p>Hva blir utskriften hvis du endrer varetype til “reise”? <br> Sjekk svaret ditt med programmet!</p>
+</div>
+<input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-5">
+c</label><div class="sd-tab-content docutils">
+<p>Endre varetype til “annet” og prisen til 100. <br> Hva blir utskriften? Sjekk svaret ditt med programmet!</p>
+</div>
+</div>
 <div id="container-kode-programmering-if-else-utforsk-3"></div>
 <script type="text/javascript">
-    document.addEventListener("DOMContentLoaded", () => {
-        const code = 
-`varetype = input("Skriv inn varetype: 'mat', 'reise' eller 'annet': ")
+    code = `
+varetype = input("Skriv inn varetype: 'mat', 'reise' eller 'annet': ")
 pris = float(input("Skriv inn pris: "))
 
 if varetype == "mat":        # Hvis varetype er "mat"
@@ -787,29 +796,180 @@ totalpris = pris * (1 + moms)
 print(f"{totalpris = :.2f} kr")
 `;   
 
-        makeInteractiveCode(
-            "container-kode-programmering-if-else-utforsk-3",
+    makeInteractiveCode(
+        "container-kode-programmering-if-else-utforsk-3",
+        code,
+    );
+</script>
+
+
+</div>
+</section>
+<hr class="docutils" />
+<section id="oppgaver">
+<h2>Oppgaver<a class="headerlink" href="#oppgaver" title="Link to this heading">#</a></h2>
+<div class="problem-level-1 admonition">
+<p class="admonition-title">Oppgave 1</p>
+<div class="sd-tab-set tabs-parts docutils">
+<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-6">
+a</label><div class="sd-tab-content docutils">
+<p>Programmet under løser en likning.</p>
+<p>Les programmet og forutsi hva programmet skriver ut. Skriv inn hypotesen din og sjekk svaret!</p>
+</div>
+<input id="sd-tab-item-7" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-7">
+b</label><div class="sd-tab-content docutils">
+<p>Juster programmet slik at det løser likningen</p>
+<div class="math notranslate nohighlight">
+\[
+-3x + 9 = 0.
+\]</div>
+</div>
+<input id="sd-tab-item-8" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-8">
+c</label><div class="sd-tab-content docutils">
+<p>Juster programmet slik at det løser likningen</p>
+<div class="math notranslate nohighlight">
+\[
+x^2 - x - 6 = 0.
+\]</div>
+</div>
+</div>
+<div id="container-kode-programmering-if-tester-oppgave-1-a"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`
+for x in range(-10, 11):
+    if 2*x - 4 == 0:
+        print(x)
+`;
+
+        makePredictionInteractiveCode(
+            "container-kode-programmering-if-tester-oppgave-1-a",
             code,
         );
     });
 </script>
 
 
-<br>
-<dl class="simple myst">
-<dt>Deloppgave 1</dt><dd><p>Kjør programmet med varetype som “mat” og sett prisen til 50. <br> Kan du forutsi verdien programmet skriver ut? Kjør programmet og sjekk svaret ditt!</p>
-</dd>
-</dl>
-<br>
-<dl class="simple myst">
-<dt>Deloppgave 2</dt><dd><p>Hva blir utskriften hvis du endrer varetype til “reise”? <br> Sjekk svaret ditt med programmet!</p>
-</dd>
-</dl>
-<br>
-<dl class="simple myst">
-<dt>Deloppgave 3</dt><dd><p>Endre varetype til “annet” og prisen til 100. <br> Hva blir utskriften? Sjekk svaret ditt med programmet!</p>
-</dd>
-</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<hr class="docutils" />
+<div class="problem-level-2 admonition">
+<p class="admonition-title">Oppgave 2</p>
+<p>Skriv et program som løser likningen</p>
+<div class="math notranslate nohighlight">
+\[
+x^3 - 4x^2 - 7x + 10 = 0.
+\]</div>
+<div class="dropdown hints admonition">
+<p class="admonition-title">Hint</p>
+<p>Bruk samme strategi som i oppgave 1.</p>
+</div>
+<div id="container-kode-programmering-if-tester-oppgave-2"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`# Skriv kode her
+
+
+`;
+
+        makeInteractiveCode(
+            "container-kode-programmering-if-tester-oppgave-2",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<hr class="docutils" />
+<div class="problem-level-1 admonition">
+<p class="admonition-title">Oppgave 3</p>
+<p>Programmet under sjekker om en trekant med sidelengder <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> og <span class="math notranslate nohighlight">\(c\)</span> er en rettvinklet trekant.</p>
+<div class="sd-tab-set tabs-parts docutils">
+<input checked="checked" id="sd-tab-item-9" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-9">
+a</label><div class="sd-tab-content docutils">
+<p>Les programmet under og forutsi hva programmet skriver ut.</p>
+<p>Skriv inn hypotesen din under og sjekk svaret!</p>
+</div>
+<input id="sd-tab-item-10" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-10">
+b</label><div class="sd-tab-content docutils">
+<p>For å sjekke om flere betingelser er oppfylt samtidig med en <code class="code docutils literal highlight highlight-python"><span class="k">if</span></code>-test, kan man skrive</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">betingelse1</span> <span class="ow">and</span> <span class="n">betingelse2</span><span class="p">:</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p>Juster programmet slik at det sjekker om trekanten er rettvinklet uten å anta at <span class="math notranslate nohighlight">\(a\)</span> og <span class="math notranslate nohighlight">\(b\)</span> er de to katetene.</p>
+<p>Prøv ut programmet med forskjellige verdier for <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> og <span class="math notranslate nohighlight">\(c\)</span>.</p>
+</div>
+</div>
+<div id="container-kode-programmering-if-tester-oppgave-3"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`a = 3
+b = 4
+c = 5
+
+if a**2 + b**2 == c**2:
+    print("Trekanten er rettvinklet.")
+else:
+    print("Trekanten er ikke rettvinklet.")
+
+`;
+
+        makePredictionInteractiveCode(
+            "container-kode-programmering-if-tester-oppgave-3",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div>
 </section>
 </section>
@@ -844,24 +1004,6 @@ print(f"{totalpris = :.2f} kr")
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="../for_loops/for_loops.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="../while_loops/while_loops.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkker</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -880,6 +1022,7 @@ print(f"{totalpris = :.2f} kr")
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#betingelser">Betingelser</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-elif-else-setninger"><code class="code docutils literal highlight highlight-python"><span class="k">if</span></code>-<code class="code docutils literal highlight highlight-python"><span class="k">elif</span></code>-<code class="code docutils literal highlight highlight-python"><span class="k">else</span></code>-setninger</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oppgaver">Oppgaver</a></li>
 </ul>
   </nav></div>
 
