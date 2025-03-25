@@ -1,30 +1,76 @@
 # Regning med Python
 
-:::{admonition} Læringsmål: Regning med Python
+
+:::{admonition} Læringsmål: regning med Python
 ---
 class: tip
 ---
-Etter å ha lest dette delkapittelet, er målet at du skal kunne:
-* Bruke python til å regne ut enkle og sammensatte regnestykker.
+* Bruke Pythonkode til å regne ut enkle regnestykker.
+* Bruke Pythonkode til å regne med formler.
 :::
 
-Python kan på mange måter sees på som en kraftfull og fleksibel kalkulator som lar oss regne matematisk på en måte vi ikke ellers kan gjøre på noen annen måte. Dette kan være å gjenta en utregning millioner av ganger frem til vi oppnår et ønsket resultat, eller bare regne ut en enkel matematisk formel. 
+Python kan på mange måter sees på som en kraftfull og fleksibel kalkulator. Den kan brukes for å regne ut en enkel matematisk formel, men også gjennomføre millioner av utregninger i løpet av noen få sekunder. 
 
-## Regneoperasjoner i Python
+## Regnearter i Python
 
-Vi starter med de viktigste regneoperasjonene
+Vi starter med å bli kjent med de vanlige regneartene vi bruker i matematikken.
 
-:::{admonition} Divisjon og brøker
+:::::{admonition} Utforsk 1: regnearter
 ---
-class: sidenote, margin
+class: explore
 ---
 
-I Python, så vil en brøk alltid regnes ut til et heltall (`int`{l=python}) eller et desimaltall (`float`{l=python}). Det er ingen innebygd måte å representere brøker på direkte.
+::::{tab-set}
+---
+class: tabs-parts
+---
+:::{tab-item} a
+Under vises et program som bruker de ulike regneartene i Python til å regne ut noe og skrive ut svaret.
+
+Les programmet og forutsi hva som skrives ut. Skriv inn hypotesen din under for å sjekke.
 :::
 
-::::{admonition} Viktige regneoperasjoner i Python
+:::{tab-item} b
+Bruk programmet til å regne ut svarene på følgende regnestykker:
+
+* $3 + 4$
+* $3 - 4$
+* $3 \cdot 4$
+* $\dfrac{3}{4}$
+* $3^4$
+
+````{admonition} Fasit
 ---
-class: theory
+class: dropdown, answer
+---
+```{code-block} python
+---
+linenos: true
+---
+print(3 + 4)
+print(3 - 4)
+print(3 * 4)
+print(3 / 4)
+print(3 ** 4) 
+```
+````
+:::
+::::
+
+<br>
+
+:::{raw} html
+---
+file: ./interaktiv_kode/utforsk/utforsk_1/steg_1.html
+---
+:::
+:::::
+
+> Etter utforsk 1, kan du ta en titt på oppsummeringsboksen under.
+
+::::{admonition} Oppsummering: regneartene i Python
+---
+class: summary, dropdown
 ---
 | Operasjon | Symbol i Python | Kodeeksempel | Matematikk |
 | --- | --- | --- | --- |
@@ -35,18 +81,6 @@ class: theory
 | Potens | `**`{l=python} | `3 ** 4`{l=python} | $3^4$ |
 
 ::::
-
-:::{admonition} Variabler og tilordning
----
-class: sidenote, margin
----
-Kodenlinjen
-```{code-block} 
-a = -1 + 2
-```
-
-vil regne ut `-1 + 2`{l=python} og lagre svaret i variabelen `a`{l=python} slik at vi kan bruke det senere i programmet. I utforsk 1 skriver vi bare ut hva verdien er med en `print`{l=python}-setning.
-:::
 
 <!-- :::::{admonition} Utforsk 1
 ---
@@ -65,334 +99,218 @@ file: interaktiv_kode/utforsk/utforsk_1.html
 
 ::::: -->
 
-::::{admonition} Utforsk 1
+
+## Formler
+
+Det er sjelden vi skriver regnestykker manuelt slik som vi så på i utforsk 1. Vi er oftest interessert i å regne ut noe med en formel som inneholder variabler. Vi ønsker med andre ord å bruke Python som en avansert kalkulator.
+
+
+:::::{admonition} Utforsk 2: formler
 ---
 class: explore
 ---
-Når vi skriver en kodelinje som
+Strekning, fart og tid er tre størrelser som henger sammen. Vi kan bruke formelen 
 
-```{code-block} python
-print(2 + 2)
-```
+$$
+s = v\cdot t
+$$
 
-så vil programmet skrive ut svaret av regnestykket $2 + 2$ når det kjøres. 
+til å regne ut strekningen $s$ dersom vi har farten $v$ og tiden $t$. 
 
-Under vises noen kodelinjer av denne typen og noen utskrifter som parvis hører sammen. <br> Pusle sammen riktig kodelinje med riktig utskrift.
-
-:::{raw} html
+::::{tab-set}
 ---
-file: pair_puzzles/utforsk/utforsk_1.html
+class: tabs-parts
 ---
+
+:::{tab-item} a
+I programkoden under regnes det ut en strekning $s$ basert på en fart $v$ og en tid $t$.
+
+Les programmet og forutsi hva som skrives ut. Skriv inn hypotesen din under for å sjekke.
 :::
 
+:::{tab-item} b
+Bruk programmet til å regne ut strekningen når $v = 80 \ \mathrm{km / h}$ og $t = 2.5 \ \mathrm{h}$.
 
-::::
+Hva blir strekningen?
 
-
-## Regnerekkefølge
-
-Python følger samme regnerekkefølge du har møtt i matematikken, bortsett fra at divisjon kommer alltid før multiplikasjon. 
-
-::::{admonition} Regnerekkefølge i Python
+````{admonition} Fasit
 ---
-class: theory
----
-Regnerekkefølgen i Python er:
-
-1. Parenteser
-2. Potenser
-3. Divisjon
-4. Multiplikasjon
-5. Addisjon og subtraksjon
-
-::::
-
-
-::::{admonition} Utforsk 2
----
-class: explore
----
-Under vises kodelinjer som regner ut noen regnerstykker som bruker regnerekkefølgen. Kodelinjene hører parvis sammen med noen utskrifter. 
-
-Pusle sammen riktig kodelinje med riktig utskrift.
-
-:::{raw} html
----
-file: pair_puzzles/utforsk/utforsk_2.html
----
-:::
-
-
-::::
-
-<!-- :::::{admonition} Utforsk 2
----
-class: explore
----
-Under vises et interaktiv kodevindu der regneoperasjoner som bruker regnerekkefølgen utføres.
-
-Prøv å bruke regnerekkefølgen til å bestemme verdiene til variablene `a`{l=python}, `b`{l=python}, `c`{l=python}, `p`{l=python} og `q`{l=python} før du kjører programmet. <br> Kjør programmet og sjekk om svarene din stemmer.
-
-:::{raw} html
----
-file: interaktiv_kode/utforsk/utforsk_2.html
----
-:::
-
-::::: -->
-
-## Formler i Python
-Ofte vil vi ha behov for å regne ut en formel i Python der vi bruker variabler for alle størrelsene i formelen. 
-
-
-::::{admonition} Utforsk 3
----
-class: explore
----
-I programmet under vises en formel som regner ut arealet av et rektangel.
-
-:::{raw} html
----
-file: ./interaktiv_kode/utforsk/utforsk_3.html
----
-:::
-
-<br>
-
-````{tab-set}
-```{tab-item} Deloppgave 1
-Prøv å bestemme hva verdien til `areal`{l=python} blir **før** du kjører programmet. <br> Kjør programmet og sjekk om svaret ditt stemmer.
-```
-
-```{tab-item} Deloppgave 2
-Et annet rektangel har lengdene $l = 5$ og $b = 3$. <br> Endre programmet og bruk det til å regne ut arealet av dette rektangelet.
-```
-````
-
-::::
-
-
-## Oppgaver
-
-::::{admonition} Oppgave 1 
----
-class: problem-level-1, full-width
----
-Under vises noen kodelinjer og utskrifter som parvis hører sammen. <br> Pusle sammen riktig kodelinje med riktig utskrift.
-
-:::{raw} html
----
-file: pair_puzzles/oppgaver/oppgave_1.html
----
-:::
-
-:::: 
-
----
-
-:::::{admonition} Oppgave 2
----
-class: problem-level-2
----
-I tabellen under vises noen regnestykker. Fyll ut koden i det interaktive kodevinduet under for å regne ut svarene.
-
-| Variabel | Regnestykke |
-| --- | --- |
-| `a`{l=python} | $7 + 3 \cdot (10 - 4)$ |
-| `b`{l=python} | $\dfrac{8 + 2}{2} + 5\cdot 3$ |
-| `c`{l=python} | $\dfrac{12}{3\cdot 2}\cdot 4 + 1$ |
-| `d`{l=python} | $4\cdot (5 + 3^2) - \dfrac{6}{2}\cdot 3$ |
-
-<br>
-
-:::{raw} html
----
-file: interaktiv_kode/oppgaver/oppgave_2.html
----
-:::
-
-
-:::{admonition} Fasit
----
-class: answer, dropdown
+class: dropdown, answer
 ---
 ```{code-block} python
 ---
 linenos: true
 ---
-a = 7 + 3*(10 - 4)
-b = (8 + 2)/2 + 5*3
-c = 12 /(3 * 2) * 4 + 1
-d = 4 * (5 + 3**2) - 6/2 * 3
+v = 80          # kilometer per time
+t = 2.5         # timer
 
-# Skriver ut resultatet
-print(f"{a = } \n{b = } \n{c = } \n{d = }")
+s = v * t       # strekning i kilometer
+
+print(s)
 ```
+````
 :::
 
-:::::
+:::{tab-item} c
+En bil kjører i $90 \ \mathrm{km / h}$ og kjører en avstand på $342 \ \mathrm{km}$. 
 
----
+Juster programmet slik at du kan regne ut tiden det tok å kjøre denne strekningen. Hvor lang tid tok det?
 
-:::::{admonition} Oppgave 3
+````{admonition} Fasit
 ---
-class: problem-level-2
+class: dropdown, answer
 ---
-Under vises et program som ber deg skrive inn et tall for `a`{l=python} og `b`{l=python} *først* når du kjører koden.
+Vi kan enten prøve oss frem med ulike verdier av $t$ til vi får riktig avstand, eller så kan vi skrive om formelen til å regne ut tiden $t$:
 
-:::{raw} html
+$$
+t = \dfrac{s}{v}
+$$
+```{code-block} python
 ---
-file: interaktiv_kode/oppgaver/oppgave_3.html
+linenos: true
 ---
+v = 90
+s = 342
+
+t = s / v
+
+print(t)
+```
+````
 :::
+::::
 
 <br>
 
-Deloppgave 1
-: Les programmet og forutsi hva utskriften blir dersom du skriver inn $a = 3$ og $b = 2$. <br> Kjør programmet og sjekk om svaret ditt stemmer.
+:::{raw} html
+---
+file: interaktiv_kode/utforsk/utforsk_2.html
+:::
 
-:::{admonition} Fasit
+::::: 
+
+
 ---
-class: answer, dropdown
+
+:::{admonition} Deling før ganging
 ---
-Utskrift:
+class: sidenote, margin
+---
+Merk at i Python så skjer deling før ganging! Dette får du bruk for i oppgave 1.
+:::
+
+::::{admonition} Oppgave 1
+---
+class: problem-level-1
+---
+Gjennomfør quizen! Mer enn et alternativ kan være riktig.
+
+:::{raw} html
+---
+file: quiz/oppgaver/oppgave_1.html/
+---
+:::
+
+::::
+
+---
+
+
+:::::{admonition} Oppgave 2
+---
+class: problem-level-1
+---
+Når et program ble kjørt, ga det utskriften
+
 ```console
-p = 5 
-q = 1 
-r = 6 
-s = 1.5 
-t = 9
+6
+-11
+0
+3
+2.0
 ```
+
+Programmet er vist i tilfeldig rekkefølge under. Sett sammen programmet i riktig rekkefølge.
+
+:::{raw} html
+---
+file: ./parsons_puzzle/oppgaver/oppgave_2.html
+---
 :::
-
-<br>
-
-Deloppgave 2
-: Finn to tall for `a`{l=python} og `b`{l=python} slik at `p`{l=python} og `r`{l=python} blir like.
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-$$
-a = 2 \quad \text{og} \quad b = 2.
-$$
-
-:::
-
-<br>
-
-Deloppgave 3
-: Finn to tall for `a`{l=python} og `b`{l=python} slik at `q`{l=python} og `s`{l=python} blir like.
-
-:::{admonition} Fasit
----
-class: answer, dropdown 
----
-$$
-a = 4 \quad \text{og} \quad b = 2.
-$$
-
-:::
-
-<br>
-
-Deloppgave 4
-: Finn to tall for `a`{l=python} og `b`{l=python} slik at `t`{l=python} blir lik $8$. 
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-$$
-a = 2 \quad \text{og} \quad b = 3.
-$$
-
-:::
-
 :::::
 
 ---
 
-::::{admonition} Oppgave 4
+::::::{admonition} Oppgave 3
 ---
-class: problem-level-2
+class: problem-level-1
 ---
-Sammenhengen mellom temperatur i Celsius $C$ og temperatur i Fahrenheit $F$, er gitt ved formelen
+To enheter som er brukt for å måle temperatur er Celsius og Fahrenheit. En av statene som er mest kjent for å bruke Fahrenheit er USA. 
+
+En formel som forteller oss hva temperaturen i Celsius $C$ er når vi kjenner temperaturen i Fahrenheit $F$ er gitt ved
 
 $$
-C = \dfrac{5}{9} \cdot (F - 32).
+C = \dfrac{5}{9} \cdot (F - 32)
 $$
 
-Under vises et uferdig program som du skal bruke til å regne ut temperaturen i Celsius gitt en temperatur i Fahrenheit.
+:::::{tab-set}
+---
+class: tabs-parts
+---
+::::{tab-item} a
+Fyll ut programmet under med formelen for å regne ut temperaturen i Celsius.
 
+Prøv programmet ditt ved å kjøre programmet med $F = 32$. <br> Da skal temperaturen i Celsius være $0$.
+````{admonition} Fasit
+---
+class: dropdown, answer
+---
+```{code-block} python
+---
+linenos: true
+---
+F = float(input("Skriv inn temperatur i Fahrenheit: "))
+
+C = (5 / 9) * (F - 32)
+
+print(C)
+```
+````
+::::
+
+::::{tab-item} b
+Det finnes en temperatur der både temperaturen i Fahrenheit og Celsius blir den samme.
+
+Bruk programmet ditt til å lete etter denne temperaturen ved å prøve ut ulike verdier for $F$. 
+
+Hva er temperaturen da?
+
+````{admonition} Hint
+---
+class: dropdown, hints
+---
+Når du prøver deg fram, kan du bruke følgende strategi:
+1. Start med å prøve deg fram med en temperatur i Fahrenheit.
+2. Når forskjellen i temperatur i Celsius og Fahrenheit begynner å bli mindre, så nærmer du deg den riktige verdien.
+````
+
+````{admonition} Fasit
+---
+class: dropdown, answer
+---
+$F = -40$ gir $C = -40$. Da er temperaturen den samme i Fahrenheit og Celsius.
+````
+::::
+:::::
+
+<br>
 
 :::{raw} html
 ---
-file: interaktiv_kode/oppgaver/oppgave_4.html
+file: ./interaktiv_kode/oppgaver/oppgave_3.html
 ---
 :::
 
-<br>
-
-Deloppgave 1
-: Skriv ferdig programmet slik at det regner ut temperaturen i Celsius gitt en temperatur i Fahrenheit. <br> Prøv ut programmet med $F = 32$. Hva blir temperaturen i Celsius?
+::::::
 
 
-::::
-
-
----
-
-::::{admonition} Oppgave 5
----
-class: problem-level-3, interactive
----
-I denne oppgaven skal du utforske egenskapene til noen spesielle rasjonale tall. <br> Under kan du se et interaktivt kodevindu der du kan kjøre Pythonkode. 
-
-:::{raw} html
----
-file: ./interaktiv_kode/oppgaver/oppgave_5.html
----
-:::
-
-<br>
-
-Deloppgave 1
-: Kjør koden og undersøk utskriften. Kan du se sammenheng mellom mønsteret i tallet som skrives ut og brøkene? <br> Prøv å forutsi hva som vil skrives ut dersom du skriver ut brøkene $\dfrac{21}{99}$, $\dfrac{321}{999}$ og $\dfrac{4321}{9999}$. <br> Test hypotesen din ved å endre på programmet og kjøre med de nye brøkene.
-
-
-<br>
-
-Deloppgave 2
-: Endre programmet slik at du i stedet regner ut brøkene $\dfrac{21}{990}$, $\dfrac{321}{9990}$ og $\dfrac{4321}{99990}$. <br> Kan du forklare hva som skjer med brøkene når det står en $0$ på slutten av nevneren?
-
-
-<br>
-
-Selv om programmet over skriver ut et endelig antall med desimaler, vil mønsteret fortsette i det uendelige i matematikken.
-
-Deloppgave 3
-: Bruk observasjonene du har gjort til å fylle ut tabellen under. <br> Prøv deretter kjøre programmet med brøkene du forutsier for å se om du har forutsagt riktig. 
-
-| Desimalrepresentasjon | Brøkrepresentasjon |
-|:---|:---|
-| $0.7777\ldots$ | |
-| $0.003636\ldots$ | |
-| $0.0789789\ldots$ | |
-| $0.01234512345\ldots$ | |
-
-
-:::{admonition} Spoiler Warning! (Fasit)
----
-class: answer, dropdown
----
-| Desimalrepresentasjon | Brøkrepresentasjon |
-|:---|:---|
-| $0.7777\ldots$ | $\dfrac{7}{9}$ |
-| $0.003636\ldots$ | $\dfrac{36}{9900}$ |
-| $0.0789789\ldots$ | $\dfrac{789}{9990}$ |
-| $0.01234512345\ldots$ | $\dfrac{12345}{999990}$ |
-:::
-
-::::

@@ -4,9 +4,7 @@
 ---
 class: tip
 --- 
-Etter å ha lest dette delkapittelet, er målet at du skal kunne:
-* Forklare hva en **betingelse** er, og sette opp betingelser i Python.
-* Forstå hva en **boolsk** variabel er, og kunne sette opp en sannhetstabell for ulike betingelser.
+* Kunne forklare hva en **betingelse** er, og sette opp betingelser i Python.
 * Kunne bruke `if`{l=python}-`else`{l=python}-setninger i Python.
 :::
 
@@ -25,7 +23,7 @@ Utforsk og kjør programmet, og forklar hva programmet gjør.
 
 :::{raw} html
 ---
-file: interaktiv_kode/utforsk/utforsk_1.html
+file: python/utforsk/utforsk_1.html
 ---
 :::
 :::::
@@ -57,43 +55,52 @@ I programmet fra {ref}`utforsk 1 <programmering-if-else-utforsk-1>` har vi brukt
 
 Så kan **du** få utforske litt mer:
 
-:::::{admonition} Utforsk 2
+:::::::::::::::{admonition} Utforsk 2
 ---
 class: explore
 ---
 Under vises et interakivt program som skriver ut forskjellige betingelser.
 
 
-Deloppgave 1
-: Prøv å bestemme hvilke av betingelsene som er `True`{l=python} og hvilke som er `False`{l=python} før du kjører programmet. 
-: Skriv ned forutsigelsene dine og kjør programmet.
+::::::::::::::{tab-set} 
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Les programmet og forutsi hva programmet skriver ut. 
 
-<br>
+Skriv inn hypotesen din og sjekk svaret under!
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Hvis du endrer på verdien til `a`{l=python} og `b`{l=python} slik at betingelsen `a > b`{l=python} er `True`{l=python}, hvilke av de andre betingelsene vil da også være `True`{l=python}?
+
+Tenk ut først – prøv deretter ut med programmet!
+
+
+:::::::::::::
+
+:::::::::::::{tab-item} c
+
+Hvilke verdier kan du sette `a`{l=python} og `b`{l=python} slik at **flest mulig** betingelser blir `True`{l=python}?
+
+::::::::::::::
 
 
 
 :::{raw} html
 ---
-file: interaktiv_kode/utforsk/utforsk_2.html
+file: python/utforsk/utforsk_2.html
 ---
 :::
 
 
-<br>
-
-Deloppgave 2
-: Hvis du endrer verdiene til `a`{l=python} og `b`{l=python} slik at betingelsen `a > b`{l=python} er `True`{l=python}, hvilke av de andre betingelsene vil da også være `True`{l=python}? 
-: Tenk ut først, deretter test ut med programmet!
 
 
-<br>
-
-Deloppgave 3
-: Hva er det største antall betingelser som er `True`{l=python} du kan få ut ifra programmet bare ved å endre på verdiene til `a`{l=python} og `b`{l=python}?
-
-
-
-:::::
+:::::::::::::::
 
 I {ref}`underveisoppgave 2 <programmering-if-else-underveisoppgave-2>` har vi brukt det vi kaller **sammenlikningsoperatorer** for å sette opp betingelser. Disse operatorene sammenlikner to verdier og returnerer `True`{l=python} eller `False`{l=python}.
 
@@ -121,32 +128,184 @@ Vi har følgende boolske operatorer i Python:
 
 Noen ganger ønsker å splitte programmet vårt i flere enn to deler. Da kan vi bruke en `elif`{l=python}-setning (står for "else if"): 
 
-:::::{admonition} Utforsk 3
+:::::::::::::::{admonition} Utforsk 3
 ---
 class: explore
 ---
 Under vises et program som bruker en `if`{l=python}-`elif`{l=python}-`else`{l=python}-setning. 
 
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Kjør programmet med varetype som "mat" og sett prisen til 50. <br> Kan du forutsi verdien programmet skriver ut? Kjør programmet og sjekk svaret ditt!
+
+
+:::::::::::::
+
+:::::::::::::{tab-item} b
+Hva blir utskriften hvis du endrer varetype til "reise"? <br> Sjekk svaret ditt med programmet!
+
+
+:::::::::::::
+
+:::::::::::::{tab-item} c
+Endre varetype til "annet" og prisen til 100. <br> Hva blir utskriften? Sjekk svaret ditt med programmet!
+
+
+:::::::::::::
+
+
+::::::::::::::
+
+
 :::{raw} html
 ---
-file: interaktiv_kode/utforsk/utforsk_3.html
+file: python/utforsk/utforsk_3.html
 :::
 
-<br>
 
-Deloppgave 1
-: Kjør programmet med varetype som "mat" og sett prisen til 50. <br> Kan du forutsi verdien programmet skriver ut? Kjør programmet og sjekk svaret ditt!
+:::::::::::::::
 
 
-<br>
+---
 
-Deloppgave 2
-: Hva blir utskriften hvis du endrer varetype til "reise"? <br> Sjekk svaret ditt med programmet!
+## Oppgaver 
+
+:::::::::::::::{admonition} Oppgave 1
+---
+class: problem-level-1
+---
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Programmet under løser en likning. 
+
+Les programmet og forutsi hva programmet skriver ut. Skriv inn hypotesen din og sjekk svaret!
 
 
-<br>
 
-Deloppgave 3
-: Endre varetype til "annet" og prisen til 100. <br> Hva blir utskriften? Sjekk svaret ditt med programmet!
-:::::
+:::::::::::::
 
+
+:::::::::::::{tab-item} b
+Juster programmet slik at det løser likningen 
+
+$$
+-3x + 9 = 0.
+$$
+
+
+:::::::::::::
+
+
+
+:::::::::::::{tab-item} c
+Juster programmet slik at det løser likningen 
+
+$$
+x^2 - x - 6 = 0.
+$$
+
+:::::::::::::
+
+::::::::::::::
+
+
+:::{raw} html
+---
+file: ./python/oppgaver/oppgave_1/a.html
+---
+:::
+
+
+
+:::::::::::::::
+
+
+---
+
+
+
+:::::::::::::::{admonition} Oppgave 2 
+---
+class: problem-level-2
+---
+Skriv et program som løser likningen
+
+$$
+x^3 - 4x^2 - 7x + 10 = 0.
+$$
+
+:::{admonition} Hint
+---
+class: dropdown, hints
+---
+Bruk samme strategi som i oppgave 1.
+:::
+
+:::{raw} html
+---
+file: ./python/oppgaver/oppgave_2/oppgave_2.html
+---
+:::
+
+:::::::::::::::
+
+---
+
+
+:::::::::::::::{admonition} Oppgave 3
+---
+class: problem-level-1
+---
+Programmet under sjekker om en trekant med sidelengder $a$, $b$ og $c$ er en rettvinklet trekant. 
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+
+:::::::::::::{tab-item} a
+Les programmet under og forutsi hva programmet skriver ut.
+
+Skriv inn hypotesen din under og sjekk svaret!
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+For å sjekke om flere betingelser er oppfylt samtidig med en `if`{l=python}-test, kan man skrive
+
+```python
+if betingelse1 and betingelse2:
+    ...
+```
+
+Juster programmet slik at det sjekker om trekanten er rettvinklet uten å anta at $a$ og $b$ er de to katetene.
+
+Prøv ut programmet med forskjellige verdier for $a$, $b$ og $c$.
+
+:::::::::::::
+
+
+::::::::::::::
+
+
+
+:::{raw} html
+---
+file: ./python/oppgaver/oppgave_3/oppgave_3.html
+---
+:::
+
+
+
+
+:::::::::::::::

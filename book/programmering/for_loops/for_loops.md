@@ -1,426 +1,853 @@
 # `for`{l=python}-løkker
 
-
-:::{admonition} Læringsmål: `for`{l=python}-løkker
+::::{admonition} Læringsmål
 ---
 class: tip
 ---
-Etter å ha gått gjennom dette delkapittelet, er målet at du skal kunne:
-* Lese og forstå `for`{l=python}-løkker som bruker `range`{l=python}-funksjonen.
-* Skrive grunnleggende `for`{l=python}-løkker som bruker `range`{l=python}-funksjonen til å løse matematiske problemer.
+* Kunne bruke `for`{l=python}-løkker med `range`{l=python}-funksjonen for å lage en liste med tall. 
+* Kunne bruke `for`{l=python}-løkker til å gjenta én eller flere kodelinjer et bestemt antall ganger.
+* Kunne tolke og skrive nøstede `for`{l=python}-løkker for å lage rutenett med punkter $(x, y)$.
 
-:::
+::::
 
+## `for`{l=python}-løkker for å lage tall
 
-En `for`{l=python}-løkke er noe som brukes til å gjenta en eller flere linjer med kode et bestemt antall ganger som er forhåndsbestemt. For å oppnå dette, brukes ofte `range`{l=python}-funksjonen.
+En `for`{l=python}-løkke er noe som kan brukes til å lage en liste med tall. Dette er det første vi skal se på.
 
-
-:::::{admonition} Utforsk 1
+::::::::::::::{admonition} Utforsk 1
 ---
 class: explore
 ---
-Her skal du bli kjent med `for`{l=python}-løkker på formen:
 
-```{code-block} python
-for i in range(a, b, c):
-    ...
-```
+Her skal du bli kjent med `range`{l=python}-funksjonen som ofte brukes sammen med `for`{l=python}-løkker.
 
-som ofte brukes når man løser matematiske problemer med Pythonkode.
 
-Under vises et interaktivt kodevindu. Her kan du kjøre kode. 
 
-```{raw} html
+:::::::{tab-set}
 ---
-file: interaktiv_kode/utforsk/utforsk_1.html
+class: tabs-parts
 ---
-```
+::::::{tab-item} a
+Under vises tre eksempler på programmer som bruker `range(a, b, c)`{l=python}-funksjonen med tre tall `a`{l=python}, `b`{l=python} og `c`{l=python}.
 
+Kjør programmene og se på utskriften deres. Bruk de tre kodeeksemplene til å formulere en hypotese på hva de tre tallene bestemmer.
 
-<br>
+::::{admonition} Test hypotesen din her når du er klar!
+---
+class: dropdown, check
+---
+Les programmet under og forutsi hva programmet skriver ut basert på hypotesen din.
+
+Skriv inn under og sjekk!
+
+:::{raw} html
+---
+file: ./python/utforsk/utforsk_1/oppgave_a/test_deg_selv.html
+---
+:::
+::::
 
 ````{tab-set}
-```{tab-item} Deloppgave 1
-Undersøk hva de tre tallene i `range(1, 6, 1)`{l=python} gjør for noe ved å prøve ut forskjellige kombinasjoner av tall. 
+```{tab-item} Eksempel 1
 
-Hva er rollen til de tre tallene?
-
-:::{admonition} Hint
+:::{raw} html
 ---
-class: hints, dropdown
+file: ./python/utforsk/utforsk_1/oppgave_a/eksempel_1.html
 ---
-* Prøv å endre på **ett** tall av gangen!
-* Du kan også bruke negative tall.
 :::
 
-:::{admonition} Løsning
----
-class: solution, dropdown 
----
-Vi bruker notasjonen `range(a, b, c)`{l=python} for å gjøre det enklere å beskrive de ulike tallene.
-* `a`{l=python} beskriver startverdien til `i`{l=python} i løkka.
-* `b`{l=python} beskriver sluttverdien, men er *ikke* inkludert. Vi stopper alltid før sluttverdien. 
-* `c`{l=python} er steglengden (avstanden mellom hvert tall). 
-
-Vi kan altså tenke på de det som at vi skriver `range(start, slutt, steglengde)`{l=python}. 
-:::
 ```
+```{tab-item} Eksempel 2
 
-```{tab-item} Deloppgave 2
-Undersøk hva som skjer hvis du bare bruker **ett** tall som `range(6)`{l=python}. 
-
-Hva er sammenhengen med når du bruker tre tall?
-
-:::{admonition} Løsning
+:::{raw} html
 ---
-class: solution, dropdown
+file: ./python/utforsk/utforsk_1/oppgave_a/eksempel_2.html
 ---
-Hvis du bare bruker ett tall, som `range(6)`{l=python}, så vil startverdien være 0 og steglengden være 1. Det er det samme som å skrive `range(0, 6, 1)`{l=python}. 
-
-Mer generelt kan vi tolke det som at vi skriver `range(slutt)`{l=python}. Da vil vi automatisk ha startverdien 0 og steglengden 1.
 :::
 
 ```
 
+```{tab-item} Eksempel 3
 
-```{tab-item} Deloppgave 3
-Undersøk hva som skjer hvis du bruker **to** tall som `range(1, 6)`{l=python}. 
-
-Hva er sammenhengen når du bruker tre tall?
-
-:::{admonition} Løsning
+:::{raw} html
 ---
-class: solution, dropdown
+file: ./python/utforsk/utforsk_1/oppgave_a/eksempel_3.html
 ---
-Hvis vi bruker to tall, som `range(1, 6)`{l=python}, så vil startverdien være 1 og steglengden være 1. Det er det samme som å skrive `range(1, 6, 1)`{l=python}.
-
-Mer generelt kan vi skrive `range(start, slutt)`{l=python}. Da vil vi automatisk ha steglengden 1.
 :::
+
 ```
+````
 
-```{tab-item} Deloppgave 4
-Endre på `for`{l=python}-løkka slik at du skriver ut de 10 første naturlige tallene.
+::::::
 
+::::::{tab-item} b
+Under vises tre eksempler på programmer som bruker `range`{l=python}-funksjonen som `range(a, b)`{l=python}. 
 
-::::{admonition} Løsning
----
-class: solution, dropdown
----
-Vi må endre stoppverdien til `11`{l=python} for å få med tallet 10. 
+Kjør programmene og se på utskriften deres. Bruk de tre kodeeksemplene til å formulere en hypotese på hva de to tallene bestemmer og hvordan denne skrivemåten henger sammen med skrivemåten i deloppgave a.
 
-:::{code-block} python
+::::{admonition} Test hypotesen din her når du er klar!
 ---
-linenos: true
-emphasize-lines: 1
+class: dropdown, check
 ---
-for i in range(1, 11, 1):
-    print(i)
+Les programmet under og forutsi hva programmet skriver ut basert på hypotesen din.
+
+Skriv inn under og sjekk!
+
+:::{raw} html
+---
+file: ./python/utforsk/utforsk_1/oppgave_b/test_deg_selv.html
+---
 :::
-
-Fra deloppgave 2, lærte vi også at vi ikke trenger å ta med steglengden når den er 1. Derfor kan vi skrive `range(1, 11)`{l=python} i stedet.
 ::::
 
+````{tab-set}
+```{tab-item} Eksempel 1
+
+:::{raw} html
+---
+file: ./python/utforsk/utforsk_1/oppgave_b/eksempel_1.html
+---
+:::
+
 ```
 
-```{tab-item} Deloppgave 5
-Endre på `for`{l=python}-løkka slik at du skriver ut de 10 første naturlige tallene i synkende rekkefølge.
+```{tab-item} Eksempel 2
 
-::::{admonition} Løsning
+:::{raw} html
 ---
-class: solution, dropdown
+file: ./python/utforsk/utforsk_1/oppgave_b/eksempel_2.html
 ---
-Vi må sette følgende verdier:
-* Startverdi: 10
-* Stoppverdi: 0 (husk at vi aldri får med det siste tallet)
-* Steglengde: -1
-
-:::{code-block} python
----
-linenos: true
-emphasize-lines: 1
----
-for i in range(10, 0, -1):
-    print(i)
 :::
-::::
+
+```
+
+```{tab-item} Eksempel 3
+
+:::{raw} html
+---
+file: ./python/utforsk/utforsk_1/oppgave_b/eksempel_3.html
+---
+:::
+
 ```
 
 ````
 
+
+
+::::::
+
+:::::::
+
+::::::::::::::
+
+---
+
+> Ta gjerne en titt på oppsummeringen av utforsk 1 før du går videre! 
+
+::::::::{admonition} Oppsummering: Utforsk 1
+---
+class: summary, dropdown
+---
+Når vi bruker `range`{l=python}-funksjonen til å lage en liste med tall kan vi enten bruke den som:
+::::{tab-set}
+:::{tab-item} `range(start, stopp, steglengde)`{l=python}
+```{code-block} python
+for x in range(start, stopp, steglengde):
+    # kode som skal gjentas
+```
+
+* `start`{l=python} er det første tallet i listen.
+* `stopp`{l=python} er stoppekriteriet. Vi stopper alltid *før* dette tallet.
+* `steglengde`{l=python} er hvor mye vi skal endre på løkkevariabelen `x`{l=python} på hver runde i løkken.
+* `x`{l=python} kalles for **løkkevariabelen** fordi den lages av løkka og endres for hver runde i løkka automatisk.
+
+| Eksempel | Liste med tall |
+|-----------|----------|
+| `range(1, 5, 1)`{l=python} | $1, 2, 3, 4$ |
+| `range(1, 10, 2)`{l=python} | $1, 3, 5, 7, 9$ |
+| `range(5, 1, -1)`{l=python} | $5, 4, 3, 2$ |
+:::
+
+:::{tab-item} `range(start, stopp)`{l=python}
+```{code-block} python
+for y in range(start, stopp):
+    # kode som skal gjentas
+```
+
+* `start`{l=python} er det første tallet i listen.
+* `stopp`{l=python} er stoppekriteriet. Vi stopper alltid *før* dette tallet.
+* `steglengde`{l=python} er satt fast til `1`{l=python} som standardverdi her.
+* `y`{l=python} kalles for **løkkevariabelen** fordi den lages av løkka og endres for hver runde i løkka automatisk.
+
+
+| Eksempel | Liste med tall |
+|-----------|----------|
+| `range(1, 5)`{l=python} | $1, 2, 3, 4$ |
+| `range(1, 10)`{l=python} | $1, 2, 3, 4, 5, 6, 7, 8, 9$ |
+| `range(5, 1)`{l=python} | Ingen tall lages |
+:::
+::::
+::::::::
+
+---
+
+:::::{admonition} Quiz 1
+---
+class: quiz
+---
+Ta quizen!
+
+:::{raw} html
+---
+file: ./quiz/quiz_1/quiz_1.html
+---
+:::
+
 :::::
 
 ---
 
-::::{admonition} Underveisoppgave 1
+:::::::::::::::{admonition} Underveisoppgave 1
 ---
-class: check, full-width
+class: check
 ---
+::::::::::::::{tab-set}
+---
+class: tabs-parts 
+---
+:::::::::::::{tab-item} a
 
-Under vises noen `for`{l=python}-løkker og noen følger med tall. <br> Pusle sammen riktig løkke med riktig tallfølge.
+Les programmet under og forutsi hva programmet skriver ut.
+
+Skriv inn forutsigelsen din og sjekk!
+
 :::{raw} html
 ---
-file: ./pair_puzzles/underveisoppgave_1.html
+file: ./python/underveisoppgaver/underveisoppgave_1/a.html
 ---
 :::
 
-::::
+:::::::::::::
 
+:::::::::::::{tab-item} b
+
+Les programmet under og forutsi hva programmet skriver ut.
+
+Skriv inn forutsigelsen din og sjekk!
+
+:::{raw} html
+---
+file: ./python/underveisoppgaver/underveisoppgave_1/b.html
+---
+:::
+
+:::::::::::::
+
+:::::::::::::{tab-item} c
+
+Les programmet under og forutsi hva programmet skriver ut.
+
+Skriv inn forutsigelsen din og sjekk!
+
+:::{raw} html
+---
+file: ./python/underveisoppgaver/underveisoppgave_1/c.html
+---
+:::
+
+:::::::::::::
+
+:::::::::::::{tab-item} d
+
+Les programmet under og forutsi hva programmet skriver ut.
+
+Skriv inn forutsigelsen din og sjekk!
+
+:::{raw} html
+---
+file: ./python/underveisoppgaver/underveisoppgave_1/d.html
+---
+:::
+
+:::::::::::::
+
+::::::::::::::
+
+
+:::::::::::::::
 
 ---
 
-Nå har du fått litt oversikt over hvordan en enkel `for`{l=python}-løkke fungerer. Nå skal du se på noen matematiske problemer du kan løse ved hjelp av `for`{l=python}-løkker.
+
+:::::::::::::::{admonition} Underveisoppgave 2
+---
+class: check
+---
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Fyll ut programmet slik at det skriver ut tallfølgen
+
+$$
+1, 4, 7, 10. 
+$$
+
+:::{raw} html
+---
+file: ./python/underveisoppgaver/underveisoppgave_2/a.html
+---
+:::
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+:::{code-block} python
+---
+linenos: true
+---
+for x in range(1, 11, 3):
+    print(x)
+:::
+::::
+
+:::::::::::::
+
+:::::::::::::{tab-item} b
+Fyll ut programmet slik at det skriver ut tallfølgen
+
+$$
+-4, 0, 4, 8, 12. 
+$$
+
+:::{raw} html
+---
+file: ./python/underveisoppgaver/underveisoppgave_2/b.html
+---
+:::
 
 
-:::::{admonition} Utforsk 2
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+:::{code-block} python
+---
+linenos: true
+---
+for x in range(-4, 13, 4):
+    print(x)
+:::
+::::
+
+:::::::::::::
+
+:::::::::::::{tab-item} c
+Fyll ut programmet slik at det skriver ut tallfølgen
+
+$$
+0, 100, 200, 300, 400, 500. 
+$$
+
+:::{raw} html
+---
+file: ./python/underveisoppgaver/underveisoppgave_2/c.html
+---
+:::
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+:::{code-block} python
+---
+linenos: true
+---
+for x in range(0, 501, 100):
+    print(x)
+:::
+::::
+
+:::::::::::::
+
+:::::::::::::{tab-item} d
+Fyll ut programmet slik at det skriver ut tallfølgen
+
+$$
+15, 9, 3, -3, -9, -15.
+$$
+
+:::{raw} html
+---
+file: ./python/underveisoppgaver/underveisoppgave_2/d.html
+---
+:::
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+:::{code-block} python
+---
+linenos: true
+---
+for x in range(15, -16, -6):
+    print(x)
+:::
+::::
+
+:::::::::::::
+
+::::::::::::::
+
+:::::::::::::::
+
+---
+
+
+## `for`{l=python}-løkker for å gjenta noe 
+
+En annen vanlig måte å jobbe med `for`{l=python}-løkker på, er at man ønsker å gjenta en eller flere utregninger et bestemt antall ganger. Dette skal du se nærmere på i Utforsk 2.
+
+:::::::{admonition} Utforsk 2
 ---
 class: explore
 ---
-Under vises et program som regner ut summen av de 5 første naturlige tallene.
 
+Her skal du bli kjent med hvordan `for`{l=python}-løkker kan brukes til å gjenta en eller flere kodelinjer et bestemt antall ganger.
 
-```{raw} html
+::::::{tab-set} 
 ---
-file: interaktiv_kode/utforsk/utforsk_2.html
+class: tabs-parts
 ---
-```
+:::::{tab-item} a
+Under vises tre eksempler på programmer som bruker `for`{l=python}-løkker med kun ett tall i `range`{l=python}-funksjonen.
 
-<br>
-
-Deloppgave 1
-: Kan du endre programmet slik at det regner ut summen av de 10 første naturlige tallene?
+Kjør eksempelkodene og se på utskriften. Lag en hypotese om hvordan denne typen `for`{l=python}-løkker fungerer.
 
 
-::::{admonition} Løsning
+::::{admonition} Skriv inn hypotesen din her når du er klar!
 ---
-class: solution, dropdown
+class: dropdown, check
 ---
-Vi endrer stoppverdien til `11`{l=python} for å få med tallet 10. 
-
-```{code-block} python
----
-linenos: true
-emphasize-lines: 2
----
-s = 0 
-for i in range(1, 11):
-    s = s + i
-
-print(f"{s = }")
-```
-::::
-
-<br>
-
-Deloppgave 2
-: Endre programmet slik at det regner ut summen av de 100 første naturlige tallene. (Det kan lurt å ta bort `print`{l=python}-setningen i `for`{l=python}-løkka for å unngå for mye utskrift.)
-
-
-::::{admonition} Løsning
----
-class: solution, dropdown
----
-Vi endrer stoppverdien til `101`{l=python} for å få med tallet 100. 
-
-```{code-block} python
----
-linenos: true
-emphasize-lines: 2
----
-s = 0
-for i in range(1, 101):
-    s = s + i
-
-print(f"Summen ble: {s = }")
-```
-
-::::
-
-<br>
-
-Deloppgave 3
-: Endre programmet slik at det regner ut summen av de 100 første kvadrattallene. 
-
-:::{admonition} Hint: Kvadrattall?
----
-class: hints, dropdown
----
-Et kvadrattall er et tall på formen $n^2$ for et naturlig tall $n$. 
-:::
-
-
-::::{admonition} Løsning
----
-class: solution, dropdown
----
-Vi må endre på formelen som oppdaterer verdien til `s`{l=python} slik at vi legger til et kvadrattall `i**2`{l=python} i stedet for et naturlig tall `i` (linje 3).
-
-```{code-block} python
----
-linenos: true
-emphasize-lines: 3
----
-s = 0
-for i in range(1, 101):
-    s = s + i**2
-
-print(f"Summen ble: {s = }")
-```
-::::
-
-
-<br>
-
-Deloppgave 4
-: Et partall kan skrives på formen $2i$ for et naturlig tall $i \in \mathbb{N}$. Endre programmet slik at det regner ut summen av de 100 første partallene 
-
-
-::::{admonition} Løsning
----
-class: solution, dropdown
----
-Vi endrer på formelen som oppdaterer verdien til `s`{l=python} slik at vi legger til et partall `2*i`{l=python} i stedet for et naturlig tall `i` (linje 3).
-
-```{code-block} python
----
-linenos: true
-emphasize-lines: 3
----
-s = 0
-for i in range(1, 101):
-    s = s + 2*i
-
-print(f"Summen ble: {s = }")
-```
-::::
-
-
-:::::
-
-
----
-
-## Oppgaver 
-
-:::::{admonition} Oppgave 1
----
-class: problem-level-1
----
-Et tall $x$ er et kvadrattall hvis det kan skrives på formen $x = n^2$ der $n \in \mathbb{N}$. <br> 
-Under vises et program i tilfeldig rekkefølge som regner ut summen av noen kvadrattall. 
-
-Deloppgave 1
-: Plasser kodelinjene i riktig rekkefølge for å få tilgang til det ferdig programmet. <br> Kan du forutsi hva programmet skriver ut? Kjør programmet og sjekk! 
-
-<br>
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/oppgaver/oppgave_1.html
+file: ./python/utforsk/utforsk_2/oppgave_a/test_deg_selv.html
 ---
 :::
 
-<br>
+::::
 
-Delopppgave 2
-: Endre programmet slik at det regner ut summen av de 10 første kvadrattallene. <br> Stemmer svaret du får ved å kjøre programmet?
-
-
-Deloppgave 3
-: Endre programmet til å regne ut summen av de 100 første kubikktallene. <br> Hva blir summen?
-
-
-:::::
-
-
-
-
-
-
-:::::{admonition} Oppgave 2
----
-class: problem-level-2
----
-
-En matematisk størrelse som dukker opp i mange sammenhenger er $n$-fakultet, som vi skiver som $n!$ - vi har definert $n!$ som produktet av alle heltall fra $1$ til $n$:
-
-$$
-n! = 1 \cdot 2 \cdot \ldots \cdot (n - 1) \cdot n.
-$$
-
-For eksempel er 
-
-$$
-4! = 1 \cdot 2 \cdot 3 \cdot 4 = 24.
-$$
-
-
-Deloppgave 1
-: Under vises et program som regner ut $4!$ der kodelinjene er plassert i tilfeldig rekkefølge. <br> Plasser kodelinjene i riktig rekkefølge for å få tilgang til det ferdige programmet. <br> Lim inn programmet i det interaktivt kodevinduet og kjør det.  <br> Blir svaret riktig?
-
-<br>
+````{tab-set}
+```{tab-item} Eksempel 1
 
 :::{raw} html
 ---
-file: ./interaktiv_kode/oppgaver/oppgave_2.html
+file: ./python/utforsk/utforsk_2/oppgave_a/eksempel_1.html
 ---
 :::
 
-<br>
+```
 
-Deloppgave 2
-: Endre programmet slik at det regner ut $7!$. <br> Hva blir svaret? svaret ved regning.
+```{tab-item} Eksempel 2
+
+:::{raw} html
+---
+file: ./python/utforsk/utforsk_2/oppgave_a/eksempel_2.html
+---
+:::
+
+```
+
+```{tab-item} Eksempel 3
+
+:::{raw} html
+---
+file: ./python/utforsk/utforsk_2/oppgave_a/eksempel_3.html
+---
+:::
+
+```
+````
+
+:::::
+
+:::::{tab-item} b
+En tallfølge er en sekvens av tall som følger en bestemt regel. For eksempel er $2, 5, 8, 11$ en tallfølge som øker med $3$ for hvert tall.
+
+Under vises tre kodeeksempler som bruker `for`{l=python}-løkker til å lage bestemte tallfølger. Kjør programmene og se på hvilke tallfølger de gir. Bruk de tre kodeeksemplene til å 
+formulere en hypotese på hvordan `for`{l=python}-løkker du kan lage tallfølger med `for`{l=python}-løkker.
+
+::::{admonition} Test hypotesen din her når du er klar!
+---
+class: dropdown, check
+---
+Les programmet under og forutsi hva programmet skriver ut basert på hypotesen din.
+
+Skriv inn under og sjekk!
+
+:::{raw} html
+---
+file: ./python/utforsk/utforsk_2/oppgave_b/test_deg_selv.html
+---
+:::
+
+::::
 
 
-<br>
+````{tab-set}
+```{tab-item} Eksempel 1
 
-Deloppgave 3
-: Dobbeltfakultet $n!!$ er definert som at du tar produktet av annenhvert tall. Hvis tallet $n$ er et oddetall, starter du på $1$. Hvis $n$ er et partall, starter du på $2$. For eksempel er
+:::{raw} html
+---
+file: ./python/utforsk/utforsk_2/oppgave_b/eksempel_1.html
+---
+:::
 
-    $$
-    5!! = 1 \cdot 3 \cdot 5 = 15  \quad \text{og} \quad 6!! = 2 \cdot 4 \cdot 6 = 48.
-    $$
+```
 
-    Endre programmet slik at det regner ut $6!!$ <br> Stemmer svaret overens med svaret over?
+```{tab-item} Eksempel 2
+
+:::{raw} html
+---
+file: ./python/utforsk/utforsk_2/oppgave_b/eksempel_2.html
+---
+:::
+
+```
+
+```{tab-item} Eksempel 3
+
+:::{raw} html
+---
+file: ./python/utforsk/utforsk_2/oppgave_b/eksempel_3.html
+---
+:::
+
+```
+````
+
+
+:::{admonition} Merknad: bruk av `_`{l=python} i `for`{l=python}-løkker
+---
+class: sidenote, dropdown
+---
+I kodeeksemplene her vil du se at løkkevariabelen er `_`{l=python}. Det er vanlig å bruke `_`{l=python} som løkkevariabel når vi ikke bruker løkkevariabelen til å utføre noen handler. Typisk betyr dette at `for`{l=python}-løkka bare skal gjenta noe et bestemt antall ganger og det spiller ingen rolle hva løkkevariabelen sin er verdi er underveis. Det holder bare styr på hvor mange ganger løkka har kjørt og når den skal stoppe.
+:::
+
+:::::
+
+
+::::::
+
+
+:::::::
+
+---
+
+:::::::::::::::{admonition} Oppsummering: Utforsk 2
+---
+class: summary, dropdown
+---
+
+::::::::::::::{tab-set}
+:::::::::::::{tab-item} Gjentakelse av kodelinjer
+Vi kan gjenta noen kodelinjer et bestemt antall ganger ved å skrive:
+
+:::{code-block} python
+---
+linenos: true
+---
+for x in range(N):
+    # Noen kodelinjer her. Disse gjentas `N` ganger.
+:::
+
+| Eksempel | Tall | Beskrivelse |
+|-----------|----------|----------|
+| `for x in range(3)`{l=python} | $0, 1, 2$. | 3 gjentakelser. |
+| `for x in range(5)`{l=python} | $0, 1, 2, 3, 4$ | 5 gjentakelser. |
+| `for x in range(-2)`{l=python} | Ingen tall | Ingen gjentakelse. |
+
+:::::::::::::
+
+:::::::::::::{tab-item} Gjentakelse av kodelinjer uten løkke-variabel
+Når vi skal gjenta noen kodelinjer et bestemt antall ganger, men ikke skal bruke løkkevariabelen til noe, skriver vi:
+
+:::{code-block} python
+---
+linenos: true
+---
+# bruker `_` som løkkevariabel fordi den ikke brukes i utregninger.
+for _ in range(N):
+    # Noen kodelinjer her. Disse gjentas `N` ganger.
+:::
+
+| Eksempel | Beskrivelse |
+|-----------|----------|
+| `for _ in range(3)`{l=python} | Gir 3 gjentakelser. |
+| `for _ in range(5)`{l=python} | 5 gjentakelser. |
+| `for _ in range(-2)`{l=python} | Ingen gjentakelser. |
+:::::::::::::
+::::::::::::::
+
+:::::::::::::::
+
+
+---
+
+:::::{admonition} Quiz 2
+---
+class: quiz
+---
+Ta quizen!
+
+:::{raw} html
+---
+file: ./quiz/quiz_2/quiz_2.html
+---
+:::
+
 :::::
 
 ---
 
-:::{admonition} Oppgave 3
+## Nøstede `for`{l=python}-løkker
+
+Nøstede `for`{l=python}-løkker er `for`{l=python}-løkker som er plassert inni hverandre. Når vi jobber med likningssystemer, bruker vi ofte dette til å lage et rutenett av punkter $(x, y)$. Dette skal du se nærmere på i Utforsk 3.
+
+:::::::::::::::{admonition} Utforsk 3
 ---
-class: problem-level-3
+class: explore, full-width
 ---
-I denne oppgaven skal du jobbe med summer av oddetall:
+Under vises tre eksempler på programmer som bruker nøstede `for`{l=python}-løkker til å lage et rutenett av punkter $(x, y)$. 
 
-\begin{align*}
-    S_1 &= 1, \\
-    S_2 &= 1 + 3, \\
-    S_3 &= 1 + 3 + 5, \\
-    S_4 &= 1 + 3 + 5 + 7, \\
-    S_5 &= 1 + 3 + 5 + 7 + 9, \\
-\end{align*}
+Ved siden av programmene er det tilhørende animasjoner som viser hvilke punkter som lager og i hvilken rekkefølge det skjer.
 
-og så videre. Vi lar $S_N$ være summen av de $N$ første oddetallene.
+Legg spesielt merke til rekkefølgen på de to `for`{l=python}-løkkene og hvordan det påvirker hvilken rekkefølge man løper gjennom punktene i rutenettet.
 
-<br>
+::::::::::::::{tab-set}
+:::::::::::::{tab-item} Eksempel 1
 
-Deloppgave 1
-: La $a_n$ være det $n$-te leddet i summen. Finn en formel for $a_n$. 
-
-<br>
-
-Under vises et interaktivt kodevindu med en uferdig kode. 
-
-Deloppgave 2
-: Fullfør programmet slik at det regner ut $S_5$. <br> Sjekk at svaret stemmer for hånd.
-
-<br>
-
-::::{raw} html
+:::::{grid}
+::::{grid-item} **Programkode**
+:::{raw} html
 ---
-file: ./interaktiv_kode/oppgaver/oppgave_5.html
+file: ./python/utforsk/utforsk_3/eksempel_1.html
 ---
+:::
 ::::
 
-<br>
-
+::::{grid-item} **Animasjon**
+:::{figure} ./figurer/utforsk_3/eksempler/eksempel_1.gif
+---
+width: 100%
+class: no-click
+---
 :::
+::::
+
+:::::
+:::::::::::::
+
+:::::::::::::{tab-item} Eksempel 2
+
+:::::{grid}
+::::{grid-item} **Programkode**
+:::{raw} html
+---
+file: ./python/utforsk/utforsk_3/eksempel_2.html
+---
+:::
+::::
+
+::::{grid-item} **Animasjon**
+:::{figure} ./figurer/utforsk_3/eksempler/eksempel_2.gif
+---
+width: 100%
+class: no-click
+---
+:::
+::::
+
+:::::
+:::::::::::::
+
+:::::::::::::{tab-item} Eksempel 3
+
+:::::{grid}
+::::{grid-item} **Programkode**
+:::{raw} html
+---
+file: ./python/utforsk/utforsk_3/eksempel_3.html
+---
+:::
+::::
+
+::::{grid-item} **Animasjon**
+:::{figure} ./figurer/utforsk_3/eksempler/eksempel_3.gif
+---
+width: 100%
+class: no-click
+---
+:::
+::::
+
+:::::
+:::::::::::::
+
+::::::::::::::
+
+
+:::::::::::::::
+
+---
+
+
+:::::::::::::::{admonition} Quiz 3
+---
+class: quiz
+---
+Ta quizen!
+
+:::{raw} html
+---
+file: ./quiz/quiz_3/quiz_3.html
+---
+:::
+
+
+:::::::::::::::
+
+---
+
+:::::::::::::::{admonition} Underveisoppgave 4
+---
+class: check, full-width
+---
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Fyll inn i for-løkka slik at den gir rutenettet som er vist i animasjonen til høyre.
+
+
+:::::{grid}
+::::{grid-item} **Programkode**
+
+:::{raw} html
+---
+file: ./python/underveisoppgaver/underveisoppgave_4/a.html
+---
+:::
+::::
+
+::::{grid-item} **Animasjon**
+:::{figure} ./figurer/underveisoppgaver/underveisoppgave_4/a.gif
+---
+width: 100%
+class: no-click
+---
+:::
+::::
+
+:::::
+
+
+
+:::::::::::::
+
+:::::::::::::{tab-item} b
+Fyll inn i for-løkka slik at den gir rutenettet som er vist i animasjonen til høyre.
+
+
+:::::{grid}
+::::{grid-item} **Programkode**
+
+:::{raw} html
+---
+file: ./python/underveisoppgaver/underveisoppgave_4/b.html
+---
+:::
+::::
+
+::::{grid-item} **Animasjon**
+:::{figure} ./figurer/underveisoppgaver/underveisoppgave_4/b.gif
+---
+width: 100%
+class: no-click
+---
+:::
+::::
+
+:::::
+
+
+
+:::::::::::::
+
+:::::::::::::{tab-item} c
+Fyll inn i for-løkka slik at den gir rutenettet som er vist i animasjonen til høyre.
+
+
+:::::{grid}
+::::{grid-item} **Programkode**
+
+:::{raw} html
+---
+file: ./python/underveisoppgaver/underveisoppgave_4/c.html
+---
+:::
+::::
+
+::::{grid-item} **Animasjon**
+:::{figure} ./figurer/underveisoppgaver/underveisoppgave_4/c.gif
+---
+width: 100%
+class: no-click
+---
+:::
+::::
+
+:::::
+
+
+
+:::::::::::::
+
+:::::::::::::{tab-item} d
+Fyll inn i for-løkka slik at den gir rutenettet som er vist i animasjonen til høyre.
+
+
+:::::{grid}
+::::{grid-item} **Programkode**
+
+:::{raw} html
+---
+file: ./python/underveisoppgaver/underveisoppgave_4/d.html
+---
+:::
+::::
+
+::::{grid-item} **Animasjon**
+:::{figure} ./figurer/underveisoppgaver/underveisoppgave_4/d.gif
+---
+width: 100%
+class: no-click
+---
+:::
+::::
+
+:::::
+
+
+
+:::::::::::::
+::::::::::::::
+
+:::::::::::::::
+
