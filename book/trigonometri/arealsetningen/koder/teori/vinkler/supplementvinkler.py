@@ -34,10 +34,19 @@ def main(dirname, save):
         show=False,
         radius=0.25,
         fontsize=22,
-        label_angles=("u", False, False),
+        label_angles=(" ", False, False),
         label_sides=(False, False, False),
         vertex_labels=(False, False, False),
         alpha=0.05,
+    )
+
+    plt.text(
+        x=-0.35,
+        y=0.2,
+        s=r"$u$",
+        fontsize=20,
+        ha="center",
+        va="center",
     )
 
     # angle = 120 * np.pi / 180
