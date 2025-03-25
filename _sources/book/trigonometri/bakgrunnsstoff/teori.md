@@ -196,27 +196,27 @@ I praksis kan vi ikke gjøre dette når vi skal undersøke om to trekanter er fo
 ---
 class: summary
 ---
-En trekant $\Delta ABC$ og en trekant $\Delta DEF$ er **formlike** dersom én av følgende betingelser er oppfylt:
+En trekant $\triangle ABC$ og en trekant $\triangle DEF$ er **formlike** dersom én av følgende betingelser er oppfylt:
 
 **SSS** (side-side-side): 
-: Forholdet mellom sidene i $\Delta ABC$ og de tilsvarende sidene i $\Delta DEF$ er én konstant.
+: Forholdet mellom sidene i $\triangle ABC$ og de tilsvarende sidene i $\triangle DEF$ er én konstant.
 
 $$
 \dfrac{AB}{DE} = \dfrac{BC}{EF} = \dfrac{AC}{DF}
 $$
 
 **SVS** (side-vinkel-side): 
-: Forholdet mellom to av sidene i $\Delta ABC$ med de tilsvarende sidene i $\Delta DEF$ er like, og vinkelen mellom disse sidene er lik i begge trekanter.
+: Forholdet mellom to av sidene i $\triangle ABC$ med de tilsvarende sidene i $\triangle DEF$ er like, og vinkelen mellom disse sidene er lik i begge trekanter.
 
 **VVV** (vinkel-vinkel-vinkel): 
-: Alle vinkler i $\Delta ABC$ er like store som de tilsvarende vinklene i $\Delta DEF$.
+: Alle vinkler i $\triangle ABC$ er like store som de tilsvarende vinklene i $\triangle DEF$.
 
 
 <br>
 
 De tre betingelsene ovenfor er **ekvivalente**.
 
-Hvis $\Delta ABC$ og $\Delta DEF$ er formlike, så skriver vi $\Delta ABC \sim \Delta DEF$.
+Hvis $\triangle ABC$ og $\triangle DEF$ er formlike, så skriver vi $\triangle ABC \sim \triangle DEF$.
 
 
 :::{figure} ./figurer/teori/formlikhet/merged_figure.svg
@@ -224,7 +224,7 @@ Hvis $\Delta ABC$ og $\Delta DEF$ er formlike, så skriver vi $\Delta ABC \sim \
 width: 100%
 class: no-click
 ---
-viser to formlike trekanter $\Delta ABC$ og $\Delta DEF$. Her er $\angle A = \angle D$, $\angle B = \angle E$ og $\angle C = \angle F$. De tilsvarende sidene i trekantene er $AB$ og $DE$, sidene $BC$ og $EF$, og sidene $AC$ og $DF$.
+viser to formlike trekanter $\triangle ABC$ og $\triangle DEF$. Her er $\angle A = \angle D$, $\angle B = \angle E$ og $\angle C = \angle F$. De tilsvarende sidene i trekantene er $AB$ og $DE$, sidene $BC$ og $EF$, og sidene $AC$ og $DF$.
 :::
 
 
@@ -253,14 +253,14 @@ class: no-click
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
-Forklar at $\Delta ABC \sim \Delta DEF$.
+Forklar at $\triangle ABC \sim \triangle DEF$.
 
 
 ::::{admonition} Løsning
 ---
 class: solution, dropdown
 ---
-Vi kan starte med å undersøke om VVV-kriteriet er oppfylt. I trekant $\Delta ABC$ er vinklene 
+Vi kan starte med å undersøke om VVV-kriteriet er oppfylt. I trekant $\triangle ABC$ er vinklene 
 
 $$
 \angle A = 63.43 \degree \and \angle B = 90 \degree \and \angle C = 180\degree - \angle A - \angle B
@@ -275,7 +275,7 @@ $$
 Vi kan se at $\angle E = 90 \degree$ og $\angle F = 26.57 \degree$. Siden to av vinklene er like, betyr det automatisk at alle tre vinklene er like, så da er VVV-kriteriet er oppfylt. Dermed er 
 
 $$
-\Delta ABC \sim \Delta DEF.
+\triangle ABC \sim \triangle DEF.
 $$
 ::::
 
@@ -283,26 +283,26 @@ $$
 
 
 :::::::::::::{tab-item} b
-Bestem de ukjente sidelengdene i trekanten $\Delta DEF$.
+Bestem de ukjente sidelengdene i trekanten $\triangle DEF$.
 
 
 ::::{admonition} Løsning
 ---
 class: solution, dropdown
 ---
-Vi vet nå at $\Delta ABC \sim \Delta DEF$. Dermed er forholdet mellom to tilsvarende sider en konstant. De tilsvarende sidene i trekanten er $AB$ og $DE$, sidene $BC$ og $EF$, og sidene $AC$ og $DF$. Vi kan dermed skrive
+Vi vet nå at $\triangle ABC \sim \triangle DEF$. Dermed er forholdet mellom to tilsvarende sider en konstant. De tilsvarende sidene i trekanten er $AB$ og $DE$, sidene $BC$ og $EF$, og sidene $AC$ og $DF$. Vi kan dermed skrive
 
 $$
 \dfrac{AB}{DE} = \dfrac{BC}{EF} = \dfrac{AC}{DF}.
 $$
 
-Fra $\Delta ABC$ har vi at $AC = \sqrt{5}$ og fra $\Delta DEF$ har vi at $DF = 2\sqrt{5}$. Dermed er 
+Fra $\triangle ABC$ har vi at $AC = \sqrt{5}$ og fra $\triangle DEF$ har vi at $DF = 2\sqrt{5}$. Dermed er 
 
 $$
 \dfrac{DF}{AC} = \dfrac{2\sqrt{5}}{\sqrt{5}} = 2.
 $$
 
-Dette betyr at alle sidene i $\Delta DEF$ er $2$ ganger så store som sidelengdene i $\Delta ABC$. Dermed er
+Dette betyr at alle sidene i $\triangle DEF$ er $2$ ganger så store som sidelengdene i $\triangle ABC$. Dermed er
 
 $$
 DE = 2\cdot AB = 2 \cdot 1 = 2 \and EF = 2\cdot BC = 2 \cdot 2 = 4. 

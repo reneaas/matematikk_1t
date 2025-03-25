@@ -243,19 +243,19 @@ class: no-click
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
-Forklar at $\Delta ABC \sim \Delta DEF$.
+Forklar at $\triangle ABC \sim \triangle DEF$.
 
 ::::{admonition} Fasit
 ---
 class: answer, dropdown
 ---
-Vi kjenner til alle sidelengdene i $\Delta ABC$ og $\Delta DEF$, så vi kan sjekke SSS-kriteriet:
+Vi kjenner til alle sidelengdene i $\triangle ABC$ og $\triangle DEF$, så vi kan sjekke SSS-kriteriet:
 
 $$
 \dfrac{DE}{AB} = \dfrac{8}{4} = 2 \and \dfrac{DF}{AC} = \dfrac{6}{3} = 2 \and \dfrac{EF}{BC} = \dfrac{10}{5} = 2.
 $$
 
-Siden alle forholdstallene er like, må $\Delta ABC \sim \Delta DEF$.
+Siden alle forholdstallene er like, må $\triangle ABC \sim \triangle DEF$.
 ::::
 
 :::::::::::::
@@ -307,21 +307,21 @@ class: no-click
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
-Forklar at $\Delta ABC \sim \Delta EDF$. 
+Forklar at $\triangle ABC \sim \triangle EDF$. 
 
 
 ::::{admonition} Fasit
 ---
 class: answer, dropdown
 ---
-I $\Delta ABC$ har vi at 
+I $\triangle ABC$ har vi at 
 
 
 $$
 \angle C = 90 \degree - \angle B = 90 \degree - 30 \degree = 60 \degree.
 $$
 
-For $\Delta EDF$ har vi samtidig at:
+For $\triangle EDF$ har vi samtidig at:
 
 $$
 \angle D = 90 \degree - \angle F = 90 \degree - 60 \degree = 30 \degree.
@@ -333,7 +333,7 @@ $$
 \angle B = \angle D \and \angle C = \angle F \and \angle A = \angle E,
 $$
 
-som etter VVV-kriteriet betyr at $\Delta ABC \sim \Delta EDF$.
+som etter VVV-kriteriet betyr at $\triangle ABC \sim \triangle EDF$.
 ::::
 
 :::::::::::::
@@ -383,7 +383,7 @@ class: no-click
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
-Forklar at $\Delta ABC \sim \Delta EDF$. 
+Forklar at $\triangle ABC \sim \triangle EDF$. 
 
 ::::{admonition} Fasit
 ---
@@ -391,19 +391,19 @@ class: answer, dropdown
 ---
 Vi kan bestemme alle vinklene i de to trekantene som gjør det hensiktsmessig å sjekke VVV-kriteriet.
 
-For $\Delta ABC$ har vi at
+For $\triangle ABC$ har vi at
 
 $$
 \angle A = 120 \degree \and \angle C = 30 \degree \and \angle B = 180 \degree - \angle A - \angle C = 30 \degree.
 $$
 
-og for $\Delta EDF$ har vi at
+og for $\triangle EDF$ har vi at
 
 $$
 \angle D = 30 \degree \and \angle F = 30 \degree \and \angle E = 180 \degree - \angle D - \angle F = 120 \degree.
 $$
 
-Ut ifra VVV-kriteriet er derfor $\Delta ABC \sim \Delta EDF$.
+Ut ifra VVV-kriteriet er derfor $\triangle ABC \sim \triangle EDF$.
 ::::
 
 :::::::::::::
@@ -416,7 +416,7 @@ Bestem $AC$.
 ---
 class: answer, dropdown
 ---
-Trekant $\Delta ABC$ er likebeint så $AB = AC = 3$. 
+Trekant $\triangle ABC$ er likebeint så $AB = AC = 3$. 
 ::::
 
 :::::::::::::
@@ -451,7 +451,7 @@ $$
 ---
 class: problem-level-2
 ---
-Nedenfor vises to trekanter $\Delta ABC$ og $\Delta ADE$ der 
+Nedenfor vises to trekanter $\triangle ABC$ og $\triangle ADE$ der 
 
 $$
 BC = 2\sqrt{3} \quad\quad\quad AB = 4 \quad\quad\quad AE = 1. 
@@ -470,17 +470,17 @@ class: no-click
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
-Forklar at $\Delta ABC \sim \Delta ADE$.
+Forklar at $\triangle ABC \sim \triangle ADE$.
 
 
 ::::{admonition} Fasit
 ---
 class: answer, dropdown
 ---
-$\angle A$ er en felles vinkel i $\Delta ABC$ og $\Delta ADE$. Vi har også at $\angle E = \angle C = 90 \degree$. Siden to av vinklene er like, blir den siste også lik i hver av trekantene som betyr at trekantene oppfyller VVV-kriteriet og derfor er 
+$\angle A$ er en felles vinkel i $\triangle ABC$ og $\triangle ADE$. Vi har også at $\angle E = \angle C = 90 \degree$. Siden to av vinklene er like, blir den siste også lik i hver av trekantene som betyr at trekantene oppfyller VVV-kriteriet og derfor er 
 
 $$
-\Delta ABC \sim \Delta ADE.
+\triangle ABC \sim \triangle ADE.
 $$
 ::::
 
