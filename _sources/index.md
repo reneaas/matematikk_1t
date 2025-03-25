@@ -167,4 +167,61 @@ $$
 ::::
 
 
+::::{grid-item-card}
+---
+link: book/eksponentialfunksjoner_og_potensfunksjoner/intro
+link-type: doc
+---
+**Eksponentialfunksjoner og potensfunksjoner** 
+
+
+^^^
+
+$$
+f(x) = a \cdot b^x
+$$
+
+$$
+g(x) = a \cdot x^b
+$$
+
+
+::::
+
+
+
+::::{grid-item-card}
+---
+link: book/trigonometri/intro
+link-type: doc
+---
+**Trigonometri** 
+
+
+^^^
+
+\begin{align*}
+    \sin v &= \dfrac{\mathrm{mot}}{\mathrm{hyp}} \\
+    \cos v &= \dfrac{\mathrm{hos}}{\mathrm{hyp}} \\
+    \tan v &= \dfrac{\mathrm{mot}}{\mathrm{hos}}
+\end{align*}
+
+---
+
+$$
+T = \dfrac{1}{2} ab \sin C
+$$
+
+$$
+\dfrac{\sin A}{a} = \dfrac{\sin B}{b} = \dfrac{\sin C}{c}
+$$
+
+$$
+c^2 = a^2 + b^2 - 2ab\cos C
+$$
+
+
+::::
+
+
 :::::
