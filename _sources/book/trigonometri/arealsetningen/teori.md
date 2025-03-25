@@ -45,7 +45,7 @@ class: no-click
 ---
 class: check 
 ---
-En trekant $\Delta ABC$ er vist i figuren nedenfor. $AB = 4$. 
+En trekant $\triangle ABC$ er vist i figuren nedenfor. $AB = 4$. 
 
 Bestem arealet av trekanten.
 
@@ -154,7 +154,7 @@ class: no-click
 ---
 class: check
 ---
-Nedenfor vises en trekant $\Delta ABC$. 
+Nedenfor vises en trekant $\triangle ABC$. 
 
 
 :::{figure} ./figurer/underveisoppgaver/oppgave_2/figur.svg
@@ -234,7 +234,7 @@ Vi skal i det som følger både begrunne arealsetningen og gi mening til hva det
 ---
 class: explore
 ---
-Nedenfor vises en trekant $\Delta ABC$ med en spiss vinkel $\angle A$, en høyde $h$ og en grunnlinje $g$.
+Nedenfor vises en trekant $\triangle ABC$ med en spiss vinkel $\angle A$, en høyde $h$ og en grunnlinje $g$.
 
 :::{figure} ./figurer/utforsk/utforsk_1/figur.svg
 ---
@@ -325,7 +325,7 @@ Nå har vi begrunnet hvorfor arealsetningen stemmer når vi tar utgangspunkt i e
 ---
 class: explore
 ---
-Nedenfor vises en trekant $\Delta ABC$ med en stump vinkel $\angle A$, en høyde $h$ og en grunnlinje $g$.
+Nedenfor vises en trekant $\triangle ABC$ med en stump vinkel $\angle A$, en høyde $h$ og en grunnlinje $g$.
 
 
 :::{figure} ./figurer/utforsk/utforsk_2/figur.svg
@@ -359,7 +359,7 @@ $$
 
 
 :::::::::::::{tab-item} b
-Bestem høyden $h$ uttrykt ved hjelp av sidelenger i $\Delta ABC$ og vinkel $v$.
+Bestem høyden $h$ uttrykt ved hjelp av sidelenger i $\triangle ABC$ og vinkel $v$.
 
 
 
