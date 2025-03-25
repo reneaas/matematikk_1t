@@ -24,8 +24,8 @@ def main(dirname, save):
         y = radius * np.sin(theta)
         return x, y
 
-    ax.set_xlabel("$\\cos u$", loc="right", fontsize=16)
-    ax.set_ylabel("$\\sin u$", loc="top", fontsize=16)
+    ax.set_xlabel("$x$", loc="right", fontsize=16)
+    ax.set_ylabel("$y$", loc="top", fontsize=16)
 
     r = 1
 
@@ -41,6 +41,17 @@ def main(dirname, save):
         color="black",
         lw=1.5,
         linestyle="--",
+    )
+
+    ax.plot(r * np.cos(angle), r * np.sin(angle), "ko", markersize=8, alpha=0.7)
+
+    ax.text(
+        x=r * np.cos(angle) - 0.05,
+        y=r * np.sin(angle) - 0.05,
+        s="$(x, y)$",
+        fontsize=16,
+        ha="right",
+        va="top",
     )
 
     dx = dy = 0.1
