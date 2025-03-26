@@ -783,7 +783,7 @@ Hvis $\sin v = -0.5$, hvilke verdier kan $\cos v$ ha?
 class: answer, dropdown
 ---
 $$
-v = 210\degree \or v = 330\degree
+\cos v \approx 0.87 \or \cos v \approx -0.87
 $$
 ::::
 
