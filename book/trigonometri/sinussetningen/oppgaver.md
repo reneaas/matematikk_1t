@@ -36,7 +36,7 @@ $$
 
 
 :::::::::::::{tab-item} b
-Bestem $b$. 
+Bestem $c$. 
 
 ::::{admonition} Fasit
 ---
