@@ -32,6 +32,18 @@ a \approx 1.39
 $$
 ::::
 
+::::{admonition} Løsning
+---
+class: solution, dropdown
+---
+:::{figure} ./ggb/oppgaver/oppgave_1/a.png
+---
+width: 100%
+class: no-click
+---
+:::
+::::
+
 :::::::::::::
 
 
@@ -45,6 +57,19 @@ class: answer, dropdown
 $$
 b = 2
 $$
+::::
+
+
+::::{admonition} Løsning
+---
+class: solution, dropdown
+---
+:::{figure} ./ggb/oppgaver/oppgave_1/b.png
+---
+width: 100%
+class: no-click
+---
+:::
 ::::
 
 :::::::::::::
