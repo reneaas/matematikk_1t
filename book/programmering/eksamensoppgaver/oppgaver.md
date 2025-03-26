@@ -251,7 +251,7 @@ class: problem-level-2
 ---
 Nedenfor vises en figur som er satt sammen av uendelig mange linjestykker.
 
-Lengden til et linjestykke er alltid $90 %$ av lengden til det forrige linjestykket. Det første linjestykket er $100$ cm langt.
+Lengden til et linjestykke er alltid $90 \%$ av lengden til det forrige linjestykket. Det første linjestykket er $100$ cm langt.
 
 :::{figure} ./figurer/oppgave_6/figur.svg
 ---
