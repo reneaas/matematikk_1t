@@ -585,17 +585,17 @@ $$
 \sin 30\degree = \dfrac{x}{1} = x
 $$
 
-Fra opplysningene i oppgaven, vet vi at $\sin 30\degree = \dfrac{1}{2}$, som betyr at vi også kan konkludere at 
+Fra opplysningene i oppgaven, vet vi at $\sin 30\degree = \dfrac{1}{2}$. Men siden $x$-koordinaten skal være negativ, betyr at vi må sette
 
 $$
-x = \dfrac{1}{2}
+x = -\dfrac{1}{2}
 $$
 
 
 Med Pytagoras' setning kan vi finne lengden $y$:
 
 $$
-x^2 + y^2 = 1 \liff \left(\dfrac{1}{2}\right)^2 + y^2 = 1 \liff \dfrac{1}{4} + y^2 = 1
+x^2 + y^2 = 1 \liff \left(-\dfrac{1}{2}\right)^2 + y^2 = 1 \liff \dfrac{1}{4} + y^2 = 1
 $$
 
 som gir 
@@ -609,7 +609,7 @@ I det siste steget velger vi den negative løsningen fordi $y$-koordinaten på e
 Dermed har vi funnet at 
 
 $$
-(x, y) = \left(\dfrac{1}{2}, -\dfrac{\sqrt{3}}{2}\right) = (\cos 240\degree, \sin 240\degree)
+(x, y) = \left(-\dfrac{1}{2}, -\dfrac{\sqrt{3}}{2}\right) = (\cos 240\degree, \sin 240\degree)
 $$
 
 ::::
