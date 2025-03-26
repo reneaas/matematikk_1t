@@ -803,14 +803,8 @@ Hva blir retningen til lysstrålen i vannet når $u$ nærmer seg $0^\circ$. Gi e
 ---
 class: answer, dropdown
 ---
-Når $u \approx 0^\circ$, vil $\sin u \approx 0$ og dermed $\sin v \approx 0$. Dermed vil lysstrålen gå parallelt med overflaten i vannet.
+Når $u \approx 0^\circ$, vil $\sin u \approx 0$ og dermed $\sin v \approx 0$. Dermed vil lysstrålen gå parallelt med innfallsloddet og vannstrålen endrer ikke retning når den går gjennom vannoverflaten. Det skjer altså ingen brytning.
 ::::
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} c
-Hva blir retningen til lysstrålen i vannet når $u$ nærmer seg $90^\circ$. Gi en praktisk tolkning av svaret.
 
 :::::::::::::
 
