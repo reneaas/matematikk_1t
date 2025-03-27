@@ -34,6 +34,14 @@ file: ./python/oppgave_2/kodevindu.html
 ---
 :::
 
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+Programmet regner ut den gjennomsnittlige vekstfarten til $f(x) = x^2 - 3x + 7$ i intervallet $[0, 5]$. Programmet skriver ut at denne verdien er $2$. 
+::::
+
 :::::::::::::::
 
 
@@ -57,6 +65,20 @@ Forklar hva programmet regner ut og avgjør hvilke verdier som skrives ut av pro
 
 Skriv inn svaret ditt i feltet nedenfor.
 
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+Programmet bestemmer nullpunktene til $f(x) = x^2 - 2x - 8$. Vi bestemmer disse med $abc$-formelen som gir 
+
+$$
+x = \dfrac{2 \pm \sqrt{4 + 4\cdot 8}}{2} = \dfrac{2 \pm 6}{2} = 1 \pm 3
+$$
+
+som betyr at programmet først skriver ut $x = -2$ og deretter $x = 4$.
+::::
+
 :::::::::::::
 
 :::::::::::::{tab-item} b
@@ -67,6 +89,41 @@ x^2 - x - 6 = 0
 $$
 
 Bestem løsningene med programmet ditt.
+
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+Vi endrer på $f(x)$ i programmet slik at vi i stedet bruker $f(x) = x^2 - x - 6$. 
+
+:::{code-block} python
+---
+linenos:
+emphasize-lines: 2
+---
+def f(x):
+    return x**2 - x - 6
+
+for x in range(-10, 11):
+    if f(x) == 0:
+        print(x)
+:::
+
+Programmet skriver da ut 
+
+:::{code-block} console
+-2
+3
+:::
+
+som betyr at løsningene av $x^2 - x - 6 = 0$ er 
+
+$$
+x = -2 \or x = 3.
+$$
+::::
+
 
 :::::::::::::
 
@@ -99,6 +156,19 @@ Forklar hva programmet regner ut og bestem hvilken verdi som skrives ut av progr
 
 Sjekk svaret ved å skrive inn i feltet nedenfor.
 
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+Programmet regner ut summen av de $4$ først naturlige tallene. Programmet skriver derfor ut verdi
+
+$$
+s = 1 + 2 + 3 + 4 = 10.
+$$
+
+::::
+
 :::::::::::::
 
 
@@ -106,6 +176,35 @@ Sjekk svaret ved å skrive inn i feltet nedenfor.
 Da en matematiker som het Gauss gikk på skolen, fikk han i oppgave å summere de 100 første heltallene som straff for at han var urolig i timen. 
 
 Endre på programmet og bruk det til å løse oppgaven til Gauss.
+
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+Vi må endre på programmet slik at det summerer opp tallene $1, 2, \ldots, 99, 100$, som vi kan oppnå ved å bruke `range(1, 101)` i stedet for `range(1, 5)`. Da får vi programmet:
+
+:::{code-block} python
+---
+linenos: 
+emphasize-lines: 3
+---
+s = 0
+
+for n in range(1, 101):
+    s = s + n
+
+print(s)
+:::
+
+som gir utskriften
+
+:::{code-block} console
+5050
+:::
+
+Summen av de 100 første naturlige tallene er derfor $5050$. 
+::::
 
 :::::::::::::
 
