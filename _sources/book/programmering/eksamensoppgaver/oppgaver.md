@@ -655,7 +655,7 @@ class: no-click
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
-Regn ut summen av arealene i rektanglene i figuren til venstre ovenfor.
+Regn ut summen av arealene i rektanglene i figuren til venstre ovenfor (med 6 rektangler).
 
 ::::{admonition} Fasit
 ---
