@@ -543,7 +543,8 @@ def f(x):
     
 def A(x):
     return x * f(x)
-    
+
+
 for k in range(1, 11):
     print(k, A(k))
 :::
@@ -569,7 +570,7 @@ Første kolonne er verdiene av $k$ og andre kolonne er arealene av rektanglene.
 
 
 :::::::::::::{tab-item} c
-Utvid programmet ditt og bestem hvilken verdi av $k [0, \to\rangle$ som gir størst mulig areal.
+Utvid programmet ditt og bestem hvilken verdi av $k \in \langle 0, \to\rangle$ som gir størst mulig areal.
 
 
 ::::{admonition} Fasit
@@ -588,7 +589,8 @@ def f(x):
     
 def A(x):
     return x * f(x)
-    
+
+
 k = 0
 while A(k) < A(k + 0.01): # Så lenge neste areal er større 
     k = k + 0.01
@@ -616,6 +618,250 @@ file: ./python/oppgave_7/kodevindu.html
 :::
 
 :::::::::::::::
+
+
+---
+
+
+
+:::::::::::::::{admonition} Oppgave 8
+---
+class: problem-level-3
+---
+En lysstråle ble først observert ved et punkt $A(1000, 0)$ i luften og deretter i et punkt $B(10000, -1000)$ i vann.
+
+Alle avstander er målt i meter. Se figuren nedenfor.
+
+
+:::{figure} ./figurer/oppgave_8/figur.svg
+---
+width: 80%
+class: no-click
+---
+:::
+
+Lyset reiser med en fart på $300 \, \mathrm{m/\mu s}$ (meter per mikrosekund) i luft og $225 \, \mathrm{m/\mu s}$ i vann. Her står $1 \, \mathrm{\mu s}$ for 1 mikrosekund som en milliondel av et sekund.
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Nedenfor vises en programkode som regner ut hvor lang tid lysstrålen bruker fra $A$ til $M(3000, 0)$ i luften.
+
+1. Forklar matematikken som ligger bak de fargelagte kodelinjene (6 og 7) i programmet.
+2. Utvid programmet slik at det det regner ut den totale tiden lysstrålen bruker fra $A$ til $B$ når den treffer vannoverflaten i punktet $M$ som er brukt i programmet.
+
+:::{code-block} python
+---
+linenos: 
+emphasize-lines: 6-7
+---
+from math import sqrt
+
+def tid_luft(x):
+    fart_luft = 300 # meter per mikrosekund
+
+    AM = sqrt(x**2 + 1000**2) # meter
+    tid = AM / fart_luft # mikrosekunder
+
+    return tid
+    
+
+x = 3000
+reisetid = tid_luft(x)
+
+print(f"{reisetid = :.2f} mikrosekunder")
+:::
+
+> Koden ovenfor kan kopieres og limes inn i kodevindu nedenfor.
+
+::::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+:::::{tab-set}
+::::{tab-item} 1. Forklaring av kodelinjene
+* **Kodelinje 6** bruker Pytagoras' setning til å regne ut avstanden $AM$ der den ene kateten er $x = 3000$ m og den andre kateten er $1000$ m. 
+* **Kodelinje 7** bruker vei-fart-tid-formelen $s = v \cdot t$ til å regne ut tiden det tar å reise avstanden $AM$ i luft, der $s$ er avstanden, $v$ er farten og $t$ er tiden.
+::::
+
+::::{tab-item} 2. Utvidet program
+:::{code-block} python
+---
+linenos:
+emphasize-lines: 11-17, 21
+---
+from math import sqrt
+
+def tid_luft(x):
+    fart_luft = 300 # meter per mikrosekund
+
+    AM = sqrt(x**2 + 1000**2) # meter
+    tid = AM / fart_luft # mikrosekunder
+
+    return tid
+    
+def tid_vann(x):
+    fart_vann = 225 # meter per mikrosekund
+    
+    MC = sqrt((x - 10_000)**2 + 1000**2)
+    tid = MC / fart_vann
+    
+    return tid
+    
+
+x = 3000
+reisetid = tid_luft(x) + tid_vann(x)
+
+print(f"{reisetid = :.2f} mikrosekunder")
+:::
+
+som gir utskriften
+
+:::{code-block} console
+reisetid = 41.97 mikrosekunder
+:::
+
+som betyr at lyset bruker omtrent $41.97$ mikrosekunder fra $A$ til $B$.
+
+::::
+
+:::::
+::::::
+
+:::::::::::::
+
+
+
+:::::::::::::{tab-item} b
+Utvid programmet ditt med en funksjon `T(x)`{l=python} som bruker funksjonen `tid_luft(x)`{l=python} og `tid_vann(x)`{l=python} til å regne ut den totale tiden lysstrålen bruker fra $A$ til $B$ når den treffer vannoverflaten i punktet $M(x, 0)$.
+
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+Funksjonen må plasseres nedenfor funksjonene `tid_luft(x)`{l=python} og `tid_vann(x)`{l=python} i programmet fra **a**. Da kan vi definere funksjonen som:
+
+:::{code-block} python
+---
+linenos:
+---
+def T(x):
+    return tid_luft(x) + tid_vann(x)
+:::
+
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+Ifølge Snells lov, vil lysstrålen vil alltid "velge" den veien mellom $A$ og $B$ som gir kortest mulig reisetid. 
+
+Utvid programmet ditt og bruk det til å bestemme i hvilket punkt lysstrålen må ha truffet vannoverflaten.
+
+::::::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+:::::::{tab-set}
+::::::{tab-item} 1. Strategi
+Vi må bestemme hvilken verdi av $x$ som gir minst mulig verdi for $T(x)$. Dette kan vi gjøre ved å starte med $x = 0$, og deretter øke $x$ med et lite tall så lenge reisetiden i $x$ er større enn reisetiden i $x + \mathrm{lite \, tall}$. Altså, så lenge
+
+$$
+T(x) > T(x + \mathrm{lite \, tall})
+$$ 
+
+Når $T(x) \leq T(x + \mathrm{lite \, tall})$, har vi funnet den verdien av $x$ som gir kortest mulig reisetid.
+::::::
+
+::::::{tab-item} 2. Utvidelse til programkode
+Utvidelse av programkoden fra **b**:
+
+:::{code-block} python
+x = 0
+while T(x) > T(x + 0.01):
+    x = x + 0.01
+    
+print(x)
+:::
+
+::::::
+
+::::::{tab-item} 3. Full programkode
+Utvidelse av programkoden fra **b**:
+
+:::{code-block} python
+---
+linenos:
+---
+from math import sqrt
+
+def tid_luft(x):
+    fart_luft = 300 # meter per mikrosekund
+
+    AM = sqrt(x**2 + 1000**2) # meter
+    tid = AM / fart_luft # mikrosekunder
+
+    return tid
+    
+def tid_vann(x):
+    fart_vann = 225 # meter per mikrosekund
+    
+    MC = sqrt((x - 10_000)**2 + 1000**2)
+    tid = MC / fart_vann
+    
+    return tid
+
+    
+def T(x):
+    return tid_luft(x) + tid_vann(x)    
+
+
+x = 0
+while T(x) > T(x + 0.01):
+    x = x + 0.01
+
+print(f"{x = :.2f} meter")
+
+:::
+
+som gir utskriften
+
+:::{code-block} console
+x = 8882.18 meter
+:::
+
+som betyr at lysstrålen traff vannet omtrentlig i punktet $M(8882, 0)$.
+
+::::::
+
+:::::::
+::::::::
+
+:::::::::::::
+
+
+::::::::::::::
+
+
+:::{raw} html
+---
+file: ./python/oppgave_8/kodevindu.html
+---
+:::
+
+
+
+
+
+
+
+:::::::::::::::
+
 
 
 
