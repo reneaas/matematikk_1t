@@ -641,7 +641,7 @@ class: no-click
 ---
 :::
 
-For å bestemme arealet av det fargelagte området, skal du summere arealene til rektangler som bruker $f(x)$ om høyde på ulike verdier av $x$ i intervallet $[0, 6]$. Se figurene nedenfor:
+For å bestemme arealet av det fargelagte området, skal du summere arealene til rektangler som bruker $f(x)$ som høyde til rektangler for ulike verdier av $x$ i intervallet $[0, 6]$. Se figurene nedenfor:
 
 :::{figure} ./figurer/oppgave_8/merged_figure.svg
 ---
