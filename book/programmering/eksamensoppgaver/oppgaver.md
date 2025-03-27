@@ -636,7 +636,7 @@ $$
 
 :::{figure} ./figurer/oppgave_8/figur.svg
 ---
-width: 80%
+width: 70%
 class: no-click
 ---
 :::
@@ -668,7 +668,7 @@ Arealet av rektanglene i figuren til venstre ovenfor (med 6 rektangler) er ca. $
 
 
 :::::::::::::{tab-item} b
-Lag et program som bestemme arealet av det fargelagte området ved å bruke $6000$ rektangler.
+Lag et program som regner ut arealet av det fargelagte området ved å bruke $6000$ rektangler.
 
 Du kan ta utgangspunkt i programmet nedenfor.
 
