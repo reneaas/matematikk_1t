@@ -47,7 +47,7 @@ def main(dirname, save):
     plt.plot([B[0], C[0]], [B[1], C[1]], color="red")
     plt.plot(*C, "ko", markersize=8, alpha=0.7)
     plt.text(
-        x=C[0] + 0.01,
+        x=C[0] + 0.05,
         y=C[-1] - 0.1,
         s="$C$",
         fontsize=16,
@@ -60,7 +60,7 @@ def main(dirname, save):
     plt.text(
         x=-0.35,
         y=0.5 * A[-1],
-        s="$1$",
+        s="$1000 \\, \\mathrm{m}$",
         fontsize=16,
         ha="right",
         va="center",
@@ -80,7 +80,7 @@ def main(dirname, save):
     plt.text(
         x=C[0] + 0.40,
         y=0.5 * C[-1],
-        s="$1$",
+        s="$1000 \\, \\mathrm{m}$",
         fontsize=16,
         ha="left",
         va="center",
@@ -127,7 +127,7 @@ def main(dirname, save):
     plt.text(
         x=0.5 * L,
         y=-1,
-        s="$10$",
+        s="$10 \\, 000 \\, \\mathrm{m}$",
         fontsize=16,
         ha="center",
         va="top",

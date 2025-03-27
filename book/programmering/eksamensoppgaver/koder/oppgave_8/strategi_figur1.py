@@ -21,8 +21,19 @@ def main(dirname, save):
         ticks=True,
     )
 
-    x = np.linspace(0, 6, 1024)
-    ax.fill_between(x, 0, f(x), where=(f(x) > 0), color="teal", alpha=0.05)
+    x = np.linspace(0, 6, 7)
+
+    for i in range(len(x) - 1):
+        x0 = x[i]
+        x1 = x[i + 1]
+
+        y0 = 0
+        y1 = f(x0)
+        A = (x0, y0)
+        B = (x1, y0)
+        C = (x1, y1)
+        D = (x0, y1)
+        plotmath.plot_polygon(A, B, C, D, color="teal", alpha=0.05)
 
     # NOTE: Select an appropriate `dirname` to save the figure.
     # The directory `dirname` will be created automatically if it does not exist already.
