@@ -177,6 +177,7 @@ def main(dirname, save):
     plt.axis("off")
     plt.axis("equal")
     plt.xlim(-1, 3)
+
     # NOTE: Select an appropriate `dirname` to save the figure.
     # The directory `dirname` will be created automatically if it does not exist already.
     if save:

@@ -1,5 +1,6 @@
 import plotmath
 import numpy as np
+import matplotlib.pyplot as plt
 
 
 def main(dirname, save):
@@ -34,6 +35,16 @@ def main(dirname, save):
         C = (x1, y1)
         D = (x0, y1)
         plotmath.plot_polygon(A, B, C, D, color="teal", alpha=0.05)
+
+    plt.text(
+        x=6,
+        y=6,
+        s="12 rektangler",
+        fontsize=20,
+        ha="center",
+        va="center",
+        bbox=dict(facecolor="white", edgecolor="black", boxstyle="round,pad=0.5"),
+    )
 
     # NOTE: Select an appropriate `dirname` to save the figure.
     # The directory `dirname` will be created automatically if it does not exist already.
