@@ -623,8 +623,117 @@ file: ./python/oppgave_7/kodevindu.html
 ---
 
 
-
 :::::::::::::::{admonition} Oppgave 8
+---
+class: problem-level-2
+---
+I denne oppgaven skal du bestemme arealet av det fargelagte området vist i figuren nedenfor. Funksjonen $f$ er gitt ved 
+
+$$
+f(x) = \dfrac{1}{9}(x + 1)(x - 6)^2
+$$
+
+
+:::{figure} ./figurer/oppgave_8/figur.svg
+---
+width: 80%
+class: no-click
+---
+:::
+
+For å bestemme arealet av det fargelagte området, skal du summere arealene til rektangler som bruker $f(x)$ om høyde på ulike verdier av $x$ i intervallet $[0, 6]$. Se figurene nedenfor:
+
+:::{figure} ./figurer/oppgave_8/merged_figure.svg
+---
+width: 100%
+class: no-click
+---
+:::
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Regn ut summen av arealene i rektanglene i figuren til venstre ovenfor.
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+Arealet av rektanglene i figuren til venstre ovenfor (med 6 rektangler) er ca. $21.78$. 
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Lag et program som regner ut arealet ved å bruke $6000$ rektangler.
+
+Du kan ta utgangspunkt i programmet nedenfor.
+
+
+:::{raw} html
+---
+file: ./python/oppgave_8/kodevindu.html
+---
+:::
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+**Programkode**:
+
+:::{code-block} python
+---
+linenos:
+---
+def f(x):
+    return 1/9 * (x + 1) * (x - 6) ** 2
+
+x_min = 0
+x_max = 6
+
+n = 6000 # antall rektangler
+
+bredde = (x_max - x_min) / n
+
+areal = 0
+for i in range(n):
+    x = x_min + i * bredde
+    høyde = f(x)
+    
+    areal = areal + bredde * høyde
+    
+print(areal)
+:::
+
+**Utskrift**:
+
+:::{code-block} console
+20.001999777777893
+:::
+
+Arealet under grafen til $f$ i intervallet $[0, 6]$ er derfor omtrent $20$.
+
+::::
+
+
+:::::::::::::
+::::::::::::::
+
+
+
+
+:::::::::::::::
+
+
+---
+
+
+
+:::::::::::::::{admonition} Oppgave 9
 ---
 class: problem-level-3
 ---
@@ -633,7 +742,7 @@ En lysstråle ble først observert ved et punkt $A(1000, 0)$ i luften og derette
 Alle avstander er målt i meter. Se figuren nedenfor.
 
 
-:::{figure} ./figurer/oppgave_8/figur.svg
+:::{figure} ./figurer/oppgave_9/figur.svg
 ---
 width: 80%
 class: no-click
@@ -850,14 +959,9 @@ som betyr at lysstrålen traff vannet omtrentlig i punktet $M(8882, 0)$.
 
 :::{raw} html
 ---
-file: ./python/oppgave_8/kodevindu.html
+file: ./python/oppgave_9/kodevindu.html
 ---
 :::
-
-
-
-
-
 
 
 :::::::::::::::
