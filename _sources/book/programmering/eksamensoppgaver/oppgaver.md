@@ -54,8 +54,6 @@ class: problem-level-1
 ---
 Nedenfor vises en programkode. 
 
-Forklar hva programmet regner ut og avgjør hvilke verdier som skrives ut av programmet. Skriv inn svaret ditt i feltet nedenfor.
-
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
