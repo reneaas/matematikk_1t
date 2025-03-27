@@ -35,7 +35,7 @@ def main(dirname, save):
     plt.text(
         x=0 - 1,
         y=0.5 * 100,
-        s="$100$ cm",
+        s="$100 \\, \\mathrm{cm}$",
         va="center",
         ha="right",
         fontsize=20,
@@ -44,7 +44,7 @@ def main(dirname, save):
     plt.text(
         x=0.5 * 0.9 * 100,
         y=100,
-        s="$90$ cm",
+        s="$90 \\, \\mathrm{cm}$",
         va="bottom",
         ha="center",
         fontsize=20,
