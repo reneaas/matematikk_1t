@@ -34,7 +34,7 @@ def main(dirname, save):
         B = (x1, y0)
         C = (x1, y1)
         D = (x0, y1)
-        plotmath.plot_polygon(A, B, C, D, color="teal", alpha=0.05)
+        plotmath.plot_polygon(A, B, C, D, color="teal", alpha=0.1)
 
     plt.text(
         x=6,

@@ -22,7 +22,7 @@ def main(dirname, save):
     )
 
     x = np.linspace(0, 6, 1024)
-    ax.fill_between(x, 0, f(x), where=(f(x) > 0), color="teal", alpha=0.05)
+    ax.fill_between(x, 0, f(x), where=(f(x) > 0), color="teal", alpha=0.1)
 
     # NOTE: Select an appropriate `dirname` to save the figure.
     # The directory `dirname` will be created automatically if it does not exist already.
