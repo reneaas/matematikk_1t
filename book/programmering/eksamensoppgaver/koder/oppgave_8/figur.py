@@ -1,31 +1,30 @@
 import plotmath
 import numpy as np
+import matplotlib.pyplot as plt
 
 
 def main(dirname, save):
-    #
-    # Define functions
-    def f(x):
-        return (x + 1) * (x - 6) ** 2 / 9
+    # TODO: write code here
+    fig, ax = plt.subplots(figsize=(8, 2))
+    s = 1
+    step = 1
+    for i in range(1, 10):
+        A = (step * i + s * i, 0)
+        B = (step * i + s * (i + 1), 0)
+        C = (step * i + s * (i + 1), s)
+        D = (step * i + s * i, s)
 
-    # List of functions and their labels.
-    functions = [f]
+        plotmath.plot_polygon(
+            *[A, B, C, D],
+        )
 
-    fig, ax = plotmath.plot(
-        functions=functions,
-        fn_labels=True,
-        xmin=-1,
-        xmax=8,
-        ymin=-1,
-        ymax=8,
-        ticks=True,
-    )
+        s = 0.9 * s
 
-    x = np.linspace(0, 6, 1024)
-    ax.fill_between(x, 0, f(x), where=(f(x) > 0), color="teal", alpha=0.1)
+    plt.axis("equal")
+    plt.axis("off")
 
-    # NOTE: Select an appropriate `dirname` to save the figure.
-    # The directory `dirname` will be created automatically if it does not exist already.
+    plt.tight_layout()
+    # NOTE: Automatically saves with correct file format and filename.
     if save:
         fname = __file__.split("/")[-1].replace(".py", ".svg")
         plotmath.savefig(
