@@ -821,21 +821,24 @@ Lyset reiser med en fart på $300 \, \mathrm{m/\mu s}$ (meter per mikrosekund) i
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
-Nedenfor vises en programkode som regner ut hvor lang tid lysstrålen bruker fra $A$ til $M(3000, 0)$ i luften.
+Nedenfor vises et program som regner ut tiden det tar for lyset å reise fra $A$ til $M(3000, 0)$.
 
-1. Forklar matematikken som ligger bak de fargelagte kodelinjene (6 og 7) i programmet.
-2. Utvid programmet slik at det det regner ut den totale tiden lysstrålen bruker fra $A$ til $B$ når den treffer vannoverflaten i punktet $M$ som er brukt i programmet.
+Pusle sammen programmet i riktig rekkefølge.
 
+
+::::{admonition} Fasit
+---
+class: dropdown, answer
+---
 :::{code-block} python
 ---
-linenos: 
-emphasize-lines: 6-7
+linenos:
 ---
-from math import sqrt
+from math import sqrt # jeg må være første kodelinje!
 
 def tid_luft(x):
     fart_luft = 300 # meter per mikrosekund
-
+    
     AM = sqrt(x**2 + 1000**2) # meter
     tid = AM / fart_luft # mikrosekunder
 
@@ -848,19 +851,34 @@ reisetid = tid_luft(x)
 print(f"{reisetid = :.2f} mikrosekunder")
 :::
 
-> Koden ovenfor kan kopieres og limes inn i kodevindu nedenfor.
+::::
+
+:::::::::::::
+
+:::::::::::::{tab-item} b
+Forklar matematikken bak kodelinje 6 og 7 i programmet.
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+* **Kodelinje 6** bruker Pytagoras' setning til å regne ut avstanden $AM$ der den ene kateten er $x = 3000$ m og den andre kateten er $1000$ m. 
+* **Kodelinje 7** bruker vei-fart-tid-formelen $s = v \cdot t$ til å regne ut tiden det tar å reise avstanden $AM$ i luft, der $s$ er avstanden, $v$ er farten og $t$ er tiden.
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+Utvid programmet slik at det regner ut tiden det tar for lyset å reise fra $A$ til $M$ i vann.
+
+Bruk programmet til å regne ut tiden det tar for lyset å reise fra $A$ til $B$.
+
 
 ::::::{admonition} Fasit
 ---
 class: answer, dropdown
 ---
-:::::{tab-set}
-::::{tab-item} 1. Forklaring av kodelinjene
-* **Kodelinje 6** bruker Pytagoras' setning til å regne ut avstanden $AM$ der den ene kateten er $x = 3000$ m og den andre kateten er $1000$ m. 
-* **Kodelinje 7** bruker vei-fart-tid-formelen $s = v \cdot t$ til å regne ut tiden det tar å reise avstanden $AM$ i luft, der $s$ er avstanden, $v$ er farten og $t$ er tiden.
-::::
-
-::::{tab-item} 2. Utvidet program
 :::{code-block} python
 ---
 linenos:
@@ -899,16 +917,14 @@ reisetid = 41.97 mikrosekunder
 
 som betyr at lyset bruker omtrent $41.97$ mikrosekunder fra $A$ til $B$.
 
-::::
-
-:::::
 ::::::
+
 
 :::::::::::::
 
 
 
-:::::::::::::{tab-item} b
+:::::::::::::{tab-item} d
 Utvid programmet ditt med en funksjon `T(x)`{l=python} som bruker funksjonen `tid_luft(x)`{l=python} og `tid_vann(x)`{l=python} til å regne ut den totale tiden lysstrålen bruker fra $A$ til $B$ når den treffer vannoverflaten i punktet $M(x, 0)$.
 
 
@@ -931,7 +947,7 @@ def T(x):
 :::::::::::::
 
 
-:::::::::::::{tab-item} c
+:::::::::::::{tab-item} e
 Ifølge Snells lov, vil lysstrålen vil alltid "velge" den veien mellom $A$ og $B$ som gir kortest mulig reisetid. 
 
 Utvid programmet ditt og bruk det til å bestemme i hvilket punkt lysstrålen må ha truffet vannoverflaten.
@@ -1023,7 +1039,7 @@ som betyr at lysstrålen traff vannet omtrentlig i punktet $M(8882, 0)$.
 
 :::{raw} html
 ---
-file: ./python/oppgave_10/kodevindu.html
+file: ./python/oppgave_10/parsons_code.html
 ---
 :::
 
