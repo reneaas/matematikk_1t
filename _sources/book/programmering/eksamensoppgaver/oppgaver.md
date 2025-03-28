@@ -625,6 +625,66 @@ file: ./python/oppgave_7/kodevindu.html
 ---
 class: problem-level-2
 ---
+I figuren nedenfor vises en følge av kvadrater der det første kvadratet har sidelengde $1$. Sidelengdene i det neste kvadratet er $90 \%$ av sidelengdene i det forrige kvadratet. Slik fortsetter følgen i det uendelige.
+
+:::{figure} ./figurer/oppgave_8/figur.svg
+---
+width: 100%
+class: no-click
+---
+:::
+
+
+Lag et program som regner ut summen av arealene til veldig mange kvadrater. 
+
+
+:::{raw} html
+---
+file: ./python/oppgave_8/kodevindu.html
+---
+:::
+
+::::{admonition} Fasit
+---
+class: answer, dropdown
+---
+:::{code-block} python
+---
+linenos:
+---
+sidelengde = 1
+n_kvadrater = 1_000_000 # antall kvadrater
+
+sum_arealer = 0    # lagrer summen av arealene
+for i in range(n_kvadrater):
+    areal = sidelengde ** 2 # arealet til kvadratet
+    sum_arealer = sum_arealer + areal # legg til på summen
+    
+    sidelengde = 0.9 * sidelengde # neste sidelengde er 90% av forrige
+
+print(sum_arealer)
+:::
+
+som gir utskriften
+
+:::{code-block} console
+5.263157894736843
+:::
+
+som betyr at arealet når vi bruker mange kvadrater er omtrent $5.26$. 
+::::
+
+
+:::::::::::::::
+
+
+---
+
+
+:::::::::::::::{admonition} Oppgave 9
+---
+class: problem-level-2
+---
 I denne oppgaven skal du bestemme arealet av det fargelagte området vist i figuren nedenfor. Funksjonen $f$ er gitt ved 
 
 $$
@@ -632,7 +692,7 @@ f(x) = \dfrac{1}{9}(x + 1)(x - 6)^2
 $$
 
 
-:::{figure} ./figurer/oppgave_8/figur.svg
+:::{figure} ./figurer/oppgave_9/figur.svg
 ---
 width: 70%
 class: no-click
@@ -641,7 +701,7 @@ class: no-click
 
 For å bestemme arealet av det fargelagte området, skal du summere arealene til rektangler som bruker $f(x)$ som høyde til rektangler for ulike verdier av $x$ i intervallet $[0, 6]$. Se figurene nedenfor:
 
-:::{figure} ./figurer/oppgave_8/merged_figure.svg
+:::{figure} ./figurer/oppgave_9/merged_figure.svg
 ---
 width: 100%
 class: no-click
@@ -662,6 +722,7 @@ class: answer, dropdown
 Arealet av rektanglene i figuren til venstre ovenfor (med 6 rektangler) er ca. $21.78$. 
 ::::
 
+
 :::::::::::::
 
 
@@ -673,7 +734,7 @@ Du kan ta utgangspunkt i programmet nedenfor.
 
 :::{raw} html
 ---
-file: ./python/oppgave_8/kodevindu.html
+file: ./python/oppgave_9/kodevindu.html
 ---
 :::
 
@@ -731,7 +792,12 @@ Arealet under grafen til $f$ i intervallet $[0, 6]$ er derfor omtrent $20$.
 
 
 
-:::::::::::::::{admonition} Oppgave 9
+
+---
+
+
+
+:::::::::::::::{admonition} Oppgave 10
 ---
 class: problem-level-3
 ---
@@ -740,7 +806,7 @@ En lysstråle ble først observert ved et punkt $A(1000, 0)$ i luften og derette
 Alle avstander er målt i meter. Se figuren nedenfor.
 
 
-:::{figure} ./figurer/oppgave_9/figur.svg
+:::{figure} ./figurer/oppgave_10/figur.svg
 ---
 width: 80%
 class: no-click
@@ -957,7 +1023,7 @@ som betyr at lysstrålen traff vannet omtrentlig i punktet $M(8882, 0)$.
 
 :::{raw} html
 ---
-file: ./python/oppgave_9/kodevindu.html
+file: ./python/oppgave_10/kodevindu.html
 ---
 :::
 
