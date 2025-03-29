@@ -1,7 +1,7 @@
 # Python
 
 
-:::::::::::::::{admonition} Oversikt over kommandoer
+:::::::::::::::{admonition} Oversikt over Pythonkode
 ---
 class: summary, dropdown
 ---
@@ -36,28 +36,38 @@ melding = 'hei'
 
 :::::::::::::{tab-item} `for`{l=python}-løkker
 
-:::{code-block} python
+**Grunnleggende `for`{l=python}-løkke**
+```{code-block} python
 ---
 linenos:
 ---
 for i in range(5):
     print(i)
-:::
+```
 
-Utskrift: 
+<br>
 
-:::{code-block} console
-0
-1
-2
-3
-4
-:::
+**En `for`{l=python}-løkke med summering**:
+
+Regner ut summen $s = 1 + 2 + 3 + 4 + 5$:
+
+```{code-block} python
+---
+linenos:
+---
+s = 0
+for i in range(1, 6):
+    s = s + i
+
+print(s)
+```
 
 :::::::::::::
 
 
 :::::::::::::{tab-item} `while`{l=python}-løkker
+
+**Grunnleggende `while`{l=python}-løkke**:
 
 :::{code-block} python
 ---
@@ -69,14 +79,21 @@ while i < 5:
     i = i + 1
 :::
 
-Utskrift:
+**`while`{l=python}-løkke med summering**:
 
-:::{code-block} console
-0
-1
-2
-3
-4
+Regner ut summen $s = 1 + 2 + 3 + 4 + 5$:
+
+:::{code-block} python
+---
+linenos:
+---
+s = 0
+i = 1
+while i <= 5:
+    s = s + i
+    i = i + 1
+
+print(s)
 :::
 
 :::::::::::::
