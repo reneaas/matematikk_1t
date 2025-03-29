@@ -1561,7 +1561,7 @@ $$
 :::::::::::::{tab-item} c
 
 
-````{tab} Geogebra
+
 Bruk CAS-vindu nedenfor til å løse likningssystemet. 
 
 
@@ -1593,20 +1593,6 @@ $$
 
 
 
-````
-
-
-````{tab} Python
-
-Bruk programmet under til å løse likningssystemet.
-
-:::{raw} html
----
-file: ./python/underveisoppgaver/underveisoppgave_4/c.html
----
-:::
-
-````
 
 :::::::::::::
 
