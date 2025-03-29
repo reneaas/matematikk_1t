@@ -6,55 +6,63 @@
 class: summary, dropdown
 ---
 
-::::{grid}
 
-:::{grid-item}
-:outline:
-:columns: 6
-**Faktorisering**
-:::
-:::{grid-item}
-:outline:
-:columns: 6
-![](./ggb/faktoriser.png)
-:::
-:::{grid-item}
-:outline:
-:columns: 6
-**Utvide**
-:::
-:::{grid-item}
-:outline:
-:columns: 6
-![](./ggb/regnut.png)
-:::
+::::::::::::::{tab-set}
+:::::::::::::{tab-item} Løs
 
-:::{grid-item}
-:outline:
-:columns: 6
-**Polynomdivisjon**
-:::
-:::{grid-item}
-:outline:
-:columns: 6
-![](./ggb/divisjon.png)
-:::
-
-:::{grid-item}
-:outline:
-:columns: 6
-**Likninger**
-:::
-:::{grid-item}
-:outline:
-:columns: 6
-![](./ggb/likning.png)
-:::
+Likninger
+: ![](./ggb/solve/likning.png)
 
 
+Ulikheter
+: ![](./ggb/solve/ulikhet.png)
 
-::::
 
+Likningssystemer
+: ![](./ggb/solve/likningssystem.png)
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} Funksjoner
+
+Definere funksjon
+: ![](./ggb/funksjoner/definere_funksjon.png)
+
+Funksjonsverdier
+: ![](./ggb/funksjoner/funksjonsverdier.png)
+
+
+Finne nullpunkter
+: ![](./ggb/funksjoner/nullpunkter.png)
+
+
+Den deriverte
+: ![](./ggb/funksjoner/derivert.png)
+
+
+Finne ekstremalpunkter
+: ![](./ggb/funksjoner/ekstremalpunkter.png)
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} Algebra
+
+Faktorisering
+: ![](./ggb/algebra/faktoriser.png)
+
+
+Utvide
+: ![](./ggb/algebra/utvide.png)
+
+Polynomdivisjon
+: ![](./ggb/algebra/polydiv.png)
+
+:::::::::::::
+
+
+::::::::::::::
 
 
 :::::::::::::::
