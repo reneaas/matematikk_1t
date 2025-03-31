@@ -119,7 +119,7 @@ def main(dirname, save):
     plt.text(
         x=0.5 * (a - b),
         y=-dy,
-        s="$b-a$",
+        s="$a-b$",
         fontsize=20,
         color="black",
         ha="center",
