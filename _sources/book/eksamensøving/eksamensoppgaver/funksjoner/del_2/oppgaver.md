@@ -1113,6 +1113,137 @@ class: no-click
 ::::::::::::::::
 
 
+---
+
+
+
+::::::::::::::::{admonition} Oppgave 10 (Høst 2023)
+---
+class: check
+---
+Nedenfor ser du grafen til funksjon $f$ gitt ved 
+
+$$
+f(x) = \dfrac{8}{x^2 + 20}
+$$
+
+Rektangelet under grafen har hjørner i punktene $(0, 0)$, $(5, 0)$, $(5, f(5))$ og $(0, f(5))$. 
+
+
+:::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+::::::::::::::{tab-item} a
+Bestem arealet av rektangelet.
+
+
+:::::{admonition} Løsning
+---
+class: solution, dropdown
+---
+Arealet til rektangelet er gitt ved 
+
+$$
+A = 5 \cdot f(5)
+$$
+
+Vi regner ut arealet med CAS:
+
+:::{figure} ./figurer/oppgave_10/a/sol.png
+---
+width: 80%
+class: no-click
+---
+:::
+
+Altså er arealet av rektangelet 
+
+$$
+A = \dfrac{8}{9}
+$$
+
+:::::
+
+
+
+::::::::::::::
+
+
+::::::::::::::{tab-item} b
+Lag en systematisk oversikt som viser arealet av rektanglene som har hjørner i punktene $(0, 0)$, $(n, 0)$, $(n, f(n))$ og $(0, f(n))$ for $n \in \{1, 2, 3, \ldots, 10\}$. 
+
+
+:::::{admonition} Løsning
+---
+class: solution, dropdown
+---
+> Her er det mange muligheten for hva som menes med "systematisk oversikt". Vi velger å lage en grafisk framstilling, men man kan for eksempel lage en verditabell ved hjelp av en Pythonprogram eller regne ut verdiene med CAS og lage en tabell manuelt.
+
+Vi kan lage en modell $A$ for arealet av rektangelet, og så vise en graf av arealet der vi marker punktene $(n, A(n))$ for $n \in \{1, 2, 3, \ldots, 10\}$ på grafen. Modellen $A(x)$ vil være 
+
+$$
+A(x) = x \cdot f(x) = \dfrac{8x}{x^2 + 20}.
+$$
+
+Vi tegner grafen til $A$ med en graftegner og markerer punktene $(n, A(n))$ for $n \in \{1, 2, 3, \ldots, 10\}$:
+
+:::{figure} ./figurer/oppgave_10/b/sol.png
+---
+width: 100%
+class: no-click
+---
+viser grafen til arealet $A$ med punktene $(n, A(n))$ for $n \in \{1, 2, 3, \ldots, 10\}$ markert med koordinater. Her viser $y$-aksen arealet $A(x)$. 
+:::
+
+
+:::::
+
+
+::::::::::::::
+
+
+::::::::::::::{tab-item} c
+Bestem $k$ slik at arealet av rektangelet som har hjørner i punktene $(0, 0)$, $(k, 0)$, $(k, f(k))$ og $(0, f(k))$ blir størst mulig.
+
+
+:::::{admonition} Løsning 
+---
+class: solution, dropdown
+---
+For å bestemme hvilke verdi av $k$ som gir størst mulig areal, kan vi løse likningen $A'(k) = 0$ med CAS:
+
+:::{figure} ./figurer/oppgave_10/c/sol.png
+---
+width: 90%
+class: no-click
+---
+:::
+
+Den eneste kandidaten for $k$ som gir mening er $k = 2\sqrt{5}$ siden dette er den eneste verdien av $k$ der $k > 0$. At 
+
+$$
+k = 2\sqrt{5} \approx 4.47
+$$
+
+gir størst mulig areal stemmer bra med oversikten vi lagde i oppgave **b** der vi kan se fra grafen at toppunktet må ligge mellom $x = 4$ og $x = 5$. Dermed vil $k = 2\sqrt{5}$ gi størst mulig areal av rektangelet.
+
+
+:::::
+
+::::::::::::::
+
+
+
+
+:::::::::::::::
+
+::::::::::::::::
+
+
+
+
+
 
 
 
