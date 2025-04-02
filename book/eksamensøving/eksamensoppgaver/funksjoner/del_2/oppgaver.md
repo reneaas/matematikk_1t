@@ -1129,6 +1129,13 @@ $$
 
 Rektangelet under grafen har hjørner i punktene $(0, 0)$, $(5, 0)$, $(5, f(5))$ og $(0, f(5))$. 
 
+:::{figure} ./figurer/oppgave_10/figur.svg
+---
+width: 80%
+class: no-click
+---
+:::
+
 
 :::::::::::::::{tab-set}
 ---
