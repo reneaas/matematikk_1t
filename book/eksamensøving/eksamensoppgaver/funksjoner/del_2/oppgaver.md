@@ -373,6 +373,7 @@ Vi kan sette opp et likningssystem med tre likninger og tre ukjente fra opplysni
 
 1) **Punktet $(-8, 0)$ er et toppunkt på grafen til $f$** <br>
 Fra dette kan vi sette opp to likninger:
+
 \begin{align*}
     f(-8) &= 0 && \text{Punktet ligger på grafen} \\
     \\
