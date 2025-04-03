@@ -870,7 +870,7 @@ class: answer, dropdown
 
 
 :::::::::::::{tab-item} c
-Utvid programmet slik at det regner ut tiden det tar for lyset å reise fra $A$ til $M$ i vann.
+Utvid programmet slik at det regner ut tiden det tar for lyset å reise fra $M$ til $C$ i vann.
 
 Bruk programmet til å regne ut tiden det tar for lyset å reise fra helt fra $A$ til $C$.
 
@@ -915,7 +915,7 @@ som gir utskriften
 reisetid = 41.97 mikrosekunder
 :::
 
-som betyr at lyset bruker omtrent $41.97$ mikrosekunder fra $A$ til $B$.
+som betyr at lyset bruker omtrent $41.97$ mikrosekunder fra $A$ til $C$.
 
 ::::::
 
@@ -948,7 +948,7 @@ def T(x):
 
 
 :::::::::::::{tab-item} e
-Ifølge Snells lov, vil lysstrålen vil alltid "velge" den veien mellom $A$ og $B$ som gir kortest mulig reisetid. 
+Ifølge Snells lov, vil lysstrålen vil alltid "velge" den veien mellom $A$ og $C$ som gir kortest mulig reisetid. 
 
 Utvid programmet ditt og bruk det til å bestemme i hvilket punkt lysstrålen må ha truffet vannoverflaten.
 

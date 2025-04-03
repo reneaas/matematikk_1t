@@ -870,7 +870,7 @@ class: answer, dropdown
 
 
 :::::::::::::{tab-item} c
-Utvid programmet slik at det regner ut tiden det tar for lyset å reise fra $A$ til $M$ i vann.
+Utvid programmet slik at det regner ut tiden det tar for lyset å reise fra $M$ til $C$ i vann.
 
 Bruk programmet til å regne ut tiden det tar for lyset å reise helt fra $A$ til $C$.
 
@@ -915,7 +915,7 @@ som gir utskriften
 reisetid = 41.97 mikrosekunder
 :::
 
-som betyr at lyset bruker omtrent $41.97$ mikrosekunder fra $A$ til $B$.
+som betyr at lyset bruker omtrent $41.97$ mikrosekunder fra $A$ til $C$.
 
 ::::::
 
@@ -925,7 +925,7 @@ som betyr at lyset bruker omtrent $41.97$ mikrosekunder fra $A$ til $B$.
 
 
 :::::::::::::{tab-item} d
-Utvid programmet ditt med en funksjon `T(x)`{l=python} som bruker funksjonen `tid_luft(x)`{l=python} og `tid_vann(x)`{l=python} til å regne ut den totale tiden lysstrålen bruker fra $A$ til $B$ når den treffer vannoverflaten i punktet $M(x, 0)$.
+Utvid programmet ditt med en funksjon `T(x)`{l=python} som bruker funksjonen `tid_luft(x)`{l=python} og `tid_vann(x)`{l=python} til å regne ut den totale tiden lysstrålen bruker fra $A$ til $C$ når den treffer vannoverflaten i punktet $M(x, 0)$.
 
 
 ::::{admonition} Fasit
@@ -948,7 +948,7 @@ def T(x):
 
 
 :::::::::::::{tab-item} e
-Ifølge Snells lov, vil lysstrålen vil alltid "velge" den veien mellom $A$ og $B$ som gir kortest mulig reisetid. 
+Ifølge Snells lov, vil lysstrålen vil alltid "velge" den veien mellom $A$ og $C$ som gir kortest mulig reisetid. 
 
 Utvid programmet ditt og bruk det til å bestemme i hvilket punkt lysstrålen må ha truffet vannoverflaten.
 
