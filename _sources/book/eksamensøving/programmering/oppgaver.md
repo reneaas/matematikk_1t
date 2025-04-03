@@ -872,7 +872,7 @@ class: answer, dropdown
 :::::::::::::{tab-item} c
 Utvid programmet slik at det regner ut tiden det tar for lyset å reise fra $A$ til $M$ i vann.
 
-Bruk programmet til å regne ut tiden det tar for lyset å reise fra $A$ til $B$.
+Bruk programmet til å regne ut tiden det tar for lyset å reise helt fra $A$ til $C$.
 
 
 ::::::{admonition} Fasit
