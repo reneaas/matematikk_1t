@@ -737,7 +737,13 @@ class: no-click
 ---
 :::
 
-som forteller oss at $F(20) < F(22.5) < F(25)$, så $x = 22.5$ svarer til et toppunkt. Dermed er det høyeste folketallet i området $x = 22.5$ år etter 1960 som tilsvarer i år 1982.
+som forteller oss at 
+
+$$
+F(22.5) > F(20) \and F(22.5) > F(25)
+$$
+
+så $x = 22.5$ svarer til et toppunkt. Dermed er det høyeste folketallet i området $x = 22.5$ år etter 1960 som tilsvarer i år 1982.
 
 
 **Metode 2: Finne toppunktet grafisk** <br>
