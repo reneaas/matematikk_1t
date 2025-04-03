@@ -9,9 +9,16 @@ class: tip
 * Kunne avgjøre hvor mange nullpunkter en andregradsfunksjon har ved hjelp av algebraiske metoder.
 :::
 
-Vi har så langt utforsket ulike måter å skrive andregradsfunksjoner på og hvordan de gir oss ulik informasjon om en andregradsfunksjon. Så langt har vi klart å komme oss fra nullpunktsform og ekstremalform til standardform – men motsatt vei har vi ikke hatt noen strategi for å gjøre. Her skal vi utvikle verktøy for å gå motsatt vei!
+Vi har så langt utforsket ulike måter å skrive andregradsfunksjoner på og hvordan de gir oss ulik informasjon om en andregradsfunksjon. Så langt har vi klart å komme oss fra nullpunktsform og ekstremalform til standardform – men motsatt vei har vi ikke hatt noen strategi for å gjøre. Her skal vi utvikle verktøy for å gå motsatt vei! Se {numref}`fig-andregradsfunksjoner-algebra-diagram-full`. 
 
-:::{include} ./figurer/teori/representasjoner_diagram.md
+
+:::{figure} ./figurer/teori/diagram_3.svg
+---
+name: fig-andregradsfunksjoner-algebra-diagram-full
+width: 100%
+class: no-click
+---
+viser en oversikt over strategiene vi skal bruke for å gå fra standardform til ekstremalform og nullpunktsform.
 :::
 
 :::::::::::::::{admonition} Repetisjon: representasjoner av andregradsfunksjoner
@@ -73,7 +80,12 @@ width: 100%
 
 ## Fra standardform til ekstremalform – fullstendige kvadraters metode
 
-:::{include} ./figurer/teori/standardform_til_ekstremalform.md
+
+:::{figure} ./figurer/teori/diagram_1.svg
+---
+width: 80%
+class: no-click
+---
 :::
 
 Fullstendige kvadraters metode lar oss skrive om et andregradsuttrykk på formen
@@ -234,7 +246,12 @@ Med andre ord, vi gjør følgende:
 
 Nå vet vi hvordan vi kan bruke fullstendige kvadraters metode til å gå fra standardform til ekstremalform. Det neste steget i prosessen er å gå fra ekstremalform til nullpunktsform – dette oppnår vi ved å bruke konjugatsetningen.
 
-:::{include} ./figurer/teori/ekstremalform_til_nullpunktsform.md
+
+:::{figure} ./figurer/teori/diagram_2.svg
+---
+width: 80%
+class: no-click
+---
 :::
 
 

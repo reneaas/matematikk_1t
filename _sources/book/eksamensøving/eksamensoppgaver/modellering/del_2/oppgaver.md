@@ -7,7 +7,7 @@
 ---
 class: check 
 ---
-Tabellen nedenfor viser hvor mange bagetter en kantine har solgt hver av de siste sju ukene, og hvor stor overskudd salget har gitt.
+Tabellen nedenfor viser hvor mange bagetter en kantine har solgt hver av de siste sju ukene, og hvor stort overskudd salget har gitt.
 
 
 | Solgte bagetter | 100 | 130 | 160 | 175 | 190 | 220 | 235 |
