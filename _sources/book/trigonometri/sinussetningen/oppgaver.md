@@ -492,7 +492,7 @@ Bestem arealet $T$ av $\square ABCD$.
 class: answer, dropdown
 ---
 $$
-T \approx 11.98
+T \approx 29.3
 $$
 ::::
 
