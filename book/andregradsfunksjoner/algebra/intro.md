@@ -38,7 +38,11 @@ link-type: doc
 
 ^^^
 
-:::{include} ./omgjøring_av_andregradsuttrykk/figurer/teori/representasjoner_diagram.md
+:::{figure} ./omgjøring_av_andregradsuttrykk/figurer/teori/diagram_4.svg
+---
+width: 80%
+class: no-click
+---
 :::
 
 ::::
