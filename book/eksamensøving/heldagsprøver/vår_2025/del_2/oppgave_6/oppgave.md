@@ -20,10 +20,10 @@ Lag et program som regner ut summen av arealet til de 100 største fargelagte kv
 ---
 class: answer, dropdown
 ---
-Først kan vi legge merke til at sidelengdene i det største fargelangte kvadratet er $3/2$. Deretter halveres sidelengden for hvert mindre fargelagte kvadrat. For å summere arealet til de 100 største fargelagte kvadratene, kan vi derfor bruke en løkke som gjør følgende:
+Først kan vi legge merke til at sidelengdene i det største fargelagte kvadratet er $3/2$. Deretter halveres sidelengden for hvert mindre fargelagte kvadrat. For å summere arealet til de 100 største fargelagte kvadratene, kan vi derfor bruke en løkke som gjør følgende:
 
-1. Regner ut arealet av kvadrat med sidelengde $\ell$.
-2. Legger til arealet til summen $s \to s + \ell^2$. 
+1. Regner ut arealet $A$ av kvadrat med sidelengde $\ell$ ved $A = \ell^2$.
+2. Legger til arealet til summen $s \to s + A$. 
 3. Halverer sidelengden $\ell \to \ell / 2$.
 
 Vi gjentar dette 100 ganger.
