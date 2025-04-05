@@ -13,6 +13,15 @@ class: no-click
 :::
 
 
+:::::{admonition} Retteveiledning
+---
+class: summary, dropdown
+---
+* Inntil 1 poeng for å bestemme $AC$ med en gyldig strategi.
+* Inntil 1 poeng for å bestemme $tan 60 \degree$ med en gyldig strategi.
+:::::
+
+
 :::::{admonition} Fasit
 ---
 class: answer, dropdown

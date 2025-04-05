@@ -48,6 +48,15 @@ $$
 x^3 + x^2 - 5x + 3 = (x - a)(x - b)(x - c). 
 $$
 
+
+:::::{admonition} Retteveiledning
+---
+class: summary, dropdown
+---
+* Inntil 1 poeng for å velge en gyldig fremgangsmåte.
+* 1 poeng for å bestemme én mulighet for $a$, $b$ og $c$.
+:::::
+
 :::::{admonition} Fasit
 ---
 class: answer, dropdown
@@ -96,6 +105,15 @@ $$
 
 :::::::::::::{tab-item} b
 Løs ulikheten $f(x) < 0$.
+
+
+:::::{admonition} Retteveiledning
+---
+class: summary, dropdown
+---
+* Inntil 1 poeng for å velge en gyldig fremgangsmåte.
+* Inntil 1 poeng for riktig svar.
+:::::
 
 
 :::::{admonition} Fasit

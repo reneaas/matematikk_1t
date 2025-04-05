@@ -15,6 +15,15 @@ $$
 
 Bestem i hvilke punkter grafen til $f$ skjærer $x$-aksen.
 
+
+:::::{admonition} Retteveiledning
+---
+class: summary, dropdown
+---
+* Inntil 1 poeng for gyldig strategi.
+* Inntil 1 poeng for riktig svar.
+:::::
+
 :::::{admonition} Fasit
 ---
 class: answer, dropdown
@@ -38,7 +47,7 @@ $$
 x = 4 \or x = -1. 
 $$
 
-Dermed skjærer grafen til $f$ $x$-aksen i $x = -1$ og $x = 4$.
+Dermed skjærer grafen til $f$ gjennom $x$-aksen i $x = -1$ og $x = 4$.
 :::::
 
 :::::::::::::

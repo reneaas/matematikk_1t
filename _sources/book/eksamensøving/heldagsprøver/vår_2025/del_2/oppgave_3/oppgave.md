@@ -14,6 +14,18 @@ class: no-click
 :::
 
 
+:::::{admonition} Retteveiledning
+---
+class: summary, dropdown
+---
+* Inntil 1 poeng for å sette opp et gyldig likningssystem for koeffisientene til $f(x)$ eller $f'(x)$.
+* 1 poeng for å bestemme $f(x)$ med en gyldig fremgangsmåte.
+* 1 poeng for å bestemme $f'(x)$ med en gyldig fremgangsmåte.
+
+Andre gyldige fremgangsmåter som leder fram til $f(x)$ og $f'(x)$ vil også gi full uttelling.
+:::::
+
+
 :::::{admonition} Fasit
 ---
 class: answer, dropdown

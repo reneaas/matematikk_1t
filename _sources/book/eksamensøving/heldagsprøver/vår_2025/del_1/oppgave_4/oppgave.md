@@ -12,12 +12,22 @@ Avgjør hvilken graf som tilhører $f$.
 
 Husk å forklare hvordan du kommer fram til svaret ditt.
 
+
 :::{figure} ./figurer/del_1/oppgave_4/merged_figure.svg
 ---
 width: 100%
 class: no-click
 ---
 :::
+
+
+:::::{admonition} Retteveiledning
+---
+class: summary, dropdown
+---
+* Inntil 2 poeng for å bestemme relevante egenskaper for $f$.
+* Inntil 1 poeng for å bestemme riktig graf ut ifra egenskapene.
+:::::
 
 
 :::::{admonition} Fasit
