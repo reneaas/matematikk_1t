@@ -37,7 +37,7 @@ def main(dirname, save):
 
     x = np.linspace(-20, x_inf, 1024)
     y = f(x)
-    ax.plot(x, y, label=r"$\mathrm{C}$", color="teal", lw=2.5, alpha=0.6)
+    ax.plot(x, y, label=r"$\mathrm{B}$", color="teal", lw=2.5, alpha=0.6)
 
     x = np.linspace(x_inf, 20, 1024)
     y = f(x)
