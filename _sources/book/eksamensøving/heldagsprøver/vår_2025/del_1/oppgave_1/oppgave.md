@@ -62,6 +62,15 @@ $$
 
 Bestem ekstremalpunktet til $g$.
 
+:::::{admonition} Retteveiledning
+---
+class: summary, dropdown
+---
+* Inntil 1 poeng for gyldig strategi.
+* Inntil 1 poeng for riktig svar.
+:::::
+
+
 
 :::::{admonition} Fasit
 ---
@@ -104,6 +113,15 @@ h(x) = -(x + 2)^2 + 5 \quad \text{der} \quad D_h = \mathbb{R}.
 $$
 
 Bestem verdimengden til $h$.
+
+
+:::::{admonition} Retteveiledning
+---
+class: summary, dropdown
+---
+* Inntil 1 poeng for gyldig strategi.
+* Inntil 1 poeng for riktig svar.
+:::::
 
 
 :::::{admonition} Fasit
