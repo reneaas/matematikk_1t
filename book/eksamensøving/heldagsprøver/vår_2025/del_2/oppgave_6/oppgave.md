@@ -23,7 +23,7 @@ class: summary, dropdown
 * Inntil 1 poeng for å skrive et program som bruker en løkke som regner ut arealet av $100$ kvadrater.
 * Inntil 1 poeng for å bestemme riktig sum av arealene. 
 
-Mindre mangler i programmet kan fortsatt gi noe uttelling. Programmet bør være rimelig forklart med kommentarer eller en overordnet forklaring for å gi full utelling.
+Mindre mangler i programmet kan fortsatt gi noe uttelling. Programmet bør være rimelig forklart med kommentarer eller en overordnet forklaring for å gi full uttelling.
 :::::
 
 
