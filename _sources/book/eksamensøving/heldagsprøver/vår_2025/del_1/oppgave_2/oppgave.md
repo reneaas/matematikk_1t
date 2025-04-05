@@ -18,7 +18,7 @@ class: no-click
 class: summary, dropdown
 ---
 * Inntil 1 poeng for å bestemme $AC$ med en gyldig strategi.
-* Inntil 1 poeng for å bestemme $tan 60 \degree$ med en gyldig strategi.
+* Inntil 1 poeng for å bestemme $\tan 60 \degree$ med en gyldig strategi.
 :::::
 
 
