@@ -69,7 +69,8 @@ class: summary, dropdown
 * Inntil 1 poeng for gyldig strategi.
 * Inntil 1 poeng for riktig svar.
 
-Det gis full uttelling om bare $x$-koordinaten er oppgitt, men det gis også full uttelling om en $y$-koordinat er oppgitt i tillegg. Det er forvirring om definisjonen av ekstremalpunkt (mye på grunn av Geogebra), men det er formelt sett bare $x$-koordinaten bunn- eller toppunkt.
+Det gis full uttelling om bare $x$-koordinaten er oppgitt, men det gis også full uttelling om en $y$-koordinat er oppgitt i tillegg, selv hvis feil $y$-koordinat er oppgitt. <br>
+Det er forvirring rundt definisjonen av ekstremalpunkt (mye på grunn av Geogebra), men det er formelt sett bare $x$-koordinaten til et bunn- eller toppunkt.
 :::::
 
 
