@@ -25,6 +25,15 @@ class: tabs-parts
 :::::::::::::{tab-item} a
 Bestem lengden båten må kjøre fra $A$ til $C$ dersom den går i land $2$ km fra strandkiosken.
 
+
+:::::{admonition} Retteveiledning
+---
+class: summary, dropdown
+---
+* Inntil 1 poeng for å bruke Pytagoras' setning til å bestemme lengdene $AB$ og $BC$.
+* Inntil 1 poeng for å bestemme den totale lengden på reisen fra $A$ til $C$.
+:::::
+
 :::::{admonition} Fasit
 ---
 class: answer, dropdown
@@ -56,6 +65,15 @@ som betyr at båten da kjører ca. $10.89$ km.
 
 :::::::::::::{tab-item} b
 Lag en modell $L$ som gir lengden $L(x)$ som båten må kjøre dersom den går i land en avstand $x$ fra strandkiosken.
+
+
+:::::{admonition} Retteveiledning
+---
+class: summary, dropdown
+---
+* Inntil 1 poeng for å bruke Pytagoras' setning til å bestemme lengdene $AB$ og $BC$.
+* Inntil 1 poeng for å sette opp modellen $L(x)$.
+:::::
 
 
 :::::{admonition} Fasit
@@ -92,6 +110,14 @@ $$
 
 :::::::::::::{tab-item} c
 Bestem hvor langt unna strandkiosken båten må gå i land for å få kortest mulig reisevei fra $A$ til $C$.
+
+:::::{admonition} Retteveiledning
+---
+class: summary, dropdown
+---
+* Inntil 1 poeng for å velge riktig fremgangsmåte.
+* Inntil 1 poeng for å bestemme $x$ slik at reiseveien er kortest mulig. Maksimalt 0,5 poeng hvis det ikke argumentert for at $x$ gir et bunnpunkt.
+:::::
 
 
 :::::{admonition} Fasit

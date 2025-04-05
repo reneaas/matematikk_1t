@@ -20,6 +20,14 @@ class: tabs-parts
 Bestem $f(x)$.
 
 
+:::::{admonition} Retteveiledning
+---
+class: summary, dropdown
+---
+* Inntil 1 poeng for å velge en gyldig fremgangsmåte.
+* 1 poeng for å bestemme riktig $f(x)$.
+:::::
+
 :::::{admonition} Fasit
 ---
 class: answer, dropdown
@@ -57,6 +65,15 @@ $$
 
 :::::::::::::{tab-item} b
 Bestem likningen til tangenten i $(3, f(3))$. 
+
+
+:::::{admonition} Retteveiledning
+---
+class: summary, dropdown
+---
+* Inntil 1 poeng for å bestemme $AC$ med en gyldig strategi.
+* 1 poeng for riktig likning for tangenten.
+:::::
 
 
 :::::{admonition} Fasit

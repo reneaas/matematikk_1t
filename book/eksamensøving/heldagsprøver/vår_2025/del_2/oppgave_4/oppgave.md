@@ -32,6 +32,14 @@ $$
 som viser hvor mange meter $S(x)$ vannstrålen beveger seg horisontalt når vannstanden er $x$ meter over bunnen av sylinderen.
 
 
+:::::{admonition} Retteveiledning
+---
+class: summary, dropdown
+---
+* Inntil 1 poeng for å velge en gyldig fremgangsmåte.
+* 1 poeng for å bestemme en rimelig modell $S(x)$.
+:::::
+
 :::::{admonition} Fasit
 ---
 class: answer, dropdown
@@ -89,6 +97,14 @@ Når hullet i bunnen ble åpnet var vannstanden $10$ meter over bunnen. Tanken b
 
 Bestem $k$ og $r$. Gi en praktisk tolkning av konstanten $r$. 
 
+:::::{admonition} Retteveiledning
+---
+class: summary, dropdown
+---
+* Inntil 1 poeng for å bestemme $k$ og $r$.
+* Inntil 1 poeng for å gi en praktisk tolkning av konstanten $r$.
+:::::
+
 
 :::::{admonition} Fasit
 ---
@@ -142,6 +158,14 @@ Siden $h(t)$ er skrevet på ekstremalform med en ekstremalverdi som er $y_0 = 0$
 :::::::::::::{tab-item} c
 Hvor lang tid tar det før lengden av strålen og høyden på vannstanden er like?
 
+
+:::::{admonition} Retteveiledning
+---
+class: summary, dropdown
+---
+* Inntil 1 poeng få bestemme ved hvilken høyde strålen og høyden på vannstanden er like.
+* Inntil 1 poeng for å bestemme hvor lang tid det tar før strålen og høyden på vannstanden er like.
+:::::
 
 
 :::::{admonition} Fasit

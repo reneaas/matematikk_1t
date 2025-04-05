@@ -17,6 +17,16 @@ class: no-click
 
 Bruk trigonometri til å bestemme arealet av 6-kanten.
 
+
+:::::{admonition} Retteveiledning
+---
+class: summary, dropdown
+---
+* Inntil 1 poeng for å bestemme sidelengdene i trekanten med en gyldig strategi.
+* Inntil 1 poeng for å bestemme arealet av trekanten.
+* Inntil 1 poeng for å bestemme arealet av 6-kanten.
+:::::
+
 :::::{admonition} Fasit
 ---
 class: answer, dropdown
@@ -67,17 +77,5 @@ T_{6-\mathrm{kant}} = 6 \cdot T_{\triangle ABC} = 6 \cdot \dfrac{\sqrt{3}}{3} = 
 $$
 
 :::::
-:::::::::::::::
-
-
----
-
-
-:::::::::::::::{admonition} Oppgave 3
----
-class: check
----
-
-
 :::::::::::::::
 

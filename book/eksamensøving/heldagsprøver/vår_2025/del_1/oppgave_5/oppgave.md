@@ -16,6 +16,16 @@ class: no-click
 Bestem arealet av $\triangle ABC$.
 
 
+:::::{admonition} Retteveiledning
+---
+class: summary, dropdown
+---
+* Inntil 1 poeng for å sette opp riktig formel for arealet med arealsetningen.
+* Inntil 1 poeng for å bestemme $\sin 120 \degree$ med en gyldig strategi.
+* Bruk av formlikhet for å bestemme arealet kan også gi full uttelling. 
+:::::
+
+
 :::::{admonition} Fasit
 ---
 class: answer, dropdown

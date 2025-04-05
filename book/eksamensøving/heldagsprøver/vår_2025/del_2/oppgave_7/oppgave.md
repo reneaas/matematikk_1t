@@ -27,6 +27,15 @@ Påstand 3
 : har en vertikal asymptote *kun* når $m = 1$.
 
 
+:::::{admonition} Retteveiledning
+---
+class: summary, dropdown
+---
+* Inntil 1 poeng for hver påstand som er vurdert riktig.
+
+Riktig svar uten argumentasjon gir ingen uttelling.
+:::::
+
 :::::{admonition} Løsning
 ---
 class: solution, dropdown

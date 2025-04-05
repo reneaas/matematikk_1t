@@ -17,6 +17,14 @@ $$
 
 der $L(x)$ er det atmosfæriske trykket $x$ kilometer over bakken.
 
+:::::{admonition} Retteveiledning
+---
+class: summary, dropdown
+---
+* Inntil 1 poeng for å forklare at $L$ er en eksponentiell modell $L(x) = a \cdot b^x$.
+* Inntil 1 poeng for å forklare verdiene $a$ og $b$ ut ifra opplysningene i oppgaven.
+:::::
+
 :::::{admonition} Løsning
 ---
 class: solution, dropdown
@@ -41,6 +49,15 @@ $$
 
 :::::::::::::{tab-item} b
 Ved hvilken høyde er lufttrykket halvparten av det på bakkenivå?
+
+
+:::::{admonition} Retteveiledning
+---
+class: summary, dropdown
+---
+* Inntil 1 poeng for å forklare å velge en gyldig fremgangsmåte.
+* Inntil 1 poeng for riktig svar.
+:::::
 
 
 :::::{admonition} Fasit
@@ -79,6 +96,15 @@ som betyr at lufttrykket er halvparten av det på bakkenivå ved $x \approx 5.42
 
 :::::::::::::{tab-item} c
 Bestem stigningstallet til linja som går gjennom $(0, L(0))$ og $(8, L(8))$. <br> Gi en praktisk tolkning av svaret.
+
+
+:::::{admonition} Retteveiledning
+---
+class: summary, dropdown
+---
+* 1 poeng for å bestemme riktig stigningstall.
+* 1 poeng for riktig praktisk tolkning av svaret.
+:::::
 
 
 :::::{admonition} Fasit
