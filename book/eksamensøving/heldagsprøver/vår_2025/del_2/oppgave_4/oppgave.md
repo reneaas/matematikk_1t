@@ -16,7 +16,7 @@ Den horisontale avstanden vannstrålen beveger seg er $S_i$ meter når vannstand
 
 | $x$ (meter) | $8$ | $6$ | $5$ | $3$ | $2$ | 
 |:------------|:---:|:---:|:---:|:---:|:---:|
-| $S$ (meter) | $5.66$ | $4.90$ | $4.47$ | $3.46$ | $2.83$ |
+| **$S$ (meter)** | $5.66$ | $4.90$ | $4.47$ | $3.46$ | $2.83$ |
 
 ::::::::::::::{tab-set}
 ---
