@@ -143,4 +143,30 @@ class: no-click
 
 ::::
 
+
+::::{grid-item-card}
+---
+link: cosinussetningen/teori
+link-type: doc
+---
+**Cosinussetningen**
+
+
+^^^
+
+$$
+a^2 = b^2 + c^2 - 2bc \cos A
+$$
+
+---
+
+:::{figure} ./cosinussetningen/figurer/teori/generell_trekant/figur.svg
+---
+width: 100%
+class: no-click
+---
+:::
+
+::::
+
 :::::
