@@ -27,9 +27,17 @@ file: ./pair_puzzles/oppgaver/oppgave_1.html
 
 ::::
 
----
+
+
+
+
 
 ---
+
+
+
+
+
 
 ::::{admonition} Oppgave 2
 ---

@@ -5,7 +5,6 @@
 ---
 class: tip
 ---
-Etter dette delkapittelet, er målet at du skal:
 * Kunne uttrykke tallmengder ved hjelp av listeform.
 :::
 
@@ -37,7 +36,7 @@ Listen kan ha endelig mange elementer, eller den kan være uendelig lang.
 
 ::::
 
-### Lister med tall
+## Lister med tall
 
 Vi har allerede møtt på to tallmengder som kan beskrives med listenotasjon - nemlig $\mathbb{N}$ og $\mathbb{Z}$. Men det er mange flere tallmengder som best kan beskrives med lister.
 

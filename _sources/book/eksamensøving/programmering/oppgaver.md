@@ -792,11 +792,6 @@ Arealet under grafen til $f$ i intervallet $[0, 6]$ er derfor omtrent $20$.
 
 
 
-
----
-
-
-
 :::::::::::::::{admonition} Oppgave 10
 ---
 class: problem-level-3

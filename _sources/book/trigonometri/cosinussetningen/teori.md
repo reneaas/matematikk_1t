@@ -10,6 +10,7 @@ class: tip
 :::::::::::::::
 
 
+
 Cosinussetningen er en *generalisert* versjon av Pytagoras' setning som gjelder for *alle* trekanter. Vi skal se hvordan vi kommer fram til setningen senere, samt hvordan Pytagoras' setning kan betraktes som et spesialtilfelle av cosinussetningen.
 
 Vi starter med å se på hva cosinussetningen sier.
@@ -101,11 +102,15 @@ $$
 ---
 class: progging, dropdown
 ---
-:::{raw} html
+
+:::{cas} 700 700
+:::
+
+<!-- :::{raw} html
 ---
 file: ./ggb/underveisoppgaver/oppgave_1/cas.html
 ---
-:::
+::: -->
 ::::
 
 :::::::::::::::
@@ -310,6 +315,16 @@ $$
 
 
 :::::::::::::::
+
+
+
+---
+
+
+
+
+:::{cas} 700 700
+:::
 
 
 

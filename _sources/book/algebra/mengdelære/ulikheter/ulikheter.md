@@ -1,10 +1,9 @@
 # Mengder som ulikheter
 
-:::{admonition} Læringsmål: mengder som ulikheter
+:::{admonition} Læringsmål
 ---
 class: tip
 ---
-Etter dette delkapittelet, er målet at du skal:
 * Kunne beskrive begrensede og ubegrensede mengder av reelle tall ved hjelp av ulikheter.
 :::
 
@@ -13,7 +12,7 @@ Når vi har en mengde som består av reelle tall på en avgrenset del av tallinj
 * **Begrensede mengder**: En del av tallinja som ligger mellom to tall $a$ og $b$.
 * **Ubegrensede mengder**: En del av tallinja som kun kan være avgrenset av et tall $a$ nedenfra eller et tall $b$ ovenfra. Delen av tallinja strekker seg altså i det uendelige minst én retning.  
 
-### Begrensede mengder
+## Begrensede mengder
 
 ::::{admonition} Begrensede mengder som ulikheter
 ---
@@ -108,7 +107,7 @@ class: answer, dropdown
 :::: -->
 
 
-### Ubegrensede mengder 
+## Ubegrensede mengder 
 
 Vi kan også bruke ulikheter til å beskrive ubegrensede mengder. Disse er enklere å skrive opp enn begrensede mengder.
 

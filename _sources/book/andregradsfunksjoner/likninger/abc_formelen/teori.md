@@ -435,11 +435,6 @@ viser grafen til $f(x) = x^2 + x + 1$ som ikke skjærer $x$-aksen i noen punkter
 ---
 
 
-
-
-
----
-
 ## Utledning av $abc$-formelen
 Du har vært med på å gjøre alt forarbeidet som skal til for å komme fram til $abc$-formelen. Du skal derfor få utlede den under med litt hjelp underveis.
 

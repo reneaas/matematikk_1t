@@ -722,7 +722,7 @@ class: answer, dropdown
 
 :::{code-block} python
 ---
-linenos: true
+linenos: 
 ---
 from casify import *
 
@@ -738,7 +738,7 @@ print(koeffisienter)
 
 :::{code-block} console
 ---
-linenos: false
+linenos:
 ---
 a = 1 ∧ b = -2 ∧ c = 0 ∧ d = 3
 :::

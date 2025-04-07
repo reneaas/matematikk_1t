@@ -401,12 +401,7 @@ $$
 g(x) = \dfrac{x^2 - x - 6}{(x + 3)(x - 4)}
 $$
 
-::::{admonition} Fasit
----
-class: answer, dropdown
----
 
-::::
 
 
 ::::{admonition} Løsning

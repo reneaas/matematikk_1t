@@ -1,35 +1,5 @@
 # Oppgaver: Omgjøring av andregradsuttrykk
 
-:::::::::::::::{admonition} Oppsummering
----
-class: summary, dropdown
----
-::::::::::::::{tab-set}
----
-class: tabs-custom
----
-:::::::::::::{tab-item} Standardform til ekstremalform: Fullstendige kvadraters metode
-
-$$
-x^2 + \textcolor{red}{b}x + c = \underbrace{x^2 + \textcolor{red}{b}x + \left(\dfrac{\textcolor{red}{b}}{2}\right)^2}_{\text{kvadratsetning}} - \left(\dfrac{\textcolor{red}{b}}{2}\right)^2 + c = \left(x + \dfrac{b}{2}\right)^2 - \left(\dfrac{b}{2}\right)^2 + c.
-$$
-
-:::::::::::::
-
-:::::::::::::{tab-item} Ekstremalform til nullpunktsform: Konjugatsetningen
-
-$$
-a^2 - b^2 = (a + b)(a - b)
-$$
-
-:::::::::::::
-::::::::::::::
-
-:::{include} ./figurer/teori/representasjoner_diagram.md
-:::
-
-
-:::::::::::::::
 
 :::::::::::::::{admonition} Oppgave 1
 ---
