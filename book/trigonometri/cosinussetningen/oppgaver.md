@@ -584,6 +584,38 @@ $$
 
 :::::::::::::
 
+:::::::::::::{tab-item} c
+Bestem $a$ slik at arealet av firkanten er $\sqrt{3}$.
+
+
+::::{answer}
+$$
+a = \sqrt{6} - \sqrt{2}
+$$
+::::
+
+::::{solution}
+Vi setter opp en likning der vi uttrykket arealet til $\square ABCD$ ved $a$ ved å bruke arealsetningen på $\triangle ABD$ og $\triangle BCD$, som vi løser med CAS:
+
+:::{figure} ./figurer/oppgaver/oppgave_5/c/sol.png
+---
+width: 100%
+class: no-click
+---
+:::
+
+
+Altså er arealet av $\square ABCD$ lik $\sqrt{3}$ dersom
+
+$$
+a = \sqrt{6} - \sqrt{2}
+$$
+
+
+::::
+
+:::::::::::::
+
 ::::::::::::::
 
 
@@ -594,11 +626,6 @@ $$
 
 :::::::::::::::
 
-
-<!-- :::::::::::::{tab-item} c
-Bestem $a$ slik at arealet av firkanten er $\sqrt{3}$.
-
-::::::::::::: -->
 
 
 
