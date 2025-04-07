@@ -97,9 +97,6 @@ I dette programmet ser du hvordan vi kan bruke `f`-strings til å sette inn verd
 
 
 :::{interactive-code}
----
-predict: false
----
 x = 2
 
 # Vi skriver bare ut 'x'
@@ -119,20 +116,6 @@ print(f"{x = }")
 ::::
 :::::
 ::::::
-
----
-<!-- 
-::::{admonition} Underveisquiz 1
----
-class: check
----
-:::{raw} html
----
-file: quiz/quiz_1/quiz_1.html
----
-:::
-
-:::: -->
 
 ---
 
