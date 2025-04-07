@@ -1,23 +1,24 @@
 from casify import *
+import matplotlib.pyplot as plt
 
 
 def main(dirname, save):
     # TODO: write code here
     import plotmath
 
-    s = 1
     ax = draw_triangle(
-        sas=(2 * s, 60, 5 * s),
+        sss=(7, 4, 6),
         show=False,
         radius=0.6,
         fontsize=16,
-        label_angles=(True, False, False),
-        label_sides=("5\\ell", False, "2 \\ell"),
+        label_angles=(False, "x", False),
+        label_sides=(True, True, True),
         vertex_labels=("A", "B", "C"),
-        numerical_len=False,
+        numerical_len=True,
         show_vertices=False,
     )
 
+    plt.tight_layout()
     # NOTE: Automatically saves with correct file format and filename.
     if save:
         fname = __file__.split("/")[-1].replace(".py", ".svg")

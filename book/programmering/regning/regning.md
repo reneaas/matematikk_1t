@@ -54,9 +54,6 @@ Bruk programmet til å regne ut svarene på følgende regnestykker:
 * $3^4$
 
 ```{interactive-code}
----
-predict: false
----
 # Skriv din kode her
 ```
 

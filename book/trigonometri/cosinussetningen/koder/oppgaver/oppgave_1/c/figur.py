@@ -5,16 +5,15 @@ def main(dirname, save):
     # TODO: write code here
     import plotmath
 
-    s = 1
     ax = draw_triangle(
-        sas=(2 * s, 60, 5 * s),
+        sas=(5, 105, 3),
         show=False,
-        radius=0.6,
+        radius=0.85,
         fontsize=16,
-        label_angles=(True, False, False),
-        label_sides=("5\\ell", False, "2 \\ell"),
+        label_angles=(False, True, False),
+        label_sides=("x", True, True),
         vertex_labels=("A", "B", "C"),
-        numerical_len=False,
+        numerical_len=True,
         show_vertices=False,
     )
 
