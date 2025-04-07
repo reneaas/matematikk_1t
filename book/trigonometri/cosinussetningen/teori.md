@@ -98,20 +98,8 @@ $$
 ::::
 
 
-::::{admonition} CAS-vindu
----
-class: progging, dropdown
----
-
-:::{cas} 700 700
+:::{cas-window}
 :::
-
-<!-- :::{raw} html
----
-file: ./ggb/underveisoppgaver/oppgave_1/cas.html
----
-::: -->
-::::
 
 :::::::::::::::
 

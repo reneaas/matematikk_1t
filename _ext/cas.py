@@ -26,7 +26,6 @@ class CASDirective(SphinxDirective):
         # Create the raw HTML. Adjust the ggbBase64 value as needed.
         html = f"""
 <div id="{container_id}" style="width: {width}px; height: {height}px;"></div>
-<script src="https://cdn.geogebra.org/apps/deployggb.js" defer></script>
 <script>
 document.addEventListener("DOMContentLoaded", function() {{
     var options = {{
