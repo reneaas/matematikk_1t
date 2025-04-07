@@ -103,7 +103,7 @@ class: no-click
 * Linja $x = x_0$ er symmetrilinja til $f$. Grafen er speilet rundt denne linja!
 ---
 
-::::{figure} ./figurer/teori/grafisk_representasjon.svg
+:::{figure} ./figurer/teori/grafisk_representasjon.svg
 ---
 width: 80%
 class: no-click

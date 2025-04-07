@@ -322,7 +322,7 @@ viser fortegnslinja til $f'(x)$. Sammenhengen med grafen til $f$ er at $f'(x) > 
 
 :::{figure} ./figurer/eksempler/eksempel_2/f_derivert.svg
 ---
-name: fig-polnyomfunksjoner-derivasjon-eksempel-2-fortegnslinje
+name: fig-polnyomfunksjoner-derivasjon-eksempel-2-f-derivert
 width: 80%
 class: no-click
 ---

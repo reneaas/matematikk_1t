@@ -9,6 +9,9 @@ class: tip
 * Bruke Pythonkode til å regne med formler.
 :::
 
+
+
+
 Python kan på mange måter sees på som en kraftfull og fleksibel kalkulator. Den kan brukes for å regne ut en enkel matematisk formel, men også gjennomføre millioner av utregninger i løpet av noen få sekunder. 
 
 ## Regnearter i Python

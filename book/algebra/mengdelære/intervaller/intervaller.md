@@ -1,18 +1,16 @@
+# Mengder som intervaller
 
-## Mengder som intervaller
-
-:::{admonition} Læringsmål: mengder som intervaller
+:::{admonition} Læringsmål
 ---
 class: tip
 ---
-Etter dette delkapittelet, er målet at du skal:
 * Kunne beskrive begrensede og ubegrensede mengder av reelle tall ved hjelp av intervaller.
 :::
 
 
 Når vi skal uttrykke en mengde reelle tall som ligger på en sammenhengende del av tallinja, bruker vi ofte **intervaller**. Vi skal illustrere notasjonen ved å sammenlikne med de tilsvarende ulikhetene.
 
-### Begrensede mengder
+## Begrensede mengder
 
 ::::{admonition} Begrensede intervaller
 ---
@@ -64,41 +62,10 @@ file: ./pair_puzzles/underveisoppgave_1.html
 :::
 ::::
 
-<!-- ::::{admonition} Underveisoppgave 1
----
-class: check
----
-Skriv av og fyll ut tabellen under:
-
-| Ulikhet | Intervall |
-|:---:|:---:|
-| $-1 < x \leq 3$ | |
-| | $x\in \langle 1, 6]$ |
-| $0 \leq x < 2$ |  |
-| | $x\in \left[-\dfrac{1}{3}, 1\right\rangle$ |
-| $-2 \leq x \leq 4$ |  |
-
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-
-| Ulikhet | Intervall |
-|:---:|:---:|
-| $-1 < x \leq 3$ | $x \in \langle -1, 3]$ |
-| $1 < x \leq 6$ | $x\in \langle 1, 6]$ |
-| $0 \leq x < 2$ | $x \in [0, 2\rangle$ |
-| $-\dfrac{1}{3} \leq x < 1$ | $x\in \left[-\dfrac{1}{3}, 1\right\rangle$ |
-| $-2 \leq x \leq 4$ |  $x \in [-2, 4]$ |
-
-:::
-:::: -->
-
 
 ---
 
-### Ubegrensede mengder
+## Ubegrensede mengder
 
 
 ::::{admonition} Ubegrensede intervaller
@@ -150,35 +117,3 @@ file: ./pair_puzzles/underveisoppgave_2.html
 :::
 
 ::::
-
-<!-- ::::{admonition} Underveisoppgave 2
----
-class: check
----
-Skriv av og fyll ut tabellen under:
-
-
-| Ulikhet | Intervall |
-|:---:|:---:|
-| $x \geq 0$ | |
-| | $x\in \langle \gets, 3]$ |
-| $x > 2$ |  |
-| | $x\in \left\langle -\dfrac{1}{2}, \to\right\rangle$ |
-| $x \leq 1$ |  |
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-
-| Ulikhet | Intervall |
-|:---:|:---:|
-| $x \geq 0$ | $x \in [0, \to \rangle$ |
-| $x \leq 3$ | $x\in \langle \gets, 3]$ |
-| $x > 2$ | $x \in \langle 2, \to \rangle$ |
-| $x > -\dfrac{1}{2}$ | $x\in \left\langle -\dfrac{1}{2}, \to\right\rangle$ |
-| $x \leq 1$ | $x \in \langle \gets, 1]$ |
-
-:::
-
-:::: -->

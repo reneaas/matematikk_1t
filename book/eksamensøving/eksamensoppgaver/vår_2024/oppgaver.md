@@ -427,16 +427,6 @@ Husk å argumentere for at svaret ditt er riktig.
 :::::::::::::::
 
 
----
-
-
-:::::::::::::::{admonition} Oppgave 7
----
-class: check
----
-
-
-:::::::::::::::
 
 
 

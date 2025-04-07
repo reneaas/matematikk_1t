@@ -79,7 +79,7 @@ $$
 der $v$ er vinkelen mellom $OP$ og $x$-aksen i positiv omløpsretning. Dette betyr at vi trekker en vinkelbue fra $x$-aksen **mot klokka** til vi treffer linja $OP$. Se figurene nedenfor.
 
 
-:::::{figure} ./figurer/teori/enhetssirkelen/merged_figure.svg
+:::{figure} ./figurer/teori/enhetssirkelen/merged_figure.svg
 ---
 width: 100%
 class: no-click

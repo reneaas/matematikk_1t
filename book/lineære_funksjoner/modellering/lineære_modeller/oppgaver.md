@@ -179,18 +179,14 @@ Isen koster 32 kroner, noe som kan være rimelig. Modellen ser dermed ut til å 
 
 ::::::::::::
 
----
 
 
-::::::::::::{admonition} Oppgave 4
----
-class: problem-level-1
----
-
-
-::::::::::::
 
 ---
+
+
+
+
 
 ::::::::::::{admonition} Oppgave 4
 ---

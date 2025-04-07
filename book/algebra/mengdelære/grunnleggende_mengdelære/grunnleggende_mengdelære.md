@@ -4,7 +4,6 @@
 ---
 class: tip
 ---
-Etter dette delkapittelet, er målet at du skal:
 * Kunne forklare hva en mengde er og bruke matematisk notasjon for å uttrykke om et tall er et element i en mengde eller ikke.
 * Kunne beskrive mengdene $\mathbb{N}$, $\mathbb{Z}$, $\mathbb{Q}$, $\mathbb{R}$ og $\emptyset$, og gi eksempler på tall som er element i hver mengde. 
 :::

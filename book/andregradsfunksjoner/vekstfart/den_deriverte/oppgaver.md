@@ -16,10 +16,6 @@ class: no-click
 ::::
 :::::::::::::
 
-:::::::::::::{tab-item} Grafisk sammenheng
-
-:::::::::::::
-
 :::::::::::::{tab-item} Symmetrilinje og den deriverte
 Den deriverte er null i symmetrilinja til en andregradsfunksjon:
 

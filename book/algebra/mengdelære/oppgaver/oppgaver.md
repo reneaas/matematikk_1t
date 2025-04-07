@@ -266,8 +266,6 @@ Her finnes det flere muligheter. Men én løsning er:
 
 ---
 
----
-
 
 ## Blandede oppgaver
 

@@ -414,13 +414,6 @@ print(løsning)
 ```
 ````
 
-
-:::{raw} html
----
-file: ./interaktiv_kode/oppgave_4/b/program.html
----
-:::
-
 :::::
 ::::::
 

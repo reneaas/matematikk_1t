@@ -3,7 +3,7 @@
 En trekant er en geometrisk figur som består av tre hjørner og tre sider. Vi skal se på noen grunnleggende egenskaper ved trekanter, og vi skal se på noen viktige sammenhenger som er nyttige når vi skal jobbe med trigonometri.
 
 
-### Vinkler
+## Vinkler
 
 En **vinkel** er mål på hvor mange grader det er i en vinkelbue mellom to rette linjer.
 
@@ -26,7 +26,7 @@ Stump vinkel
 
 
 
-### Spesielle trekanter
+## Spesielle trekanter
 
 Vi skal starte med å se på to spesielle trekanter
 * **Likesidet trekant**: En trekant der alle sidene er like lange.
@@ -55,7 +55,7 @@ class: no-click
 
 
 
-### Vinkler
+## Vinkler
 
 En **vinkel** er et mål på hvor mange grader en vinkelbue spenner ut mellom to linjer. 
 
