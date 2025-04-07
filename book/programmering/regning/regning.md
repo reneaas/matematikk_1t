@@ -31,6 +31,17 @@ class: tabs-parts
 Under vises et program som bruker de ulike regneartene i Python til å regne ut noe og skrive ut svaret.
 
 Les programmet og forutsi hva som skrives ut. Skriv inn hypotesen din under for å sjekke.
+
+```{interactive-code}
+---
+predict: true
+---
+print(8 + 2)            # Pluss
+print(8 - 2)            # Minus
+print(8 * 2)            # Gange
+print(8 / 2)            # Dele
+print(8 ** 2)           # Potens
+```
 :::
 
 :::{tab-item} b
@@ -41,6 +52,13 @@ Bruk programmet til å regne ut svarene på følgende regnestykker:
 * $3 \cdot 4$
 * $\dfrac{3}{4}$
 * $3^4$
+
+```{interactive-code}
+---
+predict: false
+---
+# Skriv din kode her
+```
 
 ````{admonition} Fasit
 ---
@@ -62,11 +80,7 @@ print(3 ** 4)
 
 <br>
 
-:::{raw} html
----
-file: ./interaktiv_kode/utforsk/utforsk_1/steg_1.html
----
-:::
+
 :::::
 
 > Etter utforsk 1, kan du ta en titt på oppsummeringsboksen under.
@@ -85,22 +99,6 @@ class: summary, dropdown
 
 ::::
 
-<!-- :::::{admonition} Utforsk 1
----
-class: explore
----
-Under vises et interaktivt kodevindu der noen regneoperasjoner blir utført.
-
-Prøv å bestemme hvilke verdier variablene `a`{l=python}, `b`{l=python}, `c`{l=python}, `p`{l=python} og `q`{l=python} får før du kjører programmet. <br>
-Kjør programmet for å sjekke svaret ditt!
-
-:::{raw} html
----
-file: interaktiv_kode/utforsk/utforsk_1.html
----
-:::
-
-::::: -->
 
 
 ## Formler
@@ -185,9 +183,18 @@ print(t)
 
 <br>
 
-:::{raw} html
+
+
+:::{interactive-code}
 ---
-file: interaktiv_kode/utforsk/utforsk_2.html
+predict: true
+---
+v = 20      # kilometer per time
+t = 2       # timer
+
+s = v * t   # strekning i kilometer
+
+print(s)
 :::
 
 ::::: 
@@ -235,11 +242,14 @@ Når et program ble kjørt, ga det utskriften
 
 Programmet er vist i tilfeldig rekkefølge under. Sett sammen programmet i riktig rekkefølge.
 
-:::{raw} html
----
-file: ./parsons_puzzle/oppgaver/oppgave_2.html
----
+:::{parsons-puzzle}
+print(2 * 3)
+print(-3 * 5 + 4)
+print(-1 ** 2 + 1)
+print((-1) ** 2 + 2)
+print((3 + 1) / 2)
 :::
+
 :::::
 
 ---
@@ -308,10 +318,14 @@ $F = -40$ gir $C = -40$. Da er temperaturen den samme i Fahrenheit og Celsius.
 
 <br>
 
-:::{raw} html
----
-file: ./interaktiv_kode/oppgaver/oppgave_3.html
----
+
+:::{interactive-code}
+F = float(input("Skriv inn temperatur i Fahrenheit: ")) # IKKE RØR
+
+C = # FYLL INN: formelen for temperatur i celsius
+
+print(C)
+
 :::
 
 ::::::
