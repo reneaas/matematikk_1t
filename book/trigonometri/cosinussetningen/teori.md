@@ -144,7 +144,7 @@ $$
 
 Vi bestemmer $x$ med CAS:
 
-:::{figure} ./figurer/eksempler/eksempel_1/BD.png
+:::{figure} ./figurer/eksempler/eksempel_1/part_1.png
 ---
 width: 100%
 class: no-click
@@ -161,7 +161,7 @@ $$
 
 Vi bestemmer $y$ med CAS:
 
-:::{figure} ./figurer/eksempler/eksempel_1/AD.png
+:::{figure} ./figurer/eksempler/eksempel_1/part_2.png
 ---
 width: 100%
 class: no-click
