@@ -28,10 +28,22 @@ Nedenfor vises en programkode.
 
 Forklar hva programmet regner ut og bestem verdien som skrives ut av programmet. Skriv inn svaret ditt i feltet nedenfor.
 
-:::{raw} html
+
+:::{interactive-code}
 ---
-file: ./python/oppgave_2/kodevindu.html
+predict: 
 ---
+def f(x):
+    return x ** 2 - 3 * x + 7
+
+a = 0
+b = 5
+
+v = (f(b) - f(a)) / (b - a)
+
+print(v)
+
+
 :::
 
 
@@ -127,10 +139,20 @@ $$
 
 ::::::::::::::
 
-:::{raw} html
+
+
+:::{interactive-code}
 ---
-file: ./python/oppgave_3/kodevindu.html
+predict:
 ---
+def f(x):
+    return x**2 - 2*x - 8
+
+for x in range(-10, 11):
+    if f(x) == 0:
+        print(x)
+
+
 :::
 
 :::::::::::::::
@@ -209,10 +231,19 @@ Summen av de 100 første naturlige tallene er derfor $5050$.
 
 ::::::::::::::
 
-:::{raw} html
+
+:::{interactive-code}
 ---
-file: ./python/oppgave_4/kodevindu.html
+predict:
 ---
+s = 0
+
+for n in range(1, 5):
+    s = s + n
+
+print(s)
+
+
 :::
 
 
@@ -329,10 +360,13 @@ Altså er summen av de 20 første partallene større enn summen av de 20 første
 
 ::::::::::::::
 
-:::{raw} html
----
-file: ./python/oppgave_5/kodevindu.html
----
+
+:::{interactive-code}
+# Skriv din kode her
+
+
+
+
 :::
 
 
@@ -454,11 +488,16 @@ Kjører vi programmet med veldig mange linjestykker, vil summen av lengdene nær
 ::::::::::::::
 
 
-:::{raw} html
----
-file: ./python/oppgave_6/kodevindu.html
----
+:::{interactive-code}
+# Skriv din kode her
+
+
+
+
 :::
+
+
+
 
 :::::::::::::::
 
@@ -609,11 +648,16 @@ som betyr at $k \approx 2$ gir størst mulig areal.
 
 ::::::::::::::
 
-:::{raw} html
----
-file: ./python/oppgave_7/kodevindu.html
----
+:::{interactive-code}
+# Skriv din kode her
+
+
+
+
 :::
+
+
+
 
 :::::::::::::::
 
@@ -638,11 +682,16 @@ class: no-click
 Lag et program som regner ut summen av arealene til veldig mange kvadrater. 
 
 
-:::{raw} html
----
-file: ./python/oppgave_8/kodevindu.html
----
+:::{interactive-code}
+# Skriv din kode her
+
+
+
+
 :::
+
+
+
 
 ::::{admonition} Fasit
 ---
@@ -732,10 +781,18 @@ Lag et program som regner ut arealet av det fargelagte området ved å bruke $60
 Du kan ta utgangspunkt i programmet nedenfor.
 
 
-:::{raw} html
----
-file: ./python/oppgave_9/kodevindu.html
----
+:::{interactive-code}
+def f(x):
+    return 1/9 * (x + 1) * (x - 6) ** 2
+
+x_min = 0
+x_max = 6
+
+n = 6000 # antall rektangler
+
+bredde = # FYLL INN bredde til hvert rektangel
+
+
 :::
 
 ::::{admonition} Fasit
@@ -1032,10 +1089,23 @@ som betyr at lysstrålen traff vannet omtrentlig i punktet $M(8882, 0)$.
 ::::::::::::::
 
 
-:::{raw} html
----
-file: ./python/oppgave_10/parsons_code.html
----
+
+
+:::{parsons-puzzle}
+from math import sqrt # jeg må være første kodelinje!
+
+def tid_luft(x):
+    fart_luft = 300 # meter per mikrosekund
+    
+    AM = sqrt(x**2 + 1000**2) # meter;    tid = AM / fart_luft # mikrosekunder
+
+    return tid
+    
+
+x = 3000;reisetid = tid_luft(x)
+
+print(f"{reisetid = :.2f} mikrosekunder")
+
 :::
 
 
