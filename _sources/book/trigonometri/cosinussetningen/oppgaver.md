@@ -476,11 +476,137 @@ $$
 ---
 level: 2
 ---
+Nedenfor vises en firkant $\square ABCD$. 
+
+:::{figure} ./figurer/oppgaver/oppgave_5/figur.svg
+---
+width: 100%
+class: no-click
+---
+:::
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Bestem omkretsen av $\square ABCD$.
+
+
+::::{answer}
+$$
+\mathcal{O} \approx 9.33.
+$$
+::::
+
+::::{solution}
+Vi bruker cosinussetningen på $\triangle BCD$ for å bestemme lengden $BD$:
+
+:::{figure} ./figurer/oppgaver/oppgave_5/a/sol_1.png
+---
+width: 100%
+class: no-click
+---
+:::
+
+som gir
+
+$$
+BD \approx 3.13.
+$$
+
+Deretter bruker vi cosinussetningen på $\triangle ABD$ for å bestemme lengden $AB$:
+
+:::{figure} ./figurer/oppgaver/oppgave_5/a/sol_2.png
+---
+width: 100%
+class: no-click
+---
+:::
+
+som gir 
+
+$$
+AB \approx 1.33
+$$
+
+Omkretsen til $\square ABCD$ er derfor
+
+$$
+\mathcal{O} = AB + BC + CD + DA \approx 1.33 + 2 + 4 + 2 = 9.33.
+$$
+
+
+::::
+
+:::::::::::::
+
+
+
+:::::::::::::{tab-item} b
+Bestem arealet av $\square ABCD$.
+
+
+::::{solution}
+Fra oppgave **a** fant vi at 
+
+$$
+AB \approx 1.33 \quad \text{og} \quad BD \approx 3.13.
+$$
+
+Arealet av $\triangle ABD$ kan regnes ut med arealsetningen:
+
+$$
+T_{\triangle ABD} = \dfrac{1}{2} \cdot AB \cdot AD \cdot \sin \angle A
+$$
+
+og tilsvarende for $\triangle BCD$:
+
+$$
+T_{\triangle BCD} = \dfrac{1}{2} \cdot BC \cdot BD \cdot \sin \angle CBD
+$$
+
+som vi gjør med CAS:
+
+:::{figure} ./figurer/oppgaver/oppgave_5/b/sol.png
+---
+width: 100%
+class: no-click
+---
+:::
+
+
+Altså er 
+
+$$
+T_{\square ABCD} \approx 3.95. 
+$$
+
+::::
+
+:::::::::::::
+
+::::::::::::::
+
+:::{cas-window}
+:::
+
+:::::::::::::::
+
+
+---
+
+
+:::::::::::::::{problem} Oppgave 6
+---
+level: 2
+---
 
 En firkant $\square ABCD$ er vist nedenfor.
 
 
-:::{figure} ./figurer/oppgaver/oppgave_5/figur.svg
+:::{figure} ./figurer/oppgaver/oppgave_6/figur.svg
 ---
 width: 80%
 class: no-click
@@ -507,7 +633,7 @@ $$
 ::::{solution}
 La $x = BD$. Vi kan merke oss at siden $\angle ADB = 30 \degree$ og $\angle A = 120\degree$, så følger det at $\angle ABD = 30\degree$ som betyr at $\triangle ABD$ er en likebeint trekant. Dermed er $AB = AD = a$. Da kan bruke cosinussetningen til å bestemme $x$:
 
-:::{figure} ./figurer/oppgaver/oppgave_5/a/sol.png
+:::{figure} ./figurer/oppgaver/oppgave_6/a/sol.png
 ---
 width: 100%
 class: no-click
@@ -543,7 +669,7 @@ $$
 
 Vi gjør utregningene med CAS:
 
-:::{figure} ./figurer/oppgaver/oppgave_5/b/sol.png
+:::{figure} ./figurer/oppgaver/oppgave_6/b/sol.png
 ---
 width: 100%
 class: no-click
@@ -565,7 +691,7 @@ $$
 
 vi gjør selve utregningen med CAS:
 
-:::{figure} ./figurer/oppgaver/oppgave_5/b/sol_omkrets.png
+:::{figure} ./figurer/oppgaver/oppgave_6/b/sol_omkrets.png
 ---
 width: 100%
 class: no-click
@@ -597,7 +723,7 @@ $$
 ::::{solution}
 Vi setter opp en likning der vi uttrykket arealet til $\square ABCD$ ved $a$ ved å bruke arealsetningen på $\triangle ABD$ og $\triangle BCD$, som vi løser med CAS:
 
-:::{figure} ./figurer/oppgaver/oppgave_5/c/sol.png
+:::{figure} ./figurer/oppgaver/oppgave_6/c/sol.png
 ---
 width: 100%
 class: no-click
@@ -625,6 +751,102 @@ $$
 
 
 :::::::::::::::
+
+
+---
+
+
+
+:::::::::::::::{problem} Oppgave 7
+---
+level: 2
+---
+Nedenfor vises en regulær 5-kant $ABCDE$. Alle sidelengdene er $\ell$ og vinklene i hvert hjørne er $108 \degree$.
+
+:::{figure} ./figurer/oppgaver/oppgave_7/figur.svg
+---
+width: 80%
+class: no-click
+class: no-click
+---
+:::
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Bestem et eksakt uttrykk for $AB$ uttrykt ved $\ell$.
+
+
+::::{solution}
+Vi bruker cosinussetningen med $AB = BC = \ell$ som gir:
+
+:::{figure} ./figurer/oppgaver/oppgave_7/a/sol.png
+---
+width: 100%
+class: no-click
+---
+:::
+
+
+$$
+AC = \dfrac{1}{2}\left(\sqrt{5} + 1\right)\cdot \ell
+$$
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Bestem et eksakt uttrykk for arealet av 5-kanten uttrykt ved $\ell$.
+
+
+
+
+:::::::::::::
+
+::::::::::::::
+
+
+:::{cas-window}
+:::
+
+:::::::::::::::
+
+
+---
+
+
+:::::::::::::::{problem} Oppgave 8
+---
+level: 3
+---
+Nedenfor vises en regulær $7$-kant med sidelengder $2$. 
+
+Bestem arealet av $7$-kanten.
+
+:::{figure} ./figurer/oppgaver/oppgave_8/figur.svg
+---
+width: 80%
+class: no-click
+---
+:::
+
+
+
+:::{cas-window}
+:::
+
+:::::::::::::::
+
+
+
+
+
+
+
+
 
 
 
