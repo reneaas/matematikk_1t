@@ -776,8 +776,14 @@ class: no-click
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
-Bestem et eksakt uttrykk for $AB$ uttrykt ved $\ell$.
+Bestem et eksakt uttrykk for $AC$ uttrykt ved $\ell$.
 
+
+::::{answer}
+$$
+AC = \dfrac{1}{2}\left(\sqrt{5} + 1\right)\cdot \ell
+$$
+::::
 
 ::::{solution}
 Vi bruker cosinussetningen med $AB = BC = \ell$ som gir:
@@ -802,6 +808,80 @@ $$
 Bestem et eksakt uttrykk for arealet av 5-kanten uttrykt ved $\ell$.
 
 
+::::{answer}
+$$
+T_{ABCDE} = \dfrac{1}{4} \sqrt{5\left(2\sqrt{5} + 5\right)} \cdot \ell^2
+$$
+::::
+
+
+
+::::{solution}
+Fra figuren, kan vi merke oss at 5-kant $ABCDE$ er delt opp i tre trekanter $\triangle ABC$, $\triangle ACE$ og $\triangle CDE$. Vi kan også merke oss at $\triangle ABC$ og $\triangle CDE$ er **kongruente** (de er formlike *og* like store) fordi $\angle D = \angle B$ og $CD = DE = \ell$. Dermed kan vi uttrykke arealet av 5-kanten som 
+
+$$
+T_{ABCDE} = T_{\triangle ABC} + T_{\triangle ACE} + T_{\triangle CDE} = 2T_{\triangle ABC} + T_{\triangle ACE}.
+$$
+
+Arealet av $\triangle ABC$ kan regnes ut med arealsetningen:
+
+$$
+T_{\triangle ABC} = \dfrac{1}{2} \ell^2 \cdot \sin(108\degree).
+$$
+
+I $\triangle ACE$ kan vi konkludere at $AC = CE$ ettersom de er tilsvarende sider i $\triangle ABC$ og $\triangle CDE$. Vi trenger å kjenne til vinkelen som spenner ut av sidene $AC$ og $CE$. Vi bruker en hjelpefigur for å bestemme vinkelen:
+
+:::{figure} ./figurer/oppgaver/oppgave_7/hjelpefigur.svg
+---
+width: 80%
+class: no-click
+---
+:::
+
+Her kan vi se at 
+
+$$
+\angle C = 108\degree = \gamma + 2\alpha. 
+$$
+
+Men vi vet også at 
+
+$$
+2\alpha + 108\degree = 180\degree \liff 2\alpha = 72\degree
+$$
+
+som betyr at 
+
+$$
+108\degree = \gamma + 2\alpha = \gamma + 72\degree \liff \gamma = 36\degree.
+$$
+
+
+Da følger det at arealet at $\triangle ACE$ er
+
+$$
+T_{\triangle ACE} = \dfrac{1}{2} AC^2 \cdot \sin(36\degree).
+$$
+
+Vi regner ut med CAS:
+
+:::{figure} ./figurer/oppgaver/oppgave_7/b/sol.png
+---
+width: 100%
+class: no-click
+---
+:::
+
+Dermed finner vi at arealet av $5$-kanten er 
+
+$$
+T_{ABCDE} = \dfrac{1}{4} \sqrt{5\left(2\sqrt{5} + 5\right)} \cdot \ell^2
+$$
+
+
+
+::::
+
 
 
 :::::::::::::
@@ -817,8 +897,54 @@ Bestem et eksakt uttrykk for arealet av 5-kanten uttrykt ved $\ell$.
 
 ---
 
-
 :::::::::::::::{problem} Oppgave 8
+---
+level: 2
+---
+Anna jobber med å finne en ukjent side $x$ i trekant. <br>
+Hun har brukt cosinussetningen og har satt opp likningen
+
+$$
+14^2  = 16^2 + x^2 - 16x. 
+$$
+
+
+Hvilke opplysninger kan Anna ha fått om trekanten?
+
+::::{solution}
+Cosinussetningen kan skrives som 
+
+$$
+a^2 = b^2 + c^2 - 2\cdot b \cdot c \cdot \cos A. 
+$$
+
+Sammenlikner vi likningen ovenfor med likningen til Anna, kan vi se at det passer dersom 
+
+$$
+a = 14 \and b = 16 \and c = x \and \cos A = \dfrac{1}{2}
+$$
+
+Det betyr at 
+
+$$
+A = 60 \degree.
+$$
+
+Dette er en mulighet for opplysningene Anna kan ha fått.
+
+::::
+
+
+::::::::::::::
+
+:::::::::::::::
+
+
+
+---
+
+
+:::::::::::::::{problem} Oppgave 9
 ---
 level: 3
 ---
@@ -826,12 +952,18 @@ Nedenfor vises en regulær $7$-kant med sidelengder $2$.
 
 Bestem arealet av $7$-kanten.
 
-:::{figure} ./figurer/oppgaver/oppgave_8/figur.svg
+:::{figure} ./figurer/oppgaver/oppgave_9/figur.svg
 ---
 width: 80%
 class: no-click
 ---
 :::
+
+::::{answer}
+$$
+T_{\mathrm{7-kant}} \approx 14.55.
+$$
+::::
 
 
 

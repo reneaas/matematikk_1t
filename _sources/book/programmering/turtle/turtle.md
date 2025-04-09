@@ -9,6 +9,8 @@ class: sidenote, margin
 * `left(90)`{l=python} Snur skilpadden 90 grader mot venstre.
 ::::
 
+
+
 :::::::::::::::{admonition} Utforsk 1
 ---
 class: explore
@@ -94,11 +96,22 @@ left(60)
 
 ::::::::::::::
 
-:::{raw} html
----
-file: ./utforsk/utforsk_1/utforsk_1.html
----
+:::{turtle}
+from turtle import *
+
+forward(100)
+left(120)
+
+forward(100)
+left(120)
+
+forward(100)
+left(120)
+
+
 :::
+
+
 :::::::::::::::
 
 
@@ -149,10 +162,15 @@ class: no-click
 
 Fyll ut programmet under slik at det tegner figuren over på samme måte.
 
-:::{raw} html
----
-file: ./underveisoppgaver/oppgave_1/a/python.html
----
+:::{turtle}
+from turtle import *
+
+forward(100)
+left(120)
+
+# TODO: skriv din kode her
+# FYLL INN: gjør ferdig figuren
+
 :::
 
 
@@ -172,10 +190,15 @@ class: no-click
 
 Fyll ut programmet under slik at det tegner figuren over på samme måte.
 
-:::{raw} html
----
-file: ./underveisoppgaver/oppgave_1/b/python.html
----
+:::{turtle}
+from turtle import *
+
+forward(100)
+left(90)
+
+# TODO: skriv din kode her
+# FYLL INN: gjør ferdig figuren
+
 :::
 
 
@@ -196,10 +219,13 @@ class: no-click
 
 Fyll ut programmet under slik at det tegner figuren over på samme måte.
 
-:::{raw} html
----
-file: ./underveisoppgaver/oppgave_1/c/python.html
----
+:::{turtle}
+from turtle import *
+
+for i in range(3):
+    forward(100)
+    left(120)
+
 :::
 
 

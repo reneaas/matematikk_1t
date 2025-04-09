@@ -1,3 +1,12 @@
+function generateUUID() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        const r = (Math.random() * 16) | 0;
+        const v = c === 'x' ? r : (r & 0x3) | 0x8;
+        return v.toString(16);
+    });
+}
+
+
 class TurtleCode {
     /**
      * @param {string} containerId - ID of an existing <div> that will hold this environment.
@@ -13,7 +22,7 @@ class TurtleCode {
         this.initialCode = initialCode;
         this.cmOptions = cmOptions;
     
-        this.uniqueSuffix = Date.now(); // to avoid ID collisions
+        this.uniqueSuffix = generateUUID(); // to avoid ID collisions
     
         this.createUI();
       
