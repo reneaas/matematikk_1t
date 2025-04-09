@@ -5,7 +5,7 @@ def main(dirname, save):
     #
     # Define functions
     def f(x):
-        return 8 / (x**2 + 20)
+        return (x + 1) ** 2 - 3
 
     # List of functions and their labels.
     functions = [f]
@@ -13,14 +13,14 @@ def main(dirname, save):
     fig, ax = plotmath.plot(
         functions=functions,
         fn_labels=True,
-        xmin=-1,
-        xmax=15,
-        ymin=-0.1,
-        ymax=0.5,
+        xmin=-6,
+        xmax=6,
+        ymin=-6,
+        ymax=6,
         ticks=True,
         xstep=1,
-        ystep=0.1,
-        grid=False,
+        ystep=1,
+        grid=True,
         lw=2.5,
         alpha=0.6,
         domain=False,
@@ -55,4 +55,4 @@ if __name__ == "__main__":
     dirname = "/".join(parts)
 
     # NOTE: Set `save=True` to save figure. `save=False` to display figure.
-    main(dirname=dirname, save=False)
+    main(dirname=dirname, save=True)

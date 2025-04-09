@@ -18,7 +18,7 @@ def main(dirname, save):
     fig, ax = plotmath.plot(
         functions=functions,
         fn_labels=None,  # NOTE: Set `None` hvis du ikke vil ha labels.
-        xmin=-2,
+        xmin=-4,
         xmax=8,
         ymin=-8,
         ymax=8,
@@ -30,11 +30,16 @@ def main(dirname, save):
 
     ax.plot(xmin, ymin, "ko", markersize=10, alpha=0.7)
 
-    fontsize = 22
+    ax.plot(0, ymin, "ko", markersize=8, alpha=0.5)
+    ax.plot(xmin, 0, "ko", markersize=8, alpha=0.5)
+
+    ax.hlines(y=ymin, xmin=0, xmax=xmin, linestyle="--", alpha=0.5, color="black")
+
+    fontsize = 20
     plt.annotate(
-        text="Ekstremalpunkt $(x_0, y_0)$",
-        xy=(xmin, ymin),
-        xytext=(xmin + 0.5, ymin - 4),
+        text="Ekstremalpunkt",
+        xy=(xmin, 0),
+        xytext=(xmin + 0.25, ymin + 8),
         fontsize=fontsize,
         arrowprops=dict(
             arrowstyle="->",
@@ -48,9 +53,41 @@ def main(dirname, save):
     )
 
     plt.annotate(
+        text="Ekstremalverdi",
+        xy=(0, ymin),
+        xytext=(xmin - 6, ymin - 4),
+        fontsize=fontsize,
+        arrowprops=dict(
+            arrowstyle="->",
+            lw=2,
+            color="black",
+            alpha=0.7,
+            connectionstyle="arc3,rad=-0.2",
+        ),
+        horizontalalignment="left",
+        verticalalignment="center",
+    )
+
+    # plt.annotate(
+    #     text="(x_0, y_0)",
+    #     xy=(xmin, ymin),
+    #     xytext=(xmin + 0.5, ymin - 4),
+    #     fontsize=fontsize,
+    #     arrowprops=dict(
+    #         arrowstyle="->",
+    #         lw=2,
+    #         color="black",
+    #         alpha=0.7,
+    #         connectionstyle="arc3,rad=-0.2",
+    #     ),
+    #     horizontalalignment="left",
+    #     verticalalignment="center",
+    # )
+
+    plt.annotate(
         text="Symmetrilinje",
-        xy=(xmin, 3),
-        xytext=(xmin + 0.25, ymin + 9),
+        xy=(xmin, ymin - 4),
+        xytext=(xmin + 2, ymin - 2),
         fontsize=fontsize,
         arrowprops=dict(
             arrowstyle="->",

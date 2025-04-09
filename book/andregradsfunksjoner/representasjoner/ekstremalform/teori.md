@@ -13,13 +13,13 @@ class: tip
 
 Før vi ser på hva ekstremalformen til en andregradsfunksjon er, må vi først definere noen nye begreper. 
 
-:::::::::::::::{admonition} Ekstremalpunkter, toppunkter og bunnpunkter
+:::::::::::::::{admonition} Ekstremalpunkt, ekstremalverdi, toppunkt og bunnpunkt
 ---
 class: theory
 ---
-**Ekstremalpunkt** er en fellesbetegnelse for **toppunkt** og **bunnpunkt**. Et ekstremalpunkt kan enten være et toppunkt eller et bunnpunkt.
+En andregradsfunksjon har enten et **toppunkt** og **bunnpunkt**. <br> Vi kaller $x$-koordinaten til dette punktet for **ekstremalpunktet** og $y$-koordinaten for **ekstremalverdien**.
 
-Under vises det grafisk hva et toppunkt og et bunnpunkt er for en andregradsfunksjon.
+Nedenfor vises det grafisk hva et toppunkt og et bunnpunkt er for en andregradsfunksjon.
 ::::::::::::::{tab-set}
 :::::::::::::{tab-item} Bunnpunkt
 Grafen til en andregradsfunksjon har et bunnpunkt når den er **konveks** $\smile$ (den har "smilefjes").
@@ -73,7 +73,7 @@ viser grafen til en andregradsfunksjon $f$.
 class: solution
 ---
 1. Siden grafen til $f$ er *konkav* $\frown$, har $f$ et toppunkt.
-2. Det høyeste punktet på grafen er $(-1, 2)$. Dette er ekstremalpunktet til $f$.
+2. Det høyeste punktet på grafen er $(-1, 2)$. Dette er koordinatene til toppunktet på grafen til $f$. Da er $x_0 = -1$ ekstremalpunktet og $y_0 = 2$ ekstremalverdien.
 :::
 
 :::::::::::::::::
@@ -125,7 +125,11 @@ Under vises noen eksempler på andregradsfunksjoner med grafen og tilhørende fu
 class: tabs-parts
 ---
 :::::::::::::{tab-item} $f$
-Grafen til $f$ har et bunnpunkt i $(-1, -3)$ og har derfor en symmetrilinje $x = -1$. <br> Ekstremalformen til $f$ er gitt ved
+Grafen til $f$ har et bunnpunkt i $(-1, -3)$ som betyr at grafen til $f$ har
+* ekstremalpunktet $x_0 = -1$
+* ekstremalverdien $y_0 = -3$.
+
+Ekstremalformen til $f(x)$ er gitt ved
 
 $$
 f(x) = (x + 1)^2 - 3
@@ -141,7 +145,11 @@ class: no-click
 :::::::::::::
 
 :::::::::::::{tab-item} $g$
-Grafen til $g$ har et toppunkt i $(2, 1)$ og har derfor en symmetrilinje $x = 2$. <br> Ekstremalformen til $g$ er gitt ved 
+Grafen til $g$ har et toppunkt i $(2, 1)$ som betyr at $g$ har
+* ekstremalpunktet $x_0 = 2$
+* ekstremalverdien $y_0 = 1$.
+
+Ekstremalformen til $g(x)$ er gitt ved 
 
 $$
 g(x) = -\dfrac{1}{2}(x - 2)^2 + 1
@@ -157,7 +165,11 @@ class: no-click
 :::::::::::::
 
 :::::::::::::{tab-item} $h$
-Grafen til $h$ har et bunnpunkt i $(-1, 1)$ og har derfor symmetrilinje $x = -1$. <br> Ekstremalformen til $h$ er gitt ved
+Grafen til $h$ har et bunnpunkt i $(-1, 1)$ som betyr at $h$ har
+* ekstremalpunktet $x_0 = -1$
+* ekstremalverdien $y_0 = 1$.
+
+Ekstremalformen til $h(x)$ er gitt ved
 
 $$
 h(x) = 2(x + 1)^2 + 1
