@@ -224,7 +224,7 @@ Vi utfører polynomdivisjon for å lese av kvotienten $K(x)$ i divisjonen:
 :::{figure} ./koder/oppgaver/oppgave_2/a.svg
 ---
 width: 50%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -256,7 +256,7 @@ Vi utfører polynomdivisjon for å bestemme kvotienten $K(x)$ i divisjonen:
 :::{figure} ./koder/oppgaver/oppgave_2/b.svg
 ---
 width: 60%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -292,7 +292,7 @@ Vi utfører polynomdivisjon for å bestemme kvotienten $K(x)$ i divisjonen:
 :::{figure} ./koder/oppgaver/oppgave_2/c.svg
 ---
 width: 60%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -546,7 +546,7 @@ Graf **C**.
 ::::{figure} ./figurer/oppgaver/oppgave_4/merged_figure.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 ::::
 
@@ -603,7 +603,7 @@ Graf **C**.
 ::::{figure} ./figurer/oppgaver/oppgave_5/merged_figure.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 ::::
 
@@ -658,7 +658,7 @@ Graf **C**.
 ::::{figure} ./figurer/oppgaver/oppgave_6/merged_figure.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 ::::
 
@@ -734,7 +734,7 @@ Vi utfører polynomdivisjon for å bestemme kvotienten $K(x)$:
 :::{figure} ./koder/oppgaver/oppgave_7/b.svg
 ---
 width: 60%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -797,7 +797,7 @@ class: answer, dropdown
 :::{figure} ./figurer/oppgaver/oppgave_7/d.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -821,7 +821,7 @@ class: answer, dropdown
 :::{figure} ./figurer/oppgaver/oppgave_7/e.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 ::::
@@ -852,7 +852,7 @@ Vi bruker fortegnslinja til $f(x)$ som vi tegnet i **d** til å bestemme hvor $f
 :::{figure} ./figurer/oppgaver/oppgave_7/f.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -981,7 +981,7 @@ For å bestemme eventuelle horisontale eller skrå asymptoter, utfører polynomd
 :::{figure} ./koder/oppgaver/oppgave_8/b.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -1039,7 +1039,7 @@ class: answer, dropdown
 :::{figure} ./figurer/oppgaver/oppgave_8/c_graf.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 ::::
@@ -1059,7 +1059,7 @@ så lenge $x \neq 2$. I $x = 2$ vil grafen til $f$ ha et hull, men vil ellers op
 :::{figure} ./figurer/oppgaver/oppgave_8/c_fortegnslinje.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -1068,7 +1068,7 @@ Denne informasjonen om fortegnet til $f(x)$ sammen med asymptotene $y = 1$ og $x
 :::{figure} ./figurer/oppgaver/oppgave_8/c_graf.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -1099,6 +1099,7 @@ For å løse ulikheten $f(x) \leq 0$ bruker vi fortegnslinja til $f(x)$ som vi t
 :::{figure} ./figurer/oppgaver/oppgave_8/c_fortegnslinje.svg
 ---
 width: 100%
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -1140,7 +1141,7 @@ $$
 ---
 name: fig-generelle-rasjonale-funksjoner-oppgave-9-graf
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en rasjonal funksjon $f$.
 :::
@@ -1192,7 +1193,7 @@ class: answer, dropdown
 :::{figure} ./figurer/oppgaver/oppgave_9/f_derivert_fortegnslinje.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 ::::
@@ -1219,7 +1220,7 @@ class: answer, dropdown
 :::{figure} ./figurer/oppgaver/oppgave_9/graf_derivert.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 ::::
@@ -1249,7 +1250,7 @@ $$
 ---
 name: fig-generelle-rasjonale-funksjoner-oppgave-10-graf
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en rasjonal funksjon $f$. 
 :::
@@ -1315,7 +1316,7 @@ class: answer, dropdown
 :::{figure} ./figurer/oppgaver/oppgave_10/derivert_fortegnslinje.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 ::::
@@ -1342,7 +1343,7 @@ class: answer, dropdown
 :::{figure} ./figurer/oppgaver/oppgave_10/derivert_graf.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 ::::

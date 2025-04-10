@@ -27,7 +27,7 @@ Dette tallet forteller oss hvor mye $f(x)$ endrer seg når vi øker $x$ med 1.
 :::{figure} ./figurer/teori/topunktsformelen.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -47,7 +47,7 @@ Den **gjennomsnittlige vekstfarten** til en funksjon $f$ i intervallet $[x_1, x_
 :::{figure} ./figurer/teori/formel2.svg
 ---
 width: 60%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -57,7 +57,7 @@ Linjen som går gjennom de to punktene kaller vi for en **sekant**. Se {numref}`
 ---
 name: fig-teori-andregradsfunksjoner-vekstfart-gjennomsnittlig-vekstfart-sekanter
 width: 100%
-class: no-click
+class: no-click, manim-figure
 ---
 viser grafen til en andregradsfunksjon (blå) og en sekant (rød) som går gjennom to punkter $(x_1, f(x_1))$ og $(x_2, f(x_2))$ og den tilsvarende formelen for gjennomsnittlig vekstfart i intervallet $[x_1, x_2]$.
 :::
@@ -78,7 +78,7 @@ Bruk sekanten til å bestemme den gjennomsnittlige vekstfarten til $f$ i interva
 ---
 name: fig-andregradsfunksjoner-vekstfart-gjennomsnittlig-vekstfart-eksempel-1
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $f$ og en sekant $s$ som går gjennom to punkter på grafen til $f$. 
 :::

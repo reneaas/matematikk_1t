@@ -26,3 +26,90 @@ a.no-click {
     width: 150px; /* Adjust the width as needed */
     height: auto; /* Maintain the aspect ratio */
   }
+
+
+
+
+/* Base styles for polynomial division figures */
+.adaptive-figure img,
+.adaptive-figure svg {
+    background: transparent !important; /* Force transparent background */
+    background-color: inherit !important;
+    transition: filter 0.1s ease; /* Smooth transition between modes */
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1em auto;
+}
+
+/* Light mode (default) */
+[data-mode="light"] .adaptive-figure img {
+    filter: invert(0%); /* Normal */
+}
+
+/* Dark mode styles */
+[data-mode="dark"] .adaptive-figure img,
+[data-mode="dark"] .adaptive-figure svg {
+    filter: invert(100%) hue-rotate(180deg) !important; /* Invert colors for dark mode */
+    background: transparent !important; /* Force transparent background */
+    background-color: inherit !important;
+}
+
+/* Auto mode with system preference */
+@media (prefers-color-scheme: dark) {
+[data-mode="auto"] .adaptive-figure img {
+    filter: invert(100%) hue-rotate(180deg) !important;
+    background: transparent !important; /* Force transparent background */
+}
+}
+
+/* Auto mode with system preference */
+@media (prefers-color-scheme: light) {
+    [data-mode="auto"] .adaptive-figure img {
+        filter: invert(0%) !important;
+    }
+}
+
+
+
+
+
+
+/* Base styles for polynomial division figures */
+.manim-figure img,
+.manim-figure svg {
+    background: transparent !important; /* Force transparent background */
+    background-color: inherit !important;
+    transition: filter 0.1s ease; /* Smooth transition between modes */
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1em auto;
+}
+
+/* Light mode (default) */
+[data-mode="light"] .manim-figure img {
+    filter: invert(100%); /* Normal */
+    filter: invert(100%) hue-rotate(180deg) !important; /* Invert colors for dark mode */
+}
+
+/* Dark mode styles */
+[data-mode="dark"] .manim-figure img,
+[data-mode="dark"] .manim-figure svg {
+    filter: invert(0%); /* Normal */
+}
+
+/* Auto mode with system preference */
+@media (prefers-color-scheme: dark) {
+[data-mode="auto"] .manim-figure img {
+    filter: invert(0%) !important; /* Normal */
+}
+}
+
+/* Auto mode with system preference */
+@media (prefers-color-scheme: light) {
+    [data-mode="auto"] .manim-figure img {
+        filter: invert(100%) !important;
+    }
+}
+

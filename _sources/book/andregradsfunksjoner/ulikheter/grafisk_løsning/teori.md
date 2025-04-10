@@ -51,7 +51,7 @@ $$
 ---
 name: fig-andregradsulikheter-eksempel-1-mengde-1
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser to områder på tallinja som er fargelagt med rød farge.
 :::
@@ -83,7 +83,7 @@ $$
 ---
 name: fig-andregradsulikheter-eksempel-1-mengde-2
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser to områder på tallinja som er fargelagt med rød farge.
 :::
@@ -114,7 +114,7 @@ $$
 ---
 name: fig-andregradsulikheter-eksempel-1-mengde-3
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser to områder på tallinja som er fargelagt med rød farge.
 :::
@@ -154,7 +154,7 @@ $$
 ---
 name: fig-andregradsulikheter-eksempel-1-mengde-1-alternativ
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser to områder på tallinja som er fargelagt med rød farge.
 :::
@@ -182,7 +182,7 @@ $$
 ---
 name: fig-andregradsulikheter-eksempel-1-mengde-2-alternativ
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser to områder på tallinja som er fargelagt med rød farge.
 :::
@@ -209,7 +209,7 @@ $$
 ---
 name: fig-andregradsulikheter-eksempel-1-mengde-3-alternativ
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser to områder på tallinja som er fargelagt med rød farge.
 :::
@@ -271,7 +271,7 @@ $$
 ---
 name: fig-andregradsulikheter-grafisk-løsning-eksempel-1
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til $f(x) = x^2 - 4x + 3$. Løsningsmengden der grafen til $f$ ligger over $x$-aksen er fargelagt med rød farge.
 :::
@@ -298,7 +298,7 @@ $$
 ---
 name: fig-andregradsulikheter-grafisk-løsning-eksempel-2
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til $f(x) = -2x^2 + 4x + 4$ og linja $y = -2$. Løsningsmengden til $f(x) > -2$ er markert i rødt på $x$-aksen.
 ::::
@@ -324,7 +324,7 @@ $$
 ---
 name: fig-andregradsulikheter-grafisk-løsning-eksempel-3
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til $f(x) = x^2 + 5x + 1$ og $g(x) = -x - 4$. Løsningsmengden til $f(x) \leq g(x)$ er markert i rødt på $x$-aksen.
 :::
@@ -351,7 +351,7 @@ $$
 ---
 name: fig-andregradsfunksjoner-andregradsulikheter-grafisk-løsning-underveisoppgave-2
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 Viser grafene til $f(x) = x^2 + x + 1$ og $g(x) = -x + 4$.
 :::

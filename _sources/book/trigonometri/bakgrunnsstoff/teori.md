@@ -47,7 +47,7 @@ Likebeint trekant
 :::{figure} ./figurer/teori/spesielle_trekanter/merged_figure.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -79,7 +79,7 @@ Se figuren nedenfor.
 :::{figure} ./figurer/teori/vinkler/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -98,7 +98,7 @@ Kan du bruke figuren til å bestemme vinkelsummen i en trekant?
 :::{figure} ./figurer/utforsk/utforsk_1/figur_løsning.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -140,7 +140,7 @@ Se figuren til venstre nedenfor.
 :::{figure} ./figurer/teori/pytagoras_setning/merged_figure.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -166,7 +166,7 @@ Bestem $x$ i trekanten nedenfor.
 :::{figure} ./figurer/underveisoppgaver/oppgave_1/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -222,7 +222,7 @@ Hvis $\triangle ABC$ og $\triangle DEF$ er formlike, så skriver vi $\triangle A
 :::{figure} ./figurer/teori/formlikhet/merged_figure.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser to formlike trekanter $\triangle ABC$ og $\triangle DEF$. Her er $\angle A = \angle D$, $\angle B = \angle E$ og $\angle C = \angle F$. De tilsvarende sidene i trekantene er $AB$ og $DE$, sidene $BC$ og $EF$, og sidene $AC$ og $DF$.
 :::
@@ -243,7 +243,7 @@ Nedenfor vises to trekanter.
 :::{figure} ./figurer/underveisoppgaver/oppgave_2/merged_figure.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 

@@ -18,7 +18,7 @@ Bestem $\angle C$.
 :::{figure} ./figurer/oppgaver/oppgave_1/a.svg
 ---
 width: 70%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -41,7 +41,7 @@ Bestem $\angle B$.
 :::{figure} ./figurer/oppgaver/oppgave_1/b.svg
 ---
 width: 70%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -64,7 +64,7 @@ Bestem $\angle A$.
 :::{figure} ./figurer/oppgaver/oppgave_1/c.svg
 ---
 width: 70%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -109,7 +109,7 @@ Bestem $x$.
 :::{figure} ./figurer/oppgaver/oppgave_2/figur.svg
 ---
 width: 70%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser en rettvinklet trekant.
 :::
@@ -142,7 +142,7 @@ Bestem $x$.
 :::{figure} ./figurer/oppgaver/oppgave_3/figur.svg
 ---
 width: 70%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -173,7 +173,7 @@ Bestem høyden $h$ i trekanten.
 :::{figure} ./figurer/oppgaver/oppgave_4/figur.svg
 ---
 width: 70%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser en trekant.
 :::
@@ -205,7 +205,7 @@ Bestem $x$.
 :::{figure} ./figurer/oppgaver/oppgave_5/figur.svg
 ---
 width: 70%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -234,7 +234,7 @@ Nedenfor vises to rettvinklete trekanter.
 :::{figure} ./figurer/oppgaver/oppgave_6/merged_figure.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -297,7 +297,7 @@ Nedenfor vises to rettvinklete trekanter.
 :::{figure} ./figurer/oppgaver/oppgave_7/merged_figure.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -373,7 +373,7 @@ Nedenfor vises to trekanter.
 :::{figure} ./figurer/oppgaver/oppgave_8/merged_figure.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -460,7 +460,7 @@ $$
 :::{figure} ./figurer/oppgaver/oppgave_9/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -523,7 +523,7 @@ Bestem $x$, $y$ og $z$.
 :::{figure} ./figurer/oppgaver/oppgave_10/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -551,7 +551,7 @@ Bestem $CM$ i figuren nedenfor.
 :::{figure} ./figurer/oppgaver/oppgave_11/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 

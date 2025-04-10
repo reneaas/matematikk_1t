@@ -29,7 +29,7 @@ $$
 :::{figure} ./figurer/teori/sinussetningen.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -49,7 +49,7 @@ Bestem de sidelengdene $x$ og $y$.
 :::{figure} ./figurer/eksempler/eksempel_1/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -108,7 +108,7 @@ I figuren nedenfor vises en trekant $\triangle ABC$.
 :::{figure} ./figurer/teori/sinussetningen.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 

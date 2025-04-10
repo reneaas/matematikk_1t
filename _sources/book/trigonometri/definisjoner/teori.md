@@ -30,7 +30,7 @@ Om en katet er motstående eller hosliggende er altså avhengig av hvilken vinke
 :::{figure} ./figurer/teori/merged_figure.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -56,7 +56,7 @@ Bestem hvilke sidelengder som er motstående katet og hosliggende katet til vink
 :::{figure} ./figurer/underveisoppgaver/underveisoppgave_1/a.svg
 ---
 width: 70%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -75,7 +75,7 @@ Bestem hvilke sidelenger som er motstående katet og hosliggende katet for vinke
 :::{figure} ./figurer/underveisoppgaver/underveisoppgave_1/b.svg
 ---
 width: 70%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -113,7 +113,7 @@ $$
 :::{figure} ./figurer/teori/trekant3.svg
 ---
 width: 70%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -133,7 +133,7 @@ En trekant er vist nedenfor.
 :::{figure} ./figurer/underveisoppgaver/underveisoppgave_2/trekant.svg
 ---
 width: 70%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -219,7 +219,7 @@ I figuren nedenfor vises en rettvinklet trekant.
 :::{figure} ./figurer/utforsk/utforsk_1/trekant.svg
 ---
 width: 70%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -256,16 +256,13 @@ Trekanten fra Utforsk 1 er vist nedenfor.
 :::{figure} ./figurer/utforsk/utforsk_1/trekant.svg
 ---
 width: 70%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
 Bruk CAS-vindu nedenfor til å bestemme vinkel $C$. 
 
-:::{raw} html
----
-file: ./ggb/underveisoppgaver/underveisoppgave_3/cas_vindu.html
----
+:::{cas-window}
 :::
 
 
@@ -276,7 +273,7 @@ class: answer, dropdown
 :::{figure} ./ggb/underveisoppgaver/underveisoppgave_3/fasit.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -336,10 +333,7 @@ Bruk CAS-vinduet nedenfor til å regne ut
 1. $\sin 60^\circ$
 2. $\cos 60^\circ$
 
-:::{raw} html
----
-file: ./ggb/underveisoppgaver/underveisoppgave_4/cas_vindu.html
----
+:::{cas-window}
 :::
 
 ::::{admonition} Fasit
@@ -349,7 +343,7 @@ class: answer, dropdown
 :::{figure} ./ggb/underveisoppgaver/underveisoppgave_4/fasit.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -387,7 +381,7 @@ $$
 :::{figure} ./figurer/teori/trekant3.svg
 ---
 width: 60%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -405,7 +399,7 @@ Bestem $\tan A$ og $\tan C$ for trekanten nedenfor.
 :::{figure} ./figurer/underveisoppgaver/underveisoppgave_5/trekant.svg
 ---
 width: 70%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -419,18 +413,6 @@ $$
 ::::
 
 :::::::::::::::
-
-<!-- ## Bestemme ukjente sidelenger og vinkler
-
-Vi kan bruke sinus, cosinus og tangens til å bestemme ukjente sidelenger og vinkler i en rettvinklet trekant.
-
-:::::::::::::::{admonition} Eksempel 1
----
-class: example
----
-
-
-::::::::::::::: -->
 
 
 

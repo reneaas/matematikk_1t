@@ -36,17 +36,6 @@ class: example
 ---
 Nedenfor vises fire eksempler på rasjonale funksjoner med ulike egenskaper. Det *ikke* meningen at du skal forstå *hvorfor* grafene ser ut som de gjør enda, men få et inntrykk av hvor stort mangfold rasjonale funksjoner kan ha.
 
-<!-- ::::{figure} ./figurer/teori/merged_figure.svg
----
-width: 100%
-class: no-click
----
-**Øverst til venstre**: $f(x) = \dfrac{(x - 2)(x + 3)}{x^2 - 1}$. Grafen har 2 nullpunkter, 2 vertikale asymptoter og 1 horisontal asymptote. <br>
-**Øverst til høyre**: $f(x) = \dfrac{x^2 - 4}{x - 1}$. Grafen har 2 nullpunkter, 1 vertikal asymptote og en **skrå** asymptote. <br>
-**Nederst til venstre**: $f(x) = \dfrac{1}{x - 2}$. Grafen har 0 nullpunkter, 1 vertikal asymptote og 1 horisontal asymptote $y = 0$. <br>
-**Nederst til høyre**: $f(x) = \dfrac{x - 1}{x^2 + 1}$. Grafen har 1 nullpunkt, 0 vertikale asymptoter og 1 horisontal asymptote $y = 0$.
-:::: -->
-
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
@@ -56,7 +45,7 @@ class: tabs-parts
 ::::{figure} ./figurer/teori/eksempel_1.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en rasjonal funksjon $f(x) = \dfrac{(x - 2)(x + 3)}{x^2 - 1}$. Her har $f$ en horisontal asymptote $y = 1$, to vertikale asymptoter med likningene $x = \pm 1$, og to nullpunkter $x = -3$ og $x = 2$.
 ::::
@@ -69,7 +58,7 @@ viser grafen til en rasjonal funksjon $f(x) = \dfrac{(x - 2)(x + 3)}{x^2 - 1}$. 
 ::::{figure} ./figurer/teori/eksempel_2.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til $f(x) = \dfrac{x^2 - 4}{x - 1}$. Grafen har to nullpunkter $x = \pm 2$, en vertikal asymptote i $x = 1$ og en **skrå** asymptote $y = x + 1$. Grafen til $f$ nærmer seg altså en lineær funksjon når $|x|$ blir stor.
 ::::
@@ -82,7 +71,7 @@ viser grafen til $f(x) = \dfrac{x^2 - 4}{x - 1}$. Grafen har to nullpunkter $x =
 ::::{figure} ./figurer/teori/eksempel_3.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til $f(x) = \dfrac{1}{x - 2}$. Grafen har en vertikal asymptote i $x = 2$, men ingen nullpunkter. Grafen til $f$ har en horisontal asymptote $y = 0$.
 ::::
@@ -94,7 +83,7 @@ viser grafen til $f(x) = \dfrac{1}{x - 2}$. Grafen har en vertikal asymptote i $
 ::::{figure} ./figurer/teori/eksempel_4.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til $f(x) = \dfrac{x - 1}{x^2 + 1}$. Grafen har et nullpunkt i $x = 1$ og en horisontal asymptote $y = 0$. Grafen har ingen vertikale asymptoter.
 ::::
@@ -229,7 +218,7 @@ Med avlesning, kan vi se at $a = -2$ som betyr at den horisontale asymptoten til
 :::{figure} ./koder/eksempler/eksempel_2/eksempel_2.svg
 ---
 width: 60%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -267,7 +256,7 @@ Siden tellergraden til $f$ er én grad høyere enn nevnergraden, kan vi forvente
 :::{figure} ./koder/eksempler/eksempel_3/eksempel_3.svg
 ---
 width: 70%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 

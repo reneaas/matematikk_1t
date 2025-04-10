@@ -20,7 +20,7 @@ Bestem $f(x)$.
 ---
 name: fig-polynomer-polynomfunksjoner-oppgave-1-a
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en tredjegradsfunksjon $f$.
 :::
@@ -46,7 +46,7 @@ Bestem $g(x)$.
 ---
 name: fig-polynomer-polynomfunksjoner-oppgave-1-b
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en tredjegradsfunksjon $g$.
 :::
@@ -73,7 +73,7 @@ Bestem $h(x)$.
 ---
 name: fig-polynomer-polynomfunksjoner-oppgave-1-c
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en tredjegradsfunksjon $h$.
 :::
@@ -100,7 +100,7 @@ Bestem $p(x)$.
 ---
 name: fig-polynomer-polynomfunksjoner-oppgave-1-d
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en tredjegradsfunksjon $p$.
 :::
@@ -140,7 +140,7 @@ er vist i
 ---
 name: fig-polynomer-polynomfunksjoner-oppgave-2
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en tredjegradsfunksjon $f$.
 :::
@@ -297,7 +297,7 @@ class: answer, dropdown
 :::{figure} ./figurer/oppgaver/oppgave_3/b.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -317,7 +317,7 @@ class: answer, dropdown
 :::{figure} ./figurer/oppgaver/oppgave_3/c.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -391,7 +391,7 @@ class: answer, dropdown
 :::{figure} ./figurer/oppgaver/oppgave_4/b.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -412,7 +412,7 @@ class: answer, dropdown
 :::{figure} ./figurer/oppgaver/oppgave_4/c.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -490,7 +490,7 @@ class: answer, dropdown
 :::{figure} ./figurer/oppgaver/oppgave_5/b.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -508,7 +508,7 @@ class: dropdown, answer
 :::{figure} ./figurer/oppgaver/oppgave_5/c.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 ::::

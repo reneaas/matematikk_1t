@@ -89,7 +89,7 @@ Dermed har $f'(x)$ røttene $x = 1$ og $x = -3$. For å avgjøre hvilket punkt s
 ---
 name: fig-polynomer-optimering-eksempel-1
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser fortegnsskjema til $f'(x)$. Vi kan lese av at $f'(x)$ er positiv rett før $x = -3$ og negativ rett etter, som betyr at grafen til $f$ stiger rett før punktet og synker rett etter. Det betyr at punktet er et toppunkt. Tilsvarende er $f'(x)$ negativ rett før $x = 1$ og positiv rett etter, som betyr at grafen til $f$ synker rett før punktet og stiger rett etter. Det betyr at punktet er et bunnpunkt.
 :::
@@ -130,7 +130,7 @@ Bestem sidelengdene slik at arealet av rektangelet er størst mulig.
 ---
 name: fig-polynomer-optimering-eksempel-2
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser et rektangel med sidelenger $x$ og $y$. Omkretsen av rektangelet er $100$.
 :::
@@ -216,7 +216,7 @@ Bestem $a$ slik at arealet av rektangelet blir størst mulig.
 ---
 name: fig-polynomer-optimering-eksempel-3
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $f$.
 ::: 

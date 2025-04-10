@@ -16,7 +16,7 @@ Bestem $x$ i trekanten nedenfor.
 :::{figure} ./figurer/oppgaver/oppgave_1/a/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -33,7 +33,7 @@ $$
 :::{figure} ./figurer/oppgaver/oppgave_1/a/sol.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -53,7 +53,7 @@ Bestem $x$ i trekanten nedenfor.
 :::{figure} ./figurer/oppgaver/oppgave_1/b/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -67,7 +67,7 @@ $$
 :::{figure} ./figurer/oppgaver/oppgave_1/b/sol.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -88,7 +88,7 @@ Bestem $x$ i trekanten nedenfor.
 :::{figure} ./figurer/oppgaver/oppgave_1/c/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -103,7 +103,7 @@ $$
 :::{figure} ./figurer/oppgaver/oppgave_1/c/sol.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -147,7 +147,7 @@ Bestem $x$ i trekanten nedenfor.
 :::{figure} ./figurer/oppgaver/oppgave_2/a/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -163,7 +163,7 @@ $$
 :::{figure} ./figurer/oppgaver/oppgave_2/a/sol.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -183,7 +183,7 @@ Bestem $x$ i trekanten nedenfor.
 :::{figure} ./figurer/oppgaver/oppgave_2/b/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -199,7 +199,7 @@ $$
 :::{figure} ./figurer/oppgaver/oppgave_2/b/sol.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -219,7 +219,7 @@ Bestem $x$ i trekanten nedenfor.
 :::{figure} ./figurer/oppgaver/oppgave_2/c/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -235,7 +235,7 @@ $$
 :::{figure} ./figurer/oppgaver/oppgave_2/c/sol.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -270,7 +270,7 @@ En trekant $\triangle ABC$ er vist nedenfor.
 :::{figure} ./figurer/oppgaver/oppgave_3/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -295,7 +295,7 @@ Bruker arealsetningen og regner ut med CAS:
 :::{figure} ./figurer/oppgaver/oppgave_3/a/sol.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 $$
@@ -327,7 +327,7 @@ La $x = BC$. Vi bruker cosinussetningen til å bestemme $x$ uttrykt ved $\ell$:
 :::{figure} ./figurer/oppgaver/oppgave_3/b/sol.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -364,7 +364,7 @@ En firkant $\square ABCD$ er vist nedenfor.
 :::{figure} ./figurer/oppgaver/oppgave_4/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -404,7 +404,7 @@ Da kan vi bruke cosinussetningen til å bestemme lengden $x = CD$. Vi regner det
 :::{figure} ./figurer/oppgaver/oppgave_4/a/sol.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -442,7 +442,7 @@ For $\triangle ACD$ kan vi bruke arealsetningen ut ifra vinkel $\angle ACD$. Vi 
 :::{figure} ./figurer/oppgaver/oppgave_4/b/sol.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -481,7 +481,7 @@ Nedenfor vises en firkant $\square ABCD$.
 :::{figure} ./figurer/oppgaver/oppgave_5/figur.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -506,7 +506,7 @@ Vi bruker cosinussetningen på $\triangle BCD$ for å bestemme lengden $BD$:
 :::{figure} ./figurer/oppgaver/oppgave_5/a/sol_1.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -521,7 +521,7 @@ Deretter bruker vi cosinussetningen på $\triangle ABD$ for å bestemme lengden 
 :::{figure} ./figurer/oppgaver/oppgave_5/a/sol_2.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -572,7 +572,7 @@ som vi gjør med CAS:
 :::{figure} ./figurer/oppgaver/oppgave_5/b/sol.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -609,7 +609,7 @@ En firkant $\square ABCD$ er vist nedenfor.
 :::{figure} ./figurer/oppgaver/oppgave_6/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -636,7 +636,7 @@ La $x = BD$. Vi kan merke oss at siden $\angle ADB = 30 \degree$ og $\angle A = 
 :::{figure} ./figurer/oppgaver/oppgave_6/a/sol.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -672,7 +672,7 @@ Vi gjør utregningene med CAS:
 :::{figure} ./figurer/oppgaver/oppgave_6/b/sol.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -694,7 +694,7 @@ vi gjør selve utregningen med CAS:
 :::{figure} ./figurer/oppgaver/oppgave_6/b/sol_omkrets.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -726,7 +726,7 @@ Vi setter opp en likning der vi uttrykket arealet til $\square ABCD$ ved $a$ ved
 :::{figure} ./figurer/oppgaver/oppgave_6/c/sol.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -766,8 +766,7 @@ Nedenfor vises en regulær 5-kant $ABCDE$. Alle sidelengdene er $\ell$ og vinkle
 :::{figure} ./figurer/oppgaver/oppgave_7/figur.svg
 ---
 width: 80%
-class: no-click
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -791,7 +790,7 @@ Vi bruker cosinussetningen med $AB = BC = \ell$ som gir:
 :::{figure} ./figurer/oppgaver/oppgave_7/a/sol.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -834,7 +833,7 @@ I $\triangle ACE$ kan vi konkludere at $AC = CE$ ettersom de er tilsvarende side
 :::{figure} ./figurer/oppgaver/oppgave_7/hjelpefigur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -868,7 +867,7 @@ Vi regner ut med CAS:
 :::{figure} ./figurer/oppgaver/oppgave_7/b/sol.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -955,7 +954,7 @@ Bestem arealet av $7$-kanten.
 :::{figure} ./figurer/oppgaver/oppgave_9/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 

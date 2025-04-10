@@ -16,6 +16,7 @@ link-type: doc
 :::{figure} ./grafisk_løsning/figurer/teori/andregradsulikhet_f_vs_lineær.svg
 ---
 width: 100%
+class: no-click, adaptive-figure
 ---
 :::
 ::::
@@ -39,6 +40,7 @@ $$
 :::{figure} ./algebraisk_løsning/figurer/teori/card_sample.svg
 ---
 width: 100%
+class: no-click, adaptive-figure
 ---
 :::
 

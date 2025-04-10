@@ -33,6 +33,7 @@ I {numref}`fig-koordinatsystem` viser vi et konkret eksempel med punktet $(3, 2)
 ---
 width: 80%
 name: fig-koordinatsystem
+class: no-click, adaptive-figure
 ---
 viser et koordinatsystem med punktet $(3, 2)$. For å finne punktet går vi $3$ plasser parallelt med $x$-aksen og $2$ plasser parallelt med $y$-aksen. 
 :::
@@ -51,6 +52,7 @@ I {numref}`fig-lineære-funksjoner-grafisk-representasjon-underveisoppgave-1` vi
 ---
 name: fig-lineære-funksjoner-grafisk-representasjon-underveisoppgave-1
 width: 80%
+class: no-click, adaptive-figure
 ---
 viser seks punkter $A$, $B$, $C$, $D$, $E$ og $F$ i et koordinatsystem.
 :::
@@ -82,6 +84,7 @@ Gitt grafen til en lineær funksjon $f$, kan vi lese av funksjonsverdien $f(x)$ 
 ---
 width: 80%
 name: fig-lineær-funksjoner-grafisk-representasjon-teori-1
+class: no-click, adaptive-figure
 ---
 viser grafen til en lineær funksjon $f$ og et punkt $(x, y) = (x, f(x))$ på grafen til $f$. Funksjonsverdien $f(x)$ leser vi av som $y$-koordinaten til punktet.
 :::
@@ -99,6 +102,7 @@ class: check
 ---
 name: fig-lineære-funksjoner-grafisk-representasjon-underveisoppgave-2
 width: 80%
+class: no-click, adaptive-figure
 ---
 vises grafen til en lineær funksjon $f$.
 :::
@@ -147,6 +151,7 @@ Konstantledd $b$
 ---
 name: fig-lineær-funksjoner-grafisk-representasjon-teori-2
 width: 80%
+class: no-click, adaptive-figure
 ---
 viser grafen til en lineær funksjon $f(x) = ax + b$. Stigningstallet $a$ bestemmer hvor mye funksjonsverdien endrer seg når vi øker $x$ med $1$. Konstantleddet $b$ bestemmer hvor grafen skjærer $y$-aksen.
 :::
@@ -171,6 +176,7 @@ I fanene under vises eksempler på grafene til lineære funksjoner og hvordan di
 ---
 name: fig-lineære-funksjoner-grafisk-representasjon-eksempel-1-f
 width: 80%
+class: no-click, adaptive-figure
 ---
 
 viser grafen til $f(x) = 2x + 1$. Grafen skjærer $y$-aksen i $y = 1$ - derfor er $b = 1$. Når vi øker verdien til $x$ med $1$, øker funksjonsverdien med $2$ - derfor er $a = 2$.
@@ -184,6 +190,7 @@ viser grafen til $f(x) = 2x + 1$. Grafen skjærer $y$-aksen i $y = 1$ - derfor e
 ---
 name: fig-lineære-funksjoner-grafisk-representasjon-eksempel-1-g
 width: 80%
+class: no-click, adaptive-figure
 ---
 
 viser grafen til $g(x) = x - 1$. Grafen skjærer $y$-aksen i $y = -1$ - derfor er $b = -1$. Når vi øker verdien til $x$ med $1$, øker funksjonsverdien med $1$ - derfor er $a = 1$.
@@ -197,6 +204,7 @@ viser grafen til $g(x) = x - 1$. Grafen skjærer $y$-aksen i $y = -1$ - derfor e
 ---
 name: fig-lineære-funksjoner-grafisk-representasjon-eksempel-1-h
 width: 80%
+class: no-click, adaptive-figure
 ---
 
 viser grafen til $h(x) = -4x + 3$. Grafen skjærer $y$-aksen i $y = 3$ - derfor er $b = 3$. Når vi øker verdien til $x$ med $1$, synker funksjonsverdien med $4$ - derfor er $a = -4$.
@@ -210,6 +218,7 @@ viser grafen til $h(x) = -4x + 3$. Grafen skjærer $y$-aksen i $y = 3$ - derfor 
 ---
 name: fig-lineære-funksjoner-grafisk-representasjon-eksempel-1-p
 width: 80%
+class: no-click, adaptive-figure
 ---
 
 viser grafen til $p(x) = -3x$. Grafen skjærer $y$-aksen i $y = 0$ - derfor er  $b = 0$. Når vi øker verdien til $x$ med $1$, synker funksjonsverdien med $3$ - derfor er $a = -3$.
@@ -234,6 +243,7 @@ I figur {numref}`fig-lineære-funksjoner-grafisk-representasjon-underveisoppgave
 ---
 name: fig-lineære-funksjoner-grafisk-representasjon-underveisoppgave-3
 width: 80%
+class: no-click, adaptive-figure
 ---
 viser grafene til noen lineære funksjoner.
 :::

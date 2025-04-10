@@ -24,7 +24,7 @@ En trekant $\triangle ABC$ er vist nedenfor.
 :::{figure} ./figurer/teori/generell_trekant/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -54,7 +54,7 @@ Nedenfor vises en trekant $\triangle ABC$.
 :::{figure} ./figurer/underveisoppgaver/oppgave_1.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -85,7 +85,7 @@ Vi bruker CAS til å bestemme $AC$:
 :::{figure} ./ggb/underveisoppgaver/oppgave_1/sol.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -118,7 +118,7 @@ Nedenfor vises en firkant $\square ABCD$.
 :::{figure} ./figurer/eksempler/eksempel_1/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -147,7 +147,7 @@ Vi bestemmer $x$ med CAS:
 :::{figure} ./figurer/eksempler/eksempel_1/part_1.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -164,7 +164,7 @@ Vi bestemmer $y$ med CAS:
 :::{figure} ./figurer/eksempler/eksempel_1/part_2.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -195,7 +195,7 @@ Til sammen utgjør de en rettvinklet trekant $\triangle DBC$.
 :::{figure} ./figurer/utforsk/utforsk_1/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 

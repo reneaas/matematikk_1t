@@ -23,7 +23,7 @@ $$
 :::{figure} ./gjennomsnittlig_vekstfart/koder/animasjoner/gjennomsnittig_vekstfart/media/videos/gjennomsnittlig_vekstfart/1440p60/gjennomsnittlig_vekstfart.gif
 ---
 width: 100%
-class: no-click
+class: no-click, manim-figure
 ---
 :::
 ::::
@@ -47,6 +47,7 @@ $$
 :::{figure} ./momentan_vekstfart/figurer/teori/momentan_vekstfart.svg
 ---
 width: 100%
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -70,7 +71,7 @@ $$
 :::{figure} ./den_deriverte/koder/animasjoner/media/videos/den_deriverte_card/720p30/den_deriverte_card.gif
 ---
 width: 100%
-class: no-click
+class: no-click, manim-figure
 ---
 :::
 

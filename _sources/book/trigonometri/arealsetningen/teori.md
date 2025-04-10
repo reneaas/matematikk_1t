@@ -32,7 +32,7 @@ Dette stemmer både om vinkelene er **spisse** ($<90\degree$) eller om trekanten
 :::{figure} ./figurer/teori/areal/merged_figure.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -53,7 +53,7 @@ Bestem arealet av trekanten.
 :::{figure} ./figurer/underveisoppgaver/oppgave_1/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -103,7 +103,7 @@ Supplementvinkler
 :::{figure} ./figurer/teori/vinkler/supplementvinkler.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -139,7 +139,7 @@ Se figuren nedenfor.
 :::{figure} ./figurer/teori/arealsetningen/spiss.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -160,7 +160,7 @@ Nedenfor vises en trekant $\triangle ABC$.
 :::{figure} ./figurer/underveisoppgaver/oppgave_2/figur.svg
 ---
 width: 70%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -189,7 +189,7 @@ som vi kan regne ut med CAS:
 :::{figure} ./ggb/underveisoppgaver/oppgave_2/vinkel_B.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -204,7 +204,7 @@ som gir
 :::{figure} ./ggb/underveisoppgaver/oppgave_2/vinkel_C.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -239,7 +239,7 @@ Nedenfor vises en trekant $\triangle ABC$ med en spiss vinkel $\angle A$, en hø
 :::{figure} ./figurer/utforsk/utforsk_1/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -331,7 +331,7 @@ Nedenfor vises en trekant $\triangle ABC$ med en stump vinkel $\angle A$, en hø
 :::{figure} ./figurer/utforsk/utforsk_2/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -419,10 +419,7 @@ v \in \{120\degree, 135\degree, 150\degree\}
 $$
 
 
-:::{raw} html
----
-file: ./ggb/utforsk/utforsk_3/cas_vindu.html
----
+:::{cas-window}
 :::
 
 

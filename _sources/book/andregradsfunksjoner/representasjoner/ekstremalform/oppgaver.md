@@ -28,7 +28,7 @@ Grafen til en andregradsfunksjon $f$ er vist i {numref}`fig-andregradsfunksjoner
 ---
 name: fig-andregradsfunksjoner-representasjoner-ekstremalform-oppgave-2
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $f$.
 :::
@@ -91,7 +91,7 @@ Grafen til en andregradsfunksjon $g$ er vist i {numref}`fig-andregradsfunksjoner
 ---
 name: fig-andregradsfunksjoner-representasjoner-ekstremalform-oppgave-3
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $g$.
 :::

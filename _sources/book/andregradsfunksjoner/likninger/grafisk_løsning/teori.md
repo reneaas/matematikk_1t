@@ -31,6 +31,7 @@ $$
 :::{figure} ./figurer/eksempler/eksempel_1/likning_1.svg
 ---
 width: 80%
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -59,6 +60,7 @@ $$
 :::{figure} ./figurer/eksempler/eksempel_1/likning_2.svg
 ---
 width: 80%
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -87,6 +89,7 @@ $$
 :::{figure} ./figurer/eksempler/eksempel_1/likning_3.svg
 ---
 width: 80%
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -130,6 +133,7 @@ $$
 :::{figure} ./figurer/teori/ax^2+bx+c=0.svg
 ---
 width: 80%
+class: no-click, adaptive-figure
 ---
 :::
 ::::::::::::::
@@ -143,6 +147,7 @@ $$
 :::{figure} ./figurer/teori/ax^2+bx+c=qx+r.svg
 ---
 width: 80%
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -157,6 +162,7 @@ $$
 :::{figure} ./figurer/teori/ax^2+bx+c=px^2+qx+r.svg
 ---
 width: 80%
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -177,6 +183,15 @@ I {numref}`fig-andregradsfunksjoner-andregradslikninger-grafisk-underveisoppgave
 $$
 f(x) = x^2 - x - 6. 
 $$
+
+:::{figure} ./figurer/underveisoppgaver/underveisoppgave_1.svg
+---
+name: fig-andregradsfunksjoner-andregradslikninger-grafisk-underveisoppgave-1
+width: 80%
+class: no-click, adaptive-figure
+---
+viser grafen til $f(x) = x^2 - x - 6$.
+:::
 
 ::::::{tab-set}
 ---
@@ -236,16 +251,6 @@ $$
 
 ::::::
 
----
-
-:::{figure} ./figurer/underveisoppgaver/underveisoppgave_1.svg
----
-name: fig-andregradsfunksjoner-andregradslikninger-grafisk-underveisoppgave-1
-width: 80%
----
-viser grafen til $f(x) = x^2 - x - 6$.
-:::
-
 ::::::::::::::::
 
 ---
@@ -259,6 +264,16 @@ I {numref}`fig-andregradsfunksjoner-andregradslikninger-grafisk-underveisoppgave
 $$
 f(x) = -x^2 + x + 6 \quad \text{og} \quad g(x) = x - 3.
 $$
+
+
+:::{figure} ./figurer/underveisoppgaver/underveisoppgave_2.svg
+---
+name: fig-andregradsfunksjoner-andregradslikninger-grafisk-underveisoppgave-2
+width: 80%
+class: no-click, adaptive-figure
+---
+viser grafene til $f(x) = -x^2 + x + 6$ og $g(x) = x - 3$.
+:::
 
 ::::::{tab-set}
 ---
@@ -317,15 +332,6 @@ $$
 
 ::::::
 
----
-
-:::{figure} ./figurer/underveisoppgaver/underveisoppgave_2.svg
----
-name: fig-andregradsfunksjoner-andregradslikninger-grafisk-underveisoppgave-2
-width: 80%
----
-viser grafene til $f(x) = -x^2 + x + 6$ og $g(x) = x - 3$.
-:::
 
 ::::::::::::::::
 

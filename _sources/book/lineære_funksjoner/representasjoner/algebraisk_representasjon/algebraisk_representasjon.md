@@ -29,7 +29,7 @@ En lineær funksjon $f$ er en funksjon på formen
 :::{figure} ./figurer/teori/algebraisk_uttrykk.svg
 ---
 width: 60%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 

@@ -111,6 +111,7 @@ Uttrykk løsningen som
 ---
 name: lineære-likningssystemer-grafisk-oppgave-1
 width: 80%
+class: no-click, adaptive-figure
 ---
 
 Grafisk representasjon av likningssystemet.
@@ -244,6 +245,7 @@ class: tabs-parts
 :::{figure} ./figurer/oppgaver/oppgave_4/figur_A.svg
 ---
 width: 80%
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -254,6 +256,7 @@ width: 80%
 :::{figure} ./figurer/oppgaver/oppgave_4/figur_B.svg
 ---
 width: 80%
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -264,6 +267,7 @@ width: 80%
 :::{figure} ./figurer/oppgaver/oppgave_4/figur_C.svg
 ---
 width: 80%
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -285,8 +289,11 @@ Lag et likningssystem som kan beskrives av de to funksjonene, og bruk figuren ti
 
 
 ```{figure} ./figurer/oppgaver/oppgave_3.svg
-:name: oppgave-3
-:width: 80%
+---
+name: oppgave-3
+width: 80%
+class: no-click, adaptive-figure
+---
 ```
 
 

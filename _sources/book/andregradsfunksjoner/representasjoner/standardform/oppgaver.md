@@ -65,7 +65,7 @@ Grafen til en andregradsfunksjon $f$ er vist i {numref}`fig-andregradsfunksjoner
 ---
 name: fig-andregradsfunksjoner-representasjoner-standardform-oppgave-3
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $f$.
 :::
@@ -138,7 +138,7 @@ Grafen til en andregradsfunksjon $g$ er vist i {numref}`fig-andregradsfunksjoner
 ---
 name: fig-andregradsfunksjoner-representasjoner-standardform-oppgave-4
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $g$.
 :::
@@ -220,7 +220,7 @@ Bestem $f(x)$.
 ---
 name: fig-andregradsfunksjoner-representasjoner-standardform-oppgave-5-a
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $f$.
 :::
@@ -247,7 +247,7 @@ Bestem $g(x)$.
 ---
 name: fig-andregradsfunksjoner-representasjoner-standardform-oppgave-5-b
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $g$.
 :::
@@ -273,7 +273,7 @@ Bestem $h(x)$.
 ---
 name: fig-andregradsfunksjoner-representasjoner-standardform-oppgave-5-c
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $h$.
 :::
@@ -373,7 +373,7 @@ Grafen til en andregradsfunksjon er vist i {numref}`fig-andregradsfunksjoner-rep
 ---
 name: fig-andregradsfunksjoner-representasjoner-standardform-oppgave-7
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $f$. 
 :::

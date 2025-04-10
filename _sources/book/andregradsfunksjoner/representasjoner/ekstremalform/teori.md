@@ -27,7 +27,7 @@ Grafen til en andregradsfunksjon har et bunnpunkt når den er **konveks** $\smil
 :::{figure} ./figurer/teori/bunnpunkt.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 :::::::::::::
@@ -37,7 +37,7 @@ Grafen til en andregradsfunksjon har et toppunkt når den er **konkav** $\frown$
 :::{figure} ./figurer/teori/toppunkt.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 :::::::::::::
@@ -62,7 +62,7 @@ Grafen til en andregradsfunksjon $f$ er vist i {numref}`fig-andregradsfunksjoner
 ---
 name: fig-andregradsfunksjoner-representasjoner-ekstremalform-eksempel-1
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $f$.
 :::
@@ -94,7 +94,7 @@ Ekstremalformen til en andregradsfunksjon $f$ er gitt ved
 :::{figure} ./figurer/teori/algebraisk_uttrykk.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -106,7 +106,7 @@ class: no-click
 :::{figure} ./figurer/teori/grafisk_representasjon.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -138,7 +138,7 @@ $$
 :::{figure} ./figurer/eksempler/eksempel_2/f.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -158,7 +158,7 @@ $$
 :::{figure} ./figurer/eksempler/eksempel_2/g.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -178,7 +178,7 @@ $$
 :::{figure} ./figurer/eksempler/eksempel_2/h.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -224,7 +224,7 @@ Bestem ekstremalformen til $f(x)$.
 ---
 name: fig-andregradsfunksjoner-representasjoner-ekstremalform-eksempel-3
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $f$.
 :::  
@@ -289,7 +289,7 @@ Bestem ekstremalformen til $f(x)$.
 ---
 name: fig-andregradsfunksjoner-representasjoner-ekstremalform-underveisoppgave-2
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $f$.
 :::
@@ -369,7 +369,7 @@ Se på grafene under.
 :::{figure} ./figurer/utforsk/utforsk_1/a/graf_A.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 :::::::::::
@@ -378,7 +378,7 @@ class: no-click
 :::{figure} ./figurer/utforsk/utforsk_1/a/graf_B.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 :::::::::::
@@ -387,7 +387,7 @@ class: no-click
 :::{figure} ./figurer/utforsk/utforsk_1/a/graf_C.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 :::::::::::
@@ -468,7 +468,7 @@ For å bytte fra nullpunktsformen til ekstremalformen til en andregradsfunksjon,
 :::{figure} ./figurer/teori/nullpunkter_og_symmetrilinje.svg
 ---
 width: 40%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 

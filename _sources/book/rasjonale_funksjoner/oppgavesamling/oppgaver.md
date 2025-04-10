@@ -11,7 +11,7 @@ I {numref}`fig-rasjonale-funksjoner-oppgavesamling-oppgave-1` vises grafen til e
 ---
 name: fig-rasjonale-funksjoner-oppgavesamling-oppgave-1
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en rasjonal funksjon $f$. En horisontal og en vertikal asymptote for $f$ er tegnet inn.
 :::
@@ -141,7 +141,7 @@ class: answer, dropdown
 :::{figure} ./figurer/oppgave_2/d.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 ::::
@@ -165,7 +165,7 @@ I {numref}`fig-rasjonale-funksjoner-oppgavesamling-oppgave-3` vises grafen til e
 ---
 name: fig-rasjonale-funksjoner-oppgavesamling-oppgave-3
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en rasjonal funksjon $f$. En horisontal og en vertikal asymptote for $f$ er tegnet inn.
 :::
@@ -313,7 +313,7 @@ class: answer, dropdown
 :::{figure} ./figurer/oppgave_4/d.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 ::::
@@ -373,7 +373,7 @@ Graf **C**.
 ::::{figure} ./figurer/oppgave_5/merged_figure.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 ::::
 
@@ -408,7 +408,7 @@ class: answer, dropdown
 ::::{figure} ./figurer/oppgave_6/merged_figure.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 ::::
 
@@ -506,7 +506,7 @@ class: answer, dropdown
 :::{figure} ./figurer/oppgave_7/e.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 ::::
@@ -606,7 +606,7 @@ class: answer, dropdown
 :::{figure} ./figurer/oppgave_8/e.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 ::::
@@ -709,7 +709,7 @@ class: answer, dropdown
 :::{figure} ./figurer/oppgave_9/e.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 ::::
@@ -724,57 +724,3 @@ class: no-click
 :::::::::::::::
 
 
-
-<!-- 
-:::::::::::::::{admonition} Oppgave X
----
-class: problem-level-3
----
-Nedenfor vises noen påstander om en rasjonal funksjon $f$ gitt ved
-
-$$
-f(x) = \dfrac{P(x)}{Q(x)}
-$$
-
-der $P(x)$ og $Q(x)$ er polynomer. 
-
-1. Avgjør om påstandene er sanne eller usanne.
-2. Hvis en påstand er usann, vis at påstanden er usann ved å finne et moteksempel.
-
-::::::::::::::{tab-set}
----
-class: tabs-parts
----
-:::::::::::::{tab-item} Påstand 1
-Hvis $f$ har nøyaktig én horisontal asymptote med likningen $y = 2$, så er verdimengden til $f$ gitt ved  
-
-$$
-V_f = \mathbb{R} \setminus \{2\}.
-$$ 
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} Påstand 2
-Hvis $Q(-1) = 0$, så har $f$ en vertikal asymptote med likningen $x = -1$.
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} Påstand 3
-$$
-P(3) = 0 \liff f(3) = 0.
-$$
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} Påstand 4
-Hvis tellergraden og nevnergraden til $f$ er like, så har grafen til $f'$ en horisontal asymptote med likningen $y = 0$. 
-
-:::::::::::::
-
-::::::::::::::
-
-
-::::::::::::::: -->

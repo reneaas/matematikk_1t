@@ -83,7 +83,7 @@ Vi bruker CAS til å løse likningen:
 :::{figure} ./figurer/del_2/oppgave_1/b.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -117,7 +117,7 @@ Stigningstallet til linja som går gjennom punktene $(0, L(0))$ og $(8, L(8))$ s
 :::{figure} ./figurer/del_2/oppgave_1/c.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -158,7 +158,7 @@ En sirkel med radius $1$ er innskrevet i en regulær 6-kant. En trekant har et h
 :::{figure} ./figurer/del_2/oppgave_2/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -199,7 +199,7 @@ Trekant $\triangle ABC$ er *minimum* en likebeint trekant siden $AB = AC$. Vider
 :::{figure} ./figurer/del_2/oppgave_2/hjelpefigur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -255,7 +255,7 @@ Nedenfor vises grafen til en andregradsfunksjon $f$ og to tangenter som skjærer
 :::{figure} ./figurer/del_2/oppgave_3/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -324,7 +324,7 @@ Vi løser likningssystemet med CAS for å bestemme koeffisientene til $f(x)$:
 :::{figure} ./figurer/del_2/oppgave_3/sol.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -379,7 +379,7 @@ Nedenfor vises en sylinder fylt med vann med et lite hull i bunnen.
 :::{figure} ./figurer/del_2/oppgave_4/merged_figure.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -430,7 +430,7 @@ Vi skriver inn datapunktene i et regneark i Geogebra:
 :::{figure} ./figurer/del_2/oppgave_4/a/regneark.png
 ---
 width: 30%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -439,7 +439,7 @@ Deretter gjør vi regresjonsanalyse og velger en potensfunksjon som modell siden
 :::{figure} ./figurer/del_2/oppgave_4/a/modell.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -507,7 +507,7 @@ Vi bestemmer $k$ og $r$ ved å løse likningssystemet i CAS:
 :::{figure} ./figurer/del_2/oppgave_4/b/sol.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -567,7 +567,7 @@ Vi løser dette med CAS:
 :::{figure} ./figurer/del_2/oppgave_4/c/sol.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -626,7 +626,7 @@ Kystlinjen er $9$ km lang. Øy $A$ ligger $2$ km fra land og øy $C$ ligger $4$ 
 :::{figure} ./figurer/del_2/oppgave_5/figur.svg
 ---
 width: 90%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -667,7 +667,7 @@ Vi regner ut summen av lengdene $AB + BC$ med CAS:
 :::{figure} ./figurer/del_2/oppgave_5/a/sol.png
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -753,7 +753,7 @@ For å bestemme hvor langt unna strandkiosken båten må gå i land for å få k
 :::{figure} ./figurer/del_2/oppgave_5/c/sol_1.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -762,7 +762,7 @@ som forteller oss at $x = 3$ er en kandidat for et bunnpunkt. For å være sikre
 :::{figure} ./figurer/del_2/oppgave_5/c/sol_2.png
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -805,7 +805,7 @@ Kvadratet er fylt med mindre fargelagte kvadrater som blir mindre og mindre.
 :::{figure} ./figurer/del_2/oppgave_6/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -937,7 +937,7 @@ siden her er $f(-1) = f(3) = 0$. Så kan vi bestemme i hvilke punkter $x$ vi få
 ```{figure} ./figurer/del_2/oppgave_7/påstand_1/sol.png
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 ```
 

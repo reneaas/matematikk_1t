@@ -21,7 +21,7 @@ $$
 ---
 name: fig-andregradsfunksjoner-likninger-grafisk-løsning-oppgave-1-a
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $f$.
 :::
@@ -48,7 +48,7 @@ $$
 ---
 name: fig-andregradsfunksjoner-likninger-grafisk-løsning-oppgave-1-b
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $g$.
 :::
@@ -78,7 +78,7 @@ $$
 ---
 name: fig-andregradsfunksjoner-likninger-grafisk-løsning-oppgave-1-c
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $h$.
 :::
@@ -108,7 +108,7 @@ $$
 ---
 name: fig-andregradsfunksjoner-likninger-grafisk-løsning-oppgave-1-d
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $p$.
 :::
@@ -140,7 +140,7 @@ Grafen til en andregradsfunksjon $f$ er vist i {numref}`fig-andregradsfunksjoner
 ---
 name: fig-andregradsfunksjoner-likninger-grafisk-løsning-oppgave-2
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $f$.
 :::
@@ -228,7 +228,7 @@ $$
 ---
 name: fig-andregradsfunksjoner-likninger-grafisk-løsning-oppgave-3-a
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafene til en andregradsfunksjon $f$ og en lineær funksjon $g$.
 :::
@@ -258,7 +258,7 @@ $$
 ---
 name: fig-andregradsfunksjoner-likninger-grafisk-løsning-oppgave-3-b
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafene til en andregradsfunksjon $f$ og en lineær funksjon $g$.
 :::
@@ -286,7 +286,7 @@ $$
 ---
 name: fig-andregradsfunksjoner-likninger-grafisk-løsning-oppgave-3-c
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafene til en andregradsfunksjon $f$ og en andregradsfunksjon $g$.
 :::

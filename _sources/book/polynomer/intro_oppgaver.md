@@ -22,7 +22,7 @@ $$
 :::{figure} ./polynomfunksjoner/figurer/teori/nullpunkter/tre_nullpunkter.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -46,7 +46,7 @@ $$
 :::{figure} ./polynomdivisjon/koder/eksempler/eksempel_2/eksempel_2.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -55,7 +55,7 @@ class: no-click
 :::{figure} ./polynomdivisjon/koder/eksempler/eksempel_5/eksempel_5.gif
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -130,7 +130,7 @@ $$
 :::{figure} ./optimering/figurer/eksempler/eksempel_3.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 

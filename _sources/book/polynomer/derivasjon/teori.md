@@ -66,7 +66,7 @@ class: answer, dropdown
 :::{figure} ./koder/utforsk/utforsk_1/b_annotert.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -124,7 +124,7 @@ class: answer, dropdown
 :::{figure} ./koder/underveisoppgaver/underveisoppgave_1/a.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 ::::
@@ -294,7 +294,7 @@ Grafen til en tredjegradsfunksjon $f$ er vist i {numref}`fig-polnyomfunksjoner-d
 ---
 name: fig-polnyomfunksjoner-derivasjon-eksempel-2
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en tredjegradsfunksjon $f$
 :::
@@ -310,7 +310,7 @@ For å forstå hvordan grafen til $f'$ henger sammen med grafen til $f$ kan vi
 ---
 name: fig-polnyomfunksjoner-derivasjon-eksempel-2-fortegnslinje
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser fortegnslinja til $f'(x)$. Sammenhengen med grafen til $f$ er at $f'(x) > 0$ når grafen til $f$ stiger og $f'(x) < 0$ når grafen til $f$ synker. I ekstremalpunktene til $f$ er $f'(x) = 0$ fordi en tangent gjennom punktet vil være horisontal og dermed ha stigningstall $0$.
 :::
@@ -324,7 +324,7 @@ viser fortegnslinja til $f'(x)$. Sammenhengen med grafen til $f$ er at $f'(x) > 
 ---
 name: fig-polnyomfunksjoner-derivasjon-eksempel-2-f-derivert
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til $f'$. Nullpunktene til $f'$ svarer til samme $x$-koordinater som ekstremalpunktene til $f$.
 :::
@@ -356,7 +356,7 @@ Vi antar her at $r$ er et fastholdt tall, mens $x$ kan variere.
 ---
 name: fig-polynomer-derivasjon-utforsk-2
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en tredjegradsfunksjon $f$ og en sekant gjennom to punkter $(r, f(r))$ og $(x, f(x))$ der $x > r$.
 :::
@@ -407,7 +407,7 @@ Vi utfører polynomdivisjonen hvor $f(x) = x^3$ og $f(r) = r^3$
 :::{figure} ./koder/utforsk/utforsk_2/b.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 

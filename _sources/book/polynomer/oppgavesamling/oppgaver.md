@@ -229,7 +229,7 @@ class: dropdown, solution
 :::{figure} ./koder/oppgaver/oppgave_2/a.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 ::::
@@ -261,7 +261,7 @@ class: dropdown, solution
 :::{figure} ./koder/oppgaver/oppgave_2/b.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 ::::
@@ -293,7 +293,7 @@ class: dropdown, solution
 :::{figure} ./koder/oppgaver/oppgave_2/c.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 ::::
@@ -326,7 +326,7 @@ class: dropdown, solution
 :::{figure} ./koder/oppgaver/oppgave_2/d.svg
 ---
 width: 90%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 ::::
@@ -393,7 +393,7 @@ Bestem $f(x)$.
 ---
 name: fig-polynomer-oppgavesamling-oppgave-3-a
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $f$.
 :::
@@ -444,7 +444,7 @@ Bestem $g(x)$.
 ---
 name: fig-polynomer-oppgavesamling-oppgave-3-b
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $g$.
 :::
@@ -495,7 +495,7 @@ Bestem $h(x)$.
 ---
 name: fig-polynomer-oppgavesamling-oppgave-3-c
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $h$.
 :::
@@ -642,7 +642,7 @@ Vi starter med å tegne et fortegnsskjema for $f(x) = (x - 1)(x + 2)$:
 :::{figure} ./figurer/oppgaver/oppgave_4/b.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -702,7 +702,7 @@ Vi tegner et fortegnsskjema for $f(x) = (x + 2)(x - 3)$ og leser av hvor $f(x) \
 :::{figure} ./figurer/oppgaver/oppgave_4/c.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -764,7 +764,7 @@ Så tegner vi et fortegnsskjema for $g(x)$ og leser av hvor $g(x) < 0$:
 :::{figure} ./figurer/oppgaver/oppgave_4/d.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -1076,7 +1076,7 @@ Bruker polynomdivisjon til å finne likningen til tangenten. Likningen er resten
 :::{figure} ./koder/oppgaver/oppgave_6/b.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -1180,7 +1180,7 @@ Vi utfører polynomdivisjonen $p(x) : (x - 0)^2$ for å finne likningen til tang
 :::{figure} ./koder/oppgaver/oppgave_6/d.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -1324,7 +1324,7 @@ der vi må lete etter et andregradspolynom slik at likningen er oppfylt. Dette k
 :::{figure} ./koder/oppgaver/oppgave_7/b.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -1373,7 +1373,7 @@ Vi fyrer løs:
 :::{figure} ./koder/oppgaver/oppgave_7/c.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -1428,7 +1428,7 @@ så får vi et andregradspolynom som vi videre kan nullpunktsfaktorisere for å 
 :::{figure} ./koder/oppgaver/oppgave_7/d.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -1554,7 +1554,7 @@ Dermed er $x = 1$ en løsning. Det betyr at $(x - 1)$ er en faktor i tredjegrads
 :::{figure} ./koder/oppgaver/oppgave_8/a.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -1622,7 +1622,7 @@ Dermed vet vi at $x = 1$ er en rot som betyr at $(x - 1)$ er en faktor i tredjeg
 :::{figure} ./koder/oppgaver/oppgave_8/b.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -1715,7 +1715,7 @@ Dermed er $x = - 1$ en rot. Dette betyr at $f(x)$ er delelig med $(x + 1)$ som b
 :::{figure} ./koder/oppgaver/oppgave_8/c.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -1849,7 +1849,7 @@ Lag en skisse av grafen til $f'$.
 ---
 name: fig-polynomer-oppgavesamling-oppgave-10-a
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $f$.
 :::
@@ -1861,7 +1861,7 @@ class: answer, dropdown
 :::{figure} ./figurer/oppgaver/oppgave_10/a_løsning.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser en skisse av grafen til $f'$.
 :::
@@ -1880,7 +1880,7 @@ Lag en skisse av grafen til $g'$.
 ---
 name: fig-polynomer-oppgavesamling-oppgave-10-b
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en tredjegradsfunksjon $g$.
 :::
@@ -1892,7 +1892,7 @@ class: answer, dropdown
 :::{figure} ./figurer/oppgaver/oppgave_10/b_løsning.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 viser en skisse av grafen til $g'$.
@@ -1912,7 +1912,7 @@ Lag en skisse av grafen til $h'$.
 ---
 name: fig-polynomer-oppgavesamling-oppgave-10-c
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en tredjegradsfunksjon $h$.
 :::
@@ -1924,7 +1924,7 @@ class: answer, dropdown
 :::{figure} ./figurer/oppgaver/oppgave_10/c_løsning.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 viser en skisse av grafen til $h'$.
@@ -1969,7 +1969,7 @@ En trekant har hjørnene $(0, 0)$, $(2, 0)$ og $(2, f(2))$. Se {numref}`fig-poly
 ---
 name: fig-polynomer-oppgavesamling-oppgave-11
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en tredjegradsfunksjon $f$ og en trekant med hjørner i $(0, 0)$, $(2, 0)$ og $(2, f(2))$. 
 :::
@@ -2075,7 +2075,7 @@ Lag en skisse av grafen til $f$.
 ---
 name: fig-polynomer-oppgavesamling-oppgave-12-a
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en lineær funksjon $f'$. 
 :::
@@ -2088,7 +2088,7 @@ class: dropdown, answer
 :::{figure} ./figurer/oppgaver/oppgave_12/a_løsning.svg
 ---
 width: 100%
-class: no-click
+class: no-click, 
 ---
 viser en skisse av grafen til $f$. 
 :::
@@ -2107,7 +2107,7 @@ Lag en skisse av grafen til $g$.
 ---
 name: fig-polynomer-oppgavesamling-oppgave-12-b
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $g'$. 
 :::
@@ -2120,7 +2120,7 @@ class: dropdown, answer
 :::{figure} ./figurer/oppgaver/oppgave_12/b_løsning.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser en skisse av grafen til $g$. 
 :::
@@ -2141,7 +2141,7 @@ Lag en skisse av grafen til $h$.
 ---
 name: fig-polynomer-oppgavesamling-oppgave-12-c
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $h'$. 
 :::
@@ -2154,7 +2154,7 @@ class: dropdown, answer
 :::{figure} ./figurer/oppgaver/oppgave_12/c_løsning.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser en skisse av grafen til $h$. 
 :::
@@ -2175,7 +2175,7 @@ Lag en skisse av grafen til $p$.
 ---
 name: fig-polynomer-oppgavesamling-oppgave-12-d
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en tredjegradsfunksjon $p'$. 
 :::
@@ -2188,7 +2188,7 @@ class: dropdown, answer
 :::{figure} ./figurer/oppgaver/oppgave_12/d_løsning.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser en skisse av grafen til $p$. 
 :::
@@ -2218,7 +2218,7 @@ En sylinder med radius $r$ og høyde $h$ er vist i {numref}`fig-polynomer-oppgav
 ---
 name: fig-polynomer-oppgavesamling-oppgave-13-sylinder
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser en sylinder med radius $r$ og høyde $h$.
 :::

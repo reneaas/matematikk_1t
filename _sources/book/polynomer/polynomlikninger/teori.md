@@ -90,7 +90,7 @@ Så vi finner at $f(2) = 0$, som betyr at $(x - 2)$ er en faktor i $f(x)$. Derme
 :::{figure} ./koder/eksempler/eksempel_1/eksempel_1_polydiv.svg
 ---
 width: 90%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -104,7 +104,7 @@ Bruker vi et Horner-skjema, får vi utført polynomdivisjon samtidig som vi regn
 :::{figure} ./koder/eksempler/eksempel_1/eksempel_1_syntetisk_1.svg
 ---
 width: 50%
-class: no-click
+class: no-click, adaptive-figure
 ---
 Horner-skjema for $x = 1$. Her finner vi at $f(1) = -9$. 
 :::
@@ -114,7 +114,7 @@ Vi prøver videre.
 :::{figure} ./koder/eksempler/eksempel_1/eksempel_1_syntetisk_-1.svg
 ---
 width: 50%
-class: no-click
+class: no-click, adaptive-figure
 ---
 Horner-skjema for $x = -1$. Her finner vi at $f(-1) = -3$.
 :::
@@ -125,7 +125,7 @@ Vi prøver neste verdi:
 :::{figure} ./koder/eksempler/eksempel_1/eksempel_1_syntetisk_2.svg
 ---
 width: 50%
-class: no-click
+class: no-click, adaptive-figure
 ---
 Horner-skjema for $x = 2$. Her finner vi at $f(2) = 0$. 
 :::

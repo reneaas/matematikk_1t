@@ -17,7 +17,7 @@ link-type: doc
 :::{figure} ./standardform/figurer/teori/algebraisk_uttrykk.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -26,7 +26,7 @@ class: no-click
 :::{figure} ./standardform/figurer/teori/grafisk_representasjon.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -45,7 +45,7 @@ link-type: doc
 :::{figure} ./nullpunktsform/figurer/teori/algebraisk_uttrykk.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -54,7 +54,7 @@ class: no-click
 :::{figure} ./nullpunktsform/figurer/teori/grafisk_representasjon.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 ::::
@@ -70,7 +70,7 @@ link-type: doc
 :::{figure} ./ekstremalform/figurer/teori/algebraisk_uttrykk.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -79,7 +79,7 @@ class: no-click
 :::{figure} ./ekstremalform/figurer/teori/grafisk_representasjon.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 

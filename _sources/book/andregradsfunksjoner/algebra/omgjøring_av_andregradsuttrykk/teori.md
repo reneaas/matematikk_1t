@@ -16,7 +16,7 @@ Vi har så langt utforsket ulike måter å skrive andregradsfunksjoner på og hv
 ---
 name: fig-andregradsfunksjoner-algebra-diagram-full
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser en oversikt over strategiene vi skal bruke for å gå fra standardform til ekstremalform og nullpunktsform.
 :::
@@ -84,7 +84,7 @@ width: 100%
 :::{figure} ./figurer/teori/diagram_1.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -250,7 +250,7 @@ Nå vet vi hvordan vi kan bruke fullstendige kvadraters metode til å gå fra st
 :::{figure} ./figurer/teori/diagram_2.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 

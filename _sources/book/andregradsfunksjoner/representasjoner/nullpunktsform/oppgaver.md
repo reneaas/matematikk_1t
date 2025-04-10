@@ -112,7 +112,7 @@ Bestem $f(x)$.
 ---
 width: 80%
 name: fig-andregradsfunksjoner-representasjoner-nullpunktsform-oppgave-3-a
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $f$.
 :::
@@ -136,7 +136,7 @@ Bestem $g(x)$.
 ---
 width: 80%
 name: fig-andregradsfunksjoner-representasjoner-nullpunktsform-oppgaver-oppgave-3-b
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $g$.
 :::
@@ -161,7 +161,7 @@ Bestem $h(x)$.
 ---
 width: 80%
 name: fig-andregradsfunksjoner-representasjoner-nullpunktsform-oppgave-3-c
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $h$.
 :::
@@ -183,7 +183,7 @@ Bestem $r(x)$.
 ---
 width: 80%
 name: fig-andregradsfunksjoner-representasjoner-nullpunktsform-oppgave-3-d
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $r$.
 :::
@@ -491,7 +491,7 @@ Hvis en andregradsfunksjon skjærer linja $y = y_0$ i $x = x_1$ og $x = x_2$, ka
 :::{figure} ./figurer/oppgaver/oppgave_7/nullpunktsform_forskyvning.svg
 ---
 width: 60%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -500,7 +500,7 @@ class: no-click
 :::{figure} ./figurer/oppgaver/oppgave_7/teori.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -520,7 +520,7 @@ Bestem standardformen til $f(x)$.
 ---
 name: fig-andregradsfunksjoner-representasjoner-nullpunktsform-oppgave-7-eksempel
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $f$.
 :::
@@ -578,7 +578,7 @@ Bestem standardformen til $f(x)$.
 ---
 name: fig-andregradsfunksjoner-representasjoner-nullpunktsform-oppgave-7-a
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $f$.
 :::
@@ -604,7 +604,7 @@ Bestem standardformen til $g(x)$.
 ---
 name: fig-andregradsfunksjoner-representasjoner-nullpunktsform-oppgave-7-b
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $g$.
 :::
@@ -629,7 +629,7 @@ Bestem standardformen til $h(x)$.
 ---
 name: fig-andregradsfunksjoner-representasjoner-nullpunktsform-oppgave-7-c
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $h$.
 :::
@@ -656,7 +656,7 @@ Bestem standardformen til $r(x)$.
 ---
 name: fig-andregradsfunksjoner-representasjoner-nullpunktsform-oppgave-7-d
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $r$.
 :::

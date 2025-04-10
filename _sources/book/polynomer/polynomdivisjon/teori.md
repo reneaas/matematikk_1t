@@ -77,7 +77,7 @@ Først finner vi hva vi må gange $(x + 2)$ slik at vi får $3x^2$ som høyeste 
 ::::{figure} ./koder/eksempler/eksempel_1/stage_3.svg
 ---
 width: 60%
-class: no-click
+class: no-click, polydiv-figure
 ---
 ::::
 
@@ -92,7 +92,7 @@ Dette er $-3$. Deretter trekker vi fra $-3(x + 2)$ fra $(-3x - 6)$.
 ::::{figure} ./koder/eksempler/eksempel_1/stage_6.svg
 ---
 width: 60%
-class: no-click
+class: no-click, polydiv-figure
 ---
 ::::
 
@@ -106,7 +106,7 @@ Legger vi sammen de to linjene, så sitter vi igjen med $0$ i rest, og vi er fer
 ::::{figure} ./koder/eksempler/eksempel_1/stage_7.svg
 ---
 width: 60%
-class: no-click
+class: no-click, polydiv-figure
 ---
 ::::
 
@@ -121,7 +121,7 @@ Hele utregningen kan derfor skrives ned som:
 ::::{figure} ./koder/eksempler/eksempel_1/eksempel_1.svg
 ---
 width: 60%
-class: no-click
+class: no-click, polydiv-figure
 ---
 ::::
 
@@ -163,7 +163,7 @@ Vi starter med å dele høyeste potens av $x$ i teller som er $x^3$ med høyeste
 :::{figure} ./koder/eksempler/eksempel_2/stage_2.svg
 ---
 width: 80%
-class: no-click
+class: no-click, polydiv-figure
 ---
 :::
 
@@ -175,7 +175,7 @@ Vi ganger svaret fra steg 1 med $(x + 2)$ som gir $x^2(x + 2) = x^3 + 2x^2$. Der
 :::{figure} ./koder/eksempler/eksempel_2/stage_3.svg
 ---
 width: 80%
-class: no-click
+class: no-click, polydiv-figure
 ---
 :::
 
@@ -188,7 +188,7 @@ Vet å regne ut differansen fra steg 2, får vi polynomet $-5x^2 - 6x + 8$ (men 
 :::{figure} ./koder/eksempler/eksempel_2/stage_4.svg
 ---
 width: 80%
-class: no-click
+class: no-click, polydiv-figure
 ---
 :::
 
@@ -203,7 +203,7 @@ Vi deler leddet med høyeste potens av $x$ fra det resterende polynomet som er $
 :::{figure} ./koder/eksempler/eksempel_2/stage_5.svg
 ---
 width: 80%
-class: no-click
+class: no-click, polydiv-figure
 ---
 :::
 
@@ -217,7 +217,7 @@ Vi ganger tilbake svaret fra steg 4 med $(x + 2)$ som gir $-5x(x + 2) = -5x^2 - 
 :::{figure} ./koder/eksempler/eksempel_2/stage_7.svg
 ---
 width: 80%
-class: no-click
+class: no-click, polydiv-figure
 ---
 :::
 
@@ -231,7 +231,7 @@ Deretter vi svaret $4$ med $(x + 2)$ som gir $4(x + 2) = 4x + 8$ og trekker dett
 :::{figure} ./koder/eksempler/eksempel_2/stage_10.svg
 ---
 width: 80%
-class: no-click
+class: no-click, polydiv-figure
 ---
 :::
 
@@ -246,7 +246,7 @@ Vi kan oppsummere hele regnestykket som følger:
 :::{figure} ./koder/eksempler/eksempel_2/eksempel_2.svg
 ---
 width: 80%
-class: no-click
+class: no-click, polydiv-figure
 ---
 :::
 
@@ -291,7 +291,7 @@ class: solution
 :::{figure} ./koder/eksempler/eksempel_3/eksempel_3.svg
 ---
 width: 85%
-class: no-click
+class: no-click, polydiv-figure
 ---
 :::
 
@@ -338,7 +338,7 @@ Vi utfører polynomdivisjon:
 :::{figure} ./koder/eksempler/eksempel_4/eksempel_4.svg
 ---
 width: 90%
-class: no-click
+class: no-click, polydiv-figure
 ---
 :::
 
@@ -422,7 +422,7 @@ class: answer, dropdown
 :::{figure} ./koder/utforsk/utforsk_1/utforsk_1.svg
 ---
 width: 90%
-class: no-click
+class: no-click, polydiv-figure
 ---
 :::
 
@@ -521,7 +521,7 @@ Vi utfører polynomdivisjon og får:
 :::{figure} ./koder/eksempler/eksempel_5/eksempel_5_longdiv.svg
 ---
 width: 90%
-class: no-click
+class: no-click, polydiv-figure
 ---
 :::
 
@@ -584,7 +584,7 @@ Polynomdivisjonen fra eksempel 4 krever mye skriving:
 :::{figure} ./koder/eksempler/eksempel_5/eksempel_5_longdiv.svg
 ---
 width: 80%
-class: no-click
+class: no-click, polydiv-figure
 ---
 :::
 
@@ -593,7 +593,7 @@ Vi kan se at mange av leddene forsvinner som en trapp, så vi trenger ikke holde
 :::{figure} ./koder/eksempler/eksempel_5/eksempel_5.gif
 ---
 width: 60%
-class: no-click
+class: no-click, polydiv-figure
 ---
 viser hvordan vi algoritmisk regner ut verdiene i tabellen.
 :::
@@ -606,7 +606,7 @@ Vi kan oppsummere resultatet vi fikk med Horner-skjemaet som
 :::{figure} ./koder/eksempler/eksempel_5/eksempel_5.svg
 ---
 width: 60%
-class: no-click
+class: no-click, polydiv-figure
 ---
 På øverste rad står koeffisientene til $f(x)$ med høyeste grad først og konstantledd til slutt. På nederste rad er de tre første tallene koeffisientene til kvotienten $K(x)$ med høyest grad til venstre og konstantledd til slutt. Det siste tallet (i rødt) på siste rad er resten $R$. 
 :::
@@ -650,7 +650,7 @@ class: answer, dropdown
 :::{figure} ./koder/underveisoppgaver/underveisoppgave_1/underveisoppgave_1.svg
 ---
 width: 60%
-class: no-click
+class: no-click, polydiv-figure
 ---
 :::
 
@@ -676,7 +676,7 @@ class: solution, dropdown
 :::{figure} ./koder/underveisoppgaver/underveisoppgave_1/underveisoppgave_1_tutor.svg
 ---
 width: 60%
-class: no-click
+class: no-click, polydiv-figure
 ---
 :::
 

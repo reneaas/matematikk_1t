@@ -23,6 +23,7 @@ $$
 :::{figure} ./gjennomsnittlig_vekstfart/figurer/teori/gjennomsnittlig_vekstfart.svg
 ---
 width: 100%
+class: no-click, adaptive-figure
 ---
 :::
 ::::
@@ -46,6 +47,7 @@ $$
 :::{figure} ./momentan_vekstfart/figurer/teori/momentan_vekstfart.svg
 ---
 width: 100%
+class: no-click, adaptive-figure
 ---
 :::
 

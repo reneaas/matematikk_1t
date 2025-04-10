@@ -74,53 +74,6 @@ file: quiz/oppgaver/quiz_1/quiz_1.html
 
 ---
 
-<!-- 
-:::::::::::::::{admonition} Oppgave 3
----
-class: problem-level-1
----
-Skriv om potensene til røtter.
-
-::::::::::::::{tab-set}
----
-class: tabs-parts
----
-
-
-:::::::::::::{tab-item} a
-$$
-x^{1/5}
-$$
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} b
-$$
-x^{-1/2}
-$$
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} c
-$$
-x^{2/3}
-$$
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} d
-$$
-x^{-3/4}
-$$
-
-:::::::::::::
-
-
-::::::::::::::
-::::::::::::::: -->
 
 
 :::::::::::::::{admonition} Oppgave 3
@@ -144,7 +97,7 @@ Koble sammen riktig funksjon med riktig graf.
 ---
 name: fig-potensfunksjoner-oppgave-3-a
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafene til tre funksjoner.
 :::
@@ -176,7 +129,7 @@ Koble sammen riktig funksjon med riktig graf.
 ---
 name: fig-potensfunksjoner-oppgave-3-b
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafene til tre funksjoner.
 :::
@@ -207,7 +160,7 @@ Koble sammen riktig funksjon med riktig graf.
 ---
 name: fig-potensfunksjoner-oppgave-3-c
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafene til tre funksjoner.
 :::
@@ -329,7 +282,7 @@ Vi bruker den siste strategien med CAS som vi kan få til med:
 :::{figure} ./ggb/oppgaver/oppgave_4/d_sol.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -410,7 +363,7 @@ Perioden til en planet er tiden det tar for en planet å gjennomføre et fullt o
 :::{figure} ./figurer/eksempler/eksempel_3/planetbane.svg
 ---
 width: 50%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -452,7 +405,7 @@ Bruker `RegPot` for å lage en potensfunksjon med regresjon:
 :::{figure} ./ggb/oppgaver/oppgave_5/a_sol.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -517,7 +470,7 @@ Vi regner ut $P(1)$ med modellen vi bestemte i **a**:
 :::{figure} ./ggb/oppgaver/oppgave_5/b_sol.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -566,7 +519,7 @@ Vi utvider CAS-vinduet med å løse likningen
 :::{figure} ./ggb/oppgaver/oppgave_5/c_sol.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -667,7 +620,7 @@ Vi bruker regresjon til å bestemme $f(x)$.
 :::{figure} ./ggb/oppgaver/oppgave_6/a_sol.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -752,7 +705,7 @@ Vi må løse likningen $g(x) = 300$ for å bestemme hvor langt over bakken luftt
 :::{figure} ./ggb/oppgaver/oppgave_6/c_sol.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -805,7 +758,7 @@ Vi løser dette problemet i to steg:
 :::{figure} ./ggb/oppgaver/oppgave_6/d_sol.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 

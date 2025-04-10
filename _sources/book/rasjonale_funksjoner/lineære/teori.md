@@ -98,7 +98,7 @@ En rasjonal funksjon $f$ der teller $P(x)$ og nevner $Q(x)$ er lineære polynome
 :::{figure} ./figurer/teori/annoterte_figurer/linear_rational_function.svg
 ---
 width: 60%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -108,7 +108,7 @@ der definisjonsmengden er $D_f = \mathbb{R} \setminus \{c\}$ og verdimengden er 
 ::::{figure} ./figurer/teori/teori_1.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 ::::
 
@@ -144,7 +144,7 @@ Bestem $f(x)$.
 ---
 name: fig-rasjonale-funksjoner-representasjoner-eksempel-1
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en rasjonal funksjon $f$ med en horisontal asymptote $y = 2$ og en vertikal asymptote $x = -1$ og et nullpunkt i $x = 3$. 
 :::
@@ -205,7 +205,7 @@ Bestem $f(x)$.
 ---
 name: fig-rasjonale-funksjoner-representasjoner-underveisoppgave-1
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en rasjonal funksjon $f$.
 :::
@@ -323,7 +323,7 @@ Vi tegner en fortegnslinje der vi passer på å få med at $x = -3$ et **bruddpu
 ---
 name: fig-lineære-rasjonale-funksjoner-eksempel-3-fortegnslinje
 width: 90%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser fortegnsskjema for $f(x) = (-2x + 4) / (x + 3)$. Bruddpunktene til $f(x)$ er markert med et kryss "$\times$" i fortegnslinja.
 ::: 
@@ -335,7 +335,7 @@ Samler vi dette med opplysningene om nullpunktet og asymptotene til $f$, kan vi 
 ---
 name: fig-lineære-rasjonale-funksjoner-eksempel-3-graf
 width: 90%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser en skisse av grafen til $f(x) = (-2x + 4) / (x + 3)$ med nullpunktet $x = 2$, den vertikale asymptoten $x = -3$ og den horisontale asymptoten $y = -2$.
 ::: 

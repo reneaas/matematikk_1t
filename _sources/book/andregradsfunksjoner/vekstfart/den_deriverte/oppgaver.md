@@ -11,7 +11,7 @@ For en andregradsfunksjon $f(x) = ax^2 + bx + c$ er den deriverte gitt ved:
 ::::{figure} ./figurer/teori/annoterte_uttrykk/den_deriverte2.svg
 ---
 width: 70%
-class: no-click
+class: no-click, adaptive-figure
 ---
 ::::
 :::::::::::::
@@ -22,14 +22,14 @@ Den deriverte er null i symmetrilinja til en andregradsfunksjon:
 ::::{figure} ./figurer/teori/annoterte_uttrykk/derivert_symmetrilinje.svg
 ---
 width: 30%
-class: no-click
+class: no-click, adaptive-figure
 ---
 ::::
 
 ::::{figure} ./figurer/teori/derivert_ekstremalpunkt/graf.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 ::::
 :::::::::::::
@@ -158,7 +158,7 @@ class: tabs-parts
 ::::{figure} ./figurer/oppgaver/oppgave_3/a/graf.svg
 ---
 width: 90%
-class: no-click
+class: no-click, adaptive-figure
 ---
 ::::
 
@@ -169,7 +169,7 @@ class: answer, dropdown
 ::::{figure} ./figurer/oppgaver/oppgave_3/a/fortegnslinje.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 ::::
 :::::
@@ -179,7 +179,7 @@ class: no-click
 ::::{figure} ./figurer/oppgaver/oppgave_3/b/graf.svg
 ---
 width: 90%
-class: no-click
+class: no-click, adaptive-figure
 ---
 ::::
 
@@ -191,7 +191,7 @@ class: answer, dropdown
 ::::{figure} ./figurer/oppgaver/oppgave_3/b/fortegnslinje.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 ::::
 :::::
@@ -202,7 +202,7 @@ class: no-click
 ::::{figure} ./figurer/oppgaver/oppgave_3/c/graf.svg
 ---
 width: 90%
-class: no-click
+class: no-click, adaptive-figure
 ---
 ::::
 
@@ -214,7 +214,7 @@ class: answer, dropdown
 ::::{figure} ./figurer/oppgaver/oppgave_3/c/fortegnslinje.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 ::::
 :::::
@@ -225,7 +225,7 @@ class: no-click
 ::::{figure} ./figurer/oppgaver/oppgave_3/d/graf.svg
 ---
 width: 90%
-class: no-click
+class: no-click, adaptive-figure
 ---
 ::::
 
@@ -237,7 +237,7 @@ class: answer, dropdown
 ::::{figure} ./figurer/oppgaver/oppgave_3/d/fortegnslinje.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 ::::
 :::::
@@ -557,7 +557,7 @@ Bestem likningen for tangenten til grafen til $f$ i punktet $P$.
 ---
 name: fig-andregradsfunksjoner-den-deriverte-oppgave-8-a
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til $f'$. 
 ::::
@@ -585,7 +585,7 @@ Bestem likningen for tangenten til grafen til $g$ i punktet $Q$.
 ---
 name: fig-andregradsfunksjoner-den-deriverte-oppgave-8-b
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til $g'$. 
 ::::
@@ -614,7 +614,7 @@ Bestem likningen for tangenten til grafen til $h$ i punktet $R$.
 ---
 name: fig-andregradsfunksjoner-den-deriverte-oppgave-8-c
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til $h'$. 
 ::::
@@ -643,7 +643,7 @@ Bestem likningen for tangenten til grafen til $p$ i punktet $S$.
 ---
 name: fig-andregradsfunksjoner-den-deriverte-oppgave-8-d
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til $p'$. 
 ::::
@@ -680,7 +680,7 @@ I {numref}`fig-andregradsfunksjoner-vekstfart-den-deriverte-oppgave-9` vises gra
 ---
 name: fig-andregradsfunksjoner-vekstfart-den-deriverte-oppgave-9
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $f$ og tangenter i punktene $(1, f(1))$ og $(3, f(3))$. 
 ::::

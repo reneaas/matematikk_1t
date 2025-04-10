@@ -10,7 +10,7 @@ En trekant $\triangle ABC$ er vist i figuren nedenfor.
 :::{figure} ./figurer/oppgaver/oppgave_1/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -39,7 +39,7 @@ class: solution, dropdown
 :::{figure} ./ggb/oppgaver/oppgave_1/a.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 ::::
@@ -67,7 +67,7 @@ class: solution, dropdown
 :::{figure} ./ggb/oppgaver/oppgave_1/b.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 ::::
@@ -78,16 +78,8 @@ class: no-click
 ::::::::::::::
 
 
-::::{admonition} CAS-vindu
----
-class: progging, dropdown
----
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_1/cas.html
----
+:::{cas-window}
 :::
-::::
 
 
 
@@ -108,7 +100,7 @@ I figuren nedenfor vises en trekant $\triangle ABC$.
 :::{figure} ./figurer/oppgaver/oppgave_2/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -167,16 +159,8 @@ $$
 ::::::::::::::
 
 
-::::{admonition} CAS-vindu
----
-class: progging, dropdown
----
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_2/cas.html
----
+:::{cas-window}
 :::
-::::
 
 
 :::::::::::::::
@@ -229,16 +213,8 @@ $$
 
 
 
-::::{admonition} CAS-vindu
----
-class: progging, dropdown
----
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_3/cas.html
----
+:::{cas-window}
 :::
-::::
 
 :::::::::::::::
 
@@ -255,7 +231,7 @@ I figuren nedenfor vises $\square ABCD$.
 :::{figure} ./figurer/oppgaver/oppgave_4/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -297,17 +273,8 @@ $$
 
 
 
-::::{admonition} CAS-vindu
----
-class: progging, dropdown
----
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_4/cas.html
----
+:::{cas-window}
 :::
-::::
-
 
 :::::::::::::::
 
@@ -324,7 +291,7 @@ I figuren nedenfor vises $\square ABCD$.
 :::{figure} ./figurer/oppgaver/oppgave_5/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -366,16 +333,8 @@ $$
 ::::::::::::::
 
 
-::::{admonition} CAS-vindu
----
-class: progging, dropdown
----
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_5/cas.html
----
+:::{cas-window}
 :::
-::::
 
 :::::::::::::::
 
@@ -391,7 +350,7 @@ I figuren nedenfor vises $\square ABCD$.
 :::{figure} ./figurer/oppgaver/oppgave_6/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -433,16 +392,8 @@ $$
 ::::::::::::::
 
 
-::::{admonition} CAS-vindu
----
-class: progging, dropdown
----
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_6/cas.html
----
+:::{cas-window}
 :::
-::::
 
 :::::::::::::::
 
@@ -460,7 +411,7 @@ I figuren nedenfor vises $\square ABCD$.
 :::{figure} ./figurer/oppgaver/oppgave_7/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -500,16 +451,8 @@ $$
 
 ::::::::::::::
 
-::::{admonition} CAS-vindu
----
-class: progging, dropdown
----
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_7/cas.html
----
+:::{cas-window}
 :::
-::::
 
 :::::::::::::::
 

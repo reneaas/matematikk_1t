@@ -68,8 +68,5 @@ Polynomdivisjon
 :::::::::::::::
 
 
-:::{raw} html
----
-file: ./ggb/cas.html
----
+:::{cas} 1000 1000
 :::

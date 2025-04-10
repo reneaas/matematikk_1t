@@ -21,7 +21,7 @@ Standardformen til en andregradsfunksjon $f$ er gitt ved
 :::{figure} ./figurer/teori/algebraisk_uttrykk.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -216,7 +216,7 @@ $a$ bestemmer om grafen er konveks (smiler $\smile$ ) eller konkav (surt fjes $\
 :::{figure} ./figurer/utforsk/utforsk_1/a.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -232,7 +232,7 @@ Bestemmer forskyvningen av grafen fra $y$-aksen. Fortegnet til $a$ bestemmer hvi
 :::{figure} ./figurer/utforsk/utforsk_1/b_1.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -243,7 +243,7 @@ class: no-click
 :::{figure} ./figurer/utforsk/utforsk_1/b_2.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -259,7 +259,7 @@ Bestemmer hvor grafen skjærer $y$-aksen.
 :::{figure} ./figurer/utforsk/utforsk_1/c.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -289,7 +289,7 @@ Bestem $f(x)$.
 ---
 name: fig-andregradsfunksjoner-representasjoner-standardform-eksempel-2
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $f$.
 :::
@@ -392,7 +392,7 @@ Bestem $f(x)$.
 ---
 name: fig-andregradsfunksjoner-representasjoner-standardform-underveisoppgave-2
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $f$.
 :::

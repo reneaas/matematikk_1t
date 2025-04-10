@@ -301,6 +301,7 @@ Grafene til to lineære funksjoner $f$ og $g$ er vist i {numref}`fig-lineære-fu
 ---
 name: fig-lineære-funksjoner-representasjoner-bestemme-funksjonsuttrykk-oppgave-6
 width: 80%
+class: no-click, adaptive-figure
 ---
 viser grafen til to lineære funksjoner $f$ og $g$. Grafen til $f$ og $g$ er parallelle.
 :::
@@ -343,6 +344,7 @@ Grafen til en lineær funksjon $g$ er vist i {numref}`fig-lineære-funksjoner-re
 ---
 name: fig-lineære-funksjoner-representasjoner-bestemme-funksjonsuttrykk-oppgave-7
 width: 80%
+class: no-click, adaptive-figure
 ---
 viser grafen til en lineær funksjon $g$, og to punkter på grafen.
 :::
@@ -387,6 +389,7 @@ Bestem $f(x)$.
 ---
 name: fig-lineære-funksjoner-representasjoner-bestemme-funksjonsuttrykk-oppgave-8
 width: 80%
+class: no-click, adaptive-figure
 ---
 viser grafene til to lineære funksjoner $f$ og $g$. Avstanden fra origo til det nærmeste punktet på de to grafene er det samme. Grafene er parallelle.
 :::

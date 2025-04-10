@@ -399,7 +399,7 @@ Bruk arealberegninger til å begrunne 1.kvadratsetning.
 ---
 name: fig-andregradsfunksjoner-algebra-kvadratsetninger-oppgave-6
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser et kvadrat med sidelengder $a + b$ bygget opp at et kvadrat med sidelengder $a$, to rektangler med sidelengder $a - b$ og $b$, og et lite kvadrat med sidelengder $b$. 
 :::
@@ -422,7 +422,7 @@ class: dropdown, solution
 ---
 name: fig-andregradsfunksjoner-algebra-kvadratsetninger-oppgave-6-løsning
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser arealet til hver bit av kvadratet. 
 :::
@@ -465,7 +465,7 @@ Bruk arealberegninger av det grønne området til å begrunne 2.kvadratsetning.
 ---
 name: fig-andregradsfunksjoner-algebra-kvadratsetninger-oppgave-7
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser et kvadrat med et område som er fargelagt grønt.
 :::
@@ -527,7 +527,7 @@ Bruk arealberegninger av det grønne området til å begrunne konjugatsetningen.
 ---
 name: fig-andregradsfunksjoner-algebra-kvadratsetninger-oppgave-8
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser et kvadrat med et området som er fargelagt grønt.
 :::

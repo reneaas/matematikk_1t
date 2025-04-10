@@ -47,6 +47,7 @@ Vi kaller dette for **nullpunktet** til funksjonen.
 ---
 name: fig-lineære-funksjoner-likninger-grafisk-teori-1
 width: 80%
+class: no-click, adaptive-figure
 ---
 viser grafen til en lineær funksjon $f(x) = ax + b$ og skjæringen med $x$-aksen. Løsningen av likningen $ax + b = 0$ er $x$-koordinaten til skjæringspunktet $(x_0, 0)$.
 :::
@@ -84,6 +85,7 @@ Vi kan se grafen til $f$ i {numref}`fig-lineære-funksjoner-likninger-grafisk-ek
 ---
 name: fig-lineære-funksjoner-likninger-grafisk-eksempel-1
 width: 90%
+class: no-click, adaptive-figure
 ---
 
 Grafen til $f(x) = 2x - 4$. Grafen skjærer $x$-aksen i $x = 2$. 
@@ -118,6 +120,7 @@ Bestem nullpunktet til $f$.
 ---
 name: lineære-likninger-grafisk-underveisoppgave-1
 width: 80%
+class: no-click, adaptive-figure
 ---
 
 Viser grafen til $f(x) = -2x + 6$. 
@@ -143,6 +146,7 @@ Vi må bestemme hvor grafen til $f$ skjærer $x$-aksen. I {numref}`fig-lineære-
 ---
 name: fig-lineære-funksjoner-likninger-grafisk-underveisoppgave-1-løsning
 width: 90%
+class: no-click, adaptive-figure
 ---
 viser en annotert versjon av {numref}`lineære-likninger-grafisk-underveisoppgave-1` som tydelig viser skjæringen mellom grafen til $f$ og $x$-aksen. Grafen skjærer $x$-aksen i $x = 3$.
 :::
@@ -178,6 +182,7 @@ $$
 ---
 name: fig-lineære-funksjoner-likninger-grafisk-teori-2
 width: 80%
+class: no-click, adaptive-figure
 ---
 viser grafen til to lineære funksjoner $f(x) = ax + b$ og $g(x) = k$ og skjæringen mellom dem. Løsningen av likningen er $ax + b = k$ er $x$-koordinaten til skjæringspunktet, som navngitt $x_0$.
 ::::
@@ -210,6 +215,7 @@ Grafene til $f$ og $g$ er vist i {numref}`lineære-likninger-grafisk-eksempel-2`
 ---
 name: lineære-likninger-grafisk-eksempel-2
 width: 90%
+class: no-click, adaptive-figure
 ---
 Grafen til $f(x) = 2x + 3$ og $g(x) = 5$. 
 :::
@@ -330,6 +336,7 @@ I {numref}`fig-lineære-funksjoner-likninger-grafisk-teori-3` er dette illustrer
 ---
 name: fig-lineære-funksjoner-likninger-grafisk-teori-3
 width: 80%
+class: no-click, adaptive-figure
 ---
 Viser grafene til to lineære funksjoner $f(x) = ax + b$ og $g(x) = cx + d$ og skjæringen mellom dem. Løsningen av likningen er $ax + b = cx + d$ er $x$-koordinaten til skjæringspunktet, som navngitt $x_1$.
 :::
@@ -361,8 +368,11 @@ $$
 Grafene til $f$ og $g$ er vist i {numref}`lineære-likninger-grafisk-eksempel-3`. I figuren har vi også annotert hvor grafene skjærer hverandre.
 
 :::{figure} ./figurer/eksempler/eksempel_3.svg
-:name: lineære-likninger-grafisk-eksempel-3
-:width: 80%
+---
+name: lineære-likninger-grafisk-eksempel-3
+width: 80%
+class: no-click, adaptive-figure
+---
 
 viser grafene til $f(x) = x - 1$ og $g(x) = -x + 3$. 
 :::
@@ -392,8 +402,12 @@ $$
 $$
 
 :::{figure} ./figurer/underveisoppgaver/underveisoppgave_3.svg
-:name: lineære-likninger-grafisk-underveisoppgave-3
-:width: 80%
+---
+name: lineære-likninger-grafisk-underveisoppgave-3
+width: 80%
+class: no-click, adaptive-figure
+---
+
 
 Grafene til $f(x) = -2x + 1$ og $g(x) = x - 2$. 
 :::
@@ -417,6 +431,7 @@ I {numref}`lineære-likninger-grafisk-underveisoppgave-3-løsning` ser vi en utv
 ---
 name: lineære-likninger-grafisk-underveisoppgave-3-løsning
 width: 90%
+class: no-click, adaptive-figure
 ---
 viser grafene til $f$ og $g$, samt skjæringspunktet $(1, -1)$ og annotering av løsningen til likningen $f(x) = g(x)$. 
 ```
@@ -436,46 +451,3 @@ $$
 
 :::
 ::::
-
-<!-- 
-## Ingen, én eller uendelig mange løsninger
-Eksemplene vi har sett på så langt har hatt én løsning, men det finnes også lineære likninger som har ingen løsninger, eller uendelig mange løsninger. 
-
-::::{admonition} Eksempel 4: likninger uten løsninger
-:class: example
-
-Likningen
-
-$$
-x + 1 = x + 3,
-$$
-
-er et eksempel på en likningen uten noen løsning. Grafisk svarer dette til to parallelle linjer, som vi kan se i {numref}:lineære-likninger-grafisk-eksempel-4:.
-
-:::{figure} ./figurer/eksempler/eksempel_4.svg
-:name: lineære-likninger-grafisk-eksempel-4
-:width: 80%
-
-Likningen $x + 3 = x + 1$ har ingen løsninger siden grafene til $f(x) = x+1$ og $g(x) = x + 3$ aldri skjærer hverandre.
-:::
-
-::::
-
-::::{admonition} Eksempel 5: uendelige mange løsninger
-:class: example
-
-Likningen 
-
-$$
-2(x+1) = 2x + 2,
-$$ 
-
-vil ha uendelig mange løsninger siden det er en **identitet**. Husk at med dette begrepet, så mener vi at likningen er sann for **alle** verdier av $x$. Grafisk svarer dette til to overlappende grafer, som vi kan se i {numref}:lineære-likninger-grafisk-eksempel-5:.
-
-:::{figure} ./figurer/eksempler/eksempel_5.svg
-:name: lineære-likninger-grafisk-eksempel-5
-:width: 80%
-
-Grafene til $f(x) = 2x + 2$ og $g(x) = 2(x+1)$ overlapper fordi likningen $2(x + 1) = 2x + 2$ er en identitet. 
-:::
-:::: -->
