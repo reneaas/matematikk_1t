@@ -25,7 +25,7 @@ class CASDirective(SphinxDirective):
 
         # Create the raw HTML. Adjust the ggbBase64 value as needed.
         html = f"""
-<div id="{container_id}" style="width: {width}px; height: {height}px;"></div>
+<div id="{container_id}" style="width: {width}px; height: {height}px;" class="ggb-window"></div>
 <script>
 document.addEventListener("DOMContentLoaded", function() {{
     var options = {{

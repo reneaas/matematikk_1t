@@ -12,6 +12,7 @@ I {numref}`fig-lineære-funksjoner-representasjoner-oppgave-1` vises seks punkte
 ---
 name: fig-lineære-funksjoner-representasjoner-oppgave-1
 width: 80%
+class: no-click, adaptive-figure
 ---
 
 viser seks punkter $A$, $B$, $C$, $D$, $E$ og $F$ i et koordinatsystem.
@@ -49,6 +50,7 @@ I {numref}`fig-lineære-funksjoner-representasjoner-oppgave-2` vises grafen til 
 ---
 name: fig-lineære-funksjoner-representasjoner-oppgave-2
 width: 80%
+class: no-click, adaptive-figure
 ---
 
 viser grafen til en lineær funksjon $f$.
@@ -79,6 +81,7 @@ I {numref}`fig-lineære-funksjoner-representasjoner-oppgave-3` vises grafen til 
 ---
 name: fig-lineære-funksjoner-representasjoner-oppgave-3
 width: 80%
+class: no-click, adaptive-figure
 ---
 viser grafen til fem lineære funksjoner $f$, $g$, $h$, $p$ og $r$. 
 :::
@@ -108,6 +111,7 @@ I {numref}`fig-lineære-funksjoner-representasjoner-oppgave-4` vises grafen til 
 ---
 name: fig-lineære-funksjoner-representasjoner-oppgave-4
 width: 80%
+class: no-click, adaptive-figure
 ---
 viser grafen til en lineær funksjon $f$.
 :::
@@ -236,6 +240,7 @@ class: answer, dropdown
 ---
 name: fig-lineære-funksjoner-representasjoner-oppgave-5-2
 width: 100%
+class: no-click, adaptive-figure
 ---
 viser punktene fra verditabellen i deloppgave 1 tegnet i et koordinatsystem.
 ```
@@ -258,6 +263,7 @@ Grafen til $f$ vises i {numref}`fig-lineære-funksjoner-representasjoner-oppgave
 ---
 name: fig-lineære-funksjoner-representasjoner-oppgave-5-3
 width: 100%
+class: no-click, adaptive-figure
 ---
 viser grafen til $f(x)= 2x - 3$ og punktene fra verditabellen i deloppgave 1.
 :::
@@ -298,6 +304,7 @@ Bruk {numref}`fig-lineære-funksjoner-representasjoner-oppgave-6-1` til å beste
 ---
 name: fig-lineære-funksjoner-representasjoner-oppgave-6-1
 width: 80%
+class: no-click, adaptive-figure
 ---
 viser grafen til en lineær funksjon $f$.
 :::
@@ -323,6 +330,7 @@ Bruk {numref}`fig-lineære-funksjoner-representasjoner-oppgave-6-2` til å beste
 ---
 name: fig-lineære-funksjoner-representasjoner-oppgave-6-2
 width: 80%
+class: no-click, adaptive-figure
 ---
 viser grafen til en lineær funksjon $g$.
 :::
@@ -346,6 +354,7 @@ Bruk {numref}`fig-lineære-funksjoner-representasjoner-oppgave-6-3` til å beste
 ---
 name: fig-lineære-funksjoner-representasjoner-oppgave-6-3
 width: 80%
+class: no-click, adaptive-figure
 ---
 viser grafen til en lineær funksjon $h$.
 :::
@@ -369,6 +378,7 @@ Bruk {numref}`fig-lineære-funksjoner-representasjoner-oppgave-6-4` til å beste
 ---
 name: fig-lineære-funksjoner-representasjoner-oppgave-6-4
 width: 80%
+class: no-click, adaptive-figure
 ---
 viser grafen til en lineær funksjon $r$.
 :::
@@ -507,6 +517,7 @@ Bestem hvilken graf som hører til hvilken funksjon.
 ---
 name: fig-lineære-funksjoner-representasjoner-oppgave-7
 width: 80%
+class: no-click, adaptive-figure
 ---
 viser grafene til de lineære funksjonene $f$, $g$, $h$ og $r$ - men vi har glemt å merke hvilken graf som hører til hvilken funksjon.
 :::
@@ -522,6 +533,7 @@ I {numref}`fig-lineære-funksjoner-representasjoner-oppgave-7-fasit` er grafene 
 ---
 name: fig-lineære-funksjoner-representasjoner-oppgave-7-fasit
 width: 80%
+class: no-click, adaptive-figure
 ---
 viser grafene til de lineære funksjonene $f$, $g$, $h$ og $r$ merket med riktig funksjonsuttrykk.
 ```
@@ -550,6 +562,7 @@ Bestem hvilken graf som hører til hvilken funksjon.
 ---
 name: fig-lineære-funksjoner-representasjoner-oppgave-8
 width: 80%
+class: no-click, adaptive-figure
 ---
 viser grafene til de lineære funksjonene $f$, $g$, $h$ og $p$. Vi husker bare ikke hvilken graf som hører til hvilken funksjon. Hjelp...
 :::
@@ -563,6 +576,7 @@ class: answer, dropdown
 ---
 name: fig-lineære-funksjoner-representasjoner-oppgave-5-fasit
 width: 80%
+class: no-click, adaptive-figure
 ---
 viser grafene til de lineære funksjonene $f$, $g$, $h$ og $p$ der vi har merket hvilken graf som hører til hvilken funksjon.
 ```

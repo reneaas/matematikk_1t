@@ -16,7 +16,7 @@ link-type: doc
 :::{figure} ./algebraisk_representasjon/figurer/teori/algebraisk_uttrykk.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -35,6 +35,7 @@ link-type: doc
 :::{figure} grafisk_representasjon/figurer/teori/grafisk_representasjon.svg
 ---
 width: 100%
+class: no-click, adaptive-figure
 ---
 :::
 

@@ -9,7 +9,7 @@ I figuren nedenfor vises en rettvinklet trekant.
 :::{figure} ./figurer/oppgaver/oppgave_1/figur.svg
 ---
 width: 70%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -96,7 +96,7 @@ I figuren nedenfor vises en rettvinklet trekant.
 :::{figure} ./figurer/oppgaver/oppgave_2/figur.svg
 ---
 width: 70%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -195,7 +195,7 @@ I figuren nedenfor vises den samme rettvinklete trekanten du jobbet med i oppgav
 :::{figure} ./figurer/oppgaver/oppgave_3/figur.svg
 ---
 width: 70%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -219,7 +219,7 @@ class: answer, dropdown
 :::{figure} ./ggb/oppgaver/oppgave_3/a.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -241,7 +241,7 @@ class: answer, dropdown
 :::{figure} ./ggb/oppgaver/oppgave_3/b.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -261,7 +261,7 @@ class: answer, dropdown
 :::{figure} ./ggb/oppgaver/oppgave_3/c.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -271,10 +271,7 @@ Dermed er $C = 60$.
 
 ::::::::::::::
 
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_3/cas_vindu.html
----
+:::{cas-window}
 :::
 
 :::::::::::::::
@@ -303,7 +300,7 @@ class: answer, dropdown
 :::{figure} ./ggb/oppgaver/oppgave_4/a.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -326,7 +323,7 @@ class: answer, dropdown
 :::{figure} ./ggb/oppgaver/oppgave_4/b.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -342,10 +339,7 @@ $$
 
 
 
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_4/cas.html
----
+:::{cas-window}
 :::
 
 :::::::::::::::
@@ -371,14 +365,11 @@ Bruk CAS til å bestemme $x$.
 :::{figure} ./figurer/oppgaver/oppgave_5/a.svg
 ---
 width: 70%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_5/a.html
----
+:::{cas-window}
 :::
 
 ::::{admonition} Fasit
@@ -388,7 +379,7 @@ class: answer, dropdown
 :::{figure} ./ggb/oppgaver/oppgave_5/a.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -408,14 +399,11 @@ Bruk CAS til å bestemme $x$.
 :::{figure} ./figurer/oppgaver/oppgave_5/b.svg
 ---
 width: 70%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_5/b.html
----
+:::{cas-window}
 :::
 
 ::::{admonition} Fasit
@@ -425,7 +413,7 @@ class: answer, dropdown
 :::{figure} ./ggb/oppgaver/oppgave_5/b.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -445,14 +433,11 @@ Bruk CAS til å bestemme $x$.
 :::{figure} ./figurer/oppgaver/oppgave_5/c.svg
 ---
 width: 70%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_5/c.html
----
+:::{cas-window}
 :::
 
 ::::{admonition} Fasit
@@ -462,7 +447,7 @@ class: answer, dropdown
 :::{figure} ./ggb/oppgaver/oppgave_5/c.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -480,14 +465,11 @@ Bruk CAS til å bestemme $x$.
 :::{figure} ./figurer/oppgaver/oppgave_5/d.svg
 ---
 width: 70%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_5/d.html
----
+:::{cas-window}
 :::
 
 
@@ -498,7 +480,7 @@ class: answer, dropdown
 :::{figure} ./ggb/oppgaver/oppgave_5/d.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -516,14 +498,11 @@ Bruk CAS til å bestemme $x$.
 :::{figure} ./figurer/oppgaver/oppgave_5/e.svg
 ---
 width: 70%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_5/e.html
----
+:::{cas-window}
 :::
 
 ::::{admonition} Fasit
@@ -533,7 +512,7 @@ class: answer, dropdown
 :::{figure} ./ggb/oppgaver/oppgave_5/e.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 Altså er $x = 1.25$.
@@ -551,15 +530,12 @@ Bruk CAS til å bestemme $x$.
 :::{figure} ./figurer/oppgaver/oppgave_5/f.svg
 ---
 width: 70%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
 
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_5/f.html
----
+:::{cas-window}
 :::
 
 
@@ -570,7 +546,7 @@ class: answer, dropdown
 :::{figure} ./ggb/oppgaver/oppgave_5/f.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 Altså er $x = 3.22$.
@@ -595,7 +571,7 @@ En likesidet trekant er vist i figuren nedenfor.
 :::{figure} ./figurer/oppgaver/oppgave_6/figur.svg
 ---
 width: 70%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -679,7 +655,7 @@ Bruk trekanten nedenfor til å bestemme en eksakt verdi for $\sin 45^\circ$ og $
 :::{figure} ./figurer/oppgaver/oppgave_7/figur.svg
 ---
 width: 70%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -722,7 +698,7 @@ Vis at formelen stemmer for trekanten nedenfor med $v = 30^\circ$.
 :::{figure} ./figurer/oppgaver/oppgave_8/figur.svg
 ---
 width: 70%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -752,7 +728,7 @@ $$
 :::{figure} ./figurer/oppgaver/oppgave_9/figur.svg
 ---
 width: 70%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -763,20 +739,10 @@ class: tabs-parts
 :::::::::::::{tab-item} a
 Hvor stor vinkel $u$ må lyset ha for at vinkelen etter brytning i vannet skal være $v = 30^\circ$?
 
-::::{admonition} CAS-vindu
----
-class: progging, dropdown
----
 
-<br>
-
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_9/a.html
----
+:::{cas-window}
 :::
 
-::::
 
 ::::{admonition} Fasit
 ---
@@ -785,7 +751,7 @@ class: answer, dropdown
 :::{figure} ./ggb/oppgaver/oppgave_9/a.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -830,7 +796,7 @@ I figuren nedenfor vises en mulig bane for lysstrålen.
 :::{figure} ./figurer/oppgaver/oppgave_10/figur.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -902,19 +868,8 @@ $$
 :::::::::::::{tab-item} d
 Bestem i hvilket punkt $M(x, 0)$ lysstrålen må ha truffet dersom lysstrålen skal bruke kortest mulig tid mellom $A$ og $B$. 
 
-::::{admonition} CAS-vindu
----
-class: progging, dropdown
----
-
-<br>
-
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_10/d.html
----
+:::{cas-window}
 :::
-::::
 
 
 ::::{admonition} Fasit
@@ -924,7 +879,7 @@ class: answer, dropdown
 :::{figure} ./ggb/oppgaver/oppgave_10/d.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -945,24 +900,13 @@ $$
 :::{figure} ./figurer/oppgaver/oppgave_9/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
 
-::::{admonition} CAS-vindu
----
-class: progging, dropdown
----
-
-<br>
-
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_10/e.html
----
+:::{cas-window}
 :::
-::::
 
 
 ::::{admonition} Fasit
@@ -972,7 +916,7 @@ class: answer, dropdown
 :::{figure} ./ggb/oppgaver/oppgave_10/e.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 ::::
@@ -1010,17 +954,8 @@ Månen har en radius på ca. 1737 km og er ca. 384 400 km unna jorden.
 Bestem hvor stor vinkel $v$ månen dekker på himmelen sett fra jorden.
 
 
-::::{admonition} CAS-vindu
----
-class: progging, dropdown
----
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_11/a.html
----
+:::{cas-window}
 :::
-
-::::
 
 ::::{admonition} Fasit
 ---
@@ -1044,17 +979,8 @@ Dekker månen eller Andromedagalaksen størst vinkel på himmelen?
 
 
 
-::::{admonition} CAS-vindu
----
-class: progging, dropdown
----
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_11/b.html
----
+:::{cas-window}
 :::
-
-::::
 
 
 ::::{admonition} Fasit
@@ -1091,7 +1017,7 @@ Nedenfor vises en rettvinklet trekant med vinkler $u$ og $v$.
 :::{figure} ./figurer/oppgaver/oppgave_12/figur.svg
 ---
 width: 70%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 

@@ -17,6 +17,7 @@ link-type: doc
 :::{figure} ./abc_formelen/figurer/teori/abc-formel.svg
 ---
 width: 100%
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -34,6 +35,7 @@ link-type: doc
 :::{figure} ./grafisk_løsning/figurer/teori/ax^2+bx+c=qx+r.svg
 ---
 width: 100%
+class: no-click, adaptive-figure
 ---
 :::
 ::::

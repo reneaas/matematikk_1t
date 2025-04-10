@@ -201,7 +201,7 @@ $$
 ---
 name: fig-andregradsfunksjoner-ulikheter-grafisk-løsning-oppgave-4-a
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $f$. 
 ::: 
@@ -230,7 +230,7 @@ $$
 ---
 name: fig-andregradsfunksjoner-ulikheter-grafisk-løsning-oppgave-4-b
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $f$. 
 ::: 
@@ -258,7 +258,7 @@ $$
 ---
 name: fig-andregradsfunksjoner-ulikheter-grafisk-løsning-oppgave-4-c
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $f$. 
 ::: 
@@ -286,7 +286,7 @@ $$
 ---
 name: fig-andregradsfunksjoner-ulikheter-grafisk-løsning-oppgave-4-d
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $f$. 
 ::: 
@@ -322,7 +322,7 @@ I {numref}`fig-andregradsfunksjoner-ulikheter-grafisk-løsning-oppgave-5` vises 
 ---
 name: fig-andregradsfunksjoner-ulikheter-grafisk-løsning-oppgave-5
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafene til en andregradsfunksjon $f$ og en lineær funksjon $g$.
 :::

@@ -41,7 +41,7 @@ link-type: doc
 :::{figure} ./omgjøring_av_andregradsuttrykk/figurer/teori/diagram_4.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 

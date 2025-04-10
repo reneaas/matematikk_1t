@@ -83,6 +83,7 @@ Form på likning:
 ---
 width: 80%
 name: fig-lineære-likningssystemer-grafisk-eksempel-2a
+class: no-click, adaptive-figure
 ---
 viser en skrå linje $y = -\dfrac{4}{3}x + \dfrac{2}{3}$ som også kan skrives på formen $4x + 3y = 2$.
 :::
@@ -97,6 +98,7 @@ Form på likning:
 ---
 width: 80%
 name: fig-lineære-likningssystemer-grafisk-eksempel-2b
+class: no-click, adaptive-figure
 ---
 viser en horisontal linje $y = 3$.
 :::
@@ -110,6 +112,7 @@ Form på likning:
 ---
 width: 80%
 name: fig-lineære-likningssystemer-grafisk-eksempel-2c
+class: no-click, adaptive-figure
 ---
 viser en vertikal linje $x = -2$. 
 :::
@@ -152,6 +155,7 @@ er løsningen av likningssystemer skjæringspunktet $(x_1, y_1)$ mellom de to li
 ---
 name: fig-lineære-likningssystemer-grafisk-løsning
 width: 80%
+class: no-click, adaptive-figure
 ---
 Løsningen av likningssystemet $Ax + By = C \, \land \, Dx + Ey = F$ er skjæringspunktet $(x_1, y_1)$ mellom de to linjene. 
 :::
@@ -222,6 +226,7 @@ så finner vi skjæringspunktet mellom linjene.
 ---
 name: lineære-likningssystemer-grafisk-eksempel-3
 width: 80%
+class: no-click, adaptive-figure
 ---
 Grafene til de lineære funksjonene $f(x) = 2x + 1$ og $g(x) = -x + 4$. Skjæringspunktet mellom de to grafene svarer til løsningen av likningssystemet. 
 :::
@@ -263,6 +268,7 @@ Uttrykk løsningen som
 ---
 name: lineære-likningssystemer-grafisk-underveisoppgave-1
 width: 80%
+class: no-click, adaptive-figure
 ---
 
 Grafisk representasjon av likningssystemet
@@ -309,9 +315,3 @@ $$
 
 `````
 ``````
-
-<!-- ## Antall løsninger
-På samme måte som en lineær likning kan ha ingen, én eller uendelig mange løsninger, kan også lineære likningssystemer ha ingen, én eller uendelig mange løsninger. 
-
-## Likningssystem med flere enn to variabler
-Et likningssystem kan ha flere enn to variabler, men disse likningssystemene vil være vanskelige å tegne opp i et todimensjonalt koordinatsystem, ettersom vi har en variabel representert langs hver akse. For likningssystemer med flere enn to variabler vil vi som regel heller velge en algebraisk løsningsmetode.  -->

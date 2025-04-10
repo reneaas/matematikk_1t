@@ -3,7 +3,7 @@
 
 :::::::::::::::{admonition} Oppsummering
 ---
-class: summary
+class: summary, dropdown
 ---
 ::::::::::::::{tab-set}
 :::::::::::::{tab-item} Gjennomsnittlig vekstfart
@@ -12,7 +12,7 @@ Den **gjennomsnittlige vekstfarten** til en funksjon $f$ i intervallet $[x_1, x_
 :::{figure} ./figurer/teori/formel2.svg
 ---
 width: 60%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -22,7 +22,7 @@ Linjen som går gjennom de to punktene kaller vi for en **sekant**. Se {numref}`
 ---
 name: fig-teori-andregradsfunksjoner-vekstfart-gjennomsnittlig-vekstfart-sekanter-oppgaver
 width: 100%
-class: no-click
+class: no-click, manim-figure
 ---
 viser grafen til en andregradsfunksjon (blå) og en sekant (rød) som går gjennom to punkter $(x_1, f(x_1))$ og $(x_2, f(x_2))$ og den tilsvarende formelen for gjennomsnittlig vekstfart i intervallet $[x_1, x_2]$.
 :::
@@ -57,7 +57,7 @@ Bestem den gjennomsnittlige vekstfarten til $f$ i intervallet $[0, 3]$.
 :::{figure} ./figurer/oppgaver/oppgave_1/a.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -78,7 +78,7 @@ Bestem den gjennomsnittlige vekstfarten til $g$ i intervallet $[-4, 0]$.
 :::{figure} ./figurer/oppgaver/oppgave_1/b.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -99,7 +99,7 @@ Bestem den gjennomsnittlige vekstfarten til $h$ i intervallet $[-3, 1]$.
 :::{figure} ./figurer/oppgaver/oppgave_1/c.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -119,7 +119,7 @@ Bestem den gjennomsnittlige vekstfarten til $p$ i intervallet $[-1, 2]$.
 :::{figure} ./figurer/oppgaver/oppgave_1/d.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 

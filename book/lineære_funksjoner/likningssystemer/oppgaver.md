@@ -16,6 +16,7 @@ link-type: doc
 :::{figure} ./grafisk_løsning/figurer/teori/grafisk_løsning.svg
 ---
 width: 100%
+class: no-click, adaptive-figure
 ---
 :::
 ::::

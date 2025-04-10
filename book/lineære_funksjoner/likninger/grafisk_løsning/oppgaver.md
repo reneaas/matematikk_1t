@@ -14,6 +14,7 @@ $$
 ---
 name: fig-lineære-funksjoner-likninger-grafisk-oppgaver-oppgave-1
 width: 80%
+class: no-click, adaptive-figure
 ---
 
 viser grafen til $f(x) = x + 3$.
@@ -93,6 +94,7 @@ $$
 ---
 name: fig-lineære-funksjoner-likninger-grafisk-oppgaver-oppgave-2
 width: 80%
+class: no-click, adaptive-figure
 ---
 viser grafene til $f(x) = 2x - 1$ og $g(x) = 4x - 5$.
 :::
@@ -186,6 +188,7 @@ I figur {numref}`fig-lineære-funksjoner-likninger-grafisk-oppgaver-oppgave-3` v
 ---
 name: fig-lineære-funksjoner-likninger-grafisk-oppgaver-oppgave-3
 width: 80%
+class: no-click, adaptive-figure
 ---
 viser grafene til to lineære funksjoner $f$ og $g$.
 :::
@@ -265,6 +268,7 @@ I {numref}`fig-lineære-funksjoner-likninger-grafisk-oppgaver-oppgave-4` vises g
 ---
 name: fig-lineære-funksjoner-likninger-grafisk-oppgaver-oppgave-4
 width: 80%
+class: no-click, adaptive-figure
 ---
 
 viser grafen til to lineære funksjoner $f$ og $g$.
@@ -305,62 +309,3 @@ $$
 ````
 
 ::::::
-
----
-
-<!-- ::::::{admonition} Oppgave 5
----
-class: problem-level-2
----
-Fire alternativer for figurer som viser grafene til to lineære funksjoner $f$ og $g$ er vist under.
-
-`````{tab-set}
-
-````{tab-item} Figur A
-
-:::{figure} ./figurer/oppgaver/oppgave_5/figur_A.svg
----
-width: 80%
----
-:::
-
-````
-
-````{tab-item} Figur B
-
-:::{figure} ./figurer/oppgaver/oppgave_5/figur_B.svg
----
-width: 80%
----
-:::
-
-````
-
-````{tab-item} Figur C
-
-:::{figure} ./figurer/oppgaver/oppgave_5/figur_C.svg
----
-width: 80%
----
-:::
-
-````
-
-````{tab-item} Figur D
-
-:::{figure} ./figurer/oppgaver/oppgave_5/figur_D.svg
----
-width: 80%
----
-:::
-
-````
-`````
-
-
-
-:::::: -->
-
-
-
-

@@ -16,6 +16,7 @@ link-type: doc
 :::{figure} ./grafisk_løsning/figurer/teori/ax^2+bx+c=qx+r.svg
 ---
 width: 100%
+class: no-click, adaptive-figure
 ---
 :::
 ::::

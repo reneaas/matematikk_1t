@@ -181,7 +181,7 @@ Nedenfor vises en trekant $\triangle ABC$.
 :::{figure} ./figurer/del_1/oppgave_2/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -257,7 +257,7 @@ Grafen til en andregradsfunksjon $f$ er vist i figuren nedenfor.
 :::{figure} ./figurer/del_1/oppgave_3/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -376,11 +376,12 @@ $$
 ::::{tab-item} Strategi 2: Polynomdivisjon
 Resten i polynomdivisjonen $f(x) : (x - 3)^2$ gir oss uttrykket for tangenten i $x = 3$.
 
-:::{figure} ./koder/del_1/oppgave_3/polydiv.svg
+
+:::{polydiv}
 ---
-width: 80%
-class: no-click
+width: 95%
 ---
+-x^2 + 2x + 8 : (x - 3)^2
 :::
 
 Fra resten i polynomdivisjonen finner vi at likningen er 
@@ -428,7 +429,7 @@ Husk å forklare hvordan du kommer fram til svaret ditt.
 :::{figure} ./figurer/del_1/oppgave_4/merged_figure.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -510,7 +511,7 @@ I figuren nedenfor til høyre vises en trekant $\triangle ABC$.
 :::{figure} ./figurer/del_1/oppgave_5/merged_figure.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -578,8 +579,6 @@ $$
 
 
 
-
-
 :::::::::::::::{admonition} Oppgave 6
 ---
 class: check
@@ -589,7 +588,7 @@ En elev jobber med en funksjon $f$. Grafen til $f$ er vist i figuren nedenfor.
 :::{figure} ./figurer/del_1/oppgave_6/figur.svg
 ---
 width: 60%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -631,6 +630,7 @@ x^3 + x^2 - 5x + 3 = (x - a)(x - b)(x - c).
 $$
 
 
+
 :::::{admonition} Retteveiledning
 ---
 class: summary, dropdown
@@ -649,6 +649,7 @@ $$
 :::::
 
 
+
 :::::{admonition} Løsning
 ---
 class: solution, dropdown
@@ -657,12 +658,14 @@ Programmet til eleven bruker en for-løkke som går gjennom verdiene $x \in \{0,
 
 Fra figuren kan vi se at det positive nullpunktet til $f$ også er et bunnpunkt som betyr at det er et dobbelt nullpunkt. Da vet vi at $(x - 1)^2 | f(x)$ og polynomdivisjonen $f(x) : (x - 1)^2$ vil gå opp: 
 
+
 :::{figure} ./koder/del_1/oppgave_6/polydiv.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure, polydiv-figure
 ---
 :::
+
 
 Fra polynomdivisjonen følger det at 
 

@@ -41,7 +41,7 @@ $$
 :::{figure} ./figurer/eksempler/eksempel_1/grad_1.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -59,7 +59,7 @@ $$
 :::{figure} ./figurer/eksempler/eksempel_1/grad_2.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -75,7 +75,7 @@ $$
 :::{figure} ./figurer/eksempler/eksempel_1/grad_3.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -92,7 +92,7 @@ $$
 :::{figure} ./figurer/eksempler/eksempel_1/grad_4.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -188,12 +188,6 @@ file: ./ggb/utforsk/utforsk_1/c.html
 
 ::::::::::::::
 
-<!-- :::{raw} html
----
-file: ./ggb/utforsk/utforsk_x/utforsk_x.html
----
-::: -->
-
 :::::::::::::::
 
 
@@ -217,7 +211,7 @@ der $x_1$, $x_2$ og $x_3$ er nullpunktene og $a$ er en konstant.
 ::::{figure} ./figurer/teori/nullpunkter/tre_nullpunkter.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 ::::
 
@@ -237,7 +231,7 @@ der $a$ er en konstant. Vi kaller $x_1$ for et **dobbelt nullpunkt**.
 ::::{figure} ./figurer/teori/nullpunkter/to_nullpunkter.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 ::::
 
@@ -257,7 +251,7 @@ der $a$ er en konstant.
 ::::{figure} ./figurer/teori/nullpunkter/ett_nullpunkt.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 ::::
 
@@ -394,7 +388,7 @@ class: answer, dropdown
 
 :::{figure} ./figurer/utforsk/utforsk_1/c.svg
 ---
-class: no-click
+class: no-click, adaptive-figure
 width: 100%
 ---
 :::
@@ -416,7 +410,7 @@ class: answer, dropdown
 
 :::{figure} ./figurer/utforsk/utforsk_1/d.svg
 ---
-class: no-click
+class: no-click, adaptive-figure
 width: 80%
 ---
 :::
@@ -451,7 +445,7 @@ Bestem $f(x)$.
 ---
 name: fig-polynomer-nullpunktsform-eksempel-2
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til et tredjegradspolynom.
 :::
@@ -504,7 +498,7 @@ Bestem $f(x)$.
 ---
 name: fig-polynomer-polynomfunksjoner-underveisoppgave-1
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en tredjegradsfunksjon $f$. 
 :::
@@ -562,7 +556,7 @@ $$
 
 
 
-Vi tar et eksempel på hvordan vi kan gå frem for å bestemme $f(x)$ gitt grafen til et tredjegradspolynom. Den algebraiske regningen vil være såpass fiklete, at her skal vi benytte oss at CAS for å bestemme $f(x)$.  
+Vi tar et eksempel på hvordan vi kan gå frem for å bestemme $f(x)$ gitt grafen til et tredjegradspolynom. Den algebraiske regningen vil være såpass fiklete, at her skal vi benytte oss av CAS for å bestemme $f(x)$.  
 
 
 :::::::::::::::{admonition} Eksempel 3
@@ -576,7 +570,7 @@ Grafen til et tredjegradspolynom er vist i {numref}`fig-polynomer-nullpunktsform
 ---
 name: fig-polynomer-nullpunktsform-eksempel-3
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til et tredjegradspolynom. Noen punkter på grafen til $f$ er markert i figuren.
 :::
@@ -667,7 +661,7 @@ Grafen til en tredjegradsfunksjon $f$ er vist i {numref}`fig-polynomer-nullpunkt
 ---
 name: fig-polynomer-nullpunktsform-underveisoppgave-2
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en tredjegradsfunksjon $f$.
 :::

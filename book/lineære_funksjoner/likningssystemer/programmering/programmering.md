@@ -129,6 +129,7 @@ class: check, dropdown
 :::{figure} ./figurer/utforsk/utforsk_1.svg
 ---
 width: 100%
+class: no-click, adaptive-figure
 ---
 viser linjene i likningssystemet $x + 2y = 5 \, \land \, 4x + y = 6$
 :::
@@ -227,6 +228,7 @@ file: ./interaktiv_kode/utforsk/utforsk_2/a/eksempel_1.html
 :::{figure} ./figurer/utforsk/utforsk_2/a/eksempel_1.gif
 ---
 width: 100%
+class: no-click, adaptive-figure
 ---
 viser hvordan punktene $(x, y)$ i rutenettet løpes gjennom av programmet til venstre.
 ::: 
@@ -254,6 +256,7 @@ file: ./interaktiv_kode/utforsk/utforsk_2/a/eksempel_2.html
 :::{figure} ./figurer/utforsk/utforsk_2/a/eksempel_2.gif
 ---
 width: 100%
+class: no-click, adaptive-figure
 ---
 viser hvordan punktene $(x, y)$ i rutenettet løpes gjennom av programmet til venstre.
 ::: 
@@ -316,6 +319,7 @@ file: ./interaktiv_kode/utforsk/utforsk_2/b/program_3.html
 :::{figure} ./figurer/utforsk/utforsk_2/b/animasjon_A.gif
 ---
 width: 100%
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -326,6 +330,7 @@ width: 100%
 :::{figure} ./figurer/utforsk/utforsk_2/b/animasjon_B.gif
 ---
 width: 100%
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -336,6 +341,7 @@ width: 100%
 :::{figure} ./figurer/utforsk/utforsk_2/b/animasjon_C.gif
 ---
 width: 100%
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -418,6 +424,7 @@ file: ./interaktiv_kode/utforsk/utforsk_2/c/program_2.html
 :::{figure} ./figurer/utforsk/utforsk_2/c/animasjon_2.gif
 ---
 width: 100%
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -463,6 +470,7 @@ file: ./interaktiv_kode/utforsk/utforsk_2/c/program_3.html
 :::{figure} ./figurer/utforsk/utforsk_2/c/animasjon_3.gif
 ---
 width: 100%
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -607,6 +615,7 @@ file: ./interaktiv_kode/utforsk/utforsk_3/b/eksempel_1.html
 :::{figure} ./figurer/utforsk/utforsk_3/b/animasjon_1.gif
 ---
 width: 100%
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -636,6 +645,7 @@ file: ./interaktiv_kode/utforsk/utforsk_3/b/eksempel_2.html
 :::{figure} ./figurer/utforsk/utforsk_3/b/animasjon_2.gif
 ---
 width: 100%
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -836,6 +846,7 @@ file: ./interaktiv_kode/utforsk/utforsk_3/d/oppgave_1.html
 :::{figure} ./figurer/utforsk/utforsk_3/d/oppgave_1_animasjon.gif
 ---
 width: 100%
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -887,6 +898,7 @@ file: ./interaktiv_kode/utforsk/utforsk_3/d/oppgave_2.html
 :::{figure} ./figurer/utforsk/utforsk_3/d/oppgave_2_animasjon.gif
 ---
 width: 100%
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -938,6 +950,7 @@ file: ./interaktiv_kode/utforsk/utforsk_3/d/oppgave_3.html
 :::{figure} ./figurer/utforsk/utforsk_3/d/oppgave_3_animasjon.gif
 ---
 width: 100%
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -1246,7 +1259,5 @@ $$
 ::::::
 
 :::::::
-
-
 
 ::::::::

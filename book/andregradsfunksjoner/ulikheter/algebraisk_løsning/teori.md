@@ -37,7 +37,7 @@ En **fortegnslinje** er en linje som viser fortegnet til en funksjon på et inte
 ---
 name: fig-andregradsulikheter-algebraisk-løsning-teori-1
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $f$ med to nullpunkter $x_1$ og $x_2$. 
 ::: -->
@@ -48,7 +48,7 @@ viser grafen til en andregradsfunksjon $f$ med to nullpunkter $x_1$ og $x_2$.
 ---
 name: fig-andregradsulikheter-algebraisk-løsning-teori-2
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser en fortegnslinje for en andregradsfunksjon $f$ med to nullpunkter $x_1$ og $x_2$. De røde **heltrukne** linjene svarer til positivt fortegn. De blå **stiplede** linjene svarer til negativt fortegn.
 :::
@@ -71,7 +71,7 @@ $$
 ---
 name: fig-andregradsulikheter-algebraisk-løsning-eksempel-1
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til $f(x) = x^2 - 4x$ 
 :::
@@ -90,7 +90,7 @@ Vi markerer nullpunktene til grafen på en tallinje, og så tegner vi stiplede l
 ---
 name: fig-andregradsulikheter-algebraisk-løsning-eksempel-1-f
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser fortegnslinjen til $f(x) = x^2 - 4x$. Grafen til $f$ ligger **over** $x$-aksen når $x < 0$ eller $x > 4$, og **under** $x$-aksen når $0 < x < 4$.
 ```
@@ -244,7 +244,7 @@ class: answer, dropdown
 :::{figure} ./figurer/underveisoppgaver/underveisoppgave_2/b.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 ::::

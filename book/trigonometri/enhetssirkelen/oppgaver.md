@@ -413,7 +413,7 @@ $$
 :::{figure} ./figurer/oppgaver/oppgave_3/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -457,7 +457,7 @@ Nedenfor vises en trekant innskrevet i en sirkel med radius $1$ der $P$ ligger p
 :::{figure} ./figurer/oppgaver/oppgave_4/figur.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -557,7 +557,7 @@ Nedenfor vises enhetssirkelen med en vinkelbue på $240\degree$.
 :::{figure} ./figurer/oppgaver/oppgave_5/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -575,7 +575,7 @@ Den rettvinklede trekanten som er tegnet inn vil ha en vinkel som er $30\degree$
 :::{figure} ./figurer/oppgaver/oppgave_5/hjelpefigur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -629,7 +629,7 @@ Nedenfor vises en sirkel med radius $1$. Vinkelen mellom $x$-aksen og $OP$ er $5
 :::{figure} ./figurer/oppgaver/oppgave_6/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 

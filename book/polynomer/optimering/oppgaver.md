@@ -173,7 +173,7 @@ Et rektangel har hjørnene $(-3, 0)$, $(-3, f(-3))$, $(3, 0)$ og $(3, f(3))$.
 ---
 name: fig-polynomer-optimering-oppgave-2
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $f(x) = -x^2 + 16$ og et rektangel med hjørnene $(-3, 0)$, $(-3, f(-3))$, $(3, 0)$ og $(3, f(3))$.
 :::
@@ -313,7 +313,7 @@ Bestem sidelengdene slik at arealet av hagen blir størst mulig.
 ---
 name: fig-polynomer-optimering-oppgave-3
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser en rektangulær hage med sidelengder $x$ og $y$ der den ene siden er dekket av et stor fjellvegg. Gjerde som skal settes opp har til sammen en lengde på $100$ meter.
 :::
@@ -638,7 +638,7 @@ der $D_f = [0, 3]$, og en trekant som har hjørner i punktene $(0, 0)$, $(2, 0)$
 ---
 name: fig-polynomer-optimering-oppgave-5
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $f$ og en trekant med hjørner $(0, 0)$, $(2, 0)$ og $(2, f(2))$.
 :::
@@ -916,7 +916,7 @@ og et fargelagt området med hjørner i punktene $(-4, 0)$, $(-4, f(-4))$, $(4, 
 ---
 name: fig-polynomer-optimering-oppgave-6
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $f(x) = -x^2 + 36$ og et fargelagt område med hjørner $(-4, 0)$, $(-4, f(-4))$, $(4, 0)$ og $(4, f(4))$.
 ::::
@@ -1062,7 +1062,7 @@ der $D_f = [0, 4]$, og en trekant som har hjørner i punktene $(1, 0)$, $(4, 0)$
 ---
 name: fig-polynomer-optimering-oppgave-7
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en tredjegradsfunksjon $f$ og en trekant med hjørner $(1, 0)$, $(4, 0)$ og $(1, f(1))$.
 :::
@@ -1227,7 +1227,7 @@ En trekant har hjørnene $(0, 0)$, $(2, 0)$ og $(2, f(2))$.
 ---
 name: fig-polynomer-optimering-oppgave-9
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en fjerdegradsfunksjon $f(x) = -x(x - 3)^3$ og en trekant med hjørner $(0, 0)$, $(2, 0)$ og $(2, f(2))$.
 :::
@@ -1386,7 +1386,7 @@ for noen koeffisienter $a$, $b$ og $c$. Vi kan finne $a$, $b$ og $c$ ved å utf�
 :::{figure} ./koder/oppgaver/oppgave_9_løsning.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 

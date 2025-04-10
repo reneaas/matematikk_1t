@@ -16,6 +16,7 @@ link-type: doc
 :::{figure} ./figurer/intro.svg
 ---
 width: 100%
+class: no-click, adaptive-figure
 ---
 :::
 ::::

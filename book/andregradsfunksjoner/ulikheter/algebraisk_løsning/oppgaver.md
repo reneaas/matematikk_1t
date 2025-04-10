@@ -32,7 +32,7 @@ Løs $f(x) > 0$.
 :::{figure} ./figurer/oppgaver/oppgave_2/a.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 ::: 
 
@@ -53,7 +53,7 @@ Løs $f(x) \geq 0$.
 :::{figure} ./figurer/oppgaver/oppgave_2/b.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -74,7 +74,7 @@ Løs $f(x) > 0$.
 :::{figure} ./figurer/oppgaver/oppgave_2/c.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 ::: 
 
@@ -95,7 +95,7 @@ Løs $f(x) \leq 0$.
 :::{figure} ./figurer/oppgaver/oppgave_2/d.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 ::: 
 
@@ -153,7 +153,7 @@ class: answer, dropdown
 :::{figure} ./figurer/oppgaver/oppgave_3.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 ::::
@@ -214,7 +214,7 @@ class: answer, dropdown
 :::{figure} ./figurer/oppgaver/oppgave_4.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 ::::

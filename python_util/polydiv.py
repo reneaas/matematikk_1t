@@ -7,6 +7,14 @@ def polylongdiv(
     if not vars:
         vars = "x"
 
+    # Generate unique temp filenames
+    import uuid
+
+    temp_id = uuid.uuid4().hex[:8]
+    tex_file = f"tmp_{temp_id}.tex"
+    pdf_file = f"tmp_{temp_id}.pdf"
+
+    # Format LaTeX command
     if stage is None:
         div_cmd = r"\polylongdiv[style=C, div=:, vars=None]{{p}}{{q}}"
         div_cmd = div_cmd.replace("{p}", p).replace("{q}", q).replace("None", str(vars))
@@ -16,6 +24,7 @@ def polylongdiv(
             div_cmd.replace("{p}", p).replace("{q}", q).replace("{stage}", str(stage))
         )
 
+    # Create LaTeX file
     s = f"""\\documentclass[border=0.2cm]{{standalone}}
 \\usepackage{{polynom}}
 \\begin{{document}}
@@ -23,25 +32,20 @@ def polylongdiv(
 \\end{{document}}
     """
 
-    with open("tmp.tex", "w") as f:
+    # Remove .svg extension properly if present
+    if fname.endswith(".svg"):
+        fname = fname[:-4]  # Correct way to remove extension
+
+    # Write and process files
+    with open(tex_file, "w") as f:
         f.write(s)
 
-    os.system("pdflatex tmp.tex")
-    if fname.endswith(".svg"):
-        fname.strip(".svg")
+    os.system(f"pdflatex {tex_file}")
 
     if svg:
-        os.system(f"pdf2svg tmp.pdf {fname}.svg")
+        os.system(f"pdf2svg {pdf_file} {fname}.svg")
     else:
-        os.system(f"mv tmp.pdf {fname}.pdf")
+        os.system(f"mv {pdf_file} {fname}.pdf")
 
-    os.system("rm tmp.*")
-
-
-if __name__ == "__main__":
-    polylongdiv(
-        fname="test",
-        p="x^3 + 2x^2 - 3x - 6",
-        q="x - 2",
-        stage=None,
-    )
+    # Cleanup with more specific pattern
+    os.system(f"rm tmp_{temp_id}.*")

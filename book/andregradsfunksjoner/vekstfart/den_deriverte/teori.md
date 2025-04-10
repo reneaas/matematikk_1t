@@ -64,7 +64,7 @@ Lag en skisse av grafen til $f'$.
 ---
 name: fig-andregradsfunksjoner-vekstfart-den-deriverte-underveisoppgave-1
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til $f(x) = (x - 1)^2$.
 :::
@@ -85,7 +85,7 @@ class: dropdown, answer
 ---
 name: fig-andregradsfunksjoner-vekstfart-den-deriverte-underveisoppgave-1-fasit
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til $f'$ for $f(x) = (x - 1)^2$.
 :::
@@ -247,14 +247,14 @@ Fra fortegnslinjen til $f'(x)$ kan vi lese av:
 :::{figure} ./figurer/teori/fortegnslinjer/konveks_graf.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
 :::{figure} ./figurer/teori/fortegnslinjer/konveks_fortegnslinje.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 :::::::::::::
@@ -263,14 +263,14 @@ class: no-click
 :::{figure} ./figurer/teori/fortegnslinjer/konkav_graf.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
 :::{figure} ./figurer/teori/fortegnslinjer/konkav_fortegnslinje.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 :::::::::::::

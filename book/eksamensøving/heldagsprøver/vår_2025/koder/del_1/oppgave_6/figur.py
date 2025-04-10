@@ -21,6 +21,7 @@ def main(dirname, save):
         ystep=1,
         ticks=False,
         grid=False,
+        alpha=1,
     )
 
     ax.plot(-3, 0, "ko", markersize=8, alpha=0.7)

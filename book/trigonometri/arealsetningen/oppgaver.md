@@ -18,23 +18,13 @@ Bestem arealet av trekanten nedenfor.
 :::{figure} ./figurer/oppgaver/oppgave_1/a.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
 
-::::{admonition} CAS-vindu
----
-class: progging, dropdown
----
-
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_1/a.html
----
+:::{cas-window}
 :::
-
-::::
 
 
 ::::{admonition} Fasit
@@ -44,7 +34,7 @@ class: answer, dropdown
 :::{figure} ./ggb/oppgaver/oppgave_1/a.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -65,23 +55,13 @@ Bestem arealet av trekanten nedenfor.
 :::{figure} ./figurer/oppgaver/oppgave_1/b.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
 
-::::{admonition} CAS-vindu
----
-class: progging, dropdown
----
-
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_1/b.html
----
+:::{cas-window}
 :::
-
-::::
 
 
 ::::{admonition} Fasit
@@ -91,7 +71,7 @@ class: answer, dropdown
 :::{figure} ./ggb/oppgaver/oppgave_1/b.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -112,23 +92,13 @@ Bestem arealet av trekanten nedenfor.
 :::{figure} ./figurer/oppgaver/oppgave_1/c.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
 
-::::{admonition} CAS-vindu
----
-class: progging, dropdown
----
-
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_1/c.html
----
+:::{cas-window}
 :::
-
-::::
 
 
 ::::{admonition} Fasit
@@ -138,7 +108,7 @@ class: answer, dropdown
 :::{figure} ./ggb/oppgaver/oppgave_1/c.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -171,7 +141,7 @@ Bestem $\angle A$ i trekanten nedenfor.
 :::{figure} ./figurer/oppgaver/oppgave_2/a.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -183,18 +153,8 @@ class: dropdown, hints
 Lag en likning ved å bestemme arealet av trekanten på to måter, og sett dem lik hverandre!
 ::::
 
-::::{admonition} CAS-vindu
----
-class: progging, dropdown
----
-
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_2/a.html
----
+:::{cas-window}
 :::
-
-::::
 
 ::::{admonition} Fasit
 ---
@@ -203,7 +163,7 @@ class: answer, dropdown
 :::{figure} ./ggb/oppgaver/oppgave_2/a.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -219,23 +179,13 @@ Bestem $\angle C$ i trekanten nedenfor.
 :::{figure} ./figurer/oppgaver/oppgave_2/b.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
 
-::::{admonition} CAS-vindu
----
-class: progging, dropdown
----
-
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_2/b.html
----
+:::{cas-window}
 :::
-
-::::
 
 
 ::::{admonition} Fasit
@@ -245,7 +195,7 @@ class: answer, dropdown
 :::{figure} ./ggb/oppgaver/oppgave_2/b.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -263,23 +213,13 @@ Bestem $\angle B$ i trekanten nedenfor.
 :::{figure} ./figurer/oppgaver/oppgave_2/c.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
 
-::::{admonition} CAS-vindu
----
-class: progging, dropdown
----
-
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_2/c.html
----
+:::{cas-window}
 :::
-
-::::
 
 ::::{admonition} Fasit
 ---
@@ -288,7 +228,7 @@ class: answer, dropdown
 :::{figure} ./ggb/oppgaver/oppgave_2/c.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -319,20 +259,8 @@ I en $\triangle ABC$ er $AB = 8$, $AC = 6$ og $\angle A = 30 \degree$.
 Bestem arealet av trekanten.
 
 
-::::{admonition} CAS-vindu
----
-class: progging, dropdown
----
-
-<br>
-
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_3/a.html
----
+:::{cas-window}
 :::
-
-::::
 
 
 ::::{admonition} Fasit
@@ -353,7 +281,7 @@ class: solution, dropdown
 :::{figure} ./ggb/oppgaver/oppgave_3/a.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -374,21 +302,8 @@ I en $\triangle ABC$ er $AB = 5$, $BC = 7$ og $\angle B = 45 \degree$.
 
 Bestem arealet av trekanten.
 
-
-::::{admonition} CAS-vindu
----
-class: progging, dropdown
----
-
-<br>
-
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_3/b.html
----
+:::{cas-window}
 :::
-
-::::
 
 
 ::::{admonition} Fasit
@@ -408,7 +323,7 @@ class: solution, dropdown
 :::{figure} ./ggb/oppgaver/oppgave_3/b.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -423,20 +338,8 @@ I en $\triangle ABC$ er $BC = 10$, $AC = 8$ og $\angle C = 120 \degree$.
 Bestem arealet av trekanten.
 
 
-::::{admonition} CAS-vindu
----
-class: progging, dropdown
----
-
-<br>
-
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_3/c.html
----
+:::{cas-window}
 :::
-
-::::
 
 
 ::::{admonition} Fasit
@@ -455,7 +358,7 @@ class: solution, dropdown
 :::{figure} ./ggb/oppgaver/oppgave_3/c.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -487,24 +390,13 @@ Bestem arealet av tomten.
 :::{figure} ./figurer/oppgaver/oppgave_4/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
 
-::::{admonition} CAS-vindu
----
-class: progging, dropdown
----
-
-<br>
-
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_4/a.html
----
+:::{cas-window}
 :::
-::::
 
 
 ::::{admonition} Fasit
@@ -525,7 +417,7 @@ class: solution, dropdown
 :::{figure} ./ggb/oppgaver/oppgave_4/a.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -555,7 +447,7 @@ Nedenfor vises en sirkel med radius $2$. Tre trekanter $\triangle SAC$, $\triang
 :::{figure} ./figurer/oppgaver/oppgave_5/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -592,7 +484,7 @@ vi regner ut med CAS og får:
 :::{figure} ./ggb/oppgaver/oppgave_5/a.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -638,20 +530,8 @@ $$
 ::::::::::::::
 
 
-::::{admonition} CAS-vindu
----
-class: progging, dropdown
----
-
-<br>
-
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_5/cas.html
----
+:::{cas-window}
 :::
-
-::::
 
 
 
@@ -669,7 +549,7 @@ Nedenfor vises en firkant $\square ABCD$.
 :::{figure} ./figurer/oppgaver/oppgave_6/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -706,7 +586,7 @@ Vi regner ut med CAS:
 :::{figure} ./ggb/oppgaver/oppgave_6/a.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -752,7 +632,7 @@ Vi regner ut med CAS:
 :::{figure} ./ggb/oppgaver/oppgave_6/b_trekant_ACD.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -775,7 +655,7 @@ Vi regner ut med CAS:
 :::{figure} ./ggb/oppgaver/oppgave_6/b_trekant_ABC.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -784,7 +664,7 @@ Til slutt summerer vi de to arealene for å finne arealet $T_{\square ABCD}$. Vi
 :::{figure} ./ggb/oppgaver/oppgave_6/b_firkant.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -826,7 +706,7 @@ Vi gjør dette med CAS:
 :::{figure} ./ggb/oppgaver/oppgave_6/c.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -842,20 +722,8 @@ $$
 ::::::::::::::
 
 
-::::{admonition} CAS-vindu
----
-class: progging, dropdown
----
-
-<br>
-
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_6/cas.html
----
+:::{cas-window}
 :::
-
-::::
 
 :::::::::::::::
 
@@ -875,7 +743,7 @@ Nedenfor vises en sirkel med radius $2$ og tre trekanter $\triangle SAB$, $\tria
 :::{figure} ./figurer/oppgaver/oppgave_7/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -917,7 +785,7 @@ Vi regner ut svaret med CAS:
 :::{figure} ./ggb/oppgaver/oppgave_7/a.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -974,7 +842,7 @@ Vi regner ut svaret med CAS:
 :::{figure} ./ggb/oppgaver/oppgave_7/b.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -993,20 +861,9 @@ $$
 ::::::::::::::
 
 
-::::{admonition} CAS-vindu
----
-class: progging, dropdown
----
-
-<br>
-
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_7/cas.html
----
+:::{cas-window}
 :::
 
-::::
 
 :::::::::::::::
 
@@ -1024,7 +881,7 @@ I figuren nedenfor vises en regulær $6$-kant som er **innskrevet** i en sirkel 
 :::{figure} ./figurer/oppgaver/oppgave_8/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -1065,20 +922,8 @@ $$
 ::::::::::::::
 
 
-::::{admonition} CAS-vindu
----
-class: progging, dropdown
----
-
-<br>
-
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_8/cas.html
----
+:::{cas-window}
 :::
-
-::::
 
 :::::::::::::::
 
@@ -1096,7 +941,7 @@ I figuren nedenfor vises en regulær $12$-kant som innskrevet i en sirkel med ra
 :::{figure} ./figurer/oppgaver/oppgave_9/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -1162,7 +1007,7 @@ Vi bruker CAS til å regne ut arealet av den regulære $4096$-kanten:
 :::{figure} ./ggb/oppgaver/oppgave_9/c.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -1182,20 +1027,8 @@ som stemmer godt overens med at arealet bør være ganske nærme arealet av en s
 ::::::::::::::
 
 
-::::{admonition} CAS-vindu
----
-class: progging, dropdown
----
-
-<br>
-
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_9/cas.html
----
+:::{cas-window}
 :::
-
-::::
 
 :::::::::::::::
 

@@ -68,7 +68,7 @@ En av røttene til $f(x)$ er $x = 1$. Det kan vi se enten med et Horner-skjema e
 :::{figure} ./koder/oppgaver/oppgave_1/b.svg
 ---
 width: 50%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -79,7 +79,7 @@ class: no-click
 :::{figure} ./koder/oppgaver/oppgave_1/b_polydiv.svg
 ---
 width: 90%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -196,7 +196,7 @@ class: dropdown, answer
 :::{figure} ./figurer/oppgaver/oppgave_2/b.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -217,7 +217,7 @@ class: answer, dropdown
 :::{figure} ./figurer/oppgaver/oppgave_2/c.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -488,7 +488,7 @@ $x = 1$ er en løsning til likningen så vi kan se fra et Horner-skjema eller va
 :::{figure} ./koder/oppgaver/oppgave_6/b.svg
 ---
 width: 70%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -499,7 +499,7 @@ class: no-click
 :::{figure} ./koder/oppgaver/oppgave_6/b_polydiv.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -550,7 +550,7 @@ $x = -2$ løser likningen. Vi kan se dette fra et Horner-skjema eller vanlig pol
 :::{figure} ./koder/oppgaver/oppgave_6/c.svg
 ---
 width: 70%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -561,7 +561,7 @@ class: no-click
 :::{figure} ./koder/oppgaver/oppgave_6/c_polydiv.svg
 ---
 width: 90%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 

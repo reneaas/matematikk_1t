@@ -25,7 +25,7 @@ Nedenfor vises en rettvinklet trekant der hypotenusen er $1$. Den ene kateten ha
 :::{figure} ./figurer/utforsk/utforsk_1/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -82,7 +82,7 @@ der $v$ er vinkelen mellom $OP$ og $x$-aksen i positiv omløpsretning. Dette bet
 :::{figure} ./figurer/teori/enhetssirkelen/merged_figure.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -99,7 +99,7 @@ Nedenfor vises enhetssirkelen med et punkt $P(x, y)$ tegnet inn på sirkelen. En
 :::{figure} ./figurer/utforsk/utforsk_2/enhetssirkelen.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -183,7 +183,7 @@ Nedenfor vises enhetssirkelen med en linje fra origo ut til en punkt $P$ som har
 :::{figure} ./figurer/underveisoppgaver/oppgave_1/a.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -224,7 +224,7 @@ Nedenfor vises enhetssirkelen med en linje fra origo ut til en punkt $P$ som har
 :::{figure} ./figurer/underveisoppgaver/oppgave_1/b.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 

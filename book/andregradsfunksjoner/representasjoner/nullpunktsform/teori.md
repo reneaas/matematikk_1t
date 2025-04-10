@@ -21,7 +21,7 @@ Nullpunktsformen til en andregradsfunksjon er gitt ved
 :::{figure} ./figurer/teori/algebraisk_uttrykk.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -30,7 +30,7 @@ class: no-click
 :::{figure} ./figurer/teori/grafisk_representasjon.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -59,7 +59,7 @@ $$
 :::{figure} ./figurer/eksempler/eksempel_1/f.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til $f(x) = (x - 1)(x + 3)$. Grafen skjærer $x$-aksen i to punkter og kan derfor skrives på nullpunktsform.
 :::
@@ -76,7 +76,7 @@ $$
 :::{figure} ./figurer/eksempler/eksempel_1/g.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til $g(x) = -2(x + 1)^2$. Grafen skjærer $x$-aksen i ett punkt og kan derfor skrives på nullpunktsform. Vi må bruke det samme nullpunktet to ganger!
 :::
@@ -95,7 +95,7 @@ $$
 :::{figure} ./figurer/eksempler/eksempel_1/h.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til $h(x) = x^2 + x + 1$. Grafen har ingen nullpunkter og kan derfor ikke skrives på nullpunktsform.
 :::
@@ -186,7 +186,7 @@ Bestem nullpunktsformen til $f(x)$.
 ---
 name: fig-andregradsfunksjoner-representasjoner-nullpunktsform-eksempel-3
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $f$.
 :::
@@ -254,7 +254,7 @@ Bestem nullpunktsformen til $f(x)$.
 ---
 name: fig-andregradsfunksjoner-representasjoner-nullpunktsform-underveisoppgave-2
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $f$.
 :::

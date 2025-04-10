@@ -153,7 +153,7 @@ Bruk {numref}`fig-andregradsfunksjoner-vekstfart-momentan-vekstfart-oppgave-2-a`
 ---
 name: fig-andregradsfunksjoner-vekstfart-momentan-vekstfart-oppgave-2-a
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $f$ og en tangent som går gjennom $(1, f(1))$.
 :::
@@ -179,7 +179,7 @@ Bruk {numref}`fig-andregradsfunksjoner-vekstfart-momentan-vekstfart-oppgave-2-b`
 ---
 name: fig-andregradsfunksjoner-vekstfart-momentan-vekstfart-oppgave-2-b
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $g$ og en tangent som går gjennom $(-1, g(-1))$.
 :::
@@ -204,7 +204,7 @@ Bruk {numref}`fig-andregradsfunksjoner-vekstfart-momentan-vekstfart-oppgave-2-c`
 ---
 name: fig-andregradsfunksjoner-vekstfart-momentan-vekstfart-oppgave-2-c
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $g$ og en tangent som går gjennom $(-1, h(-1))$.
 :::
@@ -229,7 +229,7 @@ Bruk {numref}`fig-andregradsfunksjoner-vekstfart-momentan-vekstfart-oppgave-2-d`
 ---
 name: fig-andregradsfunksjoner-vekstfart-momentan-vekstfart-oppgave-2-d
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $g$ og en tangent som går gjennom $(2, p(2))$.
 :::
@@ -366,7 +366,7 @@ Bestem $f(x)$.
 ---
 name: fig-andregradsfunksjoner-vekstfart-momentan-vekstfart-oppgave-4-a
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser en andregradsfunksjon $f$ og en tangent som går gjennom $(3, f(3))$ med likningen $y = -4x + 13$. 
 :::
@@ -393,7 +393,7 @@ Bestem $g(x)$.
 ---
 name: fig-andregradsfunksjoner-vekstfart-momentan-vekstfart-oppgave-4-b
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser en andregradsfunksjon $g$, og to tangenter.
 :::
@@ -417,7 +417,7 @@ Bestem $h(x)$.
 ---
 name: fig-andregradsfunksjoner-vekstfart-momentan-vekstfart-oppgave-4-c
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser en andregradsfunksjon $h$, en tangent (rød) gjennom $(2, h(2))$ og en tangent (blå) gjennom $(4, h(4))$. Tangentene skjærer hverandre i $(3, 9)$. Den momentane vekstfarten til $h$ i punktet $(4, h(4))$ er $-4$. 
 :::
@@ -457,7 +457,7 @@ Bestem $f(x)$.
 ---
 name: fig-andregradsfunksjoner-vekstfart-momentan-vekstfart-oppgave-5-a
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser en andregradsfunksjon $f$ og en tangent som går gjennom et punkt på grafen til $f$ med likningen $y = -2x + 2$.
 :::
@@ -548,7 +548,7 @@ Bestem $g(x)$.
 ---
 name: fig-andregradsfunksjoner-vekstfart-momentan-vekstfart-oppgave-5-b
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser en andregradsfunksjon $g$ og to tangenter.
 :::
@@ -635,7 +635,7 @@ Bestem $h(x)$.
 ---
 name: fig-andregradsfunksjoner-vekstfart-momentan-vekstfart-oppgave-5-c
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser en andregradsfunksjon $h$ og to tangenter.
 :::

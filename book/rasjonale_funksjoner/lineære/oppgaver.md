@@ -34,7 +34,7 @@ Bestem $f(x)$.
 ---
 name: fig-rasjonale-funksjoner-representasjoner-oppgave-2-a
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en rasjonal funksjon $f$.
 :::
@@ -59,7 +59,7 @@ Bestem $g(x)$.
 ---
 name: fig-rasjonale-funksjoner-representasjoner-oppgave-2-b
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en rasjonal funksjon $g$.
 :::
@@ -85,7 +85,7 @@ Bestem $h(x)$.
 ---
 name: fig-rasjonale-funksjoner-representasjoner-oppgave-2-c
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en rasjonal funksjon $h$.
 :::
@@ -110,7 +110,7 @@ Bestem $p(x)$.
 ---
 name: fig-rasjonale-funksjoner-representasjoner-oppgave-2-d
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en rasjonal funksjon $p$.
 :::
@@ -202,7 +202,7 @@ class: dropdown, answer
 :::{figure} ./figurer/oppgaver/oppgave_3/d.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 :::
 ::::
 
@@ -223,7 +223,7 @@ class: dropdown, answer
 :::{figure} ./figurer/oppgaver/oppgave_3/e.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 :::
 ::::
 
@@ -293,7 +293,7 @@ class: answer, dropdown
 :::{figure} ./figurer/oppgaver/oppgave_4/c.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 ::::
@@ -532,7 +532,7 @@ class: answer, dropdown
 :::{figure} ./figurer/oppgaver/oppgave_7/c.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 

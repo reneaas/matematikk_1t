@@ -17,6 +17,7 @@ link-type: doc
 :::{figure} grafisk_løsning/figurer/teori/ax+b=cx+d.svg
 ---
 width: 100%
+class: no-click, adaptive-figure
 ---
 :::
 ::::

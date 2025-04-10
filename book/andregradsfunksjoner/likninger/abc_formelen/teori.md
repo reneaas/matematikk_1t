@@ -106,7 +106,7 @@ Løsningen til en andregradslikning
 :::{figure} ./figurer/teori/andregradslikning.svg
 ---
 width: 30%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -116,7 +116,7 @@ er gitt ved
 :::{figure} ./figurer/teori/abc-formel.svg
 ---
 width: 35%
-class: no-click
+class: no-click, adaptive-figure
 ---
 ::::
 
@@ -281,7 +281,7 @@ For en andregradslikning
 :::{figure} ./figurer/teori/andregradslikning.svg
 ---
 width: 30%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -290,7 +290,7 @@ definerer vi **diskriminanten** $D$ som
 :::{figure} ./figurer/teori/diskriminant.svg
 ---
 width: 40%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 

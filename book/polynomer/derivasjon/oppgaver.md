@@ -230,7 +230,7 @@ Polynomdivisjonen blir da:
 :::{figure} ./koder/oppgaver/oppgave_3/a.svg
 ---
 width: 85%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -278,7 +278,7 @@ Dermed blir polynomdivisjonen:
 :::{figure} ./koder/oppgaver/oppgave_3/b.svg
 ---
 width: 85%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -322,7 +322,7 @@ Siden $(x - 0)^2 = x^2$, kan vi utføre polynomdivisjonen direkte:
 :::{figure} ./koder/oppgaver/oppgave_3/c.svg
 ---
 width: 85%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -370,7 +370,7 @@ Så utfører vi polynomdivisjonen:
 :::{figure} ./koder/oppgaver/oppgave_3/d.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -406,7 +406,7 @@ Bruk grafen til å tegne fortegnslinja til $f'(x)$.
 ---
 name: fig-polynomfunksjoner-derivasjon-oppgave-4-a
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $f$.
 :::
@@ -419,7 +419,7 @@ class: dropdown, answer
 ---
 name: fig-polynomfunksjoner-derivasjon-oppgave-4-a-løsning
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser fortegnslinja til $f'(x)$.
 :::
@@ -437,7 +437,7 @@ Bruk grafen til å tegne fortegnslinja til $g'(x)$.
 ---
 name: fig-polynomfunksjoner-derivasjon-oppgave-4-b
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en tredjegradsfunksjon $g$.
 :::
@@ -451,7 +451,7 @@ class: dropdown, answer
 ---
 name: fig-polynomfunksjoner-derivasjon-oppgave-4-b-løsning
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser fortegnslinja til $g'(x)$.
 :::
@@ -469,7 +469,7 @@ Bruk grafen til å tegne fortegnslinja til $h'(x)$.
 ---
 name: fig-polynomfunksjoner-derivasjon-oppgave-4-c
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en tredjegradsfunksjon $h$.
 :::
@@ -483,7 +483,7 @@ class: dropdown, answer
 ---
 name: fig-polynomfunksjoner-derivasjon-oppgave-4-c-løsning
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser fortegnslinja til $h'(x)$.
 :::
@@ -501,7 +501,7 @@ Bruk grafen til å tegne fortegnslinja til $p'(x)$.
 ---
 name: fig-polynomfunksjoner-derivasjon-oppgave-4-d
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en fjerdegradsfunksjon $p$.
 :::
@@ -515,7 +515,7 @@ class: dropdown, answer
 ---
 name: fig-polynomfunksjoner-derivasjon-oppgave-4-d-løsning
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser fortegnslinja til $p'(x)$.
 :::
@@ -548,7 +548,7 @@ Lag en skisse av grafen til $f'$.
 ---
 name: fig-polynomfunksjoner-derivasjon-oppgave-5-a
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $f$.
 :::
@@ -562,7 +562,7 @@ class: dropdown, answer
 ---
 name: fig-polynomfunksjoner-derivasjon-oppgave-5-a-løsning
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til den deriverte $f'$. 
 :::
@@ -583,7 +583,7 @@ Lag en skisse av grafen til $g'$.
 ---
 name: fig-polynomfunksjoner-derivasjon-oppgave-5-b
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en tredjegradsfunksjon $g$.
 :::
@@ -597,7 +597,7 @@ class: dropdown, answer
 ---
 name: fig-polynomfunksjoner-derivasjon-oppgave-5-b-løsning
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til den deriverte $g'$. 
 :::
@@ -617,7 +617,7 @@ Lag en skisse av grafen til $h'$.
 ---
 name: fig-polynomfunksjoner-derivasjon-oppgave-5-c
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en tredjegradsfunksjon $h$.
 :::
@@ -631,7 +631,7 @@ class: dropdown, answer
 ---
 name: fig-polynomfunksjoner-derivasjon-oppgave-5-c-løsning
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til den deriverte $h'$. 
 :::
@@ -650,7 +650,7 @@ Lag en skisse av grafen til $p'$.
 ---
 name: fig-polynomfunksjoner-derivasjon-oppgave-5-d
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en fjerdegradsfunksjon $p$.
 :::
@@ -664,7 +664,7 @@ class: dropdown, answer
 ---
 name: fig-polynomfunksjoner-derivasjon-oppgave-5-d-løsning
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til den deriverte $p'$. 
 :::
@@ -698,7 +698,7 @@ Lag en skisse av grafen til $f$.
 ---
 name: fig-polynomfunksjoner-derivasjon-oppgave-6-a
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til $f'$.
 :::
@@ -711,7 +711,7 @@ class: dropdown, answer
 ---
 name: fig-polynomfunksjoner-derivasjon-oppgave-6-a-løsning
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser en skisse av grafen til $f$.
 :::
@@ -731,7 +731,7 @@ Lag en skisse av grafen til $g$.
 ---
 name: fig-polynomfunksjoner-derivasjon-oppgave-6-b
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til $g'$.
 :::
@@ -745,7 +745,7 @@ class: dropdown, answer
 ---
 name: fig-polynomfunksjoner-derivasjon-oppgave-6-b-løsning
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser en skisse av grafen til $g$.
 :::
@@ -764,7 +764,7 @@ Lag en skisse av grafen til $h$.
 ---
 name: fig-polynomfunksjoner-derivasjon-oppgave-6-c
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til $h'$.
 :::
@@ -778,7 +778,7 @@ class: dropdown, answer
 ---
 name: fig-polynomfunksjoner-derivasjon-oppgave-6-c-løsning
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser en skisse av grafen til $h$.
 :::
@@ -799,7 +799,7 @@ Lag en skisse av grafen til $p$.
 ---
 name: fig-polynomfunksjoner-derivasjon-oppgave-6-d
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til $p'$.
 :::
@@ -813,7 +813,7 @@ class: dropdown, answer
 ---
 name: fig-polynomfunksjoner-derivasjon-oppgave-6-d-løsning
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser en skisse av grafen til $p$.
 :::
@@ -847,7 +847,7 @@ Bestem $f(x)$ og $f'(x)$.
 ---
 name: fig-polynomfunksjoner-derivasjon-oppgave-7
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $f$ og to tangenter. Den ene tangenten har likningen $y = 4x + 4$ og den andre tangenten skjærer $y$-aksen i $(0, 12)$. 
 :::
@@ -880,7 +880,7 @@ class: problem-level-2
 ---
 name: fig-polynomfunksjoner-derivasjon-oppgave-8
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $f'$.  
 :::
@@ -938,7 +938,7 @@ class: problem-level-3
 ---
 name: fig-polynomfunksjoner-derivasjon-oppgave-9
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $f'$. 
 :::

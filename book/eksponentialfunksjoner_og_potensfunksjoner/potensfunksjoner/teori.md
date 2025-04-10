@@ -83,7 +83,7 @@ der $a, b \in \mathbb{R} \setminus \{0\}$ er konstanter. I {numref}`fig-potensfu
 ---
 name: fig-potensfunksjoner-teori-graf
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafene til potensfunksjoner med samme verdi av $a$, men ulike verdier av $b$. 
 :::
@@ -111,7 +111,7 @@ $$
 :::{figure} ./figurer/eksempler/eksempel_2/funksjon_1.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -127,7 +127,7 @@ $$
 :::{figure} ./figurer/eksempler/eksempel_2/funksjon_2.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -143,7 +143,7 @@ $$
 :::{figure} ./figurer/eksempler/eksempel_2/funksjon_3.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -172,7 +172,7 @@ Perioden til en planet er tiden det tar for en planet å gjennomføre et fullt o
 :::{figure} ./figurer/eksempler/eksempel_3/planetbane.svg
 ---
 width: 50%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 

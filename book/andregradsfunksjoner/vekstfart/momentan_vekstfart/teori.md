@@ -6,8 +6,6 @@ class: tip
 ---
 * Kunne beskrive sammenhengen mellom momentan vekstfart og tangenter til en graf.
 * Kunne redegjøre for sammenhengen mellom momentan vekstfart og gjennomsnittlig vekstfart for andregradsfunksjoner, og bruke denne sammenhengen til å regne ut momentan vekstfart.
-<!-- * Kunne bestemme tilnærmede verdier for momentan vekstfart ved hjelp av sekanter.
-* Kunne bruke programmering til å bestemme en tilnærmet verdi for momentan vekstfart. -->
 :::::
 
 
@@ -32,7 +30,7 @@ Denne linjen kaller vi for en **tangent** og vi sier at linjen **tangerer** graf
 :::{figure} ./figurer/teori/momentan_vekstfart.svg
 ---
 name: fig-teori-andregradsfunksjoner-vekstfart-momentan-vekstfart-tangenter
-class: no-click
+class: no-click, adaptive-figure
 width: 80%
 ---
 viser grafen til en andregradsfunksjon $f$ og en tangent som "sneier" grafen til $f$ i punktet $(x_1, f(x_1))$. Stigningstallet til tangenten er den momentane vekstfarten til $f$ i punktet.
@@ -107,7 +105,7 @@ Bruk sekanten til å bestemme $f'(0)$.
 ---
 name: fig-andregradsfunksjoner-vekstfart-momentan-vekstfart-underveisoppgave-1
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til $f(x) = (x - 1)(x + 4)$ og en sekant som går gjennom $(-1, f(-1))$ og $(1, f(1))$.
 :::

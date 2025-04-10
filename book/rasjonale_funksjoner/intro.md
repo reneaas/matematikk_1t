@@ -21,7 +21,7 @@ $$
 :::{figure} ./lineære/figurer/teori/teori_1.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -45,7 +45,7 @@ $$
 :::{figure} ./generelle/figurer/teori/eksempel_1.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -54,7 +54,7 @@ class: no-click
 :::{figure} ./generelle/figurer/teori/eksempel_2.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 

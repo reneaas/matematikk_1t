@@ -269,6 +269,7 @@ der $a \in \mathbb{R} \setminus \{0\}$ og $b \in \langle 0, \to\rangle$ er konst
 ---
 name: eksponentialfunksjoner-representasjoner-grafisk-representasjon
 width: 80%
+class: no-click, adaptive-figure
 ---
 
 viser den grafiske representasjonen av eksponentialfunksjoner for ulike verdier av $b$. Grafen skjærer $y$-aksen i $y = a$.
@@ -297,7 +298,7 @@ $$
 :::{figure} ./figurer/eksempler/eksempel_1/a.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til $f(x) = 1 \cdot 2^x$. Vi kan se at $f(x)$ dobler seg for hver verdi av $x \in \mathbb{N}$ og at grafen skjærer $y$-aksen i $y = 1$. 
 :::
@@ -313,7 +314,7 @@ $$
 :::{figure} ./figurer/eksempler/eksempel_1/b.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til $f(x) = 100 \cdot \left(\dfrac{1}{2}\right)^x$. Vi kan se at $f(x)$ halveres for hver verdi av $x \in \mathbb{N}$ og at grafen skjærer $y$-aksen i $y = 100$.
 :::

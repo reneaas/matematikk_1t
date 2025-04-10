@@ -64,6 +64,7 @@ Her er $\Delta x$ endringen i $x$-verdiene og $\Delta y$ endringen i $y$-verdien
 ---
 width: 80%
 name: fig-lineære-funksjoner-representasjoner-bestemme-funksjonsuttrykk-topunktsformelen
+class: no-click, adaptive-figure
 ---
 Viser en grafen til en lineær funksjon $f$ og to punkter $(x_1, y_1)$ og $(x_2, y_2)$ på grafen. Endringen i $x$-verdien er $\Delta x = x_2 - x_1$, og endringen i $y$-verdien er $\Delta y = y_2 - y_1$ er illustrert som stiplede linjer.
 ```
@@ -152,6 +153,7 @@ Vi tar utgangspunkt i {numref}`fig-lineære-funksjoner-bestemme-funksjonsuttrykk
 ---
 name: fig-lineære-funksjoner-bestemme-funksjonsuttrykk-ettpunktsformelen
 width: 80%
+class: no-click, adaptive-figure
 ---
 Viser en lineær funksjon et kjent punkt $(x_1, y_1)$ og et vilkårlig punkt $(x, y)$ er tegnet inn.
 :::

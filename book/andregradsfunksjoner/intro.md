@@ -17,7 +17,7 @@ link-type: doc
 :::{figure} ./representasjoner/nullpunktsform/figurer/teori/algebraisk_uttrykk.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -26,7 +26,7 @@ class: no-click
 :::{figure} ./representasjoner/nullpunktsform/figurer/teori/grafisk_representasjon.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -37,7 +37,7 @@ class: no-click
 :::{figure} ./representasjoner/ekstremalform/figurer/teori/algebraisk_uttrykk.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -93,7 +93,7 @@ $$
 :::{figure} ./likninger/abc_formelen/figurer/teori/abc-formel.svg
 ---
 width: 70%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 

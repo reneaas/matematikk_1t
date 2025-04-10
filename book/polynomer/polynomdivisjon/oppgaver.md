@@ -32,7 +32,7 @@ class: solution, dropdown
 :::{figure} ./koder/oppgaver/oppgave_1/a.svg
 ---
 width: 80%
-class: no-click
+class: no-click, polydiv-figure
 ---
 :::
 
@@ -65,7 +65,7 @@ class: solution, dropdown
 :::{figure} ./koder/oppgaver/oppgave_1/b.svg
 ---
 width: 80%
-class: no-click
+class: no-click, polydiv-figure
 ---
 :::
 
@@ -99,7 +99,7 @@ class: solution, dropdown
 :::{figure} ./koder/oppgaver/oppgave_1/c.svg
 ---
 width: 80%
-class: no-click
+class: no-click, polydiv-figure
 ---
 :::
 
@@ -133,7 +133,7 @@ class: solution, dropdown
 :::{figure} ./koder/oppgaver/oppgave_1/d.svg
 ---
 width: 80%
-class: no-click
+class: no-click, polydiv-figure
 ---
 :::
 
@@ -180,7 +180,7 @@ class: solution, dropdown
 :::{figure} ./koder/oppgaver/oppgave_2/a.svg
 ---
 width: 90%
-class: no-click
+class: no-click, polydiv-figure
 ---
 :::
 
@@ -212,7 +212,7 @@ class: solution, dropdown
 :::{figure} ./koder/oppgaver/oppgave_2/b.svg
 ---
 width: 90%
-class: no-click
+class: no-click, polydiv-figure
 ---
 :::
 
@@ -247,7 +247,7 @@ class: solution, dropdown
 :::{figure} ./koder/oppgaver/oppgave_2/c.svg
 ---
 width: 85%
-class: no-click
+class: no-click, polydiv-figure
 ---
 :::
 
@@ -279,7 +279,7 @@ class: solution, dropdown
 :::{figure} ./koder/oppgaver/oppgave_2/d.svg
 ---
 width: 85%
-class: no-click
+class: no-click, polydiv-figure
 ---
 :::
 
@@ -326,7 +326,7 @@ class: dropdown, solution
 :::{figure} ./koder/oppgaver/oppgave_3/a.svg
 ---
 width: 80%
-class: no-click
+class: no-click, polydiv-figure
 ---
 :::
 
@@ -358,7 +358,7 @@ class: dropdown, solution
 :::{figure} ./koder/oppgaver/oppgave_3/b.svg
 ---
 width: 80%
-class: no-click
+class: no-click, polydiv-figure
 ---
 :::
 
@@ -392,7 +392,7 @@ class: dropdown, solution
 :::{figure} ./koder/oppgaver/oppgave_3/c.svg
 ---
 width: 80%
-class: no-click
+class: no-click, polydiv-figure
 ---
 :::
 
@@ -425,7 +425,7 @@ class: dropdown, solution
 :::{figure} ./koder/oppgaver/oppgave_3/d.svg
 ---
 width: 80%
-class: no-click
+class: no-click, polydiv-figure
 ---
 :::
 
@@ -472,7 +472,7 @@ class: dropdown, solution
 :::{figure} ./koder/oppgaver/oppgave_4/a.svg
 ---
 width: 90%
-class: no-click
+class: no-click, polydiv-figure
 ---
 :::
 :::::
@@ -505,7 +505,7 @@ class: dropdown, solution
 :::{figure} ./koder/oppgaver/oppgave_4/b.svg
 ---
 width: 80%
-class: no-click
+class: no-click, polydiv-figure
 ---
 :::
 :::::
@@ -537,7 +537,7 @@ class: dropdown, solution
 :::{figure} ./koder/oppgaver/oppgave_4/c.svg
 ---
 width: 80%
-class: no-click
+class: no-click, polydiv-figure
 ---
 :::
 :::::
@@ -569,7 +569,7 @@ class: dropdown, solution
 :::{figure} ./koder/oppgaver/oppgave_4/d.svg
 ---
 width: 90%
-class: no-click
+class: no-click, polydiv-figure
 ---
 :::
 :::::
@@ -617,7 +617,7 @@ class: dropdown, solution
 :::{figure} ./koder/oppgaver/oppgave_5/a.svg
 ---
 width: 90%
-class: no-click
+class: no-click, polydiv-figure
 ---
 :::
 :::::
@@ -649,7 +649,7 @@ class: dropdown, solution
 :::{figure} ./koder/oppgaver/oppgave_5/b.svg
 ---
 width: 70%
-class: no-click
+class: no-click, polydiv-figure
 ---
 :::
 :::::
@@ -680,7 +680,7 @@ class: dropdown, solution
 :::{figure} ./koder/oppgaver/oppgave_5/c.svg
 ---
 width: 80%
-class: no-click
+class: no-click, polydiv-figure
 ---
 :::
 :::::
@@ -711,7 +711,7 @@ class: dropdown, solution
 :::{figure} ./koder/oppgaver/oppgave_5/d.svg
 ---
 width: 80%
-class: no-click
+class: no-click, polydiv-figure
 ---
 :::
 :::::
@@ -759,7 +759,7 @@ Vi utfører polynomdivisjon med $(x - 1)$ for å finne andregradspolynomet $(ax^
 :::{figure} ./koder/oppgaver/oppgave_6/a.svg
 ---
 width: 80%
-class: no-click
+class: no-click, polydiv-figure
 ---
 :::
 
@@ -803,7 +803,7 @@ Vi utfører polynomdivisjon med $(x^2 - 4)$ for å finne førstegradspolynomet $
 :::{figure} ./koder/oppgaver/oppgave_6/b.svg
 ---
 width: 80%
-class: no-click
+class: no-click, polydiv-figure
 ---
 :::
 
@@ -847,7 +847,7 @@ Vi utfører polynomdivisjon med $(x^2 - 2x + 1)$ for å finne det ukjente andreg
 :::{figure} ./koder/oppgaver/oppgave_6/c.svg
 ---
 width: 90%
-class: no-click
+class: no-click, polydiv-figure
 ---
 :::
 
@@ -903,7 +903,7 @@ $$
 :::{figure} ./koder/oppgaver/oppgave_7/a.svg
 ---
 width: 70%
-class: no-click
+class: no-click, polydiv-figure
 ---
 :::
 ::::
@@ -917,7 +917,7 @@ class: solution, dropdown
 :::{figure} ./koder/oppgaver/oppgave_7/a_tutor.svg
 ---
 width: 70%
-class: no-click
+class: no-click, polydiv-figure
 ---
 :::
 ::::
@@ -941,7 +941,7 @@ $$
 :::{figure} ./koder/oppgaver/oppgave_7/b.svg
 ---
 width: 70%
-class: no-click
+class: no-click, polydiv-figure
 ---
 :::
 ::::
@@ -955,7 +955,7 @@ class: solution, dropdown
 :::{figure} ./koder/oppgaver/oppgave_7/b_tutor.svg
 ---
 width: 70%
-class: no-click
+class: no-click, polydiv-figure
 ---
 :::
 ::::
@@ -979,7 +979,7 @@ $$
 :::{figure} ./koder/oppgaver/oppgave_7/c.svg
 ---
 width: 70%
-class: no-click
+class: no-click, polydiv-figure
 ---
 :::
 ::::
@@ -993,7 +993,7 @@ class: solution, dropdown
 :::{figure} ./koder/oppgaver/oppgave_7/c_tutor.svg
 ---
 width: 70%
-class: no-click
+class: no-click, polydiv-figure
 ---
 :::
 ::::
@@ -1017,7 +1017,7 @@ $$
 :::{figure} ./koder/oppgaver/oppgave_7/d.svg
 ---
 width: 70%
-class: no-click
+class: no-click, polydiv-figure
 ---
 :::
 
@@ -1032,7 +1032,7 @@ class: solution, dropdown
 :::{figure} ./koder/oppgaver/oppgave_7/d_tutor.svg
 ---
 width: 70%
-class: no-click
+class: no-click, polydiv-figure
 ---
 :::
 ::::
@@ -1075,7 +1075,7 @@ $$
 :::{figure} ./koder/oppgaver/oppgave_8/a.svg
 ---
 width: 60%
-class: no-click
+class: no-click, polydiv-figure
 ---
 :::
 
@@ -1095,7 +1095,7 @@ $$
 :::{figure} ./koder/oppgaver/oppgave_8/a_tutor.svg
 ---
 width: 60%
-class: no-click
+class: no-click, polydiv-figure
 ---
 :::
 
@@ -1119,7 +1119,7 @@ class: answer, dropdown
 :::{figure} ./koder/oppgaver/oppgave_8/b.svg
 ---
 width: 50%
-class: no-click
+class: no-click, polydiv-figure
 ---
 :::
 
@@ -1146,7 +1146,7 @@ class: answer, dropdown
 :::{figure} ./koder/oppgaver/oppgave_8/c.svg
 ---
 width: 60%
-class: no-click
+class: no-click, polydiv-figure
 ---
 :::
 
@@ -1173,7 +1173,7 @@ class: answer, dropdown
 :::{figure} ./koder/oppgaver/oppgave_8/d.svg
 ---
 width: 50%
-class: no-click
+class: no-click, polydiv-figure
 ---
 :::
 
