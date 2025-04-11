@@ -23,17 +23,18 @@ def main(dirname, save):
         ymin=-4,
         ymax=9,
         ticks=True,
+        alpha=0.9,
     )
 
     x_inf = 1
     x = np.linspace(-24, x_inf, 1024)
     y = f(x)
 
-    ax.plot(x, y, color="teal", alpha=0.7, lw=2)
+    ax.plot(x, y, color="teal", alpha=0.9, lw=2)
 
     x = np.linspace(x_inf, 24, 1024)
     y = f(x)
-    ax.plot(x, y, color="teal", alpha=0.7, lw=2)
+    ax.plot(x, y, color="teal", alpha=0.9, lw=2)
 
     ax.hlines(y=3, xmin=-25, xmax=25, color="blue", ls="--")
     ax.vlines(x=1, ymin=-25, ymax=25, color="blue", ls="--")

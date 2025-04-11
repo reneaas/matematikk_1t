@@ -23,6 +23,7 @@ def main(dirname, save):
         ymin=-18,
         ymax=18,
         ticks=False,
+        alpha=0.9,
     )
 
     ax.hlines(y=2, xmin=-25, xmax=25, color="blue", ls="--")

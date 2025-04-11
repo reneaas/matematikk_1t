@@ -21,8 +21,7 @@ def main(dirname, save):
     plt.plot(x, y, color="black", lw=1.5)
 
     x, y = make_n_gon(n=6, radius=2 / np.sqrt(3))
-    plt.plot(x, y, color="teal", lw=2)
-    # plt.plot(x, y, "ko", markersize=8, alpha=0.7)
+    plt.plot(x, y, color="teal", lw=2.5, alpha=0.8)
 
     l = 2 / np.sqrt(3)
     A = (0, 0)

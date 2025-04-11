@@ -16,6 +16,7 @@ def main(dirname, save):
 
         plotmath.plot_polygon(
             *[A, B, C, D],
+            alpha=0.2,
         )
 
         s = 0.9 * s
