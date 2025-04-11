@@ -10,16 +10,19 @@ class: summary, dropdown
 ::::::::::::::{tab-set}
 :::::::::::::{tab-item} Løs
 
+
 Likninger
-: ![](./ggb/solve/likning.png)
+: <img src="./ggb/solve/likning.png" alt="likning" width="100%" class="no-click adaptive-figure"/>
+
 
 
 Ulikheter
-: ![](./ggb/solve/ulikhet.png)
+: <img src="./ggb/solve/ulikhet.png" alt="ulikhet" width="100%" class="no-click adaptive-figure"/>
+
 
 
 Likningssystemer
-: ![](./ggb/solve/likningssystem.png)
+: <img src="./ggb/solve/likningssystem.png" alt="likningssystem" width="100%" class="no-click adaptive-figure"/>
 
 :::::::::::::
 
@@ -27,22 +30,22 @@ Likningssystemer
 :::::::::::::{tab-item} Funksjoner
 
 Definere funksjon
-: ![](./ggb/funksjoner/definere_funksjon.png)
+: <img src="./ggb/funksjoner/definere_funksjon.png" alt="definere_funksjon" width="100%" class="no-click adaptive-figure"/>
 
 Funksjonsverdier
-: ![](./ggb/funksjoner/funksjonsverdier.png)
+: <img src="./ggb/funksjoner/funksjonsverdier.png" alt="funksjonsverdier" width="100%" class="no-click adaptive-figure"/>
 
 
 Finne nullpunkter
-: ![](./ggb/funksjoner/nullpunkter.png)
+: <img src="./ggb/funksjoner/nullpunkter.png" alt="nullpunkter" width="100%" class="no-click adaptive-figure"/>
 
 
 Den deriverte
-: ![](./ggb/funksjoner/derivert.png)
+: <img src="./ggb/funksjoner/derivert.png" alt="derivert" width="100%" class="no-click adaptive-figure"/>
 
 
 Finne ekstremalpunkter
-: ![](./ggb/funksjoner/ekstremalpunkter.png)
+: <img src="./ggb/funksjoner/ekstremalpunkter.png" alt="ekstremalpunkter" width="100%" class="no-click adaptive-figure"/>
 
 :::::::::::::
 
@@ -50,14 +53,14 @@ Finne ekstremalpunkter
 :::::::::::::{tab-item} Algebra
 
 Faktorisering
-: ![](./ggb/algebra/faktoriser.png)
+: <img src="./ggb/algebra/faktoriser.png" alt="faktorisering" width="100%" class="no-click adaptive-figure"/>
 
 
 Utvide
-: ![](./ggb/algebra/utvide.png)
+: <img src="./ggb/algebra/utvide.png" alt="utvide" width="100%" class="no-click adaptive-figure"/>
 
 Polynomdivisjon
-: ![](./ggb/algebra/polydiv.png)
+: <img src="./ggb/algebra/polydiv.png" alt="polynomdivisjon" width="100%" class="no-click adaptive-figure"/>
 
 :::::::::::::
 

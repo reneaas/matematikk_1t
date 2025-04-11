@@ -30,7 +30,7 @@ a.no-click {
 
 
 
-/* Base styles for polynomial division figures */
+/* Base styles for figures */
 .adaptive-figure img,
 .adaptive-figure svg {
     background: transparent !important; /* Force transparent background */
@@ -75,7 +75,7 @@ a.no-click {
 
 
 
-/* Base styles for polynomial division figures */
+/* Base styles for manim gifs */
 .manim-figure img,
 .manim-figure svg {
     background: transparent !important; /* Force transparent background */
@@ -112,4 +112,38 @@ a.no-click {
         filter: invert(100%) !important;
     }
 }
+
+
+
+
+
+
+
+/* Light mode (default) */
+[data-mode="light"] video {
+    filter: invert(100%) hue-rotate(220deg) !important; /* Invert colors for dark mode */
+}
+
+/* Dark mode styles */
+[data-mode="dark"] video {
+    filter: invert(0%); /* Normal */
+}
+
+/* Auto mode with system preference */
+@media (prefers-color-scheme: dark) {
+[data-mode="auto"] video {
+    filter: invert(0%) !important; /* Normal */
+}
+}
+
+/* Auto mode with system preference */
+@media (prefers-color-scheme: light) {
+    [data-mode="auto"] video {
+        filter: invert(100%) hue-rotate(220deg) !important; /* Invert colors for dark mode */
+    }
+}
+
+
+
+
 

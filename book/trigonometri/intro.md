@@ -30,7 +30,7 @@ $$
 :::{figure} ./bakgrunnsstoff/figurer/teori/pytagoras_setning/figur2.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -57,7 +57,7 @@ $\sin v$, $\cos v$ og $\tan v$
 :::{figure} ./definisjoner/figurer/teori/trekant1.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -85,7 +85,7 @@ link-type: doc
 :::{figure} ./sinussetningen/figurer/teori/sinussetningen.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -111,7 +111,7 @@ $$
 :::{figure} ./enhetssirkelen/figurer/teori/enhetssirkelen/figur1.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -137,7 +137,7 @@ $$
 :::{figure} ./sinussetningen/figurer/teori/sinussetningen.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -163,7 +163,7 @@ $$
 :::{figure} ./cosinussetningen/figurer/teori/generell_trekant/figur.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 

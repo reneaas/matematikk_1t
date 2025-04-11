@@ -35,6 +35,7 @@ Vi kan skrive en begrenset mengde av reelle tall på følgende måter:
 ---
 name: fig-algebra-lister-ulikheter-intervaller-teori-begrenset-mengde
 width: 80%
+class: no-click, adaptive-figure
 ---
 illustrerer mengdene beskrevet av ulikhetene i tabellen over i rødt på tallinja. Avhengig av hvilket ulikhetstegn som er brukt er et endepunkt inkludert ($\leq$) eller ekskludert ($<$).
 :::
@@ -75,36 +76,6 @@ file: ./pair_puzzles/underveisoppgave_1.html
 ::::
 
 
-<!-- ::::{admonition} Underveisoppgave 1
----
-class: check
----
-Skriv av og fyll ut tabellen:
-
-| Ulikhet | Beskrivelse |
-|:---:|:---|
-| $-1 < x \leq 3$ | |
-| | Alle reelle tall $x$ mellom $2$ og $4$. Her er $2$ inkludert, men ikke $4$. |
-| $0 \leq x < 2$ |  |
-| | Alle reelle tall $x$ mellom $-3$ og $1$. Hverken $-3$ eller $1$ er inkludert |
-| $-2 \leq x \leq 4$ |  | 
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-
-| Ulikhet | Beskrivelse |
-|:---:|:---|
-| $-1 < x \leq 3$ | Alle tall større enn $-1$ og mindre enn eller lik $3$. |
-| $2 \leq x < -4$ | Alle reelle tall $x$ mellom $2$ og $4$. Her er $2$ inkludert, men ikke $4$. |
-| $0 \leq x < 2$ | Alle reelle tall $x$ større enn eller lik $0$ og mindre enn $2$. |
-| $-3 < x < 1$ | Alle reelle tall $x$ mellom $-3$ og $1$. Hverken $-3$ eller $1$ er inkludert. |
-| $-2 \leq x \leq 4$ | Alle reelle tall $x$ som er større enn eller lik $-2$ og mindre enn eller lik $4$.  | 
-
-:::
-
-:::: -->
 
 
 ## Ubegrensede mengder 
@@ -145,6 +116,7 @@ Oppad begrenset
     ---
     name: fig-algebra-lister-ulikheter-intervaller-teori-oppad-begrenset-mengde
     width: 90%
+    class: no-click, adaptive-figure
     ---
     viser en ubegrenset mengde som er oppad begrenset (i rødt). Avhengig av hvilket ulikhetstegn som er brukt er endepunktet inkludert ($\leq$) eller ekskludert ($<$).
     :::
@@ -165,6 +137,7 @@ Nedad begrenset
     ---
     name: fig-algebra-lister-ulikheter-intervaller-teori-nedad-begrenset-mengde
     width: 90%
+    class: no-click, adaptive-figure
     ---
     viser en ubegrenset mengde som er nedad begrenset (i rødt). Avhengig av hvilket ulikhetstegn som er brukt er endepunktet inkludert ($\leq$) eller ekskludert ($<$).
     :::
@@ -208,35 +181,3 @@ file: ./pair_puzzles/underveisoppgave_2.html
 :::
 
 :::: 
-
-<!-- ::::{admonition} Underveisoppgave 2
----
-class: check
----
-Skriv av og fyll ut tabellen:
-
-| Ulikhet | Beskrivelse |
-|:---:|:---|
-| $x \geq 0$ | |
-| | Alle reelle tall $x$ mindre enn eller lik $-2$. |
-| $x > 2$ |  |
-| | Alle reelle tall $x$ mindre enn $-\dfrac{1}{2}$. |
-| $x \leq 1$ |  |
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-
-| Ulikhet | Beskrivelse |
-|:---:|:---|
-| $x \geq 0$ | Alle reelle tall $x$ større enn eller lik $0$. |
-| $x \leq -2$ | Alle reelle tall $x$ mindre enn eller lik $-2$. |
-| $x > 2$ | Alle reelle tall $x$ større enn $2$. |
-| $x < -\dfrac{1}{2}$  | Alle reelle tall $x$ mindre enn $-\dfrac{1}{2}$. |
-| $x \leq 1$ | Alle reelle tall $x$ mindre enn eller lik $1$. |
-
-
-:::
-
-:::: -->

@@ -70,20 +70,12 @@ $$
 x^2 - 3x - 4 = 0.
 $$
 
-:::{raw} html 
----
-file: ./ggb/underveisoppgaver/underveisoppgave_1/a.html
----
-:::
 
-::::{admonition} Fasit
----
-class: answer, dropdown
----
+::::{answer}
 :::{figure} ./ggb/underveisoppgaver/underveisoppgave_1/a.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -106,20 +98,12 @@ $$
 -x^2 + 9 = 0.
 $$
 
-:::{raw} html 
----
-file: ./ggb/underveisoppgaver/underveisoppgave_1/b.html
----
-:::
 
-::::{admonition} Fasit
----
-class: answer, dropdown
----
+::::{answer}
 :::{figure} ./ggb/underveisoppgaver/underveisoppgave_1/b.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -142,21 +126,11 @@ x^3 + 6x^2 - x - 30 = 0.
 $$
 
 
-:::{raw} html 
----
-file: ./ggb/underveisoppgaver/underveisoppgave_1/c.html
----
-:::
-
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
+::::{answer}
 :::{figure} ./ggb/underveisoppgaver/underveisoppgave_1/c.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -177,21 +151,12 @@ $$
 x^3 + x^2 - 5x + 1 = -x + 5.
 $$
 
-:::{raw} html 
----
-file: ./ggb/underveisoppgaver/underveisoppgave_1/d.html
----
-:::
 
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
+::::{answer}
 :::{figure} ./ggb/underveisoppgaver/underveisoppgave_1/d.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -206,6 +171,9 @@ $$
 :::::::::::::
 
 ::::::::::::::
+
+:::{cas} 720 600
+:::
 
 
 :::::::::::::::
@@ -271,20 +239,12 @@ $$
 (x - 1)(x + 4) \leq 0. 
 $$
 
-:::{raw} html
----
-file: ./ggb/underveisoppgaver/underveisoppgave_2/a.html
----
-:::
 
-::::{admonition} Fasit
----
-class: answer, dropdown
----
+::::{answer}
 :::{figure} ./ggb/underveisoppgaver/underveisoppgave_2/a.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -306,21 +266,11 @@ $$
 $$
 
 
-:::{raw} html
----
-file: ./ggb/underveisoppgaver/underveisoppgave_2/b.html
----
-:::
-
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
+::::{answer}
 :::{figure} ./ggb/underveisoppgaver/underveisoppgave_2/b.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -342,21 +292,12 @@ x^2 - 3x - 4 \geq 0.
 $$
 
 
-:::{raw} html
----
-file: ./ggb/underveisoppgaver/underveisoppgave_2/c.html
----
-:::
 
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
+::::{answer}
 :::{figure} ./ggb/underveisoppgaver/underveisoppgave_2/c.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -378,21 +319,12 @@ x^3 + x^2 - 4x - 4 \geq 0.
 $$
 
 
-:::{raw} html
----
-file: ./ggb/underveisoppgaver/underveisoppgave_2/d.html
----
-:::
 
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
+::::{answer}
 :::{figure} ./ggb/underveisoppgaver/underveisoppgave_2/d.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -407,6 +339,9 @@ $$
 :::::::::::::
 
 ::::::::::::::
+
+:::{cas} 720 600
+:::
 
 :::::::::::::::
 
@@ -473,22 +408,11 @@ Løs likningssystemet
 \end{align*}
 
 
-
-:::{raw} html
----
-file: ./ggb/underveisoppgaver/underveisoppgave_3/a.html
----
-:::
-
-
-:::::{admonition} Fasit
----
-class: answer, dropdown
----
+:::::{answer}
 :::{figure} ./ggb/underveisoppgaver/underveisoppgave_3/a.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -514,21 +438,11 @@ Løs likningssystemet
 \end{align*}
 
 
-:::{raw} html
----
-file: ./ggb/underveisoppgaver/underveisoppgave_3/b.html
----
-:::
-
-
-:::::{admonition} Fasit
----
-class: answer, dropdown
----
+:::::{answer}
 :::{figure} ./ggb/underveisoppgaver/underveisoppgave_3/b.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -553,21 +467,11 @@ Løs likningssystemet
 \end{align*}
 
 
-:::{raw} html
----
-file: ./ggb/underveisoppgaver/underveisoppgave_3/c.html
----
-:::
-
-
-:::::{admonition} Fasit
----
-class: answer, dropdown
----
+:::::{answer}
 :::{figure} ./ggb/underveisoppgaver/underveisoppgave_3/c.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -593,21 +497,11 @@ Løs likningssystemet
 \end{align*}
 
 
-:::{raw} html
----
-file: ./ggb/underveisoppgaver/underveisoppgave_3/d.html
----
-:::
-
-
-:::::{admonition} Fasit
----
-class: answer, dropdown
----
+:::::{answer}
 :::{figure} ./ggb/underveisoppgaver/underveisoppgave_3/d.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -623,6 +517,9 @@ $$
 :::::::::::::
 
 ::::::::::::::
+
+:::{cas} 720 600
+:::
 
 :::::::::::::::
 
@@ -697,13 +594,6 @@ class: tabs-parts
 Definer en funksjon $f$ og regn ut funksjonsverdiene $f(0)$, $f(1)$, $f(-2)$ og $f(k)$.
 
 
-:::{raw} html
----
-file: ./ggb/underveisoppgaver/underveisoppgave_4/a.html
----
-:::
-
-
 ::::{admonition} Fasit
 ---
 class: answer, dropdown
@@ -711,7 +601,7 @@ class: answer, dropdown
 :::{figure} ./ggb/underveisoppgaver/underveisoppgave_4/a.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -727,12 +617,6 @@ f(x) = 0.
 $$
 
 
-:::{raw} html
----
-file: ./ggb/underveisoppgaver/underveisoppgave_4/b.html
----
-:::
-
 
 ::::{admonition} Fasit
 ---
@@ -741,7 +625,7 @@ class: answer, dropdown
 :::{figure} ./ggb/underveisoppgaver/underveisoppgave_4/b.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -765,12 +649,6 @@ $$
 f(x) \geq 0. 
 $$
 
-:::{raw} html
----
-file: ./ggb/underveisoppgaver/underveisoppgave_4/c.html
----
-:::
-
 
 ::::{admonition} Fasit
 ---
@@ -779,7 +657,7 @@ class: answer, dropdown
 :::{figure} ./ggb/underveisoppgaver/underveisoppgave_4/c.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -793,9 +671,11 @@ $$
 
 :::::::::::::
 
+
 ::::::::::::::
 
-
+:::{cas} 720 600
+:::
 
 
 :::::::::::::::
@@ -887,13 +767,6 @@ class: hints, dropdown
 * $f'(0) = 3$
 :::
 
-:::{raw} html
----
-file: ./ggb/utforsk/utforsk_5/d.html
----
-:::
-
-
 ::::{admonition} Fasit
 ---
 class: answer, dropdown
@@ -902,17 +775,20 @@ class: answer, dropdown
 :::{figure} ./ggb/utforsk/utforsk_5/d.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
 **Svar**:
 
 $$
-a = -1 \lland b = 0 \lland c = 3 \lland d = -2. 
+a = -1 \and b = 0 \and c = 3 \and d = -2. 
 $$
 
 ::::
+
+:::{cas} 700 600
+:::
 
 
 :::::::::::::
@@ -966,12 +842,6 @@ Likningene blir
 Bestem $a$, $b$, $c$ og $d$. 
 
 
-:::{raw} html
----
-file: ./ggb/underveisoppgaver/underveisoppgave_5/b.html
----
-:::
-
 :::::{admonition} Fasit
 ---
 class: answer, dropdown
@@ -979,17 +849,20 @@ class: answer, dropdown
 :::{figure} ./ggb/underveisoppgaver/underveisoppgave_5/b.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
 **Svar**:
 
 $$
-x = 1 \lland b = 4 \lland c = -3 \lland d = -18
+x = 1 \and b = 4 \and c = -3 \and d = -18
 $$
 
 :::::
+
+:::{cas} 700 600
+:::
 
 :::::::::::::
 
@@ -1022,7 +895,7 @@ der $D_f = [0, 3]$, og en trekant som har hjørner i punktene $(0, 0)$, $(k, 0)$
 ---
 name: fig-cas-del-2-utforsk-6
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til $f(x) = -x^2 + 9$ for $x \in [0, 3]$ og en trekant med hjørner i $(0, 0)$, $(k, 0)$ og $(k, f(k))$.
 :::
@@ -1065,12 +938,6 @@ I CAS-vinduet nedenfor har vi definert $f(x)$ og $A(k)$.
 
 Fyll ut CAS-vinduet og bruk det til å bestemme den verdien av $k$ som gir størst mulig areal for trekanten.
 
-:::{raw} html
----
-file: ./ggb/utforsk/utforsk_6/c.html
----
-:::
-
 ::::{admonition} Fasit
 ---
 class: answer, dropdown
@@ -1078,7 +945,7 @@ class: answer, dropdown
 :::{figure} ./ggb/utforsk/utforsk_6/c.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -1089,6 +956,9 @@ k = \sqrt{3}
 $$
 
 ::::
+
+:::{cas} 700 600
+:::
 
 :::::::::::::
 
@@ -1119,17 +989,9 @@ Bestem den verdien av $k$ som gir størst mulig areal for trekanten.
 ---
 name: fig-cas-del-2-underveisoppgave-6
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til $f(x) = -x(x - 3)^3$ for $x \in [0, 3]$ og en trekant med hjørner i $(0, 0)$, $(k, 0)$ og $(k, f(k))$.
-:::
-
-
-
-:::{raw} html
----
-file: ./ggb/underveisoppgaver/underveisoppgave_6/cas.html
----
 :::
 
 
@@ -1140,7 +1002,7 @@ class: answer, dropdown
 :::{figure} ./ggb/underveisoppgaver/underveisoppgave_6/solution.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -1152,23 +1014,11 @@ $$
 :::::
 
 
+:::{cas} 720 600
+:::
+
+
 :::::::::::::::
-
-
-
-
-<!-- ## Algebra 
-
-* Faktorisere polynomer. 
-* Faktorisere og forkorte rasjonale funksjoner. 
-* Utvide polynomer. 
-
-
-## Polynomdivisjon
-
-* Utføre polynomdivisjon.
-* Lese av kvotient og rest.
-* Bestemme asymptoter til rasjonale funksjoner. -->
 
 
 ## Oppgaver
@@ -1201,7 +1051,7 @@ class: answer, dropdown
 :::{figure} ./ggb/oppgaver/oppgave_1/a.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -1225,7 +1075,7 @@ class: answer, dropdown
 :::{figure} ./ggb/oppgaver/oppgave_1/b.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -1250,7 +1100,7 @@ class: answer, dropdown
 :::{figure} ./ggb/oppgaver/oppgave_1/c.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -1275,7 +1125,7 @@ class: answer, dropdown
 :::{figure} ./ggb/oppgaver/oppgave_1/d.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -1290,12 +1140,7 @@ $$
 
 ::::::::::::::
 
-<br>
-
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_1/cas.html
----
+:::{cas} 720 600
 :::
 
 
@@ -1330,7 +1175,7 @@ class: answer, dropdown
 :::{figure} ./ggb/oppgaver/oppgave_2/a.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -1358,7 +1203,7 @@ class: answer, dropdown
 :::{figure} ./ggb/oppgaver/oppgave_2/b.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -1384,7 +1229,7 @@ class: answer, dropdown
 :::{figure} ./ggb/oppgaver/oppgave_2/c.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -1411,7 +1256,7 @@ class: answer, dropdown
 :::{figure} ./ggb/oppgaver/oppgave_2/d.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -1428,12 +1273,7 @@ $$
 
 ::::::::::::::
 
-<br>
-
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_2/cas.html
----
+:::{cas} 720 600
 :::
 
 
@@ -1459,7 +1299,7 @@ I {numref}`fig-cas-kurs-del-2-likningssystem-oppgave-3` vises en grafisk represe
 ---
 name: fig-cas-kurs-del-2-likningssystem-oppgave-3
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser en grafisk representasjon av likningene $x^2 + y^2 = 25$ og $x - y = 1$.
 :::
@@ -1565,13 +1405,6 @@ $$
 Bruk CAS-vindu nedenfor til å løse likningssystemet. 
 
 
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_3/c.html
----
-:::
-
-
 :::::{admonition} Fasit
 ---
 class: answer, dropdown
@@ -1579,7 +1412,7 @@ class: answer, dropdown
 :::{figure} ./ggb/oppgaver/oppgave_3/c.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -1592,6 +1425,9 @@ $$
 :::::
 
 
+
+:::{cas} 700 600
+:::
 
 
 :::::::::::::
@@ -1653,7 +1489,7 @@ class: answer, dropdown
 :::{figure} ./ggb/oppgaver/oppgave_4/b.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -1668,10 +1504,7 @@ $$
 
 ::::::::::::::
 
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_4/cas.html
----
+:::{cas} 720 600
 :::
 
 
@@ -1697,7 +1530,7 @@ Et rektangel har hjørner i $(0, 0)$, $(r, 0)$, $(r, f(r))$ og $(0, f(r))$.
 ---
 name: fig-cas-del-2-oppgave-5
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -1716,7 +1549,7 @@ class: answer, dropdown
 :::{figure} ./ggb/oppgaver/oppgave_5/a.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -1740,7 +1573,7 @@ class: answer, dropdown
 :::{figure} ./ggb/oppgaver/oppgave_5/b.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -1755,12 +1588,7 @@ $$
 
 ::::::::::::::
 
-<br>
-
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_5/cas.html
----
+:::{cas} 720 600
 :::
 
 
@@ -1784,7 +1612,7 @@ I {numref}`fig-cas-del-2-oppgave-6` vises grafen til en andregradsfunksjon $f$ o
 ---
 name: fig-cas-del-2-oppgave-6
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til en andregradsfunksjon $f$ og to tangenter gjennom $(1, f(1))$ og $(3, f(3))$. 
 :::
@@ -1824,7 +1652,7 @@ class: answer, dropdown
 :::{figure} ./ggb/oppgaver/oppgave_6/b.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -1841,10 +1669,7 @@ $$
 ::::::::::::::
 
 
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_6/cas.html
----
+:::{cas} 720 600
 :::
 
 :::::::::::::::

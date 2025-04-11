@@ -155,7 +155,7 @@ Under tegnes en figur.
 :::{figure} ./underveisoppgaver/oppgave_1/a/animasjon.gif
 ---
 width: 40%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -183,7 +183,7 @@ Under tegnes en figur.
 :::{figure} ./underveisoppgaver/oppgave_1/b/animasjon.gif
 ---
 width: 40%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -212,7 +212,7 @@ Under tegnes en figur.
 :::{figure} ./underveisoppgaver/oppgave_1/c/animasjon.gif
 ---
 width: 40%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -321,7 +321,7 @@ Nedenfor tegnes en figur.
 :::{figure} ./underveisoppgaver/oppgave_2/a/animasjon.gif
 ---
 width: 50%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -342,7 +342,7 @@ Nedenfor tegnes en figur.
 :::{figure} ./underveisoppgaver/oppgave_2/b/animasjon.gif
 ---
 width: 50%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -363,7 +363,7 @@ Nedenfor tegnes en figur.
 :::{figure} ./underveisoppgaver/oppgave_2/c/animasjon.gif
 ---
 width: 40%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -515,7 +515,7 @@ Kan du endre på programmet slik at det tegner en figur tilsvarende denne:
 :::{figure} ./utforsk/utforsk_4/b/animasjon.gif
 ---
 width: 25%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -530,7 +530,7 @@ Endre på programmet slik at det tegner denne figuren.
 :::{figure} ./utforsk/utforsk_4/c/animasjon.gif
 ---
 width: 25%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -567,7 +567,7 @@ Nedenfor tegnes en geometrisk figur der
 :::{figure} ./underveisoppgaver/oppgave_4/a/animasjon.gif
 ---
 width: 40%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -594,7 +594,7 @@ Nedenfor tegnes en spiral der
 :::{figure} ./underveisoppgaver/oppgave_4/b/animasjon.gif
 ---
 width: 40%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -619,7 +619,7 @@ Nedenfor tegnes det en spiral der
 :::{figure} ./underveisoppgaver/oppgave_4/c/animasjon.gif
 ---
 width: 40%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
