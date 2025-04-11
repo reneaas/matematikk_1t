@@ -26,7 +26,7 @@ I {numref}`fig-lineære-funksjoner-oppgavesamling-2-oppgave-1` vises grafene til
 ---
 name: fig-lineære-funksjoner-oppgavesamling-2-oppgave-1
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafene til $f$ og $g$.
 :::
@@ -161,7 +161,7 @@ class: dropdown, answer
 :::{figure} ./figurer/oppgave_1/e.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 ::::
@@ -180,7 +180,7 @@ class: dropdown, answer
 :::{figure} ./figurer/oppgave_1/f.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 ::::
@@ -534,6 +534,7 @@ Fortegnslinja til en lineær funksjon $f$ er gitt vist under.
 :::{figure} ./figurer/oppgave_7.svg
 ---
 width: 100%
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -564,7 +565,7 @@ er vist i figur {numref}`fig-lineære-funksjoner-oppgavesamling-2-oppgave-8`.
 ---
 name: fig-lineære-funksjoner-oppgavesamling-2-oppgave-8
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser fortegnslinja til $g(x)$.
 :::
@@ -748,7 +749,7 @@ Grafene til to lineære funksjoner $f$ og $g$ er vist i {numref}`fig-lineære-fu
 ---
 name: fig-lineære-funksjoner-oppgavesamling-2-oppgave-11
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafene til to lineære funksjoner $f$ og $g$.
 :::
@@ -832,7 +833,7 @@ Grafene til tre lineære funksjoner $f$ og $g$ og $h$ er vist i figur.
 ---
 name: fig-lineære-funksjoner-oppgavesamling-2-oppgave-12-graf
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafene til tre lineære funksjoner $f$ og $g$ og $h$.
 :::
@@ -849,7 +850,7 @@ Bestem hvilken funksjon fortegnslinja tilhører.
 :::{figure} ./figurer/oppgave_12/a.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -895,7 +896,7 @@ $$
 ---
 name: fig-lineære-funksjoner-oppgavesamling-2-oppgave-13-a
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser fortegnslinja til $f(x)$.
 :::
@@ -918,7 +919,7 @@ class: dropdown, answer
 :::{figure} ./figurer/oppgave_13/b.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 ::::
@@ -942,7 +943,7 @@ Bestem et mulig uttrykk for $h(x)$ som passer med fortegnslinja.
 ---
 name: fig-lineære-funksjoner-oppgavesamling-2-oppgave-13-d
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser fortegnslinja til $h(x)$.
 :::

@@ -304,6 +304,7 @@ Det betyr at vi fra denne tangenten kan sette opp likningene
 
 \begin{align*}
     f(1) &= 0 && \text{Nullpunkt i $x = 1$} \\
+    \\
     f'(1) &= 4 && \text{Stigningstallet til tangenten i $x = 1$} \\
 \end{align*}
 

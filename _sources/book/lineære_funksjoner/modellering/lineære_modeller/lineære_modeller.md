@@ -131,6 +131,7 @@ $$
 :::{figure} ./figurer/eksempler/eksempel_2/figur_1.svg
 ---
 width: 80%
+class: no-click, adaptive-figure
 ---
 viser en lineær funksjon $f$ som har definisjonsmengde $D_f = \langle 3, 8]$ og verdimengde $V_f = \langle 1, 6]$.
 :::
@@ -155,6 +156,7 @@ $$
 :::{figure} ./figurer/eksempler/eksempel_2/figur_2.svg
 ---
 width: 80%
+class: no-click, adaptive-figure
 ---
 viser en lineær funksjon $g$ som har definisjonsmengde $D_g = [2, 6]$ og verdimengde $V_g = [4, 8]$.
 :::
@@ -178,6 +180,7 @@ $$
 :::{figure} ./figurer/eksempler/eksempel_2/figur_3.svg
 ---
 width: 80%
+class: no-click, adaptive-figure
 ---
 viser en lineær funksjon $h$ som har definisjonsmengde $D_h = \langle 2, 6 \rangle$ og verdimengde $V_h = \langle 3, 5 \rangle$.
 :::
@@ -198,17 +201,18 @@ class: summary
 For en funksjon $f$, kan vi gi flere tolkninger av definisjonsmengde og verdimengde ut ifra hvilken representasjon vi bruker. 
 
 Definisjonsmengde $D_f$
-: Mengden av alle verdier $x$-verdier som vi kan bruke til å regne ut funksjonsverdier $f(x)$.
+: Mengden av alle $x$-verdier som vi kan bruke til å regne ut funksjonsverdier $f(x)$.
 : Mengden av alle $x$-verdier som ligger på grafen til $f$. 
 
 Verdimengde $V_f$
-: Mengden av alle funksjonsverdier $f(x)$-verdier som vi kan få fra $x$-verdiene i definisjonsmengden.
+: Mengden av alle funksjonsverdier $f(x)$ som vi kan få fra $x$-verdiene i definisjonsmengden.
 : Mengden av alle $f(x)$-verdier ($y$-verdier) som ligger på grafen til $f$.  
 
 ::::{figure} ./figurer/teori/teori_1.svg
 ---
 name: fig-lineære-funksjoner-modellering-lage-modell-teori
 width: 80%
+class: no-click, adaptive-figure
 ---
 viser grafisk hva som er definisjonsmengden $D_f$ og verdimengden $V_f$ til en lineær funksjon $f$. 
 ::::
