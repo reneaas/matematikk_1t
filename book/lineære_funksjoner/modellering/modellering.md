@@ -54,11 +54,14 @@ Matematisk modellering handler om å "beskrive" virkeligheten ved hjelp av matem
 
 Modellering beskrives ofte ved hjelp av en syklus, som vist i figuren under. Vi ser fra figuren at vi beveger oss fra den virkelige verden, til matematikken og tilbake. 
 
-```{figure} ./figurer/modelleringssyklus.svg
-:name: syklus
-:width: 100%
-
+:::{figure} ./figurer/modelleringssyklus.svg
+---
+name: syklus
+width: 100%
+class: no-click, adaptive-figure
+---
 Modelleringssyklusen
-```
+:::
+
 Det finnes mange eksempler på matematisk modellering rundt oss, fra enkle funksjoner som kan beskrive sammenhengen mellom prisen du betaler når du kjører el-sparkesykkel og antall minutter, til kompliserte modeller som forsøkte å forutsi antall smittede i Norge under koronapandemien. 
 

@@ -27,15 +27,16 @@ En digital lærebok i matematikk med interaktive oppgaver og aktiviteter, inklud
 
 ## Oversikt
 
-Dette prosjektet er en nettbasert lærebok i matematikk som inkluderer teori, oppgavesett og interaktive aktiviteter for å støtte læring. De interaktive kodeeksemplene og oppgavene er designet for å gi praktiske læringsopplevelser.
+Dette prosjektet er en nettbasert lærebok i matematikk 1T utviklet for læreplanen i LK20. Boka inneholder teori, oppgaver, og interaktive vinduer for programmering, CAS og Geogebra.
 
-## Funksjoner
+## Funksjonalitet
 
 - Matematisk teori for matematikk 1T
 - Blanding av oppgaver og interaktive aktiviteter
 - Mulighet for å kjøre Pythonkode direkte på nettstedet
 - Åpen kildekode som muliggjør bidrag og tilpasning til egen bruk
 - Brukervennlig grensesnitt og støtte for interaktiv læring
+- 
 
 
 ## Lisenser

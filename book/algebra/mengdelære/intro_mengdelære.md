@@ -18,6 +18,7 @@ link-type: doc
 :::{figure} grunnleggende_mengdelære/figurer/mengder_venndiagram.svg
 ---
 width: 100%
+class: no-click, adaptive-figure
 ---
 :::
 ::::
