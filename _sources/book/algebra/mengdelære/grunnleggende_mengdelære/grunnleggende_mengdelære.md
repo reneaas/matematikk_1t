@@ -36,6 +36,7 @@ Vi kan illustrere sammenhengen mellom tallmengdene som i {numref}`mengder_venndi
 ---
 name: mengder_venndiagram
 width: 80%
+class: no-click, adaptive-figure
 ---
 
 viser hvordan de ulike tallmengdene henger sammen. Diagrammet illustrerer at $\mathbb{N}$ er inkludert i $\mathbb{Z}$, som igjen er inkludert i $\mathbb{Q}$, som igjen er inkludert i $\mathbb{R}$.

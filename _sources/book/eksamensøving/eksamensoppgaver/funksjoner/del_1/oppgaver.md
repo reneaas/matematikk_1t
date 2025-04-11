@@ -93,7 +93,7 @@ dermed finner vi at $f(-1) = 0$ som betyr at $(x + 1) | f(x)$, det vil si $(x +
 :::{figure} ./koder/oppgave_2/polydiv.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -187,7 +187,7 @@ Vi utfører polynomdivisjonen $f(x) : (x - 1)^2$ og leser av resten i polynomdiv
 :::{figure} ./koder/oppgave_3/polydiv.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -310,7 +310,7 @@ Graf A, B og C har alle sammen bare én vertikal asymptote og er automatisk elim
 :::{figure} ./figurer/oppgave_4/merged_figure.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -353,7 +353,7 @@ Vi utfører polynomdivisjon for å få et andregradspolynom vi kan faktorisere:
 :::{figure} ./koder/oppgave_5/polydiv.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -411,7 +411,7 @@ Husk å argumentere for at svaret ditt er riktig.
 :::{figure} ./figurer/oppgave_6/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -471,7 +471,7 @@ I figuren nedenfor vises grafen til en funksjon $f$.
 :::{figure} ./figurer/oppgave_7/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -575,7 +575,7 @@ der vi har brukt at $(x - 3)(x + 2) = x^2 - x - 6$. Vi tegner et fortegnsskjema 
 :::{figure} ./figurer/oppgave_7/fortegnsskjema.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -608,7 +608,7 @@ Sett opp en matematisk identitet med utgangspunkt i arealet av det grønne farge
 :::{figure} ./figurer/oppgave_8/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -680,7 +680,7 @@ Guri kan ha utført polynomdivisjonen:
 :::{figure} ./koder/oppgave_9/polydiv1.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -689,7 +689,7 @@ eller hun kan ha utført polynomdivisjonen:
 :::{figure} ./koder/oppgave_9/polydiv2.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -800,7 +800,7 @@ Altså er $x = 1$ et nullpunkt til $f$ som betyr at $(x - 1) | f(x)$. Vi utfør
 :::{figure} ./koder/oppgave_11/polydiv.svg
 ---
 width: 90%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -827,7 +827,7 @@ For å løse en ulikheten $f(x) < 0$ tegner vi et fortegnsskjema for $f(x)$:
 :::{figure} ./figurer/oppgave_11/fortegnsskjema.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -844,7 +844,7 @@ Vi kan illustrere løsningen grafisk ved å lage en skisse av grafen til $f$ og 
 :::{figure} ./figurer/oppgave_11/skisse.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -866,7 +866,7 @@ Grafen til en andregradsfunksjon $f$ er vist nedenfor.
 :::{figure} ./figurer/oppgave_12/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -968,7 +968,7 @@ Husk å argumentere for svaret ditt.
 :::{figure} ./figurer/oppgave_13/merged_figure.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 

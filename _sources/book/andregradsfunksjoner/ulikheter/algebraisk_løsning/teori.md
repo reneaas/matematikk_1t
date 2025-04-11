@@ -185,8 +185,11 @@ Først tegner vi fortegnsskjema ved å tegne inn en fortegnslinje for *hver* lin
 Se {numref}`fig-andregradsulikheter-algebraisk-løsning-eksempel-2`.
 
 ```{figure} ./figurer/eksempler/eksempel_2.svg
-:name: fig-andregradsulikheter-algebraisk-løsning-eksempel-2
-:width: 100%
+---
+name: fig-andregradsulikheter-algebraisk-løsning-eksempel-2
+width: 100%
+class: no-click, adaptive-figure
+---
 
 viser fortegnsskjema til $f(x) = x^2 - x - 6 = (x + 2)(x - 3)$. Vi tegner en fortegnslinje for hver lineære faktor. For å få fortegnslinja til $f(x)$, ganger vi fortegnene til de lineære faktorene sammen. 
 ```

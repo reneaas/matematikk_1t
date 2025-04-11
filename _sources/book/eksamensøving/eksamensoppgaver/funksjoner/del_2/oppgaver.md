@@ -11,7 +11,7 @@ class: check
 :::{figure} ./figurer/oppgave_1/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -185,7 +185,7 @@ Vi løser likningssystemet med CAS:
 :::{figure} ./figurer/oppgave_3/sol.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -213,7 +213,7 @@ class: check
 :::{figure} ./figurer/oppgave_4/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -259,7 +259,7 @@ Vi regner ut avstanden med CAS:
 :::{figure} ./figurer/oppgave_4/a.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -300,7 +300,7 @@ For å bestemme hvilken verdi av $a$ som gir størst mulig avstand, kan vi bruke
 :::{figure} ./figurer/oppgave_4/b.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 Merk at definisjonene av $f(x)$ og $g(x)$ ligger igjen fra oppgave **a**.
 :::
@@ -316,7 +316,7 @@ gir størst mulig avstand mellom $R$ og $S$. Vi kan være sikre på at dette er 
 :::{figure} ./figurer/oppgave_4/check.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -392,7 +392,7 @@ Vi løser likningssystemet med CAS:
 :::{figure} ./figurer/oppgave_5/sol.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -459,7 +459,7 @@ Likningene følger fra at stigningstallet til tangentene er lik den deriverte i 
 :::{figure} ./figurer/oppgave_6/a.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -532,7 +532,7 @@ class: check
 :::{figure} ./figurer/oppgave_7/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -607,7 +607,7 @@ Vi kan definere en funksjon $A(x)$ i CAS og regne ut arealet for $x = 8$:
 :::{figure} ./figurer/oppgave_7/a.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -631,7 +631,7 @@ Vi bruker en grafisk framstilling av arealet $A(x)$ for å se hvordan arealet en
 :::{figure} ./figurer/oppgave_7/b.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser en grafisk fremstilling av arealet $A(x) \, \mathrm{m}^2$ på $y$-aksen når katetene i trekanten er $x$ meter lange. 
 :::
@@ -691,7 +691,7 @@ For å bestemme den kateten som gir størst mulig areal, bruker vi CAS og løser
 :::{figure} ./figurer/oppgave_7/d.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -732,7 +732,7 @@ Modellen er gyldig så lenge $A(x) > 0$ og $y > 0$. Vi løser den første ulikhe
 :::{figure} ./figurer/oppgave_7/e.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -753,7 +753,7 @@ så vi løser ulikheten $y > 0$ i CAS:
 :::{figure} ./figurer/oppgave_7/e2.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -804,7 +804,7 @@ Vi bestemmer nullpunktene til $f$ ved å løse likningen $f(x) = 0$ med CAS:
 :::{figure} ./figurer/oppgave_8/a.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -847,7 +847,7 @@ Vi løser likningen $f'(x) = 0$ med CAS:
 :::{figure} ./figurer/oppgave_8/b.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -888,7 +888,7 @@ Vi løser likningen $f'(x) = 3$ med CAS for å bestemme ved hvilke $x$-verdier v
 :::{figure} ./figurer/oppgave_8/c1.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser løsningen av $f'(x) = 3$. Vi bruker fortsatt $f(x)$ fra oppgave **a**.
 :::
@@ -904,7 +904,7 @@ Vi bestemmer likningene for tangentene i to punktene med CAS direkte med `Tangen
 :::{figure} ./figurer/oppgave_8/c2.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -943,7 +943,7 @@ Anna skal reise fra en holme som ligger $8$ km fra strandkanten. $12$ km fra det
 :::{figure} ./figurer/oppgave_9/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -1075,7 +1075,7 @@ For å finne ut hvor Anna må gå i land for at hun skal bruke minst mulig tid p
 :::{figure} ./figurer/oppgave_9/c.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -1092,7 +1092,7 @@ Vi bør dobbeltsjekke at dette svarer til et bunnpunkt ved å regne ut $T(x)$ i 
 :::{figure} ./figurer/oppgave_9/check.png
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -1133,7 +1133,7 @@ Rektangelet under grafen har hjørner i punktene $(0, 0)$, $(5, 0)$, $(5, f(5))$
 :::{figure} ./figurer/oppgave_10/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -1161,7 +1161,7 @@ Vi regner ut arealet med CAS:
 :::{figure} ./figurer/oppgave_10/a/sol.png
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -1199,7 +1199,7 @@ Vi tegner grafen til $A$ med en graftegner og markerer punktene $(n, A(n))$ for 
 :::{figure} ./figurer/oppgave_10/b/sol.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til arealet $A$ med punktene $(n, A(n))$ for $n \in \{1, 2, 3, \ldots, 10\}$ markert med koordinater. Her viser $y$-aksen arealet $A(x)$. 
 :::
@@ -1224,7 +1224,7 @@ For å bestemme hvilke verdi av $k$ som gir størst mulig areal, kan vi løse li
 :::{figure} ./figurer/oppgave_10/c/sol.png
 ---
 width: 90%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 

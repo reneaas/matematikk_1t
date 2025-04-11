@@ -37,6 +37,7 @@ gutter: 1
 :::{figure} ./figurer/teori/standardform/algebraisk_uttrykk.svg
 ---
 width: 100%
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -51,6 +52,7 @@ width: 100%
 :::{figure} ./figurer/teori/nullpunktsform/algebraisk_uttrykk.svg
 ---
 width: 100%
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -64,6 +66,7 @@ width: 100%
 :::{figure} ./figurer/teori/ekstremalform/algebraisk_uttrykk.svg
 ---
 width: 100%
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -255,7 +258,7 @@ class: no-click, adaptive-figure
 :::
 
 
-::::{admonition} Repetisjon: konjugatsetningen
+::::{admonition} Repetisjon: Konjugatsetningen
 ---
 class: reminder
 ---

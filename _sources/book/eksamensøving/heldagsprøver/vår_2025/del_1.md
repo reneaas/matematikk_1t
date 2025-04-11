@@ -360,8 +360,11 @@ Vi bruker ettpunktsformelen til å bestemme likningen
 
 \begin{align*}
     y - y_1 &= a(x - x_1) \\
+    \\
     y - 5 &= -4(x - 3) \\
+    \\
     y - 5 &= -4x + 12 \\
+    \\
     y &= -4x + 17.
 \end{align*}
 
@@ -377,11 +380,11 @@ $$
 Resten i polynomdivisjonen $f(x) : (x - 3)^2$ gir oss uttrykket for tangenten i $x = 3$.
 
 
-:::{polydiv}
+:::{figure} ./koder/del_1/oppgave_3/polydiv.svg
 ---
-width: 95%
+width: 80%
+class: no-click, adaptive-figure
 ---
--x^2 + 2x + 8 : (x - 3)^2
 :::
 
 Fra resten i polynomdivisjonen finner vi at likningen er 

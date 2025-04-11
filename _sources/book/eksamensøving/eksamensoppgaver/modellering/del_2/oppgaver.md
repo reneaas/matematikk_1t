@@ -38,7 +38,7 @@ Først fyller vi inn datapunktene i et regneark:
 :::{figure} ./oppgave_1/a/regneark.png
 ---
 width: 30%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -47,7 +47,7 @@ Velger vi regresjonsanalyse og et polynom av grad $2$, får vi
 :::{figure} ./oppgave_1/a/regresjonsmodell.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -77,7 +77,7 @@ Grafen til $O$ vil ha et toppunkt siden $O$ er en andregradsfunksjon og ledende 
 :::{figure} ./oppgave_1/b/sol.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -103,7 +103,7 @@ Vi bestemmer stigningstallet til linja gjennom punktene $(100, O(100))$ og $(200
 :::{figure} ./oppgave_1/c/sol.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -127,7 +127,7 @@ Den momentane vekstfarten til $O$ i $x = 235$ er $O'(235)$. Vi regner ut dette m
 :::{figure} ./oppgave_1/d/sol.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -176,7 +176,7 @@ Vi bestemmer $V(0)$ ved å bruke CAS:
 :::{figure} ./oppgave_2/a/sol.png
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -208,7 +208,7 @@ Fra den praktiske situasjonen, vil det være naturlig at verdimengden er $V(x) \
 :::{figure} ./oppgave_2/b/sol.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -252,7 +252,7 @@ siden vi fant at det til sammen var 2000 liter med vann i tanken i oppgave **b**
 :::{figure} ./oppgave_2/c/sol.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -282,7 +282,7 @@ Stigningstallet til den rette linjen gjennom $(0, V(0))$ og $(30, V(30))$ svarer
 :::{figure} ./oppgave_2/d/sol.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -318,7 +318,7 @@ for noen $x \in [0, 40]$. Vi løser ulikheten med CAS:
 :::{figure} ./oppgave_2/e/sol.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -385,7 +385,7 @@ Først fyller vi inn datapunktene i et regneark:
 :::{figure} ./oppgave_3/a/regneark.png
 ---
 width: 30%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -394,7 +394,7 @@ deretter bruker vi regresjonsanalyse og velger **potens** som modellklasse:
 :::{figure} ./oppgave_3/a/regresjonsmodell.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -457,7 +457,7 @@ Vi må bestemme $b$ slik at dette stemmer. Vi gjør det med CAS:
 :::{figure} ./oppgave_3/b/sol_lisa.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -480,7 +480,7 @@ Vi finner først ut hvilket lufttrykk $x$ som gir $K(x) = 85$. Vi løser likning
 :::{figure} ./oppgave_3/c/sol_del1.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -490,7 +490,7 @@ som betyr at vi må ha et lufttrykk på omtrent $574.76$ hPa. Vi kan så bestemm
 :::{figure} ./oppgave_3/c/sol_del2.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -543,7 +543,7 @@ Vi kan bruke funksjonsuttrykket og regne ut $P(0)$ siden $x = 0$ tilsvarer å 20
 :::{figure} ./oppgave_4/a/metode_1.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -553,7 +553,7 @@ Vi bruker den grafiske representasjonen til $P$ og bestemmer skjæringen med $y$
 :::{figure} ./oppgave_4/a/metode_2.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -562,7 +562,7 @@ I utgangspunktet bruker vi bare kommandoen:
 :::{figure} ./oppgave_4/a/skjæringspunkt.png
 ---
 width: 60%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -588,7 +588,7 @@ Stigningstallet til den rette linjen som går gjennom $(4, P(4))$ og $(14, P(14)
 :::{figure} ./oppgave_4/b/sol.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -611,7 +611,7 @@ Den momentane vekstfarten til $P$ når $x = 10$, er gitt ved $P'(10)$. Vi regner
 :::{figure} ./oppgave_4/c/sol.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -670,7 +670,7 @@ som vi gjør med CAS:
 :::{figure} ./oppgave_4/d/sol.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -719,7 +719,7 @@ Siden løsningene av $F'(x) = 0$ gir ekstremalpunktene som vil være punkter nå
 :::{figure} ./oppgave_5/a/metode_1.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 Her får vi to kandidater 
@@ -733,7 +733,7 @@ Men kun den første kandidaten ligger innenfor definisjonsmengden $D_F = [0, 80]
 :::{figure} ./oppgave_5/a/metode_1_check.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -752,7 +752,7 @@ Vi kan også bruke den grafiske representasjonen til $F$ og bestemme toppunktet 
 :::{figure} ./oppgave_5/a/metode_2.png
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 viser grafen til $F$ der $y$-aksen viser folketallet i tusen innbyggere og $x$-aksen viser antall år etter 1960.
 :::
@@ -762,7 +762,7 @@ Her har vi brukt følgende kommando i Geogebra for å bestemme koordinatene til 
 :::{figure} ./oppgave_5/a/metode_2_kommando.png
 ---
 width: 60%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -787,7 +787,7 @@ Stigningstallet til den rette linjen som går gjennom $(30, F(30))$ og $(70, F(7
 :::{figure} ./oppgave_5/b/sol.png
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -811,7 +811,7 @@ Folketallet vil avta raskest når den momentane vekstfarten $F'(x)$ er minst mul
 :::{figure} ./oppgave_5/c/sol.png
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 

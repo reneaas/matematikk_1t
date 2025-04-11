@@ -89,7 +89,7 @@ link-type: doc
 :::{figure} ./book/andregradsfunksjoner/representasjoner/standardform/figurer/teori/algebraisk_uttrykk.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -98,7 +98,7 @@ class: no-click
 :::{figure} ./book/andregradsfunksjoner/representasjoner/standardform/figurer/teori/grafisk_representasjon.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -127,7 +127,7 @@ $$
 :::{figure} ./book/polynomer/polynomfunksjoner/figurer/teori/nullpunkter/tre_nullpunkter.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -153,7 +153,7 @@ $$
 :::{figure} ./book/rasjonale_funksjoner/lineære/figurer/teori/teori_1.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 

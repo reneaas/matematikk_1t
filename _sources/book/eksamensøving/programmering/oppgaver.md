@@ -387,7 +387,7 @@ Lengden til et linjestykke er alltid $90 \%$ av lengden til det forrige linjesty
 :::{figure} ./figurer/oppgave_6/figur.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -519,7 +519,7 @@ Et rektangel har hjørner i punktene $(0,0)$, $(3, 0)$, $(3, f(3))$ og $(0, f(3)
 :::{figure} ./figurer/oppgave_7/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -674,7 +674,7 @@ I figuren nedenfor vises en følge av kvadrater der det første kvadratet har si
 :::{figure} ./figurer/oppgave_8/figur.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -744,7 +744,7 @@ $$
 :::{figure} ./figurer/oppgave_9/figur.svg
 ---
 width: 70%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -753,7 +753,7 @@ For å bestemme arealet av det fargelagte området, skal du summere arealene til
 :::{figure} ./figurer/oppgave_9/merged_figure.svg
 ---
 width: 100%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -861,7 +861,7 @@ Alle avstander er målt i meter. Se figuren nedenfor.
 :::{figure} ./figurer/oppgave_10/figur.svg
 ---
 width: 80%
-class: no-click
+class: no-click, adaptive-figure
 ---
 :::
 

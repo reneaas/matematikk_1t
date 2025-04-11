@@ -253,17 +253,19 @@ der startverdien er $N(0) = G$ og $V$ er vekstfaktoren for den faste prosentvise
 
 :::::{admonition} Eksponentialfunksjoner
 ---
-class: summary
+class: theory
 ---
 En **eksponentialfunksjon** $f$ er en funksjon på formen
 
-$$
-f(x) = a \cdot b^x, 
-$$
 
-der $a \in \mathbb{R} \setminus \{0\}$ og $b \in \langle 0, \to\rangle$ er konstanter. Den praktiske tolkningen av konstantene er:
-* $a$ er **startverdien** $f(0)$.
-* $b$ er **vekstfaktoren**.
+:::{figure} ./figurer/teori/algebraisk_representasjon.svg
+---
+width: 50%
+class: no-click, adaptive-figure
+---
+:::
+
+der $a \in \mathbb{R} \setminus \{0\}$ og $b \in \langle 0, \to\rangle$ er konstanter.
 
 :::{figure} ./figurer/teori/grafisk_representasjon.svg
 ---
