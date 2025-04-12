@@ -569,7 +569,7 @@ class: problem-level-3
 ---
 En rasjonal funksjon $f$ har asymptoter i $x = -2$ og $y = 4$. 
 
-Bestem hvilket punkt $f$ **ikke** kan skjære $x$-aksen. 
+Bestem hvilket punkt grafen til $f$ **ikke** kan skjære gjennom $x$-aksen. 
 
 ::::{admonition} Fasit
 ---

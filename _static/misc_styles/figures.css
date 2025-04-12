@@ -43,13 +43,16 @@ a.no-click {
 }
 
 /* Light mode (default) */
-[data-mode="light"] .adaptive-figure img {
+[data-mode="light"] .adaptive-figure img
+[data-mode="light"] .adaptive-figure svg,
+[data-mode="light"] img.adaptive-figure {
     filter: invert(0%); /* Normal */
 }
 
 /* Dark mode styles */
 [data-mode="dark"] .adaptive-figure img,
-[data-mode="dark"] .adaptive-figure svg {
+[data-mode="dark"] .adaptive-figure svg,
+[data-mode="dark"] img.adaptive-figure {
     filter: invert(100%) hue-rotate(180deg) !important; /* Invert colors for dark mode */
     background: transparent !important; /* Force transparent background */
     background-color: inherit !important;
@@ -57,15 +60,19 @@ a.no-click {
 
 /* Auto mode with system preference */
 @media (prefers-color-scheme: dark) {
-[data-mode="auto"] .adaptive-figure img {
+[data-mode="auto"] .adaptive-figure img ,
+[data-mode="auto"] .adaptive-figure svg,
+[data-mode="auto"] img.adaptive-figure {
     filter: invert(100%) hue-rotate(180deg) !important;
     background: transparent !important; /* Force transparent background */
-}
+    }
 }
 
 /* Auto mode with system preference */
 @media (prefers-color-scheme: light) {
-    [data-mode="auto"] .adaptive-figure img {
+    [data-mode="auto"] .adaptive-figure img
+    [data-mode="auto"] .adaptive-figure svg,
+    [data-mode="auto"] img.adaptive-figure {
         filter: invert(0%) !important;
     }
 }
@@ -146,4 +153,12 @@ a.no-click {
 
 
 
+.quiz-image-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
 
+.quiz-image {
+    max-width: 80%;
+}

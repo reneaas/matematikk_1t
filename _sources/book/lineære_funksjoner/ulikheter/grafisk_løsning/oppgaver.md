@@ -75,6 +75,7 @@ $$
 ---
 name: fig-lineære-funksjoner-ulikheter-grafisk-løsning-oppgaver-oppgave-1
 width: 80%
+class: no-click, adaptive-figure
 ---
 viser grafen til $f(x) = -2x + 4$. 
 ::::
@@ -179,6 +180,7 @@ $$
 ---
 name: fig-lineære-funksjoner-ulikheter-grafisk-løsning-oppgaver-oppgave-2
 width: 80%
+class: no-click, adaptive-figure
 ---
 viser grafene til $f(x) = x - 2$ og $g(x) = -x + 4$.
 ::::
@@ -284,6 +286,7 @@ $$
 ---
 name: fig-lineære-funksjoner-ulikheter-grafisk-løsning-oppgaver-oppgave-3
 width: 80%
+class: no-click, adaptive-figure
 ---
 viser grafene til $f(x) = -\dfrac{2}{3}x + 4$ og $g(x) = \dfrac{1}{3}x + 1$.
 ::::
@@ -385,6 +388,7 @@ $$
 ---
 name: fig-lineære-funksjoner-ulikheter-grafisk-løsning-oppgaver-oppgave-4
 width: 80%
+class: no-click, adaptive-figure
 ---
 viser grafen til to lineære funksjoner $f$ og $g$.
 :::

@@ -200,6 +200,7 @@ I {numref}`fig-lineære-funksjoner-ulikheter-algebraisk-løsning-teori-1` vises 
 ---
 name: fig-lineære-funksjoner-ulikheter-algebraisk-løsning-teori-1
 width: 80%
+class: no-click, adaptive-figure
 ---
 viser grafen til en lineær funksjon $f$ med ett nullpunkt i $x_1$. 
 :::
@@ -210,6 +211,7 @@ Fortegnslinjen til $f$ vil da være som vist i {numref}`fig-lineære-funksjoner-
 ---
 name: fig-lineære-funksjoner-ulikheter-algebraisk-løsning-teori-2
 width: 100%
+class: no-click, adaptive-figure
 ---
 viser fortegnslinjen til $f$. De røde **heltrukne** linjene svarer til positivt fortegn. De blå **stiplede** linjene svarer til negativt fortegn.
 :::
@@ -230,6 +232,7 @@ Her viser vi tre lineære funksjoner og deres tilhørende fortegnslinje.
 :::{figure} ./figurer/eksempler/eksempel_2/f_graf.svg
 ---
 width: 80%
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -238,6 +241,7 @@ width: 80%
 :::{figure} ./figurer/eksempler/eksempel_2/f_fortegnslinje.svg
 ---
 width: 100%
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -248,6 +252,7 @@ width: 100%
 :::{figure} ./figurer/eksempler/eksempel_2/g_graf.svg
 ---
 width: 80%
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -256,6 +261,7 @@ width: 80%
 :::{figure} ./figurer/eksempler/eksempel_2/g_fortegnslinje.svg
 ---
 width: 100%
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -266,6 +272,7 @@ width: 100%
 :::{figure} ./figurer/eksempler/eksempel_2/h_graf.svg
 ---
 width: 80%
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -274,6 +281,7 @@ width: 80%
 :::{figure} ./figurer/eksempler/eksempel_2/h_fortegnslinje.svg
 ---
 width: 100%
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -323,6 +331,7 @@ Så tegner vi en fortegnslinje for *alle* faktorene i den lineære funksjonen. F
 ---
 name: fig-lineære-funksjoner-ulikheter-algebraisk-løsning-eksempel-3
 width: 100%
+class: no-click, adaptive-figure
 ---
 viser fortegnslinjene til $-2$, $x - 3$, og til $f(x) = -4(x - 3)$. For å få fortegnlinja til $f(x)$, ganger vi sammen fortegnene til hver faktor. Dette gir oss fortegnsskjemaet til $f$.
 :::
@@ -367,6 +376,7 @@ class: dropdown, answer
 :::{figure} ./figurer/underveisoppgaver/underveisoppgave_2.svg
 ---
 width: 100%
+class: no-click, adaptive-figure
 ---
 :::
 ::::
@@ -392,6 +402,7 @@ Dette gir fortegnsskjemaet:
 :::{figure} ./figurer/underveisoppgaver/underveisoppgave_2.svg
 ---
 width: 100%
+class: no-click, adaptive-figure
 ---
 :::
 
