@@ -87,7 +87,7 @@ class: no-click, adaptive-figure
 ---
 class: summary
 ---
-Gitt et polynom $f(x)$, vil resten i polynomdivisjonen $f(x) : (x - r)^2$ være likningen til tangenten $T$ som går gjennom punktet $(r, f(r))$ på grafen til $f$.
+Gitt et polynom $f(x)$, vil resten i polynomdivisjonen $f(x) : (x - r)^2$ være det algebraiske uttrykket til tangenten som går gjennom punktet $(r, f(r))$ på grafen til $f$.
 
 :::::::::::::::
 

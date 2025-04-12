@@ -205,7 +205,7 @@ class: no-click, adaptive-figure
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
-Bruk trignometri til å uttrykke lengden $y$ ved hjelp av lengden $b$ og vinkelen $u$.
+Bruk trigonometri til å uttrykke lengden $y$ ved hjelp av lengden $b$ og vinkelen $u$.
 
 
 :::::{admonition} Fasit
@@ -232,7 +232,7 @@ $$
 
 
 :::::::::::::{tab-item} b
-Bruk trignometri til å uttrykke lengden $x$ ved hjelp av lengden $b$ og vinkelen $u$.
+Bruk trigonometri til å uttrykke lengden $x$ ved hjelp av lengden $b$ og vinkelen $u$.
 
 
 :::::{admonition} Fasit

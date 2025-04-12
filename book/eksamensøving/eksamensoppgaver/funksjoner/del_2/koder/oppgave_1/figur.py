@@ -20,6 +20,7 @@ def main(dirname, save):
         ticks=False,
         xstep=1,
         ystep=1,
+        alpha=0.8,
     )
 
     xticks = [i for i in range(-4, 7)]

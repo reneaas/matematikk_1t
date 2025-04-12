@@ -18,6 +18,7 @@ def main(dirname, save):
         ymin=-20,
         ymax=60,
         ticks=False,
+        alpha=0.8,
     )
 
     ax.legend(fontsize=22)

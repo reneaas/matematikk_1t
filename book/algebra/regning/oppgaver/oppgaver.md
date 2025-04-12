@@ -5,57 +5,74 @@
 
 ## Regnerekkefølgen
 
-::::{Admonition} Oppgave 1
+:::::::::::::::{problem} Oppgave 1
 ---
-class: problem-level-1
+level: 1
 ---
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
 Regn ut
 
-Deloppgave 1
-:  $6 + 3\cdot 2$
-:::{admonition} Fasit
----
-class: answer, dropdown
----
+$$
+6 + 3\cdot 2
+$$
+
+:::{answer}
 $12$
 :::
 
-<br>
+:::::::::::::
 
-Deloppgave 2
-: $3\cdot 7 + 5\cdot (-4)$
+:::::::::::::{tab-item} b
+Regn ut
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
+$$
+3\cdot 7 + 5\cdot (-4)
+$$
+
+:::{answer}
 $1$
 :::
 
-<br>
+:::::::::::::
 
-Deloppgave 3
-: $(-6)\cdot 3+(-4)\cdot (-5)$
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
+:::::::::::::{tab-item} c
+Regn ut 
+
+$$
+(-6)\cdot 3+(-4)\cdot (-5)
+$$
+
+:::{answer}
 $2$
 :::
 
-<br>
+:::::::::::::
 
-Deloppgave 4
-: $	 6-(-5)\cdot2+(-3)\cdot 5$
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
+:::::::::::::{tab-item} d
+Regn ut
+
+$$
+6-(-5)\cdot2+(-3)\cdot 5
+$$
+
+:::{answer}
 $1$
 :::
-::::
+
+:::::::::::::
+
+::::::::::::::
+
+:::::::::::::::
+
+
+---
 
 ## Regneregler for addisjon og subtraksjon
 
@@ -75,109 +92,153 @@ Gitt tallene $a$, $b$ og $c$, så gjelder regnereglene:
 
 ---
 
-::::{admonition} Oppgave 2
+:::::::::::::::{problem} Oppgave 2
 ---
-class: problem-level-1
+level: 1
 ---
 Regn ut uttrykkene under ved å bruke regneregel 1 og 2. <br> Sjekk at du får det samme svaret ved bruk av regnerekkefølgen.
 
-Deloppgave 1
-: $ 2 + (3 + 4) = $
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+$$
+2 + (3 + 4) 
+$$
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
+:::{answer}
 $9$
 :::
 
+:::::::::::::
 
-Deloppgave 2
-: $ 2 + (3 - 4) = $
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
+:::::::::::::{tab-item} b
+
+$$
+2 + (3 - 4)
+$$
+
+:::{answer}
 $1$
 :::
 
+:::::::::::::
 
-Deloppgave 3
-: $ 2 - (3 - 4) = $
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
+:::::::::::::{tab-item} c
+
+$$
+2 - (3 - 4)
+$$
+
+:::{answer}
 $3$
 :::
 
-Deloppgave 4
-: $ 2 - (3 + 4) = $
+:::::::::::::
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
+
+:::::::::::::{tab-item} d
+
+$$
+2 - (3 + 4)
+$$
+
+:::{answer}
 $-5$
 :::
 
-::::
+:::::::::::::
+
+::::::::::::::
+
+:::::::::::::::
+
+
+
 
 ---
 
-::::{admonition} Oppgave 3
+
+
+
+
+:::::::::::::::{problem} Oppgave 3
 ---
-class: problem-level-2
+level: 2
 ---
 I oppgavene under skal du skrive om uttrykkene så enkelt som mulig ved hjelp av regneregel 1 og 2.
 
-
-Deloppgave 1
-: $ x + (y + x) = $
-
-
-:::{admonition} Fasit
+::::::::::::::{tab-set}
 ---
-class: answer, dropdown
+class: tabs-parts
 ---
-$2x + y$
+:::::::::::::{tab-item} a
+
+$$
+x + (y + x)
+$$
+
+:::{answer}
+$$
+2x + y
+$$
 :::
 
-Deloppgave 2
-: $ x - (y - x) = $
+:::::::::::::
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-$2x - y$
+
+:::::::::::::{tab-item} b
+
+$$
+x - (y - x)
+$$
+
+:::{answer}
+$$
+2x - y
+$$
 :::
 
+:::::::::::::
 
-Deloppgave 3
-: $a + ab - (ab - a) = $
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-$2a$
+:::::::::::::{tab-item} c
+
+$$
+a + ab - (ab - a)
+$$
+
+:::{answer}
+$$
+2a
+$$
 :::
 
+:::::::::::::
 
-Deloppgave 4
-: $a + (b - c) - (a + b - c) = $
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-$0$
+:::::::::::::{tab-item} d
+
+$$
+a + (b - c) - (a + b - c)
+$$
+
+:::{answer}
+
+$$
+0
+$$
+
 :::
 
-::::
+:::::::::::::
+
+::::::::::::::
+
+::::::::::::::::::
 
 ---
 
@@ -199,181 +260,174 @@ Gitt tallene $a$, $b$, $c$ og $d$, så gjelder regnereglene:
 
 ---
 
+:::::::::::::::{problem} Oppgave 5
+---
+level: 2
+---
+> I denne oppgaven skal du bruke regneregel 3 og 4 til å skrive uttrykkene så enkelt som mulig.
 
-::::{admonition} Oppgave 4
----
-class: problem-level-1
----
-Regn ut uttrykkene under ved å bruke regneregel 3 og 4. <br> Sjekk at du får det samme svaret ved bruk av regnerekkefølgen.
 
-Deloppgave 1
-: $ 2 \cdot (3 + 4) = $
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-$14$
+$$
+2(x + y)
+$$
+
+:::{answer}
+$$
+2x + 2y
+$$
 :::
 
+:::::::::::::
 
-Deloppgave 2
-: $2 \cdot (3 - 4) = $
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-$-2$
+:::::::::::::{tab-item} b
+
+$$
+x(x + y)
+$$
+
+:::{answer}
+$$
+x^2 + xy
+$$
 :::
 
+:::::::::::::
 
-Deloppgave 3
-: $ (2 + 3) \cdot (4 + 5) = $
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-$45$
+:::::::::::::{tab-item} c
+
+$$
+(x + a)(x + a)
+$$
+
+:::{answer}
+$$
+x^2 + 2ax + a^2
+$$
 :::
 
-Deloppgave 4
-: $ (2 + 3) \cdot (4 - 5) = $
+:::::::::::::
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-$-5$
+
+:::::::::::::{tab-item} d
+
+$$
+(x + a)(x - a)
+$$
+
+:::{answer}
+x^2 - a^2
 :::
 
+:::::::::::::
 
-Deloppgave 5
-: $ (2 - 3) \cdot (4 + 5) = $
+:::::::::::::{tab-item} e
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-$-9$
+$$
+(x - a)(x + 2a)
+$$
+
+:::{answer}
+$$
+x^2 + ax - 2a^2
+$$
 :::
 
+:::::::::::::
 
-::::
+
+::::::::::::::
+
+
+:::::::::::::::
+
+
 
 ---
 
 
-::::{admonition} Oppgave 5
----
-class: problem-level-2
----
-I deloppgavene under skal du utvide uttrykkene ved hjelp av regneregel 3 og 4.
 
-Deloppgave 1
-: $2(x + y) = $
 
-:::{admonition} Fasit
+:::::::::::::::{problem} Oppgave 6
 ---
-class: answer, dropdown
+level: 2
 ---
-$2x + 2y$
+> I deloppgavene under skal du faktorisere uttrykkene så mye som mulig ved hjelp av regneregel 3.
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+$$
+4x + 2y
+$$
+
+:::{answer}
+$$
+2(2x + y)
+$$
+:::
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+
+$$
+x^2 + 2x
+$$
+
+:::{answer}
+$$
+x(x + 2)
+$$
 :::
 
-Deloppgave 2
-: $x(x + y) = $
+:::::::::::::
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-$x^2 + xy = $
+
+:::::::::::::{tab-item} c
+
+$$
+2x^2 + 4x
+$$
+
+:::{answer}
+$$
+2x(x + 2)
+$$
 :::
 
-Deloppgave 3
-: $ (x + a)(x + a) = $
+:::::::::::::
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-$x^2 + 2ax + a^2$
+
+:::::::::::::{tab-item} d
+
+$$
+3xy^2 - 9xy
+$$
+
+:::{answer}
+$$
+3xy(y - 3)
+$$
 :::
 
+:::::::::::::
 
-Deloppgave 4
-: $ (x + a)(x - a) = $
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-$x^2 - a^2$
-:::
-
-Deloppgave 5
-: $(x - a)(x + 2a) = $
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-$x^2 + ax - 2a^2$
-:::
-
-::::
-
----
+::::::::::::::
 
 
-::::{admonition} Oppgave 6
----
-class: problem-level-2
----
-I deloppgavene under skal du faktorisere uttrykkene så mye som mulig ved hjelp av regneregel 3.
+:::::::::::::::
 
-Deloppgave 1
-: $4x + 2y = $
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-$2(2x + y)$
-:::
-
-Deloppgave 2
-: $x^2 + 2x = $
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-$x(x + 2)$
-:::
-
-Deloppgave 3
-: $2x^2 + 4x = $
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-$2x(x + 2)$
-:::
-
-Deloppgave 4
-: $3xy^2 + 9xy = $
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-$3xy(y + 3)$
-:::
-
-::::
 
 ---
 

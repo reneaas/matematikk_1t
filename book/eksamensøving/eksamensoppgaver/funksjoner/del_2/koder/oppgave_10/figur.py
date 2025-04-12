@@ -22,7 +22,7 @@ def main(dirname, save):
         ystep=0.1,
         grid=False,
         lw=2.5,
-        alpha=0.6,
+        alpha=0.8,
         domain=(0, 15),
     )
 
@@ -36,7 +36,7 @@ def main(dirname, save):
         B,
         C,
         D,
-        alpha=0.1,
+        alpha=0.2,
         color="teal",
         show_vertices=True,
     )
