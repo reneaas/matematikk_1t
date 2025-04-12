@@ -26,6 +26,7 @@ Løsningen av denne typen ulikhet er alle $x$-verdier der grafen til $f$ ligger 
 :::{figure} ./figurer/teori/ulikhet_type_1/ax+b>0.svg
 ---
 width: 80%
+class: no-click, adaptive-figure
 ---
 viser løsningsmengden for ulikhetene $ax + b > 0$ og $ax + b \geq 0$. Nullpunktet til $f$ er inkludert i løsningsmengden når vi løser $f(x) \geq 0$. 
 :::
@@ -38,6 +39,7 @@ Løsningen av denne typen ulikhet er alle $x$-verdier der grafen til $f$ ligger 
 :::{figure} ./figurer/teori/ulikhet_type_1/ax+b<0.svg
 ---
 width: 80%
+class: no-click, adaptive-figure
 ---
 viser løsningsmengden for ulikhetene $ax + b < 0$ og $ax + b \leq 0$. Nullpunktet til $f$ er inkludert i løsningsmengden når vi løser $f(x) \leq 0$.
 :::
@@ -73,6 +75,7 @@ Vi tegner grafen til den lineære funksjonen $f(x) = -2x + 4$ som er vist i figu
 ---
 name: fig-lineære-ulikheter-grafisk-eksempel-1
 width: 80%
+class: no-click, adaptive-figure
 ---
 Figuren viser grafen til $f(x) = -2x + 4$ og løsningsmengden til ulikheter $-2x + 4 > 0$. Merk at $x = 2$ ikke er inkludert i løsningsmengden.
 :::
@@ -116,6 +119,7 @@ Grafen til den lineære funksjonen $f(x) = x - 3$ er vist i figuren under.
 ---
 name: fig-lineære-ulikheter-grafisk-underveisoppgave-1
 width: 80%
+class: no-click, adaptive-figure
 ---
 Figuren viser grafen til $f(x) = x - 3$.
 :::
@@ -158,6 +162,7 @@ Siden vi skal løse ulikheten $x - 3 \leq 0$, ser vi etter hvor grafen til $f(x)
 ---
 name: fig-lineære-ulikheter-grafisk-underveisoppgave-1-løsning
 width: 80%
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -195,6 +200,7 @@ Figuren under illustrerer de ulike tilfellene:
 ---
 name: lineære-ulikhter-grafisk-teori-2
 width: 100%
+class: no-click, adaptive-figure
 ---
 Figuren viser løsningsmengden til ulikhetene $ax + b < k$ og $ax + b \leq k$ til venstre, og $ax + b > k$ og $ax + b \geq k$ til høyre. $x$-verdien til skjæringspunktet mellom grafen til $f$ og linja $y = k$ er inkludert i løsningsmengden når likhet er tillatt.
 :::
@@ -225,6 +231,7 @@ Vi starter med å tegne grafen til $f(x) = 2x + 1$ og en linje $y = 3$. Deretter
 ---
 name: fig-lineære-ulikheter-grafisk-eksempel-2
 width: 80%
+class: no-click, adaptive-figure
 ---
 Figuren viser grafen til $f(x) = 2x + 1$ og linja $y = 3$. Løsningsmengden er illustrert på $x$-aksen. $x$-verdien til skjæringen mellom grafen til $f$ og linja $y = 3$ er inkludert i løsningsmengden fordi likhet er tillatt.
 :::
@@ -250,6 +257,7 @@ Figuren under viser grafen til $f(x) = -3x + 2$.
 ---
 name: fig-lineære-ulikheter-grafisk-underveisoppgave-2
 width: 80%
+class: no-click, adaptive-figure
 ---
 Grafen til $f(x) = -3x + 2$
 :::
@@ -302,6 +310,7 @@ Vi starter med å tegne grafen til $f(x) = -3x + 2$ og linja $y = -1$. Deretter 
 ---
 name: fig-lineære-ulikheter-grafisk-underveisoppgave-2-løsning
 width: 80%
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -343,6 +352,7 @@ Figuren under illustrerer de ulike tilfellene:
 ---
 name: lineære-ulikhter-grafisk-teori-3
 width: 100%
+class: no-click, adaptive-figure
 ---
 Grafisk representasjon av løsningsmengden til ulikhetene i tabellen over. $x$-verdien til skjæringspunktet mellom grafen til $f$ og grafen til $g$ er inkludert i løsningsmengden når likhet er tillatt.
 :::
@@ -382,6 +392,7 @@ Deretter finner vi alle $x$-verdier der grafen til $f$ ligger **på** eller **ov
 ---
 name: fig-lineære-ulikheter-grafisk-eksempel-3
 width: 80%
+class: no-click, adaptive-figure
 ---
 
 Figuren viser grafene til $f(x) = -3x - 1$ og $g(x) = x + 3$. Løsningsmengden er illustrert på $x$-aksen. $x$-verdien til skjæringen mellom grafen til $f$ og grafen til $g$ er inkludert i løsningsmengden fordi likhet er tillatt.
@@ -411,6 +422,7 @@ $$
 ---
 name: fig-lineære-ulikheter-grafisk-underveisoppgave-3
 width: 80%
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -457,6 +469,7 @@ der vi etter hvilke verdier av $x$ der grafen til $f$ ligger **under** grafen ti
 ---
 name: fig-lineære-ulikheter-grafisk-underveisoppgave-3-løsning
 width: 80%
+class: no-click, adaptive-figure
 ---
 :::
 

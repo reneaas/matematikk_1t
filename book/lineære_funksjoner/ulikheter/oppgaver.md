@@ -16,6 +16,7 @@ link-type: doc
 :::{figure} ./grafisk_løsning/figurer/teori/ulikhet_type_1/ax+b>0.svg
 ---
 width: 100%
+class: no-click, adaptive-figure
 ---
 :::
 ::::
@@ -39,6 +40,7 @@ link-type: doc
 :::{figure} ./algebraisk_løsning/figurer/teori/fortegnslinjer_intro.svg
 ---
 width: 100%
+class: no-click, adaptive-figure
 ---
 :::
 ::::

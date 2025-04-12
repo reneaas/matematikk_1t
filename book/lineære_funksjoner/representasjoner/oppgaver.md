@@ -48,6 +48,7 @@ link-type: doc
 :::{figure} ./grafisk_representasjon/figurer/teori/grafisk_representasjon.svg
 ---
 width: 100%
+class: no-click, adaptive-figure
 ---
 :::
 ::::

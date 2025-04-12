@@ -224,7 +224,7 @@ viser grafisk hva som er definisjonsmengden $D_f$ og verdimengden $V_f$ til en l
 ---
 class: check
 ---
-Test forståelsen din med quizen!
+Ta quizen!
 
 :::{raw} html
 ---

@@ -34,7 +34,13 @@ class: dropdown, answer
 :::::::::::::::
 
 
+
+
 ---
+
+
+
+
 
 :::::::::::::::{admonition} Oppgave 2 
 ---
