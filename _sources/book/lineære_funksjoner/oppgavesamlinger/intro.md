@@ -7,10 +7,10 @@ gutter: 3
 
 ::::{grid-item-card}
 ---
-link: ./oppgavesamling_2/oppgaver.md
+link: ./oppgavesamling_1/oppgaver
 link-type: doc
 ---
-**Oppgavesamling 2** 📈
+**Oppgavesamling 1** 📈
 
 ^^^
 **Temaer**:
