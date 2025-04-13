@@ -3,6 +3,6 @@
 
 :::{raw} html
 ---
-file: ./ggb/full_ggb_vindu.html
+file: ./ggb/ggb_app.html
 ---
 :::
