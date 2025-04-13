@@ -4,6 +4,10 @@ class: check
 ---
 På bakkenivå er lufttrykket 1 atm (atmosfærisk trykk). Lufttrykket avtar med $12 \, \%$ per km i høyden.
 
+
+:::{cas-popup} 800 400
+:::
+
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
@@ -166,6 +170,9 @@ class: no-click, adaptive-figure
 Bruk trigonometri til å bestemme arealet av 6-kanten.
 
 
+:::{cas-popup} 800 500
+:::
+
 :::::{admonition} Retteveiledning
 ---
 class: summary, dropdown
@@ -257,6 +264,10 @@ Nedenfor vises grafen til en andregradsfunksjon $f$ og to tangenter som skjærer
 width: 80%
 class: no-click, adaptive-figure
 ---
+:::
+
+
+:::{cas-popup} 800 400
 :::
 
 
@@ -632,6 +643,10 @@ class: no-click, adaptive-figure
 :::
 
 En strandkiosk $S$ er plassert på starten av kystlinja.
+
+
+:::{cas-popup} 700 400
+:::
 
 
 ::::::::::::::{tab-set}
