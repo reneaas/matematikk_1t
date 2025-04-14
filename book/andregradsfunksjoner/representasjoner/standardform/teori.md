@@ -308,70 +308,36 @@ Vi har tre ukjente koeffisienter – vi må derfor ha tre likninger for å kunne
 
 Fra {numref}`fig-andregradsfunksjoner-representasjoner-standardform-eksempel-2`, kan vi lese av at grafen til $f$ går gjennom punktene $(0, -6)$ og $(-2, 0)$ og $(3, 0)$. Dette betyr at $f(x)$ må oppfylle likningssystemet:
 
-$$
-f(0) = -6 \quad \land \quad f(-2) = 0 \quad \land \quad f(3) = 0
-$$
-
-For eksempel betyr dette at 
-
 \begin{align*}
-    f(-2) &= a \cdot (-2)^2 + b \cdot (-2) + c\\
+    f(0) &= -6 && \text{Punktet $(0, -6)$} \\
     \\
-    0 &= 4a - 2b + c
+    f(-2) &= 0 && \text{Punktet $(-2, 0)$} \\
+    \\
+    f(3) &= 0 && \text{Punktet $(3, 0)$}
 \end{align*}
 
-Vi gjør tilsvarende utregninger for de to andre betingelsene:
 
-\begin{align*}
-    f(0) &= a \cdot 0^2 + b \cdot 0 + c \\
-    \\
-    -6 &= c
-\end{align*}
+Vi løser likningssystemet med CAS: 
 
-og
-
-\begin{align*}
-    f(3) &= a \cdot 3^2 + b \cdot 3 + c \\
-    \\
-    0 &= 9a + 3b + c
-\end{align*}
-
-Derfor får vi likningssystemet
-
-\begin{align*}
-    4a - 2b + c &= 0 && \mathrm{(I)} \\
-    \\
-    c &= -6 && \mathrm{(II)} \\
-    \\
-    9a + 3b + c &= 0 && \mathrm{(III)} \\
-\end{align*}
-
-Vi løser likningssystemet med CAS. 
-
-````{tab} Geogebra
-
-:::{raw} html
+:::{figure} ./figurer/eksempler/sol.png
 ---
-file: ./ggb/eksempler/eksempel_2.html
+width: 100%
+class: no-click, adaptive-figure
 ---
 :::
 
-````
 
-````{tab} Python
-
-:::{raw} html
----
-file: ./python/eksempler/eksempel_2.html
----
-:::
-
-````
 
 Dermed er 
 
 $$
-f(x) = ax^2 + bx + c = x^2 - x - 6.
+a = 1 \and b = -1 \and c = -6.
+$$
+
+Da følger det at
+
+$$
+f(x) = a\cdot x^2 + b \cdot x + c = x^2 - x - 6.
 $$
 
 ::::
@@ -398,6 +364,9 @@ viser grafen til en andregradsfunksjon $f$.
 :::
 
 
+:::{cas-popup} 420 500
+:::
+
 
 ::::{admonition} Fasit
 ---
@@ -419,54 +388,31 @@ $$
 f(x) = ax^2 + bx + c. 
 $$
 
-Vi trenger tre likninger fordi vi har tre ukjente koeffisienter. Vi kan lese av at grafen skjærer $y$-aksen i $y = 2$ som betyr at $c = 2$. 
+Vi trenger tre likninger fordi vi har tre ukjente koeffisienter. Vi kan lese av grafen til $f$ går gjennom punktene $(-1, 0)$, $(2, 0)$ og $(1, 2)$. Da kan vi sette opp likningssystemet:
 
-Vi kan også se at grafen går gjennom punktene $(-1, 0)$ og $(2, 0)$ som gir oss likningssystemet
+\begin{align*}
+    f(-1) &= 0 && \text{Punktet $(-1, 0)$} \\
+    \\
+    f(2) &= 0 && \text{Punktet $(2, 0)$} \\
+    \\
+    f(1) &= 2 && \text{Punktet $(1, 2)$}
+\end{align*}
 
-$$
-f(-1) = 0 \quad \land \quad f(2) = 0 \quad \land \quad f(0) = 2
-$$
+Vi løser likningssystemet med CAS:
 
-som når vi regner ut gir oss 
-
-$$
-a - b + c = 0 \quad \land \quad 4a + 2b + c = 0 \quad \land \quad c = 2
-$$
-
-Vi løser likningssystemet med CAS. 
-
-
-````{tab} Geogebra
-
-:::{raw} html
+:::{figure} ./figurer/underveisoppgaver/sol.png
 ---
-file: ./ggb/underveisoppgaver/underveisoppgave_2.html
----
-:::
-
-````
-
-
-````{tab} Python
-
-> Her vil du se at vi bruker `casify`{l=python} i stedet for `sympy`{l=python} for å løse oppgaven. Herfra og utover vil vi erstatte `sympy`{l=python} med `casify`{l=python} fordi det gir oss mindre kode å skrive for å løse oppgavene!
-
-Kjør programmet og se på utskriften for å se sammenhengen med svaret under!
-
-:::{raw} html
----
-file: ./python/underveisoppgaver/underveisoppgave_2.html
+width: 100%
+class: no-click, adaptive-figure
 ---
 :::
 
 
-
-````
 
 Altså er 
 
 $$
-a = -1 \quad \land \quad  b = 1 \quad \land \quad c = 2
+a = -1 \and b = 1 \and c = 2
 $$
 
 som betyr at 

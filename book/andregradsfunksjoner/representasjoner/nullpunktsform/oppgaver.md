@@ -484,7 +484,7 @@ class: problem-level-3
 
 ::::::::::::::{admonition} Strategi
 ---
-class: summary
+class: theory
 ---
 Hvis en andregradsfunksjon skjærer linja $y = y_0$ i $x = x_1$ og $x = x_2$, kan vi uttrykke $f(x)$ som 
 
@@ -495,7 +495,6 @@ class: no-click, adaptive-figure
 ---
 :::
 
----
 
 :::{figure} ./figurer/oppgaver/oppgave_7/teori.svg
 ---

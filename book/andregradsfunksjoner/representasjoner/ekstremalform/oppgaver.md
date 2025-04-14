@@ -247,7 +247,7 @@ $$
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
-Bestem symmetrilinja til $f$.
+Bestem {popup}`symmetrilinja til $f$.<Hvis nullpunktene til $f$ er $x_1$ og $x_2$, så vil symmetrilinja $x_0$ være gjennomsnittet av de to punktene: $$x_0 = \dfrac{x_1 + x_2}{2}$$>`
 
 :::{admonition} Fasit
 ---
@@ -260,19 +260,7 @@ $$
 :::::::::::::
 
 :::::::::::::{tab-item} b
-Bestem ekstremalpunktet til $f$.
-:::{admonition} Fasit
----
-class: dropdown, answer
----
-$$
-(1, f(1)) = (1, 5)
-$$
-:::
-:::::::::::::
-
-:::::::::::::{tab-item} c
-Avgjør om ekstremalpunktet til $f$ er et toppunkt eller bunnpunkt.
+Avgjør om ekstremalpunktet til $f$ svarer til et toppunkt eller bunnpunkt.
 :::{admonition} Fasit
 ---
 class: dropdown, answer
@@ -314,19 +302,8 @@ $$
 :::
 :::::::::::::
 
-:::::::::::::{tab-item} b
-Bestem ekstremalpunktet til $f$.
-:::{admonition} Fasit
----
-class: dropdown, answer
----
-$$
-(-2, f(-2)) = (-2, -2)
-$$
-:::
-:::::::::::::
 
-:::::::::::::{tab-item} c
+:::::::::::::{tab-item} b
 Avgjør om ekstremalpunktet til $f$ er et toppunkt eller bunnpunkt.
 :::{admonition} Fasit
 ---
@@ -441,6 +418,8 @@ $$
 ---
 class: problem-level-2
 ---
+
+
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts

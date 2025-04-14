@@ -342,6 +342,7 @@ $$
 :::{figure} ./figurer/eksempler/eksempel_2/to_løsninger.svg
 ---
 width: 80%
+class: no-click, adaptive-figure
 ---
 viser at grafen til $f(x) = x^2 - 2x - 8$ skjærer $x$-aksen i to punkter som stemmer med at likningen har to løsninger.
 :::
@@ -382,6 +383,7 @@ $$
 :::{figure} ./figurer/eksempler/eksempel_2/en_løsning.svg
 ---
 width: 80%
+class: no-click, adaptive-figure
 ---
 viser at grafen til $f(x) = x^2 + 4x + 4$ skjærer $x$-aksen i ett punkt som stemmer med at likningen bare har én løsning når $D = 0$.
 :::
@@ -420,6 +422,7 @@ $$
 :::{figure} ./figurer/eksempler/eksempel_2/ingen_løsning.svg
 ---
 width: 80%
+class: no-click, adaptive-figure
 ---
 viser grafen til $f(x) = x^2 + x + 1$ som ikke skjærer $x$-aksen i noen punkter, som stemmer med at likningen ikke har noen løsninger når $D < 0$. 
 :::

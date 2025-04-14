@@ -90,6 +90,7 @@ class CASPopUpDirective(SphinxDirective):
                         showKeyboardOnFocus: false,
                         id: '{container_id}',
                         perspective: 'C',
+                        'customToolBar': '1001 | 1002 | 1007 | 1010 | 1008 | 6',
                     }};
                     
                     var applet = new GGBApplet(params, true);

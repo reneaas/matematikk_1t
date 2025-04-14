@@ -23,6 +23,7 @@ def main(dirname, save):
         ymin=-5,
         ymax=8,
         ticks=False,
+        alpha=0.8,
     )
 
     x1 = -2
