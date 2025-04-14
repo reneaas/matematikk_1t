@@ -5,7 +5,7 @@ class: check
 På bakkenivå er lufttrykket 1 atm (atmosfærisk trykk). Lufttrykket avtar med $12 \, \%$ per km i høyden.
 
 
-:::{cas-popup} 800 400
+:::{cas-popup} 420 500
 :::
 
 ::::::::::::::{tab-set}
@@ -170,7 +170,7 @@ class: no-click, adaptive-figure
 Bruk trigonometri til å bestemme arealet av 6-kanten.
 
 
-:::{cas-popup} 800 500
+:::{cas-popup} 420 500
 :::
 
 :::::{admonition} Retteveiledning
@@ -267,7 +267,7 @@ class: no-click, adaptive-figure
 :::
 
 
-:::{cas-popup} 800 400
+:::{cas-popup} 420 500
 :::
 
 
@@ -645,7 +645,7 @@ class: no-click, adaptive-figure
 En strandkiosk $S$ er plassert på starten av kystlinja.
 
 
-:::{cas-popup} 700 400
+:::{cas-popup} 420 500
 :::
 
 
@@ -829,10 +829,10 @@ Lag et program som regner ut summen av arealet til de 100 største fargelagte kv
 
 
 :::{popup-code}
-
-
-
-
+---
+width: 450
+height: 500
+---
 :::
 
 :::::{admonition} Retteveiledning

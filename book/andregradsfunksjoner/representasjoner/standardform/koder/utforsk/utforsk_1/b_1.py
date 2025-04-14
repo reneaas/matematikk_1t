@@ -62,7 +62,7 @@ def main(dirname, save):
         ha="center",
         color="black",
         bbox=dict(
-            facecolor="#C875C4",
+            facecolor="royalblue",
             alpha=0.5,
             edgecolor="black",
             boxstyle="round,pad=0.3",

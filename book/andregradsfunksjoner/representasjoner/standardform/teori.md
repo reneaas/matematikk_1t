@@ -83,7 +83,7 @@ Her skal vi se nærmere på hvordan grafen til en andregradsfunksjon ser ut og h
 
 :::::::::::::::{admonition} Utforsk 1
 ---
-class: explore, full-width
+class: explore
 ---
 
 ::::::::::::::{tab-set}
@@ -201,7 +201,7 @@ class: summary, dropdown
 
 :::::::::::::::{admonition} Oppsummering: koeffisienter og graf
 ---
-class: summary, dropdown
+class: summary
 ---
 Påvirkningen til koeffisientene til en andregradsfunksjon $f(x) = ax^2 + bx + c$ kan oppsummeres som:
 

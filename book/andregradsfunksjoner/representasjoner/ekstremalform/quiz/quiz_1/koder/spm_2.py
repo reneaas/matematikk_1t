@@ -10,7 +10,7 @@ def main(dirname, save):
     # List of functions and their labels.
     functions = [f]
 
-    fig, ax = plotmath.make_figure(
+    fig, ax = plotmath.plot(
         functions=functions,
         fn_labels=True,
         xmin=-6,

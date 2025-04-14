@@ -25,8 +25,9 @@ def main(dirname, save):
         ymin=-10,
         ymax=10,
         linestyle="--",
-        color="black",
-        alpha=0.7,
+        lw=2,
+        color="royalblue",
+        alpha=0.8,
     )
 
     # NOTE: Select an appropriate `dirname` to save the figure.

@@ -19,29 +19,16 @@ class: theory
 ---
 En andregradsfunksjon har enten et **toppunkt** og **bunnpunkt**. <br> Vi kaller $x$-koordinaten til dette punktet for **ekstremalpunktet** og $y$-koordinaten for **ekstremalverdien**.
 
-Nedenfor vises det grafisk hva et toppunkt og et bunnpunkt er for en andregradsfunksjon.
-::::::::::::::{tab-set}
-:::::::::::::{tab-item} Bunnpunkt
-Grafen til en andregradsfunksjon har et bunnpunkt når den er **konveks** $\smile$ (den har "smilefjes").
+Se figuren nedenfor.
 
-:::{figure} ./figurer/teori/bunnpunkt.svg
+:::{figure} ./figurer/teori/merged_figure.svg
 ---
-width: 80%
+width: 100%
 class: no-click, adaptive-figure
 ---
+viser to andregradsfunksjoner der grafen til venstre har et bunnpunkt og grafen til høyre har et toppunkt.
 :::
-:::::::::::::
 
-:::::::::::::{tab-item} Toppunkt
-Grafen til en andregradsfunksjon har et toppunkt når den er **konkav** $\frown$ (den har et "surt fjes").
-:::{figure} ./figurer/teori/toppunkt.svg
----
-width: 80%
-class: no-click, adaptive-figure
----
-:::
-:::::::::::::
-::::::::::::::
 
 :::::::::::::::
 
@@ -55,7 +42,7 @@ class: example
 Grafen til en andregradsfunksjon $f$ er vist i {numref}`fig-andregradsfunksjoner-representasjoner-ekstremalform-eksempel-1`.
 
 1. Bestem hva slags ekstremalpunkt $f$ har.
-2. Bestem koordinatene til ekstremalpunktet til $f$.
+2. Bestem ekstremalpunktet og ekstremalverdien til $f$.
 
 
 :::{figure} ./figurer/eksempler/eksempel_1.svg
@@ -101,7 +88,7 @@ class: no-click, adaptive-figure
 * Hvis $a > 0$ er grafen til $f$ konveks $\smile$ og har et bunnpunkt.
 * Hvis $a < 0$ er grafen til $f$ konkav $\frown$ og har et toppunkt.
 * Linja $x = x_0$ er symmetrilinja til $f$. Grafen er speilet rundt denne linja!
----
+
 
 :::{figure} ./figurer/teori/grafisk_representasjon.svg
 ---
@@ -364,6 +351,11 @@ Se på grafene under.
 1. Kan du se en sammenheng om hvor nullpunktene ligger i forhold til symmetrilinja? 
 2. Kan du beskrive sammenhengen generelt? 
 
+:::{solution}
+1. Det er like lang avstand fra symmetrilinja til hvert nullpunkt på $x$-aksen.
+2. Symmetrilinja ligger **midt** mellom nullpunktene.
+:::
+
 ::::::::::::{tab-set}
 :::::::::::{tab-item} Graf A
 :::{figure} ./figurer/utforsk/utforsk_1/a/graf_A.svg
@@ -393,59 +385,47 @@ class: no-click, adaptive-figure
 :::::::::::
 ::::::::::::
 
-:::{admonition} a: Oppsummering
----
-class: dropdown, summary
----
-1. Det er like lang avstand fra symmetrilinja til hvert nullpunkt på $x$-aksen.
-2. Symmetrilinja ligger **midt** mellom nullpunktene.
-:::
-
 :::::::::::::
 
 :::::::::::::{tab-item} b
-Under vises funksjonsuttrykkene til grafene skrevet på nullpunktsform og ekstremalform.
-Se på uttrykkene. 
+Bruk det at avstanden fra symmetrilinja til $x_0$ er den samme til hvert nullpunkt $x_1$ og $x_2$ til å finne en formel for $x_0$ uttrykt ved nullpunktene $x_1$ og $x_2$.
 
-1. Kan du finne en formel for symmetrilinja til grafene ut ifra nullpunktene?
-2. Kan du bruke dette til å regne ut ekstremalpunktet også?
 
-::::::::::::{tab-set}
-:::::::::::{tab-item} Graf A
-
-$$
-f(x) = (x - 1)(x + 3) = (x + 1)^2 - 4
-$$
-
-:::::::::::
-
-:::::::::::{tab-item} Graf B
-
-$$
-f(x) = -\dfrac{1}{2}(x + 3)(x - 5) = -\dfrac{1}{2}(x - 1)^2 + \dfrac{9}{2}
-$$
-
-:::::::::::
-
-:::::::::::{tab-item} Graf C
-$$
-f(x) = \dfrac{1}{4}(x + 2)(x - 4) = \dfrac{1}{4}(x - 1)^2 - 4
-$$
-:::::::::::
-::::::::::::
-
-:::{admonition} b: Oppsummering
----
-class: dropdown, summary
----
-1. Symmetrilinja $x_0$ er gjennomsnittet av nullpunktene $x_1$ og $x_2$. Det vil si at
-
+::::{answer}
 $$
 x_0 = \dfrac{x_1 + x_2}{2}
 $$
+::::
 
-2. For å finne ekstremalpunktet, regner vi ut $y_0 = f(x_0)$. Da har vi ekstremalpunktet $(x_0, y_0)$.
-:::
+::::{solution}
+Vi lar $x_1$ være det minste nullpunktet og $x_2$ være det største nullpunktet. Vi vet at symmetrilinja $x_0$ ligger mellom de to punktene som betyr at 
+
+$$
+x_1 < x_0 < x_2
+$$
+
+Samtidig kan vi konkludere at 
+* $x_0 - x_1$ er avstanden fra $x_0$ til $x_1$ siden $x_0 > x_1$
+* $x_2 - x_0$ er avstanden fra $x_0$ til $x_2$ siden $x_2 > x_0$
+
+Siden de to avstandene skal være like, følger det at 
+
+$$
+x_0 - x_1 = x_2 - x_0
+$$
+
+Vi løser likningen med hensyn på $x_0$:
+
+\begin{align*}
+    x_0 - x_1 &= x_2 - x_0 \\
+    \\
+    2x_0 &= x_1 + x_2 \\
+    \\
+    x_0 &= \dfrac{x_1 + x_2}{2}
+\end{align*}
+
+Dermed finner vi at symmetrilinja $x_0$ er gjennomsnittet av nullpunktene.
+::::
 
 :::::::::::::
 
@@ -455,15 +435,11 @@ $$
 
 ---
 
-> Jobb med Utforsk 1 **før** du ser på oppsummeringen under!
-
-:::::::::::::::{admonition} Oppsummering: fra nullpunktsform til ekstremalform
+:::::::::::::::{admonition} Sammenheng mellom nullpunkter og symmetrilinje
 ---
-class: summary, dropdown
+class: theory
 ---
-For å bytte fra nullpunktsformen til ekstremalformen til en andregradsfunksjon, følger vi disse stegene:
-
-1. Bestem symmetrilinja $x_0$ til funksjonen ved å regne ut gjennomsnittet av nullpunktene $x_1$ og $x_2$:
+Symmetrilinja $x_0$ er gjennomsnitt av nullpunktene $x_1$ og $x_2$, som vi kan regne ut med:
 
 :::{figure} ./figurer/teori/nullpunkter_og_symmetrilinje.svg
 ---
@@ -472,7 +448,6 @@ class: no-click, adaptive-figure
 ---
 :::
 
-2. Regn ut $y_0 = f(x_0)$ for å finne $y$-koordinaten til ekstremalpunktet.
 
 :::::::::::::::
 

@@ -30,8 +30,8 @@ def main(dirname, save):
 
     ax.plot(xmin, ymin, "ko", markersize=10, alpha=0.7)
 
-    ax.plot(0, ymin, "ko", markersize=8, alpha=0.5)
-    ax.plot(xmin, 0, "ko", markersize=8, alpha=0.5)
+    ax.plot(0, ymin, "ko", markersize=8, alpha=0.7)
+    ax.plot(xmin, 0, "ko", markersize=8, alpha=0.7)
 
     ax.hlines(y=ymin, xmin=0, xmax=xmin, linestyle="--", alpha=0.5, color="black")
 
