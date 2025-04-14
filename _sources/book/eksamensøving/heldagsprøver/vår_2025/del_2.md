@@ -828,6 +828,13 @@ class: no-click, adaptive-figure
 Lag et program som regner ut summen av arealet til de 100 største fargelagte kvadratene.
 
 
+:::{popup-code}
+
+
+
+
+:::
+
 :::::{admonition} Retteveiledning
 ---
 class: summary, dropdown
