@@ -76,12 +76,16 @@ class: no-click, adaptive-figure
 viser grafen til en andregradsfunksjon $f$.
 :::
 
+
+:::{cas-popup} 420 500
+:::
+
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
-Sett opp en likningssystem for koeffisientene til $f(x)$. 
+Sett opp et {popup}`likningssystem for $f(x).$<For eksempel hvis grafen til $f$ går gjennom punktet $(1, 2)$, så er $f(1) = 2$ én av likningene.>`
 
 
 :::{admonition} Fasit
@@ -149,12 +153,16 @@ class: no-click, adaptive-figure
 viser grafen til en andregradsfunksjon $g$.
 :::
 
+
+:::{cas-popup} 420 500
+:::
+
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
-Sett opp en likningssystem for koeffisientene til $g(x)$. 
+Sett opp et likningssystem for $g(x)$.
 
 :::{admonition} Fasit
 ---
@@ -210,7 +218,10 @@ $$
 ---
 class: problem-level-2
 ---
-> Tips: bruk gjerne CAS for å løse oppgavene – sjekk svaret ditt med CAS hvis du velger å regne for hånd. 
+> Løs oppgavene med CAS!
+
+:::{cas-popup} 420 500
+:::
 
 ::::::::::::::{tab-set}
 ---
@@ -308,8 +319,10 @@ $$
 ---
 class: problem-level-2
 ---
-> Tips: bruk gjerne CAS for å løse oppgavene – sjekk svaret ditt med CAS hvis du velger å regne for hånd.
+> Løs oppgavene med CAS!
 
+:::{cas-popup} 420 500
+:::
 
 ::::::::::::::{tab-set}
 ---
@@ -451,135 +464,3 @@ Funksjon A
 :::
 
 :::::::::::::::
-
----
-
-:::::::::::::::{admonition} Oppgave 8
----
-class: problem-level-3
----
-> Her får du se en ny måte å bruke CAS på til å bestemme $f(x)$. Som vanlig kan du velge mellom Geogebra eller Python.
-
-::::{admonition} Eksempel 
----
-class: example
----
-Grafen til en andregradsfunksjon $f$ går gjennom punktene $(-1, 2)$ og $(2, 2)$ og $(1, -1)$. 
-
-Bestem $f(x)$. 
-
-
-````{tab} Geogebra
-
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_9/eksempel.html
----
-:::
-
-Fra Geogebra-vinduet, kan vi se at 
-
-$$
-f(x) = \dfrac{3}{2}x^2 - \dfrac{3}{2}x - 1
-$$
-
-````
-
-````{tab} Python
-
-> Her vil du se en ny Python-pakke som heter `casify`{l=python}. Denne pakken kommer vi til å erstatte `sympy`{l=python} med videre fordi den gir oss mindre kode å skrive for å løse oppgavene! 
-
-Kjør programmet og se på utskriften for å se sammenhengen med svaret under!
-
-:::{raw} html
----
-file: ./python/oppgaver/oppgave_9/eksempel.html
----
-:::
-
-<br>
-
-Dermed er 
-
-$$
-f(x) = \dfrac{3}{2}x^2 - \dfrac{3}{2}x - 1
-$$
-
-````
-
-::::
-
----
-
-> Løs oppgavene med CAS – enten med Geogebra eller Python.
-
-::::::::::::::{tab-set}
----
-class: tabs-parts
----
-
-:::::::::::::{tab-item} a
-Grafen til en andregradsfunksjon $f$ går gjennom punktene $(-2, 3)$ og $(1, 3)$ og $(-3, 7)$. 
-
-Bestem $f(x)$. 
-
-:::{admonition} Fasit
----
-class: dropdown, answer
----
-$$
-f(x) = x^2 + x + 1
-$$
-:::
-:::::::::::::
-
-:::::::::::::{tab-item} b
-Grafen til en andregradsfunksjon $g$ går gjennom punktene $(-1, 3)$ og $(1, -5)$ og $(-2, 1)$. 
-
-Bestem $g(x)$. 
-
-:::{admonition} Fasit
----
-class: dropdown, answer
----
-$$
-g(x) = -2x^2 - 4x + 1
-$$
-:::
-:::::::::::::
-
-:::::::::::::{tab-item} c
-Grafen til en andregradsfunksjon $h$ går gjennom punktene $(2, 2)$ og $(4, -2)$ og $(-2, -2)$.
-
-Bestem $h(x)$.
-
-:::{admonition} Fasit
----
-class: dropdown, answer
----
-$$
-h(x) = -\dfrac{1}{2}x^2 + x^2 + 2
-$$
-:::
-:::::::::::::
-
-:::::::::::::{tab-item} d
-Grafen til en andregradsfunksjon $r$ går gjennom punktene $(-3, -1)$ og $(2, -6)$ og $(1, -3)$. 
-
-Bestem $r(x)$.
-
-:::{admonition} Fasit
----
-class: dropdown, answer
----
-$$
-r(x) = -\dfrac{1}{2}x^2 - \dfrac{3}{2}x - 1
-$$
-:::
-:::::::::::::
-
-::::::::::::::
-
-
-:::::::::::::::
-

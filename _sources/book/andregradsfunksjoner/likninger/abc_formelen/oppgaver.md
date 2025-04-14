@@ -55,7 +55,7 @@ $$
 ---
 class: problem-level-1
 ---
-Løs likningene ved bruk av $abc$-formelen.
+Løs likningene ved hjelp av {popup}`$abc$-formelen. <En likning på formen $ax^2 + bx + c = 0$ har løsningen $$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$>`
 
 ::::::::::::::{tab-set}
 ---
@@ -72,7 +72,7 @@ $$
 class: answer, dropdown
 ---
 $$
-x = 2 \, \lor \, x = 3
+x = 2 \or x = 3
 $$
 :::
 :::::::::::::
@@ -102,7 +102,7 @@ $$
 class: answer, dropdown
 ---
 $$
-x = -2 \, \lor \, x = 3
+x = -2 \or x = 3
 $$
 :::
 :::::::::::::
@@ -117,7 +117,7 @@ $$
 class: answer, dropdown
 ---
 $$
-x = -1 \, \lor \, x = 5
+x = -1 \or x = 5
 $$
 :::
 :::::::::::::
@@ -133,7 +133,7 @@ $$
 class: problem-level-1
 ---
 
-Løs likningene ved hjelp av $abc$-formelen.
+Løs likningene ved hjelp av {popup}`$abc$-formelen. <En likning på formen $ax^2 + bx + c = 0$ har løsningen $$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$>`
 
 ::::::::::::::{tab-set}
 ---
@@ -151,7 +151,7 @@ $$
 class: answer, dropdown
 ---
 $$
-x = \dfrac{1}{2} \, \lor \, x = 2
+x = \dfrac{1}{2} \or x = 2
 $$
 :::
 
@@ -186,7 +186,7 @@ $$
 class: answer, dropdown
 ---
 $$
-x = -1 \, \lor \, x = 4
+x = -1 \or x = 4
 $$
 :::
 
@@ -204,7 +204,7 @@ $$
 class: answer, dropdown
 ---
 $$
-x = -\dfrac{1}{2} \, \lor \, x = 2
+x = -\dfrac{1}{2} \or x = 2
 $$
 :::
 
@@ -360,7 +360,7 @@ $$
 ---
 class: problem-level-1
 ---
-For hver av likningene, bestem hvor mange løsninger likningen har ved hjelp av diskriminanten.
+For hver av likningene, bestem hvor mange løsninger likningen har ved hjelp av {popup}`diskriminanten. <Diskriminanten $D$ er uttrykket i kvadratroten i $abc$-formelen: $$D = b^2 - 4ac.$$ Hvis $D$ er positiv, har likningen to løsninger. Hvis $D = 0$, har likningen én løsning. Hvis $D$ er negativ, har likningen ingen løsning.>`.
 
 ::::::::::::::{tab-set}
 ---
@@ -624,17 +624,27 @@ $$
 ---
 
 
-:::::::::::::::{admonition} Oppgave XX
+:::::::::::::::{admonition} Oppgave 10
 ---
 class: problem-level-2
 ---
 Lova har skrevet et program for å løse andregradslikninger med $abc$-formelen, men har rotet det til og har fått kodelinjene i tilfeldig rekkefølge.
 
 
-:::{raw} html
----
-file: ./python/abc_formelen/abc_formelen.html
----
+:::{parsons-puzzle}
+a = float(input("Skriv inn a: ")) ;b = float(input("Skriv inn b: ")) ;c = float(input("Skriv inn c: "))
+
+diskriminant = b**2 - 4*a*c
+
+if diskriminant > 0:
+    from math import sqrt # sqrt = kvadratrot ;    x1 = (-b + sqrt(diskriminant)) / (2*a) ;    x2 = (-b - sqrt(diskriminant)) / (2*a)
+    print(f"Løsningene er {x1 = } og {x2 = }")
+elif diskriminant == 0:
+    x = -b / (2*a)
+    print(f"Løsningen er {x = }")
+else:
+    print("Ingen løsning")
 :::
+
 
 :::::::::::::::

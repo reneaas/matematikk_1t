@@ -121,3 +121,226 @@
 .popup-dialog .ui-dialog-titlebar-close .ui-icon {
     display: none !important;
 }
+
+
+
+
+
+
+
+
+/* ========= Popup Button Styles ========= */
+.popup-button {
+    background-color: #4a86e8;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.popup-button:hover {
+    background-color: #3a76d8;
+    transform: translateY(-1px);
+}
+
+.popup-button:active {
+    transform: translateY(1px);
+}
+
+/* ========= Base Dialog Styles ========= */
+.popup-dialog.ui-dialog {
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    padding: 0;
+    border: 1px solid #e1e4e8;
+    overflow: visible;
+    position: fixed !important;
+    z-index: 1000;
+    transform: translateZ(0);
+}
+
+.popup-dialog .ui-dialog-titlebar {
+    border-radius: 6px 6px 0 0;
+    padding: 12px 16px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.popup-content {
+    padding: 16px;
+    overflow-wrap: break-word;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* ========= Popup Text Styles ========= */
+.popup-text {
+    cursor: pointer;
+    padding-bottom: 1px;
+    display: inline-block;
+    position: relative;
+    transition: all 0.2s ease;
+    border-bottom: 1px dashed;
+    text-decoration: none;
+}
+
+/* ========= Close Button Styles ========= */
+.popup-dialog .ui-dialog-titlebar-close {
+    background-color: #e53935;
+    border-radius: 50%;
+    border: none;
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    margin-top: -11px;
+    transition: background-color 0.2s;
+    outline: none;
+}
+
+.popup-dialog .ui-dialog-titlebar-close::before,
+.popup-dialog .ui-dialog-titlebar-close::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 2px;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+}
+
+.popup-dialog .ui-dialog-titlebar-close::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.popup-dialog .ui-dialog-titlebar-close::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.popup-dialog .ui-dialog-titlebar-close:hover {
+    background-color: #c62828;
+}
+
+.popup-dialog .ui-dialog-titlebar-close .ui-icon {
+    display: none;
+}
+
+/* ========= Hover Dialog Styles ========= */
+.hover-dialog.ui-dialog {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    border-radius: 6px;
+    overflow: hidden;
+    animation: fadeInDialog 0.2s ease;
+}
+
+@keyframes fadeInDialog {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hover-dialog .ui-dialog-titlebar {
+    padding: 8px 10px;
+    font-size: 0.9em;
+}
+
+/* ========= Light Mode (Default) ========= */
+.popup-text {
+    color: #1a73e8;
+    border-bottom-color: #1a73e8;
+}
+
+.popup-text:hover {
+    color: #0d5bcd;
+    border-bottom-color: #0d5bcd;
+}
+
+.hover-dialog.ui-dialog {
+    background-color: white;
+    border-color: #e0e0e0;
+}
+
+.popup-dialog .ui-dialog-titlebar {
+    background: #4a86e8;
+    color: white;
+    border-bottom: 1px solid #3a76d8;
+}
+
+.hover-dialog .ui-dialog-titlebar {
+    background-color: #f5f7fa;
+    color: #24292e;
+    border-color: #e0e0e0;
+}
+
+/* ========= Dark Mode ========= */
+[data-mode="dark"] .popup-text {
+    color: #66b5ff;
+    border-bottom-color: #66b5ff;
+}
+
+[data-mode="dark"] .popup-text:hover {
+    color: #7ac1ff;
+    border-bottom-color: #7ac1ff;
+}
+
+[data-mode="dark"] .popup-dialog.ui-dialog,
+[data-mode="dark"] .hover-dialog.ui-dialog {
+    background-color: #2d333b;
+    border-color: #444c56;
+}
+
+[data-mode="dark"] .popup-dialog .ui-dialog-titlebar {
+    background: #3d76c8;
+    border-bottom-color: #2e5696;
+}
+
+[data-mode="dark"] .popup-dialog .popup-content,
+[data-mode="dark"] .popup-dialog .ui-dialog-content {
+    background: #22272e;
+    color: #adbac7;
+}
+
+[data-mode="dark"] .hover-dialog .ui-dialog-titlebar {
+    background-color: #353d47;
+    color: #adbac7;
+    border-color: #4c555e;
+}
+
+/* ========= Auto Mode (System Preference) ========= */
+@media (prefers-color-scheme: dark) {
+    [data-mode="auto"] .popup-text {
+        color: #66b5ff;
+        border-bottom-color: #66b5ff;
+    }
+
+    [data-mode="auto"] .popup-text:hover {
+        color: #7ac1ff;
+        border-bottom-color: #7ac1ff;
+    }
+
+    [data-mode="auto"] .popup-dialog.ui-dialog,
+    [data-mode="auto"] .hover-dialog.ui-dialog {
+        background-color: #2d333b;
+        border-color: #444c56;
+    }
+
+    [data-mode="auto"] .popup-dialog .ui-dialog-titlebar {
+        background: #3d76c8;
+        border-bottom-color: #2e5696;
+    }
+
+    [data-mode="auto"] .popup-dialog .popup-content,
+    [data-mode="auto"] .popup-dialog .ui-dialog-content {
+        background: #22272e;
+        color: #adbac7;
+    }
+
+    [data-mode="auto"] .hover-dialog .ui-dialog-titlebar {
+        background-color: #353d47;
+        color: #adbac7;
+        border-color: #4c555e;
+    }
+}

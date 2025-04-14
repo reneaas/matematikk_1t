@@ -1,9 +1,8 @@
 # Oppgaver: <br> Algebraisk representasjon av lineære funksjoner
 
-:::::{admonition} Oppgave 1
+:::::{problem} Oppgave 1
 ---
-class: problem-level-1
-name: lineære-funksjoner-algebraisk-representasjon-oppgave-1
+level: 1
 ---
 Fyll ut tabellen under.
 
@@ -15,10 +14,7 @@ Fyll ut tabellen under.
 | $r$ | $r(x) = 3$ |  |  |
 | $s$ | $s(x) = -\dfrac{1}{3}x + \dfrac{3}{2}$ |  |  |
 
-::::{admonition} Fasit
----
-class: answer, dropdown
----
+::::{answer}
 
 | Funksjonsnavn | Funksjonsuttrykk | Stigningstall | Konstantledd |
 | :---: | :---: | :---: | :---: |
@@ -35,10 +31,9 @@ class: answer, dropdown
 
 ---
 
-:::::{admonition} Oppgave 2
+:::::{problem} Oppgave 2
 ---
-class: problem-level-1
-name: lineære-funksjoner-algebraisk-representasjon-oppgave-2
+level: 1
 ---
 
 Regn ut funksjonsverdiene i tabellen under.
@@ -51,10 +46,7 @@ Regn ut funksjonsverdiene i tabellen under.
 | $r(x) = 3$ | $-1$ |  |
 | $s(x) = -\dfrac{1}{3}x + \dfrac{3}{2}$ | $3$ |  |
 
-::::{admonition} Fasit
----
-class: answer, dropdown
----
+::::{answer}
 
 | Funksjonsuttrykk | $\quad x \quad$ | Funksjonsverdi $f(x)$ |
 | :--- | :---: | :--- |
@@ -63,58 +55,52 @@ class: answer, dropdown
 | $h(x) = 4x + 1$ | $0$ | $1$ |
 | $r(x) = 3$ | $-1$ | $3$ |
 | $s(x) = -\dfrac{1}{3}x + \dfrac{3}{2}$ | $3$ | $\dfrac{1}{2}$ |
+
 ::::
 
 :::::
 
 ---
 
-:::::{admonition} Oppgave 3
+:::::{problem} Oppgave 3
 ---
-class: problem-level-1
-name: lineære-funksjoner-algebraisk-representasjon-oppgave-3
+level: 1
 ---
 
 Under vises et program i tilfeldig rekkefølge som regner ut funksjonsverdien til en lineær funksjon $f$.
 
 `````{tab-set}
-````{tab-item} Deloppgave 1
+---
+class: tabs-parts
+---
+````{tab-item} a
 Pusle sammen programmet i riktig rekkefølge for å få det fullstendige programmet. <br> Hva forventer du at programmet skriver ut? Kjør programmet og sjekk svaret!
 ````
 
-````{tab-item} Deloppgave 2
+````{tab-item} b
 Hva er funksjonsuttrykket til $f$ i programmet? <br> Hvilken funksjonsverdi er det programmet regner ut?
 
-::::{admonition} Fasit
----
-class: answer, dropdown
----
+::::{answer}
 * Funksjon: $f(x)= -\dfrac{1}{2}x + 3$
 * Funksjonsverdi: $y = f(-4)$
 ::::
 ````
 
-````{tab-item} Deloppgave 3
+````{tab-item} c
 Endre programmet slik at det regner ut $f(2)$. <br> Hva forventer du at svaret blir? Kjør programmmet og sjekk.
 
-::::{admonition} Fasit
----
-class: answer, dropdown
----
+::::{answer}
 $$
 f(2) = 2
 $$
 ::::
 ````
 
-````{tab-item} Deloppgave 4
+````{tab-item} d
 Endre programmet slik at det regner ut $f(2)$ når $f(x) = 2x + 1$. <br> Kjør programmet og sjekk at svaret blir riktig.
 
 
-::::{admonition} Fasit
----
-class: answer, dropdown
----
+::::{answer}
 Vi kan bare overskrive definisjonen av `f(x)`{l=python}. <br> Endret program:
 ```{code-block} python
 ---
@@ -139,14 +125,14 @@ $$
 
 <br>
 
-:::{raw} html
----
-file: interaktiv_kode/oppgaver/oppgave_3.html
----
+:::{parsons-puzzle}
+def f(x):
+    return -x/2 + 3
+
+y = f(-4)
+print(y)
+
 :::
-
-<br>
-
 
 
 :::::

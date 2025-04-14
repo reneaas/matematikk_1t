@@ -1,152 +1,188 @@
-/* Base button styles */
+/* ========= GeoGebra CAS Button Styles ========= */
 .ggb-cas-button {
-    background-color: #28a745;
+    background-color: #2ecc71;
     color: black;
     border: none;
     padding: 10px 20px;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.2s, transform 0.1s;
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .ggb-cas-button:hover {
-    background-color: #3a76d8;
-    transform: translateY(-1px);
+    background-color: #27ae60;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .ggb-cas-button:active {
     transform: translateY(1px);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
+/* ========= Dialog Base Styles ========= */
+.ui-dialog {
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+    border: none;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    transform: translateZ(0); /* Performance boost */
+    animation: dialogFadeIn 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    position: fixed !important;
+    z-index: 1000;
+}
+
+@keyframes dialogFadeIn {
+    from { opacity: 0; transform: translateY(-10px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.ui-dialog-titlebar {
+    padding: 16px 20px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border: none;
+}
+
+.ui-dialog-content {
+    padding: 16px 20px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* ========= Close Button Styles ========= */
+.ui-dialog-titlebar-close {
+    background-color: rgba(229, 57, 53, 0.9);
+    border-radius: 50%;
+    border: none;
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    margin-top: -14px;
+    transition: all 0.2s ease;
+    outline: none;
+    cursor: pointer;
+}
+
+.ui-dialog-titlebar-close::before,
+.ui-dialog-titlebar-close::after {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 2px;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+}
+
+.ui-dialog-titlebar-close::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.ui-dialog-titlebar-close::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.ui-dialog-titlebar-close:hover {
+    background-color: rgba(229, 57, 53, 1);
+    transform: scale(1.1);
+}
+
+.ui-dialog-titlebar-close .ui-icon {
+    display: none;
+}
+
+/* ========= Light Mode Styles ========= */
+[data-mode="light"] .ui-dialog {
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
 
 [data-mode="light"] .ui-dialog-titlebar {
-    color:black !important;
-    background-color: white !important;
+    background-color: #f8f9fa;
+    color: #333;
+    border-bottom: 1px solid #eee;
 }
-
-@media (prefers-color-scheme: light) {
-    [data-mode="auto"] .ui-dialog-titlebar {
-        color:black !important;
-        background-color: white !important;
-    }
-}
-
-
-[data-mode="dark"] .ui-dialog-titlebar {
-    color:white !important;
-    background-color: #141414 !important;
-}
-
-@media (prefers-color-scheme: dark) {
-    [data-mode="auto"] .ui-dialog-titlebar {
-        color:white !important;
-        background-color: #141414 !important;
-    }
-}
-
 
 [data-mode="light"] .ui-dialog-content {
-    background-color: white !important;
+    background-color: white;
+    color: #333;
 }
 
-@media (prefers-color-scheme: light) {
-    [data-mode="auto"] .ui-dialog-content {
-        background-color: white !important;
-    }
+/* ========= Dark Mode Styles ========= */
+[data-mode="dark"] .ui-dialog {
+    background-color: #252a33;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+[data-mode="dark"] .ui-dialog-titlebar {
+    background-color: #2d333b;
+    color: #e6e6e6;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 [data-mode="dark"] .ui-dialog-content {
-    background-color: #141414 !important;
+    background-color: #252a33;
+    color: #e6e6e6;
 }
 
-@media (prefers-color-scheme: dark) {
-    [data-mode="auto"] .ui-dialog-content {
-        background-color: #141414 !important;
-    }
+[data-mode="dark"] .ui-dialog-titlebar-close {
+    background-color: rgba(244, 67, 54, 0.8);
 }
 
-
-[data-mode="light"] .ui-dialog {
-    background-color: white !important;
-    border-radius: 8px !important;
+[data-mode="dark"] .ui-dialog-titlebar-close:hover {
+    background-color: rgb(244, 67, 54);
 }
 
+/* ========= Auto Mode Styles (System Preference) ========= */
 @media (prefers-color-scheme: light) {
     [data-mode="auto"] .ui-dialog {
-        background-color: white !important;
-        border-radius: 8px !important;
+        background-color: white;
+        border: 1px solid rgba(0, 0, 0, 0.1);
     }
-}
-
-
-[data-mode="dark"] .ui-dialog {
-    background-color: #141414 !important;
-    border-radius: 8px !important;
+    
+    [data-mode="auto"] .ui-dialog-titlebar {
+        background-color: #f8f9fa;
+        color: #333;
+        border-bottom: 1px solid #eee;
+    }
+    
+    [data-mode="auto"] .ui-dialog-content {
+        background-color: white;
+        color: #333;
+    }
 }
 
 @media (prefers-color-scheme: dark) {
     [data-mode="auto"] .ui-dialog {
-        background-color: #141414 !important;
-        border-radius: 8px !important;
+        background-color: #252a33;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    
+    [data-mode="auto"] .ui-dialog-titlebar {
+        background-color: #2d333b;
+        color: #e6e6e6;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    [data-mode="auto"] .ui-dialog-content {
+        background-color: #252a33;
+        color: #e6e6e6;
+    }
+    
+    [data-mode="auto"] .ui-dialog-titlebar-close {
+        background-color: rgba(244, 67, 54, 0.8);
+    }
+    
+    [data-mode="auto"] .ui-dialog-titlebar-close:hover {
+        background-color: rgb(244, 67, 54);
     }
 }
-
-
-
-
-/* Red cross close button */
-/* Red cross close button */
-.ui-dialog-titlebar-close {
-    background-color: #e53935 !important;
-    border-radius: 50% !important;
-    border: none !important;
-    width: 22px !important;
-    height: 22px !important;
-    /* Change from relative to absolute to maintain default positioning */
-    position: absolute !important;
-    right: 8px !important; /* Standard jQuery UI position */
-    top: 50% !important;
-    margin-top: -11px !important; /* Center vertically (-height/2) */
-    transition: background-color 0.2s !important;
-    outline: none !important;
-  }
-  
-  /* Create an X with CSS pseudo-elements */
-  .ui-dialog-titlebar-close::before,
-  .ui-dialog-titlebar-close::after {
-    content: "" !important;
-    position: absolute !important;
-    width: 12px !important;
-    height: 2px !important;
-    background-color: white !important;
-    top: 50% !important;
-    left: 50% !important;
-  }
-  
-  .ui-dialog-titlebar-close::before {
-    transform: translate(-50%, -50%) rotate(45deg) !important;
-  }
-  
-  .ui-dialog-titlebar-close::after {
-    transform: translate(-50%, -50%) rotate(-45deg) !important;
-  }
-  
-  /* Hover effect */
-  .ui-dialog-titlebar-close:hover {
-    background-color: #c62828 !important;
-  }
-  
-  /* Hide jQuery UI's default icon */
-  .ui-dialog-titlebar-close .ui-icon {
-    display: none !important;
-  }
-  
-  /* Theme-specific adjustments */
-  [data-mode="dark"] .ui-dialog-titlebar-close {
-    background-color: #f44336 !important; /* Brighter red for dark mode */
-  }
-  
-  [data-mode="dark"] .ui-dialog-titlebar-close:hover {
-    background-color: #d32f2f !important;
-  }

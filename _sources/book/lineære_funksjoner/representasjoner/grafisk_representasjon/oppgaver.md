@@ -67,15 +67,17 @@ file: ./pair_puzzles/oppgaver/oppgave_2.html
 
 ::::
 
+
+
 ---
 
 
-::::{admonition} Oppgave 3
----
-class: problem-level-1
----
 
-I {numref}`fig-lineære-funksjoner-representasjoner-oppgave-3` vises grafen til fem lineære funksjoner $f$, $g$, $h$, $p$ og $r$.
+:::::::::::::::{problem} Oppgave 3
+---
+level: 1
+---
+I {numref}`fig-lineære-funksjoner-representasjoner-oppgave-3` vises grafen til en lineær funksjon $f$.
 
 :::{figure} ./figurer/oppgaver/oppgave_3.svg
 ---
@@ -83,105 +85,87 @@ name: fig-lineære-funksjoner-representasjoner-oppgave-3
 width: 80%
 class: no-click, adaptive-figure
 ---
-viser grafen til fem lineære funksjoner $f$, $g$, $h$, $p$ og $r$. 
-:::
-
-Sett sammen riktig funksjonsuttrykk med riktig graf.
-
-:::{raw} html
----
-file: ./pair_puzzles/oppgaver/oppgave_3.html
----
-:::
-
-::::
-
-
----
-
-
-
-::::{admonition} Oppgave 4
----
-class: problem-level-1
----
-I {numref}`fig-lineære-funksjoner-representasjoner-oppgave-4` vises grafen til en lineær funksjon $f$.
-
-:::{figure} ./figurer/oppgaver/oppgave_4.svg
----
-name: fig-lineære-funksjoner-representasjoner-oppgave-4
-width: 80%
-class: no-click, adaptive-figure
----
 viser grafen til en lineær funksjon $f$.
 :::
 
-<br>
-
-Deloppgave 1
-: Bruk {numref}`fig-lineære-funksjoner-representasjoner-oppgave-4` til å fylle ut verditabellen under.
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Bruk {numref}`fig-lineære-funksjoner-representasjoner-oppgave-3` til å fylle ut verditabellen nedenfor.
 
 | $x$ | $-2$ | $-1$ | $0$ | $1$ | $2$ | $3$ |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | $f(x)$ | | | | | | |
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
+
+:::{answer}
+
 | $x$ | $-2$ | $-1$ | $0$ | $1$ | $2$ | $3$ |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | $f(x)$ | $3$ | $2$ | $1$ | $0$ | $-1$ | $-2$ |
 
 :::
 
+:::::::::::::
 
-<br>
-
-Deloppgave 2
-: Bruk {numref}`fig-lineære-funksjoner-representasjoner-oppgave-4` til å bestemme stigningstallet til $f$.
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-$a = -1$
-:::
-
-<br>
-
-Deloppgave 3
-: Bruk {numref}`fig-lineære-funksjoner-representasjoner-oppgave-4` til å bestemme konstantleddet til $f$.
+:::::::::::::{tab-item} b
+Bruk {numref}`fig-lineære-funksjoner-representasjoner-oppgave-4` til å bestemme stigningstallet til $f$.
 
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-$b = 1$
-:::
+::::{answer}
+$$
+a = -1
+$$
+::::
 
-<br>
+:::::::::::::
 
-Deloppgave 4
-: Bruk resultatet ditt fra deloppgave 2 og 3 til å bestemme $f(x)$. 
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
+:::::::::::::{tab-item} c
+Bruk {numref}`fig-lineære-funksjoner-representasjoner-oppgave-4` til å bestemme konstantleddet til $f$.
 
+
+::::{answer}
+$$
+b = 1
+$$
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} d
+Bruk svarene dine fra **b** og **c** til å bestemme $f(x)$.
+
+
+::::{answer}
 $$
 f(x) = -x + 1
 $$
-
-:::
-
 ::::
+
+:::::::::::::
+ 
+
+::::::::::::::
+
+
+:::::::::::::::
+
+
+
+
 
 ---
 
-:::::{admonition} Oppgave 5
+
+
+
+
+
+:::::::::::::::{admonition} Oppgave 4
 ---
 class: problem-level-1
 ---
@@ -193,8 +177,12 @@ $$
 f(x) = 2x - 3. 
 $$
 
-Deloppgave 1
-: Fyll ut verditabellen for $f$ under: 
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Fyll ut verditabellen for $f$ nedenfor: 
 
 | $x$ | Utregning |$f(x)$|
 |:---:|:---|:---:|
@@ -204,10 +192,9 @@ Deloppgave 1
 | $2$ | | |
 | $3$ | | |
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
+
+::::{answer}
+
 | $x$ | Utregning | $f(x)$|
 |:---:|:---|:---:|
 | $-1$ | $f(-1) = 2\cdot (-1) - 3 = -5$ | $-5$ |
@@ -215,293 +202,166 @@ class: answer, dropdown
 | $1$ | $f(1) = 2\cdot (1) - 3 = -1$ | $-1$ | 
 | $2$ | $f(2) = 2\cdot (2) - 3 = 1$  | $1$ |
 | $3$ | $f(3) = 2\cdot (3) - 3 = 3$  | $3$ |
-:::
-
-<br>
-
-
-Deloppgave 2 
-: Tegn punktene fra verditabellen i deloppgave 1 i et koordinatsystem.
-
-:::{admonition} Hint
----
-class: hints, dropdown
----
-Se på verdiene regnet ut i deloppgave 1. 
-* Hva er den minste og den største verdien for $x$?
-* Hva er den minste og den største verdien for $y = f(x)$?
-:::
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-```{figure} ./figurer/oppgaver/oppgave_5_2.svg
----
-name: fig-lineære-funksjoner-representasjoner-oppgave-5-2
-width: 100%
-class: no-click, adaptive-figure
----
-viser punktene fra verditabellen i deloppgave 1 tegnet i et koordinatsystem.
-```
-
-:::
-
-<br>
-
-
-Deloppgave 3
-: Tegn punktene fra verditabellen og grafen til $f$ i koordinatsystemet.
-
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-Grafen til $f$ vises i {numref}`fig-lineære-funksjoner-representasjoner-oppgave-5-3`.
-:::{figure} ./figurer/oppgaver/oppgave_5_3.svg
----
-name: fig-lineære-funksjoner-representasjoner-oppgave-5-3
-width: 100%
-class: no-click, adaptive-figure
----
-viser grafen til $f(x)= 2x - 3$ og punktene fra verditabellen i deloppgave 1.
-:::
-
-:::
-
-<!-- <br>
-
-Deloppgave 4
-: Bruk grafen til å bestemme stigningstallet og konstantleddet til funksjonen. Sjekk svarene dine ved å studere funksjonsuttrykket. 
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-Stigningstall:
-: $a = 2$
-
-Konstantledd:
-: $b = -3$
-::: -->
-:::::
-
----
-
-::::{admonition} Oppgave 6
----
-class: problem-level-2
----
-Her skal du trene på å bestemme funksjonsuttrykk fra graf. 
-
-````{tab-set}
-```{tab-item} Deloppgave 1
-
-Bruk {numref}`fig-lineære-funksjoner-representasjoner-oppgave-6-1` til å bestemme $f(x)$.
-
-:::{figure} ./figurer/oppgaver/oppgave_6_1.svg
----
-name: fig-lineære-funksjoner-representasjoner-oppgave-6-1
-width: 80%
-class: no-click, adaptive-figure
----
-viser grafen til en lineær funksjon $f$.
-:::
-
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-$$
-f(x) = x + 4
-$$
-:::
-
-
-```
-
-```{tab-item} Deloppgave 2
-
-Bruk {numref}`fig-lineære-funksjoner-representasjoner-oppgave-6-2` til å bestemme $g(x)$.
-
-:::{figure} ./figurer/oppgaver/oppgave_6_2.svg
----
-name: fig-lineære-funksjoner-representasjoner-oppgave-6-2
-width: 80%
-class: no-click, adaptive-figure
----
-viser grafen til en lineær funksjon $g$.
-:::
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-$$
-g(x) = -2x
-$$
-:::
-
-```
-
-```{tab-item} Deloppgave 3
-
-Bruk {numref}`fig-lineære-funksjoner-representasjoner-oppgave-6-3` til å bestemme $h(x)$.
-
-:::{figure} ./figurer/oppgaver/oppgave_6_3.svg
----
-name: fig-lineære-funksjoner-representasjoner-oppgave-6-3
-width: 80%
-class: no-click, adaptive-figure
----
-viser grafen til en lineær funksjon $h$.
-:::
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-$$
-h(x) = 3x - 1
-$$
-:::
-
-```
-
-```{tab-item} Deloppgave 4
-
-Bruk {numref}`fig-lineære-funksjoner-representasjoner-oppgave-6-4` til å bestemme $r(x)$.
-
-:::{figure} ./figurer/oppgaver/oppgave_6_4.svg
----
-name: fig-lineære-funksjoner-representasjoner-oppgave-6-4
-width: 80%
-class: no-click, adaptive-figure
----
-viser grafen til en lineær funksjon $r$.
-:::
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-$$
-r(x) = \dfrac{1}{2}x + 1
-$$
-:::
-
-```
-````
 
 ::::
 
-<!-- 
-::::{admonition} Oppgave 6
----
-class: problem-level-1
----
-I denne oppgaven skal du bestemme funksjonsuttrykket til lineære funksjoner fra grafer.
+:::::::::::::
 
-Deloppgave 1
-: Bestem $f(x)$ fra {numref}`fig-lineære-funksjoner-representasjoner-oppgave-6-1`.
 
-:::{figure} ./figurer/oppgaver/oppgave_6_1.svg
+:::::::::::::{tab-item} b
+Tegn punktene fra verditabellen i **a** i et koordinatssystem.
+
+
+::::{answer}
+:::{figure} ./figurer/oppgaver/oppgave_4/b.svg
 ---
-name: fig-lineære-funksjoner-representasjoner-oppgave-6-1
+width: 100%
+class: no-click, adaptive-figure
+---
+:::
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+Tegn grafen til $f$ i koordinatsystemet med punktene dine fra **b**.
+
+
+::::{answer}
+:::{figure} ./figurer/oppgaver/oppgave_4/c.svg
+---
+width: 100%
+class: no-click, adaptive-figure
+---
+:::
+::::
+
+:::::::::::::
+
+
+::::::::::::::
+
+:::::::::::::::
+
+
+
+
+
+---
+
+
+
+
+:::::::::::::::{problem} Oppgave 5
+---
+level: 2
+---
+> Her skal du trene på å bestemme funksjonsuttrykk fra graf.
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+I figuren nedenfor vises grafen til en lineær funksjon $f$.
+
+Bestem $f(x)$.
+
+:::{figure} ./figurer/oppgaver/oppgave_5/a.svg
+---
 width: 80%
+class: no-click, adaptive-figure
 ---
-viser grafen til en lineær funksjon $f$.
 :::
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
+::::{answer}
 $$
-f(x) = x - 4
+f(x) = x + 4
 $$
-:::
+::::
 
-<br>
+:::::::::::::
 
-Deloppgave 2
-: Bestem $g(x)$ fra {numref}`fig-lineære-funksjoner-representasjoner-oppgave-6-2`.
 
-:::{figure} ./figurer/oppgaver/oppgave_6_2.svg
+:::::::::::::{tab-item} b
+I figuren nedenfor vises grafen til en lineær funksjon $g$.
+
+Bestem $g(x)$.
+
+:::{figure} ./figurer/oppgaver/oppgave_5/b.svg
 ---
-name: fig-lineære-funksjoner-representasjoner-oppgave-6-2
 width: 80%
+class: no-click, adaptive-figure
 ---
-viser grafen til en lineær funksjon $g$.
 :::
 
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
+::::{answer}
 $$
 g(x) = -2x
 $$
-:::
+::::
+
+:::::::::::::
 
 
-<br>
+:::::::::::::{tab-item} c
+I figuren nedenfor vises grafen til en lineær funksjon $h$.
 
-Deloppgave 3
-: Bestem $h(x)$ fra {numref}`fig-lineære-funksjoner-representasjoner-oppgave-6-3`.
+Bestem $h(x)$.
 
-:::{figure} ./figurer/oppgaver/oppgave_6_3.svg
+:::{figure} ./figurer/oppgaver/oppgave_5/c.svg
 ---
-name: fig-lineære-funksjoner-representasjoner-oppgave-6-3
 width: 80%
+class: no-click, adaptive-figure
 ---
-viser grafen til en lineær funksjon $h$.
 :::
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
+::::{answer}
 $$
 h(x) = 3x - 1
 $$
-:::
+::::
 
-<br>
+:::::::::::::
 
-Deloppgave 4
-: Bestem $r(x)$ fra {numref}`fig-lineære-funksjoner-representasjoner-oppgave-6-4`.
 
-:::{figure} ./figurer/oppgaver/oppgave_6_4.svg
+:::::::::::::{tab-item} d
+I figuren nedenfor vises grafen til en lineær funksjon $r$.
+
+Bestem $r(x)$.
+
+:::{figure} ./figurer/oppgaver/oppgave_5/d.svg
 ---
-name: fig-lineære-funksjoner-representasjoner-oppgave-6-4
 width: 80%
+class: no-click, adaptive-figure
 ---
-viser grafen til en lineær funksjon $r$.
 :::
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
+::::{answer}
 $$
 r(x) = \dfrac{1}{2}x + 1
 $$
-:::
+::::
+
+:::::::::::::
+
+::::::::::::::
+
+:::::::::::::::
 
 
-:::: -->
+
 
 ---
 
-::::{admonition} Oppgave 7
+
+:::::::::::::::{problem} Oppgave 6
 ---
-class: problem-level-3
+level: 3
 ---
-I {numref}`fig-lineære-funksjoner-representasjoner-oppgave-7` vises grafene til de lineære funksjonene $f$, $g$, $h$ og $r$ - men vi har glemt å merke hvilken graf som hører til hvilken funksjon.
+Nedenfor vises grafene til fire lineære funksjoner $f$, $g$, $h$ og $r$. Vi har glemt å merke hvilken graf som tilhører hvilken funksjon.
 
 \begin{align*}
     f(x) &= 4x - 2 &&& g(x) = -3x + 1 \\
@@ -509,152 +369,59 @@ I {numref}`fig-lineære-funksjoner-representasjoner-oppgave-7` vises grafene til
     h(x) &= -\dfrac{1}{2}x + 1 &&& r(x) = x - 2\\
 \end{align*}
 
-<br>
-
-Bestem hvilken graf som hører til hvilken funksjon.
-
-:::{figure} ./figurer/oppgaver/oppgave_7.svg
+:::{figure} ./figurer/oppgaver/oppgave_6/figur.svg
 ---
-name: fig-lineære-funksjoner-representasjoner-oppgave-7
 width: 80%
 class: no-click, adaptive-figure
 ---
-viser grafene til de lineære funksjonene $f$, $g$, $h$ og $r$ - men vi har glemt å merke hvilken graf som hører til hvilken funksjon.
 :::
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
 
-I {numref}`fig-lineære-funksjoner-representasjoner-oppgave-7-fasit` er grafene merket med riktig funksjonsuttrykk.
-
-```{figure} ./figurer/oppgaver/oppgave_7_fasit.svg
+::::{answer}
+:::{figure} ./figurer/oppgaver/oppgave_6/figur_sol.svg
 ---
-name: fig-lineære-funksjoner-representasjoner-oppgave-7-fasit
 width: 80%
 class: no-click, adaptive-figure
 ---
-viser grafene til de lineære funksjonene $f$, $g$, $h$ og $r$ merket med riktig funksjonsuttrykk.
-```
-
 :::
-
 ::::
 
+:::::::::::::::
+
+
+
+
 ---
 
-::::{admonition} Oppgave 8
----
-class: problem-level-3
----
 
-I {numref}`fig-lineære-funksjoner-representasjoner-oppgave-8` grafene til fire lineære funksjoner $f$, $g$, $h$ og $p$. Igjen, har vi glemt å markere hvilke grafer som hører til hvilke funksjoner. Men vi husker følgende:
+:::::::::::::::{problem} Oppgave 7
+---
+level: 3
+---
+I figuren nedenfor vises grafene til fire lineære funksjoner $f$, $g$, $h$ og $p$. Vi har glemt å merke hvilken graf som tilhører hvilken funksjon.
 
+Om grafene husker vi at:
 * Grafene til $f$ og $g$ har samme stigningstall.
 * Grafene til $h$ og $p$ har samme konstantledd.
 * Stigningstallet til $h$ er større enn stigningstallet til $p$.
 * $f(2) = h(2)$
 
-Bestem hvilken graf som hører til hvilken funksjon.
-
-:::{figure} ./figurer/oppgaver/oppgave_8.svg
+:::{figure} ./figurer/oppgaver/oppgave_7/figur.svg
 ---
-name: fig-lineære-funksjoner-representasjoner-oppgave-8
 width: 80%
 class: no-click, adaptive-figure
 ---
-viser grafene til de lineære funksjonene $f$, $g$, $h$ og $p$. Vi husker bare ikke hvilken graf som hører til hvilken funksjon. Hjelp...
 :::
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
 
-```{figure} ./figurer/oppgaver/oppgave_8_fasit.svg
+::::{answer}
+:::{figure} ./figurer/oppgaver/oppgave_7/figur_sol.svg
 ---
-name: fig-lineære-funksjoner-representasjoner-oppgave-5-fasit
 width: 80%
 class: no-click, adaptive-figure
 ---
-viser grafene til de lineære funksjonene $f$, $g$, $h$ og $p$ der vi har merket hvilken graf som hører til hvilken funksjon.
-```
-:::
-
-::::
-
----
-
-
-
-<!-- 
-:::{admonition} Begrep: skissering av graf
----
-class: sidenote, margin
----
-Når vi sier at vi skal *skissere* grafen til en funksjon, mener vi å tegne en grov tegning (skisse) av grafen. Vi trenger ikke være nøyaktig, men bør få med de viktigste egenskapene til funksjonen. 
-:::
-
-:::::{admonition} Oppgave X
----
-class: problem-level-2
----
-Skisser grafene (for hånd!!) til funksjonene under ved å ta utgangspunkt i stigningstallet $a$ og konstantleddet $b$ 
-
-Deloppgave 1
-: $f(x)=-2x+1$
-
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-
-:::{figure} ./figurer/oppgaver/oppgave_4_1.svg
----
-name: fig-lineære-funksjoner-grafisk-representasjon-oppgave-4-1
-width: 100%
----
-viser grafen til $f$.
 :::
 ::::
 
+:::::::::::::::
 
-<br>
-
-Deloppgave 2
-: $g(x) = 3x - 4$
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-:::{figure} ./figurer/oppgaver/oppgave_4_2.svg
----
-name: fig-lineære-funksjoner-grafisk-representasjon-oppgave-4-2
-width: 100%
----
-viser grafen til $g$.
-:::
-::::
-
-<br>
-
-Deloppgave 3
-: $h(x)=\dfrac{1}{2}x + 2$
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-:::{figure} ./figurer/oppgaver/oppgave_4_3.svg
----
-name: fig-lineære-funksjoner-grafisk-representasjon-oppgave-4-3
-width: 100%
----
-viser grafen til $h$.
-:::
-::::
-
-::::: -->

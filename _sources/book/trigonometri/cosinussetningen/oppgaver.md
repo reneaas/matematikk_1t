@@ -5,6 +5,7 @@
 ---
 level: 1
 ---
+
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
@@ -32,7 +33,7 @@ $$
 ::::{solution}
 :::{figure} ./figurer/oppgaver/oppgave_1/a/sol.png
 ---
-width: 100%
+width: 70%
 class: no-click, adaptive-figure
 ---
 :::
@@ -66,7 +67,7 @@ $$
 ::::{solution}
 :::{figure} ./figurer/oppgaver/oppgave_1/b/sol.png
 ---
-width: 100%
+width: 70%
 class: no-click, adaptive-figure
 ---
 :::
@@ -102,7 +103,7 @@ $$
 ::::{solution}
 :::{figure} ./figurer/oppgaver/oppgave_1/c/sol.png
 ---
-width: 100%
+width: 70%
 class: no-click, adaptive-figure
 ---
 :::
@@ -120,8 +121,7 @@ $$
 
 ::::::::::::::
 
-
-:::{cas-window}
+:::{cas-popup} 420 500
 :::
 
 
@@ -250,7 +250,7 @@ $$
 
 ::::::::::::::
 
-:::{cas-window}
+:::{cas-popup} 420 500
 :::
 
 :::::::::::::::
@@ -344,9 +344,8 @@ $$
 ::::::::::::::
 
 
-:::{cas-window}
+:::{cas-popup} 420 500
 :::
-
 
 :::::::::::::::
 
@@ -461,8 +460,7 @@ $$
 ::::::::::::::
 
 
-
-:::{cas-window}
+:::{cas-popup} 420 500
 :::
 
 
@@ -589,7 +587,7 @@ $$
 
 ::::::::::::::
 
-:::{cas-window}
+:::{cas-popup} 420 500
 :::
 
 :::::::::::::::
@@ -745,7 +743,7 @@ $$
 ::::::::::::::
 
 
-:::{cas-window}
+:::{cas-popup} 420 500
 :::
 
 
@@ -888,7 +886,7 @@ $$
 ::::::::::::::
 
 
-:::{cas-window}
+:::{cas-popup} 420 500
 :::
 
 :::::::::::::::
@@ -966,7 +964,7 @@ $$
 
 
 
-:::{cas-window}
+:::{cas-popup} 420 500
 :::
 
 :::::::::::::::
