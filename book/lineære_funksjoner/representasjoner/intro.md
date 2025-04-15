@@ -7,7 +7,7 @@ gutter: 3
 
 ::::{grid-item-card}
 ---
-link: algebraisk_representasjon/algebraisk_representasjon
+link: algebraisk_representasjon/teori
 link-type: doc
 ---
 **Algebraisk representasjon**
@@ -25,7 +25,7 @@ class: no-click, adaptive-figure
 
 ::::{grid-item-card}
 ---
-link: grafisk_representasjon/grafisk_representasjon
+link: grafisk_representasjon/teori
 link-type: doc
 ---
 **Grafisk representasjon** 
@@ -44,7 +44,7 @@ class: no-click, adaptive-figure
 
 ::::{grid-item-card}
 ---
-link: bestemme_funksjonsuttrykk/bestemme_funksjonsuttrykk
+link: bestemme_funksjonsuttrykk/teori
 link-type: doc
 ---
 **Bestemme funksjonsuttrykk** 

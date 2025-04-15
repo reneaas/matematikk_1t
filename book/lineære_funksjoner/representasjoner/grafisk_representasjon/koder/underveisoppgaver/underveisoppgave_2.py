@@ -1,3 +1,6 @@
+import plotmath
+
+
 def main(dirname, save):
 
     # Define functions
@@ -9,7 +12,7 @@ def main(dirname, save):
     fn_labels = [r"$f$"]
 
     # Create the math figure
-    fig, ax = make_figure(
+    fig, ax = plotmath.plot(
         functions=functions,
         fn_labels=fn_labels,  # Set `None` hvis du ikke vil ha labels.
         xmin=-4,
@@ -23,7 +26,9 @@ def main(dirname, save):
     # The directory `dirname` will be created automatically if it does not exist already.
     if save:
         fname = __file__.split("/")[-1].replace(".py", ".svg")
-        savefig(dirname=dirname, fname=fname)  # Lagrer figuren i `dirname`-directory
+        plotmath.savefig(
+            dirname=dirname, fname=fname
+        )  # Lagrer figuren i `dirname`-directory
 
     if not save:
         import matplotlib.pyplot as plt
@@ -33,33 +38,18 @@ def main(dirname, save):
 
 if __name__ == "__main__":
 
-    import sys
     import pathlib
-
-    def find_repo_root(current_path):
-        current_path = pathlib.Path(
-            current_path
-        ).resolve()  # Convert to an absolute Path object
-        while (
-            current_path != current_path.parent
-        ):  # Stop when you reach the filesystem root
-            if (current_path / ".git").is_dir():  # Check if the .git directory exists
-                return str(current_path)
-            current_path = current_path.parent  # Move one level up
-        raise FileNotFoundError("No .git directory found in any parent directories.")
 
     # Get the directory where the script is located
     current_dir = str(pathlib.Path(__file__).resolve().parent)
 
-    # Find the root of the GitHub repository (where .git is located)
-    repo_root = find_repo_root(current_dir)
+    parts = current_dir.split("/")
+    for i in range(len(parts)):
+        if parts[~i] == "koder":
+            parts[~i] = "figurer"
+            break
 
-    # Add the GitHub repository root to sys.path
-    sys.path.append(repo_root)
-
-    # Now you can import modules from the GitHub repo root
-    from python_templates.plot_utils import make_figure, savefig
+    dirname = "/".join(parts)
 
     # NOTE: Set `save=True` to save figure. `save=False` to display figure.
-    dirname = current_dir.replace("koder", "figurer")
     main(dirname=dirname, save=True)
