@@ -71,8 +71,15 @@ Polynomdivisjon
 :::::::::::::::
 
 
-:::{cas} 800 800
-:::
+<!-- :::{cas} 800 800
+::: -->
 
+
+:::{ggb} 800 800
+---
+material_id: mexebm4g   
+toolbar: "true"
+---
+:::
 
 
