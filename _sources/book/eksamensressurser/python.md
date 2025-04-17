@@ -135,7 +135,7 @@ file: ./python/kodevindu.html
 
 
 
-Tester med et interaktivt popup vindu:
+<!-- Tester med et interaktivt popup vindu:
 
 :::{popup-code}
 def f(x):
@@ -146,4 +146,4 @@ y = f(2)
 print(y)
 
 
-::: 
+:::  -->

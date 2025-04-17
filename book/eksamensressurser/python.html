@@ -300,7 +300,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../line%C3%A6re_funksjoner/representasjoner/algebraisk_representasjon/oppgaver.html">Algebraisk representasjon</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../line%C3%A6re_funksjoner/representasjoner/grafisk_representasjon/oppgaver.html">Grafisk representasjon</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../line%C3%A6re_funksjoner/representasjoner/bestemme_funksjonsuttrykk/oppgaver.html">Bestemme funksjonsuttrykk</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../line%C3%A6re_funksjoner/representasjoner_ny/standardform/oppgaver.html">Standardform</a></li>
 </ul>
 </details></li>
 </ul>
@@ -751,112 +750,18 @@ Funksjoner</label><div class="sd-tab-content docutils">
         );
     });
 </script>
-<p>Tester med et interaktivt popup vindu:</p>
+<!-- Tester med et interaktivt popup vindu:
 
-<!-- Button to open the popup -->
-<button id="button-popup-code-29f1da29" class="popup-button">Åpne kodevindu</button>
-
-<!-- Dialog container div included directly in HTML -->
-<div id="popup-code-29f1da29" title="Interaktivt kodevindu" class="popup-code-dialog" style="display:none;">
-    <div id="container-popup-code-29f1da29" class="code-container"></div>
-</div>
-
-<!-- Dialog script -->
-<script>
-(function() {
-    function ensureScriptsLoaded(callback) {
-        // Check if jQuery is loaded
-        if (typeof jQuery === 'undefined') {
-            console.log('jQuery not loaded, loading from CDN...');
-            var script = document.createElement('script');
-            script.src = 'https://code.jquery.com/jquery-3.6.0.min.js';
-            script.onload = function() {
-                console.log('jQuery loaded successfully');
-                // Now load jQuery UI
-                var uiScript = document.createElement('script');
-                uiScript.src = 'https://code.jquery.com/ui/1.13.2/jquery-ui.min.js';
-                uiScript.onload = function() {
-                    console.log('jQuery UI loaded successfully');
-                    callback();
-                };
-                document.head.appendChild(uiScript);
-            };
-            document.head.appendChild(script);
-        }
-        else if (typeof jQuery.ui === 'undefined') {
-            console.log('jQuery UI not loaded, loading from CDN...');
-            var uiScript = document.createElement('script');
-            uiScript.src = 'https://code.jquery.com/ui/1.13.2/jquery-ui.min.js';
-            uiScript.onload = function() {
-                console.log('jQuery UI loaded successfully');
-                callback();
-            };
-            document.head.appendChild(uiScript);
-        }
-        else {
-            console.log('jQuery and jQuery UI already loaded');
-            callback();
-        }
-    }
-
-    function initializePopup() {
-        console.log('Initializing code popup dialog: #popup-code-29f1da29');
-        try {
-            $("#popup-code-29f1da29").dialog({
-                autoOpen: false,
-                title: "Interaktivt kodevindu",
-                width: 700,
-                height: 500,
-                dialogClass: "popup-dialog code-dialog",
-                modal: false,
-                resizable: true,
-                draggable: true,
-                open: function() {
-                    console.log('Dialog opened, initializing code editor');
-                    // Only initialize code editor if it hasn't been already
-                    if (!$("#container-popup-code-29f1da29").data("initialized")) {
-                        const code = `def f(x):
+:::{popup-code}
+def f(x):
     return x**2 - x - 6
 
 
 y = f(2)
 print(y)
 
-`;
-                        
-                        if (typeof makeInteractiveCode === "function") {
-                            makeInteractiveCode("container-popup-code-29f1da29", code);
-                            $("#container-popup-code-29f1da29").data("initialized", true);
-                        } else {
-                            console.error("makeInteractiveCode function not found!");
-                            $("#container-popup-code-29f1da29").html('<div class="error">Could not initialize code editor. Required JavaScript is not loaded.</div>');
-                        }
-                    }
-                }
-            });
-            
-            // Button click handler
-            $("#button-popup-code-29f1da29").on("click", function() {
-                console.log('Button clicked, opening dialog');
-                $("#popup-code-29f1da29").dialog("open");
-            });
-            
-            console.log('Code popup initialized successfully');
-        } catch(e) {
-            console.error('Error initializing popup:', e);
-        }
-    }
 
-    // Initialize when document is ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', function() {
-            ensureScriptsLoaded(initializePopup);
-        });
-    } else {
-        ensureScriptsLoaded(initializePopup);
-    }
-})();
-</script>
+:::  -->
 </section>
 
     <script type="text/x-thebe-config">
