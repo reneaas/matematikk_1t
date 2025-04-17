@@ -958,8 +958,111 @@ class: no-click, adaptive-figure
 
 ::::{answer}
 $$
-T_{\mathrm{7-kant}} \approx 14.55.
+T_{\mathrm{7-kant}} \approx 14.5.
 $$
+::::
+
+
+::::{solution}
+Vi starter med å bestemme $AC$ ved hjelp av cosinussetningen. La $L = 2$ være sidelengdene i $7$-kanten slik at $L = AB = BC$. Da kan vi bestemme $AC$ som følger:
+
+:::{figure} ./figurer/oppgaver/oppgave_9/AC.png
+---
+width: 70%
+class: no-click, adaptive-figure
+---
+:::
+
+Altså er $AC \approx 3.6$.
+
+Vi kan nå regne ut arealet til $\triangle ABC$, $\triangle CDE$ og $\triangle FGA$ siden alle disse trekantene er {popup}`kongruente.<To trekanter er kongruente hvis de er formlike og har nøyaktig samme størrelse.>` Men vi trenger å bestemme noen flere lengder og vinkler for å bestemme arealet av de resterende trekantene i figuren.
+
+La oss lage en liste med mål:
+1. Vi må bestemme lengden $CF$ og vinkelen $\angle FAC$ for å bestemme arealet av $\triangle ACF$
+2. Vi må bestemme lengden vinkelen $\angle FCE$ for å bestemme arealet av $\triangle CEF$
+
+Når vi har disse størrelsene kan vi bestemme arealet av de to resterende trekantene i figuren. Vi starter med å bestemme $CF$ og $\angle CAF$. I $\triangle ACF$ vet vi allerede at 
+
+$$
+AC = AF = 3.6
+$$
+
+Vi må for å kunne bruke cosinussetningen, må vi bestemme vinkelen $\angle FAC$ først. Først kan vi observere at $\angle CAB = \angle BCA$ og
+
+$$
+\angle CAB + \angle BCA + 128.57 \degree = 180 \degree \liff 2\cdot \angle CAB = 180 \degree - 128.57 \degree
+$$
+
+som betyr at 
+
+$$
+\angle CAB = 25.71 \degree.
+$$
+
+Videre kan vi observere at $\angle CAB = \angle GAF$ siden {popup}`$\triangle ABC \cong \triangle FGA$.<Trekantene er kongruente.>` Dermed følger det at 
+
+\begin{align*}
+    \angle CAB + \angle GAF + \angle FAC &= 128.57\degree \\
+    \\
+    2\cdot \angle CAB + \angle FAC &= 128.57\degree \\
+    \\
+    \angle FAC &= 128.57\degree - 2\cdot \angle CAB \\
+    \\
+    \angle FAC &= 128.57\degree - 2\cdot 25.71\degree \\
+    \\
+    \angle FAC &= 77.14\degree.
+\end{align*}
+
+Nå har vi opplysningene vi trenger for å bestemme sidelengden $CF$ med cosinussetningen:
+
+:::{figure} ./figurer/oppgaver/oppgave_9/CF.png
+---
+width: 70%
+class: no-click, adaptive-figure
+---
+:::
+
+Altså er $CF \approx 4.49$. Da har vi alle opplysninger vi trenger for å bestemme arealet av $\triangle ACF$.
+
+Vi går nå videre til å bestemme $\angle CEF$ for å kunne bestemme arealet av $\triangle CEF$. Siden $\triangle ABC \cong \triangle CEF$, så følger det at 
+
+$$
+\angle DEF = \angle CAB = 25.71\degree.
+$$
+
+så vi har
+
+$$
+\angle DEF + \angle CEF = 128.57 \degree \liff \angle CEF = 128.57\degree - 25.71\degree
+$$
+
+som betyr at 
+
+$$
+\angle DEF = 102.86\degree.
+$$
+
+Nå har vi alle opplysninger vi trenger for å bestemme arealet av alle trekantene i figuren. Vi bruker arealsetningen til å bestemme arealet av hver trekant: 
+
+\begin{align*}
+    T_{\text{7-kant}} &= \underbrace{T_{\triangle ABC} + T_{\triangle CDE} + T_{\triangle FGA}}_{3 \cdot T_{\triangle ABC}} + T_{\triangle ACF} + T_{\triangle CEF} \\
+    \\
+    &= 3\cdot T_{\triangle ABC} + T_{\triangle ACF} + T_{\triangle CEF}
+\end{align*}
+
+:::{figure} ./figurer/oppgaver/oppgave_9/areal.png
+---
+width: 70%
+class: no-click, adaptive-figure
+---
+:::
+
+Altså er arealet av $7$-kanten 
+
+$$
+T_{\mathrm{7-kant}} \approx 14.5.
+$$
+
 ::::
 
 

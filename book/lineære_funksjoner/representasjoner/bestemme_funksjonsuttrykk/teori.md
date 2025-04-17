@@ -158,7 +158,7 @@ class: no-click, adaptive-figure
 Viser en lineær funksjon et kjent punkt $(x_1, y_1)$ og et vilkårlig punkt $(x, y)$ er tegnet inn.
 :::
 
-Vi tenker oss at $(x_1, y_1)$ er et fast punkt, mens $(x, y)$ er et vilkårlig punkt på grafen til $f$. Da kan vi skrive stigningstallet $a$ som
+Vi tenker oss at $(x_1, y_1)$ er et fastholdt punkt, mens $(x, y)$ er et {popup}`vilkårlig punkt på grafen til $f$<Det vil si et punkt som kan varieres så lenge punktet ligger på grafen til $f$.>` Da kan vi skrive stigningstallet $a$ som
 
 $$
 a = \frac{y - y_1}{x - x_1} \, .

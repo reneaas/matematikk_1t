@@ -1,62 +1,100 @@
-import numpy as np
-import matplotlib.pyplot as plt
-
-plt.rc("text", usetex=True)
-
-def f(x):
-    return 2*x - 1
+import plotmath
 
 
-a = -5
-b = 7
+def main(dirname, save):
+    #
+    # Define functions
+    def f(x):
+        return 2 * x - 1
 
-x = np.linspace(a, b, 1024)
+    # List of functions and their labels.
+    functions = [f]
 
-fig, ax = plt.subplots()
-ax.plot(x, f(x), color="teal", lw=2, alpha=0.7)
+    fig, ax = plotmath.plot(
+        functions=functions,
+        fn_labels=True,
+        xmin=-2,
+        xmax=6,
+        ymin=-2,
+        ymax=6,
+        ticks=False,
+        xstep=1,
+        ystep=1,
+        grid=False,
+        lw=2.5,
+        alpha=0.8,
+        domain=False,
+    )
 
-ax.spines["left"].set_position("zero")
-ax.spines["right"].set_color("none")
-ax.spines["bottom"].set_position("zero")
-ax.spines["top"].set_color("none")
+    x1 = 1
+    y1 = f(x1)
+    ax.plot(x1, y1, color="black", alpha=0.7, marker="o")
 
-ax.plot(1, 0, ">k", transform=ax.get_yaxis_transform(), clip_on=False)
-ax.plot(0, 1, "^k", transform=ax.get_xaxis_transform(), clip_on=False)
+    ax.text(x1, y1 + 0.1, r"$(x_1, y_1)$", fontsize=16, ha="right", va="bottom")
+    x2 = 3
+    y2 = f(x2)
+    ax.plot(x2, y2, color="black", alpha=0.7, marker="o")
+    ax.text(x2, y2 + 0.1, r"$(x_2, y_2)$", fontsize=16, ha="right", va="bottom")
 
-ax.set_xlabel(r"$x$", fontsize=16, loc="right")
-ax.set_ylabel(r"$y$", fontsize=16, loc="top", rotation="horizontal")
+    ax.plot([x1, x2], [y1, y1], linestyle="--", color="blue", alpha=0.8)
+    ax.plot([x2, x2], [y1, y2], linestyle="--", color="blue", alpha=0.8)
+
+    ax.text(
+        (x1 + x2) / 2,
+        y1 - 0.3,
+        r"$\Delta x$",
+        fontsize=16,
+        ha="center",
+        va="center",
+    )
+    ax.text(
+        x2 + 0.3,
+        (y1 + y2) / 2,
+        r"$\Delta y$",
+        fontsize=16,
+        ha="left",
+        va="center",
+    )
+
+    ax.set_xticks(
+        [x1, x2],
+        [r"$x_1$", r"$x_2$"],
+        fontsize=16,
+    )
+
+    ax.set_yticks(
+        [y1, y2],
+        [r"$y_1$", r"$y_2$"],
+        fontsize=16,
+    )
+
+    # NOTE: Select an appropriate `dirname` to save the figure.
+    # The directory `dirname` will be created automatically if it does not exist already.
+    if save:
+        fname = __file__.split("/")[-1].replace(".py", ".svg")
+        plotmath.savefig(
+            dirname=dirname, fname=fname
+        )  # Lagrer figuren i `dirname`-directory
+
+    if not save:
+
+        plotmath.show()
 
 
-x1 = 1
-y1 = f(x1)
-ax.plot(x1, y1, color="black", alpha=0.7, marker="o")
+if __name__ == "__main__":
 
-ax.text(x1, y1 + 0.1, r"$(x_1, y_1)$", fontsize=16, ha="right", va="bottom")
+    import pathlib
 
-x2 = 3
-y2 = f(x2)
+    # Get the directory where the script is located
+    current_dir = str(pathlib.Path(__file__).resolve().parent)
 
-ax.plot(x2, y2, color="black", alpha=0.7, marker="o")
-ax.text(x2, y2 + 0.1, r"$(x_2, y_2)$", fontsize=16, ha="right", va="bottom")
+    parts = current_dir.split("/")
+    for i in range(len(parts)):
+        if parts[~i] == "koder":
+            parts[~i] = "figurer"
+            break
 
-ax.plot([x1, x2], [y1, y1], linestyle="--", color="blue", alpha=0.7)
-ax.plot([x2, x2], [y1, y2], linestyle="--", color="blue", alpha=0.7)
+    dirname = "/".join(parts)
 
-ax.text((x1 + x2) / 2, y1 - 0.3, r"$\Delta x$", fontsize=16, ha="center", va="center")
-ax.text(x2 + 0.3, (y1 + y2) / 2, r"$\Delta y$", fontsize=16, ha="left", va="center")
-
-
-
-plt.ylim(-2, 6)
-plt.xlim(-2, 6)
-
-plt.xticks([x1, x2], [r"$x_1$", r"$x_2$"], fontsize=16)
-
-plt.yticks([y1, y2], [r"$y_1$", r"$y_2$"], fontsize=16)
-
-plt.tight_layout()
-
-# Lagrer figuren i vektorformat
-plt.savefig("../../figurer/teori/topunktsformelen.svg")
-
-plt.show()
+    # NOTE: Set `save=True` to save figure. `save=False` to display figure.
+    main(dirname=dirname, save=True)
