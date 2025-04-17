@@ -307,10 +307,9 @@ Graf A, B og C har alle sammen bare én vertikal asymptote og er automatisk elim
 ::::::::::::::
 
 
-:::{figure} ./figurer/oppgave_4/merged_figure.svg
+:::{clickable-figure} ./figurer/oppgave_4/merged_figure.svg
 ---
 width: 100%
-class: no-click, adaptive-figure
 ---
 :::
 
@@ -965,10 +964,9 @@ Hvilken av grafene nedenfor kan være grafen til $f$?
 Husk å argumentere for svaret ditt.
 
 
-:::{figure} ./figurer/oppgave_13/merged_figure.svg
+:::{clickable-figure} ./figurer/oppgave_13/merged_figure.svg
 ---
 width: 100%
-class: no-click, adaptive-figure
 ---
 :::
 

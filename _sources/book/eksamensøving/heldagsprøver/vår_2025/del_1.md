@@ -429,10 +429,9 @@ Avgjør hvilken graf som tilhører $f$.
 Husk å forklare hvordan du kommer fram til svaret ditt.
 
 
-:::{figure} ./figurer/del_1/oppgave_4/merged_figure.svg
+:::{clickable-figure} ./figurer/del_1/oppgave_4/merged_figure.svg
 ---
 width: 100%
-class: no-click, adaptive-figure
 ---
 :::
 

@@ -21,7 +21,10 @@ viser grafen til $f(x) = x + 3$.
 ```
 
 ````{tab-set}
-```{tab-item} Deloppgave 1
+---
+class: tabs-parts
+---
+```{tab-item} a
 Bruk {numref}`fig-lineære-funksjoner-likninger-grafisk-oppgaver-oppgave-1` til å løse likningen 
 
 $$
@@ -38,7 +41,7 @@ $$
 :::
 ```
 
-```{tab-item} Deloppgave 2
+```{tab-item} b
 Bruk {numref}`fig-lineære-funksjoner-likninger-grafisk-oppgaver-oppgave-1` til å løse likningen
 
 $$
@@ -56,7 +59,7 @@ $$
 
 ```
 
-```{tab-item} Deloppgave 3
+```{tab-item} c
 Bruk {numref}`fig-lineære-funksjoner-likninger-grafisk-oppgaver-oppgave-1` til å løse likningen
 
 $$
@@ -78,7 +81,16 @@ $$
 
 ::::
 
+
+
+
+
 ---
+
+
+
+
+
 
 :::::{admonition} Oppgave 2
 ---
@@ -100,7 +112,10 @@ viser grafene til $f(x) = 2x - 1$ og $g(x) = 4x - 5$.
 :::
 
 ````{tab-set}
-```{tab-item} Deloppgave 1
+---
+class: tabs-parts
+---
+```{tab-item} a
 Bruk {numref}`fig-lineære-funksjoner-likninger-grafisk-oppgaver-oppgave-2` til å løse likningen
 
 $$
@@ -117,7 +132,7 @@ $$
 :::
 ```
 
-```{tab-item} Deloppgave 2
+```{tab-item} b
 Bruk {numref}`fig-lineære-funksjoner-likninger-grafisk-oppgaver-oppgave-2` til å løse likningen
 
 $$
@@ -134,7 +149,7 @@ $$
 :::
 ```
 
-```{tab-item} Deloppgave 3
+```{tab-item} c
 Bruk {numref}`fig-lineære-funksjoner-likninger-grafisk-oppgaver-oppgave-2` til å løse likningen
 
 $$
@@ -151,7 +166,7 @@ $$
 :::
 ```
 
-```{tab-item} Deloppgave 4
+```{tab-item} d
 Bruk {numref}`fig-lineære-funksjoner-likninger-grafisk-oppgaver-oppgave-2` til å løse likningen
 
 $$
@@ -194,7 +209,10 @@ viser grafene til to lineære funksjoner $f$ og $g$.
 :::
 
 ````{tab-set}
-```{tab-item} Deloppgave 1
+---
+class: tabs-parts
+---
+```{tab-item} a
 Bestem løsningen av likningen 
 
 $$
@@ -211,7 +229,7 @@ $$
 :::
 ```
 
-```{tab-item} Deloppgave 2
+```{tab-item} b
 Bestem nullpunktet til $f$. 
 
 :::{admonition} Fasit
@@ -223,7 +241,7 @@ x = 2
 $$
 ```
 
-```{tab-item} Deloppgave 3
+```{tab-item} c
 Bestem $x$-koordinaten til skjæringspunktet mellom grafen til $f$ og linja $y = 1$. 
 
 :::{admonition} Fasit
@@ -236,7 +254,7 @@ $$
 :::
 ```
 
-```{tab-item} Deloppgave 4
+```{tab-item} d
 Bestem løsningen av likningen
 
 $$
@@ -276,7 +294,10 @@ viser grafen til to lineære funksjoner $f$ og $g$.
 
 
 ````{tab-set} 
-```{tab-item} Deloppgave 1
+---
+class: tabs-parts
+---
+```{tab-item} a
 Bruk minst én av grafene i {numref}`fig-lineære-funksjoner-likninger-grafisk-oppgaver-oppgave-4` til å lage en likning på formen 
 
 $$
@@ -286,7 +307,7 @@ $$
 Løs likningen ved hjelp av figuren.
 ```
 
-```{tab-item} Deloppgave 2
+```{tab-item} b
 Bruk minst én av grafene i {numref}`fig-lineære-funksjoner-likninger-grafisk-oppgaver-oppgave-4` til å lage en likning på formen
 
 $$
@@ -296,7 +317,7 @@ $$
 Løs likningen ved hjelp av figuren.
 ```
 
-```{tab-item} Deloppgave 3
+```{tab-item} c
 
 Bruk grafene i {numref}`fig-lineære-funksjoner-likninger-grafisk-oppgaver-oppgave-4` til å skrive ned en likning på formen
 
