@@ -1045,7 +1045,7 @@ $$
 Nå har vi alle opplysninger vi trenger for å bestemme arealet av alle trekantene i figuren. Vi bruker arealsetningen til å bestemme arealet av hver trekant: 
 
 \begin{align*}
-    T_{\text{7-kant}} &= \underbrace{T_{\triangle ABC} + T_{\triangle CDE} + T_{\triangle FGA}}_{3 \cdot T_{\triangle ABC}} + T_{\triangle ACF} + T_{\triangle CEF} \\
+    T_{\text{7-kant}} &= \underbrace{T_{\triangle ABC} + T_{\triangle CDE} + T_{\triangle FGA}}_{\displaystyle 3 \cdot T_{\triangle ABC}} + T_{\triangle ACF} + T_{\triangle CEF} \\
     \\
     &= 3\cdot T_{\triangle ABC} + T_{\triangle ACF} + T_{\triangle CEF}
 \end{align*}

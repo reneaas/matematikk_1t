@@ -15,6 +15,9 @@ class: no-click, adaptive-figure
 :::
 
 
+:::{cas-popup} 420 500
+:::
+
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
@@ -78,10 +81,6 @@ class: no-click, adaptive-figure
 ::::::::::::::
 
 
-:::{cas-window}
-:::
-
-
 
 :::::::::::::::
 
@@ -102,6 +101,9 @@ I figuren nedenfor vises en trekant $\triangle ABC$.
 width: 80%
 class: no-click, adaptive-figure
 ---
+:::
+
+:::{cas-popup} 420 500
 :::
 
 ::::::::::::::{tab-set}
@@ -159,10 +161,6 @@ $$
 ::::::::::::::
 
 
-:::{cas-window}
-:::
-
-
 :::::::::::::::
 
 ---
@@ -173,6 +171,9 @@ $$
 class: problem-level-2
 ---
 I $\triangle ABC$ er $\angle A = 45 \degree$, $BC = 6$ og $AC = 8$.
+
+:::{cas-popup} 420 500
+:::
 
 ::::::::::::::{tab-set}
 ---
@@ -213,9 +214,6 @@ $$
 
 
 
-:::{cas-window}
-:::
-
 :::::::::::::::
 
 
@@ -233,6 +231,9 @@ I figuren nedenfor vises $\square ABCD$.
 width: 80%
 class: no-click, adaptive-figure
 ---
+:::
+
+:::{cas-popup} 420 500
 :::
 
 ::::::::::::::{tab-set}
@@ -272,10 +273,6 @@ $$
 ::::::::::::::
 
 
-
-:::{cas-window}
-:::
-
 :::::::::::::::
 
 ---
@@ -293,6 +290,10 @@ I figuren nedenfor vises $\square ABCD$.
 width: 80%
 class: no-click, adaptive-figure
 ---
+:::
+
+
+:::{cas-popup} 420 500
 :::
 
 
@@ -333,8 +334,6 @@ $$
 ::::::::::::::
 
 
-:::{cas-window}
-:::
 
 :::::::::::::::
 
@@ -354,6 +353,9 @@ class: no-click, adaptive-figure
 ---
 :::
 
+
+:::{cas-popup} 420 500
+:::
 
 ::::::::::::::{tab-set}
 ---
@@ -392,8 +394,6 @@ $$
 ::::::::::::::
 
 
-:::{cas-window}
-:::
 
 :::::::::::::::
 
@@ -413,6 +413,10 @@ I figuren nedenfor vises $\square ABCD$.
 width: 80%
 class: no-click, adaptive-figure
 ---
+:::
+
+
+:::{cas-popup} 420 500
 :::
 
 
@@ -451,8 +455,6 @@ $$
 
 ::::::::::::::
 
-:::{cas-window}
-:::
 
 :::::::::::::::
 

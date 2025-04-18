@@ -44,12 +44,12 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../../_static/static_code_blocks.css?v=b6831e29" />
     <link rel="stylesheet" type="text/css" href="../../../_static/pdf_custom.css?v=a874a063" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/admonitions.css?v=9e6b7c2b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/admonitions.css?v=f1608d2c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/polydiv/style.css?v=3450aa48" />
     <link rel="stylesheet" type="text/css" href="../../../_static/interactiveCode/style.css?v=bf5bef53" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/clickable_figures/style.css?v=e80764aa" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/clickable_figures/style.css?v=d35dfce7" />
     <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/tabs.css?v=f94e6bdf" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/figures.css?v=6f5ce9cd" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/figures.css?v=a6e428db" />
     <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/grids.css?v=afb20c06" />
     <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/geogebra.css?v=fd180d66" />
     <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/popup_code.css?v=a6e8dca6" />
@@ -1235,138 +1235,73 @@ f(x) = -(x + 1)(x - 1)(x - 2).
 </div>
 </div>
 <p>Vi tar et eksempel på hvordan vi kan gå frem for å bestemme <span class="math notranslate nohighlight">\(f(x)\)</span> gitt grafen til et tredjegradspolynom. Den algebraiske regningen vil være såpass fiklete, at her skal vi benytte oss av CAS for å bestemme <span class="math notranslate nohighlight">\(f(x)\)</span>.</p>
-<div class="example admonition">
-<p class="admonition-title">Eksempel 3</p>
-<p>Grafen til et tredjegradspolynom er vist i <a class="reference internal" href="#fig-polynomer-nullpunktsform-eksempel-3"><span class="std std-numref">Fig. 14.3</span></a>.</p>
-<figure class="align-default" id="fig-polynomer-nullpunktsform-eksempel-3">
+<div class="explore admonition">
+<p class="admonition-title">Utforsk 3</p>
+<p>Grafen til en tredjegradsfunksjon <span class="math notranslate nohighlight">\(f\)</span> er vist i <a class="reference internal" href="#fig-polynomer-nullpunktsform-utforsk-3"><span class="std std-numref">Fig. 14.3</span></a>.</p>
+<figure class="align-default" id="fig-polynomer-nullpunktsform-utforsk-3">
 <a class="no-click adaptive-figure reference internal image-reference" href="../../../_images/graf19.svg"><img alt="../../../_images/graf19.svg" class="no-click adaptive-figure" src="../../../_images/graf19.svg" style="width: 80%;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 14.3 </span><span class="caption-text">viser grafen til et tredjegradspolynom. Noen punkter på grafen til <span class="math notranslate nohighlight">\(f\)</span> er markert i figuren.</span><a class="headerlink" href="#fig-polynomer-nullpunktsform-eksempel-3" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 14.3 </span><span class="caption-text">viser grafen til en tredjegradsfunksjon <span class="math notranslate nohighlight">\(f\)</span>. Noen punkter på grafen til <span class="math notranslate nohighlight">\(f\)</span> er markert i figuren.</span><a class="headerlink" href="#fig-polynomer-nullpunktsform-utforsk-3" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<div class="solution admonition">
-<p class="admonition-title">Løsning</p>
-<p>Et tredjegradspolynom <span class="math notranslate nohighlight">\(f\)</span> kan skrives på formen</p>
-<div class="math notranslate nohighlight">
-\[
-f(x) = ax^3 + bx^2 + cx + d,
-\]</div>
-<p>der vi må bestemme koeffisientene <span class="math notranslate nohighlight">\(a, b, c, d \in \mathbb{R}\)</span>. Da trenger vi <strong>fire likninger</strong> siden vi har fire ukjente. På grafen er det markert fire punkter</p>
-<div class="math notranslate nohighlight">
-\[
-(-2, 3), \quad (-1, 0), \quad (0, 3), \quad (1, 3),
-\]</div>
-<p>som forteller oss at</p>
-<div class="math notranslate nohighlight">
-\[
-f(-2) = 3 \quad \land \quad f(-1) = 0 \quad \land \quad f(0) = 3 \quad \land \quad f(1) = 3.
-\]</div>
-<p>Dette gir oss et likningssystem med fire likninger og fire ukjente som vi kan løse med CAS:</p>
+<p>Fra grafen kan vi sette opp et likningssystem for <span class="math notranslate nohighlight">\(f(x)\)</span> ved å bruke punktene som er markert i figuren:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+    f(-2) &amp;= 3 &amp;&amp; \text{punktet (-2, 3)} \\
+    \\
+    f(-1) &amp;= 0 &amp;&amp; \text{punktet (-1, 0)}\\
+    \\
+    f(0) &amp;= 3 &amp;&amp; \text{punktet (0, 3)}\\
+    \\
+    f(1) &amp;= 3 &amp;&amp; \text{punktet (1, 3)}\\
+\end{align*}\]</div>
 <blockquote>
-<div><p>Som vanlig velger du mellom CAS i Python eller Geogebra.</p>
+<div><p>Bruk CAS-vinduet nedenfor til å bestemme <span class="math notranslate nohighlight">\(f(x)\)</span>. Du må sette opp resten av likningene og løse likningssystemet.</p>
 </div></blockquote>
-<div class="tab-set docutils">
-<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Python</label><div class="tab-content docutils">
-<div id="container-kode-polynomer-representasjoner-eksempel-3"></div>
-<script type="text/javascript">
 
-    document.addEventListener("DOMContentLoaded", () => {
-        const code = 
-`from casify import *
+<div id="ggb-cas-501dfe12" style="width: 720px; height: 600px;" class="ggb-window"></div>
+<script>
 
-# Lager en funksjon f med "funksjon"-funksjonen
-f = funksjon("a * x**3 + b * x**2 + c*x + d")
 
-# Løser likningssystemet med "løs"-funksjonen
-koeffisienter = løs("f(-2) = 3", "f(-1) = 0", "f(0) = 3", "f(1) = 3")
+document.addEventListener("DOMContentLoaded", function() {
+    var options = {
+        appName: 'classic',
+        width: 720,
+        height: 600,
+        showToolBar: true,
+        showAlgebraInput: false,
+        showMenuBar: false,
+        language: 'nb',
+        borderRadius: 8,
+        borderColor: '#000000',
+        showFullscreenButton: true,
+        showResetIcon: true,
+        scale: 1,
+        rounding: 2,
+        showKeyboardOnFocus: false,
+        preventFocus: true,
+        id: 'ggb-cas-501dfe12',
+        material_id: 'gjefn7be',
+        '': '',
+    };
 
-print(koeffisienter)
-`;
+    var applet = new GGBApplet(options, true);
+    applet.inject('ggb-cas-501dfe12');
 
-        makeInteractiveCode(
-            "container-kode-polynomer-representasjoner-eksempel-3",
-            code,
-        );
-    });
+});
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<br>
-<p>Kjører du programmet, vil du få en utskrift som forteller oss at</p>
-<div class="math notranslate nohighlight">
-\[
-a = -\dfrac{3}{2} \and b = -\dfrac{3}{2} \and c = 3 \and d = 3.
-\]</div>
-</div>
-<input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--2">Geogebra</label><div class="tab-content docutils">
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-    <!-- Bytt ut `container-id` med unik id. -->
-    <div id="ggb-polynomer-representasjoner-eksempel-3" class="ggb-window"></div>
-
-    <script>
-        // Define options for the GeoGebra applet
-        var options = {
-            appName: 'classic',
-            width: 650,
-            height: 500,
-            showMenuBar: false,
-            showAlgebraInput: false,
-            showToolBar: false,
-            enableLabelDrags: false,
-            enableShiftDragZoom: true,
-            enableRightClick: false,
-            errorDialogsActive: false,
-            useBrowserForJS: false,
-            language: "nb",
-            "ggbBase64":"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", 
-            appletOnLoad: function(api) {
-                // Example event handler: listen for 'update' events from the applet
-                api.registerUpdateListener(function(objName) {
-                    console.log(objName + ' was updated.');
-                });
-
-                // Example of defining a new button in GeoGebra that triggers custom JavaScript
-                api.evalCommand('Button("Click Me!", "javascript:alert(\'Button clicked!\')")');
-            }
-        };
-
-        setupGeogebra('ggb-polynomer-representasjoner-eksempel-3', options);
-    </script>
-</body>
-</html>
-<br>
-<p>Vi kan se fra CAS-vinduet at</p>
-<div class="math notranslate nohighlight">
-\[
-a = -\dfrac{3}{2} \and b = -\dfrac{3}{2} \and c = 3 \and d = 3.
-\]</div>
-</div>
-</div>
-<p>Vi kan derfor konkludere med at</p>
+        <div class="admonition solution dropdown">
+<p class="admonition-title">Løsning</p>
+<figure class="align-default">
+<a class="no-click adaptive-figure reference internal image-reference" href="../../../_images/sol25.png"><img alt="../../../_images/sol25.png" class="no-click adaptive-figure" src="../../../_images/sol25.png" style="width: 100%;" /></a>
+</figure>
 <div class="math notranslate nohighlight">
 \[
 f(x) = -\dfrac{3}{2}x^3 - \dfrac{3}{2}x^2 + 3x + 3.
 \]</div>
 </div>
 </div>
+<hr class="docutils" />
 <div class="check admonition">
 <p class="admonition-title">Underveisoppgave 2</p>
 <p>Grafen til en tredjegradsfunksjon <span class="math notranslate nohighlight">\(f\)</span> er vist i <a class="reference internal" href="#fig-polynomer-nullpunktsform-underveisoppgave-2"><span class="std std-numref">Fig. 14.4</span></a>.</p>
@@ -1380,7 +1315,7 @@ f(x) = -\dfrac{3}{2}x^3 - \dfrac{3}{2}x^2 + 3x + 3.
 <input checked="checked" id="sd-tab-item-14" name="sd-tab-set-4" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-14">
 a</label><div class="sd-tab-content docutils">
-<p>Sett opp et likningssystem uttrykt ved <span class="math notranslate nohighlight">\(f(x)\)</span> ved å finne fire punkter på grafen til <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<p>Sett opp et likningssystem for <span class="math notranslate nohighlight">\(f(x)\)</span> ved å finne fire punkter på grafen til <span class="math notranslate nohighlight">\(f\)</span>.</p>
 <div class="dropdown answer admonition">
 <p class="admonition-title">Fasit</p>
 <p>Grafen går gjennom punktene</p>
@@ -1399,116 +1334,84 @@ f(-1) = 0 \and f(0) = 3 \and f(1) = 2 \and f(2) = 3.
 <label class="sd-tab-label" for="sd-tab-item-15">
 b</label><div class="sd-tab-content docutils">
 <p>Løs likningssystemet ved hjelp av CAS og bestem <span class="math notranslate nohighlight">\(f(x)\)</span>.</p>
-<div class="tab-set docutils">
-<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">Python</label><div class="tab-content docutils">
-<div id="container-kode-polynomer-representasjoner-underveisoppgave-1-b"></div>
-<script type="text/javascript">
 
-    document.addEventListener("DOMContentLoaded", () => {
-        const code = 
-`from casify import *
+<!-- jQuery and jQuery UI -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 
-# TODO: 1. lag funksjonsuttrykket med "funksjon"-funksjonen
-f = # FYLL INN
+<!-- Button to open the dialog -->
+<button id="button-ggb-cas-83181cab" class="ggb-cas-button">Åpne CAS-vindu</button>
 
-# TODO: 2. løs likningssystemet med "løs"-funksjonen
-koeffisienter = # FYLL INN
-
-print(koeffisienter)
-`;
-
-        makeInteractiveCode(
-            "container-kode-polynomer-representasjoner-underveisoppgave-1-b",
-            code,
-        );
-    });
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="answer dropdown admonition">
-<p class="admonition-title">Fasit</p>
-<p><strong>Programkode</strong>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">from</span> <span class="nn">casify</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="linenos">2</span>
-<span class="linenos">3</span>
-<span class="linenos">4</span><span class="n">f</span> <span class="o">=</span> <span class="n">funksjon</span><span class="p">(</span><span class="s2">&quot;a * x**3 + b * x**2 + c * x + d&quot;</span><span class="p">)</span>
-<span class="linenos">5</span>
-<span class="linenos">6</span><span class="n">koeffisienter</span> <span class="o">=</span> <span class="n">løs</span><span class="p">(</span><span class="s2">&quot;f(-1) = 0&quot;</span><span class="p">,</span> <span class="s2">&quot;f(0) = 3&quot;</span><span class="p">,</span> <span class="s2">&quot;f(1) = 2&quot;</span><span class="p">,</span> <span class="s2">&quot;f(2) = 3&quot;</span><span class="p">)</span>
-<span class="linenos">7</span>
-<span class="linenos">8</span><span class="nb">print</span><span class="p">(</span><span class="n">koeffisienter</span><span class="p">)</span>
-</pre></div>
+<!-- Dialog that will contain the CAS applet -->
+<div id="dialog-ggb-cas-83181cab" title="CAS-vindu" style="display:none;">
+    <div id="ggb-cas-83181cab" style="width:420px;height:500px;" class="ggb-window"></div>
 </div>
-<p><strong>Utskrift</strong>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="go">a = 1 ∧ b = -2 ∧ c = 0 ∧ d = 3</span>
-</pre></div>
-</div>
-<p>Løsningen er</p>
-<div class="math notranslate nohighlight">
-\[
-a = 1 \and b = -2 \and c = 0 \and d = 3,
-\]</div>
-<p>som gir</p>
-<div class="math notranslate nohighlight">
-\[
-f(x) = x^3 - 2x^2 + 3.
-\]</div>
-</div>
-</div>
-<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--2">Geogebra</label><div class="tab-content docutils">
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-    <!-- Bytt ut `container-id` med unik id. -->
-    <div id="ggb-polynomer-representasjoner-underveisoppgave-1-b" class="ggb-window"></div>
 
-    <script>
-        // Define options for the GeoGebra applet
-        var options = {
-            appName: 'classic',
-            width: 700,
-            height: 400,
-            showMenuBar: true,
-            showAlgebraInput: false,
-            showToolBar: false,
-            enableLabelDrags: false,
-            enableShiftDragZoom: true,
-            enableRightClick: false,
-            errorDialogsActive: false,
-            useBrowserForJS: false,
-            language: "nb",
-            ggbBase64: "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", 
-            appletOnLoad: function(api) {
-                // Example event handler: listen for 'update' events from the applet
-                api.registerUpdateListener(function(objName) {
-                    console.log(objName + ' was updated.');
-                });
-
-                // Example of defining a new button in GeoGebra that triggers custom JavaScript
-                api.evalCommand('Button("Click Me!", "javascript:alert(\'Button clicked!\')")');
+<script>
+(function() {
+    
+    // Once document is ready
+    $(document).ready(function() {
+        var appletInitialized = false;
+        var dialogPaddingV = 60;
+        var dialogPaddingH = 20;
+        
+        // Dialog initialization
+        $("#dialog-ggb-cas-83181cab").dialog({
+            autoOpen: false,
+            width: 460,
+            height: 580,
+            modal: false,
+            resizable: true,
+            draggable: true,
+            position: { my: "center", at: "center", of: window },
+            resize: function(event, ui) {
+                if (window.ggbApplet) {
+                    var newWidth = ui.size.width - dialogPaddingH;
+                    var newHeight = ui.size.height - dialogPaddingV;
+                    $("#ggb-cas-83181cab").css({ width: newWidth + 'px', height: newHeight + 'px' });
+                    window.ggbApplet.setSize(newWidth, newHeight);
+                }
+            },
+            open: function() {
+                // Initialize applet if not already done
+                if (!appletInitialized) {
+                    var params = {
+                        appName: "classic",
+                        width: 420,
+                        height: 500,
+                        showToolBar: true,
+                        showAlgebraInput: true,
+                        showMenuBar: false,
+                        language: 'nb',
+                        borderRadius: 8,
+                        useBrowserForJS: false,
+                        preventFocus: false,
+                        showFullscreenButton: false,
+                        showResetIcon: true,
+                        enableRightClick: true,
+                        showKeyboardOnFocus: false,
+                        id: 'ggb-cas-83181cab',
+                        perspective: 'C',
+                        'customToolBar': '1001 | 1002 | 1007 | 1010 | 1008 | 6',
+                    };
+                    
+                    var applet = new GGBApplet(params, true);
+                    applet.inject('ggb-cas-83181cab');
+                    appletInitialized = true;
+                }
             }
-        };
-
-        setupGeogebra('ggb-polynomer-representasjoner-underveisoppgave-1-b', options);
-    </script>
-</body>
-</html>
-<div class="answer dropdown admonition">
+        });
+        
+        // Button click handler
+        $("#button-ggb-cas-83181cab").button().on("click", function() {
+            $("#dialog-ggb-cas-83181cab").dialog("open");
+        });
+    });
+})();
+</script>
+        <div class="admonition answer dropdown">
 <p class="admonition-title">Fasit</p>
 <p>Løsningen er</p>
 <div class="math notranslate nohighlight">
@@ -1521,7 +1424,21 @@ a = 1 \and b = -2 \and c = 0 \and d = 3,
 f(x) = x^3 - 2x^2 + 3.
 \]</div>
 </div>
-</div>
+<div class="admonition solution dropdown">
+<p class="admonition-title">Løsning</p>
+<figure class="align-default">
+<a class="no-click adaptive-figure reference internal image-reference" href="../../../_images/sol26.png"><img alt="../../../_images/sol26.png" class="no-click adaptive-figure" src="../../../_images/sol26.png" style="width: 80%;" /></a>
+</figure>
+<p>som betyr at</p>
+<div class="math notranslate nohighlight">
+\[
+a = 1 \and b = -2 \and c = 0 \and d = 3.
+\]</div>
+<p>Dermed er</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = x^3 - 2x^2 + 3.
+\]</div>
 </div>
 </div>
 </div>

@@ -44,12 +44,12 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../../_static/static_code_blocks.css?v=b6831e29" />
     <link rel="stylesheet" type="text/css" href="../../../_static/pdf_custom.css?v=a874a063" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/admonitions.css?v=9e6b7c2b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/admonitions.css?v=f1608d2c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/polydiv/style.css?v=3450aa48" />
     <link rel="stylesheet" type="text/css" href="../../../_static/interactiveCode/style.css?v=bf5bef53" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/clickable_figures/style.css?v=e80764aa" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/clickable_figures/style.css?v=d35dfce7" />
     <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/tabs.css?v=f94e6bdf" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/figures.css?v=6f5ce9cd" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/figures.css?v=a6e428db" />
     <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/grids.css?v=afb20c06" />
     <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/geogebra.css?v=fd180d66" />
     <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/popup_code.css?v=a6e8dca6" />
@@ -657,7 +657,84 @@ document.write(`
 <figure class="align-default">
 <a class="no-click adaptive-figure reference internal image-reference" href="../../../_images/figur88.svg"><img alt="../../../_images/figur88.svg" class="no-click adaptive-figure" src="../../../_images/figur88.svg" style="width: 80%;" /></a>
 </figure>
-<div class="sd-tab-set tabs-parts docutils">
+
+<!-- jQuery and jQuery UI -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
+<!-- Button to open the dialog -->
+<button id="button-ggb-cas-e00fe79b" class="ggb-cas-button">Åpne CAS-vindu</button>
+
+<!-- Dialog that will contain the CAS applet -->
+<div id="dialog-ggb-cas-e00fe79b" title="CAS-vindu" style="display:none;">
+    <div id="ggb-cas-e00fe79b" style="width:420px;height:500px;" class="ggb-window"></div>
+</div>
+
+<script>
+(function() {
+    
+    // Once document is ready
+    $(document).ready(function() {
+        var appletInitialized = false;
+        var dialogPaddingV = 60;
+        var dialogPaddingH = 20;
+        
+        // Dialog initialization
+        $("#dialog-ggb-cas-e00fe79b").dialog({
+            autoOpen: false,
+            width: 460,
+            height: 580,
+            modal: false,
+            resizable: true,
+            draggable: true,
+            position: { my: "center", at: "center", of: window },
+            resize: function(event, ui) {
+                if (window.ggbApplet) {
+                    var newWidth = ui.size.width - dialogPaddingH;
+                    var newHeight = ui.size.height - dialogPaddingV;
+                    $("#ggb-cas-e00fe79b").css({ width: newWidth + 'px', height: newHeight + 'px' });
+                    window.ggbApplet.setSize(newWidth, newHeight);
+                }
+            },
+            open: function() {
+                // Initialize applet if not already done
+                if (!appletInitialized) {
+                    var params = {
+                        appName: "classic",
+                        width: 420,
+                        height: 500,
+                        showToolBar: true,
+                        showAlgebraInput: true,
+                        showMenuBar: false,
+                        language: 'nb',
+                        borderRadius: 8,
+                        useBrowserForJS: false,
+                        preventFocus: false,
+                        showFullscreenButton: false,
+                        showResetIcon: true,
+                        enableRightClick: true,
+                        showKeyboardOnFocus: false,
+                        id: 'ggb-cas-e00fe79b',
+                        perspective: 'C',
+                        'customToolBar': '1001 | 1002 | 1007 | 1010 | 1008 | 6',
+                    };
+                    
+                    var applet = new GGBApplet(params, true);
+                    applet.inject('ggb-cas-e00fe79b');
+                    appletInitialized = true;
+                }
+            }
+        });
+        
+        // Button click handler
+        $("#button-ggb-cas-e00fe79b").button().on("click", function() {
+            $("#dialog-ggb-cas-e00fe79b").dialog("open");
+        });
+    });
+})();
+</script>
+        <div class="sd-tab-set tabs-parts docutils">
 <input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-0">
 a</label><div class="sd-tab-content docutils">
@@ -695,41 +772,6 @@ b = 2
 </div>
 </div>
 </div>
-<div class="admonition progging dropdown">
-<p class="admonition-title">CAS-vindu</p>
-
-<div id="ggb-cas-42d150d7" style="width: 720px; height: 700px;" class="ggb-window"></div>
-<script>
-
-
-document.addEventListener("DOMContentLoaded", function() {
-    var options = {
-        appName: 'classic',
-        width: 720,
-        height: 700,
-        showToolBar: true,
-        showAlgebraInput: false,
-        showMenuBar: false,
-        language: 'nb',
-        borderRadius: 8,
-        borderColor: '#000000',
-        showFullscreenButton: true,
-        showResetIcon: true,
-        scale: 1,
-        rounding: 2,
-        showKeyboardOnFocus: false,
-        preventFocus: true,
-        id: 'ggb-cas-42d150d7',
-        material_id: 'tcjdpxzj',
-        // ggbBase64: "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", 
-    };
-
-    var applet = new GGBApplet(options, true);
-    applet.inject('ggb-cas-42d150d7');
-
-});
-</script>
-        </div>
 </div>
 <hr class="docutils" />
 <div class="problem-level-1 admonition">
@@ -738,7 +780,84 @@ document.addEventListener("DOMContentLoaded", function() {
 <figure class="align-default">
 <a class="no-click adaptive-figure reference internal image-reference" href="../../../_images/figur89.svg"><img alt="../../../_images/figur89.svg" class="no-click adaptive-figure" src="../../../_images/figur89.svg" style="width: 80%;" /></a>
 </figure>
-<div class="sd-tab-set tabs-parts docutils">
+
+<!-- jQuery and jQuery UI -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
+<!-- Button to open the dialog -->
+<button id="button-ggb-cas-322b71f7" class="ggb-cas-button">Åpne CAS-vindu</button>
+
+<!-- Dialog that will contain the CAS applet -->
+<div id="dialog-ggb-cas-322b71f7" title="CAS-vindu" style="display:none;">
+    <div id="ggb-cas-322b71f7" style="width:420px;height:500px;" class="ggb-window"></div>
+</div>
+
+<script>
+(function() {
+    
+    // Once document is ready
+    $(document).ready(function() {
+        var appletInitialized = false;
+        var dialogPaddingV = 60;
+        var dialogPaddingH = 20;
+        
+        // Dialog initialization
+        $("#dialog-ggb-cas-322b71f7").dialog({
+            autoOpen: false,
+            width: 460,
+            height: 580,
+            modal: false,
+            resizable: true,
+            draggable: true,
+            position: { my: "center", at: "center", of: window },
+            resize: function(event, ui) {
+                if (window.ggbApplet) {
+                    var newWidth = ui.size.width - dialogPaddingH;
+                    var newHeight = ui.size.height - dialogPaddingV;
+                    $("#ggb-cas-322b71f7").css({ width: newWidth + 'px', height: newHeight + 'px' });
+                    window.ggbApplet.setSize(newWidth, newHeight);
+                }
+            },
+            open: function() {
+                // Initialize applet if not already done
+                if (!appletInitialized) {
+                    var params = {
+                        appName: "classic",
+                        width: 420,
+                        height: 500,
+                        showToolBar: true,
+                        showAlgebraInput: true,
+                        showMenuBar: false,
+                        language: 'nb',
+                        borderRadius: 8,
+                        useBrowserForJS: false,
+                        preventFocus: false,
+                        showFullscreenButton: false,
+                        showResetIcon: true,
+                        enableRightClick: true,
+                        showKeyboardOnFocus: false,
+                        id: 'ggb-cas-322b71f7',
+                        perspective: 'C',
+                        'customToolBar': '1001 | 1002 | 1007 | 1010 | 1008 | 6',
+                    };
+                    
+                    var applet = new GGBApplet(params, true);
+                    applet.inject('ggb-cas-322b71f7');
+                    appletInitialized = true;
+                }
+            }
+        });
+        
+        // Button click handler
+        $("#button-ggb-cas-322b71f7").button().on("click", function() {
+            $("#dialog-ggb-cas-322b71f7").dialog("open");
+        });
+    });
+})();
+</script>
+        <div class="sd-tab-set tabs-parts docutils">
 <input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-2">
 a</label><div class="sd-tab-content docutils">
@@ -776,47 +895,89 @@ T \approx 2.29
 </div>
 </div>
 </div>
-<div class="admonition progging dropdown">
-<p class="admonition-title">CAS-vindu</p>
-
-<div id="ggb-cas-2e3cc39e" style="width: 720px; height: 700px;" class="ggb-window"></div>
-<script>
-
-
-document.addEventListener("DOMContentLoaded", function() {
-    var options = {
-        appName: 'classic',
-        width: 720,
-        height: 700,
-        showToolBar: true,
-        showAlgebraInput: false,
-        showMenuBar: false,
-        language: 'nb',
-        borderRadius: 8,
-        borderColor: '#000000',
-        showFullscreenButton: true,
-        showResetIcon: true,
-        scale: 1,
-        rounding: 2,
-        showKeyboardOnFocus: false,
-        preventFocus: true,
-        id: 'ggb-cas-2e3cc39e',
-        material_id: 'tcjdpxzj',
-        // ggbBase64: "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", 
-    };
-
-    var applet = new GGBApplet(options, true);
-    applet.inject('ggb-cas-2e3cc39e');
-
-});
-</script>
-        </div>
 </div>
 <hr class="docutils" />
 <div class="problem-level-2 admonition">
 <p class="admonition-title">Oppgave 3</p>
 <p>I <span class="math notranslate nohighlight">\(\triangle ABC\)</span> er <span class="math notranslate nohighlight">\(\angle A = 45 \degree\)</span>, <span class="math notranslate nohighlight">\(BC = 6\)</span> og <span class="math notranslate nohighlight">\(AC = 8\)</span>.</p>
-<div class="sd-tab-set tabs-parts docutils">
+
+<!-- jQuery and jQuery UI -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
+<!-- Button to open the dialog -->
+<button id="button-ggb-cas-472f3909" class="ggb-cas-button">Åpne CAS-vindu</button>
+
+<!-- Dialog that will contain the CAS applet -->
+<div id="dialog-ggb-cas-472f3909" title="CAS-vindu" style="display:none;">
+    <div id="ggb-cas-472f3909" style="width:420px;height:500px;" class="ggb-window"></div>
+</div>
+
+<script>
+(function() {
+    
+    // Once document is ready
+    $(document).ready(function() {
+        var appletInitialized = false;
+        var dialogPaddingV = 60;
+        var dialogPaddingH = 20;
+        
+        // Dialog initialization
+        $("#dialog-ggb-cas-472f3909").dialog({
+            autoOpen: false,
+            width: 460,
+            height: 580,
+            modal: false,
+            resizable: true,
+            draggable: true,
+            position: { my: "center", at: "center", of: window },
+            resize: function(event, ui) {
+                if (window.ggbApplet) {
+                    var newWidth = ui.size.width - dialogPaddingH;
+                    var newHeight = ui.size.height - dialogPaddingV;
+                    $("#ggb-cas-472f3909").css({ width: newWidth + 'px', height: newHeight + 'px' });
+                    window.ggbApplet.setSize(newWidth, newHeight);
+                }
+            },
+            open: function() {
+                // Initialize applet if not already done
+                if (!appletInitialized) {
+                    var params = {
+                        appName: "classic",
+                        width: 420,
+                        height: 500,
+                        showToolBar: true,
+                        showAlgebraInput: true,
+                        showMenuBar: false,
+                        language: 'nb',
+                        borderRadius: 8,
+                        useBrowserForJS: false,
+                        preventFocus: false,
+                        showFullscreenButton: false,
+                        showResetIcon: true,
+                        enableRightClick: true,
+                        showKeyboardOnFocus: false,
+                        id: 'ggb-cas-472f3909',
+                        perspective: 'C',
+                        'customToolBar': '1001 | 1002 | 1007 | 1010 | 1008 | 6',
+                    };
+                    
+                    var applet = new GGBApplet(params, true);
+                    applet.inject('ggb-cas-472f3909');
+                    appletInitialized = true;
+                }
+            }
+        });
+        
+        // Button click handler
+        $("#button-ggb-cas-472f3909").button().on("click", function() {
+            $("#dialog-ggb-cas-472f3909").dialog("open");
+        });
+    });
+})();
+</script>
+        <div class="sd-tab-set tabs-parts docutils">
 <input checked="checked" id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-5">
 a</label><div class="sd-tab-content docutils">
@@ -842,41 +1003,6 @@ AB \approx 3.66 \or AB \approx 7.66
 </div>
 </div>
 </div>
-<div class="admonition progging dropdown">
-<p class="admonition-title">CAS-vindu</p>
-
-<div id="ggb-cas-49cf4373" style="width: 720px; height: 700px;" class="ggb-window"></div>
-<script>
-
-
-document.addEventListener("DOMContentLoaded", function() {
-    var options = {
-        appName: 'classic',
-        width: 720,
-        height: 700,
-        showToolBar: true,
-        showAlgebraInput: false,
-        showMenuBar: false,
-        language: 'nb',
-        borderRadius: 8,
-        borderColor: '#000000',
-        showFullscreenButton: true,
-        showResetIcon: true,
-        scale: 1,
-        rounding: 2,
-        showKeyboardOnFocus: false,
-        preventFocus: true,
-        id: 'ggb-cas-49cf4373',
-        material_id: 'tcjdpxzj',
-        // ggbBase64: "UEsDBBQAAAAIAHpUDFkv5KYoKgUAAComAAAXAAAAZ2VvZ2VicmFfZGVmYXVsdHMyZC54bWztWl9T4zYQf+59Co+e2gcS24lJYDA33M10ygzH3RSm01fFURwVRXItmSR8+q7+xHZIwoGTQJjCA8rK0lr7+61WK8lnn2cT5t2TXFLBYxS0fOQRnogh5WmMCjU66qPP55/OUiJSMsixNxL5BKsYRbpl2S9qha1+5Os6nGUxShiWkibIyxhWukuMxGjEKCfI82aSnnJxjSdEZjghN8mYTPCVSLAyusZKZaft9nQ6bS3e2hJ52gbFsj2Tw3aaqhaUyIOhcxkj9+MU9C71nnZMv9D3g/bf367se44olwrzBAYCZg3JCBdMSfhJGJkQrjw1z0iMMkG5Qh7DA8Ji9ENL3q+jnJDfkOc6AVo+Ov/0y5kci6knBv+QBOpUXoBq188Ibd0GHn8VTOReHqNeD3kAri4GMQqjCEBj2RjHyLeNGZ6T3LvHoMHV4EKJxPQ3tSPMpFNs3vRNDIl90nXtOQWWAE5PKgJ8+K0AeTIjZAijRs5G+AH0zA3TNY3G9Bv64DRG9Vo1Z67aDSwRIh9Kbxaja3yNvLkrH2wJTc7aDtjnQTwkGeFDaLSEc9AI5+O+wVkXgLMu9g1zY5CdvjcF+fh/CjLM4j2g/J3XsQ0bYRuEEBrAJFO+Vqh4F4Hikv9JUhhzHePOB8Z79OBuI3QhHwB74P/hIWvAshhK/R+SFjHJGJm9LvA2J3IgXhmhBD1sll/UQdcJ2VvkFvDedaBray18akyTO04k5G/gFmUn/eMPOoTFySgTkCBSBXgGvb7VQP7lS6RR4IxCm62JGBU80VaV4H4t8vs6G52u/xZ8VDobz4A9kbEZS0lSLZW43CzkyrWbpXSv7Nqv6diiUEyrveQKdlUACAxDroz7jpDsFlR957c55lJvrR67CWxv8nqMcpi76cNdzFt9tMXcyfH8Ka6jD673xPUO4h2/x3nJRJ21ZvnUxhW/BW7wxtS9IPjXgdg+9XnP7ruVEx03m/qh312PXqt3wE50D+aJCoa/nFglEO8inXvNOLgmB4e1i0iK+Q52NGye1mb0j4Vc8tGzfGxvxmZGa2gtbTqjjiE1AnWPHDzw7V/QPfGD4BhODg7W3zXCS9sXDbGtqDC2ed4+MT6IWfP8TdBmPBPB9ZH5YvthpRLJ7kf0eNFWkNCUcBuSIYD4RsccCtD8oCV9VzELjDyHAp4+6AKqTXewKqcz78L2uLANL0JbdGzRtUXk0PsJsxmEtlqW/Ghx6DbbEL2nSLJ/zneWVx+S8/BiQvJaYLheyKXvRDY0gA3F8rmUZHQIZE8owHkEOE8wrKQ6Jx9IwQoFV29wo8WrqzfrcFM6VGOdhMH4RnSmibXoeWOR0wfBVQmWp/31gplLuqWjinVEh0/lmM+KWpt8erMH13x1u+CMecqqyXhhpYoBe8BvGq0eDz5NDAzE8HLcCvudoB91/F7QO4n6x8/kKehXPNkH29G0aT4CfavzEedJdUgKCe4GJoG3nXLp1lw/6HWjTngSRsHJSRd+wNh3vRP8vayodjWHeA5oPGCl6d6O+JhIClkdXFupRAhcslFifLDZCi5mlFGcz1fftDeIFZlVCcOtEWqfHhxgOrjZFIA9rYZ2aaXa/b41ZkQBRQ7fhcAZgnkJ5V9wcpfmouDOtWsj2I3pbvE5xP3VQAhGYCe8MOvLQq7dK6+s/JsAciv408cu9i5fF4BRB8a96wkIn+AkdwMxW1qvfnI/JqtJcGWE2pXvmknwHEM3LUpHb+4NTY7nXnhZuTZJqRPQrn0V1V58gnX+H1BLAwQUAAAACAB6VAxZo6M4SXgDAABMEQAAFwAAAGdlb2dlYnJhX2RlZmF1bHRzM2QueG1s7VjLctowFF23X6HRPn6ATSATJ8Oki3YmyaSTTbeKLUCtkRxJYJxf6z/0m3r1CDENecAQOumUBUcP33utc4+vJR+fLqYlmlOpmOAZjoMII8pzUTA+zvBMjw76+PTk4/GYijG9kQSNhJwSneHUXLm0S4NO0E8jM0aqKsN5SZRiOUZVSbQxybAYjUrGKUZoodgRF5dkSlVFcnqdT+iUnIucaOtronV1FIZ1XQf3UQMhxyE4VuFCFeF4rANAjODWucqwbxyB3xXrumvtOlEUh98uzl2cA8aVJjyHG4FlFXREZqVW0KQlnVKukW4qCgsQnOVdiFGSG1pm+AvXsFaam1tE+UzOwd4bZ7gbpxE++fjhOBdCFgqJRYaBCdE4uHNQA71AmZubu7m5m6vdYO0GazsYGodqImokbr5D4AxrOYOo/oZsx14D02eiFBLJDHcgAuQtjgBvAAcdSEhZTQh4DOLI/eJkEMVxL+44+5I0VKI5Aac+KplpkVuXdnRESuVj2eAXoqBuJvHXcwaaMMwoTSH7EFxVlBa25fiEZYEUGquqtj9QxLVuSor0hOU/OFWQz7RlZBqfWVFQI05nQ2+5M1HmP8MVkSAlLUFubp6NKZ8DY0IqtIjsTTQA4O3O9IxIF7HtNwAwe2cAhq05rESyBRo6i6G7cNhx0HWQOEg9Y8ehF88jGZEFU91Py6QNfbelnKhrlbNpoiE8MAn/kGXz0Pkcv1VGQTx/K6fItyms+tfP5+m2D2ZOpKaKEd56fM/MxJ/M994D82/J+9NEgn9OW/xd2f4Kf1BWt+JvMLAEdmJAoNDiskSlu6JxRMwbzLt4svKtY8wT9ZRSfYl3BdvVa1/DXywGlSibCS2k4A+8toYeqO16ard5kjZNR5x2bT5S98ZoKTpIPGvpoBclvWRnudlW4hsxO5T5hE1pQckqtZD7fVHbid3bODm01Br4N7i9aqAiM6gObV73KFlfQvqPivA7p1UyNV0lNd6jWHuuLjuxDqD3DlnlVC/XeWna7aKa/i+qm3B5OyOF3YD5pX6977c5dQLdZWXsJQPzO+zFaT9O4ECzI4J2sS1l06pkOdOvOmisPWaYQXeWaBzcAfhom5480LDn4NBB38HgxY2ImskRHLzXbZT91GqSk+2SDHZrt8rB4WtV/+B4L5vlttGzm+Ww9d0gvP9IcfIbUEsDBBQAAAAIAHpUDFnWN725GQAAABcAAAAWAAAAZ2VvZ2VicmFfamF2YXNjcmlwdC5qc0srzUsuyczPU0hPT/LP88zLLNHQVKiuBQBQSwMEFAAAAAgAelQMWcE4i9d8BQAA2Q4AAAwAAABnZW9nZWJyYS54bWy9V21v2zYQ/tz9ioM+J7beKNmF3CIthmFAVhTNNgz7Rku0TUSWBJGOnaE/fs+Rkl+aDmuWYkmUI0/He+fjc/H2sK3pQfVGt80iiCZhQKop20o360Wws6vrWfD2zQ/FWrVrtewlrdp+K+0iECx5PCcm8WQmQubJrlsEZS2N0WVAXS0tH1kE7WpV60YFpKtFME9Flckkvw5FlVyncaqu5VLG18tZFctZNgvVKgqIDka/btoPcqtMJ0t1V27UVt62pbTO6sba7vV0ut/vJ6N/k7ZfT+GCmR5MNV2vlxPQgBBkYxbBsHgNvRen94k7F4dhNP3jl1tv51o3xsqmhMucgJ1+88OrYq+bqt3TXld2g3RlISLeKL3eICXzKAtoylId8tKp0uoHZXD2bOuit9sucGKy4fev/IrqY2ABVfpBV6pfBOEky2IRUNtr1djhPXLj7ExHDcWDVnuvilfOShrOc5RIG72s1SJYydpw9ptVj3we98Y+1mopYcn2O+xPTkRX+IWA/gvSKQfqg8ebMLziJ8cjBF6wM+eWA7JtWzutIX3+THEYh3TFJPIk9tzQb8PEk9iT1BPhZVJ/MvWiqZdJvUyaPCfAgXGKMDnFl3wtPlT3ygX+RXzxC63Ca28VUSJVcrkIbm5/+vHdp5unPsTi6z6ICF6cZ5kiEsinoGiO3GQ5ODFFglJwZuDklDBPRCklxCJRQi6NKbOjDG/4Nf6jpBRxupFhQqlQtJgrJAQJiOV8FgWkbO70hXhYGh7hSZiXJHgcL0nxcM0EFAmvBn6IJHMr4f7P+AysCNj7TO4VeOkc5pgh8ogSeIJ9HhL0Qj08dtGgO/gvIt8YOcUzclqd/vBllTrrf/Gc/sCpl1gdbWY53P9Wm7OzboAc1xKEywSSEN8lLHCnmKTDNvNb1wAhCum5XA4QVBc1PgvFA8RzOn2MJAqz56Tv3OgL8ndxp3GN3J97nphMntUoT5DyP1jMLkDy+wSczr7ZfBSjYf5nmzmD3dPPBU/RsI5+n0LM/6UQxXT8wCwGj8hsWHbocau2GBdCyhPK3B1y2ApQBah4gM1jygXlfINGmAUszihjOmAtI+3sAmsFI/EZ4GbMBKjxhSOHlR5543QEX6wd/DI0X8IvcDI9QSUcZFUREQCeMr7DA2bCi/iImjHcB0hmBGQVMWWME/8AoBjeWqOPid2oGoPdUAKXQ910O3uRt3LL041b2hbSsnZD2SBfteX9u2OmB01KGoxOJ7WYaU7Tkp9xLoapV0UtlwqT5PqO24DoQdZ8gZyFVdtYGjEnY14xdYNboXZlrSstm99R93Fg+rDbLlWPfsOy5SCdEj5O44Q3T9GQ44A3yxIvUrZtX909GrQJHf5UPQ6nOXL0OKyTaIKRzZSSu5gHpMdhnc4n8/OfmXPyVaEe7pS1CMqQPCi0nk/iuud7MySHNz+bd219YnWtbux72dld7+Z1AG7Prt4061q5/LjSYZwt75ft4c4PHags6/r1sWPI8g4s1+/buu0JlyoW8B3KHMVowtTJsGdHqQSzJVsEgQyIE2G9R5FojtxBxlEIMXVS/D3AV88HCxd9pEMZ5UEbhxjI3Hl7ucrzdLxrtL0dN1aX96dYWd7XdczipcpB5MUqi+kXLVUMzT422LatlG9Ol+JievG+uFd9o2rfTA0qv2t3xov72jqvd0Z9lHZz01Sf1BoX8aNkILRwxIue4qtUqbc46PlDniW3wW8IzHMrte7VmA/vjK/C4CWZrleyMhul0OxDLXyrn8Qcu5iO7heYXmvlIH6rARSo2FYefOWsAgR4eVP2uuP+piXQ+l6dWrjShjUcGSyNjBiEhivfNqiF5Trgi+XOblq0Fc5Iyxz241zU3fbhe+CbvwFQSwECFAAUAAAACAB6VAxZL+SmKCoFAAAqJgAAFwAAAAAAAAAAAAAAAAAAAAAAZ2VvZ2VicmFfZGVmYXVsdHMyZC54bWxQSwECFAAUAAAACAB6VAxZo6M4SXgDAABMEQAAFwAAAAAAAAAAAAAAAABfBQAAZ2VvZ2VicmFfZGVmYXVsdHMzZC54bWxQSwECFAAUAAAACAB6VAxZ1je9uRkAAAAXAAAAFgAAAAAAAAAAAAAAAAAMCQAAZ2VvZ2VicmFfamF2YXNjcmlwdC5qc1BLAQIUABQAAAAIAHpUDFnBOIvXfAUAANkOAAAMAAAAAAAAAAAAAAAAAFkJAABnZW9nZWJyYS54bWxQSwUGAAAAAAQABAAIAQAA/w4AAAAA", 
-    };
-
-    var applet = new GGBApplet(options, true);
-    applet.inject('ggb-cas-49cf4373');
-
-});
-</script>
-        </div>
 </div>
 <hr class="docutils" />
 <div class="problem-level-2 admonition">
@@ -885,7 +1011,84 @@ document.addEventListener("DOMContentLoaded", function() {
 <figure class="align-default">
 <a class="no-click adaptive-figure reference internal image-reference" href="../../../_images/figur90.svg"><img alt="../../../_images/figur90.svg" class="no-click adaptive-figure" src="../../../_images/figur90.svg" style="width: 80%;" /></a>
 </figure>
-<div class="sd-tab-set tabs-parts docutils">
+
+<!-- jQuery and jQuery UI -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
+<!-- Button to open the dialog -->
+<button id="button-ggb-cas-e55aaf4d" class="ggb-cas-button">Åpne CAS-vindu</button>
+
+<!-- Dialog that will contain the CAS applet -->
+<div id="dialog-ggb-cas-e55aaf4d" title="CAS-vindu" style="display:none;">
+    <div id="ggb-cas-e55aaf4d" style="width:420px;height:500px;" class="ggb-window"></div>
+</div>
+
+<script>
+(function() {
+    
+    // Once document is ready
+    $(document).ready(function() {
+        var appletInitialized = false;
+        var dialogPaddingV = 60;
+        var dialogPaddingH = 20;
+        
+        // Dialog initialization
+        $("#dialog-ggb-cas-e55aaf4d").dialog({
+            autoOpen: false,
+            width: 460,
+            height: 580,
+            modal: false,
+            resizable: true,
+            draggable: true,
+            position: { my: "center", at: "center", of: window },
+            resize: function(event, ui) {
+                if (window.ggbApplet) {
+                    var newWidth = ui.size.width - dialogPaddingH;
+                    var newHeight = ui.size.height - dialogPaddingV;
+                    $("#ggb-cas-e55aaf4d").css({ width: newWidth + 'px', height: newHeight + 'px' });
+                    window.ggbApplet.setSize(newWidth, newHeight);
+                }
+            },
+            open: function() {
+                // Initialize applet if not already done
+                if (!appletInitialized) {
+                    var params = {
+                        appName: "classic",
+                        width: 420,
+                        height: 500,
+                        showToolBar: true,
+                        showAlgebraInput: true,
+                        showMenuBar: false,
+                        language: 'nb',
+                        borderRadius: 8,
+                        useBrowserForJS: false,
+                        preventFocus: false,
+                        showFullscreenButton: false,
+                        showResetIcon: true,
+                        enableRightClick: true,
+                        showKeyboardOnFocus: false,
+                        id: 'ggb-cas-e55aaf4d',
+                        perspective: 'C',
+                        'customToolBar': '1001 | 1002 | 1007 | 1010 | 1008 | 6',
+                    };
+                    
+                    var applet = new GGBApplet(params, true);
+                    applet.inject('ggb-cas-e55aaf4d');
+                    appletInitialized = true;
+                }
+            }
+        });
+        
+        // Button click handler
+        $("#button-ggb-cas-e55aaf4d").button().on("click", function() {
+            $("#dialog-ggb-cas-e55aaf4d").dialog("open");
+        });
+    });
+})();
+</script>
+        <div class="sd-tab-set tabs-parts docutils">
 <input checked="checked" id="sd-tab-item-7" name="sd-tab-set-3" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-7">
 a</label><div class="sd-tab-content docutils">
@@ -911,41 +1114,6 @@ T \approx 22.5
 </div>
 </div>
 </div>
-<div class="admonition progging dropdown">
-<p class="admonition-title">CAS-vindu</p>
-
-<div id="ggb-cas-788a3545" style="width: 720px; height: 700px;" class="ggb-window"></div>
-<script>
-
-
-document.addEventListener("DOMContentLoaded", function() {
-    var options = {
-        appName: 'classic',
-        width: 720,
-        height: 700,
-        showToolBar: true,
-        showAlgebraInput: false,
-        showMenuBar: false,
-        language: 'nb',
-        borderRadius: 8,
-        borderColor: '#000000',
-        showFullscreenButton: true,
-        showResetIcon: true,
-        scale: 1,
-        rounding: 2,
-        showKeyboardOnFocus: false,
-        preventFocus: true,
-        id: 'ggb-cas-788a3545',
-        material_id: 'tcjdpxzj',
-        // ggbBase64: "UEsDBBQAAAAIAHpUDFkv5KYoKgUAAComAAAXAAAAZ2VvZ2VicmFfZGVmYXVsdHMyZC54bWztWl9T4zYQf+59Co+e2gcS24lJYDA33M10ygzH3RSm01fFURwVRXItmSR8+q7+xHZIwoGTQJjCA8rK0lr7+61WK8lnn2cT5t2TXFLBYxS0fOQRnogh5WmMCjU66qPP55/OUiJSMsixNxL5BKsYRbpl2S9qha1+5Os6nGUxShiWkibIyxhWukuMxGjEKCfI82aSnnJxjSdEZjghN8mYTPCVSLAyusZKZaft9nQ6bS3e2hJ52gbFsj2Tw3aaqhaUyIOhcxkj9+MU9C71nnZMv9D3g/bf367se44olwrzBAYCZg3JCBdMSfhJGJkQrjw1z0iMMkG5Qh7DA8Ji9ENL3q+jnJDfkOc6AVo+Ov/0y5kci6knBv+QBOpUXoBq188Ibd0GHn8VTOReHqNeD3kAri4GMQqjCEBj2RjHyLeNGZ6T3LvHoMHV4EKJxPQ3tSPMpFNs3vRNDIl90nXtOQWWAE5PKgJ8+K0AeTIjZAijRs5G+AH0zA3TNY3G9Bv64DRG9Vo1Z67aDSwRIh9Kbxaja3yNvLkrH2wJTc7aDtjnQTwkGeFDaLSEc9AI5+O+wVkXgLMu9g1zY5CdvjcF+fh/CjLM4j2g/J3XsQ0bYRuEEBrAJFO+Vqh4F4Hikv9JUhhzHePOB8Z79OBuI3QhHwB74P/hIWvAshhK/R+SFjHJGJm9LvA2J3IgXhmhBD1sll/UQdcJ2VvkFvDedaBray18akyTO04k5G/gFmUn/eMPOoTFySgTkCBSBXgGvb7VQP7lS6RR4IxCm62JGBU80VaV4H4t8vs6G52u/xZ8VDobz4A9kbEZS0lSLZW43CzkyrWbpXSv7Nqv6diiUEyrveQKdlUACAxDroz7jpDsFlR957c55lJvrR67CWxv8nqMcpi76cNdzFt9tMXcyfH8Ka6jD673xPUO4h2/x3nJRJ21ZvnUxhW/BW7wxtS9IPjXgdg+9XnP7ruVEx03m/qh312PXqt3wE50D+aJCoa/nFglEO8inXvNOLgmB4e1i0iK+Q52NGye1mb0j4Vc8tGzfGxvxmZGa2gtbTqjjiE1AnWPHDzw7V/QPfGD4BhODg7W3zXCS9sXDbGtqDC2ed4+MT6IWfP8TdBmPBPB9ZH5YvthpRLJ7kf0eNFWkNCUcBuSIYD4RsccCtD8oCV9VzELjDyHAp4+6AKqTXewKqcz78L2uLANL0JbdGzRtUXk0PsJsxmEtlqW/Ghx6DbbEL2nSLJ/zneWVx+S8/BiQvJaYLheyKXvRDY0gA3F8rmUZHQIZE8owHkEOE8wrKQ6Jx9IwQoFV29wo8WrqzfrcFM6VGOdhMH4RnSmibXoeWOR0wfBVQmWp/31gplLuqWjinVEh0/lmM+KWpt8erMH13x1u+CMecqqyXhhpYoBe8BvGq0eDz5NDAzE8HLcCvudoB91/F7QO4n6x8/kKehXPNkH29G0aT4CfavzEedJdUgKCe4GJoG3nXLp1lw/6HWjTngSRsHJSRd+wNh3vRP8vayodjWHeA5oPGCl6d6O+JhIClkdXFupRAhcslFifLDZCi5mlFGcz1fftDeIFZlVCcOtEWqfHhxgOrjZFIA9rYZ2aaXa/b41ZkQBRQ7fhcAZgnkJ5V9wcpfmouDOtWsj2I3pbvE5xP3VQAhGYCe8MOvLQq7dK6+s/JsAciv408cu9i5fF4BRB8a96wkIn+AkdwMxW1qvfnI/JqtJcGWE2pXvmknwHEM3LUpHb+4NTY7nXnhZuTZJqRPQrn0V1V58gnX+H1BLAwQUAAAACAB6VAxZo6M4SXgDAABMEQAAFwAAAGdlb2dlYnJhX2RlZmF1bHRzM2QueG1s7VjLctowFF23X6HRPn6ATSATJ8Oki3YmyaSTTbeKLUCtkRxJYJxf6z/0m3r1CDENecAQOumUBUcP33utc4+vJR+fLqYlmlOpmOAZjoMII8pzUTA+zvBMjw76+PTk4/GYijG9kQSNhJwSneHUXLm0S4NO0E8jM0aqKsN5SZRiOUZVSbQxybAYjUrGKUZoodgRF5dkSlVFcnqdT+iUnIucaOtronV1FIZ1XQf3UQMhxyE4VuFCFeF4rANAjODWucqwbxyB3xXrumvtOlEUh98uzl2cA8aVJjyHG4FlFXREZqVW0KQlnVKukW4qCgsQnOVdiFGSG1pm+AvXsFaam1tE+UzOwd4bZ7gbpxE++fjhOBdCFgqJRYaBCdE4uHNQA71AmZubu7m5m6vdYO0GazsYGodqImokbr5D4AxrOYOo/oZsx14D02eiFBLJDHcgAuQtjgBvAAcdSEhZTQh4DOLI/eJkEMVxL+44+5I0VKI5Aac+KplpkVuXdnRESuVj2eAXoqBuJvHXcwaaMMwoTSH7EFxVlBa25fiEZYEUGquqtj9QxLVuSor0hOU/OFWQz7RlZBqfWVFQI05nQ2+5M1HmP8MVkSAlLUFubp6NKZ8DY0IqtIjsTTQA4O3O9IxIF7HtNwAwe2cAhq05rESyBRo6i6G7cNhx0HWQOEg9Y8ehF88jGZEFU91Py6QNfbelnKhrlbNpoiE8MAn/kGXz0Pkcv1VGQTx/K6fItyms+tfP5+m2D2ZOpKaKEd56fM/MxJ/M994D82/J+9NEgn9OW/xd2f4Kf1BWt+JvMLAEdmJAoNDiskSlu6JxRMwbzLt4svKtY8wT9ZRSfYl3BdvVa1/DXywGlSibCS2k4A+8toYeqO16ard5kjZNR5x2bT5S98ZoKTpIPGvpoBclvWRnudlW4hsxO5T5hE1pQckqtZD7fVHbid3bODm01Br4N7i9aqAiM6gObV73KFlfQvqPivA7p1UyNV0lNd6jWHuuLjuxDqD3DlnlVC/XeWna7aKa/i+qm3B5OyOF3YD5pX6977c5dQLdZWXsJQPzO+zFaT9O4ECzI4J2sS1l06pkOdOvOmisPWaYQXeWaBzcAfhom5480LDn4NBB38HgxY2ImskRHLzXbZT91GqSk+2SDHZrt8rB4WtV/+B4L5vlttGzm+Ww9d0gvP9IcfIbUEsDBBQAAAAIAHpUDFnWN725GQAAABcAAAAWAAAAZ2VvZ2VicmFfamF2YXNjcmlwdC5qc0srzUsuyczPU0hPT/LP88zLLNHQVKiuBQBQSwMEFAAAAAgAelQMWcE4i9d8BQAA2Q4AAAwAAABnZW9nZWJyYS54bWy9V21v2zYQ/tz9ioM+J7beKNmF3CIthmFAVhTNNgz7Rku0TUSWBJGOnaE/fs+Rkl+aDmuWYkmUI0/He+fjc/H2sK3pQfVGt80iiCZhQKop20o360Wws6vrWfD2zQ/FWrVrtewlrdp+K+0iECx5PCcm8WQmQubJrlsEZS2N0WVAXS0tH1kE7WpV60YFpKtFME9Flckkvw5FlVyncaqu5VLG18tZFctZNgvVKgqIDka/btoPcqtMJ0t1V27UVt62pbTO6sba7vV0ut/vJ6N/k7ZfT+GCmR5MNV2vlxPQgBBkYxbBsHgNvRen94k7F4dhNP3jl1tv51o3xsqmhMucgJ1+88OrYq+bqt3TXld2g3RlISLeKL3eICXzKAtoylId8tKp0uoHZXD2bOuit9sucGKy4fev/IrqY2ABVfpBV6pfBOEky2IRUNtr1djhPXLj7ExHDcWDVnuvilfOShrOc5RIG72s1SJYydpw9ptVj3we98Y+1mopYcn2O+xPTkRX+IWA/gvSKQfqg8ebMLziJ8cjBF6wM+eWA7JtWzutIX3+THEYh3TFJPIk9tzQb8PEk9iT1BPhZVJ/MvWiqZdJvUyaPCfAgXGKMDnFl3wtPlT3ygX+RXzxC63Ca28VUSJVcrkIbm5/+vHdp5unPsTi6z6ICF6cZ5kiEsinoGiO3GQ5ODFFglJwZuDklDBPRCklxCJRQi6NKbOjDG/4Nf6jpBRxupFhQqlQtJgrJAQJiOV8FgWkbO70hXhYGh7hSZiXJHgcL0nxcM0EFAmvBn6IJHMr4f7P+AysCNj7TO4VeOkc5pgh8ogSeIJ9HhL0Qj08dtGgO/gvIt8YOcUzclqd/vBllTrrf/Gc/sCpl1gdbWY53P9Wm7OzboAc1xKEywSSEN8lLHCnmKTDNvNb1wAhCum5XA4QVBc1PgvFA8RzOn2MJAqz56Tv3OgL8ndxp3GN3J97nphMntUoT5DyP1jMLkDy+wSczr7ZfBSjYf5nmzmD3dPPBU/RsI5+n0LM/6UQxXT8wCwGj8hsWHbocau2GBdCyhPK3B1y2ApQBah4gM1jygXlfINGmAUszihjOmAtI+3sAmsFI/EZ4GbMBKjxhSOHlR5543QEX6wd/DI0X8IvcDI9QSUcZFUREQCeMr7DA2bCi/iImjHcB0hmBGQVMWWME/8AoBjeWqOPid2oGoPdUAKXQ910O3uRt3LL041b2hbSsnZD2SBfteX9u2OmB01KGoxOJ7WYaU7Tkp9xLoapV0UtlwqT5PqO24DoQdZ8gZyFVdtYGjEnY14xdYNboXZlrSstm99R93Fg+rDbLlWPfsOy5SCdEj5O44Q3T9GQ44A3yxIvUrZtX909GrQJHf5UPQ6nOXL0OKyTaIKRzZSSu5gHpMdhnc4n8/OfmXPyVaEe7pS1CMqQPCi0nk/iuud7MySHNz+bd219YnWtbux72dld7+Z1AG7Prt4061q5/LjSYZwt75ft4c4PHags6/r1sWPI8g4s1+/buu0JlyoW8B3KHMVowtTJsGdHqQSzJVsEgQyIE2G9R5FojtxBxlEIMXVS/D3AV88HCxd9pEMZ5UEbhxjI3Hl7ucrzdLxrtL0dN1aX96dYWd7XdczipcpB5MUqi+kXLVUMzT422LatlG9Ol+JievG+uFd9o2rfTA0qv2t3xov72jqvd0Z9lHZz01Sf1BoX8aNkILRwxIue4qtUqbc46PlDniW3wW8IzHMrte7VmA/vjK/C4CWZrleyMhul0OxDLXyrn8Qcu5iO7heYXmvlIH6rARSo2FYefOWsAgR4eVP2uuP+piXQ+l6dWrjShjUcGSyNjBiEhivfNqiF5Trgi+XOblq0Fc5Iyxz241zU3fbhe+CbvwFQSwECFAAUAAAACAB6VAxZL+SmKCoFAAAqJgAAFwAAAAAAAAAAAAAAAAAAAAAAZ2VvZ2VicmFfZGVmYXVsdHMyZC54bWxQSwECFAAUAAAACAB6VAxZo6M4SXgDAABMEQAAFwAAAAAAAAAAAAAAAABfBQAAZ2VvZ2VicmFfZGVmYXVsdHMzZC54bWxQSwECFAAUAAAACAB6VAxZ1je9uRkAAAAXAAAAFgAAAAAAAAAAAAAAAAAMCQAAZ2VvZ2VicmFfamF2YXNjcmlwdC5qc1BLAQIUABQAAAAIAHpUDFnBOIvXfAUAANkOAAAMAAAAAAAAAAAAAAAAAFkJAABnZW9nZWJyYS54bWxQSwUGAAAAAAQABAAIAQAA/w4AAAAA", 
-    };
-
-    var applet = new GGBApplet(options, true);
-    applet.inject('ggb-cas-788a3545');
-
-});
-</script>
-        </div>
 </div>
 <hr class="docutils" />
 <div class="problem-level-2 admonition">
@@ -954,7 +1122,84 @@ document.addEventListener("DOMContentLoaded", function() {
 <figure class="align-default">
 <a class="no-click adaptive-figure reference internal image-reference" href="../../../_images/figur91.svg"><img alt="../../../_images/figur91.svg" class="no-click adaptive-figure" src="../../../_images/figur91.svg" style="width: 80%;" /></a>
 </figure>
-<div class="sd-tab-set tabs-parts docutils">
+
+<!-- jQuery and jQuery UI -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
+<!-- Button to open the dialog -->
+<button id="button-ggb-cas-8a2132f0" class="ggb-cas-button">Åpne CAS-vindu</button>
+
+<!-- Dialog that will contain the CAS applet -->
+<div id="dialog-ggb-cas-8a2132f0" title="CAS-vindu" style="display:none;">
+    <div id="ggb-cas-8a2132f0" style="width:420px;height:500px;" class="ggb-window"></div>
+</div>
+
+<script>
+(function() {
+    
+    // Once document is ready
+    $(document).ready(function() {
+        var appletInitialized = false;
+        var dialogPaddingV = 60;
+        var dialogPaddingH = 20;
+        
+        // Dialog initialization
+        $("#dialog-ggb-cas-8a2132f0").dialog({
+            autoOpen: false,
+            width: 460,
+            height: 580,
+            modal: false,
+            resizable: true,
+            draggable: true,
+            position: { my: "center", at: "center", of: window },
+            resize: function(event, ui) {
+                if (window.ggbApplet) {
+                    var newWidth = ui.size.width - dialogPaddingH;
+                    var newHeight = ui.size.height - dialogPaddingV;
+                    $("#ggb-cas-8a2132f0").css({ width: newWidth + 'px', height: newHeight + 'px' });
+                    window.ggbApplet.setSize(newWidth, newHeight);
+                }
+            },
+            open: function() {
+                // Initialize applet if not already done
+                if (!appletInitialized) {
+                    var params = {
+                        appName: "classic",
+                        width: 420,
+                        height: 500,
+                        showToolBar: true,
+                        showAlgebraInput: true,
+                        showMenuBar: false,
+                        language: 'nb',
+                        borderRadius: 8,
+                        useBrowserForJS: false,
+                        preventFocus: false,
+                        showFullscreenButton: false,
+                        showResetIcon: true,
+                        enableRightClick: true,
+                        showKeyboardOnFocus: false,
+                        id: 'ggb-cas-8a2132f0',
+                        perspective: 'C',
+                        'customToolBar': '1001 | 1002 | 1007 | 1010 | 1008 | 6',
+                    };
+                    
+                    var applet = new GGBApplet(params, true);
+                    applet.inject('ggb-cas-8a2132f0');
+                    appletInitialized = true;
+                }
+            }
+        });
+        
+        // Button click handler
+        $("#button-ggb-cas-8a2132f0").button().on("click", function() {
+            $("#dialog-ggb-cas-8a2132f0").dialog("open");
+        });
+    });
+})();
+</script>
+        <div class="sd-tab-set tabs-parts docutils">
 <input checked="checked" id="sd-tab-item-9" name="sd-tab-set-4" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-9">
 a</label><div class="sd-tab-content docutils">
@@ -980,41 +1225,6 @@ T = \dfrac{1}{8}a^2 \left(2\sqrt{3} + 1\right)
 </div>
 </div>
 </div>
-<div class="admonition progging dropdown">
-<p class="admonition-title">CAS-vindu</p>
-
-<div id="ggb-cas-623fd7f5" style="width: 720px; height: 700px;" class="ggb-window"></div>
-<script>
-
-
-document.addEventListener("DOMContentLoaded", function() {
-    var options = {
-        appName: 'classic',
-        width: 720,
-        height: 700,
-        showToolBar: true,
-        showAlgebraInput: false,
-        showMenuBar: false,
-        language: 'nb',
-        borderRadius: 8,
-        borderColor: '#000000',
-        showFullscreenButton: true,
-        showResetIcon: true,
-        scale: 1,
-        rounding: 2,
-        showKeyboardOnFocus: false,
-        preventFocus: true,
-        id: 'ggb-cas-623fd7f5',
-        material_id: 'tcjdpxzj',
-        // ggbBase64: "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", 
-    };
-
-    var applet = new GGBApplet(options, true);
-    applet.inject('ggb-cas-623fd7f5');
-
-});
-</script>
-        </div>
 </div>
 <hr class="docutils" />
 <div class="problem-level-2 admonition">
@@ -1023,7 +1233,84 @@ document.addEventListener("DOMContentLoaded", function() {
 <figure class="align-default">
 <a class="no-click adaptive-figure reference internal image-reference" href="../../../_images/figur92.svg"><img alt="../../../_images/figur92.svg" class="no-click adaptive-figure" src="../../../_images/figur92.svg" style="width: 80%;" /></a>
 </figure>
-<div class="sd-tab-set tabs-parts docutils">
+
+<!-- jQuery and jQuery UI -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
+<!-- Button to open the dialog -->
+<button id="button-ggb-cas-a83e515b" class="ggb-cas-button">Åpne CAS-vindu</button>
+
+<!-- Dialog that will contain the CAS applet -->
+<div id="dialog-ggb-cas-a83e515b" title="CAS-vindu" style="display:none;">
+    <div id="ggb-cas-a83e515b" style="width:420px;height:500px;" class="ggb-window"></div>
+</div>
+
+<script>
+(function() {
+    
+    // Once document is ready
+    $(document).ready(function() {
+        var appletInitialized = false;
+        var dialogPaddingV = 60;
+        var dialogPaddingH = 20;
+        
+        // Dialog initialization
+        $("#dialog-ggb-cas-a83e515b").dialog({
+            autoOpen: false,
+            width: 460,
+            height: 580,
+            modal: false,
+            resizable: true,
+            draggable: true,
+            position: { my: "center", at: "center", of: window },
+            resize: function(event, ui) {
+                if (window.ggbApplet) {
+                    var newWidth = ui.size.width - dialogPaddingH;
+                    var newHeight = ui.size.height - dialogPaddingV;
+                    $("#ggb-cas-a83e515b").css({ width: newWidth + 'px', height: newHeight + 'px' });
+                    window.ggbApplet.setSize(newWidth, newHeight);
+                }
+            },
+            open: function() {
+                // Initialize applet if not already done
+                if (!appletInitialized) {
+                    var params = {
+                        appName: "classic",
+                        width: 420,
+                        height: 500,
+                        showToolBar: true,
+                        showAlgebraInput: true,
+                        showMenuBar: false,
+                        language: 'nb',
+                        borderRadius: 8,
+                        useBrowserForJS: false,
+                        preventFocus: false,
+                        showFullscreenButton: false,
+                        showResetIcon: true,
+                        enableRightClick: true,
+                        showKeyboardOnFocus: false,
+                        id: 'ggb-cas-a83e515b',
+                        perspective: 'C',
+                        'customToolBar': '1001 | 1002 | 1007 | 1010 | 1008 | 6',
+                    };
+                    
+                    var applet = new GGBApplet(params, true);
+                    applet.inject('ggb-cas-a83e515b');
+                    appletInitialized = true;
+                }
+            }
+        });
+        
+        // Button click handler
+        $("#button-ggb-cas-a83e515b").button().on("click", function() {
+            $("#dialog-ggb-cas-a83e515b").dialog("open");
+        });
+    });
+})();
+</script>
+        <div class="sd-tab-set tabs-parts docutils">
 <input checked="checked" id="sd-tab-item-11" name="sd-tab-set-5" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-11">
 a</label><div class="sd-tab-content docutils">
@@ -1049,41 +1336,6 @@ T = 32\sqrt{3}
 </div>
 </div>
 </div>
-<div class="admonition progging dropdown">
-<p class="admonition-title">CAS-vindu</p>
-
-<div id="ggb-cas-3cc69c2d" style="width: 720px; height: 700px;" class="ggb-window"></div>
-<script>
-
-
-document.addEventListener("DOMContentLoaded", function() {
-    var options = {
-        appName: 'classic',
-        width: 720,
-        height: 700,
-        showToolBar: true,
-        showAlgebraInput: false,
-        showMenuBar: false,
-        language: 'nb',
-        borderRadius: 8,
-        borderColor: '#000000',
-        showFullscreenButton: true,
-        showResetIcon: true,
-        scale: 1,
-        rounding: 2,
-        showKeyboardOnFocus: false,
-        preventFocus: true,
-        id: 'ggb-cas-3cc69c2d',
-        material_id: 'tcjdpxzj',
-        // ggbBase64: "UEsDBBQAAAAIAHpUDFkv5KYoKgUAAComAAAXAAAAZ2VvZ2VicmFfZGVmYXVsdHMyZC54bWztWl9T4zYQf+59Co+e2gcS24lJYDA33M10ygzH3RSm01fFURwVRXItmSR8+q7+xHZIwoGTQJjCA8rK0lr7+61WK8lnn2cT5t2TXFLBYxS0fOQRnogh5WmMCjU66qPP55/OUiJSMsixNxL5BKsYRbpl2S9qha1+5Os6nGUxShiWkibIyxhWukuMxGjEKCfI82aSnnJxjSdEZjghN8mYTPCVSLAyusZKZaft9nQ6bS3e2hJ52gbFsj2Tw3aaqhaUyIOhcxkj9+MU9C71nnZMv9D3g/bf367se44olwrzBAYCZg3JCBdMSfhJGJkQrjw1z0iMMkG5Qh7DA8Ji9ENL3q+jnJDfkOc6AVo+Ov/0y5kci6knBv+QBOpUXoBq188Ibd0GHn8VTOReHqNeD3kAri4GMQqjCEBj2RjHyLeNGZ6T3LvHoMHV4EKJxPQ3tSPMpFNs3vRNDIl90nXtOQWWAE5PKgJ8+K0AeTIjZAijRs5G+AH0zA3TNY3G9Bv64DRG9Vo1Z67aDSwRIh9Kbxaja3yNvLkrH2wJTc7aDtjnQTwkGeFDaLSEc9AI5+O+wVkXgLMu9g1zY5CdvjcF+fh/CjLM4j2g/J3XsQ0bYRuEEBrAJFO+Vqh4F4Hikv9JUhhzHePOB8Z79OBuI3QhHwB74P/hIWvAshhK/R+SFjHJGJm9LvA2J3IgXhmhBD1sll/UQdcJ2VvkFvDedaBray18akyTO04k5G/gFmUn/eMPOoTFySgTkCBSBXgGvb7VQP7lS6RR4IxCm62JGBU80VaV4H4t8vs6G52u/xZ8VDobz4A9kbEZS0lSLZW43CzkyrWbpXSv7Nqv6diiUEyrveQKdlUACAxDroz7jpDsFlR957c55lJvrR67CWxv8nqMcpi76cNdzFt9tMXcyfH8Ka6jD673xPUO4h2/x3nJRJ21ZvnUxhW/BW7wxtS9IPjXgdg+9XnP7ruVEx03m/qh312PXqt3wE50D+aJCoa/nFglEO8inXvNOLgmB4e1i0iK+Q52NGye1mb0j4Vc8tGzfGxvxmZGa2gtbTqjjiE1AnWPHDzw7V/QPfGD4BhODg7W3zXCS9sXDbGtqDC2ed4+MT6IWfP8TdBmPBPB9ZH5YvthpRLJ7kf0eNFWkNCUcBuSIYD4RsccCtD8oCV9VzELjDyHAp4+6AKqTXewKqcz78L2uLANL0JbdGzRtUXk0PsJsxmEtlqW/Ghx6DbbEL2nSLJ/zneWVx+S8/BiQvJaYLheyKXvRDY0gA3F8rmUZHQIZE8owHkEOE8wrKQ6Jx9IwQoFV29wo8WrqzfrcFM6VGOdhMH4RnSmibXoeWOR0wfBVQmWp/31gplLuqWjinVEh0/lmM+KWpt8erMH13x1u+CMecqqyXhhpYoBe8BvGq0eDz5NDAzE8HLcCvudoB91/F7QO4n6x8/kKehXPNkH29G0aT4CfavzEedJdUgKCe4GJoG3nXLp1lw/6HWjTngSRsHJSRd+wNh3vRP8vayodjWHeA5oPGCl6d6O+JhIClkdXFupRAhcslFifLDZCi5mlFGcz1fftDeIFZlVCcOtEWqfHhxgOrjZFIA9rYZ2aaXa/b41ZkQBRQ7fhcAZgnkJ5V9wcpfmouDOtWsj2I3pbvE5xP3VQAhGYCe8MOvLQq7dK6+s/JsAciv408cu9i5fF4BRB8a96wkIn+AkdwMxW1qvfnI/JqtJcGWE2pXvmknwHEM3LUpHb+4NTY7nXnhZuTZJqRPQrn0V1V58gnX+H1BLAwQUAAAACAB6VAxZo6M4SXgDAABMEQAAFwAAAGdlb2dlYnJhX2RlZmF1bHRzM2QueG1s7VjLctowFF23X6HRPn6ATSATJ8Oki3YmyaSTTbeKLUCtkRxJYJxf6z/0m3r1CDENecAQOumUBUcP33utc4+vJR+fLqYlmlOpmOAZjoMII8pzUTA+zvBMjw76+PTk4/GYijG9kQSNhJwSneHUXLm0S4NO0E8jM0aqKsN5SZRiOUZVSbQxybAYjUrGKUZoodgRF5dkSlVFcnqdT+iUnIucaOtronV1FIZ1XQf3UQMhxyE4VuFCFeF4rANAjODWucqwbxyB3xXrumvtOlEUh98uzl2cA8aVJjyHG4FlFXREZqVW0KQlnVKukW4qCgsQnOVdiFGSG1pm+AvXsFaam1tE+UzOwd4bZ7gbpxE++fjhOBdCFgqJRYaBCdE4uHNQA71AmZubu7m5m6vdYO0GazsYGodqImokbr5D4AxrOYOo/oZsx14D02eiFBLJDHcgAuQtjgBvAAcdSEhZTQh4DOLI/eJkEMVxL+44+5I0VKI5Aac+KplpkVuXdnRESuVj2eAXoqBuJvHXcwaaMMwoTSH7EFxVlBa25fiEZYEUGquqtj9QxLVuSor0hOU/OFWQz7RlZBqfWVFQI05nQ2+5M1HmP8MVkSAlLUFubp6NKZ8DY0IqtIjsTTQA4O3O9IxIF7HtNwAwe2cAhq05rESyBRo6i6G7cNhx0HWQOEg9Y8ehF88jGZEFU91Py6QNfbelnKhrlbNpoiE8MAn/kGXz0Pkcv1VGQTx/K6fItyms+tfP5+m2D2ZOpKaKEd56fM/MxJ/M994D82/J+9NEgn9OW/xd2f4Kf1BWt+JvMLAEdmJAoNDiskSlu6JxRMwbzLt4svKtY8wT9ZRSfYl3BdvVa1/DXywGlSibCS2k4A+8toYeqO16ard5kjZNR5x2bT5S98ZoKTpIPGvpoBclvWRnudlW4hsxO5T5hE1pQckqtZD7fVHbid3bODm01Br4N7i9aqAiM6gObV73KFlfQvqPivA7p1UyNV0lNd6jWHuuLjuxDqD3DlnlVC/XeWna7aKa/i+qm3B5OyOF3YD5pX6977c5dQLdZWXsJQPzO+zFaT9O4ECzI4J2sS1l06pkOdOvOmisPWaYQXeWaBzcAfhom5480LDn4NBB38HgxY2ImskRHLzXbZT91GqSk+2SDHZrt8rB4WtV/+B4L5vlttGzm+Ww9d0gvP9IcfIbUEsDBBQAAAAIAHpUDFnWN725GQAAABcAAAAWAAAAZ2VvZ2VicmFfamF2YXNjcmlwdC5qc0srzUsuyczPU0hPT/LP88zLLNHQVKiuBQBQSwMEFAAAAAgAelQMWcE4i9d8BQAA2Q4AAAwAAABnZW9nZWJyYS54bWy9V21v2zYQ/tz9ioM+J7beKNmF3CIthmFAVhTNNgz7Rku0TUSWBJGOnaE/fs+Rkl+aDmuWYkmUI0/He+fjc/H2sK3pQfVGt80iiCZhQKop20o360Wws6vrWfD2zQ/FWrVrtewlrdp+K+0iECx5PCcm8WQmQubJrlsEZS2N0WVAXS0tH1kE7WpV60YFpKtFME9Flckkvw5FlVyncaqu5VLG18tZFctZNgvVKgqIDka/btoPcqtMJ0t1V27UVt62pbTO6sba7vV0ut/vJ6N/k7ZfT+GCmR5MNV2vlxPQgBBkYxbBsHgNvRen94k7F4dhNP3jl1tv51o3xsqmhMucgJ1+88OrYq+bqt3TXld2g3RlISLeKL3eICXzKAtoylId8tKp0uoHZXD2bOuit9sucGKy4fev/IrqY2ABVfpBV6pfBOEky2IRUNtr1djhPXLj7ExHDcWDVnuvilfOShrOc5RIG72s1SJYydpw9ptVj3we98Y+1mopYcn2O+xPTkRX+IWA/gvSKQfqg8ebMLziJ8cjBF6wM+eWA7JtWzutIX3+THEYh3TFJPIk9tzQb8PEk9iT1BPhZVJ/MvWiqZdJvUyaPCfAgXGKMDnFl3wtPlT3ygX+RXzxC63Ca28VUSJVcrkIbm5/+vHdp5unPsTi6z6ICF6cZ5kiEsinoGiO3GQ5ODFFglJwZuDklDBPRCklxCJRQi6NKbOjDG/4Nf6jpBRxupFhQqlQtJgrJAQJiOV8FgWkbO70hXhYGh7hSZiXJHgcL0nxcM0EFAmvBn6IJHMr4f7P+AysCNj7TO4VeOkc5pgh8ogSeIJ9HhL0Qj08dtGgO/gvIt8YOcUzclqd/vBllTrrf/Gc/sCpl1gdbWY53P9Wm7OzboAc1xKEywSSEN8lLHCnmKTDNvNb1wAhCum5XA4QVBc1PgvFA8RzOn2MJAqz56Tv3OgL8ndxp3GN3J97nphMntUoT5DyP1jMLkDy+wSczr7ZfBSjYf5nmzmD3dPPBU/RsI5+n0LM/6UQxXT8wCwGj8hsWHbocau2GBdCyhPK3B1y2ApQBah4gM1jygXlfINGmAUszihjOmAtI+3sAmsFI/EZ4GbMBKjxhSOHlR5543QEX6wd/DI0X8IvcDI9QSUcZFUREQCeMr7DA2bCi/iImjHcB0hmBGQVMWWME/8AoBjeWqOPid2oGoPdUAKXQ910O3uRt3LL041b2hbSsnZD2SBfteX9u2OmB01KGoxOJ7WYaU7Tkp9xLoapV0UtlwqT5PqO24DoQdZ8gZyFVdtYGjEnY14xdYNboXZlrSstm99R93Fg+rDbLlWPfsOy5SCdEj5O44Q3T9GQ44A3yxIvUrZtX909GrQJHf5UPQ6nOXL0OKyTaIKRzZSSu5gHpMdhnc4n8/OfmXPyVaEe7pS1CMqQPCi0nk/iuud7MySHNz+bd219YnWtbux72dld7+Z1AG7Prt4061q5/LjSYZwt75ft4c4PHags6/r1sWPI8g4s1+/buu0JlyoW8B3KHMVowtTJsGdHqQSzJVsEgQyIE2G9R5FojtxBxlEIMXVS/D3AV88HCxd9pEMZ5UEbhxjI3Hl7ucrzdLxrtL0dN1aX96dYWd7XdczipcpB5MUqi+kXLVUMzT422LatlG9Ol+JievG+uFd9o2rfTA0qv2t3xov72jqvd0Z9lHZz01Sf1BoX8aNkILRwxIue4qtUqbc46PlDniW3wW8IzHMrte7VmA/vjK/C4CWZrleyMhul0OxDLXyrn8Qcu5iO7heYXmvlIH6rARSo2FYefOWsAgR4eVP2uuP+piXQ+l6dWrjShjUcGSyNjBiEhivfNqiF5Trgi+XOblq0Fc5Iyxz241zU3fbhe+CbvwFQSwECFAAUAAAACAB6VAxZL+SmKCoFAAAqJgAAFwAAAAAAAAAAAAAAAAAAAAAAZ2VvZ2VicmFfZGVmYXVsdHMyZC54bWxQSwECFAAUAAAACAB6VAxZo6M4SXgDAABMEQAAFwAAAAAAAAAAAAAAAABfBQAAZ2VvZ2VicmFfZGVmYXVsdHMzZC54bWxQSwECFAAUAAAACAB6VAxZ1je9uRkAAAAXAAAAFgAAAAAAAAAAAAAAAAAMCQAAZ2VvZ2VicmFfamF2YXNjcmlwdC5qc1BLAQIUABQAAAAIAHpUDFnBOIvXfAUAANkOAAAMAAAAAAAAAAAAAAAAAFkJAABnZW9nZWJyYS54bWxQSwUGAAAAAAQABAAIAQAA/w4AAAAA", 
-    };
-
-    var applet = new GGBApplet(options, true);
-    applet.inject('ggb-cas-3cc69c2d');
-
-});
-</script>
-        </div>
 </div>
 <hr class="docutils" />
 <div class="problem-level-2 admonition">
@@ -1092,7 +1344,84 @@ document.addEventListener("DOMContentLoaded", function() {
 <figure class="align-default">
 <a class="no-click adaptive-figure reference internal image-reference" href="../../../_images/figur93.svg"><img alt="../../../_images/figur93.svg" class="no-click adaptive-figure" src="../../../_images/figur93.svg" style="width: 80%;" /></a>
 </figure>
-<div class="sd-tab-set tabs-parts docutils">
+
+<!-- jQuery and jQuery UI -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
+<!-- Button to open the dialog -->
+<button id="button-ggb-cas-22f4e7ac" class="ggb-cas-button">Åpne CAS-vindu</button>
+
+<!-- Dialog that will contain the CAS applet -->
+<div id="dialog-ggb-cas-22f4e7ac" title="CAS-vindu" style="display:none;">
+    <div id="ggb-cas-22f4e7ac" style="width:420px;height:500px;" class="ggb-window"></div>
+</div>
+
+<script>
+(function() {
+    
+    // Once document is ready
+    $(document).ready(function() {
+        var appletInitialized = false;
+        var dialogPaddingV = 60;
+        var dialogPaddingH = 20;
+        
+        // Dialog initialization
+        $("#dialog-ggb-cas-22f4e7ac").dialog({
+            autoOpen: false,
+            width: 460,
+            height: 580,
+            modal: false,
+            resizable: true,
+            draggable: true,
+            position: { my: "center", at: "center", of: window },
+            resize: function(event, ui) {
+                if (window.ggbApplet) {
+                    var newWidth = ui.size.width - dialogPaddingH;
+                    var newHeight = ui.size.height - dialogPaddingV;
+                    $("#ggb-cas-22f4e7ac").css({ width: newWidth + 'px', height: newHeight + 'px' });
+                    window.ggbApplet.setSize(newWidth, newHeight);
+                }
+            },
+            open: function() {
+                // Initialize applet if not already done
+                if (!appletInitialized) {
+                    var params = {
+                        appName: "classic",
+                        width: 420,
+                        height: 500,
+                        showToolBar: true,
+                        showAlgebraInput: true,
+                        showMenuBar: false,
+                        language: 'nb',
+                        borderRadius: 8,
+                        useBrowserForJS: false,
+                        preventFocus: false,
+                        showFullscreenButton: false,
+                        showResetIcon: true,
+                        enableRightClick: true,
+                        showKeyboardOnFocus: false,
+                        id: 'ggb-cas-22f4e7ac',
+                        perspective: 'C',
+                        'customToolBar': '1001 | 1002 | 1007 | 1010 | 1008 | 6',
+                    };
+                    
+                    var applet = new GGBApplet(params, true);
+                    applet.inject('ggb-cas-22f4e7ac');
+                    appletInitialized = true;
+                }
+            }
+        });
+        
+        // Button click handler
+        $("#button-ggb-cas-22f4e7ac").button().on("click", function() {
+            $("#dialog-ggb-cas-22f4e7ac").dialog("open");
+        });
+    });
+})();
+</script>
+        <div class="sd-tab-set tabs-parts docutils">
 <input checked="checked" id="sd-tab-item-13" name="sd-tab-set-6" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-13">
 a</label><div class="sd-tab-content docutils">
@@ -1118,41 +1447,6 @@ T \approx 29.3
 </div>
 </div>
 </div>
-<div class="admonition progging dropdown">
-<p class="admonition-title">CAS-vindu</p>
-
-<div id="ggb-cas-ee876183" style="width: 720px; height: 700px;" class="ggb-window"></div>
-<script>
-
-
-document.addEventListener("DOMContentLoaded", function() {
-    var options = {
-        appName: 'classic',
-        width: 720,
-        height: 700,
-        showToolBar: true,
-        showAlgebraInput: false,
-        showMenuBar: false,
-        language: 'nb',
-        borderRadius: 8,
-        borderColor: '#000000',
-        showFullscreenButton: true,
-        showResetIcon: true,
-        scale: 1,
-        rounding: 2,
-        showKeyboardOnFocus: false,
-        preventFocus: true,
-        id: 'ggb-cas-ee876183',
-        material_id: 'tcjdpxzj',
-        // ggbBase64: "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", 
-    };
-
-    var applet = new GGBApplet(options, true);
-    applet.inject('ggb-cas-ee876183');
-
-});
-</script>
-        </div>
 </div>
 </section>
 
