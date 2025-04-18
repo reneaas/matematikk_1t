@@ -151,23 +151,49 @@ Merk at vi skriver "$\lor$" som betyr "eller". Dette brukes fordi $f(x) = 0$ kan
 
 ---
 
-:::::::::::::::{admonition} Underveisoppgave 1
----
-class: check
----
+:::::::::::::::{quiz} Underveisoppgave 1
+Q: Hvilket funksjonsuttrykk hører til grafen? ![](figurer/quiz/quiz_1/spm_1.svg)
++ $$f(x) = (x + 1)(x - 2)$$
+- $$f(x) = (x + 1)(x + 2)$$
+- $$f(x) = (x - 1)(x + 2)$$
+- $$f(x) = (x - 1)(x - 2)$$
 
-Ta quizen!
+Q: Hvilket funksjonsuttrykk hører til grafen? ![](figurer/quiz/quiz_1/spm_2.svg)
++ $$f(x) = (x - 3)(x + 3)$$
+- $$f(x) = (x - 3)(x - 3)$$
+- $$f(x) = (x + 3)(x + 3)$$
+- $$f(x) = (x + 3)(x - 2)$$
 
-:::{raw} html
----
-file: ./quiz/quiz_1/quiz_1.html
----
-:::
+Q: Hvilket funksjonsuttrykk hører til grafen? ![](figurer/quiz/quiz_1/spm_3.svg)
++ $$f(x) = -2(x - 2)^2$$
+- $$f(x) = 4(x - 2)^2$$
+- $$f(x) = (x + 2)^2$$
+- $$f(x) = (x - 2)(x + 2)$$
+
+Q: Hvilket funksjonsuttrykk hører til grafen? ![](figurer/quiz/quiz_1/spm_4.svg)
++ $$f(x) = 2(x + 3)^2$$
+- $$f(x) = -(x + 3)^2$$
+- $$f(x) = (x + 3)(x - 3)$$
+- $$f(x) = (x - 2)(x + 3)$$
+
+Q: Nullpunktene til $f(x) = (x - 4)(x + 3)$ er ...
++ $x = -3 \quad \lor \quad x = 4$
+- $x = 3 \quad \lor \quad x = 4$
+- $x = -3 \quad \lor \quad x = -4$
+- $x = 3 \quad \lor \quad x = -4$
+
+Q: Nullpunktene til $f(x) = -3(x + 1)(x - 3)$ er ...
++ $x = -1 \quad \lor \quad x = 3$
+- $x = 1 \quad \lor \quad x = -3$
+- $x = -1 \quad \lor \quad x = -3$
+- $x = 1 \quad \lor \quad x = 3$
 
 :::::::::::::::
 
 
 ---
+
+
 
 ## Bestemme $f(x)$ 
 

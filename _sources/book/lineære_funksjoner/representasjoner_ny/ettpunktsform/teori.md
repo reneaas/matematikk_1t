@@ -10,7 +10,7 @@ class: tip
 
 Hittil har vi sett på to måter å representere en lineær funksjon på, nemlig {popup}`standardform<$f(x) = ax + b$>` og {popup}`nullpunktsform<$f(x) = a(x - x_0)$>`. Standardform fortalte oss stigningen til grafen og hvor grafen skjærer gjennom $y$-aksen, mens nullpunktsform fortalte oss stigningen og hvor grafen skjærer gjennom $x$-aksen. 
 
-Her skal vi se på en tredje måte å representere en lineær funksjon som vi skal kalle for **ettpunktsform**. Denne måten å uttrykke en lineær funksjon forteller oss stigningen til grafen og ett punkt som grafen går gjennom.
+Her skal vi se på en tredje måte å representere en lineær funksjon som vi skal kalle for **ettpunktsform**. Denne måten å uttrykke en lineær funksjon forteller oss stigningen til grafen og ett punkt som grafen går gjennom. Vi kan se på denne måten å uttrykke funksjonen på som at vi *bygger opp* linja ved å starte fra ett punkt og så forteller stigningstallet oss hvilken retning vi skal tegne grafen i.
 
 
 :::::::::::::::{theory} Ettpunktsform

@@ -222,23 +222,46 @@ viser to områder på tallinja som er fargelagt med rød farge.
 
 ---
 
-:::::::::::::::{admonition} Underveisoppgave 1
----
-class: check
----
-Ta quizen! Flere svaralternativer kan være riktige.
+:::::::::::::::{quiz} Underveisoppgave 1
+Q: Hvilket intervall er det samme som $x < -4 \, \lor \, x > 3$?
++ $x \in \langle \gets, -4 \rangle \cup \langle 3, \to \rangle$
+- $x \in \langle -3, 4 \rangle$
+- $x \in \langle \gets, 3 \rangle \cup \langle -4, \to \rangle$
+- $x \in \langle \gets, -4] \cup \langle 3, \to \rangle$
 
-:::{raw} html
----
-file: ./quiz/quiz_1/quiz_1.html
----
-:::
+Q: Hvilket intervall er det samme som $x \leq 1 \, \lor \, x > 2$?
++ $x \in \langle \gets, 1] \cup \langle 2, \to \rangle$
+- $x \in \langle 1, 2 \rangle$
+- $x \in \langle \gets, 2 \rangle \cup \langle 1, \to \rangle$
+- $x \in \langle \gets, 1\rangle \cup \langle 2, \to \rangle$
 
+Q: Hvilket intervall er det samme som $x < -1 \, \lor \, x \geq 1$?
++ $x \in \mathbb{R} \setminus [-1, 1 \rangle$
+- $x \in \mathbb{R} \setminus \langle -1, 1 \rangle$
+- $x \in \mathbb{R} \setminus \langle -1, 1]$
+- $x \in \mathbb{R} \setminus [-1, 1]$
+
+Q: Hvilket intervall er det samme som $x < -4 \, \lor \, x > -2$?
++ $x \in \mathbb{R} \setminus [-4, -2]$
+- $x \in \mathbb{R} \setminus \langle -4, -2 \rangle$
+- $x \in \mathbb{R} \setminus \langle -2, -4]$
+- $x \in \mathbb{R} \setminus [-4, -2\rangle$
+
+Q: Hvilket intervall er det samme som $x < -2 \, \lor \, x > 1$?
++ $x \in \mathbb{R} \setminus [-2, 1]$
+- $x \in \langle \gets, -2 \rangle \cup \langle 1, \to \rangle$
+- $x \in \mathbb{R} \setminus \langle -2, 1\rangle$
+- $x \in \langle \gets, -2] \cup \langle 1, \to \rangle$
+
+Q: Hvilket intervall er det samme som $x < 1 \, \lor \, x \geq 5$?
++ $x \in \mathbb{R} \setminus [1, 5\rangle$
+- $x \in \langle \gets, 1 \rangle \cup [5, \to \rangle$
+- $x \in \mathbb{R} \setminus \langle 1, 5]$
+- $x \in \langle \gets, 1] \cup \langle 5, \to \rangle$
 :::::::::::::::
 
 
 
-:::::::::::::::
 
 ## Ulikheter
 

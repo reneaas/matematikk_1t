@@ -1,20 +1,54 @@
 # Oppgaver:  Nullpunktsform
 
-:::::::::::::::{admonition} Oppgave 1
----
-class: problem-level-1
----
-Ta quizen!
+:::::::::::::::{quiz} Oppgave 1
+Q: Hvilket funksjonsuttrykk hører til grafen? ![](figurer/quiz/quiz_2/spm_1.svg)
++ $$f(x) = -(x + 1)(x - 1)$$
+- $$f(x) = (x + 1)(x - 1)$$
+- $$f(x) = (x - 1)^2$$
+- $$f(x) = -(x - 1)^2$$
 
-:::{raw} html
----
-file: quiz/quiz_2/quiz_2.html
----
-:::
+Q: Hvilket funksjonsuttrykk hører til grafen? ![](figurer/quiz/quiz_2/spm_2.svg)
++ $$f(x) = -(x + 3)(x - 2)$$
+- $$f(x) = (x + 3)^2$$
+- $$f(x) = (x + 3)(x - 2)$$
+- $$f(x) = (x - 3)(x + 2)$$
+
+Q: Hvilket funksjonsuttrykk hører til grafen? ![](figurer/quiz/quiz_2/spm_3.svg)
++ $$f(x) = (x + 1)(x + 3)$$
+- $$f(x) = -(x + 1)(x + 3)$$
+- $$f(x) = (x - 1)(x + 3)$$
+- $$f(x) = -(x + 1)(x - 3)$$
+
+Q: Nullpunktene til $f(x) = 2(x + 1)^2$ er ...
++ $$x = -1$$
+- $$x = 1$$
+- $$x = 2$$
+- $$x = -1 \quad \lor \quad x = 1$$
+
+Q: Nullpunktene til $f(x) = -4(x + 1)(x + 3)$ er ...
++ $$x = -1 \quad \lor \quad x = -3$$
+- $$x = 1 \quad \lor \quad x = 3$$
+- $$x = -4 \quad \lor \quad x = -1$$
+- $$x = 4 \quad \lor \quad x = -3$$
+
+
+Q: Nullpunktene til $f(x) = 3(x + 4)(x - 5)$ er ...
++ $$x = -4 \quad \lor \quad x = 5$$
+- $$x = 4 \quad \lor \quad x = -5$$
+- $$x = 3 \quad \lor \quad x = 5$$
+- $$x = 3 \quad \lor \quad x = -4$$
 
 :::::::::::::::
 
+
+
+
+
 ---
+
+
+
+
 
 :::::::::::::::{admonition} Oppgave 2
 ---
@@ -108,7 +142,7 @@ class: tabs-parts
 :::::::::::::{tab-item} a
 Bestem $f(x)$.
 
-:::{figure} ./figurer/oppgaver/oppgave_3/graf_a.svg
+:::{figure} ./figurer/oppgaver/oppgave_3/a.svg
 ---
 width: 80%
 name: fig-andregradsfunksjoner-representasjoner-nullpunktsform-oppgave-3-a
@@ -132,7 +166,7 @@ $$
 :::::::::::::{tab-item} b
 Bestem $g(x)$. 
 
-:::{figure} ./figurer/oppgaver/oppgave_3/graf_b.svg
+:::{figure} ./figurer/oppgaver/oppgave_3/b.svg
 ---
 width: 80%
 name: fig-andregradsfunksjoner-representasjoner-nullpunktsform-oppgaver-oppgave-3-b
@@ -157,7 +191,7 @@ $$
 Bestem $h(x)$.
 
 
-:::{figure} ./figurer/oppgaver/oppgave_3/graf_c.svg
+:::{figure} ./figurer/oppgaver/oppgave_3/c.svg
 ---
 width: 80%
 name: fig-andregradsfunksjoner-representasjoner-nullpunktsform-oppgave-3-c
@@ -179,7 +213,7 @@ $$
 :::::::::::::{tab-item} d
 Bestem $r(x)$.
 
-:::{figure} ./figurer/oppgaver/oppgave_3/graf_d.svg
+:::{figure} ./figurer/oppgaver/oppgave_3/d.svg
 ---
 width: 80%
 name: fig-andregradsfunksjoner-representasjoner-nullpunktsform-oppgave-3-d
@@ -528,7 +562,7 @@ viser grafen til en andregradsfunksjon $f$.
 ---
 class: solution
 ---
-Grafen til $f$ skjærer linja $y = 2$ i $x = -3$ og $x = -1$. Dermed kan v
+Grafen til $f$ skjærer linja $y = 2$ i $x = -3$ og $x = -1$. Dermed kan vi skrive 
 
 $$
 f(x) = a(x + 3)(x + 1) + 2
