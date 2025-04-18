@@ -37,17 +37,17 @@ def main(dirname, save):
 
     x = np.linspace(-20, x_inf, 1024)
     y = f(x)
-    ax.plot(x, y, label=r"$\mathrm{B}$", color="teal", lw=2.5, alpha=0.8)
+    ax.plot(x, y, label=r"$\mathrm{B}$", color=plotmath.COLORS.get("blue"), lw=2.5)
 
     x = np.linspace(x_inf, 20, 1024)
     y = f(x)
-    ax.plot(x, y, color="teal", lw=2.5, alpha=0.8)
+    ax.plot(x, y, color=plotmath.COLORS.get("blue"), lw=2.5)
 
     ax.vlines(
         x=x_inf,
         ymin=ymin,
         ymax=ymax,
-        color="blue",
+        color=plotmath.COLORS.get("red"),
         linestyle="--",
     )
 
@@ -55,7 +55,7 @@ def main(dirname, save):
         y=horisontal_asymptote,
         xmin=xmin,
         xmax=xmax,
-        color="blue",
+        color=plotmath.COLORS.get("red"),
         linestyle="--",
     )
     ax.legend(fontsize=16)
@@ -65,7 +65,9 @@ def main(dirname, save):
     if save:
         fname = __file__.split("/")[-1].replace(".py", ".svg")
         plotmath.savefig(
-            dirname=dirname, fname=fname
+            dirname=dirname,
+            fname=fname,
+            transparent=True,
         )  # Lagrer figuren i `dirname`-directory
 
     if not save:

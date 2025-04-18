@@ -153,6 +153,7 @@ def main(dirname, save):
         plotmath.savefig(
             dirname=dirname,
             fname=fname,
+            transparent=True,
         )
 
     if not save:

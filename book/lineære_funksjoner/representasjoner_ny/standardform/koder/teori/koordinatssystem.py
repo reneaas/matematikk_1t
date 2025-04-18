@@ -26,15 +26,17 @@ def main(dirname, save):
     ax.plot(*point, "ko", markersize=8, alpha=0.7)
 
     x0, y0 = point
-    ax.hlines(y0, 0, x0, color="blue", lw=1.5, linestyle="--", alpha=0.7)
-    ax.vlines(x0, 0, y0, color="blue", lw=1.5, linestyle="--", alpha=0.7)
+    ax.hlines(y0, 0, x0, color=plotmath.COLORS.get("red"), lw=2.5, linestyle="--")
+    ax.vlines(x0, 0, y0, color=plotmath.COLORS.get("red"), lw=2.5, linestyle="--")
 
     # NOTE: Select an appropriate `dirname` to save the figure.
     # The directory `dirname` will be created automatically if it does not exist already.
     if save:
         fname = __file__.split("/")[-1].replace(".py", ".svg")
         plotmath.savefig(
-            dirname=dirname, fname=fname
+            dirname=dirname,
+            fname=fname,
+            transparent=True,
         )  # Lagrer figuren i `dirname`-directory
 
     if not save:

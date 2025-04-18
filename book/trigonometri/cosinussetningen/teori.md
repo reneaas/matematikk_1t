@@ -61,6 +61,9 @@ class: no-click, adaptive-figure
 Bestem $AC$ ved hjelp av cosinussetningen.
 
 
+:::{cas-popup} 420 500
+:::
+
 ::::{admonition} Fasit
 ---
 class: answer, dropdown
@@ -96,10 +99,6 @@ AC = 4.
 $$
 
 ::::
-
-
-:::{cas-window}
-:::
 
 :::::::::::::::
 

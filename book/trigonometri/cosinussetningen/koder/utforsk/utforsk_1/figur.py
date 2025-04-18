@@ -197,7 +197,9 @@ def main(dirname, save):
     if save:
         fname = __file__.split("/")[-1].replace(".py", ".svg")
         plotmath.savefig(
-            dirname=dirname, fname=fname
+            dirname=dirname,
+            fname=fname,
+            transparent=True,
         )  # Lagrer figuren i `dirname`-directory
 
     if not save:

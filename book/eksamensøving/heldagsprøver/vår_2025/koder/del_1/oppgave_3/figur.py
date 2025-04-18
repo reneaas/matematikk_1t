@@ -21,7 +21,6 @@ def main(dirname, save):
         ystep=1,
         ticks=True,
         grid=True,
-        alpha=0.8,
     )
 
     # NOTE: Select an appropriate `dirname` to save the figure.
@@ -29,7 +28,9 @@ def main(dirname, save):
     if save:
         fname = __file__.split("/")[-1].replace(".py", ".svg")
         plotmath.savefig(
-            dirname=dirname, fname=fname
+            dirname=dirname,
+            fname=fname,
+            transparent=True,
         )  # Lagrer figuren i `dirname`-directory
 
     if not save:

@@ -46,8 +46,17 @@ def main(dirname, save):
     tangent2 = make_tangent_fn(f, x2)
 
     x = np.linspace(xmin, xmax, 1024)
-    ax.plot(x, tangent1(x), linestyle="-", color="red", alpha=1, lw=1.5)
-    ax.plot(x, tangent2(x), linestyle="-", color="blue", alpha=1, lw=1.5)
+    ax.plot(
+        x, tangent1(x), linestyle="-", color=plotmath.COLORS.get("red"), alpha=1, lw=1.5
+    )
+    ax.plot(
+        x,
+        tangent2(x),
+        linestyle="-",
+        color=plotmath.COLORS.get("orange"),
+        alpha=1,
+        lw=1.5,
+    )
 
     ax.plot(x1, f(x1), "ko", markersize=8, alpha=0.7)
     ax.plot(x2, f(x2), "ko", markersize=8, alpha=0.7)
@@ -57,7 +66,9 @@ def main(dirname, save):
     if save:
         fname = __file__.split("/")[-1].replace(".py", ".svg")
         plotmath.savefig(
-            dirname=dirname, fname=fname
+            dirname=dirname,
+            fname=fname,
+            transparent=True,
         )  # Lagrer figuren i `dirname`-directory
 
     if not save:

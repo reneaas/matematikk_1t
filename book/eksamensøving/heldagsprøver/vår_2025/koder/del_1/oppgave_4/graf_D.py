@@ -34,21 +34,21 @@ def main(dirname, save):
 
     x = np.linspace(-20, x_inf1, 1024)
     y = f(x)
-    ax.plot(x, y, label=r"$\mathrm{D}$", color="teal", lw=2.5, alpha=0.8)
+    ax.plot(x, y, label=r"$\mathrm{D}$", color=plotmath.COLORS.get("blue"), lw=2.5)
 
     x = np.linspace(x_inf1, x_inf2, 1024)
     y = f(x)
-    ax.plot(x, y, color="teal", lw=2.5, alpha=0.8)
+    ax.plot(x, y, color=plotmath.COLORS.get("blue"), lw=2.5)
 
     x = np.linspace(x_inf2, 20, 1024)
     y = f(x)
-    ax.plot(x, y, color="teal", lw=2.5, alpha=0.8)
+    ax.plot(x, y, color=plotmath.COLORS.get("blue"), lw=2.5)
 
     ax.vlines(
         x=x_inf2,
         ymin=ymin,
         ymax=ymax,
-        color="blue",
+        color=plotmath.COLORS.get("red"),
         linestyle="--",
     )
 
@@ -59,7 +59,9 @@ def main(dirname, save):
     if save:
         fname = __file__.split("/")[-1].replace(".py", ".svg")
         plotmath.savefig(
-            dirname=dirname, fname=fname
+            dirname=dirname,
+            fname=fname,
+            transparent=True,
         )  # Lagrer figuren i `dirname`-directory
 
     if not save:

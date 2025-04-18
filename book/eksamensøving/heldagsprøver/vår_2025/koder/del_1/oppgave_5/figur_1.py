@@ -28,7 +28,7 @@ def main(dirname, save):
     r = 1
 
     x, y = make_circle(radius=r)
-    ax.plot(x, y, color="teal", lw=2.5, alpha=0.8)
+    ax.plot(x, y, color=plotmath.COLORS.get("blue"), lw=2.5)
 
     ax = draw_triangle(
         (0, 0),
@@ -59,7 +59,9 @@ def main(dirname, save):
     if save:
         fname = __file__.split("/")[-1].replace(".py", ".svg")
         plotmath.savefig(
-            dirname=dirname, fname=fname
+            dirname=dirname,
+            fname=fname,
+            transparent=True,
         )  # Lagrer figuren i `dirname`-directory
 
     if not save:

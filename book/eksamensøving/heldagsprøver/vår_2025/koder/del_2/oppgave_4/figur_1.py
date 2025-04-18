@@ -34,7 +34,7 @@ def plot_trajectory(H, y0, x0, hole_size):
         trajectory_lower[:, 0],
         trajectory_lower[:, 1],
         trajectory_upper[:, 1],
-        color="lightblue",
+        color=plotmath.COLORS.get("blue"),
     )
 
 
@@ -60,7 +60,11 @@ def main(dirname, save, R, h, table_height, p, g=9.81):
     C = (R, H + table_height)
     D = (R, table_height)
 
-    plt.fill([A[0], B[0], C[0], D[0]], [A[1], B[1], C[1], D[1]], color="lightblue")
+    plt.fill(
+        [A[0], B[0], C[0], D[0]],
+        [A[1], B[1], C[1], D[1]],
+        color=plotmath.COLORS.get("blue"),
+    )
 
     dy = 0.05
     plt.annotate(
@@ -126,7 +130,9 @@ def main(dirname, save, R, h, table_height, p, g=9.81):
     if save:
         fname = __file__.split("/")[-1].replace(".py", ".svg")
         plotmath.savefig(
-            dirname=dirname, fname=fname
+            dirname=dirname,
+            fname=fname,
+            transparent=True,
         )  # Lagrer figuren i `dirname`-directory
 
     if not save:

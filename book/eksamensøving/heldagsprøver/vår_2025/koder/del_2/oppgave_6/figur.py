@@ -57,7 +57,7 @@ def main(dirname, save):
         plt.fill(
             [A_fill[0], B_fill[0], C_fill[0], D_fill[0]],
             [A_fill[1], B_fill[1], C_fill[1], D_fill[1]],
-            color="teal",
+            color=plotmath.COLORS.get("blue"),
             alpha=0.3,
         )
 
@@ -85,7 +85,9 @@ def main(dirname, save):
     if save:
         fname = __file__.split("/")[-1].replace(".py", ".svg")
         plotmath.savefig(
-            dirname=dirname, fname=fname
+            dirname=dirname,
+            fname=fname,
+            transparent=True,
         )  # Lagrer figuren i `dirname`-directory
 
     if not save:

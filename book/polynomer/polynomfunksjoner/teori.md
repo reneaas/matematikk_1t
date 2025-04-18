@@ -560,95 +560,67 @@ $$
 Vi tar et eksempel på hvordan vi kan gå frem for å bestemme $f(x)$ gitt grafen til et tredjegradspolynom. Den algebraiske regningen vil være såpass fiklete, at her skal vi benytte oss av CAS for å bestemme $f(x)$.  
 
 
-:::::::::::::::{admonition} Eksempel 3
+:::::::::::::::{admonition} Utforsk 3
 ---
-class: example
+class: explore
 ---
 
-Grafen til et tredjegradspolynom er vist i {numref}`fig-polynomer-nullpunktsform-eksempel-3`.
+Grafen til en tredjegradsfunksjon $f$ er vist i {numref}`fig-polynomer-nullpunktsform-utforsk-3`.
 
-:::{figure} ./figurer/eksempler/eksempel_3/graf.svg
+:::{figure} ./figurer/utforsk/utforsk_3/graf.svg
 ---
-name: fig-polynomer-nullpunktsform-eksempel-3
+name: fig-polynomer-nullpunktsform-utforsk-3
 width: 80%
 class: no-click, adaptive-figure
 ---
-viser grafen til et tredjegradspolynom. Noen punkter på grafen til $f$ er markert i figuren.
+viser grafen til en tredjegradsfunksjon $f$. Noen punkter på grafen til $f$ er markert i figuren.
+:::
+
+Fra grafen kan vi sette opp et likningssystem for $f(x)$ ved å bruke punktene som er markert i figuren:
+
+\begin{align*}
+    f(-2) &= 3 && \text{punktet (-2, 3)} \\
+    \\
+    f(-1) &= 0 && \text{punktet (-1, 0)}\\
+    \\
+    f(0) &= 3 && \text{punktet (0, 3)}\\
+    \\
+    f(1) &= 3 && \text{punktet (1, 3)}\\
+\end{align*}
+
+> Bruk CAS-vinduet nedenfor til å bestemme $f(x)$. Du må sette opp resten av likningene og løse likningssystemet.
+
+:::{ggb} 720 600
+---
+material_id: gjefn7be
+toolbar: "true"
+---
 :::
 
 
-::::::::::::::{admonition} Løsning
+::::{solution}
+:::{figure} ./figurer/utforsk/utforsk_3/sol.png
 ---
-class: solution
----
-
-Et tredjegradspolynom $f$ kan skrives på formen 
-
-$$
-f(x) = ax^3 + bx^2 + cx + d,
-$$
-
-der vi må bestemme koeffisientene $a, b, c, d \in \mathbb{R}$. Da trenger vi **fire likninger** siden vi har fire ukjente. På grafen er det markert fire punkter
-
-$$
-(-2, 3), \quad (-1, 0), \quad (0, 3), \quad (1, 3),
-$$
-
-som forteller oss at 
-
-$$
-f(-2) = 3 \quad \land \quad f(-1) = 0 \quad \land \quad f(0) = 3 \quad \land \quad f(1) = 3.
-$$
-
-Dette gir oss et likningssystem med fire likninger og fire ukjente som vi kan løse med CAS:
-
-> Som vanlig velger du mellom CAS i Python eller Geogebra.
-
-````{tab} Python
-
-:::{raw} html
----
-file: ./python/eksempler/eksempel_3/eksempel_3.html
+width: 100%
+class: no-click, adaptive-figure
 ---
 :::
-
-<br>
-
-Kjører du programmet, vil du få en utskrift som forteller oss at 
-
-$$
-a = -\dfrac{3}{2} \and b = -\dfrac{3}{2} \and c = 3 \and d = 3.
-$$
-
-````
-
-````{tab} Geogebra
-
-:::{raw} html
----
-file: ./ggb/eksempler/eksempel_3/eksempel_3.html
----
-:::
-
-<br>
-
-Vi kan se fra CAS-vinduet at 
-
-$$
-a = -\dfrac{3}{2} \and b = -\dfrac{3}{2} \and c = 3 \and d = 3.
-$$
-
-````
-
-Vi kan derfor konkludere med at 
 
 $$
 f(x) = -\dfrac{3}{2}x^3 - \dfrac{3}{2}x^2 + 3x + 3.
 $$
-
-::::::::::::::
+::::
 
 :::::::::::::::
+
+
+
+---
+
+
+
+
+
 
 :::::::::::::::{admonition} Underveisoppgave 2
 ---
@@ -668,12 +640,14 @@ viser grafen til en tredjegradsfunksjon $f$.
 :::
 
 
+
+
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
-Sett opp et likningssystem uttrykt ved $f(x)$ ved å finne fire punkter på grafen til $f$.
+Sett opp et likningssystem for $f(x)$ ved å finne fire punkter på grafen til $f$.
 
 
 :::{admonition} Fasit
@@ -700,76 +674,14 @@ $$
 Løs likningssystemet ved hjelp av CAS og bestem $f(x)$.
 
 
-````{tab} Python
 
-:::{raw} html
----
-file: ./python/underveisoppgaver/underveisoppgave_2/b.html
----
+:::{cas-popup} 420 500
 :::
 
 
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-**Programkode**:
 
-:::{code-block} python
----
-linenos: 
----
-from casify import *
+::::{answer}
 
-
-f = funksjon("a * x**3 + b * x**2 + c * x + d")
-
-koeffisienter = løs("f(-1) = 0", "f(0) = 3", "f(1) = 2", "f(2) = 3")
-
-print(koeffisienter)
-:::
-
-**Utskrift**:
-
-:::{code-block} console
----
-linenos:
----
-a = 1 ∧ b = -2 ∧ c = 0 ∧ d = 3
-:::
-
-Løsningen er
-
-$$
-a = 1 \and b = -2 \and c = 0 \and d = 3,
-$$
-
-som gir 
-
-$$
-f(x) = x^3 - 2x^2 + 3.
-$$
-
-::::
-
-
-````
-
-
-````{tab} Geogebra
-
-
-:::{raw} html
----
-file: ./ggb/underveisoppgaver/underveisoppgave_2/b.html
----
-:::
-
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
 Løsningen er
 
 $$
@@ -783,8 +695,29 @@ f(x) = x^3 - 2x^2 + 3.
 $$
 ::::
 
+::::{solution}
 
-````
+:::{figure} ./figurer/underveisoppgaver/underveisoppgave_2/sol.png
+---
+width: 80%
+class: no-click, adaptive-figure
+---
+:::
+
+som betyr at 
+
+$$
+a = 1 \and b = -2 \and c = 0 \and d = 3.
+$$
+
+Dermed er 
+
+$$
+f(x) = x^3 - 2x^2 + 3.
+$$
+
+::::
+
 
 
 :::::::::::::

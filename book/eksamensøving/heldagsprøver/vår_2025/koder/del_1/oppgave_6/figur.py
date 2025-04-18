@@ -21,7 +21,6 @@ def main(dirname, save):
         ystep=1,
         ticks=False,
         grid=False,
-        alpha=0.8,
     )
 
     ax.plot(-3, 0, "ko", markersize=8, alpha=0.7)
@@ -32,7 +31,9 @@ def main(dirname, save):
     if save:
         fname = __file__.split("/")[-1].replace(".py", ".svg")
         plotmath.savefig(
-            dirname=dirname, fname=fname
+            dirname=dirname,
+            fname=fname,
+            transparent=True,
         )  # Lagrer figuren i `dirname`-directory
 
     if not save:

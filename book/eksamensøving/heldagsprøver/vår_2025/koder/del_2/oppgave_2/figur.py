@@ -21,7 +21,7 @@ def main(dirname, save):
     plt.plot(x, y, color="black", lw=1.5)
 
     x, y = make_n_gon(n=6, radius=2 / np.sqrt(3))
-    plt.plot(x, y, color="teal", lw=2.5, alpha=0.8)
+    plt.plot(x, y, color=plotmath.COLORS.get("blue"), lw=2.5)
 
     l = 2 / np.sqrt(3)
     A = (0, 0)
@@ -33,7 +33,7 @@ def main(dirname, save):
         B,
         C,
         ax=plt.gca(),
-        color="teal",
+        color=plotmath.COLORS.get("blue"),
         show_vertices=True,
     )
 
@@ -67,7 +67,9 @@ def main(dirname, save):
     if save:
         fname = __file__.split("/")[-1].replace(".py", ".svg")
         plotmath.savefig(
-            dirname=dirname, fname=fname
+            dirname=dirname,
+            fname=fname,
+            transparent=True,
         )  # Lagrer figuren i `dirname`-directory
 
     if not save:
