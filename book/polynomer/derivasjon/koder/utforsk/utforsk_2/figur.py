@@ -54,7 +54,7 @@ def main(dirname, save):
 
     x_vals = np.linspace(-6, 6, 1024)
 
-    ax.plot(x_vals, secant(x_vals), lw=2, color="blue", alpha=0.7)
+    ax.plot(x_vals, secant(x_vals), lw=2.5)
 
     # NOTE: Select an appropriate `dirname` to save the figure.
     # The directory `dirname` will be created automatically if it does not exist already.

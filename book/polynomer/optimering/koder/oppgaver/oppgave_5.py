@@ -21,7 +21,7 @@ def main(dirname, save):
         domain=[0, 3],
     )
 
-    color = "teal"
+    color = "skyblue"
     x0 = 2
     a = 0
     b = 4
@@ -33,7 +33,7 @@ def main(dirname, save):
     B = [x0, f(x0)]
     C = [x0, 0]
 
-    ax.fill([A[0], B[0], C[0]], [A[1], B[1], C[1]], color=color, alpha=0.1)
+    ax.fill([A[0], B[0], C[0]], [A[1], B[1], C[1]], color=color, alpha=0.4)
 
     ax.plot(*A, "ko", markersize=8, alpha=0.7)
     ax.plot(*B, "ko", markersize=8, alpha=0.7)

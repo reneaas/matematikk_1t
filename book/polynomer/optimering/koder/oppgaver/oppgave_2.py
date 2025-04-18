@@ -21,7 +21,7 @@ def main(dirname, save):
         domain=[-4, 4],
     )
 
-    color = "teal"
+    color = "blue"
     x0 = 3
 
     A = [-x0, 0]
@@ -32,8 +32,8 @@ def main(dirname, save):
     ax.fill(
         [A[0], B[0], C[0], D[0]],
         [A[1], B[1], C[1], D[1]],
-        color=color,
-        alpha=0.1,
+        color="skyblue",
+        alpha=0.4,
     )
 
     ax.plot([A[0], B[0]], [A[1], B[1]], color="black", lw=1.5, alpha=0.7)

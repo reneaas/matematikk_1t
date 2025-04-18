@@ -9,7 +9,7 @@ def main(dirname, save):
         return -x * (x - 3) ** 3
 
     # List of functions and their labels.
-    functions = []
+    functions = [f]
 
     fig, ax = plotmath.plot(
         functions=functions,
@@ -19,12 +19,8 @@ def main(dirname, save):
         ymin=-4,
         ymax=10,
         ticks=False,
+        domain=[0, 3],
     )
-
-    x = np.linspace(0, 3, 1024)
-    y = f(x)
-
-    ax.plot(x, y, color="teal", lw=2, alpha=0.7)
 
     x0 = 2
     A = [0, 0]
@@ -38,8 +34,8 @@ def main(dirname, save):
     ax.fill(
         [A[0], B[0], C[0]],
         [A[1], B[1], C[1]],
-        color="teal",
-        alpha=0.2,
+        color="skyblue",
+        alpha=0.4,
     )
 
     ax.plot([A[0], B[0]], [A[1], B[1]], color="black", lw=1.5)

@@ -902,7 +902,7 @@ som betyr at $x \approx 1.732$ gir størst mulig areal. Dette stemmer ganske bra
 ---
 class: problem-level-2
 ---
-I {numref}`fig-polynomer-optimering-oppgave-6` vises grafen til en andregradsfunksjon $f$ gitt ved 
+I {numref}`fig-polynomer-optimering-oppgave-7` vises grafen til en andregradsfunksjon $f$ gitt ved 
 
 $$
 f(x) = -x^2 + 36, \quad D_f = [-6, 6],
@@ -912,9 +912,9 @@ og et fargelagt området med hjørner i punktene $(-4, 0)$, $(-4, f(-4))$, $(4, 
 
 
 
-::::{figure} ./figurer/oppgaver/oppgave_6.svg
+::::{figure} ./figurer/oppgaver/oppgave_7.svg
 ---
-name: fig-polynomer-optimering-oppgave-6
+name: fig-polynomer-optimering-oppgave-7
 width: 80%
 class: no-click, adaptive-figure
 ---
@@ -1050,7 +1050,7 @@ $$
 ---
 class: problem-level-2
 ---
-I {numref}`fig-polynomer-optimering-oppgave-7` vises grafen til en tredjegradsfunksjon $f$ som er gitt ved
+I {numref}`fig-polynomer-optimering-oppgave-8` vises grafen til en tredjegradsfunksjon $f$ som er gitt ved
 
 $$
 f(x) = -x^3 + 4x^2,
@@ -1058,9 +1058,9 @@ $$
 
 der $D_f = [0, 4]$, og en trekant som har hjørner i punktene $(1, 0)$, $(4, 0)$ og $(1, f(1))$. 
 
-:::{figure} ./figurer/oppgaver/oppgave_7.svg
+:::{figure} ./figurer/oppgaver/oppgave_8.svg
 ---
-name: fig-polynomer-optimering-oppgave-7
+name: fig-polynomer-optimering-oppgave-8
 width: 80%
 class: no-click, adaptive-figure
 ---

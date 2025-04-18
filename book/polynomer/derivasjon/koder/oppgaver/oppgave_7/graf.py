@@ -36,8 +36,8 @@ def main(dirname, save):
 
     ax.plot(-1, 0, "ko", markersize=8, alpha=0.7)
     ax.plot(3, 0, "ko", markersize=8, alpha=0.7)
-    ax.plot(x, tangent1(x), color="blue", lw=2, alpha=0.7)
-    ax.plot(x, tangent2(x), color="red", lw=2, alpha=0.7)
+    ax.plot(x, tangent1(x), lw=2, alpha=0.7, ls="--", color="blue")
+    ax.plot(x, tangent2(x), lw=2, alpha=0.7, ls="--", color="red")
 
     ax.text(
         x=-2,
