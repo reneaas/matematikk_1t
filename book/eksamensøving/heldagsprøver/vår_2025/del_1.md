@@ -594,7 +594,7 @@ class: no-click, adaptive-figure
 ---
 :::
 
-Eleven har skrevet programmet nedenfor.
+Eleven har skrevet programmet nedenfor
 
 :::{code-block} python
 ---
