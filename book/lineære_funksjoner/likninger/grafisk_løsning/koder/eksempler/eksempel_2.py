@@ -69,7 +69,7 @@ def main(dirname, save):
     # NOTE: Select an appropriate `dirname` to save the figure.
     # The directory `dirname` will be created automatically if it does not exist already.
     if save:
-        fname = __file__.split("/")[-1].replace(".py", ".svg")
+        fname = __file__.split("/")[-1].replace(".py", ".png")
         savefig(dirname=dirname, fname=fname)  # Lagrer figuren i `dirname`-directory
 
     if not save:

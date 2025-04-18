@@ -9,7 +9,7 @@ class: tip
 :::
 
 
-Vi har så langt sett at vi kan representere en lineær funksjon $f$ på {popup}`standardform<Standardformen til en lineær funksjon er $$f(x) = ax + b$$>`. Standardformen forteller oss grafisk hvor mye grafen stiger eller synker, og hvor den skjærer $y$-aksen. Her skal vi se på en annen representasjonsform som vi skal kalle for **nullpunktsform**. Denne vil fortelle oss hvor mye grafen til $f$ stiger eller synker, men vil i stedet fortelle oss hvor grafen til $f$ skjærer $x$-aksen. 
+Vi har så langt sett at vi kan representere en lineær funksjon $f$ på {popup}`standardform<Standardformen til en lineær funksjon er $$f(x) = ax + b$$>`. Standardformen forteller oss grafisk hvor mye grafen stiger eller synker, og hvor den skjærer $y$-aksen. Her skal vi se på en annen representasjonsform som vi skal kalle for **nullpunktsform**. Denne vil også fortelle oss hvor mye grafen til $f$ stiger eller synker, men vil i stedet fortelle oss hvor grafen til $f$ skjærer $x$-aksen fremfor $y$-aksen.
 
 
 ## Nullpunktsform
@@ -36,7 +36,13 @@ class: no-click, adaptive-figure
 :::::::::::::::
 
 
+
+
+
+
 ---
+
+
 
 
 
@@ -89,6 +95,46 @@ material_id: zgxwf6c3
 :::::::::::::::
 
 
+
+
+---
+
+
+
+:::{quiz} Quiz 1
+Q: Hva er stigningstallet til $f(x) = 2(x - 1)$?
++ $2$
+- $-2$
+- $1$
+- $2x$
+
+Q: Hva nullpunktet til $f(x) = 3(x - 2)$? 
++ $x = 2$
+- $x = 3$
+- $x = -2$
+- $x = -3$
+
+Q: Grafen til $f(x) = -4(x + 1)$ skjærer $x$-aksen i ...
++ $(-1, 0)$
+- $(1, 0)$
+- $(0, -4)$
+- $(0, 1)$
+
+Q: Hva er stigningstallet til $f(x) = -2(x + 3)$?
++ $-2$
+- $2$
+- $3$
+- $-3$
+
+Q: Nullpunktet til $f(x) = -5(x + 4)$ er ...
++ $x = -4$
+- $x = 4$
+- $x = 5$
+- $x = -5$
+:::
+
+
+
 ---
 
 
@@ -120,6 +166,48 @@ width: 100%
 
 
 :::::::::::::::
+
+
+
+---
+
+
+
+
+:::::::::::::::{underveisoppgave} Underveisoppgave 2
+Nedenfor vises grafen til en lineær funksjon $f$.
+
+Bestem $f(x)$ på nullpunktsform.
+
+
+:::{figure} ./figurer/underveisoppgaver/underveisoppgave_2/figur.svg
+---
+width: 80%
+class: no-click, adaptive-figure
+---
+:::
+
+
+::::{answer}
+$$
+f(x) = -2\cdot (x - 3)
+$$
+::::
+
+
+
+::::{solution}
+Grafen til $f$ skjærer $x$-aksen i $x_1 = 3$, som betyr at dette er nullpunktet til $f$. Stigningstallet kan vi lese av til å være $a = -2$ siden $f(x)$ synker med $2$ når $x$ øker med $1$. Dermed kan vi skrive
+
+$$
+f(x) = a \cdot (x - x_1) = -2\cdot (x - 3).
+$$
+
+
+::::
+
+:::::::::::::::
+
 
 
 ---
@@ -167,7 +255,15 @@ $$
 
 :::::::::::::::
 
-:::::::::::::::{underveisoppgave} Underveisoppgave 2
+
+
+
+---
+
+
+
+
+:::::::::::::::{underveisoppgave} Underveisoppgave 3
 En lineær funksjon $f$ er gitt ved 
 
 $$

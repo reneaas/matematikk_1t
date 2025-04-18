@@ -94,6 +94,8 @@ columns: 5
 ---
 **Algebraisk**
 
+^^^
+
 > Vi erstatter verdien til $x$ med $3$ i funksjonsuttrykket $f(x)$ og regner ut:
 
 $$
@@ -104,6 +106,8 @@ $$
 
 ::::{grid-item-card}
 **Grafisk**
+
+^^^
 
 > Klikk på figuren for å se nærmere!
 
@@ -268,6 +272,43 @@ toolbar: "false"
 
 :::::::::::::::
 
+
+
+
+---
+
+
+:::{quiz} Quiz 1
+Q: Hva stigningstallet til $f(x) = 2\cdot x + 1$?
++ $2$
+- $2x$
+- $1$
+- $2\cdot x$
+
+Q: Hva stigningstallet til $f(x) = x + 3$?
++ $1$
+- $x$
+- $3$
+- $1\cdot x$
+
+Q: Grafen til $f(x) = 3x - 2$ skjærer $y$-aksen i...
++ $(0, -2)$
+- $(3, 0)$
+- $(2, 0)$
+- $(0, 3)$
+
+Q: Konstantleddet til $f(x) = -x + 3$ er ...
++ $3$
+- $-1$
+- $-3$
+- $1$
+
+Q: Stigningstallet til $f(x) = -x + 3$ er ...
++ $-1$
+- $-x$
+- $3$
+- $1$
+:::
 
 
 

@@ -1,18 +1,57 @@
 # Oppgaver: Ekstremalform
 
-:::::::::::::::{admonition} Oppgave 1
----
-class: problem-level-1
----
-Ta quizen!
 
-:::{raw} html
----
-file: ./quiz/quiz_2/quiz_2.html
----
+:::{quiz} Oppgave 1
+Q: Hvilket funksjonsuttrykk hører til grafen? ![](figurer/quiz/quiz_2/spm_1.svg)
++ $$f(x) = -(x + 3)^2 + 4$$
+- $$f(x) = -(x + 4)^2 + 3$$
+- $$f(x) = (x + 3)^2 - 4$$
+- $$f(x) = (x + 4)^2 - 3$$
+
+Q: Hvilket funksjonsuttrykk hører til grafen? ![](figurer/quiz/quiz_2/spm_2.svg)
++ $$f(x) = (x - 1)^2 + 2$$
+- $$f(x) = -(x - 1)^2 + 2$$
+- $$f(x) = (x + 2)^2 - 1$$
+- $$f(x) = -(x + 2)^2 + 1$$
+
+
+Q: Hvilket funksjonsuttrykk hører til grafen? ![](figurer/quiz/quiz_2/spm_3.svg)
++ $$f(x) = 3(x + 2)^2 - 5$$
+- $$f(x) = -2(x + 3)^2 - 5$$
+- $$f(x) = 5(x - 2)^2 + 3$$
+- $$f(x) = 3(x + 5)^2 - 2$$
+
+Q: Hvilket funksjonsuttrykk hører til grafen? ![](figurer/quiz/quiz_2/spm_4.svg)
++ $$f(x) = -\dfrac{1}{2}(x - 3)^2 + 4$$
+- $$f(x) = \dfrac{1}{2}(x - 3)^2 + 4$$
+- $$f(x) = -(x + 3)^2 + 4$$
+- $$f(x) = (x + 4)^2 + 3$$
+
+Q: Symmetrilinja til $f(x) = -2(x - 1)^2 + 3$ er ...
++ $$x = 1$$
+- $$x = -1$$
+- $$x = 2$$
+- $$x = 3$$
+
+Q: Symmetrilinja til $f(x) = 3(x + 2)^2 - 4$ er ...
++ $$x = -2$$
+- $$x = 2$$
+- $$x = 4$$
+- $$x = 3$$
+
+Q: Ekstremalpunktet til $f(x) = -(x + 4)^2 - 2$ er ...
++ $$x = -4$$
+- $$x = 4$$
+- $$x = 2$$
+- $$x = -2$$
+
+Q: Ekstremalverdien til $f(x) = 4(x - 1)^2 + 3$ er ...
++ $$y = 3$$
+- $$y = 4$$
+- $$y = 1$$
+- $$y = 2$$
+
 :::
-
-:::::::::::::::
 
 
 ---

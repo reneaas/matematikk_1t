@@ -42,20 +42,41 @@ class: dropdown, answer
 
 
 
-:::::::::::::::{admonition} Oppgave 2 
----
-class: problem-level-1
----
-Ta quizen! Flere svaralternativer kan være riktig.
+:::::::::::::::{quiz} Oppgave 2
+Q: Hva stemmer om koeffisientene til $f(x)$? ![](figurer/quiz/quiz_1/spm_1.svg)
++ $a > 0$
+- $a < 0$
+- $c = 2$
+- $b = 0$
 
-:::{raw} html
----
-file: ./quiz/quiz_1/quiz_1.html
----
-:::
+Q: Hva stemmer om koeffisientene til $f(x)$? ![](figurer/quiz/quiz_1/spm_2.svg)
++ $a < 0$
++ $b = 0$
+- $a > 0$
+- $c = 2$
+
+Q: Hva stemmer om koeffisientene til $f(x)$? ![](figurer/quiz/quiz_1/spm_3.svg)
++ $a < 0$
++ $b > 0$
+- $a > 0$
+- $b < 0$
+
+Q: Hva stemmer om koeffisientene til $f(x)$? ![](figurer/quiz/quiz_1/spm_4.svg)
++ $b > 0$
++ $c = 2$
+- $c = -1$
+- $b < 0$
+
+Q: Hva stemmer om koeffisientene til $f(x)$? ![](figurer/quiz/quiz_1/spm_5.svg)
++ $c = 1$
++ $b < 0$
+- $b > 0$
+- $c = -1$
 
 
 :::::::::::::::
+
+
 
 
 ---

@@ -23,7 +23,7 @@ def main(dirname, save):
     ax.plot(1, 4, "ko", markersize=10, alpha=0.7)
     ax.plot(-2, 4, "ko", markersize=10, alpha=0.7)
 
-    ax.hlines(y=4, xmin=-10, xmax=10, lw=2, alpha=0.7, color="blue", label="$y = y_0$")
+    ax.hlines(y=4, xmin=-10, xmax=10, lw=2, alpha=0.7, color="red", label="$y = y_0$")
     ax.vlines(x=1, ymin=0, ymax=4, linestyle="--", color="black", alpha=0.5)
     ax.vlines(x=-2, ymin=0, ymax=4, linestyle="--", color="black", alpha=0.5)
 

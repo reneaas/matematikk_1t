@@ -19,7 +19,7 @@ def main(dirname, save):
         fn_labels=False,
         xmin=-6,
         xmax=6,
-        ymin=-3,
+        ymin=-4,
         ymax=6,
         ticks=False,
     )
@@ -32,7 +32,7 @@ def main(dirname, save):
         ha="center",
         color="black",
         bbox=dict(
-            facecolor="teal",
+            facecolor="white",
             alpha=0.5,
             edgecolor="black",
             boxstyle="round,pad=0.3",
@@ -47,7 +47,7 @@ def main(dirname, save):
         ha="center",
         color="black",
         bbox=dict(
-            facecolor="royalblue",
+            facecolor="white",
             alpha=0.5,
             edgecolor="black",
             boxstyle="round,pad=0.3",

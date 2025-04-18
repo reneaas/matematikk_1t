@@ -1,10 +1,11 @@
 build:
-	PYTHONPATH=$PYTHONPATH:$(pwd) python3 update_quiz_figures.py
+	python update_quiz_figures.py
 	PYTHONPATH=$PYTHONPATH:$(pwd) jb build .
 
-full:
-	PYTHONPATH=$PYTHONPATH:$(pwd) python3 update_quiz_figures.py
+all:
+	python update_quiz_figures.py
 	PYTHONPATH=$PYTHONPATH:$(pwd) jb build . --all
 
-pdfs:
-	zsh build_individual_pdfs.sh
+clean:
+	rm -r ./_static/figurer
+

@@ -21,10 +21,9 @@ En andregradsfunksjon har enten et **toppunkt** og **bunnpunkt**. <br> Vi kaller
 
 Se figuren nedenfor.
 
-:::{figure} ./figurer/teori/merged_figure.svg
+:::{clickable-figure} ./figurer/teori/merged_figure.svg
 ---
 width: 100%
-class: no-click, adaptive-figure
 ---
 viser to andregradsfunksjoner der grafen til venstre har et bunnpunkt og grafen til høyre har et toppunkt.
 :::
@@ -176,24 +175,61 @@ class: no-click, adaptive-figure
 
 :::::::::::::::
 
+
+
 ---
 
 
-:::::::::::::::{admonition} Underveisoppgave 1
----
-class: check
----
-Ta quizen!
 
-:::{raw} html
----
-file: ./quiz/quiz_1/quiz_1.html
----
+:::{quiz} Quiz 1
+Q: Hvilket funksjonsuttrykk hører til grafen? ![](figurer/quiz/quiz_1/spm_1.svg)
++ $$f(x) = (x - 1)^2 + 2$$
+- $$f(x) = (x + 1)^2 + 2$$
+- $$f(x) = (x - 1)^2 - 2$$
+- $$f(x) = (x + 1)^2 - 2$$
+
+Q: Symmetrilinja til $f$ er ... ![](figurer/quiz/quiz_1/spm_1.svg)
++ $$x = 1$$
+- $$x = 2$$
+- $$x = -1$$
+- $$x = -2$$
+
+Q: Hvilket funksjonsuttrykk hører til grafen? ![](figurer/quiz/quiz_1/spm_2.svg)
++ $$f(x) = -(x + 2)^2 - 1$$
+- $$f(x) = -(x - 2)^2 - 1$$
+- $$f(x) = (x + 2)^2 - 1$$
+- $$f(x) = (x + 2)^2 + 1$$
+
+Q: Symmetrilinja til $f$ er ... ![](figurer/quiz/quiz_1/spm_2.svg)
++ $$x = -2$$
+- $$x = 2$
+- $$x = 1$$
+- $$x = -1$$
+
+Q: Hvilket funksjonsuttrykk hører til grafen? ![](figurer/quiz/quiz_1/spm_3.svg)
++ $$f(x) = -2(x + 3)^2 + 2$$
+- $$f(x) = -2(x - 3)^2 + 2$$
+- $$f(x) = -2(x + 2)^2 + 3$$
+- $$f(x) = 2(x + 3)^2 + 2$$
+
+Q: Symmetrilinja til $f(x) = 3(x + 2)^2 - 4$ er ...
++ $$x = -2$$
+- $$x = 2$$
+- $$x = 3$$
+- $$x = -4$$
+
+Q: Symmetrilinja til $f(x) = -2(x + 2)^2 - 1$ er ...
++ $$x = -2$$
+- $$x = 2$$
+- $$x = 1$$
+- $$x = -1$$
 :::
 
-:::::::::::::::
+
 
 ---
+
+
 
 ## Bestemme $f(x)$ fra graf
 
@@ -264,7 +300,7 @@ $$
 ---
 
 
-:::::::::::::::{admonition} Underveisoppgave 2
+:::::::::::::::{admonition} Underveisoppgave 1
 ---
 class: check
 ---
@@ -358,7 +394,7 @@ Se på grafene under.
 
 ::::::::::::{tab-set}
 :::::::::::{tab-item} Graf A
-:::{figure} ./figurer/utforsk/utforsk_1/a/graf_A.svg
+:::{figure} ./figurer/utforsk/utforsk_1/a/a.svg
 ---
 width: 80%
 class: no-click, adaptive-figure
@@ -367,7 +403,7 @@ class: no-click, adaptive-figure
 :::::::::::
 
 :::::::::::{tab-item} Graf B
-:::{figure} ./figurer/utforsk/utforsk_1/a/graf_B.svg
+:::{figure} ./figurer/utforsk/utforsk_1/a/b.svg
 ---
 width: 80%
 class: no-click, adaptive-figure
@@ -376,7 +412,7 @@ class: no-click, adaptive-figure
 :::::::::::
 
 :::::::::::{tab-item} Graf C
-:::{figure} ./figurer/utforsk/utforsk_1/a/graf_C.svg
+:::{figure} ./figurer/utforsk/utforsk_1/a/c.svg
 ---
 width: 80%
 class: no-click, adaptive-figure
@@ -453,7 +489,7 @@ class: no-click, adaptive-figure
 
 ---
 
-:::::::::::::::{admonition} Underveisoppgave 3
+:::::::::::::::{admonition} Underveisoppgave 2
 ---
 class: check
 ---
@@ -573,7 +609,7 @@ $$
 
 ---
 
-::::{admonition} Underveisoppgave 4
+::::{admonition} Underveisoppgave 3
 ---
 class: check
 ---
@@ -616,4 +652,5 @@ $$
 :::
 
 ::::
+
 

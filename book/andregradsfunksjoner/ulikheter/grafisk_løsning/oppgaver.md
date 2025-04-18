@@ -1,16 +1,43 @@
 # Oppgaver: Grafisk løsning
 
-:::::::::::::::{admonition} Oppgave 1
----
-class: problem-level-1
----
-Ta quizen! Flere svaralternativer kan være riktige.
 
-:::{raw} html
----
-file: ./quiz/quiz_2/quiz_2.html
----
-:::
+:::::::::::::::{quiz} Oppgave 1
+Q: Hvilket intervall er det samme som $x < -1 \, \lor \, x > 3$?
++ $x \in \langle \gets, -1 \rangle \cup \langle 3, \to \rangle$
+- $x \in \langle -3, 1 \rangle$
+- $x \in \langle \gets, 3 \rangle \cup \langle -1, \to \rangle$
+- $x \in \langle \gets, -1] \cup \langle 3, \to \rangle$
+
+Q: Hvilket intervall er det samme som $x \leq -4 \, \lor \, x > 2$?
++ $x \in \langle \gets, -4] \cup \langle 2, \to \rangle$
+- $x \in \langle -4, 2 \rangle$
+- $x \in \langle \gets, 2 \rangle \cup \langle -4, \to \rangle$
+- $x \in \langle \gets, -4\rangle \cup \langle 2, \to \rangle$
+
+Q: Hvilket intervall er det samme som $x < -7 \, \lor \, x \geq 7$?
++ $x \in \mathbb{R} \setminus [-7, 7 \rangle$
+- $x \in \mathbb{R} \setminus \langle -7, 7 \rangle$
+- $x \in \mathbb{R} \setminus \langle -7, 7]$
+- $x \in \mathbb{R} \setminus [-7, 7]$
+
+Q: Hvilket intervall er det samme som $x < -3 \, \lor \, x > -1$?
++ $x \in \mathbb{R} \setminus [-3, -1]$
+- $x \in \mathbb{R} \setminus \langle -3, -1 \rangle$
+- $x \in \mathbb{R} \setminus \langle -1, -3]$
+- $x \in \mathbb{R} \setminus [-3, -1\rangle$
+
+Q: Hvilket intervall er det samme som $x < -5 \, \lor \, x > 2$?
++ $x \in \mathbb{R} \setminus [-5, 2]$
+- $x \in \langle \gets, -5 \rangle \cup \langle 2, \to \rangle$
+- $x \in \mathbb{R} \setminus \langle -5, 2\rangle$
+- $x \in \langle \gets, -5] \cup \langle 2, \to \rangle$
+
+Q: Hvilket intervall er det samme som $x < -2 \, \lor \, x \geq 3$?
++ $x \in \mathbb{R} \setminus [-2, 3\rangle$
+- $x \in \langle \gets, -2 \rangle \cup [3, \to \rangle$
+- $x \in \mathbb{R} \setminus \langle -2, 3]$
+- $x \in \langle \gets, -2] \cup \langle 3, \to \rangle$
+
 
 :::::::::::::::
 
