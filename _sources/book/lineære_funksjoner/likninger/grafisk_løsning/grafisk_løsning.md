@@ -250,14 +250,18 @@ file: ./figurer/interaktive_plot/lineær_likning_2x+3=k.html
 ---
 ::: -->
 
-:::{raw} html
+:::{ggb} 700 600
 ---
-file: ./ggb/underveisoppgaver/underveisoppgave_2.html
+material_id: sncqr3z9
 ---
 :::
 
+
 ````{tab-set}
-```{tab-item} Deloppgave 1
+---
+class: tabs-parts
+---
+```{tab-item} a
 Bruk den interaktive figuren til å bestemme løsningen av likningen 
 
 $$
@@ -282,7 +286,7 @@ Setter vi $k = -3$, så skjærer grafen til $f$ og linja $y = -3$ i $(x, y) = (-
 
 ```
 
-```{tab-item} Deloppgave 2
+```{tab-item} b
 Bruk den interaktive figuren til å bestemme løsningen av likningen
 
 $$

@@ -186,327 +186,108 @@ file: interaktiv_kode/utforsk/utforsk_1.html
 
 ---
 
-::::::::::{admonition} Utforsk 2: nøstede `for`{l=python}-løkker
+
+
+
+
+:::::::::::::::{admonition} Utforsk 2
 ---
 class: explore, full-width
 ---
-I utforsk 3 skal vi anvende en strategi som kalles for *gridsøk*. Dette er en metode hvor vi systematisk løper gjennom punkter $(x, y)$ i et rutenett og sjekker om likningene i likningssystemet er oppfylt samtidig. For å gjøre dette trenger vi å se på **nøstede** `for`{l=python}-løkker. Dette er `for`{l=python}-løkker som er plassert inni en annen `for`{l=python}-løkke.
+> Her skal du utforske en strategi som vi kaller for **gridsøk**. 
+
+I prinsippet kan vi løse et hvert likningssystem ved å lage et rutenett med punkter $(x, y)$ i $xy$-planet og sjekke hvilke punkter som oppfyller likningssystemet. For å gjøre dette må vi lage **nøstede** `for`{l=python}-løkker. Dette er `for`{l=python}-løkker som ligger inne i hverandre. Den første `for`{l=python}-løkken lager punktene $x$, og den andre `for`{l=python}-løkken lager punktene $y$.
 
 
-::::::::{tab-set}
+
+::::::::::::::{tab-set}
 ---
 class: tabs-parts
 ---
-:::::::{tab-item} a
+:::::::::::::{tab-item} a
+Nedenfor vises et program og en animasjon som henger sammen. Undersøk på hvilken måte.
 
-Under vises to eksempler på hvordan nøstede `for`{l=python}-løkker kan brukes til å lage punkter $(x, y)$ i et rutenett. Til hver kode er det en animasjon som viser hvordan punktene genereres i rutenettet. 
-
-* Kjør programmet for hver eksempelkode og sammenlign utskriften med animasjonen. <br> (*Tips:* Prøv å trykke på kjør *akkurat* når animasjonen starter på nytt!)
-* Bruk det du observerer til å forklare betydningen av *rekkefølgen* på de to `for`{l=python}-løkkene i programmet.
-
-`````{tab-set}
+::::::::::::{grid}
+:::::::::::{grid-item-card}
 ---
-class: tabs-parts
+columns: 6
 ---
-````{tab-item} Eksempel 1
-> ⚠️ Merk deg rekkefølgen på `for`{l=python}-løkken til `x`{l=python} og `y`{l=python} i programmet. 
+Programkode
+^^^
 
-:::::{grid}
-
-::::{grid-item} **Programkode**
-
-
-:::{raw} html
----
-file: ./interaktiv_kode/utforsk/utforsk_2/a/eksempel_1.html 
----
-:::
-
-::::
-
-::::{grid-item} **Animasjon**
-:::{figure} ./figurer/utforsk/utforsk_2/a/eksempel_1.gif
----
-width: 100%
-class: no-click, adaptive-figure
----
-viser hvordan punktene $(x, y)$ i rutenettet løpes gjennom av programmet til venstre.
-::: 
-::::
-:::::
-
-````
-
-````{tab-item} Eksempel 2
-> ⚠️ Merk deg rekkefølgen på `for`{l=python}-løkken til `x`{l=python} og `y`{l=python} i programmet. 
-:::::{grid}
-
-::::{grid-item} **Programkode**
-
-
-:::{raw} html
----
-file: ./interaktiv_kode/utforsk/utforsk_2/a/eksempel_2.html 
----
-:::
-
-::::
-
-::::{grid-item} **Animasjon**
-:::{figure} ./figurer/utforsk/utforsk_2/a/eksempel_2.gif
----
-width: 100%
-class: no-click, adaptive-figure
----
-viser hvordan punktene $(x, y)$ i rutenettet løpes gjennom av programmet til venstre.
-::: 
-::::
-:::::
-
-````
-
-`````
-
-
-:::::::
-
-:::::::{tab-item} b
-Under vises tre programkoder og tre animasjoner som parvis hører sammen. 
-
-* Les programmene og bestem hvilket program som hører til hvilken animasjon. 
-* Skriv inn hypotesen din og kjør programmet for å sjekke svarene dine! 
-
-
-::::::{grid}
-:::::{grid-item} **Programkoder**
-`````{tab-set}
-````{tab-item} Program 1
-
-:::{raw} html
----
-file: ./interaktiv_kode/utforsk/utforsk_2/b/program_1.html 
----
-:::
-
-````
-
-````{tab-item} Program 2
-
-:::{raw} html
----
-file: ./interaktiv_kode/utforsk/utforsk_2/b/program_2.html 
----
-:::
-
-````
-
-````{tab-item} Program 3
-
-:::{raw} html
----
-file: ./interaktiv_kode/utforsk/utforsk_2/b/program_3.html 
----
-:::
-
-````
-`````
-:::::
-
-:::::{grid-item} **Animasjoner**
-`````{tab-set}
-````{tab-item} Animasjon A
-
-:::{figure} ./figurer/utforsk/utforsk_2/b/animasjon_A.gif
----
-width: 100%
-class: no-click, adaptive-figure
----
-:::
-
-````
-
-````{tab-item} Animasjon B
-
-:::{figure} ./figurer/utforsk/utforsk_2/b/animasjon_B.gif
----
-width: 100%
-class: no-click, adaptive-figure
----
-:::
-
-````
-
-````{tab-item} Animasjon C
-
-:::{figure} ./figurer/utforsk/utforsk_2/b/animasjon_C.gif
----
-width: 100%
-class: no-click, adaptive-figure
----
-:::
-
-
-````
-`````
-:::::
-::::::
-
-
-:::::::
-
-:::::::{tab-item} c
-
-Fyll inn i programmet slik at det skriver ut punktene $(x, y)$ i samme rekkefølge som animasjonene viser.
-
-`````{tab-set}
-````{tab-item} Oppgave 1
-
-:::::{grid}
-
-::::{grid-item} **Programkode**
-
-:::{raw} html
----
-file: ./interaktiv_kode/utforsk/utforsk_2/c/program_1.html
----
-:::
-
-::::
-
-::::{grid-item} **Animasjon**
-
-
-:::{figure} ./figurer/utforsk/utforsk_2/c/animasjon_1.gif
----
-width: 100%
----
-:::
-
-::::
-
-:::::
-
----
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-```{code-block} python
----
-linenos: true
----
-for x in range(-2, 4):
+:::{interactive-code}
+for x in range(0, 4):
     for y in range(0, 3):
-        print(f"{x = } \t {y = }")
-```
+        print(x, y)
+
+
 :::
 
-````
+:::::::::::
 
-````{tab-item} Oppgave 2
+:::::::::::{grid-item-card}
+Animasjon
+^^^
 
-:::::{grid}
-
-::::{grid-item} **Programkode**
-
-:::{raw} html
----
-file: ./interaktiv_kode/utforsk/utforsk_2/c/program_2.html
----
-:::
-
-::::
-
-::::{grid-item} **Animasjon**
-
-
-:::{figure} ./figurer/utforsk/utforsk_2/c/animasjon_2.gif
+:::{figure} ./figurer/utforsk/utforsk_2/a/animasjon.gif
 ---
 width: 100%
 class: no-click, adaptive-figure
 ---
 :::
+:::::::::::
 
-::::
+::::::::::::
 
-:::::
 
----
+:::::::::::::
 
-:::{admonition} Fasit
+
+
+:::::::::::::{tab-item} b
+Nedenfor vises et program og en animasjon som henger sammen. Undersøk på hvilken måte.
+
+::::::::::::{grid}
+:::::::::::{grid-item-card}
 ---
-class: answer, dropdown
+columns: 6
 ---
-```{code-block} python
----
-linenos: true
----
-for y in range(0, 3):      
-    for x in range(-2, 4):   
-        print(f"{x = } 	 {y = }")
-```
+Programkode
+^^^
+
+:::{interactive-code}
+for x in range(-3, 2):
+    for y in range(-1, 3):
+        print(x, y)
+
 :::
 
-````
+:::::::::::
 
-````{tab-item} Oppgave 3
+:::::::::::{grid-item-card}
+Animasjon
+^^^
 
-:::::{grid}
-
-::::{grid-item} **Programkode**
-
-:::{raw} html
----
-file: ./interaktiv_kode/utforsk/utforsk_2/c/program_3.html
----
-:::
-
-::::
-
-::::{grid-item} **Animasjon**
-
-
-:::{figure} ./figurer/utforsk/utforsk_2/c/animasjon_3.gif
+:::{figure} ./figurer/utforsk/utforsk_2/b/animasjon.gif
 ---
 width: 100%
 class: no-click, adaptive-figure
 ---
 :::
+:::::::::::
 
-::::
-
-:::::
-
----
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-```{code-block} python
----
-linenos: true
----
-for x in range(-2, 4):       
-    for y in range(-3, 3):   
-        print(f"{x = } 	 {y = }")
-```
-:::
-
-````
+::::::::::::
 
 
-`````
+:::::::::::::
+
+::::::::::::::
 
 
-:::::::
+:::::::::::::::
 
 
-::::::::
 
-
-::::::::::
 
 ---
 

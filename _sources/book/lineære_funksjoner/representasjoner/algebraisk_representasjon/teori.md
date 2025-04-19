@@ -1,18 +1,17 @@
 # Algebraisk representasjon
 
 
-:::{admonition} Læringsmål: representasjoner av lineære funksjoner
+:::{admonition} Læringsmål
 ---
 class: tip
 ---
-Etter dette delkapittelet, er målet at du skal:
 * Kunne representere en lineær funksjon algebraisk, og kunne lese av stigningstall og konstantledd.
 * Kunne regne ut funksjonsverdier med funksjonsuttrykket til en lineær funksjon.
 * Kunne bruke Python til å regne ut funksjonsverdier til en lineær funksjon.
 :::
 ---
 
-En representasjon er en måte å uttrykke noe på. Når vi jobber med rette linjer, er de to vanligste måtene å representere linjer på, algebraisk og grafisk. Med algebraisk representasjon mener vi en formel som beskriver linja. Med grafisk representasjon mener vi en tegning av linja i et koordinatsystem.
+En **representasjon** er en måte å uttrykke noe på. Når vi jobber med rette linjer, er de to vanligste måtene å representere linjer på, algebraisk og grafisk. Med algebraisk representasjon mener vi en formel som beskriver linja. Med grafisk representasjon mener vi en tegning av linja i et koordinatsystem.
 
 ---
 
@@ -75,37 +74,6 @@ file: ./pair_puzzles/underveisoppgaver/underveisoppgave_1.html
 ::::
 
 
-<!-- ::::{admonition} Underveisoppgave 1
----
-class: check
-name: lineære-funksjoner-algebraisk-representasjon-underveisoppgave-1
----
-
-Fyll ut tabellen under: 
-
-| Funksjonsnavn | Funksjonsuttrykk | Stigningstall | Konstantledd |
-| :---: | :---: | :---: | :---: |
-| $f$ | $f(x) = -3x + 2$ |  |  |
-|  | $t(x) = ax + 3$ | $2$ | |
-| $p$ | | $-1$ | $1$ |
-|  | $q(x) = 4$ |  |  |
-| $r$ |  | $-2$ | $0$ |
-
-:::{admonition} Løsning: 
----
-class: solution, dropdown
----
-
-| Funksjonsnavn | Funksjonsuttrykk | Stigningstall | Konstantledd |
-| :---: | :---: | :---: | :---: |
-| $f$ | $f(x) = -3x + 2$ | $-3$ | $2$ |
-| $t$ | $t(x) = 2x + 3$ | $2$ | $3$ |
-| $p$ | $p(x) = -x + 1$ | $-1$ | $1$ |
-| $q$ | $q(x) = 4$ | $0$ | $4$ |
-| $r$ | $r(x) = -2x$  | $-2$ | $0$ |
-:::
-:::: -->
-
 ## Funksjonsverdier
 Som nevnt er $f(x)$ funksjonsverdien til $f$ for en bestemt $x$-verdi. Når vi lar $x$ variere, tenker vi på $f(x)$ som *funksjonsuttrykket* til $f$. Når vi har en bestemt $x$-verdi, tenker vi på det som en *funksjonsverdi*.
 Her skal vi bli bedre kjent med skrivemåten og betydningen.
@@ -166,38 +134,7 @@ file: ./pair_puzzles/underveisoppgaver/underveisoppgave_2.html
 :::
 ::::
 
-<!-- ::::{admonition} Underveisoppgave 2: funksjonsverdier
----
-class: check
-name: lineære-funksjoner-algebraisk-representasjon-underveisoppgave-2
----
 
-Regn ut funksjonsverdiene i tabellen under:
-
-| Funksjonsuttrykk | $\quad x \quad$ | Funksjonsverdi $f(x)$ |
-| :--- | :---: | :--- |
-| $f(x) = -3x + 2$ | $1$ |  |
-| $t(x) = 2x + 3$ | $0$ |  |
-| $p(x) = -x + 1$ | $3$ |  |
-| $q(x) = 4$ | $2$ |  |
-| $r(x) = -2x$ | $5$ |  |
-
-
-
-:::{admonition} Løsning
----
-class: solution, dropdown
----
-| Funksjonsuttrykk | $\quad x \quad$ | Funksjonsverdi $f(x)$ |
-| :--- | :---: | :--- |
-| $f(x) = -3x + 2$ | $1$ | $f(1) = -3\cdot 1 + 2 = -3 + 2 = -1$  |
-| $t(x) = 2x + 3$ | $0$ | $t(0) = 2\cdot 0 + 3 = 0 + 3 = 3$  |
-| $p(x) = -x + 1$ | $3$ | $p(3) = -3 + 1 = -2$  |
-| $q(x) = 4$ | $2$ | $q(2) = 4$  |
-| $r(x) = -2x$ | $5$ | $r(5) = -2\cdot 5 = -10$  |
-:::
-
-:::: -->
 
 ## Funksjonsverdier i Python
 Vi kan bruke Python som en kalkulator for å regne ut funksjonsverdier. 
@@ -206,7 +143,6 @@ Vi kan bruke Python som en kalkulator for å regne ut funksjonsverdier.
 :::::{admonition} Utforsk 1: funksjonsverdier i Python
 ---
 class: explore
-name: lineære-funksjoner-algebraisk-representasjon-utforsk-1
 ---
 Programmet under regner ut funksjonsverdien $f(2)$ for funksjonen
 
@@ -216,6 +152,9 @@ $$
 
 
 ````{tab-set}
+---
+class: tabs-parts
+---
 ```{tab-item} a
 Les programmet og forutsi hvilken verdi programmet skriver ut. Skriv det inn under for å sjekke! 
 ```
@@ -317,114 +256,77 @@ Vi sier forresten at det "å bruke" funksjonen er "å kalle på" funksjonen. Vi 
 Nå skal du prøve å lage et program som regner ut en funksjonsverdi i Python.
 
 
-:::::{admonition} Underveisoppgave 3: funksjoner i Python
+:::::::::::::::{underveisoppgave} Underveisoppgave 3
+
+Nedenfor vises et program i tilfeldig rekkefølge.
+
+::::::::::::::{tab-set}
 ---
-class: check
-name: lineære-funksjoner-algebraisk-representasjon-underveisoppgave-3
+class: tabs-parts
 ---
-Under vises et program i tilfeldig rekkefølge som regner ut funksjonsverdien til en funksjon $g$.
+:::::::::::::{tab-item} a
+Pusle sammen programmet i riktig rekkefølge for å få det fullstendige programmet. 
 
+Hva forventer du at programmet skriver ut? Kjør programmet og sjekk svaret!
 
-Deloppgave 1
-: Pusle sammen programmet i riktig rekkefølge for å få det fullstendige programmet. <br> Hva forventer du at programmet skriver ut? Kjør programmet og sjekk svaret!
-
-
-<br>
-
-:::{raw} html
----
-file: interaktiv_kode/underveisoppgaver/underveisoppgave_3.html
----
-:::
-
-
-:::{admonition} Fasit
----
-class: dropdown, answer
----
-Programmet skriver ut funksjonsverdien
+::::{solution}
+Programmet skriver ut 
 
 $$
-g(1) = -2\cdot 1 + 3 = -2 + 3 = 1.
+f(2) = 2\cdot 2 - 3 = 1.
 $$
-:::
+::::
 
-<br>
-
-Deloppgave 2
-: Fiks programmet slik at det regner ut $g(-2)$. Sjekk at programmet gir riktig svar ved å regne for hånd.
+:::::::::::::
 
 
-:::{admonition} Løsning
----
-class: solution, dropdown
----
-Programmet skal gi funksjonsverdien
+:::::::::::::{tab-item} b
+Endre programmet slik at det regner ut $f(-1)$. 
 
-$$
-g(\textcolor{red}{-2}) = -2\cdot (\textcolor{red}{-2}) + 3 = 4 + 3 = 7.
-$$
+Sjekk at programmet gir riktig svar ved å regne for hånd.
 
-Vi må legge inn følgende i programmet:
-* Funksjonsuttrykket `-2*x + 3`{l=python} i funksjonen.
-* `y = g(-2)`{l=python} så vi regner ut $g(-2)$. 
-
-Programmet vil da se slik ut:
-
-```{code-block} python
+::::{solution}
+:::{code-block} python
 ---
 linenos:
-emphasize-lines: 2, 4
+emphasize-lines: 5
 ---
-def g(x):
-    return -2 * x + 3
+def f(x):
+    return 2 * x - 3
 
-y = g(-2)
 
+y = f(-1)
 print(y)
-```
-Kjører vi programmet, får vi utskriften
-```console
-7
-```
+:::
 
-Så programmet funker som det skal.
+som gir utskriften
+
+:::{code-block}
+-5
 :::
 
 
-<br>
+::::
 
-Deloppgave 3
-: Bruk programmet til å regne ut $g(3)$. 
+:::::::::::::
 
 
-<br>
+::::::::::::::
 
-:::{admonition} Løsning
----
-class: solution, dropdown
----
-Dersom vi endrer linje 4 i programmet til `y = g(3)`{l=python}, vil programmet regne ut $g(3)$. 
 
-```{code-block} python
----
-linenos: true
-emphasize-lines: 4
----
-def g(x):
-    return -2 * x + 3
+:::{parsons-puzzle}
+def f(x):
+    return 2 * x - 3
 
-y = g(3)
+
+y = f(2)
 print(y)
-```
 
-Da forventer vi å få følgende verdi i utskriften:
-
-$$
-g(3) = -2\cdot 3 + 3 = -6 + 3 = -3.
-$$
 :::
 
 
-:::::
+
+
+
+:::::::::::::::
 

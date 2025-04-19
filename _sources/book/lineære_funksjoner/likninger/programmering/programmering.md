@@ -27,6 +27,28 @@ Men vi kan alltid prøve å finne en verdi for $x$ slik at likningen er oppfylt 
 
 Først må vi repetere noen verktøy vi trenger for å få løst en likning numerisk. 
 
+---
+
+::::{admonition} Oppsummering: nullpunkter og likninger
+---
+class: dropdown, summary
+---
+For en funksjon $f$, så er følgende ekvivalent:
+* Nullpunktet til $f$
+* Skjæringen mellom grafen til $f$ og $x$-aksen
+* Løsningen til likningen $f(x) = 0$
+
+:::{figure} ../grafisk_løsning/figurer/teori/ax+b=0.svg
+---
+width: 80%
+class: no-click, adaptive-figure
+---
+viser grafisk nullpunktet for en lineær funksjon $f(x) = ax + b$. 
+:::
+::::
+
+---
+
 
 ::::{admonition} Repetisjon 1: nullpunkter og likninger
 ---
@@ -42,24 +64,6 @@ file: ./quiz/quiz_1/quiz_1.html
 
 ::::
 
----
-
-::::{admonition} Oppsummering: nullpunkter og likninger
----
-class: dropdown, summary
----
-For en funksjon $f$, så er følgende ekvivalent:
-* Nullpunktet til $f$
-* Skjæringen mellom grafen til $f$ og $x$-aksen
-* Løsningen til likningen $f(x) = 0$
-
-:::{figure} ../grafisk_løsning/figurer/teori/ax+b=0.svg
----
-width: 80%
----
-viser grafisk nullpunktet for en lineær funksjon $f(x) = ax + b$. 
-:::
-::::
 
 ---
 
