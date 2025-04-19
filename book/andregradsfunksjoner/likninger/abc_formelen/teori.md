@@ -99,7 +99,7 @@ $\pm$-tegnet leses som "pluss eller minus" og betyr at vi skal regne ut formelen
 
 ::::{admonition} Setning: $abc$-formelen
 ---
-class: theory
+class: summary
 ---
 Løsningen til en andregradslikning
 
@@ -229,7 +229,7 @@ $$
 
 :::{admonition} Hint
 ---
-class: hints
+class: hints, dropdown
 ---
 Hvis noe ser ut til å gå galt, kan det hende du regner riktig likevel – hvis det er en eller annen regning som ikke er lov, kan det hende det forteller oss noe om løsningene. 
 :::
