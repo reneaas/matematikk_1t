@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 
+
 plt.rc("text", usetex=True)
 
 a = 2
@@ -111,4 +112,7 @@ plt.axis("equal")
 plt.xlim(-1, a + b + 1.8)
 plt.ylim(-1, a + b + 0.5)
 plt.tight_layout()
-plt.savefig("../../figurer/oppgaver/oppgave_6_løsning.svg")
+plt.savefig(
+    "../../figurer/oppgaver/oppgave_6_løsning.svg",
+    transparent=True,
+)

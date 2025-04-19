@@ -35,7 +35,7 @@ def main(dirname, save):
     ax.plot(b, f(b), "ko", markersize=8, alpha=0.7)
 
     ax.text(
-        s="$(a, f(a))$",
+        s="$(x_1, f(x_1))$",
         x=a - 0.2,
         y=f(a),
         fontsize=16,
@@ -44,7 +44,7 @@ def main(dirname, save):
     )
 
     ax.text(
-        s="$(b, f(b))$",
+        s="$(x_2, f(x_2))$",
         x=b + 0.2,
         y=f(b),
         fontsize=16,

@@ -32,19 +32,18 @@ def main(dirname, save):
     x1 = -4 / 3
     x = np.linspace(xmin, x1, 1024)
     y = f(x)
-    ax.plot(x, y, color="teal", alpha=0.7, lw=2, label="$f$")
+    ax.plot(x, y, color=plotmath.COLORS.get("blue"), lw=2.5, label="$f$")
     x = np.linspace(x1, xmax, 1024)
     y = f(x)
-    ax.plot(x, y, color="teal", alpha=0.7, lw=2)
+    ax.plot(x, y, color=plotmath.COLORS.get("blue"), lw=2.5)
 
     ax.hlines(
         y=2 / 3,
         xmin=xmin,
         xmax=xmax,
         linestyle="--",
-        color="blue",
-        lw=1.5,
-        alpha=0.8,
+        color=plotmath.COLORS.get("red"),
+        lw=2,
     )
 
     ax.text(
@@ -62,9 +61,8 @@ def main(dirname, save):
         ymin=ymin,
         ymax=ymax,
         linestyle="--",
-        color="red",
-        lw=1.5,
-        alpha=0.8,
+        color=plotmath.COLORS.get("red"),
+        lw=2,
     )
 
     ax.text(

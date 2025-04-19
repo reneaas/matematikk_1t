@@ -14,7 +14,7 @@ def main(dirname, save):
     x_sol, y_sol = circle(0, 0, 2)
 
     ax.plot(x_sol, y_sol, color="black", lw=1.5)
-    plt.fill(x_sol, y_sol, color="orange", alpha=0.5)
+    plt.fill(x_sol, y_sol, color=plotmath.COLORS.get("orange"), alpha=0.7)
 
     x_planet, y_planet = circle(
         x0=4 * np.cos(np.pi / 4), y0=4 * np.sin(np.pi / 4), r=0.5
@@ -25,7 +25,7 @@ def main(dirname, save):
     x_orbit, y_orbit = circle(x0=0, y0=0, r=4)
     ax.plot(x_orbit, y_orbit, color="black", lw=1, linestyle="--")
 
-    plt.text(x=0, y=0, s="Sola", fontsize=16, ha="center", va="center")
+    plt.text(x=0, y=0, s="Sola", fontsize=20, ha="center", va="center")
 
     plt.quiver(
         4 * np.cos(np.pi / 4),
@@ -43,7 +43,7 @@ def main(dirname, save):
         x=5 * np.cos(np.pi / 4),
         y=4.2 * np.sin(np.pi / 4),
         s="Planet",
-        fontsize=16,
+        fontsize=20,
     )
 
     plt.axis("equal")

@@ -31,20 +31,20 @@ def main(dirname, save):
     x2 = 3
     x = np.linspace(-24, x1, 1024)
     y = f(x)
-    ax.plot(x, y, color="teal", alpha=0.9, lw=2, label="F")
+    ax.plot(x, y, color=plotmath.COLORS.get("blue"), lw=2.5, label="F")
 
     x = np.linspace(x1, x2, 1024)
     y = f(x)
-    ax.plot(x, y, color="teal", alpha=0.9, lw=2)
+    ax.plot(x, y, color=plotmath.COLORS.get("blue"), lw=2.5)
 
     x = np.linspace(x2, 24, 1024)
     y = f(x)
 
-    ax.plot(x, y, color="teal", alpha=0.9, lw=2)
+    ax.plot(x, y, color=plotmath.COLORS.get("blue"), lw=2.5)
 
-    ax.vlines(x=-3, ymin=-25, ymax=25, color="blue", ls="--")
-    ax.vlines(x=3, ymin=-25, ymax=25, color="blue", ls="--")
-    ax.hlines(y=1, xmin=-25, xmax=25, color="blue", ls="--")
+    ax.vlines(x=-3, ymin=-25, ymax=25, color="blue", ls="--", lw=2)
+    ax.vlines(x=3, ymin=-25, ymax=25, color="blue", ls="--", lw=2)
+    ax.hlines(y=1, xmin=-25, xmax=25, color="blue", ls="--", lw=2)
     # ax.hlines(y=2, xmin=-25, xmax=25, color="blue", ls="--")
     # ax.vlines(x=-2, ymin=-25, ymax=25, color="blue", ls="--")
 

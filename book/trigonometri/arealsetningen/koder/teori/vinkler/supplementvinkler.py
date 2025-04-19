@@ -1,4 +1,5 @@
 from casify import *
+import matplotlib.pyplot as plt
 
 
 def make_circle_arc(center, radius, start_angle, end_angle, n=100):
@@ -88,6 +89,7 @@ def main(dirname, save):
     # ax.plot(x, y, color="black", lw=1)
 
     plt.title(r"Supplementvinkler", fontsize=20, loc="left")
+    plt.tight_layout()
 
     # NOTE: Automatically saves with correct file format and filename.
     if save:

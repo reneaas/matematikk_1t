@@ -33,7 +33,7 @@ def main(dirname, save):
     points = [(np.cos(angle), np.sin(angle)) for angle in angles]
 
     x, y = zip(*points)
-    plt.plot(x + x[:1], y + y[:1], color="teal", lw=2)
+    plt.plot(x + x[:1], y + y[:1], color=plotmath.COLORS.get("blue"), lw=2)
 
     plt.axis("equal")
     plt.axis("off")

@@ -21,7 +21,6 @@ def main(dirname, save):
         ymin=-2,
         ymax=24,
         ticks=False,
-        alpha=0.8,
     )
 
     ax.vlines(
@@ -31,7 +30,7 @@ def main(dirname, save):
         color="gray",
         linestyle="-",
         lw=2,
-        alpha=0.7,
+        alpha=1,
     )
 
     ax.text(

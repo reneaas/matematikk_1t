@@ -21,7 +21,7 @@ def main(dirname, save):
     B = (4, 0)
     C = (4, 3)
 
-    plotmath.plot_polygon(*[A, B, C], ax=ax, show_vertices=True)
+    plotmath.plot_polygon(*[A, B, C], ax=ax, show_vertices=False)
 
     dx = dy = 0.1
     ax.text(

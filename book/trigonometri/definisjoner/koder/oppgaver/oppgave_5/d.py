@@ -14,6 +14,7 @@ def main(dirname, save):
         label_sides=("x", True, False),
         vertex_labels=("A", "B", "C"),
         numerical_len=True,
+        show_vertices=False,
     )
 
     # NOTE: Automatically saves with correct file format and filename.

@@ -17,48 +17,49 @@ def main(dirname, save):
     plt.hlines(y=1, xmin=-2, xmax=2, color="k", lw=2)
 
     x = np.linspace(-2, 2, 1024)
-    plt.plot(x, x + 1, "k")
+    plt.plot(x, x + 1, "k", lw=2)
 
     x, y = circle_arc(center=(0, 1), radius=0.5, start_angle=0, end_angle=np.pi / 4)
-    plt.plot(x, y, "r")
+    plt.plot(x, y, color=plotmath.COLORS.get("red"), lw=2.5)
 
     x, y = circle_arc(
         center=(0, 1), radius=0.5, start_angle=np.pi, end_angle=np.pi + np.pi / 4
     )
-    plt.plot(x, y, "r")
-
-    x, y = circle_arc(center=(-1, 0), radius=0.5, start_angle=0, end_angle=np.pi / 4)
-    plt.plot(x, y, "r")
+    plt.plot(x, y, color=plotmath.COLORS.get("red"), lw=2.5)
 
     x, y = circle_arc(
         center=(-1, 0), radius=0.5, start_angle=np.pi, end_angle=np.pi + np.pi / 4
     )
 
-    plt.plot(x, y, "r")
+    plt.plot(x, y, color=plotmath.COLORS.get("red"), lw=2.5)
+
+    x, y = circle_arc(center=(-1, 0), radius=0.5, start_angle=0, end_angle=np.pi / 4)
+
+    plt.plot(x, y, color=plotmath.COLORS.get("red"), lw=2.5)
 
     x, y = circle_arc(
         center=(-1, 0), radius=0.3, start_angle=np.pi / 4, end_angle=np.pi
     )
-    plt.plot(x, y, "b")
+    plt.plot(x, y, color=plotmath.COLORS.get("blue"), lw=2.5)
 
     x, y = circle_arc(
         center=(-1, 0), radius=0.3, start_angle=np.pi + np.pi / 4, end_angle=2 * np.pi
     )
-    plt.plot(x, y, "b")
+    plt.plot(x, y, color=plotmath.COLORS.get("blue"), lw=2.5)
 
     x, y = circle_arc(center=(0, 1), radius=0.3, start_angle=np.pi / 4, end_angle=np.pi)
-    plt.plot(x, y, "b")
+    plt.plot(x, y, color=plotmath.COLORS.get("blue"), lw=2.5)
 
     x, y = circle_arc(
         center=(0, 1), radius=0.3, start_angle=np.pi + np.pi / 4, end_angle=2 * np.pi
     )
-    plt.plot(x, y, "b")
+    plt.plot(x, y, color=plotmath.COLORS.get("blue"), lw=2.5)
 
     plt.text(
         x=-0.8,
         y=-0.4,
         s="$a$",
-        fontsize=16,
+        fontsize=20,
         ha="center",
         va="center",
     )
@@ -67,7 +68,7 @@ def main(dirname, save):
         x=-1.2,
         y=0.4,
         s="$a$",
-        fontsize=16,
+        fontsize=20,
         ha="center",
         va="center",
     )
@@ -76,7 +77,7 @@ def main(dirname, save):
         x=0.7,
         y=1.2,
         s="$b$",
-        fontsize=16,
+        fontsize=20,
         ha="center",
         va="center",
     )
@@ -85,7 +86,7 @@ def main(dirname, save):
         x=-0.65,
         y=0.7,
         s="$b$",
-        fontsize=16,
+        fontsize=20,
         ha="center",
         va="center",
     )
@@ -94,7 +95,9 @@ def main(dirname, save):
     plt.axis("off")
 
     plt.xlim(-2, 2)
-    plt.ylim(-0.5, 2)
+    plt.ylim(-0.5, 1.8)
+
+    plt.tight_layout()
 
     # NOTE: Select an appropriate `dirname` to save the figure.
     # The directory `dirname` will be created automatically if it does not exist already.

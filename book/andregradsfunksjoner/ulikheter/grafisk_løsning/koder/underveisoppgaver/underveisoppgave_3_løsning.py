@@ -1,11 +1,14 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import sympy as sp
+import plotmath
 
 plt.rc("text", usetex=True)
 
+
 def f(x, a, b, c):
-    return a * x**2 + b*x + c
+    return a * x**2 + b * x + c
+
 
 def g(x, slope, y_intercept):
     return f(x, a=0, b=slope, c=y_intercept)
@@ -23,11 +26,13 @@ c = 1
 slope = -1
 y_intercept = 4
 
-x_symmetri = -b/(2*a)
+x_symmetri = -b / (2 * a)
 
 fig, ax = plt.subplots()
-ax.plot(x, f(x, a, b, c), color="teal", lw=2, alpha=0.7, label="$f$")
-ax.plot(x, g(x, slope, y_intercept), color="mediumorchid", lw=2, alpha=0.7, label="$g$")
+ax.plot(x, f(x, a, b, c), color=plotmath.COLORS.get("blue"), lw=2.5, label="$f$")
+ax.plot(
+    x, g(x, slope, y_intercept), color=plotmath.COLORS.get("red"), lw=2.5, label="$g$"
+)
 
 roots = sp.solve(f"{a}*x**2 + {b}*x + {c} - {slope}*x - {y_intercept}", "x")
 roots = [float(root.evalf()) for root in roots]
@@ -74,7 +79,9 @@ plt.annotate(
     xy=(2.5, 0),
     xytext=(-1, -2.5),
     fontsize=16,
-    arrowprops=dict(arrowstyle="->", lw=2, color="black", alpha=0.7, connectionstyle="arc3,rad=0.2"),
+    arrowprops=dict(
+        arrowstyle="->", lw=2, color="black", alpha=0.7, connectionstyle="arc3,rad=0.2"
+    ),
     horizontalalignment="center",
     verticalalignment="center",
 )
@@ -84,17 +91,19 @@ plt.annotate(
     xy=(-4.5, 0),
     xytext=(-1, -2.5),
     fontsize=16,
-    arrowprops=dict(arrowstyle="->", lw=2, color="black", alpha=0.7, connectionstyle="arc3,rad=-0.2"),
+    arrowprops=dict(
+        arrowstyle="->", lw=2, color="black", alpha=0.7, connectionstyle="arc3,rad=-0.2"
+    ),
     horizontalalignment="center",
     verticalalignment="center",
 )
 
 
-
-
 plt.legend(fontsize=16)
 plt.tight_layout()
-plt.savefig("../../figurer/underveisoppgaver/underveisoppgave_3_løsning.svg")
+plt.savefig(
+    "../../figurer/underveisoppgaver/underveisoppgave_3_løsning.svg",
+    transparent=True,
+)
 
 plt.show()
-

@@ -1,4 +1,5 @@
 import signchart
+import plotmath
 
 
 def main(dirname, save):
@@ -13,7 +14,7 @@ def main(dirname, save):
 
     if save:
         fname = __file__.split("/")[-1].replace(".py", ".svg")
-        signchart.savefig(dirname=dirname, fname=fname)
+        plotmath.savefig(dirname=dirname, fname=fname)
 
     else:
         signchart.show()

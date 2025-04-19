@@ -14,6 +14,7 @@ def main(dirname, save):
         label_angles=("v", False, False),
         label_sides=(False, False, False),
         vertex_labels=("A", "B", "C"),
+        show_vertices=False,
     )
 
     angle = np.radians(50)

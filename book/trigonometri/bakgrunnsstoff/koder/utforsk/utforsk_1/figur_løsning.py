@@ -17,21 +17,13 @@ def main(dirname, save):
     B = (4, 0)
     C = (3, 4)
 
-    plt.fill([A[0], B[0], C[0]], [A[1], B[1], C[1]], "teal", alpha=0.1)
-    plt.plot(
-        [A[0], B[0], C[0], A[0]],
-        [
-            A[1],
-            B[1],
-            C[1],
-            A[1],
-        ],
-        "k",
+    plotmath.plot_polygon(
+        A,
+        B,
+        C,
+        show_vertices=False,
+        alpha=0.1,
     )
-
-    plt.plot(*A, "ko", markersize=8, alpha=0.7)
-    plt.plot(*B, "ko", markersize=8, alpha=0.7)
-    plt.plot(*C, "ko", markersize=8, alpha=0.7)
 
     A = np.array(A)
     B = np.array(B)

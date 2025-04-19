@@ -1,11 +1,13 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import sympy as sp
+import plotmath
 
 plt.rc("text", usetex=True)
 
+
 def f(x, a, b, c):
-    return a * x**2 + b*x + c
+    return a * x**2 + b * x + c
 
 
 x_min = -10
@@ -17,10 +19,10 @@ a = 1
 b = -4
 c = 3
 
-x_symmetri = -b/(2*a)
+x_symmetri = -b / (2 * a)
 
 fig, ax = plt.subplots()
-ax.plot(x, f(x, a, b, c), color="teal", lw=2, alpha=0.7)
+ax.plot(x, f(x, a, b, c), color=plotmath.COLORS.get("blue"), lw=2.5, alpha=1)
 
 roots = sp.solve(f"{a}*x**2 + {b}*x + {c}", "x")
 roots = [float(root.evalf()) for root in roots]
@@ -55,7 +57,7 @@ plt.xlim(x_symmetri - 5, x_symmetri + 5)
 
 plt.annotate(
     text="Løsningsmengde",
-    xy=(roots[0]-1, 0),
+    xy=(roots[0] - 1, 0),
     xytext=(x_symmetri, -4),
     fontsize=16,
     arrowprops=dict(arrowstyle="->", lw=2, color="black", alpha=0.7),
@@ -65,7 +67,7 @@ plt.annotate(
 
 plt.annotate(
     text="Løsningsmengde",
-    xy=(roots[0]-3, 0),
+    xy=(roots[0] - 3, 0),
     xytext=(x_symmetri, -4),
     fontsize=16,
     arrowprops=dict(arrowstyle="->", lw=2, color="black", alpha=0.7),
@@ -100,8 +102,7 @@ ax.hlines(0, roots[1], 10, color="red", alpha=0.3, lw=8)
 plt.grid(True, linestyle="--", alpha=0.6)
 plt.tight_layout()
 
-plt.savefig("../../figurer/eksempler/eksempel_1.svg")
-
-plt.show()
-
-
+plt.savefig(
+    "../../figurer/eksempler/eksempel_1.svg",
+    transparent=True,
+)

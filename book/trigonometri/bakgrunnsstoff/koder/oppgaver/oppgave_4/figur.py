@@ -1,4 +1,5 @@
 from casify import *
+import matplotlib.pyplot as plt
 
 
 def main(dirname, save):
@@ -9,11 +10,12 @@ def main(dirname, save):
     ax = draw_triangle(
         asa=(60, 4, 60),
         show=False,
-        radius=0.5,
-        fontsize=16,
+        radius=0.55,
+        fontsize=20,
         label_angles=(True, True, False),
         label_sides=(True, False, False),
         vertex_labels=("A", "B", "C"),
+        show_vertices=False,
     )
 
     ax.vlines(x=2, ymin=0, ymax=np.sqrt(4**2 - 2**2), linestyle="--", color="black")
@@ -23,7 +25,7 @@ def main(dirname, save):
         x=2 + dx,
         y=0.5 * np.sqrt(4**2 - 2**2),
         s="$h$",
-        fontsize=16,
+        fontsize=20,
         ha="left",
         va="center",
     )
@@ -31,6 +33,8 @@ def main(dirname, save):
     dx = 0.4
     ax.plot([2, 2 + dx], [dx, dx], ls="--", color="black")
     ax.plot([2 + dx, 2 + dx], [0, dx], ls="--", color="black")
+
+    plt.tight_layout()
 
     # NOTE: Automatically saves with correct file format and filename.
     if save:

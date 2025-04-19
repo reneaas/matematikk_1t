@@ -23,11 +23,10 @@ def main(dirname, save):
         ymin=-18,
         ymax=18,
         ticks=False,
-        alpha=0.9,
     )
 
-    ax.hlines(y=2, xmin=-25, xmax=25, color="blue", ls="--")
-    ax.vlines(x=-2, ymin=-25, ymax=25, color="blue", ls="--")
+    ax.hlines(y=2, xmin=-25, xmax=25, color=plotmath.COLORS.get("red"), ls="--", lw=2)
+    ax.vlines(x=-2, ymin=-25, ymax=25, color=plotmath.COLORS.get("red"), ls="--", lw=2)
 
     # NOTE: Select an appropriate `dirname` to save the figure.
     # The directory `dirname` will be created automatically if it does not exist already.

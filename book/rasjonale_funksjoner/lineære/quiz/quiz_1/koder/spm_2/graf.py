@@ -40,9 +40,8 @@ def main(dirname, save):
             horisontal_asymptote=horisontal_asymptote,
             zero=zero,
         ),
-        color="teal",
-        lw=2,
-        alpha=0.7,
+        color=plotmath.COLORS.get("blue"),
+        lw=2.5,
         label="$f$",
     )
     ax.plot(
@@ -53,9 +52,8 @@ def main(dirname, save):
             horisontal_asymptote=horisontal_asymptote,
             zero=zero,
         ),
-        color="teal",
-        lw=2,
-        alpha=0.7,
+        color=plotmath.COLORS.get("blue"),
+        lw=2.5,
     )
 
     ax.hlines(
@@ -63,18 +61,16 @@ def main(dirname, save):
         xmin=-10,
         xmax=10,
         linestyle="--",
-        lw=1.5,
-        color="blue",
-        alpha=0.7,
+        lw=2,
+        color=plotmath.COLORS.get("red"),
     )
     ax.vlines(
         x=vertical_asymptote,
         ymin=-12,
         ymax=12,
         linestyle="--",
-        lw=1.5,
-        color="red",
-        alpha=0.7,
+        lw=2,
+        color=plotmath.COLORS.get("red"),
     )
 
     ax.plot(zero, 0, "ko", markersize=8, alpha=0.7)

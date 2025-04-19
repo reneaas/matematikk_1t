@@ -24,8 +24,17 @@ def main(dirname, save):
     )
 
     x_vals = np.linspace(-24, 24, 1024)
-    ax.plot(x_vals, f(x_vals), color="teal", lw=2, alpha=0.7, label="$f$")
-    ax.hlines(y=0, xmin=-100, xmax=100, color="blue", linestyle="--", lw=1.5)
+    ax.plot(
+        x_vals,
+        f(x_vals),
+        color=plotmath.COLORS.get("blue"),
+        lw=2,
+        alpha=0.7,
+        label="$f$",
+    )
+    ax.hlines(
+        y=0, xmin=-100, xmax=100, color=plotmath.COLORS.get("red"), linestyle="--", lw=2
+    )
 
     ax.plot(1, 0, "ko", markersize=8, alpha=0.7)
 

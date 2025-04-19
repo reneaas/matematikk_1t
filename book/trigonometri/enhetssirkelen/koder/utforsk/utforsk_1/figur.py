@@ -14,7 +14,12 @@ def main(dirname, save):
         label_sides=("x", "y", True),
         vertex_labels=("A", "B", "C"),
         numerical_len=False,
+        show_vertices=False,
     )
+
+    import matplotlib.pyplot as plt
+
+    plt.tight_layout()
 
     # NOTE: Automatically saves with correct file format and filename.
     if save:

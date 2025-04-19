@@ -13,14 +13,13 @@ def main(dirname, save):
     fig, ax = plotmath.plot(
         functions=functions,
         fn_labels=False,
-        xmin=-4,
+        xmin=-5,
         xmax=7,
         ymin=-3,
         ymax=7,
         ticks=False,
         xstep=1,
         ystep=1,
-        alpha=0.8,
     )
 
     xticks = [i for i in range(-4, 7)]

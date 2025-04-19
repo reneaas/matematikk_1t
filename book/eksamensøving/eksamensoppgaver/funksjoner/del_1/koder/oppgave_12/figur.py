@@ -28,21 +28,20 @@ def main(dirname, save):
         ymin=-36,
         ymax=48,
         ticks=False,
-        alpha=0.85,
     )
 
     x0 = -2
     tangent_fn = make_tangent_fn(f, x0)
     x = np.linspace(-24, 24, 1024)
     y = tangent_fn(x)
-    ax.plot(x, y, color="blue", alpha=0.6, lw=2)
+    ax.plot(x, y, color=plotmath.COLORS.get("red"), lw=2)
     ax.plot(x0, 0, "ko", markersize=8, alpha=0.7)
 
     x0 = 8
     tangent_fn = make_tangent_fn(f, x0)
     x = np.linspace(-24, 24, 1024)
     y = tangent_fn(x)
-    ax.plot(x, y, color="blue", alpha=0.6, lw=2)
+    ax.plot(x, y, color=plotmath.COLORS.get("red"), lw=2)
     ax.plot(x0, f(x0), "ko", markersize=8, alpha=0.7)
 
     # NOTE: Select an appropriate `dirname` to save the figure.

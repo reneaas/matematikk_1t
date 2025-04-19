@@ -121,6 +121,11 @@ viser to områder på tallinja som er fargelagt med rød farge.
 :::::::::::::
 ::::::::::::::
 
+:::::::::::::::
+
+
+
+
 Vi har også en alternativ og effektiv skrivemåte hvor vi tenker oss at vi tar hele tallinja og "kutter" vekk en del av den. Eksempelet under vises hvordan dette kan skrives:
 
 :::::::::::::::{admonition} Eksempel 2

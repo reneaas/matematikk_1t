@@ -18,8 +18,8 @@ def main(dirname, save):
     # List of functions and their labels.
     functions = []
 
-    xmin = -8
-    xmax = 8
+    xmin = -6
+    xmax = 6
     ymin = -8
     ymax = 8
 
@@ -36,20 +36,20 @@ def main(dirname, save):
     x2 = 1
     x = np.linspace(xmin, x1, 1024)
     y = f(x)
-    ax.plot(x, y, color="teal", alpha=0.7, lw=2, label="$f$")
+    ax.plot(x, y, color=plotmath.COLORS.get("blue"), lw=2.5, label="$f$")
 
     x = np.linspace(x1, x2, 1024)
     y = f(x)
-    ax.plot(x, y, color="teal", alpha=0.7, lw=2)
+    ax.plot(x, y, color=plotmath.COLORS.get("blue"), lw=2.5)
 
     x = np.linspace(x2, xmax, 1024)
     y = f(x)
-    ax.plot(x, y, color="teal", alpha=0.7, lw=2)
+    ax.plot(x, y, color=plotmath.COLORS.get("blue"), lw=2.5)
 
     x = np.linspace(xmin, xmax, 1024)
     y = g(x)
 
-    ax.plot(x, y, linestyle="--", color="blue", lw=1.5)
+    ax.plot(x, y, linestyle="--", color=plotmath.COLORS.get("red"), lw=2)
 
     x = -5
     dx = dy = 0.5
@@ -60,11 +60,16 @@ def main(dirname, save):
         fontsize=16,
         va="top",
         ha="left",
-        color="blue",
+        color=plotmath.COLORS.get("red"),
     )
 
     ax.vlines(
-        x=x2, ymin=ymin, ymax=ymax, linestyle="--", color="red", lw=1.5, alpha=0.8
+        x=x2,
+        ymin=ymin,
+        ymax=ymax,
+        linestyle="--",
+        color=plotmath.COLORS.get("red"),
+        lw=2,
     )
 
     ax.text(

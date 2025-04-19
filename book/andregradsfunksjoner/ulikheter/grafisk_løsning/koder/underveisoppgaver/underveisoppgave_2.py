@@ -1,11 +1,13 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import sympy as sp
+import plotmath
 
 plt.rc("text", usetex=True)
 
+
 def f(x, a, b, c):
-    return a * x**2 + b*x + c
+    return a * x**2 + b * x + c
 
 
 x_min = -10
@@ -17,10 +19,10 @@ a = 1
 b = -2
 c = 0
 
-x_symmetri = -b/(2*a)
+x_symmetri = -b / (2 * a)
 
 fig, ax = plt.subplots()
-ax.plot(x, f(x, a, b, c), color="teal", lw=2, alpha=0.7, label="$f$")
+ax.plot(x, f(x, a, b, c), color=plotmath.COLORS.get("blue"), lw=2, label="$f$")
 
 roots = sp.solve(f"{a}*x**2 + {b}*x + {c}", "x")
 roots = [float(root.evalf()) for root in roots]
@@ -58,4 +60,3 @@ plt.tight_layout()
 plt.savefig("../../figurer/underveisoppgaver/underveisoppgave_2.svg")
 
 plt.show()
-

@@ -3,7 +3,7 @@ from svgutils.compose import Figure, SVG
 
 def main(dirname):
 
-    fignames = ["A.svg", "B.svg", "C.svg", "D.svg"]
+    fignames = ["a.svg", "b.svg", "c.svg", "d.svg"]
     # figure_paths = [dirname + path for path in figure_paths]
     figure_paths = [dirname + "/" + figname for figname in fignames]
     svgs = [SVG(path) for path in figure_paths]
@@ -14,10 +14,10 @@ def main(dirname):
     fig = Figure(
         svg_width * 2,
         svg_height * 2,
-        SVG(dirname + "/A.svg").scale(1.25).move(0, 0),
-        SVG(dirname + "/B.svg").scale(1.25).move(svg_width, 0),
-        SVG(dirname + "/C.svg").scale(1.25).move(0, svg_height),
-        SVG(dirname + "/D.svg").scale(1.25).move(svg_width, svg_height),
+        SVG(dirname + "/a.svg").scale(1.25).move(0, 0),
+        SVG(dirname + "/b.svg").scale(1.25).move(svg_width, 0),
+        SVG(dirname + "/c.svg").scale(1.25).move(0, svg_height),
+        SVG(dirname + "/d.svg").scale(1.25).move(svg_width, svg_height),
     )
 
     fig.save(dirname + "/merged_figure.svg")

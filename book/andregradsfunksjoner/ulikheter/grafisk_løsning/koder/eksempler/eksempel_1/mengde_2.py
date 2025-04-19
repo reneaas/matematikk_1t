@@ -90,6 +90,9 @@ plt.xlim(-6, 6)
 # plt.grid(False, linestyle="--", alpha=0.6)
 plt.tight_layout()
 
-plt.savefig("../../../figurer/eksempler/eksempel_1/mengde_2.svg")
+plt.savefig(
+    "../../../figurer/eksempler/eksempel_1/mengde_2.svg",
+    transparent=True,
+)
 
 plt.show()

@@ -30,16 +30,26 @@ def main(dirname, save):
     x1 = 2
     x = np.linspace(xmin, x1, 1024)
     y = f(x)
-    ax.plot(x, y, color="teal", alpha=0.7, lw=2, label="$f$")
+    ax.plot(x, y, color=plotmath.COLORS.get("blue"), lw=2.5, label="$f$")
     x = np.linspace(x1, xmax, 1024)
     y = f(x)
-    ax.plot(x, y, color="teal", alpha=0.7, lw=2)
+    ax.plot(x, y, color=plotmath.COLORS.get("blue"), lw=2.5)
 
     ax.hlines(
-        y=3, xmin=xmin, xmax=xmax, linestyle="--", color="blue", lw=1.5, alpha=0.8
+        y=3,
+        xmin=xmin,
+        xmax=xmax,
+        linestyle="--",
+        color=plotmath.COLORS.get("red"),
+        lw=2,
     )
     ax.vlines(
-        x=x1, ymin=ymin, ymax=ymax, linestyle="--", color="red", lw=1.5, alpha=0.8
+        x=x1,
+        ymin=ymin,
+        ymax=ymax,
+        linestyle="--",
+        color=plotmath.COLORS.get("red"),
+        lw=2,
     )
 
     xticks = [i for i in range(xmin + 1, xmax)]

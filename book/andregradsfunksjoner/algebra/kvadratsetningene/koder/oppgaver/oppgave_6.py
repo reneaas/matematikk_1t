@@ -1,22 +1,12 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
+import plotmath
 
 plt.rc("text", usetex=True)
 
 a = 1
 b = 0.35
-
-# plt.plot([0, a], [0, 0], 'teal')
-# plt.plot([a, a], [0, a + b], "teal", linestyle="--")
-# plt.plot([0, a + b], [a, a], 'teal', linestyle="--")
-# plt.plot([0, 0], [0, a], 'teal')
-
-
-# plt.plot([a, a + b], [0, 0], 'k')
-# plt.plot([a + b, a + b], [0, a + b], "k")
-# plt.plot([0, a + b], [a + b, a + b], 'k')
-# plt.plot([0, 0], [0, a + b], 'k')
 
 
 rect_1 = patches.Rectangle(
@@ -25,7 +15,7 @@ rect_1 = patches.Rectangle(
     height=a - b,
     fill=True,
     edgecolor="black",
-    facecolor="teal",
+    facecolor=plotmath.COLORS.get("blue"),
     alpha=0.2,
     lw=2,
 )
@@ -149,6 +139,9 @@ plt.annotate(
 plt.axis("equal")
 plt.axis("off")
 
-plt.savefig("../../figurer/oppgaver/oppgave_6.svg")
+plt.savefig(
+    "../../figurer/oppgaver/oppgave_6.svg",
+    transparent=True,
+)
 
 plt.show()

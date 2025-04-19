@@ -23,7 +23,7 @@ def main(dirname, save):
         B,
         C,
         D,
-        color="teal",
+        color=plotmath.COLORS.get("blue"),
         alpha=alpha,
     )
 
@@ -37,7 +37,7 @@ def main(dirname, save):
         B,
         C,
         D,
-        color="teal",
+        color=plotmath.COLORS.get("blue"),
         alpha=0,
     )
 
@@ -51,7 +51,7 @@ def main(dirname, save):
         B,
         C,
         D,
-        color="teal",
+        color=plotmath.COLORS.get("blue"),
         alpha=alpha,
     )
 

@@ -42,7 +42,6 @@ def main(dirname, save):
 
     ax.plot(a, f(a), "ko", markersize=8, alpha=0.7)
     ax.plot(b, f(b), "ko", markersize=8, alpha=0.7)
-    ax.plot(0.5 * (a + b), f(0.5 * (a + b)), "o", markersize=8, alpha=0.7, color="red")
 
     # NOTE: Select an appropriate `dirname` to save the figure.
     # The directory `dirname` will be created automatically if it does not exist already.

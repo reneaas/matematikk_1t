@@ -1,11 +1,13 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import sympy as sp
+import plotmath
 
 plt.rc("text", usetex=True)
 
+
 def f(x, a, b, c):
-    return a * x**2 + b*x + c
+    return a * x**2 + b * x + c
 
 
 x_min = -8
@@ -19,13 +21,13 @@ a1 = 1
 b1 = -1
 c1 = -6
 
- 
+
 # Koeffisienter for andregradsfunksjon 2
 a2 = -2
 b2 = 4
 c2 = 3
 
-xlim = (-b1/(2*a1) - 6, -b1/(2*a1) + 6)
+xlim = (-b1 / (2 * a1) - 6, -b1 / (2 * a1) + 6)
 ylim = (-8, 10)
 
 nrows = 1
@@ -39,13 +41,29 @@ j = 0
 roots = sp.solve(f"{a1} * x**2 + {b1}*x + {c1} - {a2}*x**2 - {b2}*x - {c2}", "x")
 roots = [float(root.evalf()) for root in roots]
 for i in range(2):
-    ax[i].plot(x, f(x, a=a1, b=b1, c=c1), color="teal", lw=2, alpha=0.7, label="$f$")
-    ax[i].plot(x, f(x, a=a2, b=b2, c=c2), color="mediumorchid", lw=2, alpha=0.7, label="$g$")
+    ax[i].plot(
+        x,
+        f(x, a=a1, b=b1, c=c1),
+        color=plotmath.COLORS.get("blue"),
+        lw=2,
+        alpha=0.7,
+        label="$f$",
+    )
+    ax[i].plot(
+        x,
+        f(x, a=a2, b=b2, c=c2),
+        color=plotmath.COLORS.get("red"),
+        lw=2,
+        alpha=0.7,
+        label="$g$",
+    )
 
     for root in roots:
         ax[i].plot(root, f(root, a1, b1, c1), "ko", markersize=8, alpha=0.7)
         ax[i].plot(root, 0, "k|", markersize=15, alpha=0.7)
-        ax[i].vlines(root, 0, f(root, a1, b1, c1), color="black", alpha=0.5, linestyle="--")
+        ax[i].vlines(
+            root, 0, f(root, a1, b1, c1), color="black", alpha=0.5, linestyle="--"
+        )
 
     ax[i].spines["left"].set_position("zero")
     ax[i].spines["right"].set_color("none")
@@ -64,16 +82,16 @@ for i in range(2):
     ax[i].set_xlim(*xlim)
 
 
-
-
 j = 0
 
 ax[j].annotate(
     text="Løsningsmengde",
     xy=(roots[0] - 3, 0),
-    xytext=(-b1/(2*a1), -8),
+    xytext=(-b1 / (2 * a1), -8),
     fontsize=16,
-    arrowprops=dict(arrowstyle="->", lw=2, color="black", alpha=0.7, connectionstyle="arc3,rad=-0.3"),
+    arrowprops=dict(
+        arrowstyle="->", lw=2, color="black", alpha=0.7, connectionstyle="arc3,rad=-0.3"
+    ),
     horizontalalignment="center",
     verticalalignment="center",
 )
@@ -101,9 +119,11 @@ ax[j].annotate(
 ax[j].annotate(
     text="Løsningsmengde",
     xy=(roots[1] + 1, 0),
-    xytext=(-b1/(2*a1), -8),
+    xytext=(-b1 / (2 * a1), -8),
     fontsize=16,
-    arrowprops=dict(arrowstyle="->", lw=2, color="black", alpha=0.7, connectionstyle="arc3,rad=0.3"),
+    arrowprops=dict(
+        arrowstyle="->", lw=2, color="black", alpha=0.7, connectionstyle="arc3,rad=0.3"
+    ),
     horizontalalignment="center",
     verticalalignment="center",
 )
@@ -127,7 +147,7 @@ j = 1
 ax[j].annotate(
     text="Løsningsmengde",
     xy=(roots[0] + 0.5, 0),
-    xytext=(-b1/(2*a1)-0.5, 8),
+    xytext=(-b1 / (2 * a1) - 0.5, 8),
     fontsize=16,
     arrowprops=dict(arrowstyle="->", lw=2, color="black", alpha=0.7),
     horizontalalignment="center",
@@ -137,7 +157,7 @@ ax[j].annotate(
 ax[j].annotate(
     text="Løsningsmengde",
     xy=(roots[1] - 0.5, 0),
-    xytext=(-b1/(2*a1)-0.5, 8),
+    xytext=(-b1 / (2 * a1) - 0.5, 8),
     fontsize=16,
     arrowprops=dict(arrowstyle="->", lw=2, color="black", alpha=0.7),
     horizontalalignment="center",
@@ -156,13 +176,13 @@ fig.legend(
     # bbox_to_anchor=(-b/(2*a), 8),
     fancybox=True,
     shadow=True,
-    ncol=2
+    ncol=2,
 )
 
 
 plt.tight_layout()
 
 # Lagrer figuren i vektorformat
-plt.savefig("../../figurer/teori/andregradsulikhet_f_vs_andregradsfunksjon.svg")
+# plt.savefig("../../figurer/teori/andregradsulikhet_f_vs_andregradsfunksjon.svg")
 
 plt.show()

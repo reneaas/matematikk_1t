@@ -30,18 +30,40 @@ def main(dirname, save):
     x1 = -1
     x2 = 3
     x_vals = np.linspace(-24, x1, 1024)
-    ax.plot(x_vals, f(x_vals), color="teal", lw=2, alpha=0.7, label="$\\mathrm{C}$")
+    ax.plot(
+        x_vals,
+        f(x_vals),
+        color=plotmath.COLORS.get("blue"),
+        lw=2.5,
+        label="$\\mathrm{C}$",
+    )
 
     x_vals = np.linspace(x1, x2, 1024)
-    ax.plot(x_vals, f(x_vals), color="teal", lw=2, alpha=0.7)
+    ax.plot(x_vals, f(x_vals), color=plotmath.COLORS.get("blue"), lw=2.5)
 
     x_vals = np.linspace(x2, 24, 1024)
-    ax.plot(x_vals, f(x_vals), color="teal", lw=2, alpha=0.7)
+    ax.plot(x_vals, f(x_vals), color=plotmath.COLORS.get("blue"), lw=2.5)
 
     # Draw vertical asymptotes
-    ax.vlines(x=x1, ymin=-100, ymax=100, color="red", linestyle="--", lw=1.5)
-    ax.vlines(x=x2, ymin=-100, ymax=100, color="red", linestyle="--", lw=1.5)
-    ax.hlines(y=1, xmin=-100, xmax=100, color="blue", linestyle="--", lw=1.5)
+    ax.vlines(
+        x=x1,
+        ymin=-100,
+        ymax=100,
+        color=plotmath.COLORS.get("red"),
+        linestyle="--",
+        lw=2,
+    )
+    ax.vlines(
+        x=x2,
+        ymin=-100,
+        ymax=100,
+        color=plotmath.COLORS.get("red"),
+        linestyle="--",
+        lw=2,
+    )
+    ax.hlines(
+        y=1, xmin=-100, xmax=100, color=plotmath.COLORS.get("red"), linestyle="--", lw=2
+    )
 
     ax.plot(1, 0, "ko", markersize=8, alpha=0.7)
 

@@ -204,7 +204,7 @@ Bestem $f(x)$.
 :::{figure} ./figurer/underveisoppgaver/underveisoppgave_1/graf.svg
 ---
 name: fig-rasjonale-funksjoner-representasjoner-underveisoppgave-1
-width: 80%
+width: 90%
 class: no-click, adaptive-figure
 ---
 viser grafen til en rasjonal funksjon $f$.

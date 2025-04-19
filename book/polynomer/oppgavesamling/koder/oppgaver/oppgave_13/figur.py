@@ -17,15 +17,15 @@ def main(dirname, save):
     x = a * np.cos(theta)
     y = b * np.sin(theta) + y1
 
-    plt.plot(x, y, color="teal", lw=2)
+    plt.plot(x, y, color=plotmath.COLORS.get("blue"), lw=2.5)
 
     y2 = -4
     y = b * np.sin(theta) + y2
 
-    plt.plot(x, y, color="teal", lw=2)
+    plt.plot(x, y, color=plotmath.COLORS.get("blue"), lw=2.5)
 
-    plt.plot([a, a], [y1, y2], color="teal", lw=2)
-    plt.plot([-a, -a], [y1, y2], color="teal", lw=2)
+    plt.plot([a, a], [y1, y2], color=plotmath.COLORS.get("blue"), lw=2.5)
+    plt.plot([-a, -a], [y1, y2], color=plotmath.COLORS.get("blue"), lw=2.5)
 
     plt.plot([0, a], [y1, y1], color="black", lw=1.5)
 

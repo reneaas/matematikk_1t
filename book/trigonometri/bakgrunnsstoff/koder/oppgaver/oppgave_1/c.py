@@ -1,4 +1,5 @@
 from casify import *
+import matplotlib.pyplot as plt
 
 
 def main(dirname, save):
@@ -8,12 +9,15 @@ def main(dirname, save):
     ax = draw_triangle(
         asa=(110, 3, 20),
         show=True if save is False else False,
-        radius=0.4,
-        fontsize=16,
+        radius=0.6,
+        fontsize=20,
         label_angles=(False, True, True),
         label_sides=(False, False, False),
         vertex_labels=("A", "B", "C"),
+        show_vertices=False,
     )
+
+    plt.tight_layout()
 
     # NOTE: Automatically saves with correct file format and filename.
     if save:

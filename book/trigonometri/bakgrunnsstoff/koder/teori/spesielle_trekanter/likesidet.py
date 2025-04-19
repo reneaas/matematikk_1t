@@ -11,7 +11,7 @@ def make_circle_arc(center, radius, start_angle, end_angle, num_points=1024):
 
 
 def main(dirname, save):
-    fontsize = 20
+    fontsize = 22
     # List of functions and their labels.
     A = (-1, 0)
     B = (1, 0)
@@ -145,6 +145,7 @@ def main(dirname, save):
     plt.axis("equal")
     plt.axis("off")
     plt.gca().set_aspect("equal", adjustable="box")
+    plt.tight_layout()
     plt.title("Likebeint", loc="left", fontsize=fontsize)
 
     # NOTE: Select an appropriate `dirname` to save the figure.

@@ -37,8 +37,8 @@ def main(dirname, save):
     x0 = -3
     x = np.linspace(-10, 10, 1024)
     tangent = make_tangent_fn(f=f, a=x1)
-    ax.plot(x, tangent(x), color="blue", lw=2, alpha=0.7)
-    ax.hlines(y=f(x0), xmin=-10, xmax=10, color="red", alpha=0.7)
+    ax.plot(x, tangent(x), color=plotmath.COLORS.get("red"), lw=2.5)
+    ax.hlines(y=f(x0), xmin=-10, xmax=10, color=plotmath.COLORS.get("skyblue"), lw=2.5)
 
     ax.plot(x1, f(x1), "ko", markersize=8, alpha=0.7)
     ax.plot(x0, f(x0), "ko", markersize=8, alpha=0.7)
@@ -61,7 +61,7 @@ def main(dirname, save):
         fontsize=18,
         va="top",
         ha="center",
-        color="red",
+        color=plotmath.COLORS.get("skyblue"),
     )
 
     # # Annotate points
@@ -91,7 +91,7 @@ def main(dirname, save):
         s="$y = 2x + 4$",
         ha="center",
         va="center",
-        color="blue",
+        color=plotmath.COLORS.get("red"),
         fontsize=18,
     )
 

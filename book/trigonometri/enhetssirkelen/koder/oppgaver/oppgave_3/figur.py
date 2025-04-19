@@ -91,7 +91,7 @@ def main(dirname, save):
     )
     x, y = make_circle(radius=1)
 
-    plt.plot(x, y, color="teal", lw=2, alpha=0.7)
+    plt.plot(x, y, color=plotmath.COLORS.get("blue"), lw=2.5)
 
     angle = np.pi / 4
     x0 = np.cos(angle)

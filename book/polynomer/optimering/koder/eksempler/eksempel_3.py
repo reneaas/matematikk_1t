@@ -39,7 +39,7 @@ def main(dirname, save):
     plt.fill(
         [A[0], B[0], C[0], D[0]],
         [A[1], B[1], C[1], D[1]],
-        color="teal",
+        color=plotmath.COLORS.get("blue"),
         alpha=0.2,
     )
 
@@ -59,7 +59,7 @@ def main(dirname, save):
         va="bottom",
     )
 
-    ax.plot(x, y, color="teal", lw=2, alpha=0.7, label="$f(x) = -x^2 + 9$")
+    ax.plot(x, y, color=plotmath.COLORS.get("blue"), lw=2.5, label="$f(x) = -x^2 + 9$")
 
     plt.legend(fontsize=16)
 

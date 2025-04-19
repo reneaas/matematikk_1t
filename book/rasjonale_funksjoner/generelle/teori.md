@@ -36,6 +36,7 @@ class: example
 ---
 Nedenfor vises fire eksempler på rasjonale funksjoner med ulike egenskaper. Det *ikke* meningen at du skal forstå *hvorfor* grafene ser ut som de gjør enda, men få et inntrykk av hvor stort mangfold rasjonale funksjoner kan ha.
 
+
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts

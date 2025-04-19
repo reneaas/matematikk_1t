@@ -40,7 +40,7 @@ def main(dirname, save):
         ha="center",
         va="bottom",
     )
-    plt.plot([A[0], B[0]], [A[1], B[1]], color="blue", lw=2)
+    plt.plot([A[0], B[0]], [A[1], B[1]], color=plotmath.COLORS.get("blue"), lw=2)
 
     plt.text(
         x=0.5 * (A[0] + B[0]),
@@ -63,7 +63,7 @@ def main(dirname, save):
 
     plt.hlines(y=0, xmin=-20, xmax=20, color="black")
 
-    plt.hlines(y=0, xmin=x, xmax=L, color="red", lw=2)
+    plt.hlines(y=0, xmin=x, xmax=L, color=plotmath.COLORS.get("red"), lw=2)
     plt.text(
         x=0.5 * (x + L),
         y=-0.5,

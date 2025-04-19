@@ -3,13 +3,13 @@ import matplotlib.pyplot as plt
 
 
 def main(dirname, save):
-    fontsize = 20
+    fontsize = 22
     # List of functions and their labels.
     A = (0, 0)
     C = (0, 2)
     B = (3, 0)
 
-    plotmath.plot_polygon(A, B, C, show_vertices=True)
+    plotmath.plot_polygon(A, B, C, show_vertices=False)
 
     dx = dy = 0.1
     plt.text(

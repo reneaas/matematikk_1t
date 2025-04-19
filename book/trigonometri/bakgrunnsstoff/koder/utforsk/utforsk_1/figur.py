@@ -17,16 +17,12 @@ def main(dirname, save):
     B = (4, 0)
     C = (3, 4)
 
-    plt.fill([A[0], B[0], C[0]], [A[1], B[1], C[1]], "teal", alpha=0.1)
-    plt.plot(
-        [A[0], B[0], C[0], A[0]],
-        [
-            A[1],
-            B[1],
-            C[1],
-            A[1],
-        ],
-        "k",
+    plotmath.plot_polygon(
+        A,
+        B,
+        C,
+        show_vertices=False,
+        alpha=0.05,
     )
 
     plt.plot(*A, "ko", markersize=8, alpha=0.7)
@@ -142,4 +138,4 @@ if __name__ == "__main__":
     dirname = "/".join(parts)
 
     # NOTE: Set `save=True` to save figure. `save=False` to display figure.
-    main(dirname=dirname, save=True)
+    main(dirname=dirname, save=False)

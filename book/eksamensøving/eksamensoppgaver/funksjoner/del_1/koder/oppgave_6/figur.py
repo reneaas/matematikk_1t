@@ -30,14 +30,14 @@ def main(dirname, save):
     x = np.linspace(-24, x_inf, 1024)
     y = f(x)
 
-    ax.plot(x, y, color="teal", alpha=0.9, lw=2)
+    ax.plot(x, y, color=plotmath.COLORS.get("blue"), lw=2.5)
 
     x = np.linspace(x_inf, 24, 1024)
     y = f(x)
-    ax.plot(x, y, color="teal", alpha=0.9, lw=2)
+    ax.plot(x, y, color=plotmath.COLORS.get("blue"), lw=2.5)
 
-    ax.hlines(y=3, xmin=-25, xmax=25, color="blue", ls="--")
-    ax.vlines(x=1, ymin=-25, ymax=25, color="blue", ls="--")
+    ax.hlines(y=3, xmin=-25, xmax=25, color=plotmath.COLORS.get("red"), ls="--", lw=2)
+    ax.vlines(x=1, ymin=-25, ymax=25, color=plotmath.COLORS.get("red"), ls="--", lw=2)
 
     # NOTE: Select an appropriate `dirname` to save the figure.
     # The directory `dirname` will be created automatically if it does not exist already.

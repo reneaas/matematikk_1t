@@ -18,6 +18,7 @@ def main(dirname, save):
         ymin=-4,
         ymax=18,
         ticks=True,
+        ystep=2,
     )
 
     # NOTE: Select an appropriate `dirname` to save the figure.

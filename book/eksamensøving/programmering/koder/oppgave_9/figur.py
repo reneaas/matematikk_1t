@@ -19,11 +19,12 @@ def main(dirname, save):
         ymin=-1,
         ymax=8,
         ticks=True,
-        alpha=0.9,
     )
 
     x = np.linspace(0, 6, 1024)
-    ax.fill_between(x, 0, f(x), where=(f(x) > 0), color="teal", alpha=0.2)
+    ax.fill_between(
+        x, 0, f(x), where=(f(x) > 0), color=plotmath.COLORS.get("blue"), alpha=0.2
+    )
 
     # NOTE: Select an appropriate `dirname` to save the figure.
     # The directory `dirname` will be created automatically if it does not exist already.

@@ -8,13 +8,18 @@ def main(dirname, save):
     ax = draw_triangle(
         sas=(3, 50, 5),
         show=False,
-        radius=0.6,
+        radius=0.65,
         fontsize=20,
         label_angles=(False, True, False),
         label_sides=(True, True, False),
         vertex_labels=("A", "B", "C"),
         numerical_len=True,
+        show_vertices=False,
     )
+
+    import matplotlib.pyplot as plt
+
+    plt.tight_layout()
 
     # NOTE: Automatically saves with correct file format and filename.
     if save:

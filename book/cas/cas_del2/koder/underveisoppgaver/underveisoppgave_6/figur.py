@@ -24,7 +24,7 @@ def main(dirname, save):
     x = np.linspace(0, 3, 1024)
     y = f(x)
 
-    ax.plot(x, y, color="teal", lw=2, alpha=0.7)
+    ax.plot(x, y, color=plotmath.COLORS.get("blue"), lw=2.5)
 
     x0 = 1.7
     A = [0, 0]
@@ -38,8 +38,8 @@ def main(dirname, save):
     ax.fill(
         [A[0], B[0], C[0]],
         [A[1], B[1], C[1]],
-        color="teal",
-        alpha=0.2,
+        color=plotmath.COLORS.get("blue"),
+        alpha=0.1,
     )
 
     ax.plot([A[0], B[0]], [A[1], B[1]], color="black", lw=1.5)

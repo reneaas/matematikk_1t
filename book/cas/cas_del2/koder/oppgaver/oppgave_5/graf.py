@@ -23,7 +23,7 @@ def main(dirname, save):
 
     x = np.linspace(0, 8, 1024)
     y = f(x)
-    ax.plot(x, y, color=(0, 100 / 255, 140 / 255), alpha=0.7, lw=2, label="$f$")
+    ax.plot(x, y, color=plotmath.COLORS.get("blue"), lw=2.5, label="$f$")
 
     k = 2.6
     A = (0, 0)

@@ -28,7 +28,12 @@ def main(dirname, save):
     B = [x0, 0]
     C = [x0, f(x0)]
 
-    ax.fill([A[0], B[0], C[0]], [A[1], B[1], C[1]], color="teal", alpha=0.1)
+    ax.fill(
+        [A[0], B[0], C[0]],
+        [A[1], B[1], C[1]],
+        color=plotmath.COLORS.get("blue"),
+        alpha=0.1,
+    )
     ax.plot([A[0], B[0]], [A[1], B[1]], color="black", lw=1.5, alpha=0.7)
     ax.plot([B[0], C[0]], [B[1], C[1]], color="black", lw=1.5, alpha=0.7)
     ax.plot([C[0], A[0]], [C[1], A[1]], color="black", lw=1.5, alpha=0.7)
@@ -57,7 +62,7 @@ def main(dirname, save):
         va="bottom",
     )
 
-    ax.plot(x, f(x), color="teal", lw=2, alpha=0.7)
+    ax.plot(x, f(x), color=plotmath.COLORS.get("blue"), lw=2.5)
 
     # NOTE: Select an appropriate `dirname` to save the figure.
     # The directory `dirname` will be created automatically if it does not exist already.

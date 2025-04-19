@@ -101,6 +101,8 @@ def main(dirname, save):
     plt.axis("equal")
     plt.axis("off")
 
+    plt.tight_layout()
+
     # NOTE: Automatically saves with correct file format and filename.
     if save:
         fname = __file__.split("/")[-1].replace(".py", ".svg")

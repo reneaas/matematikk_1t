@@ -32,18 +32,31 @@ def main(dirname, save):
     # Plot the function
     x1 = 1
     x_vals = np.linspace(-24, x1, 1024)
-    ax.plot(x_vals, f(x_vals), color="teal", lw=2, alpha=0.7, label="$\\mathrm{C}$")
+    ax.plot(
+        x_vals,
+        f(x_vals),
+        color=plotmath.COLORS.get("blue"),
+        lw=2.5,
+        label="$\\mathrm{C}$",
+    )
 
     x_vals = np.linspace(x1, 24, 1024)
-    ax.plot(x_vals, f(x_vals), color="teal", lw=2, alpha=0.7)
+    ax.plot(x_vals, f(x_vals), color=plotmath.COLORS.get("blue"), lw=2.5)
 
     # Draw vertical asymptotes
-    ax.vlines(x=x1, ymin=-100, ymax=100, color="red", linestyle="--", lw=1.5)
+    ax.vlines(
+        x=x1,
+        ymin=-100,
+        ymax=100,
+        color=plotmath.COLORS.get("red"),
+        linestyle="--",
+        lw=2,
+    )
 
     ax.plot(-1, 0, "ko", markersize=8, alpha=0.7)
 
     x = np.linspace(-20, 20, 1024)
-    ax.plot(x, g(x), color="blue", linestyle="--", lw=1.5, alpha=0.7)
+    ax.plot(x, g(x), color=plotmath.COLORS.get("red"), linestyle="--", lw=2)
 
     ax.legend(fontsize=16)
 

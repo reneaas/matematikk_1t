@@ -1,5 +1,6 @@
 from casify import *
 import numpy as np
+import matplotlib.pyplot as plt
 
 
 def scaling_matrix(s):
@@ -40,14 +41,15 @@ def main(dirname, save):
         A,
         B,
         C,
-        show=True if save is False else False,
-        radius=0.5,
-        fontsize=16,
+        show=False,
+        radius=0.7,
+        fontsize=22,
         label_angles=(False, False, True),
         label_sides=(False, False, True),
         vertex_labels=("D", "E", "F"),
     )
 
+    plt.tight_layout()
     # NOTE: Automatically saves with correct file format and filename.
     if save:
         fname = __file__.split("/")[-1].replace(".py", ".svg")

@@ -39,7 +39,7 @@ def main(dirname, save):
 
     print(A, B, C)
 
-    plotmath.plot_polygon(*points, ax=ax, show_vertices=True)
+    plotmath.plot_polygon(*points, ax=ax, show_vertices=False)
 
     dx = dy = 0.1
     ax.text(

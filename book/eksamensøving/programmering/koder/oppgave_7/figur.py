@@ -19,12 +19,11 @@ def main(dirname, save):
         ymin=-1,
         ymax=3,
         ticks=True,
-        alpha=0.9,
     )
 
     x = np.linspace(0, 8, 1024)
     y = f(x)
-    ax.plot(x, y, color="teal", alpha=0.9, lw=2, label="$f$")
+    ax.plot(x, y, color=plotmath.COLORS.get("blue"), lw=2.5, label="$f$")
 
     k = 3
     A = (0, 0)
@@ -34,10 +33,12 @@ def main(dirname, save):
 
     points = [A, B, C, D]
     # x, y = zip(*points)
-    # ax.fill(x, y, color="teal", alpha=0.1)
+    # ax.fill(x, y, color=plotmath.COLORS.get("blue"), alpha=0.1)
     # ax.plot(x, y, color="black", alpha=1, lw=1.5)
     # ax.plot(x, y, "ko", markersize=8, alpha=0.7)
-    plotmath.plot_polygon(*points, ax=ax, color="teal", alpha=0.2, show_vertices=True)
+    plotmath.plot_polygon(
+        *points, ax=ax, color=plotmath.COLORS.get("blue"), alpha=0.2, show_vertices=True
+    )
 
     dx = dy = 0.1
     # ax.text(

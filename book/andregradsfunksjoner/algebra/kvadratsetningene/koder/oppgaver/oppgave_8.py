@@ -1,16 +1,17 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
+import plotmath
 
 plt.rc("text", usetex=True)
 
 a = 1
 b = 0.35
 
-# plt.plot([0, a], [0, 0], 'teal')
-# plt.plot([a, a], [0, a + b], "teal", linestyle="--")
-# plt.plot([0, a + b], [a, a], 'teal', linestyle="--")
-# plt.plot([0, 0], [0, a], 'teal')
+# plt.plot([0, a], [0, 0], 'plotmath.COLORS.get("blue")')
+# plt.plot([a, a], [0, a + b], plotmath.COLORS.get("blue"), linestyle="--")
+# plt.plot([0, a + b], [a, a], 'plotmath.COLORS.get("blue")', linestyle="--")
+# plt.plot([0, 0], [0, a], 'plotmath.COLORS.get("blue")')
 
 
 # plt.plot([a, a + b], [0, 0], 'k')
@@ -25,7 +26,7 @@ rect_1 = patches.Rectangle(
     height=a - b,
     fill=True,
     edgecolor="black",
-    facecolor="teal",
+    facecolor=plotmath.COLORS.get("blue"),
     alpha=0.2,
     lw=2,
 )
@@ -35,7 +36,7 @@ rect_2 = patches.Rectangle(
     height=a - b,
     fill=True,
     edgecolor="black",
-    facecolor="teal",
+    facecolor=plotmath.COLORS.get("blue"),
     alpha=0.2,
     lw=2,
 )
@@ -45,7 +46,7 @@ rect_3 = patches.Rectangle(
     height=b,
     fill=True,
     edgecolor="black",
-    facecolor="teal",
+    facecolor=plotmath.COLORS.get("blue"),
     alpha=0.2,
     lw=2,
 )
@@ -149,6 +150,9 @@ plt.annotate(
 plt.axis("equal")
 plt.axis("off")
 
-plt.savefig("../../figurer/oppgaver/oppgave_8.svg")
+plt.savefig(
+    "../../figurer/oppgaver/oppgave_8.svg",
+    transparent=True,
+)
 
 plt.show()

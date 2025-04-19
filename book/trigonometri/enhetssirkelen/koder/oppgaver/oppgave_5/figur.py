@@ -30,7 +30,7 @@ def main(dirname, save):
     r = 1
 
     x, y = make_circle(radius=r)
-    ax.plot(x, y, color="teal", lw=2)
+    ax.plot(x, y, color=plotmath.COLORS.get("blue"), lw=2.5)
 
     angle = 240
     angle = np.deg2rad(angle)

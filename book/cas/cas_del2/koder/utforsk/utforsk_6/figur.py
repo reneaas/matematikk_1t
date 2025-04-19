@@ -23,9 +23,9 @@ def main(dirname, save):
 
     x = np.linspace(0, 3, 1024)
     y = f(x)
-    ax.plot(x, y, color="teal", lw=2, alpha=0.7, label="$f$")
+    ax.plot(x, y, color=plotmath.COLORS.get("blue"), lw=2.5, label="$f$")
 
-    color = "teal"
+    color = plotmath.COLORS.get("blue")
     x0 = 1.8
     a = 0
     b = 4

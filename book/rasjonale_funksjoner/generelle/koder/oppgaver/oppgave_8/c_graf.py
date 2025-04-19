@@ -33,16 +33,23 @@ def main(dirname, save):
     x1 = -3
     x2 = 2
     x_vals = np.linspace(-24, x1, 1024)
-    ax.plot(x_vals, f(x_vals), color="teal", lw=2, alpha=0.7, label="$f$")
+    ax.plot(x_vals, f(x_vals), color=plotmath.COLORS.get("blue"), lw=2.5, label="$f$")
 
     x_vals = np.linspace(x1, x2, 1024)
-    ax.plot(x_vals, f(x_vals), color="teal", lw=2, alpha=0.7)
+    ax.plot(x_vals, f(x_vals), color=plotmath.COLORS.get("blue"), lw=2.5)
 
     x_vals = np.linspace(x2, 24, 1024)
-    ax.plot(x_vals, f(x_vals), color="teal", lw=2, alpha=0.7)
+    ax.plot(x_vals, f(x_vals), color=plotmath.COLORS.get("blue"), lw=2.5)
 
     # Draw vertical asymptotes
-    ax.vlines(x=x1, ymin=-100, ymax=100, color="red", linestyle="--", lw=1.5)
+    ax.vlines(
+        x=x1,
+        ymin=-100,
+        ymax=100,
+        color=plotmath.COLORS.get("red"),
+        linestyle="--",
+        lw=2,
+    )
 
     # Draw holes in the graph
     ax.plot(x2, g(x2), "x", color="red", markersize=20, alpha=1)
@@ -76,7 +83,9 @@ def main(dirname, save):
 
     # plot horisontal asymptote
 
-    ax.hlines(y=1, xmin=-100, xmax=100, color="blue", linestyle="--", lw=1.5)
+    ax.hlines(
+        y=1, xmin=-100, xmax=100, color=plotmath.COLORS.get("red"), linestyle="--", lw=2
+    )
     ax.text(
         x=6,
         y=1 + dy,

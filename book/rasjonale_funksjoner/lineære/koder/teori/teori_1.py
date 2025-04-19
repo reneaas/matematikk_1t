@@ -32,26 +32,24 @@ def main(dirname, save):
     x1 = np.linspace(-10, vertical_asymptote, 1024)
     x2 = np.linspace(vertical_asymptote, 10, 1024)
 
-    ax.plot(x1, f(x1), color="teal", lw=2, alpha=0.7, label="$f$")
-    ax.plot(x2, f(x2), color="teal", lw=2, alpha=0.7)
+    ax.plot(x1, f(x1), color=plotmath.COLORS.get("blue"), lw=2.5, label="$f$")
+    ax.plot(x2, f(x2), color=plotmath.COLORS.get("blue"), lw=2.5)
 
     ax.hlines(
         y=horisontal_asymptote,
         xmin=-10,
         xmax=10,
         linestyle="--",
-        lw=1.5,
-        color="blue",
-        alpha=0.7,
+        lw=2,
+        color=plotmath.COLORS.get("red"),
     )
     ax.vlines(
         x=vertical_asymptote,
         ymin=-12,
         ymax=12,
         linestyle="--",
-        lw=1.5,
-        color="red",
-        alpha=0.7,
+        lw=2,
+        color=plotmath.COLORS.get("red"),
     )
 
     ax.annotate(

@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import plotmath
 
 plt.rc("text", usetex=True)
 
@@ -17,9 +18,9 @@ f2 = lag_eksponential_fn(a=1, b=0.5)
 fig, ax = plt.subplots()
 x = np.linspace(-6, 6, 1024)
 
-alpha = 0.7
-ax.plot(x, f1(x), color="teal", lw=2, alpha=alpha)
-ax.plot(x, f2(x), color="purple", lw=2, alpha=alpha)
+alpha = 1
+ax.plot(x, f1(x), color=plotmath.COLORS.get("blue"), lw=2, alpha=alpha)
+ax.plot(x, f2(x), color=plotmath.COLORS.get("red"), lw=2, alpha=alpha)
 
 ax.spines["left"].set_position("zero")
 ax.spines["right"].set_color("none")
@@ -41,7 +42,10 @@ plt.text(
     fontsize=18,
     color="white",
     bbox=dict(
-        facecolor="teal", alpha=alpha, edgecolor="black", boxstyle="round,pad=0.3"
+        facecolor=plotmath.COLORS.get("blue"),
+        alpha=alpha,
+        edgecolor="black",
+        boxstyle="round,pad=0.3",
     ),
 )
 
@@ -52,7 +56,10 @@ plt.text(
     fontsize=18,
     color="white",
     bbox=dict(
-        facecolor="purple", alpha=alpha, edgecolor="black", boxstyle="round,pad=0.3"
+        facecolor=plotmath.COLORS.get("red"),
+        alpha=alpha,
+        edgecolor="black",
+        boxstyle="round,pad=0.3",
     ),
 )
 
@@ -75,5 +82,8 @@ plt.ylim(-1, 4)
 plt.xticks([])
 plt.yticks([])
 plt.tight_layout()
-plt.savefig("../../figurer/teori/grafisk_representasjon.svg")
+plt.savefig(
+    "../../figurer/teori/grafisk_representasjon.svg",
+    transparent=True,
+)
 plt.show()

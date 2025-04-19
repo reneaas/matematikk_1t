@@ -1,4 +1,5 @@
 from casify import *
+import matplotlib.pyplot as plt
 
 
 def main(dirname, save):
@@ -9,12 +10,14 @@ def main(dirname, save):
         asa=(90, 1, 60),
         show=True if save is False else False,
         radius=0.3,
-        fontsize=16,
+        fontsize=20,
         label_angles=(True, True, False),
         label_sides=(False, False, False),
         vertex_labels=("A", "B", "C"),
+        show_vertices=False,
     )
 
+    plt.tight_layout()
     # NOTE: Automatically saves with correct file format and filename.
     if save:
         fname = __file__.split("/")[-1].replace(".py", ".svg")

@@ -11,7 +11,7 @@ def make_circle_arc(center, radius, start_angle, end_angle, num_points=1024):
 
 
 def main(dirname, save):
-    fontsize = 20
+    fontsize = 22
     # List of functions and their labels.
     A = (-1.5, 0)
     B = (1.5, 0)
@@ -77,7 +77,7 @@ def main(dirname, save):
         x=A[0] + 0.5 * (np.cos(angle_A) + 1),
         y=A[1] + 0.5 * np.sin(angle_A),
         s="$v$",
-        fontsize=fontsize,
+        fontsize=26,
         ha="center",
         va="center",
     )
@@ -86,7 +86,7 @@ def main(dirname, save):
         x=B[0] - 0.5 * (np.cos(angle_A) + 1),
         y=B[1] + 0.5 * np.sin(angle_A),
         s="$v$",
-        fontsize=fontsize,
+        fontsize=26,
         ha="center",
         va="center",
     )
@@ -124,6 +124,7 @@ def main(dirname, save):
 
     plt.axis("equal")
     plt.axis("off")
+    plt.tight_layout()
     plt.title("Likebeint", loc="right", fontsize=fontsize)
 
     # NOTE: Select an appropriate `dirname` to save the figure.

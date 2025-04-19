@@ -14,6 +14,7 @@ def main(dirname, save):
         label_angles=(False, False, False),
         label_sides=(True, False, False),
         vertex_labels=("A", "B", "C"),
+        show_vertices=False,
     )
 
     angle = np.radians(60)
@@ -34,6 +35,10 @@ def main(dirname, save):
     dx = dy = 0.2
     ax.plot([x, x + dx], [dy, dy], color="black")
     ax.plot([x + dx, x + dx], [0, dy], color="black")
+
+    import matplotlib.pyplot as plt
+
+    plt.tight_layout()
 
     # NOTE: Automatically saves with correct file format and filename.
     if save:

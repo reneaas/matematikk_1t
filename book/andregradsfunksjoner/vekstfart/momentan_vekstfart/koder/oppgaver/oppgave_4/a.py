@@ -36,7 +36,7 @@ def main(dirname, save):
     x1 = 3
     x = np.linspace(-10, 10, 1024)
     tangent = make_tangent_fn(f=f, a=x1)
-    ax.plot(x, tangent(x), color="blue", lw=2, alpha=0.7)
+    ax.plot(x, tangent(x), color=plotmath.COLORS.get("red"), lw=2.5, alpha=1)
 
     ax.plot(x1, f(x1), "ko", markersize=8, alpha=0.7)
     ax.plot(0, f(0), "ko", markersize=8, alpha=0.7)
@@ -68,7 +68,7 @@ def main(dirname, save):
         s="$y = -4x + 13$",
         ha="center",
         va="center",
-        color="blue",
+        color=plotmath.COLORS.get("red"),
         fontsize=18,
     )
 

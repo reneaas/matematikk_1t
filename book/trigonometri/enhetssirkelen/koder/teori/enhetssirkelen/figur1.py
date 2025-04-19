@@ -91,7 +91,7 @@ def main(dirname, save):
     )
     x, y = make_circle(radius=1)
 
-    plt.plot(x, y, color="teal", lw=2, alpha=0.7)
+    plt.plot(x, y, color=plotmath.COLORS.get("blue"), lw=2.5, alpha=1)
 
     angle = np.pi / 3
     x0 = np.cos(angle)
@@ -148,6 +148,7 @@ def main(dirname, save):
     )
 
     ax.set_aspect("equal")
+    plt.tight_layout()
 
     # NOTE: Select an appropriate `dirname` to save the figure.
     # The directory `dirname` will be created automatically if it does not exist already.

@@ -22,7 +22,6 @@ def main(dirname, save):
         ystep=0.1,
         grid=False,
         lw=2.5,
-        alpha=0.8,
         domain=(0, 15),
     )
 
@@ -37,7 +36,7 @@ def main(dirname, save):
         C,
         D,
         alpha=0.2,
-        color="teal",
+        color=plotmath.COLORS.get("blue"),
         show_vertices=True,
     )
 

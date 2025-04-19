@@ -12,7 +12,7 @@ def main(dirname, save):
 
     fig, ax = plotmath.plot(
         functions=functions,
-        fn_labels=["$h$"],
+        fn_labels=["$h'$"],
         xmin=-6,
         xmax=6,
         ymin=-6,

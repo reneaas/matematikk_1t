@@ -1,4 +1,5 @@
 from casify import *
+import matplotlib.pyplot as plt
 
 
 def main(dirname, save):
@@ -14,6 +15,7 @@ def main(dirname, save):
         label_angles=(" ", " ", " "),
         label_sides=(False, False, False),
         vertex_labels=("A", "B", "C"),
+        show_vertices=False,
     )
 
     angle = 5 * np.pi / 18
@@ -23,27 +25,8 @@ def main(dirname, save):
     # ax.vlines(x=x, ymin=0, ymax=h, linestyle="--", color="black")
 
     dx = dy = 0.05
-    # ax.text(
-    #     x=x + dx,
-    #     y=0.5 * h,
-    #     s=r"$h$",
-    #     fontsize=20,
-    #     ha="left",
-    #     va="center",
-    # )
 
-    # ax.text(
-    #     x=1,
-    #     y=-dy,
-    #     s=r"$g$",
-    #     fontsize=20,
-    #     ha="center",
-    #     va="top",
-    # )
-
-    # dx = dy = 0.16
-    # ax.plot([x, x + dx], [dy, dy], ls="--", color="black")
-    # ax.plot([x + dx, x + dx], [dy, 0], ls="--", color="black")
+    plt.tight_layout()
 
     # NOTE: Automatically saves with correct file format and filename.
     if save:

@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import plotmath
 
 plt.rc("text", usetex=True)
 
@@ -14,7 +15,7 @@ b = 7
 x = np.linspace(a, b, 1024)
 
 fig, ax = plt.subplots()
-ax.plot(x, f(x), color="teal", lw=2, alpha=0.7)
+ax.plot(x, f(x), color=plotmath.COLORS.get("blue"), lw=2.5)
 
 ax.spines["left"].set_position("zero")
 ax.spines["right"].set_color("none")
@@ -57,6 +58,9 @@ plt.yticks([y1, y2], [r"$y_1$", r"$y_2$"], fontsize=16)
 plt.tight_layout()
 
 # Lagrer figuren i vektorformat
-plt.savefig("../../figurer/teori/topunktsformelen.svg")
+plt.savefig(
+    "../../figurer/teori/topunktsformelen.svg",
+    transparent=True,
+)
 
 plt.show()

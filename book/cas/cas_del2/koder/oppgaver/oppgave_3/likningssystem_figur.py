@@ -26,12 +26,12 @@ def main(dirname, save):
     )
 
     x, y = make_circle(radius=5, x0=0, y0=0)
-    ax.plot(x, y, label=r"$x^2 + y^2 = 25$", color="teal", alpha=0.7)
+    ax.plot(x, y, label=r"$x^2 + y^2 = 25$", color=plotmath.COLORS.get("blue"), lw=2.5)
 
     x = np.linspace(-10, 10, 1024)
     y = x - 1
 
-    ax.plot(x, y, label=r"$x - y = 1$", color="blue", alpha=0.7)
+    ax.plot(x, y, label=r"$x - y = 1$", color=plotmath.COLORS.get("red"), lw=2.5)
 
     ax.legend(fontsize=16)
 

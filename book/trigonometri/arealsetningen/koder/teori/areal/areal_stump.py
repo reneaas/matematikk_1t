@@ -1,4 +1,5 @@
 from casify import *
+import matplotlib.pyplot as plt
 
 
 def main(dirname, save):
@@ -44,6 +45,8 @@ def main(dirname, save):
     dx = dy = 0.2
     ax.plot([x, x + dx], [dy, dy], ls="--", color="black")
     ax.plot([x + dx, x + dx], [dy, 0], ls="--", color="black")
+
+    plt.tight_layout()
 
     # NOTE: Automatically saves with correct file format and filename.
     if save:

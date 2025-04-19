@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 def main(dirname, save):
 
     fig, ax = plt.subplots(figsize=(8, 2))
-    alpha = 0.9
+    alpha = 1
     teal = (0, 140 / 255, 130 / 255)
     k = 0.9  # Scale factor
     n_linjestykker = 100  # Number of line segments
@@ -17,7 +17,7 @@ def main(dirname, save):
 
     # Draw first vertical line up
     y = lengde  # First line goes up
-    plt.plot([0, 0], [0, y], color=teal, lw=2, alpha=alpha)
+    plt.plot([0, 0], [0, y], color=plotmath.COLORS.get("blue"), lw=2, alpha=alpha)
 
     for i in range(n_linjestykker):
         lengde *= k  # Reduce length by scale factor
@@ -25,11 +25,23 @@ def main(dirname, save):
 
         if i % 2 == 0:  # Horizontal line right
             x += lengde
-            plt.plot([x_prev, x], [y, y], color=teal, lw=2, alpha=alpha)
+            plt.plot(
+                [x_prev, x],
+                [y, y],
+                color=plotmath.COLORS.get("blue"),
+                lw=2,
+                alpha=alpha,
+            )
         else:  # Vertical line (alternating down/up)
             direction = -1 if (i // 2) % 2 == 0 else 1  # Alternate between down and up
             y += direction * lengde
-            plt.plot([x, x], [y_prev, y], color=teal, lw=2, alpha=alpha)
+            plt.plot(
+                [x, x],
+                [y_prev, y],
+                color=plotmath.COLORS.get("blue"),
+                lw=2,
+                alpha=alpha,
+            )
 
     plt.axis("off")
     plt.axis("equal")
