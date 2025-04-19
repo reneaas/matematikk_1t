@@ -543,10 +543,9 @@ Graf **C**.
 ::::
 
 
-::::{figure} ./figurer/oppgaver/oppgave_4/merged_figure.svg
+::::{clickable-figure} ./figurer/oppgaver/oppgave_4/merged_figure.svg
 ---
 width: 100%
-class: no-click, adaptive-figure
 ---
 ::::
 
@@ -600,10 +599,9 @@ Graf **C**.
 ::::::::::::::
 
 
-::::{figure} ./figurer/oppgaver/oppgave_5/merged_figure.svg
+::::{clickable-figure} ./figurer/oppgaver/oppgave_5/merged_figure.svg
 ---
 width: 100%
-class: no-click, adaptive-figure
 ---
 ::::
 
@@ -655,10 +653,9 @@ Graf **C**.
 ::::::::::::::
 
 
-::::{figure} ./figurer/oppgaver/oppgave_6/merged_figure.svg
+::::{clickable-figure} ./figurer/oppgaver/oppgave_6/merged_figure.svg
 ---
 width: 100%
-class: no-click, adaptive-figure
 ---
 ::::
 

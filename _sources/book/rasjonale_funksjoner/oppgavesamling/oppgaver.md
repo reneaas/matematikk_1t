@@ -370,10 +370,9 @@ Graf **C**.
 :::::::::::::
 ::::::::::::::
 
-::::{figure} ./figurer/oppgave_5/merged_figure.svg
+::::{clickable-figure} ./figurer/oppgave_5/merged_figure.svg
 ---
 width: 100%
-class: no-click, adaptive-figure
 ---
 ::::
 
@@ -405,10 +404,9 @@ class: answer, dropdown
 ::::
 
 
-::::{figure} ./figurer/oppgave_6/merged_figure.svg
+::::{clickable-figure} ./figurer/oppgave_6/merged_figure.svg
 ---
 width: 100%
-class: no-click, adaptive-figure
 ---
 ::::
 

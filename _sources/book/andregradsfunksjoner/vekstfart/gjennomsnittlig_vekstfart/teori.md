@@ -53,13 +53,13 @@ class: no-click, adaptive-figure
 
 Linjen som går gjennom de to punktene kaller vi for en **sekant**. Se {numref}`fig-teori-andregradsfunksjoner-vekstfart-gjennomsnittlig-vekstfart-sekanter`.
 
-:::{figure} ./koder/animasjoner/gjennomsnittig_vekstfart/media/videos/gjennomsnittlig_vekstfart/1440p60/gjennomsnittlig_vekstfart.gif
+:::{figure} ./figurer/teori/gjennomsnittlig_vekstfart.svg
 ---
 name: fig-teori-andregradsfunksjoner-vekstfart-gjennomsnittlig-vekstfart-sekanter
-width: 100%
-class: no-click, manim-figure
+width: 80%
+class: no-click, adaptive-figure
 ---
-viser grafen til en andregradsfunksjon (blå) og en sekant (rød) som går gjennom to punkter $(x_1, f(x_1))$ og $(x_2, f(x_2))$ og den tilsvarende formelen for gjennomsnittlig vekstfart i intervallet $[x_1, x_2]$.
+viser grafen til en andregradsfunksjon $f$ og en sekant som går gjennom to punkter på grafen til $f$. Den gjennomsnittlige vekstfarten til $f$ i intervallet $[x_1, x_2]$ er lik stigningstallet til sekanten.
 :::
 
 :::::::::::::::

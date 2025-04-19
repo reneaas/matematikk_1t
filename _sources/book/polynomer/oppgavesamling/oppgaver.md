@@ -2088,7 +2088,7 @@ class: dropdown, answer
 :::{figure} ./figurer/oppgaver/oppgave_12/a_løsning.svg
 ---
 width: 100%
-class: no-click, 
+class: no-click, adaptive-figure
 ---
 viser en skisse av grafen til $f$. 
 :::
