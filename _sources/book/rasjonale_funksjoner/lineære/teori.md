@@ -159,7 +159,7 @@ $$
 f(x) = \dfrac{a(x - b)}{x - c}
 $$
 
-der $a$ er den horisontale asympoten, $x_1$ er nullpunktet og $x_\infty$ er den vertikale asymptoten. 
+der $y = a$ er den horisontale asympoten, $x = b$ er nullpunktet og $x = c$ er den vertikale asymptoten. 
 
 * Horisontal asymptote er $y = 2$, så $a = 2$.
 * Nullpunktet er $x = 3$, så $b = 3$.
@@ -228,10 +228,10 @@ class: dropdown, solution
 En rasjonal funksjon kan skrives som:
 
 $$
-f(x) = \dfrac{a(x - x_1)}{x - x_\infty}
+f(x) = \dfrac{a(x - b)}{x - c}
 $$
 
-der $a$ er den horisontale asymptoten, $x_1$ er nullpunktet og $x_\infty$ er den vertikale asymptoten.
+der $y = a$ er den horisontale asymptoten, $x = b$ er nullpunktet og $x = c$ er den vertikale asymptoten.
 
 * Horisontal asymptote er $y = 2$, så $a = 2$.
 * Nullpunktet til $f$ er $x = 3$, så $x_1 = 3$.
