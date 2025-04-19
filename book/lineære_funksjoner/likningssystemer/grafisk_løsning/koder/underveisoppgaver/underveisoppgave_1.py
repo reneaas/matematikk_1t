@@ -1,13 +1,18 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import plotmath
+
 
 plt.rc("text", usetex=True)
 
+
 def f(x):
-    return 3 - (4/3)*x
+    return 3 - (4 / 3) * x
+
 
 def g(x):
-    return x/2 - 5/2
+    return x / 2 - 5 / 2
+
 
 a = -7
 b = 7
@@ -15,8 +20,8 @@ b = 7
 x = np.linspace(a, b, 1024)
 
 fig, ax = plt.subplots()
-ax.plot(x, f(x), color="teal", lw=2, alpha=0.7, label="$4x + 3y = 9$")
-ax.plot(x, g(x), color="red", lw=2, alpha=0.7, label="$x - 2y = 5$")
+ax.plot(x, f(x), color=plotmath.COLORS.get("blue"), lw=2.5, label="$4x + 3y = 9$")
+ax.plot(x, g(x), color=plotmath.COLORS.get("red"), lw=2.5, label="$x - 2y = 5$")
 
 ax.spines["left"].set_position("zero")
 ax.spines["right"].set_color("none")
@@ -41,10 +46,10 @@ plt.ylim(-3, 7)
 plt.xlim(-6, 6)
 
 plt.grid(True, linestyle="--", alpha=0.6)
-plt.legend(fontsize=16, frameon=True, edgecolor='black', facecolor='white')
+plt.legend(fontsize=16, frameon=True, edgecolor="black", facecolor="white")
 plt.tight_layout()
 
 # Lagrer figuren i vektorformat
-plt.savefig("../../figurer/underveisoppgaver/underveisoppgave_1.svg")
+plt.savefig("../../figurer/underveisoppgaver/underveisoppgave_1.svg", transparent=True)
 
 plt.show()

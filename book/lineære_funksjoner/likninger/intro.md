@@ -52,6 +52,9 @@ link-type: doc
 ^^^
 
 :::{code-block} python
+---
+linenos:
+---
 def f(x):
     return 2*x + 6
 

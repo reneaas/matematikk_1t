@@ -35,7 +35,7 @@ Vi kan illustrere sammenhengen mellom tallmengdene som i {numref}`mengder_venndi
 :::{figure} ./figurer/mengder_venndiagram.svg
 ---
 name: mengder_venndiagram
-width: 80%
+width: 60%
 class: no-click, adaptive-figure
 ---
 

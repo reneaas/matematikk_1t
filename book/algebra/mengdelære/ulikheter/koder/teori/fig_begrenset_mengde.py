@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import sympy as sp
+import plotmath
 
 plt.rc("text", usetex=True)
 
@@ -66,13 +67,13 @@ ax.annotate(
     verticalalignment="center",
 )
 
-ax.hlines(0, a, b, color="red", alpha=0.3, lw=8)
+ax.hlines(0, a, b, color=plotmath.COLORS.get("blue"), alpha=0.7, lw=8)
 plt.xticks([a, b], [r"$a$", r"$b$"], fontsize=20)
 plt.tick_params(axis="x", size=10)
 
 plt.tight_layout()
 
 # Lagrer figuren i vektorformat
-plt.savefig("../../figurer/teori/begrenset_mengde.svg")
+plt.savefig("../../figurer/teori/begrenset_mengde.svg", transparent=True)
 
 plt.show()

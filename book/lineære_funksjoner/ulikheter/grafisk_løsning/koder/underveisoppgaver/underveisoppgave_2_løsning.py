@@ -1,10 +1,13 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import plotmath
 
 plt.rc("text", usetex=True)
 
+
 def f(x, a, b):
-    return a*x + b
+    return a * x + b
+
 
 x_min = -10
 x_max = 10
@@ -16,10 +19,16 @@ b = 2
 y = -1
 
 fig, ax = plt.subplots()
-ax.plot(x, f(x, a, b), color="teal", lw=2, alpha=0.7, label=f"$f(x) = {a}x + {b}$")
-ax.hlines(y, -10, 10, color="purple", alpha=0.7, lw=2, label=f"$y = {y}$")
-ax.plot(((y - b)/a), y, "ko", markersize=8, alpha=0.7)
-ax.plot(((y - b)/a), 0, "k|", markersize=15, alpha=0.7)
+ax.plot(
+    x,
+    f(x, a, b),
+    color=plotmath.COLORS.get("blue"),
+    lw=2.5,
+    label=f"$f(x) = {a}x + {b}$",
+)
+ax.hlines(y, -10, 10, color=plotmath.COLORS.get("red"), lw=2.5, label=f"$y = {y}$")
+ax.plot(((y - b) / a), y, "ko", markersize=8, alpha=0.7)
+ax.plot(((y - b) / a), 0, "k|", markersize=15, alpha=0.7)
 
 ax.spines["left"].set_position("zero")
 ax.spines["right"].set_color("none")
@@ -46,7 +55,7 @@ plt.xlim(-4, 4)
 
 plt.annotate(
     text="Løsningsmengde",
-    xy=((y - b)/a-0.1, 0),
+    xy=((y - b) / a - 0.1, 0),
     xytext=(-2, 4),
     fontsize=16,
     arrowprops=dict(arrowstyle="->", lw=2, color="black", alpha=0.7),
@@ -56,7 +65,7 @@ plt.annotate(
 
 plt.annotate(
     text="Løsningsmengde",
-    xy=((y - b)/a-2, 0),
+    xy=((y - b) / a - 2, 0),
     xytext=(-2, 4),
     fontsize=16,
     arrowprops=dict(arrowstyle="->", lw=2, color="black", alpha=0.7),
@@ -74,12 +83,21 @@ plt.annotate(
     verticalalignment="center",
 )
 
-ax.hlines(0, -5, (y-b)/a, color="red", alpha=0.3, lw=8)
+ax.hlines(0, -5, (y - b) / a, color=plotmath.COLORS.get("skyblue"), alpha=0.6, lw=8)
 
 plt.grid(True, linestyle="--", alpha=0.6)
-plt.legend(fontsize=16, fancybox=True, framealpha=0.8, edgecolor='black', facecolor='white', loc='upper right')
+plt.legend(
+    fontsize=16,
+    fancybox=True,
+    framealpha=0.8,
+    edgecolor="black",
+    facecolor="white",
+    loc="upper right",
+)
 plt.tight_layout()
 
-plt.savefig("../../figurer/underveisoppgaver/underveisoppgave_2_løsning.svg")
+plt.savefig(
+    "../../figurer/underveisoppgaver/underveisoppgave_2_løsning.svg", transparent=True
+)
 
 plt.show()

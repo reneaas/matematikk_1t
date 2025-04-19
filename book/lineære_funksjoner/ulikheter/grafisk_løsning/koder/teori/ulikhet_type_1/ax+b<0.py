@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import plotmath
 
 plt.rc("text", usetex=True)
 
@@ -16,7 +17,7 @@ def main(dirname, save):
     fn_labels = [f"$f$" for fn in functions]
 
     # Create the math figure
-    fig, ax = make_figure(
+    fig, ax = plotmath.plot(
         functions=functions,
         fn_labels=fn_labels,  # NOTE: Set `None` hvis du ikke vil ha labels.
         xmin=-8,
@@ -28,7 +29,9 @@ def main(dirname, save):
 
     ax.plot(-b / a, 0, "ko", markersize=10, alpha=0.7)
 
-    ax.hlines(y=0, xmin=-100, xmax=-b / a, color="red", alpha=0.5, lw=5)
+    ax.hlines(
+        y=0, xmin=-100, xmax=-b / a, color=plotmath.COLORS.get("red"), alpha=0.6, lw=8
+    )
 
     # ax.text(
     #     s=r"$ax + b > 0$ eller $ax + b \geq 0$",
@@ -101,7 +104,9 @@ def main(dirname, save):
     # The directory `dirname` will be created automatically if it does not exist already.
     if save:
         fname = __file__.split("/")[-1].replace(".py", ".svg")
-        savefig(dirname=dirname, fname=fname)  # Lagrer figuren i `dirname`-directory
+        plotmath.savefig(
+            dirname=dirname, fname=fname
+        )  # Lagrer figuren i `dirname`-directory
 
     if not save:
 
@@ -130,12 +135,6 @@ if __name__ == "__main__":
 
     # Find the root of the GitHub repository (where .git is located)
     repo_root = find_repo_root(current_dir)
-
-    # Add the GitHub repository root to sys.path
-    sys.path.append(repo_root)
-
-    # Now you can import modules from the GitHub repo root
-    from python_utils.plot_utils import make_figure, savefig
 
     parts = current_dir.split("/")
     for i in range(len(parts)):

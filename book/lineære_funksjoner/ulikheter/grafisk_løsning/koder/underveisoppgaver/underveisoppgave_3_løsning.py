@@ -1,10 +1,13 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import plotmath
 
 plt.rc("text", usetex=True)
 
+
 def f(x, a, b):
-    return a*x + b
+    return a * x + b
+
 
 x_min = -10
 x_max = 10
@@ -21,8 +24,8 @@ x_sol = (-b + d) / (a - c)
 y_sol = f(x_sol, a, b)
 
 fig, ax = plt.subplots()
-ax.plot(x, f(x, a, b), color="teal", lw=2, alpha=0.7, label="$f$")
-ax.plot(x, f(x, c, d), color="purple", lw=2, alpha=0.7, label="$g$")
+ax.plot(x, f(x, a, b), lw=2.5, label="$f$")
+ax.plot(x, f(x, c, d), lw=2.5, label="$g$")
 ax.plot(x_sol, y_sol, "ko", markersize=8, alpha=0.7)
 ax.plot(x_sol, 0, "k|", markersize=15, alpha=0.7)
 
@@ -51,7 +54,7 @@ plt.xlim(-6, 4)
 
 plt.annotate(
     text="Løsningsmengde",
-    xy=(x_sol-0.1, 0),
+    xy=(x_sol - 0.1, 0),
     xytext=(-3, 4),
     fontsize=16,
     arrowprops=dict(arrowstyle="->", lw=2, color="black", alpha=0.7),
@@ -61,7 +64,7 @@ plt.annotate(
 
 plt.annotate(
     text="Løsningsmengde",
-    xy=(x_sol-4, 0),
+    xy=(x_sol - 4, 0),
     xytext=(-3, 4),
     fontsize=16,
     arrowprops=dict(arrowstyle="->", lw=2, color="black", alpha=0.7),
@@ -79,13 +82,22 @@ plt.annotate(
     verticalalignment="center",
 )
 
-ax.hlines(0, -10, x_sol, color="red", alpha=0.3, lw=8)
+ax.hlines(0, -10, x_sol, color=plotmath.COLORS.get("skyblue"), alpha=0.6, lw=8)
 ax.vlines(x_sol, 0, y_sol, color="black", alpha=0.5, linestyle="--")
 
 plt.grid(True, linestyle="--", alpha=0.6)
-plt.legend(fontsize=16, fancybox=True, framealpha=0.8, edgecolor='black', facecolor='white', loc=(0.8, 0.5))
+plt.legend(
+    fontsize=16,
+    fancybox=True,
+    framealpha=0.8,
+    edgecolor="black",
+    facecolor="white",
+    loc=(0.8, 0.5),
+)
 plt.tight_layout()
 
-plt.savefig("../../figurer/underveisoppgaver/underveisoppgave_3_løsning.svg")
+plt.savefig(
+    "../../figurer/underveisoppgaver/underveisoppgave_3_løsning.svg", transparent=True
+)
 
 plt.show()

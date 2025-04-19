@@ -1,10 +1,13 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import plotmath
 
 plt.rc("text", usetex=True)
 
+
 def f(x):
     return x - 3
+
 
 a = -7
 b = 10
@@ -12,7 +15,7 @@ b = 10
 x = np.linspace(a, b, 1024)
 
 fig, ax = plt.subplots()
-ax.plot(x, f(x), color="teal", lw=2, alpha=0.7)
+ax.plot(x, f(x), color=plotmath.COLORS.get("blue"), lw=2.5)
 ax.plot(3, 0, "ko", markersize=8, alpha=0.7)
 
 ax.spines["left"].set_position("zero")
@@ -73,17 +76,21 @@ plt.annotate(
     xy=(3, 0),
     xytext=(4, -3),
     fontsize=16,
-    arrowprops=dict(arrowstyle="->", lw=2, color="black", alpha=0.7, connectionstyle="arc3,rad=0.2"),
+    arrowprops=dict(
+        arrowstyle="->", lw=2, color="black", alpha=0.7, connectionstyle="arc3,rad=0.2"
+    ),
     horizontalalignment="center",
     verticalalignment="center",
 )
 
-ax.hlines(0, 3, -4, color="red", alpha=0.3, lw=8)
+ax.hlines(0, 3, -4, color=plotmath.COLORS.get("skyblue"), alpha=0.6, lw=8)
 
 
 plt.grid(True, linestyle="--", alpha=0.6)
 plt.tight_layout()
 
-plt.savefig("../../figurer/underveisoppgaver/underveisoppgave_1_løsning.svg")
+plt.savefig(
+    "../../figurer/underveisoppgaver/underveisoppgave_1_løsning.svg", transparent=True
+)
 
 plt.show()

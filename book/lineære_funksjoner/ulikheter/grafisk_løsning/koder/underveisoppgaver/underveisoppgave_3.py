@@ -1,10 +1,13 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import plotmath
 
 plt.rc("text", usetex=True)
 
+
 def f(x, a, b):
-    return a*x + b
+    return a * x + b
+
 
 x_min = -10
 x_max = 10
@@ -21,8 +24,8 @@ x_sol = (-b + d) / (a - c)
 y_sol = f(x_sol, a, b)
 
 fig, ax = plt.subplots()
-ax.plot(x, f(x, a, b), color="teal", lw=2, alpha=0.7, label="$f$")
-ax.plot(x, f(x, c, d), color="purple", lw=2, alpha=0.7, label="$g$")
+ax.plot(x, f(x, a, b), lw=2.5, label="$f$")
+ax.plot(x, f(x, c, d), lw=2.5, label="$g$")
 
 ax.spines["left"].set_position("zero")
 ax.spines["right"].set_color("none")
@@ -47,11 +50,17 @@ plt.ylim(-5, 6)
 plt.xlim(-6, 4)
 
 
-
 plt.grid(True, linestyle="--", alpha=0.6)
-plt.legend(fontsize=16, fancybox=True, framealpha=0.8, edgecolor='black', facecolor='white', loc=(0.8, 0.5))
+plt.legend(
+    fontsize=16,
+    fancybox=True,
+    framealpha=0.8,
+    edgecolor="black",
+    facecolor="white",
+    loc=(0.8, 0.5),
+)
 plt.tight_layout()
 
-plt.savefig("../../figurer/underveisoppgaver/underveisoppgave_3.svg")
+plt.savefig("../../figurer/underveisoppgaver/underveisoppgave_3.svg", transparent=True)
 
 plt.show()

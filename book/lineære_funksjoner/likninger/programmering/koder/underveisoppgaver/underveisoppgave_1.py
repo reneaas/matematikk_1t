@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import plotmath
 
 plt.rc("text", usetex=True)
 

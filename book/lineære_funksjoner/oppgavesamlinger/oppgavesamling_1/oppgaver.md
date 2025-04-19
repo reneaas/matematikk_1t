@@ -462,8 +462,10 @@ Stigningstallet til modellen er $-340 \quad \mathrm{ dekar/år}$ og representere
 
 :::::::::::::{tab-item} c
 Bestem hvor mye jord som vil brukes til andre formål enn jordbruk – ifølge modellen din – i årene
-* 2030.
-* 2050. 
+
+* 2030
+* 2050
+
 :::::{admonition} Fasit
 ---
 class: dropdown, answer

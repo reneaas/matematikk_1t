@@ -1,3 +1,6 @@
+import plotmath
+
+
 def main(dirname, save):
 
     # Define functions
@@ -21,7 +24,7 @@ def main(dirname, save):
     fn_labels = [r"$f$", r"$g$", r"$h$", r"$r$", r"$p$"]
 
     # Create the math figure
-    fig, ax = make_figure(
+    fig, ax = plotmath.plot(
         functions=functions,
         fn_labels=fn_labels,  # Set `None` hvis du ikke vil ha labels.
         xmin=-4,
@@ -35,7 +38,9 @@ def main(dirname, save):
     # The directory `dirname` will be created automatically if it does not exist already.
     if save:
         fname = __file__.split("/")[-1].replace(".py", ".svg")
-        savefig(dirname=dirname, fname=fname)  # Lagrer figuren i `dirname`-directory
+        plotmath.savefig(
+            dirname=dirname, fname=fname
+        )  # Lagrer figuren i `dirname`-directory
 
     if not save:
         import matplotlib.pyplot as plt
@@ -65,12 +70,6 @@ if __name__ == "__main__":
 
     # Find the root of the GitHub repository (where .git is located)
     repo_root = find_repo_root(current_dir)
-
-    # Add the GitHub repository root to sys.path
-    sys.path.append(repo_root)
-
-    # Now you can import modules from the GitHub repo root
-    from python_templates.plot_utils import make_figure, savefig
 
     # NOTE: Set `save=True` to save figure. `save=False` to display figure.
     dirname = current_dir.replace("koder", "figurer")

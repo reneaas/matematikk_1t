@@ -43,6 +43,6 @@ plt.grid(True, linestyle="--", alpha=0.6)
 plt.tight_layout()
 
 # Lagrer figuren i vektorformat
-plt.savefig("../../figurer/teori/koordinatsystem.svg")
+plt.savefig("../../figurer/teori/koordinatsystem.svg", transparent=True)
 
 plt.show()

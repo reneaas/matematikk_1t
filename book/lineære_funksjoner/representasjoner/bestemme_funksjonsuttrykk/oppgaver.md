@@ -5,7 +5,7 @@
 ---
 class: problem-level-1
 ---
-Fyll ut tabellen under.
+Fyll ut tabellen nedenfor.
 
 
 | Funksjon | $(x_1, y_1)$ | $(x_2, y_2)$ | $\Delta x$ | $\Delta y$ | $a$ |
@@ -30,69 +30,83 @@ class: answer, dropdown
 :::
 ::::
 
+
+
+
+
 ---
 
-:::{admonition} Hint
----
-class: hints, margin, dropdown
----
-Bruk ettpunktsformelen:
 
-$$
-y - y_1 = a(x - x_1)
-$$
-:::
 
-::::{admonition} Oppgave 2
+
+
+:::::::::::::::{admonition} Oppgave 2
 ---
 class: problem-level-1 
 ---
+> Bruk {popup}`ettpunktsformelen<$$y - y_1 = a(x - x_1)$$>` til å bestemme funksjonsuttrykkene i oppgavene nedenfor.
 
-Deloppgave 1
-
-: Grafen til en lineær funksjon $f$ har stigningstall $2$ og går gjennom punktet $(1, 2)$. <br> Bestem $f(x)$.
-
-:::{admonition} Fasit
+::::::::::::::{tab-set}
 ---
-class: answer, dropdown
+class: tabs-parts
 ---
-$$f(x)=2x$$
-:::
+:::::::::::::{tab-item} a
+Grafen til en lineær funksjon $f$ har stigningstall $2$ og går gjennom punktet $(1, 2)$.
 
-<br>
+Bestem $f(x)$.
 
-Deloppgave 2
-: Grafen til en lineær funksjon $g$ har stigningstall $-3$ og går gjennom punktet $(2, 1)$. <br> Bestem $g(x)$.
+::::{answer}
+$$
+f(x) = 2x
+$$
+::::
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
+:::::::::::::
 
+:::::::::::::{tab-item} b
+Grafen til en lineær funksjon $g$ har stigningstall $-3$ og går gjennom punktet $(2, 1)$. 
+
+Bestem $g(x)$.
+
+::::{answer}
 $$
 g(x) = -3x + 7
 $$
+::::
 
-:::
 
-<br>
+:::::::::::::
 
-Deloppgave 3
-: Grafen til en lineær funksjon $h$ har stigningstall $1/2$ og går gjennom punktet $\left(3, -\dfrac{1}{2}\right)$. <br> Bestem $h(x)$.
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
+
+:::::::::::::{tab-item} c
+Grafen til en lineær funksjon $h$ har stigningstall $1/2$ og går gjennom punktet $\left(3, -\dfrac{1}{2}\right)$. 
+
+Bestem $h(x)$.
+
+
+::::{answer}
 $$
 h(x) = \dfrac{1}{2}x - 2
 $$
-:::
-
-
 ::::
 
+:::::::::::::
+
+
+::::::::::::::
+
+
+
+:::::::::::::::
+
+
+
+
 ---
+
+
+
 
 :::{admonition} Nyttige formler
 ---
@@ -107,45 +121,50 @@ y - y_1 = a(x - x_1)
 $$
 :::
 
-::::{admonition} Oppgave 3
+
+:::::::::::::::{problem} Oppgave 3
 ---
-class: problem-level-1
+level: 1
 ---
 Grafen til en lineær funksjon $g$ går gjennom punktene $(1, 2)$ og $(5, 6)$.
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Bestem stigningstallet til $g$.
 
-Deloppgave 1
-: Bestem stigningstallet til $g$.
+::::{answer}
+$$
+a = 1
+$$
+::::
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-Stigningstallet er $1$. 
-:::
-:::{admonition} Løsningsforslag
----
-class: solution, dropdown
----
-Vi bruker topunktsformelen og får: 
 
-$$ a = \dfrac{y_2 - y_1}{x_2 - x_1} = \dfrac{6-2}{5-1}=\dfrac{4}{4}=1$$
 
-:::
-<br>
+::::{solution}
+Vi bruker topunktsformelen: 
 
-Deloppgave 2
-: Bestem $g(x)$.
+$$
+a = \dfrac{y_2 - y_1}{x_2 - x_1} = \dfrac{6-2}{5-1} = \dfrac{4}{4} = 1
+$$
+::::
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-$g(x) = x + 1$
-:::
-:::{admonition} Løsningsforslag
----
-class: solution, dropdown
----
+:::::::::::::
+
+
+
+:::::::::::::{tab-item} b
+Bestem $g(x)$.
+
+::::{answer}
+$$
+g(x) = x + 1
+$$
+::::
+
+
+::::{solution}
 Vi bruker ettpunktsformelen og får: 
 \begin{align*}
 y - y_1 &= a(x - x_1) \\
@@ -166,132 +185,199 @@ Dermed er
 $$
 g(x) = x + 1
 $$
-:::
 ::::
 
----
-
-::::{admonition} Oppgave 4
----
-class: problem-level-2
----
-
-Deloppgave 1
-: En lineær funksjon $f$ har stigningstall $7$ og skjærer $x$-aksen i $x = 2$. <br> Bestem $f(x)$.
+:::::::::::::
 
 
-:::{admonition} Fasit
+
+
+
+::::::::::::::
+
+:::::::::::::::
+
+
+
+
+
+
 ---
-class: answer, dropdown
+
+
+
+
+
+:::::::::::::::{problem} Oppgave 4
 ---
+level: 2
+---
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+En lineær funksjon $f$ har stigningstall $7$ og skjærer $x$-aksen i $x = 2$. 
+ 
+Bestem $f(x)$.
+
+
+::::{answer}
 $$
 f(x) = 7x - 14
 $$
+::::
 
-:::
+:::::::::::::
 
-<br>
 
-Deloppgave 2
-: En lineær funksjon $g$ har stigningstall $3$ og skjærer $x$-aksen i $x = -2$. <br> Bestem $g(x)$.
+:::::::::::::{tab-item} b
+En lineær funksjon $g$ har stigningstall $3$ og skjærer $x$-aksen i $x = -2$.
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
+Bestem $g(x)$.
 
+
+::::{answer}
 $$
 g(x) = 3x + 6
 $$
+::::
 
-:::
-
-<br>
-
-Deloppgave 3
-: En lineær funksjon $h$ skjærer gjennom linja $y = 2$ når $x = 3$ og skjærer $x$-aksen i $x = 4$. <br> Bestem $h(x)$.
+:::::::::::::
 
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
+:::::::::::::{tab-item} c
+En lineær funksjon $h$ skjærer gjennom linja $y = 2$ når $x = 3$ og skjærer $x$-aksen i $x = 4$. 
+
+Bestem $h(x)$.
+
+
+::::{answer}
 $$
 h(x) = -2x + 8
 $$
-:::
-
 ::::
 
+:::::::::::::
+
+
+
+
+
+
+::::::::::::::
+
+
+
+:::::::::::::::
+
+
+
+
+
+
+
 ---
 
-::::{admonition} Oppgave 5
+
+
+:::::::::::::::{problem} Oppgave 5
 ---
-class: problem-level-2
+level: 2
 ---
-En lineær funksjon er gitt ved 
+En lineær funksjon $f$ er gitt ved 
 
 $$
-f(x) = 3x - 2.
+f(x) = 3x - 2. 
 $$
 
-En annen lineær funksjon $g$ går gjennom punktene $(1, -1)$ og $(3, f(3))$.
+En **annen** lineær funksjon $g$ går gjennom punktene $(1, -1)$ og $(3, f(3))$.
 
-Deloppgave 1
-: Bestem stigningstallet til $g$.
-
-:::{admonition} Fasit
+::::::::::::::{tab-set}
 ---
-class: answer, dropdown
+class: tabs-parts
 ---
-Stigningstallet til $g(x)$ er $4$. 
-:::
-:::{admonition} Løsningsforslag
----
-class: solution, dropdown
----
-Vi finner først $f(3)=2\cdot 3 - 2 = 9-2 = 7$. 
+:::::::::::::{tab-item} a
+Bestem stigningstallet til $g$.
 
-Deretter bruker vi topunktsformelen og får: 
 
-$$ a = \dfrac{7-(-1)}{3-1}=\dfrac{7+1}{2}=\dfrac{8}{2}=4 $$
+::::{answer}
+$$
+a = 4
+$$
+::::
 
-Stigningstallet til $g(x)$ er $4$. 
-:::
 
-<br>
+::::{solution}
+Vi finner først 
 
-Deloppgave 2
-: Bestem $g(x)$.
+$$
+f(3) = 3\cdot 3 - 2 = 9 - 2 = 7.
+$$ 
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-$g(x) = 4x-5$. 
-:::
+Deretter bruker vi topunktsformelen til å regne ut stigningstallet: 
 
-:::{admonition} Løsningsforslag
----
-class: solution, dropdown
----
-Vi bruker ettpunktsformelen når vi kjenner stigningstallet $a = 4$ og punktet $(1, -1)$ og får 
+$$
+a = \dfrac{7 - (-1)}{3 - 1} = \dfrac{7 + 1}{2} = \dfrac{8}{2} = 4 
+$$
+::::
 
-\begin{align}
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Bestem $g(x)$.
+
+
+::::{answer}
+$$
+g(x) = 4x - 5
+$$
+::::
+
+::::{solution}
+Vi bruker ettpunktsformelen med stigningstallet $a = 4$ og punktet $(1, -1)$ som gir:
+
+\begin{align*}
 y - y_1 &= a(x - x_1) \\
-y - (-1) &= 4(x-1) \\
-y + 1 &= 4x - 4 \\
-y +1 \textcolor{red}{-1} &= 4x - 4  \textcolor{red}{-1}\\
-y &= 4x - 5
-\end{align}
+\\
+y - (-1) &= 4(x - 1) \\
+\\
+y + 1 &= 4(x - 1) \\
+\\
+y + 1  &= 4x - 4 \\
+\\
+y &= 4x - 4 - 1 \\
+\\
+y &= 4x - 5 \\
+\end{align*}
 
-Vi får da at $g(x) = 4x-5$. 
-:::
+Altså er 
+
+$$
+g(x) = 4x - 5.
+$$
 ::::
+
+:::::::::::::
+
+
+
+
+::::::::::::::
+:::::::::::::::
+
+
+
 
 ---
 
-::::{admonition} Oppgave 6
+
+
+
+
+
+:::::::::::::::{admonition} Oppgave 6
 ---
 class: problem-level-2
 ---
@@ -306,34 +392,49 @@ class: no-click, adaptive-figure
 viser grafen til to lineære funksjoner $f$ og $g$. Grafen til $f$ og $g$ er parallelle.
 :::
 
-Deloppgave 1
-: Bestem $f(x)$.
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Bestem $f(x)$.
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
+:::{answer}
 $$
 f(x) = -2x + 1
 $$
 :::
 
-Deloppgave 2
-: Bestem $g(x)$.
-:::{admonition} Fasit
----
-class: answer, dropdown
----
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Bestem $g(x)$. 
+
+:::{answer}
 $$
 g(x) = -2x - 3
 $$
 :::
-::::
+
+:::::::::::::
+
+::::::::::::::
+
+
+:::::::::::::::
+
+
+
 
 
 ---
 
-::::{admonition} Oppgave 7
+
+
+
+
+:::::::::::::::{admonition} Oppgave 7
 ---
 class: problem-level-2
 ---
@@ -350,31 +451,45 @@ viser grafen til en lineær funksjon $g$, og to punkter på grafen.
 :::
 
 
-Deloppgave 1
-: Bestem hvor grafen til $g$ skjærer $y$-aksen. 
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Bestem hvor grafen til $g$ skjærer $y$-aksen.
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-Grafen til $g$ skjærer $y$-aksen i $y = -2$. 
+:::{answer}
+$$
+y = -2
+$$
 :::
 
+:::::::::::::
 
-Deloppgave 2
-: En annen funksjon $h$ er parallell med grafen til $g$ og skjærer $y$-aksen i $y = 2$. <br> Bestem $h(x)$.
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
+:::::::::::::{tab-item} b
+En annen funksjon $h$ er parallell med grafen til $g$ og skjærer $y$-aksen i $y = 2$. 
+
+Bestem $h(x)$.
+
+
+::::{answer}
 $$
 h(x) = 3x + 2
 $$
-:::
 ::::
 
----
+:::::::::::::
+
+::::::::::::::
+
+
+:::::::::::::::
+
+
+
+
+
 
 ::::{admonition} Oppgave 8
 ---
@@ -412,15 +527,18 @@ Under vises et program som regner ut funksjonsuttrykket til en lineær funksjon 
 
 
 `````{tab-set}
-````{tab-item} Deloppgave 1
+---
+class: tabs-parts
+---
+````{tab-item} a
 Løs puslespillet ved å sette kodelinjene i riktig rekkefølge. <br> Forutsi hva som skrives ut av programmet. Kjør programmet og sjekk svaret! 
 
 ````
 
-````{tab-item} Deloppgave 2
+````{tab-item} b
 Endre programmet slik at det finner funksjonsuttrykket til en lineær funksjon som går gjennom punktene $(1, 2)$ og $(3, 6)$. <br> Sjekk at programmet finner riktig funksjon ved regning.
 
-:::{admonition} Løsningsforslag
+:::{admonition} Løsning
 ---
 class: solution, dropdown
 ---
@@ -446,10 +564,10 @@ Vi ser at det gir funksjonen $y = f(x) = 2x$.
 :::
 ````
 
-````{tab-item} Deloppgave 3
+````{tab-item} c
 Kan du forklare kodelinjen `b = y1 - a * x1`{l=python}? <br> Hva representerer variabelen `b`{l=python}? <br> Kan du komme fram til formelen?
 
-:::{admonition} Løsningsforslag
+:::{admonition} Løsning
 ---
 class: solution, dropdown
 ---

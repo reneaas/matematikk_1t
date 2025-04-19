@@ -28,8 +28,7 @@ def main(dirname, save):
         x_vals,
         f(x_vals),
         color=plotmath.COLORS.get("blue"),
-        lw=2,
-        alpha=0.7,
+        lw=2.5,
         label="$f$",
     )
     ax.hlines(

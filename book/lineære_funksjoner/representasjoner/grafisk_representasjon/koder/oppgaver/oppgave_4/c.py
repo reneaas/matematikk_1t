@@ -21,7 +21,6 @@ def main(dirname, save):
         ystep=1,
         grid=True,
         lw=2.5,
-        alpha=0.8,
         domain=False,
     )
 

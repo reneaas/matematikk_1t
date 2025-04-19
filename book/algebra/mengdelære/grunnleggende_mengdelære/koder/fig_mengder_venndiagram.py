@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 import numpy as np
+import plotmath
 
 plt.rc("text", usetex=True)
 plt.rcParams.update(
@@ -38,13 +39,26 @@ plt.figure(figsize=(7, 7))
 # plt.fill(*donut(0, 0, radius_N, radius_Z), color="red", alpha=0.3) # Z
 # plt.fill(*donut(0, 0, radius_Z, radius_Q), color="teal", alpha=0.3) # Q
 # plt.fill(*donut(0, 0, radius_Q, radius_R), color="purple", alpha=0.3) # R
-plt.fill(*circle(0, 0, radius_R), color="purple", alpha=0.3)  # R
+# plt.fill(*circle(0, 0, radius_R), color="purple", alpha=0.3)  # R
+# plt.fill(*circle(0, 0, radius_Q), color="white", alpha=1)  # Q
+# plt.fill(*circle(0, 0, radius_Q), color="teal", alpha=0.3)  # Q
+# plt.fill(*circle(0, 0, radius_Z), color="white", alpha=1)  # Z
+# plt.fill(*circle(0, 0, radius_Z), color="red", alpha=0.3)  # Z
+# plt.fill(*circle(0, 0, radius_N), color="white", alpha=1)  # N
+# plt.fill(*circle(0, 0, radius_N), color="blue", alpha=0.3)  # N
+# plt.axis("equal")
+
+# plt.axis("off")
+# plt.tight_layout()
+
+
+plt.fill(*circle(0, 0, radius_R), color=plotmath.COLORS.get("blue"), alpha=0.3)  # R
 plt.fill(*circle(0, 0, radius_Q), color="white", alpha=1)  # Q
-plt.fill(*circle(0, 0, radius_Q), color="teal", alpha=0.3)  # Q
+plt.fill(*circle(0, 0, radius_Q), color=plotmath.COLORS.get("red"), alpha=0.7)  # Q
 plt.fill(*circle(0, 0, radius_Z), color="white", alpha=1)  # Z
-plt.fill(*circle(0, 0, radius_Z), color="red", alpha=0.3)  # Z
+plt.fill(*circle(0, 0, radius_Z), color=plotmath.COLORS.get("orange"), alpha=0.3)  # Z
 plt.fill(*circle(0, 0, radius_N), color="white", alpha=1)  # N
-plt.fill(*circle(0, 0, radius_N), color="blue", alpha=0.3)  # N
+plt.fill(*circle(0, 0, radius_N), color=plotmath.COLORS.get("skyblue"), alpha=0.3)  # N
 plt.axis("equal")
 
 plt.axis("off")
@@ -136,10 +150,5 @@ for angle, reelt_tall in zip(angles, reelle_tall):
     )
 
 
-try:
-    plt.savefig("book/algebra/mengdelære/figurer/mengder_venndiagram.svg")
-    plt.close()
-
-except:
-    plt.savefig("../figurer/mengder_venndiagram.svg")
-    plt.show()
+plt.savefig("../figurer/mengder_venndiagram.svg", transparent=True)
+plt.show()
