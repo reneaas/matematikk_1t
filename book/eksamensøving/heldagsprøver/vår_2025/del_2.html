@@ -36,7 +36,7 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css?v=4c969af8" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/misc_styles/cas_popup.css?v=1aba96b2" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/misc_styles/cas_popup.css?v=ff10440c" />
     <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/misc_styles/popup.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/misc_styles/popup_code.css?v=4b4feebf" />
@@ -45,16 +45,16 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/static_code_blocks.css?v=68f9364b" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/pdf_custom.css?v=a874a063" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/general_style.css?v=70162cbf" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/admonitions.css?v=21537df6" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/admonitions.css?v=cdb658ea" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/polydiv/style.css?v=3450aa48" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/interactiveCode/style.css?v=bf5bef53" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/clickable_figures/style.css?v=d35dfce7" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/misc_styles/tabs.css?v=a560da15" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/misc_styles/figures.css?v=65ca5f79" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/misc_styles/figures.css?v=c2e25413" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/misc_styles/grids.css?v=7667ba21" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/misc_styles/geogebra.css?v=fd180d66" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/misc_styles/popup_code.css?v=4b4feebf" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/misc_styles/cas_popup.css?v=1aba96b2" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/misc_styles/cas_popup.css?v=ff10440c" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/misc_styles/misc.css?v=55d93a12" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/parsons_puzzle/parsonsPuzzle.css?v=57404909" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/multipleChoiceQuiz/style.css?v=42d54795" />
@@ -118,7 +118,7 @@
     <script src="../../../../_static/multipleChoiceQuiz/multipleChoiceQuestion.js?v=f8e9756b"></script>
     <script src="../../../../_static/multipleChoiceQuiz/timedMultipleChoiceQuiz.js?v=79e3619c"></script>
     <script src="../../../../_static/skulpt/skulpt.js?v=51c28977"></script>
-    <script src="../../../../_static/popup/popup.js?v=d57357d7"></script>
+    <script src="../../../../_static/popup/popup.js?v=ae828753"></script>
     <script src="../../../../_static/pairPuzzle/draggableItem.js?v=5767251d"></script>
     <script src="../../../../_static/pairPuzzle/game.js?v=56c2b5af"></script>
     <script src="../../../../_static/pairPuzzle/dropZone.js?v=56907477"></script>
@@ -668,14 +668,16 @@ document.write(`
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-ui-touch-punch-improved@0.3.1/dist/jquery.ui.touch-punch-improved.min.js"></script>
 <link  rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 
-<button id="button-ggb-cas-070a8b34" class="ggb-cas-button">Åpne CAS‑vindu</button>
 
-<div id="dialog-ggb-cas-070a8b34" title="CAS‑vindu" style="display:none;">
+
+<button id="button-ggb-cas-a6235aa4" class="ggb-cas-button">Åpne CAS‑vindu</button>
+
+<div id="dialog-ggb-cas-a6235aa4" title="CAS‑vindu" style="display:none;">
     <!-- ✨ inline width/height REMOVED so CSS can take over -->
-    <div id="ggb-cas-070a8b34" class="ggb-window"></div>
+    <div id="ggb-cas-a6235aa4" class="ggb-window"></div>
 </div>
 
 <style>
@@ -692,12 +694,12 @@ document.write(`
 
     function applySize(){
       if(!ggbReady) return;
-      const w = $("#ggb-cas-070a8b34").width(),
-            h = $("#ggb-cas-070a8b34").height();
+      const w = $("#ggb-cas-a6235aa4").width(),
+            h = $("#ggb-cas-a6235aa4").height();
       window.ggbApplet.setSize(Math.round(w), Math.round(h));
     }
 
-    $("#dialog-ggb-cas-070a8b34").dialog({
+    $("#dialog-ggb-cas-a6235aa4").dialog({
       autoOpen:false,
       width:460,height:580,
       resizable:true,draggable:true,
@@ -706,20 +708,20 @@ document.write(`
       open:function(){
         if(!ggbReady){
           new GGBApplet({
-            appName:"classic",id:"ggb-cas-070a8b34",
+            appName:"classic",id:"ggb-cas-a6235aa4",
             width:420,height:500,
             perspective:"C",language:"nb",
             showToolBar:true,showAlgebraInput:true,
             borderRadius:8,enableRightClick:true,showKeyboardOnFocus:false,
             customToolBar:"1001 | 1002 | 1007 | 1010 | 1008 | 6",
             appletOnLoad:()=>{ggbReady=true;applySize();}
-          },true).inject("ggb-cas-070a8b34");
+          },true).inject("ggb-cas-a6235aa4");
         }else{applySize();}
       }
     });
 
-    $("#button-ggb-cas-070a8b34").button()
-      .on("click touchend pointerup",e=>{e.preventDefault();$("#dialog-ggb-cas-070a8b34").dialog("open");});
+    $("#button-ggb-cas-a6235aa4").button()
+      .on("click touchend pointerup",e=>{e.preventDefault();$("#dialog-ggb-cas-a6235aa4").dialog("open");});
   });
 })();
 </script>
@@ -819,14 +821,16 @@ c</label><div class="sd-tab-content docutils">
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-ui-touch-punch-improved@0.3.1/dist/jquery.ui.touch-punch-improved.min.js"></script>
 <link  rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 
-<button id="button-ggb-cas-2400814c" class="ggb-cas-button">Åpne CAS‑vindu</button>
 
-<div id="dialog-ggb-cas-2400814c" title="CAS‑vindu" style="display:none;">
+
+<button id="button-ggb-cas-4064224b" class="ggb-cas-button">Åpne CAS‑vindu</button>
+
+<div id="dialog-ggb-cas-4064224b" title="CAS‑vindu" style="display:none;">
     <!-- ✨ inline width/height REMOVED so CSS can take over -->
-    <div id="ggb-cas-2400814c" class="ggb-window"></div>
+    <div id="ggb-cas-4064224b" class="ggb-window"></div>
 </div>
 
 <style>
@@ -843,12 +847,12 @@ c</label><div class="sd-tab-content docutils">
 
     function applySize(){
       if(!ggbReady) return;
-      const w = $("#ggb-cas-2400814c").width(),
-            h = $("#ggb-cas-2400814c").height();
+      const w = $("#ggb-cas-4064224b").width(),
+            h = $("#ggb-cas-4064224b").height();
       window.ggbApplet.setSize(Math.round(w), Math.round(h));
     }
 
-    $("#dialog-ggb-cas-2400814c").dialog({
+    $("#dialog-ggb-cas-4064224b").dialog({
       autoOpen:false,
       width:460,height:580,
       resizable:true,draggable:true,
@@ -857,20 +861,20 @@ c</label><div class="sd-tab-content docutils">
       open:function(){
         if(!ggbReady){
           new GGBApplet({
-            appName:"classic",id:"ggb-cas-2400814c",
+            appName:"classic",id:"ggb-cas-4064224b",
             width:420,height:500,
             perspective:"C",language:"nb",
             showToolBar:true,showAlgebraInput:true,
             borderRadius:8,enableRightClick:true,showKeyboardOnFocus:false,
             customToolBar:"1001 | 1002 | 1007 | 1010 | 1008 | 6",
             appletOnLoad:()=>{ggbReady=true;applySize();}
-          },true).inject("ggb-cas-2400814c");
+          },true).inject("ggb-cas-4064224b");
         }else{applySize();}
       }
     });
 
-    $("#button-ggb-cas-2400814c").button()
-      .on("click touchend pointerup",e=>{e.preventDefault();$("#dialog-ggb-cas-2400814c").dialog("open");});
+    $("#button-ggb-cas-4064224b").button()
+      .on("click touchend pointerup",e=>{e.preventDefault();$("#dialog-ggb-cas-4064224b").dialog("open");});
   });
 })();
 </script>
@@ -934,14 +938,16 @@ T_{6-\mathrm{kant}} = 6 \cdot T_{\triangle ABC} = 6 \cdot \dfrac{\sqrt{3}}{3} = 
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-ui-touch-punch-improved@0.3.1/dist/jquery.ui.touch-punch-improved.min.js"></script>
 <link  rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 
-<button id="button-ggb-cas-91dce361" class="ggb-cas-button">Åpne CAS‑vindu</button>
 
-<div id="dialog-ggb-cas-91dce361" title="CAS‑vindu" style="display:none;">
+
+<button id="button-ggb-cas-35248684" class="ggb-cas-button">Åpne CAS‑vindu</button>
+
+<div id="dialog-ggb-cas-35248684" title="CAS‑vindu" style="display:none;">
     <!-- ✨ inline width/height REMOVED so CSS can take over -->
-    <div id="ggb-cas-91dce361" class="ggb-window"></div>
+    <div id="ggb-cas-35248684" class="ggb-window"></div>
 </div>
 
 <style>
@@ -958,12 +964,12 @@ T_{6-\mathrm{kant}} = 6 \cdot T_{\triangle ABC} = 6 \cdot \dfrac{\sqrt{3}}{3} = 
 
     function applySize(){
       if(!ggbReady) return;
-      const w = $("#ggb-cas-91dce361").width(),
-            h = $("#ggb-cas-91dce361").height();
+      const w = $("#ggb-cas-35248684").width(),
+            h = $("#ggb-cas-35248684").height();
       window.ggbApplet.setSize(Math.round(w), Math.round(h));
     }
 
-    $("#dialog-ggb-cas-91dce361").dialog({
+    $("#dialog-ggb-cas-35248684").dialog({
       autoOpen:false,
       width:460,height:580,
       resizable:true,draggable:true,
@@ -972,20 +978,20 @@ T_{6-\mathrm{kant}} = 6 \cdot T_{\triangle ABC} = 6 \cdot \dfrac{\sqrt{3}}{3} = 
       open:function(){
         if(!ggbReady){
           new GGBApplet({
-            appName:"classic",id:"ggb-cas-91dce361",
+            appName:"classic",id:"ggb-cas-35248684",
             width:420,height:500,
             perspective:"C",language:"nb",
             showToolBar:true,showAlgebraInput:true,
             borderRadius:8,enableRightClick:true,showKeyboardOnFocus:false,
             customToolBar:"1001 | 1002 | 1007 | 1010 | 1008 | 6",
             appletOnLoad:()=>{ggbReady=true;applySize();}
-          },true).inject("ggb-cas-91dce361");
+          },true).inject("ggb-cas-35248684");
         }else{applySize();}
       }
     });
 
-    $("#button-ggb-cas-91dce361").button()
-      .on("click touchend pointerup",e=>{e.preventDefault();$("#dialog-ggb-cas-91dce361").dialog("open");});
+    $("#button-ggb-cas-35248684").button()
+      .on("click touchend pointerup",e=>{e.preventDefault();$("#dialog-ggb-cas-35248684").dialog("open");});
   });
 })();
 </script>
@@ -1235,14 +1241,16 @@ Båten må innom land på en kystlinje på et punkt <span class="math notranslat
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-ui-touch-punch-improved@0.3.1/dist/jquery.ui.touch-punch-improved.min.js"></script>
 <link  rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 
-<button id="button-ggb-cas-7034d0f0" class="ggb-cas-button">Åpne CAS‑vindu</button>
 
-<div id="dialog-ggb-cas-7034d0f0" title="CAS‑vindu" style="display:none;">
+
+<button id="button-ggb-cas-35b1bb58" class="ggb-cas-button">Åpne CAS‑vindu</button>
+
+<div id="dialog-ggb-cas-35b1bb58" title="CAS‑vindu" style="display:none;">
     <!-- ✨ inline width/height REMOVED so CSS can take over -->
-    <div id="ggb-cas-7034d0f0" class="ggb-window"></div>
+    <div id="ggb-cas-35b1bb58" class="ggb-window"></div>
 </div>
 
 <style>
@@ -1259,12 +1267,12 @@ Båten må innom land på en kystlinje på et punkt <span class="math notranslat
 
     function applySize(){
       if(!ggbReady) return;
-      const w = $("#ggb-cas-7034d0f0").width(),
-            h = $("#ggb-cas-7034d0f0").height();
+      const w = $("#ggb-cas-35b1bb58").width(),
+            h = $("#ggb-cas-35b1bb58").height();
       window.ggbApplet.setSize(Math.round(w), Math.round(h));
     }
 
-    $("#dialog-ggb-cas-7034d0f0").dialog({
+    $("#dialog-ggb-cas-35b1bb58").dialog({
       autoOpen:false,
       width:460,height:580,
       resizable:true,draggable:true,
@@ -1273,20 +1281,20 @@ Båten må innom land på en kystlinje på et punkt <span class="math notranslat
       open:function(){
         if(!ggbReady){
           new GGBApplet({
-            appName:"classic",id:"ggb-cas-7034d0f0",
+            appName:"classic",id:"ggb-cas-35b1bb58",
             width:420,height:500,
             perspective:"C",language:"nb",
             showToolBar:true,showAlgebraInput:true,
             borderRadius:8,enableRightClick:true,showKeyboardOnFocus:false,
             customToolBar:"1001 | 1002 | 1007 | 1010 | 1008 | 6",
             appletOnLoad:()=>{ggbReady=true;applySize();}
-          },true).inject("ggb-cas-7034d0f0");
+          },true).inject("ggb-cas-35b1bb58");
         }else{applySize();}
       }
     });
 
-    $("#button-ggb-cas-7034d0f0").button()
-      .on("click touchend pointerup",e=>{e.preventDefault();$("#dialog-ggb-cas-7034d0f0").dialog("open");});
+    $("#button-ggb-cas-35b1bb58").button()
+      .on("click touchend pointerup",e=>{e.preventDefault();$("#dialog-ggb-cas-35b1bb58").dialog("open");});
   });
 })();
 </script>
@@ -1394,11 +1402,11 @@ x = 3
 <p>Lag et program som regner ut summen av arealet til de 100 største fargelagte kvadratene.</p>
 
 <!-- Button to open the popup -->
-<button id="button-popup-code-3053889c" class="popup-button">Åpne kodevindu</button>
+<button id="button-popup-code-d0519b68" class="popup-button">Åpne kodevindu</button>
 
 <!-- Dialog container div included directly in HTML -->
-<div id="popup-code-3053889c" title="Interaktivt kodevindu" class="popup-code-dialog" style="display:none;">
-    <div id="container-popup-code-3053889c" class="code-container"></div>
+<div id="popup-code-d0519b68" title="Interaktivt kodevindu" class="popup-code-dialog" style="display:none;">
+    <div id="container-popup-code-d0519b68" class="code-container"></div>
 </div>
 
 <!-- Dialog script -->
@@ -1440,9 +1448,9 @@ x = 3
     }
 
     function initializePopup() {
-        console.log('Initializing code popup dialog: #popup-code-3053889c');
+        console.log('Initializing code popup dialog: #popup-code-d0519b68');
         try {
-            $("#popup-code-3053889c").dialog({
+            $("#popup-code-d0519b68").dialog({
                 autoOpen: false,
                 title: "Interaktivt kodevindu",
                 width: 450,
@@ -1454,24 +1462,24 @@ x = 3
                 open: function() {
                     console.log('Dialog opened, initializing code editor');
                     // Only initialize code editor if it hasn't been already
-                    if (!$("#container-popup-code-3053889c").data("initialized")) {
+                    if (!$("#container-popup-code-d0519b68").data("initialized")) {
                         const code = ``;
                         
                         if (typeof makeInteractiveCode === "function") {
-                            makeInteractiveCode("container-popup-code-3053889c", code);
-                            $("#container-popup-code-3053889c").data("initialized", true);
+                            makeInteractiveCode("container-popup-code-d0519b68", code);
+                            $("#container-popup-code-d0519b68").data("initialized", true);
                         } else {
                             console.error("makeInteractiveCode function not found!");
-                            $("#container-popup-code-3053889c").html('<div class="error">Could not initialize code editor. Required JavaScript is not loaded.</div>');
+                            $("#container-popup-code-d0519b68").html('<div class="error">Could not initialize code editor. Required JavaScript is not loaded.</div>');
                         }
                     }
                 }
             });
             
             // Button click handler
-            $("#button-popup-code-3053889c").on("click", function() {
+            $("#button-popup-code-d0519b68").on("click", function() {
                 console.log('Button clicked, opening dialog');
-                $("#popup-code-3053889c").dialog("open");
+                $("#popup-code-d0519b68").dialog("open");
             });
             
             console.log('Code popup initialized successfully');

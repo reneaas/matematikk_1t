@@ -105,7 +105,7 @@ $$
 
 ---
 
-Cosinussetningen er en slagkraftig setning som sammen med sinussetningen og arealsetningen lar oss finne finne ut svært mye om trekanter fra lite informasjon. Vi tar et sammensatt eksempel for å se hvordan vi kan bruke cosinussetningen i praksis.
+Cosinussetningen er en slagkraftig setning som sammen med sinussetningen og arealsetningen lar oss finne ut svært mye om trekanter fra lite informasjon. Vi tar et sammensatt eksempel for å se hvordan vi kan bruke cosinussetningen i praksis.
 
 
 :::::::::::::::{admonition} Eksempel 1
