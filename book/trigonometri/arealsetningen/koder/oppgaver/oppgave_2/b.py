@@ -8,7 +8,6 @@ def main(dirname, save):
     ax = draw_triangle(
         asa=(100, 3, 45),
         show=False,
-        radius=1,
         fontsize=20,
         label_angles=(False, True, False),
         label_sides=(True, True, True),
