@@ -36,8 +36,8 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=4c969af8" />
-    <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/cas_popup.css?v=1aba96b2" />
+    <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/popup.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/popup_code.css?v=4b4feebf" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css" />
@@ -659,79 +659,94 @@ document.write(`
 <a class="no-click adaptive-figure reference internal image-reference" href="../../../_images/figur88.svg"><img alt="../../../_images/figur88.svg" class="no-click adaptive-figure" src="../../../_images/figur88.svg" style="width: 80%;" /></a>
 </figure>
 
-<!-- jQuery and jQuery UI -->
+<!--‑‑ Mobile viewport so the dialog scales on phones ‑‑>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- jQuery + jQuery UI -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+
+<!-- Touch‑punch: maps touch / pointer events to jQuery‑UI mouse APIs -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 
-<!-- Button to open the dialog -->
-<button id="button-ggb-cas-e7512348" class="ggb-cas-button">Åpne CAS-vindu</button>
+<!-- Button that opens the dialog -->
+<button id="button-ggb-cas-29e893b1" class="ggb-cas-button">Åpne CAS‑vindu</button>
 
 <!-- Dialog that will contain the CAS applet -->
-<div id="dialog-ggb-cas-e7512348" title="CAS-vindu" style="display:none;">
-    <div id="ggb-cas-e7512348" style="width:420px;height:500px;" class="ggb-window"></div>
+<div id="dialog-ggb-cas-29e893b1" title="CAS‑vindu" style="display:none;">
+    <div id="ggb-cas-29e893b1"
+         style="width:420px;height:500px;"
+         class="ggb-window"></div>
 </div>
+
+<style>
+/* Larger touch targets for the resizable handles */
+.ui-resizable-handle {
+    min-width: 16px;
+    min-height: 16px;
+}
+</style>
 
 <script>
 (function() {
-    
-    // Once document is ready
-    $(document).ready(function() {
-        var appletInitialized = false;
-        var dialogPaddingV = 60;
-        var dialogPaddingH = 20;
-        
-        // Dialog initialization
-        $("#dialog-ggb-cas-e7512348").dialog({
-            autoOpen: false,
-            width: 460,
-            height: 580,
-            modal: false,
+    $(function() {
+        let appletInitialised = false,
+            padV = 60,          /* padding inside dialog */
+            padH = 20;
+
+        /* 1 » Create the dialog (draggable + resizable now work on touch) */
+        $("#dialog-ggb-cas-29e893b1").dialog({
+            autoOpen : false,
+            width    : 460,
+            height   : 580,
+            modal    : false,
             resizable: true,
             draggable: true,
-            position: { my: "center", at: "center", of: window },
-            resize: function(event, ui) {
+            position : { my: "center", at: "center", of: window },
+
+            resize: function (_, ui) {
                 if (window.ggbApplet) {
-                    var newWidth = ui.size.width - dialogPaddingH;
-                    var newHeight = ui.size.height - dialogPaddingV;
-                    $("#ggb-cas-e7512348").css({ width: newWidth + 'px', height: newHeight + 'px' });
-                    window.ggbApplet.setSize(newWidth, newHeight);
+                    const w = ui.size.width  - padH,
+                          h = ui.size.height - padV;
+                    $("#ggb-cas-29e893b1").css({width: w, height: h});
+                    window.ggbApplet.setSize(w, h);
                 }
             },
-            open: function() {
-                // Initialize applet if not already done
-                if (!appletInitialized) {
-                    var params = {
-                        appName: "classic",
-                        width: 420,
-                        height: 500,
-                        showToolBar: true,
-                        showAlgebraInput: true,
-                        showMenuBar: false,
-                        language: 'nb',
-                        borderRadius: 8,
-                        useBrowserForJS: false,
-                        preventFocus: false,
-                        showFullscreenButton: false,
-                        showResetIcon: true,
-                        enableRightClick: true,
-                        showKeyboardOnFocus: false,
-                        id: 'ggb-cas-e7512348',
-                        perspective: 'C',
-                        'customToolBar': '1001 | 1002 | 1007 | 1010 | 1008 | 6',
+
+            open: function () {
+                if (!appletInitialised) {
+                    const params = {
+                        appName              : "classic",
+                        id                   : "ggb-cas-29e893b1",
+                        width                : 420,
+                        height               : 500,
+                        perspective          : "C",
+                        language             : "nb",
+                        showToolBar          : true,
+                        showAlgebraInput     : true,
+                        showMenuBar          : false,
+                        borderRadius         : 8,
+                        showResetIcon        : true,
+                        enableRightClick     : true,
+                        showKeyboardOnFocus  : false,
+                        showFullscreenButton : false,
+                        customToolBar        : "1001 | 1002 | 1007 | 1010 | 1008 | 6"
                     };
-                    
-                    var applet = new GGBApplet(params, true);
-                    applet.inject('ggb-cas-e7512348');
-                    appletInitialized = true;
+                    new GGBApplet(params, true).inject("ggb-cas-29e893b1");
+                    appletInitialised = true;
                 }
             }
         });
-        
-        // Button click handler
-        $("#button-ggb-cas-e7512348").button().on("click", function() {
-            $("#dialog-ggb-cas-e7512348").dialog("open");
-        });
+
+        /* 2 » Open dialog on click **or** touch/pointer‑up */
+        $("#button-ggb-cas-29e893b1")
+            .button()
+            .on("click touchend pointerup", function (e) {
+                e.preventDefault();          // eliminate 300 ms delay on iOS/Android
+                $("#dialog-ggb-cas-29e893b1").dialog("open");
+            });
     });
 })();
 </script>
@@ -782,79 +797,94 @@ b = 2
 <a class="no-click adaptive-figure reference internal image-reference" href="../../../_images/figur89.svg"><img alt="../../../_images/figur89.svg" class="no-click adaptive-figure" src="../../../_images/figur89.svg" style="width: 80%;" /></a>
 </figure>
 
-<!-- jQuery and jQuery UI -->
+<!--‑‑ Mobile viewport so the dialog scales on phones ‑‑>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- jQuery + jQuery UI -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+
+<!-- Touch‑punch: maps touch / pointer events to jQuery‑UI mouse APIs -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 
-<!-- Button to open the dialog -->
-<button id="button-ggb-cas-f856edc5" class="ggb-cas-button">Åpne CAS-vindu</button>
+<!-- Button that opens the dialog -->
+<button id="button-ggb-cas-bbfc14bd" class="ggb-cas-button">Åpne CAS‑vindu</button>
 
 <!-- Dialog that will contain the CAS applet -->
-<div id="dialog-ggb-cas-f856edc5" title="CAS-vindu" style="display:none;">
-    <div id="ggb-cas-f856edc5" style="width:420px;height:500px;" class="ggb-window"></div>
+<div id="dialog-ggb-cas-bbfc14bd" title="CAS‑vindu" style="display:none;">
+    <div id="ggb-cas-bbfc14bd"
+         style="width:420px;height:500px;"
+         class="ggb-window"></div>
 </div>
+
+<style>
+/* Larger touch targets for the resizable handles */
+.ui-resizable-handle {
+    min-width: 16px;
+    min-height: 16px;
+}
+</style>
 
 <script>
 (function() {
-    
-    // Once document is ready
-    $(document).ready(function() {
-        var appletInitialized = false;
-        var dialogPaddingV = 60;
-        var dialogPaddingH = 20;
-        
-        // Dialog initialization
-        $("#dialog-ggb-cas-f856edc5").dialog({
-            autoOpen: false,
-            width: 460,
-            height: 580,
-            modal: false,
+    $(function() {
+        let appletInitialised = false,
+            padV = 60,          /* padding inside dialog */
+            padH = 20;
+
+        /* 1 » Create the dialog (draggable + resizable now work on touch) */
+        $("#dialog-ggb-cas-bbfc14bd").dialog({
+            autoOpen : false,
+            width    : 460,
+            height   : 580,
+            modal    : false,
             resizable: true,
             draggable: true,
-            position: { my: "center", at: "center", of: window },
-            resize: function(event, ui) {
+            position : { my: "center", at: "center", of: window },
+
+            resize: function (_, ui) {
                 if (window.ggbApplet) {
-                    var newWidth = ui.size.width - dialogPaddingH;
-                    var newHeight = ui.size.height - dialogPaddingV;
-                    $("#ggb-cas-f856edc5").css({ width: newWidth + 'px', height: newHeight + 'px' });
-                    window.ggbApplet.setSize(newWidth, newHeight);
+                    const w = ui.size.width  - padH,
+                          h = ui.size.height - padV;
+                    $("#ggb-cas-bbfc14bd").css({width: w, height: h});
+                    window.ggbApplet.setSize(w, h);
                 }
             },
-            open: function() {
-                // Initialize applet if not already done
-                if (!appletInitialized) {
-                    var params = {
-                        appName: "classic",
-                        width: 420,
-                        height: 500,
-                        showToolBar: true,
-                        showAlgebraInput: true,
-                        showMenuBar: false,
-                        language: 'nb',
-                        borderRadius: 8,
-                        useBrowserForJS: false,
-                        preventFocus: false,
-                        showFullscreenButton: false,
-                        showResetIcon: true,
-                        enableRightClick: true,
-                        showKeyboardOnFocus: false,
-                        id: 'ggb-cas-f856edc5',
-                        perspective: 'C',
-                        'customToolBar': '1001 | 1002 | 1007 | 1010 | 1008 | 6',
+
+            open: function () {
+                if (!appletInitialised) {
+                    const params = {
+                        appName              : "classic",
+                        id                   : "ggb-cas-bbfc14bd",
+                        width                : 420,
+                        height               : 500,
+                        perspective          : "C",
+                        language             : "nb",
+                        showToolBar          : true,
+                        showAlgebraInput     : true,
+                        showMenuBar          : false,
+                        borderRadius         : 8,
+                        showResetIcon        : true,
+                        enableRightClick     : true,
+                        showKeyboardOnFocus  : false,
+                        showFullscreenButton : false,
+                        customToolBar        : "1001 | 1002 | 1007 | 1010 | 1008 | 6"
                     };
-                    
-                    var applet = new GGBApplet(params, true);
-                    applet.inject('ggb-cas-f856edc5');
-                    appletInitialized = true;
+                    new GGBApplet(params, true).inject("ggb-cas-bbfc14bd");
+                    appletInitialised = true;
                 }
             }
         });
-        
-        // Button click handler
-        $("#button-ggb-cas-f856edc5").button().on("click", function() {
-            $("#dialog-ggb-cas-f856edc5").dialog("open");
-        });
+
+        /* 2 » Open dialog on click **or** touch/pointer‑up */
+        $("#button-ggb-cas-bbfc14bd")
+            .button()
+            .on("click touchend pointerup", function (e) {
+                e.preventDefault();          // eliminate 300 ms delay on iOS/Android
+                $("#dialog-ggb-cas-bbfc14bd").dialog("open");
+            });
     });
 })();
 </script>
@@ -902,79 +932,94 @@ T \approx 2.29
 <p class="admonition-title">Oppgave 3</p>
 <p>I <span class="math notranslate nohighlight">\(\triangle ABC\)</span> er <span class="math notranslate nohighlight">\(\angle A = 45 \degree\)</span>, <span class="math notranslate nohighlight">\(BC = 6\)</span> og <span class="math notranslate nohighlight">\(AC = 8\)</span>.</p>
 
-<!-- jQuery and jQuery UI -->
+<!--‑‑ Mobile viewport so the dialog scales on phones ‑‑>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- jQuery + jQuery UI -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+
+<!-- Touch‑punch: maps touch / pointer events to jQuery‑UI mouse APIs -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 
-<!-- Button to open the dialog -->
-<button id="button-ggb-cas-53f4cd59" class="ggb-cas-button">Åpne CAS-vindu</button>
+<!-- Button that opens the dialog -->
+<button id="button-ggb-cas-3973059c" class="ggb-cas-button">Åpne CAS‑vindu</button>
 
 <!-- Dialog that will contain the CAS applet -->
-<div id="dialog-ggb-cas-53f4cd59" title="CAS-vindu" style="display:none;">
-    <div id="ggb-cas-53f4cd59" style="width:420px;height:500px;" class="ggb-window"></div>
+<div id="dialog-ggb-cas-3973059c" title="CAS‑vindu" style="display:none;">
+    <div id="ggb-cas-3973059c"
+         style="width:420px;height:500px;"
+         class="ggb-window"></div>
 </div>
+
+<style>
+/* Larger touch targets for the resizable handles */
+.ui-resizable-handle {
+    min-width: 16px;
+    min-height: 16px;
+}
+</style>
 
 <script>
 (function() {
-    
-    // Once document is ready
-    $(document).ready(function() {
-        var appletInitialized = false;
-        var dialogPaddingV = 60;
-        var dialogPaddingH = 20;
-        
-        // Dialog initialization
-        $("#dialog-ggb-cas-53f4cd59").dialog({
-            autoOpen: false,
-            width: 460,
-            height: 580,
-            modal: false,
+    $(function() {
+        let appletInitialised = false,
+            padV = 60,          /* padding inside dialog */
+            padH = 20;
+
+        /* 1 » Create the dialog (draggable + resizable now work on touch) */
+        $("#dialog-ggb-cas-3973059c").dialog({
+            autoOpen : false,
+            width    : 460,
+            height   : 580,
+            modal    : false,
             resizable: true,
             draggable: true,
-            position: { my: "center", at: "center", of: window },
-            resize: function(event, ui) {
+            position : { my: "center", at: "center", of: window },
+
+            resize: function (_, ui) {
                 if (window.ggbApplet) {
-                    var newWidth = ui.size.width - dialogPaddingH;
-                    var newHeight = ui.size.height - dialogPaddingV;
-                    $("#ggb-cas-53f4cd59").css({ width: newWidth + 'px', height: newHeight + 'px' });
-                    window.ggbApplet.setSize(newWidth, newHeight);
+                    const w = ui.size.width  - padH,
+                          h = ui.size.height - padV;
+                    $("#ggb-cas-3973059c").css({width: w, height: h});
+                    window.ggbApplet.setSize(w, h);
                 }
             },
-            open: function() {
-                // Initialize applet if not already done
-                if (!appletInitialized) {
-                    var params = {
-                        appName: "classic",
-                        width: 420,
-                        height: 500,
-                        showToolBar: true,
-                        showAlgebraInput: true,
-                        showMenuBar: false,
-                        language: 'nb',
-                        borderRadius: 8,
-                        useBrowserForJS: false,
-                        preventFocus: false,
-                        showFullscreenButton: false,
-                        showResetIcon: true,
-                        enableRightClick: true,
-                        showKeyboardOnFocus: false,
-                        id: 'ggb-cas-53f4cd59',
-                        perspective: 'C',
-                        'customToolBar': '1001 | 1002 | 1007 | 1010 | 1008 | 6',
+
+            open: function () {
+                if (!appletInitialised) {
+                    const params = {
+                        appName              : "classic",
+                        id                   : "ggb-cas-3973059c",
+                        width                : 420,
+                        height               : 500,
+                        perspective          : "C",
+                        language             : "nb",
+                        showToolBar          : true,
+                        showAlgebraInput     : true,
+                        showMenuBar          : false,
+                        borderRadius         : 8,
+                        showResetIcon        : true,
+                        enableRightClick     : true,
+                        showKeyboardOnFocus  : false,
+                        showFullscreenButton : false,
+                        customToolBar        : "1001 | 1002 | 1007 | 1010 | 1008 | 6"
                     };
-                    
-                    var applet = new GGBApplet(params, true);
-                    applet.inject('ggb-cas-53f4cd59');
-                    appletInitialized = true;
+                    new GGBApplet(params, true).inject("ggb-cas-3973059c");
+                    appletInitialised = true;
                 }
             }
         });
-        
-        // Button click handler
-        $("#button-ggb-cas-53f4cd59").button().on("click", function() {
-            $("#dialog-ggb-cas-53f4cd59").dialog("open");
-        });
+
+        /* 2 » Open dialog on click **or** touch/pointer‑up */
+        $("#button-ggb-cas-3973059c")
+            .button()
+            .on("click touchend pointerup", function (e) {
+                e.preventDefault();          // eliminate 300 ms delay on iOS/Android
+                $("#dialog-ggb-cas-3973059c").dialog("open");
+            });
     });
 })();
 </script>
@@ -1013,79 +1058,94 @@ AB \approx 3.66 \or AB \approx 7.66
 <a class="no-click adaptive-figure reference internal image-reference" href="../../../_images/figur90.svg"><img alt="../../../_images/figur90.svg" class="no-click adaptive-figure" src="../../../_images/figur90.svg" style="width: 80%;" /></a>
 </figure>
 
-<!-- jQuery and jQuery UI -->
+<!--‑‑ Mobile viewport so the dialog scales on phones ‑‑>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- jQuery + jQuery UI -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+
+<!-- Touch‑punch: maps touch / pointer events to jQuery‑UI mouse APIs -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 
-<!-- Button to open the dialog -->
-<button id="button-ggb-cas-7f892412" class="ggb-cas-button">Åpne CAS-vindu</button>
+<!-- Button that opens the dialog -->
+<button id="button-ggb-cas-5f7faa76" class="ggb-cas-button">Åpne CAS‑vindu</button>
 
 <!-- Dialog that will contain the CAS applet -->
-<div id="dialog-ggb-cas-7f892412" title="CAS-vindu" style="display:none;">
-    <div id="ggb-cas-7f892412" style="width:420px;height:500px;" class="ggb-window"></div>
+<div id="dialog-ggb-cas-5f7faa76" title="CAS‑vindu" style="display:none;">
+    <div id="ggb-cas-5f7faa76"
+         style="width:420px;height:500px;"
+         class="ggb-window"></div>
 </div>
+
+<style>
+/* Larger touch targets for the resizable handles */
+.ui-resizable-handle {
+    min-width: 16px;
+    min-height: 16px;
+}
+</style>
 
 <script>
 (function() {
-    
-    // Once document is ready
-    $(document).ready(function() {
-        var appletInitialized = false;
-        var dialogPaddingV = 60;
-        var dialogPaddingH = 20;
-        
-        // Dialog initialization
-        $("#dialog-ggb-cas-7f892412").dialog({
-            autoOpen: false,
-            width: 460,
-            height: 580,
-            modal: false,
+    $(function() {
+        let appletInitialised = false,
+            padV = 60,          /* padding inside dialog */
+            padH = 20;
+
+        /* 1 » Create the dialog (draggable + resizable now work on touch) */
+        $("#dialog-ggb-cas-5f7faa76").dialog({
+            autoOpen : false,
+            width    : 460,
+            height   : 580,
+            modal    : false,
             resizable: true,
             draggable: true,
-            position: { my: "center", at: "center", of: window },
-            resize: function(event, ui) {
+            position : { my: "center", at: "center", of: window },
+
+            resize: function (_, ui) {
                 if (window.ggbApplet) {
-                    var newWidth = ui.size.width - dialogPaddingH;
-                    var newHeight = ui.size.height - dialogPaddingV;
-                    $("#ggb-cas-7f892412").css({ width: newWidth + 'px', height: newHeight + 'px' });
-                    window.ggbApplet.setSize(newWidth, newHeight);
+                    const w = ui.size.width  - padH,
+                          h = ui.size.height - padV;
+                    $("#ggb-cas-5f7faa76").css({width: w, height: h});
+                    window.ggbApplet.setSize(w, h);
                 }
             },
-            open: function() {
-                // Initialize applet if not already done
-                if (!appletInitialized) {
-                    var params = {
-                        appName: "classic",
-                        width: 420,
-                        height: 500,
-                        showToolBar: true,
-                        showAlgebraInput: true,
-                        showMenuBar: false,
-                        language: 'nb',
-                        borderRadius: 8,
-                        useBrowserForJS: false,
-                        preventFocus: false,
-                        showFullscreenButton: false,
-                        showResetIcon: true,
-                        enableRightClick: true,
-                        showKeyboardOnFocus: false,
-                        id: 'ggb-cas-7f892412',
-                        perspective: 'C',
-                        'customToolBar': '1001 | 1002 | 1007 | 1010 | 1008 | 6',
+
+            open: function () {
+                if (!appletInitialised) {
+                    const params = {
+                        appName              : "classic",
+                        id                   : "ggb-cas-5f7faa76",
+                        width                : 420,
+                        height               : 500,
+                        perspective          : "C",
+                        language             : "nb",
+                        showToolBar          : true,
+                        showAlgebraInput     : true,
+                        showMenuBar          : false,
+                        borderRadius         : 8,
+                        showResetIcon        : true,
+                        enableRightClick     : true,
+                        showKeyboardOnFocus  : false,
+                        showFullscreenButton : false,
+                        customToolBar        : "1001 | 1002 | 1007 | 1010 | 1008 | 6"
                     };
-                    
-                    var applet = new GGBApplet(params, true);
-                    applet.inject('ggb-cas-7f892412');
-                    appletInitialized = true;
+                    new GGBApplet(params, true).inject("ggb-cas-5f7faa76");
+                    appletInitialised = true;
                 }
             }
         });
-        
-        // Button click handler
-        $("#button-ggb-cas-7f892412").button().on("click", function() {
-            $("#dialog-ggb-cas-7f892412").dialog("open");
-        });
+
+        /* 2 » Open dialog on click **or** touch/pointer‑up */
+        $("#button-ggb-cas-5f7faa76")
+            .button()
+            .on("click touchend pointerup", function (e) {
+                e.preventDefault();          // eliminate 300 ms delay on iOS/Android
+                $("#dialog-ggb-cas-5f7faa76").dialog("open");
+            });
     });
 })();
 </script>
@@ -1124,79 +1184,94 @@ T \approx 22.5
 <a class="no-click adaptive-figure reference internal image-reference" href="../../../_images/figur91.svg"><img alt="../../../_images/figur91.svg" class="no-click adaptive-figure" src="../../../_images/figur91.svg" style="width: 80%;" /></a>
 </figure>
 
-<!-- jQuery and jQuery UI -->
+<!--‑‑ Mobile viewport so the dialog scales on phones ‑‑>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- jQuery + jQuery UI -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+
+<!-- Touch‑punch: maps touch / pointer events to jQuery‑UI mouse APIs -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 
-<!-- Button to open the dialog -->
-<button id="button-ggb-cas-26991257" class="ggb-cas-button">Åpne CAS-vindu</button>
+<!-- Button that opens the dialog -->
+<button id="button-ggb-cas-7b5dcda4" class="ggb-cas-button">Åpne CAS‑vindu</button>
 
 <!-- Dialog that will contain the CAS applet -->
-<div id="dialog-ggb-cas-26991257" title="CAS-vindu" style="display:none;">
-    <div id="ggb-cas-26991257" style="width:420px;height:500px;" class="ggb-window"></div>
+<div id="dialog-ggb-cas-7b5dcda4" title="CAS‑vindu" style="display:none;">
+    <div id="ggb-cas-7b5dcda4"
+         style="width:420px;height:500px;"
+         class="ggb-window"></div>
 </div>
+
+<style>
+/* Larger touch targets for the resizable handles */
+.ui-resizable-handle {
+    min-width: 16px;
+    min-height: 16px;
+}
+</style>
 
 <script>
 (function() {
-    
-    // Once document is ready
-    $(document).ready(function() {
-        var appletInitialized = false;
-        var dialogPaddingV = 60;
-        var dialogPaddingH = 20;
-        
-        // Dialog initialization
-        $("#dialog-ggb-cas-26991257").dialog({
-            autoOpen: false,
-            width: 460,
-            height: 580,
-            modal: false,
+    $(function() {
+        let appletInitialised = false,
+            padV = 60,          /* padding inside dialog */
+            padH = 20;
+
+        /* 1 » Create the dialog (draggable + resizable now work on touch) */
+        $("#dialog-ggb-cas-7b5dcda4").dialog({
+            autoOpen : false,
+            width    : 460,
+            height   : 580,
+            modal    : false,
             resizable: true,
             draggable: true,
-            position: { my: "center", at: "center", of: window },
-            resize: function(event, ui) {
+            position : { my: "center", at: "center", of: window },
+
+            resize: function (_, ui) {
                 if (window.ggbApplet) {
-                    var newWidth = ui.size.width - dialogPaddingH;
-                    var newHeight = ui.size.height - dialogPaddingV;
-                    $("#ggb-cas-26991257").css({ width: newWidth + 'px', height: newHeight + 'px' });
-                    window.ggbApplet.setSize(newWidth, newHeight);
+                    const w = ui.size.width  - padH,
+                          h = ui.size.height - padV;
+                    $("#ggb-cas-7b5dcda4").css({width: w, height: h});
+                    window.ggbApplet.setSize(w, h);
                 }
             },
-            open: function() {
-                // Initialize applet if not already done
-                if (!appletInitialized) {
-                    var params = {
-                        appName: "classic",
-                        width: 420,
-                        height: 500,
-                        showToolBar: true,
-                        showAlgebraInput: true,
-                        showMenuBar: false,
-                        language: 'nb',
-                        borderRadius: 8,
-                        useBrowserForJS: false,
-                        preventFocus: false,
-                        showFullscreenButton: false,
-                        showResetIcon: true,
-                        enableRightClick: true,
-                        showKeyboardOnFocus: false,
-                        id: 'ggb-cas-26991257',
-                        perspective: 'C',
-                        'customToolBar': '1001 | 1002 | 1007 | 1010 | 1008 | 6',
+
+            open: function () {
+                if (!appletInitialised) {
+                    const params = {
+                        appName              : "classic",
+                        id                   : "ggb-cas-7b5dcda4",
+                        width                : 420,
+                        height               : 500,
+                        perspective          : "C",
+                        language             : "nb",
+                        showToolBar          : true,
+                        showAlgebraInput     : true,
+                        showMenuBar          : false,
+                        borderRadius         : 8,
+                        showResetIcon        : true,
+                        enableRightClick     : true,
+                        showKeyboardOnFocus  : false,
+                        showFullscreenButton : false,
+                        customToolBar        : "1001 | 1002 | 1007 | 1010 | 1008 | 6"
                     };
-                    
-                    var applet = new GGBApplet(params, true);
-                    applet.inject('ggb-cas-26991257');
-                    appletInitialized = true;
+                    new GGBApplet(params, true).inject("ggb-cas-7b5dcda4");
+                    appletInitialised = true;
                 }
             }
         });
-        
-        // Button click handler
-        $("#button-ggb-cas-26991257").button().on("click", function() {
-            $("#dialog-ggb-cas-26991257").dialog("open");
-        });
+
+        /* 2 » Open dialog on click **or** touch/pointer‑up */
+        $("#button-ggb-cas-7b5dcda4")
+            .button()
+            .on("click touchend pointerup", function (e) {
+                e.preventDefault();          // eliminate 300 ms delay on iOS/Android
+                $("#dialog-ggb-cas-7b5dcda4").dialog("open");
+            });
     });
 })();
 </script>
@@ -1235,79 +1310,94 @@ T = \dfrac{1}{8}a^2 \left(2\sqrt{3} + 1\right)
 <a class="no-click adaptive-figure reference internal image-reference" href="../../../_images/figur92.svg"><img alt="../../../_images/figur92.svg" class="no-click adaptive-figure" src="../../../_images/figur92.svg" style="width: 80%;" /></a>
 </figure>
 
-<!-- jQuery and jQuery UI -->
+<!--‑‑ Mobile viewport so the dialog scales on phones ‑‑>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- jQuery + jQuery UI -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+
+<!-- Touch‑punch: maps touch / pointer events to jQuery‑UI mouse APIs -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 
-<!-- Button to open the dialog -->
-<button id="button-ggb-cas-40dba018" class="ggb-cas-button">Åpne CAS-vindu</button>
+<!-- Button that opens the dialog -->
+<button id="button-ggb-cas-ed3c714c" class="ggb-cas-button">Åpne CAS‑vindu</button>
 
 <!-- Dialog that will contain the CAS applet -->
-<div id="dialog-ggb-cas-40dba018" title="CAS-vindu" style="display:none;">
-    <div id="ggb-cas-40dba018" style="width:420px;height:500px;" class="ggb-window"></div>
+<div id="dialog-ggb-cas-ed3c714c" title="CAS‑vindu" style="display:none;">
+    <div id="ggb-cas-ed3c714c"
+         style="width:420px;height:500px;"
+         class="ggb-window"></div>
 </div>
+
+<style>
+/* Larger touch targets for the resizable handles */
+.ui-resizable-handle {
+    min-width: 16px;
+    min-height: 16px;
+}
+</style>
 
 <script>
 (function() {
-    
-    // Once document is ready
-    $(document).ready(function() {
-        var appletInitialized = false;
-        var dialogPaddingV = 60;
-        var dialogPaddingH = 20;
-        
-        // Dialog initialization
-        $("#dialog-ggb-cas-40dba018").dialog({
-            autoOpen: false,
-            width: 460,
-            height: 580,
-            modal: false,
+    $(function() {
+        let appletInitialised = false,
+            padV = 60,          /* padding inside dialog */
+            padH = 20;
+
+        /* 1 » Create the dialog (draggable + resizable now work on touch) */
+        $("#dialog-ggb-cas-ed3c714c").dialog({
+            autoOpen : false,
+            width    : 460,
+            height   : 580,
+            modal    : false,
             resizable: true,
             draggable: true,
-            position: { my: "center", at: "center", of: window },
-            resize: function(event, ui) {
+            position : { my: "center", at: "center", of: window },
+
+            resize: function (_, ui) {
                 if (window.ggbApplet) {
-                    var newWidth = ui.size.width - dialogPaddingH;
-                    var newHeight = ui.size.height - dialogPaddingV;
-                    $("#ggb-cas-40dba018").css({ width: newWidth + 'px', height: newHeight + 'px' });
-                    window.ggbApplet.setSize(newWidth, newHeight);
+                    const w = ui.size.width  - padH,
+                          h = ui.size.height - padV;
+                    $("#ggb-cas-ed3c714c").css({width: w, height: h});
+                    window.ggbApplet.setSize(w, h);
                 }
             },
-            open: function() {
-                // Initialize applet if not already done
-                if (!appletInitialized) {
-                    var params = {
-                        appName: "classic",
-                        width: 420,
-                        height: 500,
-                        showToolBar: true,
-                        showAlgebraInput: true,
-                        showMenuBar: false,
-                        language: 'nb',
-                        borderRadius: 8,
-                        useBrowserForJS: false,
-                        preventFocus: false,
-                        showFullscreenButton: false,
-                        showResetIcon: true,
-                        enableRightClick: true,
-                        showKeyboardOnFocus: false,
-                        id: 'ggb-cas-40dba018',
-                        perspective: 'C',
-                        'customToolBar': '1001 | 1002 | 1007 | 1010 | 1008 | 6',
+
+            open: function () {
+                if (!appletInitialised) {
+                    const params = {
+                        appName              : "classic",
+                        id                   : "ggb-cas-ed3c714c",
+                        width                : 420,
+                        height               : 500,
+                        perspective          : "C",
+                        language             : "nb",
+                        showToolBar          : true,
+                        showAlgebraInput     : true,
+                        showMenuBar          : false,
+                        borderRadius         : 8,
+                        showResetIcon        : true,
+                        enableRightClick     : true,
+                        showKeyboardOnFocus  : false,
+                        showFullscreenButton : false,
+                        customToolBar        : "1001 | 1002 | 1007 | 1010 | 1008 | 6"
                     };
-                    
-                    var applet = new GGBApplet(params, true);
-                    applet.inject('ggb-cas-40dba018');
-                    appletInitialized = true;
+                    new GGBApplet(params, true).inject("ggb-cas-ed3c714c");
+                    appletInitialised = true;
                 }
             }
         });
-        
-        // Button click handler
-        $("#button-ggb-cas-40dba018").button().on("click", function() {
-            $("#dialog-ggb-cas-40dba018").dialog("open");
-        });
+
+        /* 2 » Open dialog on click **or** touch/pointer‑up */
+        $("#button-ggb-cas-ed3c714c")
+            .button()
+            .on("click touchend pointerup", function (e) {
+                e.preventDefault();          // eliminate 300 ms delay on iOS/Android
+                $("#dialog-ggb-cas-ed3c714c").dialog("open");
+            });
     });
 })();
 </script>
@@ -1346,79 +1436,94 @@ T = 32\sqrt{3}
 <a class="no-click adaptive-figure reference internal image-reference" href="../../../_images/figur93.svg"><img alt="../../../_images/figur93.svg" class="no-click adaptive-figure" src="../../../_images/figur93.svg" style="width: 80%;" /></a>
 </figure>
 
-<!-- jQuery and jQuery UI -->
+<!--‑‑ Mobile viewport so the dialog scales on phones ‑‑>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- jQuery + jQuery UI -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+
+<!-- Touch‑punch: maps touch / pointer events to jQuery‑UI mouse APIs -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 
-<!-- Button to open the dialog -->
-<button id="button-ggb-cas-598753d5" class="ggb-cas-button">Åpne CAS-vindu</button>
+<!-- Button that opens the dialog -->
+<button id="button-ggb-cas-7d7db03b" class="ggb-cas-button">Åpne CAS‑vindu</button>
 
 <!-- Dialog that will contain the CAS applet -->
-<div id="dialog-ggb-cas-598753d5" title="CAS-vindu" style="display:none;">
-    <div id="ggb-cas-598753d5" style="width:420px;height:500px;" class="ggb-window"></div>
+<div id="dialog-ggb-cas-7d7db03b" title="CAS‑vindu" style="display:none;">
+    <div id="ggb-cas-7d7db03b"
+         style="width:420px;height:500px;"
+         class="ggb-window"></div>
 </div>
+
+<style>
+/* Larger touch targets for the resizable handles */
+.ui-resizable-handle {
+    min-width: 16px;
+    min-height: 16px;
+}
+</style>
 
 <script>
 (function() {
-    
-    // Once document is ready
-    $(document).ready(function() {
-        var appletInitialized = false;
-        var dialogPaddingV = 60;
-        var dialogPaddingH = 20;
-        
-        // Dialog initialization
-        $("#dialog-ggb-cas-598753d5").dialog({
-            autoOpen: false,
-            width: 460,
-            height: 580,
-            modal: false,
+    $(function() {
+        let appletInitialised = false,
+            padV = 60,          /* padding inside dialog */
+            padH = 20;
+
+        /* 1 » Create the dialog (draggable + resizable now work on touch) */
+        $("#dialog-ggb-cas-7d7db03b").dialog({
+            autoOpen : false,
+            width    : 460,
+            height   : 580,
+            modal    : false,
             resizable: true,
             draggable: true,
-            position: { my: "center", at: "center", of: window },
-            resize: function(event, ui) {
+            position : { my: "center", at: "center", of: window },
+
+            resize: function (_, ui) {
                 if (window.ggbApplet) {
-                    var newWidth = ui.size.width - dialogPaddingH;
-                    var newHeight = ui.size.height - dialogPaddingV;
-                    $("#ggb-cas-598753d5").css({ width: newWidth + 'px', height: newHeight + 'px' });
-                    window.ggbApplet.setSize(newWidth, newHeight);
+                    const w = ui.size.width  - padH,
+                          h = ui.size.height - padV;
+                    $("#ggb-cas-7d7db03b").css({width: w, height: h});
+                    window.ggbApplet.setSize(w, h);
                 }
             },
-            open: function() {
-                // Initialize applet if not already done
-                if (!appletInitialized) {
-                    var params = {
-                        appName: "classic",
-                        width: 420,
-                        height: 500,
-                        showToolBar: true,
-                        showAlgebraInput: true,
-                        showMenuBar: false,
-                        language: 'nb',
-                        borderRadius: 8,
-                        useBrowserForJS: false,
-                        preventFocus: false,
-                        showFullscreenButton: false,
-                        showResetIcon: true,
-                        enableRightClick: true,
-                        showKeyboardOnFocus: false,
-                        id: 'ggb-cas-598753d5',
-                        perspective: 'C',
-                        'customToolBar': '1001 | 1002 | 1007 | 1010 | 1008 | 6',
+
+            open: function () {
+                if (!appletInitialised) {
+                    const params = {
+                        appName              : "classic",
+                        id                   : "ggb-cas-7d7db03b",
+                        width                : 420,
+                        height               : 500,
+                        perspective          : "C",
+                        language             : "nb",
+                        showToolBar          : true,
+                        showAlgebraInput     : true,
+                        showMenuBar          : false,
+                        borderRadius         : 8,
+                        showResetIcon        : true,
+                        enableRightClick     : true,
+                        showKeyboardOnFocus  : false,
+                        showFullscreenButton : false,
+                        customToolBar        : "1001 | 1002 | 1007 | 1010 | 1008 | 6"
                     };
-                    
-                    var applet = new GGBApplet(params, true);
-                    applet.inject('ggb-cas-598753d5');
-                    appletInitialized = true;
+                    new GGBApplet(params, true).inject("ggb-cas-7d7db03b");
+                    appletInitialised = true;
                 }
             }
         });
-        
-        // Button click handler
-        $("#button-ggb-cas-598753d5").button().on("click", function() {
-            $("#dialog-ggb-cas-598753d5").dialog("open");
-        });
+
+        /* 2 » Open dialog on click **or** touch/pointer‑up */
+        $("#button-ggb-cas-7d7db03b")
+            .button()
+            .on("click touchend pointerup", function (e) {
+                e.preventDefault();          // eliminate 300 ms delay on iOS/Android
+                $("#dialog-ggb-cas-7d7db03b").dialog("open");
+            });
     });
 })();
 </script>

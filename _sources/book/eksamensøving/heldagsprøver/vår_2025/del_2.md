@@ -299,7 +299,7 @@ class: solution, dropdown
 ---
 Vi kan sette opp et likningssystem ut ifra opplysningene i oppgaven. Vi trenger tre likninger der minst én av de ikke er en nullpunktslikning. 
 
-Begge tangenter går ggjennom punkten $(-1, -8)$. Den ene har stigningstall $4$. Fra ettpunktsformelen får vi dermed skrive ned likningen til denne tangenten som:
+Begge tangenter går gjennom punktet $(-1, -8)$. Den ene tangenten har stigningstall $4$. Fra ettpunktsformelen kan vi dermed skrive ned likningen til denne tangenten som:
 
 $$
 y - (-8) = 4(x - (-1)) \liff y = 4x - 4 = 4(x - 1)
