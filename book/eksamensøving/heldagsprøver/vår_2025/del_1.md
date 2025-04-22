@@ -463,7 +463,7 @@ $$
 f(x) = \dfrac{x^2 - 1}{x^2 - 2x + 1} = \dfrac{(x + 1)(x - 1)}{(x - 1)^2} = \dfrac{x + 1}{x - 1}
 $$
 
-der vi bruke konjugatsetningen i tellerpolynomet og 2.kvadratsetning i nevnerpolynomet. Ettersom vi nå har forkortet bort alle felles faktorer, kan vi bestemme $f$ sine nullpunkter og asymptoter.
+der vi brukte konjugatsetningen i tellerpolynomet og 2.kvadratsetning i nevnerpolynomet. Ettersom vi nå har forkortet bort alle felles faktorer, kan vi bestemme $f$ sine nullpunkter og asymptoter.
 
 Fra tellerpolynomet i det fortkortede uttrykket får vi at 
 
@@ -477,12 +477,12 @@ $$
 x - 1 = 0  \liff x = 1
 $$
 
-som betyr at $f$ har en vertikal asymptote i $x = 1$. Siden ledene koeffisient for teller og nevnerpolynomet er $1$ og polynomeme er av samme grad, følger det at den horisontale asymptoten er $y = 1$.
+som betyr at $f$ har en vertikal asymptote i $x = 1$. Siden ledende koeffisient for teller og nevnerpolynomet er $1$ og polynomeme er av samme grad, følger det at den horisontale asymptoten er $y = 1$.
 
 Graf $B$ er den eneste grafen som samtidig har
-* Har et nullpunkt for $x < 0$
+* et nullpunkt for $x < 0$
 * en vertikal asymptote når $x > 0$
-* En horisontal asymptote der $y > 0$.
+* en horisontal asymptote der $y > 0$.
 
 Dermed må graf B gære grafen til $f$. 
 
