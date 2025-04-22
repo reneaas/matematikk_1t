@@ -174,7 +174,7 @@ $$
 x^2 - 9 = (x + 3)(x - 3). 
 $$
 
-De har ingen lineær faktor til felles, så holder det å bestemme nullpunktene til tellerpolynomet for å finne nullpunktene til $p$. Disse fant vi med $abc$-formelen som ga oss
+De har ingen lineær faktor til felles, så da holder det å bestemme nullpunktene til tellerpolynomet for å finne nullpunktene til $p$. Disse fant vi med $abc$-formelen som ga oss
 
 $$
 x = -1 \or x = 2.
