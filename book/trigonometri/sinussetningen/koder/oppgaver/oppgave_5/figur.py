@@ -187,7 +187,7 @@ def main(dirname, save):
     plotmath.plot_polygon(
         *points,
         ax=None,
-        show_vertices=True,
+        show_vertices=False,
         alpha=0.03,
     )
 
@@ -195,7 +195,7 @@ def main(dirname, save):
     plotmath.plot_polygon(
         *points,
         ax=None,
-        show_vertices=True,
+        show_vertices=False,
         alpha=0.03,
     )
 

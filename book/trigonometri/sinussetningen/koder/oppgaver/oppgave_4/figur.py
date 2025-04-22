@@ -42,7 +42,7 @@ def main(dirname, save):
     plotmath.plot_polygon(
         *points,
         ax=None,
-        show_vertices=True,
+        show_vertices=False,
         alpha=0.03,
     )
 
@@ -115,7 +115,7 @@ def main(dirname, save):
     )
 
     plt.text(
-        x=B[0] + dx,
+        x=B[0],
         y=B[1] - dy,
         s="$B$",
         fontsize=16,
@@ -125,7 +125,7 @@ def main(dirname, save):
 
     plt.text(
         x=C[0] + dx,
-        y=C[1] - dy,
+        y=C[1],
         s="$C$",
         fontsize=16,
         ha="center",
@@ -133,7 +133,7 @@ def main(dirname, save):
     )
 
     plt.text(
-        x=D[0] + dx,
+        x=D[0],
         y=D[1] + dy,
         s="$D$",
         fontsize=16,
