@@ -58,7 +58,7 @@ Bestem $c$.
 class: answer, dropdown
 ---
 $$
-b = 2
+c = 2
 $$
 ::::
 
