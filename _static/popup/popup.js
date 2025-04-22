@@ -69,3 +69,49 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+
+
+
+
+
+// add touch support
+
+/* Pointer‑events → synthetic touch‑events for Touch‑Punch -------------- */
+(function () {
+  if (!window.PointerEvent) return;               // old browsers
+
+  function makeTouchList(e) {
+    return [{
+      identifier : e.pointerId,
+      target     : e.target,
+      clientX    : e.clientX,
+      clientY    : e.clientY,
+      pageX      : e.pageX,
+      pageY      : e.pageY,
+      screenX    : e.screenX,
+      screenY    : e.screenY
+    }];
+  }
+
+  function dispatchSynthetic(original, type) {
+    const touchEvent = new Event(type, { bubbles:true, cancelable:true });
+    touchEvent.touches        =
+    touchEvent.targetTouches  =
+    touchEvent.changedTouches = makeTouchList(original);
+    original.target.dispatchEvent(touchEvent);
+  }
+
+  ["pointerdown","pointermove","pointerup","pointercancel"]
+    .forEach(peType => {
+      window.addEventListener(peType, ev => {
+        if (ev.pointerType !== "touch" && ev.pointerType !== "pen") return;
+        switch (peType) {
+          case "pointerdown":   dispatchSynthetic(ev,"touchstart");  break;
+          case "pointermove":   dispatchSynthetic(ev,"touchmove");   break;
+          case "pointerup":     dispatchSynthetic(ev,"touchend");    break;
+          case "pointercancel": dispatchSynthetic(ev,"touchcancel"); break;
+        }
+      }, true);                               // capture phase ⇒ before jQuery‑UI
+    });
+})();
