@@ -8,6 +8,9 @@ class: problem-level-1
 > Her trenger du CAS til å regne ut $\sin v$. 
 
 
+:::{cas-popup} 350 500
+:::
+
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts 
@@ -22,9 +25,6 @@ class: no-click, adaptive-figure
 ---
 :::
 
-
-:::{cas-window}
-:::
 
 
 ::::{admonition} Fasit
@@ -57,10 +57,6 @@ Bestem arealet av trekanten nedenfor.
 width: 80%
 class: no-click, adaptive-figure
 ---
-:::
-
-
-:::{cas-window}
 :::
 
 
@@ -97,9 +93,6 @@ class: no-click, adaptive-figure
 :::
 
 
-:::{cas-window}
-:::
-
 
 ::::{admonition} Fasit
 ---
@@ -131,6 +124,11 @@ $$
 ---
 class: problem-level-1
 ---
+<br>
+
+:::{cas-popup} 350 500
+:::
+
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
@@ -184,10 +182,6 @@ class: no-click, adaptive-figure
 :::
 
 
-:::{cas-window}
-:::
-
-
 ::::{admonition} Fasit
 ---
 class: answer, dropdown
@@ -218,9 +212,6 @@ class: no-click, adaptive-figure
 :::
 
 
-:::{cas-window}
-:::
-
 ::::{admonition} Fasit
 ---
 class: answer, dropdown
@@ -249,6 +240,12 @@ Vinkel $\angle B$ er spiss, så $\angle B \approx 35.52 \degree$.
 ---
 class: problem-level-1
 ---
+
+<br>
+
+:::{cas-popup} 350 500
+:::
+
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
@@ -259,8 +256,6 @@ I en $\triangle ABC$ er $AB = 8$, $AC = 6$ og $\angle A = 30 \degree$.
 Bestem arealet av trekanten.
 
 
-:::{cas-window}
-:::
 
 
 ::::{admonition} Fasit
@@ -302,8 +297,6 @@ I en $\triangle ABC$ er $AB = 5$, $BC = 7$ og $\angle B = 45 \degree$.
 
 Bestem arealet av trekanten.
 
-:::{cas-window}
-:::
 
 
 ::::{admonition} Fasit
@@ -337,9 +330,6 @@ I en $\triangle ABC$ er $BC = 10$, $AC = 8$ og $\angle C = 120 \degree$.
 
 Bestem arealet av trekanten.
 
-
-:::{cas-window}
-:::
 
 
 ::::{admonition} Fasit
@@ -395,7 +385,8 @@ class: no-click, adaptive-figure
 :::
 
 
-:::{cas-window}
+
+:::{cas-popup} 350 500
 :::
 
 
@@ -449,6 +440,9 @@ Nedenfor vises en sirkel med radius $2$. Tre trekanter $\triangle SAC$, $\triang
 width: 80%
 class: no-click, adaptive-figure
 ---
+:::
+
+:::{cas-popup} 350 500
 :::
 
 ::::::::::::::{tab-set}
@@ -530,9 +524,6 @@ $$
 ::::::::::::::
 
 
-:::{cas-window}
-:::
-
 
 
 :::::::::::::::
@@ -551,6 +542,10 @@ Nedenfor vises en firkant $\square ABCD$.
 width: 80%
 class: no-click, adaptive-figure
 ---
+:::
+
+
+:::{cas-popup} 350 500
 :::
 
 
@@ -721,10 +716,6 @@ $$
 
 ::::::::::::::
 
-
-:::{cas-window}
-:::
-
 :::::::::::::::
 
 
@@ -746,6 +737,11 @@ width: 80%
 class: no-click, adaptive-figure
 ---
 :::
+
+
+:::{cas-popup} 350 500
+:::
+
 
 ::::::::::::::{tab-set}
 ---
@@ -861,9 +857,6 @@ $$
 ::::::::::::::
 
 
-:::{cas-window}
-:::
-
 
 :::::::::::::::
 
@@ -884,6 +877,13 @@ width: 80%
 class: no-click, adaptive-figure
 ---
 :::
+
+
+
+:::{cas-popup} 350 500
+:::
+
+
 
 ::::::::::::::{tab-set}
 ---
@@ -922,9 +922,6 @@ $$
 ::::::::::::::
 
 
-:::{cas-window}
-:::
-
 :::::::::::::::
 
 
@@ -944,6 +941,12 @@ width: 80%
 class: no-click, adaptive-figure
 ---
 :::
+
+
+:::{cas-popup} 350 500
+:::
+
+
 
 ::::::::::::::{tab-set}
 ---
@@ -1025,10 +1028,6 @@ som stemmer godt overens med at arealet bør være ganske nærme arealet av en s
 :::::::::::::
 
 ::::::::::::::
-
-
-:::{cas-window}
-:::
 
 :::::::::::::::
 

@@ -199,9 +199,8 @@ class: no-click, adaptive-figure
 ---
 :::
 
-I CAS-vinduet nedenfor vises det hvordan man kan bestemme vinkelen ved å løse en likning med $\cos A^\circ$. Vi velger løsningen slik at $A^\circ \in [0 ^\circ, 90^\circ]$.
-
-Bruk CAS-vinduet til å løse oppgavene nedenfor.
+:::{cas-popup} 350 500
+:::
 
 > For å skrive $A^\circ$ i CAS-vinduet, kan du bruke "Alt" + "o" på Windows og "⌥" (option) + "o" på Mac for å få gradertegnet $^\circ$ 
 
@@ -284,7 +283,8 @@ class: problem-level-1
 ---
 > I denne oppgaven skal du bruke CAS til å regne ut $\sin v$, $\cos v$ og $\tan v$ for ulike vinkler $v$. 
 
-I CAS-vinduet nedenfor vises det hvordan man regner ut $\sin 30^\circ$, $\cos 30^\circ$ og $\tan 30^\circ$. 
+:::{cas-popup} 350 500
+:::
 
 ::::::::::::::{tab-set}
 ---
@@ -353,6 +353,9 @@ class: problem-level-1
 ---
 > I denne oppgaven skal du bruke CAS til å bestemme ukjente sidelenger i rettvinklede trekanter.
 
+:::{cas-popup} 350 500
+:::
+
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
@@ -369,8 +372,8 @@ class: no-click, adaptive-figure
 ---
 :::
 
-:::{cas-window}
-:::
+
+
 
 ::::{admonition} Fasit
 ---
@@ -403,8 +406,8 @@ class: no-click, adaptive-figure
 ---
 :::
 
-:::{cas-window}
-:::
+
+
 
 ::::{admonition} Fasit
 ---
@@ -437,8 +440,6 @@ class: no-click, adaptive-figure
 ---
 :::
 
-:::{cas-window}
-:::
 
 ::::{admonition} Fasit
 ---
@@ -469,8 +470,7 @@ class: no-click, adaptive-figure
 ---
 :::
 
-:::{cas-window}
-:::
+
 
 
 ::::{admonition} Fasit
@@ -502,8 +502,6 @@ class: no-click, adaptive-figure
 ---
 :::
 
-:::{cas-window}
-:::
 
 ::::{admonition} Fasit
 ---
@@ -534,9 +532,6 @@ class: no-click, adaptive-figure
 ---
 :::
 
-
-:::{cas-window}
-:::
 
 
 ::::{admonition} Fasit
@@ -725,6 +720,10 @@ $$
 \sin u = 1.33 \cdot \sin v
 $$
 
+
+:::{cas-popup} 350 500
+:::
+
 :::{figure} ./figurer/oppgaver/oppgave_9/figur.svg
 ---
 width: 70%
@@ -739,9 +738,6 @@ class: tabs-parts
 :::::::::::::{tab-item} a
 Hvor stor vinkel $u$ må lyset ha for at vinkelen etter brytning i vannet skal være $v = 30^\circ$?
 
-
-:::{cas-window}
-:::
 
 
 ::::{admonition} Fasit
@@ -798,6 +794,9 @@ I figuren nedenfor vises en mulig bane for lysstrålen.
 width: 100%
 class: no-click, adaptive-figure
 ---
+:::
+
+:::{cas-popup} 350 500
 :::
 
 ::::::::::::::{tab-set}
@@ -868,8 +867,6 @@ $$
 :::::::::::::{tab-item} d
 Bestem i hvilket punkt $M(x, 0)$ lysstrålen må ha truffet dersom lysstrålen skal bruke kortest mulig tid mellom $A$ og $B$. 
 
-:::{cas-window}
-:::
 
 
 ::::{admonition} Fasit
@@ -904,9 +901,6 @@ class: no-click, adaptive-figure
 ---
 :::
 
-
-:::{cas-window}
-:::
 
 
 ::::{admonition} Fasit
@@ -944,6 +938,12 @@ class: no-click, adaptive-figure
 ---
 class: problem-level-2
 ---
+
+<br>
+
+:::{cas-popup} 350 500
+:::
+
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
@@ -954,8 +954,6 @@ Månen har en radius på ca. 1737 km og er ca. 384 400 km unna jorden.
 Bestem hvor stor vinkel $v$ månen dekker på himmelen sett fra jorden.
 
 
-:::{cas-window}
-:::
 
 ::::{admonition} Fasit
 ---
@@ -979,8 +977,6 @@ Dekker månen eller Andromedagalaksen størst vinkel på himmelen?
 
 
 
-:::{cas-window}
-:::
 
 
 ::::{admonition} Fasit
