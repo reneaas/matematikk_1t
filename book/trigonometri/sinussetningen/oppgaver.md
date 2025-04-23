@@ -15,7 +15,7 @@ class: no-click, adaptive-figure
 :::
 
 
-:::{cas-popup} 420 500
+:::{cas-popup} 350 500
 :::
 
 ::::::::::::::{tab-set}
@@ -103,7 +103,7 @@ class: no-click, adaptive-figure
 ---
 :::
 
-:::{cas-popup} 420 500
+:::{cas-popup} 350 500
 :::
 
 ::::::::::::::{tab-set}
@@ -218,7 +218,7 @@ class: problem-level-2
 ---
 I $\triangle ABC$ er $\angle A = 45 \degree$, $BC = 6$ og $AC = 8$.
 
-:::{cas-popup} 420 500
+:::{cas-popup} 350 500
 :::
 
 ::::::::::::::{tab-set}
@@ -331,7 +331,7 @@ class: no-click, adaptive-figure
 ---
 :::
 
-:::{cas-popup} 420 500
+:::{cas-popup} 350 500
 :::
 
 ::::::::::::::{tab-set}
@@ -428,7 +428,7 @@ class: no-click, adaptive-figure
 :::
 
 
-:::{cas-popup} 420 500
+:::{cas-popup} 350 500
 :::
 
 
@@ -528,7 +528,7 @@ class: no-click, adaptive-figure
 :::
 
 
-:::{cas-popup} 420 500
+:::{cas-popup} 350 500
 :::
 
 ::::::::::::::{tab-set}
@@ -627,7 +627,7 @@ class: no-click, adaptive-figure
 :::
 
 
-:::{cas-popup} 420 500
+:::{cas-popup} 350 500
 :::
 
 

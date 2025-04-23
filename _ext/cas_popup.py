@@ -78,7 +78,7 @@ class CASPopUpDirective(SphinxDirective):
             perspective:"C",language:"nb",
             showToolBar:true,showAlgebraInput:true,
             borderRadius:8,enableRightClick:true,showKeyboardOnFocus:false,
-            customToolBar:"1001 | 1002 | 1007 | 1010 | 1008 | 6",
+            customToolBar:"1001 | 1002 | 1007 | 1010 | 6",
             appletOnLoad:()=>{{ggbReady=true;applySize();}}
           }},true).inject("{cid}");
         }}else{{applySize();}}
