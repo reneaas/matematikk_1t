@@ -11,13 +11,38 @@ a.no-click {
 .image .caption {
     text-align: left !important;
 }
-  
+
+
 .inline-image {
     width: 35px; /* Fixed width */
     height: auto; /* Maintain aspect ratio */
     vertical-align: middle; /* Align with text */
     border: 1px solid #006aff; /* Add a border */
-    border-radius: 8px; /* Rounded corners */
+    border-radius: 8px !important; /* Rounded corners */
+}
+
+[data-mode="light"] .inline-image {
+    filter: invert(0%); /* Normal */
+}
+
+[data-mode="dark"] .inline-image {
+    filter: invert(100%) hue-rotate(180deg) !important; /* Invert colors for dark mode */
+    background-color: inherit !important;
+}
+
+/* Auto mode with system preference */
+@media (prefers-color-scheme: dark) {
+    [data-mode="auto"] .inline-image {
+        filter: invert(100%) hue-rotate(180deg) !important; /* Invert colors for dark mode */
+        background-color: inherit !important;
+    }
+}
+
+/* Auto mode with system preference */
+@media (prefers-color-scheme: light) {
+    [data-mode="auto"] .inline-image {
+        filter: invert(0%) !important; /* Normal */
+    }
 }
 
 
