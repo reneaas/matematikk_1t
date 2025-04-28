@@ -36,6 +36,51 @@ class: no-click, adaptive-figure
 
 ::::
 
+
+---
+
+:::::::::::::::{explore} Utforsk 1
+I det interaktive vinduet nedenfor kan vises en andregradsfunksjon $f$ der $f(x)$ er skrevet på nullpunktsform 
+
+$$
+f(x) = a \cdot (x - x_1) \cdot (x - x_2)
+$$
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Undersøk hva som skjer med grafen til $f$ når $a$ endres. 
+
+Er det noen forskjell fra effekten til $a$ i standardform?
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Undersøk hva som skjer med grafen til $f$ når $x_1$ endres. 
+
+Gi en beskrivelse av effekten $x_1$ har på grafen til $f$.
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+Undersøk hva som skjer med grafen til $f$ når $x_2$ endres. 
+
+Gi en beskrivelse av effekten $x_2$ har på grafen til $f$.
+:::::::::::::
+
+::::::::::::::
+
+:::{ggb} 720 600
+---
+material_id: sfwczuxa
+---
+:::
+
+:::::::::::::::
+
 ---
 
 :::::::::::::::{admonition} Eksempel 1
@@ -433,4 +478,5 @@ $$
 ::::
 
 ::::::::::::
+
 

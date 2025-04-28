@@ -5,7 +5,7 @@
 I det øverste vinduet nedenfor vises en andregradsfunksjon 
 
 $$
-f(x) = x^2 - 2x + 1.
+f(x) = x^2
 $$
 
 Sammen med andregradsfunksjonen $f$ er det tegnet inn en tangent gjennom et punkt $(x_0, f(x_0))$ på grafen til $f$. Til å begynne med er $x_0 = 1$ og stigningstallet til tangenten er vist til å være $a = 2$. 
