@@ -429,10 +429,10 @@ $$
 ::::
 
 ::::{solution}
-Arealet av $\triangle ABC$ kan regnes ut direkte:
+Arealet av $\triangle ABC$ kan regnes ut direkte med grunnlinje $AB$ og høyde $BC$ (siden trekanten er rettvinklet):
 
 $$
-T_{\triangle ABC} = \dfrac{1}{2} \cdot AB \cdot AC = \dfrac{1}{2} \cdot \sqrt{3} \cdot 1 = \dfrac{\sqrt{3}}{2}.
+T_{\triangle ABC} = \dfrac{1}{2} \cdot AB \cdot BC = \dfrac{1}{2} \cdot \sqrt{3} \cdot 1 = \dfrac{\sqrt{3}}{2}.
 $$
 
 For $\triangle ACD$ kan vi bruke arealsetningen ut ifra vinkel $\angle ACD$. Vi regner det ut med CAS:
