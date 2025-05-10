@@ -1,6 +1,6 @@
 :::::::::::::::{admonition} Oppgave 1
 ---
-class: check
+class: exercise
 ---
 ::::::::::::::{tab-set}
 ---
@@ -173,7 +173,7 @@ $$
 
 :::::::::::::::{admonition} Oppgave 2
 ---
-class: check
+class: exercise
 ---
 
 Nedenfor vises en trekant $\triangle ABC$. 
@@ -250,7 +250,7 @@ $$
 
 :::::::::::::::{admonition} Oppgave 3
 ---
-class: check
+class: exercise
 ---
 Grafen til en andregradsfunksjon $f$ er vist i figuren nedenfor.
 
@@ -416,7 +416,7 @@ $$
 
 :::::::::::::::{admonition} Oppgave 4
 ---
-class: check
+class: exercise
 ---
 En rasjonal funksjon $f$ er gitt ved 
 
@@ -504,7 +504,7 @@ Dermed må graf B gære grafen til $f$.
 
 :::::::::::::::{admonition} Oppgave 5
 ---
-class: check
+class: exercise
 ---
 I figuren nedenfor til venstre vises en sirkel med radius $1$ og en trekant som har to hjørner på sirkelen.
 
@@ -583,7 +583,7 @@ $$
 
 :::::::::::::::{admonition} Oppgave 6
 ---
-class: check
+class: exercise
 ---
 En elev jobber med en funksjon $f$. Grafen til $f$ er vist i figuren nedenfor. 
 

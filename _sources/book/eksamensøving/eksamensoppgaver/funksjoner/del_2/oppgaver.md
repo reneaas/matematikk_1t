@@ -5,7 +5,7 @@
 
 ::::::::::::::::{admonition} Oppgave 1 (Vår 2024)
 ---
-class: check
+class: exercise
 ---
 
 :::{figure} ./figurer/oppgave_1/figur.svg
@@ -57,7 +57,7 @@ Bruker vi ettpunktsformelen, blir derfor likningen for tangenten til $f$ i punkt
 
 ::::::::::::::::{admonition} Oppgave 2 (Høst 2024)
 ---
-class: check
+class: exercise
 ---
 En rasjonal funksjon $f$ har asymptotene $x = 2$ og $y = 4$. <br>
 Nullpunktet til funksjonen er $x = -3$.
@@ -112,7 +112,7 @@ $$
 
 ::::::::::::::::{admonition} Oppgave 3 (Høst 2024)
 ---
-class: check
+class: exercise
 ---
 Du får vite følgende om en tredjegradsfunksjon $f$ gitt ved
 
@@ -207,7 +207,7 @@ $$
 
 ::::::::::::::::{admonition} Oppgave 4 (Høst 2023)
 ---
-class: check
+class: exercise
 ---
 
 :::{figure} ./figurer/oppgave_4/figur.svg
@@ -313,7 +313,7 @@ $$
 
 gir størst mulig avstand mellom $R$ og $S$. Vi kan være sikre på at dette er den riktige verdien for $a$ ved å sjekke $d(a)$ i endepunktene og sjekke at verdiene er lavere enn $d(a)$ i $a_\mathrm{størst}$:
 
-:::{figure} ./figurer/oppgave_4/check.png
+:::{figure} ./figurer/oppgave_4/exercise.png
 ---
 width: 100%
 class: no-click, adaptive-figure
@@ -340,7 +340,7 @@ Ja. Vi *legger'n død*.
 
 ::::::::::::::::{admonition} Oppgave 5 (Høst 2023)
 ---
-class: check
+class: exercise
 ---
 En tredjegradsfunksjon $f$ er gitt ved 
 
@@ -412,7 +412,7 @@ $$
 
 ::::::::::::::::{admonition} Oppgave 6 (Vår 2022)
 ---
-class: check
+class: exercise
 ---
 Grafen til en andregradsfunksjon $f$ har
 
@@ -526,7 +526,7 @@ $$
 
 ::::::::::::::::{admonition} Oppgave 7 (Høst 2024)
 ---
-class: check
+class: exercise
 ---
 
 :::{figure} ./figurer/oppgave_7/figur.svg
@@ -779,7 +779,7 @@ $$
 
 ::::::::::::::::{admonition} Oppgave 8 (Vår 2022)
 ---
-class: check
+class: exercise
 ---
 Funksjonen $f$ er gitt ved 
 
@@ -936,7 +936,7 @@ $$
 
 ::::::::::::::::{admonition} Oppgave 9 
 ---
-class: check
+class: exercise
 ---
 Anna skal reise fra en holme som ligger $8$ km fra strandkanten. $12$ km fra det punktet på stranden som ligger nærmest holmen, ligger det en hytte. Se figuren nedenfor.
 
@@ -1089,7 +1089,7 @@ Da bruker hun ca. $5.77$ timer på reisen.
 
 Vi bør dobbeltsjekke at dette svarer til et bunnpunkt ved å regne ut $T(x)$ i endepunktene og sjekke at verdiene vi får er høyere:
 
-:::{figure} ./figurer/oppgave_9/check.png
+:::{figure} ./figurer/oppgave_9/exercise.png
 ---
 width: 80%
 class: no-click, adaptive-figure
@@ -1120,7 +1120,7 @@ class: no-click, adaptive-figure
 
 ::::::::::::::::{admonition} Oppgave 10 (Høst 2023)
 ---
-class: check
+class: exercise
 ---
 Nedenfor ser du grafen til funksjon $f$ gitt ved 
 

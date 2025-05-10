@@ -1,6 +1,6 @@
 :::::::::::::::{admonition} Oppgave 1 
 ---
-class: check
+class: exercise
 ---
 På bakkenivå er lufttrykket 1 atm (atmosfærisk trykk). Lufttrykket avtar med $12 \, \%$ per km i høyden.
 
@@ -152,7 +152,7 @@ Stigningstallet til linja er altså ca. $-0.08$ atm/km. Det betyr at lufttrykket
 
 :::::::::::::::{admonition} Oppgave 2
 ---
-class: check
+class: exercise
 ---
 En regulær 6-kant er en 6-kant der alle sidene er like lange. 
 
@@ -253,7 +253,7 @@ $$
 
 :::::::::::::::{admonition} Oppgave 3
 ---
-class: check
+class: exercise
 ---
 Nedenfor vises grafen til en andregradsfunksjon $f$ og to tangenter som skjærer gjennom nullpunktene til $f$.
 * Den ene tangenten har stigningstall $4$.
@@ -384,7 +384,7 @@ $$
 
 :::::::::::::::{admonition} Oppgave 4
 ---
-class: check
+class: exercise
 ---
 Nedenfor vises en sylinder fylt med vann med et lite hull i bunnen.
 
@@ -627,7 +627,7 @@ Men vi vet allerede at vanntanken er tom etter $t \approx 23.9$ sekunder, som be
 
 :::::::::::::::{admonition} Oppgave 5
 ---
-class: check
+class: exercise
 ---
 En båt skal reise fra en øy $A$ til en øy $C$. <br>
 Båten må innom land på en kystlinje på et punkt $B$ for å hente ferskvann. Båten skal reise en så kort som mulig avstand for å spare drivstoff.
@@ -812,7 +812,7 @@ Vi ser altså at $L(3) < L(0)$ og $L(3) < L(9)$, og dermed er $x = 3$ et bunnpun
 
 :::::::::::::::{admonition} Oppgave 6
 ---
-class: check
+class: exercise
 ---
 Nedenfor vises et kvadrat med sidelengder $3$. 
 
@@ -905,7 +905,7 @@ Arealet til de 100 største fargelagte kvadratene er ca. $3$.
 
 :::::::::::::::{admonition} Oppgave 7
 ---
-class: check
+class: exercise
 ---
 Nedenfor vises noen påstander. 
 

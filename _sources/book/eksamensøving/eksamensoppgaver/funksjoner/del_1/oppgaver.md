@@ -4,7 +4,7 @@
 
 :::::::::::::::{admonition} Oppgave 1 (Vår 2023)
 ---
-class: check
+class: exercise
 ---
 Funksjonen $f$ er gitt ved 
 
@@ -52,7 +52,7 @@ Dermed skjærer grafen til $f$ gjennom $x$-aksen i $x = -2$ og $x = 4$.
 
 :::::::::::::::{admonition} Oppgave 2 (Høst 2023)
 ---
-class: check
+class: exercise
 ---
 Funksjonen $f$ er gitt ved 
 
@@ -120,7 +120,7 @@ Dermed skjærer grafen til $f$ gjennom $x$-aksen i $x = -1$, $x = 2$ og $x = -3$
 
 :::::::::::::::{admonition} Oppgave 3 (Høst 2023)
 ---
-class: check
+class: exercise
 ---
 Funksjonen $f$ er gitt ved 
 
@@ -210,7 +210,7 @@ $$
 
 :::::::::::::::{admonition} Oppgave 4 (Høst 2023)
 ---
-class: check
+class: exercise
 ---
 Funksjonen $f$ og $g$ er gitt ved 
 
@@ -322,7 +322,7 @@ width: 100%
 
 :::::::::::::::{admonition} Oppgave 5 (Vår 2023)
 ---
-class: check
+class: exercise
 ---
 Gitt likningen 
 
@@ -398,7 +398,7 @@ $$
 
 :::::::::::::::{admonition} Oppgave 6 (Vår 2023)
 ---
-class: check
+class: exercise
 ---
 Nedenfor ser du grafen til en rasjonal funksjon $f$.
 
@@ -463,7 +463,7 @@ $$
 
 :::::::::::::::{admonition} Oppgave 7 (Vår 2024)
 ---
-class: check
+class: exercise
 ---
 I figuren nedenfor vises grafen til en funksjon $f$. 
 
@@ -600,7 +600,7 @@ $$
 
 :::::::::::::::{admonition} Oppgave 8 (Vår 2024)
 ---
-class: check 
+class: exercise 
 ---
 Sett opp en matematisk identitet med utgangspunkt i arealet av det grønne fargelagte området.
 
@@ -656,7 +656,7 @@ $$
 
 :::::::::::::::{admonition} Oppgave 9 (Vår 2024)
 ---
-class: check
+class: exercise
 ---
 Guri har utført to ulike polynomdivisjoner og påstår begge divisjonene viser at faktoriseringen nedenfor er riktig.
 
@@ -710,7 +710,7 @@ $$
 
 :::::::::::::::{admonition} Oppgave 10 (Høst 2024)
 ---
-class: check
+class: exercise
 ---
 Funksjonen $f$ er gitt ved 
 
@@ -757,7 +757,7 @@ Altså er bunnpunktet $(-1, -4)$.
 
 :::::::::::::::{admonition} Oppgave 11 (Høst 2024)
 ---
-class: check 
+class: exercise 
 ---
 Funksjonen $f$ er gitt ved 
 
@@ -858,7 +858,7 @@ class: no-click, adaptive-figure
 
 :::::::::::::::{admonition} Oppgave 12 (Høst 2022)
 ---
-class: check
+class: exercise
 ---
 Grafen til en andregradsfunksjon $f$ er vist nedenfor. 
 
@@ -946,7 +946,7 @@ $$
 
 :::::::::::::::{admonition} Oppgave 13 (Høst 2022)
 ---
-class: check
+class: exercise
 ---
 Funksjonen $f$ er gitt ved
 
@@ -1052,7 +1052,7 @@ $$
 
 :::::::::::::::{admonition} Oppgave 14 (Vår 2022)
 ---
-class: check
+class: exercise
 ---
 Bestem $r$ og $s$ slik at sammenhengen nedenfor blir en identitet
 
