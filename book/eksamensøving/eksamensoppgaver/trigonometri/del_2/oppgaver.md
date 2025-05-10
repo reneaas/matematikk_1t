@@ -877,4 +877,97 @@ $$
 :::::::::::::::
 
 
+---
+
+
+
+:::::::::::::::{exercise} Oppgave 9 (Vår 2023)
+
+:::{figure} ./figurer/oppgave_9/figur.svg
+---
+width: 80%
+class: no-click, adaptive-figure
+---
+:::
+
+Punktene $A$, $B$ og $C$ ligger på en sirkel med sentrum i $S$ og radius $r$.
+
+$\angle SBA = 30\degree$ og $\angle BSC = 90\degree$.
+
+Arealet av $\triangle ABC$ er $2\sqrt{3} + 6$.
+
+Se figuren ovenfor.
+
+Bestem en eksakt verdi for $r$.
+
+:::{cas-popup} 350 500
+:::
+
+:::::{answer}
+$$
+r = 2\sqrt{2}
+$$
+:::::
+
+:::::{solution}
+Først kan vi finne et eksakt uttrykk for arealet av $\triangle ABC$ uttrykt ved $r$. Vi har først og fremst at 
+
+$$
+T_{SBC} = \dfrac{1}{2}r^2
+$$
+
+Videre er $\angle BSA = 120\degree$ siden $\triangle ABS$ er en likebeint trekant der toppvinkelen er $120\degree$. Dermed er arealet $\triangle ABS$ gitt ved
+
+:::{sidebar}
+$\sin (120\degree) = \dfrac{\sqrt{3}}{2}$
+:::
+
+$$
+T_{ABS} = \dfrac{1}{2}r^2 \cdot \sin (120\degree) = \dfrac{1}{2}r^2 \cdot \dfrac{\sqrt{3}}{2} = \dfrac{\sqrt{3}}{4}r^2
+$$
+
+Vi kan bestemme toppvinkelen i $\triangle ASC$ ved å merke oss at en sirkel har $360\degree$, som gir summen av toppvinklene, som betyr at 
+
+$$
+\angle ASC + 120\degree + 90\degree = 360\degree \liff \angle ASC = 360\degree - 120\degree - 90\degree = 150\degree.
+$$
+
+Dermed er arealet av $\triangle ASC$ gitt ved
+
+:::{sidebar}
+$\sin (150\degree) = \dfrac{1}{2}$
+:::
+
+$$
+T_{ASC} = \dfrac{1}{2}r^2 \cdot \sin (150\degree) = \dfrac{1}{2}r^2 \cdot \dfrac{1}{2} = \dfrac{1}{4}r^2
+$$
+
+Arealet av trekanten er $2\sqrt{3} + 6$ som betyr at vi bestemme $r$ ved å løse likningen
+
+$$
+T_{SBC} + T_{ABS} + T_{SBC} = 2\sqrt{3} + 6
+$$
+
+Vi gjør den siste her med CAS:
+
+:::{figure} ./figurer/oppgave_9/sol.png
+---
+width: 90%
+class: no-click, adaptive-figure
+---
+:::
+
+Dermed er vil arealet av trekanten være lik $2 \sqrt{3} + 6$ når 
+
+$$
+r = 2\sqrt{2}
+$$
+
+:::::
+
+:::::::::::::::
+
+
+
+
 
