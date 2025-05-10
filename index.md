@@ -223,5 +223,14 @@ $$
 
 ::::
 
+::::{grid-item-card}
+---
+link: book/eksamensøving/intro
+link-type: doc
+---
+**Eksamensøving**
+^^^
+Tidligere eksamensoppgaver og heldagsprøver
+::::
 
 :::::
