@@ -99,7 +99,7 @@ I mange tilfeller er det nyttig å lage et kodevindu der elevene må lese og for
 ```markdown
 :::{interactive-code}
 ---
-prectict:
+predict:
 ---
 # Kode de skal forutsi utskriften til her
 :::
@@ -110,7 +110,7 @@ prectict:
 ```markdown
 :::{interactive-code}
 ---
-prectict:
+predict:
 ---
 def f(x):
     return x**2 - 4

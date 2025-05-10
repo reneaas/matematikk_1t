@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Quadratic Roguelike Quiz</title>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/lib/common.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/github-dark.min.css">
+  <style>
+    body { font-family: sans-serif; background: #111; color: #f0f0f0; padding: 2em; }
+    #roguelike-quiz { position: relative; }
+    .question-card { background: #222; padding: 1em; border: 2px solid #555; margin-bottom: 1em; }
+    .answers-grid { display: flex; flex-direction: column; gap: 0.5em; }
+    .answer-card { background: #333; padding: 0.5em; border: 1px solid #666; cursor: pointer; }
+    .answer-card.selected { background: #444; border-color: #0f0; }
+    .answer-card.disabled { pointer-events: none; opacity: 0.6; }
+    .correct { border-color: green; }
+    .incorrect { border-color: red; }
+    .button-container { margin-top: 1em; }
+    .button { padding: 0.5em 1em; margin: 0 0.5em; cursor: pointer; }
+    .toast { position: absolute; padding: 1em; background: #222; border: 2px solid #fff; border-radius: 4px; }
+    .toast-success { border-color: green; color: lightgreen; }
+    .toast-error { border-color: red; color: pink; }
+    .game-over { color: red; font-size: 1.5em; margin-top: 2em; text-align: center; }
+    #joker-bar { position: absolute; top: 0; right: 0; background: #333; padding: 0.5em; border: 2px solid #999; border-radius: 8px; min-width: 120px; text-align: center; }
+    .joker-placeholder { color: #777; font-size: 0.9em; }
+    .joker-button { display: block; margin: 0.25em auto; background: #555; color: white; padding: 0.4em; border: none; cursor: pointer; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <h1>Cave of Quadratics 🕳️</h1>
+  <div id="roguelike-quiz">
+    <div id="joker-bar"><span class="joker-placeholder">🃏 Jokere</span></div>
+  </div>
+
+  <script>
+    // --- Quiz data (curated run) ---
+    const questionSequence = [
+      { id: "q1", content: "Hvilken av disse funksjonene er kvadratisk?", answers: [
+          { content: "$f(x) = x^2 + 3x + 2$", isCorrect: true },
+          { content: "$f(x) = 2x + 1$", isCorrect: false },
+          { content: "$f(x) = x^3 - x$", isCorrect: false }
+        ] },
+      { id: "q2", content: "Løs: $x^2 - 5x + 6 = 0$", answers: [
+          { content: "$x = 2, x = 3$", isCorrect: true },
+          { content: "$x = -2, x = -3$", isCorrect: false },
+          { content: "$x = 1, x = 6$", isCorrect: false }
+        ] },
+      { id: "joker1", content: "Velg en joker til å hjelpe deg videre!", isJoker: true, answers: [
+          { content: "🃏 Vis grafen", isCorrect: true, joker: "graph" },
+          { content: "🃏 Fjern et galt svar", isCorrect: false, joker: "eliminate" }
+        ] },
+      { id: "q3", content: "Løs: $x^2 + 4x + 4 = 0$", answers: [
+          { content: "$x = -2$", isCorrect: true },
+          { content: "$x = 2$", isCorrect: false },
+          { content: "$x = -4$", isCorrect: false }
+        ] },
+      { id: "q4", content: "Hva er diskriminanten til $x^2 - 4x + 4 = 0$?", answers: [
+          { content: "$\\Delta = 0$", isCorrect: true },
+          { content: "$\\Delta = 4$", isCorrect: false },
+          { content: "$\\Delta = 16$", isCorrect: false }
+        ] },
+      { id: "joker2", content: "Velg en joker før bosskampen!", isJoker: true, answers: [
+          { content: "🃏 Fjern et galt svar", isCorrect: true, joker: "eliminate" },
+          { content: "🃏 Vis grafen", isCorrect: false, joker: "graph" }
+        ] },
+      { id: "q5", content: "Boss: Hva er toppunktet til $f(x) = -x^2 + 4x - 3$?", answers: [
+          { content: "$(2, 1)$", isCorrect: true },
+          { content: "$(1, 2)$", isCorrect: false },
+          { content: "$(4, -3)$", isCorrect: false }
+        ] }
+    ];
+
+    // --- Helper: UUID (unchanged) ---
+    function generateUUID() {
+      return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        const r = Math.random() * 16 | 0,
+              v = c === 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16);
+      });
+    }
+
+    // Assume MultipleChoiceQuestion & SequentialMultipleChoiceQuiz are already globally available (from your existing codebase)
+
+    class QuizWithJokers extends SequentialMultipleChoiceQuiz {
+      constructor(containerId, questionsData) {
+        super(containerId, questionsData);
+        this.jokers = [];
+        this.jokerBar = document.getElementById("joker-bar");
+      }
+
+      // Override submitAnswer
+      submitAnswer() {
+        const isJokerQ = this.currentQuestion.isJoker === true;
+        const selectedIds = [...this.currentQuestion.selectedAnswers];
+        const selectedAnswer = this.currentQuestion.answers.find(a => selectedIds.includes(a.id));
+
+        if (isJokerQ) {
+          if (!selectedAnswer) { this.showToast('error'); return; }
+
+          // Store joker regardless of correct flag
+          if (selectedAnswer.joker) this.jokers.push(selectedAnswer.joker);
+
+          // Force question to be correct by mapping selection to the answer flagged as correct
+          const forcedCorrect = this.currentQuestion.answers.find(a => a.isCorrect);
+          this.currentQuestion.selectedAnswers = new Set([forcedCorrect.id]);
+          // Mark question correctly answered and progress
+          this.currentQuestion.correctlyAnswered = true;
+          this.correctlyAnsweredQuestions.add(this.currentQuestionIndex);
+          this.showToast('success');
+          this.renderJokerBar();
+          setTimeout(() => this.goToNextQuestion(), 800);
+          return;
+        }
+
+        // Non-joker logic unchanged
+        const isCorrect = this.currentQuestion.checkAnswers(false);
+        if (isCorrect) {
+          this.correctlyAnsweredQuestions.add(this.currentQuestionIndex);
+          this.currentQuestion.markAsCorrectlyAnswered();
+          this.showToast('success');
+          setTimeout(() => this.updateNavigationButtons(), 400);
+        } else {
+          this.showToast('error');
+        }
+      }
+
+      // Render / update joker bar
+      renderJokerBar() {
+        this.jokerBar.innerHTML = "";
+        if (this.jokers.length === 0) {
+          this.jokerBar.innerHTML = '<span class="joker-placeholder">🃏 Jokere</span>';
+          return;
+        }
+        this.jokers.forEach((j, idx) => {
+          const btn = document.createElement('button');
+          btn.className = 'joker-button';
+          btn.textContent = j === 'graph' ? '📈 Vis graf' : '❌ Fjern svar';
+          btn.onclick = () => this.useJoker(j, idx);
+          this.jokerBar.appendChild(btn);
+        });
+      }
+
+      useJoker(type, index) {
+        if (type === 'eliminate') {
+          // hide one wrong answer in current question, if exists
+          const wrong = this.currentQuestion.answers.find(a => !a.isCorrect);
+          if (wrong) {
+            const el = this.currentQuestion.elements.answersGrid.querySelector(`[data-answer-id='${wrong.id}']`);
+            if (el) el.style.display = 'none';
+          }
+        } else if (type === 'graph') {
+          alert('📈 Graph would appear (placeholder).');
+        }
+        // Consume joker
+        this.jokers.splice(index,1);
+        this.renderJokerBar();
+      }
+    }
+
+    // --- Instantiate ---
+    new QuizWithJokers('roguelike-quiz', questionSequence);
+  </script>
+</body>
+</html>

@@ -5,7 +5,7 @@
 
 :::::::::::::::{admonition} Oppgave 1 (Vår 2024)
 ---
-class: check 
+class: exercise 
 ---
 Tabellen nedenfor viser hvor mange bagetter en kantine har solgt hver av de siste sju ukene, og hvor stort overskudd salget har gitt.
 
@@ -146,7 +146,7 @@ som gir at $O'(235) \approx 8.74$ kr per bagett. Den praktiske tolkningen av det
 
 :::::::::::::::{admonition} Oppgave 2 (Vår 2022)
 ---
-class: check 
+class: exercise 
 ---
 En fabrikk har en vanntank. Vannet i tanken skal tappes ut.
 
@@ -346,7 +346,7 @@ som ikke ligger innenfor definisjonsmengden. Med andre ord finner vi at det *ald
 
 :::::::::::::::{admonition} Oppgave 3 (Vår 2024)
 ---
-class: check
+class: exercise
 ---
 Lufttrykk måles ofte i hektopascal (hPa). Jo høyere over havet vi befinner oss, jo lavere er lufttrykket. Lufttrykket ved havets overflate er ca. 1000 hPa.
 
@@ -513,7 +513,7 @@ som forteller oss at kokepunktet er på $85 \degree \mathrm{C}$ når vi er omtre
 
 :::::::::::::::{admonition} Oppgave 4 (Høst 2024)
 ---
-class: check
+class: exercise
 ---
 Funksjonen $P$ gitt ved 
 
@@ -691,7 +691,7 @@ Altså vil antall papirabonnenter bli lavere enn antall digitale abonnenter når
 
 :::::::::::::::{admonition} Oppgave 5 (Høst 2023)
 ---
-class: check
+class: exercise
 ---
 En gruppe statistikere har sett på hvordan folketallet i et område har endret seg siden 1960, og laget en modell $F$ gitt ved 
 
@@ -730,7 +730,7 @@ $$
 
 Men kun den første kandidaten ligger innenfor definisjonsmengden $D_F = [0, 80]$. Vi kan undersøke om det er toppunkt ved å regne ut $F(x)$ i to "nabopunkter" til $x = 22.5$ og sjekker om $F(22.5)$ er større enn begge. Vi gjør utregningen med CAS:
 
-:::{figure} ./oppgave_5/a/metode_1_check.png
+:::{figure} ./oppgave_5/a/metode_1_exercise.png
 ---
 width: 100%
 class: no-click, adaptive-figure
@@ -829,7 +829,7 @@ som betyr at når $x \approx 71.6$, altså i år 2031, vil folketallet avta rask
 <!-- 
 :::::::::::::::{admonition} Oppgave 5 (Høst 2023)
 ---
-class: check
+class: exercise
 ---
 Tabellen nedenfor viser antall personer i Norge som hadde fiske som hovedyrke noen år i perioden 1952 - 2022.
 

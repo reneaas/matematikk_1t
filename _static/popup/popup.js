@@ -1,4 +1,4 @@
-console.log("✅ popup.js loaded");
+console.log("✅ popup.js (portal-style) loaded");
 
 window.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".popup-wrapper").forEach(wrapper => {
@@ -9,13 +9,27 @@ window.addEventListener("DOMContentLoaded", () => {
 
     let hideTimeout;
 
+    // Move bubble to body
+    const bodyBubble = bubble.cloneNode(true);
+    bodyBubble.style.display = "none";
+    document.body.appendChild(bodyBubble);
+
+    const positionBubble = () => {
+      const rect = trigger.getBoundingClientRect();
+      bodyBubble.style.position = "absolute";
+      bodyBubble.style.left = `${rect.left + window.scrollX}px`;
+      bodyBubble.style.top = `${rect.bottom + 6 + window.scrollY}px`;
+      bodyBubble.style.zIndex = "9999";
+    };
+
     const showBubble = () => {
       clearTimeout(hideTimeout);
       document.querySelectorAll(".popup-bubble").forEach(b => b.style.display = "none");
-      bubble.style.display = "block";
+      positionBubble();
+      bodyBubble.style.display = "block";
 
       if (window.renderMathInElement) {
-        renderMathInElement(bubble, {
+        renderMathInElement(bodyBubble, {
           delimiters: [
             { left: "$$", right: "$$", display: true },
             { left: "$", right: "$", display: false },
@@ -29,14 +43,14 @@ window.addEventListener("DOMContentLoaded", () => {
 
     const hideBubble = () => {
       hideTimeout = setTimeout(() => {
-        bubble.style.display = "none";
+        bodyBubble.style.display = "none";
       }, 200);
     };
 
     // Click toggle
     trigger.addEventListener("click", e => {
       e.stopPropagation();
-      const visible = bubble.style.display === "block";
+      const visible = bodyBubble.style.display === "block";
       document.querySelectorAll(".popup-bubble").forEach(b => b.style.display = "none");
       if (!visible) showBubble();
     });
@@ -44,18 +58,18 @@ window.addEventListener("DOMContentLoaded", () => {
     // Hover
     trigger.addEventListener("mouseenter", showBubble);
     trigger.addEventListener("mouseleave", hideBubble);
-    bubble.addEventListener("mouseenter", () => clearTimeout(hideTimeout));
-    bubble.addEventListener("mouseleave", hideBubble);
+    bodyBubble.addEventListener("mouseenter", () => clearTimeout(hideTimeout));
+    bodyBubble.addEventListener("mouseleave", hideBubble);
 
     // Global close
-    document.addEventListener("click", () => bubble.style.display = "none");
+    document.addEventListener("click", () => bodyBubble.style.display = "none");
     document.addEventListener("keydown", e => {
       if (e.key === "Escape") {
-        bubble.style.display = "none";
+        bodyBubble.style.display = "none";
       }
     });
 
-    // ✅ Render math in the trigger label itself
+    // Render math in the trigger
     if (window.renderMathInElement) {
       renderMathInElement(trigger, {
         delimiters: [
@@ -69,6 +83,3 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-
-
-
