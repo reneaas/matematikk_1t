@@ -1249,6 +1249,125 @@ gir størst mulig areal stemmer bra med oversikten vi lagde i oppgave **b** der 
 ::::::::::::::::
 
 
+---
+
+
+::::::::::::::::{exercise} Oppgave 11 (Høst 2021)
+
+
+:::{figure} ./figurer/oppgave_11/figur.svg
+---
+width: 80%
+class: no-click, adaptive-figure
+---
+:::
+
+Skissen ovenfor viser grafen til funksjonen $f$ gitt ved $f(x) = \dfrac{1}{x}$ og tangenten til grafen i punktet $(s, f(s))$. 
+
+:::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+::::::::::::::{tab-item} a
+Vis at likningen for tangenten er
+
+$$
+y = -\dfrac{1}{s^2}\cdot x + \dfrac{2}{s}
+$$
+
+
+:::::{solution} 
+Vi kan bestemme tangenten til grafen direkte med CAS: 
+
+:::{figure} ./figurer/oppgave_11/a.png
+---
+width: 80%
+class: no-click, adaptive-figure
+---
+:::
+
+som vi kan skrive om som følger:
+
+$$
+y = \dfrac{2s - x}{s^2} = \dfrac{2s}{s^2} - \dfrac{x}{s^2} = -\dfrac{1}{s^2}\cdot x + \dfrac{2}{s}
+$$
+
+som var det vi skulle vise.
+
+:::::
+
+::::::::::::::
+
+
+::::::::::::::{tab-item} b
+Tangenten skjærer koordinataksene i punktene $A$ og $B$.
+
+Bestem koordinatene til $A$ og $B$ uttrykt ved $s$.
+
+
+:::::{answer}
+$$
+A = \left(2s, 0\right) \and B = \left(0, \dfrac{2}{s}\right)
+$$
+:::::
+
+:::::{solution}
+Vi kaller tangenten for $T$. Da vil skjæringen med $y$-aksen svaret til $T(0)$ og skjæringen med $x$-aksen svarer til løsningen av $T(x) = 0$. Vi regner ut begge disse verdiene med CAS:
+
+:::{figure} ./figurer/oppgave_11/b.png
+---
+width: 80%
+class: no-click, adaptive-figure
+---
+:::
+
+Fra celle 3, kan vi lese av at punktet $B$ kan skrives som 
+
+$$
+B = \left(0, \dfrac{2}{s}\right)
+$$
+
+Og fra celle 4 kan vi lese av at punktet $A$ kan skrives som
+
+$$
+A = \left(2s, 0\right)
+$$
+
+:::::
+
+::::::::::::::
+
+
+::::::::::::::{tab-item} c 
+Bestem arealet av $\triangle OAB$.
+
+:::::{answer}
+Arealet av $\triangle OAB$ er gitt ved
+
+$$
+T_{\triangle OAB} = 2.
+$$
+:::::
+
+
+
+:::::{solution}
+$OA$ er grunnlinjen i trekanten og $OB$ er høyden. Arealet av trekanten er da:
+
+$$
+T_{\triangle OAB} = \dfrac{OA \cdot OB}{2} = \dfrac{2s \cdot \dfrac{2}{s}}{2} = \dfrac{4}{2} = 2.
+$$
+
+:::::
+
+
+::::::::::::::
+
+:::::::::::::::
+
+
+::::::::::::::::
+
 
 
 
