@@ -78,6 +78,24 @@ Modellering ved med ulike funksjonstyper:
 ::::
 
 
+::::{grid-item-card}
+---
+link: eksamensoppgaver/trigonometri/del_1/oppgaver
+link-type: doc
+---
+**Trigonometri (Del 1)** ◢
+
+
+^^^
+**Uten hjelpemidler**
+
+* $\sin$, $\cos$ og $\tan$
+* Arealsetningen
+* Cosinusetningen
+* Sinussetningen
+::::
+
+
 
 ::::{grid-item-card}
 ---
