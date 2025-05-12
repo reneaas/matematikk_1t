@@ -42,9 +42,10 @@ def main(dirname, save):
 
     ax.plot(x, y, color=plotmath.COLORS.get("blue"), lw=2.5)
 
-    ax.vlines(x=-3, ymin=-25, ymax=25, color="blue", ls="--", lw=2)
-    ax.vlines(x=3, ymin=-25, ymax=25, color="blue", ls="--", lw=2)
-    ax.hlines(y=1, xmin=-25, xmax=25, color="blue", ls="--", lw=2)
+    red = plotmath.COLORS.get("red")
+    ax.vlines(x=-3, ymin=-25, ymax=25, color=red, ls="--", lw=2)
+    ax.vlines(x=3, ymin=-25, ymax=25, color=red, ls="--", lw=2)
+    ax.hlines(y=1, xmin=-25, xmax=25, color=red, ls="--", lw=2)
     # ax.hlines(y=2, xmin=-25, xmax=25, color="blue", ls="--")
     # ax.vlines(x=-2, ymin=-25, ymax=25, color="blue", ls="--")
 
