@@ -1114,6 +1114,41 @@ $$
 :::::::::::::::
 
 
+---
+
+
+
+:::::::::::::::{exercise} Oppgave 15 (Vår 2022)
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Løs likningen 
+
+$$
+(x - 2)(x + 1) = 0
+$$
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Sett opp en ulikhet som har løsning $x \in \langle \gets, -1 \rangle \cup \langle 2, \to \rangle$.
+
+Husk å begrunne svaret.
+
+:::::::::::::
+
+::::::::::::::
+:::::::::::::::
+
+
+---
+
+
+:::::::::::::::{exercise} Oppgave 16 ( )
+
 
 
 
