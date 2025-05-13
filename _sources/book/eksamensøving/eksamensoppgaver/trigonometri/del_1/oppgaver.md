@@ -3,14 +3,13 @@
 > Disse oppgavene skal løses **uten** hjelpemidler.
 
 :::::::::::::::{exercise} Oppgave 1 (Vår 2023)
-::::{sidebar}
 :::{figure} ./figurer/oppgave_1/figur.svg
 ---
-width: 80%
+width: 70%
 class: no-click, adaptive-figure
+align: right
 ---
 :::
-::::
 
 En rettvinklet trekant har sidelengder $8$, $6$ og $10$. <br> Se figuren til høyre.
 
@@ -67,14 +66,13 @@ Til slutt regner vi ut:
 
 
 :::::::::::::::{exercise} Oppgave 2 (Høst 2023)
-::::{sidebar}
 :::{figure} ./figurer/oppgave_2/figur.svg
 ---
 width: 80%
 class: no-click, adaptive-figure
+align: right
 ---
 :::
-::::
 
 En likesidet trekant har sidelengder $2$. <br> Se figuren til høyre.
 
@@ -92,14 +90,13 @@ $$
 Vi tegner oss en hjelpefigur der vi slår en normal fra toppunktet ned på grunnlinja i trekanten. Da vil grunnlinja være delt i to like store deler som begge har lengde $1$. 
 
 
-::::{sidebar}
 :::{figure} ./figurer/oppgave_2/hjelpefigur.svg
 ---
 width: 80%
 class: no-click, adaptive-figure
+align: right
 ---
 :::
-::::
 
 Deretter kan vi bruke definisjonen av cosinus direkte:
 
@@ -152,14 +149,13 @@ Men $u = 32\degree$ er nærmere $90\degree$ enn $u = 30\degree$, som betyr at $\
 ---
 
 :::::::::::::::{exercise} Oppgave 4 (Vår 2024)
-::::{sidebar}
 :::{figure} ./figurer/oppgave_4/figur.svg
 ---
 width: 80%
 class: no-click, adaptive-figure
+align: right
 ---
 :::
-::::
 
 
 Tom har arbeidet med trekanten til høyre og påstår at 
@@ -180,7 +176,7 @@ class: tabs-parts
 Vis at Tom har rett.
 
 :::::{solution}
-Vi kan først bestemme $tan u$:
+Vi kan først bestemme $\tan u$:
 
 $$
 \tan u = \dfrac{\mathrm{motstående \, katet \, til \,} u}{\mathrm{hosliggende \, katet \, til \,} u} = \dfrac{6}{8} = \dfrac{3}{4}.
@@ -208,28 +204,30 @@ Så Tom har derfor rett i sin påstand.
 Avgjør om påstanden stemmer for alle rettvinklede trekanter med to spisse trekanter $u$ og $v$.
 
 :::::{solution}
-::::{sidebar}
 :::{figure} ./figurer/oppgave_4/hjelpefigur.svg
 ---
-width: 80%
+width: 60%
 class: no-click, adaptive-figure
+align: right
 ---
 :::
-::::
 
 
 Vi lager oss en generell trekant med spisse vinkler $u$ og $v$, og sidelengder $a$, $b$ og $c$. Se figuren til høyre.
 
 Fra figuren kan vi skrive ned $\tan u$ som:
 
-$$
-\tan u = \dfrac{\mathrm{motstående \, katet \, til \,} u}{\mathrm{hosliggende \, katet \, til \,} u} = \dfrac{c}{b}.
-$$
+\begin{align*}
+    \tan u &= \dfrac{\mathrm{motstående \, katet \, til \,} u}{\mathrm{hosliggende \, katet \, til \,} u} \\
+    \\
+    \tan u &= \dfrac{c}{b}
+\end{align*}
+
 
 og tilsvarende for $\tan v$:
 
 $$
-\tan v = \dfrac{\mathrm{motstående \, katet \, til \,} v}{\mathrm{hosliggende \, katet \, til \,} v} = \dfrac{b}{c}.
+\tan v = \dfrac{\mathrm{motstående \, katet \, til \,} v}{\mathrm{hosliggende \, katet \, til \,} v} = \dfrac{b}{c}
 $$
 
 Deretter ganger vi de to sammen:
@@ -256,14 +254,13 @@ Dermed stemmer påstanden for alle rettvinklede trekanter med to spisse vinkler 
 
 
 :::::::::::::::{exercise} Oppgave 5 (Høst 2024)
-::::{sidebar}
 :::{figure} ./figurer/oppgave_5/figur.svg
 ---
 width: 80%
 class: no-click, adaptive-figure
+align: right
 ---
 :::
-::::
 
 Snorre har funnet formelen nedenfor i en matematikkbok
 
@@ -388,14 +385,13 @@ Dermed er **ikke** $\tan 130\degree > 0$.
 
 
 :::::::::::::::{exercise} Oppgave 7 (Høst 2022)
-::::{sidebar}
 :::{figure} ./figurer/oppgave_7/figur.svg
 ---
 width: 80%
 class: no-click, adaptive-figure
+align: right
 ---
 :::
-::::
 
 Gitt trekanten til høyre.
 
@@ -486,6 +482,108 @@ Hypotenusen kan være kortere enn $4$ fordi $\tan \angle B$ bare beskriver forho
 :::::
 
 
+
+:::::::::::::::
+
+
+---
+
+
+
+:::::::::::::::{exercise} Oppgave 9 (Høst 2021)
+Om en rettvinklet trekant $ABC$ får du vite at 
+
+* $\cos \angle A = \dfrac{1}{2}$
+* $\sin \angle C = \dfrac{1}{2}$
+* $AB = 4$
+
+Bestem $AC$. 
+
+
+:::::{solution}
+
+:::{figure} ./figurer/oppgave_9/hjelpefigur.svg
+---
+width: 80%
+class: no-click, adaptive-figure
+align: right
+---
+:::
+
+Vi starter med å lage en hjelpefigur der vi nødvendigvis må ha at $\angle B = 90\degree$ siden trekanten er rettvinklet og $\sin \angle C \neq 1$ og $\cos \angle A \neq 0$ som betyr at ingen av dem kan være $90\degree$. 
+
+Se figuren til høyre.
+
+:::{clear}
+:::
+
+Vi tar utgangspunkt i at 
+
+$$
+\cos \angle A = \frac{1}{2} \and \cos \angle A = \dfrac{4}{x}
+$$
+
+som betyr at 
+
+\begin{align*}
+    \dfrac{4}{x} & = \dfrac{1}{2} \\
+    \\
+    4 & = \dfrac{x}{2} \\
+    \\
+    8 & = x.
+\end{align*}
+
+Dermed er $x = AC = 8$. 
+
+:::::
+
+
+:::::::::::::::
+
+
+---
+
+
+:::::::::::::::{exercise} Oppgave 10 (Vår 2021)
+:::{figure} ./figurer/oppgave_10/figur.svg
+---
+width: 80%
+class: no-click, adaptive-figure
+align: right
+---
+:::
+
+Du får vite følgende om trekanten $ABC$
+
+* $AC = 10$
+* $\sin A = \dfrac{3}{5}$
+
+
+Bestem $BC$. 
+
+:::{clear}
+:::
+
+:::::{solution}
+Først kan vi merke oss at 
+
+$$
+\sin A = \dfrac{BC}{AC} = \dfrac{BC}{10} = \dfrac{3}{5}
+$$
+
+Vi løser likningen for $BC$:
+
+\begin{align*}
+    \dfrac{BC}{10} & = \dfrac{3}{5} \\
+    \\
+    \cancel{10}\cdot \dfrac{BC}{\cancel{10}} & = \dfrac{3}{\cancel{5}} \cdot \cancelto{\displaystyle 2}{10} \\
+    \\
+    \\
+    BC & = 3\cdot 2= 6.
+\end{align*}
+
+
+:::::
 
 :::::::::::::::
 
