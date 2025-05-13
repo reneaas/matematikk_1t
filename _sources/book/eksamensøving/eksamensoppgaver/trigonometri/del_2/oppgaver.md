@@ -967,6 +967,123 @@ $$
 
 :::::::::::::::
 
+---
+
+
+:::::::::::::::{exercise} Oppgave 10 (Vår 2024)
+:::{figure} ./figurer/oppgave_10/figur.svg
+---
+width: 80%
+class: no-click, adaptive-figure
+align: right
+---
+:::
+
+Når en lysstråle går fra luft til vann, skiften den retning. <br>
+På figuren står linjen $m$ vinkelrett på vannoverflaten og lysstrålen går fra å danne en vinkel $u$ med $m$ til å danne en vinkel $v$ med $m$.
+
+Når lysstrålen går fra luft til vann, vil 
+
+$$
+\sin u = 1.33 \cdot \sin v
+$$
+
+:::{clear}
+:::
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts 
+---
+:::::::::::::{tab-item} a
+Hvor stor må vinkelen $u$ være for at vinkelen $v$ skal bli $39\degree$?
+
+::::::{answer}
+$$
+u \approx 56.82\degree
+$$
+::::::
+
+:::::{solution}
+Vi løser likningen
+
+$$
+\sin u = 1.33 \cdot \sin (39\degree)
+$$
+
+ved å bruke CAS: 
+
+:::{figure} ./figurer/oppgave_10/a.png
+---
+width: 80%
+class: no-click, adaptive-figure
+---
+:::
+
+Altså er $u \approx 56.82\degree$ dersom $v = 39\degree$.
+
+
+:::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Hva vil skje med vinkelen $v$ dersom vinkelen $u$ nærmer seg $90\degree$?
+
+
+:::::{answer}
+$$
+v \approx 48.75\degree
+$$
+:::::
+
+:::::{solution}
+Når vinkelen $u$ nærmer seg $90\degree$, så vil $\sin u$ nærme seg $1$. Det betyr at vi nærmer oss likningen 
+
+$$
+1 = 1.33 \cdot \sin v
+$$
+
+Vi løser likningen med CAS:
+
+
+:::{figure} ./figurer/oppgave_10/b.png
+---
+width: 80%
+class: no-click, adaptive-figure
+---
+:::
+
+Som betyr at vinkelen $v$ nærmer seg $v \approx 48.75\degree$ når $u$ nærmer seg $90\degree$. Det betyr at retningen på lysstrålen endrer seg når den omtrent går parallelt med vannoverflaten med en vinkel på $48.75\degree$ med linja $m$.
+
+
+:::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+Kan vinklene $u$ og $v$ bli like store?
+
+:::::{answer}
+Ja, da er $u = v = 0\degree$.
+:::::
+
+:::::{solution}
+Vinklene $u$ og $v$ kan bli like store dersom lysstrålen går parallelt med linja $m$, siden da er $\sin u = 0$ og dermed også $\sin v = 0$. Den praktiske tolkningen av dette er at dersom lysstrålen kommer normalt ned på vannoverflaten, så endrer den ikke retning. Det betyr at vinklene bare kan bli like store dersom $u = v = 0\degree$.
+:::::
+
+
+:::::::::::::
+
+::::::::::::::
+
+
+:::::::::::::::
+
+
+
 
 
 
