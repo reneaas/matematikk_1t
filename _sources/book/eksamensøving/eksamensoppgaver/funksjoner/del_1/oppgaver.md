@@ -1144,11 +1144,6 @@ Husk å begrunne svaret.
 :::::::::::::::
 
 
----
-
-
-:::::::::::::::{exercise} Oppgave 16 ( )
-
 
 
 
