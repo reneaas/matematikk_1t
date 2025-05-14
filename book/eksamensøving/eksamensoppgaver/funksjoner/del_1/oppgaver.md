@@ -1130,6 +1130,27 @@ $$
 (x - 2)(x + 1) = 0
 $$
 
+:::::{answer}
+$$
+x = 2 \or x = -1.
+$$
+:::::
+
+
+:::::{solution}
+Vi bruker produktregelen som gir oss at 
+
+$$
+(x - 2)\cdot (x + 1) = 0 \liff x - 2 = 0 \or x + 1 = 0
+$$
+
+som betyr at 
+
+$$
+x = 2 \or x = -1.
+$$
+:::::
+
 :::::::::::::
 
 
@@ -1137,6 +1158,31 @@ $$
 Sett opp en ulikhet som har løsning $x \in \langle \gets, -1 \rangle \cup \langle 2, \to \rangle$.
 
 Husk å begrunne svaret.
+
+:::::{answer}
+$$
+(x - 2)(x + 1) > 0.
+$$
+:::::
+
+:::::{solution}
+Vi kan tegne et fortegnsskjema for $f(x) = (x - 2)(x + 1)$. Da får vi:
+
+:::{figure} ./figurer/oppgave_15/figur.svg
+---
+width: 100%
+class: no-click, adaptive-figure
+align: right
+---
+:::
+
+Fra fortegnslinja, kan vi lese av at vi kan få løsningen $x \in \langle \gets, -1 \rangle \cup \langle 2, \to \rangle$ med ulikheten $f(x) > 0$. Dermed vil en ulikhet som har den oppgitt løsningen være 
+
+$$
+(x - 2)(x + 1) > 0.
+$$
+
+:::::
 
 :::::::::::::
 
