@@ -1,9 +1,7 @@
 # Programmeringsoppgaver
 
-:::::::::::::::{admonition} Oppgave 1
----
-class: problem-level-1
----
+:::::::::::::::{exercise} Oppgave 1
+
 Ta quizen!
 
 :::{raw} html
@@ -20,10 +18,8 @@ file: ./quiz/quiz_1/quiz_1.html
 
 
 
-:::::::::::::::{admonition} Oppgave 2
----
-class: problem-level-1
----
+:::::::::::::::{exercise} Oppgave 2
+
 Nedenfor vises en programkode. 
 
 Forklar hva programmet regner ut og bestem verdien som skrives ut av programmet. Skriv inn svaret ditt i feltet nedenfor.
@@ -47,10 +43,8 @@ print(v)
 :::
 
 
-::::{admonition} Fasit
----
-class: answer, dropdown
----
+::::{answer}
+
 Programmet regner ut den gjennomsnittlige vekstfarten til $f(x) = x^2 - 3x + 7$ i intervallet $[0, 5]$. Programmet skriver ut at denne verdien er $2$. 
 ::::
 
@@ -60,10 +54,8 @@ Programmet regner ut den gjennomsnittlige vekstfarten til $f(x) = x^2 - 3x + 7$ 
 ---
 
 
-:::::::::::::::{admonition} Oppgave 3
----
-class: problem-level-1
----
+:::::::::::::::{exercise} Oppgave 3
+
 Nedenfor vises en programkode. 
 
 ::::::::::::::{tab-set}
@@ -161,10 +153,8 @@ for x in range(-10, 11):
 ---
 
 
-:::::::::::::::{admonition} Oppgave 4
----
-class: problem-level-1
----
+:::::::::::::::{exercise} Oppgave 4
+
 En programkode er vist nedenfor. 
 
 ::::::::::::::{tab-set}
@@ -253,10 +243,8 @@ print(s)
 ---
 
 
-:::::::::::::::{admonition} Oppgave 5
----
-class: problem-level-2
----
+:::::::::::::::{exercise} Oppgave 5
+
 I denne oppgaven skal du jobbe med summer av oddetall og partall. Vi lar $S_n$ være summen av de $n$ første oddetallene. Nedenfor vises noen av disse summene: 
 
 \begin{align*}
@@ -376,10 +364,8 @@ Altså er summen av de 20 første partallene større enn summen av de 20 første
 ---
 
 
-:::::::::::::::{admonition} Oppgave 6
----
-class: problem-level-2
----
+:::::::::::::::{exercise} Oppgave 6
+
 Nedenfor vises en figur som er satt sammen av uendelig mange linjestykker.
 
 Lengden til et linjestykke er alltid $90 \%$ av lengden til det forrige linjestykket. Det første linjestykket er $100$ cm langt.
@@ -504,10 +490,8 @@ Kjører vi programmet med veldig mange linjestykker, vil summen av lengdene nær
 ---
 
 
-:::::::::::::::{admonition} Oppgave 7
----
-class: problem-level-2
----
+:::::::::::::::{exercise} Oppgave 7
+
 I figuren nedenfor vises grafen til en rasjonal funksjon gitt ved
 
 $$
@@ -665,10 +649,8 @@ som betyr at $k \approx 2$ gir størst mulig areal.
 ---
 
 
-:::::::::::::::{admonition} Oppgave 8
----
-class: problem-level-2
----
+:::::::::::::::{exercise} Oppgave 8
+
 I figuren nedenfor vises en følge av kvadrater der det første kvadratet har sidelengde $1$. Sidelengdene i det neste kvadratet er $90 \%$ av sidelengdene i det forrige kvadratet. Slik fortsetter følgen i det uendelige.
 
 :::{figure} ./figurer/oppgave_8/figur.svg
@@ -730,10 +712,8 @@ som betyr at arealet når vi bruker mange kvadrater er omtrent $5.26$.
 ---
 
 
-:::::::::::::::{admonition} Oppgave 9
----
-class: problem-level-2
----
+:::::::::::::::{exercise} Oppgave 9
+
 I denne oppgaven skal du bestemme arealet av det fargelagte området vist i figuren nedenfor. Funksjonen $f$ er gitt ved 
 
 $$
@@ -848,10 +828,8 @@ Arealet under grafen til $f$ i intervallet $[0, 6]$ er derfor omtrent $20$.
 
 
 
-:::::::::::::::{admonition} Oppgave 10
----
-class: problem-level-3
----
+:::::::::::::::{exercise} Oppgave 10
+
 En lysstråle ble først observert ved et punkt $A(1000, 0)$ i luften og deretter i et punkt $B(10000, -1000)$ i vann.
 
 Alle avstander er målt i meter. Se figuren nedenfor.
