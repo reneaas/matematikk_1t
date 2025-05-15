@@ -826,16 +826,47 @@ Arealet under grafen til $f$ i intervallet $[0, 6]$ er derfor omtrent $20$.
 
 ---
 
-
-
 :::::::::::::::{exercise} Oppgave 10
+I figuren til høyre vises en likesidet trekant med sidelengder $2$. 
+
+:::{figure} ./figurer/oppgave_10/figur.svg
+---
+width: 100%
+class: no-click, adaptive-figure
+align: right
+---
+:::
+
+Inni den ytre trekanten er det innskrevet en mindre likesidet trekant. Inni denne trekanten er det igjen innskrevet en enda mindre likesidet trekant. Slik fortsetter det i det uendelige.
+
+
+Lag et program som regner ut summen av omkretsene til de 100 største trekantene.
+
+:::{clear}
+:::
+
+
+:::{interactive-code}
+# Skriv din kode her
+
+:::
+
+:::
+
+:::::::::::::::
+
+---
+
+
+
+:::::::::::::::{exercise} Oppgave 11
 
 En lysstråle ble først observert ved et punkt $A(1000, 0)$ i luften og deretter i et punkt $B(10000, -1000)$ i vann.
 
 Alle avstander er målt i meter. Se figuren nedenfor.
 
 
-:::{figure} ./figurer/oppgave_10/figur.svg
+:::{figure} ./figurer/oppgave_11/figur.svg
 ---
 width: 80%
 class: no-click, adaptive-figure

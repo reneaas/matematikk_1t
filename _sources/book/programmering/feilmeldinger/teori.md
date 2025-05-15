@@ -55,9 +55,31 @@ print(s)
 :::::::::::::{tab-item} b
 
 :::{interactive-code}
-
+for x in range(5)
+    print(x)
 
 :::
+
+:::::{answer}
+1. `SyntaxError`. Vi har skrevet noe som ikke er gyldig Pythonkode. 
+2. Linje 1.
+3. Vi har glemt kolon `:`{l=python} på slutten av linje 1. Ved å legge til kolon på slutten av linje 1, vil programmet fungere som det skal.
+:::::
+
+:::::::::::::
+
+:::::::::::::{tab-item} c
+
+:::{interactive-code}
+for x in range(5):
+print(x)
+:::
+
+::::{answer}
+1. `IndentationError`. Vi har ikke brukt innrykk på kodelinjen som skal stå inni `for`{l=python}-løkken.
+2. Linje 2.
+3. Vi må bare legge til et innrykk på linje 2 med tab, så fungerer programmet som det skal.
+::::
 
 :::::::::::::
 
