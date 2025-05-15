@@ -329,7 +329,7 @@ Sammenligner vi venstre side og høyre side, så kan vi observere at de er like.
 :::::::::::::::{exercise} Oppgave 6 (Høst 2024)
 
 
-I koordinatsystemet til nedenfor har vi tegnet en sirkel med radius $r = 1$. Punktet $P(0.64, 0.77)$ ligger på sirkelen.
+I koordinatsystemet nedenfor har vi tegnet en sirkel med radius $r = 1$. Punktet $P(0.64, 0.77)$ ligger på sirkelen.
 
 :::{figure} ./figurer/oppgave_6/figur.svg
 ---

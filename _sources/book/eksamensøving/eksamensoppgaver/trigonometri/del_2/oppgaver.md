@@ -432,7 +432,7 @@ Arealet av $\triangle SBC$ er $3\cdot \sqrt{2}$.
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
-Bestem sirkelen radius. Bruk eksakte verdier.
+Bestem sirkelens radius. Bruk eksakte verdier.
 
 :::::{answer}
 $$
