@@ -178,6 +178,8 @@ class: exercise
 
 Nedenfor vises en trekant $\triangle ABC$. 
 
+Bruk trekanten til å bestemme $\tan 60\degree$.
+
 :::{figure} ./figurer/del_1/oppgave_2/figur.svg
 ---
 width: 80%
