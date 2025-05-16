@@ -104,6 +104,15 @@ def main(dirname, save, rotation_deg=0):
     tx, ty = rotate_point(mid_bc, rotation_deg)
     ax.text(tx, ty, r"$\sqrt{2} \cdot a$", fontsize=20, ha="center", va="center")
 
+    ax.text(
+        x=0.5 * (A[0] + B[0]),
+        y=0.5 * (A[1] + B[1]) - 0.02,
+        s=r"$a$",
+        fontsize=20,
+        ha="center",
+        va="top",
+    )
+
     # Label corners
 
     ax.text(A[0], A[1], r"$A$", fontsize=20, ha="right", va="top")
