@@ -851,22 +851,113 @@ Lag et program som regner ut summen av omkretsene til de 100 største trekantene
 
 :::
 
+:::::{solution}
+:::{code-block} python
+---
+linenos:
+---
+sidelengde = 2
+samlet_omkrets = 0
+
+for i in range(100):
+    omkrets = 3 * sidelengde    # omkretsen til nåværende trekant
+    samlet_omkrets = samlet_omkrets + omkrets    # legg til omkretsen
+    sidelengde = sidelengde / 2 # neste trekant har halvparten av sidelengden
+    
+print(samlet_omkrets)
 :::
+
+som gir utskriften
+
+:::{code-block} console
+11.999999999999998
+:::
+
+som betyr at den samlede omkretsen til de 100 største trekantene er omtrent $12$.
+:::::
 
 :::::::::::::::
 
 ---
 
 
-
 :::::::::::::::{exercise} Oppgave 11
+I figuren nedenfor til høyre vises en figur som er satt sammen av likesidede trekanter med sidelengder $2$. Figuren nedenfor til høyre viser en tilsvarende figur med mange flere slike likesidede trekanter.
+
+:::{figure} ./figurer/oppgave_11/merged_figure.svg
+---
+width: 100%
+class: no-click, adaptive-figure
+---
+:::
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Lag et program som regner ut hvor mange trekanter det er i en figur dersom den ytre omkretsen til figuren er $600$. 
+
+
+:::{interactive-code}
+# Skriv din kode her 
+
+
+:::
+
+::::{solution}
+Siden de mindre likesidede trekantene har sidelengder $2$ og den ytre omkretsen skal være $600$, så betyr at sidelengdene i den samlede figuren er $600 / 3 = 200$. Da følger det at det er $200 / 2 = 100$ rader med trekanter. Antall trekanter i hver rad er $1, 3, 5, \ldots, 2n + 1$ der $n = 0, 1, 2, \ldots, 99$. Vi kan summere opp antall trekanter i figuren med følgende program: 
+
+:::{code-block} python
+---
+linenos:
+---
+n_trekanter = 0 # for å summere opp antall trekanter
+for n in range(100): # summerer over 100 rader.
+    n_trekanter = n_trekanter + (2 * n + 1) # legger til antall trekanter i rad n.
+    
+print(n_trekanter)
+:::
+
+som gir utskriften
+
+:::{code-block} console
+10000
+:::
+
+Altså er det 10000 trekanter i figuren.
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Lag et program som regner ut hvor mange rader det er i en figur dersom arealet av hele figuren er $100 \cdot \sqrt{3}$.
+
+
+:::{interactive-code}
+# Skriv din kode her 
+
+
+:::
+
+:::::::::::::
+
+::::::::::::::
+
+:::::::::::::::
+
+
+
+:::::::::::::::{exercise} Oppgave 12
 
 En lysstråle ble først observert ved et punkt $A(1000, 0)$ i luften og deretter i et punkt $B(10000, -1000)$ i vann.
 
 Alle avstander er målt i meter. Se figuren nedenfor.
 
 
-:::{figure} ./figurer/oppgave_11/figur.svg
+:::{figure} ./figurer/oppgave_12/figur.svg
 ---
 width: 80%
 class: no-click, adaptive-figure
