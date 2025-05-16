@@ -1369,7 +1369,147 @@ $$
 ::::::::::::::::
 
 
+---
 
+
+
+::::::::::::::::{exercise} Oppgave 12 (Eksempelsett 2021)
+En funksjon $f$ er gitt ved 
+
+$$
+f(x) = x^3 - x - 1. 
+$$
+
+
+Grafen til $f$ har to tangenter som er parallelle med linjen $y = \dfrac{1}{2}x + 2$. 
+
+Bestem en eksakt verdi for nullpunktet til hver av disse tangentene.
+
+:::::{answer}
+Tangenten i punktet $\left(-\dfrac{\sqrt{2}}{2}, f\left(-\dfrac{\sqrt{2}}{2}\right)\right)$ har nullpunktet
+
+$$
+x = -\sqrt{2} + 2
+$$
+
+og tangenten i punktet $\left(\dfrac{\sqrt{2}}{2}, f\left(\dfrac{\sqrt{2}}{2}\right)\right)$ har nullpunktet
+
+
+
+$$
+x = \sqrt{2} + 2
+$$
+
+:::::
+
+:::::{solution}
+Tangentene vil ha stigningstall $\dfrac{1}{2}$ siden de er parallelle med linjen $y = \dfrac{1}{2}x + 2$. Det betyr at tangentene må gå gjennom punkter på grafen til $f$ der 
+
+$$
+f'(x) = \dfrac{1}{2}.
+$$
+
+Vi løser likningen med CAS for å avgjøre hvilke to punkter tangentene går gjennom:
+
+:::{figure} ./figurer/oppgave_12/sol_1.png
+---
+width: 90%
+class: no-click, adaptive-figure
+---
+:::
+
+Altså må tangentene gå gjennom to punkter på grafen til $f$ der 
+
+$$
+x = -\dfrac{\sqrt{2}}{2} \or x = \dfrac{\sqrt{2}}{2}.
+$$
+
+Vi bruker så tangent-funksjonen i CAS til å bestemme likningene for de to tangentene og deres nullpunkter:
+
+:::{figure} ./figurer/oppgave_12/sol_2.png
+---
+width: 80%
+class: no-click, adaptive-figure
+---
+:::
+
+Dermed kan vi se at den ene tangenten har nullpunkt i $x = -\sqrt{2} + 2$ og den andre tangenten har nullpunkt i $x = \sqrt{2} + 2$.
+
+
+:::::
+
+::::::::::::::::
+
+---
+
+
+::::::::::::::::{exercise} Oppgave 13 (Eksempelsett 2021)
+
+
+:::{figure} ./figurer/oppgave_13/figur.svg
+---
+width: 80%
+class: no-click, adaptive-figure
+---
+:::
+
+Figuren ovenfor viser grafen til en tredjegradsfunksjon $f$. <br>
+Figuren viser også tangenten til grafen i tre ulike punkter.
+
+Bruk tangentene til å bestemme et eksakt uttrykk for den deriverte funksjonen $f'$.
+
+
+
+:::::{answer}
+$$
+f'(x) = 3(x + 1)(x - 1) \quad \mathrm{eller} \quad f'(x) = 3x^2 - 3.
+$$
+:::::
+
+
+:::::{solution}
+Den deriverte funksjonen $f'$ er en andregradsfunksjon som vi kan skrive på formen 
+
+$$
+f'(x) = ax^2 + bx + c. 
+$$
+
+Fra tangentene i grafen kan vi se at det er en tangent med stigningstall $0$ i $x = -1$ og $x = 1$ som betyr at 
+
+$$
+f'(-1) = 0 \and f'(1) = 0.
+$$
+
+Videre har vi en tangent som går gjennom $(0, 4)$ på grafen og samtidig går gjennom et annet punkt $(1, 1)$ som ikke er på grafen. Stigningstallet til denne tangenten blir da $-3$. Siden tangenten går gjennom grafen i $x = 0$, så vet vi derfor at den deriverte også oppfyller
+
+$$
+f'(0) = -3.
+$$
+
+Siden $f'$ er en andregradsfunksjon med nullpunkter i $x = -1$ og $x = 1$, så kan vi skrive opp $f'(x)$ på formen
+
+$$
+f'(x) = a(x + 1)(x - 1). 
+$$
+
+Videre kan vi bruke at $f'(0) = -3$ til å bestemme $a$:
+
+$$
+f'(0) = -3 = a \cdot (0 + 1)(0 - 1) \liff -3 = -a \liff a = 3.
+$$
+
+Dermed er 
+
+$$
+f'(x) = 3(x + 1)(x - 1).
+$$
+
+> En annen måte å uttrykke $f'(x)$ på er $f'(x) = 3x^2 - 3$ (standardform/ekstremalform). Spiller ingen rolle hvilken vi velger å bruke.
+
+:::::
+
+
+::::::::::::::::
 
 
 
