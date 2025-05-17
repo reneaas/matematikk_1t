@@ -1512,6 +1512,154 @@ $$
 ::::::::::::::::
 
 
+---
+
+
+::::::::::::::::{exercise} Oppgave 14
+En takrenne skal lages i form av et åpent trapes ved å brette to sidekanter fra et flatt rektangel med en vinkel $x$ slik at alle sidelengder i takrenna er $10$ cm. <br> Se figuren nedenfor.
+
+:::{figure} ./figurer/oppgave_14/figur.svg
+---
+width: 100%
+class: no-click, adaptive-figure
+---
+:::
+
+
+:::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+::::::::::::::{tab-item} a
+Bestem tverrsnittsarealet $T$ av takrenna dersom vinkelen er $30^\circ$.
+
+:::::{answer}
+$$
+T = 50 + 25 \sqrt{3} \; \mathrm{cm}^2
+$$
+:::::
+
+:::::{solution}
+Vi lager oss en hjelpefigur der vi tegner inn et rettvinklet trekant på hver side av trapeset og definerer en grunnlinje $g$ og en høyde $h$ for de to trekantene. Se figuren nedenfor.
+
+:::{figure} ./figurer/oppgave_14/hjelpefigur.svg
+---
+width: 100%
+class: no-click, adaptive-figure
+---
+:::
+
+Arealet $T$ av figuren vil da være 
+
+$$
+T = \underbrace{10 \cdot h}_{\mathrm{rektangel}} + \underbrace{g\cdot h}_{\mathrm{trekantene}} 
+$$
+
+For å bestemme grunnlinja $g$ og høyden $h$, bruker vi definisjonen av sinus og cosinus i trekantene med $x = 30\degree$ som gir:
+
+
+$$
+\sin 30\degree = \dfrac{h}{10} \liff h = 10 \cdot \sin 30\degree = 10 \cdot \dfrac{1}{2} = 5
+$$
+
+og 
+
+$$
+\cos 30\degree = \dfrac{g}{10} \liff g = 10 \cdot \cos 30\degree = 10 \cdot \dfrac{\sqrt{3}}{2} = 5\sqrt{3}.
+$$
+
+der vi har brukt at $\sin 30\degree = \dfrac{1}{2}$ og $\cos 30\degree = \dfrac{\sqrt{3}}{2}$. Dermed er tverrsnittsarealet $T$ til takrenna når vinkelen er $30\degree$ gitt ved
+
+$$
+T = 10\cdot 5 + 5\sqrt{3} \cdot 5 = 50 + 25\sqrt{3}
+$$
+
+der $T$ er målt i cm$^2$.
+
+:::::
+
+::::::::::::::
+
+
+::::::::::::::{tab-item} b
+Lag en modell $T$ for tverrsnittsarealet $T(x) \, \mathrm{cm}^2$ når sidekantene er brettet opp $x$ grader.
+
+:::::{answer}
+$$
+T(x) = 100 \cdot \sin x \cdot (1 + \cos x) 
+$$
+:::::
+
+:::::{solution}
+Vi generaliserer regningen vi gjorde i oppgave **a** som betyr at 
+
+$$
+\sin x = \dfrac{h}{10} \liff h(x) = 10 \cdot \sin x
+$$
+
+og 
+
+$$
+\cos x = \dfrac{g}{10} \liff g(x) = 10 \cdot \cos x.
+$$
+
+Dermed er en modell for tverrsnittsarealet $T$ til takrenna når vinkelen er $x$ grader gitt ved
+
+\begin{align*}
+    T(x) &= 10 \cdot h(x) + g(x) \cdot h(x) \\
+    \\
+    &= 10 \cdot (10 \cdot \sin x) + (10 \cdot \cos x) \cdot (10 \cdot \sin x) \\
+    \\
+    &= 100 \cdot \sin x + 100 \cdot \sin x \cdot \cos x \\
+    \\
+    &= 100 \cdot \sin x \cdot (1 + \cos x) \\
+\end{align*}
+
+:::::
+
+::::::::::::::
+
+
+::::::::::::::{tab-item} c
+Bestem hvilken vinkel som sørger for at mest mulig vann kan strømme gjennom takrenna.
+
+:::::{answer}
+$$
+x = 60\degree
+$$
+:::::
+
+:::::{solution}
+Mest mulig vann kan strømme gjennom takrenna dersom det er størst mulig tverrsnittsareal $T(x)$. Vi kan derfor bestemme hvilken vinkel $x$ som gir størst mulig tverrsnittsareal ved å løse likningen $T'(x) = 0$ med CAS:
+
+:::{figure} ./figurer/oppgave_14/c_sol.png
+---
+width: 100%
+class: no-click, adaptive-figure
+---
+:::
+
+som gir $x = 60\degree$ som den eneste løsningen. Vi bør sjekke at dette er den største verdien ved å regne ut $T(x)$ i endepunktene $x = 0\degree$ og $x = 90\degree$ og sammenligne med verdien av $T(x)$ i $x = 60\degree$:
+
+:::{figure} ./figurer/oppgave_14/c_check.png
+---
+width: 70%
+class: no-click, adaptive-figure
+---
+:::
+
+Fra utskriften kan vi se at $T(60)$ er størst som betyr at $x = 60\degree$ gir størst mulig tverrsnittsareal $T(x)$ og dermed også lar mest mulig vann strømme gjennom takrenna. 
+
+:::::
+
+::::::::::::::
+
+:::::::::::::::
+
+
+::::::::::::::::
+
+
 
 
 

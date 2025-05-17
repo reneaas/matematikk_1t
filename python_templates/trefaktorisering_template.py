@@ -86,8 +86,39 @@ def plot_tree(
         plt.show()
 
 
-# Example usage
-n = 240 * 2
-tree = build_tree(n)
-depth = get_tree_depth(tree)
-plot_tree(tree, max_depth=depth, angle_deg=30)
+def main(dirname, save):
+    # Example usage
+    n = 240 * 2
+    tree = build_tree(n)
+    depth = get_tree_depth(tree)
+    plot_tree(tree, max_depth=depth, angle_deg=30)
+
+    # NOTE: Automatically saves with correct file format and filename.
+    if save:
+        fname = __file__.split("/")[-1].replace(".py", ".svg")
+        plotmath.savefig(
+            dirname=dirname, fname=fname
+        )  # Lagrer figuren i `dirname`-directory
+
+    if not save:
+
+        plotmath.show()
+
+
+if __name__ == "__main__":
+
+    import pathlib
+
+    # Get the directory where the script is located
+    current_dir = str(pathlib.Path(__file__).resolve().parent)
+
+    parts = current_dir.split("/")
+    for i in range(len(parts)):
+        if parts[~i] == "koder":
+            parts[~i] = "figurer"
+            break
+
+    dirname = "/".join(parts)
+
+    # NOTE: Set `save=True` to save figure. `save=False` to display figure.
+    main(dirname=dirname, save=True)
