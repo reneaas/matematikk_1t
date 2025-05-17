@@ -1190,6 +1190,108 @@ $$
 :::::::::::::::
 
 
+---
+
+
+:::::::::::::::{exercise} Oppgave 16
+En fjerdegradsfunksjon $f$ er gitt ved 
+
+$$
+f(x) = x^4 - x^2 - 2
+$$
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Bestem $a$ og $b$ slik at likningen nedenfor blir en identitet
+
+$$
+x^4 - x^2 - 2 = (x^2 - a)(x^2 - b)
+$$
+
+:::::{answer}
+$$
+(a = 2 \and b = -1) \or (a = -1 \and b = 2).
+$$
+:::::
+
+
+:::::{solution}
+Vi kan starte med å observere at hvis vi setter $u = x^2$ så kan høyresiden skrives om til et andregradspolynom:
+
+$$
+x^4 - x^2 - 2 = u^2 - u - 2
+$$
+
+Dette polynomet kan vi bruke $abc$-formelen på for å finne røttene $u$ til polynomet:
+
+$$
+u = \dfrac{1 \pm \sqrt{1^2 + 4\cdot 2}}{2} = \dfrac{1 \pm \sqrt{9}}{2} = \dfrac{1 \pm 3}{2}
+$$
+
+som gir 
+
+$$
+u = 2 \or u = -1.
+$$
+
+Dermed kan vi skrive om polynomet til
+
+$$
+u^2 - u - 2 = (u - 2)(u + 1) = (x^2 - 2)(x^2 + 1).
+$$
+
+Altså er 
+
+$$
+x^4 - x^2 - 2 = (x^2 - 2)(x^2 + 1)
+$$
+
+som betyr at likningen er en identitet hvis 
+
+$$
+a = 2 \and b = -1 \or a = -1 \and b = 2.
+$$
+:::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Bestem i hvilke punkter grafen til $f$ skjærer $x$-aksen.
+
+
+:::::{answer}
+$$
+x = -\sqrt{2} \or x = \sqrt{2}.
+$$
+:::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+Løs ulikheten $f(x) > 0$.
+
+:::::{answer}
+$$
+x \in \left\langle -\sqrt{2}, \sqrt{2} \right\rangle.
+$$
+:::::
+
+:::::::::::::
+
+::::::::::::::
+
+:::::::::::::::
+
+
+
+
+
 
 
 
