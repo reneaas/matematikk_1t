@@ -849,6 +849,7 @@ antall_kvadrater = 1_000_000
 for n in range(1, 10_000_000):
     # Hvis vi bruker for mange, så stopper vi
     if antall_kvadrater - f(n) < 0: 
+        n = n - 1 # Vi får ikke lagde denne figuren, så vi tar bort 1
         break
     
     # Lag en ny figur og trekk fra kvadratene
@@ -861,10 +862,10 @@ print(n, antall_kvadrater)
 som gir utskriften
 
 :::{code-block} console
-143 15017
+142 15017
 :::
 
-Her har vi laget vi telt opp én figur for mye, som betyr at vi kan lage 142 figurer og vi har igjen 15 017 små kvadrater.
+Dermed kan vi lage 142 figurer, og da har vi 15 017 kvadrater igjen.
 :::::
 
 :::::::::::::
