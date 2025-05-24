@@ -864,7 +864,7 @@ som gir utskriften
 143 15017
 :::
 
-som betyr at vi kan lage 143 figurer og vi har igjen 15 017 små kvadrater.
+Her har vi laget vi telt opp én figur for mye, som betyr at vi kan lage 142 figurer og vi har igjen 15 017 små kvadrater.
 :::::
 
 :::::::::::::
