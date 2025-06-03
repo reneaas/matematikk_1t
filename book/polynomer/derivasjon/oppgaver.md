@@ -986,4 +986,69 @@ $$
 :::::::::::::::
 
 
+---
+
+
+
+:::::::::::::::{problem} Oppgave 10
+---
+level: 3
+---
+
+:::{figure} ./figurer/oppgaver/oppgave_10/figur.svg
+---
+width: 80%
+class: no-click, adaptive-figure
+---
+:::
+
+Anna og Bjørn arbeider med tredjegradsfunksjoner og tangenter.
+
+
+:::::{dialogue}
+---
+name1: Anna
+name2: Bjørn
+speaker1: left
+speaker2: right
+---
+Anna: Jeg tror en tredjegradsfunksjon alltid må ha to tangenter som har samme stigningstall.
+Bjørn: Men hva med når den har et toppunkt og et bunnpunkt? Vil den da alltid ha dette?
+Anna: Kanskje vi må sjekke hva som skjer mellom toppunktet og bunnpunktet?
+Bjørn: Men hva om den ikke har et toppunkt eller bunnpunkt? Vil det da alltid være to tangenter med samme stigningstall?
+:::::
+
+
+<br>
+
+Utforsk det Anna og Bjørn diskuterer og finn ut om det stemmer at en tredjegradsfunksjon alltid har to tangenter med samme stigningstall.
+
+Argumenter for svaret ditt. 
+
+
+:::::{solution}
+En tredjegradsfunksjon er gitt ved 
+
+$$
+f(x) = ax^3 + bx^2 + cx + d
+$$
+
+Ekstremalpunktene på grafen til $f$ kan vi bestemme ved å løse $f'(x) = 0$. Vi har at 
+
+$$
+f'(x) = 3ax^2 + 2bx + c
+$$
+
+som er en andregradsfunksjon. Andregradsfunksjonen kan enten ha ingen, ett eller to nullpunkter som vi kan bestemme med $abc$-formelen:
+
+$$
+x = \dfrac{-2b \pm \sqrt{(2b)^2 - 4\cdot (3a) \cdot c}}{2 \cdot 3a} = \dfrac{-b \pm \sqrt{b^2 - 3ac}}{3a}.
+$$
+
+Vi må ta for oss tilfellene der
+:::::
+
+:::::::::::::::
+
+
 

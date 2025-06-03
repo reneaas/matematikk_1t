@@ -19,8 +19,9 @@ class SummaryDirective(SphinxDirective):
         admonition_node = nodes.admonition()
         admonition_node["classes"] = ["admonition", "summary"]
 
-        # Create the title node
-        title_node = nodes.title(text=title)
+        title_node = nodes.title()
+        parsed_title, _ = self.state.inline_text(title, self.lineno)
+        title_node += parsed_title
         admonition_node += title_node
 
         # Parse the content

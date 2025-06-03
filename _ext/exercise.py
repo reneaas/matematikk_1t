@@ -20,7 +20,9 @@ class ExerciseDirective(SphinxDirective):
         admonition_node["classes"] = ["admonition", "exercise"]
 
         # Create the title node
-        title_node = nodes.title(text=title)
+        title_node = nodes.title()
+        parsed_title, _ = self.state.inline_text(title, self.lineno)
+        title_node += parsed_title
         admonition_node += title_node
 
         # Parse the content

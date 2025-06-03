@@ -5,7 +5,7 @@ import plotmath
 
 # Enable LaTeX rendering
 mpl.rcParams["text.usetex"] = True
-mpl.rcParams["font.size"] = 14
+mpl.rcParams["font.size"] = 18
 
 
 def prime_factors(n):
@@ -81,17 +81,18 @@ def plot_tree(
     if ax is not None and level == 0:
         total_depth = max_depth or 6
         ax.set_xlim(-dx * total_depth, dx * total_depth)
-        # ax.set_ylim(y + dy * (total_depth + 0.5), 1)
-        plt.tight_layout()
-        plt.show()
 
 
 def main(dirname, save):
     # Example usage
-    n = 240 * 2
+    n = 68
     tree = build_tree(n)
     depth = get_tree_depth(tree)
     plot_tree(tree, max_depth=depth, angle_deg=30)
+
+    fig = plt.gcf()
+    fig.set_size_inches(3, 3)  # Set figure size to 6x6 inches
+    plt.tight_layout()
 
     # NOTE: Automatically saves with correct file format and filename.
     if save:
@@ -121,4 +122,4 @@ if __name__ == "__main__":
     dirname = "/".join(parts)
 
     # NOTE: Set `save=True` to save figure. `save=False` to display figure.
-    main(dirname=dirname, save=True)
+    main(dirname=dirname, save=False)
