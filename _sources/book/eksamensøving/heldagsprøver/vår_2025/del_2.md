@@ -923,7 +923,7 @@ Påstand 2
 <br>
 
 Påstand 3
-: Funksjon $f$ gitt ved 
+: Funksjonen $f$ gitt ved 
 
     $$
     f(x) = \dfrac{(x - 3)^m}{x^2 - 6x + 9} \quad \text{der} \quad m \in \mathbb{N}

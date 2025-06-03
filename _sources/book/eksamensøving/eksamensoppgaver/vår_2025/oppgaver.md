@@ -458,7 +458,7 @@ Siri finner den minste verdien til $f(x)$ og programmet skriver ut verdien $-16$
 :::::{solution}
 Programmet starter med å sette `verdi`{l=python} til $f(-5)$. Deretter så øker programmet verdien til `x`{l=python} med `1`{l=python} frem til verdien er større enn $5$. I hver iterasjon sjekker programmet om $f(x)$ er mindre enn `verdi`{l=python}. Hvis det er tilfelle, så oppdaterer programmet `verdi`{l=python} til $f(x)$. Det betyr at vi stadig ser etter en mindre verdi av $f(x)$. Til slutt skriver programmet ut den minste verdien programmet fant. Dette vil svare til $y$-koordinaten til bunnpunktet på grafen til $f$.
 
-Vi kan bestemme denne verdien ved å første løse $f'(x) = 0$ og deretter regne ut funksjonsverdien i punktet. Vi har
+Vi kan bestemme denne verdien ved å først løse $f'(x) = 0$ og deretter regne ut funksjonsverdien i punktet. Vi har
 
 $$
 f(x) = x^2 + 2x - 15 \limplies f'(x) = 2x + 2. 
