@@ -9,14 +9,14 @@ class: tip
 :::::
 
 
-I forrige delkapittel innførte vi en ny størrelse – gjennomsnittlig vekstfart – som lar oss sette tall på hvor mye funksjonsverdien til en andregradsfunksjon $f$ ender seg i *gjennomsnitt* dersom vi øker $x$ med 1 i et intervall. Selv om dette gir oss noe informasjon om hvordan $f(x)$ ender seg, kunne vi tenkt oss en størrelse som forteller oss hvor mye $f(x)$ endrer seg *nøyaktig i ett punkt* når vi øker $x$ med 1 – et slags mål på "hvor bratt er grafen til $f$ i punktet. 
+I forrige delkapittel innførte vi en ny størrelse – gjennomsnittlig vekstfart – som lar oss sette tall på hvor mye funksjonsverdien til en andregradsfunksjon $f$ endrer seg i *gjennomsnitt* dersom vi øker $x$ med 1 i et intervall. Selv om dette gir oss noe informasjon om hvordan $f(x)$ endrer seg, kunne vi tenkt oss en størrelse som forteller oss hvor mye $f(x)$ endrer seg i *nøyaktig ett punkt* når vi øker $x$ med 1 – et slags mål på "hvor bratt er grafen til $f$ i punktet. 
 
-Vi skal kalle dette for **momentan vekstfart** fordi den skal gi oss informasjon om hvor mye $f(x)$ *momentant* ("akkurat i") ett punkt når vi endrer på $x$. Men hvordan skal vi definere momentan vekstfart så det fanger opp denne ideen?
+Vi skal kalle dette for **momentan vekstfart** fordi den skal gi oss informasjon om hvor mye $f(x)$ endres *momentant* ("akkurat i") ett punkt når vi endrer på $x$. Men hvordan skal vi definere momentan vekstfart så det fanger opp denne ideen?
 
 
 ## Fra gjennomsnittlig vekstfart til momentan vekstfart
 
-Momentan vekstfart skal vi tenke på som stigningstallet til en linje som "sneier" grafen til $f$ i et bestemt punkt. Stigningstallet skal svaret til hvor "bratt" grafen er *akkurat* i dette punktet. 
+Momentan vekstfart skal vi tenke på som stigningstallet til en linje som "sneier" grafen til $f$ i et bestemt punkt. Stigningstallet skal svare til hvor "bratt" grafen er *akkurat* i dette punktet. 
 
 
 :::::::::::::::{admonition} Momentan vekstfart

@@ -347,9 +347,23 @@ Lag et formel $f(n)$ som beskriver antall kvadrater i figur $n$.
 
 :::::{answer}
 $$
-f(n) = \dfrac{3}{2}n^2 + \dfrac{9}{2}n - 2
+f(n) = \dfrac{n(n + 1)}{2}
 $$
 :::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Lag et program som skriver ut antall kvadrater i de 20 første figurene.
+
+:::{interactive-code}
+def f(n):
+    return # FYLL INN funksjonsuttrykket her
+
+for n in range(????):
+    print(n, f(n))
+:::
 
 :::::::::::::
 

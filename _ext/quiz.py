@@ -41,7 +41,6 @@ class QuizDirective(SphinxDirective):
         html = f"""
         <!-- Container for the quiz -->
         <div id="{container_id}" class="quiz-main-container"></div>
-
         <!-- Include KaTeX for LaTeX rendering -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
         <script defer src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>

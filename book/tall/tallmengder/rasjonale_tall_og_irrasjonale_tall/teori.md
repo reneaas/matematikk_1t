@@ -12,7 +12,7 @@ class: tip
 ## De rasjonale tallene $\mathbb{Q}$
 
 :::{margin}
-Symbolet $\mid$ leses som "slik at".
+Symbolet "$\mid$" leses som "slik at". Når vi skriver $\left\{ \dfrac{a}{b} \mid a, b \in \mathbb{Z}, \quad b \neq 0 \right\}$, så leser vi dette som "mengden av alle brøker $\dfrac{a}{b}$ slik at $a$ og $b$ er heltall og $b$ ikke er lik null". 
 :::
 
 :::::{theory} De rasjonale tallene
@@ -49,20 +49,20 @@ Dette er sant fordi $0.25 \cdot 4 = 1$. Sifferutviklingen er endelig og stopper 
 Så tar vi et med repeterende sifferutvikling:
 
 :::{margin}
-Det kan hende du har sett at vi kan skrive
+Når sifrene i desimalrepresentasjonen repeterer seg for alltid, bruker vi enten "$\ldots$" eller en strek over tallene for å vise at de repeterer seg: 
 
 $$
 0.3333\ldots = 0.\overline{3}
 $$
 
-Men vi skal bruke "$\ldots$" for å vise at sifrene gjentar seg. Det gjør det litt enklere å regne med som vi skal se på i eksempel 3.
+Hva som brukes er avhengig av hva som gjør det enklest å regne med. Vi skal her bruke streken over tallene for å gjøre det enklere å lese.
 :::
 
 :::::{example} Eksempel 2
 Det rasjonale tallet $\dfrac{1}{3}$ kan skrives som 
 
 $$
-\dfrac{1}{3} = 0.3333\ldots
+\dfrac{1}{3} = 0.3333\ldots = 0.\overline{3}
 $$
 
 :::::
@@ -73,28 +73,29 @@ Vi kan ha enda mer komplekse repeterende sifferutviklinger.
 La oss se på desimaltallet
 
 $$
-0.142142142\ldots
+0.142142142\ldots = 0.\overline{142}
 $$
 
 Kan dette skrives som en brøk der telleren og nevneren er hele tall? Vi lar 
 
 $$
-x = 0.142142142\ldots
+x = 0.\overline{142}
 $$
 
-Så ganger vi begge sider med $1000$:
+Siden sifrene $142$ gjentar seg med en periode på $3$, så kan vi gange begge sider med $1000$ for å flytte desimaltegnet tre plasser til høyre:
+
 
 $$
-1000x = 142.142142142\ldots
+1000x = 142.\overline{142}
 $$
 
 Hvis vi nå trekker fra $x$ på begge sider får vi:
 
 $$
-1000x - x = 142.142142142\ldots - 0.142142142\ldots
+1000x - x = 142.\overline{142} - 0.\overline{142}
 $$
 
-som gir 
+Siden alle de repeterende sifrene etter desimaltegnet nå er like, så vil de nulle hverandre ut. Da får vi:
 
 $$
 999x = 142
@@ -114,12 +115,12 @@ så med andre ord var tallet et rasjonalt tall.
 Skriv følgende rasjonale tall som en brøk
 
 $$
-0.52165216\ldots
+0.\overline{5216}
 $$
 
 ::::{answer}
 $$
-0.52165216\ldots = \dfrac{5216}{9999}
+0.\overline{5216} = \dfrac{5216}{9999}
 $$
 ::::
 :::::
