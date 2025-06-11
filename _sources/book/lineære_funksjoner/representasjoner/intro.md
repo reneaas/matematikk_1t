@@ -7,13 +7,13 @@ gutter: 3
 
 ::::{grid-item-card}
 ---
-link: algebraisk_representasjon/teori
+link: standardform/teori
 link-type: doc
 ---
-**Algebraisk representasjon**
+**Standardform**
 
 ^^^
-:::{figure} ./algebraisk_representasjon/figurer/teori/algebraisk_uttrykk.svg
+:::{figure} ./standardform/figurer/teori/algebraisk/standardform.svg
 ---
 width: 100%
 class: no-click, adaptive-figure
@@ -23,16 +23,16 @@ class: no-click, adaptive-figure
 
 ::::
 
+
 ::::{grid-item-card}
 ---
-link: grafisk_representasjon/teori
+link: nullpunktsform/teori
 link-type: doc
 ---
-**Grafisk representasjon** 
+**Nullpunktsform**
 
 ^^^
-
-:::{figure} grafisk_representasjon/figurer/teori/grafisk_representasjon.svg
+:::{figure} ./nullpunktsform/figurer/teori/algebraisk_representasjon/nullpunktsform.svg
 ---
 width: 100%
 class: no-click, adaptive-figure
@@ -42,24 +42,24 @@ class: no-click, adaptive-figure
 
 ::::
 
+
 ::::{grid-item-card}
 ---
-link: bestemme_funksjonsuttrykk/teori
+link: ettpunktsform/teori
 link-type: doc
 ---
-**Bestemme funksjonsuttrykk** 
+**Ettpunktsform**
 
 ^^^
-
-$$
-a = \dfrac{y_2 - y_1}{x_2 - x_1}
-$$
-
-$$
-y - y_1 = a(x - x_1)
-$$
+:::{figure} ./ettpunktsform/figurer/teori/algebraisk_representasjon/ettpunktsform.svg
+---
+width: 100%
+class: no-click, adaptive-figure
+---
+:::
 
 
 ::::
+
 
 :::::

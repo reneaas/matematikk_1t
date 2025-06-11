@@ -723,7 +723,72 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 10
+:::::::::::::::{exercise} Oppgave 10
+I figuren nedenfor vises grafen til to lineære funksjoner $f$ og $g$. Punktene $A$ og $B$ og $C$ danner en likebeint trekant $\triangle ABC$ der sidelengden $AB = 2$. 
+
+Et rektangel har hjørnene $(-k, 0)$ og $(-k, g(-k))$ og $(k, f(k))$ og $(k, 0)$ der $k > 0$.
+
+:::{figure} ./figurer/oppgaver/oppgave_10/figur.svg
+---
+width: 80%
+class: no-click, adaptive-figure
+---
+:::
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Bestem $f(x)$ og $g(x)$.
+
+
+::::{answer}
+\begin{align*}
+    f(x) &= -x + 1 \\
+    \\
+    g(x) &= x + 1
+\end{align*}
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Lag en oversikt over arealet $R(k)$ til rektangelet for ulike verdier av $k$ med utgangspunkt i tabellen nedenfor.
+
+| $k$ | Areal $R(k)$ |
+|-----|---------------|
+| 0 |               |
+| 0.2 |               |
+| 0.4   |               |
+| 0.6   |               |
+| 0.8   |               |
+| 1.0   |               |
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+Lag en modell $R(k)$ for arealet av rektangelet uttrykt ved $k$.
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} d
+Bestem hvilken verdi av $k$ som gir størst mulig areal av rektangelet.
+
+:::::::::::::
+
+::::::::::::::
+
+
+:::::::::::::::
+
+
+---
+
+:::::::::::::::{admonition} Oppgave 11
 ---
 class: problem-level-3
 ---
@@ -752,25 +817,4 @@ $m$ er midtpunktet på intervallet $\langle x_1, x_2 \rangle$, eller sagt mer ge
 
 
 :::::::::::::::
-
-
----
-
-<!-- :::::::::::::::{admonition} Oppgave XY
----
-class: problem-level-2
----
-Lova har jobbet med en andregradsfunksjon og har undersøkt om formelen for den deriverte stemmer ved å bruke sammenhengen 
-
-$$
-f'(x) = \dfrac{f(x + 1) - f(x - 1)}{2}
-$$
-
-:::{raw} html
----
-file: ./python/oppgaver/oppgave_XY.html
----
-:::
-
-::::::::::::::: -->
 
