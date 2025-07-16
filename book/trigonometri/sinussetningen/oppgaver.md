@@ -1,9 +1,9 @@
 # Oppgaver: Sinussetningen
 
 
-:::::::::::::::{admonition} Oppgave 1
+:::::::::::::::{exercise} Oppgave 1
 ---
-class: problem-level-1
+level: 1
 ---
 En trekant $\triangle ABC$ er vist i figuren nedenfor. 
 
@@ -89,9 +89,9 @@ class: no-click, adaptive-figure
 
 
 
-:::::::::::::::{admonition} Oppgave 2
+:::::::::::::::{exercise} Oppgave 2
 ---
-class: problem-level-1
+level: 1
 ---
 I figuren nedenfor vises en trekant $\triangle ABC$. 
 
@@ -212,9 +212,9 @@ $$
 ---
 
 
-:::::::::::::::{admonition} Oppgave 3
+:::::::::::::::{exercise} Oppgave 3
 ---
-class: problem-level-2
+level: 2
 ---
 I $\triangle ABC$ er $\angle A = 45 \degree$, $BC = 6$ og $AC = 8$.
 
@@ -318,9 +318,9 @@ $$
 ---
 
 
-:::::::::::::::{admonition} Oppgave 4
+:::::::::::::::{exercise} Oppgave 4
 ---
-class: problem-level-2
+level: 2
 ---
 I figuren nedenfor vises $\square ABCD$. 
 
@@ -414,9 +414,9 @@ $$
 
 
 
-:::::::::::::::{admonition} Oppgave 5
+:::::::::::::::{exercise} Oppgave 5
 ---
-class: problem-level-2
+level: 2
 ---
 I figuren nedenfor vises $\square ABCD$. 
 
@@ -514,9 +514,9 @@ $$
 ---
 
 
-:::::::::::::::{admonition} Oppgave 6
+:::::::::::::::{exercise} Oppgave 6
 ---
-class: problem-level-2
+level: 2
 ---
 I figuren nedenfor vises $\square ABCD$. 
 
@@ -613,9 +613,9 @@ $$
 
 
 
-:::::::::::::::{admonition} Oppgave 7
+:::::::::::::::{exercise} Oppgave 7
 ---
-class: problem-level-2
+level: 2
 ---
 I figuren nedenfor vises $\square ABCD$.
 

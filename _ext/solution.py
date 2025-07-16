@@ -26,12 +26,13 @@ class SolutionDirective(SphinxDirective):
         admonition_node = nodes.admonition()
         admonition_node["classes"] = ["admonition", "solution"]
 
-        if "dropdown" in self.options:
-            dropdown_val = int(self.options["dropdown"])
+        if self.options.get("dropdown"):
+            dropdown = self.options.get("dropdown")
+            if dropdown == "1":
+                admonition_node["classes"].append("dropdown")
+            elif dropdown == "0":
+                pass
         else:
-            dropdown_val = 1
-
-        if dropdown_val == 1:
             admonition_node["classes"].append("dropdown")
 
         # Create the title node

@@ -11,7 +11,7 @@ class QuizDirective(SphinxDirective):
     """Directive for embedding interactive quizzes."""
 
     has_content = True
-    required_arguments = 1  # Quiz ID/name
+    required_arguments = 0
     optional_arguments = 0
     final_argument_whitespace = True
     option_spec = {
@@ -19,15 +19,6 @@ class QuizDirective(SphinxDirective):
     }
 
     def run(self):
-        title = self.arguments[0]
-
-        # Create the admonition node
-        admonition_node = nodes.admonition()
-        admonition_node["classes"] = ["admonition", "quiz"]
-
-        # Create the title node
-        title_node = nodes.title(text=title)
-        admonition_node += title_node
 
         # Parse the content
         # self.state.nested_parse(self.content, self.content_offset, admonition_node)
@@ -58,9 +49,8 @@ class QuizDirective(SphinxDirective):
         """
 
         raw_node = nodes.raw("", html, format="html")
-        admonition_node += raw_node
 
-        return [admonition_node]
+        return [raw_node]
 
     def _parse_quiz_content(self):
         """Parse the directive content into quiz questions data."""

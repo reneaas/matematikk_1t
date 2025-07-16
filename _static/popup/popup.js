@@ -1,4 +1,4 @@
-console.log("✅ popup.js (portal-style) loaded");
+
 
 window.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".popup-wrapper").forEach(wrapper => {

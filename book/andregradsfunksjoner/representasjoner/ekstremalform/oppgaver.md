@@ -57,9 +57,9 @@ Q: Ekstremalverdien til $f(x) = 4(x - 1)^2 + 3$ er ...
 ---
 
 
-:::::::::::::::{admonition} Oppgave 2
+:::::::::::::::{exercise} Oppgave 2
 ---
-class: problem-level-1
+level: 1
 ---
 Grafen til en andregradsfunksjon $f$ er vist i {numref}`fig-andregradsfunksjoner-representasjoner-ekstremalform-oppgave-2`.
 
@@ -120,9 +120,9 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 3
+:::::::::::::::{exercise} Oppgave 3
 ---
-class: problem-level-1
+level: 1
 ---
 Grafen til en andregradsfunksjon $g$ er vist i {numref}`fig-andregradsfunksjoner-representasjoner-ekstremalform-oppgave-3`.
 
@@ -181,9 +181,9 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 4
+:::::::::::::::{exercise} Oppgave 4
 ---
-class: problem-level-1
+level: 1
 ---
 ::::::::::::::{tab-set}
 ---
@@ -271,9 +271,9 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 5
+:::::::::::::::{exercise} Oppgave 5
 ---
-class: problem-level-1
+level: 1
 ---
 En andregradsfunksjon $f$ har nullpunktsformen
 
@@ -314,9 +314,9 @@ Toppunkt siden $a < 0$.
 ---
 
 
-:::::::::::::::{admonition} Oppgave 6
+:::::::::::::::{exercise} Oppgave 6
 ---
-class: problem-level-1
+level: 1
 ---
 En andregradsfunksjon $f$ har nullpunktsformen
 
@@ -359,9 +359,9 @@ Bunnpunkt siden $a > 0$.
 ---
 
 
-:::::::::::::::{admonition} Oppgave 7
+:::::::::::::::{exercise} Oppgave 7
 ---
-class: problem-level-2
+level: 2
 ---
 
 ::::::::::::::{tab-set}
@@ -453,9 +453,9 @@ $$
 ---
 
 
-:::::::::::::::{admonition} Oppgave 8
+:::::::::::::::{exercise} Oppgave 8
 ---
-class: problem-level-2
+level: 2
 ---
 
 

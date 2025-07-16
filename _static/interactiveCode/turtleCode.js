@@ -28,7 +28,12 @@ class TurtleCode {
       
         // Initialize your existing CodeEditor on the created <textarea>
         this.editor = new CodeEditor(this.textAreaEl.id);
-        this.editor.setValue(this.initialCode);
+
+        // Add a small delay before setting the initial code
+        setTimeout(() => {
+            this.editor.setValue(this.initialCode);
+        }, 100); // 100ms delay should be enough
+        // this.editor.setValue(this.initialCode);
 
         this.runButtonEl.addEventListener("click", () => this.runCode());
     }

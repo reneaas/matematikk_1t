@@ -1,9 +1,9 @@
 # Oppgaver: <br> Grafisk løsning
 
 
-:::::::::::::::{admonition} Oppgave 1
+:::::::::::::::{exercise} Oppgave 1
 ---
-class: problem-level-1
+level: 1
 ---
 
 ::::::::::::::{tab-set}
@@ -130,9 +130,9 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 2
+:::::::::::::::{exercise} Oppgave 2
 ---
-class: problem-level-1
+level: 1
 ---
 Grafen til en andregradsfunksjon $f$ er vist i {numref}`fig-andregradsfunksjoner-likninger-grafisk-løsning-oppgave-2`.
 
@@ -207,9 +207,9 @@ $$
 ---
 
 
-:::::::::::::::{admonition} Oppgave 3
+:::::::::::::::{exercise} Oppgave 3
 ---
-class: problem-level-1
+level: 1
 ---
 ::::::::::::::{tab-set}
 ---

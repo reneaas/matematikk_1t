@@ -1,9 +1,9 @@
 # Oppgaver: Enhetssirkelen
 
 
-:::::::::::::::{admonition} Oppgave 1
+:::::::::::::::{exercise} Oppgave 1
 ---
-class: problem-level-1
+level: 1
 ---
 Nedenfor vises et interaktivt vindu hvor enhetssirkelen er tegnet inn med en vinkel $v$ som kan varieres.
 
@@ -253,9 +253,9 @@ $$
 ---
 
 
-:::::::::::::::{admonition} Oppgave 2
+:::::::::::::::{exercise} Oppgave 2
 ---
-class: problem-level-1
+level: 1
 ---
 > Noen ganger når du har løst likninger som $\sin(v\degree) = 0.5$, så har du fått to løsninger. Det samme gjelder for $\cos(v\degree) = 0.5$. I denne oppgaven skal du finne ut hvorfor det er slik.
 
@@ -397,9 +397,9 @@ $$
 ---
 
 
-:::::::::::::::{admonition} Oppgave 3
+:::::::::::::::{exercise} Oppgave 3
 ---
-class: problem-level-2
+level: 2
 ---
 Nedenfor vises enhetssirkelen med et punkt $P(x, y)$ på sirkelen slik at $OP = 1$, der $O(0, 0)$ er origo.
 
@@ -448,9 +448,9 @@ $$
 
 
 
-:::::::::::::::{admonition} Oppgave 4
+:::::::::::::::{exercise} Oppgave 4
 ---
-class: problem-level-2
+level: 2
 ---
 Nedenfor vises en trekant innskrevet i en sirkel med radius $1$ der $P$ ligger på sirkelen.
 
@@ -548,9 +548,9 @@ $$
 ---
 
 
-:::::::::::::::{admonition} Oppgave 5
+:::::::::::::::{exercise} Oppgave 5
 ---
-class: problem-level-2
+level: 2
 ---
 Nedenfor vises enhetssirkelen med en vinkelbue på $240\degree$. 
 
@@ -620,9 +620,9 @@ $$
 ---
 
 
-:::::::::::::::{admonition} Oppgave 6
+:::::::::::::::{exercise} Oppgave 6
 ---
-class: problem-level-2
+level: 2
 ---
 Nedenfor vises en sirkel med radius $1$. Vinkelen mellom $x$-aksen og $OP$ er $50 \degree$. 
 
@@ -709,9 +709,9 @@ Siden $\tan 50\degree > 0$, så er $\tan 130\degree < 0$. Dermed er $\tan 130\de
 
 
 
-:::::::::::::::{admonition} Oppgave 7
+:::::::::::::::{exercise} Oppgave 7
 ---
-class: problem-level-2
+level: 2
 ---
 Nedenfor vises et interaktivt vindu hvor enhetssirkelen er tegnet inn med en vinkel $v$ som kan varieres.
 
@@ -798,9 +798,9 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 8
+:::::::::::::::{exercise} Oppgave 8
 ---
-class: problem-level-2
+level: 2
 ---
 Nedenfor vises et interaktivt vindu hvor enhetssirkelen er tegnet inn med en vinkel $v$ som kan varieres.
 

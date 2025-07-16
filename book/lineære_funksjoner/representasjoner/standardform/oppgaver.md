@@ -1,8 +1,11 @@
 # Oppgaver: Standardform
 
 
-
-:::::::::::::::{quiz} Quiz 1
+:::::::::::::::{exercise} Oppgave 1
+---
+level: 1
+---
+:::{quiz}
 Q: Hvilket punkt er vist i figuren nedenfor? ![](figurer/oppgaver/quiz_1/oppgave_1.svg)
 + $(2, 3)$
 - $(3, 2)$
@@ -38,16 +41,23 @@ Q: Hvilket punkt er vist i figuren nedenfor? ![](figurer/oppgaver/quiz_1/oppgave
 - $(3, 4)$
 - $(4, 3)$
 - $(4, -3)$
-
+:::
 :::::::::::::::
 
 
 
-:::::::::::::::{exercise} Oppgave 1
+---
+
+
+
+:::::::::::::::{exercise} Oppgave 2
+---
+level: 1
+---
 I figuren nedenfor vises seks punkter $A$, $B$, $C$, $D$, $E$ og $F$.
 
 
-:::{figure} ./figurer/oppgaver/oppgave_1/figur.svg
+:::{figure} ./figurer/oppgaver/oppgave_2/figur.svg
 ---
 width: 80%
 class: no-click, adaptive-figure
@@ -73,8 +83,11 @@ $F$ : $(3, -1)$
 
 
 ---
-
-:::::::::::::::{quiz} Quiz 2
+:::::::::::::::{exercise} Oppgave 3
+---
+level: 1
+---
+:::{quiz}
 
 Q: Hvilket funksjonsuttrykk stemmer med grafen vist i figuren nedenfor? ![](figurer/oppgaver/quiz_2/oppgave_1.svg)
 + $f(x) = x - 2$
@@ -112,8 +125,11 @@ Q: Hvilket funksjonsuttrykk stemmer med grafen vist i figuren nedenfor? ![](figu
 - $f(x) = 2x + 1$
 - $f(x) = -2x + 1$
 
-
+:::
 :::::::::::::::
+
+
+
 
 
 ---
@@ -122,7 +138,10 @@ Q: Hvilket funksjonsuttrykk stemmer med grafen vist i figuren nedenfor? ![](figu
 
 
 
-:::::::::::::::{exercise} Oppgave 2
+:::::::::::::::{exercise} Oppgave 4
+---
+level: 1
+---
 
 En lineær funksjon $f$ er gitt ved
 
@@ -187,11 +206,14 @@ $$
 
 
 
-:::::::::::::::{exercise} Oppgave 3
+:::::::::::::::{exercise} Oppgave 5
+---
+level: 1
+---
 
 Grafen til en lineær funksjon $f$ er vist i figuren nedenfor.
 
-:::{figure} ./figurer/oppgaver/oppgave_3/figur.svg
+:::{figure} ./figurer/oppgaver/oppgave_5/figur.svg
 ---
 width: 80%
 class: no-click, adaptive-figure
@@ -292,10 +314,13 @@ $$
 
 
 
-:::::::::::::::{exercise} Oppgave 4
+:::::::::::::::{exercise} Oppgave 6
+---
+level: 1
+---
 Grafen til en lineær funksjon $f$ er vist i figuren nedenfor.
 
-:::{figure} ./figurer/oppgaver/oppgave_4/figur.svg
+:::{figure} ./figurer/oppgaver/oppgave_6/figur.svg
 ---
 width: 80%
 class: no-click, adaptive-figure
@@ -396,7 +421,10 @@ $$
 ---
 
 
-:::::::::::::::{exercise} Oppgave 5 
+:::::::::::::::{exercise} Oppgave 7
+---
+level: 2
+--- 
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
@@ -406,7 +434,7 @@ Grafen til en lineær funksjon $f$ er vist i figuren nedenfor.
 
 Bestem $f(x)$. 
 
-:::{figure} ./figurer/oppgaver/oppgave_5/a.svg
+:::{figure} ./figurer/oppgaver/oppgave_7/a.svg
 ---
 width: 80%
 class: no-click, adaptive-figure
@@ -421,7 +449,7 @@ Grafen til en lineær funksjon $g$ er vist i figuren nedenfor.
 
 Bestem $g(x)$. 
 
-:::{figure} ./figurer/oppgaver/oppgave_5/b.svg
+:::{figure} ./figurer/oppgaver/oppgave_7/b.svg
 ---
 width: 80%
 class: no-click, adaptive-figure
@@ -435,7 +463,7 @@ Grafen til en lineær funksjon $h$ er vist i figuren nedenfor.
 
 Bestem $h(x)$. 
 
-:::{figure} ./figurer/oppgaver/oppgave_5/c.svg
+:::{figure} ./figurer/oppgaver/oppgave_7/c.svg
 ---
 width: 80%
 class: no-click, adaptive-figure
@@ -450,7 +478,7 @@ Grafen til en lineær funksjon $p$ er vist i figuren nedenfor.
 
 Bestem $p(x)$. 
 
-:::{figure} ./figurer/oppgaver/oppgave_5/d.svg
+:::{figure} ./figurer/oppgaver/oppgave_7/d.svg
 ---
 width: 80%
 class: no-click, adaptive-figure
@@ -472,7 +500,10 @@ class: no-click, adaptive-figure
 
 
 
-:::::::::::::::{exercise} Oppgave 6
+:::::::::::::::{exercise} Oppgave 8
+---
+level: 2
+---
 Om en lineær funksjon $f$ får du vite at 
 * Stigningstallet er $2$
 * Grafen til $f$ skjærer $y$-aksen i punktet $(0, -1)$
@@ -480,7 +511,7 @@ Om en lineær funksjon $f$ får du vite at
 Bestem hvilken av grafene nedenfor som er grafen til $f$.
 
 
-:::{figure} ./figurer/oppgaver/oppgave_6/figur.svg
+:::{figure} ./figurer/oppgaver/oppgave_8/figur.svg
 ---
 width: 80%
 class: no-click, adaptive-figure
@@ -499,7 +530,10 @@ Grafen til $f$ er graf B.
 
 
 
-:::::::::::::::{exercise} Oppgave 7 
+:::::::::::::::{exercise} Oppgave 9
+---
+level: 3
+---
 I figuren nedenfor vises grafen til en lineær funksjon $f$ og en trekant $\triangle ABC$ der 
 * Arealet $\triangle ABC$ er $\dfrac{9}{2}$
 * Punktet $A$ har koordinatene $(1, 3)$
@@ -507,7 +541,7 @@ I figuren nedenfor vises grafen til en lineær funksjon $f$ og en trekant $\tria
 
 Bestem $f(x)$.
 
-:::{figure} ./figurer/oppgaver/oppgave_7/figur.svg
+:::{figure} ./figurer/oppgaver/oppgave_9/figur.svg
 ---
 width: 80%
 class: no-click, adaptive-figure
@@ -541,10 +575,13 @@ $$
 
 
 
-:::::::::::::::{exercise} Oppgave 8
+:::::::::::::::{exercise} Oppgave 10
+---
+level: 3
+---
 I figuren nedenfor vises grafene til to lineære funksjoner $f$ og $g$.
 
-:::{figure} ./figurer/oppgaver/oppgave_8/figur.svg
+:::{figure} ./figurer/oppgaver/oppgave_10/figur.svg
 ---
 width: 80%
 class: no-click, adaptive-figure

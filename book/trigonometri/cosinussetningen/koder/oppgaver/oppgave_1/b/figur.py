@@ -8,13 +8,14 @@ def main(dirname, save):
     ax = draw_triangle(
         sas=(4, 70, 6),
         show=False,
-        radius=0.8,
         fontsize=16,
         label_angles=(False, False, True),
         label_sides=(True, True, "x"),
         vertex_labels=("A", "B", "C"),
         numerical_len=True,
         show_vertices=False,
+        color=plotmath.COLORS.get("common"),
+        alpha=0.1,
     )
 
     # NOTE: Automatically saves with correct file format and filename.

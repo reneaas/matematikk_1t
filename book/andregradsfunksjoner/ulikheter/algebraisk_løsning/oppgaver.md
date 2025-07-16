@@ -1,8 +1,8 @@
 # Oppgaver: Algebraisk løsning
 
-:::::::::::::::{admonition} Oppgave 1
+:::::::::::::::{exercise} Oppgave 1
 ---
-class: problem-level-1
+level: 1
 ---
 Ta quizen! 
 
@@ -16,9 +16,9 @@ file: ./quiz/quiz_2/quiz_2.html
 
 ---
 
-:::::::::::::::{admonition} Oppgave 2
+:::::::::::::::{exercise} Oppgave 2
 ---
-class: problem-level-1
+level: 1
 ---
 Løs ulikhetene ved hjelp av fortegnslinjene.
 
@@ -115,9 +115,9 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 3
+:::::::::::::::{exercise} Oppgave 3
 ---
-class: problem-level-1
+level: 1
 ---
 En ulikhet er gitt ved 
 
@@ -176,9 +176,9 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 4
+:::::::::::::::{exercise} Oppgave 4
 ---
-class: problem-level-1
+level: 1
 ---
 > Når den ledende koeffisienten $a \neq 1$, tar vi den med som en faktor i fortegnsskjema. Her møter du en ulikhet der du må gjøre dette.
 
@@ -240,9 +240,9 @@ $$
 ---
 
 
-:::::::::::::::{admonition} Oppgave 5
+:::::::::::::::{exercise} Oppgave 5
 ---
-class: problem-level-2
+level: 2
 ---
 Løs ulikhetene.
 
@@ -315,9 +315,9 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 6
+:::::::::::::::{exercise} Oppgave 6
 ---
-class: problem-level-2
+level: 2
 ---
 ::::::::::::::{tab-set} 
 ---
@@ -395,9 +395,9 @@ $$
 :::::::::::::::
 ---
 
-:::::::::::::::{admonition} Oppgave 7
+:::::::::::::::{exercise} Oppgave 7
 ---
-class: problem-level-2
+level: 2
 ---
 En andregradsfunksjon $f$ er gitt ved 
 
@@ -482,317 +482,12 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 8
+
+
+
+:::::::::::::::{exercise} Oppgave 8
 ---
-class: problem-level-2
----
-> Her skal du se på løsning av andregradsulikheter med CAS. Som vanlig kan du velge mellom Geogebra og Python.
-
-
-Under vises et eksempel på løsning av en andregradsulikhet med CAS.
-
-:::::{admonition} Eksempel
----
-class: example
----
-
-````{tab} Geogebra
-
-Løs ulikheten
-
-$$
-x^2 - 4x + 3 < 0
-$$
-
-:::{raw} html
----
-file: ./ggb/oppgave_7/oppgave_7_eksempel.html
----
-:::
-
-````
-
-
-````{tab} Python
-
-Løs ulikheten
-
-$$
-x^2 - 4x + 3 < 0
-$$
-
-:::{raw} html
----
-file: ./python/oppgaver/oppgave_7/eksempel.html
----
-:::
-
-````
-
-:::::
-
-
-````{tab} Geogebra
-
-Løs ulikhetene med CAS.
-<br>
-
-::::::::::::::{tab-set}
----
-class: tabs-parts
----
-:::::::::::::{tab-item} a
-$$
-x^2 - 3x + 2 > 0
-$$
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-$$
-x \in \mathbb{R} \setminus \left[1, 2\right]
-$$
-:::
-
-:::::::::::::
-
-:::::::::::::{tab-item} b
-$$
--x^2 + 4x - 3 \leq 0
-$$
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-$$
-x \in \mathbb{R} \setminus \langle 1, 3 \rangle
-$$
-:::
-:::::::::::::
-
-:::::::::::::{tab-item} c
-$$
-x^2 - 3x - 3 > -x + 4
-$$
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-$$
-x \in \mathbb{R} \setminus \left[ 1 - 2\sqrt{2}, 1 + 2\sqrt{2} \right]
-$$
-:::
-:::::::::::::
-
-:::::::::::::{tab-item} d
-$$
--x^2 + 3x - 2 \geq -x + 1
-$$
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-$$
-x \in [1, 3]
-$$
-:::
-:::::::::::::
-::::::::::::::
-
-````
-
-````{tab} Python
-
-Løs ulikhetene med CAS.
-
-<br>
-
-::::::::::::::{tab-set}
----
-class: tabs-parts
----
-:::::::::::::{tab-item} a
-$$
-x^2 - 3x + 2 > 0
-$$
-
-
-:::{raw} html
----
-file: ./python/oppgaver/oppgave_7/a.html
----
-:::
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-$$
-x \in \mathbb{R} \setminus \left[1, 2\right]
-$$
-
-**Programkode**:
-
-:::{code-block} python
----
-linenos: true
----
-from casify import *
-
-løsning = løs("x**2 - 3*x + 2 > 0")
-
-print(løsning)
-:::
-
-**Utskrift**:
-
-:::{code-block} console
-x < 1  ∨  2 < x 
-:::
-::::
-
-:::::::::::::
-
-:::::::::::::{tab-item} b
-$$
--x^2 + 4x - 3 \leq 0
-$$
-
-:::{raw} html
----
-file: ./python/oppgaver/oppgave_7/b.html
----
-:::
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-$$
-x \in \mathbb{R} \setminus \langle 1, 3 \rangle
-$$
-
-**Programkode**:
-
-:::{code-block} python
----
-linenos: true
----
-from casify import *
-
-løsning = løs("-x**2 + 4*x - 3 <= 0")
-
-print(løsning)
-:::
-
-**Utskrift**:
-
-:::{code-block} console
-3 <= x  ∨  x <= 1
-:::
-
-::::
-:::::::::::::
-
-:::::::::::::{tab-item} c
-$$
-x^2 - 3x - 3 > -x + 4
-$$
-
-:::{raw} html
----
-file: ./python/oppgaver/oppgave_7/c.html
----
-:::
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-$$
-x < 1 - 2\sqrt{2} \quad \lor \quad  1 + 2\sqrt{2} < x
-$$
-
-**Programkode**:
-
-:::{code-block} python
----
-linenos: true
----
-from casify import *
-
-løsning = løs("x**2 - 3*x - 3 > -x + 4")
-
-print(løsning)
-:::
-
-**Utskrift**:
-
-:::{code-block} console
-x < 1 - 2*sqrt(2)   ∨   1 + 2*sqrt(2) < x
-:::
-
-::::
-:::::::::::::
-
-:::::::::::::{tab-item} d
-$$
--x^2 + 3x - 2 \geq -x + 1
-$$
-
-:::{raw} html
----
-file: ./python/oppgaver/oppgave_7/d.html
----
-:::
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-$$
-x \in [1, 3]
-$$
-
-**Programkode**:
-
-:::{code-block} python
----
-linenos: true
----
-from casify import *
-
-løsning = løs("-x**2 + 3*x - 2 >= -x + 1")
-
-print(løsning)
-:::
-
-**Utskrift**:
-
-:::{code-block} console
-1 <= x   ∧   x <= 3
-:::
-
-::::
-:::::::::::::
-::::::::::::::
-
-````
-
-:::::::::::::::
-
----
-
-
-
-
-:::::::::::::::{admonition} Oppgave 9
----
-class: problem-level-3
+level: 3
 ---
 En andregradsfunksjon $f$ er gitt ved
 

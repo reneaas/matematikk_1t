@@ -25,7 +25,7 @@ For å løse likninger med CAS, skriver vi inn likningen først – deretter bru
 
 
 :::{margin}
-> For å skrive gangetegn i CAS-vinduet, bruker vi `*` mellom tall og variabler.
+For å skrive gangetegn i CAS-vinduet, bruker vi `*` mellom tall og variabler.
 :::
 
 :::::::::::::::{explore} Utforsk 1

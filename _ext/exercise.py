@@ -11,13 +11,35 @@ class ExerciseDirective(SphinxDirective):
     required_arguments = 1
     optional_arguments = 0
     final_argument_whitespace = True
+    option_spec = {
+        "level": directives.unchanged,
+    }
 
     def run(self):
         title = self.arguments[0]
-
         # Create the admonition node
         admonition_node = nodes.admonition()
-        admonition_node["classes"] = ["admonition", "exercise"]
+
+        # if self.options.get("level"):
+        #     level = self.options.get("level")
+        #     admonition_node["classes"] = ["admonition", f"problem-level-{level}"]
+        # else:
+        #     admonition_node["classes"] = ["admonition", "exercise"]
+
+        if self.options.get("level"):
+            level = self.options.get("level")
+            if level == "1":
+                admonition_node["classes"] = ["admonition", f"common"]
+            elif level == "2":
+                admonition_node["classes"] = ["admonition", f"rare"]
+            elif level == "3":
+                admonition_node["classes"] = ["admonition", f"epic"]
+            elif level == "4":
+                admonition_node["classes"] = ["admonition", f"legendary"]
+            else:
+                admonition_node["classes"] = ["admonition", "exercise"]
+        else:
+            admonition_node["classes"] = ["admonition", "exercise"]
 
         # Create the title node
         title_node = nodes.title()

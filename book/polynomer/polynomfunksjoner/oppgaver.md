@@ -1,8 +1,8 @@
 # Oppgaver: Polynomfunksjoner
 
-:::::::::::::::{admonition} Oppgave 1
+:::::::::::::::{exercise} Oppgave 1
 ---
-class: problem-level-1
+level: 1
 ---
 
 
@@ -124,9 +124,9 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 2
+:::::::::::::::{exercise} Oppgave 2
 ---
-class: problem-level-1
+level: 1
 ---
 Grafen til en tredjegradsfunksjon $f$ gitt ved 
 
@@ -168,84 +168,43 @@ $$
 
 
 :::::::::::::{tab-item} b
-Bruk CAS til å bestemme $f(x)$. 
-> Som vanlig, velg mellom CAS i Geogebra eller Python. 
+> Her skal du bruke CAS til å bestemme koeffisientene til $f(x)$.
 
-````{tab} Python
+Bestem $f(x)$.
 
-:::{raw} html
+:::{cas-popup} 350 500
+:::
+
+
+::::{answer}
+$$
+f(x) = x^3 + 3x^2 + x + 1. 
+$$
+::::
+
+::::{solution}
+Vi skriver inn et generelt funksjonsuttrykk og likningene i CAS, og løser deretter likningssystemet:
+
+:::{figure} ./figurer/oppgaver/oppgave_2/sol.png
 ---
-file: ./python/oppgaver/oppgave_2/b.html
+width: 60%
+class: no-click, adaptive-figure
 ---
 :::
 
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-**Programkode**:
-
-:::{code-block} python
----
-linenos: true
----
-from casify import *
-
-f = funksjon("a * x**3 + b * x**2 + c * x + d")
-
-koeffs = løs("f(-3) = -2", "f(-2) = 3", "f(-1) = 2", "f(0) = 1")
-
-print(koeffs)
-:::
-
-**Utskrift**:
-
-:::{code-block} console
-a = 1 ∧ b = 3 ∧ c = 1 ∧ d = 1
-:::
-
-**Koeffisienter**:
+som betyr at 
 
 $$
 a = 1 \and b = 3 \and c = 1 \and d = 1.
 $$
 
-**Funksjonsuttrykk**:
+Dermed er 
 
 $$
 f(x) = x^3 + 3x^2 + x + 1. 
 $$
 ::::
 
-````
-
-
-````{tab} Geogebra
-
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_2/b.html
----
-:::
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-**Koeffisienter**:
-
-$$
-a = 1 \and b = 3 \and c = 1 \and d = 1.
-$$
-
-**Funksjonsuttrykk**:
-
-$$
-f(x) = x^3 + 3x^2 + x + 1. 
-$$
-::::
-
-````
 
 
 :::::::::::::
@@ -254,10 +213,109 @@ $$
 :::::::::::::::
 
 
-
-:::::::::::::::{admonition} Oppgave 3
 ---
-class: problem-level-1
+
+
+:::::::::::::::{exercise} Oppgave 3
+---
+level: 2
+---
+> Bruk CAS til å bestemme funksjonsuttrykkene for hver av funksjonene nedenfor.
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Grafen til en tredjegradsfunksjon $f$ er vist i figuren nedenfor.
+
+Bestem $f(x)$.
+
+:::{cas-popup} 350 500
+:::
+
+
+:::{figure} ./figurer/oppgaver/oppgave_3/a.svg
+---
+width: 80%
+class: no-click, adaptive-figure
+---
+:::
+
+:::::::::::::
+
+:::::::::::::{tab-item} b
+Grafen til en tredjegradsfunksjon $g$ er vist i figuren nedenfor.
+
+Bestem $g(x)$.
+
+:::{cas-popup} 350 500
+:::
+
+
+:::{figure} ./figurer/oppgaver/oppgave_3/b.svg
+---
+width: 80%
+class: no-click, adaptive-figure
+---
+:::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+Grafen til en tredjegradsfunksjon $h$ er vist i figuren nedenfor.
+
+Bestem $h(x)$.
+
+:::{cas-popup} 350 500
+:::
+
+
+:::{figure} ./figurer/oppgaver/oppgave_3/c.svg
+---
+width: 80%
+class: no-click, adaptive-figure
+---
+:::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} d
+Grafen til en tredjegradsfunksjon $p$ er vist i figuren nedenfor.
+
+Bestem $p(x)$.
+
+:::{cas-popup} 350 500
+:::
+
+
+:::{figure} ./figurer/oppgaver/oppgave_3/d.svg
+---
+width: 80%
+class: no-click, adaptive-figure
+---
+:::
+
+:::::::::::::
+
+::::::::::::::
+
+
+
+:::::::::::::::
+
+
+
+
+---
+
+
+
+:::::::::::::::{exercise} Oppgave 4
+---
+level: 2
 ---
 En tredjegradsfunksjon $f$ er gitt ved 
 
@@ -294,7 +352,7 @@ Tegn en fortegnslinje for $f(x)$ inkludert faktorene til $f$.
 class: answer, dropdown
 ---
 
-:::{figure} ./figurer/oppgaver/oppgave_3/b.svg
+:::{figure} ./figurer/oppgaver/oppgave_4/b.svg
 ---
 width: 100%
 class: no-click, adaptive-figure
@@ -314,7 +372,7 @@ Lag en **skisse** av grafen til $f$.
 class: answer, dropdown
 ---
 
-:::{figure} ./figurer/oppgaver/oppgave_3/c.svg
+:::{figure} ./figurer/oppgaver/oppgave_4/c.svg
 ---
 width: 80%
 class: no-click, adaptive-figure
@@ -351,9 +409,9 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 4
+:::::::::::::::{exercise} Oppgave 5
 ---
-class: problem-level-1
+level: 2
 ---
 En tredjegradsfunksjon $f$ er gitt ved 
 
@@ -388,7 +446,7 @@ Tegn et fortegnsskjema for $f(x)$.
 class: answer, dropdown
 ---
 
-:::{figure} ./figurer/oppgaver/oppgave_4/b.svg
+:::{figure} ./figurer/oppgaver/oppgave_5/b.svg
 ---
 width: 100%
 class: no-click, adaptive-figure
@@ -409,7 +467,7 @@ Tegn en **skisse** av grafen til $f$.
 class: answer, dropdown
 ---
 
-:::{figure} ./figurer/oppgaver/oppgave_4/c.svg
+:::{figure} ./figurer/oppgaver/oppgave_5/c.svg
 ---
 width: 80%
 class: no-click, adaptive-figure
@@ -450,9 +508,9 @@ $$
 ---
 
 
-:::::::::::::::{admonition} Oppgave 5
+:::::::::::::::{exercise} Oppgave 6
 ---
-class: problem-level-2
+level: 2
 ---
 En fjerdegradsfunksjon $f$ er gitt ved
 
@@ -487,7 +545,7 @@ Tegn et fortegnsskjema for $f(x)$, inkludert faktorene i $f(x)$.
 class: answer, dropdown
 ---
 
-:::{figure} ./figurer/oppgaver/oppgave_5/b.svg
+:::{figure} ./figurer/oppgaver/oppgave_6/b.svg
 ---
 width: 100%
 class: no-click, adaptive-figure
@@ -505,7 +563,7 @@ Tegn en **skisse** av grafen til $f$.
 ---
 class: dropdown, answer
 ---
-:::{figure} ./figurer/oppgaver/oppgave_5/c.svg
+:::{figure} ./figurer/oppgaver/oppgave_6/c.svg
 ---
 width: 80%
 class: no-click, adaptive-figure

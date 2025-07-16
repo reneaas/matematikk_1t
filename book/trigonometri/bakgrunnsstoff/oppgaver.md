@@ -3,9 +3,9 @@
 
 
 
-:::::::::::::::{admonition} Oppgave 1
+:::::::::::::::{exercise} Oppgave 1
 ---
-class: problem-level-1
+level: 1
 ---
 ::::::::::::::{tab-set}
 ---
@@ -96,9 +96,9 @@ $$
 
 
 
-:::::::::::::::{admonition} Oppgave 2
+:::::::::::::::{exercise} Oppgave 2
 ---
-class: problem-level-1
+level: 1
 ---
 
 Nedenfor vises en rettvinklet trekant.
@@ -129,9 +129,9 @@ $$
 ---
 
 
-:::::::::::::::{admonition} Oppgave 3
+:::::::::::::::{exercise} Oppgave 3
 ---
-class: problem-level-1
+level: 1
 ---
 
 Nedenfor vises en rettvinklet trekant.
@@ -161,9 +161,9 @@ $$
 ---
 
 
-:::::::::::::::{admonition} Oppgave 4
+:::::::::::::::{exercise} Oppgave 4
 ---
-class: problem-level-1
+level: 1
 ---
 Nedenfor vises en trekant. 
 
@@ -194,9 +194,9 @@ $$
 ---
 
 
-:::::::::::::::{admonition} Oppgave 5
+:::::::::::::::{exercise} Oppgave 5
 ---
-class: problem-level-1
+level: 1
 ---
 Nedenfor vises en rettvinklet trekant.
 
@@ -224,9 +224,9 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 6
+:::::::::::::::{exercise} Oppgave 6
 ---
-class: problem-level-2
+level: 2
 ---
 Nedenfor vises to rettvinklete trekanter.
 
@@ -288,9 +288,9 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 7
+:::::::::::::::{exercise} Oppgave 7
 ---
-class: problem-level-2
+level: 2
 ---
 Nedenfor vises to rettvinklete trekanter.
 
@@ -364,9 +364,9 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 8
+:::::::::::::::{exercise} Oppgave 8
 ---
-class: problem-level-2
+level: 2
 ---
 Nedenfor vises to trekanter.
 
@@ -447,9 +447,9 @@ $$
 
 
 
-:::::::::::::::{admonition} Oppgave 9
+:::::::::::::::{exercise} Oppgave 9
 ---
-class: problem-level-2
+level: 2
 ---
 Nedenfor vises to trekanter $\triangle ABC$ og $\triangle ADE$ der 
 
@@ -512,9 +512,9 @@ $$
 ---
 
 
-:::::::::::::::{admonition} Oppgave 10
+:::::::::::::::{exercise} Oppgave 10
 ---
-class: problem-level-3
+level: 3
 ---
 Figuren nedenfor viser en trekant.
 
@@ -541,9 +541,9 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 11
+:::::::::::::::{exercise} Oppgave 11
 ---
-class: problem-level-3
+level: 3
 ---
 Bestem $CM$ i figuren nedenfor.
 

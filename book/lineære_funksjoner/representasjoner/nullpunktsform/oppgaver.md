@@ -1,7 +1,10 @@
 # Oppgaver: Nullpunktsform
 
-
-:::::::::::::::{quiz} Quiz 1
+:::::::::::::::{exercise} Oppgave 1
+---
+level: 1
+---
+:::{quiz}
 Q: Hvilket funksjonsuttrykk stemmer med grafen vist i figuren nedenfor? ![](figurer/oppgaver/quiz_1/oppgave_1.svg)
 + $f(x) = x - 1$
 - $f(x) = x + 1$
@@ -31,7 +34,7 @@ Q: Hvilket funksjonsuttrykk stemmer med grafen vist i figuren nedenfor? ![](figu
 - $f(x) = 2(x + 4)$
 - $f(x) = -4(x - 8)$
 - $f(x) = 2(x - 8)$
-
+:::
 :::::::::::::::
 
 
@@ -45,7 +48,10 @@ Q: Hvilket funksjonsuttrykk stemmer med grafen vist i figuren nedenfor? ![](figu
 
 
 
-:::::::::::::::{exercise} Oppgave 1
+:::::::::::::::{exercise} Oppgave 2
+---
+level: 1
+---
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
@@ -139,7 +145,10 @@ $$
 
 
 
-:::::::::::::::{exercise} Oppgave 2
+:::::::::::::::{exercise} Oppgave 3
+---
+level: 1
+---
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
@@ -222,7 +231,10 @@ $$
 
 
 
-:::::::::::::::{exercise} Oppgave 3
+:::::::::::::::{exercise} Oppgave 4
+---
+level: 1
+---
 En lineær funksjon $f$ er gitt ved 
 
 $$
@@ -294,7 +306,10 @@ $$
 
 
 
-:::::::::::::::{exercise} Oppgave 4
+:::::::::::::::{exercise} Oppgave 5
+---
+level: 1
+---
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
@@ -387,7 +402,10 @@ $$
 
 
 
-:::::::::::::::{exercise} Oppgave 5
+:::::::::::::::{exercise} Oppgave 6
+---
+level: 1
+---
 En lineær funksjon $f$ er gitt ved 
 
 $$
@@ -396,7 +414,7 @@ $$
 
 Bestem hvilken grafen nedenfor som viser grafen til $f$?
 
-:::{figure} ./figurer/oppgaver/oppgave_5/merged_figure.svg
+:::{figure} ./figurer/oppgaver/oppgave_6/merged_figure.svg
 ---
 width: 100%
 class: no-click, adaptive-figure
@@ -418,10 +436,13 @@ Graf B viser grafen til $f$.
 
 
 
-:::::::::::::::{exercise} Oppgave 6
+:::::::::::::::{exercise} Oppgave 7
+---
+level: 1
+---
 I figuren nedenfor vises grafen til en lineær funksjon $f$.
 
-:::{figure} ./figurer/oppgaver/oppgave_6/figur.svg
+:::{figure} ./figurer/oppgaver/oppgave_7/figur.svg
 ---
 width: 80%
 class: no-click, adaptive-figure
@@ -471,7 +492,10 @@ $$
 ---
 
 
-:::::::::::::::{exercise} Oppgave 7
+:::::::::::::::{exercise} Oppgave 8
+---
+level: 2
+---
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
@@ -482,7 +506,7 @@ Grafen til en lineær funksjon $f$ er vist i figuren nedenfor.
 Bestem $f(x)$ på nullpunktsform. 
 
 
-:::{figure} ./figurer/oppgaver/oppgave_7/a.svg
+:::{figure} ./figurer/oppgaver/oppgave_8/a.svg
 ---
 width: 80%
 class: no-click, adaptive-figure
@@ -505,7 +529,7 @@ Grafen til en lineær funksjon $g$ er vist i figuren nedenfor.
 Bestem $g(x)$ på nullpunktsform. 
 
 
-:::{figure} ./figurer/oppgaver/oppgave_7/b.svg
+:::{figure} ./figurer/oppgaver/oppgave_8/b.svg
 ---
 width: 80%
 class: no-click, adaptive-figure
@@ -529,7 +553,7 @@ Bestem $h(x)$ på nullpunktsform.
 
 
 
-:::{figure} ./figurer/oppgaver/oppgave_7/c.svg
+:::{figure} ./figurer/oppgaver/oppgave_8/c.svg
 ---
 width: 80%
 class: no-click, adaptive-figure
@@ -553,7 +577,7 @@ Grafen til en lineær funksjon $p$ er vist i figuren nedenfor.
 Bestem $p(x)$ på nullpunktsform. 
 
 
-:::{figure} ./figurer/oppgaver/oppgave_7/d.svg
+:::{figure} ./figurer/oppgaver/oppgave_8/d.svg
 ---
 width: 80%
 class: no-click, adaptive-figure
@@ -594,7 +618,10 @@ så leser vi det som at $a = 2$ og samtidig er $b = -5$.
 :::
 
 
-:::::::::::::::{exercise} Oppgave 8
+:::::::::::::::{exercise} Oppgave 9
+---
+level: 2
+---
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
@@ -670,10 +697,13 @@ $$
 ---
 
 
-:::::::::::::::{exercise} Oppgave 9
+:::::::::::::::{exercise} Oppgave 10
+---
+level: 3
+---
 I figuren nedenfor vises grafen til to lineære funksjoner $f$ og $g$.
 
-:::{figure} ./figurer/oppgaver/oppgave_9/figur.svg
+:::{figure} ./figurer/oppgaver/oppgave_10/figur.svg
 ---
 width: 80%
 class: no-click, adaptive-figure

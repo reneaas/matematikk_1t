@@ -1,59 +1,9 @@
 # Oppgaver: <br> $abc$-formelen
 
-:::::::::::::::{admonition} Oppsummering
+
+:::::::::::::::{exercise} Oppgave 1
 ---
-class: summary
----
-
-::::::::::::::{tab-set}
-
-:::::::::::::{tab-item} $abc$-formelen
-
-For en andregradslikning som er skrevet på formen
-
-$$
-ax^2 + bx + c = 0
-$$
-
-er løsningen
-
-$$
-x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a}
-$$
-
-:::::::::::::
-
-:::::::::::::{tab-item} Antall løsninger og diskriminanten
-
-For en andregradslikning som er skrevet på formen
-
-$$
-ax^2 + bx + c = 0
-$$
-
-kan vi bestemme antall løsninger ved å regne ut diskriminanten
-
-$$
-D = b^2 - 4ac
-$$
-
-| Antall løsninger |Diskriminant $D$ |
-|-------------------|---------------------|
-| To løsninger      | $D > 0$             |
-| Én løsning        | $D = 0$             |
-| Ingen løsninger   | $D < 0$             |
-
-:::::::::::::
-
-::::::::::::::
-
-:::::::::::::::
-
----
-
-:::::::::::::::{admonition} Oppgave 1
----
-class: problem-level-1
+level: 1
 ---
 Løs likningene ved hjelp av {popup}`$abc$-formelen. <En likning på formen $ax^2 + bx + c = 0$ har løsningen $$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$>`
 
@@ -128,9 +78,9 @@ $$
 ---
 
 
-:::::::::::::::{admonition} Oppgave 2
+:::::::::::::::{exercise} Oppgave 2
 ---
-class: problem-level-1
+level: 1
 ---
 
 Løs likningene ved hjelp av {popup}`$abc$-formelen. <En likning på formen $ax^2 + bx + c = 0$ har løsningen $$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$>`
@@ -216,9 +166,9 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 3
+:::::::::::::::{exercise} Oppgave 3
 ---
-class: problem-level-1
+level: 1
 ---
 Løs likningene med $abc$-formelen.
 
@@ -291,9 +241,9 @@ Ingen løsning.
 ---
 
 
-:::::::::::::::{admonition} Oppgave 4
+:::::::::::::::{exercise} Oppgave 4
 ---
-class: problem-level-2
+level: 2
 ---
 Løs likningene med $abc$-formelen.
 
@@ -356,9 +306,9 @@ $$
 ---
 
 
-:::::::::::::::{admonition} Oppgave 5
+:::::::::::::::{exercise} Oppgave 5
 ---
-class: problem-level-1
+level: 1
 ---
 For hver av likningene, bestem hvor mange løsninger likningen har ved hjelp av {popup}`diskriminanten. <Diskriminanten $D$ er uttrykket i kvadratroten i $abc$-formelen: $$D = b^2 - 4ac.$$ Hvis $D$ er positiv, har likningen to løsninger. Hvis $D = 0$, har likningen én løsning. Hvis $D$ er negativ, har likningen ingen løsning.>`.
 
@@ -419,9 +369,9 @@ Ingen løsning siden $D < 0$.
 
 ---
 
-:::::::::::::::{admonition} Oppgave 6
+:::::::::::::::{exercise} Oppgave 6
 ---
-class: problem-level-2
+level: 2
 ---
 Bestem nullpunktene til funksjonene ved $abc$-formelen.
 
@@ -499,9 +449,9 @@ $$
 ---
 
 
-::::{admonition} Oppgave 6
+::::{exercise} Oppgave 6
 ---
-class: problem-level-2
+level: 2
 ---
 Bestem $k$ slik at andregradslikningen
 
@@ -524,9 +474,9 @@ $$
 
 ---
 
-::::{admonition} Oppgave 7
+::::{exercise} Oppgave 7
 ---
-class: problem-level-2
+level: 3
 ---
 Et likningssystem er gitt ved
 
@@ -547,16 +497,16 @@ Hva er løsningen til dette likningssystemet?
 class: answer, dropdown
 ---
 $$
-k = 2 \quad \text{og} \quad x = 1 \, \land \, y = 0.
+k = 2 \and x = 1 \and y = 0.
 $$
 :::
 ::::
 
 ---
 
-::::{admonition} Oppgave 8
+::::{exercise} Oppgave 8
 ---
-class: problem-level-2
+level: 3
 ---
 En likning er gitt ved 
 
@@ -586,9 +536,9 @@ $$
 ---
 
 
-::::{admonition} Oppgave 9
+::::{exercise} Oppgave 9
 ---
-class: problem-level-3
+level: 4
 ---
 Et tall er gitt ved 
 
@@ -624,9 +574,9 @@ $$
 ---
 
 
-:::::::::::::::{admonition} Oppgave 10
+:::::::::::::::{exercise} Oppgave 10
 ---
-class: problem-level-2
+level: 2
 ---
 Lova har skrevet et program for å løse andregradslikninger med $abc$-formelen, men har rotet det til og har fått kodelinjene i tilfeldig rekkefølge.
 

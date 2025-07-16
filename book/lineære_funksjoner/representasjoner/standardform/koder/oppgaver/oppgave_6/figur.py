@@ -5,34 +5,22 @@ def main(dirname, save):
     #
     # Define functions
     def f(x):
-        return -2 * x + 3
-
-    def g(x):
-        return 2 * x - 1
-
-    def h(x):
-        return 2 * x + 1
+        return 0.5 * x - 2
 
     # List of functions and their labels.
-    import numpy as np
-
-    np.random.seed(42)
-
-    functions = [f, g, h]
-
-    functions = np.random.permutation(functions).tolist()
+    functions = [f]
 
     fig, ax = plotmath.plot(
         functions=functions,
-        fn_labels=["A", "B", "C"],
-        xmin=-4,
-        xmax=4,
+        fn_labels=True,
+        xmin=-6,
+        xmax=6,
         ymin=-6,
         ymax=6,
-        ticks=False,
+        ticks=True,
         xstep=1,
         ystep=1,
-        grid=False,
+        grid=True,
         lw=2.5,
         domain=False,
     )

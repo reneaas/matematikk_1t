@@ -1,9 +1,9 @@
 # Oppgaver: Arealsetningen 
 
 
-:::::::::::::::{admonition} Oppgave 1
+:::::::::::::::{exercise} Oppgave 1
 ---
-class: problem-level-1
+level: 1
 ---
 > Her trenger du CAS til å regne ut $\sin v$. 
 
@@ -120,9 +120,9 @@ $$
 ---
 
 
-:::::::::::::::{admonition} Oppgave 2
+:::::::::::::::{exercise} Oppgave 2
 ---
-class: problem-level-1
+level: 1
 ---
 <br>
 
@@ -151,8 +151,6 @@ class: dropdown, hints
 Lag en likning ved å bestemme arealet av trekanten på to måter, og sett dem lik hverandre!
 ::::
 
-:::{cas-window}
-:::
 
 ::::{admonition} Fasit
 ---
@@ -236,9 +234,9 @@ Vinkel $\angle B$ er spiss, så $\angle B \approx 35.52 \degree$.
 
 ---
 
-:::::::::::::::{admonition} Oppgave 3
+:::::::::::::::{exercise} Oppgave 3
 ---
-class: problem-level-1
+level: 1
 ---
 
 <br>
@@ -367,9 +365,9 @@ class: no-click, adaptive-figure
 
 
 
-:::::::::::::::{admonition} Oppgave 4
+:::::::::::::::{exercise} Oppgave 4
 ---
-class: problem-level-2
+level: 2
 ---
 Nedenfor vises en skisse av en boligtomt.
 
@@ -428,9 +426,9 @@ $$
 ---
 
 
-:::::::::::::::{admonition} Oppgave 5
+:::::::::::::::{exercise} Oppgave 5
 ---
-class: problem-level-2
+level: 2
 ---
 Nedenfor vises en sirkel med radius $2$. Tre trekanter $\triangle SAC$, $\triangle CSB$ og $\triangle CAS$ er tegnet inn i sirkelen. Punktet $S$ er i sentrum av sirkelen og $\angle ASB = 120 \degree$.
 
@@ -531,9 +529,9 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 6
+:::::::::::::::{exercise} Oppgave 6
 ---
-class: problem-level-2
+level: 2
 ---
 Nedenfor vises en firkant $\square ABCD$. 
 
@@ -725,9 +723,9 @@ $$
 
 
 
-:::::::::::::::{admonition} Oppgave 7
+:::::::::::::::{exercise} Oppgave 7
 ---
-class: problem-level-2
+level: 2
 ---
 Nedenfor vises en sirkel med radius $2$ og tre trekanter $\triangle SAB$, $\triangle CAS$ og $\triangle CAB$. Punktet $S$ er i sentrum av sirkelen og $\angle ACS = 22.5 \degree$.
 
@@ -863,9 +861,9 @@ $$
 ---
 
 
-:::::::::::::::{admonition} Oppgave 8
+:::::::::::::::{exercise} Oppgave 8
 ---
-class: problem-level-2
+level: 2
 ---
 En **regulær** $n$-kant er en $n$-kant hvor alle sider og vinkler er like store. 
 
@@ -929,9 +927,9 @@ $$
 
 
 
-:::::::::::::::{admonition} Oppgave 9
+:::::::::::::::{exercise} Oppgave 9
 ---
-class: problem-level-3
+level: 3
 ---
 I figuren nedenfor vises en regulær $12$-kant som innskrevet i en sirkel med radius $r$. 
 

@@ -1,25 +1,44 @@
-import signchart
+import plotmath
 
 
 def main(dirname, save):
+    #
+    # Define functions
+    def g(x):
+        return -(x + 2) * (x**2 - x - 3)
 
-    f = "-(x + 1) * (x - 1) * (x - 2)"
+    # List of functions and their labels.
+    functions = [g]
 
-    signchart.plot(
-        f=f,
-        fn_name="f(x)",
-        include_factors=True,
+    fig, ax = plotmath.plot(
+        functions=functions,
+        fn_labels=True,
+        xmin=-6,
+        xmax=6,
+        ymin=-2,
+        ymax=12,
+        ticks=True,
+        xstep=1,
+        ystep=1,
+        grid=True,
+        lw=2.5,
+        alpha=None,
+        domain=False,
     )
 
+    # NOTE: Select an appropriate `dirname` to save the figure.
+    # The directory `dirname` will be created automatically if it does not exist already.
     if save:
         fname = __file__.split("/")[-1].replace(".py", ".svg")
-        signchart.savefig(dirname=dirname, fname=fname)
+        plotmath.savefig(
+            dirname=dirname, fname=fname
+        )  # Lagrer figuren i `dirname`-directory
 
-    else:
-        signchart.show()
+    if not save:
+
+        plotmath.show()
 
 
-# NOTE: Ikke endre på noe under denne linjen
 if __name__ == "__main__":
 
     import pathlib
@@ -27,7 +46,6 @@ if __name__ == "__main__":
     # Get the directory where the script is located
     current_dir = str(pathlib.Path(__file__).resolve().parent)
 
-    # NOTE: Set `save=True` to save figure. `save=False` to display figure.
     parts = current_dir.split("/")
     for i in range(len(parts)):
         if parts[~i] == "koder":
@@ -36,4 +54,5 @@ if __name__ == "__main__":
 
     dirname = "/".join(parts)
 
+    # NOTE: Set `save=True` to save figure. `save=False` to display figure.
     main(dirname=dirname, save=True)

@@ -35,7 +35,8 @@ def main(dirname, save):
         D,
         E,
         show_vertices=False,
-        alpha=0.05,
+        alpha=0.1,
+        color=plotmath.COLORS.get("rare"),
     )
 
     plt.plot(*zip(A, C), ls="--", color="black")

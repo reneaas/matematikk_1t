@@ -1,8 +1,8 @@
 # Oppgaver: $\sin v$, $\cos v$ og $\tan v$
 
-:::::::::::::::{admonition} Oppgave 1
+:::::::::::::::{exercise} Oppgave 1
 ---
-class: problem-level-1
+level: 1
 ---
 I figuren nedenfor vises en rettvinklet trekant.
 
@@ -87,9 +87,9 @@ $$
 ---
 
 
-:::::::::::::::{admonition} Oppgave 2
+:::::::::::::::{exercise} Oppgave 2
 ---
-class: problem-level-1
+level: 1
 ---
 I figuren nedenfor vises en rettvinklet trekant.
 
@@ -184,9 +184,9 @@ $$
 ---
 
 
-:::::::::::::::{admonition} Oppgave 3
+:::::::::::::::{exercise} Oppgave 3
 ---
-class: problem-level-1
+level: 1
 ---
 > I denne oppgaven skal du bruke CAS til å bestemme vinklene i trekanten. 
 
@@ -270,16 +270,13 @@ Dermed er $C = 60$.
 
 ::::::::::::::
 
-:::{cas-window}
-:::
-
 :::::::::::::::
 
 ---
 
-:::::::::::::::{admonition} Oppgave 4
+:::::::::::::::{exercise} Oppgave 4
 ---
-class: problem-level-1
+level: 1
 ---
 > I denne oppgaven skal du bruke CAS til å regne ut $\sin v$, $\cos v$ og $\tan v$ for ulike vinkler $v$. 
 
@@ -338,18 +335,14 @@ $$
 ::::::::::::::
 
 
-
-:::{cas-window}
-:::
-
 :::::::::::::::
 
 ---
 
 
-:::::::::::::::{admonition} Oppgave 5
+:::::::::::::::{exercise} Oppgave 5
 ---
-class: problem-level-1
+level: 1
 ---
 > I denne oppgaven skal du bruke CAS til å bestemme ukjente sidelenger i rettvinklede trekanter.
 
@@ -557,9 +550,9 @@ Altså er $x = 3.22$.
 ---
 
 
-:::::::::::::::{admonition} Oppgave 6
+:::::::::::::::{exercise} Oppgave 6
 ---
-class: problem-level-2
+level: 2
 ---
 En likesidet trekant er vist i figuren nedenfor. 
 
@@ -641,9 +634,9 @@ for $v = 30^\circ$ og $v = 60^\circ$.
 ---
 
 
-:::::::::::::::{admonition} Oppgave 7
+:::::::::::::::{exercise} Oppgave 7
 ---
-class: problem-level-2
+level: 2
 ---
 Bruk trekanten nedenfor til å bestemme en eksakt verdi for $\sin 45^\circ$ og $\cos 45^\circ$.
 
@@ -669,9 +662,9 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 8
+:::::::::::::::{exercise} Oppgave 8
 ---
-class: problem-level-2
+level: 2
 ---
 I en matematikkbok står det følgende:
 
@@ -710,9 +703,9 @@ class: no-click, adaptive-figure
 ---
 
 
-:::::::::::::::{admonition} Oppgave 9
+:::::::::::::::{exercise} Oppgave 9
 ---
-class: problem-level-2
+level: 2
 ---
 **Snells** lov forteller oss at når lys går fra luft til vann, vil lyset brytes slik at lysstrålen sin retning i luft og vann oppfyller
 
@@ -781,9 +774,9 @@ Når $u \approx 0^\circ$, vil $\sin u \approx 0$ og dermed $\sin v \approx 0$. D
 
 ---
 
-:::::::::::::::{admonition} Oppgave 10 
+:::::::::::::::{exercise} Oppgave 10 
 ---
-class: problem-level-3
+level: 3
 ---
 En lysstråle har beveget seg fra et punkt $A(0, 1)$ i luft til et punkt $B(10, -1)$ i vann. Lyset traff vannoverflaten i et punkt $M(x, 0)$. Alle avstander er i kilometer.
 
@@ -934,9 +927,9 @@ class: no-click, adaptive-figure
 ---
 
 
-:::::::::::::::{admonition} Oppgave 11
+:::::::::::::::{exercise} Oppgave 11
 ---
-class: problem-level-2
+level: 2
 ---
 
 <br>
@@ -1004,9 +997,9 @@ $$
 
 
 
-:::::::::::::::{admonition} Oppgave 12
+:::::::::::::::{exercise} Oppgave 12
 ---
-class: problem-level-3
+level: 3
 ---
 Nedenfor vises en rettvinklet trekant med vinkler $u$ og $v$. 
 

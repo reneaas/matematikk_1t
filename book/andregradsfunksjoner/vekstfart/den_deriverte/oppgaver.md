@@ -1,55 +1,9 @@
 # Oppgaver: den deriverte
 
-:::::::::::::::{admonition} Oppsummering: den deriverte
----
-class: summary
----
-::::::::::::::{tab-set}
-:::::::::::::{tab-item} Formel
-For en andregradsfunksjon $f(x) = ax^2 + bx + c$ er den deriverte gitt ved:
 
-::::{figure} ./figurer/teori/annoterte_uttrykk/den_deriverte2.svg
+:::::::::::::::{exercise} Oppgave 1
 ---
-width: 70%
-class: no-click, adaptive-figure
----
-::::
-:::::::::::::
-
-:::::::::::::{tab-item} Symmetrilinje og den deriverte
-Den deriverte er null i symmetrilinja til en andregradsfunksjon:
-
-::::{figure} ./figurer/teori/annoterte_uttrykk/derivert_symmetrilinje.svg
----
-width: 30%
-class: no-click, adaptive-figure
----
-::::
-
-::::{figure} ./figurer/teori/derivert_ekstremalpunkt/graf.svg
----
-width: 80%
-class: no-click, adaptive-figure
----
-::::
-:::::::::::::
-
-:::::::::::::{tab-item} Ettpunktsformelen
-En linje som går gjennom et punkt $(x_1, y_1)$ med stigningstall $a$ har likningen 
-
-$$
-y - y_1 = a(x - x_1)
-$$
-:::::::::::::
-
-::::::::::::::
-:::::::::::::::
-
----
-
-:::::::::::::::{admonition} Oppgave 1
----
-class: problem-level-1
+level: 1
 ---
 Bestem den deriverte til funksjonene.
 
@@ -125,9 +79,9 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 2
+:::::::::::::::{exercise} Oppgave 2
 ---
-class: problem-level-1
+level: 1
 ---
 Ta quizen! 
 
@@ -143,9 +97,9 @@ file: ./quiz/quiz_2/quiz_2.html
 
 ---
 
-:::::::::::::::{admonition} Oppgave 3
+:::::::::::::::{exercise} Oppgave 3
 ---
-class: problem-level-1
+level: 1
 ---
 Tegn en fortegnslinje for den deriverte til funksjonene.
 
@@ -250,9 +204,9 @@ class: no-click, adaptive-figure
 
 ---
 
-:::::::::::::::{admonition} Oppgave 4
+:::::::::::::::{exercise} Oppgave 4
 ---
-class: problem-level-1
+level: 1
 ---
 Ta quizen!
 
@@ -266,9 +220,9 @@ file: ./quiz/quiz_3/quiz_3.html
 
 ---
 
-:::::::::::::::{admonition} Oppgave 5
+:::::::::::::::{exercise} Oppgave 5
 ---
-class: problem-level-1
+level: 1
 ---
 
 ::::::::::::::{tab-set}
@@ -360,9 +314,9 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 6
+:::::::::::::::{exercise} Oppgave 6
 ---
-class: problem-level-2
+level: 2
 ---
 ::::::::::::::{tab-set}
 ---
@@ -448,9 +402,9 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 7
+:::::::::::::::{exercise} Oppgave 7
 ---
-class: problem-level-2
+level: 2
 ---
 
 ::::::::::::::{tab-set}
@@ -536,9 +490,9 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 8
+:::::::::::::::{exercise} Oppgave 8
 ---
-class: problem-level-2
+level: 2
 ---
 
 ::::::::::::::{tab-set}
@@ -667,9 +621,9 @@ $$
 ---
 
 
-:::::::::::::::{admonition} Oppgave 9
+:::::::::::::::{exercise} Oppgave 9
 ---
-class: problem-level-2
+level: 3
 ---
 I {numref}`fig-andregradsfunksjoner-vekstfart-den-deriverte-oppgave-9` vises grafen til en andregradsfunksjon $f$ og to tangenter i punktene $(1, f(1))$ og $(3, f(3))$.
 
@@ -724,6 +678,9 @@ $$
 ---
 
 :::::::::::::::{exercise} Oppgave 10
+---
+level: 3
+---
 I figuren nedenfor vises grafen til to lineære funksjoner $f$ og $g$. Punktene $A$ og $B$ og $C$ danner en likebeint trekant $\triangle ABC$ der sidelengden $AB = 2$. 
 
 Et rektangel har hjørnene $(-k, 0)$ og $(-k, g(-k))$ og $(k, f(k))$ og $(k, 0)$ der $k > 0$.
@@ -788,9 +745,9 @@ Bestem hvilken verdi av $k$ som gir størst mulig areal av rektangelet.
 
 ---
 
-:::::::::::::::{admonition} Oppgave 11
+:::::::::::::::{exercise} Oppgave 11
 ---
-class: problem-level-3
+level: 4
 ---
 En andregradsfunksjon $f$ oppfyller sammenhengen
 

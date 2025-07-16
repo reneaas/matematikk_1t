@@ -47,7 +47,8 @@ def main(dirname, save):
         F,
         G,
         show_vertices=False,
-        alpha=0.03,
+        alpha=0.1,
+        color=plotmath.COLORS.get("epic"),
     )
 
     # Label vertices

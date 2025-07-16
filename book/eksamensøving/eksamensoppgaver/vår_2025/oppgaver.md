@@ -571,11 +571,15 @@ I celle 2 ser vi at stigningstallet er omtrent $71.84$. Den praktiske tolkningen
 Hvor mange tilfeller av kikhoste vil bli registrert i Norge i mai 2025 ifølge modellen?
 
 
+:::::{answer}
+Ifølge modellen blir det registrert omtrent $5499$ tilfeller av kikhoste i Norge i mai 2025.
+:::::
+
 :::::{solution}
 Vi kan tolke problemet som at vi skal bestemme $K(x)$ i mai 2025, som vi kan gjøre ved å sette
 
 $$
-x = 5 + 12\cdot 2 = 29
+x = \underbrace{5}_{\text{første mai måned}} + \underbrace{12}_{\text{antall måneder i et år}}\cdot \underbrace{2}_{\text{2 år senere}} = 29
 $$
 
 Vi regner ut med CAS:
@@ -587,7 +591,7 @@ class: no-click, adaptive-figure
 ---
 :::
 
-Dermed vil modellen gi at antall registrerte tilfeller av kikhoste i Norge i mai 2025 er omtrent $K(29) \approx 4599$. 
+Dermed vil modellen gi at antall registrerte tilfeller av kikhoste i Norge i mai 2025 er omtrent $K(29) \approx 5499$. 
 
 :::::
 
