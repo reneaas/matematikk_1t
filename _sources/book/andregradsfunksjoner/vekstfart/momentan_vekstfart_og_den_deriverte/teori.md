@@ -1,0 +1,1 @@
+# Momentan vekstfart og den deriverte

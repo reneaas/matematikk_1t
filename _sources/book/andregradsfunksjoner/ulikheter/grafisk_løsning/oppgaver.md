@@ -46,9 +46,9 @@ Q: Hvilket intervall er det samme som $x < -2 \, \lor \, x \geq 3$?
 ---
 
 
-:::::::::::::::{admonition} Oppgave 2
+:::::::::::::::{exercise} Oppgave 2
 ---
-class: problem-level-1
+level: 1
 ---
 Skriv om ulikhetene til intervaller.
 
@@ -124,9 +124,9 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 3
+:::::::::::::::{exercise} Oppgave 3
 ---
-class: problem-level-1
+level: 1
 ---
 
 Skriv om intervallene til en mengde minus en annen mengde. 
@@ -206,9 +206,9 @@ $$
 ---
 
 
-:::::::::::::::{admonition} Oppgave 4
+:::::::::::::::{exercise} Oppgave 4
 ---
-class: problem-level-1
+level: 1
 ---
 
 ::::::::::::::{tab-set}
@@ -339,9 +339,9 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 5
+:::::::::::::::{exercise} Oppgave 5
 ---
-class: problem-level-1
+level: 1
 ---
 I {numref}`fig-andregradsfunksjoner-ulikheter-grafisk-løsning-oppgave-5` vises grafene til en andregradsfunksjon $f$ og en lineær funksjon $g$.
 

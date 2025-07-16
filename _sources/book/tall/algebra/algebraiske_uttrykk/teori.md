@@ -152,7 +152,10 @@ En likning som er sann for alle verdier av $x$. Derfor er det en identitet.
 
 Test deg selv for å se om du har skjønt forskjellen!
 
-:::::{quiz} Quiz 1
+:::::::::::::::{exercise} Underveisoppgave 2
+Ta quizen! 
+
+:::::{quiz} 
 Q: Hvilke av alternativene nedenfor er algebraiske uttrykk?
 + $2x + 3$
 + $3x$
@@ -191,7 +194,7 @@ Q: Hvilke av alternativene nedenfor er identiteter?
 
 
 :::::
-
+:::::::::::::::
 
 
 

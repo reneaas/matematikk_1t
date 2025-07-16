@@ -127,23 +127,11 @@ Utskrift:
 :::::::::::::::
 
 
-:::{raw} html
----
-file: ./python/kodevindu.html
----
+
+:::{interactive-code}
+# Din kode her
+
+
+
+
 :::
-
-
-
-<!-- Tester med et interaktivt popup vindu:
-
-:::{popup-code}
-def f(x):
-    return x**2 - x - 6
-
-
-y = f(2)
-print(y)
-
-
-:::  -->

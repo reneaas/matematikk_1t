@@ -1,3 +1,3 @@
-# Mengder og tallfølger
+# Mengder
 
 

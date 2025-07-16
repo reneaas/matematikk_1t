@@ -1,41 +1,71 @@
 # Oppgaver: Momentan vekstfart
 
 
-:::::::::::::::{admonition} Oppsummering
+
+:::::::::::::::{exercise} Oppgave 1
 ---
-class: summary
+level: 1
 ---
 ::::::::::::::{tab-set}
-:::::::::::::{tab-item} Momentan vekstfart
-Den momentane vekstfarten til en andregradsfunksjon $f$ i et punkt $x$ er gitt ved 
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+En andregradsfunksjon $f$ er gitt ved
 
 $$
-f'(x) = \dfrac{f(x + 1) - f(x - 1)}{2}
+f(x) = x^2 - 4x + 3.
 $$
 
+Bestem $f'(x)$. 
 
 :::::::::::::
 
-:::::::::::::{tab-item} Tangenter
-En tangent er en rett linje som går gjennom et punkt $(x_1, f(x_1))$ på grafen til en funksjon $f$ og har samme stigningstall som den momentane vekstfarten $f'(x_1)$ i punktet.
 
-Likningen for en tangent bestemmer vi med ettpunktsformelen
+:::::::::::::{tab-item} b
+En andregradsfunksjon $g$ er gitt ved
 
 $$
-y - y_1 = a(x - x_1)
+g(x) = -x^2 + 3x + 5
 $$
 
-der $a = f'(x_1)$.
+Bestem $g'(x)$. 
+
 :::::::::::::
+
+
+:::::::::::::{tab-item} c
+En andregradsfunksjon $h$ er gitt ved
+
+$$
+h(x) = 2x^2 + 3x - 5.
+$$
+
+Bestem $h'(x)$. 
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} d
+En andregradsfunksjon $p$ er gitt ved
+
+$$
+p(x) = 5x^2 - 2x
+$$
+
+Bestem $p'(x)$. 
+
+:::::::::::::
+
 ::::::::::::::
 
 :::::::::::::::
 
----
 
-:::::::::::::::{admonition} Oppgave 1
+
+:::::::::::::::{exercise} Oppgave 2
 ---
-class: problem-level-1
+level: 1
 ---
 ::::::::::::::{tab-set}
 ---
@@ -134,9 +164,9 @@ $$
 ---
 
 
-:::::::::::::::{admonition} Oppgave 2
+:::::::::::::::{exercise} Oppgave 3
 ---
-class: problem-level-1
+level: 1
 ---
 
 ::::::::::::::{tab-set}
@@ -206,7 +236,7 @@ name: fig-andregradsfunksjoner-vekstfart-momentan-vekstfart-oppgave-2-c
 width: 80%
 class: no-click, adaptive-figure
 ---
-viser grafen til en andregradsfunksjon $g$ og en tangent som går gjennom $(-1, h(-1))$.
+viser grafen til en andregradsfunksjon $h$ og en tangent som går gjennom $(-1, h(-1))$.
 :::
 
 ::::{admonition} Fasit
@@ -231,7 +261,7 @@ name: fig-andregradsfunksjoner-vekstfart-momentan-vekstfart-oppgave-2-d
 width: 80%
 class: no-click, adaptive-figure
 ---
-viser grafen til en andregradsfunksjon $g$ og en tangent som går gjennom $(2, p(2))$.
+viser grafen til en andregradsfunksjon $p$ og en tangent som går gjennom $(2, p(2))$.
 :::
 
 ::::{admonition} Fasit
@@ -249,9 +279,9 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 3
+:::::::::::::::{exercise} Oppgave 3
 ---
-class: problem-level-1
+level: 1
 ---
 
 ::::::::::::::{tab-set}
@@ -348,9 +378,9 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 4
+:::::::::::::::{exercise} Oppgave 4
 ---
-class: problem-level-2
+level: 2
 ---
 ::::::::::::::{tab-set}
 ---
@@ -439,9 +469,9 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 5
+:::::::::::::::{exercise} Oppgave 5
 ---
-class: problem-level-2
+level: 2
 ---
 ::::::::::::::{tab-set}
 ---
@@ -732,9 +762,9 @@ $$
 
 
 
-:::::::::::::::{admonition} Oppgave 6
+:::::::::::::::{exercise} Oppgave 6
 ---
-class: problem-level-2
+level: 2
 ---
 > I hver av oppgavene under, er det lurt å lage skisser tilsvarende de figurene du jobbet med i oppgave 4. Disse hjelper deg få en bedre forståelse av oppgaven ved å visualisere informasjonen som er oppgitt i oppgaven. 
 ::::::::::::::{tab-set}
@@ -816,128 +846,3 @@ $$
 ::::::::::::::
 
 :::::::::::::::
-
----
-
-
-:::::::::::::::{admonition} Oppgave 7
----
-class: problem-level-3
----
-Lova har lest seg opp på en strategi der man kan bruke tangenter til å finne nullpunkter til en andregradsfunksjon. 
-
-Hun har laget animasjonen under for å illustrere strategien sin.
-
-:::{video} ./koder/animasjoner/media/videos/newtons_metode/1440p60/newtons_metode.mp4
----
-width: 95%
----
-:::
-
-::::::::::::::{tab-set}
----
-class: tabs-parts
----
-
-:::::::::::::{tab-item} a
-Se på animasjonen og forklar strategien til Lova.
-
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-Lova starter med gjetning på nullpunktet som hun kaller for $x_1$. Deretter lager hun seg en tangent som går gjennom $(x_1, f(x_1))$. Hun finner nullpunktet til denne som hun kaller for $x_2$. Så gjentar hun ved å lage en tangent gjennom $(x_2, f(x_2))$ og finner nullpunktet til denne tangenten. Slik gjentar hun flere ganger frem til hun er nærme et av nullpunktene til $f$.
-:::
-:::::::::::::
-
-
-:::::::::::::{tab-item} b
-En andregradsfunksjon $f$ er gitt ved
-
-$$
-f(x) = x^2 - 4.
-$$
-
-Bruk strategien til Lova med $x_1 = 1$ og regn ut $x_2$ og $x_3$. 
-
-Kommer du nærme et av nullpunktene til $f$? 
-
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-\begin{align*}
-    x_2 &= \dfrac{5}{2}\\
-    \\
-    x_3 &= \dfrac{41}{20} = 2.05.
-\end{align*}
-
-Et av nullpunktene til $f$ er $x = 2$, så vi kommer ganske nærme med disse to stegene.
-:::
-:::::::::::::
-
-
-:::::::::::::{tab-item} c
-Finn en generell formel for nullpunktet til en tangent som går gjennom et punkt $(x_1, y_1)$ med stigningstall a ved å ta utgangspunkt i ettpunktsformelen.
-
-$$
-y - y_1 = a(x - x_1).
-$$
-
-:::{admonition} Fasit
----
-class: answer, dropdown
----
-$$
-x_\text{nullpunkt} = x_1 - \dfrac{y_1}{a}. 
-$$
-:::
-
-:::::::::::::
-
-:::::::::::::{tab-item} d
-> Du må bruke ulike verdier for startverdien $x_1$ for å kunne finne begge nullpunktene til $f$.
-
-Fyll ut programmet under og bruk det til å finne begge nullpunktene til $f$. 
-
-:::{raw} html
----
-file: ./python/oppgaver/newtons_metode.html
----
-:::
-
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-:::{code-block} python
----
-linenos: true
----
-def f(x):
-    return x**2 - 4
-
-x1 = 1
-
-for n in range(5): # 5 runder
-    y1 = f(x1)
-    a = 0.5 * (f(x1 + 1) - f(x1 - 1))
-    
-    x_nullpunkt = x1 - y1 / a
-
-    # Setter x1 = x_nullpunkt og "glemmer" forrige x1
-    x_nullpunkt, x1 = x1, x_nullpunkt
-
-print(f"{x1 = :.2f}") # Skriver ut nullpunktet med 2 desimaler.
-:::
-::::
-
-:::::::::::::
-
-::::::::::::::
-
-:::::::::::::::
-

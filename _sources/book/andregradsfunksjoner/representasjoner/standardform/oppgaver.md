@@ -1,8 +1,8 @@
 # Oppgaver: Standardform
 
-:::::::::::::::{admonition} Oppgave 1
+:::::::::::::::{exercise} Oppgave 1
 ---
-class: problem-level-1
+level: 1
 ---
 Fyll ut tabellen under.
 
@@ -81,9 +81,9 @@ Q: Hva stemmer om koeffisientene til $f(x)$? ![](figurer/quiz/quiz_1/spm_5.svg)
 
 ---
 
-:::::::::::::::{admonition} Oppgave 3
+:::::::::::::::{exercise} Oppgave 3
 ---
-class: problem-level-1
+level: 1
 ---
 Grafen til en andregradsfunksjon $f$ er vist i {numref}`fig-andregradsfunksjoner-representasjoner-standardform-oppgave-3`.
 
@@ -158,9 +158,9 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 4
+:::::::::::::::{exercise} Oppgave 4
 ---
-class: problem-level-1
+level: 1
 ---
 Grafen til en andregradsfunksjon $g$ er vist i {numref}`fig-andregradsfunksjoner-representasjoner-standardform-oppgave-4`.
 
@@ -235,9 +235,9 @@ $$
 
 
 
-:::::::::::::::{admonition} Oppgave 5
+:::::::::::::::{exercise} Oppgave 5
 ---
-class: problem-level-2
+level: 2
 ---
 > Løs oppgavene med CAS!
 
@@ -336,9 +336,9 @@ $$
 ---
 
 
-:::::::::::::::{admonition} Oppgave 6
+:::::::::::::::{exercise} Oppgave 6
 ---
-class: problem-level-2
+level: 2
 ---
 > Løs oppgavene med CAS!
 
@@ -403,9 +403,9 @@ $$
 ---
 
 
-:::::::::::::::{admonition} Oppgave 7
+:::::::::::::::{exercise} Oppgave 7
 ---
-class: problem-level-2
+level: 2
 ---
 Grafen til en andregradsfunksjon er vist i {numref}`fig-andregradsfunksjoner-representasjoner-standardform-oppgave-7`.
 

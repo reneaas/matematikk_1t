@@ -14,7 +14,7 @@ Først må vi utvide begrepsapparatet vårt litt:
 ---
 class: summary
 ---
-Et nullpunkt til en polynom kalles for en **rot** til polynomet. Samlingen av alle nullpunktene til et polynom kalles for **røttene** til polynomet.
+Et nullpunkt til en polynomfunksjon kalles for en **rot** til polynomet. Samlingen av alle nullpunktene til et polynom kalles for **røttene** til polynomet.
 ::::
 
 ## Nullpunktene til et tredjegradspolynom

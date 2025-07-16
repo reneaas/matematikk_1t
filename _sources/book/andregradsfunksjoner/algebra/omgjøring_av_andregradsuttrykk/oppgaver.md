@@ -1,9 +1,9 @@
 # Oppgaver: Omgjøring av andregradsuttrykk
 
 
-:::::::::::::::{admonition} Oppgave 1
+:::::::::::::::{exercise} Oppgave 1
 ---
-class: problem-level-1
+level: 1
 ---
 Bruk fullstendige kvadraters metode til å skrive om funksjonsuttrykkene til ekstremalform.
 
@@ -76,9 +76,9 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 2
+:::::::::::::::{exercise} Oppgave 2
 ---
-class: problem-level-1
+level: 1
 ---
 Bruk konjugatsetningen til å skrive om andregradsuttrykkene til nullpunktsform
 
@@ -150,9 +150,9 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 3
+:::::::::::::::{exercise} Oppgave 3
 ---
-class: problem-level-1
+level: 1
 ---
 En andregradsfunksjon er gitt ved 
 
@@ -223,9 +223,9 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 4
+:::::::::::::::{exercise} Oppgave 4
 ---
-class: problem-level-2
+level: 2
 ---
 Bestem ekstremalpunktene til funksjonene. 
 
@@ -315,9 +315,9 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 5
+:::::::::::::::{exercise} Oppgave 5
 ---
-class: problem-level-2
+level: 2
 ---
 Finn nullpunktene til andregradsfunksjonene. 
 ::::::::::::::{tab-set}
@@ -392,9 +392,9 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 6
+:::::::::::::::{exercise} Oppgave 6
 ---
-class: problem-level-2
+level: 2
 ---
 Bestem antall nullpunkter for hver andregradsfunksjon. 
 
@@ -460,9 +460,9 @@ Ingen nullpunkter
 
 ---
 
-:::::::::::::::{admonition} Oppgave 7
+:::::::::::::::{exercise} Oppgave 7
 ---
-class: problem-level-2
+level: 2
 ---
 Bestem hvor grafene til andregradsfunksjonene skjærer $x$-aksen.
 
@@ -540,9 +540,9 @@ $$
 
 
 
-:::::::::::::::{admonition} Oppgave 8
+:::::::::::::::{exercise} Oppgave 8
 ---
-class: problem-level-2
+level: 2
 ---
 Bestem koeffisientene slik at sammenhengene blir **identiteter**.
 
@@ -621,9 +621,9 @@ $$
 :::::::::::::::
 
 
-:::::::::::::::{admonition} Oppgave 9
+:::::::::::::::{exercise} Oppgave 9
 ---
-class: problem-level-3
+level: 3
 ---
 Bestem koeffisientene slik at sammenhengene blir **identiteter**.
 

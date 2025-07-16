@@ -1,8 +1,8 @@
 # Oppgaver: Kvadratsetningene
 
-:::::::::::::::{admonition} Oppgave 1
+:::::::::::::::{exercise} Oppgave 1
 ---
-class: problem-level-1
+level: 1
 ---
 Utvid andregradsuttrykkene ved hjelp av kvadratsetningene.
 
@@ -78,9 +78,9 @@ $$
 ---
 
 
-:::::::::::::::{admonition} Oppgave 2
+:::::::::::::::{exercise} Oppgave 2
 ---
-class: problem-level-1
+level: 1
 ---
 Bruk kvadratsetningene til å faktorisere andregradsuttrykkene til nullpunktsform.
 
@@ -153,9 +153,9 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 3
+:::::::::::::::{exercise} Oppgave 3
 ---
-class: problem-level-2
+level: 2
 ---
 Bruk kvadratsetningene til å utvide andregradsuttrykkene. 
 
@@ -234,9 +234,9 @@ $$
 ---
 
 
-:::::::::::::::{admonition} Oppgave 4
+:::::::::::::::{exercise} Oppgave 4
 ---
-class: problem-level-2
+level: 2
 ---
 Bruk kvadratsetningene til å faktorisere andregradsuttrykkene.
 
@@ -308,9 +308,9 @@ $$
 
 :::::::::::::::
 
-:::::::::::::::{admonition} Oppgave 5
+:::::::::::::::{exercise} Oppgave 5
 ---
-class: problem-level-2
+level: 2
 ---
 Bestem de ukjente koeffisientene slik at sammenhengene under blir **identiteter**. 
 
@@ -385,9 +385,9 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 6
+:::::::::::::::{exercise} Oppgave 6
 ---
-class: problem-level-2
+level: 2
 ---
 > I denne oppgaven skal du begrunne 1.kvadratsetning geometrisk.
 
@@ -451,9 +451,9 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 7
+:::::::::::::::{exercise} Oppgave 7
 ---
-class: problem-level-2
+level: 2
 ---
 > I denne oppgaven skal du begrunne 2.kvadratsetning geometrisk.
 
@@ -513,9 +513,9 @@ $$
 ---
 
 
-:::::::::::::::{admonition} Oppgave 8
+:::::::::::::::{exercise} Oppgave 8
 ---
-class: problem-level-2
+level: 2
 ---
 > I denne oppgaven skal du begrunne konjugatsetningen geometrisk.
 

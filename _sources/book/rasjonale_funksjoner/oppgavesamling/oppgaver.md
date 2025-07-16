@@ -1,4 +1,4 @@
-# Oppgaver: Blandede oppgaver
+# Oppgavesamling: Rasjonale funksjoner
 
 
 :::::::::::::::{admonition} Oppgave 1

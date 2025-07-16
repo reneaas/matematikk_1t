@@ -3,6 +3,9 @@
 
 
 :::::::::::::::{exercise} Oppgave 1
+---
+level: 1
+---
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
@@ -79,6 +82,9 @@ $$
 
 
 :::::::::::::::{exercise} Oppgave 2
+---
+level: 2
+---
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
@@ -181,6 +187,9 @@ $$
 
 
 :::::::::::::::{exercise} Oppgave 3
+---
+level: 2
+---
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
@@ -256,7 +265,7 @@ $$
 
 :::::::::::::::{exercise} Oppgave 4
 ---
-class: tabs-parts
+level: 2
 ---
 En elev har satt opp funksjonsuttrykket til en lineær funksjon $f$ på ettpunktsform:
 
@@ -330,6 +339,9 @@ class: no-click, adaptive-figure
 
 
 :::::::::::::::{exercise} Oppgave 5
+---
+level: 3
+---
 
 I figuren nedenfor vises grafene til to lineære funksjoner $f$ og $g$. Grafene er parallelle.
 
@@ -390,6 +402,9 @@ Arealet er $4$.
 
 
 :::::::::::::::{exercise} Oppgave 6
+---
+level: 2
+---
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts

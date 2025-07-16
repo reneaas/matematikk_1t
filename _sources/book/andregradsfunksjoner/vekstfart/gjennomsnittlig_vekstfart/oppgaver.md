@@ -1,51 +1,9 @@
 # Oppgaver: Gjennomsnittlig vekstfart
 
 
-:::::::::::::::{admonition} Oppsummering
+:::::::::::::::{exercise} Oppgave 1
 ---
-class: summary, dropdown
----
-::::::::::::::{tab-set}
-:::::::::::::{tab-item} Gjennomsnittlig vekstfart
-Den **gjennomsnittlige vekstfarten** til en funksjon $f$ i intervallet $[x_1, x_2]$ er definert som stigningstallet til en rett linje som går gjennom punktene $(x_1, f(x_1))$ og $(x_2, f(x_2))$ på grafen til $f$.
-
-:::{figure} ./figurer/teori/formel2.svg
----
-width: 60%
-class: no-click, adaptive-figure
----
-:::
-
-Linjen som går gjennom de to punktene kaller vi for en **sekant**. Se {numref}`fig-teori-andregradsfunksjoner-vekstfart-gjennomsnittlig-vekstfart-sekanter-oppgaver`.
-
-:::{figure} ./koder/animasjoner/gjennomsnittig_vekstfart/media/videos/gjennomsnittlig_vekstfart/1440p60/gjennomsnittlig_vekstfart.gif
----
-name: fig-teori-andregradsfunksjoner-vekstfart-gjennomsnittlig-vekstfart-sekanter-oppgaver
-width: 100%
-class: no-click, manim-figure
----
-viser grafen til en andregradsfunksjon (blå) og en sekant (rød) som går gjennom to punkter $(x_1, f(x_1))$ og $(x_2, f(x_2))$ og den tilsvarende formelen for gjennomsnittlig vekstfart i intervallet $[x_1, x_2]$.
-:::
-:::::::::::::
-
-:::::::::::::{tab-item} Ettpunktsformelen
-En linje med stigningstall $a$ som går gjennom punktet $(x_1, y_1)$ kan skrives på formen
-
-$$
-y - y_1 = a(x - x_1).
-$$
-
-:::::::::::::
-
-::::::::::::::
-
-:::::::::::::::
-
----
-
-:::::::::::::::{admonition} Oppgave 1
----
-class: problem-level-1
+level: 1
 ---
 ::::::::::::::{tab-set}
 ---
@@ -138,9 +96,9 @@ $$
 ---
 
 
-:::::::::::::::{admonition} Oppgave 2
+:::::::::::::::{exercise} Oppgave 2
 ---
-class: problem-level-1
+level: 1
 ---
 
 ::::::::::::::{tab-set}
@@ -227,9 +185,9 @@ $$
 ---
 
 
-:::::::::::::::{admonition} Oppgave 3
+:::::::::::::::{exercise} Oppgave 3
 ---
-class: problem-level-1
+level: 1
 ---
 En andregradsfunksjon er gitt ved 
 
@@ -289,9 +247,9 @@ $$
 :::::::::::::::
 
 
-:::::::::::::::{admonition} Oppgave 4
+:::::::::::::::{exercise} Oppgave 4
 ---
-class: problem-level-2
+level: 2
 ---
 
 
@@ -446,9 +404,9 @@ $$
 :::::::::::::::
 
 
-:::::::::::::::{admonition} Oppgave 5
+:::::::::::::::{exercise} Oppgave 5
 ---
-class: problem-level-2
+level: 2
 ---
 
 ::::::::::::::{tab-set}
@@ -611,9 +569,9 @@ $$
 ---
 
 
-:::::::::::::::{admonition} Oppgave 6
+:::::::::::::::{exercise} Oppgave 6
 ---
-class: problem-level-3
+level: 3
 ---
 Lova syns ikke $abc$-formelen var så grei å bruke for å finne nullpunkter, så hun har lest seg opp på en annen strategi der hun kan bruke sekanter for å finne nullpunktene til en andregradsfunksjon.
 

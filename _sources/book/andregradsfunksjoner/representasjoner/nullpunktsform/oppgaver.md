@@ -50,9 +50,9 @@ Q: Nullpunktene til $f(x) = 3(x + 4)(x - 5)$ er ...
 
 
 
-:::::::::::::::{admonition} Oppgave 2
+:::::::::::::::{exercise} Oppgave 2
 ---
-class: problem-level-1
+level: 1
 ---
 Bestem nullpunktene til hver av funksjonene. 
 
@@ -129,9 +129,9 @@ $$
 ---
 
 
-:::::::::::::::{admonition} Oppgave 3
+:::::::::::::::{exercise} Oppgave 3
 ---
-class: problem-level-1
+level: 1
 ---
 For hver av funksjonene, bestem nullpunktsformen til funksjonsuttrykket fra grafen. 
 
@@ -237,9 +237,9 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 4
+:::::::::::::::{exercise} Oppgave 4
 ---
-class: problem-level-1
+level: 1
 ---
 
 ::::::::::::::{tab-set}
@@ -335,9 +335,9 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 5
+:::::::::::::::{exercise} Oppgave 5
 ---
-class: problem-level-2
+level: 2
 ---
 ::::::::::::::{tab-set}
 ---
@@ -433,9 +433,9 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 6
+:::::::::::::::{exercise} Oppgave 6
 ---
-class: problem-level-2
+level: 2
 ---
 ::::::::::::::{tab-set}
 ---
@@ -510,9 +510,9 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 7
+:::::::::::::::{exercise} Oppgave 7
 ---
-class: problem-level-3
+level: 3
 ---
 > Mange andregradsfunksjoner har ikke noen nullpunkter. Likevel kan vi bruke nullpunktsform som del av en strategi for å bestemme funksjonsuttrykket til funksjonen. I denne oppgaven skal du lære hvordan vi kan gjøre dette.
 

@@ -1,7 +1,7 @@
 # Oppgaver: Cosinussetningen
 
 
-:::::::::::::::{problem} Oppgave 1
+:::::::::::::::{exercise} Oppgave 1
 ---
 level: 1
 ---
@@ -133,7 +133,7 @@ $$
 ---
 
 
-:::::::::::::::{problem} Oppgave 2
+:::::::::::::::{exercise} Oppgave 2
 ---
 level: 1
 ---
@@ -261,7 +261,7 @@ $$
 
 
 
-:::::::::::::::{problem} Oppgave 3
+:::::::::::::::{exercise} Oppgave 3
 ---
 level: 2
 ---
@@ -353,7 +353,7 @@ $$
 ---
 
 
-:::::::::::::::{problem} Oppgave 4
+:::::::::::::::{exercise} Oppgave 4
 ---
 level: 2
 ---
@@ -470,7 +470,7 @@ $$
 ---
 
 
-:::::::::::::::{problem} Oppgave 5
+:::::::::::::::{exercise} Oppgave 5
 ---
 level: 2
 ---
@@ -596,7 +596,7 @@ $$
 ---
 
 
-:::::::::::::::{problem} Oppgave 6
+:::::::::::::::{exercise} Oppgave 6
 ---
 level: 2
 ---
@@ -755,7 +755,7 @@ $$
 
 
 
-:::::::::::::::{problem} Oppgave 7
+:::::::::::::::{exercise} Oppgave 7
 ---
 level: 2
 ---
@@ -894,7 +894,7 @@ $$
 
 ---
 
-:::::::::::::::{problem} Oppgave 8
+:::::::::::::::{exercise} Oppgave 8
 ---
 level: 2
 ---
@@ -941,7 +941,7 @@ Dette er en mulighet for opplysningene Anna kan ha fått.
 ---
 
 
-:::::::::::::::{problem} Oppgave 9
+:::::::::::::::{exercise} Oppgave 9
 ---
 level: 3
 ---

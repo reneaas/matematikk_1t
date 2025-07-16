@@ -225,7 +225,7 @@ plt.show = lambda: show_override("\${messageId}")
         return messageId;
     }
 
-      handleMessage(event) {
+    handleMessage(event) {
         let data;
         try {
             data = JSON.parse(event.data);
