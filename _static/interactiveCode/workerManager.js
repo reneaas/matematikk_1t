@@ -9,6 +9,16 @@ class WorkerManager {
             const defaultPreloadPackages = ['matplotlib', 'numpy', 'scipy', 'sympy', 'micropip'];
             const combinedPreloadPackages = Array.from(new Set(preloadPackages ? [...defaultPreloadPackages, ...preloadPackages] : defaultPreloadPackages));
             WorkerManager.instance = new WorkerManager(combinedPreloadPackages);
+            
+            // Trigger warm-up after initialization
+            setTimeout(() => {
+                WorkerManager.instance.warmUpPyodide().catch(err => {
+                    console.warn("Pyodide warm-up failed:", err);
+                });
+            }, 1000); // Small delay to let the page finish loading
+
+
+
         } else if (preloadPackages) {
              // Only load packages that are NOT already loaded.
             const packagesToLoad = preloadPackages.filter(pkg => !WorkerManager.instance.loadedPackages.has(pkg));
@@ -40,6 +50,8 @@ class WorkerManager {
         this.initWorker();
 
         WorkerManager.instance = this;
+
+
     }
 
     initWorker() {
@@ -197,6 +209,35 @@ plt.show = lambda: show_override("\${messageId}")
 
         // Send preloadPackages with the init message!
         this.worker.postMessage({ type: 'init', preloadPackages: this.preloadPackages });
+
+
+        this.pyodideWarmedUp = false;
+    }
+
+    warmUpPyodide() {
+        // Only warm up once
+        if (this.pyodideWarmedUp) {
+            return Promise.resolve();
+        }
+
+        return this.workerReadyPromise.then(() => {
+            console.log("Warming up Pyodide with empty execution...");
+            return new Promise((resolve) => {
+                const messageId = this.generateMessageId();
+                this.callbacks[messageId] = (data) => {
+                    if (data.type === 'executionComplete') {
+                        console.log("Pyodide warm-up complete");
+                        this.pyodideWarmedUp = true;
+                        resolve();
+                    }
+                };
+                this.worker.postMessage({ 
+                    type: 'runCode', 
+                    code: '# Empty script to trigger Pyodide compilation', 
+                    messageId 
+                });
+            });
+        });
     }
 
     generateMessageId() {
