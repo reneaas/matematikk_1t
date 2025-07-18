@@ -312,6 +312,21 @@ plt.show = lambda: show_override("\${messageId}")
         }
     }
 
+    // restartWorker() {
+    //     if (this.worker) {
+    //         this.worker.terminate();
+    //         this.worker = null;
+    //     }
+
+    //     this.loadedPackages = new Set();
+    //     this.workerReadyPromise = new Promise((resolve, reject) => {
+    //         this.workerReadyResolve = resolve;
+    //         this.workerReadyReject = reject;
+    //     });
+
+    //     this.initWorker();
+    // }
+
     restartWorker() {
         if (this.worker) {
             this.worker.terminate();
@@ -319,11 +334,20 @@ plt.show = lambda: show_override("\${messageId}")
         }
 
         this.loadedPackages = new Set();
+        this.pyodideWarmedUp = false;  // Reset warm-up status
+        
         this.workerReadyPromise = new Promise((resolve, reject) => {
             this.workerReadyResolve = resolve;
             this.workerReadyReject = reject;
         });
 
         this.initWorker();
+
+        // Trigger warm-up after reinitialization
+        setTimeout(() => {
+            this.warmUpPyodide().catch(err => {
+                console.warn("Pyodide warm-up failed after restart:", err);
+            });
+        }, 1000); // Small delay to let the worker initialize
     }
 }
