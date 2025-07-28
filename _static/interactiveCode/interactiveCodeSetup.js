@@ -257,6 +257,7 @@ class PredictionInteractiveCodeSetup extends InteractiveCodeSetup {
     runCode() {
         if (this.predictionDisplayed) {
             // Replace with a new InteractiveCodeSetup instance
+            this.initialCode = this.editorInstance.getValue();
             this.replaceWithInteractiveCodeSetup();
 
         } else {

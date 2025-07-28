@@ -1,0 +1,434 @@
+# Oppgaver: Formler
+
+
+:::::::::::::::{exercise} Oppgave 1
+---
+level: 1
+---
+Nedenfor vises noen figurer som følger et bestemt mønster. Vi tenker oss at figurene fortsetter etter samme mønster. La $S_n$ være antall sirkler i figur $n$. 
+
+:::{figure} ./figurer/oppgaver/oppgave_1/figur.svg
+---
+width: 100%
+class: no-click, adaptive-figure
+---
+:::
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts 
+---
+:::::::::::::{tab-item} a
+Bestem verdien til $S_1$, $S_2$ og $S_3$ fra figurene. 
+
+::::{answer}
+$$
+S_1 = 4 \qog S_2 = 8 \qog S_3 = 12
+$$
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Bestem $S_4$. 
+
+::::{answer}
+$$
+S_4 = 16
+$$
+::::
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+Bestem en formel for $S_n$. 
+
+::::{answer}
+$$
+S_n = 4n \qder n \in \mathbb{N}
+$$
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} d
+Hvilken figur har $120$ sirkler? 
+
+::::{answer}
+Figur $30$ har $120$ sirkler siden $S_{30} = 4 \cdot 30 = 120$.
+::::
+
+:::::::::::::
+
+
+::::::::::::::
+
+:::::::::::::::
+
+
+---
+
+:::::::::::::::{exercise} Oppgave 2
+---
+level: 1
+---
+Nedenfor vises noen figurer som følger et bestemt mønster. Vi tenker oss at figurene fortsetter etter samme mønster. La $S_n$ være antall fargelagte kvadrater i figur $n$.
+
+:::{figure} ./figurer/oppgaver/oppgave_2/figur_4n_plus_2.svg
+---
+width: 100%
+class: no-click, adaptive-figure
+---
+:::
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Bestem verdien til $S_1$, $S_2$, $S_3$ og $S_4$ fra figurene.
+
+::::{answer}
+$$
+S_1 = 6 \qog S_2 = 10 \qog S_3 = 14 \qog S_4 = 18
+$$
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Bestem en formel for $S_n$. 
+
+::::{answer}
+$$
+S_n = 4n + 2 \qder n \in \mathbb{N}
+$$
+::::
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+Hvilken figur har $82$ sirkler?
+
+
+::::{answer}
+Figur $20$ har $82$ sirkler siden $S_{20} = 4 \cdot 20 + 2 = 82$.
+::::
+
+:::::::::::::
+:::::::::::::::
+
+
+---
+
+:::::::::::::::{exercise} Oppgave 3
+---
+level: 2
+---
+En tallfølge $a_n$ er gitt ved 
+
+$$
+4, 7, 10, 13, \ldots
+$$
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Bestem det neste leddet i tallfølgen.
+
+
+::::{answer}
+Neste ledd i tallfølgen er $16$.
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Bestem en formel for $a_n$. 
+
+::::{answer}
+$$
+a_n = 3n + 1 \qder n \in \mathbb{N}
+$$
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+Hvilket ledd i tallfølgen har verdien $100$? 
+
+::::{answer}
+Leddet $n = 33$ har verdien $100$ siden $a_{33} = 3 \cdot 33 + 1 = 100$.
+::::
+
+:::::::::::::
+::::::::::::::
+
+
+
+:::::::::::::::
+
+
+---
+
+
+:::::::::::::::{exercise} Oppgave 4
+---
+level: 2
+---
+I denne oppgave skal du bestemme formlene til tallfølger.
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+En tallfølge $a_n$ er gitt ved 
+
+$$
+-1, 1, 3, 5, \ldots
+$$
+
+Bestem en formel for $a_n$. 
+
+::::{answer}
+$$
+a_n = 2n - 3 \qder n \in \mathbb{N}
+$$
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+En tallfølge $b_n$ er gitt ved 
+
+$$
+6, 11, 16, 21, \ldots
+$$
+
+Bestem en formel for $b_n$. 
+
+
+::::{answer}
+$$
+b_n = 5n + 1 \qder n \in \mathbb{N}
+$$
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+En tallfølge $c_n$ er gitt ved 
+
+$$
+0, 3, 8, 15, \ldots
+$$
+
+Bestem en formel for $c_n$. 
+
+::::{answer}
+$$
+c_n = n^2 - 1 \qder n \in \mathbb{N}
+$$
+::::
+
+:::::::::::::
+
+::::::::::::::
+
+:::::::::::::::
+
+
+---
+
+
+:::::::::::::::{exercise} Oppgave 5
+---
+level: 2
+---
+Nedenfor vises noen figurer som følger et bestemt mønster. Vi tenker oss at figurene fortsetter etter samme mønster. La $R_n$ være antall prikker i figur $n$.
+
+
+:::{figure} ./figurer/oppgaver/oppgave_5/figur_rektangulære.svg
+---
+width: 100%
+class: no-click, adaptive-figure
+---
+:::
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Bestem verdien til $R_5$. 
+
+::::{answer}
+$$
+R_5 = 30
+$$
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Bestem et uttrykk for $R_n$. 
+
+
+::::{answer}
+$$
+R_n = n(n + 1) \qder n \in \mathbb{N}
+$$
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+La $T_n$ være antall prikker i figur $n$ som er blå. 
+
+Bestem en formel for $T_n$. 
+
+::::{answer}
+$$
+T_n = \dfrac{R_n}{2} = \dfrac{n(n + 1)}{2} \qder n \in \mathbb{N}
+$$
+::::
+:::::::::::::
+
+::::::::::::::
+:::::::::::::::
+
+
+---
+
+
+:::::::::::::::{exercise} Oppgave 6
+Nedenfor vises noen figurer som følger et bestemt mønster. Vi tenker oss at figurene fortsetter etter samme mønster. La $F_n$ være antall fargelagte firkanter i figur $n$.
+
+
+:::{figure} ./figurer/oppgaver/oppgave_6/figur_katt.svg
+---
+width: 100%
+class: no-click, adaptive-figure
+---
+:::
+
+
+:::::::::::::::
+
+
+---
+
+
+:::{margin} Tips til oppgave 7
+$1 = (-1)^2 = (-1)^4 = (-1)^6 = \ldots$
+
+og 
+
+$-1 = (-1)^3 = (-1)^5 = (-1)^7 = \ldots$
+:::
+
+
+:::::::::::::::{exercise} Oppgave 7
+---
+level: 3
+---
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+En tallfølge $a_n$ er gitt ved 
+
+$$
+1, -2, 4, -6, 8, -10, \ldots
+$$
+
+Bestem en formel for $a_n$. 
+
+::::{answer}
+$$
+a_n = (-1)^{n+1} \cdot 2n \qder n \in \mathbb{N}
+$$
+::::
+
+
+:::::::::::::
+
+:::::::::::::{tab-item} b
+En tallfølge $b_n$ er gitt ved 
+
+$$
+-1, 4, -9, 16, -25, \ldots
+$$
+
+Bestem en formel for $b_n$. 
+
+
+::::{answer}
+$$
+b_n = (-1)^n \cdot n^2 \qder n \in \mathbb{N}
+$$
+::::
+
+
+:::::::::::::
+
+:::::::::::::{tab-item} c
+En tallfølge $c_n$ er gitt ved 
+
+$$
+1, -3, 5, -7, 9, -11, \ldots
+$$
+
+Bestem en formel for $c_n$. 
+
+
+::::{answer}
+$$
+c_n = (-1)^{n+1} \cdot (2n - 1) \qder n \in \mathbb{N}
+$$
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} d
+En tallfølge $d_n$ er gitt ved
+
+$$
+1, -\dfrac{1}{2}, \dfrac{1}{4}, -\dfrac{1}{8}, \dfrac{1}{16}, \ldots
+$$
+
+Bestem en formel for $d_n$. 
+
+
+::::{answer}
+$$
+d_n = \dfrac{(-1)^{n+1}}{2^{n-1}} \qder n \in \mathbb{N}
+$$
+::::
+
+
+:::::::::::::
+
+
+::::::::::::::
+:::::::::::::::
+
