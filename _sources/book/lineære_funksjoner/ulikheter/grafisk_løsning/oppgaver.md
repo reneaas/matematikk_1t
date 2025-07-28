@@ -8,7 +8,18 @@ class: problem-level-1
 
 Grafen til en lineær funksjon $f(x) = -2x + 4$ er vist i {numref}`fig-lineære-funksjoner-ulikheter-grafisk-løsning-oppgaver-oppgave-1`. 
 
-For hver av ulikhetene under, bruk grafen til å løse ulikheten. 
+
+::::{figure} ./figurer/oppgaver/oppgave_1.svg
+---
+name: fig-lineære-funksjoner-ulikheter-grafisk-løsning-oppgaver-oppgave-1
+width: 80%
+class: no-click, adaptive-figure
+---
+viser grafen til $f(x) = -2x + 4$. 
+::::
+
+
+Bruk figuren til å løse hver av oppgavene nedenfor.
 
 ::::::::{tab-set}
 ---
@@ -71,16 +82,6 @@ $$
 ::::::::
 
 
-::::{figure} ./figurer/oppgaver/oppgave_1.svg
----
-name: fig-lineære-funksjoner-ulikheter-grafisk-løsning-oppgaver-oppgave-1
-width: 80%
-class: no-click, adaptive-figure
----
-viser grafen til $f(x) = -2x + 4$. 
-::::
-
-
 ::::::::::::
 
 ---
@@ -95,7 +96,18 @@ $$
 f(x) = x - 2 \quad \text{og} \quad g(x) = -x + 4.
 $$
 
-I hver av oppgavene under skal du bruke grafene til å løse ulikhetene.
+
+::::{figure} ./figurer/oppgaver/oppgave_2.svg
+---
+name: fig-lineære-funksjoner-ulikheter-grafisk-løsning-oppgaver-oppgave-2
+width: 80%
+class: no-click, adaptive-figure
+---
+viser grafene til $f(x) = x - 2$ og $g(x) = -x + 4$.
+::::
+
+
+Bruk figuren til å løse hver av oppgavene nedenfor.
 
 ::::::::{tab-set}
 ---
@@ -176,16 +188,6 @@ $$
 ::::::::
 
 
-::::{figure} ./figurer/oppgaver/oppgave_2.svg
----
-name: fig-lineære-funksjoner-ulikheter-grafisk-løsning-oppgaver-oppgave-2
-width: 80%
-class: no-click, adaptive-figure
----
-viser grafene til $f(x) = x - 2$ og $g(x) = -x + 4$.
-::::
-
-
 ::::::::::::
 
 ---
@@ -203,7 +205,17 @@ f(x) = -\dfrac{2}{3}x + 4 \quad \text{og} \quad g(x) = \dfrac{1}{3}x + 1.
 $$
 
 
-For hver av oppgavene under skal du bruke grafene til å løse ulikhetene.
+::::{figure} ./figurer/oppgaver/oppgave_3.svg
+---
+name: fig-lineære-funksjoner-ulikheter-grafisk-løsning-oppgaver-oppgave-3
+width: 80%
+class: no-click, adaptive-figure
+---
+viser grafene til $f(x) = -\dfrac{2}{3}x + 4$ og $g(x) = \dfrac{1}{3}x + 1$.
+::::
+
+
+Bruk figuren til å løse hver av oppgavene nedenfor.
 
 
 ::::::::{tab-set}
@@ -281,16 +293,6 @@ $$
 :::::::
 ::::::::
 
-
-::::{figure} ./figurer/oppgaver/oppgave_3.svg
----
-name: fig-lineære-funksjoner-ulikheter-grafisk-løsning-oppgaver-oppgave-3
-width: 80%
-class: no-click, adaptive-figure
----
-viser grafene til $f(x) = -\dfrac{2}{3}x + 4$ og $g(x) = \dfrac{1}{3}x + 1$.
-::::
-
 ::::::::::::
 
 
@@ -302,6 +304,19 @@ viser grafene til $f(x) = -\dfrac{2}{3}x + 4$ og $g(x) = \dfrac{1}{3}x + 1$.
 class: problem-level-2
 ---
 I {numref}`fig-lineære-funksjoner-ulikheter-grafisk-løsning-oppgaver-oppgave-4` vises grafene til to lineære funksjoner $f$ og $g$.
+
+
+:::{figure} ./figurer/oppgaver/oppgave_4.svg
+---
+name: fig-lineære-funksjoner-ulikheter-grafisk-løsning-oppgaver-oppgave-4
+width: 80%
+class: no-click, adaptive-figure
+---
+viser grafen til to lineære funksjoner $f$ og $g$.
+:::
+
+
+
 :::::::::::{tab-set}
 ---
 class: tabs-parts
@@ -382,16 +397,6 @@ $$
 
 
 :::::::::::
-
-
-:::{figure} ./figurer/oppgaver/oppgave_4.svg
----
-name: fig-lineære-funksjoner-ulikheter-grafisk-løsning-oppgaver-oppgave-4
-width: 80%
-class: no-click, adaptive-figure
----
-viser grafen til to lineære funksjoner $f$ og $g$.
-:::
 
 
 ::::::::::::
