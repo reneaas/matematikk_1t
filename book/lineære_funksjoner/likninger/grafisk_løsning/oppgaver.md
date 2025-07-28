@@ -1,8 +1,8 @@
 # Oppgaver: <br> Grafisk løsning av lineære likninger
 
-::::{admonition} Oppgave 1
+::::{exercise} Oppgave 1
 ---
-class: problem-level-1
+level: 1
 ---
 I {numref}`fig-lineære-funksjoner-likninger-grafisk-oppgaver-oppgave-1` vises grafen til
 
@@ -92,9 +92,9 @@ $$
 
 
 
-:::::{admonition} Oppgave 2
+:::::{exercise} Oppgave 2
 ---
-class: problem-level-1
+level: 1
 ---
 I {numref}`fig-lineære-funksjoner-likninger-grafisk-oppgaver-oppgave-2` vises grafene til 
 
@@ -193,9 +193,9 @@ $$
 
 
 
-:::::{admonition} Oppgave 3
+::::{exercise} Oppgave 3
 ---
-class: problem-level-1
+level: 1
 ---
 I figur {numref}`fig-lineære-funksjoner-likninger-grafisk-oppgaver-oppgave-3` vises grafene til to lineære funksjoner $f$ og $g$.
 
@@ -275,9 +275,9 @@ $$
 
 
 
-::::::{admonition} Oppgave 4
+::::::{exercise} Oppgave 4
 ---
-class: problem-level-2
+level: 2
 ---
 
 I {numref}`fig-lineære-funksjoner-likninger-grafisk-oppgaver-oppgave-4` vises grafene til to lineære funksjoner $f$ og $g$. 

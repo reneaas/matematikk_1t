@@ -18,40 +18,24 @@ gutter: 3
 
 ::::{grid-item-card}
 ---
-link: book/algebra/regning/intro
+link: book/tall/intro
 link-type: doc
 ---
-**Grunnleggende regning** ➕➖✖️➗
+**Tall**
 
 
 ^^^
 $$
-2 \cdot(3^2 + 4) = 26
+2 \in \mathbb{N}
 $$
 
 $$
 a(b + c) = ab + ac
 $$
-::::
 
-::::{grid-item-card}
----
-link: book/algebra/mengdelære/intro_mengdelære
-link-type: doc
----
-**Mengdelære** 
-
-^^^
-
-\begin{align*}
-    x &\in \mathbb{R} \\
-    \\
-    n &\in \{1, 2, 5\} \\
-    \\
-    y &\in \langle 2, 5] \\
-    \\
-    -2 &< z \leq  5
-\end{align*}
+$$
+a = 2n - 1, \qfor n \in \mathbb{N}
+$$
 ::::
 
 
