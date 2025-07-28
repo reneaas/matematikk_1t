@@ -1,4 +1,4 @@
-# Oppgaver: Setningslogikk
+# Oppgaver: Matematisk logikk og symboler
 
 
 :::::::::::::::{exercise} Oppgave 1
@@ -11,9 +11,7 @@ Koble sammen riktig begrep med riktig symbol.
 $\\land$ : Logisk og
 $\\lor$ : Logisk eller
 $\\implies$ : Impliserer
-$\\impliedby$ : Implisert av
 $\\iff$ : Ekvivalens
-
 :::
 
 :::::::::::::::

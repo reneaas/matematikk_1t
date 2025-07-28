@@ -4,20 +4,14 @@ import uuid
 
 
 class CASPopUpDirective(SphinxDirective):
-    required_arguments = 2  # width, height
-    optional_arguments = 2  # button text, dialog title
+    required_arguments = 0  # width, height
+    optional_arguments = 4  # width, height, button text, dialog title
     has_content = False
 
     def run(self):
         # 1 » parse args -----------------------------------------------------
-        try:
-            width = int(self.arguments[0])
-        except:
-            width = 700
-        try:
-            height = int(self.arguments[1])
-        except:
-            height = 400
+        width = int(self.arguments[0]) if len(self.arguments) > 0 else 350
+        height = int(self.arguments[1]) if len(self.arguments) > 1 else 500
 
         button_text = self.arguments[2] if len(self.arguments) > 2 else "Åpne CAS‑vindu"
         dialog_title = self.arguments[3] if len(self.arguments) > 3 else "CAS‑vindu"
@@ -33,7 +27,6 @@ class CASPopUpDirective(SphinxDirective):
 
 
 <button id="{button_id}" class="ggb-cas-button">{button_text}</button>
-
 <div id="{dialog_id}" title="{dialog_title}" style="display:none;">
     <!-- ✨ inline width/height REMOVED so CSS can take over -->
     <div id="{cid}" class="ggb-window"></div>
@@ -44,6 +37,7 @@ class CASPopUpDirective(SphinxDirective):
 /* kill jQuery‑UI’s 10 px padding & let the CAS pane fill the box */
 .ui-dialog-content{{padding:0!important;}}
 .ggb-window       {{width:100%!important;height:100%!important;box-sizing:border-box;}}
+.ggb-cas-button   {{margin-top: 1em;}}
 </style>
 
 <script>

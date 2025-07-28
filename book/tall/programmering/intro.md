@@ -1,3 +1,0 @@
-# Programmering med tall
-
-

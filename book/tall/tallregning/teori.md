@@ -77,12 +77,118 @@ $$
 
 ## Brøkregning
 
+Ofte jobber med vi brøker og vi foretrekker gjerne å oppgi svaret vårt som brøk fremfor å regne det ut som desimaltall. For å kunne regne med brøker må vi kjenne til hvordan vi legger sammen, trekker fra, ganger og deler brøker.
 
+
+### Legge sammen brøker
+
+Når to brøker skal legges sammen eller trekkes fra hverandre, må vi ha felles nevner i brøkene. Dette kan vi oppnå ved å utvide brøkene.
+
+::::{summary} Legge sammen brøker
+$$
+\dfrac{a}{b} + \dfrac{c}{d} = \dfrac{a \cdot d + b \cdot c}{b \cdot d}
+$$
+::::
+
+Vi tar et eksempel med tall:
+
+:::::::::::::::{example} Eksempel 2
+Regn ut
+
+$$
+\dfrac{3}{4} + \dfrac{1}{6}
+$$
+
+:::::{solution}
+---
+dropdown: 0
+---
+$$
+\dfrac{3}{4} + \dfrac{1}{6} = \dfrac{3 \cdot 6}{4 \cdot 6} + \dfrac{1 \cdot 4}{6 \cdot 4} = \dfrac{18}{24} + \dfrac{4}{24} = \dfrac{22}{24} = \dfrac{11}{12}
+$$
+:::::
+
+
+:::::::::::::::
+
+
+
+### Gange brøker
+
+Når vi ganger to brøker, ganger vi tellerne med hverandre og nevnerne med hverandre.
+
+::::{summary} Ganging av brøker
+$$
+\dfrac{a}{b} \cdot \dfrac{c}{d} = \dfrac{a \cdot c}{b \cdot d}
+$$
+::::
+
+Vi tar et eksempel med tall:
+
+:::::::::::::::{example} Eksempel 3
+Regn ut
+
+$$
+\dfrac{2}{3} \cdot \dfrac{4}{5}
+$$
+:::::{solution}
+---
+dropdown: 0
+---
+$$
+\dfrac{2}{3} \cdot \dfrac{4}{5} = \dfrac{2 \cdot 4}{3 \cdot 5} = \dfrac{8}{15}
+$$
+:::::
+:::::::::::::::
+
+
+### Dele brøker
+Når vi deler en brøk med en annen, ganger vi den første brøken med den omvendte av den andre brøken.
+
+::::{margin} Annen skrivemåte
+Noen ganger skriver vi dette som
+
+$$
+\dfrac{a / b}{c / d} = \dfrac{a}{b} \cdot \dfrac{d}{c}
+$$
+::::
+
+::::{summary} Deling av brøker
+$$
+\dfrac{a}{b} : \dfrac{c}{d} = \
+\dfrac{a}{b} \cdot \dfrac{d}{c}
+$$
+::::
+
+Vi tar et eksempel med tall:
+
+:::::::::::::::{example} Eksempel 4
+Regn ut
+
+$$
+\dfrac{3}{4} : \dfrac{2}{5}
+$$
+:::::{solution}
+---
+dropdown: 0
+---
+$$
+\dfrac{3}{4} : \dfrac{2}{5} = \dfrac{3}{4} \cdot \dfrac{5}{2} = \dfrac{3 \cdot 5}{4 \cdot 2} = \dfrac{15}{8}
+$$
+:::::
+:::::::::::::::
 
 
 
 ## Kvadratrøtter
 
+:::::::::::::::{summary} Kvadratrøtter
+Kvadratroten av et tall $a$ er det tallet $b$ som må opphøyes i $2$ for å få $a$. Det betyr at
 
+$$
+b = \sqrt{a} \liff b^2 = a
+$$
+
+:::::::::::::::
 
 

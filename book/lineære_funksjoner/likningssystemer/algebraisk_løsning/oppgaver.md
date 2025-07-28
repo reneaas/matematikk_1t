@@ -423,6 +423,11 @@ f(0) + g(0) &= 0 & f(-2) + g(2) &= 4 \\
 \\
 \end{align*}
 
+
+:::{cas-popup}
+:::
+
+
 :::::{tab-set}
 ---
 class: tabs-parts
@@ -438,7 +443,7 @@ class: answer, dropdown
 \begin{align*}
     2a + b &= -2c + d \\
     \\
-    b + r &= 0 \\
+    b + d &= 0 \\
     \\
     a &= 2c \\
     \\

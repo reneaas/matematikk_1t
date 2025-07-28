@@ -1,4 +1,4 @@
-# Oppgaver: mengdelære
+# Oppgaver: Mengdelære
 
 ```{contents} Oversikt
 ```
