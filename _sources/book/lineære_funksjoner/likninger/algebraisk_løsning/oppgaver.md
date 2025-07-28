@@ -1,9 +1,9 @@
 # Oppgaver: <br> Algebraisk løsning av lineære likninger
 
 
-:::::{admonition} Oppgave 1
+:::::{exercise} Oppgave 1
 ---
-class: problem-level-1
+level: 1
 ---
 Løs likningene under algebraisk.
 
@@ -100,9 +100,9 @@ $$
 
 
 
-::::{admonition} Oppgave 2
+::::{exercise} Oppgave 2
 ---
-class: problem-level-1
+level: 1
 ---
 En lineær funksjon $f$ er gitt ved 
 
@@ -186,9 +186,9 @@ $$
 
 
 
-:::::{admonition} Oppgave 3
+:::::{exercise} Oppgave 3
 ---
-class: problem-level-2
+level: 2
 ---
 En lineær funksjon $f$ er gitt ved 
 
@@ -272,9 +272,9 @@ $$
 
 
 
-::::{admonition} Oppgave 4
+::::{exercise} Oppgave 4
 ---
-class: problem-level-2
+level: 2
 ---
 Grafen til en lineær funksjon $f$ er vist i {numref}`fig-lineære-funksjoner-likninger-algebraisk-oppgave-4`.
 
@@ -359,9 +359,9 @@ Den korteste avstanden mellom de to skjæringspunktene er $1$.
 
 
 
-::::{admonition} Oppgave 5
+::::{exercise} Oppgave 5
 ---
-class: problem-level-2
+level: 2
 ---
 En lineær funksjon $f$ går gjennom punktet $(1, 2)$. 
 
@@ -467,9 +467,9 @@ $$
 
 
 
-::::{admonition} Oppgave 6
+::::{exercise} Oppgave 6
 ---
-class: problem-level-2
+level: 2
 ---
 En lineær funksjon $f$ oppfyller likningen
 

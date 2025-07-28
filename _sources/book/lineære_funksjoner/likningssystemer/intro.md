@@ -13,7 +13,7 @@ link-type: doc
 **Grafisk løsning** 📈
 
 ^^^
-:::{figure} ./figurer/intro.svg
+:::{figure} ./grafisk_løsning/figurer/teori/grafisk_løsning.svg
 ---
 width: 100%
 class: no-click, adaptive-figure
