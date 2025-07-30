@@ -1,0 +1,1355 @@
+
+<!DOCTYPE html>
+
+
+<html lang="norwegian" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>8. Lineære likningssystemer &#8212; Matematikk 1T</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/cas_popup.css?v=ff10440c" />
+    <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/popup.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/popup_code.css?v=4b4feebf" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/dialogue.css?v=1b585024" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/general_style.css?v=f92fc478" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pdf_custom.css?v=a874a063" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/static_code_blocks.css?v=68f9364b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/admonitions.css?v=e96e44d6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/geogebra.css?v=fd180d66" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/popup_code.css?v=4b4feebf" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/misc.css?v=55d93a12" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/grids.css?v=7667ba21" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/cas_popup.css?v=ff10440c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/figures.css?v=e7de8791" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/tabs.css?v=a560da15" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_dark_default_cm.css?v=3beebd47" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_dark_high_contrast_cm.css?v=4c0c1b0f" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_light_default_cm.css?v=c880a553" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_light_cm.css?v=facc8b7a" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/github_dark_cm.css?v=d1235728" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/one_dark_cm.css?v=3ae52176" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/parsons_puzzle/parsonsPuzzle.css?v=9fbab2c7" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/popup/popup.css?v=2d27c3a4" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/multipleChoiceQuiz/style.css?v=42d54795" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/escapeRoom/style.css?v=b30732ed" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/interactiveCode/style.css?v=20be8392" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/clickable_figures/style.css?v=d35dfce7" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/polydiv/style.css?v=3450aa48" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pairPuzzle/style.css?v=e3c8ca03" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mathjax/style.css?v=f2a0e64a" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=c712eed9"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../../_static/tabs.js?v=3ee01567"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/auto-render.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"annotateAbove": ["\\mathrel{\\overset{\\substack{\\text{#2} \\\\ \\Bigg\\downarrow}}{#1}}", 2], "annotateBelow": ["\\mathrel{\\underset{\\substack{\\Bigg\\uparrow \\\\ \\text{#2}}}{#1}}", 2], "cline": ["\\underline{\\phantom{#1}}", 1], "and": ["\\quad \\land \\quad"], "or": ["\\quad \\lor \\quad"], "liff": ["\\quad \\iff \\quad"], "limplies": ["\\quad \\implies \\quad"], "limpliedby": ["\\quad \\impliedby \\quad"], "lland": ["\\; \\land \\;"], "degree": ["^\\circ"], "qog": ["\\quad \\text{og} \\quad"], "qder": ["\\quad \\text{der} \\quad"], "qeller": ["\\quad \\text{eller} \\quad"], "qhvis": ["\\quad \\text{hvis} \\quad"], "qfor": ["\\quad \\text{for} \\quad"], "natural": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rational": ["\\mathbb{Q}"], "real": ["\\mathbb{R}"], "irrational": ["\\mathbb{Q}^c"], "qcomma": [",\\quad"], "nimplies": ["\\quad\\mathrel{\\not\\!\\!\\!\\implies}\\quad"], "nimpliedby": ["\\quad\\mathrel{\\not\\!\\!\\!\\impliedby}\\quad"], "niff": ["\\quad\\mathrel{\\not\\!\\!\\!\\iff}\\quad"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3.2/es5/tex-mml-chtml.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/lineære_funksjoner/likningssystemer/teori';</script>
+    <script>mermaid.initialize({"startOnLoad": true})</script>
+    <script src="../../../_static/geogebra-setup.js?v=c67998b1"></script>
+    <script src="../../../_static/utils.js?v=14803243"></script>
+    <script src="../../../_static/serviceWorker.js?v=19bb19ce"></script>
+    <script src="../../../_static/static_code_blocks.js?v=e512471c"></script>
+    <script src="../../../_static/parsons_puzzle/theme-switcher.js?v=c0cdcaac"></script>
+    <script src="../../../_static/parsons_puzzle/parsonsPuzzle.js?v=6e8c8774"></script>
+    <script src="../../../_static/skulpt/skulpt.js?v=51c28977"></script>
+    <script src="../../../_static/popup/popup.js?v=5db611f4"></script>
+    <script src="../../../_static/multipleChoiceQuiz/timedMultipleChoiceQuiz.js?v=79e3619c"></script>
+    <script src="../../../_static/multipleChoiceQuiz/multipleChoiceQuiz.js?v=7d161c2c"></script>
+    <script src="../../../_static/multipleChoiceQuiz/utils.js?v=2c6f871c"></script>
+    <script src="../../../_static/multipleChoiceQuiz/multipleChoiceQuestion.js?v=f8e9756b"></script>
+    <script src="../../../_static/multipleChoiceQuiz/sequentialMultipleChoiceQuiz.js?v=8d38189d"></script>
+    <script src="../../../_static/escapeRoom/escapeRoom.js?v=cdbaa3bb"></script>
+    <script src="../../../_static/interactiveCode/turtleCode.js?v=e0242465"></script>
+    <script src="../../../_static/interactiveCode/pythonRunner.js?v=e9f0c2d2"></script>
+    <script src="../../../_static/interactiveCode/workerManager.js?v=de8adb65"></script>
+    <script src="../../../_static/interactiveCode/interactiveCodeSetup.js?v=49566f0b"></script>
+    <script src="../../../_static/interactiveCode/codeEditor.js?v=371b09e9"></script>
+    <script src="../../../_static/clickable_figures/clickable_figure.js?v=dd2467e6"></script>
+    <script src="../../../_static/pairPuzzle/game.js?v=cb8b0d45"></script>
+    <script src="../../../_static/pairPuzzle/draggableItem.js?v=5767251d"></script>
+    <script src="../../../_static/pairPuzzle/dropZone.js?v=56907477"></script>
+    <link rel="canonical" href="https://www.munchboka.no/book/lineære_funksjoner/likningssystemer/teori.html" />
+    <link rel="icon" href="../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Oppgaver: Lineære likningssystemer" href="oppgaver.html" />
+    <link rel="prev" title="Oppgaver: Lineære likninger" href="../likninger/oppgaver.html" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="norwegian"/>
+<!-- Pyodide -->
+<script src="https://cdn.jsdelivr.net/pyodide/v0.27.0/full/pyodide.js"></script>
+
+
+<!-- CodeMirror -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+<link rel="stylesheet" href="../../../_static/code_mirror_themes/github_light_cm.css">
+<link rel="stylesheet" href="../../../_static/code_mirror_themes/github_dark_cm.css">
+<link rel="stylesheet" href="../../../_static/code_mirror_themes/one_dark_cm.css">
+
+<!-- CodeMirror scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+<!-- highlighting of code in Parsons puzzle -->
+<head>
+    <link id="highlight-theme-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css">
+    <link id="highlight-theme-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github-dark.min.css">
+</head>
+
+
+
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery-ui-touch-punch-improved@0.3.1/dist/jquery.ui.touch-punch-improved.min.js"></script>
+
+
+
+
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/evg_logo_med_1T.png" class="logo__image only-light" alt="Matematikk 1T - Home"/>
+    <script>document.write(`<img src="../../../_static/evg_logo_med_1T.png" class="logo__image only-dark" alt="Matematikk 1T - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">I. Tall</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../tall/algebra/intro.html">1. Algebra</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../tall/tallregning/teori.html">1.1. Tallregning</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tall/tallregning/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tall/algebra/algebraiske_uttrykk/teori.html">1.2. Algebraiske uttrykk, likninger og identiteter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tall/algebra/parenteser/teori.html">1.3. Regning med parenteser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tall/algebra/oppgaver.html">1.4. Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../tall/tallmengder_og_setningslogikk/intro.html">2. Tallmengder og symboler</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../tall/tallmengder_og_setningslogikk/tallmengder/teori.html">2.1. Tallmengder</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tall/tallmengder_og_setningslogikk/tallmengder/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../tall/tallmengder_og_setningslogikk/setningslogikk/teori.html">2.2. Matematisk logikk og symboler</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tall/tallmengder_og_setningslogikk/setningslogikk/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../tall/tallf%C3%B8lger/intro.html">3. Tallfølger</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../tall/tallf%C3%B8lger/formler/teori.html">3.1. Formler</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tall/tallf%C3%B8lger/formler/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../tall/tallf%C3%B8lger/programmering/teori.html">3.2. Programmering av tallfølger</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../tall/tallf%C3%B8lger/programmering/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">II. Lineære funksjoner</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../representasjoner/standardform/teori.html">4. Standardform</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../representasjoner/standardform/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../representasjoner/nullpunktsform/teori.html">5. Nullpunktsform</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../representasjoner/nullpunktsform/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../representasjoner/ettpunktsform/teori.html">6. Ettpunktsform</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../representasjoner/ettpunktsform/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../likninger/teori.html">7. Lineære likninger</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../likninger/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">8. Lineære likningssystemer</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ulikheter/teori.html">9. Lineære ulikheter</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">III. Andregradsfunksjoner</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../andregradsfunksjoner/representasjoner/intro.html">10. Representasjoner</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../andregradsfunksjoner/representasjoner/standardform/teori.html">10.1. Standardform</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../andregradsfunksjoner/representasjoner/standardform/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../andregradsfunksjoner/representasjoner/nullpunktsform/teori.html">10.2. Nullpunktsform</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../andregradsfunksjoner/representasjoner/nullpunktsform/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../andregradsfunksjoner/representasjoner/ekstremalform/teori.html">10.3. Ekstremalform</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../andregradsfunksjoner/representasjoner/ekstremalform/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../andregradsfunksjoner/algebra/intro.html">11. Algebra</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../andregradsfunksjoner/algebra/kvadratsetningene/teori.html">11.1. Kvadratsetningene</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../andregradsfunksjoner/algebra/kvadratsetningene/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../andregradsfunksjoner/algebra/omgj%C3%B8ring_av_andregradsuttrykk/teori.html">11.2. Omgjøring av andregradsuttrykk</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../andregradsfunksjoner/algebra/omgj%C3%B8ring_av_andregradsuttrykk/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../andregradsfunksjoner/likninger/intro.html">12. Andregradslikninger</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../andregradsfunksjoner/likninger/abc_formelen/teori.html">12.1. <span class="math notranslate nohighlight">\(abc\)</span>-formelen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../andregradsfunksjoner/likninger/abc_formelen/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../andregradsfunksjoner/likninger/grafisk_l%C3%B8sning/teori.html">12.2. Grafisk løsning</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../andregradsfunksjoner/likninger/grafisk_l%C3%B8sning/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../andregradsfunksjoner/likninger/spesielle_andregradslikninger/teori.html">12.3. Spesielle andregradslikninger</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../andregradsfunksjoner/likninger/spesielle_andregradslikninger/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../andregradsfunksjoner/ulikheter/intro.html">13. Andregradsulikheter</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../andregradsfunksjoner/ulikheter/grafisk_l%C3%B8sning/teori.html">13.1. Grafisk løsning</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../andregradsfunksjoner/ulikheter/grafisk_l%C3%B8sning/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../andregradsfunksjoner/ulikheter/algebraisk_l%C3%B8sning/teori.html">13.2. Algebraisk løsning</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../andregradsfunksjoner/ulikheter/algebraisk_l%C3%B8sning/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../andregradsfunksjoner/vekstfart/intro.html">14. Vekstfart</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../andregradsfunksjoner/vekstfart/gjennomsnittlig_vekstfart/teori.html">14.1. Gjennomsnittlig vekstfart</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../andregradsfunksjoner/vekstfart/gjennomsnittlig_vekstfart/oppgaver.html">Gjennomsnittlig vekstfart</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../andregradsfunksjoner/vekstfart/momentan_vekstfart/teori.html">14.2. Momentan vekstfart</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../andregradsfunksjoner/vekstfart/momentan_vekstfart/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../andregradsfunksjoner/vekstfart/den_deriverte/teori.html">14.3. Den deriverte</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../andregradsfunksjoner/vekstfart/den_deriverte/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../andregradsfunksjoner/vekstfart/momentan_vekstfart_og_den_deriverte/teori.html">14.4. Momentan vekstfart og den deriverte</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../andregradsfunksjoner/vekstfart/momentan_vekstfart_og_den_deriverte/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">IV. Polynomer</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../polynomer/polynomfunksjoner/teori.html">15. Polynomfunksjoner</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../polynomer/polynomfunksjoner/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../polynomer/polynomdivisjon/teori.html">16. Polynomdivisjon</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../polynomer/polynomdivisjon/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../polynomer/polynomlikninger/teori.html">17. Polynomlikninger</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../polynomer/polynomlikninger/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../polynomer/derivasjon/teori.html">18. Den deriverte</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../polynomer/derivasjon/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../polynomer/funksjonsdr%C3%B8fting/teori.html">19. Funksjonsdrøfting</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../polynomer/optimering/teori.html">20. Optimering</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../polynomer/optimering/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../polynomer/oppgavesamling/oppgaver.html">21. Oppgavesamling</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">V. Rasjonale funksjoner</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../rasjonale_funksjoner/line%C3%A6re/teori.html">22. Lineære-over-lineære</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../rasjonale_funksjoner/line%C3%A6re/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../rasjonale_funksjoner/generelle/teori.html">23. Generelle rasjonale funksjoner</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../rasjonale_funksjoner/generelle/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rasjonale_funksjoner/oppgavesamling/oppgaver.html">24. Oppgavesamling</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">VI. Eksponentialfunksjoner og Potensfunksjoner</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../eksponentialfunksjoner_og_potensfunksjoner/eksponentialfunksjoner/teori.html">25. Eksponentialfunksjoner</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../eksponentialfunksjoner_og_potensfunksjoner/eksponentialfunksjoner/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../eksponentialfunksjoner_og_potensfunksjoner/potensfunksjoner/teori.html">26. Potensfunksjoner</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../eksponentialfunksjoner_og_potensfunksjoner/potensfunksjoner/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">VII. Trigonometri</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../trigonometri/bakgrunnsstoff/teori.html">27. Pytagoras’ setning, formlikhet og vinkler</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../trigonometri/bakgrunnsstoff/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../trigonometri/definisjoner/teori.html">28. <span class="math notranslate nohighlight">\(\sin v\)</span>, <span class="math notranslate nohighlight">\(\cos v\)</span> og <span class="math notranslate nohighlight">\(\tan v\)</span></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../trigonometri/definisjoner/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../trigonometri/arealsetningen/teori.html">29. Arealsetningen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../trigonometri/arealsetningen/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../trigonometri/enhetssirkelen/teori.html">30. Enhetssirkelen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../trigonometri/enhetssirkelen/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../trigonometri/sinussetningen/teori.html">31. Sinussetningen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../trigonometri/sinussetningen/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../trigonometri/cosinussetningen/teori.html">32. Cosinussetningen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../trigonometri/cosinussetningen/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CAS</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../cas/cas_del1/cas_del1.html">CAS-kurs: Del 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../cas/cas_del2/oppgaver.html">CAS-kurs: Del 2</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Programmering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../programmering/turtle/turtle.html">Kræsjkurs 💥 i programmering med <code class="code docutils literal highlight highlight-python"><span class="n">turtle</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programmering/variabler/variabler.html">Variabler og <code class="code docutils literal highlight highlight-python"><span class="nb">print</span></code>-funksjonen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programmering/regning/regning.html">Regning med Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programmering/for_loops/for_loops.html"><code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programmering/while_loops/while_loops.html"><code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programmering/if_else/if_else.html"><code class="code docutils literal highlight highlight-python"><span class="k">if</span></code>-<code class="code docutils literal highlight highlight-python"><span class="k">else</span></code>-setninger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../programmering/feilmeldinger/teori.html">Feilsøking og debugging</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Eksamensøving</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../eksamens%C3%B8ving/eksamensoppgaver/funksjoner/del_1/oppgaver.html">Funksjoner (Del 1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../eksamens%C3%B8ving/eksamensoppgaver/funksjoner/del_2/oppgaver.html">Funksjoner (Del 2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../eksamens%C3%B8ving/eksamensoppgaver/modellering/del_2/oppgaver.html">Modellering (Del 2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../eksamens%C3%B8ving/eksamensoppgaver/trigonometri/del_1/oppgaver.html">Trigonometri (Del 1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../eksamens%C3%B8ving/eksamensoppgaver/trigonometri/del_2/oppgaver.html">Trigonometri (Del 2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../eksamens%C3%B8ving/programmering/oppgaver.html">Programmeringsoppgaver</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../eksamens%C3%B8ving/heldagspr%C3%B8ver/intro.html">Heldagsprøver</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../eksamens%C3%B8ving/heldagspr%C3%B8ver/v%C3%A5r_2025/oppgaver.html">Vår 2025</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../eksamens%C3%B8ving/eksamensoppgaver/v%C3%A5r_2025/oppgaver.html">Eksamen vår 2025</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Eksamensressurser</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../eksamensressurser/python.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../eksamensressurser/cas.html">CAS (Geogebra)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../eksamensressurser/geogebra.html">Geogebra</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Last ned denne siden">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/book/lineære_funksjoner/likningssystemer/teori.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Last ned kildefilen"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Skriv ut til PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullskjerm-modus"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Lineære likningssystemer</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Innhold </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafisk-losning">Grafisk løsning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafisk-tolkning-av-likninger">Grafisk tolkning av likninger</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algebraisk-losning">Algebraisk løsning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#innsettingsmetoden">Innsettingsmetoden</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#addisjonsmetoden">Addisjonsmetoden</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cas">CAS</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#losning-med-programmering">Løsning med programmering</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lineaere-likningssystemer">
+<h1><span class="section-number">8. </span>Lineære likningssystemer<a class="headerlink" href="#lineaere-likningssystemer" title="Link to this heading">#</a></h1>
+<div class="admonition tip">
+<p class="admonition-title">Læringsmål</p>
+<ul class="simple">
+<li><p>Kunne løse lineære likningssystemer grafisk.</p></li>
+<li><p>Kunne løse lineære likningssystemer algebraisk, både med og uten hjelpemidler.</p></li>
+<li><p>Kunne løse lineære likningssystemer med programmering.</p></li>
+</ul>
+</div>
+<aside class="margin sidebar">
+<p class="sidebar-title">Men er ikke dette bare likningssett?</p>
+<p>På ungdomsskolen har du kanskje lært om likningssett. I videregående skole er dette et mindre brukt begrep, og vi skal heller kalle det for likningssystemer.</p>
+</aside>
+<p>Et <strong>likningssystem</strong> er et system som består av to eller flere likninger med to eller flere ukjente. Målet er at alle likningene er oppfylt samtidig. Et eksempel på et slikt likningssystem er</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+    x + y &amp;= 1 \\
+    -2x + 3y &amp;= 4
+\end{align*}\]</div>
+<p>Målet vårt er å bestemme hvilke verdier <span class="math notranslate nohighlight">\(x\)</span> og <span class="math notranslate nohighlight">\(y\)</span> må ha for at begge likningene i systemet skal være oppfylt samtidig. Vi markerer ofte likningene med (I) og (II) for å enklere kunne beskrive dem i tekst.</p>
+<p>I likhet med likninger, så har vi flere strategier vi kan bruke for å løse disse:</p>
+<ol class="arabic simple">
+<li><p><strong>Grafisk løsning</strong></p></li>
+<li><p><strong>Algebraisk løsning</strong></p></li>
+<li><p><strong>Løsning med programmering</strong></p></li>
+</ol>
+<section id="grafisk-losning">
+<h2>Grafisk løsning<a class="headerlink" href="#grafisk-losning" title="Link to this heading">#</a></h2>
+<p>Når vi løser et likningssystem grafisk, så tegner vi grafer som svarer til likningene i systemet og leter etter skjæringspunktet mellom dem. Løsningen av likningssystemet er koordinatene til skjæringspunktet. Men før vi ser konkret på hvordan vi gjør dette, må vi ta en liten avstikker og se på en ny måte å tenke på hvordan linjer i planet kan skrives algebraisk og hvordan vi kan tolke dem grafisk.</p>
+<section id="grafisk-tolkning-av-likninger">
+<h3>Grafisk tolkning av likninger<a class="headerlink" href="#grafisk-tolkning-av-likninger" title="Link to this heading">#</a></h3>
+<p>En typisk likning i et likningssystem kan være</p>
+<div class="math notranslate nohighlight">
+\[
+x + y = 1.
+\]</div>
+<p>Grafisk tolker vi dette som alle punkter <span class="math notranslate nohighlight">\((x, y)\)</span> som oppfyller at <span class="math notranslate nohighlight">\(x + y = 1\)</span>. Vi kan skrive om likningen som</p>
+<div class="math notranslate nohighlight">
+\[
+x + y = 1 \liff y = -x + 1
+\]</div>
+<p>Når vi så på standardformen til lineære funksjoner, så gjenkjenner vi dette som en lineær funksjon med stigningstall <span class="math notranslate nohighlight">\(-1\)</span> som skjærer <span class="math notranslate nohighlight">\(y\)</span>-aksen i punktet <span class="math notranslate nohighlight">\((0, 1)\)</span>. Mer generelt kan vi skrive om en likning</p>
+<div class="math notranslate nohighlight">
+\[
+Ax + By = C
+\]</div>
+<p>til formen <span class="math notranslate nohighlight">\(y = ax + b\)</span> ved å løse likningen for <span class="math notranslate nohighlight">\(y\)</span>. Men dette fungerer bare for <strong>skrå</strong> linjer.</p>
+<p>Til nå har vi tenkt på lineære funksjoner som linjer på formen <span class="math notranslate nohighlight">\(y = ax + b\)</span> der <span class="math notranslate nohighlight">\(y = f(x)\)</span>. Vi har også sett at vi kan skrive disse på 
+<span class="popup-wrapper" id="popup-role-4f37a17f">
+  <span class="popup-trigger">nullpunktsform</span>
+  <span class="popup-bubble" style="display:none;">$y = a(x - x_1)$</span>
+</span>
+ og 
+<span class="popup-wrapper" id="popup-role-d698d8ee">
+  <span class="popup-trigger">ettpunktsform</span>
+  <span class="popup-bubble" style="display:none;">$y = a(x - x_0) + y_0$</span>
+</span>
+. Men linjer i planet trenger ikke alltid være lineære funksjoner. Mer generelt kan vi dele linjer inn i tre kategorier:</p>
+<ol class="arabic simple">
+<li><p><strong>Skrå linjer</strong>: Linjer som kan skrives på de tre formene vi har sett på tidligere.</p></li>
+<li><p><strong>Horisontale linjer</strong>: Linjer som er på formen <span class="math notranslate nohighlight">\(y = \text{konstant}\)</span>, for eksempel <span class="math notranslate nohighlight">\(y = 3\)</span>.</p></li>
+<li><p><strong>Loddrette linjer</strong>: Linjer som er på formen <span class="math notranslate nohighlight">\(x = \text{konstant}\)</span>, for eksempel <span class="math notranslate nohighlight">\(x = -2\)</span>.</p></li>
+</ol>
+<div class="admonition example">
+<p class="admonition-title">Eksempel 1</p>
+<p>Nedenfor ser du et eksempel på hver av de tre typene linjer i planet</p>
+<div class="sd-tab-set tabs-parts docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Skrå linje</label><div class="sd-tab-content docutils">
+<figure class="align-default" id="id1">
+<a class="no-click adaptive-figure reference internal image-reference" href="../../../_images/skrå_linje.svg"><img alt="../../../_images/skr%C3%A5_linje.svg" class="no-click adaptive-figure" src="../../../_images/skr%C3%A5_linje.svg" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 8.1 </span><span class="caption-text">viser en skrå linje som svarer til en linje med likningen <span class="math notranslate nohighlight">\(y = -\dfrac{4}{3}x + \dfrac{2}{3}\)</span>. Men vi kan også gange denne likningen med <span class="math notranslate nohighlight">\(3\)</span> for å kunne skrive den som <span class="math notranslate nohighlight">\(4x + 3y = 2\)</span>.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Horisontal linje</label><div class="sd-tab-content docutils">
+<figure class="align-default" id="id2">
+<a class="no-click adaptive-figure reference internal image-reference" href="../../../_images/horisontal_linje.svg"><img alt="../../../_images/horisontal_linje.svg" class="no-click adaptive-figure" src="../../../_images/horisontal_linje.svg" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 8.2 </span><span class="caption-text">viser en horisontal linje <span class="math notranslate nohighlight">\(y = 3\)</span>. Her har vi ikke noe <span class="math notranslate nohighlight">\(x\)</span>-ledd som betyr at linja har samme <span class="math notranslate nohighlight">\(y\)</span>-verdi uansett hvilken verdi <span class="math notranslate nohighlight">\(x\)</span> har. Vi kan også skrive denne linja som <span class="math notranslate nohighlight">\(0x + 1y = 3\)</span>, men det gjør vi sjeldent.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+Vertikal linje</label><div class="sd-tab-content docutils">
+<figure class="align-default" id="id3">
+<a class="no-click adaptive-figure reference internal image-reference" href="../../../_images/vertikal_linje.svg"><img alt="../../../_images/vertikal_linje.svg" class="no-click adaptive-figure" src="../../../_images/vertikal_linje.svg" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 8.3 </span><span class="caption-text">viser en vertikal linje <span class="math notranslate nohighlight">\(x = -2\)</span>. Her har vi ikke noe <span class="math notranslate nohighlight">\(y\)</span>-ledd som betyr at linja har samme <span class="math notranslate nohighlight">\(x\)</span>-verdi uansett hvilken verdi <span class="math notranslate nohighlight">\(y\)</span> har. Vi kan også skrive denne linja som <span class="math notranslate nohighlight">\(1x + 0y = -2\)</span>, men det gjør vi typisk ikke.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Eksempel 2</p>
+<p>Nedenfor ser du grafene til to linjer som er gitt ved likningssystemet</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+    x + 3y &amp;= -1 \\
+    -3x + 2y &amp;= -8
+\end{align*}\]</div>
+<figure class="align-default">
+<a class="no-click adaptive-figure reference internal image-reference" href="../../../_images/figur59.svg"><img alt="../../../_images/figur59.svg" class="no-click adaptive-figure" src="../../../_images/figur59.svg" style="width: 80%;" /></a>
+</figure>
+<p>Bruk figuren til å løse likningssystemet.</p>
+<div class="admonition solution">
+<p class="admonition-title">Løsning</p>
+<p>Løsningen av likningssystemet er koordinatene til skjæringspunktet mellom de to linjene. Fra figuren ser vi at skjæringspunktet er <span class="math notranslate nohighlight">\((2, -1)\)</span>. Dermed er løsningen av likningssystemet</p>
+<div class="math notranslate nohighlight">
+\[
+(x, y) = (2, -1) \liff x = 2 \and y = -1.
+\]</div>
+</div>
+</div>
+<hr class="docutils" />
+<p>Vi kan også tegne grafene selv med Geogebra og bestemme skjæringspunktet mellom dem. Dette skal du få prøve i Utforsk 1.</p>
+<div class="admonition explore">
+<p class="admonition-title">Utforsk 1</p>
+<p>Et likningssystem er gitt ved</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+    x + 3y &amp;= -1 \\
+    -3x + 2y &amp;= -8
+\end{align*}\]</div>
+<div class="sd-tab-set tabs-parts docutils">
+<input checked="checked" id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
+a</label><div class="sd-tab-content docutils">
+<p>Skriv inn hver likning i skrivefeltet og trykk enter. Se videoen nedenfor for hjelp.</p>
+<div  class="sphinx-contrib-video-container align-center"><video controls="True" preload="auto" width="100%" class="no-click"><source src="../../../_images/del_1.mp4" type="video/mp4"></video></div></div>
+<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
+b</label><div class="sd-tab-content docutils">
+<p>Videoen nedenfor viser hvordan man finner skjæringen mellom de to linjene som vises i grafikkfeltet.</p>
+<p>Se videoen og finn deretter skjæringspunktet mellom de to linjene.</p>
+<div  class="sphinx-contrib-video-container align-center"><video controls="True" preload="auto" width="100%" class="no-click"><source src="../../../_images/del_2.mp4" type="video/mp4"></video></div></div>
+<input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-5">
+c</label><div class="sd-tab-content docutils">
+<p>Les av løsningen av likningssystemet fra punktet som vises i algebrafeltet (tekstfeltet).</p>
+</div>
+</div>
+
+<div id="ggb-cas-13bd582e" style="width: 720px; height: 800px;" class="ggb-window"></div>
+<script>
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    var options = {
+        appName: 'classic',
+        width: 720,
+        height: 800,
+        showToolBar: true,
+        showAlgebraInput: true,
+        showMenuBar: true,
+        language: 'nb',
+        borderRadius: 8,
+        borderColor: '#000000',
+        showFullscreenButton: true,
+        showResetIcon: true,
+        scale: 1,
+        rounding: 2,
+        showKeyboardOnFocus: false,
+        preventFocus: true,
+        id: 'ggb-cas-13bd582e',
+        '': '',
+        perspective: 'A/G',
+    };
+
+    var applet = new GGBApplet(options, true);
+    applet.inject('ggb-cas-13bd582e');
+
+});
+</script>
+        </div>
+<p>Grafisk løsning har en begrensning i at vi ikke alltid kan lese av en eksakt løsning. Selv om vi kan trykke på skjæring med Geogebra, vil vi i tilfeller hvor svarene ikke er hele tall eller rasjonale tall med endelig desimalutvikling, ikke kunne lese av løsningen eksakt. Hvis vi trenger den eksakte løsningen, må vi derfor snu oss mot neste strategi – algebraisk løsning.</p>
+</section>
+</section>
+<section id="algebraisk-losning">
+<h2>Algebraisk løsning<a class="headerlink" href="#algebraisk-losning" title="Link to this heading">#</a></h2>
+<p>Algebraisk løsning av et likningssystem handler om å finne de eksakte verdiene for <span class="math notranslate nohighlight">\(x\)</span> og <span class="math notranslate nohighlight">\(y\)</span> som oppfyller likningene i systemet. For likningssystemene vi har sett på så langt, handler det om å isolere <span class="math notranslate nohighlight">\(x\)</span> og <span class="math notranslate nohighlight">\(y\)</span>. Vi skal se på to strategier for å gjøre det ved regning, og til slutt skal vi se på hvordan vi gjør dette med CAS.</p>
+<section id="innsettingsmetoden">
+<h3>Innsettingsmetoden<a class="headerlink" href="#innsettingsmetoden" title="Link to this heading">#</a></h3>
+<p>Innsettingsmetoden går ut på å isolere én variabel fra den ene likningen og sette inn i den andre likningen slik at vi får en likning med bare én ukjent. La oss se på et eksempel:</p>
+<div class="admonition example">
+<p class="admonition-title">Eksempel 3</p>
+<p>Løs likningssystemet</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+x + y &amp;= 1 \\
+x + 2y &amp;= -1
+\end{align*}\]</div>
+<div class="admonition solution">
+<p class="admonition-title">Løsning</p>
+<p>Vi starter med å nummerere likningene for å enklere kunne beskrive hva som foregår i utregningene:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+x + y &amp;= 1 &amp;&amp; \text{(I)} \\
+x + 2y &amp;= -1 &amp;&amp; \text{(II)}
+\end{align*}\]</div>
+<p>Vi løser likning <span class="math notranslate nohighlight">\(\mathrm{(I)}\)</span> for <span class="math notranslate nohighlight">\(y\)</span> fordi det er lettere å isolere <span class="math notranslate nohighlight">\(y\)</span> i denne likningen:</p>
+<div class="math notranslate nohighlight">
+\[
+x + y = 1 \liff y = 1 - x
+\]</div>
+<p>deretter setter vi inn dette uttrykket for <span class="math notranslate nohighlight">\(y\)</span> inn i likning <span class="math notranslate nohighlight">\(\mathrm{(II)}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+x + 2\cdot (1 - x) = -1 \liff x + 2 - 2x = -1
+\]</div>
+<p>som gir</p>
+<div class="math notranslate nohighlight">
+\[
+-x + 2 = -1 \liff -x = -3 \liff x = 3
+\]</div>
+<p>Til slutt setter vi inn denne verdien for <span class="math notranslate nohighlight">\(x\)</span> inn i likning <span class="math notranslate nohighlight">\(\mathrm{(I)}\)</span> som allerede er løst for <span class="math notranslate nohighlight">\(y\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+y = 1 - x = 1 - 3 = -2
+\]</div>
+<p>Dermed er løsningen av likningssystemet</p>
+<div class="math notranslate nohighlight">
+\[
+x = 3 \and y = -2
+\]</div>
+</div>
+</div>
+<div class="admonition exercise">
+<p class="admonition-title">Underveisoppgave 1</p>
+<p>Løs likningssystemet nedenfor med Innsettingsmetoden</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+    2x + y &amp; =2 \\
+    3x - 2y &amp;= -11
+\end{align*}\]</div>
+<div class="admonition answer dropdown">
+<p class="admonition-title">Fasit</p>
+<div class="math notranslate nohighlight">
+\[
+x = -1 \and y = 4
+\]</div>
+</div>
+</div>
+</section>
+<section id="addisjonsmetoden">
+<h3>Addisjonsmetoden<a class="headerlink" href="#addisjonsmetoden" title="Link to this heading">#</a></h3>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Selv om metoden heter <em>addisjonsmetoden</em>, betyr det ikke at vi <em>kun</em> kan plusse likninger sammen. Vi kan også ta en likning minus en annen.</p>
+</aside>
+<p>Denne strategien handler om å plusse sammen likninger eller trekke likninger fra hverandre slik at én av variablene forsvinner. Da sitter vi igjen med en likning med kun én ukjent. Deretter kan vi bare sette inn løsningen i én av likningene for å bestemme hva den andre må være. La oss ta et eksempel:</p>
+<div class="admonition example">
+<p class="admonition-title">Eksempel 4</p>
+<p>Løs likningssystemet</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+2x + y &amp;= 8 \\
+x - y &amp;= 7
+\end{align*}\]</div>
+<div class="admonition solution">
+<p class="admonition-title">Løsning</p>
+<p>La oss starte med å nummerere likningene:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+2x + y &amp;= 8 &amp;&amp; \text{(I)} \\
+x - y &amp;= 7 &amp;&amp; \text{(II)}
+\end{align*}\]</div>
+<p>Se på venstresidene i likningene. Her er <span class="math notranslate nohighlight">\(y\)</span>-leddene motsatte av hverandre: <span class="math notranslate nohighlight">\(+y\)</span> i likning <span class="math notranslate nohighlight">\(\text{(I)}\)</span> og <span class="math notranslate nohighlight">\(-y\)</span> i likning <span class="math notranslate nohighlight">\(\text{(II)}\)</span>. Hvis vi legger sammen venstresidene, vil <span class="math notranslate nohighlight">\(y\)</span>-leddene derfor forsvinne. Det kan vi gjøre, så lenge vi også legger sammen høyresidene – da får vi en ny likning:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+(2x + y) + (x - y) &amp;= 8 + 7 &amp;&amp; \text{(I) + (II)} \\
+\end{align*}\]</div>
+<p>Dette kan vi forenkle til:</p>
+<div class="math notranslate nohighlight">
+\[
+3x = 15 \liff x = 5
+\]</div>
+<p>Nå som vi har funnet at <span class="math notranslate nohighlight">\(x = 5\)</span>, kan vi sette inn denne verdien i én av likningene for å finne <span class="math notranslate nohighlight">\(y\)</span>. Det spiller ingen rolle hvilken av de to likningene vi bruker. Her velger vi likning <span class="math notranslate nohighlight">\(\text{(II)}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+5 - y = 7 \liff -y = 2 \liff y = -2
+\]</div>
+<p>Altså er løsningen av likningssystemet</p>
+<div class="math notranslate nohighlight">
+\[
+x = 5 \and y = -2
+\]</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="admonition exercise">
+<p class="admonition-title">Underveisoppgave 2</p>
+<p>Løs likningssystemet nedenfor med Addisjonsmetoden</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+x - 2y &amp;= 8 \\
+-x + y &amp;= -5
+\end{align*}\]</div>
+<div class="admonition answer dropdown">
+<p class="admonition-title">Fasit</p>
+<div class="math notranslate nohighlight">
+\[
+x = 2 \and y = -3
+\]</div>
+</div>
+</div>
+</section>
+<section id="cas">
+<h3>CAS<a class="headerlink" href="#cas" title="Link to this heading">#</a></h3>
+<p>Vi kan løse likningssystemer algebraisk ved hjelp av CAS og det er ganske likt som å løse en likning. Vi skriver inn likningene, markerer dem og trykker på <img alt="../../../_images/mode_solve.svg" class="inline-image" src="../../../_images/mode_solve.svg" />.</p>
+<div class="admonition explore">
+<p class="admonition-title">Utforsk 1</p>
+<p>I gif-en nedenfor vises det hvordan man løser et likningssystem med CAS.</p>
+<figure class="align-default">
+<a class="no-click adaptive-figure reference internal image-reference" href="../../../_images/cas-likningssystemer.gif"><img alt="../../../_images/cas-likningssystemer.gif" class="no-click adaptive-figure" src="../../../_images/cas-likningssystemer.gif" style="width: 80%;" /></a>
+</figure>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<button id="button-ggb-cas-831e5c24" class="ggb-cas-button">Åpne CAS‑vindu</button>
+<div id="dialog-ggb-cas-831e5c24" title="CAS‑vindu" style="display:none;">
+    <!-- ✨ inline width/height REMOVED so CSS can take over -->
+    <div id="ggb-cas-831e5c24" class="ggb-window"></div>
+</div>
+
+<style>
+.ui-resizable-handle { min-width:16px;min-height:16px; }
+/* kill jQuery‑UI’s 10 px padding & let the CAS pane fill the box */
+.ui-dialog-content{padding:0!important;}
+.ggb-window       {width:100%!important;height:100%!important;box-sizing:border-box;}
+.ggb-cas-button   {margin-top: 1em; margin-bottom: 1em;}
+</style>
+
+<script>
+(function() {
+  $(function() {
+    let ggbReady = false;
+
+    function applySize(){
+      if(!ggbReady) return;
+      const w = $("#ggb-cas-831e5c24").width(),
+            h = $("#ggb-cas-831e5c24").height();
+      window.ggbApplet.setSize(Math.round(w), Math.round(h));
+    }
+
+    $("#dialog-ggb-cas-831e5c24").dialog({
+      autoOpen:false,
+      width:390,height:580,
+      resizable:true,draggable:true,
+      position:{my:"center",at:"center",of:window},
+      resize:()=>window.requestAnimationFrame(applySize),
+      open:function(){
+        if(!ggbReady){
+          new GGBApplet({
+            appName:"classic",id:"ggb-cas-831e5c24",
+            width:350,height:500,
+            perspective:"C",language:"nb",
+            showToolBar:true,showAlgebraInput:true,
+            borderRadius:8,enableRightClick:true,showKeyboardOnFocus:false,
+            customToolBar:"1001 | 1002 | 1007 | 1010 | 6",
+            appletOnLoad:()=>{ggbReady=true;applySize();}
+          },true).inject("ggb-cas-831e5c24");
+        }else{applySize();}
+      }
+    });
+
+    $("#button-ggb-cas-831e5c24").button()
+      .on("click touchend pointerup",e=>{e.preventDefault();$("#dialog-ggb-cas-831e5c24").dialog("open");});
+  });
+})();
+</script>
+        <div class="sd-tab-set tabs-parts docutils">
+<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-6">
+a</label><div class="sd-tab-content docutils">
+<p>Bruk CAS-vinduet til å løse det samme likningssystemet slik det er vist i gif-en ovenfor.</p>
+</div>
+<input id="sd-tab-item-7" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-7">
+b</label><div class="sd-tab-content docutils">
+<p>Bruk CAS-vinduet til å løse likningssystemet gitt ved</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+2x + 3y &amp;= 6 \\
+4x - y &amp;= 5
+\end{align*}
+\end{split}\]</div>
+</div>
+<input id="sd-tab-item-8" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-8">
+c</label><div class="sd-tab-content docutils">
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+3x + 2y &amp;= 8 \\
+2x - 4y &amp;= -2
+\end{align*}\]</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="losning-med-programmering">
+<h2>Løsning med programmering<a class="headerlink" href="#losning-med-programmering" title="Link to this heading">#</a></h2>
+<p>Når vi skal løse likningssystemer med programmering, lager vi en systematisk oppskrift som vi ber et program gjennomføre – vi kaller dette en <strong>algoritme</strong>. En gjenganger vi kommer til å møte på er at vi systematisk prøver ut forskjellige verdier og sjekker om svaret er riktig.</p>
+<p>I forbindelse med likningssystemer betyr det at vi systematisk prøver ut mange forskjellige punkter <span class="math notranslate nohighlight">\((x, y)\)</span> og sjekker om likningssystemet er oppfylt for hvert punkt ved å sette inn verdiene i likningene. Dette krever at vi klarer å lage et <strong>grid</strong> med punkter slik at for hver verdi av <span class="math notranslate nohighlight">\(x\)</span>, prøver vi ut mange verdier av <span class="math notranslate nohighlight">\(y\)</span>. Dette skal du se mer på i Utforsk 2.</p>
+<div class="admonition explore">
+<p class="admonition-title">Utforsk 2</p>
+<p>Nedenfor vises et program lager mange forskjellige punkter <span class="math notranslate nohighlight">\((x, y)\)</span> i et grid og skriver ut verdiene til punktene.</p>
+<div class="sd-tab-set tabs-parts docutils">
+<input checked="checked" id="sd-tab-item-9" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-9">
+a</label><div class="sd-tab-content docutils">
+<p>Hvilken av figurene nedenfor tror du viser alle punktene som programmet skriver ut?</p>
+<p>Kjør programmet til slutt og sjekk svaret ditt.</p>
+<blockquote>
+<div><p>Klikk gjerne på figuren for å se nærmere!</p>
+</div></blockquote>
+<figure class="clickable-figure adaptive-figure align-default">
+<a class="reference internal image-reference" href="../../../_images/merged_figure13.svg"><img alt="" src="../../../_images/merged_figure13.svg" style="width: 100%;" /></a>
+</figure>
+
+        <div id="container-code-ca23ae9f"></div>
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", () => {
+                const code = 
+`for x in range(0, 2):
+    for y in range(0, 3):
+        print((x, y))
+`;
+
+                makePredictionInteractiveCode(
+                    "container-code-ca23ae9f",
+                    code,
+                );
+            });
+        </script>
+        </div>
+<input id="sd-tab-item-10" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-10">
+b</label><div class="sd-tab-content docutils">
+<p>Nedenfor vises et program som løser et likningssystem ved å prøve ut mange punkter <span class="math notranslate nohighlight">\((x, y)\)</span>.</p>
+<p>Bruk CAS-vinduet til å bestemme hva som skrives ut av programmet, og sjekk deretter svaret ditt ved å kjøre programmet.</p>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<button id="button-ggb-cas-d5a6ab3b" class="ggb-cas-button">Åpne CAS‑vindu</button>
+<div id="dialog-ggb-cas-d5a6ab3b" title="CAS‑vindu" style="display:none;">
+    <!-- ✨ inline width/height REMOVED so CSS can take over -->
+    <div id="ggb-cas-d5a6ab3b" class="ggb-window"></div>
+</div>
+
+<style>
+.ui-resizable-handle { min-width:16px;min-height:16px; }
+/* kill jQuery‑UI’s 10 px padding & let the CAS pane fill the box */
+.ui-dialog-content{padding:0!important;}
+.ggb-window       {width:100%!important;height:100%!important;box-sizing:border-box;}
+.ggb-cas-button   {margin-top: 1em; margin-bottom: 1em;}
+</style>
+
+<script>
+(function() {
+  $(function() {
+    let ggbReady = false;
+
+    function applySize(){
+      if(!ggbReady) return;
+      const w = $("#ggb-cas-d5a6ab3b").width(),
+            h = $("#ggb-cas-d5a6ab3b").height();
+      window.ggbApplet.setSize(Math.round(w), Math.round(h));
+    }
+
+    $("#dialog-ggb-cas-d5a6ab3b").dialog({
+      autoOpen:false,
+      width:390,height:580,
+      resizable:true,draggable:true,
+      position:{my:"center",at:"center",of:window},
+      resize:()=>window.requestAnimationFrame(applySize),
+      open:function(){
+        if(!ggbReady){
+          new GGBApplet({
+            appName:"classic",id:"ggb-cas-d5a6ab3b",
+            width:350,height:500,
+            perspective:"C",language:"nb",
+            showToolBar:true,showAlgebraInput:true,
+            borderRadius:8,enableRightClick:true,showKeyboardOnFocus:false,
+            customToolBar:"1001 | 1002 | 1007 | 1010 | 6",
+            appletOnLoad:()=>{ggbReady=true;applySize();}
+          },true).inject("ggb-cas-d5a6ab3b");
+        }else{applySize();}
+      }
+    });
+
+    $("#button-ggb-cas-d5a6ab3b").button()
+      .on("click touchend pointerup",e=>{e.preventDefault();$("#dialog-ggb-cas-d5a6ab3b").dialog("open");});
+  });
+})();
+</script>
+        <br>
+
+        <div id="container-code-7b42d64b"></div>
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", () => {
+                const code = 
+`for x in range(-5, 6):
+    for y in range(-5, 6):
+        if 2*x + 4*y == 12 and 3*x - y == -10:
+            print((x, y))
+`;
+
+                makePredictionInteractiveCode(
+                    "container-code-7b42d64b",
+                    code,
+                );
+            });
+        </script>
+        </div>
+</div>
+</div>
+</section>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./book/lineære_funksjoner/likningssystemer"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../likninger/oppgaver.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Oppgaver: Lineære likninger</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="oppgaver.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Oppgaver: Lineære likningssystemer</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Innhold
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafisk-losning">Grafisk løsning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafisk-tolkning-av-likninger">Grafisk tolkning av likninger</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algebraisk-losning">Algebraisk løsning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#innsettingsmetoden">Innsettingsmetoden</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#addisjonsmetoden">Addisjonsmetoden</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cas">CAS</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#losning-med-programmering">Løsning med programmering</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Av René Ask, Edvard Munch Videregående Skole
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

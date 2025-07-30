@@ -42,6 +42,7 @@ Grafen til $f$ er vist til venstre og grafen til $f'$ blir tegnet til høyre ut 
 :::{video} ./koder/animasjoner/media/videos/den_deriverte2/1440p60/den_deriverte2.mp4
 ---
 width: 95%
+class: manim-video
 ---
 :::
 :::::

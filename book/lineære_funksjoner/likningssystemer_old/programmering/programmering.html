@@ -1,0 +1,2475 @@
+
+<!DOCTYPE html>
+
+
+<html lang="norwegian" data-content_root="../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Programmering av likningssystemer &#8212; Matematikk 1T</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/misc_styles/cas_popup.css?v=ff10440c" />
+    <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/misc_styles/popup.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/misc_styles/popup_code.css?v=4b4feebf" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/dialogue.css?v=1b585024" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/general_style.css?v=f92fc478" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pdf_custom.css?v=a874a063" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/static_code_blocks.css?v=68f9364b" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/admonitions.css?v=e96e44d6" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/misc_styles/geogebra.css?v=fd180d66" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/misc_styles/popup_code.css?v=4b4feebf" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/misc_styles/misc.css?v=55d93a12" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/misc_styles/grids.css?v=7667ba21" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/misc_styles/cas_popup.css?v=ff10440c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/misc_styles/figures.css?v=e7de8791" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/misc_styles/tabs.css?v=a560da15" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/code_mirror_themes/github_dark_default_cm.css?v=3beebd47" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/code_mirror_themes/github_dark_high_contrast_cm.css?v=4c0c1b0f" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/code_mirror_themes/github_light_default_cm.css?v=c880a553" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/code_mirror_themes/github_light_cm.css?v=facc8b7a" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/code_mirror_themes/github_dark_cm.css?v=d1235728" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/code_mirror_themes/one_dark_cm.css?v=3ae52176" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/parsons_puzzle/parsonsPuzzle.css?v=9fbab2c7" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/popup/popup.css?v=2d27c3a4" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/multipleChoiceQuiz/style.css?v=42d54795" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/escapeRoom/style.css?v=b30732ed" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/interactiveCode/style.css?v=20be8392" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/clickable_figures/style.css?v=d35dfce7" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/polydiv/style.css?v=3450aa48" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pairPuzzle/style.css?v=e3c8ca03" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/mathjax/style.css?v=f2a0e64a" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../../_static/documentation_options.js?v=c712eed9"></script>
+    <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../../../_static/tabs.js?v=3ee01567"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/auto-render.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"macros": {"annotateAbove": ["\\mathrel{\\overset{\\substack{\\text{#2} \\\\ \\Bigg\\downarrow}}{#1}}", 2], "annotateBelow": ["\\mathrel{\\underset{\\substack{\\Bigg\\uparrow \\\\ \\text{#2}}}{#1}}", 2], "cline": ["\\underline{\\phantom{#1}}", 1], "and": ["\\quad \\land \\quad"], "or": ["\\quad \\lor \\quad"], "liff": ["\\quad \\iff \\quad"], "limplies": ["\\quad \\implies \\quad"], "limpliedby": ["\\quad \\impliedby \\quad"], "lland": ["\\; \\land \\;"], "degree": ["^\\circ"], "qog": ["\\quad \\text{og} \\quad"], "qder": ["\\quad \\text{der} \\quad"], "qeller": ["\\quad \\text{eller} \\quad"], "qhvis": ["\\quad \\text{hvis} \\quad"], "qfor": ["\\quad \\text{for} \\quad"], "natural": ["\\mathbb{N}"], "integer": ["\\mathbb{Z}"], "rational": ["\\mathbb{Q}"], "real": ["\\mathbb{R}"], "irrational": ["\\mathbb{Q}^c"], "qcomma": [",\\quad"], "nimplies": ["\\quad\\mathrel{\\not\\!\\!\\!\\implies}\\quad"], "nimpliedby": ["\\quad\\mathrel{\\not\\!\\!\\!\\impliedby}\\quad"], "niff": ["\\quad\\mathrel{\\not\\!\\!\\!\\iff}\\quad"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3.2/es5/tex-mml-chtml.js"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'book/lineære_funksjoner/likningssystemer_old/programmering/programmering';</script>
+    <script>mermaid.initialize({"startOnLoad": true})</script>
+    <script src="../../../../_static/geogebra-setup.js?v=c67998b1"></script>
+    <script src="../../../../_static/utils.js?v=14803243"></script>
+    <script src="../../../../_static/serviceWorker.js?v=19bb19ce"></script>
+    <script src="../../../../_static/static_code_blocks.js?v=e512471c"></script>
+    <script src="../../../../_static/parsons_puzzle/theme-switcher.js?v=c0cdcaac"></script>
+    <script src="../../../../_static/parsons_puzzle/parsonsPuzzle.js?v=6e8c8774"></script>
+    <script src="../../../../_static/skulpt/skulpt.js?v=51c28977"></script>
+    <script src="../../../../_static/popup/popup.js?v=5db611f4"></script>
+    <script src="../../../../_static/multipleChoiceQuiz/timedMultipleChoiceQuiz.js?v=79e3619c"></script>
+    <script src="../../../../_static/multipleChoiceQuiz/multipleChoiceQuiz.js?v=7d161c2c"></script>
+    <script src="../../../../_static/multipleChoiceQuiz/utils.js?v=2c6f871c"></script>
+    <script src="../../../../_static/multipleChoiceQuiz/multipleChoiceQuestion.js?v=f8e9756b"></script>
+    <script src="../../../../_static/multipleChoiceQuiz/sequentialMultipleChoiceQuiz.js?v=8d38189d"></script>
+    <script src="../../../../_static/escapeRoom/escapeRoom.js?v=cdbaa3bb"></script>
+    <script src="../../../../_static/interactiveCode/turtleCode.js?v=e0242465"></script>
+    <script src="../../../../_static/interactiveCode/pythonRunner.js?v=e9f0c2d2"></script>
+    <script src="../../../../_static/interactiveCode/workerManager.js?v=de8adb65"></script>
+    <script src="../../../../_static/interactiveCode/interactiveCodeSetup.js?v=49566f0b"></script>
+    <script src="../../../../_static/interactiveCode/codeEditor.js?v=371b09e9"></script>
+    <script src="../../../../_static/clickable_figures/clickable_figure.js?v=dd2467e6"></script>
+    <script src="../../../../_static/pairPuzzle/game.js?v=cb8b0d45"></script>
+    <script src="../../../../_static/pairPuzzle/draggableItem.js?v=5767251d"></script>
+    <script src="../../../../_static/pairPuzzle/dropZone.js?v=56907477"></script>
+    <link rel="canonical" href="https://www.munchboka.no/book/lineære_funksjoner/likningssystemer_old/programmering/programmering.html" />
+    <link rel="icon" href="../../../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="norwegian"/>
+<!-- Pyodide -->
+<script src="https://cdn.jsdelivr.net/pyodide/v0.27.0/full/pyodide.js"></script>
+
+
+<!-- CodeMirror -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+<link rel="stylesheet" href="../../../../_static/code_mirror_themes/github_light_cm.css">
+<link rel="stylesheet" href="../../../../_static/code_mirror_themes/github_dark_cm.css">
+<link rel="stylesheet" href="../../../../_static/code_mirror_themes/one_dark_cm.css">
+
+<!-- CodeMirror scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+<!-- highlighting of code in Parsons puzzle -->
+<head>
+    <link id="highlight-theme-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css">
+    <link id="highlight-theme-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github-dark.min.css">
+</head>
+
+
+
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery-ui-touch-punch-improved@0.3.1/dist/jquery.ui.touch-punch-improved.min.js"></script>
+
+
+
+
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../_static/evg_logo_med_1T.png" class="logo__image only-light" alt="Matematikk 1T - Home"/>
+    <script>document.write(`<img src="../../../../_static/evg_logo_med_1T.png" class="logo__image only-dark" alt="Matematikk 1T - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">I. Tall</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../tall/algebra/intro.html">1. Algebra</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../tall/tallregning/teori.html">1.1. Tallregning</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tall/tallregning/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tall/algebra/algebraiske_uttrykk/teori.html">1.2. Algebraiske uttrykk, likninger og identiteter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tall/algebra/parenteser/teori.html">1.3. Regning med parenteser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../tall/algebra/oppgaver.html">1.4. Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../tall/tallmengder_og_setningslogikk/intro.html">2. Tallmengder og symboler</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../tall/tallmengder_og_setningslogikk/tallmengder/teori.html">2.1. Tallmengder</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tall/tallmengder_og_setningslogikk/tallmengder/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../tall/tallmengder_og_setningslogikk/setningslogikk/teori.html">2.2. Matematisk logikk og symboler</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tall/tallmengder_og_setningslogikk/setningslogikk/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../tall/tallf%C3%B8lger/intro.html">3. Tallfølger</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../tall/tallf%C3%B8lger/formler/teori.html">3.1. Formler</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tall/tallf%C3%B8lger/formler/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../tall/tallf%C3%B8lger/programmering/teori.html">3.2. Programmering av tallfølger</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../tall/tallf%C3%B8lger/programmering/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">II. Lineære funksjoner</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../representasjoner/standardform/teori.html">4. Standardform</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../representasjoner/standardform/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../representasjoner/nullpunktsform/teori.html">5. Nullpunktsform</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../representasjoner/nullpunktsform/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../representasjoner/ettpunktsform/teori.html">6. Ettpunktsform</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../representasjoner/ettpunktsform/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../likninger/teori.html">7. Lineære likninger</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../likninger/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../likningssystemer/teori.html">8. Lineære likningssystemer</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../likningssystemer/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../ulikheter/teori.html">9. Lineære ulikheter</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">III. Andregradsfunksjoner</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../andregradsfunksjoner/representasjoner/intro.html">10. Representasjoner</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../andregradsfunksjoner/representasjoner/standardform/teori.html">10.1. Standardform</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../andregradsfunksjoner/representasjoner/standardform/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../andregradsfunksjoner/representasjoner/nullpunktsform/teori.html">10.2. Nullpunktsform</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../andregradsfunksjoner/representasjoner/nullpunktsform/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../andregradsfunksjoner/representasjoner/ekstremalform/teori.html">10.3. Ekstremalform</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../andregradsfunksjoner/representasjoner/ekstremalform/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../andregradsfunksjoner/algebra/intro.html">11. Algebra</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../andregradsfunksjoner/algebra/kvadratsetningene/teori.html">11.1. Kvadratsetningene</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../andregradsfunksjoner/algebra/kvadratsetningene/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../andregradsfunksjoner/algebra/omgj%C3%B8ring_av_andregradsuttrykk/teori.html">11.2. Omgjøring av andregradsuttrykk</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../andregradsfunksjoner/algebra/omgj%C3%B8ring_av_andregradsuttrykk/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../andregradsfunksjoner/likninger/intro.html">12. Andregradslikninger</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../andregradsfunksjoner/likninger/abc_formelen/teori.html">12.1. <span class="math notranslate nohighlight">\(abc\)</span>-formelen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../andregradsfunksjoner/likninger/abc_formelen/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../andregradsfunksjoner/likninger/grafisk_l%C3%B8sning/teori.html">12.2. Grafisk løsning</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../andregradsfunksjoner/likninger/grafisk_l%C3%B8sning/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../andregradsfunksjoner/likninger/spesielle_andregradslikninger/teori.html">12.3. Spesielle andregradslikninger</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../andregradsfunksjoner/likninger/spesielle_andregradslikninger/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../andregradsfunksjoner/ulikheter/intro.html">13. Andregradsulikheter</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../andregradsfunksjoner/ulikheter/grafisk_l%C3%B8sning/teori.html">13.1. Grafisk løsning</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../andregradsfunksjoner/ulikheter/grafisk_l%C3%B8sning/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../andregradsfunksjoner/ulikheter/algebraisk_l%C3%B8sning/teori.html">13.2. Algebraisk løsning</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../andregradsfunksjoner/ulikheter/algebraisk_l%C3%B8sning/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../andregradsfunksjoner/vekstfart/intro.html">14. Vekstfart</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../andregradsfunksjoner/vekstfart/gjennomsnittlig_vekstfart/teori.html">14.1. Gjennomsnittlig vekstfart</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../andregradsfunksjoner/vekstfart/gjennomsnittlig_vekstfart/oppgaver.html">Gjennomsnittlig vekstfart</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../andregradsfunksjoner/vekstfart/momentan_vekstfart/teori.html">14.2. Momentan vekstfart</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../andregradsfunksjoner/vekstfart/momentan_vekstfart/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../andregradsfunksjoner/vekstfart/den_deriverte/teori.html">14.3. Den deriverte</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../andregradsfunksjoner/vekstfart/den_deriverte/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../andregradsfunksjoner/vekstfart/momentan_vekstfart_og_den_deriverte/teori.html">14.4. Momentan vekstfart og den deriverte</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../andregradsfunksjoner/vekstfart/momentan_vekstfart_og_den_deriverte/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">IV. Polynomer</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../polynomer/polynomfunksjoner/teori.html">15. Polynomfunksjoner</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../polynomer/polynomfunksjoner/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../polynomer/polynomdivisjon/teori.html">16. Polynomdivisjon</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../polynomer/polynomdivisjon/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../polynomer/polynomlikninger/teori.html">17. Polynomlikninger</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../polynomer/polynomlikninger/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../polynomer/derivasjon/teori.html">18. Den deriverte</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../polynomer/derivasjon/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../polynomer/funksjonsdr%C3%B8fting/teori.html">19. Funksjonsdrøfting</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../polynomer/optimering/teori.html">20. Optimering</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../polynomer/optimering/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../polynomer/oppgavesamling/oppgaver.html">21. Oppgavesamling</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">V. Rasjonale funksjoner</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../rasjonale_funksjoner/line%C3%A6re/teori.html">22. Lineære-over-lineære</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../rasjonale_funksjoner/line%C3%A6re/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../rasjonale_funksjoner/generelle/teori.html">23. Generelle rasjonale funksjoner</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../rasjonale_funksjoner/generelle/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rasjonale_funksjoner/oppgavesamling/oppgaver.html">24. Oppgavesamling</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">VI. Eksponentialfunksjoner og Potensfunksjoner</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../eksponentialfunksjoner_og_potensfunksjoner/eksponentialfunksjoner/teori.html">25. Eksponentialfunksjoner</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../eksponentialfunksjoner_og_potensfunksjoner/eksponentialfunksjoner/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../eksponentialfunksjoner_og_potensfunksjoner/potensfunksjoner/teori.html">26. Potensfunksjoner</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../eksponentialfunksjoner_og_potensfunksjoner/potensfunksjoner/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">VII. Trigonometri</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../trigonometri/bakgrunnsstoff/teori.html">27. Pytagoras’ setning, formlikhet og vinkler</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../trigonometri/bakgrunnsstoff/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../trigonometri/definisjoner/teori.html">28. <span class="math notranslate nohighlight">\(\sin v\)</span>, <span class="math notranslate nohighlight">\(\cos v\)</span> og <span class="math notranslate nohighlight">\(\tan v\)</span></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../trigonometri/definisjoner/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../trigonometri/arealsetningen/teori.html">29. Arealsetningen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../trigonometri/arealsetningen/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../trigonometri/enhetssirkelen/teori.html">30. Enhetssirkelen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../trigonometri/enhetssirkelen/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../trigonometri/sinussetningen/teori.html">31. Sinussetningen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../trigonometri/sinussetningen/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../trigonometri/cosinussetningen/teori.html">32. Cosinussetningen</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../trigonometri/cosinussetningen/oppgaver.html">Oppgaver</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">CAS</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../cas/cas_del1/cas_del1.html">CAS-kurs: Del 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cas/cas_del2/oppgaver.html">CAS-kurs: Del 2</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Programmering</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../programmering/turtle/turtle.html">Kræsjkurs 💥 i programmering med <code class="code docutils literal highlight highlight-python"><span class="n">turtle</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../programmering/variabler/variabler.html">Variabler og <code class="code docutils literal highlight highlight-python"><span class="nb">print</span></code>-funksjonen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../programmering/regning/regning.html">Regning med Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../programmering/for_loops/for_loops.html"><code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../programmering/while_loops/while_loops.html"><code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../programmering/if_else/if_else.html"><code class="code docutils literal highlight highlight-python"><span class="k">if</span></code>-<code class="code docutils literal highlight highlight-python"><span class="k">else</span></code>-setninger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../programmering/feilmeldinger/teori.html">Feilsøking og debugging</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Eksamensøving</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../eksamens%C3%B8ving/eksamensoppgaver/funksjoner/del_1/oppgaver.html">Funksjoner (Del 1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../eksamens%C3%B8ving/eksamensoppgaver/funksjoner/del_2/oppgaver.html">Funksjoner (Del 2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../eksamens%C3%B8ving/eksamensoppgaver/modellering/del_2/oppgaver.html">Modellering (Del 2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../eksamens%C3%B8ving/eksamensoppgaver/trigonometri/del_1/oppgaver.html">Trigonometri (Del 1)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../eksamens%C3%B8ving/eksamensoppgaver/trigonometri/del_2/oppgaver.html">Trigonometri (Del 2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../eksamens%C3%B8ving/programmering/oppgaver.html">Programmeringsoppgaver</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../eksamens%C3%B8ving/heldagspr%C3%B8ver/intro.html">Heldagsprøver</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../eksamens%C3%B8ving/heldagspr%C3%B8ver/v%C3%A5r_2025/oppgaver.html">Vår 2025</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../eksamens%C3%B8ving/eksamensoppgaver/v%C3%A5r_2025/oppgaver.html">Eksamen vår 2025</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Eksamensressurser</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../eksamensressurser/python.html">Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../eksamensressurser/cas.html">CAS (Geogebra)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../eksamensressurser/geogebra.html">Geogebra</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Last ned denne siden">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../../_sources/book/lineære_funksjoner/likningssystemer_old/programmering/programmering.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Last ned kildefilen"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Skriv ut til PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullskjerm-modus"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Programmering av likningssystemer</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Innhold </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerisk-losning-av-likningssystemer">Numerisk løsning av likningssystemer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#repetisjon">Repetisjon</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#losning-av-likningssystemer-med-programmering">Løsning av likningssystemer med programmering</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="programmering-av-likningssystemer">
+<h1>Programmering av likningssystemer<a class="headerlink" href="#programmering-av-likningssystemer" title="Link to this heading">#</a></h1>
+<div class="tip admonition">
+<p class="admonition-title">Læringsmål</p>
+<p>Målet etter dette delkapittelet er at du skal:</p>
+<ul class="simple">
+<li><p>Kunne lese, tolke og endre på programkode som løser lineære likningssystemer.</p></li>
+<li><p>Kunne lese, tolke og lage nøstede <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker for å lage punkter i et rutenett og bruke dette til å løse likningssystemer.</p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<section id="numerisk-losning-av-likningssystemer">
+<h2>Numerisk løsning av likningssystemer<a class="headerlink" href="#numerisk-losning-av-likningssystemer" title="Link to this heading">#</a></h2>
+<p>Akkurat som at det finnes likninger som ikke har noen analytisk løsning, finnes det også likningssystemer der dette er tilfellet. I andre tilfeller vil vi ha likningssystemer med så mange likninger og variabler at å løse dem uten datamaskin er en håpløs oppgave.</p>
+<p>Her skal vi se på hvordan vi kan bruke programmering til å finne løsninger til lineære likningssystemer.</p>
+<section id="repetisjon">
+<h3>Repetisjon<a class="headerlink" href="#repetisjon" title="Link to this heading">#</a></h3>
+<p>Først bør vi starte med å få repetert det viktigste vi trenger for å løse likningssystemer med programmering.</p>
+<div class="reminder admonition">
+<p class="admonition-title">Repetisjon 1:</p>
+<p>Her kommer en quiz om <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker, funksjoner i Python og løsning av likninger med programmering.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Level 1 🔥</label><div class="sd-tab-content docutils">
+<p>Ta quizen!</p>
+<!-- Container for the quiz -->
+<div id="quiz-container-lineære-funksjoner-likningssystemer-repetisjon-1-level-1" class="quiz-main-container"></div>
+
+<!-- Include KaTeX for LaTeX rendering -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/auto-render.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/highlightjs-line-numbers.js/dist/highlightjs-line-numbers.min.js"></script>
+
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", () => {
+
+        // Define your questions and answers
+        const questionsData = [
+        {
+                content: 'Hvilke tall skrives ut av programmet? <pre><code class="python">for x in range(2, 10, 3):\n    print(x)</code></pre>',
+                answers: [
+                    { content: '$2, 5, 8$', isCorrect: true },
+                    { content: '$2, 5, 7$', isCorrect: false },
+                    { content: '$2, 6, 9$', isCorrect: false },
+                    { content: '$3, 6, 9$', isCorrect: false }
+                ]
+            },
+            {
+                content: 'Hva skrives ut av programmet? <pre><code class="python">for x in range(3, -3, -1):\n    print(x)</code></pre>',
+                answers: [
+                    { content: '$3, 2, 1, 0, -1, -2$', isCorrect: true },
+                    { content: '$3, 2, 1, 0, -1, -2, -3$', isCorrect: false },
+                    { content: '$2, 1, 0, -1, -2$', isCorrect: false },
+                    { content: '$2, 1, 0, -1, -2, -3$', isCorrect: false }
+                ]
+            },
+            {
+                content: 'Hvilket program definerer $f(x) = 5x - 7$?',
+                answers: [
+                    { content: '<pre><code class="python">def f(x):\n    return 5 * x - 7</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">def f(x):\n    return -5 * x + 7</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">def f(x):\n    return 7 * x - 5</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">def f(x):\n    return -7 * x + 5</code></pre>', isCorrect: false }
+                ]
+            },
+            {
+                content: 'Hva skrives ut av programmet? <pre><code class="python">def g(x):\n    return 2 * x + 1\n\n\nfor x in range(0, 3):\n    print(g(x))</code></pre>',
+                answers: [
+                    { content: '$1, 3, 5$', isCorrect: true },
+                    { content: '$0, 2, 4$', isCorrect: false },
+                    { content: '$3, 5, 7$', isCorrect: false },
+                    { content: '$2, 4, 6$', isCorrect: false }
+                ]
+            },
+            {
+                content: 'Hva må <code class="python">????</code> byttes ut med for at programmet skal skrive ut <code class="python">True</code>? <pre><code class="python">def f(x):\n    return 2 * x - 4 \n\nx = ???? \nprint(f(x) == 0)</code></pre>',
+                answers: [
+                    { content: '<code class="python">x = 2</code>', isCorrect: true },
+                    { content: '<code class="python">x = -2</code>', isCorrect: false },
+                    { content: '<code class="python">x = -1 / 2</code>', isCorrect: false },
+                    { content: '<code class="python">x = 0.5</code>', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hva må <code class="python">????</code> byttes ut med for å løse likningen $f(x) = 0$? <pre><code class="python">def f(x):\n    return 4 * x + 2 \n\nfor x in range(-5, 6):\n    if ????:\n        print(x)</code></pre>',
+                answers: [
+                    { content: '<code class="python">f(x) == 0</code>', isCorrect: true },
+                    { content: '<code class="python">f(x) = 0</code>', isCorrect: false },
+                    { content: '<code class="python">f(x) <= 0</code>', isCorrect: false },
+                    { content: '<code class="python">f(x) == -1</code>', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hva må <code class="python">????</code> byttes ut med for å finne skjæringen mellom grafen til $f$ og linja $y = -2$? <pre><code class="python">def f(x):\n    return 4 * x + 2 \n\nfor x in range(-5, 6):\n    if ????:\n        print(x)</code></pre>',
+                answers: [
+                    { content: '<code class="python">f(x) == -2</code>', isCorrect: true },
+                    { content: '<code class="python">f(x) = -2</code>', isCorrect: false },
+                    { content: '<code class="python">f(x) == 0</code>', isCorrect: false },
+                    { content: '<code class="python">f(x) == 2</code>', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hvilket program finner nullpunktet til $f(x) = 4x - 20$?',
+                answers: [
+                    { content: '<pre><code class="python">def f(x):\n    return 4 * x - 20\n\nfor x in range(0, 10):\n    if f(x) == 0:\n        print(x)</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">def f(x):\n    return 4 * x - 20\n\nfor x in range(-5, 5):\n    if f(x) == 0:\n        print(x)</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">def f(x):\n    return -4 * x + 20\n\nfor x in range(0, 10):\n    if f(x) == 0:\n        print(x)</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">def f(x):\n    return 4 * x - 10\n\nfor x in range(-5, 5):\n    if f(x) == 0:\n        print(x)</code></pre>', isCorrect: false }
+                ]
+            },
+        ];
+
+        // Initialize the multiple-choice quiz
+        const quiz = new SequentialMultipleChoiceQuiz('quiz-container-lineære-funksjoner-likningssystemer-repetisjon-1-level-1', questionsData);
+
+    });
+</script>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Level 2 🔥🔥</label><div class="sd-tab-content docutils">
+<p>Svar på så mange spørsmål du kan før tiden er ute! ⏳</p>
+<!-- Container for the quiz -->
+<div id="quiz-container-lineære-funksjoner-likningssystemer-repetisjon-1-level-2" class="quiz-main-container"></div>
+
+<!-- Include KaTeX for LaTeX rendering -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/auto-render.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/highlightjs-line-numbers.js/dist/highlightjs-line-numbers.min.js"></script>
+
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", () => {
+
+        // Define your questions and answers
+        const questionsData = [
+            {
+                content: 'Hvilket program skriver ut alle oddetall opp under $10$?',
+                answers: [
+                    { content: '<pre><code class="python">for x in range(1, 11, 2):\n    print(x)</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">for x in range(1, 9, 2):\n    print(x)</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">for x in range(2, 10, 1):\n    print(x)</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">for x in range(2, 11, 2):\n    print(x)</code></pre>', isCorrect: false }
+                ]
+            },
+            {
+                content: 'Hva skrives ut av programmet? <pre><code class="python">for x in range(3, -3, -1):\n    print(x)</code></pre>',
+                answers: [
+                    { content: '$3, 2, 1, 0, -1, -2$', isCorrect: true },
+                    { content: '$3, 2, 1, 0, -1, -2, -3$', isCorrect: false },
+                    { content: '$2, 1, 0, -1, -2$', isCorrect: false },
+                    { content: '$2, 1, 0, -1, -2, -3$', isCorrect: false }
+                ]
+            },
+            {
+                content: 'Hvilket program definerer $f(x) = \\dfrac{1}{2}x + 3$?',
+                answers: [
+                    { content: '<pre><code class="python">def f(x):\n    return 0.5 * x + 3</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">def f(x):\n    return 0.5 * x - 3</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">def f(x):\n    return -0.5 * x + 3</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">def f(x):\n    return x / 2 - 3</code></pre>', isCorrect: false }
+                ]
+            },
+            {
+                content: 'Hvilke tall skrives ut av programmet? <pre><code class="python">for x in range(-3, 10, 4):\n    print(x)</code></pre>',
+                answers: [
+                    { content: '$-3, 1, 5, 9$', isCorrect: true },
+                    { content: '$-3, 2, 5, 9$', isCorrect: false },
+                    { content: '$-2, 1, 5$', isCorrect: false },
+                    { content: '$-3, 1, 5$', isCorrect: false }
+                ]
+            },
+            {
+                content: 'Hva skrives ut av programmet? <pre><code class="python">def g(x):\n    return 2 * x - 1\n\n\nfor x in range(0, 3):\n    print(g(x))</code></pre>',
+                answers: [
+                    { content: '$-1, 1, 3$', isCorrect: true },
+                    { content: '$1, 3, 5$', isCorrect: false },
+                    { content: '$3, 5, 7$', isCorrect: false },
+                    { content: '$2, 4, 6$', isCorrect: false }
+                ]
+            },
+            {
+                content: 'Hva må <code class="python">????</code> byttes ut med for å løse likningen $f(x) = -3$? <pre><code class="python">def f(x):\n    return 4 * x + 2 \n\nfor x in range(-5, 6):\n    if ????:\n        print(x)</code></pre>',
+                answers: [
+                    { content: '<code class="python">f(x) == -3</code>', isCorrect: true },
+                    { content: '<code class="python">f(x) = 0</code>', isCorrect: false },
+                    { content: '<code class="python">f(x) == 0</code>', isCorrect: false },
+                    { content: '<code class="python">f(x) == -2</code>', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hva må <code class="python">????</code> byttes ut med for å finne hvor $f$ skjærer $x$-aksen? <pre><code class="python">def f(x):\n    return 4 * x + 2 \n\nfor x in range(-5, 6):\n    if ????:\n        print(x)</code></pre>',
+                answers: [
+                    { content: '<code class="python">f(x) == 0</code>', isCorrect: true },
+                    { content: '<code class="python">f(x) = -2</code>', isCorrect: false },
+                    { content: '<code class="python">f(x) = 0</code>', isCorrect: false },
+                    { content: '<code class="python">f(x) == -2</code>', isCorrect: false },
+                ]
+            },
+            {
+                content: 'Hvilket program gir utskriften <pre><code class="console">5\n7\n9\n</code></pre>',
+                answers: [
+                    { content: '<pre><code class="python">for x in range(5, 10, 2):\n    print(x)</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">for x in range(5, 10, 1):\n    print(x)</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">for x in range(7, 11, 2):\n    print(x)</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">for x in range(6, 10, 2):\n    print(x)</code></pre>', isCorrect: false }
+                ]
+            },
+            {
+                content: 'Hva skrives ut av programmet? <pre><code class="python">for x in range(10, 3, -2):\n    print(x)</code></pre>',
+                answers: [
+                    { content: '$10, 8, 6, 4$', isCorrect: true },
+                    { content: '$10, 8, 6, 3$', isCorrect: false },
+                    { content: '$10, 8, 6$', isCorrect: false },
+                    { content: '$10, 9, 8, 7$', isCorrect: false }
+                ]
+            },
+            {
+                content: 'Hvilket program definerer $f(x) = -2x + 5$?',
+                answers: [
+                    { content: '<pre><code class="python">def f(x):\n    return -2 * x + 5</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">def f(x):\n    return 2 * x + 5</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">def f(x):\n    return -2 * x - 5</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">def f(x):\n    return -2 * x + 3</code></pre>', isCorrect: false }
+                ]
+            },
+            {
+                content: 'Hva skrives ut av programmet? <pre><code class="python">for x in range(-2, 4, 2):\n    print(x)</code></pre>',
+                answers: [
+                    { content: '$-2, 0, 2$', isCorrect: true },
+                    { content: '$-2, 0, 2, 4$', isCorrect: false },
+                    { content: '$0, 2, 4$', isCorrect: false },
+                    { content: '$-2, -1, 0, 1, 2$', isCorrect: false }
+                ]
+            },
+            {
+                content: 'Hvilket program gir utskriften <pre><code class="console">8\n12\n16\n</code></pre>',
+                answers: [
+                    { content: '<pre><code class="python">for x in range(8, 20, 4):\n    print(x)</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">for x in range(6, 18, 4):\n    print(x)</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">for x in range(8, 21, 4):\n    print(x)</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">for x in range(7, 21, 5):\n    print(x)</code></pre>', isCorrect: false }
+                ]
+            },
+            {
+                content: 'Hva skrives ut av programmet? <pre><code class="python">def f(x):\n    return -2 * x + 3 \n\n\nx = -1 \nprint(f(x))</code></pre>',
+                answers: [
+                    { content: '$5$', isCorrect: true },
+                    { content: '$1$', isCorrect: false },
+                    { content: '$-1$', isCorrect: false },
+                    { content: '$-3$', isCorrect: false }
+                ]
+            },
+        ];
+
+        // Initialize the multiple-choice quiz
+        const quiz = new TimedMultipleChoiceQuiz('quiz-container-lineære-funksjoner-likningssystemer-repetisjon-1-level-2', questionsData);
+
+    });
+</script>
+<div class="docutils">
+</div>
+</div>
+</div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="losning-av-likningssystemer-med-programmering">
+<h3>Løsning av likningssystemer med programmering<a class="headerlink" href="#losning-av-likningssystemer-med-programmering" title="Link to this heading">#</a></h3>
+<div class="explore admonition">
+<p class="admonition-title">Utforsk 1: strategi 1</p>
+<p>I mange tilfeller kan vi skrive om et likningssystem fra dens generelle form til en form som svarer til to lineære funksjoner. Da kan vi tolke likningssystemet som at vi skal bestemme koordinatene til skjæringspunktet <span class="math notranslate nohighlight">\((x, y)\)</span> mellom grafene til de to funksjonene.</p>
+<div class="example admonition">
+<p class="admonition-title">Eksempel</p>
+<div class="math notranslate nohighlight">
+\[
+5x + y = 2 \quad \land \quad 3x - y = 2
+\]</div>
+<p>kan skrives om ved å løse begge likninger for <span class="math notranslate nohighlight">\(y\)</span> til:</p>
+<div class="math notranslate nohighlight">
+\[
+y = \underbrace{-5x + 2}_{\displaystyle f(x)} \quad \land \quad y = \underbrace{3x - 2}_{\displaystyle g(x)}
+\]</div>
+<p>Løsningen av likningssystemet er da bare koordinatene til skjæringspunktet mellom grafene til <span class="math notranslate nohighlight">\(f\)</span> og <span class="math notranslate nohighlight">\(g\)</span>.</p>
+</div>
+<div class="sd-tab-set tabs-parts docutils">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+a</label><div class="sd-tab-content docutils">
+<p>Et likningssystem er gitt ved</p>
+<div class="math notranslate nohighlight">
+\[
+x + 2y = 5 \quad \land \quad 4x + y = 6
+\]</div>
+<p>Skriv om likningssystemet til formen</p>
+<div class="math notranslate nohighlight">
+\[
+y = ax + b \quad \land \quad y = cx + d
+\]</div>
+<p>Hvilke to lineære funksjoner inngår i likningssystemet?</p>
+<div class="answer dropdown admonition">
+<p class="admonition-title">Fasit</p>
+<div class="math notranslate nohighlight">
+\[
+y = -\dfrac{1}{2}x + \dfrac{5}{2} \quad \land \quad y = -4x + 6
+\]</div>
+</div>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
+b</label><div class="sd-tab-content docutils">
+<p>Under vises et uferdig program som skal løse likningssystemet fra deloppgave a.</p>
+<p>Fyll inn koden som mangler og kjør programmet for å bestemme løsningen av likningssystemet.</p>
+<div id="container-kode-lineære-funksjoner-likningssystemer-programmering-utforsk-1"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`def f(x):
+    return # FYLL INN: funksjonsuttrykket til likning 1
+
+def g(x):
+    return # FYLL INN: funksjonsuttrykket til likning 2
+
+for x in range(-5, 6):
+    if ????:    # FYLL INN: sjekk om f(x) og g(x) er like
+        print(x, f(x))
+`;
+
+        makeInteractiveCode(
+            "container-kode-lineære-funksjoner-likningssystemer-programmering-utforsk-1",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="check dropdown admonition">
+<p class="admonition-title">Sjekk svaret ved å sammenligne med figuren her når du er klar!</p>
+<figure class="align-default" id="id1">
+<a class="no-click adaptive-figure reference internal image-reference" href="../../../../_images/utforsk_1.svg"><img alt="../../../../_images/utforsk_1.svg" class="no-click adaptive-figure" src="../../../../_images/utforsk_1.svg" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-text">viser linjene i likningssystemet <span class="math notranslate nohighlight">\(x + 2y = 5 \, \land \, 4x + y = 6\)</span></span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<hr class="docutils" />
+<div class="answer dropdown admonition">
+<p class="admonition-title">Fasit</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="linenos">2</span>    <span class="k">return</span> <span class="o">-</span><span class="n">x</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="linenos">3</span>
+<span class="linenos">4</span><span class="k">def</span> <span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="linenos">5</span>    <span class="k">return</span> <span class="o">-</span><span class="mi">4</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">6</span>
+<span class="linenos">6</span>
+<span class="linenos">7</span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+<span class="linenos">8</span>    <span class="k">if</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="n">g</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="linenos">9</span>        <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Utskriften blir</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">1 2.0</span>
+</pre></div>
+</div>
+<p>som betyr at løsningen av likningssystemet er</p>
+<div class="math notranslate nohighlight">
+\[
+x = 1 \, \land \, y = 2
+\]</div>
+</div>
+<div class="docutils">
+</div>
+</div>
+</div>
+<div id="container-kode-lineære-funksjoner-likningssystemer-programmering-utforsk-1"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`def f(x):
+    return # FYLL INN: funksjonsuttrykket til likning 1
+
+def g(x):
+    return # FYLL INN: funksjonsuttrykket til likning 2
+
+for x in range(-5, 6):
+    if ????:    # FYLL INN: sjekk om f(x) og g(x) er like
+        print(x, f(x))
+`;
+
+        makeInteractiveCode(
+            "container-kode-lineære-funksjoner-likningssystemer-programmering-utforsk-1",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+</div>
+<hr class="docutils" />
+<div class="explore full-width admonition">
+<p class="admonition-title">Utforsk 2</p>
+<blockquote>
+<div><p>Her skal du utforske en strategi som vi kaller for <strong>gridsøk</strong>.</p>
+</div></blockquote>
+<p>I prinsippet kan vi løse et hvert likningssystem ved å lage et rutenett med punkter <span class="math notranslate nohighlight">\((x, y)\)</span> i <span class="math notranslate nohighlight">\(xy\)</span>-planet og sjekke hvilke punkter som oppfyller likningssystemet. For å gjøre dette må vi lage <strong>nøstede</strong> <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker. Dette er <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkker som ligger inne i hverandre. Den første <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkken lager punktene <span class="math notranslate nohighlight">\(x\)</span>, og den andre <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkken lager punktene <span class="math notranslate nohighlight">\(y\)</span>.</p>
+<div class="sd-tab-set tabs-parts docutils">
+<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
+a</label><div class="sd-tab-content docutils">
+<p>Nedenfor vises et program og en animasjon som henger sammen. Undersøk på hvilken måte.</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row docutils">
+<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header docutils">
+<p class="sd-card-text">Programkode</p>
+</div>
+<div class="sd-card-body docutils">
+
+        <div id="container-code-fa087171"></div>
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", () => {
+                const code = 
+`for x in range(0, 4):
+    for y in range(0, 3):
+        print(x, y)
+
+`;
+
+                makeInteractiveCode(
+                    "container-code-fa087171",
+                    code,
+                );
+            });
+        </script>
+        </div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header docutils">
+<p class="sd-card-text">Animasjon</p>
+</div>
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<a class="no-click adaptive-figure reference internal image-reference" href="../../../../_images/animasjon.gif"><img alt="../../../../_images/animasjon.gif" class="no-click adaptive-figure" src="../../../../_images/animasjon.gif" style="width: 100%;" /></a>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<input id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-5">
+b</label><div class="sd-tab-content docutils">
+<p>Nedenfor vises et program og en animasjon som henger sammen. Undersøk på hvilken måte.</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row docutils">
+<div class="sd-col sd-d-flex-row sd-col-6 sd-col-xs-6 sd-col-sm-6 sd-col-md-6 sd-col-lg-6 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header docutils">
+<p class="sd-card-text">Programkode</p>
+</div>
+<div class="sd-card-body docutils">
+
+        <div id="container-code-b902ed2c"></div>
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", () => {
+                const code = 
+`for x in range(-3, 2):
+    for y in range(-1, 3):
+        print(x, y)
+`;
+
+                makeInteractiveCode(
+                    "container-code-b902ed2c",
+                    code,
+                );
+            });
+        </script>
+        </div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-header docutils">
+<p class="sd-card-text">Animasjon</p>
+</div>
+<div class="sd-card-body docutils">
+<figure class="align-default">
+<a class="no-click adaptive-figure reference internal image-reference" href="../../../../_images/animasjon1.gif"><img alt="../../../../_images/animasjon1.gif" class="no-click adaptive-figure" src="../../../../_images/animasjon1.gif" style="width: 100%;" /></a>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="check admonition">
+<p class="admonition-title">Underveisoppgave 1</p>
+<p>Ta quizen!</p>
+<!-- Container for the quiz -->
+<div id="quiz-container-lineære-funksjoner-likningssystemer-underveisoppgave-1" class="quiz-main-container"></div>
+
+<!-- Include KaTeX for LaTeX rendering -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/auto-render.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/highlightjs-line-numbers.js/dist/highlightjs-line-numbers.min.js"></script>
+
+
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", () => {
+        
+        const img_style = 'display: block; width: 80%; margin-left: auto; margin-right: auto;';
+        // Define your questions and answers
+        const questionsData = [
+            {
+                content: `Hvilket program passer med animasjonen? <br><br> 
+                <div class="quiz-image-container">
+                    <img src="../../../../_static/figurer/lineære_funksjoner/likningssystemer/programmering/quiz/quiz_3/spm_1.gif" class="adaptive-figure quiz-image">
+                </div>`,
+                answers: [
+                    { content: '<pre><code class="python">for x in range(-2, 3):\n    for y in range(-3, 4):\n        print(x, y)</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">for y in range(-3, 4):\n    for x in range(-2, 3):\n        print(x, y)</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">for x in range(-2, 2):\n    for y in range(-3, 4):\n        print(x, y)</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">for y in range(-2, 3):\n    for x in range(-2, 2):\n        print(x, y)</code></pre>', isCorrect: false },
+                ]
+            },
+            {
+                content: `Hvilket program passer med animasjonen? <br><br>
+                <div class="quiz-image-container">
+                    <img src="../../../../_static/figurer/lineære_funksjoner/likningssystemer/programmering/quiz/quiz_3/spm_2.gif" class="adaptive-figure quiz-image">
+                </div>`,
+                answers: [
+                    { content: '<pre><code class="python">for y in range(-3, 4):\n    for x in range(-2, 3):\n        print(x, y)</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">for x in range(-2, 3):\n    for y in range(-3, 4):\n        print(x, y)</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">for x in range(-2, 2):\n    for y in range(-3, 4):\n        print(x, y)</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">for y in range(-3, 3):\n    for x in range(-2, 2):\n        print(x, y)</code></pre>', isCorrect: false },
+                ]
+            },
+            {
+                content: `Hvilket program passer med animasjonen? <br><br>
+                <div class="quiz-image-container"> 
+                    <img src="../../../../_static/figurer/lineære_funksjoner/likningssystemer/programmering/quiz/quiz_3/spm_3.gif" class="adaptive-figure quiz-image">
+                </div>`,
+                answers: [
+                    { content: '<pre><code class="python">for y in range(1, 4):\n    for x in range(-2, 0):\n        print(x, y)</code></pre>', isCorrect: true },
+                    { content: '<pre><code class="python">for x in range(1, 4):\n    for y in range(-2, 0):\n        print(x, y)</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">for x in range(-2, -1):\n    for y in range(1, 3):\n        print(x, y)</code></pre>', isCorrect: false },
+                    { content: '<pre><code class="python">for y in range(1, 3):\n    for x in range(-2, -1):\n        print(x, y)</code></pre>', isCorrect: false },
+                ]
+            },
+            {
+                content: `Hvilket program passer med animasjonen? <br><br> 
+                <div class="quiz-image-container">
+                    <img src="../../../../_static/figurer/lineære_funksjoner/likningssystemer/programmering/quiz/quiz_3/spm_4.gif" class="adaptive-figure quiz-image">
+                </div>`,
+                answers: [
+                { content: '<pre><code class="python">for x in range(0, 3):\n    for y in range(-2, 1):\n        print(x, y)</code></pre>', isCorrect: true },
+                { content: '<pre><code class="python">for x in range(0, 2):\n    for y in range(-2, 0):\n        print(x, y)</code></pre>', isCorrect: false },
+                { content: '<pre><code class="python">for y in range(-2, 1):\n    for x in range(0, 3):\n        print(x, y)</code></pre>', isCorrect: false },
+                { content: '<pre><code class="python">for y in range(-2, 0):\n    for x in range(0, 3):\n        print(x, y)</code></pre>', isCorrect: false },
+                ]
+            },
+        ];
+
+        // Initialize the multiple-choice quiz
+        const quiz = new SequentialMultipleChoiceQuiz('quiz-container-lineære-funksjoner-likningssystemer-underveisoppgave-1', questionsData);
+
+    });
+</script>
+</div>
+<hr class="docutils" />
+<div class="explore full-width admonition">
+<p class="admonition-title">Utforsk 3: strategi 2</p>
+<p>Her skal vi se hvordan vi kan bruke gridsøk til å finne løsningen av likningssystemer.</p>
+<div class="sd-tab-set tabs-parts docutils">
+<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-6">
+a</label><div class="sd-tab-content docutils">
+<p>Vi trenger en måte å sjekke om et likningssystem er oppfylt for et punkt <span class="math notranslate nohighlight">\((x, y)\)</span>. Med andre ord, vi må kunne sjekke om to likninger er sanne <em>samtidig</em>.</p>
+<p>Under vises det tre eksemplekoder der man sjekker om et likningssystem er oppfylt for et bestemt punkt <span class="math notranslate nohighlight">\((x, y)\)</span>. For hvert kodeeksempel:</p>
+<ul class="simple">
+<li><p>Les kodeeksempelet og løs likningssystemet (med valgfri metode) programmet sjekker.</p></li>
+<li><p>Forutsi om programmet skriver ut <code class="code docutils literal highlight highlight-python"><span class="kc">True</span></code> eller <code class="code docutils literal highlight highlight-python"><span class="kc">False</span></code>.</p></li>
+<li><p>Skriv inn forutsigelsen din og sjekk svaret ditt!</p></li>
+</ul>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-10" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-10">
+Eksempel 1</label><div class="sd-tab-content docutils">
+<blockquote>
+<div><p>⚠️ Merk at nøkkelordet <code class="code docutils literal highlight highlight-python"><span class="ow">and</span></code> = <span class="math notranslate nohighlight">\(\land\)</span> (<em>og samtidig</em>)</p>
+</div></blockquote>
+<div id="container-kode-lineære-funksjoner-likningssystemer-programmering-utforsk-3-a-eksempel-1"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`x = 1
+y = 1
+
+print(
+    x + y == 2 and x - y == 0
+)
+`;
+
+        makePredictionInteractiveCode(
+            "container-kode-lineære-funksjoner-likningssystemer-programmering-utforsk-3-a-eksempel-1",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<input id="sd-tab-item-11" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-11">
+Eksempel 2</label><div class="sd-tab-content docutils">
+<blockquote>
+<div><p>⚠️ Merk at nøkkelordet <code class="code docutils literal highlight highlight-python"><span class="ow">and</span></code> = <span class="math notranslate nohighlight">\(\land\)</span> (<em>og samtidig</em>)</p>
+</div></blockquote>
+<div id="container-kode-lineære-funksjoner-likningssystemer-programmering-utforsk-3-a-eksempel-2"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`x = 2
+y = 3
+
+print(
+    2*x - y == 6 and x - y == 3
+)
+`;
+
+        makePredictionInteractiveCode(
+            "container-kode-lineære-funksjoner-likningssystemer-programmering-utforsk-3-a-eksempel-2",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<input id="sd-tab-item-12" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-12">
+Eksempel 3</label><div class="sd-tab-content docutils">
+<blockquote>
+<div><p>⚠️ Merk at nøkkelordet <code class="code docutils literal highlight highlight-python"><span class="ow">and</span></code> = <span class="math notranslate nohighlight">\(\land\)</span> (<em>og samtidig</em>)</p>
+</div></blockquote>
+<div id="container-kode-lineære-funksjoner-likningssystemer-programmering-utforsk-3-a-eksempel-3"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`x = 1
+y = 2
+
+print(
+    2*x - y == 2 and x + 2*y == 0
+)
+`;
+
+        makePredictionInteractiveCode(
+            "container-kode-lineære-funksjoner-likningssystemer-programmering-utforsk-3-a-eksempel-3",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>
+<input id="sd-tab-item-7" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-7">
+b</label><div class="sd-tab-content docutils">
+<p>For å få programmet til å si ifra for oss når det finner en løsning, kan vi bruke en <code class="code docutils literal highlight highlight-python"><span class="k">if</span></code>-setning som sjekker om begge likningene er sanne, og deretter skriver ut svaret!</p>
+<ul class="simple">
+<li><p>Les eksemplene under og kjør programmene.</p></li>
+<li><p>Kan du forklare sammenhengen mellom utskriften og animasjonen?</p></li>
+</ul>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-13" name="sd-tab-set-5" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-13">
+Eksempel 1</label><div class="sd-tab-content docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row docutils">
+<div class="sd-col sd-d-flex-column docutils">
+<p><strong>Programkode</strong></p>
+<div id="container-kode-lineære-funksjoner-likningssystemer-programmering-utforsk-3-b-eksempel-1"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`for x in range(-2, 3):
+    for y in range(-2, 3):
+        if x + y == -3 and -x + y == 1:
+            print(f"{x = } \\t {y = }")
+`;
+
+        makeInteractiveCode(
+            "container-kode-lineære-funksjoner-likningssystemer-programmering-utforsk-3-b-eksempel-1",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<p><strong>Animasjon</strong></p>
+<figure class="align-default">
+<a class="no-click adaptive-figure reference internal image-reference" href="../../../../_images/animasjon_1.gif"><img alt="../../../../_images/animasjon_1.gif" class="no-click adaptive-figure" src="../../../../_images/animasjon_1.gif" style="width: 100%;" /></a>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<input id="sd-tab-item-14" name="sd-tab-set-5" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-14">
+Eksempel 2</label><div class="sd-tab-content docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row docutils">
+<div class="sd-col sd-d-flex-column docutils">
+<p><strong>Programkode</strong></p>
+<div id="container-kode-lineære-funksjoner-likningssystemer-programmering-utforsk-3-b-eksempel-2"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`for x in range(-2, 3):
+    for y in range(-2, 3):
+        if x + y == 3 and -x + y == 1:
+            print(f"{x = } \\t {y = }")
+`;
+
+        makeInteractiveCode(
+            "container-kode-lineære-funksjoner-likningssystemer-programmering-utforsk-3-b-eksempel-2",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<p><strong>Animasjon</strong></p>
+<figure class="align-default">
+<a class="no-click adaptive-figure reference internal image-reference" href="../../../../_images/animasjon_2.gif"><img alt="../../../../_images/animasjon_2.gif" class="no-click adaptive-figure" src="../../../../_images/animasjon_2.gif" style="width: 100%;" /></a>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<input id="sd-tab-item-8" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-8">
+c</label><div class="sd-tab-content docutils">
+<p>I oppgavene under må du fylle inn programmet med riktig likningssystem i <code class="code docutils literal highlight highlight-python"><span class="k">if</span></code>-setningen for å bestemme løsningen.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-15" name="sd-tab-set-6" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-15">
+Oppgave 1</label><div class="sd-tab-content docutils">
+<p>Bruk programmet til å bestemme løsningen av likningssystemet</p>
+<div class="math notranslate nohighlight">
+\[
+3x + 2y = 7 \quad \land \quad x - y = 4
+\]</div>
+<div id="container-kode-lineære-funksjoner-likningssystemer-programmering-utforsk-3-c-oppgave-1"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`for x in range(-5, 6):
+    for y in range(-5, 6):
+        if ??:  # FYLL INN: skriv inn likningssystemet her
+            print(f"{x = } \\t {y = }")
+`;
+
+        makeInteractiveCode(
+            "container-kode-lineære-funksjoner-likningssystemer-programmering-utforsk-3-c-oppgave-1",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr class="docutils" />
+<div class="answer dropdown admonition">
+<p class="admonition-title">Fasit</p>
+<p>Programkode:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+<span class="linenos">2</span>    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+<span class="hll"><span class="linenos">3</span>        <span class="k">if</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">y</span> <span class="o">==</span> <span class="mi">7</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+</span><span class="linenos">4</span>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="w"> </span><span class="si">= }</span><span class="s2"> </span><span class="se">\t</span><span class="s2"> </span><span class="si">{</span><span class="n">y</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x = 3 	 y = -1</span>
+</pre></div>
+</div>
+<p>som betyr at</p>
+<div class="math notranslate nohighlight">
+\[
+3x + 2y = 7 \quad \land \quad x - y = 4 \quad \iff \quad x = 3 \quad \land \quad y = -1
+\]</div>
+</div>
+</div>
+<input id="sd-tab-item-16" name="sd-tab-set-6" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-16">
+Oppgave 2</label><div class="sd-tab-content docutils">
+<p>Bruk programmet til å bestemme løsningen av likningssystemet</p>
+<div class="math notranslate nohighlight">
+\[
+x + 2y = 4 \quad \land \quad -2x + y = -3
+\]</div>
+<div id="container-kode-lineære-funksjoner-likningssystemer-programmering-utforsk-3-c-oppgave-2"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`for x in range(-5, 6):
+    for y in range(-5, 6):
+        if ??:  # FYLL INN: skriv inn likningssystemet her
+            print(f"{x = } \\t {y = }")
+`;
+
+        makeInteractiveCode(
+            "container-kode-lineære-funksjoner-likningssystemer-programmering-utforsk-3-c-oppgave-2",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr class="docutils" />
+<div class="answer dropdown admonition">
+<p class="admonition-title">Fasit</p>
+<p>Programkode:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+<span class="linenos">2</span>    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+<span class="hll"><span class="linenos">3</span>        <span class="k">if</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">y</span> <span class="o">==</span> <span class="mi">4</span> <span class="ow">and</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">==</span> <span class="o">-</span><span class="mi">3</span><span class="p">:</span>
+</span><span class="linenos">4</span>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="w"> </span><span class="si">= }</span><span class="s2"> </span><span class="se">\t</span><span class="s2"> </span><span class="si">{</span><span class="n">y</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x = 2 	 y = 1</span>
+</pre></div>
+</div>
+<p>som betyr at</p>
+<div class="math notranslate nohighlight">
+\[
+x + 2y = 4 \quad \land \quad -2x + y = -3 \quad \iff \quad x = 2 \quad \land \quad y = 1
+\]</div>
+</div>
+</div>
+<input id="sd-tab-item-17" name="sd-tab-set-6" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-17">
+Oppgave 3</label><div class="sd-tab-content docutils">
+<p>Bruk programmet til å bestemme løsningen av likningssystemet</p>
+<div class="math notranslate nohighlight">
+\[
+3x + 4y = -10 \quad \land \quad \dfrac{1}{2}x + y = -2
+\]</div>
+<div id="container-kode-lineære-funksjoner-likningssystemer-programmering-utforsk-3-c-oppgave-3"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`for x in range(-5, 6):
+    for y in range(-5, 6):
+        if ??:  # FYLL INN: skriv inn likningssystemet her
+            print(f"{x = } \\t {y = }")
+`;
+
+        makeInteractiveCode(
+            "container-kode-lineære-funksjoner-likningssystemer-programmering-utforsk-3-c-oppgave-3",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr class="docutils" />
+<div class="answer dropdown admonition">
+<p class="admonition-title">Fasit</p>
+<p>Programkode:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+<span class="linenos">2</span>    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+<span class="hll"><span class="linenos">3</span>        <span class="k">if</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">4</span><span class="o">*</span><span class="n">y</span> <span class="o">==</span> <span class="o">-</span><span class="mi">10</span> <span class="ow">and</span> <span class="n">x</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span> <span class="o">==</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span>
+</span><span class="linenos">4</span>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="w"> </span><span class="si">= }</span><span class="s2"> </span><span class="se">\t</span><span class="s2"> </span><span class="si">{</span><span class="n">y</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>som gir utskriften</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x = -2 	 y = -1</span>
+</pre></div>
+</div>
+<p>som betyr at</p>
+<div class="math notranslate nohighlight">
+\[
+3x + 4y = -10 \quad \land \quad \dfrac{1}{2}x + y = -2 \quad \iff \quad x = -2 \quad \land \quad y = -1
+\]</div>
+</div>
+</div>
+</div>
+</div>
+<input id="sd-tab-item-9" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-9">
+d</label><div class="sd-tab-content docutils">
+<p>I programmene under må du:</p>
+<ul class="simple">
+<li><p>Fylle inn likningssystemene i <code class="code docutils literal highlight highlight-python"><span class="k">if</span></code>-setningen.</p></li>
+<li><p>Bestemme riktig <code class="code docutils literal highlight highlight-python"><span class="nb">range</span></code> i <code class="code docutils literal highlight highlight-python"><span class="k">for</span></code>-løkkene slik at programmet lager de samme punktene <span class="math notranslate nohighlight">\((x, y)\)</span> som vises i tilhørende animasjonene.</p></li>
+</ul>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-18" name="sd-tab-set-7" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-18">
+Oppgave 1</label><div class="sd-tab-content docutils">
+<p>Bruk programmet under til å bestemme løsningen av likningssystemet</p>
+<div class="math notranslate nohighlight">
+\[
+x + 3y = 5 \quad \land \quad 2x - y = 3
+\]</div>
+<hr class="docutils" />
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row docutils">
+<div class="sd-col sd-d-flex-column docutils">
+<p><strong>Programkode</strong></p>
+<div id="container-kode-lineære-funksjoner-likningssystemer-programmering-utforsk-3-d-oppgave-1"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`for x in range(??):        # FYLL INN: bytt ut '??'
+    for y in range(??):    # FYLL INN: bytt ut '??'
+        if ??:      # FYLL INN: likningssystemet
+            print(f"{x = } \\t {y = }")
+`;
+
+        makeInteractiveCode(
+            "container-kode-lineære-funksjoner-likningssystemer-programmering-utforsk-3-d-oppgave-1",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<p><strong>Animasjon</strong></p>
+<figure class="align-default">
+<a class="no-click adaptive-figure reference internal image-reference" href="../../../../_images/oppgave_1_animasjon.gif"><img alt="../../../../_images/oppgave_1_animasjon.gif" class="no-click adaptive-figure" src="../../../../_images/oppgave_1_animasjon.gif" style="width: 100%;" /></a>
+</figure>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="answer dropdown admonition">
+<p class="admonition-title">Fasit</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
+<span class="linenos">2</span>    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
+<span class="linenos">3</span>        <span class="k">if</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">y</span> <span class="o">==</span> <span class="mi">5</span> <span class="ow">and</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+<span class="linenos">4</span>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="w"> </span><span class="si">= }</span><span class="s2"> </span><span class="se">\t</span><span class="s2"> </span><span class="si">{</span><span class="n">y</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<input id="sd-tab-item-19" name="sd-tab-set-7" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-19">
+Oppgave 2</label><div class="sd-tab-content docutils">
+<p>Bruk programmet under til å bestemme løsningen av likningssystemet</p>
+<div class="math notranslate nohighlight">
+\[
+x + y = -1 \quad \land \quad x + \dfrac{1}{2}y = \dfrac{1}{2}
+\]</div>
+<hr class="docutils" />
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row docutils">
+<div class="sd-col sd-d-flex-column docutils">
+<p><strong>Programkode</strong></p>
+<div id="container-kode-lineære-funksjoner-likningssystemer-programmering-utforsk-3-d-oppgave-2"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`for x in range(??):        # FYLL INN: bytt ut '??'
+    for y in range(??):    # FYLL INN: bytt ut '??'
+        if ??:      # FYLL INN: likningssystemet
+            print(f"{x = } \\t {y = }")
+`;
+
+        makeInteractiveCode(
+            "container-kode-lineære-funksjoner-likningssystemer-programmering-utforsk-3-d-oppgave-2",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<p><strong>Animasjon</strong></p>
+<figure class="align-default">
+<a class="no-click adaptive-figure reference internal image-reference" href="../../../../_images/oppgave_2_animasjon.gif"><img alt="../../../../_images/oppgave_2_animasjon.gif" class="no-click adaptive-figure" src="../../../../_images/oppgave_2_animasjon.gif" style="width: 100%;" /></a>
+</figure>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="answer dropdown admonition">
+<p class="admonition-title">Fasit</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
+<span class="linenos">2</span>    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
+<span class="linenos">3</span>        <span class="k">if</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">/</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">:</span>     
+<span class="linenos">4</span>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="w"> </span><span class="si">= }</span><span class="s2"> </span><span class="se">\t</span><span class="s2"> </span><span class="si">{</span><span class="n">y</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<input id="sd-tab-item-20" name="sd-tab-set-7" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-20">
+Oppgave 3</label><div class="sd-tab-content docutils">
+<p>Bruk programmet under til å bestemme løsningen av likningssystemet</p>
+<div class="math notranslate nohighlight">
+\[
+2x - y = -5 \quad \land \quad x + 3y = 1
+\]</div>
+<hr class="docutils" />
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row docutils">
+<div class="sd-col sd-d-flex-column docutils">
+<p><strong>Programkode</strong></p>
+<div id="container-kode-lineære-funksjoner-likningssystemer-programmering-utforsk-3-d-oppgave-3"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`for x in range(??):        # FYLL INN: bytt ut '??'
+    for y in range(??):    # FYLL INN: bytt ut '??'
+        if ??:      # FYLL INN: likningssystemet
+            print(f"{x = } \\t {y = }")
+`;
+
+        makeInteractiveCode(
+            "container-kode-lineære-funksjoner-likningssystemer-programmering-utforsk-3-d-oppgave-3",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<p><strong>Animasjon</strong></p>
+<figure class="align-default">
+<a class="no-click adaptive-figure reference internal image-reference" href="../../../../_images/oppgave_3_animasjon.gif"><img alt="../../../../_images/oppgave_3_animasjon.gif" class="no-click adaptive-figure" src="../../../../_images/oppgave_3_animasjon.gif" style="width: 100%;" /></a>
+</figure>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="answer dropdown admonition">
+<p class="admonition-title">Fasit</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span> 
+<span class="linenos">2</span>    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
+<span class="linenos">3</span>        <span class="k">if</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span> <span class="o">==</span> <span class="o">-</span><span class="mi">5</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">y</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="linenos">4</span>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="w"> </span><span class="si">= }</span><span class="s2"> </span><span class="se">\t</span><span class="s2"> </span><span class="si">{</span><span class="n">y</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="explore admonition">
+<p class="admonition-title">Utforsk 4: anvendelse</p>
+<p>Her skal vi se hvordan vi kan anvende gridsøk til å bestemme funksjonsuttrykket til lineære funksjoner. I dette tilfellet er det ikke lenger <span class="math notranslate nohighlight">\(x\)</span> og <span class="math notranslate nohighlight">\(y\)</span> som er variablene i likningssystemet, men koeffisientene <span class="math notranslate nohighlight">\(a\)</span> og <span class="math notranslate nohighlight">\(b\)</span> til den lineære funksjonen.</p>
+<div class="sd-tab-set tabs-parts docutils">
+<input checked="checked" id="sd-tab-item-21" name="sd-tab-set-8" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-21">
+a</label><div class="sd-tab-content docutils">
+<p>I eksemplene under viser vi hvordan vi kan bruke gridsøk til å bestemme koeffisientene <span class="math notranslate nohighlight">\(a\)</span> og <span class="math notranslate nohighlight">\(b\)</span> til en lineær funksjon <span class="math notranslate nohighlight">\(f(x) = ax + b\)</span> som går gjennom to gitte punkter.</p>
+<ul class="simple">
+<li><p>Les programmene og sjekk at du kan forklare sammenhengen mellom innholdet i programmet og likningene den lineære funksjonen må oppfylle.</p></li>
+<li><p>Bruk utskriften av programmet til å bestemme funksjonsuttrykket til funksjonen.</p></li>
+</ul>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-23" name="sd-tab-set-9" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-23">
+Eksempel 1</label><div class="sd-tab-content docutils">
+<p>Et lineær funksjon <span class="math notranslate nohighlight">\(f(x) = ax + b\)</span> går gjennom punktene <span class="math notranslate nohighlight">\((-1, -5)\)</span> og <span class="math notranslate nohighlight">\((1, 1)\)</span>. Dette gir likningssystemet</p>
+<div class="math notranslate nohighlight">
+\[
+f(-1) = -5 \quad \land \quad f(1) = 1
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+-a + b = -5 \quad \land \quad a + b = 1
+\]</div>
+<p>Programkode:</p>
+<div id="container-kode-lineære-funksjoner-likningssystemer-programmering-utforsk-4-a-eksempel-1"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`for a in range(-5, 6):
+    for b in range(-5, 6):
+        if -a + b == -5 and a + b == 1:
+            print(f"{a = } \\t {b = }")
+`;
+
+        makeInteractiveCode(
+            "container-kode-lineære-funksjoner-likningssystemer-programmering-utforsk-4-a-eksempel-1",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr class="docutils" />
+<div class="answer dropdown admonition">
+<p class="admonition-title">Fasit</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = 3x - 2
+\]</div>
+</div>
+</div>
+<input id="sd-tab-item-24" name="sd-tab-set-9" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-24">
+Eksempel 2</label><div class="sd-tab-content docutils">
+<p>En lineær funksjon <span class="math notranslate nohighlight">\(g(x) = ax + b\)</span> går gjennom punktene <span class="math notranslate nohighlight">\((-3, 5)\)</span> og <span class="math notranslate nohighlight">\((-2, 4)\)</span>. Dette gir likningssystemet</p>
+<div class="math notranslate nohighlight">
+\[
+g(-3) = 5 \quad \land \quad g(-2) = 4
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+-3a + b = 5 \quad \land \quad -2a + b = 4
+\]</div>
+<p>Programkode:</p>
+<div id="container-kode-lineære-funksjoner-likningssystemer-programmering-utforsk-4-a-eksempel-2"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`for a in range(-5, 6):
+    for b in range(-5, 6):
+        if -3*a + b == 5 and -2*a + b == 4:
+            print(f"{a = } \\t {b = }")
+`;
+
+        makeInteractiveCode(
+            "container-kode-lineære-funksjoner-likningssystemer-programmering-utforsk-4-a-eksempel-2",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr class="docutils" />
+<div class="answer dropdown admonition">
+<p class="admonition-title">Fasit</p>
+<div class="math notranslate nohighlight">
+\[
+g(x) = -x + 2
+\]</div>
+</div>
+</div>
+<input id="sd-tab-item-25" name="sd-tab-set-9" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-25">
+Eksempel 3</label><div class="sd-tab-content docutils">
+<p>En lineær funksjon <span class="math notranslate nohighlight">\(h(x) = ax + b\)</span> går gjennom punktene <span class="math notranslate nohighlight">\((-2, -5)\)</span> og <span class="math notranslate nohighlight">\((3, 10)\)</span>. Dette gir likningssystemet</p>
+<div class="math notranslate nohighlight">
+\[
+h(-2) = -5 \quad \land \quad h(3) = 10
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+-2a + b = -5 \quad \land \quad 3a + b = 10
+\]</div>
+<p>Programkode:</p>
+<div id="container-kode-lineære-funksjoner-likningssystemer-programmering-utforsk-4-a-eksempel-3"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`for a in range(-5, 6):
+    for b in range(-5, 6):
+        if -2*a + b == -5 and 3*a + b == 10:
+            print(f"{a = } \t {b = }")
+`;
+
+        makeInteractiveCode(
+            "container-kode-lineære-funksjoner-likningssystemer-programmering-utforsk-4-a-eksempel-3",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr class="docutils" />
+<div class="answer dropdown admonition">
+<p class="admonition-title">Fasit</p>
+<div class="math notranslate nohighlight">
+\[
+h(x) = 3x + 1
+\]</div>
+</div>
+</div>
+</div>
+</div>
+<input id="sd-tab-item-22" name="sd-tab-set-8" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-22">
+b</label><div class="sd-tab-content docutils">
+<p>I oppgavene under skal du sette opp likningssystemet for koeffisientene til de lineære funksjonene og fylle inn i programmet for å bestemme funksjonsuttrykket.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-26" name="sd-tab-set-10" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-26">
+Oppgave 1</label><div class="sd-tab-content docutils">
+<p>En lineær funksjon <span class="math notranslate nohighlight">\(f(x) = ax + b\)</span> går gjennom punktene <span class="math notranslate nohighlight">\((-1, -6)\)</span> og <span class="math notranslate nohighlight">\((3, 10)\)</span>.</p>
+<ol class="arabic simple">
+<li><p>Sett opp et likningssystem for koeffisientene til <span class="math notranslate nohighlight">\(f\)</span>.</p></li>
+<li><p>Fyll ut programmet under og bruk det til å bestemme <span class="math notranslate nohighlight">\(f(x)\)</span>.</p></li>
+</ol>
+<div id="container-kode-lineære-funksjoner-likningssystemer-programmering-utforsk-4-b-oppgave-1"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`for a in range(-5, 6):
+    for b in range(-5, 6):
+        if ??:  # FYLL INN: likningssystemet for 'a' og 'b'
+            print(f"{a = } \\t {b = }")
+`;
+
+        makeInteractiveCode(
+            "container-kode-lineære-funksjoner-likningssystemer-programmering-utforsk-4-b-oppgave-1",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="answer dropdown admonition">
+<p class="admonition-title">Fasit</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-29" name="sd-tab-set-11" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-29">
+Likningssystem</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+-a + b = -6 \quad \land \quad 3a + b = 10
+\]</div>
+</div>
+<input id="sd-tab-item-30" name="sd-tab-set-11" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-30">
+Programkode</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+<span class="linenos">2</span>    <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+<span class="linenos">3</span>        <span class="k">if</span> <span class="o">-</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">==</span> <span class="o">-</span><span class="mi">6</span> <span class="ow">and</span> <span class="mi">3</span><span class="o">*</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">10</span><span class="p">:</span>
+<span class="linenos">4</span>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="w"> </span><span class="si">= }</span><span class="s2"> </span><span class="se">\t</span><span class="s2"> </span><span class="si">{</span><span class="n">b</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Utskrift:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">a = 4 	 b = -2</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-31" name="sd-tab-set-11" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-31">
+Funksjonsuttrykk</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+f(x) = 4x - 2
+\]</div>
+</div>
+</div>
+</div>
+</div>
+<input id="sd-tab-item-27" name="sd-tab-set-10" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-27">
+Oppgave 2</label><div class="sd-tab-content docutils">
+<p>En lineær funksjon <span class="math notranslate nohighlight">\(g(x) = ax + b\)</span> går gjennom punktene <span class="math notranslate nohighlight">\((1, 1)\)</span> og <span class="math notranslate nohighlight">\((4, -5)\)</span>.</p>
+<ol class="arabic simple">
+<li><p>Sett opp et likningssystem for koeffisientene til <span class="math notranslate nohighlight">\(g\)</span>.</p></li>
+<li><p>Fyll ut programmet under og bruk det til å bestemme <span class="math notranslate nohighlight">\(g(x)\)</span>.</p></li>
+</ol>
+<div id="container-kode-lineære-funksjoner-likningssystemer-programmering-utforsk-4-b-oppgave-2"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`for a in range(-5, 6):
+    for b in range(-5, 6):
+        if ??:  # FYLL INN: likningssystemet for 'a' og 'b'
+            print(f"{a = } \\t {b = }")
+`;
+
+        makeInteractiveCode(
+            "container-kode-lineære-funksjoner-likningssystemer-programmering-utforsk-4-b-oppgave-2",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="answer dropdown admonition">
+<p class="admonition-title">Fasit</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-32" name="sd-tab-set-12" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-32">
+Likningssystem</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+a + b = 1 \quad \land \quad 4a + b = -5
+\]</div>
+</div>
+<input id="sd-tab-item-33" name="sd-tab-set-12" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-33">
+Programkode</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+<span class="linenos">2</span>    <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+<span class="linenos">3</span>        <span class="k">if</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="mi">4</span><span class="o">*</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">==</span> <span class="o">-</span><span class="mi">5</span><span class="p">:</span>
+<span class="linenos">4</span>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="w"> </span><span class="si">= }</span><span class="s2"> </span><span class="se">\t</span><span class="s2"> </span><span class="si">{</span><span class="n">b</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Utskrift:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">a = -2 	 b = 3</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-34" name="sd-tab-set-12" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-34">
+Funksjonsuttrykk</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+g(x) = -2x + 3
+\]</div>
+</div>
+</div>
+</div>
+</div>
+<input id="sd-tab-item-28" name="sd-tab-set-10" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-28">
+Oppgave 3</label><div class="sd-tab-content docutils">
+<p>En lineær funksjon <span class="math notranslate nohighlight">\(h(x) = ax + b\)</span> går gjennom punktene <span class="math notranslate nohighlight">\((-3, 13)\)</span> og <span class="math notranslate nohighlight">\((7, -17)\)</span>.</p>
+<ol class="arabic simple">
+<li><p>Sett opp et likningssystem for koeffisientene til <span class="math notranslate nohighlight">\(h\)</span>.</p></li>
+<li><p>Fyll ut programmet under og bruk det til å bestemme <span class="math notranslate nohighlight">\(h(x)\)</span>.</p></li>
+</ol>
+<div id="container-kode-lineære-funksjoner-likningssystemer-programmering-utforsk-4-b-oppgave-3"></div>
+<script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const code = 
+`for a in range(-5, 6):
+    for b in range(-5, 6):
+        if ??:  # FYLL INN: likningssystemet for 'a' og 'b'
+            print(f"{a = } \\t {b = }")
+`;
+
+        makeInteractiveCode(
+            "container-kode-lineære-funksjoner-likningssystemer-programmering-utforsk-4-b-oppgave-3",
+            code,
+        );
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="answer dropdown admonition">
+<p class="admonition-title">Fasit</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-35" name="sd-tab-set-13" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-35">
+Likningssystem</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+-3a + b = 13 \quad \land \quad 7a + b = -17
+\]</div>
+</div>
+<input id="sd-tab-item-36" name="sd-tab-set-13" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-36">
+Programkode</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+<span class="linenos">2</span>    <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">):</span>
+<span class="linenos">3</span>        <span class="k">if</span> <span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">13</span> <span class="ow">and</span> <span class="mi">7</span><span class="o">*</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">==</span> <span class="o">-</span><span class="mi">17</span><span class="p">:</span>
+<span class="linenos">4</span>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="w"> </span><span class="si">= }</span><span class="s2"> </span><span class="se">\t</span><span class="s2"> </span><span class="si">{</span><span class="n">b</span><span class="w"> </span><span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Utskrift:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">a = -3 	 b = 4</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-37" name="sd-tab-set-13" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-37">
+Funksjonsuttrykk</label><div class="sd-tab-content docutils">
+<div class="math notranslate nohighlight">
+\[
+h(x) = -3x + 4
+\]</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./book/lineære_funksjoner/likningssystemer_old/programmering"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Innhold
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerisk-losning-av-likningssystemer">Numerisk løsning av likningssystemer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#repetisjon">Repetisjon</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#losning-av-likningssystemer-med-programmering">Løsning av likningssystemer med programmering</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Av René Ask, Edvard Munch Videregående Skole
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

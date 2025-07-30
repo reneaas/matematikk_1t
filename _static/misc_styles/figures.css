@@ -154,24 +154,50 @@ a.no-click {
 
 /* Light mode (default) */
 [data-mode="light"] video {
-    filter: invert(100%) hue-rotate(220deg) !important; /* Invert colors for dark mode */
+    filter: invert(0%) !important; /* Invert colors for dark mode */
 }
 
 /* Dark mode styles */
 [data-mode="dark"] video {
-    filter: invert(0%); /* Normal */
+    filter: invert(100%) hue-rotate(220deg); /* Normal */
 }
 
 /* Auto mode with system preference */
 @media (prefers-color-scheme: dark) {
 [data-mode="auto"] video {
-    filter: invert(0%) !important; /* Normal */
+    filter: invert(100%) hue-rotate(220deg) !important; /* Normal */
 }
 }
 
 /* Auto mode with system preference */
 @media (prefers-color-scheme: light) {
     [data-mode="auto"] video {
+        filter: invert(0%) !important; /* Invert colors for dark mode */
+    }
+}
+
+
+
+/* Light mode (default) */
+[data-mode="light"] video.manim-video {
+    filter: invert(100%) hue-rotate(220deg) !important; /* Invert colors for dark mode */
+}
+
+/* Dark mode styles */
+[data-mode="dark"] video.manim-video {
+    filter: invert(0%); /* Normal */
+}
+
+/* Auto mode with system preference */
+@media (prefers-color-scheme: dark) {
+[data-mode="auto"] video.manim-video {
+    filter: invert(0%) !important; /* Normal */
+}
+}
+
+/* Auto mode with system preference */
+@media (prefers-color-scheme: light) {
+    [data-mode="auto"] video.manim-video {
         filter: invert(100%) hue-rotate(220deg) !important; /* Invert colors for dark mode */
     }
 }
