@@ -37,7 +37,7 @@ class CASPopUpDirective(SphinxDirective):
 /* kill jQuery‑UI’s 10 px padding & let the CAS pane fill the box */
 .ui-dialog-content{{padding:0!important;}}
 .ggb-window       {{width:100%!important;height:100%!important;box-sizing:border-box;}}
-.ggb-cas-button   {{margin-top: 1em;}}
+.ggb-cas-button   {{margin-top: 1em; margin-bottom: 1em;}}
 </style>
 
 <script>

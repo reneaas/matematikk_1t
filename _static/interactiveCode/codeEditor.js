@@ -201,11 +201,12 @@ class CodeEditor {
                     "# FORKLARING",
                     "# <--",
                     "# MERK",
+                    "????",
                 ];
 
                 for (const keyword of keywords) {
-                    if (stream.match(keyword) || (keyword === "# TODO" && stream.match("# <--"))) {
-                        return keyword.replace("# ", "").toLowerCase().replace(" ", "");
+                    if (stream.match(keyword)) {
+                        return keyword.replace("# ", "").toLowerCase().replace(" ", "").replace(/\?+/g, "question");
                     }
                 }
                 
