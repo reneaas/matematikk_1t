@@ -1,0 +1,1 @@
+# Oppgaver: Ikke-lineære likningssystemer

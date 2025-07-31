@@ -478,6 +478,30 @@ for x in range(-5, 6):
 
 :::
 
+:::::::::::::
+
+:::::::::::::{tab-item} c
+Fyll ut programmet nedenfor slik at det løser likningssystemet
+
+\begin{align*}
+x + y &= -1 \\
+x - y &= 3
+\end{align*}
+
+:::{interactive-code}
+# TODO: bytt ut ????
+
+for x in range(-10, 11):
+    for y in range(-10, 11):
+        if ????:
+            print((x, y))
+:::
+
+
+
+:::::::::::::
+::::::::::::::
+
 
 :::::::::::::::
 
