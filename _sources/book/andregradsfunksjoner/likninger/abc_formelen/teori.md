@@ -118,9 +118,9 @@ er gitt ved
 width: 35%
 class: no-click, adaptive-figure
 ---
+:::
 ::::
 
-:::
 
 Senere skal du få utlede denne formelen med litt hjelp – nå tar vi et eksempel på bruken av den.
 
@@ -173,6 +173,8 @@ x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
 $$
 ::::
 
+
+
 :::::::::::::::{admonition} Underveisoppgave 1
 ---
 class: check
@@ -196,7 +198,7 @@ class: dropdown, answer
 ---
 
 $$
-x = 4 \quad \lor \quad x = -1.
+x = 4 \or x = -1.
 $$
 :::
 

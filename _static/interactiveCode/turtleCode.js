@@ -32,7 +32,7 @@ class TurtleCode {
         // Add a small delay before setting the initial code
         setTimeout(() => {
             this.editor.setValue(this.initialCode);
-        }, 100); // 100ms delay should be enough
+        }, 300); // 100ms delay should be enough
         // this.editor.setValue(this.initialCode);
 
         this.runButtonEl.addEventListener("click", () => this.runCode());
