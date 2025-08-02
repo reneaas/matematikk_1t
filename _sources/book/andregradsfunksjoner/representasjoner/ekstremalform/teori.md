@@ -1,85 +1,35 @@
-# Ekstremalform
+# Ekstremalpunktsform
 
-:::{admonition} Læringsmål
----
-class: tip
----
-* Kunne representere en andregradsfunksjon på ekstremalform, og lese av ekstremalpunktet fra funksjonsuttrykket.
-* Kunne bestemme $f(x)$ på ekstremalform fra graf. 
-* Kunne finne standardform fra ekstremalform.
-* Kunne finne ekstremalform fra nullpunktsform, og kunne beskrive sammenhengen mellom nullpunkter og symmetrilinje.
-* Kunne bestemme om et ekstremalpunkt er et topp- eller bunnpunkt fra ekstremalformen til en andregradsfunksjon.
-::: 
-
-Før vi ser på hva ekstremalformen til en andregradsfunksjon er, må vi først definere noen nye begreper. 
-
-:::::::::::::::{admonition} Ekstremalpunkt, ekstremalverdi, toppunkt og bunnpunkt
----
-class: theory
----
-En andregradsfunksjon har enten et **toppunkt** og **bunnpunkt**. <br> Vi kaller $x$-koordinaten til dette punktet for **ekstremalpunktet** og $y$-koordinaten for **ekstremalverdien**.
-
-Se figuren nedenfor.
-
-:::{clickable-figure} ./figurer/teori/merged_figure.svg
----
-width: 100%
----
-viser to andregradsfunksjoner der grafen til venstre har et bunnpunkt og grafen til høyre har et toppunkt.
+:::{goals} Læringsmål
+* Kunne bestemme $f(x)$ på ekstremalpunktsform og kunne bruke denne til å bestemme grafiske egenskaper ved funksjonen.
+* Kunne veksle mellom ekstremalpunktsform og standardform.
 :::
 
 
-:::::::::::::::
-
----
-
-:::::::::::::::::{admonition} Eksempel 1
----
-class: example
----
-
-Grafen til en andregradsfunksjon $f$ er vist i {numref}`fig-andregradsfunksjoner-representasjoner-ekstremalform-eksempel-1`.
-
-1. Bestem hva slags ekstremalpunkt $f$ har.
-2. Bestem ekstremalpunktet og ekstremalverdien til $f$.
+Standardformen til en andregradsfunksjon ga oss informasjon om funksjonens form, hvor den den skjærer $y$-aksen. Vi kunne også bestemme symmetrilinja til grafen ved litt regning. 
 
 
-:::{figure} ./figurer/eksempler/eksempel_1.svg
----
-name: fig-andregradsfunksjoner-representasjoner-ekstremalform-eksempel-1
-width: 80%
-class: no-click, adaptive-figure
----
-viser grafen til en andregradsfunksjon $f$.
+Nå skal vi se på en annen representasjon som vi kaller for **ekstremalpunktsform**. **Ekstremalpunkt** er en fellesbetegnelse på toppunkt og bunnpunkt. Denne representasjonen gir oss informasjon om funksjonens topp- eller bunnpunkt, symmetrilinje og grafens form. 
+
+
+
+## Grafisk og algebraisk representasjon
+
+
+:::{margin}
+Når vi så på standardformen $f(x) = ax^2 + bx + c$, så vi at vi kunne bestemme grafens symmetrilinje ved å bruke formelen
+
+$$
+x_0 = -\frac{b}{2a}
+$$
 :::
 
-
-:::{admonition} Løsning
----
-class: solution
----
-1. Siden grafen til $f$ er *konkav* $\frown$, har $f$ et toppunkt.
-2. Det høyeste punktet på grafen er $(-1, 2)$. Dette er koordinatene til toppunktet på grafen til $f$. Da er $x_0 = -1$ ekstremalpunktet og $y_0 = 2$ ekstremalverdien.
-:::
-
-:::::::::::::::::
-
----
-
-
-## Ekstremalform: algebraisk og grafisk
-
-Ekstremalformen til en andregradsfunksjon er en tredje måte å skrive en andregradsfunksjon på. Ekstremalformen inneholder informasjon om ekstremalpunktet til funksjonen.
-
-:::::{admonition} Ekstremalform
----
-class: theory
----
-Ekstremalformen til en andregradsfunksjon $f$ er gitt ved
+:::::::::::::::{summary} Ekstremalpunktsform
+Ekstremalpunktsformen til en andregradsfunksjon $f$ er gitt ved
 
 :::{figure} ./figurer/teori/algebraisk_uttrykk.svg
 ---
-width: 80%
+width: 65%
 class: no-click, adaptive-figure
 ---
 :::
@@ -96,556 +46,482 @@ class: no-click, adaptive-figure
 ---
 :::
 
-:::::
+:::::::::::::::
 
----
 
-:::::::::::::::{admonition} Eksempel 2
----
-class: example
----
-Under vises noen eksempler på andregradsfunksjoner med grafen og tilhørende funksjonsuttrykk skrevet på ekstremalform. 
+La oss se på et eksempel der vi ser på den grafiske sammenhengen med det algebraiske uttrykket for ekstremalpunktsformen.
 
-::::::::::::::{tab-set}
----
-class: tabs-parts
----
-:::::::::::::{tab-item} $f$
-Grafen til $f$ har et bunnpunkt i $(-1, -3)$ som betyr at grafen til $f$ har
-* ekstremalpunktet $x_0 = -1$
-* ekstremalverdien $y_0 = -3$.
+:::::::::::::::{example} Eksempel 1
+Nedenfor vises fire eksempler på grafene til andregradsfunksjoner og deres ekstremalpunktsform.
 
-Ekstremalformen til $f(x)$ er gitt ved
+<!-- :::{clickable-figure} ./figurer/eksempler/eksempel_1/merged_figure.svg
+---
+width: 100%
+---
+::: -->
 
+
+::::::::::::::{grid} 1 1 2 2
+---
+gutter: 2
+---
+:::::::::::::{grid-item-card}
 $$
-f(x) = (x + 1)^2 - 3
+f(x) = (x - 1)^2 - 4
 $$
-
-:::{figure} ./figurer/eksempler/eksempel_2/f.svg
+^^^
+:::{figure} ./figurer/eksempler/eksempel_1/A.svg
 ---
-width: 80%
 class: no-click, adaptive-figure
+width: 100%
 ---
 :::
 
 :::::::::::::
 
-:::::::::::::{tab-item} $g$
-Grafen til $g$ har et toppunkt i $(2, 1)$ som betyr at $g$ har
-* ekstremalpunktet $x_0 = 2$
-* ekstremalverdien $y_0 = 1$.
 
-Ekstremalformen til $g(x)$ er gitt ved 
-
+:::::::::::::{grid-item-card}
 $$
-g(x) = -\dfrac{1}{2}(x - 2)^2 + 1
+g(x) = -2(x + 3)^2 + 1
 $$
 
-:::{figure} ./figurer/eksempler/eksempel_2/g.svg
+^^^
+:::{figure} ./figurer/eksempler/eksempel_1/B.svg
 ---
-width: 80%
 class: no-click, adaptive-figure
+width: 100%
 ---
 :::
 
 :::::::::::::
 
-:::::::::::::{tab-item} $h$
-Grafen til $h$ har et bunnpunkt i $(-1, 1)$ som betyr at $h$ har
-* ekstremalpunktet $x_0 = -1$
-* ekstremalverdien $y_0 = 1$.
 
-Ekstremalformen til $h(x)$ er gitt ved
-
+:::::::::::::{grid-item-card}
 $$
-h(x) = 2(x + 1)^2 + 1
+h(x) = -\frac{1}{2}(x - 2)^2 - 3
 $$
-
-:::{figure} ./figurer/eksempler/eksempel_2/h.svg
+^^^
+:::{figure} ./figurer/eksempler/eksempel_1/C.svg
 ---
-width: 80%
 class: no-click, adaptive-figure
+width: 100%
 ---
 :::
 
 :::::::::::::
 
+
+:::::::::::::{grid-item-card}
+$$
+p(x) = (x + 1)^2 + 2
+$$
+^^^
+:::{figure} ./figurer/eksempler/eksempel_1/D.svg
+---
+class: no-click, adaptive-figure
+width: 100%
+---
+:::
+
+:::::::::::::
 ::::::::::::::
+
+
+
 
 
 :::::::::::::::
 
+
+---
+
+
+:::::::::::::::{explore} Utforsk 1
+Nedenfor vises et interaktivt vindu der en andregradsfunksjon $f$ er skrevet på ekstremalpunktsform 
+
+$$
+f(x) = a (x - x_0)^2 + y_0
+$$
+
+Du kan variere verdiene til $a$, $x_0$ og $y_0$ for å se hvordan grafen endrer seg. 
+
+Endre på verdiene og lag figurene som er vist i Eksempel 1.
+
+:::{ggb} 720 600
+---
+material_id: wapc5yua
+---
+:::
+
+:::::::::::::::
+
+---
+
+
+### Fra standardform til ekstremalpunktsform
+Nå skal vi se hvordan vi kan skrive om en andregradsfunksjon fra standardform til ekstremalpunktsform.
+
+:::::::::::::::{example} Eksempel 2
+En andregradsfunksjon $f$ er gitt ved
+
+$$
+f(x) = x^2 - 4x + 3.
+$$
+
+Bestem $f(x)$ på ekstremalpunktsform.
+
+
+::::{solution}
+---
+dropdown: 0
+---
+Ekstremalpunktsformen til $f(x)$ er gitt ved
+
+$$
+f(x) = a(x - x_0)^2 + y_0,
+$$
+
+der $y_0 = f(x_0)$ og $x_0$ er symmetrilinja til grafen. Vi kan bestemme $x_0$ med formelen: 
+
+$$
+x_0 = -\frac{b}{2a} \, ,
+$$
+
+og siden $a = 1$ og $b = -4$, så får vi:
+
+$$
+x_0 = -\frac{-4}{2 \cdot 1} = 2.
+$$
+
+Deretter bestemmer vi $y_0$ ved å sette $x = 2$ i funksjonsuttrykket:
+
+$$
+y_0 = f(2) = 2^2 - 4 \cdot 2 + 3 = 4 - 8 + 3 = -1.
+$$
+
+Dermed er ekstremalpunktsformen til $f(x)$ gitt ved
+
+$$
+f(x) = (x - 2)^2 - 1.
+$$
+
+::::
+
+
+:::::::::::::::
 
 
 ---
 
 
 :::::::::::::::{exercise} Underveisoppgave 1
-:::{quiz}
-Q: Hvilket funksjonsuttrykk hører til grafen? ![](figurer/quiz/quiz_1/spm_1.svg)
-+ $$f(x) = (x - 1)^2 + 2$$
-- $$f(x) = (x + 1)^2 + 2$$
-- $$f(x) = (x - 1)^2 - 2$$
-- $$f(x) = (x + 1)^2 - 2$$
+En andregradsfunksjon $f$ er gitt ved
 
-Q: Symmetrilinja til $f$ er ... ![](figurer/quiz/quiz_1/spm_1.svg)
-+ $$x = 1$$
-- $$x = 2$$
-- $$x = -1$$
-- $$x = -2$$
-
-Q: Hvilket funksjonsuttrykk hører til grafen? ![](figurer/quiz/quiz_1/spm_2.svg)
-+ $$f(x) = -(x + 2)^2 - 1$$
-- $$f(x) = -(x - 2)^2 - 1$$
-- $$f(x) = (x + 2)^2 - 1$$
-- $$f(x) = (x + 2)^2 + 1$$
-
-Q: Symmetrilinja til $f$ er ... ![](figurer/quiz/quiz_1/spm_2.svg)
-+ $$x = -2$$
-- $$x = 2$
-- $$x = 1$$
-- $$x = -1$$
-
-Q: Hvilket funksjonsuttrykk hører til grafen? ![](figurer/quiz/quiz_1/spm_3.svg)
-+ $$f(x) = -2(x + 3)^2 + 2$$
-- $$f(x) = -2(x - 3)^2 + 2$$
-- $$f(x) = -2(x + 2)^2 + 3$$
-- $$f(x) = 2(x + 3)^2 + 2$$
-
-Q: Symmetrilinja til $f(x) = 3(x + 2)^2 - 4$ er ...
-+ $$x = -2$$
-- $$x = 2$$
-- $$x = 3$$
-- $$x = -4$$
-
-Q: Symmetrilinja til $f(x) = -2(x + 2)^2 - 1$ er ...
-+ $$x = -2$$
-- $$x = 2$$
-- $$x = 1$$
-- $$x = -1$$
-:::
-:::::::::::::::
-
-
-
----
-
-
-
-## Bestemme $f(x)$ fra graf
-
-Vi skal se på hvordan vi kan gå fra grafen til en andregradsfunksjon til et funksjonsuttrykk for ved hjelp av ekstremalformen. 
-
-:::::::::::::::{admonition} Eksempel 3
----
-class: example
----
-Grafen til en andregradsfunksjon er vist i {numref}`fig-andregradsfunksjoner-representasjoner-ekstremalform-eksempel-3`.
-
-Bestem ekstremalformen til $f(x)$.
-
-:::{figure} ./figurer/eksempler/eksempel_3.svg
----
-name: fig-andregradsfunksjoner-representasjoner-ekstremalform-eksempel-3
-width: 80%
-class: no-click, adaptive-figure
----
-viser grafen til en andregradsfunksjon $f$.
-:::  
-
-::::{admonition} Løsning
----
-class: solution
----
-Vi starter fra ekstremalformen til $f(x)$:
 
 $$
-f(x) = a(x - x_1)^2 + y_1
+f(x) = 2x^2 - 8x + 6.
 $$
 
-Fra grafen til $f$ kan vi lese av at det har et bunnpunkt i $(1, -2)$ som betyr at 
-
-$$
-(x_1, y_1) = (1, -2).
-$$
-
-Vi setter dette inn i ekstremalformen til $f$:
-
-$$
-f(x) = a(x - 1)^2 - 2
-$$
-
-Nå må vi ha ett punkt til for å bestemme $a$. Vi kan se at grafen går gjennom punkt $(3, 0)$ som betyr at 
-
-\begin{align*}
-    f(3) &= 0 \\
-    \\
-    a(3 - 1)^2 - 2 &= 0 \\
-    \\
-    4a - 2 &= 0 \\
-    \\
-    4a &= 2 \\
-    \\
-    a &= \dfrac{1}{2}
-\end{align*}
-
-Dermed er 
-
-$$
-f(x) = \dfrac{1}{2}(x - 1)^2 - 2
-$$
-::::
-
-:::::::::::::::
-
----
-
-
-:::::::::::::::{exercise} Underveisoppgave 2
-
-Grafen til en andregradsfunksjon $f$ er vist i {numref}`fig-andregradsfunksjoner-representasjoner-ekstremalform-underveisoppgave-2`.
-
-Bestem ekstremalformen til $f(x)$.
-
-:::{figure} ./figurer/underveisoppgaver/underveisoppgave_2.svg 
----
-name: fig-andregradsfunksjoner-representasjoner-ekstremalform-underveisoppgave-2
-width: 80%
-class: no-click, adaptive-figure
----
-viser grafen til en andregradsfunksjon $f$.
-:::
-
-:::{admonition} Fasit
----
-class: dropdown, answer
----
-$$
-f(x) = -3(x + 2)^2 + 4
-$$
-:::
-
-:::{admonition} Løsning
----
-class: dropdown, solution
----
-Vi starter fra ekstremalformen til $f(x)$:
-
-$$
-f(x) = a(x - x_1)^2 + y_1
-$$
-
-Vi kan lese fra grafen til $f$ at det har et toppunkt i $(-2, 4)$ som betyr at
-
-$$
-f(x) = a(x - (-2))^2 + 4 = a(x + 2)^2 + 4
-$$
-
-Vi trenger ett punkt til for å bestemme $a$. Vi kan se at grafen går gjennom punkt $(-1, 1)$ som gir 
-
-\begin{align*}
-    f(-1) &= 1 \\
-    \\
-    a(-1 + 2)^2 + 4 &= 1 \\
-    \\
-    a(1)^2 + 4 &= 1 \\
-    \\
-    a + 4 &= 1 \\
-    \\
-    a &= -3
-\end{align*}
-
-Dermed er 
-
-$$
-f(x) = -3(x + 2)^2 + 4
-$$
-:::
-
-:::::::::::::::
-
-
-## Fra nullpunktsform til ekstremalform
-
-Vi skal nå se på hvordan vi kan gå fra nullpunktsformen til ekstremalformen til en andregradsfunksjon. 
-
-
-:::::::::::::::{admonition} Utforsk 1
----
-class: explore
----
-Her skal du utforske sammenhengen mellom nullpunktsformen og ekstremalformen til en andregradsfunksjon.
-
-::::::::::::::{tab-set}
----
-class: tabs-parts
----
-:::::::::::::{tab-item} a
-Se på grafene under. 
-
-1. Kan du se en sammenheng om hvor nullpunktene ligger i forhold til symmetrilinja? 
-2. Kan du beskrive sammenhengen generelt? 
-
-:::{solution}
-1. Det er like lang avstand fra symmetrilinja til hvert nullpunkt på $x$-aksen.
-2. Symmetrilinja ligger **midt** mellom nullpunktene.
-:::
-
-::::::::::::{tab-set}
-:::::::::::{tab-item} Graf A
-:::{figure} ./figurer/utforsk/utforsk_1/a/a.svg
----
-width: 80%
-class: no-click, adaptive-figure
----
-:::
-:::::::::::
-
-:::::::::::{tab-item} Graf B
-:::{figure} ./figurer/utforsk/utforsk_1/a/b.svg
----
-width: 80%
-class: no-click, adaptive-figure
----
-:::
-:::::::::::
-
-:::::::::::{tab-item} Graf C
-:::{figure} ./figurer/utforsk/utforsk_1/a/c.svg
----
-width: 80%
-class: no-click, adaptive-figure
----
-:::
-:::::::::::
-::::::::::::
-
-:::::::::::::
-
-:::::::::::::{tab-item} b
-Bruk det at avstanden fra symmetrilinja til $x_0$ er den samme til hvert nullpunkt $x_1$ og $x_2$ til å finne en formel for $x_0$ uttrykt ved nullpunktene $x_1$ og $x_2$.
+Bestem $f(x)$ på ekstremalpunktsform.
 
 
 ::::{answer}
 $$
-x_0 = \dfrac{x_1 + x_2}{2}
+f(x) = 2(x - 2)^2 - 2.
 $$
 ::::
 
 ::::{solution}
-Vi lar $x_1$ være det minste nullpunktet og $x_2$ være det største nullpunktet. Vi vet at symmetrilinja $x_0$ ligger mellom de to punktene som betyr at 
+Koeffisientene til $f(x)$ er
 
 $$
-x_1 < x_0 < x_2
+a = 2 \and b = -8 \and c = 6.
 $$
 
-Samtidig kan vi konkludere at 
-* $x_0 - x_1$ er avstanden fra $x_0$ til $x_1$ siden $x_0 > x_1$
-* $x_2 - x_0$ er avstanden fra $x_0$ til $x_2$ siden $x_2 > x_0$
-
-Siden de to avstandene skal være like, følger det at 
+Symmetrilinja er derfor
 
 $$
-x_0 - x_1 = x_2 - x_0
+x_0 = -\dfrac{b}{2a} = -\dfrac{-8}{2 \cdot 2} = 2.
 $$
 
-Vi løser likningen med hensyn på $x_0$:
+Deretter bestemmer vi $y_0$ ved å sette $x = 2$ i funksjonsuttrykket:
 
-\begin{align*}
-    x_0 - x_1 &= x_2 - x_0 \\
-    \\
-    2x_0 &= x_1 + x_2 \\
-    \\
-    x_0 &= \dfrac{x_1 + x_2}{2}
-\end{align*}
+$$
+y_0 = f(2) = 2 \cdot 2^2 - 8 \cdot 2 + 6 = 8 - 16 + 6 = -2.
+$$
 
-Dermed finner vi at symmetrilinja $x_0$ er gjennomsnittet av nullpunktene.
+Dermed er ekstremalpunktsformen til $f(x)$ gitt ved
+
+$$
+f(x) = a(x - x_0)^2 + y_0 = 2(x - 2)^2 - 2.
+$$
 ::::
-
-:::::::::::::
-
-::::::::::::::
 
 :::::::::::::::
 
+
+### Fra ekstremalpunktsform til standardform
+Vi kan også veksle fra ekstremalpunktsform til standardform. Dette gjør vi ved å gange ut parentesen og samle leddene:
+
+:::{margin} Husk: Kvadratsetninger
+$$
+(a + b)^2 = a^2 + 2ab + b^2
+$$
+
+$$
+(a - b)^2 = a^2 - 2ab + b^2
+$$
+:::
+
+:::::::::::::::{example} Eksempel 3
+En andregradsfunksjon $f$ er gitt ved
+
+$$
+f(x) = -3(x - 1)^2 + 2
+$$
+
+Bestem $f(x)$ på standardform.
+
+::::{solution}
+---
+dropdown: 0
+---
+Vi ganger ut parentesen før vi samler leddene:
+
+\begin{align*}
+f(x) &= -3(x - 1)^2 + 2 \\
+\\
+&= -3(x^2 - 2x + 1) + 2 \\
+\\
+&= -3x^2 + 6x - 3 + 2 \\
+\\
+&= -3x^2 + 6x - 1.
+\end{align*}
+
+::::
+
+:::::::::::::::
+
+
 ---
 
-:::::::::::::::{admonition} Sammenheng mellom nullpunkter og symmetrilinje
----
-class: theory
----
-Symmetrilinja $x_0$ er gjennomsnitt av nullpunktene $x_1$ og $x_2$, som vi kan regne ut med:
+:::::::::::::::{exercise} Underveisoppgave 2
+En andregradsfunksjon $f$ er gitt ved
 
-:::{figure} ./figurer/teori/nullpunkter_og_symmetrilinje.svg
+$$
+f(x) = 2(x + 3)^2 - 5.
+$$
+
+Bestem $f(x)$ på standardform.
+
+::::{answer}
+$$
+f(x) = 2x^2 + 12x + 13.
+$$
+::::
+
+::::{solution}
+Vi ganger ut parentesen og samler leddene:
+
+\begin{align*}
+f(x) &= 2(x + 3)^2 - 5 \\
+\\
+&= 2(x^2 + 6x + 9) - 5 \\
+\\
+&= 2x^2 + 12x + 18 - 5 \\
+\\
+&= 2x^2 + 12x + 13.
+\end{align*}
+
+::::
+
+
+
+:::::::::::::::
+
+
+## Fra graf til $f(x)$ på ekstremalpunktsform
+
+
+:::{margin}
+Vi trenger det ekstra punktet for å bestemme verdien til $a$ i ekstremalpunktsformen.
+:::
+
+Når vi har en graf, kan vi bestemme ekstremalpunktsformen når vi kjenner til ekstremalpunktet og ett punkt til på grafen. 
+La oss se på et eksempel:
+
+
+:::::::::::::::{example} Eksempel 4
+Grafen til en andregradsfunksjon $f$ er vist nedenfor.
+
+Bestem $f(x)$ på ekstremalpunktsform.
+
+
+:::{figure} ./figurer/eksempler/eksempel_4/figur.svg
 ---
-width: 40%
 class: no-click, adaptive-figure
+width: 80%
 ---
 :::
 
+::::{solution}
+---
+dropdown: 0 
+---
+Vi ser fra grafen at ekstremalpunktet er $(1, -8)$. Det betyr at vi kan skrive $f(x)$ på ekstremalpunktsform som
+
+$$
+f(x) = a(x - 1)^2 - 8.
+$$
+
+Vi trenger ett punkt til for å bestemme verdien til $a$. Vi ser at grafen skjærer $y$-aksen i punktet $(0, -6)$ som betyr at 
+
+$$
+f(0) = -6 \liff a(0 - 1)^2 - 8 = -6.
+$$
+
+som vi forenkler til 
+
+$$
+a - 8 = -6 \liff a = 2.
+$$
+
+Dermed er 
+
+$$
+f(x) = 2(x - 1)^2 - 8.
+$$
+
+::::
+
 
 :::::::::::::::
 
+
 ---
+
 
 :::::::::::::::{exercise} Underveisoppgave 3
+Grafen til en andregradsfunksjon $f$ er vist nedenfor.
 
-Nullpunktsformen til en andregradsfunksjon er gitt ved
+Bestem $f(x)$ på ekstremalpunktsform.
 
-$$
-f(x) = -2(x - 1)(x + 3)
-$$
 
-Bestem ekstremalformen til $f(x)$. 
-
-::::::::::::::{admonition} Fasit
+:::{figure} ./figurer/underveisoppgaver/underveisoppgave_3/figur.svg
 ---
-class: answer, dropdown
+class: no-click, adaptive-figure
+width: 80%
 ---
+:::
+
+
+::::{answer}
+$$
+f(x) = -(x + 1)^2 + 4.
+$$
+::::
+
+
+::::{solution}
+Vi ser at grafen til $f$ har et ekstremalpunkt i $(-1, 4)$ som betyr at vi kan skrive $f(x)$ på ekstremalpunktsform som
 
 $$
-f(x) = -2(x + 1)^2 - 8
+f(x) = a(x - (-1))^2 + 4 = a(x + 1)^2 + 4.
 $$
 
-::::::::::::::
-
-
-::::::::::::::{admonition} Løsning
----
-class: solution, dropdown
----
-Nullpunktene til $f(x)$ er 
+Vi trenger ett punkt til for å bestemme verdien til $a$. Vi ser at grafen skjærer $y$-aksen i punktet $(0, 3)$ som betyr at
 
 $$
-x = 1 \quad \lor \quad x = -3
+f(0) = 3 \liff a(0 + 1)^2 + 4 = 3.
 $$
 
-Symmetrilinja er gjennomsnittet av nullpunktene som gir 
+som vi forenkler til
 
 $$
-x_0 = \dfrac{1 + (-3)}{2} = \dfrac{-2}{2} = -1.
+a + 4 = 3 \liff a = -1.
 $$
 
-$y$-koordinaten til ekstremalpunktet er
+Dermed er
 
 $$
-y_0 = f(x_0) = f(-1) = -2\cdot (-1 - 1) \cdot (-1 + 3) = -2\cdot (-2)\cdot (2) = -8.
+f(x) = -(x + 1)^2 + 4.
 $$
 
-Dermed er ekstremalformen til $f(x)$ gitt ved
+::::
 
-$$
-f(x) = -2(x + 1)^2 - 8
-$$
-::::::::::::::
 :::::::::::::::
 
-## Fra ekstremalform til standardform
 
-Vi skal nå se på hvordan vi kan gå fra ekstremalformen til standardformen til en andregradsfunksjon.
+## Sammenlikning av standardform og ekstremalpunktsform
+
+Det kan være nyttig å oppsummere forskjellen mellom standardform og ekstremalpunktsform for å belyse hva slags opplysninger de to representasjonene gir oss: 
 
 
-
-::::{admonition} Eksempel 4
+:::::::::::::::{grid} 1 1 2 2
 ---
-class: example
+gutter: 2
 ---
-En andregradsfunksjon er gitt ved 
 
-$$
-f(x) = (x - 1)^2 + 3
-$$
+::::::::::::::{grid-item-card} 
+Standardform
 
-Bestem standardformen til $f(x)$. 
+^^^
 
-:::{admonition} Hint: Algebraisk lov 1
+:::{figure} ../standardform/figurer/teori/algebraisk_uttrykk.svg
 ---
-class: hints, dropdown
+class: no-click, adaptive-figure
+width: 100%
 ---
-Vi bruker den algebraiske loven for multiplikasjon av to parenteser i utregningen under:
-
-$$
-(a + b)^2 = (a + b)(a + b)
-$$
 :::
 
-:::{admonition} Hint: Algebraisk lov 2
 ---
-class: hints, dropdown
----
-Vi bruker den algebraiske loven for multiplikasjon av to parenteser i utregningen under:
 
-$$
-(a + b)(c + d) = ac + ad + bc + bd
-$$
+:::{figure} ../standardform/figurer/teori/grafisk_representasjon/figur_1.svg
+---
+class: no-click, adaptive-figure
+width: 100%
+---
 :::
 
-:::{admonition} Løsning
----
-class: solution
----
-\begin{align*}
-f(x) &= (x - 1)^2 + 3 \\
-\\
-&= \textcolor{red}{(x - 1)(x - 1)} + 3 \\
-\\ 
-&= \textcolor{red}{x^2 - x - x + (-1)\cdot (-1)} + 3 \\
-\\
-&= x^2 - 2x + 1 + 3 \\
-\\
-&= x^2 - 2x + 4
-\end{align*}
-
-Dermed er standardformen til $f(x)$ gitt ved 
-
-$$
-f(x) = x^2 - 2x + 4
-$$
-:::
-::::
-
 ---
 
-::::{exercise} Underveisoppgave 4
+**Hva kan vi lese av?**
+* Grafens form bestemmes av $a$. 
+* Forteller oss umiddelbart hvor grafen skjærer $y$-aksen.
+* Symmetrilinja kan bestemmes med formelen $x_0 = -\dfrac{b}{2a}$.
 
-Bestem standardformen til 
 
-$$
-f(x) = (x + 3)^2 + 4.
-$$
 
-:::{admonition} Fasit
+::::::::::::::
+
+
+::::::::::::::{grid-item-card}
+Ekstremalpunktsform
+^^^
+
+:::{figure} figurer/teori/algebraisk_uttrykk.svg
 ---
-class: dropdown, answer
+class: no-click, adaptive-figure
+width: 100%
 ---
-$$
-f(x) = x^2 + 6x + 13
-$$
 :::
 
-:::{admonition} Løsning
 ---
-class: dropdown, solution
+
+:::{figure} figurer/teori/grafisk_representasjon.svg
 ---
-\begin{align*}
-    f(x) &= (x + 3)^2 + 4 \\
-    \\
-    &= \textcolor{red}{(x + 3)(x + 3)} + 4 \\
-    \\
-    &= \textcolor{red}{x^2 + 3x + 3x + 3^2} + 4 \\
-    \\
-    &= \textcolor{red}{x^2 + 6x + 9} + 4 \\
-    \\
-    &= x^2 + 6x + 13
-\end{align*}
-
-Dermed er standardformen til $f(x)$ gitt ved 
-
-$$
-f(x) = x^2 + 6x + 13
-$$
+class: no-click, adaptive-figure
+width: 100%
+---
 :::
 
-::::
+---
 
+**Hva kan vi lese av?**
+* Grafens form bestemmes av $a$.
+* Forteller oss umiddelbart hvor grafen har et toppunkt eller bunnpunkt.
+* Forteller oss umiddelbart hvor grafen har symmetrilinje.
 
+::::::::::::::
+
+:::::::::::::::
