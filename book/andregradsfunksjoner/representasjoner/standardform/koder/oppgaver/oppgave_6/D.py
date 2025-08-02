@@ -5,19 +5,19 @@ def main(dirname, save):
     #
     # Define functions
     def f(x):
-        return (x - 1) ** 2 - 3
+        return -0.5 * ((x - 2) ** 2 - 4)
 
     # List of functions and their labels.
     functions = [f]
 
     fig, ax = plotmath.plot(
         functions=functions,
-        fn_labels=["D"],
+        fn_labels=True,
         xmin=-6,
         xmax=6,
         ymin=-6,
         ymax=6,
-        ticks=False,
+        ticks=True,
         xstep=1,
         ystep=1,
         grid=True,

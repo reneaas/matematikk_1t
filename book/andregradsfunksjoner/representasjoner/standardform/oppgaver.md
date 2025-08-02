@@ -85,15 +85,155 @@ $$
 ---
 
 
-
-
 :::::::::::::::{exercise} Oppgave 2
+---
+level: 1
+---
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+En andregradsfunksjon $f$ er gitt ved 
+
+$$
+f(x) = 2x^2 + 4x - 5
+$$
+
+Regn ut $f(-1)$, $f(0)$ og $f(2)$.
+
+
+::::{answer}
+\begin{align*}
+f(-1) &= -7, \\
+\\
+f(0) &= -5, \\
+\\
+f(2) &= 11.
+\end{align*}
+::::
+
+::::{solution}
+\begin{align*}
+f(-1) &= 2 \cdot (-1)^2 + 4 \cdot (-1) - 5 = 2 - 4 - 5 = -7, \\
+\\
+f(0) &= 2 \cdot 0^2 + 4 \cdot 0 - 5 = -5, \\
+\\
+f(2) &= 2 \cdot 2^2 + 4 \cdot 2 - 5 = 8 + 8 - 5 = 11.
+\end{align*}
+::::
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+En andregradsfunksjon $g$ er gitt ved 
+
+$$
+g(x) = -x^2 + 3x + 2
+$$
+
+Regn ut $g(-2)$, $g(1)$ og $g(4)$. 
+
+
+::::{answer}
+\begin{align*}
+g(-2) &= -8, \\
+g(1) &= 4, \\
+g(4) &= -2.
+\end{align*}
+::::
+
+
+::::{solution}
+\begin{align*}
+g(-2) &= -(-2)^2 + 3 \cdot (-2) + 2 = -4 - 6 + 2 = -8, \\
+g(1) &= -(1)^2 + 3 \cdot (1) + 2 = -1 + 3 + 2 = 4, \\
+g(4) &= -(4)^2 + 3 \cdot (4) + 2 = -16 + 12 + 2 = -2.
+\end{align*}
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+Grafen til en andregradsfunksjon $h$ er vist nedenfor.
+
+Bruk grafen til å bestemme $h(-3)$, $h(-2)$, $h(-1)$, $h(0)$ og $h(1)$. 
+
+:::{figure} ./figurer/oppgaver/oppgave_2/c.svg
+---
+class: no-click, adaptive-figure
+width: 90%
+---
+:::
+
+
+::::{answer}
+\begin{align*}
+h(-3) &= 0, \\
+\\
+h(-2) &= -3, \\
+\\
+h(-1) &= -4, \\
+\\
+h(0) &= -3, \\
+\\
+h(1) &= 0.
+\end{align*}
+::::
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} d
+Grafen til en andregradsfunksjon $p$ er vist nedenfor.
+
+Bruk grafen til å bestemme $p(-1)$, $p(0)$, $p(1)$, $p(2)$ og $p(3)$.  
+
+:::{figure} ./figurer/oppgaver/oppgave_2/d.svg
+---
+class: no-click, adaptive-figure
+width: 90%
+---
+:::
+
+
+::::{answer}
+\begin{align*}
+p(-1) &= 0, \\
+\\
+p(0) &= 3, \\
+\\
+p(1) &= 4, \\
+\\
+p(2) &= 3, \\
+\\
+p(3) &= 0.
+\end{align*}
+::::
+
+
+:::::::::::::
+
+::::::::::::::
+:::::::::::::::
+
+
+---
+
+
+
+
+:::::::::::::::{exercise} Oppgave 3
 ---
 level: 1
 ---
 Nedenfor vises grafen til en andregradsfunksjon $f$.
 
-:::{figure} ./figurer/oppgaver/oppgave_2/figur.svg
+:::{figure} ./figurer/oppgaver/oppgave_3/figur.svg
 ---
 class: no-click, adaptive-figure
 width: 
@@ -166,7 +306,7 @@ Grafen skjærer $y$-aksen i $(0, 3)$ som betyr at $c = 3$.
 
 ---
 
-:::::::::::::::{exercise} Oppgave 3
+:::::::::::::::{exercise} Oppgave 4
 ---
 level: 1
 ---
@@ -259,7 +399,7 @@ Dermed er koordinatene til bunnpunktet $(-1, -7)$.
 Lag en skisse av grafen til $f$ og marker egenskapene du har funnet på grafen. 
 
 ::::{answer}
-:::{figure} ./figurer/oppgaver/oppgave_3/figur.svg
+:::{figure} ./figurer/oppgaver/oppgave_4/figur.svg
 ---
 class: no-click, adaptive-figure
 width: 90%
@@ -278,13 +418,13 @@ width: 90%
 ---
 
 
-:::::::::::::::{exercise} Oppgave 4
+:::::::::::::::{exercise} Oppgave 5
 ---
 level: 1
 ---
 Nedenfor vises grafen til en andregradsfunksjon $f(x) = ax^2 + bx + c$. 
 
-:::{figure} ./figurer/oppgaver/oppgave_4/figur.svg
+:::{figure} ./figurer/oppgaver/oppgave_5/figur.svg
 ---
 class: no-click, adaptive-figure
 width: 80%
@@ -401,7 +541,7 @@ $$
 ---
 
 
-:::::::::::::::{exercise} Oppgave 5
+:::::::::::::::{exercise} Oppgave 6
 ---
 level: 2
 ---
@@ -414,7 +554,7 @@ Grafen til en andregradsfunksjon $f$ er vist i figuren nedenfor.
 
 Bestem $f(x)$.
 
-:::{figure} ./figurer/oppgaver/oppgave_5/a.svg
+:::{figure} ./figurer/oppgaver/oppgave_6/a.svg
 ---
 class: no-click, adaptive-figure
 width: 80%
@@ -491,7 +631,7 @@ Grafen til en andregradsfunksjon $g$ er vist i figuren nedenfor.
 
 Bestem $g(x)$.
 
-:::{figure} ./figurer/oppgaver/oppgave_5/b.svg
+:::{figure} ./figurer/oppgaver/oppgave_6/b.svg
 ---
 class: no-click, adaptive-figure
 width: 80%
@@ -560,7 +700,7 @@ Grafen til en andregradsfunksjon $h$ er vist i figuren nedenfor.
 
 Bestem $h(x)$.
 
-:::{figure} ./figurer/oppgaver/oppgave_5/c.svg
+:::{figure} ./figurer/oppgaver/oppgave_6/c.svg
 ---
 class: no-click, adaptive-figure
 width: 80%
@@ -629,7 +769,7 @@ Grafen til en andregradsfunksjon $p$ er vist i figuren nedenfor.
 
 Bestem $p(x)$.
 
-:::{figure} ./figurer/oppgaver/oppgave_5/d.svg
+:::{figure} ./figurer/oppgaver/oppgave_6/d.svg
 ---
 class: no-click, adaptive-figure
 width: 80%
@@ -701,10 +841,17 @@ $$
 ---
 
 
-:::::::::::::::{exercise} Oppgave 6
+:::::::::::::::{exercise} Oppgave 7
 ---
 level: 2
 ---
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+
 En andregradsfunksjon $f$ er gitt ved 
 
 $$
@@ -713,7 +860,7 @@ $$
 
 Bestem hvilken av grafene nedenfor som viser grafen til $f$.
 
-:::{figure} ./figurer/oppgaver/oppgave_6/merged_figure.svg
+:::{figure} ./figurer/oppgaver/oppgave_7/a/merged_figure.svg
 ---
 class: no-click, adaptive-figure
 width: 100%
@@ -742,13 +889,84 @@ $$
 Dette passer bare med graf B som betyr at grafen til $f$ er graf B.
 ::::
 
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+En andregradsfunksjon $g$ er gitt ved
+
+$$
+g(x) = x^2 - 4x
+$$
+
+Bestem hvilken av grafene nedenfor som viser grafen til $g$.
+
+
+:::{figure} ./figurer/oppgaver/oppgave_7/b/merged_figure.svg
+---
+class: no-click, adaptive-figure
+width: 100%
+---
+:::
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+En andregradsfunksjon $h$ er gitt ved
+
+$$
+h(x) = x^2 + 6x + 5
+$$
+
+Bestem hvilken av grafene nedenfor som viser grafen til $h$.
+
+
+:::{figure} ./figurer/oppgaver/oppgave_7/c/merged_figure.svg
+---
+class: no-click, adaptive-figure
+width: 100%
+---
+:::
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} d
+En andregradsfunksjon $p$ er gitt ved
+
+$$
+p(x) = -2x^2 + 4x - 1
+$$
+
+Bestem hvilken av grafene nedenfor som viser grafen til $p$.
+
+
+:::{figure} ./figurer/oppgaver/oppgave_7/d/merged_figure.svg
+---
+class: no-click, adaptive-figure
+width: 100%
+---
+:::
+
+
+:::::::::::::
+
+
+
+::::::::::::::
+
 :::::::::::::::
+
+
 
 
 ---
 
 
-:::::::::::::::{exercise} Oppgave 7
+:::::::::::::::{exercise} Oppgave 8
 ---
 level: 2
 ---
@@ -799,7 +1017,7 @@ Topp- eller bunnpunkt
 
 Når har vi nok opplysninger til å tegne en skisse av grafen til $f$:
 
-:::{figure} ./figurer/oppgaver/oppgave_7/a.svg
+:::{figure} ./figurer/oppgaver/oppgave_8/a.svg
 ---
 class: no-click, adaptive-figure
 width: 80%
@@ -855,7 +1073,7 @@ Topp- eller bunnpunkt
 
 Når har vi nok opplysninger til å tegne en skisse av grafen til $g$:
 
-:::{figure} ./figurer/oppgaver/oppgave_7/b.svg
+:::{figure} ./figurer/oppgaver/oppgave_8/b.svg
 ---
 class: no-click, adaptive-figure
 width: 80%
@@ -912,7 +1130,7 @@ Topp- eller bunnpunkt
 
 Når har vi nok opplysninger til å tegne en skisse av grafen til $h$:
 
-:::{figure} ./figurer/oppgaver/oppgave_7/c.svg
+:::{figure} ./figurer/oppgaver/oppgave_8/c.svg
 ---
 class: no-click, adaptive-figure
 width: 80%
@@ -969,7 +1187,7 @@ Topp- eller bunnpunkt
 
 Nå har vi nok opplysninger til å tegne en skisse av grafen til $p$:
 
-:::{figure} ./figurer/oppgaver/oppgave_7/d.svg
+:::{figure} ./figurer/oppgaver/oppgave_8/d.svg
 ---
 class: no-click, adaptive-figure
 width: 80%
@@ -989,7 +1207,7 @@ width: 80%
 ---
 
 
-:::::::::::::::{exercise} Oppgave 8
+:::::::::::::::{exercise} Oppgave 9
 ---
 level: 2
 ---
@@ -1011,7 +1229,7 @@ Grafen til en andregradsfunksjon $f$ er vist i figuren nedenfor.
 Bruk CAS til å bestemme $f(x)$.
 
 
-:::{figure} ./figurer/oppgaver/oppgave_8/a.svg
+:::{figure} ./figurer/oppgaver/oppgave_9/a.svg
 ---
 class: no-click, adaptive-figure
 width: 80%
@@ -1029,7 +1247,7 @@ $$
 ::::{solution}
 Vi trenger tre punkter på grafen til $f$. Vi ser at grafen går gjennom punktene $(-1, 0)$, $(3, 0)$ og $(0, -3)$. Da kan vi sette opp et likningssystem og bestemme koeffisientene til $f(x)$:
 
-:::{figure} ./figurer/oppgaver/oppgave_8/a_sol.png
+:::{figure} ./figurer/oppgaver/oppgave_9/a_sol.png
 ---
 class: no-click, adaptive-figure
 width: 60%
@@ -1069,7 +1287,7 @@ Grafen til en andregradsfunksjon $g$ er vist i figuren nedenfor.
 Bruk CAS til å bestemme $g(x)$.
 
 
-:::{figure} ./figurer/oppgaver/oppgave_8/b.svg
+:::{figure} ./figurer/oppgaver/oppgave_9/b.svg
 ---
 class: no-click, adaptive-figure
 width: 80%
@@ -1089,7 +1307,7 @@ $$
 Vi trenger tre punkter på grafen til $g$. Vi ser at grafen til $g$ går gjennom punktene $(-1, -1)$, $(0, -3)$ og $(-2, -3)$. Da kan vi sette opp et likningssystem og bestemme koeffisientene til $g(x)$:
 
 
-:::{figure} ./figurer/oppgaver/oppgave_8/b_sol.png
+:::{figure} ./figurer/oppgaver/oppgave_9/b_sol.png
 ---
 class: no-click, adaptive-figure
 width: 80%
@@ -1128,7 +1346,7 @@ Grafen til en andregradsfunksjon $h$ er vist i figuren nedenfor.
 Bruk CAS til å bestemme $h(x)$.
 
 
-:::{figure} ./figurer/oppgaver/oppgave_8/c.svg
+:::{figure} ./figurer/oppgaver/oppgave_9/c.svg
 ---
 class: no-click, adaptive-figure
 width: 80%
@@ -1146,7 +1364,7 @@ $$
 Vi trenger tre punkter på grafen til $h$. Vi ser at grafen til $h$ går gjennom punktene $(-5, 0)$, $(-1, 0)$ og $(0, 5)$. Da kan vi sette opp et likningssystem og bestemme koeffisientene til $h(x)$:
 
 
-:::{figure} ./figurer/oppgaver/oppgave_8/c_sol.png
+:::{figure} ./figurer/oppgaver/oppgave_9/c_sol.png
 ---
 class: no-click, adaptive-figure
 width: 60%
@@ -1188,7 +1406,7 @@ Grafen til en andregradsfunksjon $p$ er vist i figuren nedenfor.
 Bruk CAS til å bestemme $p(x)$.
 
 
-:::{figure} ./figurer/oppgaver/oppgave_8/d.svg
+:::{figure} ./figurer/oppgaver/oppgave_9/d.svg
 ---
 class: no-click, adaptive-figure
 width: 80%
@@ -1206,7 +1424,7 @@ $$
 ::::{solution}
 Vi trenger tre punkter på grafen til $p$. Vi ser at grafen til $p$ går gjennom punktene $(2, 0)$, $(0, -2)$ og $(4, -2)$. Da kan vi sette opp et likningssystem og bestemme koeffisientene til $p(x)$:
 
-:::{figure} ./figurer/oppgaver/oppgave_8/d_sol.png
+:::{figure} ./figurer/oppgaver/oppgave_9/d_sol.png
 ---
 class: no-click, adaptive-figure
 width: 60%
@@ -1228,6 +1446,341 @@ $$
 
 :::::::::::::
 
+
+
+::::::::::::::
+:::::::::::::::
+
+
+---
+
+:::::::::::::::{exercise} Oppgave 10
+---
+level: 3
+---
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+I figuren nedenfor vises grafen til en andregradsfunksjon $f$. 
+
+Bestem $f(x)$. 
+
+:::{figure} ./figurer/oppgaver/oppgave_10/a.svg
+---
+class: no-click, adaptive-figure
+width: 80%
+---
+:::
+
+
+::::{answer}
+$$
+f(x) = -\dfrac{1}{2}x^2 + 2x + 1.
+$$
+::::
+
+
+::::{solution}
+Vi går ut ifra standardformen til $f(x)$ som er 
+
+$$
+f(x) = ax^2 + bx + c.
+$$
+
+Vi ser at grafen til $f$ skjærer $y$-aksen i $(0, 1)$ som betyr at $c = 1$.
+
+Vi ser at grafen har et toppunkt i $(2, 3)$ som betyr at symmetrilinja er $x = 2$. Da får vi at 
+
+$$
+x = -\dfrac{b}{2a} = 2 \liff b = -4a.
+$$
+
+Med opplysningene vi har brukt så langt, kan vi skrive om $f(x)$ til
+
+$$
+f(x) = ax^2 + bx + c = ax^2 - 4ax + 1.
+$$
+
+Nå bruker vi toppunktet til å bestemme verdien til $a$. Siden grafen går gjennom $(2, 3)$, så betyr det at 
+
+$$
+f(2) = 3 \liff a \cdot 2^2 - 4a \cdot 2 + 1 = 3
+$$
+
+som vi forenkler til
+
+$$
+-4a + 1 = 3 \liff -4a = 2 \liff a = -\dfrac{1}{2}.
+$$
+
+Nå kan vi regne ut verdien til $b$:
+
+$$
+b = -4a = -4 \cdot \left(-\dfrac{1}{2}\right) = 2.
+$$
+
+Det betyr at koeffisientene til $f(x)$ er 
+
+$$
+a = -\dfrac{1}{2} \and b = 2 \and c = 1.
+$$
+
+Dermed er
+
+$$
+f(x) = -\dfrac{1}{2}x^2 + 2x + 1.
+$$
+
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+I figuren nedenfor vises grafen til en andregradsfunksjon $g$. 
+
+Bestem $g(x)$. 
+
+:::{figure} ./figurer/oppgaver/oppgave_10/b.svg
+---
+class: no-click, adaptive-figure
+width: 80%
+---
+:::
+
+::::{answer}
+$$
+g(x) = 2x^2 + 4x + 4.
+$$
+::::
+
+::::{solution}
+Siden $g$ er en andregradsfunksjon, så er 
+
+$$
+g(x) = ax^2 + bx + c.
+$$
+
+Grafen til $g$ har et bunnpunkt i $(-1, 2)$ som betyr at symmetrilinja er $x = -1$. Da får vi at
+
+$$
+x = -\dfrac{b}{2a} = -1 \liff b = 2a.
+$$
+
+Grafen til $g$ går gjennom punktet $(-2, 4)$ som ligger én enhet til venstre for bunnpunktet. Det betyr at hvis vi flytter oss én enhet til høyre, så får vi et punkt med samme $y$-koordinat. Dette blir da $(0, 4)$ som er punktet grafen til $g$ skjærer $y$-aksen. Dermed er 
+
+$$
+c = 4.
+$$
+
+Nå kan vi skrive om $g(x)$ til 
+
+$$
+g(x) = ax^2 + 2ax + 4.
+$$
+
+Nå bruker vi bunnpunktet til å bestemme verdien til $a$. Siden grafen går gjennom $(-1, 2)$, så betyr det at
+
+$$
+g(-1) = 2 \liff a \cdot (-1)^2 + 2a \cdot (-1) + 4 = 2
+$$
+
+som vi forenkler til
+
+$$
+-a + 4 = 2 \liff -a = -2 \liff a = 2.
+$$
+
+Nå kan vi regne ut verdien til $b$:
+
+$$
+b = 2a = 2 \cdot 2 = 4.
+$$
+
+Dermed er koeffisientene til $g(x)$ gitt ved
+
+$$
+a = 2 \and b = 4 \and c = 4.
+$$
+
+Dermed er
+
+$$
+g(x) = 2x^2 + 4x + 4.
+$$
+
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+I figuren nedenfor vises grafen til en andregradsfunksjon $h$. 
+
+Bestem $h(x)$. 
+
+:::{figure} ./figurer/oppgaver/oppgave_10/c.svg
+---
+class: no-click, adaptive-figure
+width: 80%
+---
+:::
+
+
+::::{answer}
+$$
+h(x) = x^2 - 6x + 9.
+$$
+::::
+
+
+::::{solution}
+Vi starter med standardformen til $h(x)$ som er
+
+$$
+h(x) = ax^2 + bx + c.
+$$
+
+Grafen til $h$ skjærer $y$-aksen i $(0, 9)$ som betyr at $c = 9$.
+
+Grafen til $h$ går gjennom punktene $(1, 4)$ og $(5, 4)$ som har samme $y$-koordinat. Siden de har samme $y$-koordinat, må symmetrilinja ligge midt mellom disse to punktene som betyr at symmetrilinja er gjennomsnittet av $x$-koordinatene:
+
+
+$$
+x = \dfrac{1 + 5}{2} = 3.
+$$
+
+> Gjennomsnittet av to tall ligger alltid midt mellom de to tallene!
+
+Men da får vi at 
+
+$$
+x = -\dfrac{b}{2a} = 3 \liff b = -6a.
+$$
+
+Da kan vi skrive om $h(x)$ til 
+
+$$
+h(x) = ax^2 - 6ax + 9.
+$$
+
+Nå trenger vi å bruke ett av punktene vi ikke har brukt enda. Vi velger $(1, 4)$ som betyr at 
+
+$$
+h(1) = 4 \liff a \cdot 1^2 - 6a \cdot 1 + 9 = 4
+$$
+
+som vi forenkler til
+
+$$
+-5a + 9 = 4 \liff -5a = -5 \liff a = 1.
+$$
+
+Nå kan vi regne ut verdien til $b$:
+
+$$
+b = -6a = -6 \cdot 1 = -6.
+$$
+
+Dermed er koeffisientene til $h(x)$ gitt ved
+
+$$
+a = 1 \and b = -6 \and c = 9.
+$$
+
+Dermed er
+
+$$
+h(x) = x^2 - 6x + 9.
+$$
+
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} d
+I figuren nedenfor vises grafen til en andregradsfunksjon $p$. 
+
+Bestem $p(x)$. 
+
+:::{figure} ./figurer/oppgaver/oppgave_10/d.svg
+---
+class: no-click, adaptive-figure
+width: 80%
+---
+:::
+
+
+::::{answer}
+$$
+p(x) = -2x^2 + 2x + 12.
+$$
+::::
+
+
+::::{solution}
+Standardformen til $p(x)$ er gitt ved 
+
+$$
+p(x) = ax^2 + bx + c.
+$$
+
+Vi ser at grafen til $p$ skjærer $y$-aksen i $(0, 12)$ som betyr at $c = 12$. 
+
+Grafen til $p$ har to nullpunkter i $(-2, 0)$ og $(3, 0)$. Siden disse punktene har samme $y$-koordinat, så må symmetrilinja ligge midt mellom disse to punktene som betyr at symmetrilinja er gjennomsnittet av $x$-koordinatene:
+
+$$
+x = \dfrac{-2 + 3}{2} = \dfrac{1}{2}
+$$
+
+Da får vi at
+
+$$
+x = -\dfrac{b}{2a} = \dfrac{1}{2} \liff b = -a.
+$$
+
+Da kan vi skrive om $p(x)$ til
+
+$$
+p(x) = ax^2 - ax + 12.
+$$
+
+Nå trenger vi å bruke ett av punktene vi ikke har brukt enda. Vi velger $(3, 0)$ som betyr at
+
+$$
+p(3) = 0 \liff a \cdot 3^2 - a \cdot 3 + 12 = 0
+$$
+
+som vi forenkler til
+
+$$
+6a + 12 = 0 \liff 6a = -12 \liff a = -2.
+$$
+
+Nå kan vi regne ut verdien til $b$:
+
+$$
+b = -a = -(-2) = 2.
+$$
+
+Dermed er koeffisientene til $p(x)$ gitt ved
+
+$$
+a = -2 \and b = 2 \and c = 12.
+$$
+
+Det betyr at 
+
+$$
+p(x) = -2x^2 + 2x + 12.
+$$
+
+::::
+
+:::::::::::::
 
 
 ::::::::::::::

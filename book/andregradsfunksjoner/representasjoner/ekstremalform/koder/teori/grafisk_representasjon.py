@@ -17,7 +17,7 @@ def main(dirname, save):
     # Create the math figure
     fig, ax = plotmath.plot(
         functions=functions,
-        fn_labels=None,  # NOTE: Set `None` hvis du ikke vil ha labels.
+        fn_labels=True,  # NOTE: Set `None` hvis du ikke vil ha labels.
         xmin=-4,
         xmax=8,
         ymin=-8,
@@ -30,16 +30,16 @@ def main(dirname, save):
 
     ax.plot(xmin, ymin, "ko", markersize=10, alpha=0.7)
 
-    ax.plot(0, ymin, "ko", markersize=8, alpha=0.7)
-    ax.plot(xmin, 0, "ko", markersize=8, alpha=0.7)
+    # ax.plot(0, ymin, "ko", markersize=8, alpha=0.7)
+    # ax.plot(xmin, 0, "ko", markersize=8, alpha=0.7)
 
-    ax.hlines(y=ymin, xmin=0, xmax=xmin, linestyle="--", alpha=0.5, color="black")
+    # ax.hlines(y=ymin, xmin=0, xmax=xmin, linestyle="--", alpha=0.5, color="black")
 
     fontsize = 20
     plt.annotate(
-        text="Ekstremalpunkt",
-        xy=(xmin, 0),
-        xytext=(xmin + 0.25, ymin + 8),
+        text="Ekstremalpunkt $(x_0, y_0)$",
+        xy=(xmin, ymin),
+        xytext=(xmin + 0.25, ymin - 4),
         fontsize=fontsize,
         arrowprops=dict(
             arrowstyle="->",
@@ -50,23 +50,24 @@ def main(dirname, save):
         ),
         horizontalalignment="left",
         verticalalignment="center",
+        bbox=dict(boxstyle="round,pad=0.3", fc="white", ec="black", lw=1, alpha=0.8),
     )
 
-    plt.annotate(
-        text="Ekstremalverdi",
-        xy=(0, ymin),
-        xytext=(xmin - 6, ymin - 4),
-        fontsize=fontsize,
-        arrowprops=dict(
-            arrowstyle="->",
-            lw=2,
-            color="black",
-            alpha=0.7,
-            connectionstyle="arc3,rad=-0.2",
-        ),
-        horizontalalignment="left",
-        verticalalignment="center",
-    )
+    # plt.annotate(
+    #     text="Ekstremalverdi",
+    #     xy=(0, ymin),
+    #     xytext=(xmin - 6, ymin - 4),
+    #     fontsize=fontsize,
+    #     arrowprops=dict(
+    #         arrowstyle="->",
+    #         lw=2,
+    #         color="black",
+    #         alpha=0.7,
+    #         connectionstyle="arc3,rad=-0.2",
+    #     ),
+    #     horizontalalignment="left",
+    #     verticalalignment="center",
+    # )
 
     # plt.annotate(
     #     text="(x_0, y_0)",
@@ -85,9 +86,9 @@ def main(dirname, save):
     # )
 
     plt.annotate(
-        text="Symmetrilinje",
-        xy=(xmin, ymin - 4),
-        xytext=(xmin + 2, ymin - 2),
+        text="Symmetrilinje $x = x_0$",
+        xy=(xmin, ymin + 4),
+        xytext=(xmin - 6, ymin - 2),
         fontsize=fontsize,
         arrowprops=dict(
             arrowstyle="->",
@@ -98,9 +99,11 @@ def main(dirname, save):
         ),
         horizontalalignment="left",
         verticalalignment="center",
+        bbox=dict(boxstyle="round,pad=0.3", fc="white", ec="black", lw=1, alpha=0.8),
     )
 
-    ax.vlines(x=xmin, ymin=-10, ymax=10, linestyle="--", alpha=0.5, color="black")
+    red = plotmath.COLORS.get("red")
+    ax.vlines(x=xmin, ymin=-10, ymax=10, linestyle="--", color=red, lw=1.5)
 
     # NOTE: Select an appropriate `dirname` to save the figure.
     # The directory `dirname` will be created automatically if it does not exist already.

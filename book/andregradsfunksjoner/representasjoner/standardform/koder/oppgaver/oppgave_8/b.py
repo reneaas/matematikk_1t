@@ -1,11 +1,17 @@
 import plotmath
+import matplotlib.pyplot as plt
 
 
 def main(dirname, save):
     #
     # Define functions
+
+    a = 2
+    b = 4
+    c = -1
+
     def g(x):
-        return -2 * ((x + 1) ** 2) - 1
+        return a * (x**2) + b * x + c
 
     # List of functions and their labels.
     functions = [g]
@@ -13,17 +19,79 @@ def main(dirname, save):
     fig, ax = plotmath.plot(
         functions=functions,
         fn_labels=True,
-        xmin=-6,
-        xmax=6,
-        ymin=-6,
-        ymax=6,
-        ticks=True,
+        xmin=-8,
+        xmax=8,
+        ymin=-12,
+        ymax=12,
+        ticks=False,
         xstep=1,
         ystep=1,
         grid=True,
         lw=2.5,
         alpha=None,
         domain=False,
+    )
+
+    x_symmetri = -b / (2 * a)
+    ekstremalpunkt = (x_symmetri, g(x_symmetri))
+    y_skjæring = (0, c)
+
+    ax.plot(*ekstremalpunkt, "ko", markersize=10, alpha=0.7)
+
+    ax.plot(*y_skjæring, "ko", markersize=10, alpha=0.7)
+
+    red = plotmath.COLORS.get("red")
+    ax.vlines(x=x_symmetri, ymin=-20, ymax=20, color=red, lw=1.5, ls="--")
+
+    plt.annotate(
+        text=f"Bunnpunkt $({ekstremalpunkt[0]:.0f}, {ekstremalpunkt[1]:.0f})$",
+        xy=ekstremalpunkt,
+        xytext=(-8, -6),
+        fontsize=18,
+        arrowprops=dict(
+            arrowstyle="->",
+            lw=2,
+            color="black",
+            alpha=0.7,
+            connectionstyle="arc3,rad=+0.3",
+        ),
+        bbox=dict(boxstyle="round,pad=0.4", fc="white", ec="black", lw=1.5),
+        horizontalalignment="left",
+        verticalalignment="center",
+    )
+
+    plt.annotate(
+        text=f"Symmetrilinje $x = {x_symmetri:.0f}$",
+        xy=(x_symmetri, 4),
+        xytext=(x_symmetri + 3, 4),
+        fontsize=18,
+        arrowprops=dict(
+            arrowstyle="->",
+            lw=2,
+            color="black",
+            alpha=0.7,
+            connectionstyle="arc3,rad=+0.2",
+        ),
+        bbox=dict(boxstyle="round,pad=0.4", fc="white", ec="black", lw=1.5),
+        horizontalalignment="left",
+        verticalalignment="center",
+    )
+
+    plt.annotate(
+        text=f"Skjæring med $y$-aksen \n $(0, {y_skjæring[1]})$",
+        xy=y_skjæring,
+        xytext=(2, -6),
+        fontsize=18,
+        arrowprops=dict(
+            arrowstyle="->",
+            lw=2,
+            color="black",
+            alpha=0.7,
+            connectionstyle="arc3,rad=-0.2",
+        ),
+        bbox=dict(boxstyle="round,pad=0.4", fc="white", ec="black", lw=1.5),
+        horizontalalignment="left",
+        verticalalignment="center",
     )
 
     # NOTE: Select an appropriate `dirname` to save the figure.

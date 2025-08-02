@@ -4,20 +4,20 @@ import plotmath
 def main(dirname, save):
     #
     # Define functions
-    def f(x):
-        return x**2 + 2 * x - 2
+    def g(x):
+        return -((x - 2) ** 2) - 1
 
     # List of functions and their labels.
-    functions = [f]
+    functions = [g]
 
     fig, ax = plotmath.plot(
         functions=functions,
-        fn_labels=["B"],
-        xmin=-6,
-        xmax=6,
-        ymin=-6,
-        ymax=6,
-        ticks=False,
+        fn_labels=True,
+        xmin=-4,
+        xmax=8,
+        ymin=-8,
+        ymax=4,
+        ticks=True,
         xstep=1,
         ystep=1,
         grid=True,
