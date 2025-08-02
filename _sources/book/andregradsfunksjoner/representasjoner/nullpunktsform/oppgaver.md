@@ -1,6 +1,13 @@
 # Oppgaver:  Nullpunktsform
 
-:::::::::::::::{quiz} Oppgave 1
+
+:::::::::::::::{exercise} Oppgave 1
+---
+level: 1
+---
+
+
+:::{quiz}
 Q: Hvilket funksjonsuttrykk hører til grafen? ![](figurer/quiz/quiz_2/spm_1.svg)
 + $$f(x) = -(x + 1)(x - 1)$$
 - $$f(x) = (x + 1)(x - 1)$$
@@ -38,8 +45,8 @@ Q: Nullpunktene til $f(x) = 3(x + 4)(x - 5)$ er ...
 - $$x = 3 \quad \lor \quad x = 5$$
 - $$x = 3 \quad \lor \quad x = -4$$
 
+:::
 :::::::::::::::
-
 
 
 

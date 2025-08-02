@@ -1,6 +1,9 @@
 # Oppgaver: Ekstremalform
 
-
+:::::::::::::::{exercise} Oppgave 1
+---
+level: 1
+---
 :::{quiz} Oppgave 1
 Q: Hvilket funksjonsuttrykk hører til grafen? ![](figurer/quiz/quiz_2/spm_1.svg)
 + $$f(x) = -(x + 3)^2 + 4$$
@@ -52,6 +55,7 @@ Q: Ekstremalverdien til $f(x) = 4(x - 1)^2 + 3$ er ...
 - $$y = 2$$
 
 :::
+:::::::::::::::
 
 
 ---
