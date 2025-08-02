@@ -196,7 +196,8 @@ Merk at vi skriver "$\lor$" som betyr "eller". Dette brukes fordi $f(x) = 0$ kan
 
 ---
 
-:::::::::::::::{quiz} Underveisoppgave 1
+:::::::::::::::{exercise} Underveisoppgave 1
+:::{quiz}
 Q: Hvilket funksjonsuttrykk hører til grafen? ![](figurer/quiz/quiz_1/spm_1.svg)
 + $$f(x) = (x + 1)(x - 2)$$
 - $$f(x) = (x + 1)(x + 2)$$
@@ -233,6 +234,7 @@ Q: Nullpunktene til $f(x) = -3(x + 1)(x - 3)$ er ...
 - $x = -1 \quad \lor \quad x = -3$
 - $x = 1 \quad \lor \quad x = 3$
 
+:::
 :::::::::::::::
 
 

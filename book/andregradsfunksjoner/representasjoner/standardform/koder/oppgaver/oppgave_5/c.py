@@ -5,7 +5,7 @@ def main(dirname, save):
     #
     # Define functions
     def h(x):
-        return 3 * (x - 1) * (x + 1)
+        return (x + 1) ** 2 + 3
 
     # List of functions and their labels.
     functions = [h]
@@ -15,9 +15,15 @@ def main(dirname, save):
         fn_labels=True,
         xmin=-6,
         xmax=6,
-        ymin=-6,
-        ymax=6,
+        ymin=-3,
+        ymax=10,
         ticks=True,
+        xstep=1,
+        ystep=1,
+        grid=True,
+        lw=2.5,
+        alpha=None,
+        domain=False,
     )
 
     # NOTE: Select an appropriate `dirname` to save the figure.
