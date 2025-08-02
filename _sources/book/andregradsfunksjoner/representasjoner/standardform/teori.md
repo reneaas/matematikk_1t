@@ -1,426 +1,411 @@
 # Standardform
 
 
-:::{admonition} Læringsmål
----
-class: tip
----
+:::{goals} Læringsmål
 * Kunne representere en andregradsfunksjon på standardform, og kunne lese av koeffisientene.
 * Kunne avgjøre den grafiske formen til en andregradsfunksjon ut fra koeffisientene.
 * Kunne bestemme koeffisientene til en andregradsfunksjon ved hjelp av lineære likningssystemer.
 :::
 
-## Algebraisk representasjon
+Akkurat som når vi jobbet med lineære funksjoner, så kan vi representere en andregradsfunksjon på flere måter som gir oss ulike opplysninger om grafen til funksjonen. Her skal vi se på det vi kaller for **standardform**. Standardformen gir oss informasjon om hvilken vei grafen til funksjonen vender, hvor den skjærer $y$-aksen og hvor symmetrilinja til grafen er. Det er det neste vi skal se nærmere på.
 
-::::{admonition} Andregradsfunksjon: standardform
----
-class: theory
----
-Standardformen til en andregradsfunksjon $f$ er gitt ved
+## Algebraisk og grafisk representasjon
+
+
+:::::::::::::::{summary} Standardform
+
+En andregradsfunksjon $f$ kan representeres algebraisk på standardform ved:
 
 :::{figure} ./figurer/teori/algebraisk_uttrykk.svg
 ---
-width: 80%
+width: 50%
 class: no-click, adaptive-figure
 ---
 :::
 
-Vi merker oss at koeffisienten $a$ kalles for **ledende koeffisient** fordi det er koeffisienten foran den største potensen av $x$. Altså er **ikke** $a$ "stigningstall" når vi snakker om andregradsfunksjoner.
+Grafen til $f$ vil ha form som en **parabel** der koeffisientene har følgende betydning på grafens form:
+* Hvis $a > 0$, så er grafen **konveks** (den smiler $\smile$). Hvis $a < 0$, så er grafen **konkav** (surt fjes $\frown$)
+* Grafen har en symmetrilinje gitt ved $x = -\dfrac{b}{2a}$
+* Grafen skjærer $y$-aksen i punktet $(0, c)$
+
+Se figuren nedenfor.
+
+:::{clickable-figure} ./figurer/teori/grafisk_representasjon/merged_figure.svg
+---
+width: 100%
+---
+:::
+
+
+:::::::::::::::
+
+La oss se på et eksempel der vi regner ut de ulike egenskapene og sammenlikner med grafen.
+
+
+:::::::::::::::{example} Eksempel 1
+En andregradsfunksjon $f$ er gitt ved
+
+$$
+f(x) = 2x^2 - 4x + 1
+$$
+
+Bestem følgende egenskaper til grafen til $f$:
+* Grafens form (konveks eller konkav)
+* Symmetrilinje
+* Koordinatene til topp- eller bunnpunktet
+* Skjæringspunktet med $y$-aksen
+
+Lag en skisse av grafen til $f$.
+
+
+::::{solution}
+---
+dropdown: 0
+---
+Koeffisientene til $f(x)$ er $a = 2$ og $b = -4$ og $c = 1$. 
+
+Grafens form
+: Grafen er konveks (den smiler $\smile$) fordi $a > 0$.
+
+Symmetrilinje
+: Symmetrilinja til $f$ er gitt ved $x = \dfrac{-b}{2a} = \dfrac{-(-4)}{2 \cdot 2} = \dfrac{4}{4} = 1$.
+
+Bunn- eller toppunkt
+: Siden grafen er konveks, så har grafen et bunnpunkt. Bunnpunktets $x$-koordinat er det samme som symmetrilinja, altså $x = 1$. For å finne $y$-koordinaten til bunnpunktet, setter vi $x = 1$ inn i funksjonen:
+
+    $$
+    f(1) = 2 \cdot 1^2 - 4 \cdot 1 + 1 = 2 - 4 + 1 = -1
+    $$
+: Dermed er bunnpunktet $(1, -1)$.
+
+Skjæringspunkt med $y$-aksen
+: Skjæringspunktet med $y$-aksen er $(0, c) = (0, 1)$.
+
+Nå har vi nok opplysninger til å tegne en skisse av grafen til $f$:
+
+:::{figure} ./figurer/eksempler/eksempel_1/figur.svg
+---
+class: no-click, adaptive-figure
+width: 80%
+---
+:::
 
 ::::
-
-::::{admonition} Eksempel 1: Andregradsfunksjoner
----
-class: example
----
-I tabellen under vises en rekke andregradsfunksjoner og deres koeffisienter.
-
-| Funksjon | $a$ | $b$ | $c$ |
-|:----------|:-----:|:-----:|:-----:|
-| $f(x) = 2x^2 + 3x + 1$ | $2$ | $3$ | $1$ |
-| $g(x) = -x^2 + 4x - 2$ | $-1$ | $4$ | $-2$ |
-| $h(x) = 3x^2 - 2x + 5$ | $3$ | $-2$ | $5$ |
-| $p(x) = 2x^2$ | $2$ | $0$ | $0$ |
-| $q(x) = x^2 - 3x$ | $1$ | $-3$ | $0$ |
-| $r(x) = -x^2 + 4$ | $-1$ | $0$ | $4$ |
-::::
-
-Så er det din tur:
-
-::::{admonition} Underveisoppgave 1
----
-class: check
----
-Fyll ut tabellen med koeffisientene eller funksjonsuttrykket til andregradsfunksjonene:
-
-| Funksjon | $a$ | $b$ | $c$ |
-|:----------|:-----:|:-----:|:-----:|
-| $f(x) = 3x^2 + 2x + 1$ | | | |
-| $g(x) = -2x^2 + 5x - 3$ | | | |
-| $h(x) = $ | $-1$ | $6$ | $0$ |
-| $p(x) = 3x^2$ | | | |
-| $q(x) = x^2 - 2x$ | | | |
-| $r(x) = $ | $-2$ | $0$ | $-5$ |
-
-```{admonition} Løsning
-:class: solution, dropdown
-
-| Funksjon | $a$ | $b$ | $c$ |
-|:----------|:-----:|:-----:|:-----:|
-| $f(x) = 3x^2 + 2x + 1$ | $3$ | $2$ | $1$ |
-| $g(x) = -2x^2 + 5x - 3$ | $-2$ | $5$ | $-3$ |
-| $h(x) = -x^2 + 6x$ | $-1$ | $6$ | $0$ |
-| $p(x) = 3x^2$ | $3$ | $0$ | $0$ |
-| $q(x) = x^2 - 2x$ | $1$ | $-2$ | $0$ |
-| $r(x) = -2x^2 - 5$ | $-2$ | $0$ | $-5$ |
-```
-::::
-
-## Grafisk representasjon
-
-Her skal vi se nærmere på hvordan grafen til en andregradsfunksjon ser ut og hvordan koeffisientene påvirker formen på grafen.
-
-
-:::::::::::::::{admonition} Utforsk 1
----
-class: explore
----
-
-::::::::::::::{tab-set}
-:::::::::::::{tab-item} Koeffisient: $a$
-
-Under er en andregradsfunksjon vist der du kan variere verdien til koeffisienten $a$. 
-
-1. Hva skjer med grafen når $a > 0$.
-2. Hva skjer med grafen når $a < 0$.
-3. Hva skjer med grafen når $|a|$ er stor eller liten? 
-
-
-:::{raw} html
----
-file: ./ggb/utforsk/utforsk_1/a.html
----
-:::
-
-:::{admonition} Oppsummering: Koeffisient $a$
----
-class: summary, dropdown
----
-1. Grafen har et "smilefjes" når $a > 0$. Vi sier at grafen er **konveks**. 
-2. Grafen har et "surt fjes" når $a < 0$. Vi sier at grafen er **konkav**.
-3. Når $|a|$ er stor, vil grafen bli brattere og smalere. Når $|a|$ er liten, vil grafen få lavere stigning og bli bredere.
-:::
-
-:::::::::::::
-
-:::::::::::::{tab-item} Koeffisient: $b$
-Effekten til $b$ er påvirket av fortegnet til $a$. Du finner ett vindu med $a > 0$ og ett med $a < 0$.
-
-1. Hva skjer med grafen når $b = 0$?
-2. Hva skjer med grafen når $b > 0$? 
-3. Hva skjer med grafen når $b < 0$?
-
-::::::::::::{tab-set}
-:::::::::::{tab-item} Når $a > 0$
-
-:::{raw} html
----
-file: ./ggb/utforsk/utforsk_1/b_1.html
----
-:::
-
-:::::::::::
-
-:::::::::::{tab-item} Når $a < 0$
-
-:::{raw} html
----
-file: ./ggb/utforsk/utforsk_1/b_2.html
----
-:::
-
-:::::::::::
-
-::::::::::::
-
-
-:::{admonition} Oppsummering: Koeffisient $b$
----
-class: summary, dropdown
----
-
-````{tab} $a > 0$
-1. Når $b = 0$, vil grafen være symmetrisk om $y$-aksen. 
-2. Når $b > 0$, forskyver vi grafen til venstre for $y$-aksen.
-3. Når $b < 0$, forskyver vi grafen til høyre for $y$-aksen. 
-
-````
-
-````{tab} $a < 0$
-1. Når $b = 0$, vil grafen være symmetrisk om $y$-aksen. 
-2. Når $b > 0$, forskyver vi grafen til høyre for $y$-aksen.
-3. Når $b < 0$, forskyver vi grafen til venstre for $y$-aksen. 
-````
-
-Effekten til $b$ er altså motsatt når $a < 0$ sammenlignet med når $a > 0$.
-:::
-
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} Koeffisient: $c$
-
-1. Hva skjer med grafen når $c = 0$?
-2. Hva bestemmer $c$ for grafen generelt? 
-
-:::{raw} html
----
-file: ./ggb/utforsk/utforsk_1/c.html
----
-:::
-
-:::{admonition} Oppsummering: Koeffisient $c$
----
-class: summary, dropdown
----
-1. Når $c = 0$, skjærer grafen gjennom origo. 
-2. Verdien til $c$ bestemmer hvor grafen skjærer $y$-aksen. 
-:::
-
-:::::::::::::
-
-
-::::::::::::::
 
 :::::::::::::::
 
 ---
 
-> Jobb med Utforsk 1 **før** du ser på oppsummeringen under.
+:::::::::::::::{exercise} Underveisoppgave 1
+En andregradsfunksjon $f$ er gitt ved
 
-:::::::::::::::{admonition} Oppsummering: koeffisienter og graf
----
-class: summary
----
-Påvirkningen til koeffisientene til en andregradsfunksjon $f(x) = ax^2 + bx + c$ kan oppsummeres som:
+$$
+f(x) = -x^2 + 4x + 3
+$$
 
-::::::::::::::{tab-set}
----
-class: tabs-parts
----
-:::::::::::::{tab-item} Koeffisient $a$
+Bestem følgende egenskaper til grafen til $f$:
+* Grafens form (konveks eller konkav)
+* Symmetrilinje
+* Koordinatene til topp- eller bunnpunktet
+* Skjæringspunktet med $y$-aksen
 
-$a$ bestemmer om grafen er konveks (smiler $\smile$ ) eller konkav (surt fjes $\frown$). 
+Lag en skisse av grafen til $f$.
 
-:::{figure} ./figurer/utforsk/utforsk_1/a.svg
+
+::::{solution}
+Koeffisientene til $f(x)$ er $a = -1$, $b = 4$ og $c = 3$.
+
+Grafens form
+: Grafen er konkav fordi $a < 0$ (surt fjes $\frown$).
+
+Symmetrilinje
+: Symmetrilinja til $f$ er gitt ved
+
+    $$
+    x = \dfrac{-b}{2a} = \dfrac{-4}{2 \cdot (-1)} = \dfrac{-4}{-2} = 2.
+    $$
+
+Topp- eller bunnpunkt
+: Siden grafen er konkav, så har grafen et toppunkt. Toppunktets $x$-koordinat er det samme som symmetrilinja, altså $x = 2$. For å finne $y$-koordinaten til toppunktet, setter vi $x = 2$ inn i funksjonen:
+
+    $$
+    f(2) = -2^2 + 4 \cdot 2 + 3 = -4 + 8 + 3 = 7.
+    $$
+
+: Dermed er toppunktet $(2, 7)$. 
+
+Skjæringspunkt med $y$-aksen
+: Siden $c = 3$, så er skjæringspunktet med $y$-aksen $(0, 3)$.
+
+Nå har vi nok opplysninger til å tegne en skisse av grafen til $f$:
+
+
+:::{figure} ./figurer/underveisoppgaver/underveisoppgave_1/figur.svg
 ---
-width: 100%
 class: no-click, adaptive-figure
+width: 90%
 ---
 :::
 
-:::::::::::::
-
-:::::::::::::{tab-item} Koeffisient $b$
-Bestemmer forskyvningen av grafen fra $y$-aksen. Fortegnet til $a$ bestemmer hvilken retning $b > 0$ og $b < 0$ gir.
-
-
-::::::::::::{tab-set}
-:::::::::::{tab-item} $a > 0$
-
-:::{figure} ./figurer/utforsk/utforsk_1/b_1.svg
----
-width: 100%
-class: no-click, adaptive-figure
----
-:::
-
-:::::::::::
-
-:::::::::::{tab-item} $a < 0$
-
-:::{figure} ./figurer/utforsk/utforsk_1/b_2.svg
----
-width: 100%
-class: no-click, adaptive-figure
----
-:::
-
-:::::::::::
-
-::::::::::::
-
-:::::::::::::
-
-:::::::::::::{tab-item} Koeffisient $c$
-Bestemmer hvor grafen skjærer $y$-aksen.
-
-:::{figure} ./figurer/utforsk/utforsk_1/c.svg
----
-width: 100%
-class: no-click, adaptive-figure
----
-:::
-
-:::::::::::::
-::::::::::::::
-
+::::
 
 :::::::::::::::
 
 
 ---
 
-## Bestemme $f(x)$
 
-Vi skal se nærmere på hvordan vi kan bruke lineære likningssystemer for å bestemme koeffisientene til en andregradsfunksjon.
+## Fra graf til $f(x)$
 
-:::::{admonition} Eksempel 2: Bestemme $f(x)$
+Så langt har vi sett hvordan vi kan skisse grafen til en andregradsfunksjon $f$ ut ifra standardformen til $f(x)$. Det er naturlig å lure på om vi kan gå motsatt vei også. Her skal vi se på to strategier:
+1. **Bruke egenskapene til $f$**
+2. **CAS**
+
+
+### Bestemme $f(x)$ ut ifra egenskapene til grafen til $f$
+Når vi har grafen til en andregradsfunksjon $f$, kan vi bruke følgende egenskaper til å bestemme $f(x)$:
+* Skjæringspunktet med $y$-aksen bestemmer konstantleddet $c$.
+* Symmetrilinja gir en sammenheng mellom $a$ og $b$. 
+* Ett punkt til på grafen til å bestemme $a$ og $b$. 
+
+La oss se på et eksempel:
+
+:::::::::::::::{example} Eksempel 2
+Grafen til en andregradsfunksjon $f$ er vist i figuren nedenfor.
+
+Bestem $f(x)$. 
+
+:::{figure} ./figurer/eksempler/eksempel_2/figur.svg
 ---
-class: example
----
-
-Grafen til en andregradsfunksjon $f$ er vist i {numref}`fig-andregradsfunksjoner-representasjoner-standardform-eksempel-2`.
-
-Bestem $f(x)$.
-
-:::{figure} ./figurer/eksempler/eksempel_2.svg
----
-name: fig-andregradsfunksjoner-representasjoner-standardform-eksempel-2
-width: 80%
 class: no-click, adaptive-figure
+width: 80%
 ---
-viser grafen til en andregradsfunksjon $f$.
 :::
 
-::::{admonition} Løsning
+::::{solution}
 ---
-class: solution
+dropdown: 0
 ---
-En andregradsfunksjon kan skrives på standardform
+Standardformen til $f(x)$ er gitt ved 
 
 $$
 f(x) = ax^2 + bx + c.
 $$
 
-Vi har tre ukjente koeffisienter – vi må derfor ha tre likninger for å kunne bestemme $a$, $b$ og $c$. 
+Vi ser at grafen til $f$ skjærer $y$-aksen i $(0, -8)$ som betyr at $c = -8$. 
 
-Fra {numref}`fig-andregradsfunksjoner-representasjoner-standardform-eksempel-2`, kan vi lese av at grafen til $f$ går gjennom punktene $(0, -6)$ og $(-2, 0)$ og $(3, 0)$. Dette betyr at $f(x)$ må oppfylle likningssystemet:
+Vi ser at symmetrilinja til $f$ er $x = -1$ som betyr at 
 
-\begin{align*}
-    f(0) &= -6 && \text{Punktet $(0, -6)$} \\
-    \\
-    f(-2) &= 0 && \text{Punktet $(-2, 0)$} \\
-    \\
-    f(3) &= 0 && \text{Punktet $(3, 0)$}
-\end{align*}
+$$
+x = -\dfrac{b}{2a} \liff -1 = -\dfrac{b}{2a} \liff b = 2a.
+$$
+
+Med opplysningene vi har funnet så langt, kan vi derfor skrive om $f(x)$ til 
+
+$$
+f(x) = ax^2 + 2ax - 8.
+$$
+
+Nå trenger vi bare å lese av ett punkt til på grafen for å sette opp en likning som vi kan løse for $a$. Vi ser at grafen til $f$ går gjennom punktet $(2, 0)$. Dermed kan vi sette opp likningen
+
+$$
+f(2) = 0 \liff a \cdot 2^2 + 2a \cdot 2 - 8 = 0 
+$$
+
+som vi forenkle til 
+
+$$
+4a + 4a - 8 = 0 \liff 8a - 8 = 0 \liff a = 1.
+$$
 
 
-Vi løser likningssystemet med CAS: 
+Nå vet vi at koeffisientene til $f(x)$ er 
 
-:::{figure} ./figurer/eksempler/sol.png
+$$
+a = 1 \and b = 2a = 2 \cdot 1 = 2 \and c = -8.
+$$
+
+Dermed er $f(x)$ gitt ved
+
+$$
+f(x) = x^2 + 2x - 8.
+$$
+::::
+
+:::::::::::::::
+
 ---
-width: 100%
+
+:::::::::::::::{exercise} Underveisoppgave 2
+Grafen til en andregradsfunksjon $f$ er vist i figuren nedenfor.
+
+Bestem $f(x)$.
+
+:::{figure} ./figurer/underveisoppgaver/underveisoppgave_2/figur.svg
+---
 class: no-click, adaptive-figure
+width: 90%
 ---
 :::
 
+::::{answer}
+$$
+f(x) = -x^2 + 6x - 5.
+$$
+::::
 
+::::{solution}
+Vi ser at grafen til $f$ skjærer $y$-aksen i $(0, -5)$ som betyr at $c = -5$.
 
-Dermed er 
+Vi ser at symmetrilinja til $f$ er $x = 3$ som betyr at 
 
 $$
-a = 1 \and b = -1 \and c = -6.
+x = -\dfrac{b}{2a} \liff 3 = -\dfrac{b}{2a} \liff b = -6a.
 $$
 
-Da følger det at
+Med opplysningene vi har funnet så langt, kan vi derfor skrive om $f(x)$ til
 
 $$
-f(x) = a\cdot x^2 + b \cdot x + c = x^2 - x - 6.
+f(x) = ax^2 + bx + c = ax^2 - 6ax - 5.
+$$
+
+Vi finner ett punkt til på grafen til $f$ slik at vi kan sette opp en likning som vi kan løse for $a$. Vi ser at grafen til $f$ går gjennom punktet $(1, 0)$ som betyr at 
+
+$$
+f(1) = 0 \liff a \cdot 1^2 - 6a \cdot 1 - 5 = 0
+$$
+
+som vi forenkler til
+
+$$
+-5a - 5 = 0 \liff -5a = 5 \liff a = -1.
+$$
+
+Dermed er koeffisientene til $f(x)$ gitt ved
+
+$$
+a = -1 \and b = -6a = -6 \cdot (-1) = 6 \and c = -5.
+$$
+
+Så funksjonsuttrykket til $f$ er 
+
+$$
+f(x) = -x^2 + 6x - 5.
 $$
 
 ::::
 
-:::::
 
----
+:::::::::::::::
 
-:::::::::::::::{admonition} Underveisoppgave 2
----
-class: check
----
-Grafen til en andregradsfunksjon $f$ er vist i {numref}`fig-andregradsfunksjoner-representasjoner-standardform-underveisoppgave-2`. 
 
-Bestem $f(x)$. 
 
-:::{figure} ./figurer/underveisoppgaver/underveisoppgave_2.svg
+### CAS
+En annen måte å finne $f(x)$ på er å sette opp et likningssystem for koeffisientene $a$, $b$ og $c$ som vi løser med CAS. Det skal du se nærmere på i Utforsk 1. 
+
+:::::::::::::::{explore} Utforsk 1
+Nedenfor vises grafen til en andregradsfunksjon $f$. Grafen går gjennom punktene $(-3, 0)$, $(2, 0)$ og $(0, 12)$.
+
+:::{figure} ./figurer/utforsk/utforsk_1/figur.svg
 ---
-name: fig-andregradsfunksjoner-representasjoner-standardform-underveisoppgave-2
+class: no-click, adaptive-figure
 width: 80%
+---
+viser grafen til $f$. Spesielt kan vi merke oss at grafen går gjennom punktene $(-3, 0)$, $(2, 0)$ og $(0, 12)$. 
+:::
+
+
+Nedenfor vises en gif som viser hvordan vi kan bruke CAS til å finne $f(x)$ ut ifra punktene som grafen går gjennom.
+
+:::{figure} ./videoer/cas_standardform.gif
+---
 class: no-click, adaptive-figure
+width: 80%
 ---
-viser grafen til en andregradsfunksjon $f$.
+:::
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+
+:::{cas-popup}
+---
+layout: sidebar
+---
 :::
 
 
-:::{cas-popup} 420 500
-:::
+Bruk CAS til å bestemme koeffisientene til $f(x) = ax^2 + bx + c$ slik som det vises i gif-en over. 
 
+Hva blir $f(x)$? 
 
-::::{admonition} Fasit
----
-class: answer, dropdown
----
+::::{answer}
 $$
-f(x) = -x^2 + x + 2.
+f(x) = -2x^2 - 2x + 12
+$$
+::::
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+
+:::{cas-popup}
+---
+layout: sidebar
+---
+:::
+
+Grafen til en andregradsfunksjon $g$ går gjennom punktene $(0, 4)$, $(1, 3)$ og $(2, 0)$.
+
+Bestem $g(x)$ med CAS.
+
+
+::::{answer}
+:::{figure} ./figurer/utforsk/utforsk_1/b.png
+---
+class: no-click, adaptive-figure
+width: 80%
+---
+:::
+
+$$
+g(x) = -x^2 + 4
 $$
 ::::
 
 
-::::::::::::::{admonition} Løsning
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+:::{cas-popup}
 ---
-class: solution, dropdown
----
-Vi starter med standardformen til en andregradsfunksjon
-
-$$
-f(x) = ax^2 + bx + c. 
-$$
-
-Vi trenger tre likninger fordi vi har tre ukjente koeffisienter. Vi kan lese av grafen til $f$ går gjennom punktene $(-1, 0)$, $(2, 0)$ og $(1, 2)$. Da kan vi sette opp likningssystemet:
-
-\begin{align*}
-    f(-1) &= 0 && \text{Punktet $(-1, 0)$} \\
-    \\
-    f(2) &= 0 && \text{Punktet $(2, 0)$} \\
-    \\
-    f(1) &= 2 && \text{Punktet $(1, 2)$}
-\end{align*}
-
-Vi løser likningssystemet med CAS:
-
-:::{figure} ./figurer/underveisoppgaver/sol.png
----
-width: 100%
-class: no-click, adaptive-figure
+layout: sidebar
 ---
 :::
 
+Grafen til en andregradsfunksjon $h$ går gjennom punktene $(0, 1)$, $(1, 0)$ og $(2, 3)$.
 
+Bestem $h(x)$ med CAS.
 
-Altså er 
+::::{answer}
+:::{figure} ./figurer/utforsk/utforsk_1/c.png
+---
+class: no-click, adaptive-figure
+width: 80%
+---
+:::
 
 $$
-a = -1 \and b = 1 \and c = 2
+h(x) = 2x^2 - 3x + 1
 $$
+::::
+:::::::::::::
 
-som betyr at 
-
-$$
-f(x) = ax^2 + bx + c = -x^2 + x + 2.
-$$
 
 ::::::::::::::
 
 :::::::::::::::
+

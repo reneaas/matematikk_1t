@@ -180,8 +180,8 @@ class: no-click, adaptive-figure
 ---
 
 
-
-:::{quiz} Quiz 1
+:::::::::::::::{exercise} Underveisoppgave 1
+:::{quiz}
 Q: Hvilket funksjonsuttrykk hører til grafen? ![](figurer/quiz/quiz_1/spm_1.svg)
 + $$f(x) = (x - 1)^2 + 2$$
 - $$f(x) = (x + 1)^2 + 2$$
@@ -224,6 +224,7 @@ Q: Symmetrilinja til $f(x) = -2(x + 2)^2 - 1$ er ...
 - $$x = 1$$
 - $$x = -1$$
 :::
+:::::::::::::::
 
 
 
@@ -300,10 +301,8 @@ $$
 ---
 
 
-:::::::::::::::{admonition} Underveisoppgave 1
----
-class: check
----
+:::::::::::::::{exercise} Underveisoppgave 2
+
 Grafen til en andregradsfunksjon $f$ er vist i {numref}`fig-andregradsfunksjoner-representasjoner-ekstremalform-underveisoppgave-2`.
 
 Bestem ekstremalformen til $f(x)$.
@@ -489,10 +488,8 @@ class: no-click, adaptive-figure
 
 ---
 
-:::::::::::::::{admonition} Underveisoppgave 2
----
-class: check
----
+:::::::::::::::{exercise} Underveisoppgave 3
+
 Nullpunktsformen til en andregradsfunksjon er gitt ved
 
 $$
@@ -609,10 +606,8 @@ $$
 
 ---
 
-::::{admonition} Underveisoppgave 3
----
-class: check
----
+::::{exercise} Underveisoppgave 4
+
 Bestem standardformen til 
 
 $$

@@ -1,48 +1,94 @@
-# Oppgaver
+# Oppgaver: Lineære ulikheter
 
-:::::{grid} 1 1 2 2
+
+:::::::::::::::{exercise} Oppgave 1
 ---
-gutter: 3
+level: 1
 ---
 
-::::{grid-item-card}
+::::::::::::::{tab-set}
 ---
-link: ./grafisk_løsning/oppgaver
-link-type: doc
+class: tabs-parts
 ---
-**Oppgaver: Grafisk løsning** 📈
+:::::::::::::{tab-item} a
+Figuren nedenfor viser grafen til $f(x) = x + 3$.
 
-^^^
-:::{figure} ./grafisk_løsning/figurer/teori/ulikhet_type_1/ax+b>0.svg
+Bruk figuren til å løse ulikheten 
+
+$$
+x + 3 < 0.
+$$
+
+:::{figure} ./figurer/oppgaver/oppgave_1/a.svg
 ---
-width: 100%
 class: no-click, adaptive-figure
+width: 90%
 ---
 :::
-::::
 
-::::{grid-item-card}
----
-link: algebraisk_løsning/oppgaver
-link-type: doc
----
-**Oppgaver: Algebraisk løsning** ✍🏼
 
-^^^
-\begin{align*}
-    2x - 5 & \geq 3x + 1 \\
-    -5 & \geq x + 1 \\
-    -6 & \geq x
-\end{align*}
+:::::::::::::
 
----
 
-:::{figure} ./algebraisk_løsning/figurer/teori/fortegnslinjer_intro.svg
+:::::::::::::{tab-item} b
+Figuren nedenfor viser grafen til $f(x) = -2x + 4$. 
+
+Bruk figuren til å løse ulikheten
+
+$$
+-2x + 4 \leq 0.
+$$
+
+
+:::{figure} ./figurer/oppgaver/oppgave_1/b.svg
 ---
-width: 100%
 class: no-click, adaptive-figure
+width: 90%
 ---
 :::
-::::
 
-:::::
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+Figuren nedenfor  viser grafen til $f(x) = \dfrac{1}{2}x - 1$. 
+
+Bruk figuren til å løse ulikheten
+
+$$
+\frac{1}{2}x - 1 > 0.
+$$
+
+:::{figure} ./figurer/oppgaver/oppgave_1/c.svg
+---
+class: no-click, adaptive-figure
+width: 90%
+---
+:::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} d
+Figuren nedenfor viser grafen til $f(x) = 3x - 6$. 
+
+Bruk figuren til å løse ulikheten
+
+$$
+3x - 6 \geq 0.
+$$
+
+:::{figure} ./figurer/oppgaver/oppgave_1/d.svg
+---
+class: no-click, adaptive-figure
+width: 90%
+---
+:::
+
+:::::::::::::
+
+
+
+::::::::::::::
+
+:::::::::::::::

@@ -239,7 +239,7 @@ Les programmet og prøv å forutsi hvilke tall programmet skriver ut.
 predict:
 ---
 x = -3
-while x <=3:
+while x <= 3:
     print(x)
     
     x = x + 1 # øker verdien til x med 1
@@ -259,7 +259,7 @@ Les programmet og bruk utskriften til å bestemme løsningen av ulikheten.
 
 :::{interactive-code}
 x = -10
-while 2*x - 6 < 0: # så 2x - 6 < 0 ...
+while 2*x - 6 < 0: # så lenge 2x - 6 < 0 ...
     x = x + 0.125 # øker verdien til x med 0.125
 
 print(x)
