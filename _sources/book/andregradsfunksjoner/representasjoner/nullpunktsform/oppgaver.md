@@ -1,444 +1,465 @@
-# Oppgaver:  Nullpunktsform
-
+# Oppgaver: Nullpunktsform
 
 :::::::::::::::{exercise} Oppgave 1
 ---
 level: 1
 ---
-
-
-:::{quiz}
-Q: Hvilket funksjonsuttrykk hører til grafen? ![](figurer/quiz/quiz_2/spm_1.svg)
-+ $$f(x) = -(x + 1)(x - 1)$$
-- $$f(x) = (x + 1)(x - 1)$$
-- $$f(x) = (x - 1)^2$$
-- $$f(x) = -(x - 1)^2$$
-
-Q: Hvilket funksjonsuttrykk hører til grafen? ![](figurer/quiz/quiz_2/spm_2.svg)
-+ $$f(x) = -(x + 3)(x - 2)$$
-- $$f(x) = (x + 3)^2$$
-- $$f(x) = (x + 3)(x - 2)$$
-- $$f(x) = (x - 3)(x + 2)$$
-
-Q: Hvilket funksjonsuttrykk hører til grafen? ![](figurer/quiz/quiz_2/spm_3.svg)
-+ $$f(x) = (x + 1)(x + 3)$$
-- $$f(x) = -(x + 1)(x + 3)$$
-- $$f(x) = (x - 1)(x + 3)$$
-- $$f(x) = -(x + 1)(x - 3)$$
-
-Q: Nullpunktene til $f(x) = 2(x + 1)^2$ er ...
-+ $$x = -1$$
-- $$x = 1$$
-- $$x = 2$$
-- $$x = -1 \quad \lor \quad x = 1$$
-
-Q: Nullpunktene til $f(x) = -4(x + 1)(x + 3)$ er ...
-+ $$x = -1 \quad \lor \quad x = -3$$
-- $$x = 1 \quad \lor \quad x = 3$$
-- $$x = -4 \quad \lor \quad x = -1$$
-- $$x = 4 \quad \lor \quad x = -3$$
-
-
-Q: Nullpunktene til $f(x) = 3(x + 4)(x - 5)$ er ...
-+ $$x = -4 \quad \lor \quad x = 5$$
-- $$x = 4 \quad \lor \quad x = -5$$
-- $$x = 3 \quad \lor \quad x = 5$$
-- $$x = 3 \quad \lor \quad x = -4$$
-
-:::
-:::::::::::::::
-
-
-
-
----
-
-
-
-
-
-:::::::::::::::{exercise} Oppgave 2
----
-level: 1
----
-Bestem nullpunktene til hver av funksjonene. 
-
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
+En andregradsfunksjon $f$ er gitt ved
+
 $$
-f(x) = -2(x + 2)(x - 1)
+f(x) = 3(x + 1)(x - 2)
 $$
 
-::::{admonition} Fasit
----
-class: dropdown, answer
----
+Bestem nullpunktene til $f$.
+
+
+::::{answer}
 $$
-x = -2 \quad \lor \quad x = 1
+x = -1 \or x = 2
 $$
 ::::
 
 :::::::::::::
+
 
 :::::::::::::{tab-item} b
+En andregradsfunksjon $g$ er gitt ved
+
 $$
-g(x) = 4(x - 2)(x - 5)
+g(x) = -2(x - 1)(x - 1) = -2(x - 1)^2
 $$
 
+Bestem nullpunktene til $g$.
 
-::::{admonition} Fasit
----
-class: dropdown, answer
----
+
+::::{answer}
 $$
-x = 2 \quad \lor \quad x = 5
+x = 1
 $$
 ::::
 
 :::::::::::::
+
 
 :::::::::::::{tab-item} c
+En andregradsfunksjon $h$ er gitt ved
+
 $$
-g(x) = \dfrac{1}{2}(x - 1)(x + 1)
+h(x) = \left(x - \dfrac{1}{2}\right)(x + 4)
 $$
 
-::::{admonition} Fasit
----
-class: dropdown, answer
----
+Bestem nullpunktene til $h$.
+
+::::{answer}
 $$
-x = -1 \quad \lor \quad x = 1
+x = \dfrac{1}{2} \or x = -4
 $$
 ::::
+
 :::::::::::::
+
 
 :::::::::::::{tab-item} d
+En andregradsfunksjon $p$ er gitt ved
+
 $$
-g(x) = -\left(x + \dfrac{1}{3}\right)(x - 3)
+p(x) = -3(x + 2)^2 
 $$
 
-::::{admonition} Fasit
----
-class: dropdown, answer
----
+Bestem nullpunktene til $p$.
+
+
+::::{answer}'
 $$
-x = -\dfrac{1}{3} \quad \lor \quad x = 3
+x = -2
 $$
 ::::
-:::::::::::::
-::::::::::::::
 
+:::::::::::::
+
+
+::::::::::::::
 :::::::::::::::
 
+
+
 ---
+
+
+:::{margin} Tips: Oppgave 2
+Husk på konjugatsetningen:
+
+$$
+a^2 - b^2 = (a + b)(a - b)
+$$
+
+:::
+
+:::::::::::::::{exercise} Oppgave 2
+---
+level: 1
+---
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+En andregradsfunksjon $f$ er gitt ved
+
+$$
+f(x) = (x - 2)^2 - 4
+$$
+
+Bestem $f(x)$ på nullpunktsform.
+
+
+::::{answer}
+$$
+f(x) = x(x - 4)
+$$
+::::
+
+
+::::{solution}
+Vi bruker konjugatsetningen for å skrive om $f(x)$ til nullpunktsform:
+
+\begin{align*}
+f(x) &= (x - 2)^2 - 2^2 \\
+\\
+&= (x - 2 + 2)(x - 2 - 2) \\
+\\
+&= (x - 0)(x - 4) \\
+\\
+&= x(x - 4)
+\end{align*}
+
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+En andregradsfunksjon $g$ er gitt ved
+
+$$
+g(x) = -(x + 3)^2 + 9
+$$
+
+Bestem $g(x)$ på nullpunktsform.
+
+
+::::{answer}
+$$
+g(x) = -x(x + 6)
+$$
+::::
+
+
+::::{solution}
+Vi bruker konjugatsetningen for å skrive om $g(x)$ til nullpunktsform:
+
+\begin{align*}
+g(x) &= -(x + 3)^2 + 3^2 \\
+\\
+&= -\left((x + 3)^2 - 3^2 \right) \\
+\\
+&= -\left((x + 3 + 3)(x + 3 - 3)\right) \\
+\\
+&= -\left((x + 6)(x - 0)\right) \\
+\\
+&= -x(x + 6)    
+\end{align*}
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+En andregradsfunksjon $h$ er gitt ved
+
+$$
+h(x) = (x - 6)^2 - 1
+$$
+
+Bestem $h(x)$ på nullpunktsform.
+
+
+::::{answer}
+$$
+h(x) = (x - 5)(x - 7)
+$$
+::::
+
+
+::::{solution}
+Vi bruker konjugatsetningen for å skrive om $h(x)$ til nullpunktsform:
+
+\begin{align*}
+h(x) &= (x - 6)^2 - 1^2 \\
+\\
+&= (x - 6 + 1)(x - 6 - 1) \\
+\\
+&= (x - 5)(x - 7)
+\end{align*}
+::::
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} d
+En andregradsfunksjon $p$ er gitt ved
+
+$$
+p(x) = -(x - 3)^2 + 16
+$$
+
+Bestem $p(x)$ på nullpunktsform.
+
+
+::::{answer}
+$$
+p(x) = -(x - 7)(x + 1)
+$$
+::::
+
+
+::::{solution}
+Vi bruker konjugatsetningen for å skrive om $p(x)$ til nullpunktsform:
+
+\begin{align*}
+p(x) &= -(x - 3)^2 + 4^2 \\
+\\
+&= -\left((x - 3)^2 - 4^2 \right) \\
+\\
+&= -\left((x - 3 + 4)(x - 3 - 4)\right) \\
+\\
+&= -\left((x + 1)(x - 7)\right) \\
+\\
+&= -(x + 1)(x - 7)
+\end{align*}
+::::
+:::::::::::::
+
+
+
+::::::::::::::
+:::::::::::::::
+
+
+
+---
+
+
+:::{margin} Tips: Oppgave 3
+Husk: Sammenheng mellom nullpunkter $x_1$ og $x_2$ og symmetrilinje $x_0$ er gitt ved
+
+$$
+x_0 = \dfrac{x_1 + x_2}{2}
+$$
+:::
 
 
 :::::::::::::::{exercise} Oppgave 3
 ---
 level: 1
 ---
-For hver av funksjonene, bestem nullpunktsformen til funksjonsuttrykket fra grafen. 
-
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
-Bestem $f(x)$.
+En andregradsfunksjon $f$ er gitt ved
 
-:::{figure} ./figurer/oppgaver/oppgave_3/a.svg
----
-width: 80%
-name: fig-andregradsfunksjoner-representasjoner-nullpunktsform-oppgave-3-a
-class: no-click, adaptive-figure
----
-viser grafen til en andregradsfunksjon $f$.
-:::
-
-
-::::{admonition} Fasit
----
-class: dropdown, answer
----
 $$
-f(x) = 2(x + 1)(x - 2)
+f(x) = 2(x - 1)(x + 3)
 $$
-::::
+
+Bestem $f(x)$ på ekstremalform. 
 
 :::::::::::::
 
 :::::::::::::{tab-item} b
-Bestem $g(x)$. 
+En andregradsfunksjon $g$ er gitt ved
 
-:::{figure} ./figurer/oppgaver/oppgave_3/b.svg
----
-width: 80%
-name: fig-andregradsfunksjoner-representasjoner-nullpunktsform-oppgaver-oppgave-3-b
-class: no-click, adaptive-figure
----
-viser grafen til en andregradsfunksjon $g$.
-:::
-
-
-::::{admonition} Fasit
----
-class: dropdown, answer
----
 $$
-g(x) = -\dfrac{1}{4}(x + 1)^2
+g(x) = -3(x + 2)(x - 4)
 $$
-::::
 
+Bestem $g(x)$ på ekstremalform.
 :::::::::::::
+
 
 :::::::::::::{tab-item} c
-Bestem $h(x)$.
+En andregradsfunksjon $h$ er gitt ved
 
-
-:::{figure} ./figurer/oppgaver/oppgave_3/c.svg
----
-width: 80%
-name: fig-andregradsfunksjoner-representasjoner-nullpunktsform-oppgave-3-c
-class: no-click, adaptive-figure
----
-viser grafen til en andregradsfunksjon $h$.
-:::
-
-::::{admonition} Fasit
----
-class: dropdown, answer
----
 $$
-h(x) = -(x + 3)(x - 1)
+h(x) = \frac{1}{2}(x + 5)(x - 1)
 $$
-::::
+
+Bestem $h(x)$ på ekstremalform.
 :::::::::::::
+
 
 :::::::::::::{tab-item} d
-Bestem $r(x)$.
+En andregradsfunksjon $p$ er gitt ved
 
-:::{figure} ./figurer/oppgaver/oppgave_3/d.svg
----
-width: 80%
-name: fig-andregradsfunksjoner-representasjoner-nullpunktsform-oppgave-3-d
-class: no-click, adaptive-figure
----
-viser grafen til en andregradsfunksjon $r$.
-:::
-
-::::{admonition} Fasit
----
-class: dropdown, answer
----
 $$
-r(x) = 5(x + 1)(x - 1)
+p(x) = -\frac{1}{3}(x - 2)(x + 4)
 $$
-::::
 
+Bestem $p(x)$ på ekstremalform.
 :::::::::::::
+
 ::::::::::::::
 :::::::::::::::
 
+
+
 ---
+
 
 :::::::::::::::{exercise} Oppgave 4
 ---
 level: 1
 ---
-
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
-En andregradsfunksjon er gitt ved 
+En andregradsfunksjon $f$ er gitt ved
 
 $$
 f(x) = (x - 1)(x + 3)
 $$
 
+Bestem $f(x)$ på standardform.
 
-Bestem standardformen til $f(x)$.
-
-:::{admonition} Fasit
----
-class: dropdown, answer
----
-$$
-f(x) = x^2 + 2x - 3
-$$
-:::
 :::::::::::::
+
 
 :::::::::::::{tab-item} b
-En andregradsfunksjon er gitt ved
+En andregradsfunksjon $g$ er gitt ved
 
 $$
-g(x) = 2(x - 2)(x + 4)
+g(x) = -2(x + 2)(x - 4)
 $$
 
-Bestem standardformen til $g(x)$.
+Bestem $g(x)$ på standardform.
 
-
-:::{admonition} Fasit
----
-class: dropdown, answer
----
-$$
-g(x) = 2x^2 + 4x - 16
-$$
-:::
 :::::::::::::
+
 
 :::::::::::::{tab-item} c
-En andregradsfunksjon er gitt ved
+En andregradsfunksjon $h$ er gitt ved
 
 $$
-h(x) = -\dfrac{1}{2}(x - 1)(x + 1)
+h(x) = -3(x + 4)^2 
 $$
 
-Bestem standardformen til $h(x)$.
 
-:::{admonition} Fasit
----
-class: dropdown, answer
----
-$$
-h(x) = -\dfrac{1}{2}x^2 + \dfrac{1}{2}
-$$
-:::
+Bestem $h(x)$ på standardform.
+
 
 :::::::::::::
+
 
 :::::::::::::{tab-item} d
-
-En andregradsfunksjon er gitt ved
+En andregradsfunksjon $p$ er gitt ved
 
 $$
-r(x) = -\left(x + \dfrac{1}{3}\right)(x - 3)
+p(x) = 2(x + 2)(x + 3)
 $$
 
-Bestem standardformen til $r(x)$.
+Bestem $p(x)$ på standardform.
 
-:::{admonition} Fasit
----
-class: dropdown, answer
----
-$$
-r(x) = -x^2 + \dfrac{8}{3}x + 1
-$$
-:::
 :::::::::::::
-
 
 
 ::::::::::::::
-
-
 :::::::::::::::
 
+
 ---
+
+:::{margin} Tips: Oppgave 5
+Husk at for et uttrykk på standardform $ax^2 + bx + c$, så er symmetrilinja gitt ved 
+
+$$
+x_0 = -\frac{b}{2a}
+$$
+:::
+
 
 :::::::::::::::{exercise} Oppgave 5
 ---
-level: 2
+level: 1
 ---
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
-En andregradsfunksjon $f$ har nullpunktene 
+En andregradsfunksjon $f$ er gitt ved
 
 $$
-x = -2 \quad \lor \quad x = 3
+f(x) = x^2 + 6x + 8
 $$
 
-og går gjennom punktet $(1, 5)$. 
+Bestem $f(x)$ på nullpunktsform.
 
-Bestem $f(x)$. 
-
-
-::::{admonition} Fasit
----
-class: dropdown, answer
----
-$$
-f(x) = -\dfrac{5}{6}(x + 2)(x - 3)
-$$
-::::
 :::::::::::::
 
 :::::::::::::{tab-item} b
-En andregradsfunksjon $g$ har nullpunktene
+En andregradsfunksjon $g$ er gitt ved
+
 
 $$
-x = 1 \quad \lor \quad x = 4
+g(x) = -x^2 + 4x + 5
 $$
 
-og går gjennom punktet $(2, 3)$.
+Bestem $g(x)$ på nullpunktsform.
 
-Bestem $g(x)$.
-
-::::{admonition} Fasit
----
-class: dropdown, answer
----
-$$
-g(x) = -\dfrac{3}{2}(x - 1)(x - 4)
-$$
-::::
 :::::::::::::
+
 
 :::::::::::::{tab-item} c
-En andregradsfunksjon $h$ har nullpunktene
+En andregradsfunksjon $h$ er gitt ved
 
 $$
-x = -1 \quad \lor \quad x = 2
+h(x) = x^2 - x - 6
 $$
 
-og går gjennom punktet $(3, 4)$.
-
-Bestem $h(x)$.
-
-::::{admonition} Fasit
----
-class: dropdown, answer
----
-$$
-h(x) = (x + 1)(x - 2)
-$$
-::::
+Bestem $h(x)$ på nullpunktsform.
 :::::::::::::
+
 
 :::::::::::::{tab-item} d
-En andregradsfunksjon $r$ har nullpunktene
+En andregradsfunksjon $p$ er gitt ved
 
 $$
-x = -\dfrac{1}{2} \quad \lor \quad x = 2
+p(x) = 2x^2 + 8x - 10
 $$
 
-og går gjennom punktet $(-2, 4)$.
+Bestem $p(x)$ på nullpunktsform.
 
-Bestem $r(x)$.
-
-::::{admonition} Fasit
----
-class: dropdown, answer
----
-$$
-r(x) = \dfrac{2}{3}\left(x + \dfrac{1}{2}\right)(x - 2)
-$$
-::::
 :::::::::::::
+
 ::::::::::::::
 :::::::::::::::
 
 
 ---
+
+
+
+
 
 :::::::::::::::{exercise} Oppgave 6
 ---
@@ -448,277 +469,466 @@ level: 2
 ---
 class: tabs-parts
 ---
-
 :::::::::::::{tab-item} a
-En andregradsfunksjon $f$ skjærer $x$-aksen i $x = -1$ og $x = 3$. I tillegg skjærer grafen i $y$-aksen i $y = 6$.
+Grafen til en andregradsfunksjon $f$ er vist i figuren nedenfor.
 
-Bestem nullpunktsformen til $f(x)$. 
+Bestem $f(x)$ på nullpunktsform.
 
-::::{admonition} Fasit
+:::{figure} ./figurer/oppgaver/oppgave_6/a.svg
 ---
-class: dropdown, answer
+class: no-click, adaptive-figure
+width: 80%
 ---
+:::
+
+
+::::{answer}
 $$
-f(x) = -2(x + 1)(x - 3)
+f(x) = (x + 1)(x - 2).
 $$
 ::::
+
+
+::::{solution}
+Vi ser at grafen til $f$ har nullpunkter $(-1, 0)$ og $(2, 0)$. Det betyr at 
+
+$$
+f(x) = a(x + 1)(x - 2)
+$$
+
+Vi ser også at grafen skjærer $y$-aksen i punktet $(0, -2)$ som betyr at 
+
+$$
+f(0) = -2 \liff a(0 + 1)(0 - 2) = -2.
+$$
+
+Dette forenkler vi til
+
+$$
+-2a = -2 \liff a = 1.
+$$
+
+Dermed har vi at 
+
+$$
+f(x) = 1\cdot(x + 1)(x - 2) = (x + 1)(x - 2).
+$$
+::::
+
 :::::::::::::
+
 
 :::::::::::::{tab-item} b
-En andregradsfunksjon $g$ har nullpunktene $x = 1$ og $x = -3$. Grafen går gjennom punktet $(-1, 3)$.
+Grafen til en andregradsfunksjon $g$ er vist i figuren nedenfor.
 
-Bestem nullpunktsformen til $g(x)$.
+Bestem $g(x)$ på nullpunktsform.
 
-::::{admonition} Fasit
+:::{figure} ./figurer/oppgaver/oppgave_6/b.svg
 ---
-class: dropdown, answer
+class: no-click, adaptive-figure
+width: 80%
 ---
+:::
+
+
+::::{answer}
 $$
-g(x) = -\dfrac{3}{4}(x - 1)(x + 3)
+g(x) = 3(x + 1)^2
 $$
 ::::
+
+
+::::{solution}
+Grafen til $g$ har bare ett nullpunkt i $(-1, 0)$. Det betyr at vi kan skrive $g(x)$ på nullpunktsform som
+
+$$
+g(x) = a(x + 1)(x + 1) = a(x + 1)^2
+$$
+
+Vi ser at grafen skjærer $y$-aksen i punktet $(0, 3)$ som betyr at 
+
+$$
+g(0) = 3 \liff a(0 + 1)^2 = 3.
+$$
+
+Dette forenkler vi til
+
+$$
+a = 3
+$$
+
+Dermed har vi at 
+
+$$
+g(x) = 3(x + 1)^2
+$$
+::::
+
 :::::::::::::
+
 
 :::::::::::::{tab-item} c
-En andregradsfunksjon $h$ har nullpunktene $x = -1$ og $x = 2$. Grafen går gjennom punktet $(1, 4)$.
+Grafen til en andregradsfunksjon $h$ er vist i figuren nedenfor.
 
-Bestem nullpunktsformen til $h(x)$.
+Bestem $h(x)$ på nullpunktsform.
 
-::::{admonition} Fasit
+:::{figure} ./figurer/oppgaver/oppgave_6/c.svg
 ---
-class: dropdown, answer
+class: no-click, adaptive-figure
+width: 80%
 ---
+:::
+
+
+::::{answer}
 $$
-h(x) = -2(x + 1)(x - 2)
+h(x) = -\frac{1}{2}(x + 2)(x - 3).
 $$
 ::::
+
+
+::::{solution}
+Grafen til $h$ har nullpunkter i $(-2, 0)$ og $(3, 0)$. Det betyr at vi kan skrive $h(x)$ på nullpunktsform som
+
+$$
+h(x) = a(x + 2)(x - 3).
+$$
+
+Vi ser at grafen skjærer $y$-aksen i punktet $(0, 3)$ som betyr at 
+
+$$
+h(0) = 3 \liff a(0 + 2)(0 - 3) = 3.
+$$
+
+Dette forenkler vi til
+
+$$
+-6a = 3 \liff a = -\frac{1}{2}.
+$$
+
+Dermed har vi at
+
+$$
+h(x) = -\frac{1}{2}(x + 2)(x - 3).
+$$
+::::
+
 :::::::::::::
+
 
 :::::::::::::{tab-item} d
-En andregradsfunksjon $r$ går gjennom punktene $\left(-\dfrac{1}{2}, 0\right)$ og $(3, 0)$ og $(0, 2)$.
+Grafen til en andregradsfunksjon $p$ er vist i figuren nedenfor.
 
-Bestem nullpunktsformen til $r(x)$.
+Bestem $p(x)$ på nullpunktsform.
 
-
-::::{admonition} Fasit
+:::{figure} ./figurer/oppgaver/oppgave_6/d.svg
 ---
-class: dropdown, answer
+class: no-click, adaptive-figure
+width: 80%
 ---
+:::
+
+
+::::{answer}
 $$
-r(x) = -\dfrac{4}{3}\left(x + \dfrac{1}{2}\right)(x - 3)
+p(x) = -2(x - 3)^2
 $$
 ::::
+
+::::{solution}
+Grafen til $p$ har bare ett nullpunkt i $(3, 0)$. Det betyr at vi kan skrive $p(x)$ på nullpunktsform som
+
+$$
+p(x) = a(x - 3)(x - 3) = a(x - 3)^2
+$$
+
+Vi ser at grafen går gjennom punktet $(2, -2)$ som betyr at 
+
+$$
+p(2) = -2 \liff a(2 - 3)^2 = -2 \liff a = -2.
+$$
+
+Dermed er uttrykket for $p(x)$ gitt ved 
+
+$$
+p(x) = -2(x - 3)^2
+$$
+
+::::
+
 :::::::::::::
 
+
 ::::::::::::::
-
-
 :::::::::::::::
 
+
 ---
+
 
 :::::::::::::::{exercise} Oppgave 7
 ---
-level: 3
+level: 2
 ---
-> Mange andregradsfunksjoner har ikke noen nullpunkter. Likevel kan vi bruke nullpunktsform som del av en strategi for å bestemme funksjonsuttrykket til funksjonen. I denne oppgaven skal du lære hvordan vi kan gjøre dette.
-
-::::::::::::::{admonition} Strategi
----
-class: theory
----
-Hvis en andregradsfunksjon skjærer linja $y = y_0$ i $x = x_1$ og $x = x_2$, kan vi uttrykke $f(x)$ som 
-
-:::{figure} ./figurer/oppgaver/oppgave_7/nullpunktsform_forskyvning.svg
----
-width: 60%
-class: no-click, adaptive-figure
----
-:::
-
-
-:::{figure} ./figurer/oppgaver/oppgave_7/teori.svg
----
-width: 80%
-class: no-click, adaptive-figure
----
-:::
-
-::::::::::::::
-
-Du kan prøve å anvende strategien på oppgavene under direkte, eller du kan lese eksempelet under hvis du trenger litt mer detaljer for å komme i gang!
-
-::::::::::::::{admonition} Eksempel
----
-class: example, dropdown
----
-Grafen til en andregradsfunksjon $f$ er vist i {numref}`fig-andregradsfunksjoner-representasjoner-nullpunktsform-oppgave-7-eksempel`. 
-
-Bestem standardformen til $f(x)$.
-
-:::{figure} ./figurer/oppgaver/oppgave_7/eksempel.svg
----
-name: fig-andregradsfunksjoner-representasjoner-nullpunktsform-oppgave-7-eksempel
-width: 80%
-class: no-click, adaptive-figure
----
-viser grafen til en andregradsfunksjon $f$.
-:::
-
-:::::::::::::{admonition} Løsning
----
-class: solution
----
-Grafen til $f$ skjærer linja $y = 2$ i $x = -3$ og $x = -1$. Dermed kan vi skrive 
-
-$$
-f(x) = a(x + 3)(x + 1) + 2
-$$
-
-Vi kan se at grafen skjærer $y$-aksen i $y = 5$ som betyr at 
-
-\begin{align*}
-    f(0) &= 5 \\
-    \\
-    a(0 + 3)(0 + 1) + 2 &= 5 \\
-    \\
-    3a + 2 &= 5 \\
-    \\
-    3a &= 3 \\
-    \\
-    a &= 1 
-\end{align*}
-
-Dermed er standardformen til $f(x)$ gitt ved
-
-\begin{align*}
-    f(x) &= (x + 3)(x + 1) + 2 \\
-    \\
-    &= x^2 + 4x + 3 + 2 \\
-    \\
-    &= x^2 + 4x + 5
-\end{align*}
-
-:::::::::::::
-::::::::::::::
-
-Bruk strategien over til å bestemme funksjonsuttrykkene under.
-
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
-Grafen til en andregradsfunksjon $f$ er vist i {numref}`fig-andregradsfunksjoner-representasjoner-nullpunktsform-oppgave-7-a`.
+En andregradsfunksjon $f$ er gitt ved
 
-
-Bestem standardformen til $f(x)$.
-
-:::{figure} ./figurer/oppgaver/oppgave_7/a.svg
----
-name: fig-andregradsfunksjoner-representasjoner-nullpunktsform-oppgave-7-a
-width: 80%
-class: no-click, adaptive-figure
----
-viser grafen til en andregradsfunksjon $f$.
-:::
-
-:::{admonition} Fasit
----
-class: dropdown, answer
----
 $$
-f(x) = x^2 - 2x + 3
+f(x) = -x^2 + 4x + 5
 $$
-:::
+
+Bestem nullpunktene til $f$.
+
 
 :::::::::::::
+
+
 
 :::::::::::::{tab-item} b
-En andregradsfunksjon $g$ er vist i {numref}`fig-andregradsfunksjoner-representasjoner-nullpunktsform-oppgave-7-b`.
+En andregradsfunksjon $g$ er gitt ved
 
-
-Bestem standardformen til $g(x)$.
-
-:::{figure} ./figurer/oppgaver/oppgave_7/b.svg
----
-name: fig-andregradsfunksjoner-representasjoner-nullpunktsform-oppgave-7-b
-width: 80%
-class: no-click, adaptive-figure
----
-viser grafen til en andregradsfunksjon $g$.
-:::
-
-:::{admonition} Fasit
----
-class: dropdown, answer
----
 $$
-g(x) = -x^2 + 4x - 5
+g(x) = x^2 - 5x - 6
 $$
-:::
+
+Bestem i hvilke punkter grafen til $g$ skjærer $x$-aksen.
+
 :::::::::::::
+
 
 :::::::::::::{tab-item} c
-En andregradsfunksjon $h$ er vist i {numref}`fig-andregradsfunksjoner-representasjoner-nullpunktsform-oppgave-7-c`.
+En andregradsfunksjon $h$ er gitt ved
 
-
-Bestem standardformen til $h(x)$.
-
-:::{figure} ./figurer/oppgaver/oppgave_7/c.svg
----
-name: fig-andregradsfunksjoner-representasjoner-nullpunktsform-oppgave-7-c
-width: 80%
-class: no-click, adaptive-figure
----
-viser grafen til en andregradsfunksjon $h$.
-:::
-
-:::{admonition} Fasit
----
-class: dropdown, answer
----
 $$
-h(x) = 2x^2 + 12x + 21
+h(x) = x^2 + 5x - 14
 $$
-:::
+
+Bestem nullpunktene til $h$.
 
 :::::::::::::
 
+
 :::::::::::::{tab-item} d
+En andregradsfunksjon $p$ er gitt ved
 
-En andregradsfunksjon $r$ er vist i {numref}`fig-andregradsfunksjoner-representasjoner-nullpunktsform-oppgave-7-d`.
-
-
-Bestem standardformen til $r(x)$.
-
-:::{figure} ./figurer/oppgaver/oppgave_7/d.svg
----
-name: fig-andregradsfunksjoner-representasjoner-nullpunktsform-oppgave-7-d
-width: 80%
-class: no-click, adaptive-figure
----
-viser grafen til en andregradsfunksjon $r$.
-:::
-
-:::{admonition} Fasit
----
-class: dropdown, answer
----
 $$
-r(x) = -\dfrac{1}{2}x^2 - 2x - 6
+p(x) = x^2 + 6x + 8
 $$
-:::
+
+Bestem i hvilke punkter grafen til $p$ skjærer $x$-aksen.
 
 :::::::::::::
 
 
 ::::::::::::::
-
-
-
-
-
-
 :::::::::::::::
 
+
+---
+
+:::{margin} Tips: Oppgave 8
+Her må du selv velge hvilken representasjon du vil bruke for å bestemme funksjonsuttrykkene. Velg det tenker er enklest for deg! 
+:::
+
+:::::::::::::::{exercise} Oppgave 8
+---
+level: 3
+---
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Grafen til en andregradsfunksjon $f$ er vist i figuren nedenfor.
+
+Bestem $f(x)$. 
+
+:::{figure} ./figurer/oppgaver/oppgave_8/a.svg
+---
+class: no-click, adaptive-figure
+width: 80%
+---
+:::
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Grafen til en andregradsfunksjon $g$ er vist i figuren nedenfor.
+
+Bestem $g(x)$.
+
+:::{figure} ./figurer/oppgaver/oppgave_8/b.svg
+---
+class: no-click, adaptive-figure
+width: 80%
+---
+:::
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+Grafen til en andregradsfunksjon $h$ er vist i figuren nedenfor.
+
+Bestem $h(x)$.
+
+:::{figure} ./figurer/oppgaver/oppgave_8/c.svg
+---
+class: no-click, adaptive-figure
+width: 80%
+---
+:::
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} d
+Grafen til en andregradsfunksjon $p$ er vist i figuren nedenfor.
+
+Bestem $p(x)$.
+
+:::{figure} ./figurer/oppgaver/oppgave_8/d.svg
+---
+class: no-click, adaptive-figure
+width: 80%
+---
+:::
+
+
+:::::::::::::
+
+
+
+::::::::::::::
+:::::::::::::::
+
+
+---
+
+
+:::{margin} Tips: Oppgave 9 
+Når en funksjon er skrevet på formen $a(x - x_0)^2 + y_0$, må du faktorisere ut $a$ fra begge ledd før du kan bruke konjugatsetningen. 
+
+Husk at hvis leddene har samme fortegn, så har ikke funksjonen nullpunkter siden vi ikke kan bruke konjugatsetningen. 
+:::
+
+
+:::::::::::::::{exercise} Oppgave 9 
+---
+level: 3
+---
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+En andregradsfunksjon $f$ er gitt ved
+
+$$
+f(x) = (x - 2)^2 - 9
+$$
+
+Avgjør om $f$ har nullpunkter. Hvis ja, bestem nullpunktene.
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+En andregradsfunksjon $g$ er gitt ved
+
+$$
+g(x) = -2(x + 1)^2 + 4
+$$
+
+Avgjør om $g$ har nullpunkter. Hvis ja, bestem nullpunktene.
+
+:::::::::::::
+
+:::::::::::::{tab-item} c
+En andregradsfunksjon $h$ er gitt ved
+
+$$
+h(x) = (x + 3)^2 + 1
+$$
+
+Avgjør om $h$ har nullpunkter. Hvis ja, bestem nullpunktene.
+:::::::::::::
+
+:::::::::::::{tab-item} d
+En andregradsfunksjon $p$ er gitt ved
+
+$$
+p(x) = -\frac{1}{2}(x - 4)^2 + 2
+$$
+
+::::::::::::::
+:::::::::::::::
+
+
+---
+
+
+:::{margin} Tips: Oppgave 10
+Husk at en identitet er en likning som er sann for alle verdier av $x$. Det betyr at venstre side og høyre side er alltid like uansett hva vi setter inn for $x$.
+:::
+
+
+:::::::::::::::{exercise} Oppgave 10
+---
+level: 3
+---
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Bestem $s$ og $r$ slik at likningen nedenfor er en identitet.
+
+$$
+(x + 2)(x - 8) = (x - s)^2 + r
+$$
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Bestem $s$ og $r$ slik at likningen nedenfor er en identitet.
+
+$$
+(x - 1)(x + 3) = (x - s)^2 + r
+$$
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+Bestem $s$ og $r$ slik at likningen nedenfor er en identitet.
+
+$$
+(x - s)(x - r) = (x - 2)^2 - 1
+$$
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} d
+Bestem $s$ og $r$ slik at likningen nedenfor er en identitet
+
+$$
+x^2 - x - 2 = (x - s)(x - r)
+$$
+
+:::::::::::::
+
+
+
+::::::::::::::
+:::::::::::::::

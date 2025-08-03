@@ -1,31 +1,30 @@
 # Nullpunktsform
 
-:::{admonition} Læringsmål
----
-class: tip
----
-* Kunne representere en andregradsfunksjon på nullpunktsform.
-* Kunne finne standardform fra nullpunktsform.
-* Kunne bestemme $f(x)$ på nullpunktsform fra graf. 
-::: 
+:::{goals} Læringsmål
+* Kunne representere en andregradsfunksjon på nullpunktsform og bruke denne formen til å bestemme grafiske egenskaper ved funksjonen.
+* Kunne veksle mellom nullpunktsform og ekstremalpunktsform.
+* Kunne veksle mellom nullpunktsform og standardform.
+* Kunne bestemme nullpunktsformen fra graf. 
+:::
 
-En annen veldig nyttig måte å representere en andregradsfunksjon er på **nullpunktsform**. Nullpunktsformen uttrykker funksjonen ved hjelp av nullpunktene til funksjonen. Som vi kanskje oppdaget når vi så på standardform, så var det slik at andregradsfunksjoner kan ha to, ett eller ingen nullpunkter. Derfor kan ikke alle andregradsfunksjoner skrives på nullpunktsform. 
+Så langt har vi sett på to representasjoner av en andregradsfunksjon. Den første var standardformen som ga oss opplysninger om grafens form og skjæringspunkt med $y$-aksen. Vi kunne også regne ut symmetrilinja til grafen. Den andre var ekstremalpunktsformen som ga oss informasjon om topp- og bunnpunkt, symmetrilinje og grafens form.
+
+Den tredje representasjonen vi skal se på er **nullpunktsform**. Nullpunktsformen gir oss informasjon om hvor grafen skjærer $x$-aksen, altså nullpunktene til funksjonen. På lik linje som de to andre representasjonene, gir den oss også informasjon om grafens form. Vi kan også bestemme symmetrilinja, men som med standardformen vil det være et lite regnestykke involvert. 
+
+## Grafisk og algebraisk representasjon
 
 
-::::{admonition} Andregradsfunksjon: nullpunktsform
----
-class: theory
----
-Nullpunktsformen til en andregradsfunksjon er gitt ved 
+:::::::::::::::{summary} Nullpunktsform
+Nullpunktsformen til en andregradsfunksjon $f$ er gitt ved
 
 :::{figure} ./figurer/teori/algebraisk_uttrykk.svg
 ---
-width: 80%
+width: 60%
 class: no-click, adaptive-figure
 ---
 :::
 
----
+Se figuren nedenfor.
 
 :::{figure} ./figurer/teori/grafisk_representasjon.svg
 ---
@@ -34,451 +33,521 @@ class: no-click, adaptive-figure
 ---
 :::
 
+:::::::::::::::
+
+
+
+La oss se på et eksempel der vi ser på den grafiske sammenhengen med det algebraiske uttrykket for nullpunktsformen.
+
+
+
+:::::::::::::::{example} Eksempel 1
+Nedenfor vises fire eksempler på grafene til andregradsfunksjoner og deres nullpunktsform.
+
+
+
+::::::::::::::{grid} 1 1 2 2
+---
+gutter: 2
+---
+:::::::::::::{grid-item-card}
+$$
+f(x) = (x + 2)(x - 1)
+$$
+^^^
+:::{figure} ./figurer/eksempler/eksempel_1/A.svg
+---
+class: no-click, adaptive-figure
+width: 100%
+---
+:::
+
+:::::::::::::
+
+
+:::::::::::::{grid-item-card}
+$$
+g(x) = -2(x - 1)(x - 1) = -2(x - 1)^2
+$$
+
+^^^
+:::{figure} ./figurer/eksempler/eksempel_1/B.svg
+---
+class: no-click, adaptive-figure
+width: 100%
+---
+:::
+
+:::::::::::::
+
+
+:::::::::::::{grid-item-card}
+$$
+h(x) = -\frac{1}{2}(x + 2)(x - 4)
+$$
+^^^
+:::{figure} ./figurer/eksempler/eksempel_1/C.svg
+---
+class: no-click, adaptive-figure
+width: 100%
+---
+:::
+
+:::::::::::::
+
+
+:::::::::::::{grid-item-card}
+$$
+p(x) = 3 (x + 2)(x + 2) = 3(x + 2)^2
+$$
+^^^
+:::{figure} ./figurer/eksempler/eksempel_1/D.svg
+---
+class: no-click, adaptive-figure
+width: 100%
+---
+:::
+
+:::::::::::::
+::::::::::::::
+:::::::::::::::
+
+
+### Fra ekstremalpunktsform til nullpunktsform
+Her skal vi se på hvordan vi kan skrive om fra ekstremalpunktsform til nullpunktsform. Vi starter med å se på et eksempel.
+
+
+:::{margin} Konjugatsetningen
+Her trenger vi konjugatsetningen
+
+$$
+a^2 - b^2 = (a + b)(a - b)
+$$
+:::
+
+:::::::::::::::{example} Eksempel 2
+En andregradsfunksjon $f$ er gitt ved 
+
+$$
+f(x) = (x - 1)^2 - 4
+$$
+
+Bestem nullpunktsformen til $f(x)$. 
+
+::::{solution}
+---
+dropdown: 0
+---
+Vi kan skrive $f(x)$ som 
+
+$$
+f(x) = (x - 1)^2 - 2^2
+$$
+
+deretter kan vi bruke konjugatsetningen for å bestemme nullpunktsformen til uttrykket:
+
+$$
+f(x) = (x - 1 + 2)(x - 1 - 2) = (x + 1)(x - 3)
+$$
+
 ::::
-
-
----
-
-:::::::::::::::{explore} Utforsk 1
-I det interaktive vinduet nedenfor kan vises en andregradsfunksjon $f$ der $f(x)$ er skrevet på nullpunktsform 
-
-$$
-f(x) = a \cdot (x - x_1) \cdot (x - x_2)
-$$
-
-
-::::::::::::::{tab-set}
----
-class: tabs-parts
----
-:::::::::::::{tab-item} a
-Undersøk hva som skjer med grafen til $f$ når $a$ endres. 
-
-Er det noen forskjell fra effekten til $a$ i standardform?
-:::::::::::::
-
-
-:::::::::::::{tab-item} b
-Undersøk hva som skjer med grafen til $f$ når $x_1$ endres. 
-
-Gi en beskrivelse av effekten $x_1$ har på grafen til $f$.
-:::::::::::::
-
-
-:::::::::::::{tab-item} c
-Undersøk hva som skjer med grafen til $f$ når $x_2$ endres. 
-
-Gi en beskrivelse av effekten $x_2$ har på grafen til $f$.
-:::::::::::::
-
-::::::::::::::
-
-:::{ggb} 720 600
----
-material_id: sfwczuxa
----
-:::
-
-:::::::::::::::
-
----
-
-:::::::::::::::{admonition} Eksempel 1
----
-class: example
----
-Under vises tre andregradsfunksjoner og deres nullpunktsform *hvis* den eksisterer. 
-
-
-::::::::::::::{tab-set} 
----
-class: tabs-parts
----
-:::::::::::::{tab-item} $f$
-Grafen til $f$ skjærer $x$-aksen i to punkter, så vi kan skrive $f$ på nullpunktsform.
-
-$$
-f(x) = (x - 1)(x + 2)
-$$
-
-:::{figure} ./figurer/eksempler/eksempel_1/f.svg
----
-width: 80%
-class: no-click, adaptive-figure
----
-viser grafen til $f(x) = (x - 1)(x + 3)$. Grafen skjærer $x$-aksen i to punkter og kan derfor skrives på nullpunktsform.
-:::
-
-:::::::::::::
-
-:::::::::::::{tab-item} $g$
-Grafen til $g$ skjærer $x$-aksen i ett punkt, så vi kan skrive $g$ på nullpunktsform, men vi må bruke det **samme nullpunktet to ganger**! 
-
-$$
-g(x) = -2(x + 1)(x + 1) = -2(x + 1)^2 
-$$
-
-:::{figure} ./figurer/eksempler/eksempel_1/g.svg
----
-width: 80%
-class: no-click, adaptive-figure
----
-viser grafen til $g(x) = -2(x + 1)^2$. Grafen skjærer $x$-aksen i ett punkt og kan derfor skrives på nullpunktsform. Vi må bruke det samme nullpunktet to ganger!
-:::
-
-:::::::::::::
-
-:::::::::::::{tab-item} $h$
-
-Grafen til $h$ skjærer ikke $x$-aksen og har derfor ikke nullpunkter. Vi kan derfor ikke skrive $h$ på nullpunktsform.
-
-$$
-h(x) = x^2 + x + 1
-$$
-
-
-:::{figure} ./figurer/eksempler/eksempel_1/h.svg
----
-width: 80%
-class: no-click, adaptive-figure
----
-viser grafen til $h(x) = x^2 + x + 1$. Grafen har ingen nullpunkter og kan derfor ikke skrives på nullpunktsform.
-:::
-
-:::::::::::::
-::::::::::::::
-
-
-
-:::::::::::::::
-
-
----
-
-:::::::::::::::{admonition} Eksempel 2
----
-class: example
----
-En andregradsfunksjon er gitt ved
-
-$$
-f(x) = 2(x - 1)(x + 3)
-$$
-
-Bestem nullpunktene til $f$.
-
-:::{admonition} Løsning
----
-class: solution
----
-$f(x) = 2(x - 1)(x + 3)$ er skrevet på nullpunktsform. Generelt er nullpunktsformen
-
-$$
-f(x) = a(x - x_1)(x - x_2)
-$$
-
-så vi må skrive om uttrykket litt for å lese av nullpunktene:
-
-$$
-f(x) = 2(x - 1)(x + 3) = 2(x - \textcolor{red}{1})(x - \textcolor{red}{(-3)})
-$$
-
-Nullpunktene til $f$ er derfor
-
-$$
-x = 1 \quad \lor \quad x = -3
-$$
-
-Merk at vi skriver "$\lor$" som betyr "eller". Dette brukes fordi $f(x) = 0$ kan bare være null for én $x$-verdi av gangen. 
-:::
 
 :::::::::::::::
 
 ---
 
 :::::::::::::::{exercise} Underveisoppgave 1
-:::{quiz}
-Q: Hvilket funksjonsuttrykk hører til grafen? ![](figurer/quiz/quiz_1/spm_1.svg)
-+ $$f(x) = (x + 1)(x - 2)$$
-- $$f(x) = (x + 1)(x + 2)$$
-- $$f(x) = (x - 1)(x + 2)$$
-- $$f(x) = (x - 1)(x - 2)$$
+En andregradsfunksjon $f$ er gitt ved
 
-Q: Hvilket funksjonsuttrykk hører til grafen? ![](figurer/quiz/quiz_1/spm_2.svg)
-+ $$f(x) = (x - 3)(x + 3)$$
-- $$f(x) = (x - 3)(x - 3)$$
-- $$f(x) = (x + 3)(x + 3)$$
-- $$f(x) = (x + 3)(x - 2)$$
+$$
+f(x) = (x - 2)^2 - 9
+$$
 
-Q: Hvilket funksjonsuttrykk hører til grafen? ![](figurer/quiz/quiz_1/spm_3.svg)
-+ $$f(x) = -2(x - 2)^2$$
-- $$f(x) = 4(x - 2)^2$$
-- $$f(x) = (x + 2)^2$$
-- $$f(x) = (x - 2)(x + 2)$$
+Bestem nullpunktsformen til $f(x)$. Hva er nullpunktene til $f$?
 
-Q: Hvilket funksjonsuttrykk hører til grafen? ![](figurer/quiz/quiz_1/spm_4.svg)
-+ $$f(x) = 2(x + 3)^2$$
-- $$f(x) = -(x + 3)^2$$
-- $$f(x) = (x + 3)(x - 3)$$
-- $$f(x) = (x - 2)(x + 3)$$
 
-Q: Nullpunktene til $f(x) = (x - 4)(x + 3)$ er ...
-+ $x = -3 \quad \lor \quad x = 4$
-- $x = 3 \quad \lor \quad x = 4$
-- $x = -3 \quad \lor \quad x = -4$
-- $x = 3 \quad \lor \quad x = -4$
+::::{answer}
+$$
+f(x) = (x + 1)(x - 5)
+$$
 
-Q: Nullpunktene til $f(x) = -3(x + 1)(x - 3)$ er ...
-+ $x = -1 \quad \lor \quad x = 3$
-- $x = 1 \quad \lor \quad x = -3$
-- $x = -1 \quad \lor \quad x = -3$
-- $x = 1 \quad \lor \quad x = 3$
+Nullpunktene er $x = -1$ og $x = 5$. 
+::::
 
+::::{solution}
+Vi bruker konjugatsetningen:
+
+$$
+f(x) = (x - 2)^2 - 3^2 = (x - 2 + 3)(x - 2 - 3) = (x + 1)(x - 5).
+$$
+
+Fra nullpunktsformen kan vi se at nullpunktene er gitt ved 
+
+$$
+x = -1 \or x = 5
+$$
+
+::::
+
+:::::::::::::::
+
+
+
+Som vi har sett før, så er det ikke sånn at alle andregradsfunksjoner skjærer $x$-aksen. Det betyr derfor at ikke alle andregradsfunksjoner kan skrives på nullpunktsform. Hvis en funksjon ikke har nullpunkter, så kan den ikke skrives på nullpunktsform. La oss se på et eksempel der det ikke er mulig:
+
+:::::::::::::::{example} Eksempel 3
+En andregradsfunksjon $f$ er gitt ved 
+
+$$
+f(x) = (x - 1)^2 + 2
+$$
+
+Vis at det ikke er mulig å skrive $f(x)$ på nullpunktsform.
+
+::::{solution}
+---
+dropdown: 0
+---
+Vi kan merke oss at begge leddene har samme fortegn som betyr at vi ikke kan faktorisere uttrykket med konjugatsetningen siden konjugatsetningen er gitt ved 
+
+$$
+a^2 - b^2 = (a + b)(a - b)
+$$
+
+Det betyr derfor at det ikke er mulig å skrive om $f(x)$ til nullpunktsform og $f$ har derfor ingen nullpunkter.
+::::
+
+:::::::::::::::
+
+### Fra nullpunktsform til ekstremalpunktsform
+For å skrive om et uttrykk fra nullpunktsform til ekstremalpunktsform, må vi først vite hvordan vi finner symmetrilinja fra nullpunktsformen. Da trenger vi følgende setning:
+
+:::::::::::::::{summary} Sammenheng mellom nullpunkter og symmetrilinje
+Symmetrilinja $x_0$ ligger midt mellom nullpunktene. Vi kan finne denne ved å bruke gjennomsnittet av nullpunktene $x_1$ og $x_2$:
+
+$$
+x_0 = \frac{x_1 + x_2}{2}
+$$
+
+Se figuren nedenfor.
+
+:::{figure} ./figurer/teori/symmetrilinje.svg
+---
+class: no-click, adaptive-figure
+width: 80%
+---
 :::
+
+
+
+:::::::::::::::
+
+
+La oss se på et eksempel. 
+
+
+:::::::::::::::{example} Eksempel 4
+En andregradsfunksjon $f$ er gitt ved
+
+$$
+f(x) = (x + 1)(x - 3)
+$$
+
+Bestem $f(x)$ på ekstremalpunktsform.
+
+::::{solution}
+---
+dropdown: 0
+---
+Vi ser fra $f(x)$ at $a = 1$. Videre ser vi at nullpunktene er $x_1 = -1$ og $x_2 = 3$. Da finner vi symmetrilinja ved å ta gjennomsnittet av de to: 
+
+$$
+x_0 = \dfrac{x_1 + x_2}{2} = \dfrac{-1 + 3}{2} = 1.
+$$
+
+Så setter vi verdien inn i $f(x)$ for å bestemme $y$-koordinaten til ekstremalpunktet:
+
+$$
+y_0 = f(1) = (1 + 1)\cdot(1 - 3) = 2 \cdot (-2) = -4.
+$$
+
+Dermed er ekstremalformen til $f(x)$ gitt ved
+
+$$
+f(x) = a(x - x_0)^2 + y_0 = (x - 1)^2 - 4.
+$$
+
+::::
+
+:::::::::::::::
+
+---
+
+:::::::::::::::{exercise} Underveisoppgave 2
+En andregradsfunksjon $f$ er gitt ved
+
+$$
+f(x) = -3(x - 2)(x + 4)
+$$
+
+Bestem ekstremalformen til $f(x)$. 
+
+
+::::{answer}
+$$
+f(x) = -3(x + 1)^2 - 27
+$$
+::::
+
+
+::::{solution}
+Vi bestemmer symmetrilinja ved å finne gjennomsnittet av nullpunktene som er gitt ved $x_1 = 2$ og $x_2 = -4$. Da får vi:
+
+$$
+x_0 = \frac{x_1 + x_2}{2} = \frac{2 + (-4)}{2} = \frac{-2}{2} = -1
+$$
+
+Så setter vi inn denne verdien i $f(x)$ for å bestemme $y$-koordinaten til ekstremalpunktet:
+
+$$
+y_0 = f(-1) = -3\cdot(-1 - 2)\cdot(-1 + 4) = -3\cdot(-3) \cdot 3 = -27.
+$$
+
+Fra $f(x)$ ser vi at $a = -3$, så da kan vi skrive om $f(x)$ til ekstremalpunktsform:
+
+$$
+f(x) = a(x - x_0)^2 + y_0 = -3(x + 1)^2 - 27.
+$$
+
+::::
+
+
+
+:::::::::::::::
+
+
+### Fra nullpunktsform til standardform
+Vi kan også gå fra nullpunktsform til standardform. For å gjøre det ganger vi ut parentesene og trekker sammen leddene. La oss se på et eksempel:
+
+
+
+
+:::::::::::::::{example} Eksempel 5
+En andregradsfunksjon $f$ er gitt ved
+
+$$
+f(x) = -3(x - 1)(x + 2).
+$$
+
+Bestem $f(x)$ på standardform.
+
+::::{solution}
+---
+dropdown: 0
+---
+:::{sidebar}
+Regneregel: 
+
+$$
+(a + b)(c + d) = ac + ad + bc + bd
+$$
+:::
+
+
+Vi ganger ut parentesene og samler leddene:
+\begin{align*}
+f(x) &= -3(x - 1)(x + 2) \\
+\\
+&= -3(x^2 + 2x - x - 2) \\
+\\
+&= -3(x^2 + x - 2) \\
+\\
+&= -3x^2 - 3x + 6.
+\end{align*}
+
 :::::::::::::::
 
 
 ---
 
+:::::::::::::::{exercise} Underveisoppgave 3
+En andregradsfunksjon $f$ er gitt ved
+
+$$
+f(x) = 2(x + 3)(x - 1).
+$$
+
+Bestem $f(x)$ på standardform.
+
+::::{answer}
+$$
+f(x) = 2x^2 + 4x - 6
+$$
+::::
+
+::::{solution}
+Vi ganger ut parentesene og samler leddene:
+
+\begin{align*}
+f(x) &= 2(x + 3)(x - 1) \\
+\\
+&= 2(x^2 - x + 3x - 3) \\
+\\
+&= 2(x^2 + 2x - 3) \\
+\\
+&= 2x^2 + 4x - 6.
+\end{align*}
+::::
+
+:::::::::::::::
 
 
-## Bestemme $f(x)$ 
+### Fra standardform til nullpunktsform
+For å gå fra standardform til nullpunktsform, må vi gå veien via ekstremalpunktsform. La oss se på et eksempel:
 
-Vi kan bruke nullpunktsformen til å bestemme $f(x)$ fra grafen til en andregradsfunksjon.
+:::::::::::::::{example} Eksempel 6
+En andregradsfunksjon $f$ er gitt ved
 
-:::::{admonition} Eksempel 3
+$$
+f(x) = x^2 - 4x + 3
+$$
+
+Bestem $f(x)$ på nullpunktsform.
+
+::::{solution}
 ---
-class: example
+dropdown: 0
 ---
+Vi starter med å finne ekstremalpunktet så vi kan skrive $f(x)$ på ekstremalpunktsform. Vi finner symmetrilinja ved å bruke formelen for symmetrilinja:
 
-Grafen til en andregradsfunksjon $f$ er vist i {numref}`fig-andregradsfunksjoner-representasjoner-nullpunktsform-eksempel-3`. 
+$$
+x_0 = \frac{-b}{2a} = \frac{-(-4)}{2\cdot 1} = \frac{4}{2} = 2.
+$$
 
-Bestem nullpunktsformen til $f(x)$. 
+Så setter vi inn denne verdien i $f(x)$ for å bestemme $y$-koordinaten til ekstremalpunktet:
 
-:::{figure} ./figurer/eksempler/eksempel_3.svg
+$$
+y_0 = f(2) = (2)^2 - 4\cdot(2) + 3 = 4 - 8 + 3 = -1.
+$$
+
+Dermed kan vi skrive $f(x)$ på ekstremalpunktsform:
+
+$$
+f(x) = a(x - x_0)^2 + y_0 = (x - 2)^2 - 1.
+$$
+
+Så bruker vi konjugatsetningen for å skrive om $f(x)$ til nullpunktsform:
+
+$$
+f(x) = (x - 2)^2 - 1^2 = (x - 2 + 1)(x - 2 - 1) = (x - 1)(x - 3).
+$$
+
+::::
+
+
+:::::::::::::::
+
+
+
+## Fra graf til nullpunktsform
+Nullpunktsform gir oss et nytt verktøy for å bestemme funksjonsuttrykk ut ifra grafen til funksjonen. La oss se på et eksempel:
+
+
+:::::::::::::::{example} Eksempel 7
+Grafen til en andregradsfunksjon $f$ er vist i figuren nedenfor.
+
+
+Bestem $f(x)$.
+
+
+:::{figure} ./figurer/eksempler/eksempel_7/figur.svg
 ---
-name: fig-andregradsfunksjoner-representasjoner-nullpunktsform-eksempel-3
-width: 80%
 class: no-click, adaptive-figure
----
-viser grafen til en andregradsfunksjon $f$.
-:::
-
-:::{admonition} Løsning
----
-class: solution
----
-Vi bruker nullpunktsformen til $f(x)$ som er 
-
-$$
-f(x) = a(x - x_1)(x - x_2). 
-$$
-
-Fra grafen til $f$ kan vi lese av at nullpunktene er 
-
-$$
-x = -1 \quad \lor \quad x = 3
-$$
-
-Vi setter inn verdiene til nullpunktene og får
-
-$$
-f(x) = a(x - (-1))(x - 3) = a(x + 1)(x - 3)
-$$
-
-Nå mangler vi bare å bestemme $a$. Dette kan vi gjøre ved å finne ett punkt til på grafen til $f$. For eksempel ser vi at grafen går gjennom $(1, 2)$. Dette gir oss en likning vi kan løse for å bestemme $a$:
-
-\begin{align*}
-    f(1) &= 2 \\
-    \\
-    a\cdot (1 + 1) \cdot (1 - 3) &= 2 \\
-    \\
-    a\cdot 2 \cdot(-2) &= 2 \\
-    \\
-    -4a &= 2 \\
-    \\
-    a &= -\frac{1}{2}
-\end{align*}
-
-Altså er 
-
-$$
-f(x) = -\frac{1}{2}(x + 1)(x - 3)
-$$
-
-:::
-
-
-
-:::::
-
----
-
-
-::::::::::::{admonition} Underveisoppgave 2
----
-class: check
----
-Grafen til en andregradsfunksjon $f$ er vist i {numref}`fig-andregradsfunksjoner-representasjoner-nullpunktsform-underveisoppgave-2`.
-
-Bestem nullpunktsformen til $f(x)$.
-
-:::{figure} ./figurer/underveisoppgaver/underveisoppgave_2.svg
----
-name: fig-andregradsfunksjoner-representasjoner-nullpunktsform-underveisoppgave-2
 width: 80%
-class: no-click, adaptive-figure
 ---
-viser grafen til en andregradsfunksjon $f$.
 :::
 
 
-::::{admonition} Fasit
+::::{solution}
 ---
-class: answer, dropdown
+dropdown: 0
 ---
+Vi ser at grafen til $f$ skjærer $x$-aksen i punktene $(-2, 0)$ og $(3, 0)$. Dermed er nullpunktene til $f$ gitt ved $x_1 = -2$ og $x_2 = 3$. Vi kan da skrive $f(x)$ på nullpunktsform:
+
 $$
-f(x) = 2(x + 3)(x - 1)
+f(x) = a(x - (-2))(x - 3) = a(x + 2)(x - 3).
+$$
+
+Vi trenger ett punkt til for å bestemme verdien til $a$. Vi ser at grafen skjærer $y$-aksen i punktet $(0, 6)$ som betyr at
+
+$$
+f(0) = 6 \liff a(0 + 2)(0 - 3) = 6.
+$$
+
+som vi forenkler til
+
+$$
+-6a = 6 \liff a = -1.
+$$
+
+Dermed er $f(x)$ gitt ved
+
+$$
+f(x) = -1(x + 2)(x - 3) = -(x + 2)(x - 3).
 $$
 ::::
 
-::::{admonition} Løsning
+:::::::::::::::
+
+
 ---
-class: solution, dropdown
+
+:::::::::::::::{exercise} Underveisoppgave 4
+Grafen til en andregradsfunksjon $f$ er vist i figuren nedenfor.
+
+Bestem $f(x)$ på nullpunktsform.
+
+:::{figure} ./figurer/underveisoppgaver/underveisoppgave_4/figur.svg
 ---
-Vi starter med nullpunktsformen til en andregradsfunksjon
+class: no-click, adaptive-figure
+width: 80%
+---
+:::
 
+
+::::{answer}
 $$
-f(x) = a(x - x_1)(x - x_2)
-$$
-
-Fra grafen til $f$ kan vi lese av at nullpunktene er
-
-$$
-x = -3 \quad \lor \quad x = 1
-$$
-
-Vi setter inn nullpunktene som gir oss 
-
-$$
-f(x) = a(x - (-3))(x - 1) = a(x + 3)(x - 1)
-$$
-
-Nå må vi bestemme $a$. Vi finner ett punkt til på grafen til $f$. Vi kan se at grafen går gjennom $(0, -6)$, som gir oss likningen vi kan løse for å bestemme $a$:
-
-\begin{align*}
-    f(0) &= -6 \\
-    \\
-    a\cdot (0 + 3)\cdot (0 - 1) &= -6 \\
-    \\
-    a\cdot 3\cdot (-1) &= -6 \\
-    \\
-    -3a &= -6 \\
-    \\
-    a &= 2
-\end{align*}
-
-Altså er 
-
-$$
-f(x) = 2(x + 3)(x - 1)
+f(x) = \dfrac{1}{2}(x + 1)(x - 4)
 $$
 ::::
 
-::::::::::::
 
-## Fra nullpunktsform til standardform
-
-Vi kan gå fra nullpunktsformen til standardformen til en andregradsfunksjon.
-
-::::::::::::{admonition} Eksempel 4
----
-class: example
----
-En andregradsfunksjon er gitt ved 
+::::{solution}
+Vi ser at grafen til $f$ skjærer $x$-aksen i punktene $(-1, 0)$ og $(4, 0)$. Dermed er nullpunktene til $f$ gitt ved $x_1 = -1$ og $x_2 = 4$. Vi kan da skrive $f(x)$ på nullpunktsform:
 
 $$
-f(x) = (x - 1)(x + 3)
+f(x) = a(x - (-1))(x - 4) = a(x + 1)(x - 4).
 $$
 
-Bestem standardformen til $f(x)$.
-
-::::{admonition} Hint: Algebraisk lov
----
-class: hints, dropdown
----
-Vi bruker den algebraiske loven for multiplikasjon av to parenteser i utregningen under:
+Vi trenger ett punkt til for å bestemme verdien til $a$. Vi ser at grafen skjærer $y$-aksen i punktet $(0, -2)$ som betyr at
 
 $$
-(a + b)(c + d) = ac + ad + bc + bd
+f(0) = -2 \liff a(0 + 1)(0 - 4) = -2.
+$$
+
+Vi forenkler dette til 
+
+$$
+-4a = -2 \liff a = \frac{1}{2}.
+$$
+
+Dermed er 
+
+$$
+f(x) = \frac{1}{2}(x + 1)(x - 4).
 $$
 ::::
 
-:::::{admonition} Løsning
----
-class: solution
----
-\begin{align*}
-    f(x) &= (x - 1)(x + 3) \\
-    \\
-    &= x^2 + 3x - x - 3 \\
-    \\
-    &= x^2 + 2x - 3
-\end{align*}
 
-Dermed er standardformen til $f(x)$ gitt ved 
-
-$$
-f(x) = x^2 + 2x - 3
-$$
-:::::
-::::::::::::
-
----
-
-
-::::::::::::{admonition} Underveisoppgave 3
----
-class: check
----
-En andregradsfunksjon er gitt ved 
-
-$$
-f(x) = (x + 2)(x - 4)
-$$
-
-Bestem standardformen til $f(x)$.
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-
-$$
-f(x) = x^2 - 2x - 8
-$$
-
-::::
-
-::::{admonition} Løsning
----
-class: solution, dropdown
----
-\begin{align*}
-    f(x) &= (x + 2)(x - 4) \\
-    \\
-    &= x^2 - 4x + 2x - 8 \\
-    \\
-    &= x^2 - 2x - 8
-\end{align*}
-
-Dermed er standardformen til $f(x)$ gitt ved 
-
-$$
-f(x) = x^2 - 2x - 8
-$$
-::::
-
-::::::::::::
-
+:::::::::::::::
 

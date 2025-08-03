@@ -3,6 +3,7 @@
 :::{goals} Læringsmål
 * Kunne bestemme $f(x)$ på ekstremalpunktsform og kunne bruke denne til å bestemme grafiske egenskaper ved funksjonen.
 * Kunne veksle mellom ekstremalpunktsform og standardform.
+* Kunne bestemme ekstremalpunktsformen fra graf.
 :::
 
 
