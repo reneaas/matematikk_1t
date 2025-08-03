@@ -1,28 +1,29 @@
-import matplotlib.pyplot as plt
 import plotmath
-
-plt.rc("text", usetex=True)
 
 
 def main(dirname, save):
     #
     # Define functions
     def h(x):
-        return x**2 + x + 1
+        return -0.5 * (x + 2) * (x - 3)
 
     # List of functions and their labels.
     functions = [h]
-    fn_labels = [f"${fn.__name__}$" for fn in functions]
 
-    # Create the math figure
     fig, ax = plotmath.plot(
         functions=functions,
-        fn_labels=fn_labels,  # NOTE: Set `None` hvis du ikke vil ha labels.
+        fn_labels=True,
         xmin=-6,
         xmax=6,
         ymin=-6,
         ymax=6,
         ticks=True,
+        xstep=1,
+        ystep=1,
+        grid=True,
+        lw=2.5,
+        alpha=None,
+        domain=False,
     )
 
     # NOTE: Select an appropriate `dirname` to save the figure.
@@ -35,36 +36,15 @@ def main(dirname, save):
 
     if not save:
 
-        plt.show()
+        plotmath.show()
 
 
 if __name__ == "__main__":
 
-    import sys
     import pathlib
-
-    def find_repo_root(current_path):
-        current_path = pathlib.Path(
-            current_path
-        ).resolve()  # Convert to an absolute Path object
-        while (
-            current_path != current_path.parent
-        ):  # Stop when you reach the filesystem root
-            if (current_path / ".git").is_dir():  # Check if the .git directory exists
-                return str(current_path)
-            current_path = current_path.parent  # Move one level up
-        raise FileNotFoundError("No .git directory found in any parent directories.")
 
     # Get the directory where the script is located
     current_dir = str(pathlib.Path(__file__).resolve().parent)
-
-    # Find the root of the GitHub repository (where .git is located)
-    repo_root = find_repo_root(current_dir)
-
-    # Add the GitHub repository root to sys.path
-    sys.path.append(repo_root)
-
-    # Now you can import modules from the GitHub repo root
 
     parts = current_dir.split("/")
     for i in range(len(parts)):

@@ -4,11 +4,11 @@ import plotmath
 def main(dirname, save):
     #
     # Define functions
-    def h(x):
-        return -(x - 1) * (x + 3)
+    def p(x):
+        return -2 * (x - 3) ** 2
 
     # List of functions and their labels.
-    functions = [h]
+    functions = [p]
 
     fig, ax = plotmath.plot(
         functions=functions,
@@ -18,6 +18,12 @@ def main(dirname, save):
         ymin=-6,
         ymax=6,
         ticks=True,
+        xstep=1,
+        ystep=1,
+        grid=True,
+        lw=2.5,
+        alpha=None,
+        domain=False,
     )
 
     # NOTE: Select an appropriate `dirname` to save the figure.

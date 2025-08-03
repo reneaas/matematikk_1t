@@ -1,14 +1,19 @@
 import plotmath
+import matplotlib.pyplot as plt
 
 
 def main(dirname, save):
     #
     # Define functions
-    def r(x):
-        return 5 * (x**2 - 1)
+    x1 = -2
+    x2 = 4
+    a = -0.5
+
+    def h(x):
+        return a * (x - x1) * (x - x2)
 
     # List of functions and their labels.
-    functions = [r]
+    functions = [h]
 
     fig, ax = plotmath.plot(
         functions=functions,
@@ -17,8 +22,22 @@ def main(dirname, save):
         xmax=6,
         ymin=-6,
         ymax=6,
-        ticks=True,
+        ticks=False,
+        xstep=1,
+        ystep=1,
+        grid=True,
+        lw=2.5,
+        alpha=None,
+        domain=False,
     )
+
+    ax.plot(x1, 0, "ko", markersize=10, alpha=0.7)
+    ax.plot(x2, 0, "ko", markersize=10, alpha=0.7)
+
+    # Set font sizes for legend and axes labels
+    ax.legend(fontsize=24)
+    ax.yaxis.label.set_size(24)  # Set y-axis label font size
+    ax.xaxis.label.set_size(24)  # Set x-axis label font size
 
     # NOTE: Select an appropriate `dirname` to save the figure.
     # The directory `dirname` will be created automatically if it does not exist already.

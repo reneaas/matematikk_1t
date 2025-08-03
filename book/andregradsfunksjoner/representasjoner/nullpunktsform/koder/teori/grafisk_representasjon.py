@@ -17,7 +17,7 @@ def main(dirname, save):
     # Create the math figure
     fig, ax = plotmath.plot(
         functions=functions,
-        fn_labels=None,  # NOTE: Set `None` hvis du ikke vil ha labels.
+        fn_labels=True,  # NOTE: Set `None` hvis du ikke vil ha labels.
         xmin=-4,
         xmax=4,
         ymin=-5,
@@ -47,6 +47,7 @@ def main(dirname, save):
         ),
         horizontalalignment="left",
         verticalalignment="center",
+        bbox=dict(boxstyle="round,pad=0.3", fc="white", ec="black", lw=1, alpha=0.8),
     )
 
     plt.annotate(
@@ -63,6 +64,7 @@ def main(dirname, save):
         ),
         horizontalalignment="left",
         verticalalignment="center",
+        bbox=dict(boxstyle="round,pad=0.3", fc="white", ec="black", lw=1, alpha=0.8),
     )
 
     # NOTE: Select an appropriate `dirname` to save the figure.
