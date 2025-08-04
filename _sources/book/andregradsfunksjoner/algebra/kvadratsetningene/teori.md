@@ -1,21 +1,19 @@
 # Kvadratsetningene
 
-:::{admonition} Læringsmål
----
-class: tip
----
-* Kunne bruke kvadratsetningene til å skrive om $f(x)$ fra standardformen til nullpunktsform, og motsatt.
+:::{goals}
+* Kunne bruke kvadratsetningene til å skrive om andregradsuttrykk
 * Kunne forklare hva en matematisk identitet er, avgjøre om en sammenheng er en identitet, og gi konkrete eksempler på identiteter. 
 :::
 
-Vi har så langt sett på de tre ulike representasjonene til en andregradsfunksjon. Vi klarer å gå fra nullpunktsform eller fra ekstramalform til standardform, men vi har hittil ikke noen verktøy for å gå fra motsatt vei. Her skal vi starte prosessen med å bygge opp verktøykassa vår for å kunne gjøre dette ved å se på det vi kaller for **kvadratsetningene**. 
 
-Det finnes til sammen tre kvadratsetninger. Vi skal begrunne de to første geometrisk, og den siste algebraisk.
+:::{margin} 
+I oppgavene skal du få begrunne kvadratsetningene geometrisk. 
+:::
 
-:::{admonition} Kvadratsetningene
----
-class: theory
----
+
+Det finnes til sammen tre kvadratsetninger:
+
+:::{summary} Kvadratsetningene
 Gitt to vilkårlige tall $a, b \in \mathbb{R}$, så gjelder følgende tre setninger:
 
 1.Kvadratsetning
@@ -66,7 +64,7 @@ $$
 ---
 class: check
 ---
-Bruk kvadratsetningene til å skrive om andregradsuttrykkene til standardform.
+Bruk kvadratsetningene til å utvide uttrykkene.
 
 ::::::::::::::{tab-set}
 ---

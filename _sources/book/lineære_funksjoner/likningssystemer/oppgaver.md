@@ -259,6 +259,19 @@ level: 2
 Bruk CAS til å løse likningssystemene.
 
 
+::::{hints} Hvordan løser jeg et likningssystem med CAS?
+Nedenfor ser du en gif som viser hvordan man løser et likningssystem med CAS:
+
+:::{figure} ./videoer/cas-likningssystemer.gif
+---
+width: 80%
+class: no-click, adaptive-figure
+---
+:::
+
+::::
+
+
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
@@ -266,6 +279,9 @@ class: tabs-parts
 :::::::::::::{tab-item} a
 
 :::{cas-popup}
+---
+layout: sidebar
+---
 :::
 
 \begin{align*}
@@ -280,6 +296,9 @@ class: tabs-parts
 :::::::::::::{tab-item} b
 
 :::{cas-popup}
+---
+layout: sidebar
+---
 :::
 
 \begin{align*}
@@ -293,6 +312,9 @@ class: tabs-parts
 :::::::::::::{tab-item} c
 
 :::{cas-popup}
+---
+layout: sidebar
+---
 :::
 
 \begin{align*}
@@ -306,6 +328,9 @@ class: tabs-parts
 :::::::::::::{tab-item} d
 
 :::{cas-popup}
+---
+layout: sidebar
+---
 :::
 
 \begin{align*}
