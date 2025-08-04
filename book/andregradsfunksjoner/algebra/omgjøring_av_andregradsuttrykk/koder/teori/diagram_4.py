@@ -48,7 +48,7 @@ def main(dirname, save):
     plt.text(
         x=0.5 * dx,
         y=0.5 * (step + dy),
-        s="Fullstendig kvadraters metode",
+        s="$x_0 = \\displaystyle -\\frac{b}{2a}$ \n \n $y_0 = f(x_0)$",
         fontsize=15,
         ha="center",
         va="center",
@@ -95,7 +95,7 @@ def main(dirname, save):
     plt.text(
         x=0.5 * dx,
         y=0.5 * (3 * step + dy),
-        s="Konjugatsetningen",
+        s="Konjugatsetningen \n \n $a^2 - b^2 = (a - b)(a + b)$",
         fontsize=15,
         ha="center",
         va="center",
@@ -161,4 +161,4 @@ if __name__ == "__main__":
     dirname = "/".join(parts)
 
     # NOTE: Set `save=True` to save figure. `save=False` to display figure.
-    main(dirname=dirname, save=True)
+    main(dirname=dirname, save=False)

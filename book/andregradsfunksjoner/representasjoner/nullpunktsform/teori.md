@@ -114,14 +114,24 @@ width: 100%
 
 
 ### Fra ekstremalpunktsform til nullpunktsform
-Her skal vi se på hvordan vi kan skrive om fra ekstremalpunktsform til nullpunktsform. Vi starter med å se på et eksempel.
+Her skal vi se på hvordan vi kan skrive om fra ekstremalpunktsform til nullpunktsform. Diagrammet nedenfor oppsummerer strategien:
+
+:::{figure} ./figurer/teori/ekstremalpunktsform_til_nullpunktsform.svg
+---
+width: 100%
+class: no-click, adaptive-figure
+---
+:::
+
+
+La oss se på et eksempel:
 
 
 :::{margin} Konjugatsetningen
 Her trenger vi konjugatsetningen
 
 $$
-a^2 - b^2 = (a + b)(a - b)
+\textcolor{red}{a}^2 - \textcolor{RoyalBlue}{b}^2 = (\textcolor{red}{a} + \textcolor{RoyalBlue}{b})(\textcolor{red}{a} - \textcolor{RoyalBlue}{b})
 $$
 :::
 
@@ -141,13 +151,13 @@ dropdown: 0
 Vi kan skrive $f(x)$ som 
 
 $$
-f(x) = (x - 1)^2 - 2^2
+f(x) = \textcolor{red}{(x - 1)}^2 - \textcolor{RoyalBlue}{2}^2
 $$
 
 deretter kan vi bruke konjugatsetningen for å bestemme nullpunktsformen til uttrykket:
 
 $$
-f(x) = (x - 1 + 2)(x - 1 - 2) = (x + 1)(x - 3)
+f(x) = (\textcolor{red}{x - 1} + \textcolor{RoyalBlue}{2})(\textcolor{red}{x - 1} - \textcolor{RoyalBlue}{2}) = (x + 1)(x - 3)
 $$
 
 ::::
@@ -178,7 +188,7 @@ Nullpunktene er $x = -1$ og $x = 5$.
 Vi bruker konjugatsetningen:
 
 $$
-f(x) = (x - 2)^2 - 3^2 = (x - 2 + 3)(x - 2 - 3) = (x + 1)(x - 5).
+f(x) = \textcolor{red}{(x - 2)}^2 - \textcolor{RoyalBlue}{3}^2 = (\textcolor{red}{x - 2} + \textcolor{RoyalBlue}{3})(\textcolor{red}{x - 2} - \textcolor{RoyalBlue}{3}) = (x + 1)(x - 5).
 $$
 
 Fra nullpunktsformen kan vi se at nullpunktene er gitt ved 
@@ -242,8 +252,17 @@ width: 80%
 
 :::::::::::::::
 
+Strategien vi skal bruke er vist i diagrammet nedenfor:
 
-La oss se på et eksempel. 
+:::{figure} ./figurer/teori/nullpunktsform_til_ekstremalpunktsform.svg
+---
+width: 100%
+class: no-click, adaptive-figure
+---
+:::
+
+
+La oss se på et eksempel:
 
 
 :::::::::::::::{example} Eksempel 4

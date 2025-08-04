@@ -36,28 +36,62 @@ def main(dirname, save):
 
     ax.vlines(x=x0, ymin=-10, ymax=10, color=plotmath.COLORS.get("red"), lw=2, ls="--")
 
-    ax.text(
-        x1 - 0.1,
-        0 - 0.1,
-        f"$(x_1, 0)$",
-        fontsize=18,
-        va="top",
-        ha="right",
-    )
+    # ax.text(
+    #     x1 - 0.1,
+    #     0 - 0.1,
+    #     f"$(x_1, 0)$",
+    #     fontsize=18,
+    #     va="top",
+    #     ha="right",
+    # )
 
-    ax.text(
-        x2,
-        0 - 0.3,
-        f"$(x_2, 0)$",
-        fontsize=18,
-        va="top",
-        ha="left",
-    )
+    # ax.text(
+    #     x2,
+    #     0 - 0.3,
+    #     f"$(x_2, 0)$",
+    #     fontsize=18,
+    #     va="top",
+    #     ha="left",
+    # )
 
     plt.annotate(
         text="\n Symmetrilinje \n $x_0 = \\displaystyle \\frac{x_1 + x_2}{2}$",
         xy=(x0, 4),
         xytext=(0.5, 4),
+        fontsize=18,
+        arrowprops=dict(
+            arrowstyle="->",
+            lw=2,
+            color="black",
+            alpha=0.7,
+            connectionstyle="arc3,rad=+0.2",
+        ),
+        horizontalalignment="left",
+        verticalalignment="center",
+        bbox=dict(boxstyle="round,pad=0.3", fc="white", ec="black", lw=1, alpha=0.8),
+    )
+
+    plt.annotate(
+        text="$x_1$",
+        xy=(x1, 0),
+        xytext=(1, -4),
+        fontsize=18,
+        arrowprops=dict(
+            arrowstyle="->",
+            lw=2,
+            color="black",
+            alpha=0.7,
+            connectionstyle="arc3,rad=-0.2",
+        ),
+        horizontalalignment="left",
+        verticalalignment="center",
+        bbox=dict(boxstyle="round,pad=0.3", fc="white", ec="black", lw=1, alpha=0.8),
+    )
+
+    plt.annotate(
+        text="$x_2$",
+        xy=(x2, 0),
+        xytext=(5, -4),
         fontsize=18,
         arrowprops=dict(
             arrowstyle="->",

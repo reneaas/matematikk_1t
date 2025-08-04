@@ -55,12 +55,6 @@ La oss se på et eksempel der vi ser på den grafiske sammenhengen med det algeb
 :::::::::::::::{example} Eksempel 1
 Nedenfor vises fire eksempler på grafene til andregradsfunksjoner og deres ekstremalpunktsform.
 
-<!-- :::{clickable-figure} ./figurer/eksempler/eksempel_1/merged_figure.svg
----
-width: 100%
----
-::: -->
-
 
 ::::::::::::::{grid} 1 1 2 2
 ---
@@ -160,7 +154,16 @@ material_id: wapc5yua
 
 
 ### Fra standardform til ekstremalpunktsform
-Nå skal vi se hvordan vi kan skrive om en andregradsfunksjon fra standardform til ekstremalpunktsform.
+Nå skal vi se hvordan vi kan skrive om en andregradsfunksjon fra standardform til ekstremalpunktsform. Diagrammet oppsummerer strategien: 
+
+:::{figure} ./figurer/teori/diagram.svg
+---
+width: 100%
+class: no-click, adaptive-figure
+---
+:::
+
+La oss se på et eksempel:
 
 :::::::::::::::{example} Eksempel 2
 En andregradsfunksjon $f$ er gitt ved

@@ -440,11 +440,8 @@ level: 2
 ---
 Bruk CAS til å løse likningene nedenfor.
 
-:::{cas-popup}
-:::
 
-
-::::{hints} Hvordan løser jeg en likning med CAS igjen?
+::::{hints} Hvordan løser jeg en likning med CAS?
 Nedenfor ser du en *gif* som viser hvordan man kan løse en likning med CAS. Du trenger bare å åpne CAS-vinduet og gjøre slik det vises i *gif-en*.
 
 :::{figure} ./videoer/cas-likninger.gif
@@ -461,6 +458,13 @@ class: no-click, adaptive-figure
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
+
+:::{cas-popup}
+---
+layout: sidebar
+---
+:::
+
 $$
 4x + 2 = 0
 $$
@@ -468,6 +472,14 @@ $$
 :::::::::::::
 
 :::::::::::::{tab-item} b
+
+:::{cas-popup}
+---
+layout: sidebar
+---
+:::
+
+
 $$
 2x - 3 = 5
 $$
@@ -475,12 +487,28 @@ $$
 :::::::::::::
 
 :::::::::::::{tab-item} c
+
+:::{cas-popup}
+---
+layout: sidebar
+---
+:::
+
+
 $$
 3x + 4 = 2x + 7
 $$
 :::::::::::::
 
 :::::::::::::{tab-item} d
+
+:::{cas-popup}
+---
+layout: sidebar
+---
+:::
+
+
 $$
 \dfrac{3}{2}x - 1 = 2x + 4
 $$

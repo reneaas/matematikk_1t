@@ -122,9 +122,22 @@ class QuizDirective(SphinxDirective):
     def _process_figures(self, text):
         """Replace Markdown images with HTML <img> tags, copy figures, and fix path."""
         import shutil
+        import re
+        import json
+
+        # Add a counter to track images within this quiz
+        if not hasattr(self, "_image_counter"):
+            self._image_counter = 0
 
         def replace(match):
-            raw_src = match.group(1)
+            alt_or_options = match.group(1).strip()  # Alt text or options
+            raw_src = match.group(2)  # Image source path
+
+            # Increment image counter for unique naming
+            self._image_counter += 1
+
+            # Parse options from alt text
+            options = self._parse_figure_options(alt_or_options)
 
             # Path of the source .md/.rst file
             source_file = self.state.document["source"]
@@ -145,30 +158,177 @@ class QuizDirective(SphinxDirective):
             )
             os.makedirs(figure_dest_dir, exist_ok=True)
 
-            # Copy image
-            fig_filename = f"{self.quiz_id}_{os.path.basename(abs_fig_src)}"
+            # Create unique filename using the full relative path to avoid conflicts
+            # Convert the relative path from source to a safe filename part
+            rel_path_from_source = os.path.relpath(abs_fig_src, source_dir)
+            safe_path = rel_path_from_source.replace(os.sep, "_").replace("/", "_")
+            base_name, ext = os.path.splitext(safe_path)
+
+            # Use quiz_id, image counter, and the safe path for uniqueness
+            fig_filename = f"{self.quiz_id}_img{self._image_counter}_{base_name}{ext}"
             fig_dest_path = os.path.join(figure_dest_dir, fig_filename)
+
+            # Copy image
             shutil.copy2(abs_fig_src, fig_dest_path)
 
             # Now calculate relative path from output HTML to _static
-            # Example: if document is "kap1/quiz.md" => output will be in "_build/html/kap1/"
-            # and _static is at "_build/html/_static"
             depth = os.path.relpath(source_dir, app_src_dir).count(os.sep)
-            rel_prefix = "../" * (depth + 1)  # e.g. "../" if depth = 1
+            rel_prefix = "../" * (depth + 1)
 
             html_img_path = (
                 f"{rel_prefix}_static/figurer/{relative_doc_path}/{fig_filename}"
             )
 
-            html_img = f"""<br><br><div class="quiz-image-container">
-                <img src="{html_img_path}" class="quiz-image adaptive-figure" alt="Quiz figure">
-            </div>
-            """
+            # Build HTML with options
+            html_img = self._build_figure_html(html_img_path, options)
 
             return html_img
 
-        # return re.sub(r"\{fig\}\(([^)]+)\)", replace, text)
-        return re.sub(r"!\[\]\(([^)]+)\)", replace, text)
+        # Updated regex to capture both alt text and source
+        return re.sub(r"!\[([^\]]*)\]\(([^)]+)\)", replace, text)
+
+    def _parse_figure_options(self, alt_text):
+        """Parse figure options from alt text."""
+        options = {}
+
+        # Method 1: JSON-like syntax {width: 60%, class: adaptive-figure}
+        if alt_text.startswith("{") and alt_text.endswith("}"):
+            try:
+                # Clean up the syntax for JSON parsing
+                json_str = alt_text
+                # Add quotes to keys: width: -> "width":
+                json_str = re.sub(r"(\w+):", r'"\1":', json_str)
+                # Add quotes to unquoted values
+                json_str = re.sub(r':\s*([^",}]+)', r': "\1"', json_str)
+                options = json.loads(json_str)
+            except:
+                # Fallback to simple parsing
+                options = self._parse_simple_options(alt_text[1:-1])
+
+        # Method 2: HTML-style attributes: width="60%" class="adaptive-figure"
+        elif "=" in alt_text:
+            options = self._parse_html_style_options(alt_text)
+
+        # Method 3: Plain alt text (traditional)
+        else:
+            if alt_text:
+                options["alt"] = alt_text
+
+        return options
+
+    def _parse_html_style_options(self, alt_text):
+        """Parse HTML-style attributes: width="60%" class="adaptive-figure" """
+        options = {}
+        # Match attribute="value" or attribute='value'
+        pattern = r'(\w+)=(["\'])([^"\']*)\2'
+
+        for match in re.finditer(pattern, alt_text):
+            key = match.group(1)
+            value = match.group(3)
+            options[key] = value
+
+        return options
+
+    def _parse_simple_options(self, options_str):
+        """Parse simple key: value syntax"""
+        options = {}
+        pairs = options_str.split(",")
+
+        for pair in pairs:
+            if ":" in pair:
+                key, value = pair.split(":", 1)
+                key = key.strip()
+                value = value.strip()
+                # Remove quotes if present
+                if (value.startswith('"') and value.endswith('"')) or (
+                    value.startswith("'") and value.endswith("'")
+                ):
+                    value = value[1:-1]
+                options[key] = value
+
+        return options
+
+    def _build_figure_html(self, html_img_path, options):
+        """Build the HTML for the figure with options."""
+
+        # Default options
+        default_options = {"class": "quiz-image adaptive-figure", "alt": "Quiz figure"}
+
+        # Merge with user options (user options override defaults)
+        final_options = {**default_options, **options}
+
+        # Build img attributes
+        img_attrs = []
+        img_attrs.append(f'src="{html_img_path}"')
+
+        for key, value in final_options.items():
+            if key == "width":
+                img_attrs.append(f'style="width: {value};"')
+            elif key == "height":
+                img_attrs.append(f'style="height: {value};"')
+            elif key in ["class", "alt", "title"]:
+                img_attrs.append(f'{key}="{value}"')
+
+        img_tag = f'<img {" ".join(img_attrs)}>'
+
+        # Wrap in container
+        html_img = f"""<div class="quiz-image-container">
+            {img_tag}
+        </div>
+        """
+
+        return html_img
+
+    # def _process_figures(self, text):
+    #     """Replace Markdown images with HTML <img> tags, copy figures, and fix path."""
+    #     import shutil
+
+    #     def replace(match):
+    #         raw_src = match.group(1)
+
+    #         # Path of the source .md/.rst file
+    #         source_file = self.state.document["source"]
+    #         source_dir = os.path.dirname(source_file)
+    #         app_src_dir = self.env.srcdir  # Root of source directory
+
+    #         # Absolute source path of the image file
+    #         abs_fig_src = os.path.normpath(os.path.join(source_dir, raw_src))
+
+    #         if not os.path.exists(abs_fig_src):
+    #             print(f"⚠️ QuizDirective: Figure not found: {abs_fig_src}")
+    #             return f'<img src="{raw_src}" class="quiz-image adaptive-figure" alt="Quiz figure (missing)">'
+
+    #         # Determine quiz-local static path: _static/figurer/<path to .md>/<filename>
+    #         relative_doc_path = os.path.relpath(source_dir, app_src_dir)
+    #         figure_dest_dir = os.path.join(
+    #             app_src_dir, "_static", "figurer", relative_doc_path
+    #         )
+    #         os.makedirs(figure_dest_dir, exist_ok=True)
+
+    #         # Copy image
+    #         fig_filename = f"{self.quiz_id}_{os.path.basename(abs_fig_src)}"
+    #         fig_dest_path = os.path.join(figure_dest_dir, fig_filename)
+    #         shutil.copy2(abs_fig_src, fig_dest_path)
+
+    #         # Now calculate relative path from output HTML to _static
+    #         # Example: if document is "kap1/quiz.md" => output will be in "_build/html/kap1/"
+    #         # and _static is at "_build/html/_static"
+    #         depth = os.path.relpath(source_dir, app_src_dir).count(os.sep)
+    #         rel_prefix = "../" * (depth + 1)  # e.g. "../" if depth = 1
+
+    #         html_img_path = (
+    #             f"{rel_prefix}_static/figurer/{relative_doc_path}/{fig_filename}"
+    #         )
+
+    #         html_img = f"""<br><br><div class="quiz-image-container">
+    #             <img src="{html_img_path}" class="quiz-image adaptive-figure" alt="Quiz figure">
+    #         </div>
+    #         """
+
+    #         return html_img
+
+    #     # return re.sub(r"\{fig\}\(([^)]+)\)", replace, text)
+    #     return re.sub(r"!\[\]\(([^)]+)\)", replace, text)
 
 
 def setup(app):

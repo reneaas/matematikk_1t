@@ -1,4 +1,5 @@
-def main():
+def main(dirname):
+    fname = __file__.split("/")[-1].replace(".py", "")
     polylongdiv(
         fname=__file__.split("/")[-1].replace(".py", ""),
         p="x^3 + 2x^2 - 3x - 6",
@@ -6,12 +7,19 @@ def main():
         stage=None,
     )
 
+    if dirname:
+        import os
+
+        target_fname = "/".join([dirname, fname + ".svg"])
+        os.system(f"mv {fname}.svg {target_fname}")
+
 
 # NOTE: Ikke endre på noe under denne linjen
 if __name__ == "__main__":
 
     import sys
     import pathlib
+    import os
 
     def find_repo_root(current_path):
         current_path = pathlib.Path(
@@ -28,6 +36,16 @@ if __name__ == "__main__":
     # Get the directory where the script is located
     current_dir = str(pathlib.Path(__file__).resolve().parent)
 
+    parts = current_dir.split("/")
+    for i in range(len(parts)):
+        if parts[~i] == "koder":
+            parts[~i] = "figurer"
+            break
+
+    dirname = "/".join(parts)
+    if not os.path.exists(dirname):
+        os.makedirs(dirname)
+
     # Find the root of the GitHub repository (where .git is located)
     repo_root = find_repo_root(current_dir)
 
@@ -36,4 +54,4 @@ if __name__ == "__main__":
 
     from python_util.polydiv import polylongdiv
 
-    main()
+    main(dirname=dirname)

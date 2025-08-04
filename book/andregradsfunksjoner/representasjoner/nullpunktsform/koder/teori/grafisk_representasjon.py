@@ -67,6 +67,40 @@ def main(dirname, save):
         bbox=dict(boxstyle="round,pad=0.3", fc="white", ec="black", lw=1, alpha=0.8),
     )
 
+    plt.annotate(
+        text="$$x_1$$",
+        xy=(x1, 0),
+        xytext=(-2, -4),
+        fontsize=fontsize,
+        arrowprops=dict(
+            arrowstyle="->",
+            lw=2,
+            color="black",
+            alpha=0.7,
+            connectionstyle="arc3,rad=-0.2",
+        ),
+        horizontalalignment="left",
+        verticalalignment="center",
+        bbox=dict(boxstyle="round,pad=0.3", fc="white", ec="black", lw=1, alpha=0.8),
+    )
+
+    plt.annotate(
+        text="$$x_2$$",
+        xy=(x2, 0),
+        xytext=(2, -4),
+        fontsize=fontsize,
+        arrowprops=dict(
+            arrowstyle="->",
+            lw=2,
+            color="black",
+            alpha=0.7,
+            connectionstyle="arc3,rad=+0.2",
+        ),
+        horizontalalignment="left",
+        verticalalignment="center",
+        bbox=dict(boxstyle="round,pad=0.3", fc="white", ec="black", lw=1, alpha=0.8),
+    )
+
     # NOTE: Select an appropriate `dirname` to save the figure.
     # The directory `dirname` will be created automatically if it does not exist already.
     if save:

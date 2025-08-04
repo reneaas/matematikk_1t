@@ -35,9 +35,28 @@ def main(dirname, save):
     ax.plot(x2, 0, "ko", markersize=10, alpha=0.7)
 
     # Set font sizes for legend and axes labels
-    ax.legend(fontsize=24)
-    ax.yaxis.label.set_size(24)  # Set y-axis label font size
-    ax.xaxis.label.set_size(24)  # Set x-axis label font size
+    fontsize = 28
+    ax.legend(fontsize=fontsize)
+    ax.yaxis.label.set_size(fontsize)  # Set y-axis label font size
+    ax.xaxis.label.set_size(fontsize)  # Set x-axis label font size
+
+    ax.text(
+        x=x1 - 0.2,
+        y=0 + 0.2,
+        s=f"$({x1}, 0)$",
+        fontsize=fontsize,
+        va="bottom",
+        ha="right",
+    )
+
+    ax.text(
+        x=x2 + 0.2,
+        y=0 + 0.2,
+        s=f"$({x2}, 0)$",
+        fontsize=fontsize,
+        va="bottom",
+        ha="left",
+    )
 
     # NOTE: Select an appropriate `dirname` to save the figure.
     # The directory `dirname` will be created automatically if it does not exist already.

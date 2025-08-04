@@ -34,11 +34,12 @@ def main(dirname, save):
 
     ax.vlines(x=x0, ymin=-20, ymax=20, color="red", lw=1.5, ls="--")
 
+    fontsize = 28
     ax.text(
-        x=x0 - 0.5,
+        x=x0 - 0.3,
         y=2 * y0,
         s=f"$x = {x0}$",
-        fontsize=24,
+        fontsize=fontsize,
         va="center",
         ha="right",
         color="red",
@@ -49,15 +50,15 @@ def main(dirname, save):
         x0 + 0.15,
         y0 + 0.15,
         f"$({x0}, {y0})$",
-        fontsize=24,
+        fontsize=fontsize,
         va="bottom",
         ha="left",
     )
 
     # Set font sizes for legend and axes labels
-    ax.legend(fontsize=24)
-    ax.yaxis.label.set_size(24)  # Set y-axis label font size
-    ax.xaxis.label.set_size(24)  # Set x-axis label font size
+    ax.legend(fontsize=fontsize)
+    ax.yaxis.label.set_size(fontsize)  # Set y-axis label font size
+    ax.xaxis.label.set_size(fontsize)  # Set x-axis label font size
 
     # NOTE: Select an appropriate `dirname` to save the figure.
     # The directory `dirname` will be created automatically if it does not exist already.
