@@ -92,7 +92,221 @@ $$
 
 ---
 
+
 :::::::::::::::{exercise} Oppgave 2
+---
+level: 1
+---
+Løs likningene grafisk med graftegneren i Geogebra.
+
+
+::::{hints} Hvordan løser jeg likningen grafisk med Geogebra?
+En likning er gitt ved 
+
+$$
+3x - 1 = -4
+$$
+
+Nedenfor ser du en gif som viser hvordan man løser likningen med grafvinduet i Geogebra. Vi trykker på {ggb-icon}`mode_intersect` (Skjæring mellom to objekt) etterfulgt av å trykke på hver graf for å finne skjæringspunktet.
+
+:::{figure} ./videoer/grafisk_løsning.gif
+---
+class: no-click, adaptive-figure
+width: 100%
+---
+:::
+
+Skjæringspunktet er $(-1, -4)$. Det er $x$-koordinaten som er løsningen av likningen, så løsningen er
+
+$$
+x = -1
+$$
+
+::::
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+
+:::{ggb-popup}
+---
+layout: sidebar
+---
+:::
+
+
+$$
+2x - 5 = 1
+$$
+
+:::{clear}
+:::
+
+::::{answer}
+$$
+x = 3
+$$
+::::
+
+
+::::{solution}
+Vi skriver uttrykkene til venstre og høyre side i algebrafeltet og trykker på {ggb-icon}`mode_intersect` (Skjæring mellom to objekt) etterfulgt av å trykke på hver graf for å finne skjæringspunktet. Se figuren nedenfor.
+
+:::{figure} ./figurer/oppgaver/oppgave_2/a.png
+---
+class: no-click, adaptive-figure
+width: 100%
+---
+:::
+
+Vi ser at skjæringspunktet er $(3, 1)$. Det er $x$-koordinaten som er løsningen av likningen, så løsningen er
+
+$$
+x = 3
+$$
+::::
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+
+:::{ggb-popup}
+---
+layout: sidebar
+---
+:::
+
+$$
+x + 4 = -2x + 1
+$$
+
+:::{clear}
+:::
+
+::::{answer}
+$$
+x = -1
+$$
+::::
+
+
+::::{solution}
+Vi skriver inn uttrykkene på venstre og høyre side av likningen i algebrafeltet og trykker på {ggb-icon}`mode_intersect` (Skjæring mellom to objekt) etterfulgt av å trykke på hver graf for å finne skjæringspunktene. Se figuren nedenfor.
+
+:::{figure} ./figurer/oppgaver/oppgave_2/b.png
+---
+class: no-click, adaptive-figure
+width: 100%
+---
+:::
+
+Vi ser at skjæringspunktet er $(-1, 3)$. Det er $x$-koordinaten som er løsningen av likningen, så løsningen er
+
+$$
+x = -1
+$$
+
+::::
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+:::{ggb-popup}
+---
+layout: sidebar
+---
+:::
+
+$$
+-x + 1 = 2x + 7
+$$
+
+:::{clear}
+:::
+
+::::{answer}
+$$
+x = -2
+$$
+::::
+
+
+::::{solution}
+Vi skriver inn uttrykkene på venstre og høyre side av likningen i algebrafeltet og trykker på {ggb-icon}`mode_intersect` (Skjæring mellom to objekt) etterfulgt av å trykke på hver graf for å finne skjæringspunktene. Se figuren nedenfor.
+
+:::{figure} ./figurer/oppgaver/oppgave_2/c.png
+---
+class: no-click, adaptive-figure
+width: 100%
+---
+:::
+
+Vi ser at skjæringspunktet er $(-2, 3)$. Det er $x$-koordinaten som er løsningen av likningen, så løsningen er
+
+$$
+x = -2
+$$
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} d
+
+:::{ggb-popup}
+---
+layout: sidebar
+---
+:::
+
+
+$$
+x - 3 = -x + 5
+$$
+
+:::{clear}
+:::
+
+
+::::{answer}
+$$
+x = 4
+$$
+::::
+
+
+::::{solution}
+Vi skriver inn uttrykkene på venstre og høyre side av likningen i algebrafeltet og trykker på {ggb-icon}`mode_intersect` (Skjæring mellom to objekt) etterfulgt av å trykke på hver graf for å finne skjæringspunktene. Se figuren nedenfor.
+
+:::{figure} ./figurer/oppgaver/oppgave_2/d.png
+---
+class: no-click, adaptive-figure
+width: 100%
+---
+:::
+
+Vi ser at skjæringspunktet er $(4, 1)$. Det er $x$-koordinaten som er løsningen av likningen, så løsningen er
+
+$$
+x = 4
+$$
+::::
+
+:::::::::::::
+
+::::::::::::::
+:::::::::::::::
+
+
+---
+
+:::::::::::::::{exercise} Oppgave 3
 ---
 level: 1
 ---
@@ -170,7 +384,7 @@ $$
 
 ---
 
-:::::::::::::::{exercise} Oppgave 3
+:::::::::::::::{exercise} Oppgave 4
 ---
 level: 1
 ---
@@ -271,7 +485,7 @@ for x in range(-10, 11):
 
 ---
 
-:::::::::::::::{exercise} Oppgave 4
+:::::::::::::::{exercise} Oppgave 5
 ---
 level: 2
 ---
@@ -282,7 +496,7 @@ f(x) = 2x - 3 \quad \text{og} \quad g(x) = -3x - 6.
 $$
 
 
-:::{figure} ./figurer/oppgaver/oppgave_4/figur.svg
+:::{figure} ./figurer/oppgaver/oppgave_5/figur.svg
 ---
 class: no-click, adaptive-figure
 width: 80%
@@ -373,7 +587,7 @@ $$
 ---
 
 
-:::::::::::::::{exercise} Oppgave 5
+:::::::::::::::{exercise} Oppgave 6
 ---
 level: 2
 ---
@@ -434,7 +648,7 @@ $$
 ---
 
 
-:::::::::::::::{exercise} Oppgave 6
+:::::::::::::::{exercise} Oppgave 7
 ---
 level: 2
 ---
@@ -528,7 +742,7 @@ $$
 
 ---
 
-:::::::::::::::{exercise} Oppgave 7
+:::::::::::::::{exercise} Oppgave 8
 ---
 level: 2
 ---
@@ -615,7 +829,7 @@ for x in range(????):
 
 
 
-:::::::::::::::{exercise} Oppgave 8
+:::::::::::::::{exercise} Oppgave 9
 ---
 level: 2
 ---

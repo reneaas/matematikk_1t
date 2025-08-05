@@ -1,0 +1,76 @@
+import plotmath
+import numpy as np
+
+
+def main(dirname, save):
+    #
+    # Define functions
+    def f(x):
+        return -(x**2) + 5 * x + 14
+
+    def make_tangent_fn(f, a):
+        df = f(a + 1e-5) - f(a - 1e-5)
+        dfdx = df / (2 * 1e-5)
+
+        def tangent_fn(x):
+            return dfdx * (x - a) + f(a)
+
+        return tangent_fn
+
+    # List of functions and their labels.
+    functions = [f]
+
+    fig, ax = plotmath.plot(
+        functions=functions,
+        fn_labels=True,
+        xmin=-6,
+        xmax=12,
+        ymin=-36,
+        ymax=48,
+        ticks=False,
+    )
+
+    x0 = -2
+    tangent_fn = make_tangent_fn(f, x0)
+    x = np.linspace(-24, 24, 1024)
+    y = tangent_fn(x)
+    ax.plot(x, y, color=plotmath.COLORS.get("red"), lw=2)
+    ax.plot(x0, 0, "ko", markersize=10, alpha=0.8)
+
+    x0 = 8
+    tangent_fn = make_tangent_fn(f, x0)
+    x = np.linspace(-24, 24, 1024)
+    y = tangent_fn(x)
+    ax.plot(x, y, color=plotmath.COLORS.get("red"), lw=2)
+    ax.plot(x0, f(x0), "ko", markersize=10, alpha=0.8)
+
+    # NOTE: Select an appropriate `dirname` to save the figure.
+    # The directory `dirname` will be created automatically if it does not exist already.
+    if save:
+        fname = __file__.split("/")[-1].replace(".py", ".svg")
+        plotmath.savefig(
+            dirname=dirname, fname=fname
+        )  # Lagrer figuren i `dirname`-directory
+
+    if not save:
+
+        plotmath.show()
+
+
+if __name__ == "__main__":
+
+    import pathlib
+
+    # Get the directory where the script is located
+    current_dir = str(pathlib.Path(__file__).resolve().parent)
+
+    parts = current_dir.split("/")
+    for i in range(len(parts)):
+        if parts[~i] == "koder":
+            parts[~i] = "figurer"
+            break
+
+    dirname = "/".join(parts)
+
+    # NOTE: Set `save=True` to save figure. `save=False` to display figure.
+    main(dirname=dirname, save=True)

@@ -119,9 +119,219 @@ $$
 
 ---
 
-
-
 :::::::::::::::{exercise} Oppgave 2
+---
+level: 1
+---
+
+::::{hints} Hvordan løser jeg en likning grafisk med Geogebra?
+Nedenfor vises en gif som viser hvordan man løser likningen 
+
+$$
+x^2 - 4x + 3 = -2x + 6
+$$
+
+Vi trykker på {ggb-icon}`mode_intersect` (Skjæring mellom to objekt) etterfulgt av å trykke på hver graf for å finne skjæringspunktet.
+
+:::{figure} ./videoer/grafisk_løsning.gif
+---
+class: no-click, adaptive-figure
+width: 100%
+---
+Løsningen er $x$-koordinatene til skjæringspunktene. Altså $x = -1 \or x = 3$.
+:::
+
+::::
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+
+:::{ggb-popup}
+---
+layout: sidebar
+---
+:::
+
+
+
+Løs likningen nedenfor grafisk. 
+
+$$
+2x^2 + 2x - 12 = 0
+$$
+
+
+::::{answer}
+$$
+x = -3 \or x = 2
+$$
+::::
+
+
+::::{solution}
+Vi skriver inn likningene for venstre og høyre side av likningen og bruker "skjæring mellom to objekt" {ggb-icon}`mode_intersect` for å finne skjæringspunktene. Se figuren nedenfor.
+
+
+:::{figure} ./figurer/oppgaver/oppgave_2/a.png
+---
+class: no-click, adaptive-figure
+width: 100%
+---
+:::
+
+Vi ser at skjæringspunktene er $(-3, 0)$ og $(2, 0)$. Det er $x$-koordinatene som er løsningen av likningen, som betyr at løsningen er
+
+$$
+x = -3 \or x = 2
+$$
+
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+
+:::{ggb-popup}
+---
+layout: sidebar
+---
+:::
+
+Løs likningen nedenfor grafisk. 
+
+$$
+2x^2 - 4x = -2
+$$
+
+
+::::{answer}
+$$
+x = 1
+$$
+::::
+
+::::{solution}
+Vi skriver inn likningene for venstre og høyre side av likningen og bruker "skjæring mellom to objekt" {ggb-icon}`mode_intersect` for å finne skjæringspunktene. Se figuren nedenfor.
+
+:::{figure} ./figurer/oppgaver/oppgave_2/b.png
+---
+class: no-click, adaptive-figure
+width: 100%
+---
+:::
+
+Vi ser at det er ett skjæringspunkt mellom grafene gitt ved $(1, -2)$. Det er $x$-koordinaten som er løsningen av likningen, som betyr at løsningen er
+
+$$
+x = 1
+$$
+
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+
+:::{ggb-popup}
+---
+layout: sidebar
+---
+:::
+
+Løs likningen nedenfor grafisk.
+
+$$
+x^2 + 2x - 2 = 4x + 6
+$$
+
+
+::::{answer}
+$$
+x = -2 \or x = 4
+$$
+::::
+
+::::{solution}
+Vi skriver inn likningene for venstre og høyre side av likningen og bruker "skjæring mellom to objekt" {ggb-icon}`mode_intersect` for å finne skjæringspunktene. Se figuren nedenfor.
+
+:::{figure} ./figurer/oppgaver/oppgave_2/c.png
+---
+class: no-click, adaptive-figure
+width: 100%
+---
+:::
+
+Vi ser at skjæringspunktene er $(-2, -2)$ og $(4, 22)$. Det er $x$-koordinatene som er løsningene av likningen, som betyr at løsningen er
+
+$$
+x = -2 \or x = 4
+$$
+
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} d
+
+:::{ggb-popup}
+---
+layout: sidebar
+---
+:::
+
+
+Løs likningen nedenfor grafisk.
+
+$$
+4x^2 - 12x + 6 = -2x^2 + 5x - 1
+$$
+
+
+::::{answer}
+$$
+x \approx 0.5 \or x \approx 2.33.
+$$
+::::
+
+::::{solution}
+Vi skriver inn likningene for venstre og høyre side av likningen og bruker "skjæring mellom to objekt" {ggb-icon}`mode_intersect` for å finne skjæringspunktene. Se figuren nedenfor.
+
+:::{figure} ./figurer/oppgaver/oppgave_2/d.png
+---
+class: no-click, adaptive-figure
+width: 100%
+---
+:::
+
+Vi ser at skjæringspunktene er $(0.5, 1)$ og $(2.33, -0.22)$. Det er $x$-koordinatene som er løsningene av likningen, som betyr at løsningen er
+
+$$
+x \approx 0.5 \or x \approx 2.33.
+$$
+
+> Her bruker vi $\approx$ fordi vi bare finner en tilnærmet verdi for $x$-koordinatene og ikke nødvendigvis den eksakte verdien. 
+
+::::
+
+:::::::::::::
+
+
+
+::::::::::::::
+:::::::::::::::
+
+
+---
+
+
+
+:::::::::::::::{exercise} Oppgave 3
 ---
 level: 1
 ---
@@ -177,7 +387,7 @@ $$
 ---
 
 
-:::::::::::::::{exercise} Oppgave 3
+:::::::::::::::{exercise} Oppgave 4
 ---
 level: 1
 ---
@@ -227,7 +437,7 @@ $$
 ---
 
 
-:::::::::::::::{exercise} Oppgave 4
+:::::::::::::::{exercise} Oppgave 5
 ---
 level: 1
 ---
@@ -293,7 +503,7 @@ $$
 ---
 
 
-:::::::::::::::{exercise} Oppgave 5
+:::::::::::::::{exercise} Oppgave 6
 ---
 level: 2
 ---
@@ -385,7 +595,7 @@ $$
 
 
 
-:::::::::::::::{exercise} Oppgave 6
+:::::::::::::::{exercise} Oppgave 7
 ---
 level: 2
 ---
@@ -464,7 +674,7 @@ $$
 
 ---
 
-:::::::::::::::{exercise} Oppgave 7
+:::::::::::::::{exercise} Oppgave 8
 ---
 level: 2
 ---
@@ -539,7 +749,7 @@ $$
 ---
 
 
-:::::::::::::::{exercise} Oppgave 8
+:::::::::::::::{exercise} Oppgave 9
 ---
 level: 2
 ---
@@ -669,7 +879,7 @@ for x in range(-10, 11):
 ---
 
 
-:::::::::::::::{exercise} Oppgave 9
+:::::::::::::::{exercise} Oppgave 10
 ---
 level: 2
 ---
@@ -825,7 +1035,7 @@ for x in range(-10, 11):
 ---
 
 
-:::::::::::::::{exercise} Oppgave 10
+:::::::::::::::{exercise} Oppgave 11
 ---
 level: 3
 ---
@@ -916,7 +1126,7 @@ $$
 ---
 
 
-:::::::::::::::{exercise} Oppgave 11
+:::::::::::::::{exercise} Oppgave 12
 ---
 level: 3
 ---
@@ -968,7 +1178,7 @@ og avgjør hvor mange løsninger likningen har.
 ---
 
 
-:::::::::::::::{exercise} Oppgave 12
+:::::::::::::::{exercise} Oppgave 13
 ---
 level: 3
 ---
@@ -1049,14 +1259,14 @@ Bestem $k$ slik at $f$ har nøyaktig ett nullpunkt.
 
 ---
 
-:::::::::::::::{exercise} Oppgave 13
+:::::::::::::::{exercise} Oppgave 14
 ---
 level: 3
 ---
 Grafen til en andregradsfunksjon $f$ er vist nedenfor.
 
 
-:::{figure} ./figurer/oppgaver/oppgave_12/figur.svg
+:::{figure} ./figurer/oppgaver/oppgave_14/figur.svg
 ---
 class: no-click, adaptive-figure
 width: 80%
@@ -1149,7 +1359,7 @@ $$
 
 
 
-:::::::::::::::{exercise} Oppgave 14
+:::::::::::::::{exercise} Oppgave 15
 ---
 level: 4
 ---
@@ -1165,245 +1375,27 @@ class: tabs-parts
 ---
 
 :::::::::::::{tab-item} a
-Vis ved regning at likningen
+Forklar at vi kan skrive om likningen til
 
 $$
-ax^2 + bx + c = 0,
+a(x - x_0)^2 + y_0 = 0
 $$
 
-kan skrives om til 
+og bestem $x_0$ og $y_0$ uttrykt ved $a$, $b$ og $c$.
 
-$$
-x^2 + \frac{b}{a}x + \frac{c}{a} = 0.
-$$
-
-:::{admonition} Løsning
----
-class: solution, dropdown
----
-
-\begin{align*}
-ax^2 + bx + c & = 0 \\
-\\
-\dfrac{\cancel{a}x^2}{\cancel{a}} + \dfrac{bx}{a} + \dfrac{c}{a} & = 0 && \text{Deler med $a$ i alle ledd}\\
-\\
-x^2 + \frac{b}{a}x + \frac{c}{a} & = 0.
-\end{align*}
-
-::: 
 
 :::::::::::::
+
 
 :::::::::::::{tab-item} b
-For å gjøre stegene videre lettere å regne med, innfører vi to nye variabler 
+Forklar at løsningene av likningen er 
 
 $$
-B = \dfrac{b}{2a} \quad \text{og} \quad C = \dfrac{c}{a}.
+x = x_0 \pm \sqrt{-\frac{y_0}{a}}.
 $$
 
-Vis ved regning at dette betyr at likningen nå kan skrives som 
-
-$$
-x^2 + 2Bx + C = 0.
-$$
-
-> Dette er bare et midlertidig **variabelskifte**. Vi skal bytte tilbake igjen til slutt! Dette er vanlig å bruke i matematikken for å gjøre regning underveis enklere så vi unngår unødvendige feil.
-
-:::{admonition} Hint
----
-class: hints, dropdown
----
-Du kan uttrykke de nye variablene slik at du kan bytte ut $b$ og $c$ i likningen. For eksempel så er 
-
-$$
-c = a\cdot C
-$$
-:::
-
-:::{admonition} Løsning
----
-class: solution, dropdown
----
-Vi skriver om de nye variabelene:
-
-\begin{equation*}
-    \begin{matrix}
-        B = \dfrac{b}{2a} \quad & \text{og} & \quad C = \dfrac{c}{a} \\
-        \\
-        2a\cdot B = \dfrac{b}{\cancel{2a}}\cdot \cancel{2a} \quad & \text{og} & \quad a\cdot C = \dfrac{c}{\cancel{a}} \cdot \cancel{a} \\
-        \\
-        2aB = b \quad & \text{og} & \quad aC = c
-    \end{matrix}
-\end{equation*}
-
-så setter vi inn de nye uttrykkene for $b$ og $c$ i likningen:
-
-\begin{align*}
-    x^2 + \dfrac{b}{a}x + \dfrac{c}{a} &= 0 \\
-    \\
-    x^2 + \dfrac{2aB}{a}x + \dfrac{aC}{a} &= 0 \\
-    \\
-    x^2 + \dfrac{2\cancel{a}B}{\cancel{a}}x + \dfrac{\cancel{a}C}{\cancel{a}} &= 0 \\
-    \\
-    x^2 + 2Bx + C &= 0.
-\end{align*}
-
-:::
-
+Bruk dette til å utlede $abc$-formelen. 
 :::::::::::::
-
-:::::::::::::{tab-item} c
-Vis ved å bruke fullstendig kvadraters metode at du kan skrive om likningen
-
-$$
-x^2 + 2Bx + C = 0
-$$
-
-til 
-
-$$
-(x + B)^2 = B^2 - C
-$$
-
-:::{admonition} Løsning
----
-class: solution, dropdown
----
-\begin{align*}
-    x^2 + 2Bx + C &= 0 \\
-    \\
-    \underbrace{x^2 + 2Bx + \textcolor{red}{B^2}}_{\displaystyle (x + B)^2} - \textcolor{red}{B^2} + C &= 0 \\
-    \\
-    \textcolor{red}{(x + B)^2} - B^2 + C &= 0 && \text{1.kvadratsetning}\\
-    \\
-    (x + B)^2 - B^2 \textcolor{red}{+ B^2} + C \textcolor{red}{- C} &= \textcolor{red}{B^2 - C} \\
-    \\
-    (x + B)^2 &= B^2 - C.
-\end{align*}
-:::
-
-:::::::::::::
-
-:::::::::::::{tab-item} d
-Argumenter for at
-
-$$
-(x + B)^2 = B^2 - C
-$$
-
-betyr at 
-
-$$
-x + B = \pm \sqrt{B^2 - C}.
-$$
-
-:::{admonition} Løsning
----
-class: solution, dropdown
----
-Vi tar kvadratroten på hver side av likningen, men husker på at det betyr at den ene siden kan være både positiv og negativ:
-
-\begin{align*}
-    (x + B)^2 &= B^2 - C \\
-    \\
-    \sqrt{(x + B)^2} &= \pm \sqrt{B^2 - C} \\
-    \\
-    x + B &= \pm \sqrt{B^2 - C}.
-\end{align*}
-
-> Det spiller egentlig ingen rolle hvilken side vi plasserer $\pm$ ved. Men å plassere den sammen med variabelen vil gjøre det litt vanskeligere å komme fram til $abc$-formelen til slutt.
-:::
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} e
-Vis ved regning at 
-
-$$
-x + B = \pm \sqrt{B^2 - C} \quad  \iff \quad x = -\dfrac{b}{2a} \pm \sqrt{\left(\dfrac{b}{2a}\right)^2 - \dfrac{c}{a}}
-$$
-
-ved å sette tilbake 
-
-$$
-B = \dfrac{b}{2a} \quad \text{og} \quad C = \dfrac{c}{a}
-$$
-
-i likningen.
-
-
-:::{admonition} Løsning
----
-class: solution, dropdown
----
-\begin{align*}
-    x + B &= \pm \sqrt{B^2 - C} \\
-    \\
-    x + B \textcolor{red}{-B} &= \textcolor{red}{-B} \pm \sqrt{B^2 - C} \\
-    \\
-    x &= -B \pm \sqrt{B^2 - C} \\
-    \\
-    x &= -\dfrac{b}{2a} \pm \sqrt{\left(\dfrac{b}{2a}\right)^2 - \dfrac{c}{a}} && \text{Husk: } B = \dfrac{b}{2a} \quad \text{og} \quad C = \dfrac{c}{a} \\
-    \\
-\end{align*}
-:::
-
-:::::::::::::
-
-:::::::::::::{tab-item} f
-Vis ved regning at 
-
-$$
-x = -\dfrac{b}{2a} \pm \sqrt{\left(\dfrac{b}{2a}\right)^2 - \dfrac{c}{a}}
-$$
-
-kan skrives om til $abc$-formelen
-
-$$
-x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a}.
-$$
-
-
-:::{admonition} Hint
----
-class: hints, dropdown
----
-Når du tar kvadratroten av en brøk, så gjelder:
-
-$$
-\sqrt{\dfrac{A}{B}} = \dfrac{\sqrt{A}}{\sqrt{B}}
-$$
-:::
-
-
-:::{admonition} Løsning
----
-class: solution, dropdown
----
-\begin{align*}
-    x &= -\dfrac{b}{2a} \pm \sqrt{\left(\dfrac{b}{2a}\right)^2 - \dfrac{c}{a}} \\
-    \\
-    x &= -\dfrac{b}{2a} \pm \sqrt{\textcolor{red}{\dfrac{b^2}{4a^2}} - \dfrac{c}{a}} && \text{ganger ut potensen}\\
-    \\
-    x &= -\dfrac{b}{2a} \pm \sqrt{\dfrac{b^2}{4a^2} - \dfrac{\textcolor{red}{4a}}{\textcolor{red}{4a}} \cdot \dfrac{c}{a}} && \text{lager fellesnevner} \\
-    \\
-    x &= -\dfrac{b}{2a} \pm \sqrt{\dfrac{b^2}{4a^2} - \dfrac{4ac}{4a^2}} \\
-    \\
-    x &= -\dfrac{b}{2a} \pm \sqrt{\dfrac{b^2 - 4ac}{4a^2}} \\
-    \\
-    x &= -\dfrac{b}{2a} \pm \dfrac{\sqrt{b^2 - 4ac}}{\sqrt{4a^2}} && \text{Regneregel: } \sqrt{\dfrac{A}{B}} = \dfrac{\sqrt{A}}{\sqrt{B}} \\
-    \\
-    x &= -\dfrac{b}{2a} \pm \dfrac{\sqrt{b^2 - 4ac}}{2a} \\
-    \\
-    x &= \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a} \\
-\end{align*}
-
-:::
-
-:::::::::::::
-
-
 ::::::::::::::
 
 

@@ -7,48 +7,10 @@ gutter: 3
 
 ::::{grid-item-card}
 ---
-link: representasjoner/intro
+link: algebra/kvadratsetningene/teori
 link-type: doc
 ---
-**Representasjoner**
-
-^^^
-
-:::{figure} ./representasjoner/nullpunktsform/figurer/teori/algebraisk_uttrykk.svg
----
-width: 100%
-class: no-click, adaptive-figure
----
-:::
-
----
-
-:::{figure} ./representasjoner/nullpunktsform/figurer/teori/grafisk_representasjon.svg
----
-width: 100%
-class: no-click, adaptive-figure
----
-:::
-
-
----
-
-
-:::{figure} ./representasjoner/ekstremalform/figurer/teori/algebraisk_uttrykk.svg
----
-width: 100%
-class: no-click, adaptive-figure
----
-:::
-
-::::
-
-::::{grid-item-card}
----
-link: algebra/intro
-link-type: doc
----
-**Algebra**
+**Kvadratsetningene**
 
 ^^^
 
@@ -64,31 +26,62 @@ $$
 a^2 - b^2 = (a + b)(a - b)
 $$
 
-:::{include} ./algebra/omgjøring_av_andregradsuttrykk/figurer/teori/representasjoner_diagram.md
-:::
-
----
-
-
-
 ::::
 
 ::::{grid-item-card}
 ---
-link: likninger/intro
+link: representasjoner/standardform/teori
 link-type: doc
 ---
-**Likninger**
+**Standardform**
 
 ^^^
+$$
+f(x) = ax^2 + bx + c
+$$
 
+::::
+
+
+::::{grid-item-card}
+---
+link: representasjoner/ekstremalform/teori
+link-type: doc
+---
+**Ekstremalpunktsform**
+
+^^^
 $$
-x^2 - 4 = 0
+f(x) = a(x - x_0)^2 + y_0
 $$
 
+::::
+
+
+
+::::{grid-item-card}
+---
+link: representasjoner/nullpunktsform/teori
+link-type: doc
+---
+**Nullpunktsform**
+
+^^^
 $$
-x^2 + 2x = 0
+f(x) = a(x - x_1)(x - x_2)
 $$
+
+::::
+
+
+::::{grid-item-card}
+---
+link: likninger/teori
+link-type: doc
+---
+**Andregradslikninger**
+
+^^^
 
 :::{figure} ./likninger/abc_formelen/figurer/teori/abc-formel.svg
 ---
@@ -99,6 +92,68 @@ class: no-click, adaptive-figure
 
 
 ::::
+
+::::{grid-item-card}
+---
+link: ulikheter/teori
+link-type: doc
+---
+**Andregradsulikheter**
+
+^^^
+
+$$
+(x - 1)(x + 2) < 0
+$$
+
+
+$$
+x \in \langle \gets, -2\rangle \cup \langle 1, \gets \rangle
+$$
+
+::::
+
+
+::::{grid-item-card}
+---
+link: likningssystemer/teori
+link-type: doc
+---
+**Ikke-lineære likningssystemer**
+
+^^^
+
+\begin{align*}
+x^2 + 2x + 3y &= 2\\
+\\
+x - y &= 1
+\end{align*}
+
+
+::::
+
+
+::::{grid-item-card}
+---
+link: vekstfart/teori
+link-type: doc
+---
+**Vekstfart**
+
+^^^
+
+$$
+f'(x) = 2ax + b
+$$
+
+$$
+y - y_1 = a(x - x_1)
+$$
+
+
+::::
+
+
 
 :::::
 

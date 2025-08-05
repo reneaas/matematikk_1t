@@ -255,9 +255,20 @@ $$
 ---
 class: exercise
 ---
+
+:::{cas-popup}
+---
+layout: sidebar
+---
+:::
+
+
 Nedenfor vises grafen til en andregradsfunksjon $f$ og to tangenter som skjærer gjennom nullpunktene til $f$.
 * Den ene tangenten har stigningstall $4$.
 * Tangentene skjærer hverandre i $(-1, -8)$. 
+
+
+Bestem $f(x)$ og $f'(x)$.
 
 :::{figure} ./figurer/del_2/oppgave_3/figur.svg
 ---
@@ -266,9 +277,6 @@ class: no-click, adaptive-figure
 ---
 :::
 
-
-:::{cas-popup} 420 500
-:::
 
 
 :::::{admonition} Retteveiledning

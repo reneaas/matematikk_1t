@@ -6,8 +6,8 @@ import uuid
 
 class GGBDirective(SphinxDirective):
     # Require two arguments: width and height.
-    required_arguments = 2
-    optional_arguments = 0
+    required_arguments = 0
+    optional_arguments = 2
     has_content = False
 
     option_spec = {
@@ -23,11 +23,11 @@ class GGBDirective(SphinxDirective):
         # Convert arguments to integers (with defaults if conversion fails)
         try:
             width = int(self.arguments[0])
-        except ValueError:
+        except:
             width = 720
         try:
             height = int(self.arguments[1])
-        except ValueError:
+        except:
             height = 600
 
         material_id = self.options.get("material_id", None)

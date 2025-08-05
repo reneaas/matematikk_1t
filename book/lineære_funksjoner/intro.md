@@ -62,22 +62,23 @@ $$
 
 ::::{grid-item-card}
 ---
-link: likningssystemer/intro
+link: likningssystemer/teori
 link-type: doc
 ---
 **Likningssystemer**
 
 ^^^
 
-$$
-2x + 3y = 7 \quad \land \quad -x + y = 2
-$$
+\begin{align*}
+2x + 3y &= 7 \\
+-x + y &= 2
+\end{align*}
 
 ::::
 
 ::::{grid-item-card}
 ---
-link: ulikheter/intro
+link: ulikheter/teori
 link-type: doc
 ---
 **Ulikheter**

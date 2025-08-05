@@ -93,6 +93,85 @@ $$
 :::::::::::::::
 
 
+---
+
+Vi kan også løse dette med digitale hjelpemidler. La oss se på et eksempel med graftegneren i Geogebra.
+
+
+:::::::::::::::{example} Eksempel 2
+En andregradslikning er gitt ved 
+
+$$
+x^2 - 4x + 3 = -2x + 6
+$$
+
+Nedenfor ser du en gif som viser hvordan man løser likningen med grafvinduet i Geogebra. Vi trykker på {ggb-icon}`mode_intersect` (Skjæring mellom to objekt) etterfulgt av å trykke på hver graf for å finne skjæringspunktet.
+
+:::{figure} ./videoer/grafisk_løsning.gif
+---
+class: no-click, adaptive-figure
+width: 90%
+---
+:::
+
+Skjæringspunktene mellom de to grafene er $(3, 0)$ og $(-1, 8)$. Løsningen av likningen er $x$-koordinatene til skjæringspunktene som betyr at løsningen av likningen er 
+
+$$
+x = -1 \or x = 3
+$$
+
+
+
+:::::::::::::::
+
+---
+
+
+:::::::::::::::{exercise} Underveisoppgave 2
+En andregradslikning er gitt ved
+
+$$
+x^2 - 3x + 3 = 2x - 1
+$$
+
+Løs likningen grafisk. 
+
+:::{ggb}
+:::
+
+
+::::{answer}
+$$
+x = 1 \or x = 4. 
+$$
+::::
+
+
+::::{solution}
+Vi skriver inn venstresiden og høyresiden i av likningen i Geogebra for å tegne grafene til de to funksjonene. Deretter bruker vi "skjæring mellom to objekt" {cas-icon}`mode_intersect` for å finne skjæringspunktene mellom grafene. Se figuren nedenfor.
+
+:::{figure} ./figurer/underveisoppgaver/underveisoppgave_2/sol.png
+---
+class: no-click, adaptive-figure
+width: 90%
+---
+:::
+
+Skjæringspunktene mellom grafene er $(1, 1)$ og $(4, 7)$. Det er $x$-koordinatene til disse punktene som er løsningen av likningen. Dermed er løsningen av likningen
+
+$$
+x = 1 \or x = 4. 
+$$
+
+::::
+
+
+:::::::::::::::
+
+
+
+
+
 ## Algebraisk løsning 
 
 Når vi løser en andregradslikning algebraisk, så kan vi alltid faktorisere andregradspolynomet til nullpunktsform. Men her skal vi se at det også finnes noen spesielle andregradslikninger der vi kan faktorisere direkte. Vi skal også se at det finnes en helt generell formel for løsningen av en andregradslikning, som kalles for $abc$-formelen.
@@ -122,7 +201,7 @@ $$
 
 La oss nå se hvordan vi bruker produktregelen i praksis:
 
-:::::::::::::::{example} Eksempel 2
+:::::::::::::::{example} Eksempel 3
 Løs likningen
 
 $$
@@ -155,7 +234,7 @@ Altså står det egentlig bare $A \cdot B = 0$, som betyr at
 
 ---
 
-:::::::::::::::{exercise} Underveisoppgave 2
+:::::::::::::::{exercise} Underveisoppgave 3
 Løs likningen
 
 $$
@@ -196,7 +275,7 @@ $$
 
 Når et andregradspolynom mangler konstantleddet, kan vi faktorisere det direkte og bruke produktregelen: 
 
-:::::::::::::::{example} Eksempel 3
+:::::::::::::::{example} Eksempel 4
 Løs likningen
 
 $$
@@ -232,7 +311,7 @@ $$
 
 ---
 
-:::::::::::::::{exercise} Underveisoppgave 3
+:::::::::::::::{exercise} Underveisoppgave 4
 Løs likningen
 
 $$
@@ -274,7 +353,7 @@ $$
 Når et andregradspolynom mangler det lineære leddet $bx$, så kan vi bruke konjugatsetningen eller bare ta kvadratroten på hver side av likningen:
 
 
-:::::::::::::::{example} Eksempel 4
+:::::::::::::::{example} Eksempel 5
 Løs likningen
 
 $$
@@ -310,7 +389,7 @@ $$
 ---
 
 
-:::::::::::::::{exercise} Underveisoppgave 4
+:::::::::::::::{exercise} Underveisoppgave 5
 Løs likningen
 
 $$
@@ -384,7 +463,7 @@ class: no-click, adaptive-figure
 I oppgavene skal du få utlede $abc$-formelen. For nå, la oss se på hvordan vi bruker den. 
 
 
-:::::::::::::::{example} Eksempel 2
+:::::::::::::::{example} Eksempel 6
 
 Løs likningen
 
@@ -424,7 +503,7 @@ $$
 Nå kan du prøve deg!
 
 
-:::::::::::::::{exercise} Underveisoppgave 5
+:::::::::::::::{exercise} Underveisoppgave 6
 Bruk $abc$-formelen til å løse likningen 
 
 $$
@@ -477,7 +556,7 @@ $$
 x = \frac{-b \pm \sqrt{D}}{2a} \qder D = b^2 - 4ac.
 $$
 
-Vi kaller $D$ for **diskriminanten**. Ut ifra diskriminanten kan vi se hvor mange løsninger likninge har:
+Vi kaller $D$ for **diskriminanten**. Ut ifra diskriminanten kan vi se hvor mange løsninger likningen har:
 * Hvis $D < 0$, har likningen ingen løsninger.
 * Hvis $D = 0$, har likningen én løsning.
 * Hvis $D > 0$, har likningen to løsninger.
@@ -496,7 +575,7 @@ Hvis $D < 0$, har likningen ingen løsninger. Hvis $D = 0$ har likningen én lø
 
 ---
 
-:::::::::::::::{example} Eksempel 3
+:::::::::::::::{example} Eksempel 7
 Bestem hvor mange løsninger likningen nedenfor
 
 $$
@@ -523,7 +602,7 @@ Siden $D = 0$, har likningen én løsning.
 ---
 
 
-:::::::::::::::{exercise} Underveisoppgave 6
+:::::::::::::::{exercise} Underveisoppgave 7
 Bestem hvor mange løsninger likningen nedenfor har.
 
 
