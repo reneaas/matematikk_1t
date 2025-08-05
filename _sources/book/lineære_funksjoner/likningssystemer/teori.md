@@ -120,20 +120,28 @@ Bruk figuren til å løse likningssystemet.
 ---
 dropdown: 0
 ---
-Løsningen av likningssystemet er koordinatene til skjæringspunktet mellom de to linjene. Fra figuren ser vi at skjæringspunktet er $(2, -1)$. Dermed er løsningen av likningssystemet 
+Løsningen av likningssystemet er koordinatene til skjæringspunktet mellom de to linjene. Fra figuren ser vi at skjæringspunktet er $(2, -1)$. Vi kan derfor uttrykke løsningen som 
 
 $$
-(x, y) = (2, -1) \liff x = 2 \and y = -1.
+x = 2 \quad \underbrace{\land}_{\text{og samtidig}} \quad y = -1
 $$
+
+som vi bare skriver som 
+
+$$
+x = 2 \and y = -1
+$$
+
+Vi leser den siste linja der om at "$x = 2$ og samtidig er $y = -1$". 
 ::::
 
 :::::::::::::::
 
 ---
 
-Vi kan også tegne grafene selv med Geogebra og bestemme skjæringspunktet mellom dem. Dette skal du få prøve i Utforsk 1.
+I praksis må vi tegne grafene når vi skal løse likningssystemet grafisk. Da kan vi bruke graftegneren i Geogebra. La oss se på et eksempel:
 
-:::::::::::::::{explore} Utforsk 1
+:::::::::::::::{example} Eksempel 3
 Et likningssystem er gitt ved 
 
 \begin{align*}
@@ -141,56 +149,66 @@ Et likningssystem er gitt ved
     -3x + 2y &= -8
 \end{align*}
 
+Nedenfor ser du en gif som viser hvordan man løser likningen med grafvinduet i Geogebra. Vi trykker på {ggb-icon}`mode_intersect` (Skjæring mellom to objekt) etterfulgt av å trykke på hver graf for å finne skjæringspunktet.
 
-::::::::::::::{tab-set}
+:::{figure} ./videoer/grafisk_løsning.gif
 ---
-class: tabs-parts
----
-:::::::::::::{tab-item} a
-Skriv inn hver likning i skrivefeltet og trykk enter. Se videoen nedenfor for hjelp.
-
-:::{video} ./videoer/utforsk/utforsk_1/del_1.mp4
----
-width: 100%
-align: center
-class: no-click
+class: no-click, adaptive-figure
+width: 90%
 ---
 :::
 
+Skjæringspunktet mellom de to grafene er $(2, -1)$. Det betyr at løsningen av likningssystemet er 
 
-:::::::::::::
+$$
+x = 2 \and y = -1
+$$
 
 
-:::::::::::::{tab-item} b
-Videoen nedenfor viser hvordan man finner skjæringen mellom de to linjene som vises i grafikkfeltet.
 
-Se videoen og finn deretter skjæringspunktet mellom de to linjene.
 
-:::{video} ./videoer/utforsk/utforsk_1/del_2.mp4
+:::::::::::::::
+
+
 ---
-width: 100%
-align: center
-class: no-click
+
+:::::::::::::::{exercise} Underveisoppgave 1
+Bruk graftegneren i Geogebra til å løse likningssystemet
+
+\begin{align*}
+    3x + y &= 15 \\
+    4x + 2y &= 22
+\end{align*}
+
+
+:::{ggb}
+:::
+
+
+::::{answer}
+$$
+x = 4 \and y = 3
+$$
+::::
+
+::::{solution}
+Vi skriver inn likningene og bruker skjæring mellom to objekt {ggb-icon}`mode_intersect`. Se figuren nedenfor:
+
+
+:::{figure} ./figurer/underveisoppgaver/underveisoppgave_1/sol.png
+---
+class: no-click, adaptive-figure
+width: 90%
 ---
 :::
 
-:::::::::::::
+Skjæringspunktet mellom grafene er $(4, 3)$ som betyr at løsningen av likningssystemet er
 
+$$
+x = 4 \and y = 3
+$$
 
-:::::::::::::{tab-item} c
-Les av løsningen av likningssystemet fra punktet som vises i algebrafeltet (tekstfeltet). 
-:::::::::::::
-
-
-::::::::::::::
-
-
-:::{ggb} 720 800
----
-perspective: A/G
----
-:::
-
+::::
 
 :::::::::::::::
 
@@ -263,7 +281,7 @@ $$
 :::::::::::::::
 
 
-:::::::::::::::{exercise} Underveisoppgave 1
+:::::::::::::::{exercise} Underveisoppgave 2
 Løs likningssystemet nedenfor med Innsettingsmetoden
 
 \begin{align*}
@@ -342,7 +360,7 @@ $$
 
 ---
 
-:::::::::::::::{exercise} Underveisoppgave 2
+:::::::::::::::{exercise} Underveisoppgave 3
 Løs likningssystemet nedenfor med Addisjonsmetoden
 
 \begin{align*}
@@ -363,7 +381,7 @@ $$
 
 
 ### CAS
-Vi kan løse likningssystemer algebraisk ved hjelp av CAS og det er ganske likt som å løse en likning. Vi skriver inn likningene, markerer dem og trykker på <img src="/_static/icons/ggb/mode_solve.svg" class="inline-image"/>. 
+Vi kan løse likningssystemer algebraisk ved hjelp av CAS og det er ganske likt som å løse en likning. Vi skriver inn likningene, markerer dem og trykker på {ggb-icon}`mode_solve`.
 
 :::::::::::::::{explore} Utforsk 1
 I gif-en nedenfor vises det hvordan man løser et likningssystem med CAS.
@@ -375,8 +393,6 @@ class: no-click, adaptive-figure
 ---
 :::
 
-:::{cas-popup}
-:::
 
 
 
@@ -385,6 +401,15 @@ class: no-click, adaptive-figure
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
+
+:::{cas-popup}
+---
+layout: sidebar
+---
+:::
+
+
+
 Bruk CAS-vinduet til å løse det samme likningssystemet slik det er vist i gif-en ovenfor.
 
 
@@ -392,6 +417,15 @@ Bruk CAS-vinduet til å løse det samme likningssystemet slik det er vist i gif-
 
 
 :::::::::::::{tab-item} b
+
+:::{cas-popup}
+---
+layout: sidebar
+---
+:::
+
+
+
 Bruk CAS-vinduet til å løse likningssystemet gitt ved
 
 $$
@@ -405,6 +439,15 @@ $$
 
 
 :::::::::::::{tab-item} c
+:::{cas-popup}
+---
+layout: sidebar
+---
+:::
+
+Bruk CAS-vinduet til å løse likningssystemet gitt ved
+
+
 \begin{align*}
 3x + 2y &= 8 \\
 2x - 4y &= -2
@@ -420,11 +463,11 @@ $$
 
 Når vi skal løse likningssystemer med programmering, lager vi en systematisk oppskrift som vi ber et program gjennomføre – vi kaller dette en **algoritme**. En gjenganger vi kommer til å møte på er at vi systematisk prøver ut forskjellige verdier og sjekker om svaret er riktig. 
 
-I forbindelse med likningssystemer betyr det at vi systematisk prøver ut mange forskjellige punkter $(x, y)$ og sjekker om likningssystemet er oppfylt for hvert punkt ved å sette inn verdiene i likningene. Dette krever at vi klarer å lage et **grid** med punkter slik at for hver verdi av $x$, prøver vi ut mange verdier av $y$. Dette skal du se mer på i Utforsk 2. 
+I forbindelse med likningssystemer betyr det at vi systematisk prøver ut mange forskjellige punkter $(x, y)$ og sjekker om likningssystemet er oppfylt for hvert punkt ved å sette inn verdiene i likningene. Dette krever at vi klarer å lage et **grid** (rutenett) med punkter slik at for hver verdi av $x$, prøver vi ut mange verdier av $y$. Dette skal du se mer på i Utforsk 2. 
 
 
 :::::::::::::::{explore} Utforsk 2
-Nedenfor vises et program lager mange forskjellige punkter $(x, y)$ i et grid og skriver ut verdiene til punktene. 
+Nedenfor vises et program som lager mange forskjellige punkter $(x, y)$ i et grid og skriver ut verdiene til punktene. 
 
 ::::::::::::::{tab-set}
 ---
@@ -457,14 +500,18 @@ for x in range(0, 2):
 :::::::::::::
 
 :::::::::::::{tab-item} b
+
+:::{cas-popup}
+---
+layout: sidebar
+---
+:::
+
+
 Nedenfor vises et program som løser et likningssystem ved å prøve ut mange punkter $(x, y)$. 
 
 Bruk CAS-vinduet til å bestemme hva som skrives ut av programmet, og sjekk deretter svaret ditt ved å kjøre programmet.
 
-:::{cas-popup}
-:::
-
-<br>
 
 :::{interactive-code}
 ---

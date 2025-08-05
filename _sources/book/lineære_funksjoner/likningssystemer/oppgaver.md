@@ -91,8 +91,217 @@ width: 90%
 
 ---
 
-
 :::::::::::::::{exercise} Oppgave 2
+---
+level: 1
+---
+
+::::{hints} Hvordan løser jeg et likningssystem grafisk med Geogebra?
+Nedenfor vises en gif som viser hvordan man løser et likningssystem med grafvinduet i Geogebra:
+
+:::{figure} ./videoer/grafisk_løsning.gif
+---
+width: 90%
+class: no-click, adaptive-figure
+---
+:::
+
+::::
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+
+:::{ggb-popup}
+---
+layout: sidebar
+---
+:::
+
+Løs likningsystemet nedenfor grafisk. 
+
+\begin{align*}
+    2x + y &= -3 \\
+    -x + 3y &= 5
+\end{align*}
+
+
+
+::::{answer}
+$$
+x = -2 \and y = -1
+$$
+::::
+
+::::{solution}
+Vi skriver inn likningene og bruker skjæring mellom to objekt {ggb-icon}`mode_intersect` for å finne skjæringspunktene. Se figuren nedenfor.
+
+:::{figure} ./figurer/oppgaver/oppgave_2/a.png
+---
+class: no-click, adaptive-figure
+width: 90%
+---
+:::
+
+Skjæringspunktet mellom de to grafene er $(-2, -1)$ som betyr at løsningen av likningssystemet er
+
+$$
+x = -2 \and y = -1
+$$
+
+
+::::
+
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+:::{ggb-popup}
+---
+layout: sidebar
+---
+:::
+
+Løs likningsystemet nedenfor grafisk. 
+
+\begin{align*}
+-x + y &= -1 \\
+x + y &= 3
+\end{align*}
+
+
+::::{answer}
+$$
+x = 2 \and y = 1
+$$
+::::
+
+
+::::{solution}
+Vi skriver inn likningene og trykker på skjæring mellom to objekt {ggb-icon}`mode_intersect` for å finne skjæringspunktene. Se figuren nedenfor.
+
+:::{figure} ./figurer/oppgaver/oppgave_2/b.png
+---
+class: no-click, adaptive-figure
+width: 90%
+---
+:::
+
+Vi ser at skjæringspunktet mellom grafene er $(2, 1)$ som betyr at løsningen av likningssystemet er
+
+$$
+x = 2 \and y = 1
+$$
+
+::::
+
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+
+:::{ggb-popup}
+---
+layout: sidebar
+---
+:::
+
+
+
+Løs likningsystemet nedenfor grafisk. 
+
+\begin{align*}
+2x - y &= 0 \\
+3x - y &= 4
+\end{align*}
+
+::::{answer}
+$$
+x = 4 \and y = 8
+$$
+::::
+
+
+::::{solution}
+Vi skriver inn likningene og trykker på skjæring mellom to objekt {ggb-icon}`mode_intersect` for å finne skjæringspunktene. Se figuren nedenfor.
+
+:::{figure} ./figurer/oppgaver/oppgave_2/c.png
+---
+class: no-click, adaptive-figure
+width: 90%
+---
+:::
+
+Skjæringspunktet mellom grafene er $(4, 8)$ som betyr at løsningen av likningssystemet er
+
+$$
+x = 4 \and y = 8
+$$
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} d
+
+:::{ggb-popup}
+---
+layout: sidebar
+---
+:::
+
+
+Løs likningsystemet nedenfor grafisk. 
+
+\begin{align*}
+    -2x + y &= -5 \\
+    x - y &= -3
+\end{align*}
+
+
+::::{answer}
+$$
+x = 8 \and y = 11
+$$
+::::
+
+
+::::{solution}
+Vi skriver inn likningene og trykker på skjæring mellom to objekt {ggb-icon}`mode_intersect` for å finne skjæringspunktene. Se figuren nedenfor.
+
+:::{figure} ./figurer/oppgaver/oppgave_2/d.png
+---
+class: no-click, adaptive-figure
+width: 90%
+---
+:::
+
+Skjæringspunktet mellom grafene er $(8, 11)$ som betyr at løsningen av likningssystemet er
+
+$$
+x = 8 \and y = 11
+$$
+
+::::
+
+:::::::::::::
+
+
+
+::::::::::::::
+:::::::::::::::
+
+
+---
+
+
+:::::::::::::::{exercise} Oppgave 3
 ---
 level: 1
 ---
@@ -138,7 +347,7 @@ class: tabs-parts
 
 ---
 
-:::::::::::::::{exercise} Oppgave 3
+:::::::::::::::{exercise} Oppgave 4
 ---
 level: 1
 ---
@@ -197,7 +406,7 @@ Her må du gange én av likningene med et tall før du plusser eller trekker den
 ---
 
 
-:::::::::::::::{exercise} Oppgave 4
+:::::::::::::::{exercise} Oppgave 5
 ---
 level: 2
 ---
@@ -219,7 +428,7 @@ class: tabs-parts
     2x + y &= -1
 \end{align*}
 
-:::{clickable-figure} ./figurer/oppgaver/oppgave_4/a/merged_figure.svg
+:::{clickable-figure} ./figurer/oppgaver/oppgave_5/a/merged_figure.svg
 ---
 width: 100%
 ---
@@ -236,7 +445,7 @@ x + 2y &= 4 \\
 -x + \dfrac{1}{2}y &= -\dfrac{3}{2}
 \end{align*}
 
-:::{clickable-figure} ./figurer/oppgaver/oppgave_4/b/merged_figure.svg
+:::{clickable-figure} ./figurer/oppgaver/oppgave_5/b/merged_figure.svg
 ---
 width: 100%
 ---
@@ -252,7 +461,7 @@ width: 100%
 
 ---
 
-:::::::::::::::{exercise} Oppgave 5
+:::::::::::::::{exercise} Oppgave 6
 ---
 level: 2
 ---
@@ -351,7 +560,7 @@ layout: sidebar
 ---
 
 
-:::::::::::::::{exercise} Oppgave 6 
+:::::::::::::::{exercise} Oppgave 7
 ---
 level: 2
 ---
@@ -455,7 +664,7 @@ for x in range(-10, 11):
 
 ---
 
-:::::::::::::::{exercise} Oppgave 7
+:::::::::::::::{exercise} Oppgave 8
 ---
 level: 2
 ---
@@ -559,7 +768,7 @@ for x in range(????):
 
 ---
 
-:::::::::::::::{exercise} Oppgave 8
+:::::::::::::::{exercise} Oppgave 9
 ---
 level: 3
 ---
@@ -635,7 +844,7 @@ class: tabs-parts
 ---
 
 
-:::::::::::::::{exercise} Oppgave 9
+:::::::::::::::{exercise} Oppgave 10
 ---
 level: 3
 ---
@@ -648,7 +857,11 @@ class: tabs-parts
 :::::::::::::{tab-item} a
 
 :::{cas-popup}
+---
+layout: sidebar
+---
 :::
+
 
 En bygård har 40 leiligheter med til sammen 90 rom. 
 
@@ -659,7 +872,11 @@ Hvor mange leiligheter har 2 rom og hvor mange har 3 rom?
 :::::::::::::{tab-item} b
 
 :::{cas-popup}
+---
+layout: sidebar
+---
 :::
+
 
 
 
@@ -674,7 +891,11 @@ Hvor mange små og hvor mange store sekker solgte butikken denne dagen?
 :::::::::::::{tab-item} c
 
 :::{cas-popup}
+---
+layout: sidebar
+---
 :::
+
 
 
 En kino solgte 250 billetter til en forestilling. Barnebilletten koster 90 kr, og voksenbilletten koster 140 kr. Den totale billettinntekten var 27 000 kr.
@@ -687,7 +908,11 @@ Hvor mange barnebilletter og hvor mange voksenbilletter ble solgt?
 :::::::::::::{tab-item} d
 
 :::{cas-popup}
+---
+layout: sidebar
+---
 :::
+
 
 Et skoletrinn skal på tur og bestiller busser. En stor buss har plass til 60 elever, og en liten buss har plass til 24 elever. De bestiller totalt 5 busser, og det er akkurat plass til hele trinnet på 228 elever.
 
@@ -704,7 +929,7 @@ Hvor mange store og hvor mange små busser ble bestilt?
 
 ---
 
-:::::::::::::::{exercise} Oppgave 10
+:::::::::::::::{exercise} Oppgave 11
 ---
 level: 3
 ---

@@ -12,7 +12,7 @@ $$
 ax + b = cx + d
 $$
 
-der uttrykkene på venstre og høyre side kan tolkes som lineære funksjoner. Vi har tre mulige strategier vi kan bruke for å angripe disse likningene generelt:
+der uttrykkene på venstre og høyre side kan tolkes som lineære funksjoner. Vi har tre mulige strategier vi kan bruke for å angripe disse likningene:
 1. **Grafisk løsning**: Vi bruker grafene til funksjonene og leser av løsningen. 
 2. **Algebraisk løsning**: Vi løser likningen ved å bruke algebraiske metoder der målet er å få $x$ alene. 
 3. **Løsning med programmering**: Vi skriver et program som finner løsningen ved å bruke ulike strategier for å finne en tallverdi for $x$ slik at likningen er oppfylt.
@@ -66,60 +66,79 @@ $$
 
 ---
 
-:::{margin} Nullpunkter og likninger
-Likningen $ax + b = 0$ svarer også til nullpunktet til funksjonen $f(x) = ax + b$. 
-:::
 
-Men det er ikke alltid vi har en likning med et uttrykk som svar til en lineær funksjon på hver side av likningen. Noen ganger ønsker vi å løse likninger av typen
-1. $ax + b = 0$. Da ser vi etter hvor grafen til funksjonen $f(x) = ax + b$ skjærer $x$-aksen.
-2. $ax + b = k$. Da ser vi etter hvor grafen til $f(x) = ax + b$ skjærer en horisontal linje $y = k$.
+Typisk må vi faktisk tegne grafen når vi skal løse likningen. Da kan vi bruke graftegneren i Geogebra og løse likningen grafisk. La oss se på et eksempel:
+
+
 
 
 :::::::::::::::{example} Eksempel 2
-Nedenfor vises grafen til en lineær funksjon $f$ gitt ved 
+En likning er gitt ved 
 
 $$
-f(x) = -2x + 4. 
+3x - 1 = -4
 $$
 
-:::{figure} ./figurer/eksempler/eksempel_2/figur.svg
+Nedenfor ser du en gif som viser hvordan man løser likningen med grafvinduet i Geogebra. Vi trykker på {ggb-icon}`mode_intersect` (Skjæring mellom to objekt) etterfulgt av å trykke på hver graf for å finne skjæringspunktet.
+
+:::{figure} ./videoer/grafisk_løsning.gif
 ---
-width: 80%
 class: no-click, adaptive-figure
+width: 100%
 ---
 :::
 
-Bruk grafen til å løse likningene 
+Fra gif-en ser vi at skjæringspunktet mellom grafen til $y = 3x - 1$ og linja $y = -4$ er $(-1, -4)$. Det er $x$-koordinaten til skjæringspunktet som er løsningen av likningen, så løsningen er
 
 $$
--2x + 4 = 0 \quad \text{og} \quad -2x + 4 = 2.
+x = -1
 $$
+
+:::::::::::::::
+
+
+---
+
+
+:::::::::::::::{exercise} Underveisoppgave 1
+
+Løs likningen nedenfor grafisk. 
+
+$$
+x - 1 = -x + 3
+$$
+
+:::{ggb}
+:::
+
+
+::::{answer}
+$$
+x = 2.
+$$
+::::
 
 ::::{solution}
+Vi tegner grafene til funksjonene på venstre og høyre side av likningen og finner skjæringspunktet mellom dem ved å bruke "skjæring mellom to objekt" {ggb-icon}`mode_intersect`. Se figuren nedenfor:
+
+
+:::{figure} ./figurer/underveisoppgaver/underveisoppgave_2/sol.png
 ---
-dropdown: 0
+class: no-click, adaptive-figure
+width: 100%
 ---
-For å løse likningen 
+:::
+
+Vi ser at skjæringspunktet er $(2, 1)$. Det er $x$-koordinaten til skjæringspunktet som er løsningen av likningen, så løsningen er
 
 $$
--2x + 4 = 0
-$$
-
-ser vi etter hvor grafen til $f(x) = -2x + 4$ skjærer $x$-aksen. Vi ser at grafen skjærer $x$-aksen i punktet $(2, 0)$ som betyr at løsningen av likningen er 
-
-$$
-x = 2. 
-$$
-
-For å løse likningen $-2x + 4 = 2$, ser vi etter hvor grafen til $f$ skjærer en horisontal linje $y = 2$. Dette skjer i punktet $(1, 2)$ som betyr at løsningen av likningen er
-
-$$
-x = 1. 
+x = 2.
 $$
 ::::
 
 
 :::::::::::::::
+
 
 
 Grafisk løsning gir oss en visuell måte å komme fram til løsningen av en likning, men den har en klar begrensning. Ved mindre vi kan lese av eksakte skjæringspunkter, vil vi i beste fall kunne finne en tilnærmet verdi for løsningen av likningen. I slike tilfeller trenger vi en annen strategi hvis vi skal komme fram til nøyaktige svar, og det er der algebraisk løsning kommer inn i bildet.
@@ -195,22 +214,36 @@ class: no-click, adaptive-figure
 :::
 
 
-:::{cas-popup}
-:::
-
-
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
+
+:::{cas-popup}
+---
+layout: sidebar
+---
+:::
+
+
+
 Bruk CAS-vinduet til å løse likningen akkurat slik det vises i *gif-en* ovenfor. 
 
 
 :::::::::::::
 
 :::::::::::::{tab-item} b
-Bruk CAS-vinduet til å løse likningne
+
+:::{cas-popup}
+---
+layout: sidebar
+---
+:::
+
+
+
+Bruk CAS-vinduet til å løse likningen 
 
 $$
 4x - 6 = x + 3
@@ -220,6 +253,14 @@ $$
 
 
 :::::::::::::{tab-item} c
+
+:::{cas-popup}
+---
+layout: sidebar
+---
+:::
+
+
 Bruk CAS-vinduet til å løse likningen 
 
 $$
