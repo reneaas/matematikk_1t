@@ -5,113 +5,56 @@ import numpy as np
 def main(dirname, save):
     #
     # Define functions
-    k = 2
-
     def f(x):
-        return -x + k
+        return -(x**2) + 3 * x + 1
 
-    def g(x):
-        return x + k
+    def make_tangent_fn(f, a, h=1e-5):
+        slope = (f(a + h) - f(a - h)) / (2 * h)
 
-    def rf(x):
-        return np.array((x, f(x)))
+        def tangent(x):
+            return f(a) + slope * (x - a)
 
-    def rg(x):
-        return np.array((x, g(x)))
+        return tangent
 
     # List of functions and their labels.
-    functions = [f, g]
+    functions = [f]
 
     fig, ax = plotmath.plot(
         functions=functions,
-        fn_labels=True,
-        xmin=-(k + 1),
-        xmax=k + 1,
-        ymin=-1,
-        ymax=k + 1,
+        fn_labels=["$f$"],
+        xmin=-1,
+        xmax=4.5,
+        ymin=-4,
+        ymax=6,
         ticks=False,
-        xstep=1,
-        ystep=1,
-        grid=True,
-        lw=2.5,
-        alpha=None,
-        domain=False,
     )
 
-    A = (-k, 0)
-    B = (k, 0)
-    C = (0, k)
-
-    dx = dy = 0.2
-    ds = np.sqrt(dx**2 + dy**2)
-
-    angle1 = 45 + 180
-    angle2 = angle1 + 90
-    point1 = rf(C[0] + dx)
-    vx, vy = point1
-    v = point1 - np.array(C)
-    vx, vy = v
-
-    point2 = point1 - np.array((-vy, vx))
-
-    ax.plot(*zip(point1, point2), "k-", lw=1.5)
-
-    point1 = rg(C[0] - dx)
-    vx, vy = point1
-    v = point1 - np.array(C)
-    vx, vy = v
-    point2 = point1 - np.array((vy, -vx))
-    ax.plot(*zip(point1, point2), "k-", lw=1.5)
-
-    p = 0.5
-    A = (-p * k, 0)
-    B = (p * k, 0)
-    C = (p * k, f(p * k))
-    D = (-p * k, g(-p * k))
-
-    plotmath.plot_polygon(
-        A,
-        B,
-        C,
-        D,
-        ax=ax,
-        alpha=0.7,
-        color=plotmath.COLORS.get("skyblue"),
-    )
-
-    A = (-k, 0)
-    B = (k, 0)
-    C = (0, k)
-
-    ax.plot(*A, "ko", markersize=8)
-    ax.plot(*B, "ko", markersize=8)
-    ax.plot(*C, "ko", markersize=8)
-
+    x = np.linspace(-10, 10, 1024)
+    x1 = 1
+    tangent1 = make_tangent_fn(f=f, a=x1)
+    ax.plot(x, tangent1(x), color="blue", linestyle="-", lw=1)
+    ax.plot(x1, f(x1), "ko", markersize=10, alpha=0.8)
     ax.text(
-        A[0] - 0.1,
-        A[1] + 0.1,
-        r"$A$",
-        fontsize=20,
-        color="black",
+        x=x1,
+        y=f(x1) + 0.1,
+        s="$(1, f(1))$",
+        fontsize=16,
+        va="bottom",
+        ha="right",
     )
 
+    x2 = 3
+    tangent2 = make_tangent_fn(f=f, a=x2)
+    ax.plot(x, tangent2(x), color="blue", linestyle="-", lw=1)
+    ax.plot(x2, f(x2), "ko", markersize=10, alpha=0.8)
     ax.text(
-        B[0] + 0.1,
-        B[1] + 0.1,
-        r"$B$",
-        fontsize=20,
-        color="black",
+        x=x2 + 0.1,
+        y=f(x2),
+        s="$(3, f(3))$",
+        fontsize=16,
+        va="bottom",
+        ha="left",
     )
-
-    ax.text(
-        C[0] + 0.1,
-        C[1] - 0.05,
-        r"$C$",
-        fontsize=20,
-        color="black",
-    )
-
-    # ax.axis("equal")
 
     # NOTE: Select an appropriate `dirname` to save the figure.
     # The directory `dirname` will be created automatically if it does not exist already.

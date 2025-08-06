@@ -6,10 +6,10 @@ def main(dirname, save):
     #
     # Define functions
     def f(x):
-        return (x + 2) ** 2 + 1
+        return -((x - 1) ** 2) + 4
 
     def f_derivative(x):
-        return 2 * (x + 2)
+        return -2 * (x - 1)
 
     def make_tangent_fn(f, x0):
         slope = f_derivative(x0)
@@ -24,10 +24,10 @@ def main(dirname, save):
     # List of functions and their labels.
     functions = [f]
 
-    xmin = -7
-    xmax = 4
-    ymin = -4
-    ymax = 16
+    xmin = -3
+    xmax = 5
+    ymin = -3
+    ymax = 7
     fig, ax = plotmath.plot(
         functions=functions,
         fn_labels=True,
@@ -39,53 +39,43 @@ def main(dirname, save):
         grid=False,
     )
 
-    x1 = -3
-    x2 = 1
+    x1 = 0
 
     tangent1 = make_tangent_fn(f, x1)
-    tangent2 = make_tangent_fn(f, x2)
 
     x = np.linspace(xmin, xmax, 1024)
     ax.plot(
         x, tangent1(x), linestyle="-", color=plotmath.COLORS.get("red"), alpha=1, lw=2.5
     )
-    ax.plot(
-        x,
-        tangent2(x),
-        linestyle="-",
-        color="gray",
-        alpha=1,
-        lw=2.5,
-    )
 
-    ax.plot(x1, f(x1), "ko", markersize=8, alpha=0.7)
-    ax.plot(x2, f(x2), "ko", markersize=8, alpha=0.7)
+    ax.plot(x1, f(x1), "ko", markersize=10, alpha=0.7)
 
     ax.text(
-        x1,
-        f(x1) + 0.5,
-        f"$(x_1, {f(x1)})$",
-        fontsize=18,
-        verticalalignment="bottom",
-        horizontalalignment="left",
-    )
-
-    ax.text(
-        x=x1 - 3,
-        y=f(x1) - 1,
-        s="$y = -2x - 4$",
+        x=-2,
+        y=3,
+        s="$y = 2x + 3$",
         fontsize=18,
         color="red",
     )
 
+    ax.plot(3, 0, "ko", markersize=10, alpha=0.7)
     ax.text(
-        x2 + 0.3,
-        f(x2),
-        f"$({x2}, f({x2}))$",
+        x=3,
+        y=0.8,
+        s="$(3, 0)$",
         fontsize=18,
-        verticalalignment="center",
+        verticalalignment="top",
         horizontalalignment="left",
     )
+
+    # ax.text(
+    #     x1,
+    #     f(x1) + 0.2,
+    #     f"$({x1}, f({x1}))$",
+    #     fontsize=18,
+    #     verticalalignment="bottom",
+    #     horizontalalignment="left",
+    # )
 
     # NOTE: Select an appropriate `dirname` to save the figure.
     # The directory `dirname` will be created automatically if it does not exist already.

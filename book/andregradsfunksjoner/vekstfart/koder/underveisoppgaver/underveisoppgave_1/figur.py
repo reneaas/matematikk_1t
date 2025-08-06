@@ -1,21 +1,11 @@
 import plotmath
-import numpy as np
 
 
 def main(dirname, save):
     #
     # Define functions
     def f(x):
-        return -(x**2) + 5 * x + 14
-
-    def make_tangent_fn(f, a):
-        df = f(a + 1e-5) - f(a - 1e-5)
-        dfdx = df / (2 * 1e-5)
-
-        def tangent_fn(x):
-            return dfdx * (x - a) + f(a)
-
-        return tangent_fn
+        return -((x + 1) ** 2) + 4
 
     # List of functions and their labels.
     functions = [f]
@@ -24,25 +14,17 @@ def main(dirname, save):
         functions=functions,
         fn_labels=True,
         xmin=-6,
-        xmax=12,
-        ymin=-36,
-        ymax=48,
-        ticks=False,
+        xmax=6,
+        ymin=-6,
+        ymax=6,
+        ticks=True,
+        xstep=1,
+        ystep=1,
+        grid=True,
+        lw=2.5,
+        alpha=None,
+        domain=False,
     )
-
-    x0 = -2
-    tangent_fn = make_tangent_fn(f, x0)
-    x = np.linspace(-24, 24, 1024)
-    y = tangent_fn(x)
-    ax.plot(x, y, color=plotmath.COLORS.get("red"), lw=2)
-    ax.plot(x0, 0, "ko", markersize=10, alpha=0.8)
-
-    x0 = 8
-    tangent_fn = make_tangent_fn(f, x0)
-    x = np.linspace(-24, 24, 1024)
-    y = tangent_fn(x)
-    ax.plot(x, y, color=plotmath.COLORS.get("red"), lw=2)
-    ax.plot(x0, f(x0), "ko", markersize=10, alpha=0.8)
 
     # NOTE: Select an appropriate `dirname` to save the figure.
     # The directory `dirname` will be created automatically if it does not exist already.

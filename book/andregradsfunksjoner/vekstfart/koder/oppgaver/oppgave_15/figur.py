@@ -6,50 +6,69 @@ def main(dirname, save):
     #
     # Define functions
     def f(x):
-        return -(x**2) + 5 * x + 14
+        return ((x + 1) ** 2) - 4
 
-    def make_tangent_fn(f, a):
-        df = f(a + 1e-5) - f(a - 1e-5)
-        dfdx = df / (2 * 1e-5)
+    def f_derivative(x):
+        return 2 * (x + 1)
 
-        def tangent_fn(x):
-            return dfdx * (x - a) + f(a)
+    def make_tangent_fn(f, x0):
+        slope = f_derivative(x0)
+        intercept = f(x0) - slope * x0
+        print(f"y = {slope}x + {intercept}")
 
-        return tangent_fn
+        def tangent(x):
+            return f(x0) + f_derivative(x0) * (x - x0)
+
+        return tangent
 
     # List of functions and their labels.
     functions = [f]
 
+    xmin = -6
+    xmax = 4
+    ymin = -10
+    ymax = 6
     fig, ax = plotmath.plot(
         functions=functions,
         fn_labels=True,
-        xmin=-6,
-        xmax=12,
-        ymin=-36,
-        ymax=48,
+        xmin=xmin,
+        xmax=xmax,
+        ymin=ymin,
+        ymax=ymax,
         ticks=False,
+        grid=False,
     )
 
-    x0 = -2
-    tangent_fn = make_tangent_fn(f, x0)
-    x = np.linspace(-24, 24, 1024)
-    y = tangent_fn(x)
-    ax.plot(x, y, color=plotmath.COLORS.get("red"), lw=2)
-    ax.plot(x0, 0, "ko", markersize=10, alpha=0.8)
+    x1 = -3
+    x2 = 1
 
-    x0 = 8
-    tangent_fn = make_tangent_fn(f, x0)
-    x = np.linspace(-24, 24, 1024)
-    y = tangent_fn(x)
-    ax.plot(x, y, color=plotmath.COLORS.get("red"), lw=2)
-    ax.plot(x0, f(x0), "ko", markersize=10, alpha=0.8)
+    tangent1 = make_tangent_fn(f, x1)
+    tangent2 = make_tangent_fn(f, x2)
+
+    x = np.linspace(xmin, xmax, 1024)
+    ax.plot(
+        x, tangent1(x), linestyle="-", color=plotmath.COLORS.get("red"), alpha=1, lw=1.5
+    )
+    ax.plot(
+        x,
+        tangent2(x),
+        linestyle="-",
+        color=plotmath.COLORS.get("orange"),
+        alpha=1,
+        lw=1.5,
+    )
+
+    ax.plot(x1, f(x1), "ko", markersize=8, alpha=0.7)
+    ax.plot(x2, f(x2), "ko", markersize=8, alpha=0.7)
 
     # NOTE: Select an appropriate `dirname` to save the figure.
     # The directory `dirname` will be created automatically if it does not exist already.
     if save:
         fname = __file__.split("/")[-1].replace(".py", ".svg")
         plotmath.savefig(
-            dirname=dirname, fname=fname
+            dirname=dirname,
+            fname=fname,
+            transparent=True,
         )  # Lagrer figuren i `dirname`-directory
 
     if not save:
