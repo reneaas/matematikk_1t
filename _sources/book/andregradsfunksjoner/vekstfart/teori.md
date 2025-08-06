@@ -78,6 +78,42 @@ Altså øker funksjonsverdien til $f$ i gjennomsnitt med $2$ når vi øker $x$ m
 
 :::::::::::::::
 
+---
+
+
+:::::::::::::::{exercise} Underveisoppgave 1
+En andregradsfunksjon $f$ er vist i figuren nedenfor.
+
+Bestem den gjennomsnittlige vekstfarten til $f$ i intervallet $[-2, 1]$.
+
+:::{figure} ./figurer/underveisoppgaver/underveisoppgave_1/figur.svg
+---
+class: no-click, adaptive-figure
+width: 80%
+---
+:::
+
+
+::::{answer}
+$$
+\dfrac{f(1) - f(-2)}{1 - (-2)} = -1
+$$
+::::
+
+
+::::{solution}
+Vi ser fra grafen til $f$ at $f(-2) = 3$ og $f(1) = 0$. Den gjennomsnittlige vekstfarten i intervallet $[-2, 1]$ er da gitt ved
+
+$$
+\dfrac{f(1) - f(-2)}{1 - (-2)} = \dfrac{0 - 3}{1 + 2} = \dfrac{-3}{3} = -1
+$$
+
+
+::::
+
+
+:::::::::::::::
+
 
 
 ## Momentan vekstfart
