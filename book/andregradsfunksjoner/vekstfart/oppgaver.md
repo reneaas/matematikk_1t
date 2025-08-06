@@ -1674,10 +1674,77 @@ width: 80%
 ---
 :::
 
+::::{answer}
+$$
+f(x) = x^2 + 4x + 5 \qog f'(x) = 2x + 4.
+$$
+::::
+
+
+::::{solution}
+Vi velger å skrive $f(x)$ på standardform:
+
+$$
+f(x) = ax^2 + bx + c.
+$$
+
+Vi kan bestemme $x$-koordinaten til punktet tangenten som går gjennom $(x_1, 2)$ treffer ved å sette likningen til tangenten lik $2$ og løse for $x$:
+
+$$
+-2x - 4 = 2 \liff -2x = 6 \liff  x = -3.
+$$
+
+Altså går tangenten gjennom punktet $(-3, 2)$ på grafen til $f$. Det betyr at $f(-3) = 2$. 
+
+Tangenten som går gjennom $(-3, 2)$ har stigningstall $-2$ som betyr at $f'(-3) = -2$. 
+
+Tangenten i $(1, f(1))$ har stigningstall $6$ som betyr at $f'(1) = 6$.
+
+Dermed har vi tre likninger:
+
+\begin{align*}
+    f(-3) &= 2 && \text{Punktet $(-3, 2)$ den ene tangenten går gjennom}\\
+    \\
+    f'(-3) &= -2 && \text{Stigningstall til tangenten i $(-3, 2)$}\\
+    \\
+    f'(1) &= 6 && \text{Stigningstall til tangenten i $(1, f(1))$}\\
+\end{align*}
+
+Vi bruker CAS til å bestemme $a$, $b$ og $c$ ved å løse likningssystemet:
+
+:::{figure} ./figurer/oppgaver/oppgave_12/sol.png
+---
+class: no-click, adaptive-figure
+width: 60%
+---
+:::
+
+Fra utskriften ser vi at
+
+$$
+a = 1 \and b = 4 \and c = 5.
+$$
+
+Dermed er 
+
+$$
+f(x) = x^2 + 4x + 5 \qog f'(x) = 2x + 4.
+$$
+
+
+::::
+
 :::::::::::::::
 
 
 ---
+
+
+:::{margin} Oppgave 13
+Prøv å løse oppgaven uten å bruke CAS!
+
+Husk hva slags funksjon $f'$ er og at du kan velge representasjonsform selv! 
+:::
 
 :::::::::::::::{exercise} Oppgave 13
 ---
@@ -1701,10 +1768,51 @@ class: no-click, adaptive-figure
 :::
 
 
+::::{answer}
+$$
+f'(x) = -2x + 5
+$$
+::::
+
+
+::::{solution}
+Vi vet at $f'(x)$ er en lineær funksjon. Vi kan velge å skrive $f'(x)$ på ettpunktsform:
+
+$$
+f'(x) = a(x - x_0) + y_0
+$$
+
+Så må vi bestemme stigningstallet $a$ og ett punkt $(x_0, y_0)$ på grafen til $f'$. 
+
+Tangenten som går gjennom punktet $(-2, 0)$ på grafen til $f$ har likningen $y = 9x + 18$. Det betyr at $x$-koordinaten til punktet er $x = -2$ og $y$-koordinaten til $f'$ er $y = 9$ siden det er stigningstallet til tangenten. Dermed er punktet $(-2, 9)$ på grafen til $f'$.
+
+Tangenten som går gjennom punktet $(8, -10)$ på grafen til $f$ har likningen $y = -11x + 78$. Det betyr at $x$-koordinaten til punktet er $x = 8$ og $y$-koordinaten til $f'$ er $y = -11$. Dermed er punktet $(8, -11)$ på grafen til $f'$.
+
+Vi har nå to punkter på grafen til $f'$, så vi kan bestemme stigningstallet $a$:
+
+$$
+a = \frac{y_2 - y_1}{x_2 - x_1} = \frac{-11 - 9}{8 - (-2)} = \frac{-20}{10} = -2.
+$$
+
+Så kan vi bruke ett av punktene til å bestemme $f'(x)$. Vi velger $(-2, 9)$: 
+
+$$
+f'(x) = -2(x - (-2)) + 9 = -2(x + 2) + 9 = -2x - 4 + 9 = -2x + 5.
+$$
+
+
+::::
+
+
 :::::::::::::::
 
 ---
 
+:::{margin} Oppgave 14
+Prøv å løse oppgaven uten å bruke CAS!
+
+Husk hva slags funksjon $f'$ er og at du kan velge representasjonsform selv! 
+:::
 
 :::::::::::::::{exercise} Oppgave 14
 ---
@@ -1732,12 +1840,6 @@ class: tabs-parts
 ---
 :::::::::::::{tab-item} a
 
-:::{cas-popup}
----
-layout: sidebar
----
-:::
-
 
 Grafen til en andregradsfunksjon $f$ er vist i figuren nedenfor.
 
@@ -1749,6 +1851,38 @@ To tangenter til grafen til $f$ går gjennom punktene $(1, f(1))$ og $(3, f(3))$
 
 Bestem $f'(x)$. 
 
+
+::::{answer}
+$$
+f'(x) = -2x + 3.
+$$
+::::
+
+
+::::{solution}
+Vi vet at $f'(x)$ er en lineær funksjon. Vi kan velge å skrive $f'(x)$ på ettpunktsform:
+
+$$
+f'(x) = a(x - x_0) + y_0
+$$
+
+Så må vi bestemme stigningstallet $a$ og ett punkt $(x_0, y_0)$ på grafen til $f'$. Vi vet at tangenten som går gjennom punktet $(1, f(1))$ har stigningstall $1$, så punktet $(1, 1)$ ligger på grafen til $f'$.
+
+Tangenten som går gjennom punktet $(3, f(3))$ har stigningstall $-3$, så punktet $(3, -3)$ ligger på grafen til $f'$.
+
+Vi har nå to punkter på grafen til $f'$, så vi kan bestemme stigningstallet $a$:
+
+$$
+a = \frac{y_2 - y_1}{x_2 - x_1} = \frac{-3 - 1}{3 - 1} = \frac{-4}{2} = -2.
+$$
+
+Så kan vi bruke ett av punktene til å bestemme $f'(x)$. Vi velger $(1, 1)$:
+
+$$
+f'(x) = -2(x - 1) + 1 = -2x + 2 + 1 = -2x + 3.
+$$
+::::
+
 :::::::::::::
 
 
@@ -1756,6 +1890,62 @@ Bestem $f'(x)$.
 Tangentene skjærer hverandre i punktet $(2, 4)$. 
 
 Bestem $f(x)$. 
+
+
+::::{answer}
+$$
+f(x) = -x^2 + 3x + 1.
+$$
+::::
+
+::::{solution}
+Tangenten i $(1, f(1))$ har stigningstall $1$. Siden den skjærer den andre tangenten i $(2, 4)$, vil $y$-koordinaten til tangenten være $f(1) = 3$ siden den stiger med $1$ fra $x = 1$ til $x = 2$.
+
+Vi vet allerede at 
+
+$$
+f'(x) = -2x + 3.
+$$
+
+Vi vet også sammenhengen mellom $f(x)$ og $f'(x)$ er gitt ved 
+
+$$
+f(x) = ax^2 + bx + c \limplies f'(x) = 2ax + b.
+$$
+
+Det betyr at 
+
+$$
+2a = -2 \and b = 3 \liff a = -1 \and b = 3.
+$$
+
+Altså er $f(x)$ på formen
+
+$$
+f(x) = -x^2 + 3x + c. 
+$$
+
+For å bestemme $x$, setter vi opp en likningen med $f(1) = 3$:
+
+$$
+f(1) = 3 \liff -1 \cdot 1^2 + 3 \cdot 1 + c = 3
+$$
+
+som vi forenkler til 
+
+$$
+ -1 + 3 + c = 3 \liff c = 1.
+$$
+
+Dermed er 
+
+$$
+f(x) = -x^2 + 3x + 1.
+$$
+
+::::
+
+
 :::::::::::::
 ::::::::::::::
 :::::::::::::::
@@ -1792,6 +1982,62 @@ class: no-click, adaptive-figure
 :::
 
 
+::::{answer}
+$$
+f(x) = x^2 + 2x - 3 \qog f'(x) = 2x + 2.
+$$
+::::
+
+
+::::{solution}
+Vi velger å skrive $f(x)$ på standardform:
+
+$$
+f(x) = ax^2 + bx + c.
+$$
+
+Tangenten som går gjennom det positive nullpunktet er tangenten som må ha stigningstall $4$. Siden den andre tangenten går gjennom det andre nullpunktet til $f$, betyr det at den må ha stigningstall $-4$ på grunn av symmetrien til andregradsfunksjoner. 
+
+Tar vi utgangspunkt i tangenten med stigningstall $4$, så vil den skjære $x$-aksen i $x = 1$ siden den går gjennom punktet $(-1, -8)$ og har stigningstall $4$. Det følger fordi $y$-verdien øker med $4$ for hver gang vi øker $x$ med $1$. 
+
+Tilsvarende vil den andre tangenten med stigningstall $-4$ skjære $x$-aksen i $x = 3$ siden den går gjennom punktet $(-1, -8)$ og har stigningstall $-4$. Det følger fordi $y$-verdien synker med $4$ for hver gang vi øker $x$ med $1$.
+
+
+Nå har vi nok opplysninger til å sette opp tre likninger og bestemme $a$, $b$ og $c$:
+
+\begin{align*}
+    f(1) &= 0 && \text{Det positive nullpunktet til $f$}\\
+    \\
+    f'(1) &= -8 && \text{Stigningstallet til tangenten i $(1, 0)$}\\
+    \\
+    f(-3) &= 0 && \text{Det negative nullpunktet til $f$}
+\end{align*}
+
+Vi løser likningssystemet i CAS:
+
+:::{figure} ./figurer/oppgaver/oppgave_15/sol.png
+---
+class: no-click, adaptive-figure
+width: 60%
+---
+:::
+
+Fra utskriften ser vi at 
+
+$$
+a = 1 \and b = 2 \and c = -3
+$$
+
+Det betyr at 
+
+$$
+f(x) = x^2 + 2x - 3 \qog f'(x) = 2x + 2.
+$$
+
+
+::::
+
+
 :::::::::::::::
 
 
@@ -1804,7 +2050,7 @@ class: no-click, adaptive-figure
 ---
 level: 3
 ---
-I figuren nedenfor vises grafen til to lineære funksjoner $f$ og $g$. Punktene $A$ og $B$ og $C$ danner en likebeint trekant $\triangle ABC$ der sidelengden $AB = 2$. 
+I figuren nedenfor vises grafen til to lineære funksjoner $f$ og $g$. Punktene $A$ og $B$ og $C$ danner en likebeint trekant $\triangle ABC$ der sidelengden $AB = 4$. 
 
 Et rektangel har hjørnene $(-k, 0)$ og $(-k, g(-k))$ og $(k, f(k))$ og $(k, 0)$ der $k > 0$.
 
@@ -1825,38 +2071,94 @@ Bestem $f(x)$ og $g(x)$.
 
 ::::{answer}
 \begin{align*}
-    f(x) &= -x + 1 \\
+    f(x) &= -(x - 2) \\
     \\
-    g(x) &= x + 1
+    g(x) &= x + 2
 \end{align*}
+::::
+
+
+::::{solution}
+Trekanten er en likebeint trekant der vinkelen i toppunkt $C$ er $90\degree$. Siden trekanten er likebeint betyr det at vinkelen i hjørnene $A$ og $B$ er like store. Det betyr at vinkelene der er $45\degree$ siden vinkelsummen i en trekant $180\degree$. 
+
+Det følger at $A$ og $B$ er like langt unna $y$-aksen og siden $AB = 4$, må derfor
+
+$$
+A = (-2, 0) \qog B = (2, 0).
+$$
+
+Hvis vi lar $O = (0, 0)$ være origo, så vil $\triangle OBC$ være en rettvinklet trekant med $45\degree$ vinkler som betyr at høyden $OC$ er like lang som grunnlinja $OB$. Dermed er $C = (0, 2)$. 
+
+Siden $f$ går gjennom punktene $C$ og $B$, kan vi finne stigningstallet til $f$ som følger:
+
+$$
+a = \dfrac{2 - 0}{0 - 2} = -1.
+$$
+
+Siden $f$ har et nullpunkt i $B$, så kan skrive $f(x)$ på nullpunktsform:
+
+$$
+f(x) = a(x - x_1) = -1(x - 2) = -(x - 2).
+$$
+
+Tilsvarende kan vi finne stigningstallet til $g$ som går gjennom $A$ og $C$:
+
+$$
+a = \dfrac{2 - 0}{0 - (-2)} = \dfrac{2}{2} = 1.
+$$
+
+Siden $g$ har et nullpunkt i $A$, så kan skrive $g(x)$ på nullpunktsform:
+
+$$
+g(x) = a(x - x_1) = 1(x - (-2)) = (x + 2).
+$$
+
 ::::
 
 :::::::::::::
 
 
 :::::::::::::{tab-item} b
-Lag en oversikt over arealet $R(k)$ til rektangelet for ulike verdier av $k$ med utgangspunkt i tabellen nedenfor.
+Lag en funksjon $A(k)$ for arealet av rektangelet uttrykt ved $k$.
 
-| $k$ | Areal $R(k)$ |
-|-----|---------------|
-| 0 |               |
-| 0.2 |               |
-| 0.4   |               |
-| 0.6   |               |
-| 0.8   |               |
-| 1.0   |               |
+
+::::{solution}
+Grunnlinja til rektangelet er $2k$ og høyden er $f(k)$ (eller $g(-k)$ som vil ha samme verdi). Dermed er arealet av rektangelet gitt ved
+
+$$
+A(k) = 2k \cdot f(k) = 2k \cdot (-(k - 2)) = -2k^2 + 4k.
+$$
+::::
 
 :::::::::::::
 
 
 :::::::::::::{tab-item} c
-Lag en modell $R(k)$ for arealet av rektangelet uttrykt ved $k$.
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} d
 Bestem hvilken verdi av $k$ som gir størst mulig areal av rektangelet.
+
+Hva er det største arealet?
+
+
+::::{answer}
+$$
+k = 1 \qog A(1) = 2.
+$$
+::::
+
+::::{solution}
+Arealet $A(k)$ er en andregradsfunksjon som er konkav (surt fjes $\frown$) siden den har negativ ledende koeffisient. Da har den et toppunkt som vi kan bestemme ved å bruke formelen for symmetrilinja:
+
+$$
+k = -\frac{b}{2a} = -\frac{4}{2 \cdot (-2)} = -\frac{4}{-4} = 1.
+$$
+
+Dermed er arealet av rektangelet størst hvis $k = 1$. Det største arealet er gitt ved $y$-koordinaten til toppunktet:
+
+$$
+A(1) = -2 \cdot 1^2 + 4 \cdot 1 = -2 + 4 = 2.
+$$
+::::
+
 
 :::::::::::::
 

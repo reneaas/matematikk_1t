@@ -32,7 +32,7 @@ def main(dirname, save):
     x = np.linspace(-10, 10, 1024)
     x1 = 1
     tangent1 = make_tangent_fn(f=f, a=x1)
-    ax.plot(x, tangent1(x), color="blue", linestyle="-", lw=1)
+    ax.plot(x, tangent1(x), color="gray", linestyle="-", lw=2.5)
     ax.plot(x1, f(x1), "ko", markersize=10, alpha=0.8)
     ax.text(
         x=x1,
@@ -45,7 +45,7 @@ def main(dirname, save):
 
     x2 = 3
     tangent2 = make_tangent_fn(f=f, a=x2)
-    ax.plot(x, tangent2(x), color="blue", linestyle="-", lw=1)
+    ax.plot(x, tangent2(x), color="gray", linestyle="-", lw=2.5)
     ax.plot(x2, f(x2), "ko", markersize=10, alpha=0.8)
     ax.text(
         x=x2 + 0.1,
