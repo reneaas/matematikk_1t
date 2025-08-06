@@ -83,7 +83,7 @@ link-type: doc
 
 ^^^
 
-:::{figure} ./likninger/abc_formelen/figurer/teori/abc-formel.svg
+:::{figure} ./likninger/figurer/teori/abc-formel.svg
 ---
 width: 70%
 class: no-click, adaptive-figure
