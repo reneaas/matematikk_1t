@@ -2122,6 +2122,13 @@ $$
 Lag en funksjon $A(k)$ for arealet av rektangelet uttrykt ved $k$.
 
 
+::::{answer}
+$$
+A(k) = -2k^2 + 4k = -2k(k - 2).
+$$
+::::
+
+
 ::::{solution}
 Grunnlinja til rektangelet er $2k$ og høyden er $f(k)$ (eller $g(-k)$ som vil ha samme verdi). Dermed er arealet av rektangelet gitt ved
 
