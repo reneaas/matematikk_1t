@@ -40,6 +40,45 @@ def main(dirname, save):
         alpha=0.3,
     )
 
+    plt.text(
+        x=0 - 0.2,
+        y=a / 2,
+        s=r"$a$",
+        fontsize=25,
+        ha="right",
+        va="center",
+    )
+
+    plt.text(
+        x=0.5 * b,
+        y=-0.2,
+        s=r"$b$",
+        fontsize=25,
+        ha="center",
+        va="top",
+    )
+
+    plt.text(
+        x=b + 0.5 * c,
+        y=-0.2,
+        s=r"$c$",
+        fontsize=25,
+        ha="center",
+        va="top",
+    )
+
+    plt.text(
+        x=0.5 * b, y=0.5 * a, s="$a \\cdot b$", fontsize=25, ha="center", va="center"
+    )
+    plt.text(
+        x=b + 0.5 * c,
+        y=0.5 * a,
+        s="$a \\cdot c$",
+        fontsize=25,
+        ha="center",
+        va="center",
+    )
+
     plt.axis("equal")
     plt.axis("off")
     plt.tight_layout()

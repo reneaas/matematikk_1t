@@ -500,11 +500,168 @@ for n in range(1, 21):
 ---
 
 
+:::::::::::::::{exercise} Oppgave 6
+---
+level: 2
+---
+Alma og Synne snakker om en annen strategi for å skrive ut partall og oddetall. 
+
+:::{dialogue}
+---
+name1: Alma
+name2: Synne
+speaker1: left
+speaker2: right
+---
+Alma: Jeg har en annen idé for å skrive ut partallene på. Vi kan lage en løkke som går gjennom alle naturlige tall og sjekker om det er et partall.
+Synne: Det er en god idé! Da kan vi bruke en `if`{l=python}-setning for å sjekke om tallet er partall.
+Alma: Men hvordan sjekker vi at et tall er et partall igjen?
+Synne: Det er vel bare å sjekke om det er delelig med $2$? Jeg har lest at det kan man gjøre ved å skrive <br> `if n % 2 == 0:`{l=python}
+:::
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Fyll ut programmet nedenfor slik at det skriver ut alle partallene til og med $20$ ved hjelp av en `if`{l=python}-setning.
+
+:::{interactive-code}
+for n in range(????): # FYLL INN: bytt ut ???? med riktige tall
+    if ????: # Sjekk om n er et partall
+        print(n)
+
+:::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Alma og Synne fortsetter samtalen.
+
+:::{dialogue}
+---
+name1: Alma
+name2: Synne
+speaker1: left
+speaker2: right
+---
+Alma: Ok, så nå klarer vi å skrive ut partall ved å sjekke om et tall er delelig med $2$. Men hva med oddetallene?
+Synne: Da har jeg lest at vi kan bruke en `if`{l=python}-`else`{l=python}-setning. Hvis tallet er delelig med $2$, så gjør vi ingenting. Da kan vi bruke `pass`{l=python}. Og så skriver vi ut tallet hvis det ikke er delelig med $2$.
+:::
+
+
+<br>
+
+Bruk strategien til Alma og Synne i programmet nedenfor.
+
+:::{interactive-code}
+for n in range(????): # FYLL INN: bytt ut ???? med riktige tall
+    if ????: # Sjekk om n er et partall
+        # FYLL INN: gjør ingenting her!
+    else:
+        # FYLL INN: skriv ut tallet hvis det er et oddetall
+
+:::
+
+:::::::::::::
+
+::::::::::::::
+
+
+:::::::::::::::
+
+
+---
+
+:::::::::::::::{exercise} Oppgave 7
+---
+level: 2
+---
+Alma og Synne snakker om hvordan man kan avgjøre om et tall $p \in \mathbb{N}$ er et primtall med et program.
+
+
+:::{dialogue}
+---
+name1: Alma
+name2: Synne
+speaker1: left
+speaker2: right
+---
+Alma: Jeg har lest at et primtall er et tall som bare er delelig med $1$ og seg selv. 
+Synne: Ja, det stemmer! Så hvis vi skal sjekke om et tall $n$ er et primtall, så må vi sjekke om det er delelig med alle tallene fra $2$ til $p - 1$.
+Alma: Ja, men hvordan gjør vi det i et program?
+Synne: Vi kan bruke en løkke som går gjennom alle tallene $n \in \{2, 3, \ldots, p - 1\}$ og sjekker om $p$ er delelig med hvert av dem. Da kan vi vel bruke en `if`{l=python}-setning litt som når vi sjekket om et tall var delelig med $2$?
+:::
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Bruk strategien til Alma og Synne i programmet nedenfor. Sjekk at tallene $11$, $51$ og $729$ er primtall.
+
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Alma og Synne er ikke helt fornøyde.
+
+:::{dialogue}
+---
+name1: Alma
+name2: Synne
+speaker1: left
+speaker2: right
+---
+Alma: Men nå sjekker vi jo fryktelig mange tall. Trenger vi å sjekke alle tallene fra $2$ til $p - 1$?
+Synne: Nei! Vi trenger bare å sjekke tallene opp til $\sqrt{p}$. Hvis $p$ er delelig med et tall større enn $\sqrt{p}$, så må det også være delelig med et tall mindre enn $\sqrt{p}$. 
+Alma: Hvorfor er det slik? 
+Synne: Det er jeg ikke sikker på. Var bare noe jeg så på Insta. Men hvordan regner vi ut $\sqrt{p}$ i et program?
+Alma: Det er enkelt! Vi kan bruke `int(n ** 0.5)`{l=python}
+:::
+
+
+<br>
+
+Endre på programmet ditt og prøv ut strategien de snakker om.
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+Argumenter for at det største tallet man trenger å sjekke for å avgjøre om et tall $p$ er et primtall, er $\sqrt{p}$.
+
+:::::::::::::
+
+
+::::::::::::::
+
+:::{interactive-code}
+# Din kode her
+
+
+
+:::
+
+
+:::::::::::::::
+
+
+
+---
+
+
 :::{margin} Startverdien til `s`{l=python}
 Vi setter startverdien til `s`{l=python} til `0`{l=python} fordi å plusse på `0`{l=python} ikke endrer verdien til en sum. 
 :::
 
-:::::::::::::::{exercise} Oppgave 6
+:::::::::::::::{exercise} Oppgave 8
 ---
 level: 2
 ---
@@ -619,7 +776,7 @@ print(s)
 
 
 
-:::::::::::::::{exercise} Oppgave 7
+:::::::::::::::{exercise} Oppgave 9
 ---
 level: 2
 ---
@@ -627,7 +784,7 @@ Nedenfor ser du tre figurer. Figurene er satt sammen av små kvadrater.
 
 Tenk deg at du skal fortsette å lage figurer etter samme mønster. Vi lar $K_n$ være antall små kvadrater i figur $n$.
 
-:::{figure} ./figurer/oppgaver/oppgave_7.svg
+:::{figure} ./figurer/oppgaver/oppgave_9/figur.svg
 ---
 width: 100%
 class: no-click, adaptive-figure
@@ -683,7 +840,7 @@ Lag et program som finner ut hvor mange kvadrater du må bruke for å lage de 10
 ---
 
 
-:::::::::::::::{exercise} Oppgave 8
+:::::::::::::::{exercise} Oppgave 10
 ---
 level: 3
 ---
@@ -692,7 +849,7 @@ Nedenfor ser du tre figurer. Figurene er satt sammen av små kvadrater.
 Tenk deg at du skal fortsette å lage figurer etter samme mønster. Vi lar $K_n$ være antall små kvadrater i figur $n$. 
 
 
-:::{figure} ./figurer/oppgaver/oppgave_8.svg
+:::{figure} ./figurer/oppgaver/oppgave_10/figur.svg
 ---
 width: 100%
 class: no-click, adaptive-figure
@@ -753,7 +910,7 @@ Lag et program som finner ut
 
 
 
-:::::::::::::::{exercise} Oppgave 9
+:::::::::::::::{exercise} Oppgave 11
 ---
 level: 3
 ---
@@ -861,7 +1018,7 @@ for n in range(1, 21):
 
 
 
-:::::::::::::::{exercise} Oppgave 10
+:::::::::::::::{exercise} Oppgave 12
 ---
 level: 3
 ---
@@ -957,7 +1114,7 @@ som gir utskriften
 ---
 
 
-:::::::::::::::{exercise} Oppgave 11
+:::::::::::::::{exercise} Oppgave 13
 ---
 level: 3
 ---
@@ -966,7 +1123,7 @@ Nedenfor vises et kvadrat med sidelengder $3$.
 Kvadratet er fylt med mindre fargelagte kvadrater som blir mindre og mindre. 
 
 
-:::{figure} ./figurer/oppgaver/oppgave_11.svg
+:::{figure} ./figurer/oppgaver/oppgave_13/figur.svg
 ---
 width: 80%
 class: no-click, adaptive-figure
@@ -1041,7 +1198,7 @@ print(areal)
 
 
 
-:::::::::::::::{exercise} Oppgave 12
+:::::::::::::::{exercise} Oppgave 14
 ---
 level: 3
 ---
@@ -1051,7 +1208,7 @@ Nedenfor vises en figur som er satt sammen av uendelige mange linjestykker.
 Lengden til et linjestykke er alltid $90 \%$ av lengden til det forrige linjestykket. Det første linjestykket er $100$ cm langt. 
 
 
-:::{figure} ./figurer/oppgaver/oppgave_12.svg
+:::{figure} ./figurer/oppgaver/oppgave_14/figur.svg
 ---
 width: 100%
 class: no-click, adaptive-figure
@@ -1118,6 +1275,348 @@ Lag et program som finner hvor mange linjestykker du må sette sammen for at fig
 
 
 :::
+
+
+:::::::::::::::
+
+
+---
+
+
+:::::::::::::::{exercise} Oppgave 15
+Nedenfor vises tre figurer som følger et bestemt mønster. 
+
+La $K_n$ være antall små kvadrater i figur $n$. 
+
+
+:::{figure} ./figurer/oppgaver/oppgave_15/figur.svg
+---
+class: no-click, adaptive-figure
+width: 100%
+---
+:::
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Bestem en formel for $K_n$.
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Lag et program som skriver ut $K_1$, $K_2$, $K_3$, $\ldots$, $K_{20}$.
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+Lag et program som regner ut hvor mange små kvadrater du må bruke for å lage de 20 første figurene.
+
+
+:::::::::::::
+
+
+
+::::::::::::::
+
+
+:::{interactive-code}
+# Din kode her
+
+
+
+:::
+
+
+:::::::::::::::
+
+
+---
+
+
+
+
+:::::::::::::::{exercise} Oppgave 16
+---
+level: 3
+---
+Å regne ut $\pi$ med så mange desimaler som mulig har vært et mål for matematikere i over tusen år. En måte å komme fram til verdien til $\pi$ på er med summen
+
+$$
+\pi = \dfrac{4}{1} - \dfrac{4}{3} + \dfrac{4}{5} - \dfrac{4}{7} + \dfrac{4}{9} - \ldots
+$$
+
+
+Jo flere ledd man bruker, jo nærmere kommer man verdien til $\pi$.
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Lag et program som skriver ut de $5$ første leddene i summen.
+
+Du bør få disse verdiene i utskriften:
+
+:::{code-block} console
+4.0
+-1.3333333333333333
+0.8
+-0.5714285714285714
+0.4444444444444444
+:::
+
+::::{answer}
+:::{code-block} python
+---
+linenos:
+---
+pi = 0
+
+for n in range(1, 6):
+    if n % 2 == 0: # Hvis n er delelig med 2. Ledd 2, 4, 6, osv.
+        ledd = -4 / (2 * n - 1)
+    else: # n er ikke delelig med 2. Ledd 1, 3, 5, osv.
+        ledd = 4 / (2 * n - 1) 
+    print(ledd)
+:::
+::::
+
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Lag et program som summerer de $5$ første leddene i tallfølgen.
+
+
+::::{answer}
+:::{code-block} python
+---
+linenos:
+---
+pi = 0
+
+for n in range(1, 6):
+    if n % 2 == 0: # Hvis n er delelig med 2. Ledd 2, 4, 6, osv.
+        ledd = -4 / (2 * n - 1)
+    else: # n er ikke delelig med 2. Ledd 1, 3, 5, osv.
+        ledd = 4 / (2 * n - 1) 
+
+    pi = pi + ledd # Legger til leddet i summen
+
+print(pi)
+:::
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+
+Bestem en god tilnærming til $\pi$ med programmet ditt fra **b**.
+
+:::{sidebar}
+$\pi = 3.141592653589793 \ldots$
+:::
+
+Hvor mange ledd trenger du for å få $\pi$ med $5$ riktige desimaler? 
+
+
+:::::::::::::
+
+::::::::::::::
+
+::::{interactive-code}
+# Din kode her
+
+
+
+::::
+
+
+:::::::::::::::
+
+
+---
+
+
+
+:::::::::::::::{exercise} Oppgave 17
+---
+level: 3
+---
+Summen av en annen tallfølge nærmer seg også $\pi$, men mye raskere enn den forrige. Summen er
+
+$$
+\pi = 3 + \dfrac{4}{2 \cdot 3 \cdot 4} - \dfrac{4}{4 \cdot 5 \cdot 6} + \dfrac{4}{6 \cdot 7 \cdot 8} - \dfrac{4}{8 \cdot 9 \cdot 10} + \ldots
+$$
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Lag et program som skriver ut de $5$ første leddene i summen.
+
+Du bør få utskriften:
+
+:::{code-block} console
+3
+0.16666666666666666
+-0.03333333333333333
+0.011904761904761904
+-0.005555555555555556
+:::
+
+
+::::{answer}
+:::{code-block} python
+---
+linenos:
+---
+pi = 3
+print(pi)
+
+for i in range(1, 5):
+    nevner = (2 * i) * (2 * i + 1) * (2 * i + 2)
+    if i % 2 == 0:
+        ledd = -4 / nevner        
+    else:
+        ledd = 4 / nevner
+        
+    print(ledd)
+:::
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Lag et program som regner ut en tilnærming til $\pi$ ved å bruke de 10 000 først leddene i summen.
+
+
+::::{answer}
+:::{code-block} python
+---
+linenos:
+---
+pi = 3
+for i in range(1, 10_000):
+    nevner = (2 * i) * (2 * i + 1) * (2 * i + 2)
+    if i % 2 == 0:
+        ledd = -4 / nevner        
+    else:
+        ledd = 4 / nevner
+
+
+    pi = pi + ledd
+
+
+print(pi)
+:::
+
+som gir utskriften
+
+:::{code-block} console
+3.1415926535900383
+:::
+::::
+
+:::::::::::::
+
+::::::::::::::
+
+
+:::{interactive-code}
+# Din kode her 
+
+
+
+
+:::
+
+:::::::::::::::
+
+
+---
+
+
+
+
+:::::::::::::::{exercise} Oppgave 18
+---
+level: 4
+---
+En rask måte å komme fram til sifrene til $\pi$ er ved ta utgangspunkt i **kjedebrøken** nedenfor:
+
+$$
+\pi = \dfrac{4}{1 + \dfrac{1^2}{3 + \dfrac{2^2}{5 + \dfrac{3^2}{7 + \dfrac{4^2}{9 + \ddots}}}}}
+$$
+
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Regn ut en tilnærming til $\pi$ ved å bruke $3$ ledd i kjedebrøken:
+
+$$
+\pi \approx \dfrac{4}{1 + \dfrac{1^2}{3 + \dfrac{2^2}{5}}}
+$$
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Lag en algoritme du kan bruke til å skrive et program som regner ut verdien til $\pi$ ved å bruke $n$ ledd i kjedebrøken.
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+Lag et program med utgangspunkt i algoritmen din fra **b** og regn ut en tilnærming til $\pi$. 
+
+
+:::{interactive-code}
+# Din kode her
+
+
+
+:::
+
+
+::::{answer}
+:::{code-block} python
+---
+linenos:
+---
+N = 100 # Antall ledd i kjedebrøken
+nevner = 2 * N - 1 # først nevner
+
+for n in range(N - 1, 0, -1): # Starter med det siste leddet
+    nevner = 2 * n - 1 + n**2 / nevner # neste nevner
+    
+pi = 4 / nevner
+
+print(pi)
+:::
+
+::::
+
+:::::::::::::
+
+::::::::::::::
 
 
 :::::::::::::::

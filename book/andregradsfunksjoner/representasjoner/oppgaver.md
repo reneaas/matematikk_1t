@@ -61,13 +61,13 @@ class: no-click, adaptive-figure
 
 ::::{grid-item-card}
 ---
-link: ./ekstremalform/oppgaver
+link: ./ekstremalpunktsform/oppgaver
 link-type: doc
 ---
-**Ekstremalform** 
+**ekstremalpunktsform** 
 
 ^^^
-:::{figure} ./ekstremalform/figurer/teori/algebraisk_uttrykk.svg
+:::{figure} ./ekstremalpunktsform/figurer/teori/algebraisk_uttrykk.svg
 ---
 width: 100%
 class: no-click, adaptive-figure
@@ -76,7 +76,7 @@ class: no-click, adaptive-figure
 
 ---
 
-:::{figure} ./ekstremalform/figurer/teori/grafisk_representasjon.svg
+:::{figure} ./ekstremalpunktsform/figurer/teori/grafisk_representasjon.svg
 ---
 width: 100%
 class: no-click, adaptive-figure

@@ -277,8 +277,8 @@ toolbar: "false"
 
 ---
 
-
-:::{quiz} Quiz 1
+:::::::::::::::{exercise} Quiz 1
+:::{quiz}
 Q: Hva stigningstallet til $f(x) = 2\cdot x + 1$?
 + $2$
 - $2x$
@@ -309,7 +309,7 @@ Q: Stigningstallet til $f(x) = -x + 3$ er ...
 - $3$
 - $1$
 :::
-
+:::::::::::::::
 
 
 

@@ -22,7 +22,7 @@ $$
 
 ::::{grid-item-card}
 ---
-link: representasjoner/ekstremalform/teori
+link: representasjoner/ekstremalpunktsform/teori
 link-type: doc
 ---
 **Ekstremalpunktsform**

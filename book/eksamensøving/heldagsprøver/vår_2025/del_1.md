@@ -140,7 +140,7 @@ $$
 ---
 class: solution, dropdown
 ---
-Verdimengden til $h$ vil være alle verdier $h(x)$ vi kan få fra $x \in D_h = \mathbb{R}$. Siden definisjonsmengden er alle reelle tall, må vi avgjøre hvilke verdier $h(x)$ kan ta helt generelt. Siden $h$ er en andregradsfunksjon, følger det at den enten har et topp- eller bunnpunkt. Siden den ledende koeffisienten til $h$ er negativ, har den et toppunkt. Videre er $h(x)$ skrevet på ekstremalform
+Verdimengden til $h$ vil være alle verdier $h(x)$ vi kan få fra $x \in D_h = \mathbb{R}$. Siden definisjonsmengden er alle reelle tall, må vi avgjøre hvilke verdier $h(x)$ kan ta helt generelt. Siden $h$ er en andregradsfunksjon, følger det at den enten har et topp- eller bunnpunkt. Siden den ledende koeffisienten til $h$ er negativ, har den et toppunkt. Videre er $h(x)$ skrevet på ekstremalpunktsform
 
 $$
 h(x) = -(x + 2)^2 + 5,

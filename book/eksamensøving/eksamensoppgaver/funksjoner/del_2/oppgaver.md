@@ -1504,7 +1504,7 @@ $$
 f'(x) = 3(x + 1)(x - 1).
 $$
 
-> En annen måte å uttrykke $f'(x)$ på er $f'(x) = 3x^2 - 3$ (standardform/ekstremalform). Spiller ingen rolle hvilken vi velger å bruke.
+> En annen måte å uttrykke $f'(x)$ på er $f'(x) = 3x^2 - 3$ (standardform/ekstremalpunktsform). Spiller ingen rolle hvilken vi velger å bruke.
 
 :::::
 

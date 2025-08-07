@@ -637,8 +637,6 @@ Argumenter for at det største tallet man trenger å sjekke for å avgjøre om e
 ---
 level: 2
 ---
-> I denne oppgaven skal du lære hvordan man summerer tall med et program.
-
 
 ::::::::::::::{tab-set}
 ---

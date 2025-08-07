@@ -360,7 +360,7 @@ $$
 der $a$, $b$ og $c$ er koeffisientene og $a$ er ledende koeffisient.
 ::::::::::::
 
-::::::::::::{tab-item} Ekstremalform
+::::::::::::{tab-item} ekstremalpunktsform
 $$
 f(x) = a(x - x_0)^2 + y_0
 $$
@@ -413,7 +413,7 @@ $$
 ---
 class: solution, dropdown
 ---
-Grafen til $f$ har et bunnpunkt i $(1, -4)$ som betyr at vi kan bruke ekstremalform
+Grafen til $f$ har et bunnpunkt i $(1, -4)$ som betyr at vi kan bruke ekstremalpunktsform
 
 $$
 f(x) = a(x - 1)^2 - 4. 
@@ -464,7 +464,7 @@ $$
 ---
 class: solution, dropdown
 ---
-Vi kan lese av at grafen til $g$ har et toppunkt i $(-2, -1)$ som betyr at vi kan skrive $g(x)$ på ekstremalform:
+Vi kan lese av at grafen til $g$ har et toppunkt i $(-2, -1)$ som betyr at vi kan skrive $g(x)$ på ekstremalpunktsform:
 
 $$
 g(x) = a(x + 2)^2 - 1. 
