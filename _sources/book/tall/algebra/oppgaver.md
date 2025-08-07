@@ -1071,11 +1071,11 @@ $$
 ---
 
 :::::::::::::::{exercise} Oppgave 11
-Nedenfor vises en quiz om kvadratsetningene. 
+Nedenfor finner du en quiz om kvadratsetningene. 
 
 Velg riktig alternativ som hører til uttrykket som er oppgitt. Du skal enten faktorisere eller utvide.
 
-Klar så mange som mulig før tiden går ut! 
+Svar riktig på så mange som mulig før tiden går ut! 
 
 
 :::{timed-quiz}
