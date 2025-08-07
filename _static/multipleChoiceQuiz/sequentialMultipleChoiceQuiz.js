@@ -94,7 +94,7 @@ class SequentialMultipleChoiceQuiz {
             // Update navigation buttons after a short delay
             setTimeout(() => {
                 this.updateNavigationButtons();
-            }, 1000); // Delay to allow the user to see the feedback
+            }, 800); // Delay to allow the user to see the feedback
         } else {
             this.showToast('error');
             // Re-enable the submit button so the user can try again
