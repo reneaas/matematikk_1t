@@ -1,11 +1,7 @@
-# Oppgaver
-
+# Oppgaver: Algebra
 
 :::::::::::::::{exercise} Oppgave 1
----
-level: 1
----
-Regn ut. 
+Trekk sammen uttrykkene.
 
 ::::::::::::::{tab-set}
 ---
@@ -13,30 +9,89 @@ class: tabs-parts
 ---
 :::::::::::::{tab-item} a
 $$
-a - 2a + 6a
+3x + 4y - 2x + 5y
 $$
+
+
+::::{answer}
+$$
+x + 9y
+$$
+::::
+
+::::{solution}
+$$
+(3x - 2x) + (4y + 5y) = x + 9y
+$$
+::::
+
+
 :::::::::::::
 
 
 :::::::::::::{tab-item} b
 $$
-3x + 5y - 3x + 2y
+5x - 2y + 3x + 4y
 $$
+
+
+::::{answer}
+$$
+8x + 2y
+$$
+::::
+
+::::{solution}
+$$
+(5x + 3x) + (-2y + 4y) = 8x + 2y
+$$
+::::
+
+
 :::::::::::::
 
 
 :::::::::::::{tab-item} c
 $$
-2(x - 4) + 3(x + 2)
+2x + 3y - 4x + 5y
 $$
-:::::::::::::
 
+
+::::{answer}
+$$
+-2x + 8y
+$$
+::::
+
+::::{solution}
+$$
+(2x - 4x) + (3y + 5y) = -2x + 8y
+$$
+::::
+
+
+:::::::::::::
 
 :::::::::::::{tab-item} d
 $$
--2(x + 4) + 3(x - 2)
+-x + 2y - 3x + 4y
 $$
+
+::::{answer}
+$$
+-4x + 6y
+$$
+::::
+
+::::{solution}
+$$
+(-x - 3x) + (2y + 4y) = -4x + 6y
+$$
+::::
+
+
 :::::::::::::
+
 
 ::::::::::::::
 
@@ -44,14 +99,10 @@ $$
 
 
 ---
-
 
 
 :::::::::::::::{exercise} Oppgave 2
----
-level: 1
----
-Regn ut. 
+Trekk sammen uttrykkene.
 
 ::::::::::::::{tab-set}
 ---
@@ -59,98 +110,217 @@ class: tabs-parts
 ---
 :::::::::::::{tab-item} a
 $$
-x + 2x + 5x
+2x - (3x + 4y) + 5y
 $$
+
+::::{answer}
+$$
+-x + y
+$$
+::::
+
+::::{solution}
+$$
+2x - (3x + 4y) + 5y = 2x - 3x - 4y + 5y = -x + y
+$$
+::::
+
 
 :::::::::::::
 
 
 :::::::::::::{tab-item} b
 $$
-3x + 2 - 2x + 5
+-2x + 4y - (3x - 2y)
 $$
+
+
+::::{answer}
+$$
+-5x + 6y
+$$
+::::
+
+
+::::{solution}
+$$
+-2x + 4y - (3x - 2y) = -2x + 4y - 3x + 2y = -5x + 6y
+$$
+::::
 
 :::::::::::::
 
 
 :::::::::::::{tab-item} c
 $$
-x^2 - 4x + 3x^2 + 5x
+2x - (-3x + 4y) - 3y
 $$
+
+
+::::{answer}
+$$
+5x - 7y
+$$
+::::
+
+::::{solution}
+$$
+2x - (-3x + 4y) - 3y = 2x + 3x - 4y - 3y = 5x - 7y
+$$
+::::
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} d
+
+$$
+x - (2x - 3y) + 4y
+$$
+
+
+::::{answer}
+$$
+-x + 7y
+$$
+::::
+
+
+::::{solution}
+$$
+x - (2x - 3y) + 4y = x - 2x + 3y + 4y = -x + 7y
+$$
+::::
+
+::::
+
+:::::::::::::
+
+
+
+::::::::::::::
+
+
+:::::::::::::::
+
+
+---
+
+
+:::{margin} 
+$$
+a(b + c) = ab + ac
+$$
+:::
+
+:::::::::::::::{exercise} Oppgave 3
+Utvid uttrykkene.
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+$$
+2x(x + 1)
+$$
+
+
+::::{answer}
+$$
+2x^2 + 2x
+$$
+::::
+
+::::{solution}
+$$
+2x(x + 1) = 2x \cdot x + 2x \cdot 1 = 2x^2 + 2x
+$$
+::::
+
+
+:::::::::::::
+
+:::::::::::::{tab-item} b
+$$
+3x(x + 2)
+$$
+
+
+::::{answer}
+$$
+3x^2 + 6x
+$$
+::::
+
+
+::::{solution}
+$$
+3x(x + 2) = 3x \cdot x + 3x \cdot 2 = 3x^2 + 6x
+$$
+::::
+
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+$$
+-2x(x + 4)
+$$
+
+
+::::{answer}
+$$
+-2x^2 - 8x
+$$
+::::
+
+
+::::{solution}
+$$
+-2x(x + 4) = -2x \cdot x - 2x \cdot 4 = -2x^2 - 8x
+$$
+::::
+
 
 :::::::::::::
 
 
 :::::::::::::{tab-item} d
 $$
-x^2 - 4x + 3x^2 + 5x
+-x(x - 3)
 $$
+
+
+
+::::{answer}
+$$
+-x^2 + 3x
+$$
+::::
+
+
+::::{solution}
+$$
+-x(x - 3) = -x \cdot x + x \cdot 3 = -x^2 + 3x
+$$
+::::
+
 
 :::::::::::::
 
+
 ::::::::::::::
-
-
 :::::::::::::::
 
-
----
-
-
-:::::::::::::::{exercise} Oppgave 3
----
-level: 1
----
-Ta quizen! Det kan være flere riktige svar.
- 
-::::::::::::::{quiz}
-Q: Hvilke av alternativene nedenfor er algebraiske uttrykk?
-+ $3x - 4$
-+ $2x$
-- $3x + 2 = 5$
-- $2(x + 6) = 2x + 12$ 
-
-Q: Hvilke av alternativene nedenfor er algebraiske uttrykk?
-+ $x^2 + 2x - 3$
-+ $x^2 - 4x + 3$
-- $x^2 - 4x + 3 = 0$
-- $x^2 - 4x + 3 = (x - 1)(x - 3)$
-
-Q: Hvilke av alternativene nedenfor er algebraiske uttrykk?
-+ $2x + 3y$
-+ $3x - 2y + 5$
-- $2x + 3y = 5$
-- $3x - 2y + 5 = 0$
-
-Q: Hvilke av alternativene nedenfor er likninger? 
-+ $3x + 2 = 5$
-+ $2(x + 6) = 2x + 12$
-- $3x - 4$
-- $2x$
-
-Q: Hvilke av alternativene nedenfor er identiteter?
-+ $x^2 - 4x + 3 = (x - 1)(x - 3)$
-+ $-2(x + 1) = -2x - 2$
-- $x^2 - 4x + 3$
-- $2x + 3y = 5$
-
-Q: Hvilke av alternativene nedenfor er identiteter?
-+ $x(x + 1) = x^2 + x$
-+ $2(x + 6) = 2x + 12$
-- $x^2 - 4x + 3 = 0$
-- $3x + 2$
-::::::::::::::
-
-:::::::::::::::
 
 ---
 
 
 :::::::::::::::{exercise} Oppgave 4
----
-level: 1
----
-Løs likningene. 
+Faktoriser uttrykkene så mye som mulig. 
 
 ::::::::::::::{tab-set}
 ---
@@ -158,47 +328,108 @@ class: tabs-parts
 ---
 :::::::::::::{tab-item} a
 $$
-2x + 4 = 0
+x^2 + 3x
 $$
 
+
+::::{answer}
+$$
+x(x + 3)
+$$
+::::
+
+::::{solution}
+$$
+x^2 + 3x = x \cdot x + 3 \cdot x = x(x + 3)
+$$
+::::
+
+
+
 :::::::::::::
+
 
 
 :::::::::::::{tab-item} b
 $$
--3x + 2 = 5
+-x^2 + 8x
 $$
+
+
+::::{answer}
+$$
+-x(x - 8)
+$$
+::::
+
+::::{solution}
+$$
+-x^2 + 8x = -(x^2 - 8x) = -x(x - 8)
+$$
+::::
+
 
 :::::::::::::
 
-
 :::::::::::::{tab-item} c
 $$
--7x + 2 = 4
+2x^2 - 4x
 $$
+
+::::{answer}
+$$
+2x(x - 2)
+$$
+::::
+
+
+::::{solution}
+$$
+2x^2 - 4x = 2x \cdot x - 2 \cdot 2x = 2x(x - 2)
+$$
+::::
+
 
 :::::::::::::
 
 
 :::::::::::::{tab-item} d
 $$
-3x + 5 = -2x + 4
+x^2 - 5x
 $$
+
+
+::::{solution}
+$$
+x^2 - 5x = x \cdot x - 5 \cdot x = x(x - 5)
+$$
+::::
+
+
 
 :::::::::::::
 
+
 ::::::::::::::
+
 :::::::::::::::
 
 
 ---
+
+
+:::{margin} 
+$$
+(a + b)^2 = a^2 + 2ab + b^2
+$$
+
+$$
+(a - b)^2 = a^2 - 2ab + b^2
+$$
+:::
 
 :::::::::::::::{exercise} Oppgave 5
----
-level: 1
----
-Utvid uttrykkene og skriv dem så enkelt som mulig.
-
+Utvid uttrykkene.
 
 ::::::::::::::{tab-set}
 ---
@@ -206,34 +437,90 @@ class: tabs-parts
 ---
 :::::::::::::{tab-item} a
 $$
-2x(x + 3)
+(x + 1)^2
 $$
+
+
+::::{answer}
+$$
+x^2 + 2x + 1
+$$
+::::
+
+::::{solution}
+$$
+(x + 1)^2 = x^2 + 2\cdot 1 \cdot x + 1^2 = x^2 + 2x + 1
+$$
+::::
+
 
 :::::::::::::
 
 
 :::::::::::::{tab-item} b
 $$
-(x + 1)(x + 3)
+(x - 2)^2
 $$
+
+
+::::{answer}
+$$
+x^2 - 4x + 4
+$$
+::::
+
+::::{solution}
+$$
+(x - 2)^2 = x^2 - 2\cdot 2 \cdot x + 2^2 = x^2 - 4x + 4
+$$
+::::
 
 :::::::::::::
 
 
 :::::::::::::{tab-item} c
 $$
-(x - 1)(x - 2)
+(x + 3)^2
 $$
+
+
+::::{answer}
+$$
+x^2 + 6x + 9
+$$
+::::
+
+::::{solution}
+$$
+(x + 3)^2 = x^2 + 2\cdot 3 \cdot x + 3^2 = x^2 + 6x + 9
+$$
+::::
 
 :::::::::::::
 
 
 :::::::::::::{tab-item} d
 $$
-(x - 1)^2
+(x - 4)^2
 $$
 
+
+
+::::{answer}
+$$
+x^2 - 8x + 16
+$$
+::::
+
+::::{solution}
+$$
+(x - 4)^2 = x^2 - 2\cdot 4 \cdot x + 4^2 = x^2 - 8x + 16
+$$
+::::
+
 :::::::::::::
+
+
 
 ::::::::::::::
 
@@ -242,16 +529,11 @@ $$
 
 
 ---
-
-
 
 
 :::::::::::::::{exercise} Oppgave 6
----
-level: 2
----
+Faktoriser uttrykkene. 
 
-Skriv uttrykkene så enkelt som mulig.
 
 ::::::::::::::{tab-set}
 ---
@@ -259,74 +541,191 @@ class: tabs-parts
 ---
 :::::::::::::{tab-item} a
 $$
-2a + 3b - 4a + 5b
+x^2 + 10x + 25
 $$
 
-:::::{answer}
+
+::::{answer}
 $$
--2a + 8b
+(x + 5)^2
 $$
-:::::
+::::
+
+::::{solution}
+$$
+x^2 + 10x + 25 = x^2 + 2\cdot x \cdot 5 + 5^2 = (x + 5)^2
+$$
+::::
+
 
 :::::::::::::
 
-
 :::::::::::::{tab-item} b
 $$
-2x - 5y + 3x + y
+x^2 - 12x + 36
 $$
 
-:::::{answer}
+::::{answer}
 $$
-5x - 4y
+(x - 6)^2
 $$
-:::::
+::::
+
+::::{solution}
+$$
+x^2 - 12x + 36 = x^2 - 2\cdot 6 \cdot x + 6^2 = (x - 6)^2
+$$
+::::
+
 
 :::::::::::::
 
 
 :::::::::::::{tab-item} c
 $$
-3(2x + 4) - 2(3x - 5)
+4x^2 + 4x + 1
 $$
 
-:::::{answer}
+::::{answer}
 $$
-22
+(2x + 1)^2
 $$
-:::::
+::::
 
-
-:::::{solution}
-\begin{align*}
-    3(2x + 4) - 2(3x - 5) &= 3 \cdot 2x + 3 \cdot 4 - 2 \cdot 3x + 2 \cdot 5 \\
-    \\
-    &= 6x + 12 - 6x + 10 \\
-    \\
-    &= 22
-\end{align*}
-:::::
+::::{solution}
+$$
+4x^2 + 4x + 1 = (2x)^2 + 2\cdot 2x \cdot 1 + 1^2 = (2x + 1)^2
+$$
+::::
 
 :::::::::::::
 
 
 :::::::::::::{tab-item} d
 $$
-3(2x + y) - 2(x - 5y) + 4(2x - y)
+4x^2 - 8x + 4
+$$
+
+::::{answer}
+$$
+(2x - 2)^2
+$$
+::::
+
+::::{solution}
+$$
+4x^2 - 8x + 4 = (2x)^2 - 2\cdot 2x \cdot 2 + 2^2 = (2x - 2)^2
+$$
+::::
+
+:::::::::::::
+
+::::::::::::::
+
+
+:::::::::::::::
+
+
+---
+
+:::{margin} 
+$$
+a^2 - b^2 = (a - b)(a + b)
+$$
+:::
+
+:::::::::::::::{exercise} Oppgave 7 
+Utvid uttrykkene.
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+$$
+(x + 1)(x - 1)
 $$
 
 
-:::::{solution}
-\begin{align*}
-    3(2x + y) - 2(x - 5y) + 4(2x - y) &= 3 \cdot 2x + 3 \cdot y - 2 \cdot x + 2 \cdot 5y + 4 \cdot 2x - 4 \cdot y \\
-    \\
-    &= 6x + 3y - 2x + 10y + 8x - 4y \\
-    \\
-    &= (6x - 2x + 8x) + (3y + 10y - 4y) \\
-    \\
-    &= 12x + 9y
-\end{align*}
-:::::
+::::{answer}
+$$
+x^2 - 1
+$$
+::::
+
+::::{solution}
+$$
+(x + 1)(x - 1) = x^2 - 1^2 = x^2 - 1
+$$
+::::
+
+
+:::::::::::::
+
+:::::::::::::{tab-item} b
+$$
+(x + 2)(x - 2)
+$$
+
+
+::::{answer}
+$$
+x^2 - 4
+$$
+::::
+
+
+::::{solution}
+$$
+(x + 2)(x - 2) = x^2 - 2^2 = x^2 - 4
+$$
+::::
+
+
+
+:::::::::::::
+
+:::::::::::::{tab-item} c
+$$
+(x + 3)(x - 3)
+$$
+
+
+::::{answer}
+$$
+x^2 - 9
+$$
+::::
+
+::::{solution}
+$$
+(x + 3)(x - 3) = x^2 - 3^2 = x^2 - 9
+$$
+::::
+
+
+:::::::::::::
+
+:::::::::::::{tab-item} d
+$$
+(2x + 1)(2x - 1)
+$$
+
+
+::::{answer}
+$$
+4x^2 - 1
+$$
+::::
+
+::::{solution}
+$$
+(2x + 1)(2x - 1) = (2x)^2 - 1^2 = 4x^2 - 1
+$$
+::::
+
+
 
 :::::::::::::
 
@@ -339,55 +738,331 @@ $$
 ---
 
 
+:::::::::::::::{exercise} Oppgave 8
+Faktoriser uttrykkene.
 
-:::::::::::::::{exercise} Oppgave 7
----
-level: 2
----
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
-Bestem $a$ og $b$ slik at likningen nedenfor er en identitet:
+$$
+4x^2 - 4
+$$
 
+
+::::{answer}
 $$
-2x + 4 = a(x + b)
+4(x - 1)(x + 1)
 $$
+::::
+
+::::{solution}
+$$
+4x^2 - 4 = 4(x^2 - 1) = 4(x - 1)(x + 1)
+$$
+::::
+
 
 :::::::::::::
 
 
 :::::::::::::{tab-item} b
-Bestem $a$ og $b$ slik at likningen nedenfor er en identitet:
+$$
+-x^2 + 4
+$$
 
+
+::::{answer}
 $$
-ax + b = 3(x - 2)
+-(x - 2)(x + 2)
 $$
+::::
+
+::::{solution}
+$$
+-x^2 + 4 = -(x^2 - 4) = -(x - 2)(x + 2)
+$$
+::::
+
 
 :::::::::::::
 
-
 :::::::::::::{tab-item} c
-Bestem $a$, $b$ og $c$ slik at likningen nedenfor er en identitet:
+$$
+-x^2 + 9
+$$
 
+
+::::{answer}
 $$
-(x + 1)(x - 3) = ax^2 + bx + c
+-(x - 3)(x + 3)
 $$
+::::
+
+::::{solution}
+$$
+-x^2 + 9 = -(x^2 - 9) = -(x - 3)(x + 3)
+$$
+::::
+
+
+::::
+
 
 :::::::::::::
 
 
 :::::::::::::{tab-item} d
-Bestem $a$, $b$ og $c$ slik at likningen nedenfor er en identitet:
+$$
+-x^2 + 16
+$$
 
+
+::::{answer}
 $$
-(2x - 1)^2 = ax^2 + bx + c
+-(x - 4)(x + 4)
 $$
+::::
+
+::::{solution}
+$$
+-x^2 + 16 = -(x^2 - 16) = -(x - 4)(x + 4)
+$$
+::::
+
 
 :::::::::::::
 
+
 ::::::::::::::
+
 
 :::::::::::::::
 
+
+---
+
+
+:::{margin} Tips: Oppgave 9
+I oppgave 9a kan du bruke konjugatsetningen 
+
+$$
+a^2 - b^2 = (a - b)(a + b)
+$$
+
+ved å sette
+
+$$
+a^2 = (x - 1)^2 \qog b = 3^2
+$$
+
+:::
+
+
+:::::::::::::::{exercise} Oppgave 9
+Faktoriser uttrykkene med konjugatsetningen.
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+$$
+(x - 1)^2 - 9
+$$
+
+
+::::{answer}
+$$
+(x - 4)(x + 2)
+$$
+::::
+
+::::{solution}
+$$
+(x - 1)^2 - 9 = (x - 1)^2 - 3^2 = (x - 1 - 3)(x - 1 + 3) = (x - 4)(x + 2)
+$$
+::::
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+$$
+(x + 2)^2 - 16
+$$
+
+
+::::{answer}
+$$
+(x - 2)(x + 6)
+$$
+::::
+
+::::{solution}
+$$
+(x + 2)^2 - 16 = (x + 2)^2 - 4^2  = (x + 2 - 4)(x + 2 + 4) = (x - 2)(x + 6)
+$$
+::::
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+$$
+-(x + 2)^2 + 25
+$$
+
+
+::::{answer}
+$$
+-(x - 3)(x + 7)
+$$
+::::
+
+
+::::{solution}
+$$
+-(x + 2)^2 + 25 = -\left((x + 2)^2 - 5^2\right) = -(x + 2 - 5)(x + 2 + 5) = -(x - 3)(x + 7)
+$$
+::::
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} d
+$$
+-(x - 3)^2 + 1
+$$
+
+
+::::{answer}
+$$
+-(x - 4)(x - 2)
+$$
+::::
+
+
+::::{solution}
+$$
+-(x - 3)^2 + 1 = -\left((x - 3)^2 - 1^2\right) = -(x - 3 - 1)(x - 3 + 1) = -(x - 4)(x - 2)
+$$
+::::
+
+
+:::::::::::::
+
+
+::::::::::::::
+
+
+:::::::::::::::
+
+
+---
+
+:::{margin}
+$$
+(a + b)(c + d) = ac + ad + bc + bd
+$$
+:::
+
+:::::::::::::::{exercise} Oppgave 10
+Utvid uttrykkene.
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+$$
+(x + 1)(x - 2)
+$$
+
+
+::::{answer}
+$$
+x^2 - x - 2
+$$
+::::
+
+::::{solution}
+$$
+(x + 1)(x - 2) = x^2 - 2x + x - 2 = x^2 - x - 2
+$$
+::::
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+$$
+(x - 2)(x + 3)
+$$
+
+
+::::{answer}
+$$
+x^2 + x - 6
+$$
+::::
+
+::::{solution}
+$$
+(x - 2)(x + 3) = x^2 + 3x - 2x - 6 = x^2 + x - 6
+$$
+::::
+
+
+:::::::::::::
+
+:::::::::::::{tab-item} c
+$$
+-2(x - 5)(x + 4)
+$$
+
+
+::::{answer}
+$$
+-2x^2 + 2x + 40
+$$
+::::
+
+::::{solution}
+$$
+-2(x - 5)(x + 4) = -2(x^2 + 4x - 5x - 20) = -2(x^2 - x -20) = -2x^2 + 2x + 40
+$$
+::::
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} d
+$$
+-(x + 1)(x - 4)
+$$
+
+
+::::{answer}
+$$
+-x^2 + 5x - 4
+$$
+::::
+
+::::{solution}
+$$
+-(x + 1)(x - 4) = -x^2 + 4x + x - 4 = -x^2 + 5x - 4
+$$
+::::
+
+
+:::::::::::::
+::::::::::::::
+
+:::::::::::::::
