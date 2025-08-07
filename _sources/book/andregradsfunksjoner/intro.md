@@ -7,29 +7,6 @@ gutter: 3
 
 ::::{grid-item-card}
 ---
-link: algebra/kvadratsetningene/teori
-link-type: doc
----
-**Kvadratsetningene**
-
-^^^
-
-$$
-(a + b)^2 = a^2 + 2ab + b^2
-$$
-
-$$
-(a - b)^2 = a^2 - 2ab + b^2
-$$
-
-$$
-a^2 - b^2 = (a + b)(a - b)
-$$
-
-::::
-
-::::{grid-item-card}
----
 link: representasjoner/standardform/teori
 link-type: doc
 ---
