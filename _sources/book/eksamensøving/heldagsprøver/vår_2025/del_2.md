@@ -514,7 +514,7 @@ Den praktiske tolkningen av $r$ er at det tar $r \approx 23.9$ sekunder før tan
 ---
 class: solution, dropdown
 ---
-Modellen $h$ er en andregradsfunksjon skrevet på ekstremalform. Fra opplysningene kan vi sette opp et likningssystem:
+Modellen $h$ er en andregradsfunksjon skrevet på ekstremalpunktsform. Fra opplysningene kan vi sette opp et likningssystem:
 
 \begin{align*}
     h(0) &= 10 && \text{(høyden når hullet åpnes er 10 meter)} \\
@@ -537,7 +537,7 @@ $$
 k \approx 0.02 \and r \approx 23.9
 $$
 
-Siden $h(t)$ er skrevet på ekstremalform med en ekstremalverdi som er $y_0 = 0$, vil $t = r$ svare til $t$-koordinaten til bunnpunktet og nullpunktet til $h$. Den praktiske tolkningen er at det tar $r = 23.9$ sekunder før tanken er tom for vann.
+Siden $h(t)$ er skrevet på ekstremalpunktsform med en ekstremalverdi som er $y_0 = 0$, vil $t = r$ svare til $t$-koordinaten til bunnpunktet og nullpunktet til $h$. Den praktiske tolkningen er at det tar $r = 23.9$ sekunder før tanken er tom for vann.
 
 
 :::::

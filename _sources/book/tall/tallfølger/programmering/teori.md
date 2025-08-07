@@ -17,7 +17,7 @@ Tallfølger er nært knyttet til de naturlige tallene og egenskaper ved tall. Du
 Senere skal vi lære om en annen type løkke som kalles for en `while`{l=python}-løkke.
 :::
 
-En løkke er et verktøy i programmering som lar oss gjenta én eller flere linjer med kode flere ganger – vi kaller dette for en **kodeblokk**. Dette er nyttig når vi ønsker å lage tallfølger. Vi skal here fokusere på en type løkke som kalles `for`{l=python}-løkke. En `for`{l=python}-løkke lar oss gjenta en kodeblokk for hvert element i en liste eller en tallmengde.  
+En løkke er et verktøy i programmering som lar oss gjenta én eller flere linjer med kode flere ganger – vi kaller dette for en **kodeblokk**. Dette er nyttig når vi ønsker å lage tallfølger. Vi skal her fokusere på en type løkke som kalles `for`{l=python}-løkke. En `for`{l=python}-løkke lar oss gjenta en kodeblokk for hvert element i en liste eller en tallmengde.  
 
 ### `for`{l=python}-løkker med avstand $1$
 
@@ -485,3 +485,60 @@ for n in range(-2, 3):
 
 
 :::::::::::::::
+
+
+## Summere tall i en tallfølge
+
+I mange tilfeller er vi interessert i å summere tallene i en tallfølge. 
+
+
+:::{margin} `s = s + n`{l=python}
+Når vi skriver `s = s + n`{l=python}, så betyr det at vi legger til verdien til `n`{l=python} til verdien til `s`{l=python} og lagrer resultatet i `s`{l=python}. 
+:::
+
+:::::::::::::::{explore} Utforsk 4
+Nedenfor vises et program som summerer noen tall. 
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Les programmet nedenfor og forutsi hva som skrives ut. 
+
+Skriv inn svaret ditt nedenfor og sjekk.
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Endre på programmet slik at det summerer alle naturlig tall fra $1$ til og med $100$. 
+
+Hva blir summen? 
+:::::::::::::
+
+
+:::::::::::::{tab-item} 
+Endre på programmet slik at det finner summen av de $10$ første kvadrattallene
+
+$$
+S = 1^2 + 2^2 + 3^2 + \ldots + 10^2
+$$
+:::::::::::::
+
+::::::::::::::
+
+:::{interactive-code}
+---
+predict:
+---
+s = 0
+for n in range(1, 6):
+    s = s + n
+
+print(s)
+:::
+
+:::::::::::::::
+
+

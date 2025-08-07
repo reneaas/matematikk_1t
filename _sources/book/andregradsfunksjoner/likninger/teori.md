@@ -428,7 +428,7 @@ $$
 
 ### $abc$-formelen
 
-Vi har tidligere sett at vi kan faktorisere et andregradspolynom $ax^2 + bx + c$ ved å første skrive det om til ekstremalform med fullstendig kvadraters metode, og deretter skrive det om til nullpunktsform med konjugatsetningen. Det lar oss bestemme nullpunktene som er det samme som å løse likningen $ax^2 + bx + c = 0$. Det er naturlig å lure på om vi kan løse dette én gang for alle, uten å måtte utføre alle disse stegene hver gang. Det kan vi, og det gir oss en formel som kalles for $abc$-formelen:
+Vi har tidligere sett at vi kan faktorisere et andregradspolynom $ax^2 + bx + c$ ved å første skrive det om til ekstremalpunktsform med fullstendig kvadraters metode, og deretter skrive det om til nullpunktsform med konjugatsetningen. Det lar oss bestemme nullpunktene som er det samme som å løse likningen $ax^2 + bx + c = 0$. Det er naturlig å lure på om vi kan løse dette én gang for alle, uten å måtte utføre alle disse stegene hver gang. Det kan vi, og det gir oss en formel som kalles for $abc$-formelen:
 
 
 :::{margin} $\pm$-symbolet

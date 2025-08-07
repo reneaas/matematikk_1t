@@ -171,7 +171,7 @@ $$
 
 Nedenfor vises et rektangel.
 
-:::{figure} ./figurer/bevis/bevis_1/figur.svg
+:::{figure} ./figurer/bevis/bevis_1/figur_annotert.svg
 ---
 class: no-click, adaptive-figure
 width: 80%
@@ -333,7 +333,7 @@ $$
 ::::::::::::::{theory} Begrunnelse for 1.kvadratsetning
 Nedenfor vises en figur av et kvadrat. Kvadratet er delt opp i mindre rektangler. 
 
-:::{figure} ./figurer/bevis/bevis_2/figur.svg
+:::{figure} ./figurer/bevis/bevis_2/figur_annotert.svg
 ---
 class: no-click, adaptive-figure
 width: 80%
@@ -492,7 +492,7 @@ $$
 I figuren nedenfor vises et kvadrat. Kvadratet er delt opp i mindre rektangler. 
 
 
-:::{figure} ./figurer/bevis/bevis_3/figur.svg
+:::{figure} ./figurer/bevis/bevis_3/figur_annotert.svg
 ---
 class: no-click, adaptive-figure
 width: 80%
@@ -655,7 +655,7 @@ $$
 I figuren nedenfor vises et kvadrat. Kvadratet er delt opp i mindre rektangler.
 
 
-:::{figure} ./figurer/bevis/bevis_4/figur.svg
+:::{figure} ./figurer/bevis/bevis_4/figur_annotert.svg
 ---
 class: no-click, adaptive-figure
 width: 
@@ -807,7 +807,7 @@ Nedenfor vises et rektangel. Rektangelet er delt opp i mindre rektangler.
 
 Bruk arealberegninger til å bestemme arealet av figuren på to forskjellige måter og vis at 2.distributiv lov stemmer.
 
-:::{figure} ./figurer/bevis/bevis_5/figur.svg
+:::{figure} ./figurer/bevis/bevis_5/figur_annotert.svg
 ---
 class: no-click, adaptive-figure
 width: 80%

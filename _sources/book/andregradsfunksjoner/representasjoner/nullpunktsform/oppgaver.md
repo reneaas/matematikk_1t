@@ -280,7 +280,7 @@ $$
 f(x) = 2(x - 1)(x + 3)
 $$
 
-Bestem $f(x)$ på ekstremalform. 
+Bestem $f(x)$ på ekstremalpunktsform. 
 
 
 ::::{answer}
@@ -303,7 +303,7 @@ $$
 y_0 = f(-1) = 2(-1 - 1)(-1 + 3) = 2(-2)(2) = -8.
 $$
 
-Vi kan også lese av at $a = 2$ fra $f(x)$. Dermed er $f(x)$ på ekstremalform gitt ved
+Vi kan også lese av at $a = 2$ fra $f(x)$. Dermed er $f(x)$ på ekstremalpunktsform gitt ved
 
 $$
 f(x) = 2(x + 1)^2 - 8.
@@ -319,7 +319,7 @@ $$
 g(x) = -3(x + 2)(x - 4)
 $$
 
-Bestem $g(x)$ på ekstremalform.
+Bestem $g(x)$ på ekstremalpunktsform.
 
 
 
@@ -342,7 +342,7 @@ $$
 y_0 = g(1) = -3(1 + 2)(1 - 4) = -3(3)(-3) = 27.
 $$
 
-Vi kan også lese av at $a = -3$ fra $g(x)$. Dermed er $g(x)$ på ekstremalform gitt ved
+Vi kan også lese av at $a = -3$ fra $g(x)$. Dermed er $g(x)$ på ekstremalpunktsform gitt ved
 
 $$
 g(x) = -3(x - 1)^2 + 27.
@@ -361,7 +361,7 @@ $$
 h(x) = \frac{1}{2}(x + 5)(x - 1)
 $$
 
-Bestem $h(x)$ på ekstremalform.
+Bestem $h(x)$ på ekstremalpunktsform.
 
 
 
@@ -384,7 +384,7 @@ $$
 y_0 = h(-2) = \frac{1}{2}(-2 + 5)(-2 - 1) = \frac{1}{2}(3)(-3) = -\frac{9}{2}.
 $$
 
-Vi kan også lese av at $a = \frac{1}{2}$ fra $h(x)$. Dermed er $h(x)$ på ekstremalform gitt ved
+Vi kan også lese av at $a = \frac{1}{2}$ fra $h(x)$. Dermed er $h(x)$ på ekstremalpunktsform gitt ved
 
 $$
 h(x) = \frac{1}{2}(x + 2)^2 - \frac{9}{2}.
@@ -402,7 +402,7 @@ $$
 p(x) = -\frac{1}{3}(x - 2)(x + 4)
 $$
 
-Bestem $p(x)$ på ekstremalform.
+Bestem $p(x)$ på ekstremalpunktsform.
 
 
 ::::{answer}
@@ -425,7 +425,7 @@ $$
 y_0 = p(-1) = -\frac{1}{3}(-1 - 2)(-1 + 4) = -\frac{1}{3}(-3)(3) = -3.
 $$
 
-Vi kan også lese av at $a = -\frac{1}{3}$ fra $p(x)$. Dermed er $p(x)$ på ekstremalform gitt ved
+Vi kan også lese av at $a = -\frac{1}{3}$ fra $p(x)$. Dermed er $p(x)$ på ekstremalpunktsform gitt ved
 
 $$
 p(x) = -\frac{1}{3}(x + 1)^2 - 3.
