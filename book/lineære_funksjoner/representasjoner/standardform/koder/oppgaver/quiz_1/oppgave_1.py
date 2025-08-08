@@ -26,6 +26,12 @@ def main(dirname, save):
 
     ax.plot(*A, "ko", markersize=10, alpha=0.7)
 
+    for label in ax.get_xticklabels() + ax.get_yticklabels():
+        label.set_fontsize(25)  # Set to desired font size
+
+    ax.yaxis.label.set_size(25)  # Set y-axis label font size
+    ax.xaxis.label.set_size(25)  # Set x-axis label font size
+
     # NOTE: Select an appropriate `dirname` to save the figure.
     # The directory `dirname` will be created automatically if it does not exist already.
     if save:

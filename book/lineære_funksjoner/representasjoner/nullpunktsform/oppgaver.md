@@ -5,31 +5,31 @@
 level: 1
 ---
 :::{quiz}
-Q: Hvilket funksjonsuttrykk stemmer med grafen vist i figuren nedenfor? ![](figurer/oppgaver/quiz_1/oppgave_1.svg)
+Q: Hvilket funksjonsuttrykk stemmer med grafen vist i figuren nedenfor? ![{width: 60%}](figurer/oppgaver/quiz_1/oppgave_1.svg)
 + $f(x) = x - 1$
 - $f(x) = x + 1$
 - $f(x) = -(x - 1)$
 - $f(x) = -(x + 1)$
 
-Q: Hvilket funksjonsuttrykk stemmer med grafen vist i figuren nedenfor? ![](figurer/oppgaver/quiz_1/oppgave_2.svg)
+Q: Hvilket funksjonsuttrykk stemmer med grafen vist i figuren nedenfor? ![{width: 60%}](figurer/oppgaver/quiz_1/oppgave_2.svg)
 + $f(x) = -(x - 3)$
 - $f(x) = x + 3$
 - $f(x) = -(x + 3)$
 - $f(x) = x - 3$
 
-Q: Hvilket funksjonsuttrykk stemmer med grafen vist i figuren nedenfor? ![](figurer/oppgaver/quiz_1/oppgave_3.svg)
+Q: Hvilket funksjonsuttrykk stemmer med grafen vist i figuren nedenfor? ![{width: 60%}](figurer/oppgaver/quiz_1/oppgave_3.svg)
 + $f(x) = 2(x - 3)$
 - $f(x) = 3(x - 2)$
 - $f(x) = 2(x + 6)$
 - $f(x) = 3(x - 6)$
 
-Q: Hvilket funksjonsuttrykk stemmer med grafen vist i figuren nedenfor? ![](figurer/oppgaver/quiz_1/oppgave_4.svg)
+Q: Hvilket funksjonsuttrykk stemmer med grafen vist i figuren nedenfor? ![{width: 60%}](figurer/oppgaver/quiz_1/oppgave_4.svg)
 + $f(x) = -2(x + 1)$
 - $f(x) = -2(x - 1)$
 - $f(x) = x + 2$
 - $f(x) = x - 2$
 
-Q: Hvilket funksjonsuttrykk stemmer med grafen vist i figuren nedenfor? ![](figurer/oppgaver/quiz_1/oppgave_5.svg)
+Q: Hvilket funksjonsuttrykk stemmer med grafen vist i figuren nedenfor? ![{width: 60%}](figurer/oppgaver/quiz_1/oppgave_5.svg)
 + $f(x) = -2(x + 4)$
 - $f(x) = 2(x + 4)$
 - $f(x) = -4(x - 8)$

@@ -27,13 +27,10 @@ der $P(x)$ og $Q(x)$ er polynomer.
 Graden til $P$ kaller vi for **tellergraden** til $f$ og graden til $Q$ kaller vi for **nevnergraden** til $f$.
 :::::
 
-Vi skal først konsentrere oss om rasjonale funksjoner der tellergraden og nevnergraden er $1$. 
-Det vil si der både teller og nevner er lineære polynomer. Vi skal kalle dette for **lineære-over-lineære** rasjonale funksjoner.
-
 
 ## Algebraisk og grafisk representasjon
 
-:::::::::::::::{admonition} Utforsk 1
+<!-- :::::::::::::::{admonition} Utforsk 1
 ---
 class: explore
 ---
@@ -52,9 +49,10 @@ I det interaktive vinduet under vises grafen til $f$.
 3. Utforsk hva $c$ bestemmer for grafen til $f$. 
 
 > Husk at du kan zoome inn og ut i vinduet og flytte rundt på koordinatssystemet. 
-:::{raw} html
+
+:::{ggb} 720 600
 ---
-file: ./ggb/utforsk/utforsk_1/utforsk_1.html
+material_id: mykbcgb6
 ---
 :::
 
@@ -83,11 +81,10 @@ Konstanten $c$ bestemmer den vertikale linje $x = c$. Grafen til $f$ nærmer seg
 
 ::::::::::::::
 
-:::::::::::::::
+::::::::::::::: -->
 
----
-
-Vi kan oppsummere det vi utforsket i Utforsk 1 med følgende resultat:
+Vi skal først konsentrere oss om rasjonale funksjoner der tellergraden og nevnergraden er $1$. 
+Det vil si der både teller og nevner er lineære polynomer. Vi skal kalle dette for **lineære-over-lineære** rasjonale funksjoner.
 
 :::::{admonition} Lineære-over-lineære rasjonale funksjoner
 ---
@@ -123,7 +120,7 @@ class: no-click, adaptive-figure
 
 ---
 
-## Bestemme $f(x)$ fra grafisk representasjon
+## Fra graf til $f(x)$
 
 Vi går løs på et eksempel. 
 
@@ -176,34 +173,51 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Quiz 1
----
-class: quiz
----
-Ta quizen!
 
-:::{raw} html
----
-file: ./quiz/quiz_1/quiz_1.html
----
+:::::::::::::::{exercise} Quiz 1
+
+
+:::{quiz}
+Q: Hvilken funksjon hører til grafen? ![{width: 60%}](./figurer/quiz/quiz_1/spm_1/graf.svg)
++ $$f(x) = \dfrac{-(x - 1)}{x - 2}$$
+- $$f(x) = \dfrac{-(x + 1)}{x - 2}$$
+- $$f(x) = \dfrac{2(x - 1)}{x + 1}$$
+- $$f(x) = \dfrac{-(x - 2)}{x - 1}$$
+
+Q: Hvilken funksjon hører til grafen? ![{width: 60%}](./figurer/quiz/quiz_1/spm_2/graf.svg)
++ $$f(x) = \dfrac{2(x + 2)}{x + 3}$$
+- $$f(x) = \dfrac{2(x + 2)}{x - 3}$$
+- $$f(x) = \dfrac{3(x + 2)}{x - 2}$$
+- $$f(x) = \dfrac{3(x - 2)}{x + 2}$$
+
+Q: Hvilken funksjon hører til grafen? ![{width: 60%}](./figurer/quiz/quiz_1/spm_3/graf.svg)
++ $$f(x) = \dfrac{-3(x + 1)}{x - 2}$$
+- $$f(x) = \dfrac{2(x + 1)}{x + 3}$$
+- $$f(x) = \dfrac{2(x + 3)}{x + 1}$$
+- $$f(x) = \dfrac{3(x - 2)}{x + 1}$$
+
+Q: Hvilken funksjon hører til grafen? ![{width: 60%}](./figurer/quiz/quiz_1/spm_4/graf.svg)
++ $$f(x) = \dfrac{-2(x - 3)}{x + 1}$$
+- $$f(x) = \dfrac{2(x - 1)}{x - 3}$$
+- $$f(x) = \dfrac{3(x + 1)}{x + 2}$$
+- $$f(x) = \dfrac{-2(x + 1)}{x - 3}$$
+
 :::
-
 
 :::::::::::::::
 
 
-:::::::::::::::{admonition} Underveisoppgave 1
 ---
-class: check
----
-I {numref}`fig-rasjonale-funksjoner-representasjoner-underveisoppgave-1` vises grafen til en rasjonal funksjon $f$.
+
+
+:::::::::::::::{exercise} Underveisoppgave 1
+I figuren nedenfor vises grafen til en rasjonal funksjon $f$.
 
 Bestem $f(x)$.
 
 
 :::{figure} ./figurer/underveisoppgaver/underveisoppgave_1/graf.svg
 ---
-name: fig-rasjonale-funksjoner-representasjoner-underveisoppgave-1
 width: 90%
 class: no-click, adaptive-figure
 ---
@@ -282,9 +296,56 @@ som betyr at vi kan lese av nullpunktet og asymptotene til $f$:
 ::::
 :::::
 
+
 ---
 
-## Skissere grafen til $f$
+
+:::::::::::::::{exercise} Underveisoppgave 2
+En rasjonal funksjon $f$ er gitt ved 
+
+$$
+f(x) = \dfrac{3x + 6}{x - 1}
+$$
+
+Bestem 
+
+* Nullpunktet til $f$
+* Likningen for den vertikale asymptoten til $f$
+* Likningen for den horisontale asymptoten til $f$
+
+
+::::{answer}
+* Nullpunktet er $x = -2$
+* Vertikal asymptote er $x = 1$
+* Horisontal asymptote er $y = 3$
+::::
+
+::::{solution}
+Generelt er en lineær-over-lineær rasjonal funksjon gitt ved 
+
+$$
+f(x) = \dfrac{a(x - b)}{x - c}
+$$
+
+Vi har at 
+
+$$
+f(x) = \dfrac{3x + 6}{x - 1} = \dfrac{3(x + 2)}{x - 1}
+$$
+
+Sammenlikninger vi det generelle uttrykket med $f(x)$ så ser vi at 
+
+* Nullpunktet er $x = -2$
+* Vertikal asymptote er $x = 1$
+* Horisontal asymptote er $y = 3$
+
+::::
+
+:::::::::::::::
+
+---
+
+## Fra $f(x)$ til graf
 
 Vi går løs på et eksempel der vi lager en skisse av grafen til en lineær rasjonal funksjon.
 

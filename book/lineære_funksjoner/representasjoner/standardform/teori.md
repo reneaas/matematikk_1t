@@ -454,18 +454,18 @@ material_id: uxmuj9p5
 
 
 
-:::::::::::::::{theory} Topunktsformelen
-Hvis grafen til en lineær funksjon $f$ går gjennom punktene $(x_0, y_0)$ og $(x_1, y_1)$, så er stigningstallet $a$ gitt ved 
+:::::::::::::::{summary} Topunktsformelen
+Hvis grafen til en lineær funksjon $f$ går gjennom punktene $(x_1, y_1)$ og $(x_2, y_2)$, så er stigningstallet $a$ gitt ved 
 
 $$
-a = \dfrac{\Delta y}{\Delta x} = \dfrac{y_1 - y_0}{x_1 - x_0}
+a = \dfrac{\Delta y}{\Delta x} = \dfrac{y_2 - y_1}{x_2 - x_1}
 $$
 
 
 der vi har definert
 
 $$
-\Delta y = y_1 - y_0 \og \Delta x = x_1 - x_0
+\Delta y = y_2 - y_1 \qog \Delta x = x_2 - x_1
 $$
 
 Vi leser symbolet $\Delta$ som "endring i" slik at $\Delta y$ betyr "endring i $y$-verdien" og $\Delta x$ betyr "endring i $x$-verdien".
@@ -488,7 +488,7 @@ class: no-click, adaptive-figure
 :::::::::::::::{underveisoppgave} Underveisoppgave 4
 Grafen til en lineær funksjon $f$ går gjennom punktene $(-1, 2)$ og $(2, 5)$. 
 
-Bestem stigningstallet $a$ til grafen til $f$ ved hjelp av {popup}`topunktsformelen<$a = \dfrac{\Delta y}{\Delta x} = \dfrac{y_1 - y_0}{x_1 - x_0}$>`.
+Bestem stigningstallet $a$ til grafen til $f$ ved hjelp av topunktsformelen.
 
 ::::{answer}
 $$

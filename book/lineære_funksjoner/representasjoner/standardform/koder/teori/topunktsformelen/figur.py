@@ -34,39 +34,35 @@ def main(dirname, save):
     ax.plot(
         x0,
         y0,
-        "ro",
-        label="$(x_0, y_0)$",
-        markersize=8,
+        "ko",
+        markersize=10,
         alpha=0.8,
     )
 
     ax.text(
         x=x0 - dx,
         y=y0 + dy,
-        s="$(x_0, y_0)$",
+        s="$(x_1, y_1)$",
         fontsize=20,
         ha="right",
         va="bottom",
-        color="red",
     )
 
     ax.plot(
         x1,
         y1,
-        "ro",
-        label="$(x_0, y_0)$",
-        markersize=8,
+        "ko",
+        markersize=10,
         alpha=0.8,
     )
 
     ax.text(
         x=x1 - dx,
         y=y1 + dy,
-        s="$(x_1, y_1)$",
+        s="$(x_2, y_2)$",
         fontsize=20,
         ha="right",
         va="bottom",
-        color="red",
     )
 
     ax.hlines(

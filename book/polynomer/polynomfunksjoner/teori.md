@@ -269,20 +269,45 @@ class: no-click, adaptive-figure
 
 ---
 
-:::::::::::::::{admonition} Quiz 1
----
-class: quiz
----
-Ta quizen!
 
-:::{raw} html
----
-file: ./quiz/quiz_1/quiz_1.html
----
+:::::::::::::::{exercise} Quiz 1
+
+
+:::{quiz}
+Q: Hvilket funksjonsuttrykk passer med grafen? ![{width: 60%}](./figurer/quiz/quiz_1/spm_1.svg)
++ $$f(x) = (x - 1)(x + 2)(x - 3)$$
+- $$f(x) = (x - 1)^2(x - 3)$$
+- $$f(x) = (x + 2)(x - 3)^2$$
+- $$f(x) = -(x - 1)(x + 2)(x - 3)$$
+
+Q: Hvilket funksjonsuttrykk passer med grafen? ![{width: 60%}](./figurer/quiz/quiz_1/spm_2.svg)
++ $$f(x) = -(x + 1)^2(x - 1)$$
+- $$f(x) = -(x + 1)(x - 1)^2$$
+- $$f(x) = (x - 1)^3$$
+- $$f(x) = (x + 1)^2(x - 1)$$
+
+Q: Hvilket funksjonsuttrykk passer med grafen? ![{width: 60%}](./figurer/quiz/quiz_1/spm_3.svg)
++ $$f(x) = (x + 1)(x - 2)^2$$
+- $$f(x) = -2(x + 1)(x - 2)^2$$
+- $$f(x) = (x + 1)^2(x - 2)$$
+- $$f(x) = -(x + 1)^2(x - 2)$$
+
+Q: Vilket funksjonsuttrykk passer med grafen? ![{width: 60%}](./figurer/quiz/quiz_1/spm_4.svg)
++ $$f(x) = -(x + 2)^3$$
+- $$f(x) = (x - 2)^2(x + 2)$$
+- $$f(x) = (x + 2)^3$$
+- $$f(x) = -(x - 2)^3$$
+
+Q: Hvilket funksjonsuttrykk passer med grafen? ![{width: 60%}](./figurer/quiz/quiz_1/spm_5.svg)
++ $$f(x) = (x - 3)^3$$
+- $$f(x) = (x + 3)^3$$
+- $$f(x) = -(x - 3)^3$$
+- $$f(x) = -(x + 3)^3$$
+
 :::
 
-:::::::::::::::
 
+:::::::::::::::
 
 
 ---
