@@ -6,37 +6,37 @@
 level: 1
 ---
 :::{quiz}
-Q: Hvilket punkt er vist i figuren nedenfor? ![](figurer/oppgaver/quiz_1/oppgave_1.svg)
+Q: Hvilket punkt er vist i figuren nedenfor? ![{width: 60%}](figurer/oppgaver/quiz_1/oppgave_1.svg)
 + $(2, 3)$
 - $(3, 2)$
 - $(-2, 3)$
 - $(-3, 2)$
 
-Q: Hvilket punkt er vist i figuren nedenfor? ![](figurer/oppgaver/quiz_1/oppgave_2.svg)
+Q: Hvilket punkt er vist i figuren nedenfor? ![{width: 60%}](figurer/oppgaver/quiz_1/oppgave_2.svg)
 + $(-1, 2)$
 - $(2, -1)$
 - $(1, -2)$
 - $(-2, 1)$
 
-Q: Hvilket punkt er vist i figuren nedenfor? ![](figurer/oppgaver/quiz_1/oppgave_3.svg)
+Q: Hvilket punkt er vist i figuren nedenfor? ![{width: 60%}](figurer/oppgaver/quiz_1/oppgave_3.svg)
 + $(-3, -2)$
 - $(-2, -3)$
 - $(3, 2)$
 - $(2, 3)$
 
-Q: Hvilket punkt er vist i figuren nedenfor? ![](figurer/oppgaver/quiz_1/oppgave_4.svg)
+Q: Hvilket punkt er vist i figuren nedenfor? ![{width: 60%}](figurer/oppgaver/quiz_1/oppgave_4.svg)
 + $(-3, 0)$
 - $(0, -3)$
 - $(3, 0)$
 - $(0, 3)$
 
-Q: Hvilket punkt er vist i figuren nedenfor? ![](figurer/oppgaver/quiz_1/oppgave_5.svg)
+Q: Hvilket punkt er vist i figuren nedenfor? ![{width: 60%}](figurer/oppgaver/quiz_1/oppgave_5.svg)
 + $(0, 4)$
 - $(4, 0)$
 - $(0, -4)$
 - $(-4, 0)$
 
-Q: Hvilket punkt er vist i figuren nedenfor? ![](figurer/oppgaver/quiz_1/oppgave_6.svg)
+Q: Hvilket punkt er vist i figuren nedenfor? ![{width: 60%}](figurer/oppgaver/quiz_1/oppgave_6.svg)
 + $(-3, -4)$
 - $(3, 4)$
 - $(4, 3)$
@@ -89,37 +89,37 @@ level: 1
 ---
 :::{quiz}
 
-Q: Hvilket funksjonsuttrykk stemmer med grafen vist i figuren nedenfor? ![](figurer/oppgaver/quiz_2/oppgave_1.svg)
+Q: Hvilket funksjonsuttrykk stemmer med grafen vist i figuren nedenfor? ![{width: 60%}](figurer/oppgaver/quiz_2/oppgave_1.svg)
 + $f(x) = x - 2$
 - $f(x) = 2x + 1$
 - $f(x) = -x + 2$
 - $f(x) = -2x + 1$
 
-Q: Hvilket funksjonsuttrykk stemmer med grafen vist i figuren nedenfor? ![](figurer/oppgaver/quiz_2/oppgave_2.svg)
+Q: Hvilket funksjonsuttrykk stemmer med grafen vist i figuren nedenfor? ![{width: 60%}](figurer/oppgaver/quiz_2/oppgave_2.svg)
 + $f(x) = -x + 3$
 - $f(x) = x + 3$
 - $f(x) = x - 3$
 - $f(x) = -x - 3$
 
-Q: Hvilket funksjonsuttrykk stemmer med grafen vist i figuren nedenfor? ![](figurer/oppgaver/quiz_2/oppgave_3.svg)
+Q: Hvilket funksjonsuttrykk stemmer med grafen vist i figuren nedenfor? ![{width: 60%}](figurer/oppgaver/quiz_2/oppgave_3.svg)
 + $f(x) = 2x + 1$
 - $f(x) = -2x + 1$
 - $f(x) = -x + 2$
 - $f(x) = x + 1$
 
-Q: Hvilket funksjonsuttrykk stemmer med grafen vist i figuren nedenfor? ![](figurer/oppgaver/quiz_2/oppgave_4.svg)
+Q: Hvilket funksjonsuttrykk stemmer med grafen vist i figuren nedenfor? ![{width: 60%}](figurer/oppgaver/quiz_2/oppgave_4.svg)
 + $f(x) = 3x - 4$
 - $f(x) = x - 4$
 - $f(x) = 3x + 4$
 - $f(x) = x + 4$
 
-Q: Hvilket funksjonsuttrykk stemmer med grafen vist i figuren nedenfor? ![](figurer/oppgaver/quiz_2/oppgave_5.svg)
+Q: Hvilket funksjonsuttrykk stemmer med grafen vist i figuren nedenfor? ![{width: 60%}](figurer/oppgaver/quiz_2/oppgave_5.svg)
 + $f(x) = -x + 2$
 - $f(x) = x + 2$
 - $f(x) = -2x + 1$
 - $f(x) = 2x - 1$
 
-Q: Hvilket funksjonsuttrykk stemmer med grafen vist i figuren nedenfor? ![](figurer/oppgaver/quiz_2/oppgave_6.svg)
+Q: Hvilket funksjonsuttrykk stemmer med grafen vist i figuren nedenfor? ![{width: 60%}](figurer/oppgaver/quiz_2/oppgave_6.svg)
 + $f(x) = x + 1$
 - $f(x) = -x + 1$
 - $f(x) = 2x + 1$
