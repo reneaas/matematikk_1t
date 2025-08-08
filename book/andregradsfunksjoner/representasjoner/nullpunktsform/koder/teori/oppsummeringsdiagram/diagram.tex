@@ -1,6 +1,7 @@
 \documentclass[tikz,border=6pt]{standalone}
 \usepackage{amsmath}
 \usetikzlibrary{arrows.meta,positioning}
+\usepackage[dvipsnames]{xcolor}
 
 \begin{document}
 \begin{tikzpicture}[
@@ -22,7 +23,7 @@
 \def\boxw{52mm}       % fixed width for every box
 
 % ---- nodes (equilateral triangle) ----
-\node[box, fill=blue!5] (std) at (0,\H) {
+\node[box, fill=RoyalBlue!15] (std) at (0,\H) {
   \textbf{Standardform}\\[2pt]
   $f(x)=ax^2+bx+c$\\[4pt]
   % selectively left-align these two lines:
@@ -32,7 +33,7 @@
   \makebox[\boxw][l]{\footnotesize Symmetrilinje: $x_0=-\dfrac{b}{2a}$}
 };
 
-\node[box, fill=red!5] (ext) at (-\L/2,0) {
+\node[box, fill=RubineRed!15] (ext) at (-\L/2,0) {
   \textbf{Ekstremalpunktsform}\\[2pt]
   $f(x)=a(x-x_0)^2+y_0$\\[4pt]
   \makebox[\boxw][l]{\footnotesize $a > 0$: Konveks $\smile$}\\
@@ -41,7 +42,7 @@
   \makebox[\boxw][l]{\footnotesize Symmetrilinje: $x = x_0$}\\
 };
 
-\node[box, fill=green!5] (nul) at (\L/2,0) {
+\node[box, fill=SeaGreen!15] (nul) at (\L/2,0) {
   \textbf{Nullpunktsform}\\[2pt]
   $f(x)=a(x-x_1)(x-x_2)$\\[4pt]
   \makebox[\boxw][l]{\footnotesize $a > 0$: Konveks $\smile$}\\
@@ -64,11 +65,11 @@
   (ext);
 
 \draw[->] (nul) to[bend right=12]
-  node[label,midway,sloped,above] {Gang ut}
+  node[label,midway,sloped,above] {Gang ut parenteser}
   (std);
 
 \draw[->] (ext) to[bend left=18]
-  node[label,midway,sloped,above] {Gang ut}
+  node[label,midway,sloped,above] {Gang ut med kvadratsetning}
   (std);
 
 \end{tikzpicture}
