@@ -368,10 +368,10 @@ Vi vet allerede nå at vi kan bestemme stigningstallet $a$ til en lineær funksj
 :::::::::::::::{explore} Utforsk 3
 Nedenfor vises grafen til en lineær funksjon $f$ i et interakivt vindu. Her kan du variere avstanden på $x$-aksen mellom to punkter $A$ og $B$ som ligger på grafen til $f$.
 
-Anna mener at hvis en funksjon går gjennom punktene $(x_0, y_0)$ og $(x_1, y_1)$, så kan vi bruke formelen 
+Anna mener at hvis en funksjon går gjennom punktene $(x_1, y_1)$ og $(x_2, y_2)$, så kan vi bruke formelen 
 
 $$
-a = \dfrac{y_1 - y_0}{x_1 - x_0}
+a = \dfrac{y_2 - y_1}{x_2 - x_1}
 $$
 
 til å regne ut stigningstallet $a$ til grafen til $f$.
@@ -393,7 +393,7 @@ $$
 
 
 :::::::::::::{tab-item} b
-Vi lar punktet $A = (x_0, y_0)$. Hvilket punkt er dette i figuren nedenfor? 
+Vi lar punktet $A = (x_1, y_1)$. Hvilket punkt er dette i figuren nedenfor? 
 
 ::::{answer}
 $$
@@ -404,12 +404,12 @@ $$
 :::::::::::::
 
 :::::::::::::{tab-item} c
-Endre på verdien til $x_1$ slik at $x_1 = 3$. 
+Endre på verdien til $x_2$ slik at $x_2 = 3$. 
 
 Prøv ut formelen til Anna og sjekk om du får det samme svaret som i **oppgave a**. 
 
 ::::{solution}
-Når $x_1 = 3$, er punktet $B = (3, 7)$. Med formelen til Anna får vi derfor
+Når $x_2 = 3$, er punktet $B = (3, 7)$. Med formelen til Anna får vi derfor
 
 $$
 a = \dfrac{7 - 3}{3 - 1} = \dfrac{4}{2} = 2.
