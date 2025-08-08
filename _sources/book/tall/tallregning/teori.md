@@ -182,8 +182,10 @@ $$
 
 ## Kvadratrøtter
 
+Kvadratroten $\sqrt{a}$ av et tall $a$, er hvilket tall $b$ vi må opphøye i $2$ for å få tallet vi tar kvadratroten av. 
+
 :::::::::::::::{summary} Kvadratrøtter
-Kvadratroten av et tall $a$ er det tallet $b$ som må opphøyes i $2$ for å få $a$. Det betyr at
+Kvadratroten $\sqrt{a}$ av et tall $a$ er det tallet positive tallet $b$ som må opphøyes i $2$ for å få $a$. Det betyr at
 
 $$
 b = \sqrt{a} \liff b^2 = a
@@ -191,4 +193,65 @@ $$
 
 :::::::::::::::
 
+---
+
+:::::::::::::::{example} Eksempel 5
+Regn ut
+
+$$
+\sqrt{16}
+$$
+
+::::{solution}
+---
+dropdown: 0
+---
+Vi har at $\sqrt{16} = 4$ siden $4^2 = 16$. 
+
+::::
+
+:::::::::::::::
+
+
+---
+
+Ved regning, kan vi i praksis bare bestemme kvadratrøttene for kvadrattallene
+
+$$
+1, 4, 9, 16, 25, \ldots
+$$
+
+Vi er avhengig av en kalkulator for å beregne en tilnærmet verdi for alle andre kvadratrøtter. Ofte ønsker vi å oppgi svaret eksakt. Da er det vanlig å forenkle svaret så mye som mulig. Da får vi bruk for følgende regneregel: 
+
+:::::::::::::::{summary} Produktregelen for kvadratrøtter
+For to tall $a$ og $b$ gjelder:
+
+$$
+\sqrt{a\cdot b} = \sqrt{a} \cdot \sqrt{b}
+$$
+:::::::::::::::
+
+---
+
+La oss se på et eksempel: 
+
+:::::::::::::::{example} Eksempel 6
+Skriv kvadratroten så enkelt som mulig:
+
+$$
+\sqrt{72}
+$$
+
+
+::::{solution}
+---
+dropdown: 0
+---
+$$
+\sqrt{72} = \sqrt{36 \cdot 2} = \sqrt{36} \cdot \sqrt{2} = 6\sqrt{2}
+$$
+::::
+
+
+:::::::::::::::
 
