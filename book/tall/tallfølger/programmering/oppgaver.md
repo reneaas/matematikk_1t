@@ -771,12 +771,134 @@ print(s)
 :::::::::::::::
 
 
+---
+
+
+:::::::::::::::{exercise} Oppgave 9
+En sum er gitt ved 
+
+$$
+S = 1 + \dfrac{1}{2} + \dfrac{1}{4} + \dfrac{1}{8} + \dfrac{1}{16} + \ldots
+$$
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Lag et program som skriver ut de første 5 leddene i summen.
+
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Lag et program som regner ut summen av de 5 første leddene i summen
+
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+Bruk programmet ditt til å bestemme hvilken verdi summen nærmer seg når vi bruker veldig mange ledd.
+
+
+
+:::::::::::::
+
+
+::::::::::::::
+
+
+:::{interactive-code}
+# Din kode her
+
+
+
+
+:::
+
+
+:::::::::::::::
+
+
 
 ---
 
 
 
-:::::::::::::::{exercise} Oppgave 9
+:::::::::::::::{exercise} Oppgave 10
+Alma og Synne jobber med summen 
+
+$$
+S = 1 - \dfrac{1}{2} + \dfrac{1}{4} - \dfrac{1}{8} + \dfrac{1}{16} - \ldots
+$$
+
+:::{dialogue}
+---
+name1: Alma
+name2: Synne
+speaker1: left
+speaker2: right
+---
+Alma: Jeg vet hvordan vi kan regne ut summen når alle leddene er positive, men nå er jo leddene positive og negative annen hver gang.
+Synne: Kan vi ikke bare bruke en `if`{l=python}-`else`{l=python}-setning sånn at programmet bytter på fortegnet annen hver gang da?
+Alma: Jo! Er ikke det litt som å bare sjekke om et tall er delelig med $2$ da?
+Synne: Det tror jeg vil funke!
+:::
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Ta utgangspunkt i ideen til Alma og Synne, og lag et program som skriver ut de 5 første leddene i summen.
+
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Lag et program som regner ut summen av de 5 første leddene.
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+Bruk programmet ditt til å bestemme hvilken verdi programmet nærmer seg når vi bruker veldig mange ledd. 
+
+
+:::::::::::::
+
+
+::::::::::::::
+
+
+:::{interactive-code}
+# Din kode her
+
+
+
+
+:::
+
+
+
+:::::::::::::::
+
+
+
+---
+
+
+
+:::::::::::::::{exercise} Oppgave 11
 ---
 level: 2
 ---
@@ -784,7 +906,7 @@ Nedenfor ser du tre figurer. Figurene er satt sammen av små kvadrater.
 
 Tenk deg at du skal fortsette å lage figurer etter samme mønster. Vi lar $K_n$ være antall små kvadrater i figur $n$.
 
-:::{figure} ./figurer/oppgaver/oppgave_9/figur.svg
+:::{figure} ./figurer/oppgaver/oppgave_11/figur.svg
 ---
 width: 100%
 class: no-click, adaptive-figure
@@ -840,7 +962,7 @@ Lag et program som finner ut hvor mange kvadrater du må bruke for å lage de 10
 ---
 
 
-:::::::::::::::{exercise} Oppgave 10
+:::::::::::::::{exercise} Oppgave 12
 ---
 level: 3
 ---
@@ -849,7 +971,7 @@ Nedenfor ser du tre figurer. Figurene er satt sammen av små kvadrater.
 Tenk deg at du skal fortsette å lage figurer etter samme mønster. Vi lar $K_n$ være antall små kvadrater i figur $n$. 
 
 
-:::{figure} ./figurer/oppgaver/oppgave_10/figur.svg
+:::{figure} ./figurer/oppgaver/oppgave_12/figur.svg
 ---
 width: 100%
 class: no-click, adaptive-figure
@@ -910,7 +1032,7 @@ Lag et program som finner ut
 
 
 
-:::::::::::::::{exercise} Oppgave 11
+:::::::::::::::{exercise} Oppgave 13
 ---
 level: 3
 ---
@@ -1018,7 +1140,7 @@ for n in range(1, 21):
 
 
 
-:::::::::::::::{exercise} Oppgave 12
+:::::::::::::::{exercise} Oppgave 14
 ---
 level: 3
 ---
@@ -1114,7 +1236,7 @@ som gir utskriften
 ---
 
 
-:::::::::::::::{exercise} Oppgave 13
+:::::::::::::::{exercise} Oppgave 15
 ---
 level: 3
 ---
@@ -1123,7 +1245,7 @@ Nedenfor vises et kvadrat med sidelengder $3$.
 Kvadratet er fylt med mindre fargelagte kvadrater som blir mindre og mindre. 
 
 
-:::{figure} ./figurer/oppgaver/oppgave_13/figur.svg
+:::{figure} ./figurer/oppgaver/oppgave_15/figur.svg
 ---
 width: 80%
 class: no-click, adaptive-figure
@@ -1198,7 +1320,7 @@ print(areal)
 
 
 
-:::::::::::::::{exercise} Oppgave 14
+:::::::::::::::{exercise} Oppgave 16
 ---
 level: 3
 ---
@@ -1208,7 +1330,7 @@ Nedenfor vises en figur som er satt sammen av uendelige mange linjestykker.
 Lengden til et linjestykke er alltid $90 \%$ av lengden til det forrige linjestykket. Det første linjestykket er $100$ cm langt. 
 
 
-:::{figure} ./figurer/oppgaver/oppgave_14/figur.svg
+:::{figure} ./figurer/oppgaver/oppgave_16/figur.svg
 ---
 width: 100%
 class: no-click, adaptive-figure
@@ -1283,13 +1405,13 @@ Lag et program som finner hvor mange linjestykker du må sette sammen for at fig
 ---
 
 
-:::::::::::::::{exercise} Oppgave 15
+:::::::::::::::{exercise} Oppgave 17
 Nedenfor vises tre figurer som følger et bestemt mønster. 
 
 La $K_n$ være antall små kvadrater i figur $n$. 
 
 
-:::{figure} ./figurer/oppgaver/oppgave_15/figur.svg
+:::{figure} ./figurer/oppgaver/oppgave_17/figur.svg
 ---
 class: no-click, adaptive-figure
 width: 100%
@@ -1342,7 +1464,7 @@ Lag et program som regner ut hvor mange små kvadrater du må bruke for å lage 
 
 
 
-:::::::::::::::{exercise} Oppgave 16
+:::::::::::::::{exercise} Oppgave 18
 ---
 level: 3
 ---
@@ -1450,7 +1572,7 @@ Hvor mange ledd trenger du for å få $\pi$ med $5$ riktige desimaler?
 
 
 
-:::::::::::::::{exercise} Oppgave 17
+:::::::::::::::{exercise} Oppgave 19
 ---
 level: 3
 ---
@@ -1552,7 +1674,7 @@ som gir utskriften
 
 
 
-:::::::::::::::{exercise} Oppgave 18
+:::::::::::::::{exercise} Oppgave 20
 ---
 level: 4
 ---

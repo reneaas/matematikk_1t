@@ -4,139 +4,104 @@ import matplotlib.pyplot as plt
 
 
 def main(dirname, save):
-    """Create a 'cat'-like pattern with tail, head, and body components."""
-    alpha = 0.6
 
-    def draw_cat(ax, s, n):
-        """Draw a cat-like pattern for the n-th figure."""
+    # List of functions and their labels.
+    A = [0, 0]
+    B = [2, 0]
+    C = [2, 2]
+    D = [0, 2]
 
-        # TAIL: diagonal line going upper-left, f(n) = n squares
-        # Starts from origin and goes diagonally up-left
-        tail_offset_x = -n * s
-        tail_offset_y = n * s
-        for k in range(n):
-            x0 = tail_offset_x - k * s
-            y0 = tail_offset_y + k * s
-            # x0, y0 = -k * s, k * s
-            A = (x0, y0)
-            B = (x0 - s, y0)
-            C = (x0 - s, y0 + s)
-            D = (x0, y0 + s)
+    plt.plot([A[0], B[0]], [A[1], B[1]], "k-", lw=1, alpha=0.7)
+    plt.plot([B[0], C[0]], [B[1], C[1]], "k-", lw=1, alpha=0.7)
+    plt.plot([C[0], D[0]], [C[1], D[1]], "k-", lw=1, alpha=0.7)
+    plt.plot([D[0], A[0]], [D[1], A[1]], "k-", lw=1, alpha=0.7)
 
-            color = plotmath.COLORS.get("blue")  # Tail color
-            plotmath.plot_polygon(A, B, C, D, ax=ax, alpha=alpha, color=color)
-
-        # HEAD: n×n square at upper-right
-        # Position it so it's connected but distinct
-        head_offset_x = (n + 1) * s  # Move right
-        head_offset_y = n * s  # Move up
-
-        for i in range(n):
-            for j in range(n):
-                x0 = head_offset_x + i * s
-                y0 = head_offset_y + j * s
-                A = (x0, y0)
-                B = (x0 + s, y0)
-                C = (x0 + s, y0 + s)
-                D = (x0, y0 + s)
-
-                color = plotmath.COLORS.get("blue")  # Head color
-                plotmath.plot_polygon(A, B, C, D, ax=ax, alpha=alpha, color=color)
-
-        # BODY: bridge-like structure connecting tail and head
-        # (n + 1) * n - 1 squares forming a bridge
-        # Let's create a horizontal bridge from tail end to head start
-        # Create left part of the bridge
-
-        for i in range(n):
-            for j in range(n):
-                x0 = -s * (i + 1)
-                y0 = j * s
-                A = (x0, y0)
-                B = (x0, y0 - s)
-                C = (x0 + s, y0 - s)
-                D = (x0 + s, y0)
-
-                color = plotmath.COLORS.get("blue")  # Body color
-                plotmath.plot_polygon(A, B, C, D, ax=ax, alpha=alpha, color=color)
-
-        # Build the right part of the bridge
-        for i in range(n):
-            for j in range(n):
-                x0 = s * (i + 1)
-                y0 = j * s
-                A = (x0, y0)
-                B = (x0, y0 - s)
-                C = (x0 + s, y0 - s)
-                D = (x0 + s, y0)
-
-                color = plotmath.COLORS.get("blue")  # Body color
-                plotmath.plot_polygon(A, B, C, D, ax=ax, alpha=alpha, color=color)
-
-        # build the top part of the bridge
-        for i in range(-n, n + 1):
-            x0 = -s * i
-            y0 = s * (n - 1)
-            A = (x0, y0)
-            B = (x0 + s, y0)
-            C = (x0 + s, y0 + s)
-            D = (x0, y0 + s)
-
-            color = plotmath.COLORS.get("blue")  # Body color
-            plotmath.plot_polygon(A, B, C, D, ax=ax, alpha=alpha, color=color)
-
-    # --- Create figure with multiple cat patterns ---
-    fig, axs = plt.subplots(
-        1,
-        3,
-        figsize=(8, 3),  # Wider to accommodate cat shapes
-        sharex=True,
-        sharey=True,
-        constrained_layout=True,
+    plt.text(
+        x=0 - 0.1,
+        y=0.5 * (A[1] + D[1]),
+        s="$3$",
+        fontsize=20,
+        ha="left",
+        va="center",
     )
 
-    # Draw cats of different sizes
-    s = 1
-    draw_cat(axs[0], s=s, n=1)
-    draw_cat(axs[1], s=s, n=2)
-    draw_cat(axs[2], s=s, n=3)
+    plt.text(
+        x=0.5 * (A[0] + B[0]),
+        y=-0.1,
+        s="$3$",
+        fontsize=20,
+        ha="center",
+        va="top",
+    )
 
-    for i, ax in enumerate(axs):
-        ax.set_aspect("equal")
-        ax.axis("off")
+    lengths = ["$2$", "$1$", "$\\frac{1}{2}$"]
+    for i in range(10):
+        x_midpoint = 0.5 * (A[0] + B[0])
+        y_midpoint = 0.5 * (A[1] + C[1])
+        height = 0.5 * (C[1] - A[1])
+        width = 0.5 * (B[0] - A[0])
 
-        # Calculate total squares for this figure
-        n = i + 1
-        tail_squares = n
-        head_squares = n * n
-        body_squares = (n + 1) * n - 1
-        total_squares = tail_squares + head_squares + body_squares
+        plt.plot([x_midpoint, x_midpoint], [A[1], C[1]], "k--", lw=1, alpha=0.7)
+        plt.plot([A[0], B[0]], [y_midpoint, y_midpoint], "k--", lw=1, alpha=0.7)
 
-        ax.text(
-            x=n * s / 2,  # Center under the figure
-            y=-2 * s,
-            s=f"Figur {n}",
-            fontsize=20,
-            ha="center",
-            va="center",
-            weight="bold",
+        A_fill = A[:]
+        x_A = A[0]
+        y_A = A[1]
+        A_fill = (x_A, y_A)
+
+        B_fill = (x_midpoint, B[1])
+
+        C_fill = (x_midpoint, y_midpoint)
+        D_fill = (D[0], y_midpoint)
+
+        plt.fill(
+            [A_fill[0], B_fill[0], C_fill[0], D_fill[0]],
+            [A_fill[1], B_fill[1], C_fill[1], D_fill[1]],
+            color=plotmath.COLORS.get("blue"),
+            alpha=0.3,
         )
 
-        # Set reasonable axis limits
-        ax.set_xlim(-(3.2 + n) * s, (5 + n) * s)
-        ax.set_ylim(-(3 + n) * s, (5 + n) * s)
+        # if i < 3:
+        #     s = lengths[i]
+        #     plt.text(
+        #         x=A_fill[0] - 0.05,
+        #         y=0.5 * (A_fill[1] + D_fill[1]),
+        #         s=s,
+        #         fontsize=20,
+        #         ha="right",
+        #         va="center",
+        #     )
 
+        A = [x_midpoint, y_midpoint]
+        B = [B[0], y_midpoint]
+        D = [x_midpoint, D[-1]]
+
+    plt.tight_layout()
+    plt.axis("off")
+    plt.axis("equal")
+
+    # NOTE: Select an appropriate `dirname` to save the figure.
+    # The directory `dirname` will be created automatically if it does not exist already.
     if save:
         fname = __file__.split("/")[-1].replace(".py", ".svg")
-        plotmath.savefig(dirname=dirname, fname=fname)
-    else:
+        plotmath.savefig(
+            dirname=dirname,
+            fname=fname,
+            transparent=True,
+        )  # Lagrer figuren i `dirname`-directory
+
+    if not save:
+
         plotmath.show()
 
 
 if __name__ == "__main__":
+
     import pathlib
 
+    # Get the directory where the script is located
     current_dir = str(pathlib.Path(__file__).resolve().parent)
+
     parts = current_dir.split("/")
     for i in range(len(parts)):
         if parts[~i] == "koder":
@@ -144,4 +109,6 @@ if __name__ == "__main__":
             break
 
     dirname = "/".join(parts)
+
+    # NOTE: Set `save=True` to save figure. `save=False` to display figure.
     main(dirname=dirname, save=True)

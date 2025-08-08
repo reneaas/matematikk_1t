@@ -24,6 +24,8 @@ class: no-click, adaptive-figure
 ---
 :::
 
+> Merk at konstanten $a$ er den samme som i standardformen og ekstremalpunktsformen! 
+
 Se figuren nedenfor.
 
 :::{figure} ./figurer/teori/grafisk_representasjon.svg
@@ -570,3 +572,15 @@ $$
 
 :::::::::::::::
 
+
+## Oppsummering av representasjonsformer
+Nå har vi sett hvordan vi kan veksle mellom alle representasjonene. For å få oversikt over teorien så langt, kan vi bruke diagrammet nedenfor.
+
+
+
+:::{figure} ./koder/teori/oppsummeringsdiagram/diagram.svg
+---
+class: no-click, adaptive-figure
+width: 100%
+---
+:::
