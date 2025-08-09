@@ -9,7 +9,7 @@ class: tip
 * Kunne bestemme $f(x)$ for polynomfunksjoner. 
 :::
 
-Vi har allerede møtt på to polynomfunksjoner – lineære funksjoner og andregradsfunksjoner. Nå skal vi gå løs på helt generelle polynomfunksjoner. Fiksa med {poly-icon}`cubicup` og {poly-icon}`cubicdown`. For andregradsfunksjoner har vi {poly-icon}`smile` og {poly-icon}`frown`.
+Vi har allerede møtt på to polynomfunksjoner – lineære funksjoner og andregradsfunksjoner. Nå skal vi gå løs på helt generelle polynomfunksjoner.
 
 :::::{admonition} Definisjon: Polynomfunksjon
 ---
@@ -19,37 +19,43 @@ Et **polynom** $f(x)$ er en sum av ledd på formen $a_n x^n$ der $a_n$ er koeffi
 
 Den største verdien av $n$ i summen kalles for **graden** til polynomet.
 
-En **polynomfunksjon** $f$ er en funksjon der $f(x)$ er et polynom. 
+En **polynomfunksjon** $f$ er en funksjon der funksjonsuttrykket $f(x)$ er et polynom. 
 
 :::::
-
-> Vi skal ikke gjøre et stort poeng ut av forskjellen på et polynom og en polynomfunksjon. 
+ 
 
 :::::::::::::::{admonition} Eksempel 1
 ---
 class: example
 ---
-Under vises eksempler på polynomer med ulik grad.
-::::::::::::::{tab-set}
-:::::::::::::{tab-item} Grad 1
+Nedenfor ser du fire eksempler på polynomfunksjoner med ulik grad.
+
+
+::::::::::::::{grid} 1 1 2 2
+---
+gutter: 2
+---
+:::::::::::::{grid-item-card}
+Grad 1 (lineær funksjon)
+^^^
 
 $$
 f(x) = 2x + 3
 $$
 
-
 :::{figure} ./figurer/eksempler/eksempel_1/grad_1.svg
 ---
-width: 80%
+width: 100%
 class: no-click, adaptive-figure
 ---
 :::
 
-
 :::::::::::::
 
 
-:::::::::::::{tab-item} Grad 2
+:::::::::::::{grid-item-card}
+Grad 2 (andregradsfunksjon)
+^^^
 
 $$
 f(x) = x^2 - 2x - 3
@@ -58,14 +64,17 @@ $$
 
 :::{figure} ./figurer/eksempler/eksempel_1/grad_2.svg
 ---
-width: 80%
+width: 100%
 class: no-click, adaptive-figure
 ---
 :::
 
 :::::::::::::
 
-:::::::::::::{tab-item} Grad 3
+
+:::::::::::::{grid-item-card}
+Grad 3 (tredjegradsfunksjon)
+^^^
 
 $$
 f(x) = x^3 - 2x^2 - x + 2
@@ -74,15 +83,17 @@ $$
 
 :::{figure} ./figurer/eksempler/eksempel_1/grad_3.svg
 ---
-width: 80%
+width: 100%
 class: no-click, adaptive-figure
 ---
 :::
 
 :::::::::::::
 
-:::::::::::::{tab-item} Grad 4
 
+:::::::::::::{grid-item-card}
+Grad 4 (fjerdegradsfunksjon)
+^^^
 
 $$
 f(x) = x^4 + 3x^3 - x^2 - 3x + 4
@@ -91,7 +102,7 @@ $$
 
 :::{figure} ./figurer/eksempler/eksempel_1/grad_4.svg
 ---
-width: 80%
+width: 100%
 class: no-click, adaptive-figure
 ---
 :::
@@ -100,16 +111,26 @@ class: no-click, adaptive-figure
 
 ::::::::::::::
 
+
 :::::::::::::::
 
-## Tredjegradspolynomer
+## Tredjegradsfunksjoner
 
-Tredjegradspolynomer vil fungere som en "lekemodell" for alle polynomfunksjoner av høyere grad. Alle teknikkene vi anvender på tredjegradspolynomer vil også fungere på polynomer av høyere grad.
 
-:::{admonition} Tredjegradsfunksjoner
----
-class: theory
----
+Tredjegradsfunksjoner vil fungere som en "lekemodell" for alle polynomfunksjoner av høyere grad. Mange av teknikkene vi anvender på tredjegradsfunksjoner vil også fungere på polynomfunksjoner av høyere grad. Vi kommer til å oppdage at tredjegradsfunksjoner ikke har et like ryddig system som vi har hatt når vi har jobbet med lineære funksjoner og andregradsfunksjoner. 
+
+### Standardform
+
+Akkurat som før, har vi en standardform for tredjegradsfunksjoner også:
+
+
+:::{margin} Hva med betydningen til $c$?
+Konstanten $c$ har ikke en opplagt betydning vi kan peke på her og nå. 
+Senere vil vi ha flere verktøy til å bedre forstå hva $c$ betyr for grafen til en tredjegradsfunksjon.
+:::
+
+
+:::::::::::::::{summary} Tredjegradsfunksjoner (standardform)
 En **tredjegradsfunksjon** $f$ er en funksjon der $f(x)$ er et tredjegradspolynom. Vi kan generelt skrive 
 
 $$
@@ -117,638 +138,561 @@ f(x) = ax^3 + bx^2 + cx + d,
 $$
 
 der $a, b, c, d \in \mathbb{R}$ er koeffisientene til polynomet. 
-:::
 
+* Hvis $a > 0$ har grafen til $f$ form som {poly-icon}`cubicup`. Hvis $a < 0$ har grafen til $f$ form som {poly-icon}`cubicdown`.
+* Grafen til $f$ har en **anti-symmetrilinje** $x_0 = -\dfrac{b}{3a}$.
+* Grafen til $f$ har et vendepunkt i $(x_0, f(x_0))$. 
+* Grafen til $f$ skjærer $y$-aksen i $(0, d)$. 
 
-Men det krever en del arbeid før vi vil være i stand til å drøfte dem fullstendig når de er skrevet på denne formen. Derfor skal vi starte med noen enklere tilfeller. 
 
-
-
-
-:::::::::::::::{admonition} Utforsk 1
----
-class: explore
----
-En tredjegradsfunksjon kan skrives på formen 
-
-$$
-f(x) = a(x - x_1)(x - x_2)(x - x_3),
-$$
-
-der $x_1$, $x_2$ og $x_3$ er nullpunktene til funksjonen – men må ikke nødvendigvis være forskjellige.
-
-> Husk at det er mulig å zoome inn og flytte rundt på grafikkvinduene under.
-::::::::::::::{tab-set}
----
-class: tabs-parts
----
-:::::::::::::{tab-item} a
-
-Under kan du justere verdien til $a$, mens nullpunktene $x_1$, $x_2$ og $x_3$ er fastholdt.
-
-Undersøk hvordan $a$ påvirker formen på grafen til $f$. Forklar spesielt hva som skjer når $a$ er positiv og negativ.
-
-:::{raw} html
----
-file: ./ggb/utforsk/utforsk_1/a.html
----
-:::
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} b
-Under kan du justere verdien til $x_1$, mens $a$, $x_2$ og $x_3$ er fastholdt. 
-
-1. Hva bestemmer verdien til $x_1$?
-2. Hva skjer hvis du setter $x_1 = x_2$ eller $x_1 = x_3$?
-
-:::{raw} html
----
-file: ./ggb/utforsk/utforsk_1/b.html
----
-:::
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} c
-
-Undersøk hva som skjer hvis $x_1 = x_2 = x_3$. 
-
-
-:::{raw} html
----
-file: ./ggb/utforsk/utforsk_1/c.html
----
-:::
-
-:::::::::::::
-
-
-::::::::::::::
-
-:::::::::::::::
-
-
-
-:::::::::::::::{admonition} Faktorisering av tredjegradspolynomer
----
-class: summary
----
-Et tredjegradspolynom $f$ kan ha ett, to eller tre nullpunkter. 
-
-::::::::::::::{tab-set}
-:::::::::::::{tab-item} Tre nullpunkter
-Hvis $f$ har tre nullpunkter, kan vi skrive 
-
-$$
-f(x) = a(x - x_1)(x - x_2)(x - x_3),
-$$
-
-der $x_1$, $x_2$ og $x_3$ er nullpunktene og $a$ er en konstant.
-
-::::{figure} ./figurer/teori/nullpunkter/tre_nullpunkter.svg
----
-width: 80%
-class: no-click, adaptive-figure
----
-::::
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} To nullpunkter
-Hvis $f$ har to nullpunkter $x_1$ og $x_2$, og nullpunktet $x_1$ også er et ekstremalpunkt, så kan vi skrive 
-
-$$
-f(x) = a(x - x_1)^2 (x - x_2),
-$$
-
-der $a$ er en konstant. Vi kaller $x_1$ for et **dobbelt nullpunkt**. 
-
-
-::::{figure} ./figurer/teori/nullpunkter/to_nullpunkter.svg
----
-width: 80%
-class: no-click, adaptive-figure
----
-::::
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} Ett nullpunkt
-Hvis $f$ har **ett** nullpunkt $x_1$ og en tangent gjennom nullpunktet har stigningstall $0$, så kan vi skrive 
-
-$$
-f(x) = a(x - x_1)^3,
-$$
-
-der $a$ er en konstant.
-
-
-::::{figure} ./figurer/teori/nullpunkter/ett_nullpunkt.svg
----
-width: 80%
-class: no-click, adaptive-figure
----
-::::
-
-
-:::::::::::::
-
-::::::::::::::
-
-
-:::::::::::::::
-
-
-
-
-
----
-
-
-:::::::::::::::{exercise} Quiz 1
-
-
-:::{quiz}
-Q: Hvilket funksjonsuttrykk passer med grafen? ![{width: 60%}](./figurer/quiz/quiz_1/spm_1.svg)
-+ $$f(x) = (x - 1)(x + 2)(x - 3)$$
-- $$f(x) = (x - 1)^2(x - 3)$$
-- $$f(x) = (x + 2)(x - 3)^2$$
-- $$f(x) = -(x - 1)(x + 2)(x - 3)$$
-
-Q: Hvilket funksjonsuttrykk passer med grafen? ![{width: 60%}](./figurer/quiz/quiz_1/spm_2.svg)
-+ $$f(x) = -(x + 1)^2(x - 1)$$
-- $$f(x) = -(x + 1)(x - 1)^2$$
-- $$f(x) = (x - 1)^3$$
-- $$f(x) = (x + 1)^2(x - 1)$$
-
-Q: Hvilket funksjonsuttrykk passer med grafen? ![{width: 60%}](./figurer/quiz/quiz_1/spm_3.svg)
-+ $$f(x) = (x + 1)(x - 2)^2$$
-- $$f(x) = -2(x + 1)(x - 2)^2$$
-- $$f(x) = (x + 1)^2(x - 2)$$
-- $$f(x) = -(x + 1)^2(x - 2)$$
-
-Q: Vilket funksjonsuttrykk passer med grafen? ![{width: 60%}](./figurer/quiz/quiz_1/spm_4.svg)
-+ $$f(x) = -(x + 2)^3$$
-- $$f(x) = (x - 2)^2(x + 2)$$
-- $$f(x) = (x + 2)^3$$
-- $$f(x) = -(x - 2)^3$$
-
-Q: Hvilket funksjonsuttrykk passer med grafen? ![{width: 60%}](./figurer/quiz/quiz_1/spm_5.svg)
-+ $$f(x) = (x - 3)^3$$
-- $$f(x) = (x + 3)^3$$
-- $$f(x) = -(x - 3)^3$$
-- $$f(x) = -(x + 3)^3$$
-
-:::
-
-
-:::::::::::::::
-
-
----
-
-
-:::::::::::::::{admonition} Utforsk 2
----
-class: explore
----
-Et tredjegradspolynom er gitt ved 
-
-$$
-f(x) = (x - 1)^2 (x + 2). 
-$$
-
-
-::::::::::::::{tab-set}
----
-class: tabs-parts
----
-:::::::::::::{tab-item} a
-Utvid uttrykket til $f(x)$ og skriv det på formen 
-
-$$
-f(x) = ax^3 + bx^2 + cx + d. 
-$$
-
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-$$
-f(x) = x^3 - 3x + 2.
-$$
-
-::::
-
-::::{admonition} Løsning
----
-class: solution, dropdown
----
-\begin{align*}
-    f(x) &= (x - 1)^2 (x + 2) \\
-    \\
-    &= (x^2 - 2x + 1)(x + 2) && \text{utvidet $(x - 1)^2$ først}\\
-    \\
-    &= (x^2 - 2x + 1)\cdot x + (x^2 - 2x + 1)\cdot 2 \\
-    \\
-    &= x^3 - 2x^2 + x + 2x^2 - 4x + 2 \\
-    \\
-    &= x^3 - 3x + 2.
-\end{align*}
-
-::::
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} b
-Bestem nullpunktene til $f$. 
-
-> Bruk det faktoriserte uttrykket og produktregelen for likninger! 
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-
-$$
-x = 1 \or x = -2
-$$
-
-::::
-
-::::{admonition} Løsning
----
-class: solution, dropdown
----
-Nullpunktene er gitt ved løsningen av $f(x) = 0$, som betyr at 
-
-$$
-(x - 1)^2 \cdot (x + 2) = 0 \liff (x - 1)^2 = 0 \or x + 2 = 0.
-$$
-
-som gir 
-
-$$
-x - 1 = 0 \or x + 2 = 0 \liff x = 1 \or x = -2.
-$$
-::::
-
-:::::::::::::
-
-:::::::::::::{tab-item} c
-Tegn et fortegnsskjema for $f(x)$ (som inkluderer fortegnslinjene til faktorene i $f(x)$).
-
-> Bruk det faktoriserte uttrykket! 
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-
-:::{figure} ./figurer/utforsk/utforsk_1/c.svg
+:::{figure} ./figurer/teori/standardform/merged_figure.svg
 ---
 class: no-click, adaptive-figure
 width: 100%
 ---
 :::
 
-::::
 
-:::::::::::::
+:::::::::::::::
 
-:::::::::::::{tab-item} d
-Lag en **skisse** av grafen til $f$.
-
-> Marker nullpunktene og bruk fortegnslinja til $f(x)$ for å tegne skissen!
-
-
-::::{admonition} Fasit
----
-class: answer, dropdown
 ---
 
-:::{figure} ./figurer/utforsk/utforsk_1/d.svg
+Å bestemme $f(x)$ på standardform for en tredjegradsfunksjon er mye arbeid hvis det skal gjøres for hånd. Vi har 4 ukjente koeffisienter, som betyr at vi må ha 4 likninger! Vi starter heller med å se på hvordan vi gjør det med CAS: 
+
+
+:::::::::::::::{example} Eksempel 2
+
+:::{figure} ./figurer/eksempler/eksempel_2/figur.svg
+---
+class: no-click, adaptive-figure
+width: 80%
+align: right
+---
+:::
+
+Til høyre vises grafen til en tredjegradsfunksjon $f$. 
+
+
+I gif-en nedenfor viser vi hvordan man kan bestemme $f(x)$ fra grafen til en tredjegradsfunksjon $f$. Punktene som brukes i gif-en er markert på grafen til høyre.
+
+
+:::{figure} ./videoer/cas_bestemme_funksjonsuttrykk.gif
 ---
 class: no-click, adaptive-figure
 width: 80%
 ---
 :::
 
-::::
+Fra utskriften får vi at 
 
-:::::::::::::
+$$
+a = 1 \and b = 0 \and c = -2 \and d = 2
+$$
 
+som gir 
 
-::::::::::::::
+$$
+f(x) = x^3 - 2x + 2.
+$$
+
 
 :::::::::::::::
 
 
-
-
-
-
-### Bestemme $f(x)$
-
-
-:::::::::::::::{admonition} Eksempel 2
----
-class: example
 ---
 
-Grafen til et tredjegradspolynom er vist i {numref}`fig-polynomer-nullpunktsform-eksempel-2`.
 
-Bestem $f(x)$.
+:::::::::::::::{exercise} Underveisoppgave 1
 
-:::{figure} ./figurer/eksempler/eksempel_2/graf.svg
+:::{cas-popup}
 ---
-name: fig-polynomer-nullpunktsform-eksempel-2
-width: 80%
-class: no-click, adaptive-figure
+layout: sidebar
 ---
-viser grafen til et tredjegradspolynom.
 :::
 
 
-::::{admonition} Løsning
+Grafen til en tredjegradsfunksjon $f$ er vist i figuren nedenfor.
+
+Bruk CAS til å bestemme $f(x)$. 
+
+
+:::{figure} ./figurer/underveisoppgaver/underveisoppgave_1/figur.svg
 ---
-class: solution
+class: no-click, adaptive-figure
+width: 80%
 ---
-Fra grafen vi kan vi lese av to nullpunkter $x = -3$ og $x = 1$. Vi kan også bemerke oss at $x = -3$ er et ekstremalpunkt, som betyr at dette er et dobbelt nullpunkt. Dermed er
+:::
+
+
+::::{answer}
+$$
+f(x) = -x^3 - 5x^2 - 7x - 3.
+$$
+::::
+
+
+::::{solution}
+Vi trenger 4 punkter på grafen til $f$ for å bestemme $f(x)$. Fra figuren ser vi at grafen til $f$ går gjennom disse punktene:
 
 $$
-f(x) = a(x + 3)^2 (x - 1). 
+(-3, 0) \qog (-2, -1) \qog (-1, 0) \qog (0, -3)
 $$
 
-For å bestemme $a$ finner vi ett punkt til på grafen. Vi kan lese av at grafen går gjennom $(0, -3)$ som betyr at 
+Da kan vi bruke CAS til å bestemme koeffisientene til $f(x)$:
+
+
+:::{figure} ./figurer/underveisoppgaver/underveisoppgave_1/sol.png
+---
+class: no-click, adaptive-figure
+width: 60%
+---
+:::
+
+Fra utskriften ser vi at 
 
 $$
-f(0) = -3 \and f(0) = a\cdot (0 + 3)^2 \cdot (0 - 1) = -9a
+a = -1 \and b = -5 \and c = -7 \and d = -3.
 $$
 
-Dermed er 
+Det betyr at $f(x)$ kan skrives som 
 
 $$
--9a = -3 \liff a = \dfrac{1}{3}.
+f(x) = ax^3 + bx^2 + cx + d = -x^3 - 5x^2 - 7x - 3.
 $$
 
-Altså er 
-
-$$
-f(x) = \dfrac{1}{3}(x + 3)^2 (x - 1).
-$$
 
 ::::
 
 
 :::::::::::::::
 
+
+
+
+### Nullpunktsform
+Akkurat som for lineære funksjoner og andregradsfunksjoner, så kan vi skrive en tredjegradsfunksjon på nullpunktsform. Vi skal se at en tredjegradsfunksjon enten har ett, to eller tre nullpunkter. Dette gir oss tre mulige måter å faktorisere funksjonsuttrykket til en tredjegradsfunksjon på.
+
+#### Tre nullpunkter
+
+Når en tredjegradsfunksjon har tre nullpunkter, så gjelder følgende: 
+
+:::{margin}
+Som før, er konstanten $a$ den samme som i standardformen!
+:::
+
+:::::::::::::::{summary} Nullpunktsform med tre nullpunkter
+En tredjegradsfunksjon $f$ med tre nullpunkter $x_1, x_2, x_3$ kan skrives på nullpunktsform som
+
+$$
+f(x) = a(x - x_1)(x - x_2)(x - x_3)
+$$
+
+* Hvis $a > 0$ så er formen til grafen {poly-icon}`cubicup`. Hvis $a < 0$ så er formen til grafen {poly-icon}`cubicdown`.
+
+:::{figure} ./figurer/teori/nullpunktsform/tre_nullpunkter.svg
+---
+class: no-click, adaptive-figure
+width: 80%
+---
+:::
+
+:::::::::::::::
+
 ---
 
-:::::::::::::::{admonition} Underveisoppgave 1
----
-class: check
----
-Grafen til en tredjegradsfunksjon $f$ er vist i {numref}`fig-polynomer-polynomfunksjoner-underveisoppgave-1`.
+La oss se på et eksempel der vi bestemmer $f(x)$ fra grafen til en tredjegradsfunksjon med tre nullpunkter:
+
+:::::::::::::::{example} Eksempel 3
+Grafen til en tredjegradsfunksjon er vist i figuren nedenfor.
+
 
 Bestem $f(x)$. 
 
-:::{figure} ./figurer/underveisoppgaver/underveisoppgave_1/graf.svg
+:::{figure} ./figurer/eksempler/eksempel_3/figur.svg
 ---
-name: fig-polynomer-polynomfunksjoner-underveisoppgave-1
-width: 80%
 class: no-click, adaptive-figure
+width: 70%
 ---
-viser grafen til en tredjegradsfunksjon $f$. 
 :::
 
 
-::::{admonition} Fasit
+::::{solution}
 ---
-class: answer, dropdown
+dropdown: 0
 ---
+Vi skriver $f(x)$ på nullpunktsform med tre nullpunkter:
 
 $$
-f(x) = -(x + 1)(x - 1)(x - 2)
+f(x) = a(x - x_1)(x - x_2)(x - x_3). 
 $$
 
-::::
-
-
-::::{admonition} Løsning
----
-class: solution, dropdown
----
-Grafen til $f$ har nullpunktene
-
-$$
-x = -1 \or x = 1 \or x = 2,
-$$
-
-som betyr at vi kan skrive $f(x)$ som 
+Vi ser fra grafen til $f$ at den skjærer $x$-aksen i $(-1, 0)$, $(1, 0)$ og $(2, 0)$. Vi setter inn $x$-verdiene i uttrykket og får: 
 
 $$
 f(x) = a(x + 1)(x - 1)(x - 2).
 $$
 
-For å bestemme $a$ finner vi ett punkt til på grafen. Grafen går gjennom $(0, -2)$ som betyr at 
+Nå trenger vi ett punkt til på grafen til $f$ for å bestemme konstanten $a$. Vi ser at grafen skjærer $y$-aksen i $(0, 2)$. Da får vi likningen:
 
 $$
-f(0) = -2 \and f(0) = a\cdot (0 + 1)(0 - 1)(0 - 2) = 2a
+f(0) = 2 \liff a(0 + 1)(0 - 1)(0 - 2) = 2.
+$$
+
+Vi forenkler dette til 
+
+$$
+a \cdot 1 \cdot (-1) \cdot (-2) = 2 \liff 2a = 2 \liff a = 1.
 $$
 
 Dermed er 
 
 $$
-2a = -2 \liff a = -1.
+f(x) = (x + 1)(x - 1)(x - 2).
 $$
 
-Altså er $f(x)$ gitt ved 
-
-$$
-f(x) = -(x + 1)(x - 1)(x - 2).
-$$
 ::::
+
 
 
 :::::::::::::::
 
 
-
-Vi tar et eksempel på hvordan vi kan gå frem for å bestemme $f(x)$ gitt grafen til et tredjegradspolynom. Den algebraiske regningen vil være såpass fiklete, at her skal vi benytte oss av CAS for å bestemme $f(x)$.  
-
-
-:::::::::::::::{admonition} Utforsk 3
----
-class: explore
 ---
 
-Grafen til en tredjegradsfunksjon $f$ er vist i {numref}`fig-polynomer-nullpunktsform-utforsk-3`.
 
-:::{figure} ./figurer/utforsk/utforsk_3/graf.svg
+:::::::::::::::{exercise} Underveisoppgave 2
+Grafen til en tredjegradsfunksjon $f$ er vist i figuren nedenfor. 
+
+Bestem $f(x)$. 
+
+:::{figure} ./figurer/underveisoppgaver/underveisoppgave_2/figur.svg
 ---
-name: fig-polynomer-nullpunktsform-utforsk-3
-width: 80%
 class: no-click, adaptive-figure
----
-viser grafen til en tredjegradsfunksjon $f$. Noen punkter på grafen til $f$ er markert i figuren.
-:::
-
-Fra grafen kan vi sette opp et likningssystem for $f(x)$ ved å bruke punktene som er markert i figuren:
-
-\begin{align*}
-    f(-2) &= 3 && \text{punktet (-2, 3)} \\
-    \\
-    f(-1) &= 0 && \text{punktet (-1, 0)}\\
-    \\
-    f(0) &= 3 && \text{punktet (0, 3)}\\
-    \\
-    f(1) &= 3 && \text{punktet (1, 3)}\\
-\end{align*}
-
-> Bruk CAS-vinduet nedenfor til å bestemme $f(x)$. Du må sette opp resten av likningene og løse likningssystemet.
-
-:::{ggb} 720 600
----
-material_id: gjefn7be
-toolbar: "true"
+width: 70%
 ---
 :::
-
-
-::::{solution}
-:::{figure} ./figurer/utforsk/utforsk_3/sol.png
----
-width: 100%
-class: no-click, adaptive-figure
----
-:::
-
-$$
-f(x) = -\dfrac{3}{2}x^3 - \dfrac{3}{2}x^2 + 3x + 3.
-$$
-::::
-
-:::::::::::::::
-
-
-
----
-
-
-
-
-
-
-:::::::::::::::{admonition} Underveisoppgave 2
----
-class: check
----
-Grafen til en tredjegradsfunksjon $f$ er vist i {numref}`fig-polynomer-nullpunktsform-underveisoppgave-2`.
-
-
-
-:::{figure} ./figurer/underveisoppgaver/underveisoppgave_2/underveisoppgave_2.svg
----
-name: fig-polynomer-nullpunktsform-underveisoppgave-2
-width: 80%
-class: no-click, adaptive-figure
----
-viser grafen til en tredjegradsfunksjon $f$.
-:::
-
-
-
-
-::::::::::::::{tab-set}
----
-class: tabs-parts
----
-:::::::::::::{tab-item} a
-Sett opp et likningssystem for $f(x)$ ved å finne fire punkter på grafen til $f$.
-
-
-:::{admonition} Fasit
----
-class: dropdown, answer
----
-Grafen går gjennom punktene 
-
-$$
-(-1, 0) \and (0, 3) \and (1, 2) \and (2, 3), 
-$$
-
-som gir likningssystemet
-
-$$
-f(-1) = 0 \and f(0) = 3 \and f(1) = 2 \and f(2) = 3.
-$$
-:::
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} b
-Løs likningssystemet ved hjelp av CAS og bestem $f(x)$.
-
-
-
-:::{cas-popup} 420 500
-:::
-
 
 
 ::::{answer}
-
-Løsningen er
-
 $$
-a = 1 \and b = -2 \and c = 0 \and d = 3,
-$$
-
-som gir 
-
-$$
-f(x) = x^3 - 2x^2 + 3.
+f(x) = -2(x + 2)(x + 1)(x - 3).
 $$
 ::::
 
-::::{solution}
 
-:::{figure} ./figurer/underveisoppgaver/underveisoppgave_2/sol.png
+::::{solution}
+Vi skriver $f(x)$ på nullpunktsform med tre nullpunkter:
+
+$$
+f(x) = a(x - x_1)(x - x_2)(x - x_3).
+$$
+
+Vi ser at grafen til $f$ skjærer $x$-aksen når
+
+$$
+x = -2 \qog x = -1 \qog x = 3
+$$
+
+Vi setter inn verdiene i uttrykket og får:
+
+$$
+f(x) = a(x + 2)(x + 1)(x - 3)
+$$
+
+Vi trenger ett punkt til på grafen til $f$ for å bestemme $a$. Vi ser at grafen skjærer $y$-aksen i $(0, 12)$. Da får vi likningen:
+
+$$
+f(0) = 12 \liff a(0 + 2)(0 + 1)(0 - 3) = 12
+$$
+
+Vi forenkler dette til 
+
+$$
+a \cdot 2 \cdot 1 \cdot (-3) = 12 \liff -6a = 12 \liff a = -2.
+$$
+
+Dermed er
+
+$$
+f(x) = -2(x + 2)(x + 1)(x - 3).
+$$
+
+::::
+
+
+:::::::::::::::
+
+
 ---
-width: 80%
+
+#### To nullpunkter
+En tredjegradsfunksjon kan også ha to nullpunkter. Da gjelder følgende:
+
+
+:::::::::::::::{summary} Nullpunktsform med to nullpunkter
+En tredjegradsfunksjon med to nullpunkter $x_1$ og $x_2$, der $x_1$ også er et ekstremalpunkt, kan skrives på nullpunktsform som
+
+$$
+f(x) = a(x - x_1)^2(x - x_2)
+$$
+
+* Vi kaller $x_1$ for et **dobbelt** nullpunkt.
+* $a > 0$ gir grafen formen {poly-icon}`cubicup` og $a < 0$ gir grafen formen {poly-icon}`cubicdown`
+
+:::{figure} ./figurer/teori/nullpunktsform/to_nullpunkter.svg
+---
 class: no-click, adaptive-figure
+width: 80%
 ---
 :::
+
+
+
+:::::::::::::::
+
+
+---
+
+La oss se på et eksempel der vi bestemmer $f(x)$ fra grafen til en tredjegradsfunksjon med to nullpunkter:
+
+
+:::::::::::::::{example} Eksempel 4
+
+:::{figure} ./figurer/eksempler/eksempel_4/figur.svg
+---
+class: no-click, adaptive-figure
+width: 100%
+align: right
+---
+:::
+
+
+Til høyre vises grafen til en tredjegradsfunksjon $f$.
+
+Bestem $f(x)$.
+
+:::{clear}
+:::
+
+::::{solution}
+---
+dropdown: 0
+---
+Vi ser at grafen til $f$ har et dobbelt nullpunkt i $(3, 0)$ siden grafen både har et nullpunkt og et ekstremalpunkt der. Grafen til $f$ har også et nullpunkt i $(-2, 0)$ som betyr at vi kan skrive $f(x)$ på nullpunktsform som
+
+$$
+f(x) = a(x - x_1)^2(x - x_2) = a(x - 3)^2(x + 2)
+$$
+
+
+Vi trenger ett punkt til på grafen til $f$ for å bestemme $a$. Vi ser at grafen skjærer $y$-aksen i $(0, 18)$. Da får vi likningen:
+
+$$
+f(0) = 18 \liff a(0 - 3)^2(0 + 2) = 18.
+$$
+
+Vi forenkler dette til 
+
+$$
+a \cdot (-3)^2 \cdot 2 = 18 \liff 18a = 18 \liff a = 1.
+$$
+
+Dermed er 
+
+$$
+f(x) = (x - 3)^2(x + 2)
+$$
+::::
+
+
+:::::::::::::::
+
+
+---
+
+
+:::::::::::::::{exercise} Underveisoppgave 3
+
+:::{figure} ./figurer/underveisoppgaver/underveisoppgave_3/figur.svg
+---
+class: no-click, adaptive-figure
+width: 90%
+align: right
+---
+:::
+
+Grafen til en tredjegradsfunksjon $f$ er vist i figuren til høyre.
+
+Bestem $f(x)$.
+
+
+:::{clear}
+:::
+
+
+::::{answer}
+$$
+f(x) = -2(x + 1)^2(x - 1)
+$$
+::::
+
+
+::::{solution}
+Fra grafen til $f$ kan vi se at $f$ har et dobbelt nullpunkt i $(-1, 0)$ siden både er et nullpunkt og et ekstremalpunkt. Vi ser også at $(1, 0)$ er et nullpunkt siden grafen skjærer $x$-aksen der. Da kan vi skrive $f(x)$ på nullpunktsform som
+
+$$
+f(x) = a(x + 1)^2(x - 1)
+$$
+
+Vi trenger ett punkt til på grafen til $f$ for å bestemme $a$. Vi ser at grafen skjærer $y$-aksen i $(0, 2)$. Da får vi likningen:
+
+$$
+f(0) = 2 \liff a(0 + 1)^2(0 - 1) = 2
+$$
+
+Vi forenkler dette til 
+
+$$
+a \cdot 1^2 \cdot (-1) = 2 \liff -a = 2 \liff a = -2.
+$$
+Dermed er
+
+$$
+f(x) = -2(x + 1)^2(x - 1)
+$$
+::::
+
+
+
+:::::::::::::::
+
+
+---
+
+#### Ett nullpunkt
+Når en tredjegradsfunksjon $f$ har ett nullpunkt, så kan vi skrive $f(x)$ som et produkt av et førstegradspolynom og et andregradspolynom:
+
+:::::::::::::::{summary} Nullpunktsform med ett nullpunkt
+En tredjegradsfunksjon med ett nullpunkt $x_1$ kan skrives på nullpunktsform som
+
+$$
+f(x) = (x - x_1)(ax^2 + bx + c)
+$$
+
+* $a > 0$ gir grafen formen {poly-icon}`cubicup` og $a < 0$ gir grafen formen {poly-icon}`cubicdown`
+
+
+:::{figure} ./figurer/teori/nullpunktsform/ett_nullpunkt.svg
+---
+class: no-click, adaptive-figure
+width: 80%
+---
+:::
+
+:::::::::::::::
+
+---
+
+La oss se på et eksempel der vi bestemmer $f(x)$ fra grafen til en tredjegradsfunksjon med ett nullpunkt:
+
+:::::::::::::::{example} Eksempel 5
+Grafen til en tredjegradsfunksjon $f$ er vist i figuren nedenfor.
+
+Bestem $f(x)$. 
+
+
+:::{figure} ./figurer/eksempler/eksempel_5/figur.svg
+---
+class: no-click, adaptive-figure
+width: 80%
+---
+:::
+
+
+::::{solution}
+---
+dropdown: 0
+---
+Siden grafen til $f$ bare har ett nullpunkt, så skriver vi $f(x)$ på formen 
+
+$$
+f(x) = (x - x_1)(ax^2 + bx + c). 
+$$
+
+Vi ser grafen skjærer $x$-aksen i $(1, 0)$ som betyr at $x_1 = 1$. Da kan vi skrive
+
+$$
+f(x) = (x - 1)(ax^2 + bx + c). 
+$$
+
+Nå trenger vi tre punkter på grafen til $f$ for å bestemme $a$, $b$ og $c$. Vi ser at grafen skjærer $y$-aksen i $(0, -1)$. Det betyr at 
+
+$$
+f(0) = -1 \liff (0 - 1) \cdot (a \cdot 0^2 + b \cdot 0 + c) = -1
+$$
+
+som kan forenkles til 
+
+$$
+(-1) \cdot c = -1 \liff c = 1.
+$$
+
+Altså er $f(x) = (x - 1)(ax^2 + bx + 1)$. 
+
+
+Vi trenger to likninger til for å bestemme $a$ og $b$. Vi ser at grafen til $f$ går gjennom punktet $(2, 1)$ som gir likningen 
+
+$$
+f(2) = 1 \liff (2 - 1)(a \cdot 2^2 + b \cdot 2 + 1) = 1
+$$
+
+som vi forenkler til 
+
+$$
+1 \cdot (4a + 2b + 1) = 1 \liff 4a + 2b + 1 = 1
+$$
+
+$$
+4a + 2b = 0 \liff 2a + b = 0 \liff b = -2a. 
+$$
+
+Vi ser også at grafen går gjennom $(3, 5)$ som gir likningen 
+
+$$
+f(3) = 5 \liff (3 - 1)(a \cdot 3^2 + b \cdot 3 + 1) = 5
+$$
+
+som vi forenkler til 
+
+$$
+2(9a + 3b + 1) = 5 \liff 18a + 6b + 2 = 5
+$$
+
+$$
+18a + 6b = 3 \liff 6a + 2b = 1
+$$
+
+Så bruker vi at $b = -2a$ som gir 
+
+$$
+6a + 2\cdot (-2a) = 1 \liff 6a - 4a = 1 \liff 2a = 1
+$$
 
 som betyr at 
 
 $$
-a = 1 \and b = -2 \and c = 0 \and d = 3.
+a = \dfrac{1}{2} \and b = -2a = -2\cdot \dfrac{1}{2} = -1
 $$
 
 Dermed er 
 
 $$
-f(x) = x^3 - 2x^2 + 3.
+f(x) = (x - 1)\left(\dfrac{1}{2}x^2 - x + 1\right). 
 $$
+
 
 ::::
 
 
-
-:::::::::::::
-
-
-::::::::::::::
-
-
 :::::::::::::::
+

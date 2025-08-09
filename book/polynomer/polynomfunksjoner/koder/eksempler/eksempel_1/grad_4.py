@@ -20,6 +20,15 @@ def main(dirname, save):
         ticks=True,
     )
 
+    fontsize = 25
+    for label in ax.get_xticklabels() + ax.get_yticklabels():
+        label.set_fontsize(fontsize)  # Set to desired font size
+
+    ax.yaxis.label.set_size(fontsize)  # Set y-axis label font size
+    ax.xaxis.label.set_size(fontsize)  # Set x-axis label font size
+
+    ax.legend(fontsize=fontsize)
+
     # ticks = list(range(-5, 6, 1))
     # ticks.remove(0)
     # ax.set_xticks(ticks)

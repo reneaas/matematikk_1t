@@ -1944,6 +1944,34 @@ Undersøk om det finnes tilfeller hvor nullpunktsformen og ekstremalpunktsformen
 
 Gi et eksempel hvis du finner et.
 
+::::{solution}
+Vi skriver opp $f(x)$ på begge former:
+
+$$
+f(x) = a(x - x_1)(x - x_2) = a(x - x_0)^2 + y_0
+$$
+
+Hvis $f$ har ett nullpunkt slik at $x_1 = x_2$ så vil også symmetrilinja ha samme $x$-verdi som betyr at 
+
+$$
+x_0 = x_1 = x_2
+$$
+
+Da må også $y_0 = 0$, så vi får at ekstremalpunktsformen og nullpunktsformen er lik:
+
+$$
+f(x) = a(x - x_0)^2
+$$
+
+Et eksempel på en slik funksjon er 
+
+$$
+f(x) = (x - 2)^2
+$$
+
+Her er nullpunktet og symmetrilinja gitt ved $x = 2$.
+::::
+
 :::::::::::::
 
 
@@ -1951,6 +1979,18 @@ Gi et eksempel hvis du finner et.
 Undersøk om det finnes tilfeller hvor standardformen og nullpunktsformen til en andregradsfunksjon er like.
 
 Gi et eksempel hvis du finner et.
+
+::::{solution}
+For at standardformen og nullpunktsformen skal være like, må både $b = 0$ og $c = 0$, slik at 
+
+$$
+f(x) = ax^2
+$$
+
+Da er nullpunktet til $f$ gitt ved $x = 0$. Et eksempel vil da være $f(x) = -2x^2$.
+::::
+
+
 :::::::::::::
 
 
@@ -1958,6 +1998,18 @@ Gi et eksempel hvis du finner et.
 Undersøk om det finnes tilfeller hvor standardformen og ekstremalpunktsformen til en andregradsfunksjon er like.
 
 Gi et eksempel hvis du finner et.
+
+
+::::{solution}
+Standardformen og ekstremalpunktsformen er like dersom vi setter $b = c = 0$ i standardformen. Da får vi 
+
+$$
+f(x) = ax^2
+$$
+
+som betyr at ekstremalpunktet er $(0, 0)$. Et eksempel på en slik funksjon er $f(x) = 3x^2$.
+::::
+
 :::::::::::::
 
 
@@ -1965,6 +2017,18 @@ Gi et eksempel hvis du finner et.
 Undersøk om det finnes tilfeller hvor alle tre representasjonsformer er like. 
 
 Gi et eksempel om du finner et.
+
+::::{solution}
+De er alle like dersom $b = c = 0$ i standardformen. Da har vi 
+
+$$
+f(x) = ax^2
+$$
+
+som gir nullpunkt og ekstremalpunkt i $(0, 0)$. Et eksempel på en slik funksjon er $f(x) = x^2$.
+
+::::
+
 :::::::::::::
 
 

@@ -30,68 +30,72 @@ For rasjonale funksjoner, er de mest sentrale egenskapene:
 
 Målet vårt er å utvikle verktøy for å avgjøre hvilke egenskaper en rasjonal funksjon har. Men først tar vi et eksempel som illustrerer hvor variert antallet av disse egenskapene kan være – for de må slett ikke ha vertikale asymptoter, nullpunkter eller horisontale asymptoter i det hele tatt. Mangfoldet av egenskaper er for mange til å vise *alle* tilfeller, men dette vil gi oss en idé om variasjonen vi kan møte på. Deretter skal vi se på hvordan vi kan avgjøre hvilke egenskaper en rasjonal funksjon har.
 
-:::::::::::::::{admonition} Eksempel 1
----
-class: example
----
-Nedenfor vises fire eksempler på rasjonale funksjoner med ulike egenskaper. Det *ikke* meningen at du skal forstå *hvorfor* grafene ser ut som de gjør enda, men få et inntrykk av hvor stort mangfold rasjonale funksjoner kan ha.
+:::::::::::::::{example} Eksempel 1
+Nedenfor vises fire eksempler på rasjonale funksjoner med ulike egenskaper. 
 
+Det *ikke* meningen at du skal forstå *hvorfor* grafene ser ut som de gjør enda, men få et inntrykk av hvor stort mangfold rasjonale funksjoner kan ha.
 
-::::::::::::::{tab-set}
+::::::::::::::{grid} 1 1 2 2
 ---
-class: tabs-parts
+gutter: 2
 ---
-:::::::::::::{tab-item} Funksjon 1
+:::::::::::::{grid-item-card}
+$$f(x) = \dfrac{(x - 2)(x + 3)}{x^2 - 1}$$
+^^^
 
 ::::{figure} ./figurer/teori/eksempel_1.svg
 ---
-width: 80%
+width: 100%
 class: no-click, adaptive-figure
 ---
-viser grafen til en rasjonal funksjon $f(x) = \dfrac{(x - 2)(x + 3)}{x^2 - 1}$. Her har $f$ en horisontal asymptote $y = 1$, to vertikale asymptoter med likningene $x = \pm 1$, og to nullpunkter $x = -3$ og $x = 2$.
+Her har $f$ en horisontal asymptote $y = 1$, to vertikale asymptoter med likningene $x = \pm 1$, og to nullpunkter $x = -3$ og $x = 2$.
 ::::
 
 :::::::::::::
 
 
-:::::::::::::{tab-item} Funksjon 2
-
+:::::::::::::{grid-item-card}
+$$f(x) = \dfrac{x^2 - 4}{x - 1}$$
+^^^
 ::::{figure} ./figurer/teori/eksempel_2.svg
 ---
-width: 80%
+width: 100%
 class: no-click, adaptive-figure
 ---
-viser grafen til $f(x) = \dfrac{x^2 - 4}{x - 1}$. Grafen har to nullpunkter $x = \pm 2$, en vertikal asymptote i $x = 1$ og en **skrå** asymptote $y = x + 1$. Grafen til $f$ nærmer seg altså en lineær funksjon når $|x|$ blir stor.
+Grafen har to nullpunkter $x = \pm 2$, en vertikal asymptote i $x = 1$ og en **skrå** asymptote $y = x + 1$. Grafen til $f$ nærmer seg altså en lineær funksjon når $|x|$ blir stor.
 ::::
-
 :::::::::::::
 
 
-:::::::::::::{tab-item} Funksjon 3
-
+:::::::::::::{grid-item-card}
+$$f(x) = \dfrac{1}{x - 2}$$
+^^^
 ::::{figure} ./figurer/teori/eksempel_3.svg
 ---
-width: 80%
+width: 100%
 class: no-click, adaptive-figure
 ---
-viser grafen til $f(x) = \dfrac{1}{x - 2}$. Grafen har en vertikal asymptote i $x = 2$, men ingen nullpunkter. Grafen til $f$ har en horisontal asymptote $y = 0$.
+Grafen har en vertikal asymptote i $x = 2$, men ingen nullpunkter. Grafen til $f$ har en horisontal asymptote $y = 0$.
 ::::
 
 :::::::::::::
 
-:::::::::::::{tab-item} Funksjon 4
 
+:::::::::::::{grid-item-card} 
+$$f(x) = \dfrac{x - 1}{x^2 + 1}$$
+^^^
 ::::{figure} ./figurer/teori/eksempel_4.svg
 ---
-width: 80%
+width: 100%
 class: no-click, adaptive-figure
 ---
-viser grafen til $f(x) = \dfrac{x - 1}{x^2 + 1}$. Grafen har et nullpunkt i $x = 1$ og en horisontal asymptote $y = 0$. Grafen har ingen vertikale asymptoter.
+Grafen har et nullpunkt i $x = 1$ og en horisontal asymptote $y = 0$. Grafen har ingen vertikale asymptoter.
 ::::
-
 :::::::::::::
 
+
 ::::::::::::::
+
 
 
 :::::::::::::::

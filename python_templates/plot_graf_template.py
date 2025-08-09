@@ -26,11 +26,14 @@ def main(dirname, save):
         domain=False,
     )
 
+    fontsize = 16
     for label in ax.get_xticklabels() + ax.get_yticklabels():
-        label.set_fontsize(16)  # Set to desired font size
+        label.set_fontsize(fontsize)  # Set to desired font size
 
-    ax.yaxis.label.set_size(16)  # Set y-axis label font size
-    ax.xaxis.label.set_size(16)  # Set x-axis label font size
+    ax.yaxis.label.set_size(fontsize)  # Set y-axis label font size
+    ax.xaxis.label.set_size(fontsize)  # Set x-axis label font size
+
+    ax.legend(fontsize=fontsize)
 
     # NOTE: Select an appropriate `dirname` to save the figure.
     # The directory `dirname` will be created automatically if it does not exist already.
