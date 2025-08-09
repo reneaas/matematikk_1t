@@ -696,3 +696,112 @@ $$
 
 :::::::::::::::
 
+
+---
+
+
+:::::::::::::::{exercise} Underveisoppgave 4
+En tredjegradsfunksjon $f$ er vist i figuren nedenfor. 
+
+Bestem $f(x)$.
+
+
+:::{figure} ./figurer/underveisoppgaver/underveisoppgave_4/figur.svg
+---
+class: no-click, adaptive-figure
+width: 80%
+---
+:::
+
+
+::::{answer}
+$$
+f(x) = (x + 3)\left(-\dfrac{1}{4}x^2 + x - 2\right).
+$$
+::::
+
+
+::::{solution}
+Vi ser at grafen til $f$ har ett nullpunkt i $(-3, 0)$. Da kan vi skrive $f(x)$ på formen
+
+$$
+f(x) = (x + 3)(ax^2 + bx + c). 
+$$
+
+Vi ser at grafen til $f$ skjærer $y$-aksen i $(0, -6)$ som gir 
+
+$$
+f(0) = -6 \liff (0 + 3)(a \cdot 0^2 + b \cdot 0 + c) = -6
+$$
+
+som kan forenkles til
+
+$$
+3c = -6 \liff c = -2.
+$$
+
+Dermed er $f(x) = (x + 3)(ax^2 + bx - 2)$.
+
+Vi ser at grafen går gjennom punktet $(1, -5)$ som gir likningen 
+
+$$
+f(1) = -5 \liff (1 + 3) \cdot (a \cdot 1^2 + b \cdot 1 - 2) = -5
+$$
+
+som kan forenkles til
+
+$$
+4(a + b - 2) = -5 \liff 4a + 4b - 8 = -5
+$$
+
+som gir
+
+$$
+4a + 4b = 3
+$$
+
+Vi ser også at grafen går gjennom $(2, -5)$ som gir likningen
+
+$$
+f(2) = -5 \liff (2 + 3)(a \cdot 2^2 + b \cdot 2 - 2) = -5
+$$
+
+som vi forenkler til
+
+$$
+5(4a + 2b - 2) = -5 \liff 4a + 2b - 2 = -1
+$$
+
+$$
+4a + 2b = 1 
+$$
+
+Da har vi likningene 
+
+$$
+4a + 4b = 3 \and 4a + 2b = 1
+$$
+
+Vi tar den første likningen og trekker fra den andre:
+
+$$
+(4a + 4b) - (4a + 2b) = 3 - 1 \liff 2b = 2 \liff b = 1.
+$$
+
+Så bestemmer vi $a$ ved å sette inn verdien til $b$. Vi velger den første av de to likningene:
+
+$$
+4a + 4 \cdot 1 = 3 \liff 4a + 4 = 3 \liff 4a = -1 \liff a = -\dfrac{1}{4}.
+$$
+
+Dermed er 
+
+$$
+f(x) = (x + 3)\left(ax^2 + bx - 2\right) = (x + 3)\left(-\dfrac{1}{4}x^2 + x - 2\right).
+$$
+
+::::
+
+
+:::::::::::::::
+
