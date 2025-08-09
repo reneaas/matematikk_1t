@@ -37,8 +37,8 @@ class: no-click, adaptive-figure
 
 > Merk at konstanten $a$ er den samme som i standardformen! 
 
-* Hvis $a > 0$ er grafen til $f$ konveks $\smile$ og har et bunnpunkt.
-* Hvis $a < 0$ er grafen til $f$ konkav $\frown$ og har et toppunkt.
+* Hvis $a > 0$ er grafen til $f$ konveks {poly-icon}`smile` og har et bunnpunkt.
+* Hvis $a < 0$ er grafen til $f$ konkav {poly-icon}`frown` og har et toppunkt.
 * Linja $x = x_0$ er symmetrilinja til $f$. Grafen er speilet rundt denne linja!
 
 

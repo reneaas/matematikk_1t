@@ -25,7 +25,7 @@ Bunnpunkt i $(1, 3)$.
 
 
 ::::{solution}
-Grafen har et ekstremalpunktet i $(1, 3)$. Siden den ledende koeffisienten $a = 1> 0$, så grafen konveks (den smiler $\smile$) og ekstremalpunktet er derfor et bunnpunkt.
+Grafen har et ekstremalpunktet i $(1, 3)$. Siden den ledende koeffisienten $a = 1> 0$, så grafen konveks {poly-icon}`smile` og ekstremalpunktet er derfor et bunnpunkt.
 ::::
 
 :::::::::::::
@@ -46,7 +46,7 @@ Toppunkt i $(-1, 5)$.
 ::::
 
 ::::{solution}
-Grafen har et ekstremalpunkt i $(-1, 5)$. Siden den ledende koeffisienten $a = -2 < 0$, så grafen er konkav (surt fjes $\frown$) og ekstremalpunktet er derfor et toppunkt.
+Grafen har et ekstremalpunkt i $(-1, 5)$. Siden den ledende koeffisienten $a = -2 < 0$, så grafen er konkav {poly-icon}`frown` og ekstremalpunktet er derfor et toppunkt.
 ::::
 
 :::::::::::::
@@ -68,7 +68,7 @@ Toppunkt i $(2, -4)$.
 ::::
 
 ::::{solution}
-Grafen har et ekstremalpunkt i $(2, -4)$. Siden den ledende koeffisienten $a = -3 < 0$, så grafen er konkav (surt fjes $\frown$) og ekstremalpunktet er derfor et toppunkt.
+Grafen har et ekstremalpunkt i $(2, -4)$. Siden den ledende koeffisienten $a = -3 < 0$, så grafen er konkav {poly-icon}`frown` og ekstremalpunktet er derfor et toppunkt.
 ::::
 
 :::::::::::::
@@ -89,7 +89,7 @@ Bunnpunkt i $(-3, 2)$.
 ::::
 
 ::::{solution}
-Grafen har et ekstremalpunkt i $(-3, 2)$. Siden den ledende koeffisienten $a = 4 > 0$, så grafen er konveks (den smiler $\smile$) og ekstremalpunktet er derfor et bunnpunkt.
+Grafen har et ekstremalpunkt i $(-3, 2)$. Siden den ledende koeffisienten $a = 4 > 0$, så grafen er konveks {poly-icon}`smile` og ekstremalpunktet er derfor et bunnpunkt.
 ::::
 
 :::::::::::::
@@ -131,7 +131,7 @@ Kan du si noe om fortegnet til $a$?
 
 
 ::::{solution}
-Grafens ekstremalpunkte er i $(1, 3)$. Dette er et bunnpunkt siden grafen er konveks (den smiler $\smile$). Det betyr at $a > 0$.
+Grafens ekstremalpunkte er i $(1, 3)$. Dette er et bunnpunkt siden grafen er konveks {poly-icon}`smile`. Det betyr at $a > 0$.
 ::::
 
 :::::::::::::
@@ -219,9 +219,11 @@ Bestem symmetrilinja $x_0$ til grafen til $f$.
 
 
 ::::{answer}
+
 $$
 x_0 = 2
 $$
+
 ::::
 
 ::::{solution}
@@ -236,6 +238,7 @@ Vi kan se at $a = 1$ og $b = -4$ så
 $$
 x_0 = -\dfrac{-4}{2 \cdot 1} = \dfrac{4}{2} = 2.
 $$
+
 ::::
 
 
@@ -256,7 +259,7 @@ $$
 y_0 = f(2) = 2^2 - 4 \cdot 2 + 3 = 4 - 8 + 3 = -1.
 $$
 
-Dermed er ekstremalpunktet $(2, -1)$. Dette er et bunnpunkt siden $a > 0$ og grafen er derfor konveks (den smiler $\smile$).
+Dermed er ekstremalpunktet $(2, -1)$. Dette er et bunnpunkt siden $a > 0$ og grafen er derfor konveks {poly-icon}`smile`.
 ::::
 
 :::::::::::::
@@ -271,9 +274,11 @@ $$
 
 
 ::::{answer}
+
 $$
 f(x) = -(x - 2)^2 - 1
 $$
+
 ::::
 
 ::::{solution}
@@ -282,6 +287,7 @@ Vi vet at $x_0 = 2$ og $y_0 = -1$. Vi vet også at $a = -1$, som betyr at
 $$
 f(x) = a(x - x_0)^2 + y_0 = -(x - 2)^2 - 1.
 $$
+
 ::::
 
 :::::::::::::
@@ -330,7 +336,9 @@ $$
 x_0 = 1 \and y_0 = -4.
 $$
 
-Dette er et bunnpunkt siden $a = 2 > 0$ og grafen er derfor konveks (den smiler $\smile$).
+
+
+Dette er et bunnpunkt siden $a = 2 > 0$ og grafen er derfor konveks {poly-icon}`smile`.
 
 ::::
 
@@ -342,9 +350,11 @@ Dette er et bunnpunkt siden $a = 2 > 0$ og grafen er derfor konveks (den smiler 
 Bestem symmetrilinja til grafen til $f$.
 
 ::::{answer}
+
 $$
 x_0 = 1
 $$
+
 ::::
 
 :::::::::::::
@@ -549,11 +559,20 @@ x_0 = -\dfrac{-3}{2 \cdot \dfrac{1}{2}} = -\dfrac{-3}{1} = 3.
 $$
 Så må vi regne ut $y$-koordinaten til ekstremalpunktet:
 
-$$
-y_0 = p(3) = \dfrac{1}{2} \cdot 3^2 - 3 \cdot 3 + 2 = \dfrac{1}{2} \cdot 9 - 9 + 2 = \dfrac{9}{2} - 9 + 2 = \dfrac{9}{2} - \dfrac{18}{2} + \dfrac{4}{2} = -\dfrac{5}{2}.
-$$
 
-Dermed er ekstremalpunktet $(3, -\dfrac{5}{2})$. Vi vet fra før av at $a = \dfrac{1}{2}$, så dermed får vi
+\begin{align*}
+y_0 = p(3) &= \dfrac{1}{2} \cdot 3^2 - 3 \cdot 3 + 2 \\
+\\
+&= \dfrac{1}{2} \cdot 9 - 9 + 2 = \dfrac{9}{2} - 9 + 2 \\
+\\
+&= \dfrac{9}{2} - \dfrac{18}{2} + \dfrac{4}{2} \\
+\\
+&= -\dfrac{5}{2}.
+\end{align*}
+
+
+
+Dermed er ekstremalpunktet $\left(3, -\dfrac{5}{2}\right)$. Vi vet fra før av at $a = \dfrac{1}{2}$, så dermed får vi
 
 $$
 p(x) = a(x - x_0)^2 + y_0 = \dfrac{1}{2}(x - 3)^2 - \dfrac{5}{2}.
@@ -633,7 +652,7 @@ Vi ganger ut parentesen og samler leddene:
 \begin{align*}
 g(x) &= -3(x + 2)^2 + 5 \\
 \\
-&= -3(x^2 + 4x + 4) + 5 \
+&= -3(x^2 + 4x + 4) + 5 \\
 \\
 &= -3x^2 - 12x - 12 + 5 \\
 \\
@@ -1533,7 +1552,7 @@ $$
 
 
 :::{margin} Tips: Oppgave 12
-Gang ut høyre siden og sammenlign leddene med $x^2$, $x$ og konstantleddene på hver side av likningen.
+Gang ut høyre side og sammenlign leddene med $x^2$, $x$ og konstantleddene på hver side av likningen.
 :::
 
 :::::::::::::::{exercise} Oppgave 12

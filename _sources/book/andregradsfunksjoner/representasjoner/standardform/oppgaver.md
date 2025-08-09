@@ -338,7 +338,7 @@ Er grafen til $f$ konveks eller konkav?
 Begrunn svaret ditt.
 
 ::::{answer}
-Grafen er konveks fordi $a > 0$ (den smiler $\smile$).
+Grafen er konveks {poly-icon}`smile` fordi $a > 0$.
 ::::
 
 :::::::::::::
@@ -380,7 +380,7 @@ Grafen har et bunnpunkt i $(-1, -7)$.
 ::::
 
 ::::{solution}
-Grafen til $f$ har et bunnpunkt siden $a > 0$ som gjør at grafen er konveks (den smiler $\smile$).
+Grafen til $f$ har et bunnpunkt siden $a > 0$ som gjør at grafen er konveks {poly-icon}`smile`.
 
 Symmetrilinja er $x = -1$. Dette er $x$-koordinaten til bunnpunktet. Vi setter $x = -1$ inn i $f(x)$ for å finne $y$-koordinaten til bunnpunktet:
 
@@ -878,7 +878,7 @@ $$
 a = 2 \and b = 4 \and c = -5.
 $$
 
-Vi ser derfor at grafen til $f$ er konveks (den smiler $\smile$) siden $a > 0$. Det betyr at grafen til $f$ enten er B eller D. Grafen til $f$ skjærer $y$-aksen i et punkt med negativ $y$-koordinat siden $c < 0$, men dette er sant både for graf B og D. 
+Vi ser derfor at grafen til $f$ er konveks {poly-icon}`smile` siden $a > 0$. Det betyr at grafen til $f$ enten er B eller D. Grafen til $f$ skjærer $y$-aksen i et punkt med negativ $y$-koordinat siden $c < 0$, men dette er sant både for graf B og D.
 
 Symmetrilinja til $f$ er gitt ved 
 
@@ -909,6 +909,29 @@ width: 100%
 ---
 :::
 
+::::{answer}
+Graf D.
+::::
+
+
+::::{solution}
+Koeffisientene til $g(x)$ er
+
+$$
+a = 1 \and b = -4 \and c = 0.
+$$
+
+Siden $a > 0$ er grafen til $g$ konveks {poly-icon}`smile`. Det passer bare med graf B og D. 
+
+Symmtrilinja til $g$ er gitt ved 
+
+$$
+x = -\dfrac{b}{2a} = - \dfrac{-4}{2\cdot 1} = 2. 
+$$
+
+Det er bare graf D som har en symmetrilinja langs en positiv $x$-verdi, så dermed er graf D grafen til $g$.
+::::
+
 
 :::::::::::::
 
@@ -931,6 +954,29 @@ width: 100%
 :::
 
 
+::::{answer}
+Graf A.
+::::
+
+::::{solution}
+Koeffisientene til $h(x)$ er 
+
+$$
+a = 1 \and b = 6 \and c = 5.
+$$
+
+Grafen til $h$ skjærer $y$-aksen i $(0, 5)$ siden $c = 5$. Det bare graf A og C som skjærer $y$-aksen i et punkt med positiv $y$-verdi. 
+
+Symmetrilinja til $h$ er gitt ved 
+
+$$
+x = -\dfrac{b}{2a} = -\dfrac{6}{2 \cdot 1} = -3.
+$$
+
+Altså må grafen til $h$ ha en symmetrilinja langs en negativ $x$-verdi. Dette stemmer bare for graf A. Dermed er graf A grafen til $h$.
+::::
+
+
 :::::::::::::
 
 
@@ -950,6 +996,29 @@ class: no-click, adaptive-figure
 width: 100%
 ---
 :::
+
+
+::::{answer}
+Graf C. 
+::::
+
+::::{solution}
+Koeffisientene til $p(x)$ er 
+
+$$
+a = -2 \and b = 4 \and c = -1
+$$
+
+Grafen til $p$ er konkav {poly-icon}`frown` siden $a < 0$. Det betyr at grafen til $p$ enten er A eller C.
+
+Symmetrilinja til $p$ er gitt ved 
+
+$$
+x = -\dfrac{b}{2a} = -\dfrac{4}{2 \cdot (-2)} = 1.
+$$
+
+Det er bare graf C som har en symmetrilinje langs en positiv $x$-verdi, så dermed er graf C grafen til $p$.
+::::
 
 
 :::::::::::::
@@ -989,6 +1058,16 @@ Lag en skisse av grafen til $f$ og marker følgende egenskaper:
 * Topp- eller bunnpunkt med koordinater
 
 
+::::{answer}
+:::{figure} ./figurer/oppgaver/oppgave_8/a.svg
+---
+class: no-click, adaptive-figure
+width: 80%
+---
+:::
+::::
+
+
 ::::{solution}
 Koeffisientene til $f(x)$ er 
 
@@ -1007,7 +1086,7 @@ Symmetrilinja
     $$
 
 Topp- eller bunnpunkt
-: Grafen til $f$ er konkav siden $a < 0$ (surt fjert $\frown$). Dermed har grafen et toppunkt. Toppunktet har $x$-koordinaten lik symmetrilinja, altså $x = 2$. Vi setter $x = 2$ inn i $f(x)$ for å finne $y$-koordinaten til toppunktet:
+: Grafen til $f$ er konkav {poly-icon}`frown` siden $a < 0$. Dermed har grafen et toppunkt. Toppunktet har $x$-koordinaten lik symmetrilinja, altså $x = 2$. Vi setter $x = 2$ inn i $f(x)$ for å finne $y$-koordinaten til toppunktet:
 
     $$
     f(2) = -1 \cdot 2^2 + 4 \cdot 2 + 3 = 5.
@@ -1044,6 +1123,16 @@ Lag en skisse av grafen til $g$ og marker følgende egenskaper:
 * Topp- eller bunnpunkt med koordinater
 
 
+::::{answer}
+:::{figure} ./figurer/oppgaver/oppgave_8/b.svg
+---
+class: no-click, adaptive-figure
+width: 80%
+---
+:::
+::::
+
+
 ::::{solution}
 Koeffisientene til $g(x)$ er
 
@@ -1063,7 +1152,7 @@ Symmetrilinja
     $$
 
 Topp- eller bunnpunkt
-: Grafen til $g$ er konveks siden $a > 0$ (den smiler $\smile$). Dermed har grafen et bunnpunkt. Bunnpunktet har $x$-koordinaten lik symmetrilinja, altså $x = -1$. Vi setter $x = -1$ inn i $g(x)$ for å finne $y$-koordinaten til bunnpunktet:
+: Grafen til $g$ er konveks siden $a > 0$ {poly-icon}`smile`. Dermed har grafen et bunnpunkt. Bunnpunktet har $x$-koordinaten lik symmetrilinja, altså $x = -1$. Vi setter $x = -1$ inn i $g(x)$ for å finne $y$-koordinaten til bunnpunktet:
 
     $$
     g(-1) = 2 \cdot (-1)^2 + 4 \cdot (-1) - 1 = -3.
@@ -1100,6 +1189,14 @@ Lag en skisse av grafen til $h$ og marker følgende egenskaper:
 * Topp- eller bunnpunkt med koordinater
 
 
+::::{answer}
+:::{figure} ./figurer/oppgaver/oppgave_8/c.svg
+---
+class: no-click, adaptive-figure
+width: 80%
+---
+:::
+::::
 
 ::::{solution}
 Koeffisientene til $h(x)$ er 
@@ -1119,7 +1216,7 @@ x = -\dfrac{b}{2a} = -\dfrac{0}{2 \cdot 1} = 0.
 $$
 
 Topp- eller bunnpunkt
-: Grafen til $h$ er konveks siden $a > 0$ (den smiler $\smile$). Dermed har grafen et bunnpunkt. Bunnpunktet har $x$-koordinaten lik symmetrilinja, altså $x = 0$. Vi setter $x = 0$ inn i $h(x)$ for å finne $y$-koordinaten til bunnpunktet:
+: Grafen til $h$ er konveks {poly-icon}`smile` siden $a > 0$. Dermed har grafen et bunnpunkt. Bunnpunktet har $x$-koordinaten lik symmetrilinja, altså $x = 0$. Vi setter $x = 0$ inn i $h(x)$ for å finne $y$-koordinaten til bunnpunktet:
 
     $$
     h(0) = 0^2 - 4 = -4.
@@ -1157,6 +1254,14 @@ Lag en skisse av grafen til $p$ og marker følgende egenskaper:
 * Topp- eller bunnpunkt med koordinater
 
 
+::::{answer}
+:::{figure} ./figurer/oppgaver/oppgave_8/d.svg
+---
+class: no-click, adaptive-figure
+width: 80%
+---
+:::
+::::
 
 ::::{solution}
 Koeffisientene til $p(x)$ er 
@@ -1176,7 +1281,7 @@ x = -\dfrac{b}{2a} = -\dfrac{2}{2 \cdot (-1)} = 1.
 $$
 
 Topp- eller bunnpunkt
-: Grafen til $p$ er konkav siden $a < 0$ (surt fjert $\frown$). Dermed har grafen et toppunkt. Toppunktet har $x$-koordinaten lik symmetrilinja, altså $x = 1$. Vi setter $x = 1$ inn i $p(x)$ for å finne $y$-koordinaten til toppunktet:
+: Grafen til $p$ er konkav {poly-icon}`frown` siden $a < 0$. Dermed har grafen et toppunkt. Toppunktet har $x$-koordinaten lik symmetrilinja, altså $x = 1$. Vi setter $x = 1$ inn i $p(x)$ for å finne $y$-koordinaten til toppunktet:
 
     $$
     p(1) = -1 \cdot 1^2 + 2 \cdot 1 = 1.

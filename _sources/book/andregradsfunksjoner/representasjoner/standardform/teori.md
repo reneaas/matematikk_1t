@@ -24,8 +24,8 @@ class: no-click, adaptive-figure
 :::
 
 Grafen til $f$ vil ha form som en **parabel** der koeffisientene har følgende betydning på grafens form:
-* Hvis $a > 0$, så er grafen **konveks** (den smiler $\smile$). Hvis $a < 0$, så er grafen **konkav** (surt fjes $\frown$)
-* Grafen har en symmetrilinje gitt ved $x = -\dfrac{b}{2a}$
+* Hvis $a > 0$, så er grafen **konveks** {poly-icon}`smile` (grafen smiler). Hvis $a < 0$, så er grafen **konkav** {poly-icon}`frown` (surt fjes)
+* Grafen har en **symmetrilinje** gitt ved $x = -\dfrac{b}{2a}$
 * Grafen skjærer $y$-aksen i punktet $(0, c)$
 
 Se figuren nedenfor.
@@ -65,7 +65,7 @@ dropdown: 0
 Koeffisientene til $f(x)$ er $a = 2$ og $b = -4$ og $c = 1$. 
 
 Grafens form
-: Grafen er konveks (den smiler $\smile$) fordi $a > 0$.
+: Grafen er konveks {poly-icon}`smile` (den smiler) fordi $a > 0$.
 
 Symmetrilinje
 : Symmetrilinja til $f$ er gitt ved $x = \dfrac{-b}{2a} = \dfrac{-(-4)}{2 \cdot 2} = \dfrac{4}{4} = 1$.
@@ -116,7 +116,7 @@ Lag en skisse av grafen til $f$.
 Koeffisientene til $f(x)$ er $a = -1$, $b = 4$ og $c = 3$.
 
 Grafens form
-: Grafen er konkav fordi $a < 0$ (surt fjes $\frown$).
+: Grafen er konkav {poly-icon}`frown` (surt fjes) fordi $a < 0$.
 
 Symmetrilinje
 : Symmetrilinja til $f$ er gitt ved
