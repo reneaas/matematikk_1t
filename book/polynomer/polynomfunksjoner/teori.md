@@ -9,7 +9,7 @@ class: tip
 * Kunne bestemme $f(x)$ for polynomfunksjoner. 
 :::
 
-Vi har allerede møtt på to polynomfunksjoner – lineære funksjoner og andregradsfunksjoner. Nå skal vi gå løs på helt generelle polynomfunksjoner.
+Vi har allerede møtt på to polynomfunksjoner – lineære funksjoner og andregradsfunksjoner. Nå skal vi gå løs på helt generelle polynomfunksjoner. Fiksa med {poly-icon}`cubicup` og {poly-icon}`cubicdown`. For andregradsfunksjoner har vi {poly-icon}`smile` og {poly-icon}`frown`.
 
 :::::{admonition} Definisjon: Polynomfunksjon
 ---

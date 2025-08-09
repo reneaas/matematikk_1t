@@ -1624,12 +1624,139 @@ Vi har at $p(x)$ er skrevet på nullpunktsform (og ekstremalpunktsform, med $y_0
 ---
 
 
-:::{margin} Tips: Oppgave 10
+
+
+:::::::::::::::{exercise} Oppgave 10
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+En andregradsfunksjon $f$ er gitt ved
+
+$$
+f(x) = (x + 1)(x - 2)
+$$
+
+Bestem hvilken graf nedenfor som viser grafen til $f$.
+
+:::{figure} ./figurer/oppgaver/oppgave_10/a/merged_figure.svg
+---
+class: no-click, adaptive-figure
+width: 100%
+---
+:::
+
+
+::::{answer}
+Graf B.
+::::
+
+::::{solution}
+Vi ser fra $f(x)$ at nullpunktene er gitt ved 
+
+$$
+x = -1 \qog x = 2.
+$$
+
+Det betyr at det negative nullpunktet må ligge nærmere $y$-aksen enn det positive, noe som bare passer med graf B og C.
+
+Vi ser også at $a = 1 > 0$ som betyr at grafen til $f$ er konveks {poly-icon}`smile`. Da passer bare graf B. Dermed er graf B grafen til $f$. 
+
+::::
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+En andregradsfunksjon $g$ er gitt ved
+
+$$
+g(x) = -2(x - 1)(x - 2)
+$$
+
+:::{figure} ./figurer/oppgaver/oppgave_10/b/merged_figure.svg
+---
+class: no-click, adaptive-figure
+width: 100%
+---
+:::
+
+
+::::{answer}
+Graf A. 
+::::
+
+
+::::{solution}
+Vi ser fra $g(x)$ at nullpunktene er gitt ved
+
+$$
+x = 1 \qog x = 2.
+$$
+
+Det betyr at begge nullpunktene har positiv $x$-verdi som passer med graf A og B. 
+
+Vi ser at $a < 0$ som betyr at grafen til $g$ er konkav {poly-icon}`frown`. Dermed passer bare graf A. Dermed er graf A grafen til $g$.
+
+::::
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+En andregradsfunksjon $h$ er gitt ved 
+
+$$
+h(x) = (x + 2)^2
+$$
+
+Bestem hvilken graf nedenfor som viser grafen til $h$. 
+
+
+:::{figure} ./figurer/oppgaver/oppgave_10/c/merged_figure.svg
+---
+class: no-click, adaptive-figure
+width: 100%
+---
+:::
+
+
+::::{answer}
+Graf C.
+::::
+
+
+::::{solution}
+Vi ser fra $h(x)$ at nullpunktet er gitt ved
+
+$$
+x = -2. 
+$$
+
+Det betyr at grafen må treffe $x$-aksen ved en negativ $x$-verdi som passer med graf C og D. 
+
+Vi ser at $a = 1 > 0$ som betyr at grafen er konveks {poly-icon}`smile`. Dermed passer bare graf C. Dermed er graf C grafen til $h$.
+::::
+
+:::::::::::::
+
+
+::::::::::::::
+:::::::::::::::
+
+
+---
+
+
+:::{margin} Tips: Oppgave 11
 Husk at en identitet er en likning som er sann for alle verdier av $x$. Det betyr at venstre side og høyre side er alltid like uansett hva vi setter inn for $x$.
 :::
 
 
-:::::::::::::::{exercise} Oppgave 10
+:::::::::::::::{exercise} Oppgave 11
 ---
 level: 3
 ---
@@ -1799,9 +1926,12 @@ $$
 :::::::::::::::
 
 
+
 ---
 
-:::::::::::::::{exercise} Oppgave 11
+
+
+:::::::::::::::{exercise} Oppgave 12
 ---
 level: 3
 ---

@@ -26,6 +26,9 @@ class: no-click, adaptive-figure
 
 > Merk at konstanten $a$ er den samme som i standardformen og ekstremalpunktsformen! 
 
+* $x = x_1$ og $x = x_2$ er nullpunktene til $f$
+* Hvis $a > 0$ er grafen til $f$ konveks {poly-icon}`smile`. Hvis $a < 0$ er grafen til $f$ konkav {poly-icon}`frown`.
+
 Se figuren nedenfor.
 
 :::{figure} ./figurer/teori/grafisk_representasjon.svg
