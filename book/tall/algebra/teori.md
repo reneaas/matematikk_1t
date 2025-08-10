@@ -637,7 +637,7 @@ $$
 
 
 ### Konjugatsetningen
-Den siste kvadratsetningen er uttrykker ikke arealet av et kvadrat, men heller arealet av ett kvadrat minus arealet av et annet kvadrat. Vi kaller den for **konjugatsetningen**.
+Den siste kvadratsetningen uttrykker ikke arealet av et kvadrat, men heller arealet av ett kvadrat minus arealet av et annet kvadrat. Vi kaller den for **konjugatsetningen**.
 
 :::::::::::::::{summary} Konjugatsetningen
 For to tall $a$ og $b$ gjelder
