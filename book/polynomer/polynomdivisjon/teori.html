@@ -641,81 +641,46 @@ document.write(`
 <li><p>Kunne bruke polynomdivisjon til å regne ut funksjonsverdier.</p></li>
 </ul>
 </div>
-<div class="theory admonition">
-<p class="admonition-title">Divisjon: Begreper</p>
-<p>Når vi deler et tall <span class="math notranslate nohighlight">\(a\)</span> med et tall <span class="math notranslate nohighlight">\(b\)</span>, kan vi alltid skrive utregningen som</p>
+<p>Polynomdivisjon er en metode for å dele et polynom med et annet polynom og skrive det på en enklere måte. Før vi ser på dette, skal vi motivere hvorfor vi trenger polynomdivisjon i det hele tatt. Vi har sett at når en tredjegradsfunksjon ett nullpunkt, så kan vi skrive <span class="math notranslate nohighlight">\(f(x)\)</span> som et produkt av et førstegradspolynom og et andregradspolynom på formen:</p>
 <div class="math notranslate nohighlight">
 \[
-\dfrac{a}{b} = k + \dfrac{r}{b}
+f(x) = (x - x_1)(ax^2 + bx + c). 
 \]</div>
-<p>der</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(a\)</span> kalles for <strong>dividenden</strong></p></li>
-<li><p><span class="math notranslate nohighlight">\(b\)</span> kalles for <strong>divisoren</strong></p></li>
-<li><p><span class="math notranslate nohighlight">\(k\)</span> kalles for <strong>kvotienten</strong></p></li>
-<li><p><span class="math notranslate nohighlight">\(r\)</span> kalles for <strong>resten</strong></p></li>
-</ul>
-<p>Disse begrepene vil også gjelde dersom vi deler polynomer, som vi snart skal se på.</p>
-</div>
-<p>Polynomdivisjon er en metode for å dele et polynom med et annet polynom og skrive det på en enklere måte. Før vi ser på dette, skal vi motivere hvorfor vi trenger polynomdivisjon i det hele tatt. Følgende setning forteller oss hvorfor.</p>
-<div class="theory admonition">
+<p>Men dette vil også fungere om en tredjegradsfunksjon har to eller tre nullpunker også. Det betyr bare at andregradspolynomet har ett eller to nullpunkter! Dette kan vi oppsummere med setningen nedenfor.</p>
+<div class="admonition summary">
 <p class="admonition-title">Algebraens fundamentalsetning for tredjegradspolynomer</p>
 <p>Et tredjegradspolynom <span class="math notranslate nohighlight">\(f(x)\)</span> kan alltid skrives som et produkt av et førstegradspolynom og et andregradspolynom</p>
 <div class="math notranslate nohighlight">
 \[
-f(x) = (x - r)(ax^2 + px + q). 
+f(x) = (x - x_1)(ax^2 + bx + c). 
 \]</div>
-<p>Her er <span class="math notranslate nohighlight">\(x = r\)</span> et nullpunkt for <span class="math notranslate nohighlight">\(f\)</span>. Andregradspolynomet kan ha ingen, ett eller to nullpunkter.</p>
+<p>Her er <span class="math notranslate nohighlight">\(x = x_1\)</span> et nullpunkt for <span class="math notranslate nohighlight">\(f\)</span>. Andregradspolynomet kan ha ingen, ett eller to nullpunkter.</p>
 </div>
-<p>Setningen over forteller oss at hvis vi klarer å finne en faktor <span class="math notranslate nohighlight">\((x - r)\)</span> som deler <span class="math notranslate nohighlight">\(f(x)\)</span>, så får vi et andregradspolynom. Siden vi vet hvordan vi bestemmer alle egenskapene til andregradspolynomer allerede, betyr det at vi har en mulig metode for å finne ut alt om tredjegradspolynomer også.</p>
-<p>Vårt neste steg er derfor å se på en algoritme for å dele et polynom med en faktor <span class="math notranslate nohighlight">\((x - r)\)</span>. Vi starter med å se på et eksempel med et andregradspolynom.</p>
+<p>Setningen over forteller oss at hvis vi klarer å finne en faktor <span class="math notranslate nohighlight">\((x - x_1)\)</span> som deler <span class="math notranslate nohighlight">\(f(x)\)</span>, så får vi et andregradspolynom. Siden vi vet hvordan vi bestemmer alle egenskapene til andregradspolynomer allerede, betyr det at vi har en mulig metode for å finne ut alt om tredjegradspolynomer også.</p>
+<p>Vårt neste steg er derfor å se på en algoritme for å dele et polynom med en faktor <span class="math notranslate nohighlight">\((x - x_1)\)</span>. Vi starter med å se på et eksempel med et andregradspolynom.</p>
 <section id="polynomdivisjon-uten-rest">
 <h2>Polynomdivisjon uten rest<a class="headerlink" href="#polynomdivisjon-uten-rest" title="Link to this heading">#</a></h2>
 <div class="example admonition">
 <p class="admonition-title">Eksempel 1</p>
-<p>Utfør polynomdivisjonen:</p>
+<p>Regn ut:</p>
 <div class="math notranslate nohighlight">
 \[
 (3x^2 + 3x - 6) : (x + 2). 
 \]</div>
-<div class="solution admonition">
+<div class="admonition solution">
 <p class="admonition-title">Løsning</p>
-<p>For å utføre divisjonen, følger vi disse stegene:</p>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-0">
-Steg 1</label><div class="sd-tab-content docutils">
-<p>Først finner vi hva vi må gange <span class="math notranslate nohighlight">\((x + 2)\)</span> slik at vi får <span class="math notranslate nohighlight">\(3x^2\)</span> som høyeste potens av <span class="math notranslate nohighlight">\(x\)</span>. Dette er <span class="math notranslate nohighlight">\(3x\)</span>. Deretter trekker vi fra <span class="math notranslate nohighlight">\(3x(x + 2)\)</span> fra <span class="math notranslate nohighlight">\((3x^2 + 3x - 6)\)</span>.</p>
+<p>Først tenker vi oss hva vi må gange <span class="math notranslate nohighlight">\((x + 2)\)</span> med slik at vi <strong>minst</strong> får et ledd med <span class="math notranslate nohighlight">\(3x^2\)</span>. Dette vil være <span class="math notranslate nohighlight">\(3x\)</span>. Ganger vi <span class="math notranslate nohighlight">\(3x\)</span> med <span class="math notranslate nohighlight">\((x + 2)\)</span>, så får vi <span class="math notranslate nohighlight">\(3x^2 + 6x\)</span>. Vi trekker fra dette fra <span class="math notranslate nohighlight">\(3x^2 + 3x - 6\)</span>. Vi skriver dette slik:</p>
 <figure class="align-default">
-<a class="no-click polydiv-figure reference internal image-reference" href="../../../_images/stage_3.svg"><img alt="../../../_images/stage_3.svg" class="no-click polydiv-figure" src="../../../_images/stage_3.svg" style="width: 60%;" /></a>
+<a class="no-click polydiv-figure reference internal image-reference" href="../../../_images/stage_4.svg"><img alt="../../../_images/stage_4.svg" class="no-click polydiv-figure" src="../../../_images/stage_4.svg" style="width: 60%;" /></a>
 </figure>
-</div>
-<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-1">
-Steg 2</label><div class="sd-tab-content docutils">
-<p>Nå er resten vår <span class="math notranslate nohighlight">\(-3x - 6\)</span>. Vi må derfor finne hva vi må gange <span class="math notranslate nohighlight">\((x + 2)\)</span> med for at vi skal få <span class="math notranslate nohighlight">\(-3x\)</span> som ett av leddene.</p>
-<p>Dette er <span class="math notranslate nohighlight">\(-3\)</span>. Deretter trekker vi fra <span class="math notranslate nohighlight">\(-3(x + 2)\)</span> fra <span class="math notranslate nohighlight">\((-3x - 6)\)</span>.</p>
-<figure class="align-default">
-<a class="no-click polydiv-figure reference internal image-reference" href="../../../_images/stage_6.svg"><img alt="../../../_images/stage_6.svg" class="no-click polydiv-figure" src="../../../_images/stage_6.svg" style="width: 60%;" /></a>
-</figure>
-</div>
-<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-2">
-Steg 3</label><div class="sd-tab-content docutils">
-<p>Legger vi sammen de to linjene, så sitter vi igjen med <span class="math notranslate nohighlight">\(0\)</span> i rest, og vi er ferdig med divisjonen.</p>
+<p>Nå sitter vi igjen med en rest <span class="math notranslate nohighlight">\((-3x + 6)\)</span>. Dette er hvor mye vi “bommet” på det riktig svaret ved å velge <span class="math notranslate nohighlight">\(3x\)</span>. Vi kan nå gjenta samme prosess med resten. Hva må vi gange med <span class="math notranslate nohighlight">\((x + 2)\)</span> slik at <strong>minst</strong> et av leddene blir <span class="math notranslate nohighlight">\(-3x\)</span>. Det vil være <span class="math notranslate nohighlight">\(-3\)</span>. Ganger vi <span class="math notranslate nohighlight">\(-3\)</span> med <span class="math notranslate nohighlight">\((x + 2)\)</span> får vi <span class="math notranslate nohighlight">\(-3x + 6\)</span>. Vi trekker dette fra resten og får:</p>
 <figure class="align-default">
 <a class="no-click polydiv-figure reference internal image-reference" href="../../../_images/stage_7.svg"><img alt="../../../_images/stage_7.svg" class="no-click polydiv-figure" src="../../../_images/stage_7.svg" style="width: 60%;" /></a>
 </figure>
-</div>
-</div>
-<p>Hele utregningen kan derfor skrives ned som:</p>
-<figure class="align-default">
-<a class="no-click polydiv-figure reference internal image-reference" href="../../../_images/eksempel_11.svg"><img alt="../../../_images/eksempel_11.svg" class="no-click polydiv-figure" src="../../../_images/eksempel_11.svg" style="width: 60%;" /></a>
-</figure>
-<p>Utregningen vår forteller oss at</p>
+<p>Nå er resten vår <span class="math notranslate nohighlight">\(0\)</span> og vi er ferdig med divisjonen. Det betyr at</p>
 <div class="math notranslate nohighlight">
 \[
-\dfrac{3x^3 + 3x - 6}{x + 2} = 3x - 3 \liff 3x^2 + 3x - 6 = (x + 2)(3x - 3).
+(3x^2 + 3x - 6) : (x + 2) = 3x - 3 \liff \dfrac{3x^2 + 3x - 6}{x + 2} = 3x - 3
 \]</div>
 </div>
 </div>
@@ -728,72 +693,34 @@ Steg 3</label><div class="sd-tab-content docutils">
 \[
 (x^3 - 3x^2 - 6x + 8) : (x + 2).
 \]</div>
-<div class="solution admonition">
+<div class="admonition solution">
 <p class="admonition-title">Løsning</p>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-3">
-Steg 1</label><div class="sd-tab-content docutils">
-<p>Vi starter med å dele høyeste potens av <span class="math notranslate nohighlight">\(x\)</span> i teller som er <span class="math notranslate nohighlight">\(x^3\)</span> med høyeste potens av <span class="math notranslate nohighlight">\(x\)</span> i nevner som er <span class="math notranslate nohighlight">\(x\)</span>. Dette gir <span class="math notranslate nohighlight">\(x^2\)</span>.</p>
+<p>Først er vi etter hva vi må gange <span class="math notranslate nohighlight">\((x + 2)\)</span> med slik at vi får et polynom som har et ledd <span class="math notranslate nohighlight">\(x^3\)</span>. Det får vi hvis vi ganger med <span class="math notranslate nohighlight">\(x^2\)</span>. Ganger vi <span class="math notranslate nohighlight">\(x^2\)</span> med <span class="math notranslate nohighlight">\((x + 2)\)</span>, får vi <span class="math notranslate nohighlight">\(x^3 + 2x^2\)</span>. Vi trekker fra dette fra telleren:</p>
 <figure class="align-default">
-<a class="no-click polydiv-figure reference internal image-reference" href="../../../_images/stage_2.svg"><img alt="../../../_images/stage_2.svg" class="no-click polydiv-figure" src="../../../_images/stage_2.svg" style="width: 80%;" /></a>
+<a class="no-click polydiv-figure reference internal image-reference" href="../../../_images/stage_41.svg"><img alt="../../../_images/stage_41.svg" class="no-click polydiv-figure" src="../../../_images/stage_41.svg" style="width: 80%;" /></a>
 </figure>
-</div>
-<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-4">
-Steg 2</label><div class="sd-tab-content docutils">
-<p>Vi ganger svaret fra steg 1 med <span class="math notranslate nohighlight">\((x + 2)\)</span> som gir <span class="math notranslate nohighlight">\(x^2(x + 2) = x^3 + 2x^2\)</span>. Deretter trekker vi fra dette fra <span class="math notranslate nohighlight">\((x^3 - 3x^2 - 6x + 8)\)</span>.</p>
-<figure class="align-default">
-<a class="no-click polydiv-figure reference internal image-reference" href="../../../_images/stage_31.svg"><img alt="../../../_images/stage_31.svg" class="no-click polydiv-figure" src="../../../_images/stage_31.svg" style="width: 80%;" /></a>
-</figure>
-</div>
-<input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-5">
-Steg 3</label><div class="sd-tab-content docutils">
-<p>Vet å regne ut differansen fra steg 2, får vi polynomet <span class="math notranslate nohighlight">\(-5x^2 - 6x + 8\)</span> (men merk at vi ikke trekker ned alle tallene før vi trenger dem i divisjonen).</p>
-<figure class="align-default">
-<a class="no-click polydiv-figure reference internal image-reference" href="../../../_images/stage_4.svg"><img alt="../../../_images/stage_4.svg" class="no-click polydiv-figure" src="../../../_images/stage_4.svg" style="width: 80%;" /></a>
-</figure>
-</div>
-<input id="sd-tab-item-6" name="sd-tab-set-1" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-6">
-Steg 4</label><div class="sd-tab-content docutils">
-<p>Vi deler leddet med høyeste potens av <span class="math notranslate nohighlight">\(x\)</span> fra det resterende polynomet som er <span class="math notranslate nohighlight">\(-5x^2\)</span> med høyeste potens av <span class="math notranslate nohighlight">\(x\)</span> i nevner som er <span class="math notranslate nohighlight">\(x\)</span>. Dette gir <span class="math notranslate nohighlight">\(-5x\)</span>.</p>
-<figure class="align-default">
-<a class="no-click polydiv-figure reference internal image-reference" href="../../../_images/stage_5.svg"><img alt="../../../_images/stage_5.svg" class="no-click polydiv-figure" src="../../../_images/stage_5.svg" style="width: 80%;" /></a>
-</figure>
-</div>
-<input id="sd-tab-item-7" name="sd-tab-set-1" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-7">
-Steg 5</label><div class="sd-tab-content docutils">
-<p>Vi ganger tilbake svaret fra steg 4 med <span class="math notranslate nohighlight">\((x + 2)\)</span> som gir <span class="math notranslate nohighlight">\(-5x(x + 2) = -5x^2 - 10x\)</span>. Deretter trekker vi fra dette fra <span class="math notranslate nohighlight">\(( -5x^2 - 6x + 8)\)</span> og legger sammen.</p>
+<p>Nå sitter vi igjen med en rest <span class="math notranslate nohighlight">\((-5x^2 - 6x)\)</span>. Nå ser vi etter hva vi må gange <span class="math notranslate nohighlight">\((x + 2)\)</span> med slik at ett av leddene blir <span class="math notranslate nohighlight">\(-5x^2\)</span>. Dette vil være <span class="math notranslate nohighlight">\(-5x\)</span>. Ganger vi <span class="math notranslate nohighlight">\(-5x\)</span> med <span class="math notranslate nohighlight">\((x + 2)\)</span>, får vi <span class="math notranslate nohighlight">\(-5x^2 - 10x\)</span>. Vi trekker fra dette fra resten:</p>
 <figure class="align-default">
 <a class="no-click polydiv-figure reference internal image-reference" href="../../../_images/stage_71.svg"><img alt="../../../_images/stage_71.svg" class="no-click polydiv-figure" src="../../../_images/stage_71.svg" style="width: 80%;" /></a>
 </figure>
-</div>
-<input id="sd-tab-item-8" name="sd-tab-set-1" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-8">
-Steg 6</label><div class="sd-tab-content docutils">
-<p>Vi deler leddet med høyeste potens av det resterende polynomet som er <span class="math notranslate nohighlight">\(4x\)</span> med høyeste potens av <span class="math notranslate nohighlight">\(x\)</span> i nevner som er <span class="math notranslate nohighlight">\(x\)</span>. Dette gir <span class="math notranslate nohighlight">\(4\)</span>.
-Deretter vi svaret <span class="math notranslate nohighlight">\(4\)</span> med <span class="math notranslate nohighlight">\((x + 2)\)</span> som gir <span class="math notranslate nohighlight">\(4(x + 2) = 4x + 8\)</span> og trekker dette fra det resterende polynomet. Da får vi <span class="math notranslate nohighlight">\(0\)</span>.</p>
+<p>Nå sitter vi igjen med en rest <span class="math notranslate nohighlight">\((4x + 8)\)</span>. Nå ser vi etter hva vi må gange <span class="math notranslate nohighlight">\((x + 2)\)</span> med slik at ett av leddene blir <span class="math notranslate nohighlight">\(4x\)</span>. Dette vil være <span class="math notranslate nohighlight">\(4\)</span>. Ganger vi <span class="math notranslate nohighlight">\(4\)</span> med <span class="math notranslate nohighlight">\((x + 2)\)</span>, får vi <span class="math notranslate nohighlight">\(4x + 8\)</span>. Vi trekker fra dette fra resten:</p>
 <figure class="align-default">
 <a class="no-click polydiv-figure reference internal image-reference" href="../../../_images/stage_10.svg"><img alt="../../../_images/stage_10.svg" class="no-click polydiv-figure" src="../../../_images/stage_10.svg" style="width: 80%;" /></a>
 </figure>
-</div>
-</div>
-<p>Vi kan oppsummere hele regnestykket som følger:</p>
-<figure class="align-default">
-<a class="no-click polydiv-figure reference internal image-reference" href="../../../_images/eksempel_2.svg"><img alt="../../../_images/eksempel_2.svg" class="no-click polydiv-figure" src="../../../_images/eksempel_2.svg" style="width: 80%;" /></a>
-</figure>
-<p>Utregningen forteller oss at</p>
+<p>Nå har vi <span class="math notranslate nohighlight">\(0\)</span> i rest og er ferdig med divisjonen. Da har vi funnet at</p>
 <div class="math notranslate nohighlight">
 \[
-\dfrac{x^3 - 3x^2 - 6x + 8}{x + 2} = x^2 - 5x + 4,
+(x^3 - 3x^2 - 6x + 8) : (x + 2) = x^2 - 5x + 4
 \]</div>
-<p>som betyr at</p>
+<p>som vi også kan skrive som</p>
 <div class="math notranslate nohighlight">
 \[
-x^3 - 3x^2 - 6x + 8 = (x + 2)(x^2 - 5x + 4).
+\dfrac{x^3 - 3x^2 - 6x + 8}{x + 2} = x^2 - 5x + 4
+\]</div>
+<p>Ganger vi med <span class="math notranslate nohighlight">\((x + 2)\)</span> på hver side, så finner vi at vi kan faktorisere tredjegradspolynomet som</p>
+<div class="math notranslate nohighlight">
+\[
+x^3 - 3x^2 - 6 + 8 = (x + 2)(x^2 - 5x + 4)
 \]</div>
 </div>
 </div>
@@ -826,7 +753,7 @@ x^3 - 8x^2 + 21x - 18 = (x - 2)(x^2 - 6x + 9).
 </section>
 <section id="polynomdivisjon-med-rest">
 <h2>Polynomdivisjon med rest<a class="headerlink" href="#polynomdivisjon-med-rest" title="Link to this heading">#</a></h2>
-<p>Som vi så i begynnelsen av dette delkapittelet, så er <span class="math notranslate nohighlight">\(f(x)\)</span> bare delelig med en faktor <span class="math notranslate nohighlight">\((x - r)\)</span> hvis faktoren er i <span class="math notranslate nohighlight">\(f(x)\)</span>. Hvis ikke vil vi få en <strong>rest</strong> i divisjonen. Vi skal ta et eksempel som viser hvordan dette ser ut:</p>
+<p>Som vi så i begynnelsen av dette delkapittelet, så er <span class="math notranslate nohighlight">\(f(x)\)</span> bare delelig med en faktor <span class="math notranslate nohighlight">\((x - x_1)\)</span> hvis faktoren er i <span class="math notranslate nohighlight">\(f(x)\)</span>. Det er da naturlig å lure på hva som skjer dersom <span class="math notranslate nohighlight">\((x - x_1)\)</span> <strong>ikke</strong> er en faktor i <span class="math notranslate nohighlight">\(f(x)\)</span>. Da får vi en <strong>rest</strong> i polynomdivisjonen. La oss se på et eksempel:</p>
 <div class="example admonition">
 <p class="admonition-title">Eksempel 4</p>
 <p>Regn ut</p>
@@ -848,13 +775,13 @@ x^3 - 8x^2 + 21x - 18 = (x - 2)(x^2 - 6x + 9).
 <p>Siden vi ikke har <span class="math notranslate nohighlight">\(0\)</span> i rest, vil ikke <span class="math notranslate nohighlight">\((x - 3)\)</span> være en faktor i <span class="math notranslate nohighlight">\(x^3 - 5x^2 + 8x - 4\)</span>.</p>
 </div>
 </div>
-<p>I eksempel 1, 2 og 2 utførte vi polynomdivisjon som ikke ga noen rest fordi <span class="math notranslate nohighlight">\((x - r)\)</span> var en faktor i dividenden (telleren). I eksempel 3 fikk vi en rest som betydde at <span class="math notranslate nohighlight">\((x - r)\)</span> <em>ikke</em> var en faktor i dividenden. Basert på eksemplene, kan vi formulere en setning:</p>
+<p>I eksempel 1, 2 og 3 utførte vi polynomdivisjon som ikke ga noen rest fordi <span class="math notranslate nohighlight">\((x - x_1)\)</span> var en faktor i polynomet. I eksempel 4 fikk vi en rest som betydde at <span class="math notranslate nohighlight">\((x - x_1)\)</span> <em>ikke</em> var en faktor i polynomet. Basert på eksemplene, kan vi formulere en setning:</p>
 <div class="summary admonition">
-<p class="admonition-title">Setning: Polynomdivisjonen <span class="math notranslate nohighlight">\(f(x) : (x - r)\)</span></p>
-<p>Gitt et polynom <span class="math notranslate nohighlight">\(f\)</span>, vil polynomdivisjonen <span class="math notranslate nohighlight">\(f(x) : (x - r)\)</span> alltid kunne skrives på formen</p>
+<p class="admonition-title">Setning: Polynomdivisjonen <span class="math notranslate nohighlight">\(f(x) : (x - x_1)\)</span></p>
+<p>Gitt et polynom <span class="math notranslate nohighlight">\(f\)</span>, vil polynomdivisjonen <span class="math notranslate nohighlight">\(f(x) : (x - x_1)\)</span> alltid kunne skrives på formen</p>
 <div class="math notranslate nohighlight">
 \[
-\dfrac{f(x)}{x - r} = K(x) + \dfrac{R}{x - r}
+\dfrac{f(x)}{x - x_1} = K(x) + \dfrac{R}{x - x_1}
 \]</div>
 <p>der <span class="math notranslate nohighlight">\(R\)</span> er <strong>resten</strong> i divisjonen og <span class="math notranslate nohighlight">\(K(x)\)</span> er et polynom som kalles for <strong>kvotienten</strong>.</p>
 </div>
@@ -868,8 +795,8 @@ x^3 - 8x^2 + 21x - 18 = (x - 2)(x^2 - 6x + 9).
 f(x) = x^3 + 4x^2 + x - 6.
 \]</div>
 <div class="sd-tab-set tabs-parts docutils">
-<input checked="checked" id="sd-tab-item-9" name="sd-tab-set-2" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-9">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
 a</label><div class="sd-tab-content docutils">
 <p>Regn ut <span class="math notranslate nohighlight">\(f(-1)\)</span>.</p>
 <div class="answer dropdown admonition">
@@ -880,8 +807,8 @@ f(-1) = -4
 \]</div>
 </div>
 </div>
-<input id="sd-tab-item-10" name="sd-tab-set-2" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-10">
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
 b</label><div class="sd-tab-content docutils">
 <p>Regn ut polynomdivisjonen</p>
 <div class="math notranslate nohighlight">
@@ -902,42 +829,42 @@ b</label><div class="sd-tab-content docutils">
 <hr class="docutils" />
 <p>Observasjonene gjort i Utforsk 1 lar oss skrive en setning som er viktig for polynomdivisjon:</p>
 <div class="summary admonition">
-<p class="admonition-title">Setning: Resten i polynomdivisjon med <span class="math notranslate nohighlight">\((x - r)\)</span></p>
-<p>Gitt et polynom <span class="math notranslate nohighlight">\(f\)</span>, så er resten <span class="math notranslate nohighlight">\(R\)</span> i polynomdivisjon <span class="math notranslate nohighlight">\(f(x) : (x - r)\)</span> lik <span class="math notranslate nohighlight">\(R = f(r)\)</span>.</p>
-<p>Hvis <span class="math notranslate nohighlight">\(R = 0\)</span>, betyr det at <span class="math notranslate nohighlight">\(f(r) = 0\)</span> og <span class="math notranslate nohighlight">\((x - r)\)</span> er en faktor i <span class="math notranslate nohighlight">\(f(x)\)</span>.</p>
+<p class="admonition-title">Setning: Resten i polynomdivisjon med <span class="math notranslate nohighlight">\((x - x_1)\)</span></p>
+<p>Gitt et polynom <span class="math notranslate nohighlight">\(f\)</span>, så er resten <span class="math notranslate nohighlight">\(R\)</span> i polynomdivisjon <span class="math notranslate nohighlight">\(f(x) : (x - x_1)\)</span> lik <span class="math notranslate nohighlight">\(R = f(x_1)\)</span>.</p>
+<p>Hvis <span class="math notranslate nohighlight">\(R = 0\)</span>, betyr det at <span class="math notranslate nohighlight">\(f(x_1) = 0\)</span> og <span class="math notranslate nohighlight">\((x - x_1)\)</span> er en faktor i <span class="math notranslate nohighlight">\(f(x)\)</span>.</p>
 <div class="dropdown theory admonition">
 <p class="admonition-title">Bevis</p>
-<p>Ved polynomdivisjon <span class="math notranslate nohighlight">\(f(x) : (x - r)\)</span> får vi generelt</p>
+<p>Ved polynomdivisjon <span class="math notranslate nohighlight">\(f(x) : (x - x_1)\)</span> får vi generelt</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
-    \dfrac{f(x)}{x - r} &amp;= K(x) + \dfrac{R}{x - r} \\
+    \dfrac{f(x)}{x - x_1} &amp;= K(x) + \dfrac{R}{x - x_1} \\
     \\
-    \textcolor{red}{(x - r)} \cdot\dfrac{f(x)}{x - r} &amp;= K(x) \cdot \textcolor{red}{(x - r)} + \dfrac{R}{x - r} \cdot \textcolor{red}{(x - r)} \\
+    \textcolor{red}{(x - x_1)} \cdot\dfrac{f(x)}{x - x_1} &amp;= K(x) \cdot \textcolor{red}{(x - x_1)} + \dfrac{R}{x - x_1} \cdot \textcolor{red}{(x - x_1)} \\
     \\
-    f(x) &amp;= K(x) \cdot (x - r) + R \\
+    f(x) &amp;= K(x) \cdot (x - x_1) + R \\
 \end{align*}\]</div>
-<p>Setter vi inn <span class="math notranslate nohighlight">\(x = r\)</span> i den siste likningen, får vi</p>
+<p>Setter vi inn <span class="math notranslate nohighlight">\(x = x_1\)</span> i den siste likningen, får vi</p>
 <div class="math notranslate nohighlight">
 \[
-f(r) = K(r) \cdot (r - r) + R = R.
+f(x_1) = K(x_1) \cdot (x_1 - x_1) + R = R.
 \]</div>
-<p>Altså er resten <span class="math notranslate nohighlight">\(R = f(r)\)</span> og vi har bevist setningen.</p>
+<p>Altså er resten <span class="math notranslate nohighlight">\(R = f(x_1)\)</span> og vi har bevist setningen.</p>
 </div>
 </div>
 <hr class="docutils" />
 <div class="summary admonition">
-<p class="admonition-title">Hjelpesetning: Resten i polynomdivisjonen <span class="math notranslate nohighlight">\(f(x) : (x - r)\)</span></p>
-<p>Hvis resten i polynomdivisjonen <span class="math notranslate nohighlight">\(f(x) : (x - r)\)</span> er <span class="math notranslate nohighlight">\(R = f(r) = 0\)</span>, så er</p>
+<p class="admonition-title">Hjelpesetning: Resten i polynomdivisjonen <span class="math notranslate nohighlight">\(f(x) : (x - x_1)\)</span></p>
+<p>Hvis resten i polynomdivisjonen <span class="math notranslate nohighlight">\(f(x) : (x - x_1)\)</span> er <span class="math notranslate nohighlight">\(R = f(x_1) = 0\)</span>, så er</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(x = r\)</span> et nullpunkt for <span class="math notranslate nohighlight">\(f\)</span> siden <span class="math notranslate nohighlight">\(f(r) = 0\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\((x - r)\)</span> er en faktor i <span class="math notranslate nohighlight">\(f(x)\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(f(x)\)</span> er delelig med <span class="math notranslate nohighlight">\((x - r)\)</span>. Noen ganger sier vi at polynomdivisjonen <span class="math notranslate nohighlight">\(f(x) : (x - r)\)</span> “går opp” og vi skriver <span class="math notranslate nohighlight">\((x - r) \, |  \, f(x)\)</span> og leser det som “<span class="math notranslate nohighlight">\((x - r)\)</span> deler <span class="math notranslate nohighlight">\(f(x)\)</span>”.</p></li>
+<li><p><span class="math notranslate nohighlight">\(x = x_1\)</span> et nullpunkt for <span class="math notranslate nohighlight">\(f\)</span> siden <span class="math notranslate nohighlight">\(f(x_1) = 0\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\((x - x_1)\)</span> er en faktor i <span class="math notranslate nohighlight">\(f(x)\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(f(x)\)</span> er delelig med <span class="math notranslate nohighlight">\((x - x_1)\)</span>. Noen ganger sier vi at polynomdivisjonen <span class="math notranslate nohighlight">\(f(x) : (x - x_1)\)</span> “går opp” og vi skriver <span class="math notranslate nohighlight">\((x - x_1) \, |  \, f(x)\)</span> og leser det som “<span class="math notranslate nohighlight">\((x - x_1)\)</span> deler <span class="math notranslate nohighlight">\(f(x)\)</span>”.</p></li>
 </ul>
 </div>
 <p>Setningene over lar oss gjøre to ting:</p>
 <ul class="simple">
-<li><p>Avgjøre om et punkt <span class="math notranslate nohighlight">\(x = r\)</span> er et nullpunkt for <span class="math notranslate nohighlight">\(f\)</span>, og dermed faktorisere <span class="math notranslate nohighlight">\(f\)</span>.</p></li>
-<li><p>Regne ut funksjonsverdier <span class="math notranslate nohighlight">\(f(r)\)</span> <strong>raskt</strong> ved å dele med <span class="math notranslate nohighlight">\((x - r)\)</span> og lese av resten <span class="math notranslate nohighlight">\(R\)</span>.</p></li>
+<li><p>Avgjøre om et punkt <span class="math notranslate nohighlight">\(x = x_1\)</span> er et nullpunkt for <span class="math notranslate nohighlight">\(f\)</span>, og dermed faktorisere <span class="math notranslate nohighlight">\(f\)</span>.</p></li>
+<li><p>Regne ut funksjonsverdier <span class="math notranslate nohighlight">\(f(x_1)\)</span> <strong>raskt</strong> ved å dele med <span class="math notranslate nohighlight">\((x - x_1)\)</span> og lese av resten <span class="math notranslate nohighlight">\(R\)</span>.</p></li>
 </ul>
 <p>Vi tar et eksempel som illustrer setningen i praksis:</p>
 <div class="example admonition">
@@ -965,7 +892,7 @@ f(x) = x^3 - 2x^2 - 5x + 6.
 <p>Vi skal ta i bruk noe vi kaller for et <strong>Horner-skjema</strong> for å utføre divisjonen.</p>
 <div class="summary admonition">
 <p class="admonition-title">Horner-skjema</p>
-<p>Et <strong>Horner-skjema</strong> kan brukes til å regne ut polynomdivisjonen <span class="math notranslate nohighlight">\(f(x) : (x - r)\)</span>. La</p>
+<p>Et <strong>Horner-skjema</strong> kan brukes til å regne ut polynomdivisjonen <span class="math notranslate nohighlight">\(f(x) : (x - x_1)\)</span>. La</p>
 <div class="math notranslate nohighlight">
 \[
 f(x) = a_3x^3 + a_2x^2 + a_1x + a_0
@@ -975,12 +902,12 @@ f(x) = a_3x^3 + a_2x^2 + a_1x + a_0
 \[
 K(x) = b_2x^2 + b_1x + b_0. 
 \]</div>
-<p>Da kan vi bestemme koeffisientene til <span class="math notranslate nohighlight">\(K(x)\)</span> og resten <span class="math notranslate nohighlight">\(R\)</span> ved å lage et Horner-skjema som vist under:</p>
+<p>Da kan vi bestemme koeffisientene til <span class="math notranslate nohighlight">\(K(x)\)</span> og resten <span class="math notranslate nohighlight">\(R\)</span> ved å lage et Horner-skjema som vist nedenfor:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{array}{r|cccc}
  &amp; a_3 &amp; a_2 &amp; a_1 &amp; a_0 \\ % Dividend coefficients
-    x = r  &amp;   &amp; b_2\cdot r  &amp; b_1\cdot r  &amp; b_0\cdot r \\ % Linear term
+    x = x_1 &amp;   &amp; b_2\cdot x_1  &amp; b_1\cdot x_1  &amp; b_0\cdot x_1 \\ % Linear term
 \hline
         &amp; b_2 &amp; b_1 &amp;  b_0 &amp; R \\ % Resulting coefficients
 \end{array}
