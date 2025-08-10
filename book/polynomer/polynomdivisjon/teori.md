@@ -10,45 +10,29 @@ class: tip
 * Kunne bruke polynomdivisjon til å regne ut funksjonsverdier.
 ::::
 
-::::{admonition} Divisjon: Begreper
---- 
-class: theory
----
-Når vi deler et tall $a$ med et tall $b$, kan vi alltid skrive utregningen som 
 
+
+Polynomdivisjon er en metode for å dele et polynom med et annet polynom og skrive det på en enklere måte. Før vi ser på dette, skal vi motivere hvorfor vi trenger polynomdivisjon i det hele tatt. Vi har sett at når en tredjegradsfunksjon ett nullpunkt, så kan vi skrive $f(x)$ som et produkt av et førstegradspolynom og et andregradspolynom på formen:
 
 $$
-\dfrac{a}{b} = k + \dfrac{r}{b}
+f(x) = (x - x_1)(ax^2 + bx + c). 
 $$
 
-der 
+Men dette vil også fungere om en tredjegradsfunksjon har to eller tre nullpunker også. Det betyr bare at andregradspolynomet har ett eller to nullpunkter! Dette kan vi oppsummere med setningen nedenfor.
 
-* $a$ kalles for **dividenden**
-* $b$ kalles for **divisoren**
-* $k$ kalles for **kvotienten**
-* $r$ kalles for **resten**
-
-Disse begrepene vil også gjelde dersom vi deler polynomer, som vi snart skal se på.
-::::
-
-Polynomdivisjon er en metode for å dele et polynom med et annet polynom og skrive det på en enklere måte. Før vi ser på dette, skal vi motivere hvorfor vi trenger polynomdivisjon i det hele tatt. Følgende setning forteller oss hvorfor. 
-
-:::::{admonition} Algebraens fundamentalsetning for tredjegradspolynomer
----
-class: theory
----
+:::::{summary} Algebraens fundamentalsetning for tredjegradspolynomer
 Et tredjegradspolynom $f(x)$ kan alltid skrives som et produkt av et førstegradspolynom og et andregradspolynom
 
 $$
-f(x) = (x - r)(ax^2 + px + q). 
+f(x) = (x - x_1)(ax^2 + bx + c). 
 $$
 
-Her er $x = r$ et nullpunkt for $f$. Andregradspolynomet kan ha ingen, ett eller to nullpunkter.
+Her er $x = x_1$ et nullpunkt for $f$. Andregradspolynomet kan ha ingen, ett eller to nullpunkter.
 :::::
 
-Setningen over forteller oss at hvis vi klarer å finne en faktor $(x - r)$ som deler $f(x)$, så får vi et andregradspolynom. Siden vi vet hvordan vi bestemmer alle egenskapene til andregradspolynomer allerede, betyr det at vi har en mulig metode for å finne ut alt om tredjegradspolynomer også. 
+Setningen over forteller oss at hvis vi klarer å finne en faktor $(x - x_1)$ som deler $f(x)$, så får vi et andregradspolynom. Siden vi vet hvordan vi bestemmer alle egenskapene til andregradspolynomer allerede, betyr det at vi har en mulig metode for å finne ut alt om tredjegradspolynomer også. 
 
-Vårt neste steg er derfor å se på en algoritme for å dele et polynom med en faktor $(x - r)$. Vi starter med å se på et eksempel med et andregradspolynom.
+Vårt neste steg er derfor å se på en algoritme for å dele et polynom med en faktor $(x - x_1)$. Vi starter med å se på et eksempel med et andregradspolynom.
 
 
 ## Polynomdivisjon uten rest
@@ -57,81 +41,44 @@ Vårt neste steg er derfor å se på en algoritme for å dele et polynom med en 
 ---
 class: example
 ---
-Utfør polynomdivisjonen:
+Regn ut:
 
 $$
 (3x^2 + 3x - 6) : (x + 2). 
 $$
 
 
-:::::::::::::::{admonition} Løsning
+::::{solution}
 ---
-class: solution
+dropdown: 0
 ---
-For å utføre divisjonen, følger vi disse stegene: 
+Først tenker vi oss hva vi må gange $(x + 2)$ med slik at vi **minst** får et ledd med $3x^2$. Dette vil være $3x$. Ganger vi $3x$ med $(x + 2)$, så får vi $3x^2 + 6x$. Vi trekker fra dette fra $3x^2 + 3x - 6$. Vi skriver dette slik:
 
-::::::::::::::{tab-set}
-:::::::::::::{tab-item} Steg 1
-Først finner vi hva vi må gange $(x + 2)$ slik at vi får $3x^2$ som høyeste potens av $x$. Dette er $3x$. Deretter trekker vi fra $3x(x + 2)$ fra $(3x^2 + 3x - 6)$.
-
-::::{figure} ./koder/eksempler/eksempel_1/stage_3.svg
+:::{figure} ./koder/eksempler/eksempel_1/stage_4.svg
 ---
 width: 60%
 class: no-click, polydiv-figure
 ---
-::::
+:::
+
+Nå sitter vi igjen med en rest $(-3x + 6)$. Dette er hvor mye vi "bommet" på det riktig svaret ved å velge $3x$. Vi kan nå gjenta samme prosess med resten. Hva må vi gange med $(x + 2)$ slik at **minst** et av leddene blir $-3x$. Det vil være $-3$. Ganger vi $-3$ med $(x + 2)$ får vi $-3x + 6$. Vi trekker dette fra resten og får:
 
 
-:::::::::::::
-
-:::::::::::::{tab-item} Steg 2
-Nå er resten vår $-3x - 6$. Vi må derfor finne hva vi må gange $(x + 2)$ med for at vi skal få $-3x$ som ett av leddene. 
-
-Dette er $-3$. Deretter trekker vi fra $-3(x + 2)$ fra $(-3x - 6)$.
-
-::::{figure} ./koder/eksempler/eksempel_1/stage_6.svg
+:::{figure} ./koder/eksempler/eksempel_1/stage_7.svg
 ---
 width: 60%
 class: no-click, polydiv-figure
 ---
-::::
+:::
 
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} Steg 3
-Legger vi sammen de to linjene, så sitter vi igjen med $0$ i rest, og vi er ferdig med divisjonen.
-
-::::{figure} ./koder/eksempler/eksempel_1/stage_7.svg
----
-width: 60%
-class: no-click, polydiv-figure
----
-::::
-
-:::::::::::::
-::::::::::::::
-
-
-
-Hele utregningen kan derfor skrives ned som: 
-
-
-::::{figure} ./koder/eksempler/eksempel_1/eksempel_1.svg
----
-width: 60%
-class: no-click, polydiv-figure
----
-::::
-
-Utregningen vår forteller oss at 
+Nå er resten vår $0$ og vi er ferdig med divisjonen. Det betyr at 
 
 $$
-\dfrac{3x^3 + 3x - 6}{x + 2} = 3x - 3 \liff 3x^2 + 3x - 6 = (x + 2)(3x - 3).
+(3x^2 + 3x - 6) : (x + 2) = 3x - 3 \liff \dfrac{3x^2 + 3x - 6}{x + 2} = 3x - 3
 $$
 
-:::::::::::::::
+::::
+
 ::::::::::::::::
 
 ---
@@ -149,41 +96,12 @@ $$
 (x^3 - 3x^2 - 6x + 8) : (x + 2).
 $$
 
-::::::::::::::{admonition} Løsning
+
+::::{solution}
 ---
-class: solution
+dropdown: 0
 ---
-
-:::::::::::::{tab-set}
-
-::::::::::::{tab-item} Steg 1
-Vi starter med å dele høyeste potens av $x$ i teller som er $x^3$ med høyeste potens av $x$ i nevner som er $x$. Dette gir $x^2$. 
-
-
-:::{figure} ./koder/eksempler/eksempel_2/stage_2.svg
----
-width: 80%
-class: no-click, polydiv-figure
----
-:::
-
-::::::::::::
-
-::::::::::::{tab-item} Steg 2
-Vi ganger svaret fra steg 1 med $(x + 2)$ som gir $x^2(x + 2) = x^3 + 2x^2$. Deretter trekker vi fra dette fra $(x^3 - 3x^2 - 6x + 8)$.
-
-:::{figure} ./koder/eksempler/eksempel_2/stage_3.svg
----
-width: 80%
-class: no-click, polydiv-figure
----
-:::
-
-::::::::::::
-
-::::::::::::{tab-item} Steg 3
-Vet å regne ut differansen fra steg 2, får vi polynomet $-5x^2 - 6x + 8$ (men merk at vi ikke trekker ned alle tallene før vi trenger dem i divisjonen). 
-
+Først er vi etter hva vi må gange $(x + 2)$ med slik at vi får et polynom som har et ledd $x^3$. Det får vi hvis vi ganger med $x^2$. Ganger vi $x^2$ med $(x + 2)$, får vi $x^3 + 2x^2$. Vi trekker fra dette fra telleren:
 
 :::{figure} ./koder/eksempler/eksempel_2/stage_4.svg
 ---
@@ -192,27 +110,7 @@ class: no-click, polydiv-figure
 ---
 :::
 
-
-::::::::::::
-
-
-::::::::::::{tab-item} Steg 4
-
-Vi deler leddet med høyeste potens av $x$ fra det resterende polynomet som er $-5x^2$ med høyeste potens av $x$ i nevner som er $x$. Dette gir $-5x$.
-
-:::{figure} ./koder/eksempler/eksempel_2/stage_5.svg
----
-width: 80%
-class: no-click, polydiv-figure
----
-:::
-
-::::::::::::
-
-
-::::::::::::{tab-item} Steg 5
-Vi ganger tilbake svaret fra steg 4 med $(x + 2)$ som gir $-5x(x + 2) = -5x^2 - 10x$. Deretter trekker vi fra dette fra $( -5x^2 - 6x + 8)$ og legger sammen.
-
+Nå sitter vi igjen med en rest $(-5x^2 - 6x)$. Nå ser vi etter hva vi må gange $(x + 2)$ med slik at ett av leddene blir $-5x^2$. Dette vil være $-5x$. Ganger vi $-5x$ med $(x + 2)$, får vi $-5x^2 - 10x$. Vi trekker fra dette fra resten:
 
 :::{figure} ./koder/eksempler/eksempel_2/stage_7.svg
 ---
@@ -221,12 +119,7 @@ class: no-click, polydiv-figure
 ---
 :::
 
-::::::::::::
-
-::::::::::::{tab-item} Steg 6
-Vi deler leddet med høyeste potens av det resterende polynomet som er $4x$ med høyeste potens av $x$ i nevner som er $x$. Dette gir $4$. 
-Deretter vi svaret $4$ med $(x + 2)$ som gir $4(x + 2) = 4x + 8$ og trekker dette fra det resterende polynomet. Da får vi $0$.
-
+Nå sitter vi igjen med en rest $(4x + 8)$. Nå ser vi etter hva vi må gange $(x + 2)$ med slik at ett av leddene blir $4x$. Dette vil være $4$. Ganger vi $4$ med $(x + 2)$, får vi $4x + 8$. Vi trekker fra dette fra resten: 
 
 :::{figure} ./koder/eksempler/eksempel_2/stage_10.svg
 ---
@@ -235,34 +128,29 @@ class: no-click, polydiv-figure
 ---
 :::
 
-::::::::::::
-
-
-:::::::::::::
-
-
-Vi kan oppsummere hele regnestykket som følger: 
-
-:::{figure} ./koder/eksempler/eksempel_2/eksempel_2.svg
----
-width: 80%
-class: no-click, polydiv-figure
----
-:::
-
-Utregningen forteller oss at 
+Nå har vi $0$ i rest og er ferdig med divisjonen. Da har vi funnet at 
 
 $$
-\dfrac{x^3 - 3x^2 - 6x + 8}{x + 2} = x^2 - 5x + 4,
+(x^3 - 3x^2 - 6x + 8) : (x + 2) = x^2 - 5x + 4
 $$
 
-som betyr at 
+som vi også kan skrive som
 
 $$
-x^3 - 3x^2 - 6x + 8 = (x + 2)(x^2 - 5x + 4).
+\dfrac{x^3 - 3x^2 - 6x + 8}{x + 2} = x^2 - 5x + 4
 $$
 
-::::::::::::::
+Ganger vi med $(x + 2)$ på hver side, så finner vi at vi kan faktorisere tredjegradspolynomet som
+
+$$
+x^3 - 3x^2 - 6 + 8 = (x + 2)(x^2 - 5x + 4)
+$$
+
+::::
+
+
+
+
 
 :::::::::::::::
 
@@ -315,7 +203,7 @@ $$
 
 ## Polynomdivisjon med rest
 
-Som vi så i begynnelsen av dette delkapittelet, så er $f(x)$ bare delelig med en faktor $(x - r)$ hvis faktoren er i $f(x)$. Hvis ikke vil vi få en **rest** i divisjonen. Vi skal ta et eksempel som viser hvordan dette ser ut:
+Som vi så i begynnelsen av dette delkapittelet, så er $f(x)$ bare delelig med en faktor $(x - x_1)$ hvis faktoren er i $f(x)$. Det er da naturlig å lure på hva som skjer dersom $(x - x_1)$ **ikke** er en faktor i $f(x)$. Da får vi en **rest** i polynomdivisjonen. La oss se på et eksempel:
 
 
 :::::::::::::::{admonition} Eksempel 4
@@ -354,16 +242,16 @@ Siden vi ikke har $0$ i rest, vil ikke $(x - 3)$ være en faktor i $x^3 - 5x^2 +
 :::::::::::::::
 
  
-I eksempel 1, 2 og 2 utførte vi polynomdivisjon som ikke ga noen rest fordi $(x - r)$ var en faktor i dividenden (telleren). I eksempel 3 fikk vi en rest som betydde at $(x - r)$ *ikke* var en faktor i dividenden. Basert på eksemplene, kan vi formulere en setning: 
+I eksempel 1, 2 og 3 utførte vi polynomdivisjon som ikke ga noen rest fordi $(x - x_1)$ var en faktor i polynomet. I eksempel 4 fikk vi en rest som betydde at $(x - x_1)$ *ikke* var en faktor i polynomet. Basert på eksemplene, kan vi formulere en setning: 
 
-:::::::::::::::{admonition} Setning: Polynomdivisjonen $f(x) : (x - r)$
+:::::::::::::::{admonition} Setning: Polynomdivisjonen $f(x) : (x - x_1)$
 ---
 class: summary
 ---
-Gitt et polynom $f$, vil polynomdivisjonen $f(x) : (x - r)$ alltid kunne skrives på formen
+Gitt et polynom $f$, vil polynomdivisjonen $f(x) : (x - x_1)$ alltid kunne skrives på formen
 
 $$
-\dfrac{f(x)}{x - r} = K(x) + \dfrac{R}{x - r}
+\dfrac{f(x)}{x - x_1} = K(x) + \dfrac{R}{x - x_1}
 $$
 
 der $R$ er **resten** i divisjonen og $K(x)$ er et polynom som kalles for **kvotienten**. 
@@ -442,35 +330,35 @@ Vi kan merke oss at resten $R = -4$ og $f(-1) = -4$. Altså er resten i $(x + 1)
 Observasjonene gjort i Utforsk 1 lar oss skrive en setning som er viktig for polynomdivisjon:
 
 
-:::::::::::::::{admonition} Setning: Resten i polynomdivisjon med $(x - r)$
+:::::::::::::::{admonition} Setning: Resten i polynomdivisjon med $(x - x_1)$
 ---
 class: summary
 ---
-Gitt et polynom $f$, så er resten $R$ i polynomdivisjon $f(x) : (x - r)$ lik $R = f(r)$.
+Gitt et polynom $f$, så er resten $R$ i polynomdivisjon $f(x) : (x - x_1)$ lik $R = f(x_1)$.
 
-Hvis $R = 0$, betyr det at $f(r) = 0$ og $(x - r)$ er en faktor i $f(x)$. 
+Hvis $R = 0$, betyr det at $f(x_1) = 0$ og $(x - x_1)$ er en faktor i $f(x)$. 
 
 ::::::::::::::{admonition} Bevis
 ---
 class: dropdown, theory
 ---
-Ved polynomdivisjon $f(x) : (x - r)$ får vi generelt
+Ved polynomdivisjon $f(x) : (x - x_1)$ får vi generelt
 
 \begin{align*}
-    \dfrac{f(x)}{x - r} &= K(x) + \dfrac{R}{x - r} \\
+    \dfrac{f(x)}{x - x_1} &= K(x) + \dfrac{R}{x - x_1} \\
     \\
-    \textcolor{red}{(x - r)} \cdot\dfrac{f(x)}{x - r} &= K(x) \cdot \textcolor{red}{(x - r)} + \dfrac{R}{x - r} \cdot \textcolor{red}{(x - r)} \\
+    \textcolor{red}{(x - x_1)} \cdot\dfrac{f(x)}{x - x_1} &= K(x) \cdot \textcolor{red}{(x - x_1)} + \dfrac{R}{x - x_1} \cdot \textcolor{red}{(x - x_1)} \\
     \\
-    f(x) &= K(x) \cdot (x - r) + R \\
+    f(x) &= K(x) \cdot (x - x_1) + R \\
 \end{align*}
 
-Setter vi inn $x = r$ i den siste likningen, får vi 
+Setter vi inn $x = x_1$ i den siste likningen, får vi 
 
 $$
-f(r) = K(r) \cdot (r - r) + R = R.
+f(x_1) = K(x_1) \cdot (x_1 - x_1) + R = R.
 $$
 
-Altså er resten $R = f(r)$ og vi har bevist setningen.
+Altså er resten $R = f(x_1)$ og vi har bevist setningen.
 
 ::::::::::::::
 
@@ -478,15 +366,15 @@ Altså er resten $R = f(r)$ og vi har bevist setningen.
 
 ---
 
-:::::::::::::::{admonition} Hjelpesetning: Resten i polynomdivisjonen $f(x) : (x - r)$
+:::::::::::::::{admonition} Hjelpesetning: Resten i polynomdivisjonen $f(x) : (x - x_1)$
 ---
 class: summary
 ---
-Hvis resten i polynomdivisjonen $f(x) : (x - r)$ er $R = f(r) = 0$, så er
+Hvis resten i polynomdivisjonen $f(x) : (x - x_1)$ er $R = f(x_1) = 0$, så er
 
-* $x = r$ et nullpunkt for $f$ siden $f(r) = 0$.
-* $(x - r)$ er en faktor i $f(x)$.
-* $f(x)$ er delelig med $(x - r)$. Noen ganger sier vi at polynomdivisjonen $f(x) : (x - r)$ "går opp" og vi skriver $(x - r) \, |  \, f(x)$ og leser det som "$(x - r)$ deler $f(x)$".
+* $x = x_1$ et nullpunkt for $f$ siden $f(x_1) = 0$.
+* $(x - x_1)$ er en faktor i $f(x)$.
+* $f(x)$ er delelig med $(x - x_1)$. Noen ganger sier vi at polynomdivisjonen $f(x) : (x - x_1)$ "går opp" og vi skriver $(x - x_1) \, |  \, f(x)$ og leser det som "$(x - x_1)$ deler $f(x)$".
 
 :::::::::::::::
 
@@ -494,8 +382,8 @@ Hvis resten i polynomdivisjonen $f(x) : (x - r)$ er $R = f(r) = 0$, så er
 
 
 Setningene over lar oss gjøre to ting:
-* Avgjøre om et punkt $x = r$ er et nullpunkt for $f$, og dermed faktorisere $f$.
-* Regne ut funksjonsverdier $f(r)$ **raskt** ved å dele med $(x - r)$ og lese av resten $R$.
+* Avgjøre om et punkt $x = x_1$ er et nullpunkt for $f$, og dermed faktorisere $f$.
+* Regne ut funksjonsverdier $f(x_1)$ **raskt** ved å dele med $(x - x_1)$ og lese av resten $R$.
 
 
 Vi tar et eksempel som illustrer setningen i praksis:
@@ -542,7 +430,7 @@ Vi skal ta i bruk noe vi kaller for et **Horner-skjema** for å utføre divisjon
 ---
 class: summary
 ---
-Et **Horner-skjema** kan brukes til å regne ut polynomdivisjonen $f(x) : (x - r)$. La 
+Et **Horner-skjema** kan brukes til å regne ut polynomdivisjonen $f(x) : (x - x_1)$. La 
 
 $$
 f(x) = a_3x^3 + a_2x^2 + a_1x + a_0
@@ -555,12 +443,12 @@ K(x) = b_2x^2 + b_1x + b_0.
 $$
 
 
-Da kan vi bestemme koeffisientene til $K(x)$ og resten $R$ ved å lage et Horner-skjema som vist under:
+Da kan vi bestemme koeffisientene til $K(x)$ og resten $R$ ved å lage et Horner-skjema som vist nedenfor:
 
 $$
 \begin{array}{r|cccc}
  & a_3 & a_2 & a_1 & a_0 \\ % Dividend coefficients
-    x = r  &   & b_2\cdot r  & b_1\cdot r  & b_0\cdot r \\ % Linear term
+    x = x_1 &   & b_2\cdot x_1  & b_1\cdot x_1  & b_0\cdot x_1 \\ % Linear term
 \hline
         & b_2 & b_1 &  b_0 & R \\ % Resulting coefficients
 \end{array}
