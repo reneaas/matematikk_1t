@@ -73,6 +73,95 @@ $$
 
 :::::
 
+## Primtallsfaktorisering
+
+:::{margin}
+Det finnes ingen formel for primtall. 
+:::
+
+Et **primtall** er et heltall som kun kan deles med seg selv og $1$. De første primtallene er
+
+$$
+2, 3, 5, 7, 11, 13, 17,\ldots 
+$$
+
+Et tall som ikke er et primtall er $6$ siden vi kan skrive $6 = 2\cdot 3$ som betyr at $6$ er delelig både med $2$ og $3$.
+
+Når vi skal forkorte brøker eller forenkle kvadratrøtter, må vi ofte kunne primtallsfaktorisere tall. Å primtallsfaktorisere et tall innebærer å skrive tallet som et produkt av primtallene det er bygget opp av. For å finne primtallsfaktorene til et tall, kan vi bruke et **faktortre**. La oss se på et eksempel:
+
+
+:::::::::::::::{example} Eksempel 2
+Primtallsfaktoriser $36$.
+
+::::{solution}
+---
+dropdown: 0
+---
+
+:::{figure} ./figurer/eksempler/eksempel_2/figur.svg
+---
+class: no-click, adaptive-figure
+width: 100%
+align: right
+---
+:::
+
+Vi lager et faktortre der vi starter med å dele med det laveste primtallet så mange ganger det er mulig. Deler vi $36$ med $2$ får  vi $18$. Deler vi $18$ med $2$ får vi $9$. 
+
+Nå kan vi ikke dele videre med $2$, så vi går videre til neste primtall som er $3$. Vi deler $9$ med $3$ og får $3$. Svaret vårt er nå et primtall som betyr at vi er ferdig!
+
+Faktortreet til høyre viser hvordan vi kan systematisk ordne denne prosedyren. Primtallsfaktoriseringen av $36$ er produktet av endepunktene på hver gren i faktortreet:
+
+$$
+36 = 2 \cdot 2 \cdot 3 \cdot 3 = 2^2 \cdot 3^2
+$$
+::::
+
+
+:::::::::::::::
+
+
+---
+
+
+:::::::::::::::{exercise} Underveisoppgave 2
+Primtallsfaktoriser $60$. 
+
+
+
+::::{answer}
+$$
+60 = 2 \cdot 2 \cdot 3 \cdot 5 = 2^2 \cdot 3 \cdot 5
+$$
+::::
+
+::::{solution}
+
+:::{figure} ./figurer/underveisoppgaver/underveisoppgave_2/figur.svg
+---
+class: no-click, adaptive-figure
+width: 100%
+align: right
+---
+:::
+
+Vi lager et faktortre for å primtallsfaktorisere $60$. 
+
+Vi starter med det laveste primtallet som er $2$. Deler vi $60$ med $2$ får vi $30$. Deler vi $30$ med $2$ får vi $15$. 
+
+Nå kan vi ikke dele videre med $2$, så vi går videre til neste primtall som er $3$. Deler vi $15$ med $3$ får vi $5$. Svaret vårt er nå et primtall som betyr at vi er ferdig!
+
+Faktortreet til høyre viser hvordan vi kan systematisk ordne denne prosedyren. Primtallsfaktoriseringen av $60$ er produktet av endepunktene på hver gren i faktortreet:
+
+$$
+60 = 2 \cdot 2 \cdot 3 \cdot 5 = 2^2 \cdot 3 \cdot 5
+$$
+::::
+
+
+:::::::::::::::
+
+
 
 
 ## Brøkregning
@@ -92,7 +181,7 @@ $$
 
 Vi tar et eksempel med tall:
 
-:::::::::::::::{example} Eksempel 2
+:::::::::::::::{example} Eksempel 3
 Regn ut
 
 $$
@@ -111,6 +200,28 @@ $$
 
 :::::::::::::::
 
+---
+
+:::::::::::::::{exercise} Underveisoppgave 3
+Regn ut
+
+$$
+\dfrac{2}{5} + \dfrac{3}{8}
+$$
+
+::::{answer}
+$$
+\dfrac{31}{40}
+$$
+::::
+
+::::{solution}
+$$
+\dfrac{2}{5} + \dfrac{3}{8} = \dfrac{2 \cdot 8}{5 \cdot 8} + \dfrac{3 \cdot 5}{8 \cdot 5} = \dfrac{16}{40} + \dfrac{15}{40} = \dfrac{31}{40}
+$$
+::::
+
+:::::::::::::::
 
 
 ### Gange brøker
@@ -125,7 +236,7 @@ $$
 
 Vi tar et eksempel med tall:
 
-:::::::::::::::{example} Eksempel 3
+:::::::::::::::{example} Eksempel 4
 Regn ut
 
 $$
@@ -139,6 +250,29 @@ $$
 \dfrac{2}{3} \cdot \dfrac{4}{5} = \dfrac{2 \cdot 4}{3 \cdot 5} = \dfrac{8}{15}
 $$
 :::::
+:::::::::::::::
+
+---
+
+:::::::::::::::{exercise} Underveisoppgave 4
+Regn ut
+
+$$
+\dfrac{3}{7} \cdot \dfrac{5}{6}
+$$
+
+::::{answer}
+$$
+\dfrac{5}{14}
+$$
+::::
+
+::::{solution}
+$$
+\dfrac{3}{7} \cdot \dfrac{5}{6} = \dfrac{3 \cdot 5}{7 \cdot 6} = \dfrac{15}{42} = \dfrac{5}{14}
+$$
+::::
+
 :::::::::::::::
 
 
@@ -162,7 +296,7 @@ $$
 
 Vi tar et eksempel med tall:
 
-:::::::::::::::{example} Eksempel 4
+:::::::::::::::{example} Eksempel 5
 Regn ut
 
 $$
@@ -178,6 +312,28 @@ $$
 :::::
 :::::::::::::::
 
+---
+
+:::::::::::::::{exercise} Underveisoppgave 5
+Regn ut
+
+$$
+\dfrac{4}{9} : \dfrac{2}{3}
+$$
+
+::::{answer}
+$$
+\dfrac{2}{3}
+$$
+::::
+
+::::{solution}
+$$
+\dfrac{4}{9} : \dfrac{2}{3} = \dfrac{4}{9} \cdot \dfrac{3}{2} = \dfrac{4 \cdot 3}{9 \cdot 2} = \dfrac{12}{18} = \dfrac{2}{3}
+$$
+::::
+
+:::::::::::::::
 
 
 ## Kvadratrøtter
@@ -195,7 +351,7 @@ $$
 
 ---
 
-:::::::::::::::{example} Eksempel 5
+:::::::::::::::{example} Eksempel 6
 Regn ut
 
 $$
@@ -208,6 +364,27 @@ dropdown: 0
 ---
 Vi har at $\sqrt{16} = 4$ siden $4^2 = 16$. 
 
+::::
+
+:::::::::::::::
+
+---
+
+:::::::::::::::{exercise} Underveisoppgave 6
+Regn ut
+
+$$
+\sqrt{25}
+$$
+
+::::{answer}
+$$
+5
+$$
+::::
+
+::::{solution}
+Vi har at $\sqrt{25} = 5$ siden $5^2 = 25$.
 ::::
 
 :::::::::::::::
@@ -235,7 +412,7 @@ $$
 
 La oss se på et eksempel: 
 
-:::::::::::::::{example} Eksempel 6
+:::::::::::::::{example} Eksempel 7
 Skriv kvadratroten så enkelt som mulig:
 
 $$
@@ -252,6 +429,29 @@ $$
 $$
 ::::
 
+
+:::::::::::::::
+
+---
+
+:::::::::::::::{exercise} Underveisoppgave 7
+Skriv kvadratroten så enkelt som mulig:
+
+$$
+\sqrt{48}
+$$
+
+::::{answer}
+$$
+4\sqrt{3}
+$$
+::::
+
+::::{solution}
+$$
+\sqrt{48} = \sqrt{16 \cdot 3} = \sqrt{16} \cdot \sqrt{3} = 4\sqrt{3}
+$$
+::::
 
 :::::::::::::::
 

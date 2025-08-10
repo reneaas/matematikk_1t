@@ -310,6 +310,13 @@ $$
 
 ---
 
+:::{margin} 
+Når vi skriver $0.\overline{3}$, så mener vi sifferet $3$ repeterer seg for alltid:
+
+$$
+0.\overline{3} = 0.33333\ldots
+$$
+:::
 
 :::::::::::::::{exercise} Oppgave 7
 ---
