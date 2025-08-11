@@ -61,7 +61,7 @@ class CASPopUpDirective(SphinxDirective):
       window.ggbApplet.setSize(Math.round(w), Math.round(h));
     }}
 
-    $("#{dialog_id}").dialog({{
+    const $dlg = $("#{dialog_id}").dialog({{
       autoOpen: false,
       width: {width+40}, height: {height+80},
       resizable: true, draggable: true,
@@ -83,6 +83,116 @@ class CASPopUpDirective(SphinxDirective):
         }}
       }}
     }});
+
+    // Prevent background scroll when GeoGebra applet is active
+    let scrollLocked = false;
+    let lockedScrollTop = 0;
+    let keyHandler = null;
+    let wheelHandler = null;
+    let scrollHandler = null;
+    
+    function lockScroll() {{
+      if (scrollLocked) return;
+      scrollLocked = true;
+      lockedScrollTop = window.pageYOffset || document.documentElement.scrollTop || 0;
+      
+      // Instead of preventing keys, monitor and restore scroll position
+      scrollHandler = () => {{
+        if (scrollLocked) {{
+          const currentScroll = window.pageYOffset || document.documentElement.scrollTop || 0;
+          if (currentScroll !== lockedScrollTop) {{
+            window.scrollTo(0, lockedScrollTop);
+          }}
+        }}
+      }};
+      
+      // Prevent wheel scrolling on the page background
+      wheelHandler = (e) => {{
+        const dialogElement = e.target.closest('.ui-dialog');
+        if (dialogElement) {{
+          // Allow scrolling within dialog elements that can scroll
+          let target = e.target;
+          while (target && target !== dialogElement) {{
+            const overflow = window.getComputedStyle(target).overflow;
+            if (overflow === 'auto' || overflow === 'scroll') {{
+              return; // Allow internal scrolling
+            }}
+            target = target.parentElement;
+          }}
+          // Prevent page scroll but don't stop the event from reaching GeoGebra
+          if (!e.target.closest('#{cid}')) {{
+            e.preventDefault();
+            e.stopPropagation();
+          }}
+        }}
+      }};
+      
+      // Monitor scroll events to maintain position
+      window.addEventListener('scroll', scrollHandler, {{ passive: true }});
+      document.addEventListener('wheel', wheelHandler, {{ capture: true, passive: false }});
+    }}
+    
+    function unlockScroll() {{
+      if (!scrollLocked) return;
+      scrollLocked = false;
+      
+      if (scrollHandler) {{
+        window.removeEventListener('scroll', scrollHandler);
+        scrollHandler = null;
+      }}
+      if (wheelHandler) {{
+        document.removeEventListener('wheel', wheelHandler, {{ capture: true }});
+        wheelHandler = null;
+      }}
+    }}
+    
+    // Monitor GeoGebra applet focus/interaction to control scroll lock
+    function bindScrollLock() {{
+      const ggbContainer = document.getElementById('{cid}');
+      if (!ggbContainer) {{
+        setTimeout(bindScrollLock, 300);
+        return;
+      }}
+      
+      // Look for the actual GeoGebra canvas/applet elements
+      const ggbApplet = ggbContainer.querySelector('canvas') || 
+                       ggbContainer.querySelector('.ggbApplet') ||
+                       ggbContainer.querySelector('[id^="ggbApplet"]') ||
+                       ggbContainer;
+      
+      if (ggbApplet) {{
+        // Lock scroll when interacting with GeoGebra
+        ggbApplet.addEventListener('mousedown', lockScroll);
+        ggbApplet.addEventListener('focus', lockScroll);
+        ggbApplet.addEventListener('click', lockScroll);
+        
+        // Also monitor the container for any focus events
+        ggbContainer.addEventListener('focusin', lockScroll);
+        ggbContainer.addEventListener('mousedown', lockScroll);
+        
+        // Unlock when clicking outside or losing focus
+        document.addEventListener('click', (e) => {{
+          if (!ggbContainer.contains(e.target) && !e.target.closest('.ui-dialog')) {{
+            unlockScroll();
+          }}
+        }});
+        
+        ggbContainer.addEventListener('focusout', (e) => {{
+          // Small delay to check if focus moved outside the container
+          setTimeout(() => {{
+            if (!ggbContainer.contains(document.activeElement)) {{
+              unlockScroll();
+            }}
+          }}, 100);
+        }});
+      }}
+    }}
+    
+    // Start monitoring after GeoGebra is loaded
+    setTimeout(bindScrollLock, 1000);
+    
+    // Cleanup on dialog close
+    $dlg.on('dialogclose', unlockScroll);
 
     $("#{button_id}").button()
       .on("click touchend pointerup", e => {{

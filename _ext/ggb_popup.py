@@ -10,6 +10,8 @@ class GGBPopUpDirective(SphinxDirective):
     has_content = False
     option_spec = {
         "layout": lambda arg: arg,  # e.g., "sidebar"
+        "menubar": lambda arg: arg,  # e.g., "true" or "false"
+        "perspective": lambda arg: arg,  # e.g., "GS"
     }
 
     def run(self):
@@ -23,6 +25,10 @@ class GGBPopUpDirective(SphinxDirective):
         dialog_title = (
             self.arguments[3] if len(self.arguments) > 3 else "Geogebra‑vindu"
         )
+
+        menubar = self.options.get("menubar", "false")
+
+        perspective = self.options.get("perspective", "AG").strip()
 
         # 2 » unique IDs -----------------------------------------------------
         cid = f"ggb-geogebra-{uuid.uuid4().hex[:8]}"
@@ -76,9 +82,10 @@ class GGBPopUpDirective(SphinxDirective):
           new GGBApplet({{
             appName: "classic", id: "{cid}",
             width: {width}, height: {height},
-            perspective: "AG", language: "nb",
+            perspective: "{perspective}", language: "nb",
             showToolBar: true, showAlgebraInput: true,
             borderRadius: 8, enableRightClick: true, showKeyboardOnFocus: false,
+            showMenuBar: {menubar},
             appletOnLoad: () => {{ ggbReady = true; applySize(); }}
           }}, true).inject("{cid}");
         }} else {{
