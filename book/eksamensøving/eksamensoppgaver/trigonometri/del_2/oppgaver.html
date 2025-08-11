@@ -633,7 +633,7 @@ document.write(`
 <li><p>Arealet av trekanten er <span class="math notranslate nohighlight">\(4\sqrt{3}\)</span></p></li>
 </ul>
 <p>Bestem lengdene av sidene <span class="math notranslate nohighlight">\(AC\)</span> og <span class="math notranslate nohighlight">\(BC\)</span> 
-<span class="popup-wrapper" id="popup-role-fe4dd05b">
+<span class="popup-wrapper" id="popup-role-796f647b">
   <span class="popup-trigger">eksakt.</span>
   <span class="popup-bubble" style="display:none;">Med eksakt så mener man at svaret skal uttrykkes med eventuelle brøker, kvadratrøtter, hele tall osv. Ingen desimaltall.</span>
 </span>
@@ -642,9 +642,9 @@ document.write(`
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<button id="button-ggb-cas-c25d5bcb" class="ggb-cas-button">Åpne CAS‑vindu</button>
-<div id="dialog-ggb-cas-c25d5bcb" title="CAS‑vindu" style="display:none;">
-    <div id="ggb-cas-c25d5bcb" class="ggb-window"></div>
+<button id="button-ggb-cas-f2adbf3d" class="ggb-cas-button">Åpne CAS‑vindu</button>
+<div id="dialog-ggb-cas-f2adbf3d" title="CAS‑vindu" style="display:none;">
+    <div id="ggb-cas-f2adbf3d" class="ggb-window"></div>
 </div>
 
 <style>
@@ -661,12 +661,12 @@ document.write(`
 
     function applySize() {
       if (!ggbReady) return;
-      const w = $("#ggb-cas-c25d5bcb").width(),
-            h = $("#ggb-cas-c25d5bcb").height();
+      const w = $("#ggb-cas-f2adbf3d").width(),
+            h = $("#ggb-cas-f2adbf3d").height();
       window.ggbApplet.setSize(Math.round(w), Math.round(h));
     }
 
-    $("#dialog-ggb-cas-c25d5bcb").dialog({
+    const $dlg = $("#dialog-ggb-cas-f2adbf3d").dialog({
       autoOpen: false,
       width: 390, height: 580,
       resizable: true, draggable: true,
@@ -675,24 +675,134 @@ document.write(`
       open: function() {
         if (!ggbReady) {
           new GGBApplet({
-            appName: "classic", id: "ggb-cas-c25d5bcb",
+            appName: "classic", id: "ggb-cas-f2adbf3d",
             width: 350, height: 500,
             perspective: "C", language: "nb",
             showToolBar: true, showAlgebraInput: true,
             borderRadius: 8, enableRightClick: true, showKeyboardOnFocus: false,
             customToolBar: "1001 | 1002 | 1007 | 1010 | 6",
             appletOnLoad: () => { ggbReady = true; applySize(); }
-          }, true).inject("ggb-cas-c25d5bcb");
+          }, true).inject("ggb-cas-f2adbf3d");
         } else {
           applySize();
         }
       }
     });
 
-    $("#button-ggb-cas-c25d5bcb").button()
+    // Prevent background scroll when GeoGebra applet is active
+    let scrollLocked = false;
+    let lockedScrollTop = 0;
+    let keyHandler = null;
+    let wheelHandler = null;
+    let scrollHandler = null;
+    
+    function lockScroll() {
+      if (scrollLocked) return;
+      scrollLocked = true;
+      lockedScrollTop = window.pageYOffset || document.documentElement.scrollTop || 0;
+      
+      // Instead of preventing keys, monitor and restore scroll position
+      scrollHandler = () => {
+        if (scrollLocked) {
+          const currentScroll = window.pageYOffset || document.documentElement.scrollTop || 0;
+          if (currentScroll !== lockedScrollTop) {
+            window.scrollTo(0, lockedScrollTop);
+          }
+        }
+      };
+      
+      // Prevent wheel scrolling on the page background
+      wheelHandler = (e) => {
+        const dialogElement = e.target.closest('.ui-dialog');
+        if (dialogElement) {
+          // Allow scrolling within dialog elements that can scroll
+          let target = e.target;
+          while (target && target !== dialogElement) {
+            const overflow = window.getComputedStyle(target).overflow;
+            if (overflow === 'auto' || overflow === 'scroll') {
+              return; // Allow internal scrolling
+            }
+            target = target.parentElement;
+          }
+          // Prevent page scroll but don't stop the event from reaching GeoGebra
+          if (!e.target.closest('#ggb-cas-f2adbf3d')) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
+        }
+      };
+      
+      // Monitor scroll events to maintain position
+      window.addEventListener('scroll', scrollHandler, { passive: true });
+      document.addEventListener('wheel', wheelHandler, { capture: true, passive: false });
+    }
+    
+    function unlockScroll() {
+      if (!scrollLocked) return;
+      scrollLocked = false;
+      
+      if (scrollHandler) {
+        window.removeEventListener('scroll', scrollHandler);
+        scrollHandler = null;
+      }
+      if (wheelHandler) {
+        document.removeEventListener('wheel', wheelHandler, { capture: true });
+        wheelHandler = null;
+      }
+    }
+    
+    // Monitor GeoGebra applet focus/interaction to control scroll lock
+    function bindScrollLock() {
+      const ggbContainer = document.getElementById('ggb-cas-f2adbf3d');
+      if (!ggbContainer) {
+        setTimeout(bindScrollLock, 300);
+        return;
+      }
+      
+      // Look for the actual GeoGebra canvas/applet elements
+      const ggbApplet = ggbContainer.querySelector('canvas') || 
+                       ggbContainer.querySelector('.ggbApplet') ||
+                       ggbContainer.querySelector('[id^="ggbApplet"]') ||
+                       ggbContainer;
+      
+      if (ggbApplet) {
+        // Lock scroll when interacting with GeoGebra
+        ggbApplet.addEventListener('mousedown', lockScroll);
+        ggbApplet.addEventListener('focus', lockScroll);
+        ggbApplet.addEventListener('click', lockScroll);
+        
+        // Also monitor the container for any focus events
+        ggbContainer.addEventListener('focusin', lockScroll);
+        ggbContainer.addEventListener('mousedown', lockScroll);
+        
+        // Unlock when clicking outside or losing focus
+        document.addEventListener('click', (e) => {
+          if (!ggbContainer.contains(e.target) && !e.target.closest('.ui-dialog')) {
+            unlockScroll();
+          }
+        });
+        
+        ggbContainer.addEventListener('focusout', (e) => {
+          // Small delay to check if focus moved outside the container
+          setTimeout(() => {
+            if (!ggbContainer.contains(document.activeElement)) {
+              unlockScroll();
+            }
+          }, 100);
+        });
+      }
+    }
+    
+    // Start monitoring after GeoGebra is loaded
+    setTimeout(bindScrollLock, 1000);
+    
+    // Cleanup on dialog close
+    $dlg.on('dialogclose', unlockScroll);
+
+    $("#button-ggb-cas-f2adbf3d").button()
       .on("click touchend pointerup", e => {
         e.preventDefault();
-        $("#dialog-ggb-cas-c25d5bcb").dialog("open");
+        $("#dialog-ggb-cas-f2adbf3d").dialog("open");
       });
   });
 })();
@@ -766,9 +876,9 @@ Lengdene av sidekantene i trekantene er <span class="math notranslate nohighligh
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<button id="button-ggb-cas-c17f9b35" class="ggb-cas-button">Åpne CAS‑vindu</button>
-<div id="dialog-ggb-cas-c17f9b35" title="CAS‑vindu" style="display:none;">
-    <div id="ggb-cas-c17f9b35" class="ggb-window"></div>
+<button id="button-ggb-cas-7a82f3b8" class="ggb-cas-button">Åpne CAS‑vindu</button>
+<div id="dialog-ggb-cas-7a82f3b8" title="CAS‑vindu" style="display:none;">
+    <div id="ggb-cas-7a82f3b8" class="ggb-window"></div>
 </div>
 
 <style>
@@ -785,12 +895,12 @@ Lengdene av sidekantene i trekantene er <span class="math notranslate nohighligh
 
     function applySize() {
       if (!ggbReady) return;
-      const w = $("#ggb-cas-c17f9b35").width(),
-            h = $("#ggb-cas-c17f9b35").height();
+      const w = $("#ggb-cas-7a82f3b8").width(),
+            h = $("#ggb-cas-7a82f3b8").height();
       window.ggbApplet.setSize(Math.round(w), Math.round(h));
     }
 
-    $("#dialog-ggb-cas-c17f9b35").dialog({
+    const $dlg = $("#dialog-ggb-cas-7a82f3b8").dialog({
       autoOpen: false,
       width: 390, height: 580,
       resizable: true, draggable: true,
@@ -799,24 +909,134 @@ Lengdene av sidekantene i trekantene er <span class="math notranslate nohighligh
       open: function() {
         if (!ggbReady) {
           new GGBApplet({
-            appName: "classic", id: "ggb-cas-c17f9b35",
+            appName: "classic", id: "ggb-cas-7a82f3b8",
             width: 350, height: 500,
             perspective: "C", language: "nb",
             showToolBar: true, showAlgebraInput: true,
             borderRadius: 8, enableRightClick: true, showKeyboardOnFocus: false,
             customToolBar: "1001 | 1002 | 1007 | 1010 | 6",
             appletOnLoad: () => { ggbReady = true; applySize(); }
-          }, true).inject("ggb-cas-c17f9b35");
+          }, true).inject("ggb-cas-7a82f3b8");
         } else {
           applySize();
         }
       }
     });
 
-    $("#button-ggb-cas-c17f9b35").button()
+    // Prevent background scroll when GeoGebra applet is active
+    let scrollLocked = false;
+    let lockedScrollTop = 0;
+    let keyHandler = null;
+    let wheelHandler = null;
+    let scrollHandler = null;
+    
+    function lockScroll() {
+      if (scrollLocked) return;
+      scrollLocked = true;
+      lockedScrollTop = window.pageYOffset || document.documentElement.scrollTop || 0;
+      
+      // Instead of preventing keys, monitor and restore scroll position
+      scrollHandler = () => {
+        if (scrollLocked) {
+          const currentScroll = window.pageYOffset || document.documentElement.scrollTop || 0;
+          if (currentScroll !== lockedScrollTop) {
+            window.scrollTo(0, lockedScrollTop);
+          }
+        }
+      };
+      
+      // Prevent wheel scrolling on the page background
+      wheelHandler = (e) => {
+        const dialogElement = e.target.closest('.ui-dialog');
+        if (dialogElement) {
+          // Allow scrolling within dialog elements that can scroll
+          let target = e.target;
+          while (target && target !== dialogElement) {
+            const overflow = window.getComputedStyle(target).overflow;
+            if (overflow === 'auto' || overflow === 'scroll') {
+              return; // Allow internal scrolling
+            }
+            target = target.parentElement;
+          }
+          // Prevent page scroll but don't stop the event from reaching GeoGebra
+          if (!e.target.closest('#ggb-cas-7a82f3b8')) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
+        }
+      };
+      
+      // Monitor scroll events to maintain position
+      window.addEventListener('scroll', scrollHandler, { passive: true });
+      document.addEventListener('wheel', wheelHandler, { capture: true, passive: false });
+    }
+    
+    function unlockScroll() {
+      if (!scrollLocked) return;
+      scrollLocked = false;
+      
+      if (scrollHandler) {
+        window.removeEventListener('scroll', scrollHandler);
+        scrollHandler = null;
+      }
+      if (wheelHandler) {
+        document.removeEventListener('wheel', wheelHandler, { capture: true });
+        wheelHandler = null;
+      }
+    }
+    
+    // Monitor GeoGebra applet focus/interaction to control scroll lock
+    function bindScrollLock() {
+      const ggbContainer = document.getElementById('ggb-cas-7a82f3b8');
+      if (!ggbContainer) {
+        setTimeout(bindScrollLock, 300);
+        return;
+      }
+      
+      // Look for the actual GeoGebra canvas/applet elements
+      const ggbApplet = ggbContainer.querySelector('canvas') || 
+                       ggbContainer.querySelector('.ggbApplet') ||
+                       ggbContainer.querySelector('[id^="ggbApplet"]') ||
+                       ggbContainer;
+      
+      if (ggbApplet) {
+        // Lock scroll when interacting with GeoGebra
+        ggbApplet.addEventListener('mousedown', lockScroll);
+        ggbApplet.addEventListener('focus', lockScroll);
+        ggbApplet.addEventListener('click', lockScroll);
+        
+        // Also monitor the container for any focus events
+        ggbContainer.addEventListener('focusin', lockScroll);
+        ggbContainer.addEventListener('mousedown', lockScroll);
+        
+        // Unlock when clicking outside or losing focus
+        document.addEventListener('click', (e) => {
+          if (!ggbContainer.contains(e.target) && !e.target.closest('.ui-dialog')) {
+            unlockScroll();
+          }
+        });
+        
+        ggbContainer.addEventListener('focusout', (e) => {
+          // Small delay to check if focus moved outside the container
+          setTimeout(() => {
+            if (!ggbContainer.contains(document.activeElement)) {
+              unlockScroll();
+            }
+          }, 100);
+        });
+      }
+    }
+    
+    // Start monitoring after GeoGebra is loaded
+    setTimeout(bindScrollLock, 1000);
+    
+    // Cleanup on dialog close
+    $dlg.on('dialogclose', unlockScroll);
+
+    $("#button-ggb-cas-7a82f3b8").button()
       .on("click touchend pointerup", e => {
         e.preventDefault();
-        $("#dialog-ggb-cas-c17f9b35").dialog("open");
+        $("#dialog-ggb-cas-7a82f3b8").dialog("open");
       });
   });
 })();
@@ -848,9 +1068,9 @@ T_\mathrm{stjerne} = 12 \cdot T_\triangle = 12 \cdot 4\sqrt{3} = 48\sqrt{3}.
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<button id="button-ggb-cas-f0cf2bd2" class="ggb-cas-button">Åpne CAS‑vindu</button>
-<div id="dialog-ggb-cas-f0cf2bd2" title="CAS‑vindu" style="display:none;">
-    <div id="ggb-cas-f0cf2bd2" class="ggb-window"></div>
+<button id="button-ggb-cas-322fe88f" class="ggb-cas-button">Åpne CAS‑vindu</button>
+<div id="dialog-ggb-cas-322fe88f" title="CAS‑vindu" style="display:none;">
+    <div id="ggb-cas-322fe88f" class="ggb-window"></div>
 </div>
 
 <style>
@@ -867,12 +1087,12 @@ T_\mathrm{stjerne} = 12 \cdot T_\triangle = 12 \cdot 4\sqrt{3} = 48\sqrt{3}.
 
     function applySize() {
       if (!ggbReady) return;
-      const w = $("#ggb-cas-f0cf2bd2").width(),
-            h = $("#ggb-cas-f0cf2bd2").height();
+      const w = $("#ggb-cas-322fe88f").width(),
+            h = $("#ggb-cas-322fe88f").height();
       window.ggbApplet.setSize(Math.round(w), Math.round(h));
     }
 
-    $("#dialog-ggb-cas-f0cf2bd2").dialog({
+    const $dlg = $("#dialog-ggb-cas-322fe88f").dialog({
       autoOpen: false,
       width: 390, height: 580,
       resizable: true, draggable: true,
@@ -881,24 +1101,134 @@ T_\mathrm{stjerne} = 12 \cdot T_\triangle = 12 \cdot 4\sqrt{3} = 48\sqrt{3}.
       open: function() {
         if (!ggbReady) {
           new GGBApplet({
-            appName: "classic", id: "ggb-cas-f0cf2bd2",
+            appName: "classic", id: "ggb-cas-322fe88f",
             width: 350, height: 500,
             perspective: "C", language: "nb",
             showToolBar: true, showAlgebraInput: true,
             borderRadius: 8, enableRightClick: true, showKeyboardOnFocus: false,
             customToolBar: "1001 | 1002 | 1007 | 1010 | 6",
             appletOnLoad: () => { ggbReady = true; applySize(); }
-          }, true).inject("ggb-cas-f0cf2bd2");
+          }, true).inject("ggb-cas-322fe88f");
         } else {
           applySize();
         }
       }
     });
 
-    $("#button-ggb-cas-f0cf2bd2").button()
+    // Prevent background scroll when GeoGebra applet is active
+    let scrollLocked = false;
+    let lockedScrollTop = 0;
+    let keyHandler = null;
+    let wheelHandler = null;
+    let scrollHandler = null;
+    
+    function lockScroll() {
+      if (scrollLocked) return;
+      scrollLocked = true;
+      lockedScrollTop = window.pageYOffset || document.documentElement.scrollTop || 0;
+      
+      // Instead of preventing keys, monitor and restore scroll position
+      scrollHandler = () => {
+        if (scrollLocked) {
+          const currentScroll = window.pageYOffset || document.documentElement.scrollTop || 0;
+          if (currentScroll !== lockedScrollTop) {
+            window.scrollTo(0, lockedScrollTop);
+          }
+        }
+      };
+      
+      // Prevent wheel scrolling on the page background
+      wheelHandler = (e) => {
+        const dialogElement = e.target.closest('.ui-dialog');
+        if (dialogElement) {
+          // Allow scrolling within dialog elements that can scroll
+          let target = e.target;
+          while (target && target !== dialogElement) {
+            const overflow = window.getComputedStyle(target).overflow;
+            if (overflow === 'auto' || overflow === 'scroll') {
+              return; // Allow internal scrolling
+            }
+            target = target.parentElement;
+          }
+          // Prevent page scroll but don't stop the event from reaching GeoGebra
+          if (!e.target.closest('#ggb-cas-322fe88f')) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
+        }
+      };
+      
+      // Monitor scroll events to maintain position
+      window.addEventListener('scroll', scrollHandler, { passive: true });
+      document.addEventListener('wheel', wheelHandler, { capture: true, passive: false });
+    }
+    
+    function unlockScroll() {
+      if (!scrollLocked) return;
+      scrollLocked = false;
+      
+      if (scrollHandler) {
+        window.removeEventListener('scroll', scrollHandler);
+        scrollHandler = null;
+      }
+      if (wheelHandler) {
+        document.removeEventListener('wheel', wheelHandler, { capture: true });
+        wheelHandler = null;
+      }
+    }
+    
+    // Monitor GeoGebra applet focus/interaction to control scroll lock
+    function bindScrollLock() {
+      const ggbContainer = document.getElementById('ggb-cas-322fe88f');
+      if (!ggbContainer) {
+        setTimeout(bindScrollLock, 300);
+        return;
+      }
+      
+      // Look for the actual GeoGebra canvas/applet elements
+      const ggbApplet = ggbContainer.querySelector('canvas') || 
+                       ggbContainer.querySelector('.ggbApplet') ||
+                       ggbContainer.querySelector('[id^="ggbApplet"]') ||
+                       ggbContainer;
+      
+      if (ggbApplet) {
+        // Lock scroll when interacting with GeoGebra
+        ggbApplet.addEventListener('mousedown', lockScroll);
+        ggbApplet.addEventListener('focus', lockScroll);
+        ggbApplet.addEventListener('click', lockScroll);
+        
+        // Also monitor the container for any focus events
+        ggbContainer.addEventListener('focusin', lockScroll);
+        ggbContainer.addEventListener('mousedown', lockScroll);
+        
+        // Unlock when clicking outside or losing focus
+        document.addEventListener('click', (e) => {
+          if (!ggbContainer.contains(e.target) && !e.target.closest('.ui-dialog')) {
+            unlockScroll();
+          }
+        });
+        
+        ggbContainer.addEventListener('focusout', (e) => {
+          // Small delay to check if focus moved outside the container
+          setTimeout(() => {
+            if (!ggbContainer.contains(document.activeElement)) {
+              unlockScroll();
+            }
+          }, 100);
+        });
+      }
+    }
+    
+    // Start monitoring after GeoGebra is loaded
+    setTimeout(bindScrollLock, 1000);
+    
+    // Cleanup on dialog close
+    $dlg.on('dialogclose', unlockScroll);
+
+    $("#button-ggb-cas-322fe88f").button()
       .on("click touchend pointerup", e => {
         e.preventDefault();
-        $("#dialog-ggb-cas-f0cf2bd2").dialog("open");
+        $("#dialog-ggb-cas-322fe88f").dialog("open");
       });
   });
 })();
@@ -1017,9 +1347,9 @@ Husk å gjøre rede for hvilke trigonometriske sammenhenger du bruker.</p>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<button id="button-ggb-cas-59edfc95" class="ggb-cas-button">Åpne CAS‑vindu</button>
-<div id="dialog-ggb-cas-59edfc95" title="CAS‑vindu" style="display:none;">
-    <div id="ggb-cas-59edfc95" class="ggb-window"></div>
+<button id="button-ggb-cas-9f1e7616" class="ggb-cas-button">Åpne CAS‑vindu</button>
+<div id="dialog-ggb-cas-9f1e7616" title="CAS‑vindu" style="display:none;">
+    <div id="ggb-cas-9f1e7616" class="ggb-window"></div>
 </div>
 
 <style>
@@ -1036,12 +1366,12 @@ Husk å gjøre rede for hvilke trigonometriske sammenhenger du bruker.</p>
 
     function applySize() {
       if (!ggbReady) return;
-      const w = $("#ggb-cas-59edfc95").width(),
-            h = $("#ggb-cas-59edfc95").height();
+      const w = $("#ggb-cas-9f1e7616").width(),
+            h = $("#ggb-cas-9f1e7616").height();
       window.ggbApplet.setSize(Math.round(w), Math.round(h));
     }
 
-    $("#dialog-ggb-cas-59edfc95").dialog({
+    const $dlg = $("#dialog-ggb-cas-9f1e7616").dialog({
       autoOpen: false,
       width: 390, height: 580,
       resizable: true, draggable: true,
@@ -1050,24 +1380,134 @@ Husk å gjøre rede for hvilke trigonometriske sammenhenger du bruker.</p>
       open: function() {
         if (!ggbReady) {
           new GGBApplet({
-            appName: "classic", id: "ggb-cas-59edfc95",
+            appName: "classic", id: "ggb-cas-9f1e7616",
             width: 350, height: 500,
             perspective: "C", language: "nb",
             showToolBar: true, showAlgebraInput: true,
             borderRadius: 8, enableRightClick: true, showKeyboardOnFocus: false,
             customToolBar: "1001 | 1002 | 1007 | 1010 | 6",
             appletOnLoad: () => { ggbReady = true; applySize(); }
-          }, true).inject("ggb-cas-59edfc95");
+          }, true).inject("ggb-cas-9f1e7616");
         } else {
           applySize();
         }
       }
     });
 
-    $("#button-ggb-cas-59edfc95").button()
+    // Prevent background scroll when GeoGebra applet is active
+    let scrollLocked = false;
+    let lockedScrollTop = 0;
+    let keyHandler = null;
+    let wheelHandler = null;
+    let scrollHandler = null;
+    
+    function lockScroll() {
+      if (scrollLocked) return;
+      scrollLocked = true;
+      lockedScrollTop = window.pageYOffset || document.documentElement.scrollTop || 0;
+      
+      // Instead of preventing keys, monitor and restore scroll position
+      scrollHandler = () => {
+        if (scrollLocked) {
+          const currentScroll = window.pageYOffset || document.documentElement.scrollTop || 0;
+          if (currentScroll !== lockedScrollTop) {
+            window.scrollTo(0, lockedScrollTop);
+          }
+        }
+      };
+      
+      // Prevent wheel scrolling on the page background
+      wheelHandler = (e) => {
+        const dialogElement = e.target.closest('.ui-dialog');
+        if (dialogElement) {
+          // Allow scrolling within dialog elements that can scroll
+          let target = e.target;
+          while (target && target !== dialogElement) {
+            const overflow = window.getComputedStyle(target).overflow;
+            if (overflow === 'auto' || overflow === 'scroll') {
+              return; // Allow internal scrolling
+            }
+            target = target.parentElement;
+          }
+          // Prevent page scroll but don't stop the event from reaching GeoGebra
+          if (!e.target.closest('#ggb-cas-9f1e7616')) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
+        }
+      };
+      
+      // Monitor scroll events to maintain position
+      window.addEventListener('scroll', scrollHandler, { passive: true });
+      document.addEventListener('wheel', wheelHandler, { capture: true, passive: false });
+    }
+    
+    function unlockScroll() {
+      if (!scrollLocked) return;
+      scrollLocked = false;
+      
+      if (scrollHandler) {
+        window.removeEventListener('scroll', scrollHandler);
+        scrollHandler = null;
+      }
+      if (wheelHandler) {
+        document.removeEventListener('wheel', wheelHandler, { capture: true });
+        wheelHandler = null;
+      }
+    }
+    
+    // Monitor GeoGebra applet focus/interaction to control scroll lock
+    function bindScrollLock() {
+      const ggbContainer = document.getElementById('ggb-cas-9f1e7616');
+      if (!ggbContainer) {
+        setTimeout(bindScrollLock, 300);
+        return;
+      }
+      
+      // Look for the actual GeoGebra canvas/applet elements
+      const ggbApplet = ggbContainer.querySelector('canvas') || 
+                       ggbContainer.querySelector('.ggbApplet') ||
+                       ggbContainer.querySelector('[id^="ggbApplet"]') ||
+                       ggbContainer;
+      
+      if (ggbApplet) {
+        // Lock scroll when interacting with GeoGebra
+        ggbApplet.addEventListener('mousedown', lockScroll);
+        ggbApplet.addEventListener('focus', lockScroll);
+        ggbApplet.addEventListener('click', lockScroll);
+        
+        // Also monitor the container for any focus events
+        ggbContainer.addEventListener('focusin', lockScroll);
+        ggbContainer.addEventListener('mousedown', lockScroll);
+        
+        // Unlock when clicking outside or losing focus
+        document.addEventListener('click', (e) => {
+          if (!ggbContainer.contains(e.target) && !e.target.closest('.ui-dialog')) {
+            unlockScroll();
+          }
+        });
+        
+        ggbContainer.addEventListener('focusout', (e) => {
+          // Small delay to check if focus moved outside the container
+          setTimeout(() => {
+            if (!ggbContainer.contains(document.activeElement)) {
+              unlockScroll();
+            }
+          }, 100);
+        });
+      }
+    }
+    
+    // Start monitoring after GeoGebra is loaded
+    setTimeout(bindScrollLock, 1000);
+    
+    // Cleanup on dialog close
+    $dlg.on('dialogclose', unlockScroll);
+
+    $("#button-ggb-cas-9f1e7616").button()
       .on("click touchend pointerup", e => {
         e.preventDefault();
-        $("#dialog-ggb-cas-59edfc95").dialog("open");
+        $("#dialog-ggb-cas-9f1e7616").dialog("open");
       });
   });
 })();
@@ -1133,7 +1573,7 @@ T_{\square ABCD} \approx 50.78.
 <a class="no-click adaptive-figure reference internal image-reference" href="../../../../../_images/figur69.svg"><img alt="../../../../../_images/figur69.svg" class="no-click adaptive-figure" src="../../../../../_images/figur69.svg" style="width: 80%;" /></a>
 </figure>
 <p>En sirkel har sentrum i <span class="math notranslate nohighlight">\(S\)</span>. <span class="math notranslate nohighlight">\(AB\)</span> er diameter og <span class="math notranslate nohighlight">\(C\)</span> er ligger på 
-<span class="popup-wrapper" id="popup-role-956e93c8">
+<span class="popup-wrapper" id="popup-role-524393fd">
   <span class="popup-trigger">sirkelperiferien.</span>
   <span class="popup-bubble" style="display:none;">Begrepet "sirkelperiferi" er en annen måte å si "sirkelbuen" eller "på kanten av sirkelskiven". Generelt betyr ordet "[...]periferi" noe sånn som "på kanten av [...]"</span>
 </span>
@@ -1143,9 +1583,9 @@ T_{\square ABCD} \approx 50.78.
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<button id="button-ggb-cas-8cf2de42" class="ggb-cas-button">Åpne CAS‑vindu</button>
-<div id="dialog-ggb-cas-8cf2de42" title="CAS‑vindu" style="display:none;">
-    <div id="ggb-cas-8cf2de42" class="ggb-window"></div>
+<button id="button-ggb-cas-5ca55a28" class="ggb-cas-button">Åpne CAS‑vindu</button>
+<div id="dialog-ggb-cas-5ca55a28" title="CAS‑vindu" style="display:none;">
+    <div id="ggb-cas-5ca55a28" class="ggb-window"></div>
 </div>
 
 <style>
@@ -1162,12 +1602,12 @@ T_{\square ABCD} \approx 50.78.
 
     function applySize() {
       if (!ggbReady) return;
-      const w = $("#ggb-cas-8cf2de42").width(),
-            h = $("#ggb-cas-8cf2de42").height();
+      const w = $("#ggb-cas-5ca55a28").width(),
+            h = $("#ggb-cas-5ca55a28").height();
       window.ggbApplet.setSize(Math.round(w), Math.round(h));
     }
 
-    $("#dialog-ggb-cas-8cf2de42").dialog({
+    const $dlg = $("#dialog-ggb-cas-5ca55a28").dialog({
       autoOpen: false,
       width: 390, height: 580,
       resizable: true, draggable: true,
@@ -1176,24 +1616,134 @@ T_{\square ABCD} \approx 50.78.
       open: function() {
         if (!ggbReady) {
           new GGBApplet({
-            appName: "classic", id: "ggb-cas-8cf2de42",
+            appName: "classic", id: "ggb-cas-5ca55a28",
             width: 350, height: 500,
             perspective: "C", language: "nb",
             showToolBar: true, showAlgebraInput: true,
             borderRadius: 8, enableRightClick: true, showKeyboardOnFocus: false,
             customToolBar: "1001 | 1002 | 1007 | 1010 | 6",
             appletOnLoad: () => { ggbReady = true; applySize(); }
-          }, true).inject("ggb-cas-8cf2de42");
+          }, true).inject("ggb-cas-5ca55a28");
         } else {
           applySize();
         }
       }
     });
 
-    $("#button-ggb-cas-8cf2de42").button()
+    // Prevent background scroll when GeoGebra applet is active
+    let scrollLocked = false;
+    let lockedScrollTop = 0;
+    let keyHandler = null;
+    let wheelHandler = null;
+    let scrollHandler = null;
+    
+    function lockScroll() {
+      if (scrollLocked) return;
+      scrollLocked = true;
+      lockedScrollTop = window.pageYOffset || document.documentElement.scrollTop || 0;
+      
+      // Instead of preventing keys, monitor and restore scroll position
+      scrollHandler = () => {
+        if (scrollLocked) {
+          const currentScroll = window.pageYOffset || document.documentElement.scrollTop || 0;
+          if (currentScroll !== lockedScrollTop) {
+            window.scrollTo(0, lockedScrollTop);
+          }
+        }
+      };
+      
+      // Prevent wheel scrolling on the page background
+      wheelHandler = (e) => {
+        const dialogElement = e.target.closest('.ui-dialog');
+        if (dialogElement) {
+          // Allow scrolling within dialog elements that can scroll
+          let target = e.target;
+          while (target && target !== dialogElement) {
+            const overflow = window.getComputedStyle(target).overflow;
+            if (overflow === 'auto' || overflow === 'scroll') {
+              return; // Allow internal scrolling
+            }
+            target = target.parentElement;
+          }
+          // Prevent page scroll but don't stop the event from reaching GeoGebra
+          if (!e.target.closest('#ggb-cas-5ca55a28')) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
+        }
+      };
+      
+      // Monitor scroll events to maintain position
+      window.addEventListener('scroll', scrollHandler, { passive: true });
+      document.addEventListener('wheel', wheelHandler, { capture: true, passive: false });
+    }
+    
+    function unlockScroll() {
+      if (!scrollLocked) return;
+      scrollLocked = false;
+      
+      if (scrollHandler) {
+        window.removeEventListener('scroll', scrollHandler);
+        scrollHandler = null;
+      }
+      if (wheelHandler) {
+        document.removeEventListener('wheel', wheelHandler, { capture: true });
+        wheelHandler = null;
+      }
+    }
+    
+    // Monitor GeoGebra applet focus/interaction to control scroll lock
+    function bindScrollLock() {
+      const ggbContainer = document.getElementById('ggb-cas-5ca55a28');
+      if (!ggbContainer) {
+        setTimeout(bindScrollLock, 300);
+        return;
+      }
+      
+      // Look for the actual GeoGebra canvas/applet elements
+      const ggbApplet = ggbContainer.querySelector('canvas') || 
+                       ggbContainer.querySelector('.ggbApplet') ||
+                       ggbContainer.querySelector('[id^="ggbApplet"]') ||
+                       ggbContainer;
+      
+      if (ggbApplet) {
+        // Lock scroll when interacting with GeoGebra
+        ggbApplet.addEventListener('mousedown', lockScroll);
+        ggbApplet.addEventListener('focus', lockScroll);
+        ggbApplet.addEventListener('click', lockScroll);
+        
+        // Also monitor the container for any focus events
+        ggbContainer.addEventListener('focusin', lockScroll);
+        ggbContainer.addEventListener('mousedown', lockScroll);
+        
+        // Unlock when clicking outside or losing focus
+        document.addEventListener('click', (e) => {
+          if (!ggbContainer.contains(e.target) && !e.target.closest('.ui-dialog')) {
+            unlockScroll();
+          }
+        });
+        
+        ggbContainer.addEventListener('focusout', (e) => {
+          // Small delay to check if focus moved outside the container
+          setTimeout(() => {
+            if (!ggbContainer.contains(document.activeElement)) {
+              unlockScroll();
+            }
+          }, 100);
+        });
+      }
+    }
+    
+    // Start monitoring after GeoGebra is loaded
+    setTimeout(bindScrollLock, 1000);
+    
+    // Cleanup on dialog close
+    $dlg.on('dialogclose', unlockScroll);
+
+    $("#button-ggb-cas-5ca55a28").button()
       .on("click touchend pointerup", e => {
         e.preventDefault();
-        $("#dialog-ggb-cas-8cf2de42").dialog("open");
+        $("#dialog-ggb-cas-5ca55a28").dialog("open");
       });
   });
 })();
@@ -1271,9 +1821,9 @@ T_{\triangle ABC} = 2 \cdot T_{\triangle SBC} = 2 \cdot 3\sqrt{2} = 6\sqrt{2}.
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<button id="button-ggb-cas-92f68da8" class="ggb-cas-button">Åpne CAS‑vindu</button>
-<div id="dialog-ggb-cas-92f68da8" title="CAS‑vindu" style="display:none;">
-    <div id="ggb-cas-92f68da8" class="ggb-window"></div>
+<button id="button-ggb-cas-e80c07be" class="ggb-cas-button">Åpne CAS‑vindu</button>
+<div id="dialog-ggb-cas-e80c07be" title="CAS‑vindu" style="display:none;">
+    <div id="ggb-cas-e80c07be" class="ggb-window"></div>
 </div>
 
 <style>
@@ -1290,12 +1840,12 @@ T_{\triangle ABC} = 2 \cdot T_{\triangle SBC} = 2 \cdot 3\sqrt{2} = 6\sqrt{2}.
 
     function applySize() {
       if (!ggbReady) return;
-      const w = $("#ggb-cas-92f68da8").width(),
-            h = $("#ggb-cas-92f68da8").height();
+      const w = $("#ggb-cas-e80c07be").width(),
+            h = $("#ggb-cas-e80c07be").height();
       window.ggbApplet.setSize(Math.round(w), Math.round(h));
     }
 
-    $("#dialog-ggb-cas-92f68da8").dialog({
+    const $dlg = $("#dialog-ggb-cas-e80c07be").dialog({
       autoOpen: false,
       width: 390, height: 580,
       resizable: true, draggable: true,
@@ -1304,24 +1854,134 @@ T_{\triangle ABC} = 2 \cdot T_{\triangle SBC} = 2 \cdot 3\sqrt{2} = 6\sqrt{2}.
       open: function() {
         if (!ggbReady) {
           new GGBApplet({
-            appName: "classic", id: "ggb-cas-92f68da8",
+            appName: "classic", id: "ggb-cas-e80c07be",
             width: 350, height: 500,
             perspective: "C", language: "nb",
             showToolBar: true, showAlgebraInput: true,
             borderRadius: 8, enableRightClick: true, showKeyboardOnFocus: false,
             customToolBar: "1001 | 1002 | 1007 | 1010 | 6",
             appletOnLoad: () => { ggbReady = true; applySize(); }
-          }, true).inject("ggb-cas-92f68da8");
+          }, true).inject("ggb-cas-e80c07be");
         } else {
           applySize();
         }
       }
     });
 
-    $("#button-ggb-cas-92f68da8").button()
+    // Prevent background scroll when GeoGebra applet is active
+    let scrollLocked = false;
+    let lockedScrollTop = 0;
+    let keyHandler = null;
+    let wheelHandler = null;
+    let scrollHandler = null;
+    
+    function lockScroll() {
+      if (scrollLocked) return;
+      scrollLocked = true;
+      lockedScrollTop = window.pageYOffset || document.documentElement.scrollTop || 0;
+      
+      // Instead of preventing keys, monitor and restore scroll position
+      scrollHandler = () => {
+        if (scrollLocked) {
+          const currentScroll = window.pageYOffset || document.documentElement.scrollTop || 0;
+          if (currentScroll !== lockedScrollTop) {
+            window.scrollTo(0, lockedScrollTop);
+          }
+        }
+      };
+      
+      // Prevent wheel scrolling on the page background
+      wheelHandler = (e) => {
+        const dialogElement = e.target.closest('.ui-dialog');
+        if (dialogElement) {
+          // Allow scrolling within dialog elements that can scroll
+          let target = e.target;
+          while (target && target !== dialogElement) {
+            const overflow = window.getComputedStyle(target).overflow;
+            if (overflow === 'auto' || overflow === 'scroll') {
+              return; // Allow internal scrolling
+            }
+            target = target.parentElement;
+          }
+          // Prevent page scroll but don't stop the event from reaching GeoGebra
+          if (!e.target.closest('#ggb-cas-e80c07be')) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
+        }
+      };
+      
+      // Monitor scroll events to maintain position
+      window.addEventListener('scroll', scrollHandler, { passive: true });
+      document.addEventListener('wheel', wheelHandler, { capture: true, passive: false });
+    }
+    
+    function unlockScroll() {
+      if (!scrollLocked) return;
+      scrollLocked = false;
+      
+      if (scrollHandler) {
+        window.removeEventListener('scroll', scrollHandler);
+        scrollHandler = null;
+      }
+      if (wheelHandler) {
+        document.removeEventListener('wheel', wheelHandler, { capture: true });
+        wheelHandler = null;
+      }
+    }
+    
+    // Monitor GeoGebra applet focus/interaction to control scroll lock
+    function bindScrollLock() {
+      const ggbContainer = document.getElementById('ggb-cas-e80c07be');
+      if (!ggbContainer) {
+        setTimeout(bindScrollLock, 300);
+        return;
+      }
+      
+      // Look for the actual GeoGebra canvas/applet elements
+      const ggbApplet = ggbContainer.querySelector('canvas') || 
+                       ggbContainer.querySelector('.ggbApplet') ||
+                       ggbContainer.querySelector('[id^="ggbApplet"]') ||
+                       ggbContainer;
+      
+      if (ggbApplet) {
+        // Lock scroll when interacting with GeoGebra
+        ggbApplet.addEventListener('mousedown', lockScroll);
+        ggbApplet.addEventListener('focus', lockScroll);
+        ggbApplet.addEventListener('click', lockScroll);
+        
+        // Also monitor the container for any focus events
+        ggbContainer.addEventListener('focusin', lockScroll);
+        ggbContainer.addEventListener('mousedown', lockScroll);
+        
+        // Unlock when clicking outside or losing focus
+        document.addEventListener('click', (e) => {
+          if (!ggbContainer.contains(e.target) && !e.target.closest('.ui-dialog')) {
+            unlockScroll();
+          }
+        });
+        
+        ggbContainer.addEventListener('focusout', (e) => {
+          // Small delay to check if focus moved outside the container
+          setTimeout(() => {
+            if (!ggbContainer.contains(document.activeElement)) {
+              unlockScroll();
+            }
+          }, 100);
+        });
+      }
+    }
+    
+    // Start monitoring after GeoGebra is loaded
+    setTimeout(bindScrollLock, 1000);
+    
+    // Cleanup on dialog close
+    $dlg.on('dialogclose', unlockScroll);
+
+    $("#button-ggb-cas-e80c07be").button()
       .on("click touchend pointerup", e => {
         e.preventDefault();
-        $("#dialog-ggb-cas-92f68da8").dialog("open");
+        $("#dialog-ggb-cas-e80c07be").dialog("open");
       });
   });
 })();
@@ -1407,9 +2067,9 @@ Husk å gjøre rede for hvilke trigonometriske sammenhenger du bruker.</p>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<button id="button-ggb-cas-007dd5be" class="ggb-cas-button">Åpne CAS‑vindu</button>
-<div id="dialog-ggb-cas-007dd5be" title="CAS‑vindu" style="display:none;">
-    <div id="ggb-cas-007dd5be" class="ggb-window"></div>
+<button id="button-ggb-cas-79084ebb" class="ggb-cas-button">Åpne CAS‑vindu</button>
+<div id="dialog-ggb-cas-79084ebb" title="CAS‑vindu" style="display:none;">
+    <div id="ggb-cas-79084ebb" class="ggb-window"></div>
 </div>
 
 <style>
@@ -1426,12 +2086,12 @@ Husk å gjøre rede for hvilke trigonometriske sammenhenger du bruker.</p>
 
     function applySize() {
       if (!ggbReady) return;
-      const w = $("#ggb-cas-007dd5be").width(),
-            h = $("#ggb-cas-007dd5be").height();
+      const w = $("#ggb-cas-79084ebb").width(),
+            h = $("#ggb-cas-79084ebb").height();
       window.ggbApplet.setSize(Math.round(w), Math.round(h));
     }
 
-    $("#dialog-ggb-cas-007dd5be").dialog({
+    const $dlg = $("#dialog-ggb-cas-79084ebb").dialog({
       autoOpen: false,
       width: 390, height: 580,
       resizable: true, draggable: true,
@@ -1440,24 +2100,134 @@ Husk å gjøre rede for hvilke trigonometriske sammenhenger du bruker.</p>
       open: function() {
         if (!ggbReady) {
           new GGBApplet({
-            appName: "classic", id: "ggb-cas-007dd5be",
+            appName: "classic", id: "ggb-cas-79084ebb",
             width: 350, height: 500,
             perspective: "C", language: "nb",
             showToolBar: true, showAlgebraInput: true,
             borderRadius: 8, enableRightClick: true, showKeyboardOnFocus: false,
             customToolBar: "1001 | 1002 | 1007 | 1010 | 6",
             appletOnLoad: () => { ggbReady = true; applySize(); }
-          }, true).inject("ggb-cas-007dd5be");
+          }, true).inject("ggb-cas-79084ebb");
         } else {
           applySize();
         }
       }
     });
 
-    $("#button-ggb-cas-007dd5be").button()
+    // Prevent background scroll when GeoGebra applet is active
+    let scrollLocked = false;
+    let lockedScrollTop = 0;
+    let keyHandler = null;
+    let wheelHandler = null;
+    let scrollHandler = null;
+    
+    function lockScroll() {
+      if (scrollLocked) return;
+      scrollLocked = true;
+      lockedScrollTop = window.pageYOffset || document.documentElement.scrollTop || 0;
+      
+      // Instead of preventing keys, monitor and restore scroll position
+      scrollHandler = () => {
+        if (scrollLocked) {
+          const currentScroll = window.pageYOffset || document.documentElement.scrollTop || 0;
+          if (currentScroll !== lockedScrollTop) {
+            window.scrollTo(0, lockedScrollTop);
+          }
+        }
+      };
+      
+      // Prevent wheel scrolling on the page background
+      wheelHandler = (e) => {
+        const dialogElement = e.target.closest('.ui-dialog');
+        if (dialogElement) {
+          // Allow scrolling within dialog elements that can scroll
+          let target = e.target;
+          while (target && target !== dialogElement) {
+            const overflow = window.getComputedStyle(target).overflow;
+            if (overflow === 'auto' || overflow === 'scroll') {
+              return; // Allow internal scrolling
+            }
+            target = target.parentElement;
+          }
+          // Prevent page scroll but don't stop the event from reaching GeoGebra
+          if (!e.target.closest('#ggb-cas-79084ebb')) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
+        }
+      };
+      
+      // Monitor scroll events to maintain position
+      window.addEventListener('scroll', scrollHandler, { passive: true });
+      document.addEventListener('wheel', wheelHandler, { capture: true, passive: false });
+    }
+    
+    function unlockScroll() {
+      if (!scrollLocked) return;
+      scrollLocked = false;
+      
+      if (scrollHandler) {
+        window.removeEventListener('scroll', scrollHandler);
+        scrollHandler = null;
+      }
+      if (wheelHandler) {
+        document.removeEventListener('wheel', wheelHandler, { capture: true });
+        wheelHandler = null;
+      }
+    }
+    
+    // Monitor GeoGebra applet focus/interaction to control scroll lock
+    function bindScrollLock() {
+      const ggbContainer = document.getElementById('ggb-cas-79084ebb');
+      if (!ggbContainer) {
+        setTimeout(bindScrollLock, 300);
+        return;
+      }
+      
+      // Look for the actual GeoGebra canvas/applet elements
+      const ggbApplet = ggbContainer.querySelector('canvas') || 
+                       ggbContainer.querySelector('.ggbApplet') ||
+                       ggbContainer.querySelector('[id^="ggbApplet"]') ||
+                       ggbContainer;
+      
+      if (ggbApplet) {
+        // Lock scroll when interacting with GeoGebra
+        ggbApplet.addEventListener('mousedown', lockScroll);
+        ggbApplet.addEventListener('focus', lockScroll);
+        ggbApplet.addEventListener('click', lockScroll);
+        
+        // Also monitor the container for any focus events
+        ggbContainer.addEventListener('focusin', lockScroll);
+        ggbContainer.addEventListener('mousedown', lockScroll);
+        
+        // Unlock when clicking outside or losing focus
+        document.addEventListener('click', (e) => {
+          if (!ggbContainer.contains(e.target) && !e.target.closest('.ui-dialog')) {
+            unlockScroll();
+          }
+        });
+        
+        ggbContainer.addEventListener('focusout', (e) => {
+          // Small delay to check if focus moved outside the container
+          setTimeout(() => {
+            if (!ggbContainer.contains(document.activeElement)) {
+              unlockScroll();
+            }
+          }, 100);
+        });
+      }
+    }
+    
+    // Start monitoring after GeoGebra is loaded
+    setTimeout(bindScrollLock, 1000);
+    
+    // Cleanup on dialog close
+    $dlg.on('dialogclose', unlockScroll);
+
+    $("#button-ggb-cas-79084ebb").button()
       .on("click touchend pointerup", e => {
         e.preventDefault();
-        $("#dialog-ggb-cas-007dd5be").dialog("open");
+        $("#dialog-ggb-cas-79084ebb").dialog("open");
       });
   });
 })();
@@ -1515,9 +2285,9 @@ T_{ABCD} \approx 38.57.
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<button id="button-ggb-cas-9829bf2d" class="ggb-cas-button">Åpne CAS‑vindu</button>
-<div id="dialog-ggb-cas-9829bf2d" title="CAS‑vindu" style="display:none;">
-    <div id="ggb-cas-9829bf2d" class="ggb-window"></div>
+<button id="button-ggb-cas-022168cf" class="ggb-cas-button">Åpne CAS‑vindu</button>
+<div id="dialog-ggb-cas-022168cf" title="CAS‑vindu" style="display:none;">
+    <div id="ggb-cas-022168cf" class="ggb-window"></div>
 </div>
 
 <style>
@@ -1534,12 +2304,12 @@ T_{ABCD} \approx 38.57.
 
     function applySize() {
       if (!ggbReady) return;
-      const w = $("#ggb-cas-9829bf2d").width(),
-            h = $("#ggb-cas-9829bf2d").height();
+      const w = $("#ggb-cas-022168cf").width(),
+            h = $("#ggb-cas-022168cf").height();
       window.ggbApplet.setSize(Math.round(w), Math.round(h));
     }
 
-    $("#dialog-ggb-cas-9829bf2d").dialog({
+    const $dlg = $("#dialog-ggb-cas-022168cf").dialog({
       autoOpen: false,
       width: 390, height: 580,
       resizable: true, draggable: true,
@@ -1548,24 +2318,134 @@ T_{ABCD} \approx 38.57.
       open: function() {
         if (!ggbReady) {
           new GGBApplet({
-            appName: "classic", id: "ggb-cas-9829bf2d",
+            appName: "classic", id: "ggb-cas-022168cf",
             width: 350, height: 500,
             perspective: "C", language: "nb",
             showToolBar: true, showAlgebraInput: true,
             borderRadius: 8, enableRightClick: true, showKeyboardOnFocus: false,
             customToolBar: "1001 | 1002 | 1007 | 1010 | 6",
             appletOnLoad: () => { ggbReady = true; applySize(); }
-          }, true).inject("ggb-cas-9829bf2d");
+          }, true).inject("ggb-cas-022168cf");
         } else {
           applySize();
         }
       }
     });
 
-    $("#button-ggb-cas-9829bf2d").button()
+    // Prevent background scroll when GeoGebra applet is active
+    let scrollLocked = false;
+    let lockedScrollTop = 0;
+    let keyHandler = null;
+    let wheelHandler = null;
+    let scrollHandler = null;
+    
+    function lockScroll() {
+      if (scrollLocked) return;
+      scrollLocked = true;
+      lockedScrollTop = window.pageYOffset || document.documentElement.scrollTop || 0;
+      
+      // Instead of preventing keys, monitor and restore scroll position
+      scrollHandler = () => {
+        if (scrollLocked) {
+          const currentScroll = window.pageYOffset || document.documentElement.scrollTop || 0;
+          if (currentScroll !== lockedScrollTop) {
+            window.scrollTo(0, lockedScrollTop);
+          }
+        }
+      };
+      
+      // Prevent wheel scrolling on the page background
+      wheelHandler = (e) => {
+        const dialogElement = e.target.closest('.ui-dialog');
+        if (dialogElement) {
+          // Allow scrolling within dialog elements that can scroll
+          let target = e.target;
+          while (target && target !== dialogElement) {
+            const overflow = window.getComputedStyle(target).overflow;
+            if (overflow === 'auto' || overflow === 'scroll') {
+              return; // Allow internal scrolling
+            }
+            target = target.parentElement;
+          }
+          // Prevent page scroll but don't stop the event from reaching GeoGebra
+          if (!e.target.closest('#ggb-cas-022168cf')) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
+        }
+      };
+      
+      // Monitor scroll events to maintain position
+      window.addEventListener('scroll', scrollHandler, { passive: true });
+      document.addEventListener('wheel', wheelHandler, { capture: true, passive: false });
+    }
+    
+    function unlockScroll() {
+      if (!scrollLocked) return;
+      scrollLocked = false;
+      
+      if (scrollHandler) {
+        window.removeEventListener('scroll', scrollHandler);
+        scrollHandler = null;
+      }
+      if (wheelHandler) {
+        document.removeEventListener('wheel', wheelHandler, { capture: true });
+        wheelHandler = null;
+      }
+    }
+    
+    // Monitor GeoGebra applet focus/interaction to control scroll lock
+    function bindScrollLock() {
+      const ggbContainer = document.getElementById('ggb-cas-022168cf');
+      if (!ggbContainer) {
+        setTimeout(bindScrollLock, 300);
+        return;
+      }
+      
+      // Look for the actual GeoGebra canvas/applet elements
+      const ggbApplet = ggbContainer.querySelector('canvas') || 
+                       ggbContainer.querySelector('.ggbApplet') ||
+                       ggbContainer.querySelector('[id^="ggbApplet"]') ||
+                       ggbContainer;
+      
+      if (ggbApplet) {
+        // Lock scroll when interacting with GeoGebra
+        ggbApplet.addEventListener('mousedown', lockScroll);
+        ggbApplet.addEventListener('focus', lockScroll);
+        ggbApplet.addEventListener('click', lockScroll);
+        
+        // Also monitor the container for any focus events
+        ggbContainer.addEventListener('focusin', lockScroll);
+        ggbContainer.addEventListener('mousedown', lockScroll);
+        
+        // Unlock when clicking outside or losing focus
+        document.addEventListener('click', (e) => {
+          if (!ggbContainer.contains(e.target) && !e.target.closest('.ui-dialog')) {
+            unlockScroll();
+          }
+        });
+        
+        ggbContainer.addEventListener('focusout', (e) => {
+          // Small delay to check if focus moved outside the container
+          setTimeout(() => {
+            if (!ggbContainer.contains(document.activeElement)) {
+              unlockScroll();
+            }
+          }, 100);
+        });
+      }
+    }
+    
+    // Start monitoring after GeoGebra is loaded
+    setTimeout(bindScrollLock, 1000);
+    
+    // Cleanup on dialog close
+    $dlg.on('dialogclose', unlockScroll);
+
+    $("#button-ggb-cas-022168cf").button()
       .on("click touchend pointerup", e => {
         e.preventDefault();
-        $("#dialog-ggb-cas-9829bf2d").dialog("open");
+        $("#dialog-ggb-cas-022168cf").dialog("open");
       });
   });
 })();
@@ -1681,9 +2561,9 @@ a = -\sqrt{2} + \sqrt{6} = \sqrt{6} - \sqrt{2}
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<button id="button-ggb-cas-e905a522" class="ggb-cas-button">Åpne CAS‑vindu</button>
-<div id="dialog-ggb-cas-e905a522" title="CAS‑vindu" style="display:none;">
-    <div id="ggb-cas-e905a522" class="ggb-window"></div>
+<button id="button-ggb-cas-dc14ff24" class="ggb-cas-button">Åpne CAS‑vindu</button>
+<div id="dialog-ggb-cas-dc14ff24" title="CAS‑vindu" style="display:none;">
+    <div id="ggb-cas-dc14ff24" class="ggb-window"></div>
 </div>
 
 <style>
@@ -1700,12 +2580,12 @@ a = -\sqrt{2} + \sqrt{6} = \sqrt{6} - \sqrt{2}
 
     function applySize() {
       if (!ggbReady) return;
-      const w = $("#ggb-cas-e905a522").width(),
-            h = $("#ggb-cas-e905a522").height();
+      const w = $("#ggb-cas-dc14ff24").width(),
+            h = $("#ggb-cas-dc14ff24").height();
       window.ggbApplet.setSize(Math.round(w), Math.round(h));
     }
 
-    $("#dialog-ggb-cas-e905a522").dialog({
+    const $dlg = $("#dialog-ggb-cas-dc14ff24").dialog({
       autoOpen: false,
       width: 390, height: 580,
       resizable: true, draggable: true,
@@ -1714,24 +2594,134 @@ a = -\sqrt{2} + \sqrt{6} = \sqrt{6} - \sqrt{2}
       open: function() {
         if (!ggbReady) {
           new GGBApplet({
-            appName: "classic", id: "ggb-cas-e905a522",
+            appName: "classic", id: "ggb-cas-dc14ff24",
             width: 350, height: 500,
             perspective: "C", language: "nb",
             showToolBar: true, showAlgebraInput: true,
             borderRadius: 8, enableRightClick: true, showKeyboardOnFocus: false,
             customToolBar: "1001 | 1002 | 1007 | 1010 | 6",
             appletOnLoad: () => { ggbReady = true; applySize(); }
-          }, true).inject("ggb-cas-e905a522");
+          }, true).inject("ggb-cas-dc14ff24");
         } else {
           applySize();
         }
       }
     });
 
-    $("#button-ggb-cas-e905a522").button()
+    // Prevent background scroll when GeoGebra applet is active
+    let scrollLocked = false;
+    let lockedScrollTop = 0;
+    let keyHandler = null;
+    let wheelHandler = null;
+    let scrollHandler = null;
+    
+    function lockScroll() {
+      if (scrollLocked) return;
+      scrollLocked = true;
+      lockedScrollTop = window.pageYOffset || document.documentElement.scrollTop || 0;
+      
+      // Instead of preventing keys, monitor and restore scroll position
+      scrollHandler = () => {
+        if (scrollLocked) {
+          const currentScroll = window.pageYOffset || document.documentElement.scrollTop || 0;
+          if (currentScroll !== lockedScrollTop) {
+            window.scrollTo(0, lockedScrollTop);
+          }
+        }
+      };
+      
+      // Prevent wheel scrolling on the page background
+      wheelHandler = (e) => {
+        const dialogElement = e.target.closest('.ui-dialog');
+        if (dialogElement) {
+          // Allow scrolling within dialog elements that can scroll
+          let target = e.target;
+          while (target && target !== dialogElement) {
+            const overflow = window.getComputedStyle(target).overflow;
+            if (overflow === 'auto' || overflow === 'scroll') {
+              return; // Allow internal scrolling
+            }
+            target = target.parentElement;
+          }
+          // Prevent page scroll but don't stop the event from reaching GeoGebra
+          if (!e.target.closest('#ggb-cas-dc14ff24')) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
+        }
+      };
+      
+      // Monitor scroll events to maintain position
+      window.addEventListener('scroll', scrollHandler, { passive: true });
+      document.addEventListener('wheel', wheelHandler, { capture: true, passive: false });
+    }
+    
+    function unlockScroll() {
+      if (!scrollLocked) return;
+      scrollLocked = false;
+      
+      if (scrollHandler) {
+        window.removeEventListener('scroll', scrollHandler);
+        scrollHandler = null;
+      }
+      if (wheelHandler) {
+        document.removeEventListener('wheel', wheelHandler, { capture: true });
+        wheelHandler = null;
+      }
+    }
+    
+    // Monitor GeoGebra applet focus/interaction to control scroll lock
+    function bindScrollLock() {
+      const ggbContainer = document.getElementById('ggb-cas-dc14ff24');
+      if (!ggbContainer) {
+        setTimeout(bindScrollLock, 300);
+        return;
+      }
+      
+      // Look for the actual GeoGebra canvas/applet elements
+      const ggbApplet = ggbContainer.querySelector('canvas') || 
+                       ggbContainer.querySelector('.ggbApplet') ||
+                       ggbContainer.querySelector('[id^="ggbApplet"]') ||
+                       ggbContainer;
+      
+      if (ggbApplet) {
+        // Lock scroll when interacting with GeoGebra
+        ggbApplet.addEventListener('mousedown', lockScroll);
+        ggbApplet.addEventListener('focus', lockScroll);
+        ggbApplet.addEventListener('click', lockScroll);
+        
+        // Also monitor the container for any focus events
+        ggbContainer.addEventListener('focusin', lockScroll);
+        ggbContainer.addEventListener('mousedown', lockScroll);
+        
+        // Unlock when clicking outside or losing focus
+        document.addEventListener('click', (e) => {
+          if (!ggbContainer.contains(e.target) && !e.target.closest('.ui-dialog')) {
+            unlockScroll();
+          }
+        });
+        
+        ggbContainer.addEventListener('focusout', (e) => {
+          // Small delay to check if focus moved outside the container
+          setTimeout(() => {
+            if (!ggbContainer.contains(document.activeElement)) {
+              unlockScroll();
+            }
+          }, 100);
+        });
+      }
+    }
+    
+    // Start monitoring after GeoGebra is loaded
+    setTimeout(bindScrollLock, 1000);
+    
+    // Cleanup on dialog close
+    $dlg.on('dialogclose', unlockScroll);
+
+    $("#button-ggb-cas-dc14ff24").button()
       .on("click touchend pointerup", e => {
         e.preventDefault();
-        $("#dialog-ggb-cas-e905a522").dialog("open");
+        $("#dialog-ggb-cas-dc14ff24").dialog("open");
       });
   });
 })();
