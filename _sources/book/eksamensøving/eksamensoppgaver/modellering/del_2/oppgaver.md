@@ -408,24 +408,24 @@ $$
 :::::::::::::
 
 :::::::::::::{tab-item} b
-Nedenfor vises en samtale mellom to elever:
+Nedenfor vises en samtale mellom to elever.
 
-Ari 
-: Betyr dette at det ikke går an å få egg hardkokte oppe på et høyt fjell? 
-: Et egg blir ikke hardkokt dersom temperaturen i vannet er lavere enn $85 \, \degree \mathrm{C}$.
-
-Lisa
-: Det kommer vel an på hvor høyt fjellet er?
-
-Ari
-: Jeg vil lage en modell som viser hvor høyt lufttrykket er $x$ kilometer over havets overflate. Jeg har lært at lufttrykket minker med ca. $12 \, \%$ per km. 
-
-Lisa
-: Jeg har lært at lufttrykket halveres for hver $5.5$ km. Jeg vil ta utgangspunkt i dette og lage en modell på samme form som den du lager, Ari.
-
+:::{dialogue}
 ---
+name1: Ari
+name2: Lisa
+speaker1: left
+speaker2: right
+---
+Ari: Et egg blir ikke hardkokt dersom temperaturen i vannet er lavere enn $85 \, \degree\mathrm{C}$. Betyr det at det ikke går an å få egg hardkokte på et høyt fjell?
+Lisa: Det kommer vel an på hvor høyt fjellet er?
+Ari: Jeg vil lage en modell som viser hvor høyt lufttrykket er $x$ kilometer over havets overflate. Jeg har lært at lufttrykket minker med ca. $12 \, \%$ per km.
+Lisa: Jeg har lært at lufttrykket halveres for hver $5.5$ km. Jeg vil ta utgangspunkt i dette og lage en modell på samme form som den du lager, Ari.
+:::
 
-**Lag modellene for Ari og Lisa.**
+<br>
+
+Lag modellen til Ari og Lisa.
 
 ::::{admonition} Løsning
 ---
