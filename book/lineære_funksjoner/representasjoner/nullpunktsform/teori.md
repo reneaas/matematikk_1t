@@ -9,10 +9,10 @@ class: tip
 :::
 
 
-Vi har så langt sett at vi kan representere en lineær funksjon $f$ på {popup}`standardform<Standardformen til en lineær funksjon er $$f(x) = ax + b$$>`. Standardformen forteller oss grafisk hvor mye grafen stiger eller synker, og hvor den skjærer $y$-aksen. Her skal vi se på en annen representasjonsform som vi skal kalle for **nullpunktsform**. Denne vil også fortelle oss hvor mye grafen til $f$ stiger eller synker, men vil i stedet fortelle oss hvor grafen til $f$ skjærer $x$-aksen fremfor $y$-aksen.
+Vi har så langt sett at vi kan representere en lineær funksjon $f$ på standardform. Standardformen forteller oss grafisk hvor mye grafen stiger eller synker, og hvor den skjærer $y$-aksen. Her skal vi se på en annen representasjonsform som vi skal kalle for **nullpunktsform**. Denne vil også fortelle oss hvor mye grafen til $f$ stiger eller synker, men vil i stedet fortelle oss hvor grafen til $f$ skjærer $x$-aksen – det vi kaller for **nullpunktet** til $f$ fordi det er der $f(x) = 0$.
 
 
-## Nullpunktsform
+## Algebraisk representasjon
 
 :::::::::::::::{theory} Nullpunktsform
 En lineær funksjon $f$ kan skrives på nullpunktsform som følger:
@@ -24,6 +24,7 @@ class: no-click, adaptive-figure
 ---
 :::
 
+Her er $a$ stigningstallet til $f$ og $x_1$ er nullpunktet til $f$, altså der $f(x) = 0$.
 
 :::{figure} ./figurer/teori/grafisk_representasjon/nullpunktsform.svg
 ---
@@ -37,7 +38,47 @@ class: no-click, adaptive-figure
 
 
 
+---
 
+
+
+:::::::::::::::{example} Eksempel 1
+I figuren nedenfor vises grafen til en lineær funksjon $f$.
+
+
+Bestem $f(x)$ på nullpunktsform.
+
+
+:::{figure} ./figurer/eksempler/eksempel_1/figur.svg
+---
+class: no-click, adaptive-figure
+width: 75%
+---
+:::
+
+::::{solution}
+---
+dropdown: 0
+---
+Vi skriver $f(x)$ på nullpunktsform
+
+$$
+f(x) = a(x - x_1)
+$$
+
+Vi ser at grafen til $f$ skjærer $x$-aksen i $(1, 0)$ som betyr at $x_1 = 1$. 
+
+Øker vi verdien til $x$ med $1$ fra $(1, 0)$, finner vi et punkt på grafen i $(2, 2)$. Det betyr at $y$-verdien har økt med $2$ og derfor er stigningstallet $a = 2$. 
+
+Altså er 
+
+$$
+f(x) = a(x - x_1) = 2(x - 1)
+$$
+::::
+
+
+:::::::::::::::
 
 
 ---
@@ -46,7 +87,7 @@ class: no-click, adaptive-figure
 
 
 
-:::::::::::::::{explore} Utforsk 1
+<!-- :::::::::::::::{explore} Utforsk 1
 
 Nedenfor vises grafen til en lineær funksjon $f$ i et interaktivt vindu der $f(x)$ er skrevet på nullpunktsform
 
@@ -92,16 +133,12 @@ material_id: zgxwf6c3
 :::
 
 
-:::::::::::::::
+::::::::::::::: -->
 
 
 
 
----
-
-
-
-:::{quiz} Quiz 1
+<!-- :::{quiz} Quiz 1
 Q: Hva er stigningstallet til $f(x) = 2(x - 1)$?
 + $2$
 - $-2$
@@ -131,14 +168,11 @@ Q: Nullpunktet til $f(x) = -5(x + 4)$ er ...
 - $x = 4$
 - $x = 5$
 - $x = -5$
-:::
+::: -->
 
 
 
----
-
-
-:::::::::::::::{underveisoppgave} Underveisoppgave 1
+:::::::::::::::{exercise} Underveisoppgave 1
 Nedenfor vises nullpunktsformen til en lineær funksjon $f$ som er gitt ved 
 
 $$
@@ -148,19 +182,20 @@ $$
 Hvilken av grafene nedenfor tilhører $f$? 
 
 
+
+:::{clickable-figure} ./figurer/underveisoppgaver/underveisoppgave_1/merged_figure.svg
+---
+width: 100%
+---
+:::
+
+
 :::{answer}
 Graf C
 :::
 
 :::{solution}
 Nullpunktet til $f$ er $x_1 = 1$ og stigningstallet er $3$. Vi kan lese av at graf A og C skjærer $x$-aksen i $x = 1$ som passer med opplysningene om $f$. Men graf A har negativt stigningstall, mens graf C har positivt stigningstall. Dermed må graf C være grafen til $f$.
-:::
-
-
-:::{clickable-figure} ./figurer/underveisoppgaver/underveisoppgave_1/merged_figure.svg
----
-width: 100%
----
 :::
 
 
@@ -174,7 +209,7 @@ width: 100%
 
 
 
-:::::::::::::::{underveisoppgave} Underveisoppgave 2
+:::::::::::::::{exercise} Underveisoppgave 2
 Nedenfor vises grafen til en lineær funksjon $f$.
 
 Bestem $f(x)$ på nullpunktsform.
@@ -214,9 +249,9 @@ $$
 
 ##  Fra standardform til nullpunktsform – og omvendt
 
-Dersom vi kjenner til $f(x)$ på standardform, kan vi skrive den om til nullpunktsform ved å faktorisere ut stigningstallet $a$:
+Dersom vi kjenner til $f(x)$ på standardform, kan vi skrive den om til nullpunktsform ved å faktorisere ut stigningstallet $a$ fra alle ledd. La oss se på et eksempel:
 
-:::::::::::::::{example} Eksempel 1
+:::::::::::::::{example} Eksempel 2
 En lineær funksjon $f$ er gitt ved 
 
 $$
@@ -245,10 +280,10 @@ $$
 f(x) = 2\cdot \left(x + 2\right) = 2\cdot \left(x - (-2)\right).
 $$
 
-Dette betyr også at nullpunktet til $f$ er gitt ved 
+Vi leser av at $x_1 = -2$ som betyr at nullpunktet til $f$ gitt ved
 
 $$
-f(x) = 0 \liff x = -2. 
+x = -2.
 $$
 ::::
 
@@ -263,7 +298,7 @@ $$
 
 
 
-:::::::::::::::{underveisoppgave} Underveisoppgave 3
+:::::::::::::::{exercise} Underveisoppgave 3
 En lineær funksjon $f$ er gitt ved 
 
 $$
@@ -326,4 +361,61 @@ $$
 ::::::::::::::
 
 
+:::::::::::::::
+
+
+---
+
+
+:::::::::::::::{example} Eksempel 3
+En lineær funksjon $f$ er gitt ved 
+
+$$
+f(x) = 2(x + 3)
+$$
+
+Bestem $f(x)$ på standardform.
+
+
+::::{solution}
+---
+dropdown: 0
+---
+Vi ganger ut parentesen for å finne $f(x)$ på standardform: 
+
+$$
+f(x) = 2(x + 3) = 2x + 6
+$$
+::::
+
+
+:::::::::::::::
+
+
+---
+
+
+:::::::::::::::{exercise} Underveisoppgave 4
+En lineær funksjon $f$ er gitt ved
+
+$$
+f(x) = -2(x - 2)
+$$
+
+Bestem $f(x)$ på standardform. 
+
+
+::::{answer}
+$$
+f(x) = -2x + 4
+$$
+::::
+
+::::{solution}
+Vi ganger ut parentesen for å finne $f(x)$ på standardform:
+
+$$
+f(x) = -2(x - 2) = -2x + 4
+$$
+::::
 :::::::::::::::

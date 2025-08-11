@@ -8,12 +8,26 @@ class: tip
 * Kunne bytte fra en representasjon til en annen.
 :::
 
+En lineær funksjon er en rett linje som du kanskje har lært å beskrive med en likning
 
-## Koordinatsystemet og funksjonsverdier
+$$
+y = ax + b 
+$$
 
-Et viktig verktøy i praksis er koordinatsystemet siden vi ofte visualiserer grafen til funksjoner der. 
 
-:::::::::::::::{theory} Koordinatsystemet
+der vi setter inn en verdi for $x$ for å finne den **tilhørende** verdien for $y$. Gjør vi dette med mange ulike verdier for $x$, får vi en samling punkter $(x, y)$ – dette kaller vi for **grafen** til den lineære funksjonen. Vi gir gjerne funksjonen et navn, for eksempel $f$, og skriver funksjonsuttrykket som
+
+$$
+f(x) = ax + b
+$$
+
+som betyr at $y = f(x)$. Vi kaller $f(x)$ for **funksjonsverdien** når vi tenker på et bestemt tall $x$, og **funksjonsuttrykket** når vi ikke tenker på noe spesielt tall for $x$.
+
+
+:::::::::::::::{admonition} Påminnelse: Koordinatsystemet
+---
+class: dropdown, summary
+---
 
 Koordinatsystemet består av to tallinjer som vi kaller for **akser**. De to aksene er:
 * $x$-aksen (den horisontale aksen - også kalt *førsteaksen*).
@@ -34,92 +48,39 @@ class: no-click, adaptive-figure
 viser et koordinatsystem med punktet $(3, 2)$. For å finne punktet går vi $3$ plasser parallelt med $x$-aksen og $2$ plasser parallelt med $y$-aksen. 
 :::
 
-
 :::::::::::::::
 
+
+La oss se på et eksempel:
+
+
+:::::::::::::::{example} Eksempel 1
+I figuren nedenfor vises grafen til en lineær funksjon $f$ gitt ved 
+
+$$
+f(x) = 2x + 1.
+$$
+
+
+:::{figure} ./figurer/eksempler/eksempel_1/figur.svg
 ---
-
-
-:::::::::::::::{underveisoppgave} Underveisoppgave 1
-I figuren nedenfor vises et koordinatsystem med seks punkter $A$, $B$, $C$, $D$, $E$ og $F$.
-
-:::{figure} ./figurer/underveisoppgaver/underveisoppgave_1.svg
----
-width: 80%
 class: no-click, adaptive-figure
+width: 70%
 ---
 :::
 
-Sett sammen riktig koordinater $(x, y)$ med riktig punktnavn.
 
-:::{pair-puzzle}
-$A$ : $(1, 2)$
-$B$ : $(-2, 3)$
-$C$ : $(3, -1)$
-$D$ : $(-5, -3)$
-$E$ : $(4, 4)$
-$F$ : $(2, -4)$
-:::
-
-
-:::::::::::::::
-
-Du har kanskje tidligere lært at en lineær funksjon $f$ er en funksjon på formen
+I figuren har vi markert et punkt $(2, f(2))$ på grafen til $f$. Vi ser at $x$-koordinaten til dette punktet er $2$ og $y$-koordinaten er $5$. Det betyr at 
 
 $$
-f(x) = a\cdot x + b
+f(2) = 5
 $$
 
-
-der $a$ og $b$ er konstanter. Vi kaller $f(x)$ for **funksjonsverdien** til $f$ i $x$ der vi tenker oss at vi erstatter $x$ med et tall. Det er også vanlig å kalle $f(x)$ for **funksjonsuttrykket** til $f$ når vi ikke tenker på noe spesielt tall for $x$. 
-
-:::::::::::::::{theory} Funksjonsverdier: Algebraisk og grafisk
-For en lineær funksjon $f$ kan vi bestemme funksjonsverdier $f(x)$ på to måter:
-1. **Algebraisk**: Vi setter inn verdien til $x$ i funksjonsuttrykket $f(x)$.
-2. **Grafisk**: Vi leser av et punkt $(x, y)$ på grafen til $f$ der $y = f(x)$.
-
-Nedenfor vises et eksempel på hvordan vi kan bestemme $f(3)$ for 
+Vi kunne også sett dette ved å regne ut verdien med funksjonsuttrykket til $f$:
 
 $$
-f(x) = 2\cdot x + 1.
+f(\textcolor{red}{2}) = 2 \cdot \textcolor{red}{2} + 1 = 4 + 1 = 5. 
 $$
-
-:::::{grid}
----
-gutter: 3
----
-::::{grid-item-card}
----
-columns: 5
----
-**Algebraisk**
-
-^^^
-
-> Vi erstatter verdien til $x$ med $3$ i funksjonsuttrykket $f(x)$ og regner ut:
-
-$$
-f(\textcolor{red}{3}) = 2 \cdot \textcolor{red}{3} + 1 = 6 + 1 = 7.
-$$
-::::
-
-
-::::{grid-item-card}
-**Grafisk**
-
-^^^
-
-> Klikk på figuren for å se nærmere!
-
-:::{clickable-figure} ./figurer/teori/funksjonsverdier.svg
----
-width: 100%
----
-viser at linjen $x = 3$ skjærer grafen til $f$ i punktet $(3, 7)$ som betyr at $y = 7$ når $x = 3$. Dermed er $f(3) = 7$.
-:::
-::::
-
-:::::
 
 
 :::::::::::::::
@@ -128,88 +89,54 @@ viser at linjen $x = 3$ skjærer grafen til $f$ i punktet $(3, 7)$ som betyr at 
 ---
 
 
-:::::::::::::::{underveisoppgave} Underveisoppgave 2
+:::::::::::::::{exercise} Underveisoppgave 1
 En lineær funksjon $f$ er gitt ved 
 
 $$
-f(x) = -2\cdot x + 1
+f(x) = 3x - 2
 $$
 
+Bestem $f(4)$ ved
+1. Å regne ut med funksjonsuttrykket
+2. Ved å lese av fra grafen til $f$ vist i figuren nedenfor.
 
-::::::::::::::{tab-set}
+:::{figure} ./figurer/underveisoppgaver/underveisoppgave_1/figur.svg
 ---
-class: tabs-parts
----
-:::::::::::::{tab-item} a
-Regn ut $f(2)$ og $f(-1)$. 
-
-
-::::{answer}
-
-\begin{align*}
-    f(2) &= -3 \\
-    \\
-    f(-1) &= 3
-\end{align*}
-::::
-
-::::{solution}
-\begin{align*}
-    f(\textcolor{red}{2}) &= -2\cdot \textcolor{red}{2} + 1 = -4 + 1 = -3, \\
-    \\
-    f(\textcolor{red}{-1}) &= -2\cdot (\textcolor{red}{-1}) + 1 = 2 + 1 = 3. 
-\end{align*}
-::::
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} b
-Nedenfor vises grafen til $f$. 
-
-Bruk grafen til å bestemme $f(-2)$ og $f(1)$. 
-
-:::{figure} ./figurer/underveisoppgaver/underveisoppgave_2.svg
----
-width: 80%
 class: no-click, adaptive-figure
+width: 70%
 ---
 :::
 
 
 ::::{answer}
-\begin{align*}
-    f(-2) &= 5 \\
-    \\
-    f(1) &= -1
-\end{align*}
+$$
+f(4) = 10
+$$
 ::::
 
 ::::{solution}
-Linjen $x = -2$ skjærer grafen til $f$ i punktet $(-2, 5)$ som betyr at $f(-2) = 5$.
+Ved regning:
+: $f(\textcolor{red}{4}) = 3 \cdot \textcolor{red}{4} - 2 = 12 - 2 = 10$
 
-Linjen $x = 1$ skjærer grafen til $f$ i punktet $(1, 1)$ som betyr at $f(1) = 1$.
-
+Grafisk
+: Vi ser at når $x = 4$, så er $y = 10$ på grafen. Det betyr at $f(4) = 10$. 
 ::::
 
-:::::::::::::
-
-::::::::::::::
 
 
 
 :::::::::::::::
 
 
+## Standardform: Algebraisk og grafisk representasjon
 
 
-## Representasjon: Standardform
+En **representasjon** er en måte å beskrive noe på. En lineær funksjon kan representeres på flere måter, for eksempel med en formel som vi gjerne kaller for en **algebraisk representasjon**. En lineær funksjon kan også representeres grafisk med en **graf**. Det finnes flere representasjoner, men disse er de to viktigste. 
+
+En algebraisk representasjon kan gi oss umiddelbar informasjon om grafen til en funksjon. Å velge en representation som er hensiktmessig for å løse en oppgave er en viktig ferdighet i matematikk. Den første vi skal se på kaller vi for **standardform**. 
 
 
-En **representasjon** er en måte å beskrive noe på. En lineær funksjon kan representeres på flere måter, for eksempel med en formel som vi gjerne kaller for en **algebraisk representasjon**. En lineær funksjon kan også representeres grafisk med en **graf**. Det finnes flere representasjoner, men disse er de to viktigste. Videre kan vi skrive den algebraiske representasjonen på en måte som gir oss umiddelbar informasjon om grafen til $f$. Her skal vi fokusere på en algebraisk representasjon vi kaller for **standardform**.
-
-
-:::::::::::::::{theory} Standardform: Algebraisk representasjon
+:::::::::::::::{summary} Standardform: Algebraisk representasjon
 
 En lineær funksjon $f$ kan skrives på **standardform** som
 
@@ -234,125 +161,172 @@ class: no-click, adaptive-figure
 
 ---
 
-:::::::::::::::{explore} Utforsk 2
-Nedenfor vises grafen til en lineær funksjon $f$ i et interakivt vindu der $f(x)$ er gitt ved
 
-$$
-f(x) = ax + b.
-$$
+:::::::::::::::{example} Eksempel 2
+Grafen til en lineær funksjon $f$ er vist i figuren nedenfor. 
+
+Bestem $f(x)$.
 
 
-::::::::::::::{tab-set}
+:::{figure} ./figurer/eksempler/eksempel_2/figur.svg
 ---
-class: tabs-parts
----
-:::::::::::::{tab-item} a
-1. Juster verdien til $a$ og undersøk hva som skjer med grafen til $f$.
-2. Hvordan kan man lese av hvilken verdi $a$ har fra grafen til $f$?
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} b
-1. Juster verdien til $b$ og undersøk hva som skjer med grafen til $f$.
-2. Hvordan kan man lese av hvilken verdi $b$ har fra grafen til $f$?
-
-:::::::::::::
-
-::::::::::::::
-
-
-:::{ggb} 720 600
----
-material_id: ryesqwej
-toolbar: "false"
----
-:::
-
-
-:::::::::::::::
-
-
-
-
----
-
-:::::::::::::::{exercise} Quiz 1
-:::{quiz}
-Q: Hva stigningstallet til $f(x) = 2\cdot x + 1$?
-+ $2$
-- $2x$
-- $1$
-- $2\cdot x$
-
-Q: Hva stigningstallet til $f(x) = x + 3$?
-+ $1$
-- $x$
-- $3$
-- $1\cdot x$
-
-Q: Grafen til $f(x) = 3x - 2$ skjærer $y$-aksen i...
-+ $(0, -2)$
-- $(3, 0)$
-- $(2, 0)$
-- $(0, 3)$
-
-Q: Konstantleddet til $f(x) = -x + 3$ er ...
-+ $3$
-- $-1$
-- $-3$
-- $1$
-
-Q: Stigningstallet til $f(x) = -x + 3$ er ...
-+ $-1$
-- $-x$
-- $3$
-- $1$
-:::
-:::::::::::::::
-
-
-
-
----
-
-
-
-
-
-
-:::::::::::::::{underveisoppgave} Underveisoppgave 3
-Nedenfor vises grafen til en lineær funksjon $f$. 
-
-Bestem $f(x)$. 
-
-:::{figure} ./figurer/underveisoppgaver/underveisoppgave_3.svg
----
-width: 80%
 class: no-click, adaptive-figure
+width: 70%
 ---
 :::
 
 
-::::{answer}
+::::{solution}
+---
+dropdown: 0
+---
+En lineær funksjon på standardform er gitt ved
+
 $$
-f(x) = 3\cdot x - 2
+f(x) = ax + b
+$$
+
+Vi ser at grafen til $f$ skjærer $y$-aksen i $(0, 1)$ som betyr at $b = 1$. 
+
+Hvis vi velger ut et punkt på grafen til $f$, for eksempel $(0, 1)$, så ser vi at når vi øker $x$ med $1$, så synker funksjonsverdien $f(x)$ med $-2$ (husk $y = f(x)$) som betyr at stigningstallet er $a = -2$. 
+
+Da er $f(x)$ gitt ved
+
+$$
+f(x) = ax + b = -2 \cdot x + 1 = -2x + 1
 $$
 ::::
 
 
+:::::::::::::::
+
+
+---
+
+
+:::::::::::::::{exercise} Underveisoppgave 2 
+Grafen til en lineær funksjon $f$ er vist i figuren nedenfor.
+
+Bestem $f(x)$. 
+
+:::{figure} ./figurer/underveisoppgaver/underveisoppgave_2/figur.svg
+---
+class: no-click, adaptive-figure
+width: 70%
+---
+:::
+
+::::{answer}
+$$
+f(x) = 3x - 4
+$$
+::::
+
 ::::{solution}
-Vi starter med $f(x)$ på standardform:
+En lineær funksjon på standardform er gitt ved 
 
 $$
-f(x) = a\cdot x + b
+f(x) = ax + b
 $$
 
-Fra grafen til $f$ kan vi lese av at den skjærer $y$-aksen i $(0, -2)$ som betyr at $b = -2$. Øker vi $x$ med $1$, så vil $y$-verdien til grafen øke med $3$ som betyr at $a = 3$. Dermed får vi 
+Vi ser at grafen til $f$ skjærer $y$-aksen i $(0, -4)$ som betyr at $b = -4$. 
+
+Hvis vi velger et punkt på grafen til $f$, for eksempel $(0, -4)$ og øker $x$ med $1$, så er vi at $f(x)$ øker med $3$ siden grafen går gjennom punktet $(1, -1)$. Det betyr at stigningstallet er $a = 3$. 
+
+Da er 
 
 $$
-f(x) = 3 \cdot x - 2. 
+f(x) = 3 \cdot x - 4 = 3x - 4
 $$
+::::
+
+
+:::::::::::::::
+
+
+
+---
+
+
+La oss se på et eksempel der vi går fra funksjonsuttrykk til graf. 
+
+:::::::::::::::{example} Eksempel 3
+En lineær funksjon $f$ er gitt ved 
+
+$$
+f(x) = -x + 2
+$$
+
+Lag en skisse av grafen til $f$. 
+
+
+::::{solution}
+---
+dropdown: 0
+---
+Fra funksjonsuttrykket
+
+$$
+f(x) = -x + 2 = (-1) \cdot x + 2
+$$
+
+ser vi at stigningstallet til $f$ er $a = -1$ og konstantleddet er $b = 2$. Det betyr at grafen til $f$ skjærer $y$-aksen i $(0, 2)$. Da kan vi lage følgende skisse av grafen til $f$:
+
+:::{figure} ./figurer/eksempler/eksempel_3/figur.svg
+---
+class: no-click, adaptive-figure
+width: 70%
+---
+viser en skisse av grafen til $f$ der den skjærer $y$-aksen i $(0, 2)$ og har stigningstall $-1$. 
+:::
+
+
+::::
+
+
+:::::::::::::::
+
+
+---
+
+
+:::::::::::::::{exercise} Underveisoppgave 3
+En lineær funksjon $f$ er gitt ved
+
+$$
+f(x) = -2x + 3
+$$
+
+Lag en skisse av grafen til $f$ der du markerer skjæringspunktet med $y$-aksen og stigningstallet.
+
+
+::::{answer}
+:::{figure} ./figurer/underveisoppgaver/underveisoppgave_3/figur.svg
+---
+class: no-click, adaptive-figure
+width: 70%
+---
+:::
+::::
+
+::::{solution}
+Vi har at 
+
+$$
+f(x) = (-2) \cdot x + 3
+$$
+
+som betyr at stigningstallet er $a = -2$ og konstantleddet er $b = 3$. Grafen til $f$ skjærer derfor $y$-aksen i $(0, 3)$. 
+
+Ut ifra denne informasjonen kan vi tegne følgende skisse av grafen til $f$.
+
+
+:::{figure} ./figurer/underveisoppgaver/underveisoppgave_3/figur.svg
+---
+class: no-click, adaptive-figure
+width: 70%
+---
+:::
 ::::
 
 
@@ -363,95 +337,6 @@ $$
 ## Topunktsformelen
 
 Vi vet allerede nå at vi kan bestemme stigningstallet $a$ til en lineær funksjon ved å sjekke hvor mye $f(x)$ endrer seg når vi øker $x$ med $1$. Men vi vet ikke alltid funksjonsverdier til $f$ i $x$-verdier som ligger en avstand $1$ fra hverandre. Da trenger vi en annen metode for å bestemme stigningstallet. 
-
-
-:::::::::::::::{explore} Utforsk 3
-Nedenfor vises grafen til en lineær funksjon $f$ i et interakivt vindu. Her kan du variere avstanden på $x$-aksen mellom to punkter $A$ og $B$ som ligger på grafen til $f$.
-
-Anna mener at hvis en funksjon går gjennom punktene $(x_1, y_1)$ og $(x_2, y_2)$, så kan vi bruke formelen 
-
-$$
-a = \dfrac{y_2 - y_1}{x_2 - x_1}
-$$
-
-til å regne ut stigningstallet $a$ til grafen til $f$.
-
-::::::::::::::{tab-set}
----
-class: tabs-parts
----
-:::::::::::::{tab-item} a
-Ut ifra figuren nedenfor, kan du si hva stigningstallet til grafen til $f$ er?
-
-::::{answer}
-$$
-a = 2
-$$
-::::
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} b
-Vi lar punktet $A = (x_1, y_1)$. Hvilket punkt er dette i figuren nedenfor? 
-
-::::{answer}
-$$
-A = (1, 3)
-$$
-::::
-
-:::::::::::::
-
-:::::::::::::{tab-item} c
-Endre på verdien til $x_2$ slik at $x_2 = 3$. 
-
-Prøv ut formelen til Anna og sjekk om du får det samme svaret som i **oppgave a**. 
-
-::::{solution}
-Når $x_2 = 3$, er punktet $B = (3, 7)$. Med formelen til Anna får vi derfor
-
-$$
-a = \dfrac{7 - 3}{3 - 1} = \dfrac{4}{2} = 2.
-$$
-
-Så vi får det samme svaret som i **oppgave a**.
-::::
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} d
-Endre på verdien til $x_1$ slik at $x_1 = -2$. 
-
-Prøv ut formelen til Anna og sjekk om du får det samme svaret som i **oppgave a**. 
-
-::::{solution}
-Når vi endrer på $x_1$ til å bli $x_1 = -2$, så får vi punktet $B = (-2, -3)$. Med formelen til Anna får vi derfor
-
-$$
-a = \drac{-3 - 3}{-2 - 1} = \dfrac{-6}{-3} = 2.
-$$
-
-Igjen, får vi samme svar som i **oppgave a**.
-::::
-
-:::::::::::::
-
-::::::::::::::
-
-
-:::{ggb} 720 700
----
-material_id: uxmuj9p5
----
-:::
-
-:::::::::::::::
-
-
----
-
 
 
 :::::::::::::::{summary} Topunktsformelen
@@ -468,7 +353,7 @@ $$
 \Delta y = y_2 - y_1 \qog \Delta x = x_2 - x_1
 $$
 
-Vi leser symbolet $\Delta$ som "endring i" slik at $\Delta y$ betyr "endring i $y$-verdien" og $\Delta x$ betyr "endring i $x$-verdien".
+Vi leser symbolet $\Delta$ som "endring i" slik at $\Delta y$ betyr "endring i $y$-verdien" og $\Delta x$ betyr "endring i $x$-verdien". Stigningstallet er altså endringen i $y$-verdien delt på endringen i $x$-verdien.
 
 :::{figure} ./figurer/teori/topunktsformelen/figur.svg
 ---
@@ -484,22 +369,81 @@ class: no-click, adaptive-figure
 ---
 
 
+:::::::::::::::{example} Eksempel 4
+Grafen til en lineær funksjon $f$ er vist i figuren nedenfor.
 
-:::::::::::::::{underveisoppgave} Underveisoppgave 4
-Grafen til en lineær funksjon $f$ går gjennom punktene $(-1, 2)$ og $(2, 5)$. 
+Bestem $f(x)$.
 
-Bestem stigningstallet $a$ til grafen til $f$ ved hjelp av topunktsformelen.
+:::{figure} ./figurer/eksempler/eksempel_4/figur.svg
+---
+class: no-click, adaptive-figure
+width: 70%
+---
+:::
 
-::::{answer}
+::::{solution}
+---
+dropdown: 0
+---
+En lineær funksjon på standardform er gitt ved
+
 $$
-a = 1
+f(x) = ax + b.
+$$
+
+Vi ser at grafen til $f$ skjærer $y$-aksen i $(0, -5)$ som betyr at $b = -5$. 
+
+Vi ser at grafen til $f$ også går gjennom punktet $(2, 1)$. Vi kan bruke topunktsformelen til å bestemme stigningstallet:
+
+$$
+a = \dfrac{y_2 - y_1}{x_2 - x_1} = \dfrac{1 - (-5)}{2 - 0} = \dfrac{6}{2} = 3
+$$
+
+Dermed er 
+
+$$
+f(x) = 3x - 5
 $$
 ::::
 
+:::::::::::::::
+
+---
+
+
+:::::::::::::::{exercise} Underveisoppgave 4
+Grafen til en lineær funksjon $f$ er vist i figuren nedenfor. 
+
+Bestem $f(x)$.
+
+
+:::{figure} ./figurer/underveisoppgaver/underveisoppgave_4/figur.svg
+---
+class: no-click, adaptive-figure
+width: 70%
+---
+:::
+
+
+::::{answer}
+$$
+f(x) = -2x + 4
+$$
+::::
 
 ::::{solution}
+Vi ser at grafen til $f$ skjærer $y$-aksen i $(0, 4)$ som betyr at $b = 4$. 
+
+Vi ser grafen også går gjennom punktet $(3, -2)$. Vi bestemmer stigningstallet med topunktsformelen:
+
 $$
-a = \dfrac{5 - 2}{2 - (-1)} = \dfrac{3}{3} = 1
+a = \dfrac{y_2 - y_1}{x_2 - x_1} = \dfrac{-2 - 4}{3 - 0} = \dfrac{-6}{3} = -2
+$$
+
+Dermed er 
+
+$$
+f(x) = -2x + 4
 $$
 ::::
 

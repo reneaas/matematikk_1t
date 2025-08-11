@@ -139,7 +139,7 @@ $$
 
 
 :::::::::::::::{exercise} Underveisoppgave 2
-Bestem vekstfaktoren til $30%$ nedgang.
+Bestem vekstfaktoren til $30\%$ nedgang.
 
 
 ::::{answer}
@@ -316,7 +316,7 @@ $$
 Det betyr at $f(x)$ er gitt ved
 
 $$
-f(x) = 2 \cdot (2 \sqrt[3]{2})^x \approx 2 \cdot 2.52^x
+f(x) = 2 \cdot \left(2 \sqrt[3]{2}\right)^x \approx 2 \cdot 2.52^x
 $$
 
 ::::
@@ -324,6 +324,64 @@ $$
 
 :::::::::::::::
 
+
+---
+
+:::::::::::::::{exercise} Underveisoppgave 3 
+
+:::{cas-popup}
+---
+layout: sidebar
+---
+:::
+
+
+En eksponentialfunksjon $f$ går gjennom punktene $(1, 10)$ og $(3, 40)$. 
+
+Bestem $f(x)$.
+
+
+:::{clear}
+:::
+
+
+::::{answer}
+$$
+f(x) = 5 \cdot 2^x 
+$$
+::::
+
+::::{solution}
+En eksponentialfunksjon $f$ er på formen 
+
+$$
+f(x) = a \cdot b^x.
+$$
+
+Vi bruker CAS for å bestemme $a$ og $b$ slik at grafen til $f$ går gjennom punktet $(1, 10)$ og $(3, 40)$:
+
+:::{figure} ./figurer/underveisoppgaver/underveisoppgave_3/sol.png
+---
+class: no-click, adaptive-figure
+width: 60%
+---
+:::
+
+Vi velge den løsningen som gir at $b \in \langle 0, \to\rangle$. Dermed får vi
+
+$$
+a = 5 \and b = 2. 
+$$
+
+Det betyr at 
+
+$$
+f(x) = 5 \cdot 2^x 
+$$
+
+
+::::
+:::::::::::::::
 
 ---
 
@@ -338,9 +396,6 @@ Prøv å følge eksempelet nedenfor ved å bruke CAS-vinduet!
 
 :::::::::::::::{example} Eksempel 4
 :::{cas-popup}
----
-layout: sidebar
----
 :::
 
 En pasient får en medisin. I tabellen nedenfor vises konsentrasjonen av medisinen i mg/mL i blodet til pasienten ved ulike tidspunkter etter at pasienten fikk medisinen.
@@ -382,6 +437,55 @@ $$
 
 ::::
 
+
+:::::::::::::::
+
+
+---
+
+
+:::::::::::::::{exercise} Underveisoppgave 4
+
+:::{cas-popup}
+:::
+
+
+
+Befolkningen i en kommune i noen av årene mellom 2015 og 2024 er vist i figuren nedenfor.
+
+| År | 2015 | 2017 | 2018 | 2020 | 2024 |
+|---|---|---|---|---|---|
+| Befolkningstall | 10000 | 10404 | 10612 | 11484 | 11944 |
+
+<br>
+
+Bestem en eksponentiell modell $B$ som gir befolkningstallet $B(x)$ der $x$ er antall år etter 2015. Det vil si $x = 0$ er 2015, $x = 1$ er 2016 og så videre. 
+
+
+
+::::{answer}
+$$
+B(x) = 10041.72 \cdot 1.02^x
+$$
+::::
+
+::::{solution}
+Vi skriver inn datamateriale i CAS, men passer på at vi skriver inn årstallene $x$ slik at de er antall år etter 2015. Deretter bruker vi `RegEksp(data)` for å bestemme den eksponentielle modellen:
+
+:::{figure} ./figurer/underveisoppgaver/underveisoppgave_4/sol.png
+---
+class: no-click, adaptive-figure
+width: 100%
+---
+:::
+
+Fra utskriften ser vi at 
+
+$$
+B(x) = 10041.72 \cdot 1.02^x
+$$
+
+::::
 
 :::::::::::::::
 

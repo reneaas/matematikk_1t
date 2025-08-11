@@ -20,8 +20,8 @@ def save(counter=[1]):
     turtle.update()
     """Grab the canvas, convert white→transparent, save PNG into temp_frames/"""
     # 1. PostScript dump -> Pillow Image
-    width = 300
-    height = 300
+    width = 150
+    height = 150
     ps = (
         turtle.getcanvas()
         .postscript(

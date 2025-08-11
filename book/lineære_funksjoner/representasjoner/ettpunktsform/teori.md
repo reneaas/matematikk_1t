@@ -157,20 +157,4 @@ $$
 :::::::::::::::
 
 
-## Ettpunktsformelen
-
-Ettpunktsformen til en lineær funksjon er en måte å uttrykke en sammenheng som kalles for **ettpunktsformelen**. Vi skal se nærmere på denne sammenhengen nå.
-
-
-:::::::::::::::{theory} Ettpunktsformelen
-En linje som har stigningstall $a$ og går gjennom et punkt $(x_0, y_0)$, så kan vi skrive likningen for linja som 
-
-$$
-y = a\cdot(x - x_0) + y_0
-$$
-
-
-
-:::::::::::::::
-
 

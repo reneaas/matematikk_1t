@@ -2,13 +2,17 @@ import plotmath
 
 
 def main(dirname, save):
+    #
+    # Define functions
+    def f(x):
+        return 2 * (x - 1)
 
     # List of functions and their labels.
-    functions = []
+    functions = [f]
 
     fig, ax = plotmath.plot(
         functions=functions,
-        fn_labels=False,
+        fn_labels=True,
         xmin=-6,
         xmax=6,
         ymin=-6,
@@ -18,40 +22,25 @@ def main(dirname, save):
         ystep=1,
         grid=True,
         lw=2.5,
-        alpha=0.8,
+        alpha=None,
         domain=False,
     )
 
-    A = (1, 2)
-    B = (-2, 3)
-    C = (3, -1)
-    D = (-5, -3)
-    E = (4, 4)
-    F = (2, -4)
+    fontsize = 20
+    for label in ax.get_xticklabels() + ax.get_yticklabels():
+        label.set_fontsize(fontsize)  # Set to desired font size
 
-    punkter = {"A": A, "B": B, "C": C, "D": D, "E": E, "F": F}
+    ax.yaxis.label.set_size(fontsize)  # Set y-axis label font size
+    ax.xaxis.label.set_size(fontsize)  # Set x-axis label font size
 
-    for punktnavn in punkter:
-        x, y = punkter.get(punktnavn)
-        ax.plot(x, y, "ko", markersize=8, alpha=0.7)
-
-        ax.text(
-            s=f"${punktnavn}$",
-            x=x + 0.2,
-            y=y - 0.2,
-            fontsize=16,
-            ha="left",
-            va="bottom",
-        )
+    ax.legend(fontsize=fontsize)
 
     # NOTE: Select an appropriate `dirname` to save the figure.
     # The directory `dirname` will be created automatically if it does not exist already.
     if save:
         fname = __file__.split("/")[-1].replace(".py", ".svg")
         plotmath.savefig(
-            dirname=dirname,
-            fname=fname,
-            transparent=True,
+            dirname=dirname, fname=fname
         )  # Lagrer figuren i `dirname`-directory
 
     if not save:

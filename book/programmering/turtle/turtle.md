@@ -551,32 +551,46 @@ file: ./utforsk/utforsk_4/utforsk_4.html
 
 :::::::::::::::{admonition} Underveisoppgave 4
 ---
-class: check, full-width
+class: check
 ---
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
-Nedenfor tegnes en geometrisk figur der 
-* Hvert linjestykke blir $5$ lenger for hver gang. 
-* Vinkelen mellom hvert linjestykke er $90$ grader. 
-* Det tegnes til sammen $20$ linjestykker. 
-* Det første linjestykke har lengde $1$.
 
 :::{figure} ./underveisoppgaver/oppgave_4/a/animasjon.gif
 ---
 width: 40%
 class: no-click, adaptive-figure
+align: right
 ---
 :::
 
-Fyll ut programmet slik at det tegnes figuren over.
 
-:::{raw} html
----
-file: ./underveisoppgaver/oppgave_4/a/python.html
----
+Til høyre tegnes en geometrisk figur der 
+* Hvert linjestykke blir $5$ lenger for hver gang. 
+* Vinkelen mellom hvert linjestykke er $90$ grader. 
+* Det tegnes til sammen $20$ linjestykker. 
+* Det første linjestykke har lengde $1$.
+
+Fyll ut programmet slik at det lager figuren.
+
+
+:::{turtle}
+from turtle import *
+
+n = 20 # antall linjestykker
+lengde = # FYLL INN: startlengde
+while n > 0:
+    # FYLL INN: flytt fremover
+    # FYLL INN: snu 90 grader
+
+    # ta bort et linjestykke
+    n = # FYLL INN
+
+    # Øk lengden
+    lengde = # FYLL INN
 :::
 
 
@@ -584,50 +598,74 @@ file: ./underveisoppgaver/oppgave_4/a/python.html
 :::::::::::::
 
 :::::::::::::{tab-item} b
-Nedenfor tegnes en spiral der 
+:::{figure} ./underveisoppgaver/oppgave_4/b/animasjon.gif
+---
+width: 50%
+class: no-click, adaptive-figure
+align: right
+---
+:::
+
+Til høyre tegnes en spiral der 
 
 * Hvert linjestykke blir $1$ lenger for hver gang. 
 * Vinkelen mellom hvert linjestykke er $150$ grader (så man snur seg $180-150=30$ grader mot venstre).
 * Til sammen tegnes det $30$ linjestykker. 
 * Det første linjestykke har lengde $1$.
 
-:::{figure} ./underveisoppgaver/oppgave_4/b/animasjon.gif
----
-width: 40%
-class: no-click, adaptive-figure
----
-:::
+Fyll ut programmet slik at det lager figuren.
 
-Fyll ut programmet slik at det tegner figuren over.
 
-:::{raw} html
----
-file: ./underveisoppgaver/oppgave_4/b/python.html
----
+:::{turtle}
+from turtle import *
+
+n = 20 # antall linjestykker
+lengde = # FYLL INN: startlengde
+while n > 0:
+    # FYLL INN: flytt fremover
+    # FYLL INN: snu 30 grader
+
+    # ta bort et linjestykke
+    n = # FYLL INN
+
+    # Øk lengden
+    lengde = # FYLL INN
 :::
 
 
 :::::::::::::
 
 :::::::::::::{tab-item} c
+
+:::{figure} ./underveisoppgaver/oppgave_4/c/animasjon.gif
+---
+width: 60%
+class: no-click, adaptive-figure
+align: right
+---
+:::
+
+
 Nedenfor tegnes det en spiral der
 * Lengden til hvert linjestykke er $10 \%$ lenger enn det forrige.
 * Vinkelen mellom hvert linjestykke er $140$ grader (hvor mange grader må du snu deg da?)
 * Den totale lengden av linjestykkene overgår ikke $1000$. 
 * Det første linjestykke har lengde $1$.
 
-:::{figure} ./underveisoppgaver/oppgave_4/c/animasjon.gif
----
-width: 40%
-class: no-click, adaptive-figure
----
-:::
+
+:::{turtle}
+from turtle import *
+
+total_lengde = 0
+lengde = 1
+while ????: # FYLL INN: 
+    # FYLL INN: flytt fremover
+    # FYLL INN: snu mot høyre
+
+    total_lengde = total_lengde + lengde
+    lengde = # FYLL INN: øk lengden
 
 
-:::{raw} html
----
-file: ./underveisoppgaver/oppgave_4/c/python.html
----
 :::
 
 :::::::::::::

@@ -31,8 +31,8 @@ def main(dirname, save):
     ax.plot(
         x0,
         y0,
-        "ro",
-        markersize=8,
+        "ko",
+        markersize=10,
         alpha=0.8,
     )
 
@@ -43,24 +43,23 @@ def main(dirname, save):
         fontsize=20,
         ha="center",
         va="center",
-        color="red",
     )
 
     ax.annotate(
         text="Skjæring med $y$-aksen\n Konstantleddet $b$",
         xy=(x0, y0),
-        xytext=(1, -1),
+        xytext=(2, -1),
         fontsize=20,
         arrowprops=dict(
             arrowstyle="->",
             lw=2,
-            color="red",
+            color="black",
             alpha=0.7,
             connectionstyle="arc3,rad=-0.4",
         ),
+        bbox=dict(boxstyle="round,pad=0.4", fc="white", ec="black", lw=1.5),
         horizontalalignment="left",
         verticalalignment="center",
-        color="red",
     )
 
     x0 = 2
@@ -68,8 +67,8 @@ def main(dirname, save):
     x1 = 3
     y1 = f(x1)
 
-    ax.hlines(y=y0, xmin=x0, xmax=x1, color="black", linestyle="--", lw=1)
-    ax.vlines(x=x1, ymin=y1, ymax=y0, color="blue", linestyle="--", lw=1)
+    ax.hlines(y=y0, xmin=x0, xmax=x1, color="black", linestyle="--", lw=2.5)
+    ax.vlines(x=x1, ymin=y1, ymax=y0, color="blue", linestyle="--", lw=2.5)
 
     ax.text(
         x=0.5 * (x0 + x1),
@@ -89,6 +88,15 @@ def main(dirname, save):
         verticalalignment="center",
         color="blue",
     )
+
+    fontsize = 20
+    for label in ax.get_xticklabels() + ax.get_yticklabels():
+        label.set_fontsize(fontsize)  # Set to desired font size
+
+    ax.yaxis.label.set_size(fontsize)  # Set y-axis label font size
+    ax.xaxis.label.set_size(fontsize)  # Set x-axis label font size
+
+    ax.legend(fontsize=fontsize)
 
     # NOTE: Select an appropriate `dirname` to save the figure.
     # The directory `dirname` will be created automatically if it does not exist already.
