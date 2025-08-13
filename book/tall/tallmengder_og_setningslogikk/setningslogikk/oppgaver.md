@@ -81,7 +81,7 @@ Q: Hvilket symbol kan stå i boksen? $$x \in \langle -2, 2] \quad \boxed{\phanto
 ---
 level: 2
 ---
-Vurder påstandene nedenfor er sanne. Hvis påstanden er sann, forklar hvorfor. Hvis den er usann, gi et moteksempel.
+Vurder om påstandene nedenfor er sanne. Hvis påstanden er sann, forklar hvorfor. Hvis den er usann, gi et moteksempel.
 
 
 ::::::::::::::{tab-set}
@@ -120,7 +120,7 @@ $$
 ---
 level: 2
 ---
-Vurder påstandene nedenfor er sanne. Hvis påstanden er sann, forklar hvorfor. Hvis den er usann, gi et moteksempel.
+Vurder om påstandene nedenfor er sanne. Hvis påstanden er sann, forklar hvorfor. Hvis den er usann, gi et moteksempel.
 
 
 ::::::::::::::{tab-set}
@@ -154,7 +154,7 @@ $$
 ---
 level: 2
 ---
-Vurder påstandene nedenfor er sanne. Hvis påstanden er sann, forklar hvorfor. Hvis den er usann, gi et moteksempel.
+Vurder om påstandene nedenfor er sanne. Hvis påstanden er sann, forklar hvorfor. Hvis den er usann, gi et moteksempel.
 
 ::::::::::::::{tab-set}
 ---
