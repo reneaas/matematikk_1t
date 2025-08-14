@@ -47,7 +47,7 @@ La oss se på et eksempel der vi ser på den grafiske sammenhengen med det algeb
 
 
 :::::::::::::::{example} Eksempel 1
-Nedenfor vises fire eksempler på grafene til andregradsfunksjoner og deres nullpunktsform.
+Nedenfor vises fire eksempler på grafene til andregradsfunksjoner og deres nullpunktsform. Legg merke til at hvis grafen bare har ett nullpunkt, så er $x_1 = x_2$. Vi kaller det for et **dobbelt** nullpunkt.
 
 
 
@@ -252,6 +252,28 @@ class: no-click, adaptive-figure
 width: 80%
 ---
 :::
+
+
+
+
+::::::::::::::{admonition} Bevis
+---
+class: theory, dropdown
+---
+Symmetrilinja ligger midt mellom nullpunktene. Det betyr at avstanden fra symmetrilinja til hvert nullpunkt er like. Da har vi:
+
+$$
+x_0 - x_1 = x_2 - x_0
+$$
+
+$$
+2x_0 = x_1 + x_2 
+$$
+
+$$
+x_0 = \dfrac{x_1 + x_2}{2}
+$$
+::::::::::::::
 
 
 

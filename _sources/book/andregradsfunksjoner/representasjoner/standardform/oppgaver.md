@@ -1890,3 +1890,143 @@ $$
 
 ::::::::::::::
 :::::::::::::::
+
+
+---
+
+
+:::::::::::::::{exercise} Oppgave 11 
+Siri har laget programmet nedenfor: 
+
+:::{code-block} python
+---
+linenos:
+---
+def f(x):
+    return x ** 2 + 2 * x - 15
+
+x = -5
+verdi = f(x)
+
+while x <= 5:
+
+    if f(x) < verdi:
+        verdi = f(x)
+
+    x = x + 1
+
+print(verdi)
+:::
+
+Hva finner Siri når hun kjører programmet?
+
+
+Hvilken verdi skrives ut?
+
+:::::::::::::::
+
+
+---
+
+
+:::::::::::::::{exercise} Oppgave 12
+Anna jobber med andregradsfunksjonen
+
+$$
+f(x) = x^2 - 4x + 5
+$$
+
+Hun ønsker å bestemme bunnpunktet med programmering og har laget en figur som illustrerer strategien hun vil bruke:
+
+:::{figure} ./figurer/oppgaver/oppgave_12/bunnpunkt.svg
+---
+class: no-click, adaptive-figure
+width: 70%
+---
+:::
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Bruk strategien til Anna og skriv ferdig programmet nedenfor.
+
+Bestem koordinatene til bunnpunktet til $f$ med programmet.
+
+
+
+::::{solution}
+Løsning med `for`{l=python}-løkke:
+
+
+:::{code-block} python
+---
+linenos:
+---
+def f(x):
+    return x**2 - 4*x + 5
+
+
+for x in range(0, 11):
+    if f(x) <= f(x + 1):
+        bunnpunkt = (x, f(x))
+        print(bunnpunkt)
+
+        break
+:::
+
+
+Løsning med `while`{l=python}-løkke:
+
+:::{code-block} python
+---
+linenos:
+---
+def f(x):
+    return x**2 - 4*x + 5
+
+
+x = 0
+while f(x) < f(x + 1):
+    x = x + 1
+
+
+bunnpunkt = (x, f(x))
+print(bunnpunkt)
+:::
+
+
+::::
+
+
+
+:::::::::::::
+
+
+
+:::::::::::::{tab-item} b
+Anna vil bruke en tilsvarende strategi til å bestemme toppunktet til 
+
+$$
+g(x) = -2x^2 + 8x - 4.
+$$
+
+Gjør nødvendige endringer i programmet slik at det finner toppunktet til $g$.
+
+:::::::::::::
+
+
+::::::::::::::
+
+
+::::{interactive-code}
+def f(x):
+    return x**2 - 4*x + 5
+
+
+# TODO: skriv kode her
+::::
+
+:::::::::::::::
