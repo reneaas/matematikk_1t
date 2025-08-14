@@ -1930,8 +1930,28 @@ $$
 ---
 
 
-
 :::::::::::::::{exercise} Oppgave 12
+En andregradsfunksjon $f$ har ett nullpunkt. Grafen til $f$ skjærer $y$-aksen i punktet $(0, 9)$.
+
+Bestem et mulig funksjonsuttrykk $f(x)$ for andregradsfunksjonen.
+
+
+::::{answer}
+$$
+f(x) = (x - 3)^2 = x^2 - 6x + 9
+$$
+::::
+
+
+:::::::::::::::
+
+
+
+---
+
+
+
+:::::::::::::::{exercise} Oppgave 13
 ---
 level: 3
 ---
