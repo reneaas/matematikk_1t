@@ -11,7 +11,25 @@ gutter: 3
 
 ::::{grid-item-card}
 ---
-link: algebra/intro
+link: tallregning/teori
+link-type: doc
+---
+**Tallregning**
+
+^^^
+$$
+a(b + c) = ab + ac
+$$
+
+$$
+(a + b)^2 = a^2 + 2ab + b^2
+$$
+
+::::
+
+::::{grid-item-card}
+---
+link: algebra/teori
 link-type: doc
 ---
 **Algebra**
@@ -29,10 +47,10 @@ $$
 
 ::::{grid-item-card}
 ---
-link: tallmengder_og_setningslogikk/intro
+link: tallmengder_og_setningslogikk/tallmengder/teori
 link-type: doc
 ---
-**Tallmengder og symboler** 
+**Tallmengder** 
 
 ^^^
 
@@ -50,16 +68,42 @@ link-type: doc
 
 ::::{grid-item-card}
 ---
-link: tallfølger/intro
+link: tallmengder_og_setningslogikk/setningslogikk/teori
 link-type: doc
 ---
-**Tallfølger**
+**Matematisk logikk og symboler** 
 
+^^^
+
+\begin{align*}
+    x = -2 \implies |x| = 2
+\end{align*}
+::::
+
+
+::::{grid-item-card}
+---
+link: tallfølger/formler/teori
+link-type: doc
+---
+**Formler**
 
 ^^^
 $$
 a_n = 2n - 1 \qfor n \in \mathbb{N}
 $$
+
+::::
+
+
+::::{grid-item-card}
+---
+link: tallfølger/programmering/teori
+link-type: doc
+---
+**Programmering av tallfølger**
+
+^^^
 
 :::{code-block} python
 for n in range(1, 6):
