@@ -109,7 +109,100 @@ $7$
 ---
 
 
-::::::::::::{exercise} Oppgave 2
+:::::::::::::::{exercise} Oppgave 2
+Primtallsfaktoriser tallene.
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+$$
+12
+$$
+
+::::{answer}
+$$
+2^2 \cdot 3
+$$
+::::
+
+::::{solution}
+$$
+12 = 4 \cdot 3 = 2^2 \cdot 3
+$$
+::::
+
+:::::::::::::
+
+:::::::::::::{tab-item} b
+$$
+30
+$$
+
+::::{answer}
+$$
+2 \cdot 3 \cdot 5
+$$
+::::
+
+::::{solution}
+$$
+30 = 2 \cdot 15 = 2 \cdot 3 \cdot 5
+$$
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+$$
+62
+$$
+
+::::{answer}
+$$
+2 \cdot 31
+$$
+::::
+
+::::{solution}
+$$
+62 = 2 \cdot 31
+$$
+::::
+
+:::::::::::::
+
+:::::::::::::{tab-item} d
+$$
+102
+$$
+
+::::{answer}
+$$
+2 \cdot 3 \cdot 17
+$$
+::::
+
+::::{solution}
+$$
+102 = 2 \cdot 51 = 2 \cdot 3 \cdot 17
+$$
+::::
+
+::::::::::::
+
+
+::::::::::::::
+
+:::::::::::::::
+
+
+---
+
+
+::::::::::::{exercise} Oppgave 3
 ---
 level: 1
 ---
@@ -209,7 +302,7 @@ $$
 
 ---
 
-::::::::::::{exercise} Oppgave 3
+::::::::::::{exercise} Oppgave 4
 ---
 level: 1
 ---
@@ -313,7 +406,7 @@ $$
 ---
 
 
-:::::::::::::::{exercise} Oppgave 4
+:::::::::::::::{exercise} Oppgave 5
 Regn ut.
 
 ::::::::::::::{tab-set}
@@ -442,7 +535,7 @@ $$
 
 
 
-::::::::::::{exercise} Oppgave 5
+::::::::::::{exercise} Oppgave 6
 ---
 level: 1
 ---
@@ -563,7 +656,7 @@ $$
 ---
 
 
-::::::::::::{exercise} Oppgave 6
+::::::::::::{exercise} Oppgave 7
 ---
 level: 1
 ---
@@ -696,7 +789,7 @@ $$
 ---
 
 
-::::::::::::{exercise} Oppgave 7
+::::::::::::{exercise} Oppgave 8
 ---
 level: 2
 ---
@@ -794,7 +887,7 @@ $$
 ---
 
 
-:::::::::::::::{exercise} Oppgave 8
+:::::::::::::::{exercise} Oppgave 9
 Skriv så enkelt som mulig.
 
 
@@ -905,7 +998,7 @@ $$
 ---
 
 
-:::::::::::::::{exercise} Oppgave 9
+:::::::::::::::{exercise} Oppgave 10
 Skriv om enkelt som mulig.
 
 ::::::::::::::{tab-set}
@@ -1007,7 +1100,7 @@ $$
 $$
 :::
 
-:::::::::::::::{exercise} Oppgave 10
+:::::::::::::::{exercise} Oppgave 11
 Skriv så enkelt som mulig.
 
 ::::::::::::::{tab-set}

@@ -655,34 +655,36 @@ $$
 I figuren nedenfor vises et kvadrat. Kvadratet er delt opp i mindre rektangler.
 
 
-:::{figure} ./figurer/bevis/bevis_4/figur_annotert.svg
+:::{figure} ./figurer/bevis/bevis_4/figur.svg
 ---
 class: no-click, adaptive-figure
-width: 
+width: 80%
 ---
 :::
 
-
-Arealet av det fargelagte området kan bestemmes direkte ved å ta arealet av de blå rektanglene:
-
-\begin{align*}
-\text{Areal} &= (a - b)^2 + b(a - b) + b(a - b) \\
-\\
-&= (a - b)^2 + 2b(a - b) \\
-\\
-&= (a - b)\left((a - b) + 2b\right) \\
-\\
-&= (a - b)(a + b)
-\end{align*}
-
-
-Arealet av det blå fargelagte området kan også bestemme ved å ta arealet av hele figuren og trekke fra arealet av det blå området: 
+Figuren er et kvadrat med sidelengder $a$. Det grå området er et kvadrat med sidelengder $b$. Derfor kan vi skrive arealet av det blå fargelagte området som:
 
 $$
 \text{Areal} = a^2 - b^2
 $$
 
-De to arealene må være like, og da får vi konjugatsetningen:
+
+For å bestemme et annet uttrykk for arealet av det blå fargelagte området, kan vi flytte det ene rektangelet og legge det oppå det andre:
+
+:::{figure} ./figurer/bevis/bevis_4/figur2.svg
+---
+class: no-click, adaptive-figure
+width: 80%
+---
+:::
+
+Da ser vi at hele det blå fargelagte området er et rektangel med sidelengdene $(a + b)$ og $(a - b)$ som betyr at arealet også kan skrives som
+
+$$
+\text{Areal} = (a + b)(a - b)
+$$
+
+De to arealene må være like, så da får vi konjugatsetningen:
 
 $$
 a^2 - b^2 = (a + b)(a - b)
