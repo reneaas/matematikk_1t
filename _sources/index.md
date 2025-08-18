@@ -3,13 +3,13 @@
 
 
 
-:::{raw} html
+<!-- :::{raw} html
 ---
 file: velkommen.html
 ---
-:::
+::: -->
 
-<br>
+
 
 :::::{grid} 1 1 2 3
 ---
@@ -153,10 +153,10 @@ $$
 
 ::::{grid-item-card}
 ---
-link: book/eksponentialfunksjoner_og_potensfunksjoner/intro
+link: book/modellering/intro
 link-type: doc
 ---
-**Eksponentialfunksjoner og potensfunksjoner** 
+**Modellering** 
 
 
 ^^^

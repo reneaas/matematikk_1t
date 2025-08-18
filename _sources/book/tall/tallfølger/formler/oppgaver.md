@@ -5,7 +5,9 @@
 ---
 level: 1
 ---
-Nedenfor vises noen figurer som følger et bestemt mønster. Vi tenker oss at figurene fortsetter etter samme mønster. La $S_n$ være antall sirkler i figur $n$. 
+Nedenfor vises noen figurer som følger et bestemt mønster. Vi tenker oss at figurene fortsetter etter samme mønster. 
+
+La $S_n$ være antall sirkler i figur $n$. 
 
 :::{figure} ./figurer/oppgaver/oppgave_1/figur.svg
 ---
@@ -76,7 +78,10 @@ Figur $30$ har $120$ sirkler siden $S_{30} = 4 \cdot 30 = 120$.
 ---
 level: 1
 ---
-Nedenfor vises noen figurer som følger et bestemt mønster. Vi tenker oss at figurene fortsetter etter samme mønster. La $S_n$ være antall fargelagte kvadrater i figur $n$.
+Nedenfor vises noen figurer som følger et bestemt mønster. Vi tenker oss at figurene fortsetter etter samme mønster. 
+
+La $S_n$ være antall fargelagte kvadrater i figur $n$.
+
 
 :::{figure} ./figurer/oppgaver/oppgave_2/figur_4n_plus_2.svg
 ---
@@ -126,7 +131,307 @@ Figur $20$ har $82$ sirkler siden $S_{20} = 4 \cdot 20 + 2 = 82$.
 
 ---
 
+
 :::::::::::::::{exercise} Oppgave 3
+---
+level: 2
+---
+Nedenfor vises noen figurer som følger et bestemt mønster. Vi tenker oss at figurene fortsetter etter samme mønster. 
+
+La $R_n$ være antall prikker i figur $n$.
+
+
+:::{figure} ./figurer/oppgaver/oppgave_3/figur_rektangulære.svg
+---
+width: 100%
+class: no-click, adaptive-figure
+---
+:::
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Bestem verdien til $R_5$. 
+
+::::{answer}
+$$
+R_5 = 30
+$$
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Bestem et uttrykk for $R_n$. 
+
+
+::::{answer}
+$$
+R_n = n(n + 1) \qder n \in \mathbb{N}
+$$
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+La $T_n$ være antall prikker i figur $n$ som er blå. 
+
+Bestem en formel for $T_n$. 
+
+::::{answer}
+$$
+T_n = \dfrac{R_n}{2} = \dfrac{n(n + 1)}{2} \qder n \in \mathbb{N}
+$$
+::::
+:::::::::::::
+
+::::::::::::::
+:::::::::::::::
+
+
+
+---
+
+
+:::::::::::::::{exercise} Oppgave 4
+Nedenfor vises noen figurer som følger et bestemt mønster. Vi tenker oss at figurene fortsetter etter samme mønster.
+
+Vi lar $K_n$ være antall fargelagte kvadrater i figur $n$.
+
+:::{figure} ./figurer/oppgaver/oppgave_4/figur.svg
+---
+width: 100%
+class: no-click, adaptive-figure
+---
+:::
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Bestem verdien til $K_1$, $K_2$ og $K_3$ fra figurene.
+
+
+::::{answer}
+$$
+K_1 = 4 \qog K_2 = 9 \qog K_3 = 16
+$$
+::::
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Bestem $K_4$.
+
+::::{answer}
+$$
+K_4 = 25
+$$
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+Bestem en formel for $K_n$. 
+
+
+:::{hints}
+Lag en formel for hver fargelagt del av figuren.
+:::
+
+::::{answer}
+$$
+K_n = n^2 + 2n + 1 = (n + 1)^2 \qder n \in \mathbb{N}
+$$
+::::
+
+:::::::::::::
+
+
+::::::::::::::
+
+:::::::::::::::
+
+
+
+---
+
+
+
+
+:::::::::::::::{exercise} Oppgave 5
+Nedenfor vises noen figurer som følger et bestemt mønster. Vi tenker oss at figurene fortsetter etter samme mønster. 
+
+La $F_n$ være antall fargelagte firkanter i figur $n$.
+
+
+:::{figure} ./figurer/oppgaver/oppgave_5/figur_katt.svg
+---
+width: 100%
+class: no-click, adaptive-figure
+---
+:::
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Bestem $F_1$, $F_2$ og $F_3$ fra figurene.
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Bestem $F_4$.
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+Lag en formel $F_n$ for antall fargelagte firkanter i figur $n$.
+:::::::::::::
+
+
+::::::::::::::
+
+
+:::::::::::::::
+
+
+
+---
+
+
+
+:::::::::::::::{exercise} Oppgave 6
+Nedenfor vises de tre første figurene i en figurfølge. Figurene tenker oss at figurene følger dette mønsteret videre.
+
+La $K_n$ være antall kvadrater i figur $n$.
+
+
+:::{figure} ./figurer/oppgaver/oppgave_6/figur.svg
+---
+class: no-click, adaptive-figure
+width: 100%
+---
+:::
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Bestem verdiene til $K_1$, $K_2$ og $K_3$ fra figurene.
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Bestem $K_4$.
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+Bestem en formel for $K_n$. 
+
+:::::::::::::
+
+
+::::::::::::::
+
+
+:::::::::::::::
+
+
+
+---
+
+
+:::::::::::::::{exercise} Oppgave 7
+Nedenfor vises de tre første figurene i en figurfølge. Figurene tenker oss at figurene følger dette mønsteret videre.
+
+La $K_n$ være antall kvadrater i figur $n$.
+
+
+:::{figure} ./figurer/oppgaver/oppgave_7/figur.svg
+---
+class: no-click, adaptive-figure
+width: 100%
+---
+:::
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Bestem $K_1$, $K_2$ og $K_3$. 
+
+
+:::::::::::::
+
+
+
+:::::::::::::{tab-item} b
+Bestem $K_4$. 
+
+
+:::::::::::::
+
+
+
+:::::::::::::{tab-item} c
+Bestem en formel for $K_n$.
+:::::::::::::
+
+
+
+::::::::::::::
+
+
+:::::::::::::::
+
+
+
+---
+
+
+:::::::::::::::{exercise} Oppgave 8
+Nedenfor vises de tre første figurene i en figurfølge. Figurene tenker oss at figurene følger dette mønsteret videre.
+
+La $F_n$ være antall firkanter i figur $n$.
+
+
+:::{figure} ./figurer/oppgaver/oppgave_8/figur.svg
+---
+class: no-click, adaptive-figure
+width: 100%
+---
+:::
+:::::::::::::::
+
+
+---
+
+
+:::::::::::::::{exercise} Oppgave 9
 ---
 level: 2
 ---
@@ -182,7 +487,7 @@ Leddet $n = 33$ har verdien $100$ siden $a_{33} = 3 \cdot 33 + 1 = 100$.
 ---
 
 
-:::::::::::::::{exercise} Oppgave 4
+:::::::::::::::{exercise} Oppgave 10
 ---
 level: 2
 ---
@@ -254,183 +559,7 @@ $$
 ---
 
 
-:::::::::::::::{exercise} Oppgave 5
----
-level: 2
----
-Nedenfor vises noen figurer som følger et bestemt mønster. Vi tenker oss at figurene fortsetter etter samme mønster. 
-
-La $R_n$ være antall prikker i figur $n$.
-
-
-:::{figure} ./figurer/oppgaver/oppgave_5/figur_rektangulære.svg
----
-width: 100%
-class: no-click, adaptive-figure
----
-:::
-
-
-::::::::::::::{tab-set}
----
-class: tabs-parts
----
-:::::::::::::{tab-item} a
-Bestem verdien til $R_5$. 
-
-::::{answer}
-$$
-R_5 = 30
-$$
-::::
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} b
-Bestem et uttrykk for $R_n$. 
-
-
-::::{answer}
-$$
-R_n = n(n + 1) \qder n \in \mathbb{N}
-$$
-::::
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} c
-La $T_n$ være antall prikker i figur $n$ som er blå. 
-
-Bestem en formel for $T_n$. 
-
-::::{answer}
-$$
-T_n = \dfrac{R_n}{2} = \dfrac{n(n + 1)}{2} \qder n \in \mathbb{N}
-$$
-::::
-:::::::::::::
-
-::::::::::::::
-:::::::::::::::
-
-
----
-
-
-:::::::::::::::{exercise} Oppgave 6
-Nedenfor vises noen figurer som følger et bestemt mønster. Vi tenker oss at figurene fortsetter etter samme mønster. 
-
-La $F_n$ være antall fargelagte firkanter i figur $n$.
-
-
-:::{figure} ./figurer/oppgaver/oppgave_6/figur_katt.svg
----
-width: 100%
-class: no-click, adaptive-figure
----
-:::
-
-
-::::::::::::::{tab-set}
----
-class: tabs-parts
----
-:::::::::::::{tab-item} a
-Bestem $F_1$, $F_2$ og $F_3$ fra figurene.
-
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} b
-Bestem $F_4$.
-
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} c
-Lag en formel $F_n$ for antall fargelagte firkanter i figur $n$.
-:::::::::::::
-
-
-::::::::::::::
-
-
-:::::::::::::::
-
-
----
-
-
-:::::::::::::::{exercise} Oppgave 7
-Nedenfor vises noen figurer som følger et bestemt mønster. Vi tenker oss at figurene fortsetter etter samme mønster.
-
-Vi lar $K_n$ være antall fargelagte kvadrater i figur $n$.
-
-:::{figure} ./figurer/oppgaver/oppgave_7/figur.svg
----
-width: 100%
-class: no-click, adaptive-figure
----
-:::
-
-
-::::::::::::::{tab-set}
----
-class: tabs-parts
----
-:::::::::::::{tab-item} a
-Bestem verdien til $K_1$, $K_2$ og $K_3$ fra figurene.
-
-
-::::{answer}
-$$
-K_1 = 4 \qog K_2 = 9 \qog K_3 = 16
-$$
-::::
-:::::::::::::
-
-
-:::::::::::::{tab-item} b
-Bestem $K_4$.
-
-::::{answer}
-$$
-K_4 = 25
-$$
-::::
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} c
-Bestem en formel for $K_n$. 
-
-
-:::{hints}
-Lag en formel for hver fargelagt del av figuren.
-:::
-
-::::{answer}
-$$
-K_n = n^2 + 2n + 1 = (n + 1)^2 \qder n \in \mathbb{N}
-$$
-::::
-
-:::::::::::::
-
-
-::::::::::::::
-
-:::::::::::::::
-
----
-
-
-:::{margin} Tips til oppgave 8
+:::{margin} Tips til oppgave 11
 $1 = (-1)^2 = (-1)^4 = (-1)^6 = \ldots$
 
 og 
@@ -439,7 +568,7 @@ $-1 = (-1)^3 = (-1)^5 = (-1)^7 = \ldots$
 :::
 
 
-:::::::::::::::{exercise} Oppgave 8
+:::::::::::::::{exercise} Oppgave 11
 ---
 level: 3
 ---

@@ -1,105 +1,25 @@
 # Oppgaver: Potensfunksjoner
 
 
-
-:::::::::::::::{admonition} Oppgave 1
----
-class: problem-level-1
----
+:::::::::::::::{exercise} Oppgave 1
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
-Bruk potensreglene til å skrive svaret som en potens med grunntall $2$.
+I figuren nedenfor vises grafene til potensfunksjonene
 
 $$
-2^3 \cdot 2^4
-$$
-
-:::::::::::::
-
-:::::::::::::{tab-item} b
-Bruk potensreglene til å skrive svaret som en potens av grunntall $2$. 
-
-$$
-\dfrac{2^2}{2^{-2}}
-$$
-
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} c
-Bruk potensreglene til å skrive svaret som en potens med grunntall $2$.
-
-$$
-(2^3)^4 \cdot 2^{-2}
-$$
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} d
-Bruk potensreglene til å skrive svaret som en potens med grunntall $3$. 
-
-$$
-\dfrac{3^2 \cdot 3^{-4} }{9^{-2}}
-$$
-
-:::::::::::::
-
-
-::::::::::::::
-
-:::::::::::::::
-
----
-
-
-:::::::::::::::{admonition} Oppgave 2
----
-class: problem-level-1
----
-Ta quizen! 
-
-:::{raw} html 
----
-file: quiz/oppgaver/quiz_1/quiz_1.html
----
-:::
-
-:::::::::::::::
-
-
----
-
-
-
-:::::::::::::::{admonition} Oppgave 3
----
-class: problem-level-1
----
-::::::::::::::{tab-set}
----
-class: tabs-parts
----
-:::::::::::::{tab-item} a
-I {numref}`fig-potensfunksjoner-oppgave-3-a` vises grafene til funksjoner gitt ved
-
-$$
-f(x) = x^2 \quad\quad g(x) = \sqrt{x} \quad\quad h(x) = \dfrac{1}{x}
+f(x) = x^2 \qog g(x) = x^{0.5} \qog h(x) = x^{-1}
 $$
 
 Koble sammen riktig funksjon med riktig graf.
 
-:::{figure} ./figurer/oppgaver/oppgave_3/a.svg
+:::{figure} ./figurer/oppgaver/oppgave_1/a.svg
 ---
-name: fig-potensfunksjoner-oppgave-3-a
-width: 100%
+width: 80%
 class: no-click, adaptive-figure
 ---
-viser grafene til tre funksjoner.
 :::
 
 
@@ -117,18 +37,17 @@ class: answer, dropdown
 
 
 :::::::::::::{tab-item} b
-I {numref}`fig-potensfunksjoner-oppgave-3-b` vises grafene til tre funksjoner gitt ved
+I figuren nedenfor vises grafene til potensfunksjonene
 
 $$
-f(x) = x^{-1} \quad\quad g(x) = \dfrac{2}{x} \quad\quad h(x) = \dfrac{4}{x^2}
+f(x) = x^{-1} \quad\quad g(x) = 2\cdot x^{-1} \quad\quad h(x) = 4 \cdot x^{-2}
 $$
 
 Koble sammen riktig funksjon med riktig graf.
 
-:::{figure} ./figurer/oppgaver/oppgave_3/b.svg
+:::{figure} ./figurer/oppgaver/oppgave_1/b.svg
 ---
-name: fig-potensfunksjoner-oppgave-3-b
-width: 100%
+width: 80%
 class: no-click, adaptive-figure
 ---
 viser grafene til tre funksjoner.
@@ -148,7 +67,7 @@ class: answer, dropdown
 
 
 :::::::::::::{tab-item} c
-I {numref}`fig-potensfunksjoner-oppgave-3-c` vises grafene til tre funksjoner gitt ved
+I figuren nedenfor vises grafene til tre funksjoner gitt ved
 
 $$
 f(x) = x^{1/3} \quad\quad g(x) = 2 x^{1/2} \quad\quad h(x) = 2 x^{2/3}
@@ -156,10 +75,9 @@ $$
 
 Koble sammen riktig funksjon med riktig graf.
 
-:::{figure} ./figurer/oppgaver/oppgave_3/c.svg
+:::{figure} ./figurer/oppgaver/oppgave_1/c.svg
 ---
-name: fig-potensfunksjoner-oppgave-3-c
-width: 100%
+width: 80%
 class: no-click, adaptive-figure
 ---
 viser grafene til tre funksjoner.
@@ -186,188 +104,31 @@ class: answer, dropdown
 ---
 
 
-:::::::::::::::{admonition} Oppgave 4
+:::::::::::::::{exercise} Oppgave 2
+
+:::{cas-popup}
 ---
-class: problem-level-2
----
-Adam har arvet $100 \, 000$ kr. 
-
-::::::::::::::{tab-set}
----
-class: tabs-parts
----
-:::::::::::::{tab-item} a
-Hvis Adam setter pengene i banken og får en rente på $3 \%$ per år, hvor mye penger har han etter $10$ år?
-
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-$$
-100 \, 000 \cdot 1.03^{10} \approx 134 \, 392 \text{ kr}
-$$
-::::
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} b
-Adam tenker å investere pengene i 10 år og vil undersøke hvor penger han kan få avhengig av renten. 
-
-Lag en modell $f$ som viser sammenhengen mellom $f(x)$ kr som Adam vil ha om 10 år og vekstfaktoren $x$. 
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-$$
-f(x) = 100 \, 000 \cdot x^{10}
-$$
-::::
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} c
-Hvor mye penger vil Adam ha etter $10$ år dersom renten er $5 \%$ per år?
-
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-$$
-f(1.05) = 100 \, 000 \cdot 1.05^{10} \approx 162 \, 889 \text{ kr}
-$$
-::::
-
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} d
-Hva må renta være for at Adam skal ha $200 000$ kr etter $10$ år?
-
-
-> Du kan bruke Geogebra eller Python nedenfor som hjelpemiddel.
-
-````{tab} Geogebra
-
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_4/cas_vindu.html
+layout: sidebar
 ---
 :::
 
-::::{admonition} Fasit
+
+
+:::{figure} ./figurer/oppgaver/oppgave_2/figur.svg
 ---
-class: answer, dropdown
----
-
-Vi kan løse likningen 
-
-$$
-f(x) = 200 \, 000
-$$
-
-eller vi kan gå direkte på å bestemme renten $r$ ved å løse likningen 
-
-$$
-100 \, 000 \cdot (1 + r)^{10} = 200 \, 000
-$$
-
-Vi bruker den siste strategien med CAS som vi kan få til med:
-
-:::{figure} ./ggb/oppgaver/oppgave_4/d_sol.png
----
-width: 100%
+width: 70%
 class: no-click, adaptive-figure
----
-:::
-
-som betyr at renten må være omtrent $r = 0.07 = 7 \%$ for at Adam skal ha $200 \, 000$ kr etter $10$ år.
-
-::::
-
-````
-
-
-````{tab} Python 
-
-:::{raw} html
----
-file: ./python/oppgaver/oppgave_4/kode.html
+align: left
 ---
 :::
 
 
-:::::{admonition} Fasit
----
-class: answer, dropdown
----
-Vi kan løse likningen 
-
-$$
-f(x) = 200 \, 000
-$$
-
-eller vi kan gå direkte på å bestemme renten $r$ ved å løse likningen 
-
-$$
-100 \, 000 \cdot (1 + r)^{10} = 200 \, 000
-$$
-
-Vi bruker den siste strategien med CAS som vi kan få til med koden:
-
-:::{code-block} python
----
-linenos:
----
-from casify import *
-
-likning = nløs("100_000 * (1 + rente)**10 = 200_000")
-
-print(likning)
+:::{clear}
 :::
 
-som gir utskriften
+Perioden til en planet er tiden det tar for planeten å gjennomføre en full rundtur rundt solen. 
 
-:::{code-block} console
-rente = -2.072 ∨ rente = 0.072
-:::
-
-Vi finner altså at renten må være $r = 0.072 = 7.2 \%$ for at Adam skal ha $200 \, 000$ kr etter $10$ år.
-
-:::::
-
-````
-
-:::::::::::::
-
-
-::::::::::::::
-
-:::::::::::::::
-
-
----
-
-
-:::::::::::::::{admonition} Oppgave 5
----
-class: problem-level-2
----
-Perioden til en planet er tiden det tar for en planet å gjennomføre et fullt omløp i banen sin rundt solen. 
-
-:::{figure} ./figurer/eksempler/eksempel_3/planetbane.svg
----
-width: 50%
-class: no-click, adaptive-figure
----
-:::
-
-Nedenfor vises en tabell over periodene til noen av planetene i solsystemet og deres avstand til solen. Avstandene er gitt i astronomiske enheter (AU) som er avstanden fra solen til jorden.
+Nedenfor vises en tabell over periodene til noen av planetene i solsystemet vårt og deres avstand til solen. Avstandene er gitt i astronomiske enheter (AU) der $1 \text{ AU} = 149.6 \text{ millioner km}$ er avstanden fra jorden til solen.
 
 | Planet | Avstand (AU) | Periode (år) |
 |--------|:--------------:|:--------------:|
@@ -376,220 +137,200 @@ Nedenfor vises en tabell over periodene til noen av planetene i solsystemet og d
 | Mars   | 1.52         | 1.88         |
 | Jupiter| 5.20         | 11.86        |
 | Saturn | 9.58         | 29.46        |
+<!-- | Uranus | 19.22        | 84.01        |
+| Neptun | 30.05        | 164.79       | -->
+
+<br>
+
+
 
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
-Lag en modell $P$ som gir perioden til en planet i $P(x)$ år når avstanden til solen er $x$ AU på formen
+Lag en modell på formen
 
 $$
-P(x) = a \cdot x^b.
+P(x) = a \cdot x^b
 $$
 
+som viser sammenhengen mellom perioden $P(x)$ i år og avstanden $x$ i AU. 
 
-:::::{admonition} Fasit
+:::::::::::::
+
+
+
+:::::::::::::{tab-item} b
+Hva er perioden til jorda, ifølge modellen din? 
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+Neptun er den planeten som ligger lengst unna solen med en avstand på ca. $30.33 \, \mathrm{AU}$. 
+
+Hvor lang tid bruker Neptun på én runde rundt solen, ifølge modellen din? 
+:::::::::::::
+
+
+:::::::::::::{tab-item} d
+Pluto er en dvergplanet som bruker hele 247.94 år på én runde rundt solen.
+
+Hvor langt unna solen er Pluto, ifølge modellen din? 
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} e
+Johannes Kepler var en astronom som levde rundt år 1600. Han oppdaget en lov som vi i dag kaller for Keplers 3.lov:
+
+> For perioden $P$ og avstanden $x$ til en planet, så er $P^2$ proporsjonal med $x^3$. Det betyr at det finnes en konstant $k$ slik at $P^2 = k \cdot x^3$.
+
+
+Undersøk om modellen din samsvarer med Keplers 3.lov.
+
+:::::::::::::
+
+
+
+::::::::::::::
+:::::::::::::::
+
+
+
 ---
-class: answer, dropdown
+
+
+:::::::::::::::{exercise} Oppgave 3
+
+:::{cas-popup}
 ---
-
-$$
-P(x) \approx 1 \cdot x^{1.5}
-$$
-
-````{tab} Geogebra 
-
-Bruker `RegPot` for å lage en potensfunksjon med regresjon:
-
-:::{figure} ./ggb/oppgaver/oppgave_5/a_sol.png
----
-width: 100%
-class: no-click, adaptive-figure
+layout: sidebar
 ---
 :::
 
-````
 
 
-````{tab} Python
-
-
-:::{code-block} python
+:::{figure} ./figurer/oppgaver/oppgave_3/figur.svg
 ---
-linenos:
+class: no-click, adaptive-figure
+width: 100%
+align: left
 ---
-from casify import *
+:::
 
-xdata = [0.39, 0.72, 1.52, 5.2, 9.58]
-ydata = [0.24, 0.62, 1.88, 11.86, 29.46]
-modell = "a * x ** b"
+:::{clear}
+:::
 
-# Utfører regresjon
-P = reg(
-    modell=modell,
-    xdata=xdata,
-    ydata=ydata,
-)
+Tiden det tar for en pendel å svinge frem og tilbake én gang kalles for perioden til pendelen.
 
-print(P)
-::: 
 
-:::{code-block} console
-       1.49
-1.015*x  
-::: 
+I tabellen nedenfor vises perioden til en pendel for ulike snorlengder. 
 
-som gir:
+
+
+|Snorlengde (meter)| $0.1$ | $0.3$ | $0.5$ | $0.8$ | $1.0$ | $1.3$ | $1.6$ | $2.0$ |
+|:-------------------|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
+|**Periode (sekunder)** | $0.69$ | $1.17$ | $1.44$ | $1.82$ | $2.08$ | $2.27$ | $2.53$ | $2.80$ |
+
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Lag en modell $T$ på formen
 
 $$
-P(x) = 1.015 \cdot x^{1.49}
+T(x) = a \cdot x^{b}
 $$
 
-
-````
-
-:::::
+der $T(x)$ er perioden i sekunder for en pendel med en snorlengde på $x$ meter.
 
 :::::::::::::
 
 
 :::::::::::::{tab-item} b
-Regn ut perioden til en planet som er $1$ AU fra solen.
-
-Er svaret rimelig? 
-
-:::::{admonition} Fasit
----
-class: answer, dropdown
----
-
-````{tab} Geogebra
-Vi regner ut $P(1)$ med modellen vi bestemte i **a**:
-
-:::{figure} ./ggb/oppgaver/oppgave_5/b_sol.png
----
-width: 100%
-class: no-click, adaptive-figure
----
-:::
-
-som gir en periode på $P(1) \approx 1$ år som stemmer godt overens med at dette er perioden til jorda.
-
-````
+Hva er perioden til en pendel med en snorlengde på $1.5$ meter, ifølge modellen din?
 
 
-````{tab} Python 
-Vi utvider programmet fra **a** med følgende kodelinje:
-
-:::{code-block} python
-print(P(1)) # Periode til planet 1 AU unna sola (aka jorda)
-:::
-
-som gir utskriften 
-
-:::{code-block} console
-1.01500000000000
-:::
-
-Som betyr at $P(1) \approx 1.015$ år som stemmer godt overens med jordens periode er $1$ år. 
-
-````
-
-:::::
 
 :::::::::::::
+
 
 :::::::::::::{tab-item} c
-Uranus har en periode på $84.01$ år. 
 
-
-Bruk modellen din til å anslå avstanden til Uranus og sammenlign med den virkelige avstanden på $19.22$ AU.
-
-
-:::::{admonition} Fasit
+:::{figure} ./bilder/oppgaver/oppgave_3/pendel.png
 ---
-class: answer, dropdown
----
-Vi må løse likningen $P(x) = 84.01$ for $x$ for å bestemme perioden til Uranus. 
-
-````{tab} Geogebra
-Vi utvider CAS-vinduet med å løse likningen
-
-:::{figure} ./ggb/oppgaver/oppgave_5/c_sol.png
----
-width: 100%
-class: no-click, adaptive-figure
+class: no-click
+width: 60%
+align: right
 ---
 :::
 
-Ut ifra modellen vår er avstanden til Uranus $x \approx 19.2$ AU. I virkeligheten er den $19.22$ AU, så modellen gir en god tilnærming.
 
-````
+På Universitetet i Oslo, er en såkalt **Foucaults pendel** bygget for å demonstrere at jorden roterer. Pendelen sin periode er omtrent på $7.5$ sekunder. Pendelen er ca. $20$ cm over bakken på sitt laveste.
 
-````{tab} Python 
-Vi utvider programmet fra **a** og **b** for å løse likningen $P(x) = 84.01$:
+Hvor høyt er taket over bakken der pendelen henger?
+:::::::::::::
 
-:::{code-block} python
-avstand_uranus = nløs("P(x) = 84.01")
-print(avstand_uranus)
-:::
 
-som gir utskriften
+:::::::::::::{tab-item} d
+Fra fysikken, er perioden $T$ til en pendel med snorlengde $L$ omtrentlig gitt ved formelen
 
-:::{code-block} console
-x = 19.371
-:::
+$$
+T = 2\pi \sqrt{\dfrac{L}{g}}
+$$
 
-som betyr at avstanden ifølge modellen vår er $x \approx 19.37$ AU som stemmer godt overens med den virkelige avstanden på $19.22$ AU.
+der $g = 9.82 \, \mathrm{m/s^2}$ (meter per sekund per sekund) er tyngdeakselerasjonen i Oslo.
 
-````
-:::::
+Undersøk om modellen din samsvarer med denne formelen.
 
 :::::::::::::
+
+
 ::::::::::::::
-
-> Du kan bruke Geogebra eller Python nedenfor for å løse oppgavene.
-
-````{tab} Geogebra 
-
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_5/oppgave_5.html
----
-:::
-
-````
-
-````{tab} Python 
-
-:::{raw} html
----
-file: ./python/oppgaver/oppgave_5/oppgave_5.html
----
-:::
-
-````
 
 
 :::::::::::::::
 
 
 
-
-:::::::::::::::{admonition} Oppgave 6
 ---
-class: problem-level-3
----
-Kokepunktet til vann varierer med lufttrykket. Lufttrykket på sin side varierer med høyden over havet. I tabellen nedenfor vises kokepunktet til vann ved ulike høyder over havet.
 
-| Lufttrykk (hPa) | Kokepunkt (°C) |
-|-----------------|----------------|
-| 1000            | 100            |
-| 800             | 92.3           |
-| 600             | 84.9           |
-| 500             | 81.4           |
-| 100             | 48.9           |
+
+:::::::::::::::{exercise} Oppgave 4
+
+:::{cas-popup}
+---
+layout: sidebar
+---
+:::
+
+
+:::{figure} ./figurer/oppgaver/oppgave_4/figur.svg
+---
+class: no-click, adaptive-figure
+width: 100%
+align: left
+---
+:::
+
+:::{clear}
+:::
+
+
+Når en kule blir sluppet fra forskjellige høyder, vil det ta lenger og lenger tid før kulen treffer bakken.
+
+I tabellen nedenfor vises tiden det tar for en kule å treffe bakken når den slippes fra ulike høyder.
+
+
+| Høyde (meter) | $0.5$ | $1.0$ | $1.5$ | $2.0$ | $2.5$ | $3.0$ |
+|:--------------|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
+| **Tid (sekunder)** | $0.32$ | $0.47$ | $0.58$ | $0.63$ | $0.72$ | $0.82$ |
 
 
 
@@ -598,245 +339,71 @@ Kokepunktet til vann varierer med lufttrykket. Lufttrykket på sin side varierer
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
-
-Bestem en modell $f$ på formen 
-
-$$
-f(x) = a \cdot x^b
-$$
-
-som gir kokepunktet til vann i $f(x)$ $^\circ \mathrm{C}$ ved et lufttrykk på $x$ hPa.
-
-
-:::::{admonition} Fasit
----
-class: answer, dropdown
----
-Vi bruker regresjon til å bestemme $f(x)$. 
-
-
-````{tab} Geogebra
-
-:::{figure} ./ggb/oppgaver/oppgave_6/a_sol.png
----
-width: 100%
-class: no-click, adaptive-figure
----
-:::
-
-````
-
-````{tab} Python 
-
-
-:::{code-block} python
----
-linenos:
----
-from casify import *
-
-xdata = [1000, 800, 600, 500, 100] # lufttrykk
-ydata = [100, 92.3, 84.9, 81.4, 48.9] # kokepunkt
-modell = "a * x ** b"
-
-
-f = reg(
-    modell=modell,
-    xdata=xdata,
-    ydata=ydata,
-)
-
-
-print(f) # Skriver ut f(x)
-:::
-
-som gir utskriften
-
-:::{code-block} console
-        0.308
-11.904*x     
-:::
-
-som betyr at 
+Lag en modell $T$ på formen
 
 $$
-f(x) = 11.904 \cdot x^{0.308}
+T(x) = a \cdot x^{b}
 $$
 
-````
-
-
-:::::
-
-
+der $T(x)$ er tiden i sekunder det tar for en kule å treffe bakken når den slippes $x$ meter over bakken.
 
 :::::::::::::
+
 
 
 :::::::::::::{tab-item} b
-Lufttrykket synker med ca. $12 \%$ per km i høyden. 
+Hvor lang tid tar det før en kule treffer bakken dersom den slippes fra $10$ meter, ifølge modellen?
 
-Bestem en modell $g$ som gir lufttrykket $g(x)$ hPa ved en høyde på $x$ km over havnivået.
-
-
-:::::{admonition} Fasit
----
-class: answer, dropdown
----
-$$
-g(x) = 1000 \cdot 0.88^x
-$$
-:::::
 
 :::::::::::::
 
+
 :::::::::::::{tab-item} c
-Bestem hvor langt over bakken lufttrykket er $300$ hPa.
+En kule ble sluppet fra en bro og traff bakken etter $3$ sekunder.
 
+Hvor høy var broen?
 
-:::::{admonition} Fasit
----
-class: answer, dropdown
----
-Vi må løse likningen $g(x) = 300$ for å bestemme hvor langt over bakken lufttrykket er $300$ hPa. 
-
-````{tab} Geogebra  
-
-:::{figure} ./ggb/oppgaver/oppgave_6/c_sol.png
----
-width: 100%
-class: no-click, adaptive-figure
----
-:::
-
-````
-
-````{tab} Python 
-Vi utvider programmet fra **a** med kodelinjene:
-
-:::{code-block} python
-g = funksjon("1000 * 0.88 ** x")
-høyde = nløs("g(x) = 300")
-
-print(høyde)
-:::
-
-som gir utskriften:
-
-:::{code-block} console
-x = 9.418
-:::
-
-som betyr at lufttrykket er $300$ hPa ca. $9.42$ km over bakken.
-
-````
-
-:::::
 
 :::::::::::::
 
 
 :::::::::::::{tab-item} d
-Bestem hvor langt over bakken kokepunktet til vann er $30 \, ^\circ \mathrm{C}$.
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-Vi løser dette problemet i to steg:
-1. Vi finner ved hvilket trykk kokepunktet er $30 \, ^\circ \mathrm{C}$ med $f(x)$. Dette ved å løse likningen $f(x) = 30$.
-2. Vi finner hvor langt over bakken dette trykket er med $g(x)$. Dette ved å løse likningen $g(x) = \text{trykket fra steg 1}$.
-
-
-````{tab} Geogebra 
-
-<br>
-
-1. Vi løser først likning $f(x) = 30$ med CAS-vinduet som forteller oss hvor høyt trykket er for at kokepunktet til vann er $30 \, ^\circ \mathrm{C}$. Dette ga et lufttrykk på $20.44$ hPa.
-2. Deretter løser vi likningen $g(x) = 20.44$ som forteller oss hvor høyt over bakken dette trykket er. Dette ga en høyde på $30.43$ km.
-
-:::{figure} ./ggb/oppgaver/oppgave_6/d_sol.png
----
-width: 100%
-class: no-click, adaptive-figure
----
-:::
-
-Kokepunktet til vann er altså $30 \, ^\circ \mathrm{C}$ ca. $30.43$ km over bakken, ifølge modellene.
-
-````
-
-
-````{tab} Python 
-Først løser vi likningen $f(x) = 30$ med kodelinjene:
-
-:::{code-block} python
-trykk = nløs("f(x) = 30")
-print(trykk)
-:::
-
-som gir utskriften
-
-:::{code-block} console
-x = 20.107
-:::
-
-som betyr at kokepunktet til vann er $30 \, ^\circ \mathrm{C}$ ved et trykk på $20.107$ hPa. For å bestemme hvilken høyde dette svarer til, løser vi likningen
+En modell fra fysikken forutsier at tiden $t$ det tar for en kule å treffe bakken når den slippes fra en høyde $h$ er gitt ved formelen
 
 $$
-g(x) = 20.107
+t = \sqrt{\dfrac{2h}{g}}
 $$
 
-som vi kan gjøre med kodelinjene:
+der $g = 9.82 \, \mathrm{m/s^2}$ (meter per sekund per sekund) er tyngdeakselerasjonen i Oslo.
 
-:::{code-block} python
-høyde = nløs("g(x) = 20.107")
-print(høyde)
-:::
-
-som gir utskriften
-
-:::{code-block} console
-x = 30.561
-:::
-
-som betyr at kokepunktet til vann er $30 \, ^\circ \mathrm{C}$ ca. $30.56$ km over bakken, ifølge modellene.
-
-````
-
-::::
-
-:::::::::::::
-
+Undersøk om modellen din samsvarer med denne formelen.
 
 ::::::::::::::
-
-
-> Nedenfor kan du bruke Geogebra eller Python som hjelpemiddel.
-
-````{tab} Geogebra
-
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_6/cas.html
----
-:::
-
-````
-
-
-````{tab} Python 
-
-:::{raw} html
----
-file: ./python/oppgaver/oppgave_6/kode.html
----
-:::
-
-
-````
 
 
 :::::::::::::::
 
 
+---
+
+
+:::::::::::::::{exercise} Oppgave 5
+
+:::{cas-popup}
+---
+layout: sidebar
+---
+:::
+
+
+
+For å sende raketter til verdensrommet, så må rakettene minst oppnå en bestemt fart for å unnslippe jordens tyngdefelt. Vi kaller denne farten for **unnslipningsfarten**. Farten er avhengig både av hvor tung en planet er og hvor stor radius planeten har. 
+
+I tabellen nedenfor vises unnslipningsfarten for ulike planter i solsystemet vårt og hvor tunge planetene er i antall jordmasser. Det betyr at 1 jordmasse er like tung som jorden, 2 jordmasser er dobbelt så tungt som jorden, og 0.1 er $10\%$ av jordens tyngde.
+
+
+| Masse (jordmasser) | 0.06 | 0.815 | 1.0 | 0.1075 | 317.8 |
+|:--|:---:|:---:|:---:|:---:|:---:|
+| Unnslipningsfart (km/s) | 4.26 | 10.38 | 11.20 | 5.04 | 60.32 |
+
+:::::::::::::::

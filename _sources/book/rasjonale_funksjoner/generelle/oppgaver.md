@@ -2,10 +2,8 @@
 
 
 
-:::::::::::::::{admonition} Oppgave 1
----
-class: problem-level-1
----
+:::::::::::::::{exercise} Oppgave 1
+
 Bestem nullpunktene til funksjonene.
 
 ::::::::::::::{tab-set}
@@ -191,10 +189,8 @@ $$
 ---
 
 
-:::::::::::::::{admonition} Oppgave 2
----
-class: problem-level-1
----
+:::::::::::::::{exercise} Oppgave 2
+
 **Bruk polynomdivisjon** til å bestemme likningene til de horisontale eller skrå asymptotene til funksjonene.
 
 ::::::::::::::{tab-set}
@@ -337,10 +333,8 @@ Tellergraden er lavere enn nevnergraden som betyr at telleren allerede *er* et r
 ---
 
 
-:::::::::::::::{admonition} Oppgave 3
----
-class: problem-level-1
----
+:::::::::::::::{exercise} Oppgave 3
+
 Bestem likningene til de vertikale asymptotene til hver av funksjonene (dersom de eksisterer).
 
 ::::::::::::::{tab-set}
@@ -520,10 +514,8 @@ Vi ser at selv om $x = -1$ er et bruddpunkt for $p$ siden det er nullpunktet til
 
 
 
-:::::::::::::::{admonition} Oppgave 4
----
-class: problem-level-2
----
+:::::::::::::::{exercise} Oppgave 4
+
 En rasjonal funksjon $f$ er gitt ved 
 
 $$
@@ -556,10 +548,8 @@ width: 100%
 
 ---
 
-:::::::::::::::{admonition} Oppgave 5
----
-class: problem-level-2
----
+:::::::::::::::{exercise} Oppgave 5
+
 To rasjonale funksjoner $f$ og $g$ er gitt ved 
 
 $$
@@ -609,10 +599,8 @@ width: 100%
 
 ---
 
-:::::::::::::::{admonition} Oppgave 6
----
-class: problem-level-2
----
+:::::::::::::::{exercise} Oppgave 6
+
 To rasjonale funksjoner $f$ og $g$ er gitt ved 
 
 $$
@@ -663,10 +651,8 @@ width: 100%
 
 ---
 
-:::::::::::::::{admonition} Oppgave 7
----
-class: problem-level-2
----
+:::::::::::::::{exercise} Oppgave 7
+
 En rasjonal funksjon $f$ er gitt ved 
 
 $$
@@ -869,10 +855,8 @@ $$
 ---
 
 
-:::::::::::::::{admonition} Oppgave 8
----
-class: problem-level-2
----
+:::::::::::::::{exercise} Oppgave 8
+
 En rasjonal funksjon $f$ er gitt ved 
 
 $$
@@ -1121,10 +1105,8 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 9
----
-class: problem-level-3
----
+:::::::::::::::{exercise} Oppgave 9
+
 > I 1T skal du ikke lære å finne $f'(x)$ for den deriverte til en rasjonal funksjon $f$. Likevel kan vi finne ut mye om $f'$ fra grafen til $f$.
 
 I {numref}`fig-generelle-rasjonale-funksjoner-oppgave-9-graf` vises grafen til en rasjonal funksjon $f$ gitt ved 
@@ -1232,10 +1214,8 @@ class: no-click, adaptive-figure
 
 ---
 
-:::::::::::::::{admonition} Oppgave 10
----
-class: problem-level-3
----
+:::::::::::::::{exercise} Oppgave 10
+
 
 I {numref}`fig-generelle-rasjonale-funksjoner-oppgave-10-graf` vises grafen til en rasjonal funksjon $f$ gitt ved 
 
@@ -1355,10 +1335,95 @@ class: no-click, adaptive-figure
 ---
 
 
-:::::::::::::::{admonition} Oppgave 11
+:::::::::::::::{exercise} Oppgave 11
+
+
+Nedenfor ser du grafen til en funksjon $f$ gitt ved
+
+$$
+f(x) = \dfrac{8}{x^2 + 20}
+$$
+
+Rektangelet under grafen har hjørner i punktene $(0, 0)$, $(5, 0)$, $(5, f(5))$ og $(0, f(5))$. 
+
+:::{figure} ./figurer/oppgaver/oppgave_11/figur.svg
 ---
-class: problem-level-3
+class: no-click, adaptive-figure
+width: 70%
 ---
+:::
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+
+:::{cas-popup}
+---
+layout: sidebar
+---
+:::
+
+
+Bestem arealet av rektangelet.
+
+
+:::::::::::::
+
+
+
+:::::::::::::{tab-item} b
+
+:::{ggb-popup} 500 300
+---
+layout: sidebar
+perspective: S
+---
+:::
+
+
+
+Lag en systematisk oversikt med utgangspunkt i tabellen nedenfor som viser arealet av rektanglene som har hjørner i punktene $(0, 0)$, $(n, 0)$, $(n, f(n))$ og $(0, f(n))$ for $n \in \{1, 2, \ldots, 10\}$
+
+| $n$ | $f(n)$ | Areal |
+|:---:|:---:|:---:|
+| 1 | | |
+| 2 | | |
+| 3 | | |
+| 4 | | |
+| $\vdots$ | $\vdots$ | $\vdots$ |
+| 10 |  | |
+
+:::::::::::::
+
+
+
+:::::::::::::{tab-item} c
+:::{cas-popup}
+---
+layout: sidebar
+---
+:::
+
+
+Bestem $k \in \langle 0, \to \rangle$ slik at arealet av rektangelet hjørnene $(0, 0)$, $(k, 0)$, $(k, f(k))$ og $(0, f(k))$ er størst mulig.
+:::::::::::::
+
+
+
+::::::::::::::
+
+:::::::::::::::
+
+
+
+---
+
+
+:::::::::::::::{exercise} Oppgave 12
+
 En rasjonal funksjon $f$ er gitt ved 
 
 $$

@@ -17,10 +17,7 @@ file: ./quiz/quiz_2/quiz_2.html
 
 ---
 
-:::::::::::::::{admonition} Oppgave 2
----
-class: problem-level-1
----
+:::::::::::::::{exercise} Oppgave 2
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
@@ -135,10 +132,7 @@ $$
 
 
 
-:::::::::::::::{admonition} Oppgave 3
----
-class: problem-level-1
----
+:::::::::::::::{exercise} Oppgave 3
 En rasjonal funksjon $f$ er gitt ved 
 
 $$
@@ -238,10 +232,7 @@ class: no-click, adaptive-figure
 ---
 
 
-:::::::::::::::{admonition} Oppgave 4
----
-class: problem-level-2
----
+:::::::::::::::{exercise} Oppgave 4
 En rasjonal funksjon $f$ er gitt ved 
 
 $$
@@ -322,10 +313,7 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 5
----
-class: problem-level-2
----
+:::::::::::::::{exercise} Oppgave 5
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
@@ -397,10 +385,7 @@ $$
 ---
 
 
-:::::::::::::::{admonition} Oppgave 6
----
-class: problem-level-2
----
+:::::::::::::::{exercise} Oppgave 6
 En rasjonal funksjon $f$ er gitt ved 
 
 $$
@@ -477,10 +462,8 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 7
----
-class: problem-level-2
----
+:::::::::::::::{exercise} Oppgave 7
+
 En rasjonal funksjon $f$ er gitt ved 
 
 $$
@@ -560,27 +543,86 @@ $$
 :::::::::::::::
 
 
+
 ---
 
 
-:::::::::::::::{admonition} Oppgave 8
----
-class: problem-level-3
----
-En rasjonal funksjon $f$ har asymptoter i $x = -2$ og $y = 4$. 
 
-Bestem hvilket punkt grafen til $f$ **ikke** kan skjære gjennom $x$-aksen. 
+:::::::::::::::{exercise} Oppgave 8
 
-::::{admonition} Fasit
+:::{figure} ./figurer/oppgaver/oppgave_8/figur.svg
 ---
-class: answer, dropdown
+class: no-click, adaptive-figure
+width: 70%
 ---
-$$
-x = -2.
-$$
-::::
+:::
+
+
+Figuren ovenfor vises grafen til en rasjonal funksjon $f(x) = \dfrac{1}{x}$ og tangenten til grafen til $f$ i punktet $(s, f(s))$. 
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+:::{cas-popup}
+---
+layout: sidebar
+---
+:::
+
+
+
+Bestem likningen for tangenten.
+
+
+:::::::::::::
+
+
+
+:::::::::::::{tab-item} b
+:::{cas-popup}
+---
+layout: sidebar
+---
+:::
+
+
+Tangenten skjærer koordinataksene i punktene $A$ og $B$.
+
+Bestem koordinatene til $A$ og $B$ uttrykt ved $s$.
+:::::::::::::
+
+
+
+:::::::::::::{tab-item} c
+
+:::{cas-popup}
+---
+layout: sidebar
+---
+:::
+
+
+Bestem arealet av $\triangle OAB$ 
+
+
+
+:::::::::::::
+
+
+
+::::::::::::::
 
 :::::::::::::::
+
+
+
+---
+
+
+
+
 
 
 

@@ -1,4 +1,4 @@
-# Modeller
+# Modellering
 
 
 :::{goals} Læringsmål
@@ -16,3 +16,19 @@ class: no-click, adaptive-figure
 width: 100%
 ---
 :::
+
+
+
+## Modeller for praktiske situasjoner
+
+
+### Bestemme modeller ved regresjon
+
+
+### Praktisk betydning av vekstfart
+
+
+
+
+
+## Optimeringsmodeller
