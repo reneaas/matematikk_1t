@@ -141,7 +141,7 @@ print(y)
 :::
 ```
 
-Noen ganger er det ikke en entydig rekkefølge i et program. Da kan vi koble sammen linjene ved å skrive dem i grupper ved å separere dem med `;` (noe Python opprinnelig støtter fra før av): 
+Noen ganger er det ikke en entydig rekkefølge i et program. Da kan vi koble sammen linjene ved å skrive dem i grupper ved å separere dem med `;`: 
 
 ```markdown
 :::{parsons-puzzle}

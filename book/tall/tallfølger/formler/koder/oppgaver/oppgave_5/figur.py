@@ -1,108 +1,94 @@
 import plotmath
+import numpy as np
 import matplotlib.pyplot as plt
 
 
-def main(dirname: str, save: bool = True) -> None:
-    """Visualise the sequence *4n + 2* using dots arranged in a specific pattern.
+def main(dirname, save):
+    # TODO: write code here
+    alpha = 0.6
 
-    The *n*-th figure shows the value 4n + 2 as dots arranged in groups.
-    The number of dots is the **linear** polynomial
+    def draw_corner(ax, s, n):
+        # top n×n
+        for i in range(n):
+            for j in range(n):
+                A = (i * s, j * s)
+                B = ((i + 1) * s, j * s)
+                C = ((i + 1) * s, (j + 1) * s)
+                D = (i * s, (j + 1) * s)
 
-        p(n) = 4n + 2,
+                color = plotmath.COLORS.get("blue")
+                plotmath.plot_polygon(A, B, C, D, ax=ax, alpha=alpha, color=color)
+        # left diag (n+1)
+        for k in range(n + 1):
+            x0, y0 = (k - 1) * s, -k * s
+            A = (x0, y0)
+            B = (x0, y0 - s)
+            C = (x0 + s, y0 - s)
+            D = (x0 + s, y0)
 
-    yielding the sequence 6, 10, 14, 18, 22, …
-    """
+            color = plotmath.COLORS.get("red")
+            plotmath.plot_polygon(A, B, C, D, ax=ax, alpha=alpha, color=color)
+        # right col (n)
+        for k in range(n):
+            x0, y0 = n * s, -k * s
+            A = (x0, y0)
+            B = (x0, y0 - s)
+            C = (x0 + s, y0 - s)
+            D = (x0 + s, y0)
 
-    dot_size = 100  # size of each dot
+            color = plotmath.COLORS.get("legendary")
+            plotmath.plot_polygon(A, B, C, D, ax=ax, alpha=alpha, color=color)
 
-    # ──────────────────────────────────────────────────────────────────
-    # Helper: draw 4n + 2 pattern ──────────────────────────────────────
-    # ──────────────────────────────────────────────────────────────────
-    def draw_4n_plus_2_dots(ax, spacing: float, n: int) -> None:
-        """Plot dots in a pattern showing 4n + 2."""
-        # Calculate 4n + 2
-        total_dots = 4 * n + 2
-
-        x_positions = []
-        y_positions = []
-
-        # Pattern: arrange as 4 columns with n dots each, plus 2 extra dots
-        # Place the 4n dots in 4 columns
-        for col in range(4):
-            for row in range(n):
-                x = (col - 1.5) * spacing  # Center the 4 columns around x=0
-                y = row * spacing
-                x_positions.append(x)
-                y_positions.append(y)
-
-        # Place the 2 extra dots - one above each of the middle columns
-        x_positions.append(-0.5 * spacing)  # Above column 1 (left-middle)
-        y_positions.append(n * spacing)
-
-        x_positions.append(0.5 * spacing)  # Above column 2 (right-middle)
-        y_positions.append(n * spacing)
-
-        # Center the entire pattern vertically
-        if n > 0:
-            y_center = (n * spacing) / 2
-            y_positions = [y - y_center for y in y_positions]
-
-        # Plot all dots at once
-        color = plotmath.COLORS.get("purple")
-        ax.scatter(x_positions, y_positions, s=dot_size, color=color, alpha=1)
-
-    # ──────────────────────────────────────────────────────────────────
-    # Figure setup ─────────────────────────────────────────────────────
-    # ──────────────────────────────────────────────────────────────────
-    max_n = 4  # show n = 1, 2, 3, 4 (values: 6, 10, 14, 18)
+    # --- merge into one figure ---
     fig, axs = plt.subplots(
         1,
-        max_n,
-        figsize=(14, 4),  # ~3.5″ per subplot
+        3,
+        figsize=(6, 3),  # 3″ per subplot
         sharex=True,
-        sharey=True,
+        sharey=True,  # same data‐to‐pixel scale
         constrained_layout=True,
     )
 
-    spacing = 1  # distance between dots
+    # draw each with the same s=1
+    s = 1
+    draw_corner(axs[0], s=s, n=1)
+    draw_corner(axs[1], s=s, n=2)
+    draw_corner(axs[2], s=s, n=3)
 
-    for i, n in enumerate(range(1, max_n + 1)):
-        draw_4n_plus_2_dots(axs[i], spacing=spacing, n=n)
-        ax = axs[i]
-        ax.set_aspect("equal")
+    for i, ax in enumerate(axs):
+        ax.set_aspect("equal")  # 1 unit = 1 unit
         ax.axis("off")
-
-        # Add figure label
-        value = 4 * n + 2
         ax.text(
-            x=0,
-            y=-3 * spacing,
-            s=f"Figur {n}",
-            fontsize=24,
+            x=(i + 0.5) * s,
+            y=-5 * s,
+            s=f"Figur {i+1}",
+            fontsize=22,
             ha="center",
             va="center",
-            weight="bold",
         )
+        # fix axis‐limits so each square shows at the same scale
+        # ax.set_xlim(-1, (4 + 1) * 1)  # max_n=4 in this example
+        # ax.set_ylim(-(4 + 1) * 1, (4) * 1)
 
-        # Set limits to accommodate the largest pattern
-        limit = 3 * spacing
-        ax.set_xlim(-limit, limit)
-        ax.set_ylim(-limit, limit)
-
-    # ──────────────────────────────────────────────────────────────────
-    # Output ───────────────────────────────────────────────────────────
-    # ──────────────────────────────────────────────────────────────────
+    # NOTE: Automatically saves with correct file format and filename.
     if save:
         fname = __file__.split("/")[-1].replace(".py", ".svg")
-        plotmath.savefig(dirname=dirname, fname=fname)
-    else:
+        plotmath.savefig(
+            dirname=dirname, fname=fname
+        )  # Lagrer figuren i `dirname`-directory
+
+    if not save:
+
         plotmath.show()
 
 
 if __name__ == "__main__":
+
     import pathlib
 
+    # Get the directory where the script is located
     current_dir = str(pathlib.Path(__file__).resolve().parent)
+
     parts = current_dir.split("/")
     for i in range(len(parts)):
         if parts[~i] == "koder":
@@ -110,4 +96,6 @@ if __name__ == "__main__":
             break
 
     dirname = "/".join(parts)
+
+    # NOTE: Set `save=True` to save figure. `save=False` to display figure.
     main(dirname=dirname, save=False)

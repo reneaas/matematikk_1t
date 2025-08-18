@@ -4,68 +4,11 @@
 ---
 class: tip
 ---
-* Kan noen grunnleggende potensregler og kan veksle mellom potenser og rotuttrykk. 
 * Kan beskrive egenskapene til potensfunksjoner og bruke dem til å belyse praktiske situasjoner.
 :::::
 
-Potensfunksjoner brukes for å beskrive en sammenheng der en størrelse $y$ er proporsjonal eller omvendt proporsjonal med en potens av en annen størrelse $x$. For å kunne forstå potensfunksjoner, er vi nødt til å ta en nærmere titt på noen regneregler for potenser først.
+Potensfunksjoner brukes for å beskrive en sammenheng der en størrelse $y$ er proporsjonal eller omvendt proporsjonal med en potens av en annen størrelse $x$. Det viser seg at svært mange situasjoner i naturvitenskapene kan beskrives av potensfunksjoner. 
 
-## Potensregler 
-
-:::::::::::::::{admonition} Potensregler
----
-class: summary
----
-Nedenfor vises en oversikt over viktig regneregler for potenser.
-
-| | Regneregel | Eksempel |
-|---|------------|----------|
-| 1. | $x^m \cdot x^n = x^{m+n}$ | $x^2 \cdot x^3 = x^{2+3} = x^5$ |
-| 2. | $\dfrac{x^m}{x^n} = x^{m-n}$ | $\dfrac{x^5}{x^2} = x^{5-2} = x^3$ |
-| 3. | $(x^m)^n = x^{m \cdot n}$ | $(x^2)^3 = x^{2 \cdot 3} = x^6$ |
-| 4. | $x^0 = 1$ | $1000^0 = 1$ |
-| 5. | $x^{-n} = \dfrac{1}{x^n}$ | $x^{-2} = \dfrac{1}{x^2}$ |
-| 6. | $\sqrt[n]{x} = x^{1 / n}$ | $\sqrt[3]{x} = x^{1 / 3}$ |
-
-:::::::::::::::
-
----
-
-
-:::::::::::::::{admonition} Eksempel 1
----
-class: example
----
-Skriv så enkelt som mulig. 
-
-$$
-\dfrac{(x^2)^3 \cdot x^{-2}}{x^3}
-$$
-
-::::::::::::::{admonition} Løsning
----
-class: solution
----
-
-\begin{align*}
-    \dfrac{(x^2)^3 \cdot x^{-2}}{x^3} &= \dfrac{x^{2 \cdot 3} \cdot x^{-2}}{x^3} = \dfrac{x^6 \cdot x^{-2}}{x^3} \\
-    \\
-    &= x^{6-2} \cdot x^{-3} = x^4 \cdot x^{-3} \\
-    \\
-    &= x^{4-3} = x^1 = x \\
-\end{align*}
-
-::::::::::::::
-
-
-:::::::::::::::
-
-
-
-
-
-
-## Potensfunksjoner
 
 :::::::::::::::{admonition} Potensfunksjoner
 ---
@@ -74,15 +17,15 @@ class: summary
 En potensfunksjon $f$ er en funksjon på formen
 
 $$
-f(x) = a \cdot x^b,
+f(x) = a \cdot x^b 
 $$
 
-der $a, b \in \mathbb{R} \setminus \{0\}$ er konstanter. I {numref}`fig-potensfunksjoner-teori-graf` vises ulike potensfunksjoner for ulike verdier av $b$. 
+der $a, b \in \mathbb{R} \setminus \{0\}$ er konstanter. I figuren nedenfor vises ulike potensfunksjoner for ulike verdier av $b$. 
 
 :::{figure} ./figurer/teori/grafisk_representasjon.svg
 ---
 name: fig-potensfunksjoner-teori-graf
-width: 100%
+width: 90%
 class: no-click, adaptive-figure
 ---
 viser grafene til potensfunksjoner med samme verdi av $a$, men ulike verdier av $b$. 
@@ -167,14 +110,15 @@ Potensfunksjoner er godt egnet for situasjoner der en størrelse er proporsjonal
 ---
 class: example 
 ---
-Perioden til en planet er tiden det tar for en planet å gjennomføre et fullt omløp i banen sin rundt solen. 
-
 :::{figure} ./figurer/eksempler/eksempel_3/planetbane.svg
 ---
-width: 50%
+width: 55%
 class: no-click, adaptive-figure
+align: right
 ---
 :::
+
+Perioden til en planet er tiden det tar for en planet å gjennomføre et fullt omløp i banen sin rundt solen. 
 
 Nedenfor vises en tabell over periodene til noen av planetene i solsystemet og deres avstand til solen. Avstandene er gitt i astronomiske enheter (AU) som er avstanden fra solen til jorden.
 
@@ -193,7 +137,7 @@ Nedenfor vises en tabell over periodene til noen av planetene i solsystemet og d
 Lag en modell $P$ som gir perioden til en planet i $P(x)$ år når avstanden til solen er $x$ AU på formen 
 
 $$
-P(x) = a \cdot x^b. 
+P(x) = a \cdot x^b
 $$
 
 ::::::::::::::{admonition} Løsning
