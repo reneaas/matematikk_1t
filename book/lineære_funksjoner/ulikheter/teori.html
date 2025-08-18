@@ -622,8 +622,11 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafisk-losning">Grafisk løsning</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algebraisk-losning">Algebraisk løsning</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#losning-med-programmering">Løsning med programmering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algebraisk-losning">Algebraisk løsning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ved-regning">Ved regning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#med-cas">Med CAS</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -640,14 +643,13 @@ document.write(`
 <div class="admonition tip">
 <p class="admonition-title">Læringsmål</p>
 <ul class="simple">
-<li><p>Kunne løse lineære ulikheter grafisk, algebraisk og med programmering.</p></li>
+<li><p>Kunne løse lineære ulikheter grafisk, algebraisk ved regning og med CAS.</p></li>
 </ul>
 </div>
 <p>Vi skal se på tre strategier for å løse lineære ulikheter:</p>
 <ol class="arabic simple">
 <li><p><strong>Grafisk løsning</strong>: Vi tegner grafen til ulikheten og ser hvilke verdier som oppfyller den.</p></li>
-<li><p><strong>Algebraisk løsning</strong>: Vi løser ulikheten ved å bruke algebraiske metoder, som å isolere variabelen.</p></li>
-<li><p><strong>Løsning med programmering</strong>: Vi bruker programmering for å finne løsningen på ulikheten.</p></li>
+<li><p><strong>Algebraisk løsning</strong>: Vi løser ulikheten ved å bruke algebraiske metoder, som å isolere variabelen. Dette kan vi gjøre ved regning eller med CAS.</p></li>
 </ol>
 <section id="grafisk-losning">
 <h2>Grafisk løsning<a class="headerlink" href="#grafisk-losning" title="Link to this heading">#</a></h2>
@@ -731,6 +733,8 @@ x \in \langle \gets , 3].
 </section>
 <section id="algebraisk-losning">
 <h2>Algebraisk løsning<a class="headerlink" href="#algebraisk-losning" title="Link to this heading">#</a></h2>
+<section id="ved-regning">
+<h3>Ved regning<a class="headerlink" href="#ved-regning" title="Link to this heading">#</a></h3>
 <p>Å løse lineære ulikheter algebraisk likner en del på å løse lineære likninger. Den store forskjellen ligger i hvordan vi håndterer ulikhetstegnene. Når vi jobber med en lineær likning, trenger vi ikke tenke oss om når vi ganger med et negativt tall på hver side av likheten. Når det kommer til en lineær ulikhet, må vi imidlertid holde tunga rett i munnen å passe på at vi snur ulikhetstegnet når vi ganger eller deler med et negativt tall.</p>
 <p>La oss se på et eksempel.</p>
 <aside class="margin sidebar">
@@ -794,63 +798,260 @@ x \in \langle -3, \to \rangle.
 </div>
 </div>
 </section>
-<section id="losning-med-programmering">
-<h2>Løsning med programmering<a class="headerlink" href="#losning-med-programmering" title="Link to this heading">#</a></h2>
-<p>Å løse ulikheter med programmering handler har mye til felles med hvordan vi løser lineære likninger. Men for å gjøre dette effektivt, har vi bruk for en ny type løkke som kalles for en <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkke. En <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkke lar oss gjenta en kodeblokk så lenge en betingelse er sann. Dette er nyttig når vi ikke vet på forhånd hvor mange ganger vi må gjenta koden, som ofte er tilfellet når vi jobber med ulikheter.</p>
-<div class="admonition explore">
-<p class="admonition-title">Utforsk 1</p>
-<p>Nedenfor vises en <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkke som skriver ut noen tall i en tallfølge.</p>
-<div class="sd-tab-set tabs-parts docutils">
-<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-0">
-a</label><div class="sd-tab-content docutils">
-<p>Nedenfor vises en <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkke som skriver ut noen tall i en tallfølge.</p>
-<p>Les programmet og prøv å forutsi hvilke tall programmet skriver ut.</p>
+<section id="med-cas">
+<h3>Med CAS<a class="headerlink" href="#med-cas" title="Link to this heading">#</a></h3>
+<p>Vi kan få datamaskinen til å løse lineære ulikheter for oss og gi et svar på samme måte som vi ville fått dersom vi utførte regningen selv. La oss se på et eksempel:</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Bruk gjerne CAS-vinduet til å utføre regningen i Eksempel 5.</p>
 
-        <div id="container-code-f7d3d6a2"></div>
-        <script type="text/javascript">
-            document.addEventListener("DOMContentLoaded", () => {
-                const code = 
-`x = -3
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<button id="button-ggb-cas-ea475ae4" class="ggb-cas-button">Åpne CAS‑vindu</button>
+<div id="dialog-ggb-cas-ea475ae4" title="CAS‑vindu" style="display:none;">
+    <div id="ggb-cas-ea475ae4" class="ggb-window"></div>
+</div>
+
+<style>
+.ui-resizable-handle { min-width:16px;min-height:16px; }
+.ui-dialog-content{padding:0!important;}
+.ggb-window       {width:100%!important;height:100%!important;box-sizing:border-box;}
+.ggb-cas-button   {margin-top: 1em; margin-bottom: 1em;}
+</style>
+
+<script>
+(function() {
+  $(function() {
+    let ggbReady = false;
+
+    function applySize() {
+      if (!ggbReady) return;
+      const w = $("#ggb-cas-ea475ae4").width(),
+            h = $("#ggb-cas-ea475ae4").height();
+      window.ggbApplet.setSize(Math.round(w), Math.round(h));
+    }
+
+    const $dlg = $("#dialog-ggb-cas-ea475ae4").dialog({
+      autoOpen: false,
+      width: 390, height: 580,
+      resizable: true, draggable: true,
+      position: { my: "center", at: "center", of: window },
+      resize: () => window.requestAnimationFrame(applySize),
+      open: function() {
+        if (!ggbReady) {
+          new GGBApplet({
+            appName: "classic", id: "ggb-cas-ea475ae4",
+            width: 350, height: 500,
+            perspective: "C", language: "nb",
+            showToolBar: true, showAlgebraInput: true,
+            borderRadius: 8, enableRightClick: true, showKeyboardOnFocus: false,
+            customToolBar: "1001 | 1002 | 1007 | 1010 | 6",
+            appletOnLoad: () => { ggbReady = true; applySize(); }
+          }, true).inject("ggb-cas-ea475ae4");
+        } else {
+          applySize();
+        }
+      }
+    });
+
+    // Prevent background scroll when GeoGebra applet is active
+    let scrollLocked = false;
+    let lockedScrollTop = 0;
+    let keyHandler = null;
+    let wheelHandler = null;
+    let scrollHandler = null;
+    
+    function lockScroll() {
+      if (scrollLocked) return;
+      scrollLocked = true;
+      lockedScrollTop = window.pageYOffset || document.documentElement.scrollTop || 0;
+      
+      // Instead of preventing keys, monitor and restore scroll position
+      scrollHandler = () => {
+        if (scrollLocked) {
+          const currentScroll = window.pageYOffset || document.documentElement.scrollTop || 0;
+          if (currentScroll !== lockedScrollTop) {
+            window.scrollTo(0, lockedScrollTop);
+          }
+        }
+      };
+      
+      // Prevent wheel scrolling on the page background
+      wheelHandler = (e) => {
+        const dialogElement = e.target.closest('.ui-dialog');
+        if (dialogElement) {
+          // Allow scrolling within dialog elements that can scroll
+          let target = e.target;
+          while (target && target !== dialogElement) {
+            const overflow = window.getComputedStyle(target).overflow;
+            if (overflow === 'auto' || overflow === 'scroll') {
+              return; // Allow internal scrolling
+            }
+            target = target.parentElement;
+          }
+          // Prevent page scroll but don't stop the event from reaching GeoGebra
+          if (!e.target.closest('#ggb-cas-ea475ae4')) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
+        }
+      };
+      
+      // Monitor scroll events to maintain position
+      window.addEventListener('scroll', scrollHandler, { passive: true });
+      document.addEventListener('wheel', wheelHandler, { capture: true, passive: false });
+    }
+    
+    function unlockScroll() {
+      if (!scrollLocked) return;
+      scrollLocked = false;
+      
+      if (scrollHandler) {
+        window.removeEventListener('scroll', scrollHandler);
+        scrollHandler = null;
+      }
+      if (wheelHandler) {
+        document.removeEventListener('wheel', wheelHandler, { capture: true });
+        wheelHandler = null;
+      }
+    }
+    
+    // Monitor GeoGebra applet focus/interaction to control scroll lock
+    function bindScrollLock() {
+      const ggbContainer = document.getElementById('ggb-cas-ea475ae4');
+      if (!ggbContainer) {
+        setTimeout(bindScrollLock, 300);
+        return;
+      }
+      
+      // Look for the actual GeoGebra canvas/applet elements
+      const ggbApplet = ggbContainer.querySelector('canvas') || 
+                       ggbContainer.querySelector('.ggbApplet') ||
+                       ggbContainer.querySelector('[id^="ggbApplet"]') ||
+                       ggbContainer;
+      
+      if (ggbApplet) {
+        // Lock scroll when interacting with GeoGebra
+        ggbApplet.addEventListener('mousedown', lockScroll);
+        ggbApplet.addEventListener('focus', lockScroll);
+        ggbApplet.addEventListener('click', lockScroll);
+        
+        // Also monitor the container for any focus events
+        ggbContainer.addEventListener('focusin', lockScroll);
+        ggbContainer.addEventListener('mousedown', lockScroll);
+        
+        // Unlock when clicking outside or losing focus
+        document.addEventListener('click', (e) => {
+          if (!ggbContainer.contains(e.target) && !e.target.closest('.ui-dialog')) {
+            unlockScroll();
+          }
+        });
+        
+        ggbContainer.addEventListener('focusout', (e) => {
+          // Small delay to check if focus moved outside the container
+          setTimeout(() => {
+            if (!ggbContainer.contains(document.activeElement)) {
+              unlockScroll();
+            }
+          }, 100);
+        });
+      }
+    }
+    
+    // Start monitoring after GeoGebra is loaded
+    setTimeout(bindScrollLock, 1000);
+    
+    // Cleanup on dialog close
+    $dlg.on('dialogclose', unlockScroll);
+
+    $("#button-ggb-cas-ea475ae4").button()
+      .on("click touchend pointerup", e => {
+        e.preventDefault();
+        $("#dialog-ggb-cas-ea475ae4").dialog("open");
+      });
+  });
+})();
+</script>
+
+        </aside>
+<div class="admonition example">
+<p class="admonition-title">Eksempel 5</p>
+<p>Løs ulikheten</p>
+<div class="math notranslate nohighlight">
+\[
+2x + 3 &lt; -3x + 5
+\]</div>
+<div class="admonition solution">
+<p class="admonition-title">Løsning</p>
+<p>Vi bruker CAS til å løse ulikheten slik som vi viser i gif-en nedenfor:</p>
+<figure class="align-default">
+<a class="no-click adaptive-figure reference internal image-reference" href="../../../_images/cas1.gif"><img alt="../../../_images/cas1.gif" class="no-click adaptive-figure" src="../../../_images/cas1.gif" style="width: 100%;" /></a>
+</figure>
+<p>Fra gif-en ser vi at løsningen er</p>
+<div class="math notranslate nohighlight">
+\[
+x &lt; \dfrac{2}{5}
+\]</div>
+</div>
+</div>
+<!-- ## Løsning med programmering
+Å løse ulikheter med programmering handler har mye til felles med hvordan vi løser lineære likninger. Men for å gjøre dette effektivt, har vi bruk for en ny type løkke som kalles for en `while`{l=python}-løkke. En `while`{l=python}-løkke lar oss gjenta en kodeblokk så lenge en betingelse er sann. Dette er nyttig når vi ikke vet på forhånd hvor mange ganger vi må gjenta koden, som ofte er tilfellet når vi jobber med ulikheter.
+
+:::::::::::::::{explore} Utforsk 1
+Nedenfor vises en `while`{l=python}-løkke som skriver ut noen tall i en tallfølge.
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Nedenfor vises en `while`{l=python}-løkke som skriver ut noen tall i en tallfølge.
+
+Les programmet og prøv å forutsi hvilke tall programmet skriver ut.
+
+
+:::{interactive-code}
+---
+predict:
+---
+x = -3
 while x <= 3:
     print(x)
     
     x = x + 1 # øker verdien til x med 1
-`;
 
-                makePredictionInteractiveCode(
-                    "container-code-f7d3d6a2",
-                    code,
-                );
-            });
-        </script>
-        </div>
-<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-1">
-b</label><div class="sd-tab-content docutils">
-<p>Nedenfor vises et program som bruker en <code class="code docutils literal highlight highlight-python"><span class="k">while</span></code>-løkke for å løse en lineær ulikhet.</p>
-<p>Les programmet og bruk utskriften til å bestemme løsningen av ulikheten.</p>
 
-        <div id="container-code-0888db6b"></div>
-        <script type="text/javascript">
-            document.addEventListener("DOMContentLoaded", () => {
-                const code = 
-`x = -10
+:::
+
+:::::::::::::
+
+
+
+:::::::::::::{tab-item} b
+Nedenfor vises et program som bruker en `while`{l=python}-løkke for å løse en lineær ulikhet. 
+
+Les programmet og bruk utskriften til å bestemme løsningen av ulikheten.
+
+
+:::{interactive-code}
+x = -10
 while 2*x - 6 < 0: # så lenge 2x - 6 < 0 ...
     x = x + 0.125 # øker verdien til x med 0.125
 
 print(x)
-`;
 
-                makeInteractiveCode(
-                    "container-code-0888db6b",
-                    code,
-                );
-            });
-        </script>
-        </div>
-</div>
-</div>
+:::
+
+
+:::::::::::::
+
+
+
+::::::::::::::
+
+
+::::::::::::::: -->
+</section>
 </section>
 <div class="toctree-wrapper compound">
 </div>
@@ -921,8 +1122,11 @@ print(x)
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grafisk-losning">Grafisk løsning</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algebraisk-losning">Algebraisk løsning</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#losning-med-programmering">Løsning med programmering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algebraisk-losning">Algebraisk løsning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ved-regning">Ved regning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#med-cas">Med CAS</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

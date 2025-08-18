@@ -220,13 +220,24 @@ $$
 :::::::::::::::{exercise} Oppgave 4
 
 ::::{hints} Hvordan løser jeg en ulikhet med CAS?
+Nedenfor ser du en gif som løser ulikheten
 
-:::{figure} ./videoer/cas_1.gif
+$$
+2x + 3 < -3x + 5
+$$
+
+:::{figure} ./videoer/cas.gif
 ---
 class: no-click, adaptive-figure
 width: 100%
 ---
 :::
+
+Fra utskriften ser vi at løsningen er
+
+$$
+x < \dfrac{2}{5}
+$$
 
 ::::
 

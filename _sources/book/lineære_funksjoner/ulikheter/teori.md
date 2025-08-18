@@ -1,13 +1,12 @@
 # Lineære ulikheter
 
 :::{goals} Læringsmål
-* Kunne løse lineære ulikheter grafisk, algebraisk og med programmering.
+* Kunne løse lineære ulikheter grafisk, algebraisk ved regning og med CAS.
 :::
 
 Vi skal se på tre strategier for å løse lineære ulikheter:
 1. **Grafisk løsning**: Vi tegner grafen til ulikheten og ser hvilke verdier som oppfyller den.
-2. **Algebraisk løsning**: Vi løser ulikheten ved å bruke algebraiske metoder, som å isolere variabelen.
-3. **Løsning med programmering**: Vi bruker programmering for å finne løsningen på ulikheten.
+2. **Algebraisk løsning**: Vi løser ulikheten ved å bruke algebraiske metoder, som å isolere variabelen. Dette kan vi gjøre ved regning eller med CAS. 
 
 
 
@@ -139,6 +138,8 @@ $$
 
 ## Algebraisk løsning
 
+### Ved regning
+
 Å løse lineære ulikheter algebraisk likner en del på å løse lineære likninger. Den store forskjellen ligger i hvordan vi håndterer ulikhetstegnene. Når vi jobber med en lineær likning, trenger vi ikke tenke oss om når vi ganger med et negativt tall på hver side av likheten. Når det kommer til en lineær ulikhet, må vi imidlertid holde tunga rett i munnen å passe på at vi snur ulikhetstegnet når vi ganger eller deler med et negativt tall.
 
 La oss se på et eksempel. 
@@ -219,7 +220,60 @@ $$
 :::::::::::::::
 
 
-## Løsning med programmering
+### Med CAS
+
+Vi kan få datamaskinen til å løse lineære ulikheter for oss og gi et svar på samme måte som vi ville fått dersom vi utførte regningen selv. La oss se på et eksempel:
+
+
+::::{margin}
+Bruk gjerne CAS-vinduet til å utføre regningen i Eksempel 5.
+
+:::{cas-popup}
+:::
+::::
+
+
+:::::::::::::::{example} Eksempel 5
+
+
+Løs ulikheten 
+
+$$
+2x + 3 < -3x + 5
+$$
+
+
+::::{solution}
+---
+dropdown: 0
+---
+Vi bruker CAS til å løse ulikheten slik som vi viser i gif-en nedenfor:
+
+
+
+:::{figure} ./videoer/cas.gif
+---
+class: no-click, adaptive-figure
+width: 100%
+---
+:::
+
+Fra gif-en ser vi at løsningen er 
+
+$$
+x < \dfrac{2}{5}
+$$
+
+
+
+::::
+
+
+
+:::::::::::::::
+
+
+<!-- ## Løsning med programmering
 Å løse ulikheter med programmering handler har mye til felles med hvordan vi løser lineære likninger. Men for å gjøre dette effektivt, har vi bruk for en ny type løkke som kalles for en `while`{l=python}-løkke. En `while`{l=python}-løkke lar oss gjenta en kodeblokk så lenge en betingelse er sann. Dette er nyttig når vi ikke vet på forhånd hvor mange ganger vi må gjenta koden, som ofte er tilfellet når vi jobber med ulikheter.
 
 :::::::::::::::{explore} Utforsk 1
@@ -274,4 +328,4 @@ print(x)
 ::::::::::::::
 
 
-:::::::::::::::
+::::::::::::::: -->
