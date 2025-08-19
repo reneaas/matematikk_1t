@@ -1,6 +1,10 @@
 # Oppgaver: Formler
 
 
+:::{margin} Tips: Oppgave 1c
+Når det står "Bestem $S_n$" så mener vi at du skal finne en formel for $S_n$ som gjelder for alle naturlige tall $n$.
+:::
+
 :::::::::::::::{exercise} Oppgave 1
 ---
 level: 1
@@ -46,7 +50,7 @@ $$
 
 
 :::::::::::::{tab-item} c
-Bestem en formel for $S_n$. 
+Bestem $S_n$. 
 
 ::::{answer}
 $$
@@ -107,7 +111,7 @@ $$
 
 
 :::::::::::::{tab-item} b
-Bestem en formel for $S_n$. 
+Bestem $S_n$. 
 
 ::::{answer}
 $$
@@ -221,6 +225,16 @@ class: tabs-parts
 Bestem $K_1$, $K_2$ og $K_3$. 
 
 
+
+
+::::{answer}
+$$
+K_1 = 2 \and K_2 = 6 \and K_3 = 12
+$$
+::::
+
+
+
 :::::::::::::
 
 
@@ -229,12 +243,47 @@ Bestem $K_1$, $K_2$ og $K_3$.
 Bestem $K_4$. 
 
 
+::::{answer}
+$$
+K_4 = 20
+$$
+::::
+
+::::{solution}
+$$
+K_4 = 5 \cdot 4 = 20
+$$
+::::
+
 :::::::::::::
 
 
 
 :::::::::::::{tab-item} c
-Bestem en formel for $K_n$.
+Bestem $K_n$.
+
+
+::::{answer}
+$$
+K_n = n(n + 1) \qder n \in \mathbb{N}
+$$
+::::
+
+::::{solution}
+Vi kan se et mønster i figurene som at
+
+$$
+K_1 = 2 \cdot 1 \and K_2 = 3 \cdot 2 \and K_3 = 4 \cdot 3
+$$
+
+Vi kan se at det er $n$ rader og $(n + 1)$ kolonner i figur $n$ ut ifra mønsteret, som betyr at formelen for $K_n$ er
+
+$$
+K_n = (n + 1) \cdot n = n(n + 1) \qder n \in \mathbb{N}
+$$
+::::
+
+
 :::::::::::::
 
 
@@ -274,6 +323,20 @@ class: tabs-parts
 Bestem $F_1$, $F_2$ og $F_3$ fra figurene.
 
 
+::::{answer}
+$$
+F_1 = 2 \and F_2 = 12 \and F_3 = 30
+$$
+::::
+
+
+::::{solution}
+$$
+F_1 = 1 \cdot 2 = 2 \and F_2 = 3 \cdot 4 = 12 \and F_3 = 5 \cdot 6 = 30
+$$
+::::
+
+
 :::::::::::::
 
 
@@ -281,12 +344,51 @@ Bestem $F_1$, $F_2$ og $F_3$ fra figurene.
 Bestem $F_4$.
 
 
+::::{answer}
+$$
+F_4 = 56
+$$
+::::
+
+::::{solution}
+$$
+F_4 = 7 \cdot 8 = 56
+$$
+::::
+
 :::::::::::::
 
 
 :::::::::::::{tab-item} c
 Lag en formel $F_n$ for antall fargelagte firkanter i figur $n$.
-:::::::::::::
+
+
+::::{answer}
+$$
+F_n = 2n\cdot (2n - 1) \qder n \in \mathbb{N}
+$$
+::::
+
+
+::::{solution}
+Vi kan systematisere mønsteret i antall rader og kolonner: 
+
+
+| Figur $n$ | Antall rader | Antall kolonner |
+|:-----------:|:---------------:|:-----------------:|
+| $1$ | $2$ | $1$ |
+| $2$ | $4$ | $3$ |
+| $3$ | $6$ | $5$ |
+| $4$ | $8$ | $7$ |
+
+
+Vi kan se at antall rader passer med partall $2n$ og antall kolonner passer med oddetallne $2n - 1$.
+
+Dermed får vi formelen for $F_n$:
+
+$$
+F_n = 2n\cdot (2n - 1) \qder n \in \mathbb{N}
+$$
 
 
 ::::::::::::::
@@ -322,6 +424,12 @@ class: tabs-parts
 Bestem verdiene til $K_1$, $K_2$ og $K_3$ fra figurene.
 
 
+::::{answer}
+$$
+K_1 = 12 \and K_2 = 32 \and K_3 = 60
+$$
+::::
+
 :::::::::::::
 
 
@@ -329,11 +437,25 @@ Bestem verdiene til $K_1$, $K_2$ og $K_3$ fra figurene.
 Bestem $K_4$.
 
 
+::::{answer}
+$$
+K_4 = 96
+$$
+::::
+
 :::::::::::::
 
 
 :::::::::::::{tab-item} c
 Bestem en formel for $K_n$. 
+
+
+::::{answer}
+$$
+K_n = 4(n + 1)^2 - 4
+$$
+::::
+
 
 :::::::::::::
 
@@ -374,7 +496,7 @@ Bestem verdien til $K_1$, $K_2$ og $K_3$ fra figurene.
 
 ::::{answer}
 $$
-K_1 = 4 \qog K_2 = 9 \qog K_3 = 16
+K_1 = 4 \and K_2 = 9 \and K_3 = 16
 $$
 ::::
 :::::::::::::
@@ -395,10 +517,6 @@ $$
 :::::::::::::{tab-item} c
 Bestem en formel for $K_n$. 
 
-
-:::{hints}
-Lag en formel for hver fargelagt del av figuren.
-:::
 
 ::::{answer}
 $$
@@ -430,6 +548,58 @@ class: no-click, adaptive-figure
 width: 100%
 ---
 :::
+
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Bestem $F_1$, $F_2$ og $F_3$ fra figurene.
+
+
+::::{answer}
+$$
+F_1 = 5 \and F_2 = 13 \and F_3 = 25
+$$
+::::
+
+
+:::::::::::::
+
+
+
+:::::::::::::{tab-item} b
+Bestem $F_4$.
+
+
+::::{answer}
+$$
+F_4 = 41
+$$
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+Bestem $F_n$. 
+
+
+
+::::{answer}
+$$
+F_n = 2n^2 + 2n + 1 \qfor n \in \mathbb{N}
+$$
+::::
+
+:::::::::::::
+
+
+::::::::::::::
+
+
 :::::::::::::::
 
 
@@ -454,15 +624,44 @@ width: 100%
 ---
 class: tabs-parts
 ---
+
 :::::::::::::{tab-item} a
+Bestem $S_1$, $S_2$ og $S_3$ fra figurene.
+
+
+::::{answer}
+$$
+S_1 = 4 \and S_2 = 13 \and S_3 = 28
+$$
+::::
+
+:::::::::::::
+
+:::::::::::::{tab-item} b
 Bestem $S_4$. 
+
+
+::::{answer}
+$$
+S_4 = 49
+$$
+::::
 
 
 :::::::::::::
 
 
-:::::::::::::{tab-item} b
+:::::::::::::{tab-item} c
 Bestem $S_n$. 
+
+
+
+::::{answer}
+$$
+S_n = 3n^2 + 1 \qfor n \in \mathbb{N}
+$$
+::::
+
 :::::::::::::
 
 
