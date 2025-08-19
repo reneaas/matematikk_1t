@@ -13,7 +13,7 @@ def main(dirname: str, save: bool = True) -> None:
     yielding the sequence 1, 3, 5, 7, 9, … (OEIS A005408).
     """
 
-    dot_size = 100  # size of each dot
+    dot_size = 250  # size of each dot
 
     # ──────────────────────────────────────────────────────────────────
     # Helper: draw symmetric pattern of dots ───────────────────────────
@@ -85,9 +85,9 @@ def main(dirname: str, save: bool = True) -> None:
         odd_number = 2 * n - 1
         ax.text(
             x=0,
-            y=-5.3 * spacing,
+            y=-5.5 * spacing,
             s=f"Figur {n - 1}",
-            fontsize=20,
+            fontsize=30,
             ha="center",
             va="center",
             weight="bold",

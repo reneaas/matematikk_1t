@@ -155,4 +155,4 @@ if __name__ == "__main__":
             break
 
     dirname = "/".join(parts)
-    main(dirname=dirname, save=True)
+    main(dirname=dirname, save=False)

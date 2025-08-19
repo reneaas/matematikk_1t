@@ -194,19 +194,21 @@ $$
 :::::::::::::::
 
 
-
 ---
+
+
 
 
 :::::::::::::::{exercise} Oppgave 4
-Nedenfor vises noen figurer som følger et bestemt mønster. Vi tenker oss at figurene fortsetter etter samme mønster.
+Nedenfor vises de tre første figurene i en figurfølge. Figurene tenker oss at figurene følger dette mønsteret videre.
 
-Vi lar $K_n$ være antall fargelagte kvadrater i figur $n$.
+La $K_n$ være antall kvadrater i figur $n$.
+
 
 :::{figure} ./figurer/oppgaver/oppgave_4/figur.svg
 ---
-width: 100%
 class: no-click, adaptive-figure
+width: 100%
 ---
 :::
 
@@ -216,49 +218,32 @@ class: no-click, adaptive-figure
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
-Bestem verdien til $K_1$, $K_2$ og $K_3$ fra figurene.
+Bestem $K_1$, $K_2$ og $K_3$. 
 
 
-::::{answer}
-$$
-K_1 = 4 \qog K_2 = 9 \qog K_3 = 16
-$$
-::::
 :::::::::::::
+
 
 
 :::::::::::::{tab-item} b
-Bestem $K_4$.
+Bestem $K_4$. 
 
-::::{answer}
-$$
-K_4 = 25
-$$
-::::
 
 :::::::::::::
+
 
 
 :::::::::::::{tab-item} c
-Bestem en formel for $K_n$. 
-
-
-:::{hints}
-Lag en formel for hver fargelagt del av figuren.
-:::
-
-::::{answer}
-$$
-K_n = n^2 + 2n + 1 = (n + 1)^2 \qder n \in \mathbb{N}
-$$
-::::
-
+Bestem en formel for $K_n$.
 :::::::::::::
+
 
 
 ::::::::::::::
 
+
 :::::::::::::::
+
 
 
 
@@ -273,7 +258,7 @@ Nedenfor vises noen figurer som følger et bestemt mønster. Vi tenker oss at fi
 La $F_n$ være antall fargelagte firkanter i figur $n$.
 
 
-:::{figure} ./figurer/oppgaver/oppgave_5/figur_katt.svg
+:::{figure} ./figurer/oppgaver/oppgave_5/figur.svg
 ---
 width: 100%
 class: no-click, adaptive-figure
@@ -360,19 +345,21 @@ Bestem en formel for $K_n$.
 
 
 
+
+
 ---
+
 
 
 :::::::::::::::{exercise} Oppgave 7
-Nedenfor vises de tre første figurene i en figurfølge. Figurene tenker oss at figurene følger dette mønsteret videre.
+Nedenfor vises noen figurer som følger et bestemt mønster. Vi tenker oss at figurene fortsetter etter samme mønster.
 
-La $K_n$ være antall kvadrater i figur $n$.
-
+Vi lar $K_n$ være antall fargelagte kvadrater i figur $n$.
 
 :::{figure} ./figurer/oppgaver/oppgave_7/figur.svg
 ---
-class: no-click, adaptive-figure
 width: 100%
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -382,29 +369,47 @@ width: 100%
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
-Bestem $K_1$, $K_2$ og $K_3$. 
+Bestem verdien til $K_1$, $K_2$ og $K_3$ fra figurene.
 
 
+::::{answer}
+$$
+K_1 = 4 \qog K_2 = 9 \qog K_3 = 16
+$$
+::::
 :::::::::::::
-
 
 
 :::::::::::::{tab-item} b
-Bestem $K_4$. 
+Bestem $K_4$.
 
+::::{answer}
+$$
+K_4 = 25
+$$
+::::
 
 :::::::::::::
-
 
 
 :::::::::::::{tab-item} c
-Bestem en formel for $K_n$.
+Bestem en formel for $K_n$. 
+
+
+:::{hints}
+Lag en formel for hver fargelagt del av figuren.
+:::
+
+::::{answer}
+$$
+K_n = n^2 + 2n + 1 = (n + 1)^2 \qder n \in \mathbb{N}
+$$
+::::
+
 :::::::::::::
 
 
-
 ::::::::::::::
-
 
 :::::::::::::::
 
@@ -419,7 +424,7 @@ Nedenfor vises de tre første figurene i en figurfølge. Figurene tenker oss at 
 La $F_n$ være antall firkanter i figur $n$.
 
 
-:::{figure} ./figurer/oppgaver/oppgave_8/figur.svg
+:::{figure} ./figurer/oppgaver/oppgave_8/figur_katt.svg
 ---
 class: no-click, adaptive-figure
 width: 100%
@@ -431,7 +436,45 @@ width: 100%
 ---
 
 
+
 :::::::::::::::{exercise} Oppgave 9
+Nedenfor vises noen figurer som følger et bestemt mønster. Vi tenker oss at figurene fortsetter i samme mønster. 
+
+La $S_n$ være antall sirkler i figur $n$.
+
+:::{figure} ./figurer/oppgaver/oppgave_9/figur.svg
+---
+class: no-click, adaptive-figure
+width: 100%
+---
+:::
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Bestem $S_4$. 
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Bestem $S_n$. 
+:::::::::::::
+
+
+::::::::::::::
+
+:::::::::::::::
+
+
+---
+
+
+:::::::::::::::{exercise} Oppgave 10
 ---
 level: 2
 ---
@@ -487,7 +530,7 @@ Leddet $n = 33$ har verdien $100$ siden $a_{33} = 3 \cdot 33 + 1 = 100$.
 ---
 
 
-:::::::::::::::{exercise} Oppgave 10
+:::::::::::::::{exercise} Oppgave 11
 ---
 level: 2
 ---
@@ -559,7 +602,7 @@ $$
 ---
 
 
-:::{margin} Tips til oppgave 11
+:::{margin} Tips til oppgave 12
 $1 = (-1)^2 = (-1)^4 = (-1)^6 = \ldots$
 
 og 
@@ -568,7 +611,7 @@ $-1 = (-1)^3 = (-1)^5 = (-1)^7 = \ldots$
 :::
 
 
-:::::::::::::::{exercise} Oppgave 11
+:::::::::::::::{exercise} Oppgave 12
 ---
 level: 3
 ---

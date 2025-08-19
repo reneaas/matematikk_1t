@@ -9,8 +9,8 @@ def main(dirname, save):
 
     def draw_corner(ax, s, n):
         # top n×n
-        for i in range(n):
-            for j in range(n):
+        for i in range(2 * n - 1):
+            for j in range(2 * n):
                 A = (i * s, j * s)
                 B = ((i + 1) * s, j * s)
                 C = ((i + 1) * s, (j + 1) * s)
@@ -18,32 +18,12 @@ def main(dirname, save):
 
                 color = plotmath.COLORS.get("blue")
                 plotmath.plot_polygon(A, B, C, D, ax=ax, alpha=alpha, color=color)
-        # left diag (n+1)
-        for k in range(n + 1):
-            x0, y0 = (k - 1) * s, -k * s
-            A = (x0, y0)
-            B = (x0, y0 - s)
-            C = (x0 + s, y0 - s)
-            D = (x0 + s, y0)
-
-            color = plotmath.COLORS.get("red")
-            plotmath.plot_polygon(A, B, C, D, ax=ax, alpha=alpha, color=color)
-        # right col (n)
-        for k in range(n):
-            x0, y0 = n * s, -k * s
-            A = (x0, y0)
-            B = (x0, y0 - s)
-            C = (x0 + s, y0 - s)
-            D = (x0 + s, y0)
-
-            color = plotmath.COLORS.get("legendary")
-            plotmath.plot_polygon(A, B, C, D, ax=ax, alpha=alpha, color=color)
 
     # --- merge into one figure ---
     fig, axs = plt.subplots(
         1,
         3,
-        figsize=(6, 3),  # 3″ per subplot
+        figsize=(8, 3),  # 3″ per subplot
         sharex=True,
         sharey=True,  # same data‐to‐pixel scale
         constrained_layout=True,
@@ -60,7 +40,7 @@ def main(dirname, save):
         ax.axis("off")
         ax.text(
             x=(i + 0.5) * s,
-            y=-5 * s,
+            y=-3 * s,
             s=f"Figur {i+1}",
             fontsize=22,
             ha="center",
@@ -98,4 +78,4 @@ if __name__ == "__main__":
     dirname = "/".join(parts)
 
     # NOTE: Set `save=True` to save figure. `save=False` to display figure.
-    main(dirname=dirname, save=False)
+    main(dirname=dirname, save=True)
