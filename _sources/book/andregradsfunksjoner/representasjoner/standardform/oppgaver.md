@@ -231,7 +231,11 @@ p(3) &= 0.
 ---
 level: 1
 ---
-Nedenfor vises grafen til en andregradsfunksjon $f$.
+Nedenfor vises grafen til en andregradsfunksjon
+
+$$
+f(x) = ax^2 + bx + c
+$$
 
 :::{figure} ./figurer/oppgaver/oppgave_3/figur.svg
 ---
@@ -248,54 +252,96 @@ class: tabs-parts
 :::::::::::::{tab-item} a
 Er grafen til $f$ konveks eller konkav? 
 
-Kan du si noe om koeffisientene til $f$ i $f(x) = ax^2 + bx + c$ ut ifra dette punktet?
+Kan du si noe om koeffisientene til $f(x)$ ut ifra dette?
 
 ::::{answer}
-Grafen er konveks som betyr at $a > 0$.
+Grafen er konveks siden den smiler {poly-icon}`smile`. 
+
+Dette betyr at $a > 0$ (koeffisienten er positiv).
 ::::
 
 :::::::::::::
 
 
 :::::::::::::{tab-item} b
-Bestem symmetrilinja til $f$.
+Bestem verdien til $a$. 
 
-Kan du si noe om koeffisientene til $f$ i $f(x) = ax^2 + bx + c$ ut ifra dette punktet?
+
 
 ::::{answer}
-Symmetrilinja er $x = 2$ som betyr at 
-
 $$
-x = -\frac{b}{2a} = 2 \implies b = -4a.
+a = 1
 $$
 ::::
+
+
+::::{solution}
+Bunnpunktet til $f$ er i $(2, -1)$. Går vi én enhet langs $x$-aksen til høyre og finner grafen, er vi i $(3, 0)$. Altså øker $y$-verdien med $1$ som betyr at
+
+$$
+a = 1
+$$
+::::
+
 
 :::::::::::::
 
 
 :::::::::::::{tab-item} c
-Har grafen til $f$ et topp- eller bunnpunkt?
-
-Hva er koordinatene til dette punktet?
+Bestem likningen til symmetrilinja til $f$ og bruk denne til å bestemme verdien til $b$.
 
 
 ::::{answer}
-Grafen har et bunnpunkt i $(2, -1)$.
+**Symmetrilinje**:
+
+$$
+x = 2
+$$
+
+
+**Koeffisienten $b$**:
+
+$$
+b = -4
+$$
 ::::
+
+::::{solution}
+Likningen til symmetrilinja er $x = 2$ siden det er $x$-koordinaten der grafen har et bunnpunkt. Da får vi
+
+$$
+x = -\dfrac{b}{2a} \liff 2 = -\dfrac{b}{2 \cdot 1} \liff b = -4.
+$$
+::::
+
 :::::::::::::
 
 
-::::::::::::::{tab-item} d
+
+:::::::::::::{tab-item} d
 Bestem koordinatene til skjæringspunktet med $y$-aksen.
 
-Kan du si noe om koeffisientene til $f$ i $f(x) = ax^2 + bx + c$ ut ifra dette punktet?
+Bruk svaret ditt til å bestemme verdien til $c$.
 
 
 ::::{answer}
 Grafen skjærer $y$-aksen i $(0, 3)$ som betyr at $c = 3$.
 ::::
 
-::::::::::::::
+:::::::::::::
+
+
+:::::::::::::{tab-item} e
+Bruk svarene dine fra **a**, **b** og **c** til å bestemme $f(x)$.
+
+
+::::{answer}
+$$
+f(x) = x^2 - 4x + 3
+$$
+::::
+
+:::::::::::::
 
 
 
@@ -436,97 +482,96 @@ width: 80%
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
-Bruk grafen til å bestemme verdien til $c$.
+Bruk grafen til å bestemme verdien til $a$.
 
 
 ::::{answer}
 $$
-c = 5
+a = -1
 $$
 ::::
 
+
 ::::{solution}
-Grafen til $f$ skjærer $y$-aksen i $(0, 5)$ som betyr at $c = 5$.
+Toppunktet til $f$ er $(-2, 9)$. Øker vi $x$ med én enhet til høyre, så finner vi grafen i $(-1, 8)$ som betyr at $y$-verdien har sunket med $1$. Dermed er
+
+$$
+a = -1.
+$$
 ::::
+
 
 :::::::::::::
 
 
 :::::::::::::{tab-item} b
-Bruk symmetrilinja til grafen til å bestemme en sammenheng mellom $a$ og $b$.
+Bruk grafen til å bestemme verdien til $b$.
+
 
 ::::{answer}
 $$
-b = 4a
+b = -4
 $$
 ::::
 
+
 ::::{solution}
-Symmetrilinja til grafen er $x = -2$. Det betyr at 
+Grafen til $f$ har symmetrilinje i $x = -2$ siden dette er $x$-koordinaten til toppunktet. Fra formelen for symmetrilinja til $f$ får vi da at
 
 $$
-x = -\frac{b}{2a} = -2 \implies b = 4a.
+x = -\dfrac{b}{2a} \liff -2 = -\dfrac{b}{2 \cdot (-1)} \liff b = -4.
 $$
-
 ::::
 
 :::::::::::::
 
 
 :::::::::::::{tab-item} c
-Finn ett punkt på grafen til $f$ og bruk det til å bestemme verdiene til $a$ og $b$.
+Bruk grafen til å bestemme verdien til $c$.
 
-Hva er da $f(x)$?
 
 ::::{answer}
 $$
-a = -1 \and b = -4
+c = 5.
 $$
+::::
 
+
+::::{solution}
+Grafen til $f$ skjærer $y$-aksen i $(0, 5)$ som betyr at 
+
+$$
+c = 5.
+$$
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} d
+Bruk svarene dine fra **a**, **b** og **c** til å bestemme $f(x)$. 
+
+
+::::{answer}
 $$
 f(x) = -x^2 - 4x + 5
 $$
 ::::
 
 ::::{solution}
-Vi vet at $b = 4a$ og $c = 5$. Dermed kan vi skrive om $f(x)$ til
-
-
-$$
-f(x) = ax^2 + bx + c = ax^2 + 4ax + 5
-$$
-
-Vi ser at grafen til $f$ går gjennom punktet $(1, 0)$ som vi kan bruke til å sette opp en likning for $a$:
+Vi vet nå at koeffisientene til $f(x)$ er
 
 $$
-f(1) = 0  \liff a \cdot 1^2 + 4a \cdot 1 + 5 = 0
+a = -1 \and b = 4 \and c = 5
 $$
 
-som vi forenkler til
+som betyr at
 
 $$
-5a + 5 = 0 \liff a = -1.
+f(x) = -x^2 + 4x + 5
 $$
-
-Nå som vi vet verdien til $a$, kan vi finne verdien til $b$:
-
-$$
-b = 4a = 4 \cdot (-1) = -4
-$$
-
-Altså er koeffisientene til $f(x)$ gitt ved
-
-$$
-a = -1 \and b = -4 \and c = 5.
-$$
-
-Så funksjonsuttrykket til $f$ er
-
-$$
-f(x) = -x^2 - 4x + 5.
-$$
-
 ::::
+
 
 :::::::::::::
 
@@ -557,7 +602,7 @@ Bestem $f(x)$.
 :::{figure} ./figurer/oppgaver/oppgave_6/a.svg
 ---
 class: no-click, adaptive-figure
-width: 80%
+width: 70%
 ---
 :::
 
@@ -570,51 +615,21 @@ $$
 
 
 ::::{solution}
-Vi bruker standardformen til $f$ som er 
+Vi skriver $f(x)$ på standardform
 
 $$
 f(x) = ax^2 + bx + c.
 $$
 
-Vi ser at grafen til $f$ skjærer $y$-aksen i $(0, 6)$ som betyr at $c = 6$.
+Vi finner ekstremalpunktet til $f$ i $(-2, -2)$. Vi flytter oss én enhet til høyre langs $x$-aksen og finner grafen i $(-1, 0)$ som betyr at $y$-verdien har økt med $2$. Det betyr at $a = 2$. 
 
-Vi ser at symmetrilinka til $f$ er $x = -2$ som betyr at 
-
-$$
-x = -\frac{b}{2a} = -\dfrac{4}{2 \cdot 2} = -1 \implies b = 4a.
-$$
-
-Med opplysningene vi har funnet så langt, kan vi derfor skrive om $f(x)$ til
+Grafen til $f$ har symmetrilinje i $x = -2$ siden ekstremalpunktet er i $(-2, -2)$. Fra formelen for symmetrilinja til $f$ finner vi da at
 
 $$
-f(x) = ax^2 + bx + c = ax^2 + 4ax + 6.
+x = -\dfrac{b}{2a} \liff -2 = -\dfrac{b}{2 \cdot 2} \liff b = 8.
 $$
 
-Nå trenger vi ett punkt til for å sette opp en likning for $a$. Vi ser at grafen til $f$ går gjennom punktet $(-1, 0)$ som betyr at 
-
-$$
-f(-1) = 0 \liff a \cdot (-1)^2 + 4a \cdot (-1) + 6 = 0
-$$
-
-som vi forenkler til 
-
-$$
--3a + 6 = 0 \liff -3a = -6 \liff a = 2.
-$$
-
-Dermed er 
-
-$$
-b = 4a = 4 \cdot 2 = 8.
-$$
-
-Koeffisientene til $f(x)$ er derfor gitt ved
-
-$$
-a = 2 \and b = 8 \and c = 6.
-$$
-
-Vi setter inn koeffisientene i $f(x)$ og får at
+Vi ser at grafen til $f$ skjærer $y$-aksen i $(0, 6)$ som betyr at $c = 6$. Dermed er 
 
 $$
 f(x) = 2x^2 + 8x + 6.
@@ -634,7 +649,7 @@ Bestem $g(x)$.
 :::{figure} ./figurer/oppgaver/oppgave_6/b.svg
 ---
 class: no-click, adaptive-figure
-width: 80%
+width: 70%
 ---
 :::
 
@@ -645,45 +660,21 @@ $$
 ::::
 
 ::::{solution}
-Funksjonsuttrykket til $g$ er gitt ved 
+Vi skriver $g(x)$ på standardform
 
 $$
 g(x) = ax^2 + bx + c.
 $$
 
-Vi ser at grafen skjærer $y$-aksen i $(0, -5)$ som betyr at $c = -5$. 
+Vi ser at ekstremalpunktet til $g$ er i $(2, -1)$. Øker vi $x$ med én enhet til høyre, så finner vi grafen i $(3, -2)$ som betyr at $y$-verdien synker med $1$ enhet. Dermed er $a = -1$. 
 
-Vi ser at symmetrilinja til grafen til $g$ er $x = 2$ som betyr at 
-
-$$
-x = -\dfrac{b}{2a} \liff 2 = -\dfrac{b}{2a} \liff b = -4a.
-$$
-
-Med opplysningene ovenfor, kan vi skrive om $g(x)$ til
+Ekstremalpunktet er i $(2, -1)$ som gir at likningen til symmetrilinja er $x = 2$ siden dette er $x$-koordinaten til punktet. Fra formelen for symmetrilinja til $g$ kan vi bestemme verdien til $b$:
 
 $$
-g(x) = ax^2 + bx + c = ax^2 - 4ax - 5.
+x = -\dfrac{b}{2a} \liff 2 = -\dfrac{b}{2 \cdot (-1)} \liff b = -4.
 $$
 
-Så finner vi ett punkt på grafen til $g$ som vi kan bruke til å sette opp en likning for $a$. Vi ser at grafen går gjennom punktet $(1, -2)$ som betyr at
-
-$$
-g(1) = -2 \liff a \cdot 1^2 - 4a \cdot 1 - 5 = -2
-$$
-
-som vi forenkler til 
-
-$$
--3a - = -2 \liff -3a = 3 \liff a = -1.
-$$
-
-Nå kan vi bestemme verdien til $b$:
-
-$$
-b = -4a = -4 \cdot (-1) = 4.
-$$
-
-Dermed er $g(x)$ gitt ved 
+Vi ser at grafen til $g$ skjærer $y$-aksen i $(0, -5)$ som betyr at $c = -5$. Dermed er
 
 $$
 g(x) = -x^2 + 4x - 5.
@@ -703,7 +694,7 @@ Bestem $h(x)$.
 :::{figure} ./figurer/oppgaver/oppgave_6/c.svg
 ---
 class: no-click, adaptive-figure
-width: 80%
+width: 70%
 ---
 :::
 
@@ -716,45 +707,21 @@ $$
 ::::
 
 ::::{solution}
-Vi starter med standardformen til en andregradsfunksjon:
+Vi skriver $h(x)$ på standardform
 
 $$
-h(x) = ax^2 + bx + c.
+h(x) = ax^2 + bx + c
 $$
 
-Grafen til $h$ skjærer $y$-aksen i $(0, 4)$ som betyr at $c = 4$. 
+Ekstremalpunktet til $h$ er i $(-1, 3)$. Øker vi $x$ med én enhet og finner grafen igjen, havner vi i punktet $(0, 4)$. Altså har $y$-verdien økt med $1$ enhet som betyr at $a = 1$.
 
-Vi ser at symmetrilinja til grafen er $x = -1$ som betyr at 
-
-$$
-x = -\dfrac{b}{2a} \liff -1 = -\dfrac{b}{2a} \liff b = 2a.
-$$
-
-Nå kan vi skrive om $h(x)$ med opplysningene vi har funnet så langt:
+Ekstremalpunktet $(-1, 3)$ gir oss symmetrilinja $x = -1$ siden $x$-koordinaten er symmetrilinja til grafen. Da kan vi finne $b$:
 
 $$
-h(x) = ax^2 + bx + c = ax^2 + 2ax + 4.
+x = -\dfrac{b}{2a} \liff -1 = -\dfrac{b}{2 \cdot 1} \liff b = 2.
 $$
 
-Nå finner vi ett punkt til på grafen til $h$ som vi bruker til å sette opp en likning for $a$. Vi ser grafen går gjennom punktet $(-1, 3)$ som betyr at 
-
-$$
-h(-1) = 3 \liff a \cdot (-1)^2 + 2a \cdot (-1) + 4 = 3
-$$
-
-som vi forenkler til 
-
-$$
--a + 4 = 3 \liff -a = -1 \liff a = 1.
-$$
-
-Nå kan vi bestemme verdien til $b$:
-
-$$
-b = 2a = 2 \cdot 1 = 2.
-$$
-
-Dermed er $h(x)$ gitt ved 
+Grafen til $h$ skjærer $y$-aksen i punktet $(0, 4)$ som betyr at $c = 4$. Dermed er
 
 $$
 h(x) = x^2 + 2x + 4.
@@ -772,7 +739,7 @@ Bestem $p(x)$.
 :::{figure} ./figurer/oppgaver/oppgave_6/d.svg
 ---
 class: no-click, adaptive-figure
-width: 80%
+width: 70%
 ---
 :::
 
@@ -785,48 +752,29 @@ $$
 
 
 ::::{solution}
-Vi starter med standardformen til en andregradsfunksjon:
+Vi skriver $p(x)$ på standardform 
 
 $$
-p(x) = ax^2 + bx + c.
+p(x) = ax^2 + bx + c
 $$
 
-Vi ser at grafen til $p$ skjærer $y$-aksen i $(0, 0)$ som betyr at $c = 0$. 
-
-Vi ser at symmetrilinja til grafen er $x = 2$ som betyr at 
-
-$$
-x = -\dfrac{b}{2a} \liff 2 = -\dfrac{b}{2a} \liff b = -4a.
-$$
-
-Nå kan vi skrive om $p(x)$ med opplysningene vi har funnet så langt:
+Ekstremalpunktet til $p$ er $(2, 2)$. Hvis øker $x$ med én enhet, så klarer vi ikke lese av de eksakte koordinatene til punktet på grafen. 
+Øker vi $x$ med $2$ enheter, så finner vi grafen i punktet $(4, 0)$ som betyr at $y$-verdien har sunket med $2$ enheter. Da har vi at
 
 $$
-p(x) = ax^2 + bx + c = ax^2 - 4ax.
+2^2 \cdot a = -2 \liff 4a = -2 \liff a = -\dfrac{1}{2}
 $$
 
-Så finner i ett punkts til på grafen til $p$ som vi bruker til å sette opp en likning for $a$. Vi ser at grafen går gjennom punktet $(2, 2)$ som betyr at
+Siden ekstremalpunktet er i $(2, 2)$, så er symmetrilinja $x = 2$ ($x$-koordinaten til punktet). Fra formelen for symmetrilinja, finner vi da at 
 
 $$
-p(2) = 2 \liff a \cdot 2^2 - 4a \cdot 2 = 2
+x = -\dfrac{b}{2a} \liff 2 = -\dfrac{b}{2 \cdot \left(-\dfrac{1}{2}\right)} \liff b = 2
 $$
 
-som vi forenkler til 
+Grafen til $p$ skjærer $y$-aksen i $(0, 0)$ som betyr at $c = 0$. Dermed er
 
 $$
--4a = 2 \liff a = -\dfrac{1}{2}.
-$$
-
-Da kan vi regne ut verdien til $b$:
-
-$$
-b = -4a = -4 \cdot \left(-\dfrac{1}{2}\right) = 2.
-$$
-
-Dermed er $p(x)$ gitt ved
-
-$$
-p(x) = -\dfrac{1}{2}x^2 + 2x.
+p(x) = -\dfrac{1}{2}x^2 + 2x
 $$
 ::::
 
@@ -1588,51 +1536,26 @@ $$
 
 
 ::::{solution}
-Vi går ut ifra standardformen til $f(x)$ som er 
+Vi skriver $f(x)$ på standardform
 
 $$
-f(x) = ax^2 + bx + c.
+f(x) = ax^2 + bx + c. 
 $$
 
-Vi ser at grafen til $f$ skjærer $y$-aksen i $(0, 1)$ som betyr at $c = 1$.
-
-Vi ser at grafen har et toppunkt i $(2, 3)$ som betyr at symmetrilinja er $x = 2$. Da får vi at 
-
-$$
-x = -\dfrac{b}{2a} = 2 \liff b = -4a.
-$$
-
-Med opplysningene vi har brukt så langt, kan vi skrive om $f(x)$ til
+Vi ser at grafen til $f$ har et toppunkt i $(2, 3)$. Flytter vi oss $2$ enheter langs $x$-aksen til venstre ligger skjæringspunktet til grafen med $y$-aksen i $(0, 1)$.
+Her har $y$-verdien sunket med $2$ enheter som betyr at
 
 $$
-f(x) = ax^2 + bx + c = ax^2 - 4ax + 1.
+2^2 a = -2 \liff 4a = -2 \liff a = -\dfrac{1}{2}
 $$
 
-Nå bruker vi toppunktet til å bestemme verdien til $a$. Siden grafen går gjennom $(2, 3)$, så betyr det at 
+Siden grafen til $f$ har et toppunkt i $(2, 3)$ så er symmetrilinja gitt ved $x = 2$. Vi kan bestemme $b$ ved hjelp av formelen for symmetrilinja:
 
 $$
-f(2) = 3 \liff a \cdot 2^2 - 4a \cdot 2 + 1 = 3
+x = -\dfrac{b}{2a}  \liff 2 = -\dfrac{b}{2 \cdot \left(-\dfrac{1}{2}\right)} \liff 2 = b \liff b = 2.
 $$
 
-som vi forenkler til
-
-$$
--4a + 1 = 3 \liff -4a = 2 \liff a = -\dfrac{1}{2}.
-$$
-
-Nå kan vi regne ut verdien til $b$:
-
-$$
-b = -4a = -4 \cdot \left(-\dfrac{1}{2}\right) = 2.
-$$
-
-Det betyr at koeffisientene til $f(x)$ er 
-
-$$
-a = -\dfrac{1}{2} \and b = 2 \and c = 1.
-$$
-
-Dermed er
+Siden grafen til $f$ skjærer $y$-aksen i $(0, 1)$ så er $c = 1$. Dermed har vi
 
 $$
 f(x) = -\dfrac{1}{2}x^2 + 2x + 1.
