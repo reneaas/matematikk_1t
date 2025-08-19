@@ -12,8 +12,8 @@ Akkurat som når vi jobbet med lineære funksjoner, så kan vi representere en a
 ## Algebraisk og grafisk representasjon
 
 
-:::{margin} Ekstremalpunkt
-Ekstremalpunkt er en fellesbetegnelse på toppunkter og bunnpunkter.
+:::{margin} Begrep: Ekstremalpunkt
+Ekstremalpunkt er en fellesbetegnelse på toppunkter (høyeste punkt på grafen) og bunnpunkter (laveste punkt på grafen).
 :::
 
 
@@ -31,7 +31,7 @@ class: no-click, adaptive-figure
 Grafen til $f$ kan da representeres slik:
 
 
-:::{figure} ./figurer/teori/grafisk_representasjon/figur_3.svg
+:::{figure} ./figurer/teori/grafisk_representasjon/figur_4.svg
 ---
 class: no-click, adaptive-figure
 width: 75%
