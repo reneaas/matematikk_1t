@@ -10,6 +10,9 @@ For å lage en polynomfunksjon som en regresjonsmodell, kan du bruke `RegPoly(da
 :::
 
 :::::::::::::::{exercise} Oppgave 1
+---
+level: 1
+---
 
 :::{cas-popup}
 :::
@@ -144,29 +147,141 @@ som gir at $O'(235) \approx 8.74$ kr per bagett. Den praktiske tolkningen av det
 
 
 
+
+
+
 ---
-
-
-
-::::{margin}
-
-:::{ggb-popup}
----
-layout: sidebar
----
-:::
-
-:::{cas-popup}
----
-layout: sidebar
----
-:::
-
-
-::::
 
 
 :::::::::::::::{exercise} Oppgave 2
+---
+level: 1
+---
+
+Tabellen nedenfor viser antallet registrerte tilfeller av kikhoste i Norge noen måneder i perioden januar 2023 - oktober 2024.
+
+| Måned | Januar <br> 2023 | Mai <br> 2023 | Oktober <br> 2023 | Februar <br> 2024 | August <br> 2024 | Oktober <br> 2024 |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|
+| Antall registrerte tilfeller | 29 | 93 | 164 | 284 | 1035 | 1657 |
+ 
+
+<br>
+
+La $x$ være antall måneder etter desember 2022, det vil si at $x = 1$ tilsvarer januar 2023, $x = 3$ tilsvarer mars 2023, og så videre.
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Bruk opplysningene ovenfor til å vise at funksjonen $K$ gitt ved 
+
+$$
+K(x) = 27.8 \cdot 1.2^x
+$$
+
+er en god modell for antall registrerte tilfeller av kikhoste i Norge i perioden januar 2023 - oktober 2024.
+
+
+:::::{solution}
+Vi legger inn verdiene for $x$ og $K(x)$ i et regneark:
+
+:::{figure} ./figurer/oppgaver/oppgave_3/a_regneark.png
+---
+width: 80%
+class: no-click, adaptive-figure
+---
+:::
+
+deretter utfører vi regresjon med en eksponentiell modell:
+
+:::{figure} ./figurer/oppgaver/oppgave_3/a_regresjonsmodell.png
+---
+width: 80%
+class: no-click, adaptive-figure
+---
+:::
+
+Fra skjermbilde ovenfor, kan vi se at modellen vi får er:
+
+$$
+K(x) = 27.809 \cdot 1.1987^x \approx 27.8 \cdot 1.2^x.
+$$
+
+Dermed har vi vist at det oppgitte uttrykket for $K(x)$ er en god modell for antall registrerte tilfeller av kikhoste i Norge i perioden januar 2023 - oktober 2024 der $x$ er antall måneder etter desember 2022.
+
+:::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Bestem stigningstallet til den rette linjen som gjennom punktene $(4, K(4))$ og $(21, K(21))$. <br> Gi en praktisk tolkning av svaret du får.
+
+:::::{solution}
+Vi bruker uttrykket for $K(x)$ som er oppgitt i oppgaven. Stigningstallet til linja som går gjennom punktene $(4, K(4))$ og $(21, K(21))$ svarer til den gjennomsnittlige vekstfarten til $K(x)$ i intervallet $[4, 21]$ som vi kan bestemme slik:
+
+:::{figure} ./figurer/oppgaver/oppgave_3/b.png
+---
+width: 80%
+class: no-click, adaptive-figure
+---
+:::
+
+I celle 2 ser vi at stigningstallet er omtrent $71.84$. Den praktiske tolkningen av dette er at antallet registrerte tilfeller av kikhoste økte i gjennomsnitt med ca. $72$ tilfeller per måned i perioden fra april 2023 til september 2024 siden $x = 4$ tilsvarer april 2023 og $x = 21$ tilsvarer september 2024.
+
+:::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+Hvor mange tilfeller av kikhoste vil bli registrert i Norge i mai 2025 ifølge modellen?
+
+
+:::::{answer}
+Ifølge modellen blir det registrert omtrent $5499$ tilfeller av kikhoste i Norge i mai 2025.
+:::::
+
+:::::{solution}
+Vi kan tolke problemet som at vi skal bestemme $K(x)$ i mai 2025, som vi kan gjøre ved å sette
+
+$$
+x = \underbrace{5}_{\text{første mai måned}} + \underbrace{12}_{\text{antall måneder i et år}}\cdot \underbrace{2}_{\text{2 år senere}} = 29
+$$
+
+Vi regner ut med CAS:
+
+:::{figure} ./figurer/oppgaver/3/c.png
+---
+width: 80%
+class: no-click, adaptive-figure
+---
+:::
+
+Dermed vil modellen gi at antall registrerte tilfeller av kikhoste i Norge i mai 2025 er omtrent $K(29) \approx 5499$. 
+
+:::::
+
+:::::::::::::
+
+::::::::::::::
+
+:::::::::::::::
+
+
+
+
+
+
+---
+
+
+
+:::::::::::::::{exercise} Oppgave 3
+---
+level: 1
+---
 
 
 En fabrikk har en vanntank. Vannet i tanken skal tappes ut.
@@ -359,63 +474,89 @@ som ikke ligger innenfor definisjonsmengden. Med andre ord finner vi at det *ald
 :::::::::::::::
 
 
-
 ---
 
 
-:::::::::::::::{exercise} Oppgave 3
+:::::::::::::::{exercise} Oppgave 4
+---
+level: 1
+---
 
-Tabellen nedenfor viser antallet registrerte tilfeller av kikhoste i Norge noen måneder i perioden januar 2023 - oktober 2024.
+En gruppe statistikere har sett på hvordan folketallet i et område har endret seg siden 1960, og laget en modell $F$ gitt ved 
 
-| Måned | Januar <br> 2023 | Mai <br> 2023 | Oktober <br> 2023 | Februar <br> 2024 | August <br> 2024 | Oktober <br> 2024 |
-|---|:---:|:---:|:---:|:---:|:---:|:---:|
-| Antall registrerte tilfeller | 29 | 93 | 164 | 284 | 1035 | 1657 |
- 
+$$
+F(x) = \dfrac{1}{1000}\cdot \left(0.027 x^3 - 5.8 x^2 + 220x + 7900\right), \quad x \in [0, 80]
+$$
 
-<br>
-
-La $x$ være antall måneder etter desember 2022, det vil si at $x = 1$ tilsvarer januar 2023, $x = 3$ tilsvarer mars 2023, og så videre.
+for folketallet $F(x)$ tusen innbyggere i området $x$ år etter 1960.
 
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
-Bruk opplysningene ovenfor til å vise at funksjonen $K$ gitt ved 
-
-$$
-K(x) = 27.8 \cdot 1.2^x
-$$
-
-er en god modell for antall registrerte tilfeller av kikhoste i Norge i perioden januar 2023 - oktober 2024.
+Vis hvordan du på to ulike måter kan bestemme når folketallet var høyest ifølge modellen.
 
 
-:::::{solution}
-Vi legger inn verdiene for $x$ og $K(x)$ i et regneark:
-
-:::{figure} ./figurer/oppgaver/oppgave_3/a_regneark.png
+:::::{admonition} Løsning
 ---
-width: 80%
+class: solution, dropdown
+---
+**Metode 1: Løse $F'(x) = 0$** <br>
+Siden løsningene av $F'(x) = 0$ gir ekstremalpunktene som vil være punkter når folketallet enten er lavest eller høyest, kan vi løse denne likningen for å avgjøre når folketallet var høyest. Vi gjør dette med CAS:
+
+:::{figure} ./oppgave_5/a/metode_1.png
+---
+width: 100%
+class: no-click, adaptive-figure
+---
+:::
+Her får vi to kandidater 
+
+$$
+x \approx 22.5 \or x \approx 120.71.
+$$
+
+Men kun den første kandidaten ligger innenfor definisjonsmengden $D_F = [0, 80]$. Vi kan undersøke om det er toppunkt ved å regne ut $F(x)$ i to "nabopunkter" til $x = 22.5$ og sjekker om $F(22.5)$ er større enn begge. Vi gjør utregningen med CAS:
+
+:::{figure} ./oppgave_5/a/metode_1_exercise.png
+---
+width: 100%
 class: no-click, adaptive-figure
 ---
 :::
 
-deretter utfører vi regresjon med en eksponentiell modell:
+som forteller oss at 
 
-:::{figure} ./figurer/oppgaver/oppgave_3/a_regresjonsmodell.png
+$$
+F(22.5) > F(20) \and F(22.5) > F(25)
+$$
+
+så $x = 22.5$ svarer til et toppunkt. Dermed er det høyeste folketallet i området $x = 22.5$ år etter 1960 som tilsvarer i år 1982.
+
+
+**Metode 2: Finne toppunktet grafisk** <br>
+Vi kan også bruke den grafiske representasjonen til $F$ og bestemme toppunktet med en graftegner. Se figuren nedenfor.
+
+:::{figure} ./oppgave_5/a/metode_2.png
 ---
-width: 80%
+width: 100%
+class: no-click, adaptive-figure
+---
+viser grafen til $F$ der $y$-aksen viser folketallet i tusen innbyggere og $x$-aksen viser antall år etter 1960.
+:::
+
+Her har vi brukt følgende kommando i Geogebra for å bestemme koordinatene til toppunktet:
+
+:::{figure} ./oppgave_5/a/metode_2_kommando.png
+---
+width: 60%
 class: no-click, adaptive-figure
 ---
 :::
 
-Fra skjermbilde ovenfor, kan vi se at modellen vi får er:
+som forteller oss at koordinatene til toppunktet er $(22.5, 10.22)$ som betyr at folketallet var høyest når $x = 22.5$ år etter 1960 som tilsvarer i år 1982.
 
-$$
-K(x) = 27.809 \cdot 1.1987^x \approx 27.8 \cdot 1.2^x.
-$$
-
-Dermed har vi vist at det oppgitte uttrykket for $K(x)$ er en god modell for antall registrerte tilfeller av kikhoste i Norge i perioden januar 2023 - oktober 2024 der $x$ er antall måneder etter desember 2022.
 
 :::::
 
@@ -423,19 +564,23 @@ Dermed har vi vist at det oppgitte uttrykket for $K(x)$ er en god modell for ant
 
 
 :::::::::::::{tab-item} b
-Bestem stigningstallet til den rette linjen som gjennom punktene $(4, K(4))$ og $(21, K(21))$. <br> Gi en praktisk tolkning av svaret du får.
+Bestem stigningstallet til den rette linjen som går gjennom punktene $(30, F(30))$ og $(70, F(70))$. Gi en praktisk tolkning av dette stigningstallet.
 
-:::::{solution}
-Vi bruker uttrykket for $K(x)$ som er oppgitt i oppgaven. Stigningstallet til linja som går gjennom punktene $(4, K(4))$ og $(21, K(21))$ svarer til den gjennomsnittlige vekstfarten til $K(x)$ i intervallet $[4, 21]$ som vi kan bestemme slik:
 
-:::{figure} ./figurer/oppgaver/oppgave_3/b.png
+:::::{admonition} Løsning
+---
+class: solution, dropdown
+---
+Stigningstallet til den rette linjen som går gjennom $(30, F(30))$ og $(70, F(70))$ er den gjennomsnittlige vekstfarten til $F$ i intervallet $[30, 70]$. Vi regner ut dette med CAS:
+
+:::{figure} ./oppgave_5/b/sol.png
 ---
 width: 80%
 class: no-click, adaptive-figure
 ---
 :::
 
-I celle 2 ser vi at stigningstallet er omtrent $71.84$. Den praktiske tolkningen av dette er at antallet registrerte tilfeller av kikhoste økte i gjennomsnitt med ca. $72$ tilfeller per måned i perioden fra april 2023 til september 2024 siden $x = 4$ tilsvarer april 2023 og $x = 21$ tilsvarer september 2024.
+Vi ser at stigningstallet til linja er ca. $-0.15$ som betyr at folketallet synker med ca. $150$ innbyggere per år i gjennomsnitt i perioden fra 1990 til 2030, iføle modellen.
 
 :::::
 
@@ -443,30 +588,23 @@ I celle 2 ser vi at stigningstallet er omtrent $71.84$. Den praktiske tolkningen
 
 
 :::::::::::::{tab-item} c
-Hvor mange tilfeller av kikhoste vil bli registrert i Norge i mai 2025 ifølge modellen?
+Når vil folketallet avta raskest ifølge modellen? 
 
 
-:::::{answer}
-Ifølge modellen blir det registrert omtrent $5499$ tilfeller av kikhoste i Norge i mai 2025.
-:::::
+:::::{admonition} Løsning
+---
+class: solution, dropdown
+---
+Folketallet vil avta raskest når den momentane vekstfarten $F'(x)$ er minst mulig *og* negativ. Vi må altså lete etter bunnpunktet til $F'(x)$. Vi kan gjøre dette ved å løse likningen $F''(x) = 0$. Det vil si, vi deriverer den deriverte $F'$ for å finne ut hvor mye $F'$ endrer seg, og så finner vi bunnpunktet til $F'$ for å bestemme når $F''(x) = 0$. Vi gjør dette med CAS:
 
-:::::{solution}
-Vi kan tolke problemet som at vi skal bestemme $K(x)$ i mai 2025, som vi kan gjøre ved å sette
-
-$$
-x = \underbrace{5}_{\text{første mai måned}} + \underbrace{12}_{\text{antall måneder i et år}}\cdot \underbrace{2}_{\text{2 år senere}} = 29
-$$
-
-Vi regner ut med CAS:
-
-:::{figure} ./figurer/oppgaver/3/c.png
+:::{figure} ./oppgave_5/c/sol.png
 ---
 width: 80%
 class: no-click, adaptive-figure
 ---
 :::
 
-Dermed vil modellen gi at antall registrerte tilfeller av kikhoste i Norge i mai 2025 er omtrent $K(29) \approx 5499$. 
+som betyr at når $x \approx 71.6$, altså i år 2031, vil folketallet avta raskest ifølge modellen. Vi kan være sikre på at dette er punktet hvor $F'(x)$ er minst mulig *og* negativ fordi grafen til $F$ synker mest her ved å referere tilbake til grafen til $F$ fra oppgave **a**. Grafen til $F$ synker etter at $x = 22.5$ frem til $x = 80$ og $F'(x)$ er negativ i hele dette intervallet. Tangenten til grafen til $F$ vil være "brattest" i $x = 71.6$, og siden stigningstallet er negativt, vil det svare til når folketallet avtar raskest ifølge modellen.
 
 :::::
 
@@ -477,16 +615,14 @@ Dermed vil modellen gi at antall registrerte tilfeller av kikhoste i Norge i mai
 :::::::::::::::
 
 
-
-
-
-
 ---
 
 
 
-
-:::::::::::::::{exercise} Oppgave 4
+:::::::::::::::{exercise} Oppgave 5
+---
+level: 2
+---
 Funksjonen $P$ gitt ved 
 
 $$
@@ -659,143 +795,9 @@ Altså vil antall papirabonnenter bli lavere enn antall digitale abonnenter når
 
 
 
+
 ---
 
-
-
-
-:::::::::::::::{exercise} Oppgave 5
-En gruppe statistikere har sett på hvordan folketallet i et område har endret seg siden 1960, og laget en modell $F$ gitt ved 
-
-$$
-F(x) = \dfrac{1}{1000}\cdot \left(0.027 x^3 - 5.8 x^2 + 220x + 7900\right), \quad x \in [0, 80]
-$$
-
-for folketallet $F(x)$ tusen innbyggere i området $x$ år etter 1960.
-
-::::::::::::::{tab-set}
----
-class: tabs-parts
----
-:::::::::::::{tab-item} a
-Vis hvordan du på to ulike måter kan bestemme når folketallet var høyest ifølge modellen.
-
-
-:::::{admonition} Løsning
----
-class: solution, dropdown
----
-**Metode 1: Løse $F'(x) = 0$** <br>
-Siden løsningene av $F'(x) = 0$ gir ekstremalpunktene som vil være punkter når folketallet enten er lavest eller høyest, kan vi løse denne likningen for å avgjøre når folketallet var høyest. Vi gjør dette med CAS:
-
-:::{figure} ./oppgave_5/a/metode_1.png
----
-width: 100%
-class: no-click, adaptive-figure
----
-:::
-Her får vi to kandidater 
-
-$$
-x \approx 22.5 \or x \approx 120.71.
-$$
-
-Men kun den første kandidaten ligger innenfor definisjonsmengden $D_F = [0, 80]$. Vi kan undersøke om det er toppunkt ved å regne ut $F(x)$ i to "nabopunkter" til $x = 22.5$ og sjekker om $F(22.5)$ er større enn begge. Vi gjør utregningen med CAS:
-
-:::{figure} ./oppgave_5/a/metode_1_exercise.png
----
-width: 100%
-class: no-click, adaptive-figure
----
-:::
-
-som forteller oss at 
-
-$$
-F(22.5) > F(20) \and F(22.5) > F(25)
-$$
-
-så $x = 22.5$ svarer til et toppunkt. Dermed er det høyeste folketallet i området $x = 22.5$ år etter 1960 som tilsvarer i år 1982.
-
-
-**Metode 2: Finne toppunktet grafisk** <br>
-Vi kan også bruke den grafiske representasjonen til $F$ og bestemme toppunktet med en graftegner. Se figuren nedenfor.
-
-:::{figure} ./oppgave_5/a/metode_2.png
----
-width: 100%
-class: no-click, adaptive-figure
----
-viser grafen til $F$ der $y$-aksen viser folketallet i tusen innbyggere og $x$-aksen viser antall år etter 1960.
-:::
-
-Her har vi brukt følgende kommando i Geogebra for å bestemme koordinatene til toppunktet:
-
-:::{figure} ./oppgave_5/a/metode_2_kommando.png
----
-width: 60%
-class: no-click, adaptive-figure
----
-:::
-
-som forteller oss at koordinatene til toppunktet er $(22.5, 10.22)$ som betyr at folketallet var høyest når $x = 22.5$ år etter 1960 som tilsvarer i år 1982.
-
-
-:::::
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} b
-Bestem stigningstallet til den rette linjen som går gjennom punktene $(30, F(30))$ og $(70, F(70))$. Gi en praktisk tolkning av dette stigningstallet.
-
-
-:::::{admonition} Løsning
----
-class: solution, dropdown
----
-Stigningstallet til den rette linjen som går gjennom $(30, F(30))$ og $(70, F(70))$ er den gjennomsnittlige vekstfarten til $F$ i intervallet $[30, 70]$. Vi regner ut dette med CAS:
-
-:::{figure} ./oppgave_5/b/sol.png
----
-width: 80%
-class: no-click, adaptive-figure
----
-:::
-
-Vi ser at stigningstallet til linja er ca. $-0.15$ som betyr at folketallet synker med ca. $150$ innbyggere per år i gjennomsnitt i perioden fra 1990 til 2030, iføle modellen.
-
-:::::
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} c
-Når vil folketallet avta raskest ifølge modellen? 
-
-
-:::::{admonition} Løsning
----
-class: solution, dropdown
----
-Folketallet vil avta raskest når den momentane vekstfarten $F'(x)$ er minst mulig *og* negativ. Vi må altså lete etter bunnpunktet til $F'(x)$. Vi kan gjøre dette ved å løse likningen $F''(x) = 0$. Det vil si, vi deriverer den deriverte $F'$ for å finne ut hvor mye $F'$ endrer seg, og så finner vi bunnpunktet til $F'$ for å bestemme når $F''(x) = 0$. Vi gjør dette med CAS:
-
-:::{figure} ./oppgave_5/c/sol.png
----
-width: 80%
-class: no-click, adaptive-figure
----
-:::
-
-som betyr at når $x \approx 71.6$, altså i år 2031, vil folketallet avta raskest ifølge modellen. Vi kan være sikre på at dette er punktet hvor $F'(x)$ er minst mulig *og* negativ fordi grafen til $F$ synker mest her ved å referere tilbake til grafen til $F$ fra oppgave **a**. Grafen til $F$ synker etter at $x = 22.5$ frem til $x = 80$ og $F'(x)$ er negativ i hele dette intervallet. Tangenten til grafen til $F$ vil være "brattest" i $x = 71.6$, og siden stigningstallet er negativt, vil det svare til når folketallet avtar raskest ifølge modellen.
-
-:::::
-
-:::::::::::::
-
-::::::::::::::
-
-:::::::::::::::
 
 
 
@@ -805,6 +807,9 @@ som betyr at når $x \approx 71.6$, altså i år 2031, vil folketallet avta rask
 
 
 :::::::::::::::{exercise} Oppgave 6
+---
+level: 3
+---
 
 Lufttrykk måles ofte i hektopascal (hPa). Jo høyere over havet vi befinner oss, jo lavere er lufttrykket. Lufttrykket ved havets overflate er ca. 1000 hPa.
 
@@ -984,6 +989,9 @@ som forteller oss at kokepunktet er på $85 \degree \mathrm{C}$ når vi er omtre
 
 
 :::::::::::::::{exercise} Oppgave 7
+---
+level: 3
+---
 
 :::{cas-popup}
 ---
@@ -1051,6 +1059,9 @@ Bestem hvor langt unna strandkiosken båten må gå i land for å få kortest mu
 
 
 :::::::::::::::{exercise} Oppgave 8
+---
+level: 3
+---
 
 En sylinder med et hull i bunnen vil tappe ut vann når hullet er åpent. 
 
@@ -1121,6 +1132,9 @@ Hvor lang tid tar det før lengden av strålen og høyden på vannstanden er lik
 
 
 ::::::::::::::::{exercise} Oppgave 9 
+---
+level: 3
+---
 
 Anna skal reise fra en holme som ligger $8$ km fra strandkanten. $12$ km fra det punktet på stranden som ligger nærmest holmen, ligger det en hytte. Se figuren nedenfor.
 
@@ -1314,6 +1328,9 @@ class: no-click, adaptive-figure
 
 
 ::::::::::::::::{exercise} Oppgave 10
+---
+level: 3
+---
 
 :::{cas-popup}
 ---
@@ -1390,6 +1407,9 @@ $$
 
 
 ::::::::::::::::{exercise} Oppgave 11
+---
+level: 3
+---
 
 
 :::{figure} ./figurer/oppgaver/oppgave_11/figur.svg
@@ -1634,6 +1654,172 @@ $$
 :::::::::::::::
 
 ::::::::::::::::
+
+
+
+
+---
+
+
+
+
+
+
+:::::::::::::::{exercise} Oppgave 12
+---
+level: 3
+---
+
+Isabel er industridesigner. Hun arbeider med et design på bokser med form som sylindre.
+
+
+
+:::{figure} ./figurer/oppgaver/oppgave_12/figur.svg
+---
+width: 100%
+class: no-click, adaptive-figure
+align: right
+---
+:::
+
+Formel for å regne ut volumet av en boks med radius $r$ og høyde $h$ er
+
+$$
+V = \pi \cdot r^2 \cdot h
+$$
+
+Formel for å regne ut arealet av overflaten av boksen er 
+
+$$
+O = \pi \cdot r^2 + 2\cdot \pi \cdot r \cdot h
+$$
+
+Isabel lurer på hvor stor radius hun bør velge og hvor høye boksene må være, når hver boks skal ha 
+* et volum $V$ på $450 \, \mathrm{cm}^3$
+* minst mulige overflate $O$
+
+Isabel ser at når hun har gitt volum og radius, kan hun regne ut høyden ved å bruke formelen $V = \pi \cdot r^2 \cdot h$
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Lag en oversikt som vist nedenfor. Gjør beregninger og fyll inn verdiene som mangler.
+
+| Radius, $r$ (cm) | Høyde, $h$ (cm) | Overflate, $O$ (cm$^2$) | Volum, $V$ (cm$^3$) |
+|:---:|:---:|:---:|:---:|
+| 2 | 35.8  | 462.6 | 450 |
+| 4 |  |   | 450 |
+| 6 |  |   | 450 |
+| 8 |  |   | 450 |
+
+:::::{solution}
+Vi kan skrive om formelen for volum slik at vi kan bestemme høyden $h$ gitt et volum $V$ og en radius $r$ som:
+
+$$
+V = \pi \cdot r^2 \cdot h \liff h = \dfrac{V}{\pi \cdot r^2}
+$$
+
+Deretter lager vi et regneark der vi fyller ut tabellen:
+
+:::{figure} ./figurer/oppgaver/oppgave_12/a_regneark.png
+---
+width: 85%
+class: no-click, adaptive-figure
+---
+:::
+
+Nedenfor vises en oversikt over formlene som er brukt i regnearket:
+
+:::{figure} ./figurer/oppgaver/oppgave_12/a_regneark_med_formler.png
+---
+width: 85%
+class: no-click, adaptive-figure
+---
+:::
+
+:::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Sett opp et funksjonsuttrykk Isabel kan bruke, og lag en grafisk framstilling som viser sammenhengen mellom radius og overflate.
+
+
+:::::{solution}
+Vi kan lage et funksjonsuttrykk $O(r)$ for overflaten $O$ av boksen for en gitt høyde $r$. Volumet $V = 450$, så vi kan sette opp et likningssystem for å bestemme $O(r)$. Vi løser likningssystemet med CAS:
+
+:::{figure} ./figurer/oppgaver/oppgave_12/b_formel.png
+---
+width: 85%
+class: no-click, adaptive-figure
+---
+:::
+
+som betyr at vi kan skrive 
+
+$$
+O(r) = \dfrac{\pi r^3 + 900}{r} \and h = \dfrac{450}{\pi r^2}.
+$$
+
+Deretter kan vi lage en grafisk framstilling av funksjonen $O(r)$: 
+
+:::{figure} ./figurer/oppgaver/oppgave_12/figur_b.svg
+---
+width: 100%
+class: no-click, adaptive-figure
+---
+:::
+
+
+:::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+Hvor står må radius i boksene være for at overflaten skal bli minst mulig? <br>
+Hvor stor blir overflaten da?
+
+:::::{solution}
+For å bestemme hvilken radius som gir minst mulig overflate, så kan vi løse likningen
+
+$$
+O'(r) = 0
+$$
+
+Deretter kan vi regne ut $O(r)$ i dette punktet. Vi gjør dette med CAS:
+
+:::{figure} ./figurer/oppgaver/oppgave_12/c.png
+---
+width: 85%
+class: no-click, adaptive-figure
+---
+:::
+
+Ut ifra den grafiske framstillingen fra **b** kan vi være sikre på at løsningen her gir et bunnpunkt og dermed den minste overflaten. Vi har da at boksen har minst overflate dersom 
+
+$$
+r \approx 5.23 \, \mathrm{cm}
+$$
+
+som gir en overflate på ca. $258 \, \mathrm{cm}^2$.
+
+
+
+:::::
+
+:::::::::::::
+
+::::::::::::::
+
+
+
+
+:::::::::::::::
 
 
 
