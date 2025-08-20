@@ -7,7 +7,7 @@ gutter: 3
 
 ::::{grid-item-card}
 ---
-link: representasjoner/standardform/teori
+link: standardform/teori
 link-type: doc
 ---
 **Standardform**
@@ -22,7 +22,7 @@ $$
 
 ::::{grid-item-card}
 ---
-link: representasjoner/ekstremalpunktsform/teori
+link: ekstremalpunktsform/teori
 link-type: doc
 ---
 **Ekstremalpunktsform**
@@ -38,7 +38,7 @@ $$
 
 ::::{grid-item-card}
 ---
-link: representasjoner/nullpunktsform/teori
+link: nullpunktsform/teori
 link-type: doc
 ---
 **Nullpunktsform**

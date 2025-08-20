@@ -1819,6 +1819,10 @@ $$
 
 
 :::::::::::::::{exercise} Oppgave 11 
+---
+level: 3
+---
+
 Siri har laget programmet nedenfor: 
 
 :::{code-block} python
@@ -1853,6 +1857,10 @@ Hvilken verdi skrives ut?
 
 
 :::::::::::::::{exercise} Oppgave 12
+---
+level: 3
+---
+
 Anna jobber med andregradsfunksjonen
 
 $$

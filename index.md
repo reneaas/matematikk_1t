@@ -70,7 +70,7 @@ link-type: doc
 
 ^^^
 
-:::{figure} ./book/andregradsfunksjoner/representasjoner/standardform/figurer/teori/algebraisk_uttrykk.svg
+:::{figure} ./book/andregradsfunksjoner/standardform/figurer/teori/algebraisk_uttrykk.svg
 ---
 width: 100%
 class: no-click, adaptive-figure
@@ -79,7 +79,7 @@ class: no-click, adaptive-figure
 
 ---
 
-:::{figure} ./book/andregradsfunksjoner/representasjoner/standardform/figurer/teori/grafisk_representasjon.svg
+:::{figure} ./book/andregradsfunksjoner/standardform/figurer/teori/grafisk_representasjon.svg
 ---
 width: 100%
 class: no-click, adaptive-figure
