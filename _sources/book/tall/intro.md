@@ -47,7 +47,7 @@ $$
 
 ::::{grid-item-card}
 ---
-link: tallmengder_og_setningslogikk/tallmengder/teori
+link: tallmengder/teori
 link-type: doc
 ---
 **Tallmengder** 
@@ -68,7 +68,7 @@ link-type: doc
 
 ::::{grid-item-card}
 ---
-link: tallmengder_og_setningslogikk/setningslogikk/teori
+link: setningslogikk/teori
 link-type: doc
 ---
 **Matematisk logikk og symboler** 
@@ -83,7 +83,7 @@ link-type: doc
 
 ::::{grid-item-card}
 ---
-link: tallfølger/formler/teori
+link: formler/teori
 link-type: doc
 ---
 **Formler**
@@ -98,7 +98,7 @@ $$
 
 ::::{grid-item-card}
 ---
-link: tallfølger/programmering/teori
+link: programmering/teori
 link-type: doc
 ---
 **Programmering av tallfølger**

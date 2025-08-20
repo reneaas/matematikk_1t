@@ -3,6 +3,10 @@
 
 
 :::::::::::::::{exercise} Oppgave 1
+---
+level: 1
+---
+
 Regn ut.
 
 ::::::::::::::{tab-set}
@@ -110,6 +114,11 @@ $7$
 
 
 :::::::::::::::{exercise} Oppgave 2
+---
+level: 1
+---
+
+
 Primtallsfaktoriser tallene.
 
 ::::::::::::::{tab-set}
@@ -206,6 +215,7 @@ $$
 ---
 level: 1
 ---
+
 Forkort brøkene så mye som mulig.
 
 :::::::::::{tab-set}
@@ -306,6 +316,7 @@ $$
 ---
 level: 1
 ---
+
 Regn ut og forkort svaret så mye som mulig.
 
 :::::::::::{tab-set}
@@ -407,6 +418,10 @@ $$
 
 
 :::::::::::::::{exercise} Oppgave 5
+---
+level: 2
+---
+
 Regn ut.
 
 ::::::::::::::{tab-set}
@@ -537,8 +552,9 @@ $$
 
 ::::::::::::{exercise} Oppgave 6
 ---
-level: 1
+level: 2
 ---
+
 Regn ut og skriv svaret så enkelt som mulig.
 
 :::::::::::{tab-set}
@@ -658,8 +674,9 @@ $$
 
 ::::::::::::{exercise} Oppgave 7
 ---
-level: 1
+level: 2
 ---
+
 Regn ut og forkort svaret så mye som mulig.
 
 :::::::::::{tab-set}
@@ -888,6 +905,10 @@ $$
 
 
 :::::::::::::::{exercise} Oppgave 9
+---
+level: 2
+---
+
 Skriv så enkelt som mulig.
 
 
@@ -999,6 +1020,10 @@ $$
 
 
 :::::::::::::::{exercise} Oppgave 10
+---
+level: 3
+---
+
 Skriv om enkelt som mulig.
 
 ::::::::::::::{tab-set}
@@ -1101,6 +1126,9 @@ $$
 :::
 
 :::::::::::::::{exercise} Oppgave 11
+---
+level: 3
+---
 Skriv så enkelt som mulig.
 
 ::::::::::::::{tab-set}

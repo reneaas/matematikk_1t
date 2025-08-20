@@ -9,12 +9,12 @@
 
 Akkurat som når vi jobbet med lineære funksjoner, så kan vi representere en andregradsfunksjon på flere måter som gir oss ulike opplysninger om grafen til funksjonen. Her skal vi se på det vi kaller for **standardform**. Standardformen gir oss informasjon om hvilken vei grafen til funksjonen vender, hvor den skjærer $y$-aksen og hvor symmetrilinja til grafen er. Det er det neste vi skal se nærmere på.
 
-## Algebraisk og grafisk representasjon
 
 
 :::{margin} Begrep: Ekstremalpunkt
 Ekstremalpunkt er en fellesbetegnelse på toppunkter (høyeste punkt på grafen) og bunnpunkter (laveste punkt på grafen).
 :::
+
 
 
 :::::::::::::::{summary} Standardform
@@ -31,7 +31,7 @@ class: no-click, adaptive-figure
 Grafen til $f$ kan da representeres slik:
 
 
-:::{figure} ./figurer/teori/grafisk_representasjon/figur_4.svg
+:::{figure} ./figurer/teori/grafisk_representasjon/figur_3.svg
 ---
 class: no-click, adaptive-figure
 width: 75%
@@ -47,10 +47,139 @@ Grafen til $f$ vil ha form som en **parabel** der koeffisientene har følgende b
 
 :::::::::::::::
 
+
+---
+
+
+## Fra graf til $f(x)$
+Når vi har grafen til $f$, kan vi bestemme $f(x)$ ved å lese av verdiene til koeffisientene $a$, $b$ og $c$.  
+
+La oss se på et eksempel:
+
+:::::::::::::::{example} Eksempel 1
+Grafen til en andregradsfunksjon $f$ er vist i figuren nedenfor.
+
+Bestem $f(x)$. 
+
+:::{figure} ./figurer/eksempler/eksempel_1/figur.svg
+---
+class: no-click, adaptive-figure
+width: 70%
+---
+:::
+
+::::{solution}
+---
+dropdown: 0
+---
+Standardformen til $f(x)$ er gitt ved 
+
+$$
+f(x) = ax^2 + bx + c.
+$$
+
+
+Koeffisient $a$
+: Vi ser at grafen til $f$ har et bunnpunkt i $(-1, -9)$. Går vi én enhet langs $x$-aksen til høyre finner vi grafen i $(0, -8)$ som betyr at $y$-verdien har økt med $1$. Da får vi at $a = 1$.
+
+Koeffisient $b$
+: Symmetrilinja til grafen til $f$ er $x = -1$ som betyr at
+
+    $$
+    x = -\dfrac{b}{2a} \liff -1 = -\dfrac{b}{2 \cdot 1} \liff b = 2.
+    $$
+
+Koeffisient $c$
+: Vi ser at grafen til $f$ skjærer $y$-aksen i $(0, -8)$ som betyr at $c = -8$.
+
+
+Funksjonsuttrykket $f(x)$:
+: Nå vet vi at koeffisientene til $f(x)$ er gitt ved
+
+    $$
+    a = 1 \and b = 2 \and c = -8
+    $$
+
+    Dermed er
+
+    $$
+    f(x) = ax^2 + bx + c = x^2 + 2x - 8
+    $$
+
+::::
+
+:::::::::::::::
+
+---
+
+:::::::::::::::{exercise} Underveisoppgave 1
+Grafen til en andregradsfunksjon $f$ er vist i figuren nedenfor.
+
+Bestem $f(x)$.
+
+:::{figure} ./figurer/underveisoppgaver/underveisoppgave_1/figur.svg
+---
+class: no-click, adaptive-figure
+width: 70%
+---
+:::
+
+::::{answer}
+$$
+f(x) = -x^2 + 4x + 1.
+$$
+::::
+
+::::{solution}
+Vi skriver $f(x)$ på standardform:
+
+$$
+f(x) = ax^2 + bx + c.
+$$
+
+Koeffisient $a$
+: Vi ser at grafen til $f$ har et toppunkt i $(2, 5)$. Går vi én enhet langs $x$-aksen mot høyre, finner vi grafen i punktet $(3, 4)$. Vi ser at $y$-verdien synker med $-1$ som betyr at $a = -1$. 
+
+
+Koeffisient $b$
+: Symmetrilinja til grafen til $f$ er $x = 2$ som betyr at
+
+    $$
+    x = -\dfrac{b}{2a} \liff 2 = -\dfrac{b}{2 \cdot (-1)} \liff b = 4.
+    $$
+
+
+Koeffisient $c$
+: Vi ser at grafen til $f$ skjærer $y$-aksen i $(0, 1)$ som betyr at $c = 1$. 
+
+
+Funksjonsuttrykket $f(x)$:
+: Nå vet vi at koeffisientene til $f(x)$ er
+
+    $$
+    a = -1 \and b = 4 \and c = 1
+    $$
+
+    Dermed er
+
+    $$
+    f(x) = -x^2 + 4x + 1.
+    $$
+
+::::
+
+
+:::::::::::::::
+
+
+
+
+## Fra $f(x)$ til graf
+
 La oss se på et eksempel der vi regner ut de ulike egenskapene og sammenlikner med grafen.
 
 
-:::::::::::::::{example} Eksempel 1
+:::::::::::::::{example} Eksempel 2
 En andregradsfunksjon $f$ er gitt ved
 
 $$
@@ -91,7 +220,7 @@ Skjæringspunkt med $y$-aksen
 
 Nå har vi nok opplysninger til å tegne en skisse av grafen til $f$:
 
-:::{figure} ./figurer/eksempler/eksempel_1/figur.svg
+:::{figure} ./figurer/eksempler/eksempel_2/figur.svg
 ---
 class: no-click, adaptive-figure
 width: 80%
@@ -104,7 +233,7 @@ width: 80%
 
 ---
 
-:::::::::::::::{exercise} Underveisoppgave 1
+:::::::::::::::{exercise} Underveisoppgave 2
 En andregradsfunksjon $f$ er gitt ved
 
 $$
@@ -148,7 +277,7 @@ Skjæringspunkt med $y$-aksen
 Nå har vi nok opplysninger til å tegne en skisse av grafen til $f$:
 
 
-:::{figure} ./figurer/underveisoppgaver/underveisoppgave_1/figur.svg
+:::{figure} ./figurer/underveisoppgaver/underveisoppgave_2/figur.svg
 ---
 class: no-click, adaptive-figure
 width: 90%
@@ -160,116 +289,31 @@ width: 90%
 :::::::::::::::
 
 
+
 ---
 
+## Fra graf til $f(x)$ – igjen 
 
-## Fra graf til $f(x)$
-
-Så langt har vi sett hvordan vi kan skisse grafen til en andregradsfunksjon $f$ ut ifra standardformen til $f(x)$. Det er naturlig å lure på om vi kan gå motsatt vei også. Her skal vi se på to strategier:
-1. **Bruke egenskapene til $f$**
-2. **CAS**
+Det er ikke alltid like lett å lese av verdien til $a$, spesielt hvis vi ikke kan se hvor mye $y$-verdien endrer seg når vi øker $x$ med $1$ enhet fra symmetrilinja. Da kan vi få bruk for følgende sammenheng:
 
 
-### Bestemme $f(x)$ ut ifra egenskapene til grafen til $f$
-Når vi har grafen til en andregradsfunksjon $f$, kan vi bruke følgende egenskaper til å bestemme $f(x)$:
-* Skjæringspunktet med $y$-aksen bestemmer konstantleddet $c$.
-* Symmetrilinja gir en sammenheng mellom $a$ og $b$. 
-* Ett punkt til på grafen til å bestemme $a$ og $b$. 
 
-La oss se på et eksempel:
+:::::::::::::::{summary} Grafisk betydning av $a$ (ledende koeffisient)
+Når vi øker $x$ med $d$ enheter fra symmetrilinja, så endrer $y$-verdien seg med $d^2 \cdot a$ enheter. 
 
-:::::::::::::::{example} Eksempel 2
-Grafen til en andregradsfunksjon $f$ er vist i figuren nedenfor.
+Se figuren nedenfor.
 
-Bestem $f(x)$. 
 
-:::{figure} ./figurer/eksempler/eksempel_2/figur.svg
+:::{figure} ./figurer/teori/grafisk_representasjon/merged_figure.svg
 ---
 class: no-click, adaptive-figure
-width: 70%
+width: 100%
 ---
 :::
-
-::::{solution}
----
-dropdown: 0
----
-Standardformen til $f(x)$ er gitt ved 
-
-$$
-f(x) = ax^2 + bx + c.
-$$
-
-Vi ser at grafen til $f$ har et bunnpunkt i $(-1, -9)$. Går vi én enhet langs $x$-aksen til høyre finner vi grafen i $(0, -8)$ som betyr at $y$-verdien har økt med $1$. Da får vi at $a = 1$.
-
-Vi ser at grafen til $f$ skjærer $y$-aksen i $(0, -8)$ som betyr at $c = -8$.
-
-Symmetrilinja til grafen til $f$ er $x = -1$ som betyr at
-
-$$
-x = -\dfrac{b}{2a} \liff -1 = -\dfrac{b}{2 \cdot 1} \liff b = 2.
-$$
-
-Dermed er
-
-$$
-f(x) = ax^2 + bx + c = x^2 + 2x - 8
-$$
-
-::::
-
-:::::::::::::::
-
----
-
-:::::::::::::::{exercise} Underveisoppgave 2
-Grafen til en andregradsfunksjon $f$ er vist i figuren nedenfor.
-
-Bestem $f(x)$.
-
-:::{figure} ./figurer/underveisoppgaver/underveisoppgave_2/figur.svg
----
-class: no-click, adaptive-figure
-width: 70%
----
-:::
-
-::::{answer}
-$$
-f(x) = -x^2 + 4x + 1.
-$$
-::::
-
-::::{solution}
-Vi skriver $f(x)$ på standardform:
-
-$$
-f(x) = ax^2 + bx + c.
-$$
-
-Vi ser at grafen til $f$ skjærer $y$-aksen i $(0, 1)$ som betyr at $c = 1$. 
-
-Vi ser at grafen til $f$ har et toppunkt i $(2, 5)$. Går vi én enhet langs $x$-aksen mot høyre, finner vi grafen i punktet $(3, 4)$. Vi ser at $y$-verdien synker med $-1$ som betyr at $a = -1$. 
-
-Symmetrilinja til grafen til $f$ er $x = 2$ som betyr at
-
-$$
-x = -\dfrac{b}{2a} \liff 2 = -\dfrac{b}{2 \cdot (-1)} \liff b = 4.
-$$
-
-Dermed er
-
-$$
-f(x) = -x^2 + 4x + 1.
-$$
-
-::::
 
 
 :::::::::::::::
 
-
----
 
 Det er ikke alltid vi kan lese av verdien til $a$ direkte. Det gjør at vi heller ikke enkelt kan bestemme verdien til $b$ siden de to koeffisientene er bundet sammen ved likningen for symmetrilinja. Da kan vi sette opp en likning ut ifra et punkt på grafen til $f$ og bestemme verdien til $a$ og deretter bestemme verdien til $b$.
 
@@ -293,57 +337,110 @@ width: 70%
 ---
 dropdown: 0
 ---
-Vi skriver $f(x)$ på standardform: 
+Vi skriver $f(x)$ på standardform:
 
 $$
 f(x) = ax^2 + bx + c
 $$
 
-Vi ser grafen til $f$ skjærer $y$-aksen i $(0, -4)$ som betyr at $c = -4$.
+Koeffisient $a$
+: Vi ser at toppunktet til grafen er i $(2, 3)$. Flytter vi oss $2$ enheter til høyre så finner vi grafen i $(4, 1)$. Så her har $y$-verdien endret seg med $-2$ enheter. Men $y$-verdien skal også ha endret seg $2^2 \cdot a$ enheter, som betyr at vi får likningen
 
-Grafen til $f$ har en symmetrilinje $x = 3$ som betyr at
+    $$
+    2^2 a = -2 \liff 4a = -2 \liff a = -\dfrac{1}{2}
+    $$
 
-$$
-x = -\dfrac{b}{2a} \liff 3 = -\dfrac{b}{2a} \liff b = -6a.
-$$
 
-Med opplysningene vi har lest av så langt, kan vi skrive om $f(x)$ til
-
-$$
-f(x) = ax^2 - 6ax - 4.
-$$
-
-Vi ser at grafen har et toppunkt i $(3, 8)$ som vi kan bruke til å sette opp en likning for $a$:
+Koeffisient $b$
+: Grafen til $f$ har toppunkt i $(2, 3)$. Det er $x$-koordinaten til dette punktet som gir symmetrilinja som er $x = 2$. Da kan vi bestemme $b$:
 
 $$
-f(3) = 8 \liff a \cdot 3^2 - 6a \cdot 3 - 4 = 8
+x = -\dfrac{b}{2a} \liff -2 = -\dfrac{b}{2 \cdot \left(-\dfrac{1}{2}\right)} \liff -2 = \dfrac{b}{1} \liff b = -2
 $$
 
-som vi forenkler til
+Koeffisient $c$
+: Vi ser at grafen til $f$ skjærer $y$-aksen i $(0, 1)$ som betyr at $c = 1$.
 
-$$
-9a - 18a = 12 \liff -9a = 12 \liff a = -\dfrac{12}{9} = -\dfrac{4}{3}.
-$$
 
-Så kan vi regne ut verdien til $b$:
+Funksjonsuttrykket $f(x)$
+: Nå har vi funnet at koeffisientene til $f(x)$ er
 
-$$
-b = -6a = -6 \cdot \left(-\dfrac{4}{3}\right) = 8.
-$$
+    $$
+    a = -\dfrac{1}{2} \and b = -2 \and c = 1
+    $$
 
-Dermed er koeffisientene til $f(x)$ gitt ved
+    Dermed er
 
-$$
-a = -\dfrac{4}{3} \and b = 8 \and c = -4,
-$$
-
-så vi kan skrive ned $f(x)$ ved
-
-$$
-f(x) = -\dfrac{4}{3}x^2 + 8x - 4.
-$$
+    $$
+    f(x) = -\dfrac{1}{2}x^2 - 2x + 1
+    $$
 
 ::::
+
+:::::::::::::::
+
+
+---
+
+
+:::::::::::::::{exercise} Underveisoppgave 3
+Grafen til en andregradsfunksjon $f$ er vist i figuren nedenfor.
+
+Bestem $f(x)$.
+
+
+:::{figure} ./figurer/underveisoppgaver/underveisoppgave_3/figur.svg
+---
+class: no-click, adaptive-figure
+width: 70%
+---
+:::
+
+
+::::{answer}
+$$
+f(x) = \dfrac{3}{2}x^2 - 6x + 2
+$$
+::::
+
+
+::::{solution}
+Vi skriver $f(x)$ på standardform:
+
+Koeffisient $a$
+: Vi ser at bunnpunktet til grafen er i $(2, -4)$. Hvis vi øker $x$ med $2$ enheter til høyre, så finner vi grafen i $(4, 2)$. Da har $y$-verdien økt med $6$ enheter. Vi vet også at siden vi har økt $x$ med $2$, så skal $y$-verdien ha økt med $2^2 \cdot a = 4a$ enheter. Da får vi likningen
+
+$$
+4a = 6 \liff a = \dfrac{6}{4} = \dfrac{3}{2}
+$$
+
+
+Koeffisient $b$
+: Symmetrilinja til grafen til $f$ er $x = 2$ siden dette er $x$-koordinaten til bunnpunktet. Da kan vi bestemme $b$:
+
+$$
+x = -\dfrac{b}{2a} \liff 2 = -\dfrac{b}{2 \cdot \dfrac{3}{2}} \liff 2 = -\dfrac{b}{3} \liff b = -6
+$$
+
+
+Koeffisient $c$
+: Vi ser at grafen til $f$ skjærer $y$-aksen i $(0, 2)$ som betyr at $c = 2$.
+
+
+Funksjonsuttrykk $f(x)$
+: Vi har funnet at koeffisientene til $f(x)$ er
+
+    $$
+    a = \dfrac{3}{2} \and b = -6 \and c = 2
+    $$
+    
+    Dermed er
+
+    $$
+    f(x) = \dfrac{3}{2}x^2 - 6x + 2
+    $$
+::::
+
 
 :::::::::::::::
 
@@ -351,7 +448,7 @@ $$
 
 
 
-### CAS
+## Bestemme $f(x)$ med CAS
 En annen måte å finne $f(x)$ på er å sette opp et likningssystem for koeffisientene $a$, $b$ og $c$ som vi løser med CAS. Dette er spesielt nyttig i situasjoner hvor vi verken kan lese av symmetrilinje eller skjæring med $y$-aksen. Det skal du se nærmere på i Utforsk 1. 
 
 :::::::::::::::{explore} Utforsk 1
