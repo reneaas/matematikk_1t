@@ -1,6 +1,10 @@
 # Oppgaver: Algebra
 
 :::::::::::::::{exercise} Oppgave 1
+---
+level: 1
+---
+
 Trekk sammen uttrykkene.
 
 ::::::::::::::{tab-set}
@@ -102,6 +106,10 @@ $$
 
 
 :::::::::::::::{exercise} Oppgave 2
+---
+level: 1
+---
+
 Trekk sammen uttrykkene.
 
 ::::::::::::::{tab-set}
@@ -215,6 +223,10 @@ $$
 :::
 
 :::::::::::::::{exercise} Oppgave 3
+---
+level: 1
+---
+
 Utvid uttrykkene.
 ::::::::::::::{tab-set}
 ---
@@ -320,6 +332,10 @@ $$
 
 
 :::::::::::::::{exercise} Oppgave 4
+---
+level: 1
+---
+
 Faktoriser uttrykkene så mye som mulig. 
 
 ::::::::::::::{tab-set}
@@ -429,6 +445,10 @@ $$
 :::
 
 :::::::::::::::{exercise} Oppgave 5
+---
+level: 1
+---
+
 Utvid uttrykkene.
 
 ::::::::::::::{tab-set}
@@ -532,6 +552,10 @@ $$
 
 
 :::::::::::::::{exercise} Oppgave 6
+---
+level: 1
+---
+
 Faktoriser uttrykkene. 
 
 
@@ -635,6 +659,10 @@ $$
 :::
 
 :::::::::::::::{exercise} Oppgave 7 
+---
+level: 1
+---
+
 Utvid uttrykkene.
 
 
@@ -739,6 +767,10 @@ $$
 
 
 :::::::::::::::{exercise} Oppgave 8
+---
+level: 2
+---
+
 Faktoriser uttrykkene.
 
 ::::::::::::::{tab-set}
@@ -861,6 +893,10 @@ $$
 
 
 :::::::::::::::{exercise} Oppgave 9
+---
+level: 3
+---
+
 Faktoriser uttrykkene med konjugatsetningen.
 
 ::::::::::::::{tab-set}
@@ -972,6 +1008,10 @@ $$
 :::
 
 :::::::::::::::{exercise} Oppgave 10
+---
+level: 3
+---
+
 Utvid uttrykkene.
 
 ::::::::::::::{tab-set}
@@ -1071,6 +1111,10 @@ $$
 ---
 
 :::::::::::::::{exercise} Oppgave 11
+---
+level: 3
+---
+
 Nedenfor finner du en quiz om kvadratsetningene. 
 
 Velg riktig alternativ som hører til uttrykket som er oppgitt. Du skal enten faktorisere eller utvide.

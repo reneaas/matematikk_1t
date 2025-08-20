@@ -5,7 +5,8 @@ def main(dirname, save):
     #
     # Define functions
     def f(x):
-        return -4 / 3 * (x - 3) ** 2 + 8
+        y0 = 3
+        return -0.5 * x**2 + 2 * x - 2 + y0
 
     # List of functions and their labels.
     functions = [f]
@@ -16,7 +17,7 @@ def main(dirname, save):
         xmin=-4,
         xmax=8,
         ymin=-6,
-        ymax=12,
+        ymax=6,
         ticks=True,
         xstep=1,
         ystep=1,

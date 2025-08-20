@@ -1,1 +1,0 @@
-# Oppgaver: Mengder og tallfølger

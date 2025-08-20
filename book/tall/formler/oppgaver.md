@@ -204,6 +204,9 @@ $$
 
 
 :::::::::::::::{exercise} Oppgave 4
+---
+level: 2
+---
 Nedenfor vises de tre første figurene i en figurfølge. Figurene tenker oss at figurene følger dette mønsteret videre.
 
 La $K_n$ være antall kvadrater i figur $n$.
@@ -302,6 +305,10 @@ $$
 
 
 :::::::::::::::{exercise} Oppgave 5
+---
+level: 2
+---
+
 Nedenfor vises noen figurer som følger et bestemt mønster. Vi tenker oss at figurene fortsetter etter samme mønster. 
 
 La $F_n$ være antall fargelagte firkanter i figur $n$.
@@ -403,6 +410,10 @@ $$
 
 
 :::::::::::::::{exercise} Oppgave 6
+---
+level: 2
+---
+
 Nedenfor vises de tre første figurene i en figurfølge. Figurene tenker oss at figurene følger dette mønsteret videre.
 
 La $K_n$ være antall kvadrater i figur $n$.
@@ -474,6 +485,10 @@ $$
 
 
 :::::::::::::::{exercise} Oppgave 7
+---
+level: 3
+---
+
 Nedenfor vises noen figurer som følger et bestemt mønster. Vi tenker oss at figurene fortsetter etter samme mønster.
 
 Vi lar $K_n$ være antall fargelagte kvadrater i figur $n$.
@@ -537,6 +552,10 @@ $$
 
 
 :::::::::::::::{exercise} Oppgave 8
+---
+level: 3
+---
+
 Nedenfor vises de tre første figurene i en figurfølge. Figurene tenker oss at figurene følger dette mønsteret videre.
 
 La $F_n$ være antall firkanter i figur $n$.
@@ -608,6 +627,10 @@ $$
 
 
 :::::::::::::::{exercise} Oppgave 9
+---
+level: 3
+---
+
 Nedenfor vises noen figurer som følger et bestemt mønster. Vi tenker oss at figurene fortsetter i samme mønster. 
 
 La $S_n$ være antall sirkler i figur $n$.
@@ -675,8 +698,9 @@ $$
 
 :::::::::::::::{exercise} Oppgave 10
 ---
-level: 2
+level: 3
 ---
+
 En tallfølge $a_n$ er gitt ved 
 
 $$
@@ -731,8 +755,9 @@ Leddet $n = 33$ har verdien $100$ siden $a_{33} = 3 \cdot 33 + 1 = 100$.
 
 :::::::::::::::{exercise} Oppgave 11
 ---
-level: 2
+level: 3
 ---
+
 I denne oppgave skal du bestemme formlene til tallfølger.
 
 ::::::::::::::{tab-set}
@@ -812,7 +837,7 @@ $-1 = (-1)^3 = (-1)^5 = (-1)^7 = \ldots$
 
 :::::::::::::::{exercise} Oppgave 12
 ---
-level: 3
+level: 4
 ---
 
 ::::::::::::::{tab-set}

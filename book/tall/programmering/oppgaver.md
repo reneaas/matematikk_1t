@@ -775,6 +775,10 @@ print(s)
 
 
 :::::::::::::::{exercise} Oppgave 9
+---
+level: 2
+---
+
 En sum er gitt ved 
 
 $$
@@ -831,6 +835,10 @@ Bruk programmet ditt til å bestemme hvilken verdi summen nærmer seg når vi br
 
 
 :::::::::::::::{exercise} Oppgave 10
+---
+level: 3
+---
+
 Alma og Synne jobber med summen 
 
 $$
@@ -900,8 +908,9 @@ Bruk programmet ditt til å bestemme hvilken verdi programmet nærmer seg når v
 
 :::::::::::::::{exercise} Oppgave 11
 ---
-level: 2
+level: 3
 ---
+
 Nedenfor ser du tre figurer. Figurene er satt sammen av små kvadrater.
 
 Tenk deg at du skal fortsette å lage figurer etter samme mønster. Vi lar $K_n$ være antall små kvadrater i figur $n$.
@@ -966,6 +975,7 @@ Lag et program som finner ut hvor mange kvadrater du må bruke for å lage de 10
 ---
 level: 3
 ---
+
 Nedenfor ser du tre figurer. Figurene er satt sammen av små kvadrater.
 
 Tenk deg at du skal fortsette å lage figurer etter samme mønster. Vi lar $K_n$ være antall små kvadrater i figur $n$. 
@@ -1406,6 +1416,9 @@ Lag et program som finner hvor mange linjestykker du må sette sammen for at fig
 
 
 :::::::::::::::{exercise} Oppgave 17
+---
+level: 3
+---
 Nedenfor vises tre figurer som følger et bestemt mønster. 
 
 La $K_n$ være antall små kvadrater i figur $n$. 
@@ -1574,7 +1587,7 @@ Hvor mange ledd trenger du for å få $\pi$ med $5$ riktige desimaler?
 
 :::::::::::::::{exercise} Oppgave 19
 ---
-level: 3
+level: 4
 ---
 Summen av en annen tallfølge nærmer seg også $\pi$, men mye raskere enn den forrige. Summen er
 

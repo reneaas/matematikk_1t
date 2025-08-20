@@ -5,7 +5,7 @@ def main(dirname, save):
     #
     # Define functions
     def f(x):
-        return -((x - 2) ** 2 - 5)
+        return 3 / 2 * (x - 2) ** 2 - 4
 
     # List of functions and their labels.
     functions = [f]
@@ -13,10 +13,10 @@ def main(dirname, save):
     fig, ax = plotmath.plot(
         functions=functions,
         fn_labels=True,
-        xmin=-3,
-        xmax=7,
-        ymin=-8,
-        ymax=8,
+        xmin=-7,
+        xmax=5,
+        ymin=-6,
+        ymax=6,
         ticks=True,
         xstep=1,
         ystep=1,
@@ -24,6 +24,8 @@ def main(dirname, save):
         lw=2.5,
         alpha=None,
         domain=False,
+        fontsize=20,
+        figsize=None,
     )
 
     # NOTE: Select an appropriate `dirname` to save the figure.

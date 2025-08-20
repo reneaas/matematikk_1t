@@ -77,6 +77,21 @@ Q: Hvilket symbol kan stå i boksen? $$x \in \langle -2, 2] \quad \boxed{\phanto
 
 
 
+:::{margin} Tips: Oppgave 3 og fremover
+Et partall $a$ kan skrives som
+
+$$
+a = 2n \qder n \in \natural
+$$
+
+Et oddetall $b$ kan skrives som 
+
+$$
+b = 2n - 1 \qder n \in \natural
+$$
+
+:::
+
 :::::::::::::::{exercise} Oppgave 3 
 ---
 level: 2
@@ -191,7 +206,7 @@ $$
 
 :::::::::::::::{exercise} Oppgave 6
 ---
-level: 2
+level: 3
 ---
 Absoluttverdien til et tall $x$ skrives $|x|$ og er definert som avstanden fra $0$ på tallinjen. For eksempel er $|-3| = 3$ og $|2| = 2$. 
 
