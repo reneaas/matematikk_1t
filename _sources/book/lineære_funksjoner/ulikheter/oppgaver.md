@@ -98,6 +98,11 @@ width: 90%
 
 
 :::::::::::::::{exercise} Oppgave 2
+---
+level: 1
+---
+
+
 Bruk graftegner i Geogebra til å løse ulikhetene nedenfor.
 
 
@@ -172,6 +177,11 @@ $$
 
 
 :::::::::::::::{exercise} Oppgave 3
+---
+level: 1
+---
+
+
 Løs ulikhetene algebraisk. 
 
 ::::::::::::::{tab-set}
@@ -218,6 +228,9 @@ $$
 
 
 :::::::::::::::{exercise} Oppgave 4
+---
+level: 1
+---
 
 ::::{hints} Hvordan løser jeg en ulikhet med CAS?
 Nedenfor ser du en gif som løser ulikheten
@@ -322,6 +335,10 @@ $$
 
 
 :::::::::::::::{exercise} Oppgave 5
+---
+level: 2
+---
+
 I figuren nedenfor vises grafene til to lineære funksjoner $f$ og $g$.
 
 :::{figure} ./figurer/oppgaver/oppgave_5/figur.svg
@@ -375,6 +392,9 @@ $$
 
 
 :::::::::::::::{exercise} Oppgave 6
+---
+level: 2
+---
 
 :::{cas-popup}
 ---

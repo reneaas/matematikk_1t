@@ -770,7 +770,7 @@ for x in range(????):
 
 :::::::::::::::{exercise} Oppgave 9
 ---
-level: 3
+level: 2
 ---
 Bruk CAS til å løse likningssystemene nedenfor. 
 
