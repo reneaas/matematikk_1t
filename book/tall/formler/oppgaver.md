@@ -207,7 +207,7 @@ $$
 ---
 level: 2
 ---
-Nedenfor vises de tre første figurene i en figurfølge. Figurene tenker oss at figurene følger dette mønsteret videre.
+Nedenfor vises de tre første figurene i en figurfølge. Vi tenker oss at figurene følger dette mønsteret videre.
 
 La $K_n$ være antall kvadrater i figur $n$.
 
@@ -414,7 +414,7 @@ $$
 level: 2
 ---
 
-Nedenfor vises de tre første figurene i en figurfølge. Figurene tenker oss at figurene følger dette mønsteret videre.
+Nedenfor vises de tre første figurene i en figurfølge. Vi tenker oss at figurene følger dette mønsteret videre.
 
 La $K_n$ være antall kvadrater i figur $n$.
 
@@ -556,7 +556,7 @@ $$
 level: 3
 ---
 
-Nedenfor vises de tre første figurene i en figurfølge. Figurene tenker oss at figurene følger dette mønsteret videre.
+Nedenfor vises de tre første figurene i en figurfølge. Vi tenker oss at figurene følger dette mønsteret videre.
 
 La $F_n$ være antall firkanter i figur $n$.
 
