@@ -213,10 +213,12 @@ level: 1
 
 Grafen til en lineær funksjon $f$ er vist i figuren nedenfor.
 
-:::{figure} ./figurer/oppgaver/oppgave_5/figur.svg
+
+:::{plot}
 ---
-width: 80%
-class: no-click, adaptive-figure
+fn: -2*x + 3
+fn_label: $f$
+width: 70%
 ---
 :::
 
@@ -320,10 +322,11 @@ level: 1
 ---
 Grafen til en lineær funksjon $f$ er vist i figuren nedenfor.
 
-:::{figure} ./figurer/oppgaver/oppgave_6/figur.svg
+:::{plot}
 ---
-width: 80%
-class: no-click, adaptive-figure
+fn: 0.5*x - 2
+fn_label: $f$
+width: 70%
 ---
 :::
 
@@ -434,10 +437,11 @@ Grafen til en lineær funksjon $f$ er vist i figuren nedenfor.
 
 Bestem $f(x)$. 
 
-:::{figure} ./figurer/oppgaver/oppgave_7/a.svg
+:::{plot}
 ---
-width: 80%
-class: no-click, adaptive-figure
+fn: x - 3
+fn_label: $f$
+width: 70%
 ---
 :::
 
@@ -449,10 +453,11 @@ Grafen til en lineær funksjon $g$ er vist i figuren nedenfor.
 
 Bestem $g(x)$. 
 
-:::{figure} ./figurer/oppgaver/oppgave_7/b.svg
+:::{plot}
 ---
-width: 80%
-class: no-click, adaptive-figure
+fn: -x + 2
+fn_label: $g$
+width: 70%
 ---
 :::
 
@@ -463,10 +468,11 @@ Grafen til en lineær funksjon $h$ er vist i figuren nedenfor.
 
 Bestem $h(x)$. 
 
-:::{figure} ./figurer/oppgaver/oppgave_7/c.svg
+:::{plot}
 ---
-width: 80%
-class: no-click, adaptive-figure
+fn: 2*x - 2
+fn_label: $h$
+width: 70%
 ---
 :::
 
@@ -478,10 +484,11 @@ Grafen til en lineær funksjon $p$ er vist i figuren nedenfor.
 
 Bestem $p(x)$. 
 
-:::{figure} ./figurer/oppgaver/oppgave_7/d.svg
+:::{plot}
 ---
-width: 80%
-class: no-click, adaptive-figure
+fn: -3*x + 1
+fn_label: $p$
+width: 70%
 ---
 :::
 

@@ -1,22 +1,27 @@
 # Dev
 
 
-::::{polydiv}
-:p: x^3 + 2x^2 - 3x - 6
-:q: x - 2
-:width: 70%
+---
+
+
+::::{multi-plot}
+---
+functions: "[x**2 - 2*x + 1, (x - 3)**2 + 1, (x + 1)**2 - 2, 2*x + 1]"
+rows: 2
+cols: 2
+width: 100%
+nocache:
+---
 ::::
 
 
+::::{multi-plot}
 ---
-
-
-
-::::{polydiv}
----
-p: x^3 + 2x^2 - 3x + 5
-q: x - 4
-width: 80%
+functions: "[x**2 - 2*x + 1, (x - 3)**2 + 1, (x + 1)**2 - 2]"
+rows: 1
+cols: 3
+width: 100%
+nocache:
 ---
 ::::
 
