@@ -43,11 +43,10 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/dialogue.css?v=1b585024" />
-    <link rel="stylesheet" type="text/css" href="../../../../../_static/admonitions.css?v=a4c95251" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/admonitions.css?v=f84a357c" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/static_code_blocks.css?v=68f9364b" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/pdf_custom.css?v=a874a063" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/general_style.css?v=41f615c1" />
-    <link rel="stylesheet" type="text/css" href="../../../../../_static/polydiv/style.css?v=3450aa48" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/popup/popup.css?v=2d27c3a4" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/multipleChoiceQuiz/style.css?v=89e27729" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/pairPuzzle/style.css?v=f77426ac" />
@@ -474,6 +473,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../eksamensressurser/cas.html">CAS (Geogebra)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../eksamensressurser/geogebra.html">Geogebra</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">dev</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../../dev/dev.html">Dev</a></li>
+</ul>
 
     </div>
 </nav></div>
@@ -637,7 +640,7 @@ document.write(`
 <li><p>Arealet av trekanten er <span class="math notranslate nohighlight">\(4\sqrt{3}\)</span></p></li>
 </ul>
 <p>Bestem lengdene av sidene <span class="math notranslate nohighlight">\(AC\)</span> og <span class="math notranslate nohighlight">\(BC\)</span> 
-<span class="popup-wrapper" id="popup-role-ba80916a">
+<span class="popup-wrapper" id="popup-role-a1336cf5">
   <span class="popup-trigger">eksakt.</span>
   <span class="popup-bubble" style="display:none;">Med eksakt så mener man at svaret skal uttrykkes med eventuelle brøker, kvadratrøtter, hele tall osv. Ingen desimaltall.</span>
 </span>
@@ -646,9 +649,9 @@ document.write(`
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<button id="button-ggb-cas-848a9f84" class="ggb-cas-button">Åpne CAS‑vindu</button>
-<div id="dialog-ggb-cas-848a9f84" title="CAS‑vindu" style="display:none;">
-    <div id="ggb-cas-848a9f84" class="ggb-window"></div>
+<button id="button-ggb-cas-863fd50d" class="ggb-cas-button">Åpne CAS‑vindu</button>
+<div id="dialog-ggb-cas-863fd50d" title="CAS‑vindu" style="display:none;">
+    <div id="ggb-cas-863fd50d" class="ggb-window"></div>
 </div>
 
 <style>
@@ -665,12 +668,12 @@ document.write(`
 
     function applySize() {
       if (!ggbReady) return;
-      const w = $("#ggb-cas-848a9f84").width(),
-            h = $("#ggb-cas-848a9f84").height();
+      const w = $("#ggb-cas-863fd50d").width(),
+            h = $("#ggb-cas-863fd50d").height();
       window.ggbApplet.setSize(Math.round(w), Math.round(h));
     }
 
-    const $dlg = $("#dialog-ggb-cas-848a9f84").dialog({
+    const $dlg = $("#dialog-ggb-cas-863fd50d").dialog({
       autoOpen: false,
       width: 390, height: 580,
       resizable: true, draggable: true,
@@ -679,14 +682,14 @@ document.write(`
       open: function() {
         if (!ggbReady) {
           new GGBApplet({
-            appName: "classic", id: "ggb-cas-848a9f84",
+            appName: "classic", id: "ggb-cas-863fd50d",
             width: 350, height: 500,
             perspective: "C", language: "nb",
             showToolBar: true, showAlgebraInput: true,
             borderRadius: 8, enableRightClick: true, showKeyboardOnFocus: false,
             customToolBar: "1001 | 1002 | 1007 | 1010 | 6",
             appletOnLoad: () => { ggbReady = true; applySize(); }
-          }, true).inject("ggb-cas-848a9f84");
+          }, true).inject("ggb-cas-863fd50d");
         } else {
           applySize();
         }
@@ -729,7 +732,7 @@ document.write(`
             target = target.parentElement;
           }
           // Prevent page scroll but don't stop the event from reaching GeoGebra
-          if (!e.target.closest('#ggb-cas-848a9f84')) {
+          if (!e.target.closest('#ggb-cas-863fd50d')) {
             e.preventDefault();
             e.stopPropagation();
           }
@@ -757,7 +760,7 @@ document.write(`
     
     // Monitor GeoGebra applet focus/interaction to control scroll lock
     function bindScrollLock() {
-      const ggbContainer = document.getElementById('ggb-cas-848a9f84');
+      const ggbContainer = document.getElementById('ggb-cas-863fd50d');
       if (!ggbContainer) {
         setTimeout(bindScrollLock, 300);
         return;
@@ -803,10 +806,10 @@ document.write(`
     // Cleanup on dialog close
     $dlg.on('dialogclose', unlockScroll);
 
-    $("#button-ggb-cas-848a9f84").button()
+    $("#button-ggb-cas-863fd50d").button()
       .on("click touchend pointerup", e => {
         e.preventDefault();
-        $("#dialog-ggb-cas-848a9f84").dialog("open");
+        $("#dialog-ggb-cas-863fd50d").dialog("open");
       });
   });
 })();
@@ -880,9 +883,9 @@ Lengdene av sidekantene i trekantene er <span class="math notranslate nohighligh
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<button id="button-ggb-cas-d00f0d4f" class="ggb-cas-button">Åpne CAS‑vindu</button>
-<div id="dialog-ggb-cas-d00f0d4f" title="CAS‑vindu" style="display:none;">
-    <div id="ggb-cas-d00f0d4f" class="ggb-window"></div>
+<button id="button-ggb-cas-1ab990fb" class="ggb-cas-button">Åpne CAS‑vindu</button>
+<div id="dialog-ggb-cas-1ab990fb" title="CAS‑vindu" style="display:none;">
+    <div id="ggb-cas-1ab990fb" class="ggb-window"></div>
 </div>
 
 <style>
@@ -899,12 +902,12 @@ Lengdene av sidekantene i trekantene er <span class="math notranslate nohighligh
 
     function applySize() {
       if (!ggbReady) return;
-      const w = $("#ggb-cas-d00f0d4f").width(),
-            h = $("#ggb-cas-d00f0d4f").height();
+      const w = $("#ggb-cas-1ab990fb").width(),
+            h = $("#ggb-cas-1ab990fb").height();
       window.ggbApplet.setSize(Math.round(w), Math.round(h));
     }
 
-    const $dlg = $("#dialog-ggb-cas-d00f0d4f").dialog({
+    const $dlg = $("#dialog-ggb-cas-1ab990fb").dialog({
       autoOpen: false,
       width: 390, height: 580,
       resizable: true, draggable: true,
@@ -913,14 +916,14 @@ Lengdene av sidekantene i trekantene er <span class="math notranslate nohighligh
       open: function() {
         if (!ggbReady) {
           new GGBApplet({
-            appName: "classic", id: "ggb-cas-d00f0d4f",
+            appName: "classic", id: "ggb-cas-1ab990fb",
             width: 350, height: 500,
             perspective: "C", language: "nb",
             showToolBar: true, showAlgebraInput: true,
             borderRadius: 8, enableRightClick: true, showKeyboardOnFocus: false,
             customToolBar: "1001 | 1002 | 1007 | 1010 | 6",
             appletOnLoad: () => { ggbReady = true; applySize(); }
-          }, true).inject("ggb-cas-d00f0d4f");
+          }, true).inject("ggb-cas-1ab990fb");
         } else {
           applySize();
         }
@@ -963,7 +966,7 @@ Lengdene av sidekantene i trekantene er <span class="math notranslate nohighligh
             target = target.parentElement;
           }
           // Prevent page scroll but don't stop the event from reaching GeoGebra
-          if (!e.target.closest('#ggb-cas-d00f0d4f')) {
+          if (!e.target.closest('#ggb-cas-1ab990fb')) {
             e.preventDefault();
             e.stopPropagation();
           }
@@ -991,7 +994,7 @@ Lengdene av sidekantene i trekantene er <span class="math notranslate nohighligh
     
     // Monitor GeoGebra applet focus/interaction to control scroll lock
     function bindScrollLock() {
-      const ggbContainer = document.getElementById('ggb-cas-d00f0d4f');
+      const ggbContainer = document.getElementById('ggb-cas-1ab990fb');
       if (!ggbContainer) {
         setTimeout(bindScrollLock, 300);
         return;
@@ -1037,10 +1040,10 @@ Lengdene av sidekantene i trekantene er <span class="math notranslate nohighligh
     // Cleanup on dialog close
     $dlg.on('dialogclose', unlockScroll);
 
-    $("#button-ggb-cas-d00f0d4f").button()
+    $("#button-ggb-cas-1ab990fb").button()
       .on("click touchend pointerup", e => {
         e.preventDefault();
-        $("#dialog-ggb-cas-d00f0d4f").dialog("open");
+        $("#dialog-ggb-cas-1ab990fb").dialog("open");
       });
   });
 })();
@@ -1072,9 +1075,9 @@ T_\mathrm{stjerne} = 12 \cdot T_\triangle = 12 \cdot 4\sqrt{3} = 48\sqrt{3}.
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<button id="button-ggb-cas-d22606a0" class="ggb-cas-button">Åpne CAS‑vindu</button>
-<div id="dialog-ggb-cas-d22606a0" title="CAS‑vindu" style="display:none;">
-    <div id="ggb-cas-d22606a0" class="ggb-window"></div>
+<button id="button-ggb-cas-73fa9d31" class="ggb-cas-button">Åpne CAS‑vindu</button>
+<div id="dialog-ggb-cas-73fa9d31" title="CAS‑vindu" style="display:none;">
+    <div id="ggb-cas-73fa9d31" class="ggb-window"></div>
 </div>
 
 <style>
@@ -1091,12 +1094,12 @@ T_\mathrm{stjerne} = 12 \cdot T_\triangle = 12 \cdot 4\sqrt{3} = 48\sqrt{3}.
 
     function applySize() {
       if (!ggbReady) return;
-      const w = $("#ggb-cas-d22606a0").width(),
-            h = $("#ggb-cas-d22606a0").height();
+      const w = $("#ggb-cas-73fa9d31").width(),
+            h = $("#ggb-cas-73fa9d31").height();
       window.ggbApplet.setSize(Math.round(w), Math.round(h));
     }
 
-    const $dlg = $("#dialog-ggb-cas-d22606a0").dialog({
+    const $dlg = $("#dialog-ggb-cas-73fa9d31").dialog({
       autoOpen: false,
       width: 390, height: 580,
       resizable: true, draggable: true,
@@ -1105,14 +1108,14 @@ T_\mathrm{stjerne} = 12 \cdot T_\triangle = 12 \cdot 4\sqrt{3} = 48\sqrt{3}.
       open: function() {
         if (!ggbReady) {
           new GGBApplet({
-            appName: "classic", id: "ggb-cas-d22606a0",
+            appName: "classic", id: "ggb-cas-73fa9d31",
             width: 350, height: 500,
             perspective: "C", language: "nb",
             showToolBar: true, showAlgebraInput: true,
             borderRadius: 8, enableRightClick: true, showKeyboardOnFocus: false,
             customToolBar: "1001 | 1002 | 1007 | 1010 | 6",
             appletOnLoad: () => { ggbReady = true; applySize(); }
-          }, true).inject("ggb-cas-d22606a0");
+          }, true).inject("ggb-cas-73fa9d31");
         } else {
           applySize();
         }
@@ -1155,7 +1158,7 @@ T_\mathrm{stjerne} = 12 \cdot T_\triangle = 12 \cdot 4\sqrt{3} = 48\sqrt{3}.
             target = target.parentElement;
           }
           // Prevent page scroll but don't stop the event from reaching GeoGebra
-          if (!e.target.closest('#ggb-cas-d22606a0')) {
+          if (!e.target.closest('#ggb-cas-73fa9d31')) {
             e.preventDefault();
             e.stopPropagation();
           }
@@ -1183,7 +1186,7 @@ T_\mathrm{stjerne} = 12 \cdot T_\triangle = 12 \cdot 4\sqrt{3} = 48\sqrt{3}.
     
     // Monitor GeoGebra applet focus/interaction to control scroll lock
     function bindScrollLock() {
-      const ggbContainer = document.getElementById('ggb-cas-d22606a0');
+      const ggbContainer = document.getElementById('ggb-cas-73fa9d31');
       if (!ggbContainer) {
         setTimeout(bindScrollLock, 300);
         return;
@@ -1229,10 +1232,10 @@ T_\mathrm{stjerne} = 12 \cdot T_\triangle = 12 \cdot 4\sqrt{3} = 48\sqrt{3}.
     // Cleanup on dialog close
     $dlg.on('dialogclose', unlockScroll);
 
-    $("#button-ggb-cas-d22606a0").button()
+    $("#button-ggb-cas-73fa9d31").button()
       .on("click touchend pointerup", e => {
         e.preventDefault();
-        $("#dialog-ggb-cas-d22606a0").dialog("open");
+        $("#dialog-ggb-cas-73fa9d31").dialog("open");
       });
   });
 })();
@@ -1351,9 +1354,9 @@ Husk å gjøre rede for hvilke trigonometriske sammenhenger du bruker.</p>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<button id="button-ggb-cas-48ce2669" class="ggb-cas-button">Åpne CAS‑vindu</button>
-<div id="dialog-ggb-cas-48ce2669" title="CAS‑vindu" style="display:none;">
-    <div id="ggb-cas-48ce2669" class="ggb-window"></div>
+<button id="button-ggb-cas-ab7fdc63" class="ggb-cas-button">Åpne CAS‑vindu</button>
+<div id="dialog-ggb-cas-ab7fdc63" title="CAS‑vindu" style="display:none;">
+    <div id="ggb-cas-ab7fdc63" class="ggb-window"></div>
 </div>
 
 <style>
@@ -1370,12 +1373,12 @@ Husk å gjøre rede for hvilke trigonometriske sammenhenger du bruker.</p>
 
     function applySize() {
       if (!ggbReady) return;
-      const w = $("#ggb-cas-48ce2669").width(),
-            h = $("#ggb-cas-48ce2669").height();
+      const w = $("#ggb-cas-ab7fdc63").width(),
+            h = $("#ggb-cas-ab7fdc63").height();
       window.ggbApplet.setSize(Math.round(w), Math.round(h));
     }
 
-    const $dlg = $("#dialog-ggb-cas-48ce2669").dialog({
+    const $dlg = $("#dialog-ggb-cas-ab7fdc63").dialog({
       autoOpen: false,
       width: 390, height: 580,
       resizable: true, draggable: true,
@@ -1384,14 +1387,14 @@ Husk å gjøre rede for hvilke trigonometriske sammenhenger du bruker.</p>
       open: function() {
         if (!ggbReady) {
           new GGBApplet({
-            appName: "classic", id: "ggb-cas-48ce2669",
+            appName: "classic", id: "ggb-cas-ab7fdc63",
             width: 350, height: 500,
             perspective: "C", language: "nb",
             showToolBar: true, showAlgebraInput: true,
             borderRadius: 8, enableRightClick: true, showKeyboardOnFocus: false,
             customToolBar: "1001 | 1002 | 1007 | 1010 | 6",
             appletOnLoad: () => { ggbReady = true; applySize(); }
-          }, true).inject("ggb-cas-48ce2669");
+          }, true).inject("ggb-cas-ab7fdc63");
         } else {
           applySize();
         }
@@ -1434,7 +1437,7 @@ Husk å gjøre rede for hvilke trigonometriske sammenhenger du bruker.</p>
             target = target.parentElement;
           }
           // Prevent page scroll but don't stop the event from reaching GeoGebra
-          if (!e.target.closest('#ggb-cas-48ce2669')) {
+          if (!e.target.closest('#ggb-cas-ab7fdc63')) {
             e.preventDefault();
             e.stopPropagation();
           }
@@ -1462,7 +1465,7 @@ Husk å gjøre rede for hvilke trigonometriske sammenhenger du bruker.</p>
     
     // Monitor GeoGebra applet focus/interaction to control scroll lock
     function bindScrollLock() {
-      const ggbContainer = document.getElementById('ggb-cas-48ce2669');
+      const ggbContainer = document.getElementById('ggb-cas-ab7fdc63');
       if (!ggbContainer) {
         setTimeout(bindScrollLock, 300);
         return;
@@ -1508,10 +1511,10 @@ Husk å gjøre rede for hvilke trigonometriske sammenhenger du bruker.</p>
     // Cleanup on dialog close
     $dlg.on('dialogclose', unlockScroll);
 
-    $("#button-ggb-cas-48ce2669").button()
+    $("#button-ggb-cas-ab7fdc63").button()
       .on("click touchend pointerup", e => {
         e.preventDefault();
-        $("#dialog-ggb-cas-48ce2669").dialog("open");
+        $("#dialog-ggb-cas-ab7fdc63").dialog("open");
       });
   });
 })();
@@ -1577,7 +1580,7 @@ T_{\square ABCD} \approx 50.78.
 <a class="no-click adaptive-figure reference internal image-reference" href="../../../../../_images/figur71.svg"><img alt="../../../../../_images/figur71.svg" class="no-click adaptive-figure" src="../../../../../_images/figur71.svg" style="width: 80%;" /></a>
 </figure>
 <p>En sirkel har sentrum i <span class="math notranslate nohighlight">\(S\)</span>. <span class="math notranslate nohighlight">\(AB\)</span> er diameter og <span class="math notranslate nohighlight">\(C\)</span> er ligger på 
-<span class="popup-wrapper" id="popup-role-6afd6a1d">
+<span class="popup-wrapper" id="popup-role-315e9f29">
   <span class="popup-trigger">sirkelperiferien.</span>
   <span class="popup-bubble" style="display:none;">Begrepet "sirkelperiferi" er en annen måte å si "sirkelbuen" eller "på kanten av sirkelskiven". Generelt betyr ordet "[...]periferi" noe sånn som "på kanten av [...]"</span>
 </span>
@@ -1587,9 +1590,9 @@ T_{\square ABCD} \approx 50.78.
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<button id="button-ggb-cas-2b739ef3" class="ggb-cas-button">Åpne CAS‑vindu</button>
-<div id="dialog-ggb-cas-2b739ef3" title="CAS‑vindu" style="display:none;">
-    <div id="ggb-cas-2b739ef3" class="ggb-window"></div>
+<button id="button-ggb-cas-fe41fcda" class="ggb-cas-button">Åpne CAS‑vindu</button>
+<div id="dialog-ggb-cas-fe41fcda" title="CAS‑vindu" style="display:none;">
+    <div id="ggb-cas-fe41fcda" class="ggb-window"></div>
 </div>
 
 <style>
@@ -1606,12 +1609,12 @@ T_{\square ABCD} \approx 50.78.
 
     function applySize() {
       if (!ggbReady) return;
-      const w = $("#ggb-cas-2b739ef3").width(),
-            h = $("#ggb-cas-2b739ef3").height();
+      const w = $("#ggb-cas-fe41fcda").width(),
+            h = $("#ggb-cas-fe41fcda").height();
       window.ggbApplet.setSize(Math.round(w), Math.round(h));
     }
 
-    const $dlg = $("#dialog-ggb-cas-2b739ef3").dialog({
+    const $dlg = $("#dialog-ggb-cas-fe41fcda").dialog({
       autoOpen: false,
       width: 390, height: 580,
       resizable: true, draggable: true,
@@ -1620,14 +1623,14 @@ T_{\square ABCD} \approx 50.78.
       open: function() {
         if (!ggbReady) {
           new GGBApplet({
-            appName: "classic", id: "ggb-cas-2b739ef3",
+            appName: "classic", id: "ggb-cas-fe41fcda",
             width: 350, height: 500,
             perspective: "C", language: "nb",
             showToolBar: true, showAlgebraInput: true,
             borderRadius: 8, enableRightClick: true, showKeyboardOnFocus: false,
             customToolBar: "1001 | 1002 | 1007 | 1010 | 6",
             appletOnLoad: () => { ggbReady = true; applySize(); }
-          }, true).inject("ggb-cas-2b739ef3");
+          }, true).inject("ggb-cas-fe41fcda");
         } else {
           applySize();
         }
@@ -1670,7 +1673,7 @@ T_{\square ABCD} \approx 50.78.
             target = target.parentElement;
           }
           // Prevent page scroll but don't stop the event from reaching GeoGebra
-          if (!e.target.closest('#ggb-cas-2b739ef3')) {
+          if (!e.target.closest('#ggb-cas-fe41fcda')) {
             e.preventDefault();
             e.stopPropagation();
           }
@@ -1698,7 +1701,7 @@ T_{\square ABCD} \approx 50.78.
     
     // Monitor GeoGebra applet focus/interaction to control scroll lock
     function bindScrollLock() {
-      const ggbContainer = document.getElementById('ggb-cas-2b739ef3');
+      const ggbContainer = document.getElementById('ggb-cas-fe41fcda');
       if (!ggbContainer) {
         setTimeout(bindScrollLock, 300);
         return;
@@ -1744,10 +1747,10 @@ T_{\square ABCD} \approx 50.78.
     // Cleanup on dialog close
     $dlg.on('dialogclose', unlockScroll);
 
-    $("#button-ggb-cas-2b739ef3").button()
+    $("#button-ggb-cas-fe41fcda").button()
       .on("click touchend pointerup", e => {
         e.preventDefault();
-        $("#dialog-ggb-cas-2b739ef3").dialog("open");
+        $("#dialog-ggb-cas-fe41fcda").dialog("open");
       });
   });
 })();
@@ -1825,9 +1828,9 @@ T_{\triangle ABC} = 2 \cdot T_{\triangle SBC} = 2 \cdot 3\sqrt{2} = 6\sqrt{2}.
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<button id="button-ggb-cas-f7c23f52" class="ggb-cas-button">Åpne CAS‑vindu</button>
-<div id="dialog-ggb-cas-f7c23f52" title="CAS‑vindu" style="display:none;">
-    <div id="ggb-cas-f7c23f52" class="ggb-window"></div>
+<button id="button-ggb-cas-60a893f1" class="ggb-cas-button">Åpne CAS‑vindu</button>
+<div id="dialog-ggb-cas-60a893f1" title="CAS‑vindu" style="display:none;">
+    <div id="ggb-cas-60a893f1" class="ggb-window"></div>
 </div>
 
 <style>
@@ -1844,12 +1847,12 @@ T_{\triangle ABC} = 2 \cdot T_{\triangle SBC} = 2 \cdot 3\sqrt{2} = 6\sqrt{2}.
 
     function applySize() {
       if (!ggbReady) return;
-      const w = $("#ggb-cas-f7c23f52").width(),
-            h = $("#ggb-cas-f7c23f52").height();
+      const w = $("#ggb-cas-60a893f1").width(),
+            h = $("#ggb-cas-60a893f1").height();
       window.ggbApplet.setSize(Math.round(w), Math.round(h));
     }
 
-    const $dlg = $("#dialog-ggb-cas-f7c23f52").dialog({
+    const $dlg = $("#dialog-ggb-cas-60a893f1").dialog({
       autoOpen: false,
       width: 390, height: 580,
       resizable: true, draggable: true,
@@ -1858,14 +1861,14 @@ T_{\triangle ABC} = 2 \cdot T_{\triangle SBC} = 2 \cdot 3\sqrt{2} = 6\sqrt{2}.
       open: function() {
         if (!ggbReady) {
           new GGBApplet({
-            appName: "classic", id: "ggb-cas-f7c23f52",
+            appName: "classic", id: "ggb-cas-60a893f1",
             width: 350, height: 500,
             perspective: "C", language: "nb",
             showToolBar: true, showAlgebraInput: true,
             borderRadius: 8, enableRightClick: true, showKeyboardOnFocus: false,
             customToolBar: "1001 | 1002 | 1007 | 1010 | 6",
             appletOnLoad: () => { ggbReady = true; applySize(); }
-          }, true).inject("ggb-cas-f7c23f52");
+          }, true).inject("ggb-cas-60a893f1");
         } else {
           applySize();
         }
@@ -1908,7 +1911,7 @@ T_{\triangle ABC} = 2 \cdot T_{\triangle SBC} = 2 \cdot 3\sqrt{2} = 6\sqrt{2}.
             target = target.parentElement;
           }
           // Prevent page scroll but don't stop the event from reaching GeoGebra
-          if (!e.target.closest('#ggb-cas-f7c23f52')) {
+          if (!e.target.closest('#ggb-cas-60a893f1')) {
             e.preventDefault();
             e.stopPropagation();
           }
@@ -1936,7 +1939,7 @@ T_{\triangle ABC} = 2 \cdot T_{\triangle SBC} = 2 \cdot 3\sqrt{2} = 6\sqrt{2}.
     
     // Monitor GeoGebra applet focus/interaction to control scroll lock
     function bindScrollLock() {
-      const ggbContainer = document.getElementById('ggb-cas-f7c23f52');
+      const ggbContainer = document.getElementById('ggb-cas-60a893f1');
       if (!ggbContainer) {
         setTimeout(bindScrollLock, 300);
         return;
@@ -1982,10 +1985,10 @@ T_{\triangle ABC} = 2 \cdot T_{\triangle SBC} = 2 \cdot 3\sqrt{2} = 6\sqrt{2}.
     // Cleanup on dialog close
     $dlg.on('dialogclose', unlockScroll);
 
-    $("#button-ggb-cas-f7c23f52").button()
+    $("#button-ggb-cas-60a893f1").button()
       .on("click touchend pointerup", e => {
         e.preventDefault();
-        $("#dialog-ggb-cas-f7c23f52").dialog("open");
+        $("#dialog-ggb-cas-60a893f1").dialog("open");
       });
   });
 })();
@@ -2071,9 +2074,9 @@ Husk å gjøre rede for hvilke trigonometriske sammenhenger du bruker.</p>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<button id="button-ggb-cas-61a98f00" class="ggb-cas-button">Åpne CAS‑vindu</button>
-<div id="dialog-ggb-cas-61a98f00" title="CAS‑vindu" style="display:none;">
-    <div id="ggb-cas-61a98f00" class="ggb-window"></div>
+<button id="button-ggb-cas-59486796" class="ggb-cas-button">Åpne CAS‑vindu</button>
+<div id="dialog-ggb-cas-59486796" title="CAS‑vindu" style="display:none;">
+    <div id="ggb-cas-59486796" class="ggb-window"></div>
 </div>
 
 <style>
@@ -2090,12 +2093,12 @@ Husk å gjøre rede for hvilke trigonometriske sammenhenger du bruker.</p>
 
     function applySize() {
       if (!ggbReady) return;
-      const w = $("#ggb-cas-61a98f00").width(),
-            h = $("#ggb-cas-61a98f00").height();
+      const w = $("#ggb-cas-59486796").width(),
+            h = $("#ggb-cas-59486796").height();
       window.ggbApplet.setSize(Math.round(w), Math.round(h));
     }
 
-    const $dlg = $("#dialog-ggb-cas-61a98f00").dialog({
+    const $dlg = $("#dialog-ggb-cas-59486796").dialog({
       autoOpen: false,
       width: 390, height: 580,
       resizable: true, draggable: true,
@@ -2104,14 +2107,14 @@ Husk å gjøre rede for hvilke trigonometriske sammenhenger du bruker.</p>
       open: function() {
         if (!ggbReady) {
           new GGBApplet({
-            appName: "classic", id: "ggb-cas-61a98f00",
+            appName: "classic", id: "ggb-cas-59486796",
             width: 350, height: 500,
             perspective: "C", language: "nb",
             showToolBar: true, showAlgebraInput: true,
             borderRadius: 8, enableRightClick: true, showKeyboardOnFocus: false,
             customToolBar: "1001 | 1002 | 1007 | 1010 | 6",
             appletOnLoad: () => { ggbReady = true; applySize(); }
-          }, true).inject("ggb-cas-61a98f00");
+          }, true).inject("ggb-cas-59486796");
         } else {
           applySize();
         }
@@ -2154,7 +2157,7 @@ Husk å gjøre rede for hvilke trigonometriske sammenhenger du bruker.</p>
             target = target.parentElement;
           }
           // Prevent page scroll but don't stop the event from reaching GeoGebra
-          if (!e.target.closest('#ggb-cas-61a98f00')) {
+          if (!e.target.closest('#ggb-cas-59486796')) {
             e.preventDefault();
             e.stopPropagation();
           }
@@ -2182,7 +2185,7 @@ Husk å gjøre rede for hvilke trigonometriske sammenhenger du bruker.</p>
     
     // Monitor GeoGebra applet focus/interaction to control scroll lock
     function bindScrollLock() {
-      const ggbContainer = document.getElementById('ggb-cas-61a98f00');
+      const ggbContainer = document.getElementById('ggb-cas-59486796');
       if (!ggbContainer) {
         setTimeout(bindScrollLock, 300);
         return;
@@ -2228,10 +2231,10 @@ Husk å gjøre rede for hvilke trigonometriske sammenhenger du bruker.</p>
     // Cleanup on dialog close
     $dlg.on('dialogclose', unlockScroll);
 
-    $("#button-ggb-cas-61a98f00").button()
+    $("#button-ggb-cas-59486796").button()
       .on("click touchend pointerup", e => {
         e.preventDefault();
-        $("#dialog-ggb-cas-61a98f00").dialog("open");
+        $("#dialog-ggb-cas-59486796").dialog("open");
       });
   });
 })();
@@ -2289,9 +2292,9 @@ T_{ABCD} \approx 38.57.
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<button id="button-ggb-cas-3f4284ce" class="ggb-cas-button">Åpne CAS‑vindu</button>
-<div id="dialog-ggb-cas-3f4284ce" title="CAS‑vindu" style="display:none;">
-    <div id="ggb-cas-3f4284ce" class="ggb-window"></div>
+<button id="button-ggb-cas-f3f98a12" class="ggb-cas-button">Åpne CAS‑vindu</button>
+<div id="dialog-ggb-cas-f3f98a12" title="CAS‑vindu" style="display:none;">
+    <div id="ggb-cas-f3f98a12" class="ggb-window"></div>
 </div>
 
 <style>
@@ -2308,12 +2311,12 @@ T_{ABCD} \approx 38.57.
 
     function applySize() {
       if (!ggbReady) return;
-      const w = $("#ggb-cas-3f4284ce").width(),
-            h = $("#ggb-cas-3f4284ce").height();
+      const w = $("#ggb-cas-f3f98a12").width(),
+            h = $("#ggb-cas-f3f98a12").height();
       window.ggbApplet.setSize(Math.round(w), Math.round(h));
     }
 
-    const $dlg = $("#dialog-ggb-cas-3f4284ce").dialog({
+    const $dlg = $("#dialog-ggb-cas-f3f98a12").dialog({
       autoOpen: false,
       width: 390, height: 580,
       resizable: true, draggable: true,
@@ -2322,14 +2325,14 @@ T_{ABCD} \approx 38.57.
       open: function() {
         if (!ggbReady) {
           new GGBApplet({
-            appName: "classic", id: "ggb-cas-3f4284ce",
+            appName: "classic", id: "ggb-cas-f3f98a12",
             width: 350, height: 500,
             perspective: "C", language: "nb",
             showToolBar: true, showAlgebraInput: true,
             borderRadius: 8, enableRightClick: true, showKeyboardOnFocus: false,
             customToolBar: "1001 | 1002 | 1007 | 1010 | 6",
             appletOnLoad: () => { ggbReady = true; applySize(); }
-          }, true).inject("ggb-cas-3f4284ce");
+          }, true).inject("ggb-cas-f3f98a12");
         } else {
           applySize();
         }
@@ -2372,7 +2375,7 @@ T_{ABCD} \approx 38.57.
             target = target.parentElement;
           }
           // Prevent page scroll but don't stop the event from reaching GeoGebra
-          if (!e.target.closest('#ggb-cas-3f4284ce')) {
+          if (!e.target.closest('#ggb-cas-f3f98a12')) {
             e.preventDefault();
             e.stopPropagation();
           }
@@ -2400,7 +2403,7 @@ T_{ABCD} \approx 38.57.
     
     // Monitor GeoGebra applet focus/interaction to control scroll lock
     function bindScrollLock() {
-      const ggbContainer = document.getElementById('ggb-cas-3f4284ce');
+      const ggbContainer = document.getElementById('ggb-cas-f3f98a12');
       if (!ggbContainer) {
         setTimeout(bindScrollLock, 300);
         return;
@@ -2446,10 +2449,10 @@ T_{ABCD} \approx 38.57.
     // Cleanup on dialog close
     $dlg.on('dialogclose', unlockScroll);
 
-    $("#button-ggb-cas-3f4284ce").button()
+    $("#button-ggb-cas-f3f98a12").button()
       .on("click touchend pointerup", e => {
         e.preventDefault();
-        $("#dialog-ggb-cas-3f4284ce").dialog("open");
+        $("#dialog-ggb-cas-f3f98a12").dialog("open");
       });
   });
 })();
@@ -2565,9 +2568,9 @@ a = -\sqrt{2} + \sqrt{6} = \sqrt{6} - \sqrt{2}
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<button id="button-ggb-cas-19fdd59f" class="ggb-cas-button">Åpne CAS‑vindu</button>
-<div id="dialog-ggb-cas-19fdd59f" title="CAS‑vindu" style="display:none;">
-    <div id="ggb-cas-19fdd59f" class="ggb-window"></div>
+<button id="button-ggb-cas-5a2afbcb" class="ggb-cas-button">Åpne CAS‑vindu</button>
+<div id="dialog-ggb-cas-5a2afbcb" title="CAS‑vindu" style="display:none;">
+    <div id="ggb-cas-5a2afbcb" class="ggb-window"></div>
 </div>
 
 <style>
@@ -2584,12 +2587,12 @@ a = -\sqrt{2} + \sqrt{6} = \sqrt{6} - \sqrt{2}
 
     function applySize() {
       if (!ggbReady) return;
-      const w = $("#ggb-cas-19fdd59f").width(),
-            h = $("#ggb-cas-19fdd59f").height();
+      const w = $("#ggb-cas-5a2afbcb").width(),
+            h = $("#ggb-cas-5a2afbcb").height();
       window.ggbApplet.setSize(Math.round(w), Math.round(h));
     }
 
-    const $dlg = $("#dialog-ggb-cas-19fdd59f").dialog({
+    const $dlg = $("#dialog-ggb-cas-5a2afbcb").dialog({
       autoOpen: false,
       width: 390, height: 580,
       resizable: true, draggable: true,
@@ -2598,14 +2601,14 @@ a = -\sqrt{2} + \sqrt{6} = \sqrt{6} - \sqrt{2}
       open: function() {
         if (!ggbReady) {
           new GGBApplet({
-            appName: "classic", id: "ggb-cas-19fdd59f",
+            appName: "classic", id: "ggb-cas-5a2afbcb",
             width: 350, height: 500,
             perspective: "C", language: "nb",
             showToolBar: true, showAlgebraInput: true,
             borderRadius: 8, enableRightClick: true, showKeyboardOnFocus: false,
             customToolBar: "1001 | 1002 | 1007 | 1010 | 6",
             appletOnLoad: () => { ggbReady = true; applySize(); }
-          }, true).inject("ggb-cas-19fdd59f");
+          }, true).inject("ggb-cas-5a2afbcb");
         } else {
           applySize();
         }
@@ -2648,7 +2651,7 @@ a = -\sqrt{2} + \sqrt{6} = \sqrt{6} - \sqrt{2}
             target = target.parentElement;
           }
           // Prevent page scroll but don't stop the event from reaching GeoGebra
-          if (!e.target.closest('#ggb-cas-19fdd59f')) {
+          if (!e.target.closest('#ggb-cas-5a2afbcb')) {
             e.preventDefault();
             e.stopPropagation();
           }
@@ -2676,7 +2679,7 @@ a = -\sqrt{2} + \sqrt{6} = \sqrt{6} - \sqrt{2}
     
     // Monitor GeoGebra applet focus/interaction to control scroll lock
     function bindScrollLock() {
-      const ggbContainer = document.getElementById('ggb-cas-19fdd59f');
+      const ggbContainer = document.getElementById('ggb-cas-5a2afbcb');
       if (!ggbContainer) {
         setTimeout(bindScrollLock, 300);
         return;
@@ -2722,10 +2725,10 @@ a = -\sqrt{2} + \sqrt{6} = \sqrt{6} - \sqrt{2}
     // Cleanup on dialog close
     $dlg.on('dialogclose', unlockScroll);
 
-    $("#button-ggb-cas-19fdd59f").button()
+    $("#button-ggb-cas-5a2afbcb").button()
       .on("click touchend pointerup", e => {
         e.preventDefault();
-        $("#dialog-ggb-cas-19fdd59f").dialog("open");
+        $("#dialog-ggb-cas-5a2afbcb").dialog("open");
       });
   });
 })();

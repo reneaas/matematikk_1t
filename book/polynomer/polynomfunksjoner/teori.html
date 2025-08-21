@@ -43,11 +43,10 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../../_static/dialogue.css?v=1b585024" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/admonitions.css?v=a4c95251" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/admonitions.css?v=f84a357c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/static_code_blocks.css?v=68f9364b" />
     <link rel="stylesheet" type="text/css" href="../../../_static/pdf_custom.css?v=a874a063" />
     <link rel="stylesheet" type="text/css" href="../../../_static/general_style.css?v=41f615c1" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/polydiv/style.css?v=3450aa48" />
     <link rel="stylesheet" type="text/css" href="../../../_static/popup/popup.css?v=2d27c3a4" />
     <link rel="stylesheet" type="text/css" href="../../../_static/multipleChoiceQuiz/style.css?v=89e27729" />
     <link rel="stylesheet" type="text/css" href="../../../_static/pairPuzzle/style.css?v=f77426ac" />
@@ -474,6 +473,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../../eksamensressurser/cas.html">CAS (Geogebra)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../eksamensressurser/geogebra.html">Geogebra</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">dev</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../dev/dev.html">Dev</a></li>
+</ul>
 
     </div>
 </nav></div>
@@ -790,9 +793,9 @@ f(x) = x^3 - 2x + 2.
 <div class="sidebar-cas">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<button id="button-ggb-cas-2c44803c" class="ggb-cas-button">Åpne CAS‑vindu</button>
-<div id="dialog-ggb-cas-2c44803c" title="CAS‑vindu" style="display:none;">
-    <div id="ggb-cas-2c44803c" class="ggb-window"></div>
+<button id="button-ggb-cas-d108ffca" class="ggb-cas-button">Åpne CAS‑vindu</button>
+<div id="dialog-ggb-cas-d108ffca" title="CAS‑vindu" style="display:none;">
+    <div id="ggb-cas-d108ffca" class="ggb-window"></div>
 </div>
 
 <style>
@@ -809,12 +812,12 @@ f(x) = x^3 - 2x + 2.
 
     function applySize() {
       if (!ggbReady) return;
-      const w = $("#ggb-cas-2c44803c").width(),
-            h = $("#ggb-cas-2c44803c").height();
+      const w = $("#ggb-cas-d108ffca").width(),
+            h = $("#ggb-cas-d108ffca").height();
       window.ggbApplet.setSize(Math.round(w), Math.round(h));
     }
 
-    const $dlg = $("#dialog-ggb-cas-2c44803c").dialog({
+    const $dlg = $("#dialog-ggb-cas-d108ffca").dialog({
       autoOpen: false,
       width: 390, height: 580,
       resizable: true, draggable: true,
@@ -823,14 +826,14 @@ f(x) = x^3 - 2x + 2.
       open: function() {
         if (!ggbReady) {
           new GGBApplet({
-            appName: "classic", id: "ggb-cas-2c44803c",
+            appName: "classic", id: "ggb-cas-d108ffca",
             width: 350, height: 500,
             perspective: "C", language: "nb",
             showToolBar: true, showAlgebraInput: true,
             borderRadius: 8, enableRightClick: true, showKeyboardOnFocus: false,
             customToolBar: "1001 | 1002 | 1007 | 1010 | 6",
             appletOnLoad: () => { ggbReady = true; applySize(); }
-          }, true).inject("ggb-cas-2c44803c");
+          }, true).inject("ggb-cas-d108ffca");
         } else {
           applySize();
         }
@@ -873,7 +876,7 @@ f(x) = x^3 - 2x + 2.
             target = target.parentElement;
           }
           // Prevent page scroll but don't stop the event from reaching GeoGebra
-          if (!e.target.closest('#ggb-cas-2c44803c')) {
+          if (!e.target.closest('#ggb-cas-d108ffca')) {
             e.preventDefault();
             e.stopPropagation();
           }
@@ -901,7 +904,7 @@ f(x) = x^3 - 2x + 2.
     
     // Monitor GeoGebra applet focus/interaction to control scroll lock
     function bindScrollLock() {
-      const ggbContainer = document.getElementById('ggb-cas-2c44803c');
+      const ggbContainer = document.getElementById('ggb-cas-d108ffca');
       if (!ggbContainer) {
         setTimeout(bindScrollLock, 300);
         return;
@@ -947,10 +950,10 @@ f(x) = x^3 - 2x + 2.
     // Cleanup on dialog close
     $dlg.on('dialogclose', unlockScroll);
 
-    $("#button-ggb-cas-2c44803c").button()
+    $("#button-ggb-cas-d108ffca").button()
       .on("click touchend pointerup", e => {
         e.preventDefault();
-        $("#dialog-ggb-cas-2c44803c").dialog("open");
+        $("#dialog-ggb-cas-d108ffca").dialog("open");
       });
   });
 })();
