@@ -5,12 +5,12 @@ def synthetic_div(
     fname: str,
     p: str,
     x: float,
-    stage: int = None,
+    stage: int = 12,
     svg: bool = True,
     tutor: bool = False,
 ):
 
-    if stage is None:
+    if not tutor:
         div_cmd = (
             r"\polyhornerscheme[x={x}, resultstyle=\color{red}, showvar=true]{{p}}"
         )
