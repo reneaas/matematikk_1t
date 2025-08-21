@@ -12,6 +12,7 @@ class: tip
 
 
 
+
 Polynomdivisjon er en metode for å dele et polynom med et annet polynom og skrive det på en enklere måte. Før vi ser på dette, skal vi motivere hvorfor vi trenger polynomdivisjon i det hele tatt. Vi har sett at når en tredjegradsfunksjon ett nullpunkt, så kan vi skrive $f(x)$ som et produkt av et førstegradspolynom og et andregradspolynom på formen:
 
 $$

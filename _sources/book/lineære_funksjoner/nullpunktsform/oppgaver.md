@@ -414,12 +414,19 @@ $$
 
 Bestem hvilken grafen nedenfor som viser grafen til $f$?
 
-:::{figure} ./figurer/oppgaver/oppgave_6/merged_figure.svg
+
+:::{multi-plot}
 ---
+functions: "[x + 3, 2*(x - 3), -2*(x + 3), -(x - 3)]"
+rows: 2
+cols: 2
 width: 100%
-class: no-click, adaptive-figure
+fontsize: 18
 ---
 :::
+
+
+
 
 ::::{answer}
 Graf B viser grafen til $f$.
@@ -442,12 +449,19 @@ level: 1
 ---
 I figuren nedenfor vises grafen til en lineær funksjon $f$.
 
-:::{figure} ./figurer/oppgaver/oppgave_7/figur.svg
+
+:::{plot}
 ---
-width: 80%
-class: no-click, adaptive-figure
+fn: 3*(x - 2)
+fn_label: $f$
+width: 70%
+xmin: -7
+xmax: 7
+ymin: -7
+ymax: 7
 ---
 :::
+
 
 ::::::::::::::{tab-set}
 ---
@@ -506,12 +520,14 @@ Grafen til en lineær funksjon $f$ er vist i figuren nedenfor.
 Bestem $f(x)$ på nullpunktsform. 
 
 
-:::{figure} ./figurer/oppgaver/oppgave_8/a.svg
+:::{plot}
 ---
-width: 80%
-class: no-click, adaptive-figure
+fn: 2*(x - 1)
+fn_label: $f$
+width: 70%
 ---
 :::
+
 
 ::::{answer}
 $$
@@ -529,12 +545,14 @@ Grafen til en lineær funksjon $g$ er vist i figuren nedenfor.
 Bestem $g(x)$ på nullpunktsform. 
 
 
-:::{figure} ./figurer/oppgaver/oppgave_8/b.svg
+:::{plot}
 ---
-width: 80%
-class: no-click, adaptive-figure
+fn: -1*(x + 2)
+fn_label: $g$
+width: 70%
 ---
 :::
+
 
 ::::{answer}
 $$
@@ -553,12 +571,14 @@ Bestem $h(x)$ på nullpunktsform.
 
 
 
-:::{figure} ./figurer/oppgaver/oppgave_8/c.svg
+:::{plot}
 ---
-width: 80%
-class: no-click, adaptive-figure
+fn: 3*(x - 4)
+fn_label: $h$
+width: 70%
 ---
 :::
+
 
 
 ::::{answer}
@@ -577,12 +597,14 @@ Grafen til en lineær funksjon $p$ er vist i figuren nedenfor.
 Bestem $p(x)$ på nullpunktsform. 
 
 
-:::{figure} ./figurer/oppgaver/oppgave_8/d.svg
+:::{plot}
 ---
-width: 80%
-class: no-click, adaptive-figure
+fn: -1*(x - 4)
+fn_label: $p$
+width: 70%
 ---
 :::
+
 
 ::::{answer}
 $$

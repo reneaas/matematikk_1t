@@ -61,10 +61,17 @@ Grafen til en andregradsfunksjon $f$ er vist i figuren nedenfor.
 
 Bestem $f(x)$. 
 
-:::{figure} ./figurer/eksempler/eksempel_1/figur.svg
+
+:::{plot}
 ---
-class: no-click, adaptive-figure
+fn: x**2 + 2*x - 8
+fn_label: $f$
 width: 70%
+xmin: -6
+xmax: 6
+ymin: -10
+ymax: 6
+ystep: 1
 ---
 :::
 
@@ -117,12 +124,19 @@ Grafen til en andregradsfunksjon $f$ er vist i figuren nedenfor.
 
 Bestem $f(x)$.
 
-:::{figure} ./figurer/underveisoppgaver/underveisoppgave_1/figur.svg
+
+:::{plot}
 ---
-class: no-click, adaptive-figure
+fn: -x**2 + 4*x + 1
+fn_label: $f$
+xmin: -3
+xmax: 7
+ymin: -8
+ymax: 8
 width: 70%
 ---
 :::
+
 
 ::::{answer}
 $$
