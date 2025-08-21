@@ -54,22 +54,29 @@ dropdown: 0
 ---
 Først tenker vi oss hva vi må gange $(x + 2)$ med slik at vi **minst** får et ledd med $3x^2$. Dette vil være $3x$. Ganger vi $3x$ med $(x + 2)$, så får vi $3x^2 + 6x$. Vi trekker fra dette fra $3x^2 + 3x - 6$. Vi skriver dette slik:
 
-:::{figure} ./koder/eksempler/eksempel_1/stage_4.svg
+
+:::{polydiv}
 ---
+p: 3x^2 + 3x - 6
+q: x + 2
+stage: 4
 width: 60%
-class: no-click, adaptive-figure
 ---
 :::
+
 
 Nå sitter vi igjen med en rest $(-3x + 6)$. Dette er hvor mye vi "bommet" på det riktig svaret ved å velge $3x$. Vi kan nå gjenta samme prosess med resten. Hva må vi gange med $(x + 2)$ slik at **minst** et av leddene blir $-3x$. Det vil være $-3$. Ganger vi $-3$ med $(x + 2)$ får vi $-3x + 6$. Vi trekker dette fra resten og får:
 
 
-:::{figure} ./koder/eksempler/eksempel_1/stage_7.svg
+:::{polydiv}
 ---
+p: 3x^2 + 3x - 6
+q: x + 2
+stage: 7
 width: 60%
-class: no-click, adaptive-figure
 ---
 :::
+
 
 Nå er resten vår $0$ og vi er ferdig med divisjonen. Det betyr at 
 
@@ -103,28 +110,37 @@ dropdown: 0
 ---
 Først er vi etter hva vi må gange $(x + 2)$ med slik at vi får et polynom som har et ledd $x^3$. Det får vi hvis vi ganger med $x^2$. Ganger vi $x^2$ med $(x + 2)$, får vi $x^3 + 2x^2$. Vi trekker fra dette fra telleren:
 
-:::{figure} ./koder/eksempler/eksempel_2/stage_4.svg
+
+:::{polydiv}
 ---
+p: x^3 - 3x^2 - 6x + 8
+q: x + 2
+stage: 4
 width: 80%
-class: no-click, polydiv-figure
 ---
 :::
+
 
 Nå sitter vi igjen med en rest $(-5x^2 - 6x)$. Nå ser vi etter hva vi må gange $(x + 2)$ med slik at ett av leddene blir $-5x^2$. Dette vil være $-5x$. Ganger vi $-5x$ med $(x + 2)$, får vi $-5x^2 - 10x$. Vi trekker fra dette fra resten:
 
-:::{figure} ./koder/eksempler/eksempel_2/stage_7.svg
+
+:::{polydiv}
 ---
+p: x^3 - 3x^2 - 6x + 8
+q: x + 2
+stage: 7
 width: 80%
-class: no-click, polydiv-figure
 ---
 :::
 
+
 Nå sitter vi igjen med en rest $(4x + 8)$. Nå ser vi etter hva vi må gange $(x + 2)$ med slik at ett av leddene blir $4x$. Dette vil være $4$. Ganger vi $4$ med $(x + 2)$, får vi $4x + 8$. Vi trekker fra dette fra resten: 
 
-:::{figure} ./koder/eksempler/eksempel_2/stage_10.svg
+:::{polydiv}
 ---
+p: x^3 - 3x^2 - 6x + 8
+q: x + 2
 width: 80%
-class: no-click, polydiv-figure
 ---
 :::
 
@@ -143,7 +159,7 @@ $$
 Ganger vi med $(x + 2)$ på hver side, så finner vi at vi kan faktorisere tredjegradspolynomet som
 
 $$
-x^3 - 3x^2 - 6 + 8 = (x + 2)(x^2 - 5x + 4)
+x^3 - 3x^2 - 6x + 8 = (x + 2)(x^2 - 5x + 4)
 $$
 
 ::::
@@ -176,10 +192,11 @@ $$
 class: solution
 ---
 
-:::{figure} ./koder/eksempler/eksempel_3/eksempel_3.svg
+:::{polydiv}
 ---
-width: 85%
-class: no-click, polydiv-figure
+p: x^3 - 8x^2 + 21x - 18
+q: x^2 - 6x + 9
+width: 80%
 ---
 :::
 
@@ -223,10 +240,11 @@ class: solution
 Vi utfører polynomdivisjon:
 
 
-:::{figure} ./koder/eksempler/eksempel_4/eksempel_4.svg
+:::{polydiv}
 ---
+p: x^3 - 5x^2 + 8x - 4
+q: x - 3
 width: 90%
-class: no-click, polydiv-figure
 ---
 :::
 
@@ -307,10 +325,11 @@ Sammenlikn resten med svaret ditt fra **a**.
 ---
 class: answer, dropdown
 ---
-:::{figure} ./koder/utforsk/utforsk_1/utforsk_1.svg
+:::{polydiv}
 ---
-width: 90%
-class: no-click, polydiv-figure
+p: x^3 + 4x^2 + x - 6
+q: x + 1
+width: 80%
 ---
 :::
 
@@ -406,10 +425,12 @@ class: solution
 ---
 Vi utfører polynomdivisjon og får:
 
-:::{figure} ./koder/eksempler/eksempel_5/eksempel_5_longdiv.svg
+
+:::{polydiv}
 ---
-width: 90%
-class: no-click, polydiv-figure
+p: x^3 - 2x^2 - 5x + 6
+q: x + 1
+width: 80%
 ---
 :::
 
@@ -469,10 +490,11 @@ class: example
 ---
 Polynomdivisjonen fra eksempel 4 krever mye skriving:
 
-:::{figure} ./koder/eksempler/eksempel_5/eksempel_5_longdiv.svg
+:::{polydiv}
 ---
+p: x^3 - 2x^2 - 5x + 6
+q: x + 1
 width: 80%
-class: no-click, polydiv-figure
 ---
 :::
 
@@ -491,13 +513,15 @@ Prøv å sammenligne med polynomdivisjonen for å gjenkjenne hvor tallene i Horn
 
 Vi kan oppsummere resultatet vi fikk med Horner-skjemaet som
 
-:::{figure} ./koder/eksempler/eksempel_5/eksempel_5.svg
+
+:::{horner}
 ---
-width: 60%
-class: no-click, polydiv-figure
+p: x^3 - 2x^2 - 5x + 6
+x: -1
+width: 50%
 ---
-På øverste rad står koeffisientene til $f(x)$ med høyeste grad først og konstantledd til slutt. På nederste rad er de tre første tallene koeffisientene til kvotienten $K(x)$ med høyest grad til venstre og konstantledd til slutt. Det siste tallet (i rødt) på siste rad er resten $R$. 
 :::
+
 
 Basert på Horner-skjemaet kan vi derfor lese av at 
 
@@ -535,10 +559,11 @@ $$
 class: answer, dropdown
 ---
 
-:::{figure} ./koder/underveisoppgaver/underveisoppgave_1/underveisoppgave_1.svg
+:::{horner}
 ---
+p: x^3 - 4x^2 + 3x - 2
+x: 2
 width: 60%
-class: no-click, polydiv-figure
 ---
 :::
 
@@ -561,10 +586,12 @@ $$
 class: solution, dropdown
 ---
 
-:::{figure} ./koder/underveisoppgaver/underveisoppgave_1/underveisoppgave_1_tutor.svg
+:::{horner}
 ---
+p: x^3 - 4x^2 + 3x - 2
+x: 2
 width: 60%
-class: no-click, polydiv-figure
+tutor:
 ---
 :::
 
