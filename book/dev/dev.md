@@ -4,7 +4,7 @@
 ::::{polydiv}
 :p: x^3 + 2x^2 - 3x - 6
 :q: x - 2
-:width: 50%
+:width: 70%
 ::::
 
 

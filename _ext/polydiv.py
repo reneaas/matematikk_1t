@@ -1,5 +1,8 @@
 import os
+import shutil
 import hashlib
+import re
+import uuid
 from docutils import nodes
 from docutils.parsers.rst import directives
 from sphinx.util.docutils import SphinxDirective
@@ -60,49 +63,47 @@ class PolyDivDirective(SphinxDirective):
         "nocache": directives.flag,  # include to force regeneration
         "alt": directives.unchanged,
         "width": directives.length_or_percentage_or_unitless,
+        # Always inline now; legacy 'inline' option kept (ignored) for backward compatibility
+        "inline": directives.flag,
     }
 
     def run(self):
+        """Main directive entry: always inline-embed generated SVG and allow width control & centering."""
         env = self.state.document.settings.env
+        app = env.app
 
         try:
             from python_util.polydiv import polylongdiv
         except Exception as e:  # pragma: no cover
             msg = nodes.error()
-            para = nodes.paragraph(text=f"Kunne ikke importere polydiv-modulen: {e}")
-            msg += para
+            msg += nodes.paragraph(text=f"Kunne ikke importere polydiv-modulen: {e}")
             return [msg]
 
+        # Options
         p = self.options.get("p")
         q = self.options.get("q")
         if p is None or q is None:
-            error = self.state_machine.reporter.error(
-                "Directive 'polydiv' krever både :p: og :q: opsjoner.",
-                line=self.lineno,
-            )
-            return [error]
-
+            return [
+                self.state_machine.reporter.error(
+                    "Directive 'polydiv' krever både :p: og :q: opsjoner.",
+                    line=self.lineno,
+                )
+            ]
         stage = self.options.get("stage")
         vars_opt = self.options.get("vars", "x")
-
         explicit_name = self.options.get("name")
         content_hash = _hash_key(p, q, stage, vars_opt)
         base_name = explicit_name or f"polydiv_{content_hash}"
 
-        # Directory for generated SVG (served as static file)
-        src_dir = env.app.srcdir
+        # Paths
+        src_dir = app.srcdir
         rel_dir = os.path.join("_static", "polydiv")
         abs_dir = os.path.join(src_dir, rel_dir)
         os.makedirs(abs_dir, exist_ok=True)
-
         svg_filename = f"{base_name}.svg"
         abs_svg_path = os.path.join(abs_dir, svg_filename)
 
-        use_cache = "nocache" not in self.options
-        regenerate = True
-        if use_cache and os.path.exists(abs_svg_path):
-            regenerate = False
-
+        regenerate = "nocache" in self.options or not os.path.exists(abs_svg_path)
         if regenerate:
             cwd = os.getcwd()
             try:
@@ -115,58 +116,189 @@ class PolyDivDirective(SphinxDirective):
                     vars=vars_opt,
                 )
             except Exception as e:  # pragma: no cover
-                err = self.state_machine.reporter.error(
-                    f"Feil under generering av polynomdivisjon: {e}",
-                    line=self.lineno,
-                )
-                return [err]
+                return [
+                    self.state_machine.reporter.error(
+                        f"Feil under generering av polynomdivisjon: {e}",
+                        line=self.lineno,
+                    )
+                ]
             finally:
                 os.chdir(cwd)
 
-        # Post-process SVG: remove fixed width/height so it scales with CSS, keep viewBox
+        # Post-process: strip width/height for responsiveness if viewBox present
         try:
             if os.path.exists(abs_svg_path):
                 with open(abs_svg_path, "r", encoding="utf-8") as f_svg:
-                    svg_text = f_svg.read()
-                # Only strip if a viewBox exists (so scaling remains defined)
-                if "viewBox" in svg_text:
-                    import re
-
-                    cleaned = re.sub(r'\swidth="[^"]+"', "", svg_text)
+                    svg_text_tmp = f_svg.read()
+                if "viewBox" in svg_text_tmp:
+                    cleaned = re.sub(r'\swidth="[^"]+"', "", svg_text_tmp)
                     cleaned = re.sub(r'\sheight="[^"]+"', "", cleaned)
-                    if cleaned != svg_text:
-                        with open(abs_svg_path, "w", encoding="utf-8") as f_svg:
-                            f_svg.write(cleaned)
+                    if cleaned != svg_text_tmp:
+                        with open(abs_svg_path, "w", encoding="utf-8") as f_out:
+                            f_out.write(cleaned)
         except Exception:
-            pass  # non-fatal
+            pass
 
-        uri = f"/{rel_dir}/{svg_filename}"
+        if not os.path.exists(abs_svg_path):
+            return [
+                self.state_machine.reporter.error(
+                    (
+                        f"polydiv: klarte ikke å generere SVG '{svg_filename}'. "
+                        "Kontroller at 'pdflatex' og 'pdf2svg' er installert i miljøet."
+                    ),
+                    line=self.lineno,
+                )
+            ]
+
+        env.note_dependency(abs_svg_path)
+        try:
+            out_static = os.path.join(app.outdir, "_static", "polydiv")
+            os.makedirs(out_static, exist_ok=True)
+            shutil.copy2(abs_svg_path, os.path.join(out_static, svg_filename))
+        except Exception:
+            pass
+
+        # Alt text
         if stage is not None:
             default_alt = f"Polynomdivisjon av ({p}) : ({q}) – trinn {stage}"
         else:
             default_alt = f"Polynomdivisjon av ({p}) : ({q})"
         alt = self.options.get("alt", default_alt)
-        image_node = nodes.image(uri=uri, alt=alt)
-        image_node.setdefault("classes", []).extend(["polydiv-image", "no-click"])
-        width_opt = self.options.get("width")
-        if width_opt:
-            image_node["width"] = width_opt
 
-        figure = nodes.figure()
-        figure += image_node
-        figure.setdefault("classes", []).extend(
-            ["adaptive-figure", "polydiv-figure", "no-click"]
+        width_opt = self.options.get("width")
+        percentage_width = isinstance(width_opt, str) and width_opt.strip().endswith(
+            "%"
         )
 
-        if "class" in self.options:
-            figure["classes"].extend(self.options["class"])
-        if "align" in self.options:
-            figure["align"] = self.options["align"]
-        else:
-            figure["align"] = "center"
+        # Read final SVG
+        try:
+            with open(abs_svg_path, "r", encoding="utf-8") as f_svg:
+                raw_svg = f_svg.read()
+        except Exception as e:  # pragma: no cover
+            return [
+                self.state_machine.reporter.error(
+                    f"polydiv inline: kunne ikke lese SVG: {e}",
+                    line=self.lineno,
+                )
+            ]
 
-        # Figure-level width is less reliable; rely on image width + CSS only
+        # Uniquify IDs to prevent collisions
+        def _uniquify_ids(svg_text: str, prefix: str) -> str:
+            ids = set(re.findall(r'\bid="([^"]+)"', svg_text))
+            if not ids:
+                return svg_text
+            mapping = {old: f"{prefix}{old}" for old in ids}
+            for old, new in mapping.items():
+                svg_text = re.sub(rf'\bid="{re.escape(old)}"', f'id="{new}"', svg_text)
+            for old, new in mapping.items():
+                svg_text = re.sub(
+                    rf'(?:xlink:)?href="#?{re.escape(old)}"', f'href="#{new}"', svg_text
+                )
+                svg_text = re.sub(
+                    rf'xlink:href="#?{re.escape(old)}"',
+                    f'xlink:href="#{new}"',
+                    svg_text,
+                )
+            for old, new in mapping.items():
+                svg_text = re.sub(
+                    rf"url\(#\s*{re.escape(old)}\s*\)", f"url(#{new})", svg_text
+                )
+            for old, new in mapping.items():
+                svg_text = re.sub(rf"#({re.escape(old)})\b", f"#{new}", svg_text)
+            return svg_text
 
+        unique_prefix = f"pd_{_hash_key(p, q, stage, vars_opt)}_{uuid.uuid4().hex[:6]}_"
+        raw_svg = _uniquify_ids(raw_svg, unique_prefix)
+
+        # Augment root <svg>
+        def _augment(match):
+            tag = match.group(0)
+            if "class=" not in tag:
+                tag = tag[:-1] + ' class="polydiv-inline-svg"' + ">"
+            else:
+                tag = tag.replace('class="', 'class="polydiv-inline-svg ')
+            if alt and "aria-label=" not in tag:
+                tag = tag[:-1] + f' role="img" aria-label="{alt}"' + ">"
+            # For percentage width, apply exact percentage to SVG
+            if percentage_width and width_opt:
+                percent_val = width_opt.strip()
+                # add helper class
+                if "polydiv-fill" not in tag:
+                    if "class=" in tag:
+                        tag = tag.replace('class="', 'class="polydiv-fill ')
+                    else:
+                        tag = tag[:-1] + ' class="polydiv-fill"' + ">"
+                if "style=" in tag:
+                    tag = re.sub(
+                        r'style="([^"]*)"',
+                        lambda m: f'style="{m.group(1)}; width:{percent_val}; height:auto; display:block; margin:0 auto;"',
+                        tag,
+                        count=1,
+                    )
+                else:
+                    tag = (
+                        tag[:-1]
+                        + f' style="width:{percent_val}; height:auto; display:block; margin:0 auto;"'
+                        + ">"
+                    )
+            return tag
+
+        raw_svg = re.sub(r"<svg\b[^>]*>", _augment, raw_svg, count=1)
+        if alt and "<title" not in raw_svg:
+            raw_svg = re.sub(
+                r"(<svg\b[^>]*>)",
+                r"\1<title>" + re.escape(alt) + r"</title>",
+                raw_svg,
+                count=1,
+            )
+
+        # Apply explicit width (non-percent) directly to svg
+        if width_opt and not percentage_width:
+
+            def _apply_width(match):
+                tag = match.group(0)
+                w_val = width_opt.strip()
+                w_css = (w_val + "px") if w_val.isdigit() else w_val
+                if "style=" in tag:
+                    tag = re.sub(
+                        r'style="([^"]*)"',
+                        lambda m: f'style="{m.group(1)}; width:{w_css}; height:auto;"',
+                        tag,
+                        count=1,
+                    )
+                else:
+                    tag = tag[:-1] + f' style="width:{w_css}; height:auto;"' + ">"
+                return tag
+
+            raw_svg = re.sub(r"<svg\b[^>]*>", _apply_width, raw_svg, count=1)
+
+        figure = nodes.figure()
+        figure.setdefault("classes", []).extend(
+            [
+                "adaptive-figure",
+                "polydiv-figure",
+                "no-click",
+            ]
+        )
+        # Do not set figure width for percentage; SVG carries explicit percent, allowing centering.
+
+        raw_node = nodes.raw("", raw_svg, format="html")
+        raw_node.setdefault("classes", []).extend(
+            [
+                "polydiv-image",
+                "no-click",
+                "no-scaled-link",
+            ]
+        )
+        figure += raw_node
+
+        # Extra classes & alignment
+        extra_classes = self.options.get("class")
+        if extra_classes:
+            figure["classes"].extend(extra_classes)
+        figure["align"] = self.options.get("align", "center")
+
+        # Caption
         if self.content:
             caption_text = "\n".join(self.content)
             caption_node = nodes.caption()
