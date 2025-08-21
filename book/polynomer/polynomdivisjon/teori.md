@@ -57,7 +57,7 @@ Først tenker vi oss hva vi må gange $(x + 2)$ med slik at vi **minst** får et
 :::{figure} ./koder/eksempler/eksempel_1/stage_4.svg
 ---
 width: 60%
-class: no-click, polydiv-figure
+class: no-click, adaptive-figure
 ---
 :::
 
@@ -67,7 +67,7 @@ Nå sitter vi igjen med en rest $(-3x + 6)$. Dette er hvor mye vi "bommet" på d
 :::{figure} ./koder/eksempler/eksempel_1/stage_7.svg
 ---
 width: 60%
-class: no-click, polydiv-figure
+class: no-click, adaptive-figure
 ---
 :::
 
