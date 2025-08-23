@@ -41,7 +41,7 @@ def main(dirname, save):
     ax.plot(*B, "o", color="black", markersize=8, label="$B$")
     ax.plot(*C, "o", color="black", markersize=8, label="$C$")
 
-    plotmath.plot_polygon(
+    plotmath.polygon(
         A,
         B,
         C,
@@ -81,6 +81,7 @@ def main(dirname, save):
     )
 
     ax.axis("equal")
+    ax.axis("off")
 
     # NOTE: Automatically saves with correct file format and filename.
     if save:
@@ -110,4 +111,4 @@ if __name__ == "__main__":
     dirname = "/".join(parts)
 
     # NOTE: Set `save=True` to save figure. `save=False` to display figure.
-    main(dirname=dirname, save=True)
+    main(dirname=dirname, save=False)

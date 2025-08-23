@@ -314,6 +314,9 @@ class MultiPlotDirective(SphinxDirective):
                 #     )
                 # except Exception:
                 #     pass
+                import matplotlib
+
+                matplotlib.pyplot.close(fig)
             except Exception as e:
                 return [
                     self.state_machine.reporter.error(

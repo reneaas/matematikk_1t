@@ -26,7 +26,7 @@ som betyr at $y = f(x)$. Vi kaller $f(x)$ for **funksjonsverdien** når vi tenke
 
 :::::::::::::::{admonition} Påminnelse: Koordinatsystemet
 ---
-class: dropdown, summary
+class: summary
 ---
 
 Koordinatsystemet består av to tallinjer som vi kaller for **akser**. De to aksene er:
@@ -40,18 +40,21 @@ Vi kaller $x$-verdien til punktet for $x$-koordinaten og $y$-verdien for $y$-koo
 
 I figuren nedenfor vises en konkret eksempel med punktet $(3, 2)$.
 
-:::{figure} ./figurer/teori/koordinatssystem.svg
----
+
+:::{plot}
+point: (3, 2)
+text: 3, 2, "$(3, 2)$", top-right
+hline: 2, 0, 3
+vline: 3, 0, 2
 width: 80%
-class: no-click, adaptive-figure
----
-viser et koordinatsystem med punktet $(3, 2)$. For å finne punktet går vi $3$ plasser parallelt med $x$-aksen og $2$ plasser parallelt med $y$-aksen. 
 :::
 
 :::::::::::::::
 
 
-La oss se på et eksempel:
+---
+
+
 
 
 :::::::::::::::{example} Eksempel 1
@@ -62,12 +65,17 @@ f(x) = 2x + 1.
 $$
 
 
-:::{figure} ./figurer/eksempler/eksempel_1/figur.svg
----
-class: no-click, adaptive-figure
+:::{plot}
+function: 2 * x + 1, f
 width: 70%
----
+annotate: (3.5, 2), (2, 5), "$(2, f(2))$"
+point: (2, 5)
+xmin: -3
+ymax: 8
+vline: 2, 0, 5
+hline: 5, 0, 2
 :::
+
 
 
 I figuren har vi markert et punkt $(2, f(2))$ på grafen til $f$. Vi ser at $x$-koordinaten til dette punktet er $2$ og $y$-koordinaten er $5$. Det betyr at 
@@ -76,7 +84,7 @@ $$
 f(2) = 5
 $$
 
-Vi kunne også sett dette ved å regne ut verdien med funksjonsuttrykket til $f$:
+Vi kan også sjekke at dette stemmer ved å regne ut verdien med funksjonsuttrykket til $f$:
 
 $$
 f(\textcolor{red}{2}) = 2 \cdot \textcolor{red}{2} + 1 = 4 + 1 = 5. 
@@ -96,30 +104,21 @@ $$
 f(x) = 3x - 2
 $$
 
-Bestem $f(4)$ ved
+Bestem $f(1)$ ved
 1. Å regne ut med funksjonsuttrykket
 2. Ved å lese av fra grafen til $f$ vist i figuren nedenfor.
 
-:::{figure} ./figurer/underveisoppgaver/underveisoppgave_1/figur.svg
----
-class: no-click, adaptive-figure
+
+:::{plot}
+function: 3*x - 2, f
 width: 70%
----
 :::
 
 
 ::::{answer}
 $$
-f(4) = 10
+f(1) = 1
 $$
-::::
-
-::::{solution}
-Ved regning:
-: $f(\textcolor{red}{4}) = 3 \cdot \textcolor{red}{4} - 2 = 12 - 2 = 10$
-
-Grafisk
-: Vi ser at når $x = 4$, så er $y = 10$ på grafen. Det betyr at $f(4) = 10$. 
 ::::
 
 
@@ -150,12 +149,22 @@ class: no-click, adaptive-figure
 * Verdien til $b$ er $y$-koordinaten til skjæringspunktet mellom grafen til $f$ og $y$-aksen. Vi kaller ofte $b$ for **konstantleddet** til $f(x)$.
 
 
-:::{figure} ./figurer/teori/grafisk_representasjon/figur.svg
----
+:::{plot}
+function: 2*x - 1, f 
 width: 80%
-class: no-click, adaptive-figure
----
+hline: 1, 1, 2
+vline: 2, 1, 3
+grid: off
+xmin: -2
+xmax: 5
+ymin: -2
+ymax: 5
+text: 1.5, 1, "$1$", bottom-center
+text: 2, 2, "$a$", center-right
+point: (0, -1)
+annotate: (1, -1), (0, -1), "Skjæring med $y$-aksen $(0, b)$", -0.4
 :::
+
 
 :::::::::::::::
 
@@ -168,12 +177,11 @@ Grafen til en lineær funksjon $f$ er vist i figuren nedenfor.
 Bestem $f(x)$.
 
 
-:::{figure} ./figurer/eksempler/eksempel_2/figur.svg
----
-class: no-click, adaptive-figure
+:::{plot}
+function: -2*x + 1, f
 width: 70%
----
 :::
+
 
 
 ::::{solution}
@@ -209,12 +217,12 @@ Grafen til en lineær funksjon $f$ er vist i figuren nedenfor.
 
 Bestem $f(x)$. 
 
-:::{figure} ./figurer/underveisoppgaver/underveisoppgave_2/figur.svg
----
-class: no-click, adaptive-figure
+
+:::{plot}
+function: 3*x - 4, f
 width: 70%
----
 :::
+
 
 ::::{answer}
 $$
@@ -272,16 +280,21 @@ $$
 
 ser vi at stigningstallet til $f$ er $a = -1$ og konstantleddet er $b = 2$. Det betyr at grafen til $f$ skjærer $y$-aksen i $(0, 2)$. Da kan vi lage følgende skisse av grafen til $f$:
 
-:::{figure} ./figurer/eksempler/eksempel_3/figur.svg
----
-class: no-click, adaptive-figure
+
+:::{plot}
+function: -x + 2, f
 width: 70%
----
-viser en skisse av grafen til $f$ der den skjærer $y$-aksen i $(0, 2)$ og har stigningstall $-1$. 
-:::
-
-
-::::
+grid: off
+point: (0, 2)
+text: 0, 2, "$(0, 2)$", center-right
+hline: 4, -2, -1
+vline: -1, 4, 3
+xmin: -4
+xmax: 4
+ymax: 5
+ymin: -3
+text: -1.5, 4, "$1$", top-center
+text: -1, 3.5, "$-1$", center-right
 
 
 :::::::::::::::
@@ -301,13 +314,20 @@ Lag en skisse av grafen til $f$ der du markerer skjæringspunktet med $y$-aksen 
 
 
 ::::{answer}
-:::{figure} ./figurer/underveisoppgaver/underveisoppgave_3/figur.svg
----
-class: no-click, adaptive-figure
+:::{plot}
+function: -2*x + 3, f
 width: 70%
----
+grid: off
+point: (0, 3)
+text: 0, 3, "$(0, 3)$", center-left
+ymin: -2
+hline: 2, 0.5, 1.5
+vline: 1.5, 0, 2
+text: 1, 2, "$1$", top-center
+text: 1.5, 1, "$-2$", center-right
 :::
 ::::
+
 
 ::::{solution}
 Vi har at 
@@ -321,11 +341,17 @@ som betyr at stigningstallet er $a = -2$ og konstantleddet er $b = 3$. Grafen ti
 Ut ifra denne informasjonen kan vi tegne følgende skisse av grafen til $f$.
 
 
-:::{figure} ./figurer/underveisoppgaver/underveisoppgave_3/figur.svg
----
-class: no-click, adaptive-figure
+:::{plot}
+function: -2*x + 3, f
 width: 70%
----
+grid: off
+point: (0, 3)
+text: 0, 3, "$(0, 3)$", center-left
+ymin: -2
+hline: 2, 0.5, 1.5
+vline: 1.5, 0, 2
+text: 1, 2, "$1$", top-center
+text: 1.5, 1, "$-2$", center-right
 :::
 ::::
 
@@ -355,12 +381,24 @@ $$
 
 Vi leser symbolet $\Delta$ som "endring i" slik at $\Delta y$ betyr "endring i $y$-verdien" og $\Delta x$ betyr "endring i $x$-verdien". Stigningstallet er altså endringen i $y$-verdien delt på endringen i $x$-verdien.
 
-:::{figure} ./figurer/teori/topunktsformelen/figur.svg
----
-width: 80%
-class: no-click, adaptive-figure
----
+
+:::{plot}
+function: x + 1
+width: 70%
+grid: off
+xmin: -1
+xmax: 4.5
+ymin: -1
+point: (1, 2)
+point: (4, 5)
+text: 1, 2, "$(x_1, y_1)$", top-left
+text: 4, 5, "$(x_2, y_2)$", top-left
+hline: 2, 1, 4
+vline: 4, 2, 5
+text: 2.5, 2, "$\Delta x$", bottom-center
+text: 4, 3.5, "$\Delta y$", center-right
 :::
+
 
 
 
@@ -374,12 +412,20 @@ Grafen til en lineær funksjon $f$ er vist i figuren nedenfor.
 
 Bestem $f(x)$.
 
-:::{figure} ./figurer/eksempler/eksempel_4/figur.svg
----
-class: no-click, adaptive-figure
+:::{plot}
+function: 3*x - 5, f
 width: 70%
----
+grid: off
+xmin: -2
+xmax: 5
+ymin: -7
+ymax: 5
+point: (0, -5)
+point: (2, 1)
+text: 0, -5, "$(0, -5)$", center-left
+text: 2, 1, "$(2, 1)$", center-right
 :::
+
 
 ::::{solution}
 ---
@@ -417,12 +463,21 @@ Grafen til en lineær funksjon $f$ er vist i figuren nedenfor.
 Bestem $f(x)$.
 
 
-:::{figure} ./figurer/underveisoppgaver/underveisoppgave_4/figur.svg
----
-class: no-click, adaptive-figure
+
+:::{plot}
+function: -2*x + 4, f
 width: 70%
----
+grid: off
+point: (0, 4)
+text: 0, 4, "$(0, 4)$", center-left
+point: (3, -2)
+text: 3, -2, "$(3, -2)$", center-right
+ymin: -5
+ymax: 5
+xmax: 5
+xmin: -1
 :::
+
 
 
 ::::{answer}
