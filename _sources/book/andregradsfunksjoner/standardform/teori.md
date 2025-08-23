@@ -63,16 +63,13 @@ Bestem $f(x)$.
 
 
 :::{plot}
----
-fn: x**2 + 2*x - 8
-fn_label: $f$
+function: x**2 + 2*x - 8, f
 width: 70%
 xmin: -6
 xmax: 6
 ymin: -10
 ymax: 6
 ystep: 1
----
 :::
 
 ::::{solution}
@@ -126,15 +123,12 @@ Bestem $f(x)$.
 
 
 :::{plot}
----
-fn: -x**2 + 4*x + 1
-fn_label: $f$
+function: -x**2 + 4*x + 1, f
 xmin: -3
 xmax: 7
 ymin: -8
 ymax: 8
 width: 70%
----
 :::
 
 

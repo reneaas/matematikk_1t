@@ -57,12 +57,24 @@ level: 1
 I figuren nedenfor vises seks punkter $A$, $B$, $C$, $D$, $E$ og $F$.
 
 
-:::{figure} ./figurer/oppgaver/oppgave_2/figur.svg
----
-width: 80%
-class: no-click, adaptive-figure
----
+:::{plot}
+point: (-1, 3)
+text: -1, 3, "$A$", center-left
+point: (-2, 0)
+text: -2, 0, "$B$", top-center
+point: (1, 3)
+text: 1, 3, "$C$", center-right
+point: (0, -2)
+text: 0, -2, "$D$", center-right
+point: (3, 1)
+text: 3, 1, "$E$", center-right
+point: (3, -1)
+text: 3, -1, "$F$", bottom-right
+width: 70%
 :::
+
+
+
 
 Sett sammen riktig koordinater $(x, y)$ med riktig punktnavn.
 
@@ -215,11 +227,8 @@ Grafen til en lineær funksjon $f$ er vist i figuren nedenfor.
 
 
 :::{plot}
----
-fn: -2*x + 3
-fn_label: $f$
+function: -2*x + 3, f
 width: 70%
----
 :::
 
 
@@ -323,11 +332,8 @@ level: 1
 Grafen til en lineær funksjon $f$ er vist i figuren nedenfor.
 
 :::{plot}
----
-fn: 0.5*x - 2
-fn_label: $f$
+function: 0.5*x - 2, f
 width: 70%
----
 :::
 
 
@@ -438,11 +444,8 @@ Grafen til en lineær funksjon $f$ er vist i figuren nedenfor.
 Bestem $f(x)$. 
 
 :::{plot}
----
-fn: x - 3
-fn_label: $f$
+function: x - 3, f
 width: 70%
----
 :::
 
 :::::::::::::
@@ -454,11 +457,8 @@ Grafen til en lineær funksjon $g$ er vist i figuren nedenfor.
 Bestem $g(x)$. 
 
 :::{plot}
----
-fn: -x + 2
-fn_label: $g$
+function: -x + 2, g
 width: 70%
----
 :::
 
 :::::::::::::
@@ -469,11 +469,8 @@ Grafen til en lineær funksjon $h$ er vist i figuren nedenfor.
 Bestem $h(x)$. 
 
 :::{plot}
----
-fn: 2*x - 2
-fn_label: $h$
+function: 2*x - 2, h
 width: 70%
----
 :::
 
 :::::::::::::
@@ -485,11 +482,8 @@ Grafen til en lineær funksjon $p$ er vist i figuren nedenfor.
 Bestem $p(x)$. 
 
 :::{plot}
----
-fn: -3*x + 1
-fn_label: $p$
+function: -3*x + 1, p
 width: 70%
----
 :::
 
 :::::::::::::
@@ -503,31 +497,83 @@ width: 70%
 ---
 
 
-
-
-
-
 :::::::::::::::{exercise} Oppgave 8
 ---
 level: 2
 ---
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
 Om en lineær funksjon $f$ får du vite at 
 * Stigningstallet er $2$
-* Grafen til $f$ skjærer $y$-aksen i punktet $(0, -1)$
+* Grafen til $f$ skjærer $y$-aksen i punktet $(0, 1)$. 
 
-Bestem hvilken av grafene nedenfor som er grafen til $f$.
+Bestem hvilken graf nedenfor som viser grafen til $f$.
 
 
-:::{figure} ./figurer/oppgaver/oppgave_8/figur.svg
----
-width: 80%
-class: no-click, adaptive-figure
----
+:::{multi-plot}
+functions: 2*x - 1, 2*x + 1, -2*x + 1, -2*x - 1
+rows: 2
+cols: 2
+width: 100%
+grid: off
+ticks: off
 :::
 
-::::{answer}
-Grafen til $f$ er graf B.
-::::
+
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+En lineær funksjon $g$ er gitt ved
+
+$$
+g(x) = -x + 2
+$$
+
+
+Bestem hvilken av grafene nedenfor som viser grafen til $g$.
+
+
+:::{multi-plot}
+functions: x + 2, -x - 2, -x + 2, x - 2
+rows: 2
+cols: 2
+width: 100%
+ticks: off
+:::
+
+
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+En lineær funksjon $h$ er parallel med funksjonen $f(x) = 3x - 2$ og skjærer $y$-aksen i punktet $(0, 4)$.
+
+Bestem hvilken av grafene nedenfor som viser grafen til $h$.
+
+
+:::{multi-plot}
+functions: -3*x + 2, 3*x + 4, 3*x - 2, -3*x + 4
+rows: 2
+cols: 2
+width: 100%
+ticks: off
+:::
+
+
+
+:::::::::::::
+
+
+::::::::::::::
 
 
 :::::::::::::::
@@ -548,11 +594,17 @@ I figuren nedenfor vises grafen til en lineær funksjon $f$ og en trekant $\tria
 
 Bestem $f(x)$.
 
-:::{figure} ./figurer/oppgaver/oppgave_9/figur.svg
----
+:::{plot}
+function: x + 2, f
 width: 80%
-class: no-click, adaptive-figure
----
+polygon: (1, 3), (4, 3), (4, 6), show_vertices
+ticks: off
+axis: equal
+xmin: -3
+text: 1, 3, "$A$", top-left
+text: 4, 3, "$B$", bottom-right
+text: 4, 6, "$C$", top-left
+polygon: (3.5, 3), (4, 3), (4, 3.5), (3.5, 3.5)
 :::
 
 
@@ -583,48 +635,35 @@ $$
 
 
 :::::::::::::::{exercise} Oppgave 10
----
-level: 3
----
 I figuren nedenfor vises grafene til to lineære funksjoner $f$ og $g$.
 
-:::{figure} ./figurer/oppgaver/oppgave_10/figur.svg
----
+
+Bestem arealet av den fargelagte trekanten.
+
+
+:::{plot}
 width: 80%
-class: no-click, adaptive-figure
----
+function: -2*x + 4, f
+function: x - 5, g
+ticks: off
+xmin: -1
+point: (3, -2)
+text: 3, -2.1, "$(3, -2)$", center-right
+point: (5, 0)
+text: 5, 0, "$(5, 0)$", top-center
+point: (2, 0)
+text: 2.1, 0, "$(2, 0)$", top-center
+fill-polygon: (0, 4), (3, -2), (0, -5), royalblue, 0.3
+nocache:
 :::
 
-::::::::::::::{tab-set}
----
-class: tabs-parts
----
-:::::::::::::{tab-item} a
-Bestem $f(x)$ og $g(x)$. 
-
-
-::::{answer}
-\begin{align*}
-    f(x) &= -2x + 4 \\
-    \\
-    g(x) &= x - 5
-\end{align*}
-::::
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} b
-Bestem arealet av det fargelagte området i figuren.
 
 ::::{answer}
 Arealet er $\dfrac{27}{2}$
 ::::
 
-:::::::::::::
-
-::::::::::::::
 
 
 :::::::::::::::
+
 
