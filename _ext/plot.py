@@ -782,35 +782,89 @@ class PlotDirective(SphinxDirective):
                 ymin, ymax = ax.get_ylim()
                 ax_dx = xmax - xmin
                 ax_dy = ymax - ymin
+
+                # Determine axes pixel size for consistent visual offsets
+                try:
+                    fig.canvas.draw()  # ensure layout is realized
+                    _bbox_px = ax.get_window_extent()
+                    _ax_w_px, _ax_h_px = _bbox_px.width, _bbox_px.height
+                    if _ax_w_px <= 0 or _ax_h_px <= 0:
+                        _ax_w_px = _ax_h_px = None
+                except Exception:
+                    _ax_w_px = _ax_h_px = None
+
                 for x0, y0, text, pos, use_bbox in text_vals:
                     va, ha = _parse_text_positioning(pos)
+                    # Factors as fractions of axes size; keep long* ~3.3x larger
+                    _fx_short = 0.015
+                    _fy_short = 0.015
+                    _fx_long = 0.03
+                    _fy_long = 0.03
 
-                    if va == "bottom":
-                        # dy = 0.2
-                        dy = 0.03 * ax_dy
-                    elif va == "top":
-                        dy = -0.03 * ax_dy
-                    elif va == "longbottom":
-                        dy = 0.1 * ax_dy
+                    # Resolve long* into base alignment while keeping larger factors
+                    _use_fx = _fx_short
+                    _use_fy = _fy_short
+                    if va == "longbottom":
                         va = "bottom"
+                        _use_fy = _fy_long
                     elif va == "longtop":
-                        dy = -0.1 * ax_dy
                         va = "top"
-                    else:
-                        dy = 0
-
-                    if ha == "right":
-                        dx = -0.03 * ax_dx
-                    elif ha == "left":
-                        dx = 0.03 * ax_dx
-                    elif ha == "longright":
-                        dx = -0.1 * ax_dx
+                        _use_fy = _fy_long
+                    if ha == "longright":
                         ha = "right"
+                        _use_fx = _fx_long
                     elif ha == "longleft":
-                        dx = 0.1 * ax_dx
                         ha = "left"
+                        _use_fx = _fx_long
+
+                    if _ax_w_px and _ax_h_px:
+                        # Pixel-based offsets converted back to data units
+                        dx_px = 0.0
+                        dy_px = 0.0
+                        if ha == "right":
+                            dx_px = -_ax_w_px * _use_fx
+                        elif ha == "left":
+                            dx_px = _ax_w_px * _use_fx
+                        if va == "bottom":
+                            dy_px = _ax_h_px * _use_fy
+                        elif va == "top":
+                            dy_px = -_ax_h_px * _use_fy
+                        x_disp, y_disp = ax.transData.transform((x0, y0))
+                        x1, y1 = ax.transData.inverted().transform(
+                            (x_disp + dx_px, y_disp + dy_px)
+                        )
+                        dx = x1 - x0
+                        dy = y1 - y0
                     else:
-                        dx = 0
+                        # Fallback to fractions of data span
+                        if va == "bottom":
+                            dy = (
+                                _fy_short * ax_dy
+                                if _use_fy == _fy_short
+                                else _fy_long * ax_dy
+                            )
+                        elif va == "top":
+                            dy = -(
+                                _fy_short * ax_dy
+                                if _use_fy == _fy_short
+                                else _fy_long * ax_dy
+                            )
+                        else:
+                            dy = 0.0
+                        if ha == "right":
+                            dx = -(
+                                _fx_short * ax_dx
+                                if _use_fx == _fx_short
+                                else _fx_long * ax_dx
+                            )
+                        elif ha == "left":
+                            dx = (
+                                _fx_short * ax_dx
+                                if _use_fx == _fx_short
+                                else _fx_long * ax_dx
+                            )
+                        else:
+                            dx = 0.0
 
                     bbox_kwargs = (
                         dict(
