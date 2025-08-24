@@ -1017,6 +1017,8 @@ En strandkiosk $S$ er plassert på starten av kystlinja.
 
 
 
+
+
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts

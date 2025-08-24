@@ -30,66 +30,11 @@ Graden til $P$ kaller vi for **tellergraden** til $f$ og graden til $Q$ kaller v
 
 ## Algebraisk og grafisk representasjon
 
-<!-- :::::::::::::::{admonition} Utforsk 1
----
-class: explore
----
-En rasjonal funksjon $f = P / Q$ der $P$ og $Q$ er lineære funksjoner, kan skrives som
-
-$$
-f(x) = \dfrac{a(x - b)}{x - c}
-$$
-
-der $a, b, c \in \mathbb{R}$ er noen konstanter.
-
-I det interaktive vinduet under vises grafen til $f$. 
-
-1. Utforsk hva $a$ bestemmer for grafen til $f$.
-2. Utforsk hva $b$ bestemmer for grafen til $f$.
-3. Utforsk hva $c$ bestemmer for grafen til $f$. 
-
-> Husk at du kan zoome inn og ut i vinduet og flytte rundt på koordinatssystemet. 
-
-:::{ggb} 720 600
----
-material_id: mykbcgb6
----
-:::
-
-::::::::::::::{admonition} Fasit
----
-class: answer, dropdown
----
-:::::::::::::{tab-set}
----
-class: tabs-parts
----
-::::::::::::{tab-item} 1. $a$
-$a$ bestemmer verdien til den horisontale linja $y = a$. Grafen til $f$ *nærmer* seg denne linja når $|x|$ er stor.
-::::::::::::
-
-::::::::::::{tab-item} 2. $b$
-$b$ bestemmer nullpunktet til $f$. Grafen til $f$ skjærer $x$-aksen i $x = b$. Vi kan merke oss at når $b = c$, så forsvinner nullpunktet og grafen til $f$ blir en horisontal linje. 
-::::::::::::
-
-::::::::::::{tab-item} 3. $c$
-Konstanten $c$ bestemmer den vertikale linje $x = c$. Grafen til $f$ nærmer seg denne linja når $x$ er i nærheten av $x = c$. Verdien til $|f(x)|$ blir veldig stor når $x$ er nærme $x = c$.
-::::::::::::
-
-:::::::::::::
-
-
-::::::::::::::
-
-::::::::::::::: -->
 
 Vi skal først konsentrere oss om rasjonale funksjoner der tellergraden og nevnergraden er $1$. 
 Det vil si der både teller og nevner er lineære polynomer. Vi skal kalle dette for **lineære-over-lineære** rasjonale funksjoner.
 
-:::::{admonition} Lineære-over-lineære rasjonale funksjoner
----
-class: summary
----
+:::::{summary} Lineære-over-lineære rasjonale funksjoner
 En rasjonal funksjon $f$ der teller $P(x)$ og nevner $Q(x)$ er lineære polynomer kan alltid skrives som
 
 :::{figure} ./figurer/teori/annoterte_figurer/linear_rational_function.svg
@@ -100,21 +45,31 @@ class: no-click, adaptive-figure
 :::
 
 
-der definisjonsmengden er $D_f = \mathbb{R} \setminus \{c\}$ og verdimengden er $V_f = \mathbb{R} \setminus \{a\}$.
-
-::::{figure} ./figurer/teori/teori_1.svg
----
+:::{plot}
 width: 80%
-class: no-click, adaptive-figure
----
-::::
+fontsize: 18
+function: (x + 1) / (x - 2), f, (-15, 15) \ {2}
+xmin: -6.5
+xmax: 8
+ymin: -7
+ymax: 10
+ticks: off
+hline: 1, dashed
+vline: 2, dashed
+annotate: (-6, 5), (-1, 1), "Horisontal asymptote $y = a$", -0.3
+annotate: (3, -5), (2, -2), "Vertikal asymptote $x = c$", 0.3
+point: (-1, 0)
+annotate: (-5, -3), (-1, 0), "Nullpunkt $x = b$"
+:::
 
 
-| Konstant | Betydning |
-|:-----------:|------------|
-| $a$ | **Horisontal asymptote**. Verdien $f(x)$ nærmer seg når $\|x\|$ er veldig stor. |
-| $b$ | **Nullpunktet** til $f$. Samme som nullpunktet til telleren $P$. |
-| $c$ | **Vertikal asymptote**. Grafen til $f$ vokser mot uendeligheten når $x$ er nær linja $x = c$. Samme som nullpunktet til nevneren $Q$. |
+Grafen til $f$ er en **hyperbel** med 
+* En horisontal asymptote med likningen $y = a$.
+* En vertikal asymptote med likningen $x = c$.
+* Et nullpunkt i $x = b$. 
+* En definisjonsmengde $D_f = \mathbb{R} \setminus \{c\}$.
+* En verdimengde $V_f = \mathbb{R} \setminus \{a\}$.
+
 
 :::::
 
@@ -124,27 +79,24 @@ class: no-click, adaptive-figure
 
 Vi går løs på et eksempel. 
 
-:::::::::::::::{admonition} Eksempel 1
----
-class: example
----
-I {numref}`fig-rasjonale-funksjoner-representasjoner-eksempel-1` vises grafen til en rasjonal funksjon $f$. 
-
-I figuren vises det at grafen til $f$ har
-* En horisontal asymptote $y = 2$.
-* En vertikal asymptote $x = -1$.
-* Et nullpunkt i $x = 3$.
+:::::::::::::::{example} Eksempel 1
+I figuren nedenfor vises grafen til en lineær-over-lineær rasjonal funksjon $f$. 
 
 Bestem $f(x)$.
 
-:::{figure} ./figurer/eksempler/eksempel_1/graf.svg
----
-name: fig-rasjonale-funksjoner-representasjoner-eksempel-1
+
+:::{plot}
 width: 80%
-class: no-click, adaptive-figure
----
-viser grafen til en rasjonal funksjon $f$ med en horisontal asymptote $y = 2$ og en vertikal asymptote $x = -1$ og et nullpunkt i $x = 3$. 
+fontsize: 18
+function: 2*(x - 3) / (x + 1), f, (-15, 15) \ {-1}
+xmin: -9
+xmax: 9
+ymin: -8
+ymax: 8
+vline: -1, dashed
+hline: 2, dashed
 :::
+
 
 ::::{admonition} Løsning
 ---
