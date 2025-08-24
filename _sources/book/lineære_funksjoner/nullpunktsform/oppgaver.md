@@ -412,17 +412,15 @@ $$
 f(x) = 2\cdot (x - 3)
 $$
 
-Bestem hvilken grafen nedenfor som viser grafen til $f$?
+Bestem hvilken grafen nedenfor som viser grafen til $f$.
 
 
 :::{multi-plot}
----
-functions: "[x + 3, 2*(x - 3), -2*(x + 3), -(x - 3)]"
+functions: x + 3, 2*(x - 3), -2*(x + 3), -(x - 3)
 rows: 2
 cols: 2
 width: 100%
 fontsize: 18
----
 :::
 
 
@@ -451,15 +449,12 @@ I figuren nedenfor vises grafen til en lineær funksjon $f$.
 
 
 :::{plot}
----
-fn: 3*(x - 2)
-fn_label: $f$
+function: 3*(x - 2), f
 width: 70%
 xmin: -7
 xmax: 7
 ymin: -7
 ymax: 7
----
 :::
 
 
@@ -521,11 +516,8 @@ Bestem $f(x)$ på nullpunktsform.
 
 
 :::{plot}
----
-fn: 2*(x - 1)
-fn_label: $f$
+function: 2*(x - 1), f
 width: 70%
----
 :::
 
 
@@ -546,11 +538,8 @@ Bestem $g(x)$ på nullpunktsform.
 
 
 :::{plot}
----
-fn: -1*(x + 2)
-fn_label: $g$
+function: -1*(x + 2), g
 width: 70%
----
 :::
 
 
@@ -572,11 +561,8 @@ Bestem $h(x)$ på nullpunktsform.
 
 
 :::{plot}
----
-fn: 3*(x - 4)
-fn_label: $h$
+function: 3*(x - 4), h
 width: 70%
----
 :::
 
 
@@ -598,11 +584,8 @@ Bestem $p(x)$ på nullpunktsform.
 
 
 :::{plot}
----
-fn: -1*(x - 4)
-fn_label: $p$
+function: -1*(x - 4), p
 width: 70%
----
 :::
 
 
@@ -725,42 +708,31 @@ level: 3
 ---
 I figuren nedenfor vises grafen til to lineære funksjoner $f$ og $g$.
 
-:::{figure} ./figurer/oppgaver/oppgave_10/figur.svg
----
-width: 80%
-class: no-click, adaptive-figure
----
-:::
-
-::::::::::::::{tab-set}
----
-class: tabs-parts
----
-:::::::::::::{tab-item} a
-Bestem $f(x)$ og $g(x)$. 
-
-
-::::{answer}
-\begin{align*}
-    f(x) &= -x + 1 \\
-    \\
-    g(x) &= \dfrac{1}{2}x - 2
-\end{align*}
-::::
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} b
 Bestem arealet av det fargelagte området i figuren.
+
+
+:::{plot}
+width: 80%
+function: -x + 1, f
+function: 0.5*x - 2, g
+xmin: -1
+xmax: 5
+ymin: -3
+ymax: 2
+ticks: off
+point: (0, 1)
+text: 0, 1, "$(0, 1)$", top-right
+point: (0, -2)
+text: 0, -2, "$(0, -2)$", bottom-right
+point: (2, -1)
+text: 2, -1, "$(2, -1)$", center-right
+fill-polygon: (2, -1), (1, 0), (4, 0), royalblue, 0.4
+:::
 
 
 ::::{answer}
 Arealet er $\dfrac{3}{2}$
 ::::
-:::::::::::::
-
-::::::::::::::
 
 
 :::::::::::::::
