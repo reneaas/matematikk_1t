@@ -113,12 +113,102 @@ def _split_expr_list(val: str) -> List[str]:
     return [p for p in parts if p]
 
 
+def _split_top_level(val: str) -> List[str]:
+    """Split by commas at top level only (ignores commas inside (), [], {})."""
+    if not isinstance(val, str):
+        return []
+    s = val.strip()
+    if not s:
+        return []
+    # Strip surrounding brackets if present
+    if (s.startswith("[") and s.endswith("]")) or (
+        s.startswith("(") and s.endswith(")")
+    ):
+        s = s[1:-1].strip()
+    out: List[str] = []
+    cur = []
+    depth = 0
+    pairs = {")": "(", "]": "[", "}": "{"}
+    stack: List[str] = []
+    i = 0
+    while i < len(s):
+        ch = s[i]
+        if ch in "([{":
+            depth += 1
+            stack.append(ch)
+            cur.append(ch)
+        elif ch in ")]}":
+            depth = max(0, depth - 1)
+            if stack:
+                stack.pop()
+            cur.append(ch)
+        elif ch == "," and depth == 0:
+            part = "".join(cur).strip()
+            if part:
+                out.append(part)
+            cur = []
+        else:
+            cur.append(ch)
+        i += 1
+    tail = "".join(cur).strip()
+    if tail:
+        out.append(tail)
+    return out
+
+
+def _safe_literal(val: str):
+    try:
+        import ast as _ast
+
+        return _ast.literal_eval(val)
+    except Exception:
+        return None
+
+
+def _parse_values_list_or_none(s: str):
+    """Parse a scalar number or a tuple/list of numbers; return list[float] or None."""
+    if not isinstance(s, str):
+        return None
+    st = s.strip()
+    if not st or st.lower() == "none":
+        return None
+    lit = _safe_literal(st)
+    if isinstance(lit, (int, float)):
+        try:
+            return [float(lit)]
+        except Exception:
+            return None
+    if isinstance(lit, (list, tuple)):
+        out: List[float] = []
+        for v in lit:
+            try:
+                out.append(float(v))
+            except Exception:
+                pass
+        return out if out else None
+    # fallback: split by commas
+    parts = [p.strip() for p in st.split(",") if p.strip()]
+    out2: List[float] = []
+    for p in parts:
+        try:
+            out2.append(float(p))
+        except Exception:
+            return None
+    return out2 if out2 else None
+
+
 class MultiPlotDirective(SphinxDirective):
     has_content = True
     required_arguments = 0
     option_spec = {
         "functions": directives.unchanged_required,  # list of expressions
         "fn_labels": directives.unchanged,  # optional list of labels
+        "function-names": directives.unchanged,  # alias for fn_labels in examples
+        "domains": directives.unchanged,  # per-function domain (a,b) or (a,b) \ {..}
+        "vlines": directives.unchanged,  # per-function vline x or None
+        "hlines": directives.unchanged,  # per-function hline y or None
+        "xlims": directives.unchanged,  # per-function xlim tuple or None
+        "ylims": directives.unchanged,  # per-function ylim tuple or None
         "xmin": directives.unchanged,
         "xmax": directives.unchanged,
         "ymin": directives.unchanged,
@@ -153,7 +243,7 @@ class MultiPlotDirective(SphinxDirective):
             idx = 1
             while idx < len(lines) and lines[idx].strip() != "---":
                 line = lines[idx].rstrip()
-                m = re.match(r"^([A-Za-z_][\w]*)\s*:\s*(.*)$", line)
+                m = re.match(r"^([A-Za-z_][\w-]*)\s*:\s*(.*)$", line)
                 if m:
                     kv[m.group(1)] = m.group(2)
                 idx += 1
@@ -168,7 +258,7 @@ class MultiPlotDirective(SphinxDirective):
             if not line.strip():
                 caption_start = i + 1
                 continue
-            m = re.match(r"^([A-Za-z_][\w]*)\s*:\s*(.*)$", line)
+            m = re.match(r"^([A-Za-z_][\w-]*)\s*:\s*(.*)$", line)
             if m:
                 kv[m.group(1)] = m.group(2)
                 caption_start = i + 1
@@ -243,16 +333,124 @@ class MultiPlotDirective(SphinxDirective):
         except Exception:
             alpha = None
 
-        labels_list: List[str] = _split_expr_list(str(merged.get("fn_labels", "")))
+        # Accept both fn_labels and function-names; function-names takes precedence if provided
+        labels_list: List[str] = _split_expr_list(
+            str(merged.get("function-names", merged.get("fn_labels", "")))
+        )
         if labels_list and len(labels_list) == len(functions):
             labels_arg: Any = labels_list
         else:
             labels_arg = True
+
+        # Per-function domains with optional exclusions, vlines, hlines, and axis limits
+        # Helper to parse domain with optional set-difference exclusions
+        def _parse_domain_with_exclusions(s: str):
+            if not isinstance(s, str):
+                return None, []
+            s = s.strip()
+            if not s or s.lower() == "none":
+                return None, []
+            num_re = r"[+-]?\d+(?:\.\d+)?"
+            dom_ex_pat = re.compile(
+                rf"\(\s*({num_re})\s*,\s*({num_re})\s*\)\s*(?:\\\s*\{{\s*([^}}]*)\s*\}})?"
+            )
+            m = dom_ex_pat.search(s)
+            if not m:
+                return None, []
+            try:
+                d0 = float(m.group(1))
+                d1 = float(m.group(2))
+                dom = (d0, d1)
+            except Exception:
+                dom = None
+            excludes: List[float] = []
+            excl_str = m.group(3) if m.lastindex and m.lastindex >= 3 else None
+            if excl_str:
+                for tok in [t.strip() for t in excl_str.split(",") if t.strip()]:
+                    try:
+                        excludes.append(float(tok))
+                    except Exception:
+                        pass
+            return dom, excludes
+
+        def _parse_tuple_or_none(s: str):
+            if not isinstance(s, str):
+                return None
+            st = s.strip()
+            if not st or st.lower() == "none":
+                return None
+            lit = _safe_literal(st)
+            if isinstance(lit, (list, tuple)) and len(lit) == 2:
+                try:
+                    return (float(lit[0]), float(lit[1]))
+                except Exception:
+                    return None
+            m = re.match(
+                r"\(\s*([+-]?\d+(?:\.\d+)?)\s*,\s*([+-]?\d+(?:\.\d+)?)\s*\)", st
+            )
+            if m:
+                try:
+                    return (float(m.group(1)), float(m.group(2)))
+                except Exception:
+                    return None
+            return None
+
+        def _parse_scalar_or_none(s: str):
+            if not isinstance(s, str):
+                return None
+            st = s.strip()
+            if not st or st.lower() == "none":
+                return None
+            try:
+                return float(st)
+            except Exception:
+                return None
+
+        domains_raw = _split_top_level(str(merged.get("domains", "")))
+        vlines_raw = _split_top_level(str(merged.get("vlines", "")))
+        hlines_raw = _split_top_level(str(merged.get("hlines", "")))
+        xlims_raw = _split_top_level(str(merged.get("xlims", "")))
+        ylims_raw = _split_top_level(str(merged.get("ylims", "")))
+
+        # Normalize sizes to match number of functions
+        n = len(functions)
+
+        def _pad(lst, fill="None"):
+            return lst + [fill] * max(0, n - len(lst))
+
+        domains_raw = _pad(domains_raw)
+        vlines_raw = _pad(vlines_raw)
+        hlines_raw = _pad(hlines_raw)
+        xlims_raw = _pad(xlims_raw)
+        ylims_raw = _pad(ylims_raw)
+
+        dom_list: List[Tuple[float, float] | None] = []
+        excl_list: List[List[float]] = []
+        for s in domains_raw[:n]:
+            dom, ex = _parse_domain_with_exclusions(s)
+            dom_list.append(dom)
+            excl_list.append(ex)
+
+        vline_vals: List[List[float] | None] = [
+            _parse_values_list_or_none(s) for s in vlines_raw[:n]
+        ]
+        hline_vals: List[List[float] | None] = [
+            _parse_values_list_or_none(s) for s in hlines_raw[:n]
+        ]
+        xlim_vals: List[Tuple[float, float] | None] = [
+            _parse_tuple_or_none(s) for s in xlims_raw[:n]
+        ]
+        ylim_vals: List[Tuple[float, float] | None] = [
+            _parse_tuple_or_none(s) for s in ylims_raw[:n]
+        ]
         explicit_name = merged.get("name")
         debug_mode = "debug" in merged
         rows = int(float(merged.get("rows", 1)))
-        cols = int(float(merged.get("cols", max(1, len(functions)))))
+        # If cols not provided, default to enough columns to fit all functions over the given rows
+        default_cols = max(1, (len(functions) + rows - 1) // max(1, rows))
+        cols = int(float(merged.get("cols", default_cols)))
 
+        # Include per-axis settings in the hash to prevent stale caches
         content_hash = _hash_key(
             "|".join(exprs),
             "|".join(labels_list),
@@ -269,6 +467,12 @@ class MultiPlotDirective(SphinxDirective):
             cols,
             int(grid_flag),
             int(ticks_flag),
+            "|".join(["" if d is None else f"{d[0]},{d[1]}" for d in dom_list]),
+            "|".join(["|".join(map(str, exs)) if exs else "" for exs in excl_list]),
+            "|".join(["|".join(map(str, vs)) if vs else "" for vs in vline_vals]),
+            "|".join(["|".join(map(str, hs)) if hs else "" for hs in hline_vals]),
+            "|".join(["" if xl is None else f"{xl[0]},{xl[1]}" for xl in xlim_vals]),
+            "|".join(["" if yl is None else f"{yl[0]},{yl[1]}" for yl in ylim_vals]),
         )
         base_name = explicit_name or f"multi_plot_{content_hash}"
 
@@ -282,9 +486,10 @@ class MultiPlotDirective(SphinxDirective):
         if regenerate:
             try:
                 letters = [chr(i) for i in range(65, 65 + len(functions))]
+                # Create axes grid without auto-plotting functions
                 fig, axes = plotmath.multiplot(
-                    functions=functions,
-                    fn_labels=letters,
+                    functions=[],
+                    fn_labels=False,
                     xmin=xmin,
                     xmax=xmax,
                     ymin=ymin,
@@ -300,6 +505,78 @@ class MultiPlotDirective(SphinxDirective):
                     fontsize=fontsize,
                     figsize=(4.5 * cols, 3.5 * rows),
                 )
+                # Normalize axes to flat list
+                try:
+                    import numpy as _np
+
+                    axes_list = (
+                        list(axes.flatten())
+                        if hasattr(axes, "flatten")
+                        else list(_np.array(axes).flatten())
+                    )
+                except Exception:
+                    axes_list = axes if isinstance(axes, (list, tuple)) else [axes]
+
+                # Manual plotting per-axis
+                import numpy as np
+
+                for idx, (expr, fn) in enumerate(zip(exprs, functions)):
+                    if idx >= len(axes_list):
+                        break
+                    ax = axes_list[idx]
+                    # Per-axis domain
+                    dom = dom_list[idx]
+                    x0, x1 = dom if dom is not None else (xmin, xmax)
+                    x = np.linspace(x0, x1, int(2**12))
+                    y = fn(x)
+                    # Exclusions
+                    exs = [e for e in excl_list[idx] if x0 < e < x1]
+                    if exs:
+                        idxs = []
+                        for e in exs:
+                            try:
+                                idxs.append(int(np.argmin(np.abs(x - e))))
+                            except Exception:
+                                pass
+                        for j in set(idxs):
+                            if 0 <= j < len(y):
+                                y[j] = np.nan
+                    lbl = (
+                        labels_list[idx]
+                        if (labels_list and idx < len(labels_list))
+                        else None
+                    )
+                    if lbl:
+                        ax.plot(x, y, lw=lw, alpha=alpha, label=f"${lbl}$")
+                        ax.legend(fontsize=int(fontsize))
+                    else:
+                        ax.plot(x, y, lw=lw, alpha=alpha)
+                    # vlines / hlines (support multiple values per axis)
+                    for xv in vline_vals[idx] or []:
+                        try:
+                            ax.axvline(
+                                x=float(xv),
+                                color=plotmath.COLORS.get("red"),
+                                linestyle="--",
+                                lw=lw,
+                            )
+                        except Exception:
+                            pass
+                    for yh in hline_vals[idx] or []:
+                        try:
+                            ax.axhline(
+                                y=float(yh),
+                                color=plotmath.COLORS.get("red"),
+                                linestyle="--",
+                                lw=lw,
+                            )
+                        except Exception:
+                            pass
+                    # x/ylims
+                    if xlim_vals[idx] is not None:
+                        ax.set_xlim(*xlim_vals[idx])
+                    if ylim_vals[idx] is not None:
+                        ax.set_ylim(*ylim_vals[idx])
                 # Save via the single Figure object
                 fig.savefig(
                     abs_svg, format="svg", bbox_inches="tight", transparent=True

@@ -21,8 +21,8 @@ def main(dirname, save):
 
     letters = ["A", "B", "C", "D"]
     fig, axes = plotmath.multiplot(
-        functions,
-        fn_labels=[letters[i] for i in range(len(functions))],
+        functions=[],
+        fn_labels=False,
         xmin=-6,
         xmax=6,
         ymin=-6,

@@ -244,11 +244,13 @@ class PlotDirective(SphinxDirective):
             "text": [],
             "vline": [],
             "hline": [],
+            "line": [],
             "polygon": [],
             "axis": [],
             "fill-polygon": [],
+            "bar": [],
         }
-        idx = 0
+        # YAML-like fenced front matter
         if lines and lines[0].strip() == "---":
             idx = 1
             while idx < len(lines) and lines[idx].strip() != "---":
@@ -264,13 +266,15 @@ class PlotDirective(SphinxDirective):
                     else:
                         scalars[key] = value
                 idx += 1
+            # Skip closing fence if present
             if idx < len(lines) and lines[idx].strip() == "---":
                 idx += 1
+            # Skip trailing blanks before caption
             while idx < len(lines) and not lines[idx].strip():
                 idx += 1
             return scalars, lists, idx
 
-        # Fallback: non-fenced lines until a non key: value or blank separation
+        # Fallback: non-fenced lines until first non "key: value" or a blank separator
         caption_start = 0
         for i, line in enumerate(lines):
             if not line.strip():
@@ -288,7 +292,7 @@ class PlotDirective(SphinxDirective):
                 break
         return scalars, lists, caption_start
 
-    def run(self):  # noqa: C901
+    def run(self):
         env = self.state.document.settings.env
         app = env.app
         try:
@@ -336,34 +340,99 @@ class PlotDirective(SphinxDirective):
             ticks_flag = bool(ticks_flag)
             grid_flag = bool(grid_flag)
 
-        # Compile functions (may be zero or many) and parse optional labels
+        # Compile functions (may be zero or many) and parse optional labels, optional domain (xmin,xmax), and optional exclusions
         raw_fn_items = lists.get("function", [])
         fn_exprs: List[str] = []
         fn_labels_list: List[str] = []
+        fn_domains_list: List[Tuple[float, float] | None] = []
+        fn_exclusions_list: List[List[float]] = []
         functions: List[Callable] = []
 
-        def _parse_function_item(s: str) -> Tuple[str, str | None]:
+        def _parse_function_item(
+            s: str,
+        ) -> Tuple[str, str | None, Tuple[float, float] | None, List[float]]:
             s = str(s).strip()
-            # Try literal tuple/list like ("expr", "label")
+            # Try literal list/tuple like ("expr", "label") or ("expr", (xmin,xmax)) or ("expr", "label", (xmin,xmax)) in any order
             lit = _safe_literal(s)
-            if isinstance(lit, (list, tuple)) and len(lit) == 2:
+            if isinstance(lit, (list, tuple)) and len(lit) >= 1:
                 expr = str(lit[0]).strip()
-                label = str(lit[1]).strip() if str(lit[1]).strip() else None
-                return expr, label
-            # Fallback: split on first comma
-            if "," in s:
-                expr, label = s.split(",", 1)
-                expr = expr.strip()
-                label = label.strip()
-                return expr, (label if label else None)
-            return s, None
+                label: str | None = None
+                domain: Tuple[float, float] | None = None
+                excludes: List[float] = []
+                for item in list(lit[1:]):
+                    # Detect domain tuple/list of two numbers
+                    if (
+                        domain is None
+                        and isinstance(item, (list, tuple))
+                        and len(item) == 2
+                    ):
+                        try:
+                            d0 = float(item[0])
+                            d1 = float(item[1])
+                            domain = (d0, d1)
+                            continue
+                        except Exception:
+                            pass
+                    # Detect exclusions as a collection of numbers (not a 2-tuple domain)
+                    if isinstance(item, (set, list, tuple)) and not (
+                        isinstance(item, (list, tuple)) and len(item) == 2
+                    ):
+                        for v in item:
+                            try:
+                                excludes.append(float(v))
+                            except Exception:
+                                pass
+                    # Else treat as label if string-like
+                    if label is None and isinstance(item, str):
+                        lab = item.strip()
+                        label = lab if lab else None
+                return expr, label, domain, excludes
+            # Fallback: look for a domain pattern (a,b), remove it, then split label
+            domain: Tuple[float, float] | None = None
+            excludes: List[float] = []
+            num_re = r"[+-]?\d+(?:\.\d+)?"
+            # Domain with optional set-difference exclusions: (a,b) \ {x1, x2}
+            dom_ex_pat = re.compile(
+                rf"\(\s*({num_re})\s*,\s*({num_re})\s*\)\s*(?:\\\s*\{{\s*([^}}]*)\s*\}})?"
+            )
+            m = dom_ex_pat.search(s)
+            if m:
+                try:
+                    d0 = float(m.group(1))
+                    d1 = float(m.group(2))
+                    domain = (d0, d1)
+                except Exception:
+                    domain = None
+                # Parse exclusions if provided
+                excl_str = m.group(3) if m.lastindex and m.lastindex >= 3 else None
+                if excl_str:
+                    for tok in [t.strip() for t in excl_str.split(",") if t.strip()]:
+                        try:
+                            excludes.append(float(tok))
+                        except Exception:
+                            pass
+                # Remove the matched domain+exclusions substring
+                a, b = m.span()
+                s_wo_dom = (s[:a] + s[b:]).strip()
+            else:
+                s_wo_dom = s
+            # Tokenize on commas to robustly drop empty segments created by domain removal
+            parts = [p.strip() for p in s_wo_dom.split(",") if p.strip()]
+            if parts:
+                expr = parts[0]
+                label = parts[1] if len(parts) > 1 else None
+                return expr, label, domain, excludes
+            # Only expression provided (or empty after cleanup)
+            return s_wo_dom.strip(), None, domain, excludes
 
         for item in raw_fn_items:
-            expr, label = _parse_function_item(item)
+            expr, label, domain, excludes = _parse_function_item(item)
             try:
                 functions.append(_compile_function(expr))
                 fn_exprs.append(expr)
                 fn_labels_list.append(label or "")
+                fn_domains_list.append(domain)
+                fn_exclusions_list.append(sorted(excludes))
             except Exception as ex:
                 return [
                     self.state_machine.reporter.error(
@@ -538,7 +607,78 @@ class PlotDirective(SphinxDirective):
             if x_val is not None:
                 vline_vals.append((x_val, y0_val, y1_val, style, color))
 
-        # hlines: y[, xmin, xmax][, linestyle][, color] (style/color any order)
+        # polygons: (x,y), (x,y), ... [ , show_vertices]
+        # Parse without using literal_eval to avoid escape issues in labels.
+        poly_vals: List[Tuple[List[Tuple[float, float]], bool]] = []
+        num_re = r"[+-]?\d+(?:\.\d+)?"
+        tup_pat = re.compile(rf"\(\s*({num_re})\s*,\s*({num_re})\s*\)")
+        for p in lists.get("polygon", []):
+            s = str(p).strip()
+            # Remove an optional 'show_vertices' token (case-insensitive)
+            show_vertices = False
+            if re.search(r"(^|,)\s*show_vertices\s*(?=,|$)", s, flags=re.IGNORECASE):
+                show_vertices = True
+                s = re.sub(
+                    r"(^|,)\s*show_vertices\s*(?=,|$)", ",", s, flags=re.IGNORECASE
+                )
+                s = re.sub(r",{2,}", ",", s).strip().strip(",")
+            # Extract all (x,y) tuples
+            pts: List[Tuple[float, float]] = []
+            for m in tup_pat.finditer(s):
+                try:
+                    x = float(m.group(1))
+                    y = float(m.group(2))
+                    pts.append((x, y))
+                except Exception:
+                    pass
+            if pts:
+                poly_vals.append((pts, show_vertices))
+
+        # bar: (x, y), length, orientation
+        # Accept both literal list/tuple and CSV-like fallback
+        bar_vals: List[Tuple[Tuple[float, float], float, str]] = []
+        for b in lists.get("bar", []):
+            lit = _safe_literal(b)
+            if isinstance(lit, (list, tuple)) and len(lit) >= 3:
+                try:
+                    xy_raw, length_raw, orient_raw = lit[0], lit[1], lit[2]
+                    xy = (float(xy_raw[0]), float(xy_raw[1]))
+                    length = float(length_raw)
+                    orientation = str(orient_raw).strip().lower()
+                    if orientation in {"h", "hor", "horiz", "horizontal"}:
+                        orientation = "horizontal"
+                    elif orientation in {"v", "vert", "vertical"}:
+                        orientation = "vertical"
+                    bar_vals.append((xy, length, orientation))
+                    continue
+                except Exception:
+                    pass
+            # Fallback CSV: (x,y), length, orientation
+            try:
+                import csv as _csv
+
+                s = str(b).strip()
+                # Attempt to peel off the first tuple
+                m = tup_pat.search(s)
+                if not m:
+                    continue
+                x = float(m.group(1))
+                y = float(m.group(2))
+                # Remove tuple substring, then split the rest by commas
+                a, c = m.span()
+                rest = (s[:a] + s[c:]).strip()
+                parts = [p.strip() for p in rest.split(",") if p.strip()]
+                if len(parts) >= 2:
+                    length = float(parts[0])
+                    orientation = parts[1].strip().lower()
+                    if orientation in {"h", "hor", "horiz", "horizontal"}:
+                        orientation = "horizontal"
+                    elif orientation in {"v", "vert", "vertical"}:
+                        orientation = "vertical"
+                    bar_vals.append(((x, y), length, orientation))
+            except Exception:
+                pass
+
         hline_vals: List[
             Tuple[float, float | None, float | None, str | None, str | None]
         ] = []
@@ -575,32 +715,108 @@ class PlotDirective(SphinxDirective):
             if y_val is not None:
                 hline_vals.append((y_val, x0_val, x1_val, style_h, color_h))
 
-        # polygons: (x,y), (x,y), ... [ , show_vertices]
-        # Parse without using literal_eval to avoid escape issues in labels.
-        poly_vals: List[Tuple[List[Tuple[float, float]], bool]] = []
-        num_re = r"[+-]?\d+(?:\.\d+)?"
-        tup_pat = re.compile(rf"\(\s*({num_re})\s*,\s*({num_re})\s*\)")
-        for p in lists.get("polygon", []):
-            s = str(p).strip()
-            # Remove an optional 'show_vertices' token (case-insensitive)
-            show_vertices = False
-            if re.search(r"(^|,)\s*show_vertices\s*(?=,|$)", s, flags=re.IGNORECASE):
-                show_vertices = True
-                s = re.sub(
-                    r"(^|,)\s*show_vertices\s*(?=,|$)", ",", s, flags=re.IGNORECASE
-                )
-                s = re.sub(r",{2,}", ",", s).strip().strip(",")
-            # Extract all (x,y) tuples
-            pts: List[Tuple[float, float]] = []
-            for m in tup_pat.finditer(s):
+        # lines: a, b, color, linestyle OR a, (x, y), color, linestyle
+        # color and linestyle optional and order-independent; linestyle defaults to dashed
+        line_vals: List[Tuple[float, float, str | None, str | None]] = (
+            []
+        )  # (a, b, style, color)
+        _allowed_styles_line = {"solid", "dotted", "dashed", "dashdot"}
+
+        def _split_top_level_line(val: str) -> List[str]:
+            s = str(val or "").strip()
+            if not s:
+                return []
+            if (s.startswith("[") and s.endswith("]")) or (
+                s.startswith("(") and s.endswith(")")
+            ):
+                s = s[1:-1].strip()
+            out: List[str] = []
+            cur: List[str] = []
+            depth = 0
+            for ch in s:
+                if ch in "([{":
+                    depth += 1
+                    cur.append(ch)
+                elif ch in ")]}":
+                    depth = max(0, depth - 1)
+                    cur.append(ch)
+                elif ch == "," and depth == 0:
+                    part = "".join(cur).strip()
+                    if part:
+                        out.append(part)
+                    cur = []
+                else:
+                    cur.append(ch)
+            tail = "".join(cur).strip()
+            if tail:
+                out.append(tail)
+            return out
+
+        num_re_line = r"[+-]?\d+(?:\.\d+)?"
+        tup_pat_line = re.compile(rf"\(\s*({num_re_line})\s*,\s*({num_re_line})\s*\)")
+        for l in lists.get("line", []):
+            a_val: float | None = None
+            b_val: float | None = None
+            style_line: str | None = None
+            color_line: str | None = None
+            lit_line = _safe_literal(l)
+            if isinstance(lit_line, (list, tuple)) and len(lit_line) >= 2:
                 try:
-                    x = float(m.group(1))
-                    y = float(m.group(2))
-                    pts.append((x, y))
+                    a_val = float(lit_line[0])
                 except Exception:
-                    pass
-            if pts:
-                poly_vals.append((pts, show_vertices))
+                    a_val = None
+                second = lit_line[1]
+                if isinstance(second, (list, tuple)) and len(second) == 2:
+                    try:
+                        x0p = float(second[0])
+                        y0p = float(second[1])
+                        if a_val is not None:
+                            b_val = y0p - a_val * x0p
+                    except Exception:
+                        pass
+                else:
+                    try:
+                        b_val = float(second)
+                    except Exception:
+                        pass
+                for extra in list(lit_line[2:]):
+                    if isinstance(extra, str):
+                        e = extra.strip().strip("\"'")
+                        if e.lower() in _allowed_styles_line and style_line is None:
+                            style_line = e.lower()
+                        elif color_line is None:
+                            color_line = e
+                if a_val is not None and b_val is not None:
+                    line_vals.append((a_val, b_val, style_line, color_line))
+                    continue
+            parts = _split_top_level_line(str(l))
+            if len(parts) >= 2:
+                try:
+                    a_val = float(parts[0])
+                except Exception:
+                    a_val = None
+                mpt = tup_pat_line.match(parts[1])
+                if mpt is not None:
+                    try:
+                        x0p = float(mpt.group(1))
+                        y0p = float(mpt.group(2))
+                        if a_val is not None:
+                            b_val = y0p - a_val * x0p
+                    except Exception:
+                        pass
+                else:
+                    try:
+                        b_val = float(parts[1])
+                    except Exception:
+                        pass
+                for extra in parts[2:]:
+                    e = str(extra).strip().strip("\"'")
+                    if e.lower() in _allowed_styles_line and style_line is None:
+                        style_line = e.lower()
+                    elif color_line is None:
+                        color_line = e
+                if a_val is not None and b_val is not None:
+                    line_vals.append((a_val, b_val, style_line, color_line))
 
         # fill-polygons: (x,y), (x,y), ... [, color] [, alpha]
         # Defaults: color -> plotmath.COLORS.get("blue"), alpha -> 0.1
@@ -664,6 +880,8 @@ class PlotDirective(SphinxDirective):
         content_hash = _hash_key(
             "|".join(fn_exprs),
             "|".join(fn_labels_list),
+            "|".join(["" if d is None else f"{d[0]},{d[1]}" for d in fn_domains_list]),
+            "|".join([("|".join([str(x) for x in exs])) for exs in fn_exclusions_list]),
             ";".join([f"{x},{y}" for x, y in point_vals]),
             ";".join(
                 [
@@ -701,7 +919,16 @@ class PlotDirective(SphinxDirective):
                     for (pts, color, alpha) in poly_fill_vals
                 ]
             ),
+            ";".join(
+                [
+                    f"{xy[0]},{xy[1]}:{length}:{orientation}"
+                    for (xy, length, orientation) in bar_vals
+                ]
+            ),
             "|".join(axis_cmds),
+            ";".join(
+                [f"{a},{b}:{(st or '')}:{(col or '')}" for (a, b, st, col) in line_vals]
+            ),
             ";".join(
                 [
                     f"{x},{y}:{txt}:{pos}:{int(1 if bbox else 0)}"
@@ -751,30 +978,173 @@ class PlotDirective(SphinxDirective):
                     fontsize=fontsize,
                 )
 
-                # Plot requested functions directly on ax, with optional labels
+                # Plot requested functions directly on ax, with optional labels, per-function domains, and exclusions
                 if functions:
                     import numpy as np
 
-                    x = np.linspace(xmin, xmax, int(2**12))
                     any_label = False
-                    for f, lbl in zip(functions, fn_labels_list):
+                    for f, lbl, dom, exs in zip(
+                        functions, fn_labels_list, fn_domains_list, fn_exclusions_list
+                    ):
+                        x0, x1 = dom if dom is not None else (xmin, xmax)
+                        N = int(2**12)
+                        x = np.linspace(x0, x1, N)
+                        y = f(x)
+                        # Ensure float array and blank out non-finite values
+                        y = np.asarray(y, dtype=float)
+                        y[~np.isfinite(y)] = np.nan
+                        # More robust exclusion handling: blank a window around each excluded x
+                        exs_in = [e for e in exs if x0 < e < x1]
+                        if exs_in and N > 1:
+                            dx = (x1 - x0) / (N - 1)
+                            # Window width larger than step to ensure a gap; include tiny absolute floor
+                            w = max(4 * dx, 1e-6 * (1.0 + max(abs(e) for e in exs_in)))
+                            for e in exs_in:
+                                try:
+                                    mask = np.abs(x - e) <= w
+                                    if mask.any():
+                                        y[mask] = np.nan
+                                    # Also blank the nearest index and a couple of neighbors to guarantee a break
+                                    j = int(np.argmin(np.abs(x - e)))
+                                    for k in (j - 2, j - 1, j, j + 1, j + 2):
+                                        if 0 <= k < y.size:
+                                            y[k] = np.nan
+                                except Exception:
+                                    # Last resort: nearest index only
+                                    try:
+                                        j = int(np.argmin(np.abs(x - e)))
+                                        if 0 <= j < y.size:
+                                            y[j] = np.nan
+                                    except Exception:
+                                        pass
+                        # Additionally, break lines across steep jumps or extreme values
+                        # Determine a reasonable y-span for thresholds
+                        y_span = (
+                            abs(ymax - ymin)
+                            if (ymax is not None and ymin is not None)
+                            else np.nan
+                        )
+                        if not (isinstance(y_span, (int, float)) and y_span > 0):
+                            finite_y = y[np.isfinite(y)]
+                            if finite_y.size > 0:
+                                y_span = float(
+                                    np.nanmax(finite_y) - np.nanmin(finite_y)
+                                )
+                        if not (isinstance(y_span, (int, float)) and y_span > 0):
+                            y_span = 1.0
+                        # Break where adjacent points jump too much relative to span
+                        jump_factor = 0.5  # half the axis span signals discontinuity
+                        finite_pair = np.isfinite(y[:-1]) & np.isfinite(y[1:])
+                        big_jump = finite_pair & (
+                            np.abs(y[1:] - y[:-1]) > (jump_factor * y_span)
+                        )
+                        if big_jump.any():
+                            idx_break = np.where(big_jump)[0]
+                            for i_b in idx_break:
+                                if 0 <= i_b + 1 < y.size:
+                                    y[i_b + 1] = np.nan
+                        # Mask values far outside typical range to avoid vertical spikes drawing across
+                        mag_factor = 50.0
+                        too_big = np.isfinite(y) & (np.abs(y) > (mag_factor * y_span))
+                        if too_big.any():
+                            y[too_big] = np.nan
                         if lbl:
                             any_label = True
-                            ax.plot(x, f(x), lw=lw, alpha=alpha, label=f"${lbl}$")
+                            ax.plot(x, y, lw=lw, alpha=alpha, label=f"${lbl}$")
                         else:
-                            ax.plot(x, f(x), lw=lw, alpha=alpha)
+                            ax.plot(x, y, lw=lw, alpha=alpha)
                     if any_label:
                         ax.legend(fontsize=int(fontsize))
-
-                # Plot points
-                for x0, y0 in point_vals:
-                    ax.plot(x0, y0, "o", markersize=10, alpha=0.8, color="black")
 
                 # Annotations
                 for xytext, xy, text, arc in ann_vals:
                     plotmath.annotate(
                         xy=xy, xytext=xytext, s=text, arc=arc, fontsize=int(fontsize)
                     )
+
+                # Lines (y = a*x + b); draw before points so markers remain visible
+                if line_vals:
+                    import numpy as _np_l
+
+                    style_map_line = {
+                        "solid": "-",
+                        "dotted": ":",
+                        "dashed": "--",
+                        "dashdot": "-.",
+                    }
+                    default_color_line = plotmath.COLORS.get("red")
+                    try:
+                        from matplotlib import colors as _mcolors
+                    except Exception:
+                        _mcolors = None
+                    x_line = _np_l.array([xmin, xmax], dtype=float)
+                    for a_l, b_l, st_l, col_l in line_vals:
+                        y_line = a_l * x_line + b_l
+                        ls = style_map_line.get((st_l or "dashed").lower(), "--")
+                        col_use = col_l or default_color_line
+                        if _mcolors is not None:
+                            try:
+                                _ = _mcolors.to_rgba(col_use)
+                            except Exception:
+                                col_use = default_color_line
+                        try:
+                            ax.plot(
+                                x_line,
+                                y_line,
+                                linestyle=ls,
+                                color=col_use,
+                                lw=lw,
+                                alpha=alpha,
+                            )
+                        except Exception:
+                            ax.plot(
+                                x_line,
+                                y_line,
+                                linestyle=ls,
+                                color=default_color_line,
+                                lw=lw,
+                                alpha=alpha,
+                            )
+
+                # Plot points
+                for x0, y0 in point_vals:
+                    ax.plot(x0, y0, "o", markersize=10, alpha=0.8, color="black")
+
+                # Bars
+                for xy, length, orientation in bar_vals:
+                    try:
+                        # Prefer plotmath.make_bar if available
+                        if hasattr(plotmath, "make_bar"):
+                            plotmath.make_bar(xy, length, orientation)
+                        else:
+                            # Fallback: use annotate directly on this axes
+                            x, y = xy
+                            if orientation == "horizontal":
+                                ax.annotate(
+                                    "",
+                                    xy=xy,
+                                    xycoords="data",
+                                    xytext=(x + length, y),
+                                    textcoords="data",
+                                    arrowprops=dict(
+                                        arrowstyle="|-|,widthA=0.5,widthB=0.5",
+                                        color="black",
+                                    ),
+                                )
+                            else:
+                                ax.annotate(
+                                    "",
+                                    xy=xy,
+                                    xycoords="data",
+                                    xytext=(x, y + length),
+                                    textcoords="data",
+                                    arrowprops=dict(
+                                        arrowstyle="|-|,widthA=0.5,widthB=0.5",
+                                        color="black",
+                                    ),
+                                )
+                    except Exception:
+                        pass
 
                 # text with optional positioning and optional bbox
 

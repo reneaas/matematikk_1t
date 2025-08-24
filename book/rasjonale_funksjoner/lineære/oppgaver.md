@@ -1,18 +1,26 @@
 # Oppgaver: <br> Lineære-over-lineære
 
-:::::::::::::::{admonition} Oppgave 1
+:::::::::::::::{exercise} Oppgave 1
 ---
-class: problem-level-1
+level: 1
 ---
 Ta quizen!
 
-:::{raw} html
----
-file: ./quiz/quiz_2/quiz_2.html
----
-:::
+:::{quiz}
+Q: Hvilket funksjonsuttrykk hører til grafen? ![{width: 60%}](./figurer/quiz/quiz_1/spm_1/graf.svg)
++ $$f(x) = \dfrac{-(x - 1)}{x - 2}$$
+- $$f(x) = \dfrac{(x - 1)}{x - 2}$$
+- $$f(x) = \dfrac{(x + 1)}{x - 2}$$
+- $$f(x) = \dfrac{(x - 1)}{x + 2}$$
 
+Q: Hvilket funksjonsuttrykk hører til grafen? ![{width: 60%}](./figurer/quiz/quiz_1/spm_2/graf.svg)
++ $$f(x) = \dfrac{2(x + 2)}{x + 3}$$
+- $$f(x) = \dfrac{2(x - 2)}{x - 3}$$
+- $$f(x) = \dfrac{-3(x + 2)}{x - 2}$$
+- $$f(x) = \dfrac{-3(x - 2)}{x + 2}$$
+:::
 :::::::::::::::
+
 
 
 ---
@@ -23,18 +31,19 @@ file: ./quiz/quiz_2/quiz_2.html
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
-I {numref}`fig-rasjonale-funksjoner-representasjoner-oppgave-2-a` vises grafen til en rasjonal funksjon $f$.
+I figuren nedenfor vises grafen til en rasjonal funksjon $f$.
 
 Bestem $f(x)$.
 
-:::{figure} ./figurer/oppgaver/oppgave_2/a.svg
----
-name: fig-rasjonale-funksjoner-representasjoner-oppgave-2-a
+
+:::{plot}
 width: 80%
-class: no-click, adaptive-figure
----
-viser grafen til en rasjonal funksjon $f$.
+function: -(x - 1) / (x - 2), f
+domain: (-10, 10) \ {2}
+vline: 2, dashed
+hline: -1, dashed
 :::
+
 
 ::::{admonition} Fasit
 ---
@@ -48,17 +57,18 @@ $$
 :::::::::::::
 
 :::::::::::::{tab-item} b
-I {numref}`fig-rasjonale-funksjoner-representasjoner-oppgave-2-b` vises grafen til en rasjonal funksjon $g$.
+I figuren nedenfor vises grafen til en rasjonal funksjon $g$.
 
 Bestem $g(x)$.
 
-:::{figure} ./figurer/oppgaver/oppgave_2/b.svg
----
-name: fig-rasjonale-funksjoner-representasjoner-oppgave-2-b
+:::{plot}
 width: 80%
-class: no-click, adaptive-figure
----
-viser grafen til en rasjonal funksjon $g$.
+function: 2*(x - 1) / (x - 3), g
+domain: (-10, 10) \ {3}
+hline: 2, dashed
+vline: 3, dashed
+xmax: 8
+ymax: 8 
 :::
 
 ::::{admonition} Fasit
@@ -74,18 +84,22 @@ $$
 
 
 :::::::::::::{tab-item} c
-I {numref}`fig-rasjonale-funksjoner-representasjoner-oppgave-2-c` vises grafen til en rasjonal funksjon $h$.
+I figuren nedenfor vises grafen til en rasjonal funksjon $h$.
 
 Bestem $h(x)$.
 
-:::{figure} ./figurer/oppgaver/oppgave_2/c.svg
----
-name: fig-rasjonale-funksjoner-representasjoner-oppgave-2-c
+
+
+:::{plot}
 width: 80%
-class: no-click, adaptive-figure
----
-viser grafen til en rasjonal funksjon $h$.
+function: -2*(x + 1) / (x - 1), h
+domain: (-10, 10) \ {1}
+vline: 1, dashed
+hline: -2, dashed
+xmax: 8
+ymin: -8
 :::
+
 
 ::::{admonition} Fasit
 ---
@@ -99,18 +113,23 @@ $$
 :::::::::::::
 
 :::::::::::::{tab-item} d
-I {numref}`fig-rasjonale-funksjoner-representasjoner-oppgave-2-d` vises grafen til en rasjonal funksjon $p$.
+I figuren nedenfor vises grafen til en rasjonal funksjon $p$.
 
 Bestem $p(x)$.
 
-:::{figure} ./figurer/oppgaver/oppgave_2/d.svg
----
-name: fig-rasjonale-funksjoner-representasjoner-oppgave-2-d
+
+:::{plot}
 width: 80%
-class: no-click, adaptive-figure
----
-viser grafen til en rasjonal funksjon $p$.
+function: (x - 3) / (x + 2), p
+domain: (-10, 10) \ {-2}
+vline: -2, dashed
+hline: 1, dashed
+xmin: -8
+ymax: 8
 :::
+
+
+
 
 ::::{admonition} Fasit
 ---
