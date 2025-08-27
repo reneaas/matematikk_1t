@@ -64,7 +64,9 @@ Axes and layout
 - lw: default line width for curves (default 2.5).
 - alpha: global alpha for curves (float, optional; by default curves are opaque).
 - xlabel, ylabel: axis labels. Passed through verbatim — include `$...$` to use
-    math. The y-label is placed at the top and drawn horizontally.
+    math. Optionally add a numeric label pad with a trailing comma, e.g.
+    `xlabel: $t/\mathrm{s}$, 8`. The y-label is placed at the top and drawn
+    horizontally.
 
 Functions (multiple allowed)
 ----------------------------
@@ -1608,26 +1610,56 @@ class PlotDirective(SphinxDirective):
                     except Exception:
                         pass
 
-                # Axis labels: pass through as-is; users can include $...$ for math
-                xl_text = merged.get("xlabel")
-                yl_text = merged.get("ylabel")
+                # Axis labels: allow optional labelpad via "label, pad"
+                def _split_label_and_pad(val: Any) -> tuple[str | None, float | None]:
+                    if not isinstance(val, str):
+                        return None, None
+                    s = val.strip()
+                    if not s:
+                        return None, None
+                    # Try literal form [label, pad] or (label, pad)
+                    lit = _safe_literal(s)
+                    if isinstance(lit, (list, tuple)) and len(lit) >= 1:
+                        label = str(lit[0]).strip()
+                        pad: float | None = None
+                        if len(lit) >= 2:
+                            try:
+                                pad = float(lit[1])
+                            except Exception:
+                                pad = None
+                        return (label if label else None), pad
+                    # CSV fallback: split on last comma so labels with commas still work when quoted
+                    parts = [p.strip() for p in s.split(",")]
+                    if len(parts) >= 2:
+                        try:
+                            pad = float(parts[-1])
+                            label = ",".join(parts[:-1]).strip()
+                            return (label if label else None), pad
+                        except Exception:
+                            pass
+                    return (s if s else None), None
+
+                xl_raw = merged.get("xlabel")
+                yl_raw = merged.get("ylabel")
+                xl_text, xl_pad = _split_label_and_pad(xl_raw)
+                yl_text, yl_pad = _split_label_and_pad(yl_raw)
+
                 if isinstance(yl_text, str) and yl_text.strip():
                     try:
-                        ax.set_ylabel(
-                            yl_text,
-                            fontsize=int(fontsize),
-                            loc="top",
-                            rotation="horizontal",
+                        kwargs = dict(
+                            fontsize=int(fontsize), loc="top", rotation="horizontal"
                         )
+                        if yl_pad is not None:
+                            kwargs["labelpad"] = yl_pad
+                        ax.set_ylabel(yl_text, **kwargs)
                     except Exception:
                         ax.set_ylabel(yl_text, fontsize=int(fontsize))
                 if isinstance(xl_text, str) and xl_text.strip():
                     try:
-                        ax.set_xlabel(
-                            xl_text,
-                            fontsize=int(fontsize),
-                            loc="right",
-                        )
+                        kwargs = dict(fontsize=int(fontsize), loc="right")
+                        if xl_pad is not None:
+                            kwargs["labelpad"] = xl_pad
+                        ax.set_xlabel(xl_text, **kwargs)
                     except Exception:
                         ax.set_xlabel(xl_text, fontsize=int(fontsize))
 
