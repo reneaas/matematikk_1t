@@ -245,12 +245,9 @@ $$
 f'(x) = 2ax + b
 $$
 
-:::::::::::::::
-
-Hvis du er nysgjerrig på hvor dette uttrykket kommer fra, kan du lese beviset nedenfor. Men det kan være lurt å se resten av kapittelet først så du får en bedre forståelse av hva den deriverte er og hva vi kan bruke den til.
 
 
-:::::::::::::::{admonition} Bevis for den deriverte
+::::::::::::::{admonition} Bevis
 ---
 class: dropdown, theory
 ---
@@ -299,7 +296,12 @@ $$
 f'(x) = 2ax + b
 $$
 
+::::::::::::::
+
 :::::::::::::::
+
+Hvis du er nysgjerrig på hvor dette uttrykket kommer fra, kan du lese beviset nedenfor. Men det kan være lurt å se resten av kapittelet først så du får en bedre forståelse av hva den deriverte er og hva vi kan bruke den til.
+
 
 
 ---

@@ -11,12 +11,10 @@ Features:
 Usage (MyST):
 
 :::{multi-plot}
----
 functions: [x**2 - 2*x, -x + 2, x - 3]
 rows: 1
 cols: 3
 width: 100%
----
 :::
 """
 
@@ -209,6 +207,7 @@ class MultiPlotDirective(SphinxDirective):
         "hlines": directives.unchanged,  # per-function hline y or None
         "xlims": directives.unchanged,  # per-function xlim tuple or None
         "ylims": directives.unchanged,  # per-function ylim tuple or None
+        "lines": directives.unchanged,  # per-axis line spec: (a,b) or (a,(x,y)) or None
         "xmin": directives.unchanged,
         "xmax": directives.unchanged,
         "ymin": directives.unchanged,
@@ -411,6 +410,7 @@ class MultiPlotDirective(SphinxDirective):
         hlines_raw = _split_top_level(str(merged.get("hlines", "")))
         xlims_raw = _split_top_level(str(merged.get("xlims", "")))
         ylims_raw = _split_top_level(str(merged.get("ylims", "")))
+        lines_raw = _split_top_level(str(merged.get("lines", "")))
 
         # Normalize sizes to match number of functions
         n = len(functions)
@@ -423,6 +423,7 @@ class MultiPlotDirective(SphinxDirective):
         hlines_raw = _pad(hlines_raw)
         xlims_raw = _pad(xlims_raw)
         ylims_raw = _pad(ylims_raw)
+        lines_raw = _pad(lines_raw)
 
         dom_list: List[Tuple[float, float] | None] = []
         excl_list: List[List[float]] = []
@@ -442,6 +443,43 @@ class MultiPlotDirective(SphinxDirective):
         ]
         ylim_vals: List[Tuple[float, float] | None] = [
             _parse_tuple_or_none(s) for s in ylims_raw[:n]
+        ]
+
+        # Parse per-axis line specs
+        def _parse_line_spec(s: str):
+            if not isinstance(s, str):
+                return None
+            st = s.strip()
+            if not st or st.lower() == "none":
+                return None
+            lit = _safe_literal(st)
+            a_val = None
+            b_val = None
+            if isinstance(lit, (list, tuple)) and len(lit) >= 2:
+                try:
+                    a_val = float(lit[0])
+                except Exception:
+                    a_val = None
+                second = lit[1]
+                if isinstance(second, (list, tuple)) and len(second) == 2:
+                    try:
+                        x0p = float(second[0])
+                        y0p = float(second[1])
+                        if a_val is not None:
+                            b_val = y0p - a_val * x0p
+                    except Exception:
+                        b_val = None
+                else:
+                    try:
+                        b_val = float(second)
+                    except Exception:
+                        b_val = None
+                if a_val is not None and b_val is not None:
+                    return (a_val, b_val)
+            return None
+
+        line_specs: List[Tuple[float, float] | None] = [
+            _parse_line_spec(s) for s in lines_raw[:n]
         ]
         explicit_name = merged.get("name")
         debug_mode = "debug" in merged
@@ -473,6 +511,7 @@ class MultiPlotDirective(SphinxDirective):
             "|".join(["|".join(map(str, hs)) if hs else "" for hs in hline_vals]),
             "|".join(["" if xl is None else f"{xl[0]},{xl[1]}" for xl in xlim_vals]),
             "|".join(["" if yl is None else f"{yl[0]},{yl[1]}" for yl in ylim_vals]),
+            "|".join(["" if ls is None else f"{ls[0]},{ls[1]}" for ls in line_specs]),
         )
         base_name = explicit_name or f"multi_plot_{content_hash}"
 
@@ -527,20 +566,63 @@ class MultiPlotDirective(SphinxDirective):
                     # Per-axis domain
                     dom = dom_list[idx]
                     x0, x1 = dom if dom is not None else (xmin, xmax)
-                    x = np.linspace(x0, x1, int(2**12))
+                    N = int(2**12)
+                    x = np.linspace(x0, x1, N)
                     y = fn(x)
-                    # Exclusions
+                    # Ensure float array and blank out non-finite values
+                    y = np.asarray(y, dtype=float)
+                    y[~np.isfinite(y)] = np.nan
+                    # Robust exclusions: widen window and clear neighbors
                     exs = [e for e in excl_list[idx] if x0 < e < x1]
-                    if exs:
-                        idxs = []
+                    if exs and N > 1:
+                        dx = (x1 - x0) / (N - 1)
+                        w = max(4 * dx, 1e-6 * (1.0 + max(abs(e) for e in exs)))
                         for e in exs:
                             try:
-                                idxs.append(int(np.argmin(np.abs(x - e))))
+                                mask = np.abs(x - e) <= w
+                                if mask.any():
+                                    y[mask] = np.nan
+                                j = int(np.argmin(np.abs(x - e)))
+                                for k in (j - 2, j - 1, j, j + 1, j + 2):
+                                    if 0 <= k < y.size:
+                                        y[k] = np.nan
                             except Exception:
-                                pass
-                        for j in set(idxs):
-                            if 0 <= j < len(y):
-                                y[j] = np.nan
+                                try:
+                                    j = int(np.argmin(np.abs(x - e)))
+                                    if 0 <= j < y.size:
+                                        y[j] = np.nan
+                                except Exception:
+                                    pass
+                    # Also break across steep jumps or extreme magnitudes
+                    # Determine per-axis y-span preference: use provided ylim for this axis if any
+                    if ylim_vals[idx] is not None:
+                        y0_lim, y1_lim = ylim_vals[idx]
+                    else:
+                        y0_lim, y1_lim = ymin, ymax
+                    try:
+                        y_span = abs(float(y1_lim) - float(y0_lim))
+                    except Exception:
+                        y_span = np.nan
+                    if not (isinstance(y_span, (int, float)) and y_span > 0):
+                        finite_y = y[np.isfinite(y)]
+                        if finite_y.size > 0:
+                            y_span = float(np.nanmax(finite_y) - np.nanmin(finite_y))
+                    if not (isinstance(y_span, (int, float)) and y_span > 0):
+                        y_span = 1.0
+                    finite_pair = np.isfinite(y[:-1]) & np.isfinite(y[1:])
+                    jump_factor = 0.5
+                    big_jump = finite_pair & (
+                        np.abs(y[1:] - y[:-1]) > (jump_factor * y_span)
+                    )
+                    if big_jump.any():
+                        idx_break = np.where(big_jump)[0]
+                        for i_b in idx_break:
+                            if 0 <= i_b + 1 < y.size:
+                                y[i_b + 1] = np.nan
+                    mag_factor = 50.0
+                    too_big = np.isfinite(y) & (np.abs(y) > (mag_factor * y_span))
+                    if too_big.any():
+                        y[too_big] = np.nan
                     lbl = (
                         labels_list[idx]
                         if (labels_list and idx < len(labels_list))
@@ -551,6 +633,29 @@ class MultiPlotDirective(SphinxDirective):
                         ax.legend(fontsize=int(fontsize))
                     else:
                         ax.plot(x, y, lw=lw, alpha=alpha)
+                    # Optional line y = a*x + b per axis
+                    if line_specs[idx] is not None:
+                        try:
+                            a_l, b_l = line_specs[idx]  # type: ignore[misc]
+                            # Use provided xlim for this axis if any; else global
+                            if xlim_vals[idx] is not None:
+                                x_min_line, x_max_line = xlim_vals[idx]
+                            else:
+                                x_min_line, x_max_line = xmin, xmax
+                            x_line = np.array(
+                                [float(x_min_line), float(x_max_line)], dtype=float
+                            )
+                            y_line = a_l * x_line + b_l
+                            ax.plot(
+                                x_line,
+                                y_line,
+                                linestyle="--",
+                                color=plotmath.COLORS.get("red"),
+                                lw=lw,
+                                alpha=alpha,
+                            )
+                        except Exception:
+                            pass
                     # vlines / hlines (support multiple values per axis)
                     for xv in vline_vals[idx] or []:
                         try:
