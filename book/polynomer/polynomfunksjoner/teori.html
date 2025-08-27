@@ -473,10 +473,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../eksamensressurser/cas.html">CAS (Geogebra)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../eksamensressurser/geogebra.html">Geogebra</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">dev</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../dev/dev.html">Dev</a></li>
-</ul>
 
     </div>
 </nav></div>
@@ -793,9 +789,9 @@ f(x) = x^3 - 2x + 2.
 <div class="sidebar-cas">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<button id="button-ggb-cas-ec8c92fa" class="ggb-cas-button">Åpne CAS‑vindu</button>
-<div id="dialog-ggb-cas-ec8c92fa" title="CAS‑vindu" style="display:none;">
-    <div id="ggb-cas-ec8c92fa" class="ggb-window"></div>
+<button id="button-ggb-cas-6c85f3a6" class="ggb-cas-button">Åpne CAS‑vindu</button>
+<div id="dialog-ggb-cas-6c85f3a6" title="CAS‑vindu" style="display:none;">
+    <div id="ggb-cas-6c85f3a6" class="ggb-window"></div>
 </div>
 
 <style>
@@ -812,12 +808,12 @@ f(x) = x^3 - 2x + 2.
 
     function applySize() {
       if (!ggbReady) return;
-      const w = $("#ggb-cas-ec8c92fa").width(),
-            h = $("#ggb-cas-ec8c92fa").height();
+      const w = $("#ggb-cas-6c85f3a6").width(),
+            h = $("#ggb-cas-6c85f3a6").height();
       window.ggbApplet.setSize(Math.round(w), Math.round(h));
     }
 
-    const $dlg = $("#dialog-ggb-cas-ec8c92fa").dialog({
+    const $dlg = $("#dialog-ggb-cas-6c85f3a6").dialog({
       autoOpen: false,
       width: 390, height: 580,
       resizable: true, draggable: true,
@@ -826,14 +822,14 @@ f(x) = x^3 - 2x + 2.
       open: function() {
         if (!ggbReady) {
           new GGBApplet({
-            appName: "classic", id: "ggb-cas-ec8c92fa",
+            appName: "classic", id: "ggb-cas-6c85f3a6",
             width: 350, height: 500,
             perspective: "C", language: "nb",
             showToolBar: true, showAlgebraInput: true,
             borderRadius: 8, enableRightClick: true, showKeyboardOnFocus: false,
             customToolBar: "1001 | 1002 | 1007 | 1010 | 6",
             appletOnLoad: () => { ggbReady = true; applySize(); }
-          }, true).inject("ggb-cas-ec8c92fa");
+          }, true).inject("ggb-cas-6c85f3a6");
         } else {
           applySize();
         }
@@ -876,7 +872,7 @@ f(x) = x^3 - 2x + 2.
             target = target.parentElement;
           }
           // Prevent page scroll but don't stop the event from reaching GeoGebra
-          if (!e.target.closest('#ggb-cas-ec8c92fa')) {
+          if (!e.target.closest('#ggb-cas-6c85f3a6')) {
             e.preventDefault();
             e.stopPropagation();
           }
@@ -904,7 +900,7 @@ f(x) = x^3 - 2x + 2.
     
     // Monitor GeoGebra applet focus/interaction to control scroll lock
     function bindScrollLock() {
-      const ggbContainer = document.getElementById('ggb-cas-ec8c92fa');
+      const ggbContainer = document.getElementById('ggb-cas-6c85f3a6');
       if (!ggbContainer) {
         setTimeout(bindScrollLock, 300);
         return;
@@ -950,10 +946,10 @@ f(x) = x^3 - 2x + 2.
     // Cleanup on dialog close
     $dlg.on('dialogclose', unlockScroll);
 
-    $("#button-ggb-cas-ec8c92fa").button()
+    $("#button-ggb-cas-6c85f3a6").button()
       .on("click touchend pointerup", e => {
         e.preventDefault();
-        $("#dialog-ggb-cas-ec8c92fa").dialog("open");
+        $("#dialog-ggb-cas-6c85f3a6").dialog("open");
       });
   });
 })();
