@@ -132,14 +132,21 @@ $$
 
 ::::{answer}
 $$
-2^2 \cdot 3
+12 = 2^2 \cdot 3
 $$
 ::::
 
 ::::{solution}
+:::{factor-tree}
+n: 12
+align: right
+width: 60%
+:::
+
 $$
 12 = 4 \cdot 3 = 2^2 \cdot 3
 $$
+
 ::::
 
 :::::::::::::
@@ -151,13 +158,22 @@ $$
 
 ::::{answer}
 $$
-2 \cdot 3 \cdot 5
+30 = 2 \cdot 3 \cdot 5
 $$
 ::::
 
+
 ::::{solution}
+
+
+:::{factor-tree}
+n: 30
+align: right
+width: 60%
+:::
+
 $$
-30 = 2 \cdot 15 = 2 \cdot 3 \cdot 5
+30 = 2 \cdot 3 \cdot 5
 $$
 ::::
 
@@ -171,11 +187,17 @@ $$
 
 ::::{answer}
 $$
-2 \cdot 31
+62 = 2 \cdot 31
 $$
 ::::
 
 ::::{solution}
+:::{factor-tree}
+n: 62
+align: right
+width: 60%
+:::
+
 $$
 62 = 2 \cdot 31
 $$
@@ -190,13 +212,19 @@ $$
 
 ::::{answer}
 $$
-2 \cdot 3 \cdot 17
+102 = 2 \cdot 3 \cdot 17
 $$
 ::::
 
 ::::{solution}
+:::{factor-tree}
+n: 102
+align: right
+width: 60%
+:::
+
 $$
-102 = 2 \cdot 51 = 2 \cdot 3 \cdot 17
+102 = 2 \cdot 3 \cdot 17
 $$
 ::::
 
