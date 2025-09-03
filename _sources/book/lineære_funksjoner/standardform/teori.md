@@ -26,7 +26,7 @@ som betyr at $y = f(x)$. Vi kaller $f(x)$ for **funksjonsverdien** når vi tenke
 
 :::::::::::::::{admonition} Påminnelse: Koordinatsystemet
 ---
-class: summary
+class: summary, dropdown
 ---
 
 Koordinatsystemet består av to tallinjer som vi kaller for **akser**. De to aksene er:
