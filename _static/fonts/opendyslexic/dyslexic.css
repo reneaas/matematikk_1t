@@ -32,8 +32,17 @@
 .od-enabled h4, .od-enabled h5, .od-enabled h6 {
   font-family: var(--pst-font-family-heading);
 }
-/* Don’t alter code/math fonts */
-pre, code, .MathJax, .math, .katex { font-family: inherit; }
+/* Keep code blocks and inline code in a monospace stack when OpenDyslexic is enabled */
+.od-enabled pre,
+.od-enabled code,
+.od-enabled kbd,
+.od-enabled samp,
+.od-enabled tt,
+.od-enabled .highlight,
+.od-enabled .highlight pre,
+.od-enabled .literal-block {
+  font-family: var(--pst-font-family-monospace, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace) !important;
+}
 /* Visual feedback on the header icon */
 a#od-toggle[aria-pressed="true"] { color: var(--pst-color-primary); }
 
@@ -44,7 +53,7 @@ a#od-toggle[aria-pressed="true"] { color: var(--pst-color-primary); }
   line-height: 1;
 }
 #od-toggle .fa-universal-access {
-  font-size: 1.5rem;   /* try 1.75rem or 2rem if you want it larger */
+  font-size: 1.3rem;   /* try 1.75rem or 2rem if you want it larger */
 }
 /* Optional: visible pressed state */
 #od-toggle[aria-pressed="true"] { color: var(--pst-color-primary); }
