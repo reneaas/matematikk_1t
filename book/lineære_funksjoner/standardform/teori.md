@@ -38,7 +38,7 @@ Punktet der aksene møtes kaller vi for **origo**. Origo har koordinatene $(0, 0
 For å finne et punkt $(x, y)$ i koordinatsystemet, går vi $x$ plasser parallelt med $x$-aksen og $y$ plasser parallelt med $y$-aksen. Da står vi på punktet $(x, y)$. 
 Vi kaller $x$-verdien til punktet for $x$-koordinaten og $y$-verdien for $y$-koordinaten.
 
-I figuren nedenfor vises en konkret eksempel med punktet $(3, 2)$.
+I figuren nedenfor vises et konkret eksempel med punktet $(3, 2)$.
 
 
 :::{plot}
