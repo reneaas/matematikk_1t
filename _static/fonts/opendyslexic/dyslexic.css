@@ -57,3 +57,58 @@ a#od-toggle[aria-pressed="true"] { color: var(--pst-color-primary); }
 }
 /* Optional: visible pressed state */
 #od-toggle[aria-pressed="true"] { color: var(--pst-color-primary); }
+
+
+
+/* Increase overall sizes only when OpenDyslexic is enabled */
+/* Bump body text size */
+.od-enabled .bd-article {
+  font-size: 1rem; /* ~17px; adjust to taste */
+}
+
+
+.od-enabled .bd-article .admonition {
+  font-size: 1rem; /* reset to default */
+}
+.od-enabled .bd-article .admonition * {
+  font-size: inherit; /* keep the reset within admonitions */
+}
+
+
+
+/* Optionally scale headings */
+.od-enabled h1 { font-size: 2.0rem; }
+.od-enabled h2 { font-size: 1.6rem; }
+.od-enabled h3 { font-size: 1.35rem; }
+
+/* Make sure math stays at normal size even if a parent scales */
+/* .od-enabled mjx-container,
+.od-enabled .MathJax,
+.od-enabled .math,
+.od-enabled .katex {
+  font-size: 1em !important;
+} */
+
+
+/* Ensure the header icon row centers its children */
+.navbar-icon-links,
+.header-article__right {
+  align-items: center; /* these containers are flex in pydata-sphinx-theme */
+}
+
+/* Center the OD toggle vertically like other header buttons */
+#od-toggle.headerbtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.25rem;      /* match your theme switcher height */
+  padding: 0 .5rem;
+  line-height: 1;
+}
+
+#od-toggle .fa-universal-access {
+  line-height: 1;
+  vertical-align: middle;
+  /* optional size bump */
+  /* font-size: 1.5rem; */
+}
