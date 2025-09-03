@@ -31,9 +31,9 @@ jobs:
           jupyter-book build . --all
 
       # Ensure the CNAME file is preserved
-      - name: Preserve CNAME file
-        run: |
-          cp CNAME _build/html/ || echo "No CNAME file found in root."
+      # - name: Preserve CNAME file
+      #   run: |
+      #     cp CNAME _build/html/ || echo "No CNAME file found in root."
 
       # Deploy to GitHub Pages
       - name: GitHub Pages action
@@ -41,4 +41,4 @@ jobs:
         with:
           github_token: ${{ secrets.TOKEN }}
           publish_dir: ./_build/html
-          clean: true
+          cname: www.munchboka.no
