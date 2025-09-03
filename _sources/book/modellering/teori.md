@@ -1,2 +1,0 @@
-# Matematisk modellering 
-

@@ -1,4 +1,0 @@
-# Grunnleggende regning
-
-:::{tableofcontents}
-:::

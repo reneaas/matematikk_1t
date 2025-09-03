@@ -1,3 +1,0 @@
-# Oppgavesamling: Tallfølger
-
-

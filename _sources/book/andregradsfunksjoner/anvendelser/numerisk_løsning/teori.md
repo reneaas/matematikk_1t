@@ -1,1 +1,0 @@
-# Numerisk løsning av likninger
