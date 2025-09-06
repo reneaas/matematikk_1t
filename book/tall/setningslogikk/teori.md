@@ -32,7 +32,7 @@ $$
 \text{Anna bor i Oslo} \limplies \text{Anna bor i Norge}
 $$
 
-Men det motsatte er ikke sant. Hvis Anna bor i Norge, betyr ikke det nødvendigvis at hun bor i Oslo. Hun kan for eksempel bo i Bergen. Da kan vi skrive 
+Men det motsatte er ikke *automatisk* sant. Hvis Anna bor i Norge, betyr ikke det nødvendigvis at hun bor i Oslo. Hun kan for eksempel bo i Bergen og ikke i Oslo som betyr at ho fortsatt bor i Norge. Da kan vi skrive 
 
 $$
 \text{Anna bor i Norge} \nimplies \text{Anna bor i Oslo}
