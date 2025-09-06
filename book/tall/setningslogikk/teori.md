@@ -22,7 +22,7 @@ Vi tar et litt konkret eksempel.
 
 
 :::{margin} Symbolet $\nimplies$
-Symbolet leses som "impliserer ikke". Når vi vil uttrykke at noe *ikke* stemmer, slår vi en skråstrek over symbolet.
+Symbolet leses som "impliserer ikke". Når vi vil uttrykke at en påstand *ikke* automatisk følger fra en annen påstand, slår vi en skråstrek over symbolet.
 :::
 
 :::::::::::::::{example} Eksempel 1
