@@ -580,7 +580,7 @@ Bestem $F_1$, $F_2$ og $F_3$ fra figurene.
 
 ::::{answer}
 $$
-F_1 = 5 \and F_2 = 13 \and F_3 = 25
+F_1 = 7 \qog F_2 = 17 \qog F_3 = 37
 $$
 ::::
 
@@ -595,7 +595,7 @@ Bestem $F_4$.
 
 ::::{answer}
 $$
-F_4 = 41
+F_4 = 61
 $$
 ::::
 
@@ -609,7 +609,7 @@ Bestem $F_n$.
 
 ::::{answer}
 $$
-F_n = 2n^2 + 2n + 1 \qfor n \in \mathbb{N}
+F_n = 3n^2 + 3n + 1 \qfor n \in \mathbb{N}
 $$
 ::::
 
