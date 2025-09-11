@@ -2,7 +2,7 @@
 
 
 
-:::{multi-plot}
+<!-- :::{multi-plot}
 width: 100%
 functions: (2*x - 1) / (x + 2), (x**2 - 4) / (x**2 - 1), (x - 1) / (x + 1), (x**2 + 2*x + 1) / (x - 1)
 function-names: A, B, C, D
@@ -496,8 +496,15 @@ xmax: 20
 ymin: -2
 ymax: 7
 xstep: 2
-:::
+::: -->
 
+
+
+
+:::{plot}
+width: 80%
+function: (x - 3)**2 + 1, f, (-10, 10), blue
+:::
 
 
 
