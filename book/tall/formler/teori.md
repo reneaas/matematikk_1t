@@ -12,13 +12,13 @@
 Du vet sannsynligvis allerede hva et partall og et oddetall er. I noen situasjoner er det nyttig at vi kan beskrive partallene og oddetallene med formler. Partallene kan listes opp slik:
 
 $$
-\set{2, 4, 6, 8, \ldots}
+\{2, 4, 6, 8, \ldots\}
 $$
 
-Vi kan se at dersom vi tar de naturlige tallene $\set{1, 2, 3, 4, \ldots}$ og ganger dem med $2$, så får vi alle partallene. Dette motiverer følgende resultat:
+Vi kan se at dersom vi tar de naturlige tallene $\{1, 2, 3, 4, \ldots\}$ og ganger dem med $2$, så får vi alle partallene. Dette motiverer følgende resultat:
 
 :::::::::::::::{summary} Partallene
-Partallene $\set{2, 4, 6, 8, \ldots}$ er gitt ved formelen
+Partallene $\{2, 4, 6, 8, \ldots\}$ er gitt ved formelen
 
 $$
 P_n = 2n \qder n \in \mathbb{N}
@@ -26,10 +26,10 @@ $$
 :::::::::::::::
 
 
-Hvis vi tar partallene $\set{2, 4, 6, 8, \ldots}$ og trekker fra $1$, så får vi alle oddetallene $\set{1, 3, 5, \ldots}$. Det gjør at vi kan skrive ned en generell formel for alle oddetallene:
+Hvis vi tar partallene $\{2, 4, 6, 8, \ldots\}$ og trekker fra $1$, så får vi alle oddetallene $\{1, 3, 5, \ldots\}$. Det gjør at vi kan skrive ned en generell formel for alle oddetallene:
 
 :::::::::::::::{summary} Oddetallene
-Oddetallene $\set{1, 3, 5, 7, \ldots}$ er gitt ved formelen
+Oddetallene $\{1, 3, 5, 7, \ldots\}$ er gitt ved formelen
 
 $$
 O_n = 2n - 1 \qder n \in \mathbb{N}
