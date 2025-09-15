@@ -848,7 +848,7 @@ class: tabs-parts
 En tallfølge $a_n$ er gitt ved 
 
 $$
-1, -2, 4, -6, 8, -10, \ldots
+2, -4, 6, -8, 10, -12, \ldots
 $$
 
 Bestem en formel for $a_n$. 
