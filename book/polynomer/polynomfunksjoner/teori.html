@@ -55,7 +55,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/cas_popup.css?v=1ebfadd1" />
     <link rel="stylesheet" type="text/css" href="../../../_static/misc_styles/popup_code.css?v=4b4feebf" />
     <link rel="stylesheet" type="text/css" href="../../../_static/multipleChoiceQuiz/style.css?v=89e27729" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/interactiveCode/style.css?v=20be8392" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/interactiveCode/style.css?v=23cd07d5" />
     <link rel="stylesheet" type="text/css" href="../../../_static/pairPuzzle/style.css?v=f77426ac" />
     <link rel="stylesheet" type="text/css" href="../../../_static/popup/popup.css?v=2d27c3a4" />
     <link rel="stylesheet" type="text/css" href="../../../_static/code_mirror_themes/one_dark_cm.css?v=3ae52176" />
@@ -791,9 +791,9 @@ f(x) = x^3 - 2x + 2.
 <div class="sidebar-cas">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<button id="button-ggb-cas-033fa660" class="ggb-cas-button">Åpne CAS‑vindu</button>
-<div id="dialog-ggb-cas-033fa660" title="CAS‑vindu" style="display:none;">
-    <div id="ggb-cas-033fa660" class="ggb-window"></div>
+<button id="button-ggb-cas-3566c0ab" class="ggb-cas-button">Åpne CAS‑vindu</button>
+<div id="dialog-ggb-cas-3566c0ab" title="CAS‑vindu" style="display:none;">
+    <div id="ggb-cas-3566c0ab" class="ggb-window"></div>
 </div>
 
 <style>
@@ -810,12 +810,12 @@ f(x) = x^3 - 2x + 2.
 
     function applySize() {
       if (!ggbReady) return;
-      const w = $("#ggb-cas-033fa660").width(),
-            h = $("#ggb-cas-033fa660").height();
+      const w = $("#ggb-cas-3566c0ab").width(),
+            h = $("#ggb-cas-3566c0ab").height();
       window.ggbApplet.setSize(Math.round(w), Math.round(h));
     }
 
-    const $dlg = $("#dialog-ggb-cas-033fa660").dialog({
+    const $dlg = $("#dialog-ggb-cas-3566c0ab").dialog({
       autoOpen: false,
       width: 390, height: 580,
       resizable: true, draggable: true,
@@ -824,14 +824,14 @@ f(x) = x^3 - 2x + 2.
       open: function() {
         if (!ggbReady) {
           new GGBApplet({
-            appName: "classic", id: "ggb-cas-033fa660",
+            appName: "classic", id: "ggb-cas-3566c0ab",
             width: 350, height: 500,
             perspective: "C", language: "nb",
             showToolBar: true, showAlgebraInput: true,
             borderRadius: 8, enableRightClick: true, showKeyboardOnFocus: false,
             customToolBar: "1001 | 1002 | 1007 | 1010 | 6",
             appletOnLoad: () => { ggbReady = true; applySize(); }
-          }, true).inject("ggb-cas-033fa660");
+          }, true).inject("ggb-cas-3566c0ab");
         } else {
           applySize();
         }
@@ -874,7 +874,7 @@ f(x) = x^3 - 2x + 2.
             target = target.parentElement;
           }
           // Prevent page scroll but don't stop the event from reaching GeoGebra
-          if (!e.target.closest('#ggb-cas-033fa660')) {
+          if (!e.target.closest('#ggb-cas-3566c0ab')) {
             e.preventDefault();
             e.stopPropagation();
           }
@@ -902,7 +902,7 @@ f(x) = x^3 - 2x + 2.
     
     // Monitor GeoGebra applet focus/interaction to control scroll lock
     function bindScrollLock() {
-      const ggbContainer = document.getElementById('ggb-cas-033fa660');
+      const ggbContainer = document.getElementById('ggb-cas-3566c0ab');
       if (!ggbContainer) {
         setTimeout(bindScrollLock, 300);
         return;
@@ -948,10 +948,10 @@ f(x) = x^3 - 2x + 2.
     // Cleanup on dialog close
     $dlg.on('dialogclose', unlockScroll);
 
-    $("#button-ggb-cas-033fa660").button()
+    $("#button-ggb-cas-3566c0ab").button()
       .on("click touchend pointerup", e => {
         e.preventDefault();
-        $("#dialog-ggb-cas-033fa660").dialog("open");
+        $("#dialog-ggb-cas-3566c0ab").dialog("open");
       });
   });
 })();
