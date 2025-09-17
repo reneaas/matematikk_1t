@@ -10,6 +10,20 @@ For å få et bestemt kodeskall, skriver du nøkkelordet som vises i gif-ene og 
 ::::::::::::::{tab-set}
 
 
+:::::::::::::{tab-item} `print`{l=python}-utsagn
+Nøkkelord: `print`{l=python}
+
+:::{figure} ./code_snippets/print.gif
+---
+class: no-click, adaptive-figure
+width: 100%
+---
+:::
+
+
+:::::::::::::
+
+
 :::::::::::::{tab-item} `for`{l=python}-løkker
 Nøkkelord: `for`{l=python}
 
@@ -30,6 +44,34 @@ Nøkkelord: `sum`{l=python}
 :::{figure} ./code_snippets/sum.gif
 ---
 class: adaptive-figure, no-click
+width: 100%
+---
+:::
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} `if`{l=python}-test
+Nøkkelord: `if`{l=python}
+
+:::{figure} ./code_snippets/if_test.gif
+---
+class: no-click, adaptive-figure
+width: 100%
+---
+:::
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} `if`{l=python}-`else`{l=python}-test
+Nøkkelord: `if-else`{l=python}
+
+:::{figure} ./code_snippets/if_else.gif
+---
+class: no-click, adaptive-figure
 width: 100%
 ---
 :::

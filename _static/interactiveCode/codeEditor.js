@@ -271,6 +271,10 @@ class CodeEditor {
                 template: "s = 0\nfor n in range(start, stopp, avstand):\n    a = formel\n    s = s + a",
                 caretWords: ["start", "stopp", "avstand", "formel"]
             },
+            "print": {
+                template: "print(verdi)",
+                caretWords: ["verdi"]
+            },
         };
     }
 
