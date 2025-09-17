@@ -248,7 +248,7 @@ class CodeEditor {
         return {
             // Norwegian-friendly placeholders
             "for": {
-                template: "for i in range(start, stopp, avstand):\n    print(i)",
+                template: "for n in range(start, stopp, avstand):\n    print(n)",
                 caretWords: ["start", "stopp", "avstand"]
             },
             "if": {
@@ -266,6 +266,10 @@ class CodeEditor {
             "def": {
                 template: "def funksjonsnavn(variabel):\n    return funksjonsuttrykk",
                 caretWords: ["funksjonsnavn", "variabel", "funksjonsuttrykk"]
+            },
+            "sum": {
+                template: "s = 0\nfor n in range(start, stopp, avstand):\n    a = formel\n    s = s + a",
+                caretWords: ["start", "stopp", "avstand", "formel"]
             },
         };
     }
