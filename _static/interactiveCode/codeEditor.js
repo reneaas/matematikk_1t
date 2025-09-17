@@ -253,11 +253,11 @@ class CodeEditor {
             },
             "if": {
                 template: "if betingelse:\n    pass",
-                caretWords: ["betingelse"]
+                caretWords: ["betingelse", "pass"]
             },
             "while": {
                 template: "while betingelse:\n    pass",
-                caretWords: ["betingelse"]
+                caretWords: ["betingelse", "pass"]
             },
             "if-else": {
                 template: "if betingelse:\n    pass\nelse:\n    pass",
