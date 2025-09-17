@@ -263,7 +263,7 @@ class CodeEditor {
                 template: "if betingelse:\n    pass\nelse:\n    pass",
                 caretWords: ["betingelse"]
             },
-            "def": {
+            "funksjon": {
                 template: "def funksjonsnavn(variabel):\n    return funksjonsuttrykk",
                 caretWords: ["funksjonsnavn", "variabel", "funksjonsuttrykk"]
             },
