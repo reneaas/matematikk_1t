@@ -275,6 +275,10 @@ class CodeEditor {
                 template: "print(verdi)",
                 caretWords: ["verdi"]
             },
+            "print-f": {
+                template: "print(f\"{variabel = }\")",
+                caretWords: ["variabel"]
+            },
         };
     }
 
