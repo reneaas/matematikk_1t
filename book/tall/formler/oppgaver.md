@@ -11,7 +11,7 @@ level: 1
 ---
 Nedenfor vises noen figurer som følger et bestemt mønster. Vi tenker oss at figurene fortsetter etter samme mønster. 
 
-La $S_n$ være antall sirkler i figur $n$. 
+La $S_n$ være antall prikker i figur $n$. 
 
 :::{figure} ./figurer/oppgaver/oppgave_1/figur.svg
 ---
@@ -84,7 +84,7 @@ level: 1
 ---
 Nedenfor vises noen figurer som følger et bestemt mønster. Vi tenker oss at figurene fortsetter etter samme mønster. 
 
-La $S_n$ være antall fargelagte kvadrater i figur $n$.
+La $S_n$ være antall prikker i figur $n$.
 
 
 :::{figure} ./figurer/oppgaver/oppgave_2/figur_4n_plus_2.svg
