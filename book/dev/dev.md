@@ -1,17 +1,8 @@
 # Dev
 
 
-:::{quiz}
-Q: What is up?
-+ The sky
-- The ground
-- The ocean
-- The trees
-
-Q: What is down?
-+ The ground
-- The sky
-- The ocean
-- The trees
-
+:::{plot}
+width: 80%
+function: -2*x + 4, f
+function: x - 5, g
 :::

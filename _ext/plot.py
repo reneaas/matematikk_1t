@@ -49,7 +49,7 @@ Presentation and caching
 - align: left | center | right (figure alignment).
 - class: extra CSS classes (space separated) applied to the figure.
 - name: stable file/anchor name (otherwise a content hash is used).
-- alt: alternative text for accessibility; also inserted as an SVG <title>.
+- alt: alternative text for accessibility (used for aria-label; no <title> injected to avoid hover tooltip).
 - nocache: force regeneration of the SVG.
 - debug: keep original width/height attributes and skip ID rewriting; also
     writes a sidecar PDF for inspection when possible.
@@ -135,6 +135,16 @@ Polygons and filled regions
 - fill-polygon: `(x,y), (x,y), ...[, color][, alpha]` — fills a polygon. The
     first non-numeric extra is used as color, the first numeric extra as alpha.
     Defaults: color = blue, alpha = 0.1.
+
+Notes on colors for functions:
+    For function specifications the traditional matplotlib single-letter
+    color shorthands (b, g, r, c, m, y, k, w) are intentionally DISABLED.
+    This is to allow naming functions with conventional letters (f, g, h, …)
+    without accidental interpretation as a color. Use full color names or
+    an explicit ``color=...`` token, e.g. ``("x**2", "Parabel", color=green)``
+    or ``("sin(x)", color=orange)``. A single letter like ``g`` now always
+    becomes (or remains) part of the label unless you explicitly write
+    ``color=green``.
 
 Axis commands
 -------------
@@ -517,9 +527,10 @@ class PlotDirective(SphinxDirective):
                 # hex colors
                 if re.match(r"^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$", t):
                     return True
-                # matplotlib single-letter and tab: names
-                if t.lower() in {"b", "g", "r", "c", "m", "y", "k", "w"}:
-                    return True
+                # IMPORTANT: single-letter matplotlib shorthands intentionally
+                # NOT treated as colors here so that users can name functions
+                # with letters like 'g' without it being consumed as green.
+                # Use full names (e.g. 'green') or color=green instead.
                 if t.lower().startswith("tab:"):
                     return True
                 if re.match(r"^C\d+$", t):
@@ -1352,10 +1363,6 @@ class PlotDirective(SphinxDirective):
                                 alpha=alpha,
                             )
 
-                # Plot points
-                for x0, y0 in point_vals:
-                    ax.plot(x0, y0, "o", markersize=10, alpha=0.8, color="black")
-
                 # Bars
                 for xy, length, orientation in bar_vals:
                     try:
@@ -1520,7 +1527,7 @@ class PlotDirective(SphinxDirective):
                 for x_v, y0, y1, st, col in vline_vals:
                     y_min = ymin if y0 is None else y0
                     y_max = ymax if y1 is None else y1
-                    ls_val = style_map.get((st or "dotted").lower(), ":")
+                    ls_val = style_map.get((st or "dashed").lower(), ":")
                     # Resolve user color through plotmath.COLORS, then fallback to original, then default
                     _mapped = plotmath.COLORS.get(col) if col else None
                     color_to_try = (_mapped if _mapped else col) or default_color
@@ -1549,7 +1556,7 @@ class PlotDirective(SphinxDirective):
                 for y_h, x0, x1, st_h, col_h in hline_vals:
                     x_min = xmin if x0 is None else x0
                     x_max = xmax if x1 is None else x1
-                    ls_val_h = style_map.get((st_h or "dotted").lower(), ":")
+                    ls_val_h = style_map.get((st_h or "dashed").lower(), ":")
                     # Resolve user color through plotmath.COLORS, then fallback to original, then default
                     _mapped_h = plotmath.COLORS.get(col_h) if col_h else None
                     color_to_try_h = (
@@ -1602,6 +1609,10 @@ class PlotDirective(SphinxDirective):
                             plotmath.polygon(*pts, edges=False, facecolor=c, alpha=a)
                         except Exception:
                             plotmath.polygon(*pts, edges=False, alpha=a)
+
+                # Plot points
+                for x0, y0 in point_vals:
+                    ax.plot(x0, y0, "o", markersize=10, alpha=0.8, color="black")
 
                 # axis commands (run sequentially)
                 for cmd in axis_cmds:
@@ -1753,13 +1764,11 @@ class PlotDirective(SphinxDirective):
             return tag
 
         raw_svg = re.sub(r"<svg\b[^>]*>", _augment, raw_svg, count=1)
-        if alt and "<title" not in raw_svg:
-            raw_svg = re.sub(
-                r"(<svg\b[^>]*>)",
-                r"\1<title>" + re.escape(alt) + r"</title>",
-                raw_svg,
-                count=1,
-            )
+        # Deliberately do not inject a <title> element: browsers display it as a tooltip
+        # on hover which is distracting for readers. Accessibility is still ensured via
+        # role="img" and aria-label attributes already added in _augment(). If a title
+        # is ever desired for a specific figure, that can be added manually after build
+        # or a future directive option could re-enable this behavior.
 
         figure = nodes.figure()
         figure.setdefault("classes", []).extend(
