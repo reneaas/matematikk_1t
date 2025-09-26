@@ -795,6 +795,20 @@ Lag et program som skriver ut de første 5 leddene i summen.
 
 
 
+
+::::{answer}
+:::{code-block} python
+---
+linenos:
+---
+for i in range(1, 6, 1):
+    a = 1 / 2**(n + 1)
+    print(a)
+
+:::
+::::
+
+
 :::::::::::::
 
 
@@ -803,12 +817,44 @@ Lag et program som regner ut summen av de 5 første leddene i summen
 
 
 
+::::{answer}
+:::{code-block} python
+---
+linenos:
+---
+s = 0
+for i in range(1, 6, 1):
+    a = 1 / 2**(n + 1)
+    s = s + a
+
+print(s)
+    
+:::
+::::
+
+
 :::::::::::::
 
 
 :::::::::::::{tab-item} c
 Bruk programmet ditt til å bestemme hvilken verdi summen nærmer seg når vi bruker veldig mange ledd.
 
+
+
+::::{answer}
+:::{code-block} python
+---
+linenos:
+---
+s = 0
+for i in range(1, 10001, 1):
+    a = 1 / 2**(n + 1)
+    s = s + a
+
+print(s)
+    
+:::
+::::
 
 
 :::::::::::::

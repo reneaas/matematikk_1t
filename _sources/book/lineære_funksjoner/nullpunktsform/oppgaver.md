@@ -412,15 +412,16 @@ $$
 f(x) = 2\cdot (x - 3)
 $$
 
-Bestem hvilken grafen nedenfor som viser grafen til $f$.
+Bestem hvilken graf nedenfor som viser grafen til $f$.
 
 
 :::{multi-plot}
 functions: x + 3, 2*(x - 3), -2*(x + 3), -(x - 3)
+function-names: A, B, C, D
 rows: 2
 cols: 2
 width: 100%
-fontsize: 18
+fontsize: 16
 :::
 
 

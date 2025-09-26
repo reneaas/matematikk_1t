@@ -653,7 +653,8 @@ point: (5, 0)
 text: 5, 0, "$(5, 0)$", top-center
 point: (2, 0)
 text: 2.1, 0, "$(2, 0)$", top-center
-fill-polygon: (0, 4), (3, -2), (0, -5), royalblue, 0.3
+fill-polygon: (0, 4), (3, -2), (0, -5), royalblue, 0.2
+nocache:
 :::
 
 
