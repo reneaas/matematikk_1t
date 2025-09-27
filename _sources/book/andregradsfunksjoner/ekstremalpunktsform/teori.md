@@ -42,12 +42,20 @@ class: no-click, adaptive-figure
 * Linja $x = x_0$ er symmetrilinja til $f$. Grafen er speilet rundt denne linja!
 
 
-:::{figure} ./figurer/teori/grafisk_representasjon.svg
----
+:::{plot}
 width: 80%
-class: no-click, adaptive-figure
----
+function: (x - 2)**2 + 1, f
+xmin: -2
+xmax: 6
+ymin: -2
+ymax: 6
+ticks: off
+annotate: (2.5, -1), (2, 1), "Ekstremalpunkt $(x_0, y_0)$", -0.3
+point: (2, 1)
+vline: 2, -10, 10
+annotate: (-1.5, -1), (2, 3), "Symmetrilinje $x = x_0$", -0.3
 :::
+
 
 :::::::::::::::
 
@@ -67,12 +75,16 @@ $$
 f(x) = (x - 1)^2 - 4
 $$
 ^^^
-:::{figure} ./figurer/eksempler/eksempel_1/A.svg
----
-class: no-click, adaptive-figure
+
+:::{plot}
 width: 100%
----
+function: (x - 1)**2 - 4, f
+point: (1, -4)
+text: 1, -4, "$(1, -4)$", bottom-right
+vline: 1, -10, 10
+fontsize: 26
 :::
+
 
 :::::::::::::
 
@@ -83,26 +95,37 @@ g(x) = -2(x + 3)^2 + 1
 $$
 
 ^^^
-:::{figure} ./figurer/eksempler/eksempel_1/B.svg
----
-class: no-click, adaptive-figure
+
+:::{plot}
 width: 100%
----
+function: -2*(x + 3)**2 + 1, g
+point: (-3, 1)
+text: -3, 1, "$(-3, 1)$", top-left
+vline: -3, -10, 10
+fontsize: 26
 :::
+
 
 :::::::::::::
 
 
 :::::::::::::{grid-item-card}
 $$
-h(x) = -\frac{1}{2}(x - 2)^2 - 3
+h(x) = -\frac{1}{2}(x - 2)^2 - 1
 $$
 ^^^
-:::{figure} ./figurer/eksempler/eksempel_1/C.svg
----
-class: no-click, adaptive-figure
+
+:::{plot}
 width: 100%
----
+function: -0.5 * (x - 2)**2 - 3, h
+point: (2, -3)
+text: 2, -3, "$(2, -3)$", top-right
+vline: 2, -10, 10
+fontsize: 26
+xmin: -2
+xmax: 8
+ymin: -8
+ymax: 4
 :::
 
 :::::::::::::
@@ -113,11 +136,15 @@ $$
 p(x) = (x + 1)^2 + 2
 $$
 ^^^
-:::{figure} ./figurer/eksempler/eksempel_1/D.svg
----
-class: no-click, adaptive-figure
+
+
+:::{plot}
 width: 100%
----
+function: (x + 1)**2 + 2, p
+point: (-1, 2)
+text: -1, 2, "$(-1, 2)$", bottom-left
+vline: -1, -10, 10
+fontsize: 26
 :::
 
 :::::::::::::
@@ -152,10 +179,102 @@ material_id: wapc5yua
 
 :::::::::::::::
 
+
+
 ---
 
 
-### Fra standardform til ekstremalpunktsform
+
+## Fra graf til $f(x)$ på ekstremalpunktsform
+
+
+Når vi har en graf, kan vi bestemme ekstremalpunktsformen når vi kjenner til ekstremalpunktet og ett punkt til på grafen. 
+La oss se på et eksempel:
+
+
+:::::::::::::::{example} Eksempel 2
+Grafen til en andregradsfunksjon $f$ er vist nedenfor.
+
+Bestem $f(x)$ på ekstremalpunktsform.
+
+
+
+:::{plot}
+width: 70%
+function: 2*(x - 1)**2 - 8, f
+ymin: -10
+:::
+
+
+
+
+::::{solution}
+---
+dropdown: 0 
+---
+Vi ser fra grafen at ekstremalpunktet er $(1, -8)$. Det betyr at vi kan skrive $f(x)$ på ekstremalpunktsform som
+
+$$
+f(x) = a(x - 1)^2 - 8.
+$$
+
+
+Flytter vi oss én enhet til høyre langs $x$-aksen fra ekstremalpunktet, ser vi at funksjonsverdien øker med $2$. Det betyr at $a = 2$. Dermed er
+
+$$
+f(x) = 2(x - 1)^2 - 8.
+$$
+
+::::
+
+
+:::::::::::::::
+
+
+---
+
+
+:::::::::::::::{exercise} Underveisoppgave 1
+Grafen til en andregradsfunksjon $f$ er vist nedenfor.
+
+Bestem $f(x)$ på ekstremalpunktsform.
+
+
+:::{plot}
+width: 70%
+function: -(x + 1)**2 + 4, f
+:::
+
+
+
+::::{answer}
+$$
+f(x) = -(x + 1)^2 + 4.
+$$
+::::
+
+
+::::{solution}
+Vi ser at grafen til $f$ har et ekstremalpunkt i $(-1, 4)$ som betyr at vi kan skrive $f(x)$ på ekstremalpunktsform som
+
+$$
+f(x) = a(x - (-1))^2 + 4 = a(x + 1)^2 + 4.
+$$
+
+Flytter vi oss én enhet til høyre langs $x$-aksen fra ekstremalpunktet, ser vi at funksjonsverdien synker med $1$. Det betyr at $a = -1$. Dermed er
+
+$$
+f(x) = -(x + 1)^2 + 4.
+$$
+
+::::
+
+:::::::::::::::
+
+
+
+
+## Fra standardform til ekstremalpunktsform
 Nå skal vi se hvordan vi kan skrive om en andregradsfunksjon fra standardform til ekstremalpunktsform. Diagrammet oppsummerer strategien: 
 
 :::{figure} ./figurer/teori/diagram.svg
@@ -167,7 +286,7 @@ class: no-click, adaptive-figure
 
 La oss se på et eksempel:
 
-:::::::::::::::{example} Eksempel 2
+:::::::::::::::{example} Eksempel 3
 En andregradsfunksjon $f$ er gitt ved
 
 $$
@@ -220,7 +339,7 @@ $$
 ---
 
 
-:::::::::::::::{exercise} Underveisoppgave 1
+:::::::::::::::{exercise} Underveisoppgave 2
 En andregradsfunksjon $f$ er gitt ved
 
 
@@ -266,7 +385,7 @@ $$
 :::::::::::::::
 
 
-### Fra ekstremalpunktsform til standardform
+## Fra ekstremalpunktsform til standardform
 Vi kan også veksle fra ekstremalpunktsform til standardform. Dette gjør vi ved å gange ut parentesen og samle leddene:
 
 :::{margin} Husk: Kvadratsetninger
@@ -279,7 +398,7 @@ $$
 $$
 :::
 
-:::::::::::::::{example} Eksempel 3
+:::::::::::::::{example} Eksempel 4
 En andregradsfunksjon $f$ er gitt ved
 
 $$
@@ -311,7 +430,7 @@ f(x) &= -3(x - 1)^2 + 2 \\
 
 ---
 
-:::::::::::::::{exercise} Underveisoppgave 2
+:::::::::::::::{exercise} Underveisoppgave 3
 En andregradsfunksjon $f$ er gitt ved
 
 $$
@@ -342,118 +461,6 @@ f(x) &= 2(x + 3)^2 - 5 \\
 ::::
 
 
-
-:::::::::::::::
-
-
-## Fra graf til $f(x)$ på ekstremalpunktsform
-
-
-:::{margin}
-Vi trenger det ekstra punktet for å bestemme verdien til $a$ i ekstremalpunktsformen.
-:::
-
-Når vi har en graf, kan vi bestemme ekstremalpunktsformen når vi kjenner til ekstremalpunktet og ett punkt til på grafen. 
-La oss se på et eksempel:
-
-
-:::::::::::::::{example} Eksempel 4
-Grafen til en andregradsfunksjon $f$ er vist nedenfor.
-
-Bestem $f(x)$ på ekstremalpunktsform.
-
-
-:::{figure} ./figurer/eksempler/eksempel_4/figur.svg
----
-class: no-click, adaptive-figure
-width: 80%
----
-:::
-
-::::{solution}
----
-dropdown: 0 
----
-Vi ser fra grafen at ekstremalpunktet er $(1, -8)$. Det betyr at vi kan skrive $f(x)$ på ekstremalpunktsform som
-
-$$
-f(x) = a(x - 1)^2 - 8.
-$$
-
-Vi trenger ett punkt til for å bestemme verdien til $a$. Vi ser at grafen skjærer $y$-aksen i punktet $(0, -6)$ som betyr at 
-
-$$
-f(0) = -6 \liff a(0 - 1)^2 - 8 = -6.
-$$
-
-som vi forenkler til 
-
-$$
-a - 8 = -6 \liff a = 2.
-$$
-
-Dermed er 
-
-$$
-f(x) = 2(x - 1)^2 - 8.
-$$
-
-::::
-
-
-:::::::::::::::
-
-
----
-
-
-:::::::::::::::{exercise} Underveisoppgave 3
-Grafen til en andregradsfunksjon $f$ er vist nedenfor.
-
-Bestem $f(x)$ på ekstremalpunktsform.
-
-
-:::{figure} ./figurer/underveisoppgaver/underveisoppgave_3/figur.svg
----
-class: no-click, adaptive-figure
-width: 80%
----
-:::
-
-
-::::{answer}
-$$
-f(x) = -(x + 1)^2 + 4.
-$$
-::::
-
-
-::::{solution}
-Vi ser at grafen til $f$ har et ekstremalpunkt i $(-1, 4)$ som betyr at vi kan skrive $f(x)$ på ekstremalpunktsform som
-
-$$
-f(x) = a(x - (-1))^2 + 4 = a(x + 1)^2 + 4.
-$$
-
-Vi trenger ett punkt til for å bestemme verdien til $a$. Vi ser at grafen skjærer $y$-aksen i punktet $(0, 3)$ som betyr at
-
-$$
-f(0) = 3 \liff a(0 + 1)^2 + 4 = 3.
-$$
-
-som vi forenkler til
-
-$$
-a + 4 = 3 \liff a = -1.
-$$
-
-Dermed er
-
-$$
-f(x) = -(x + 1)^2 + 4.
-$$
-
-::::
 
 :::::::::::::::
 

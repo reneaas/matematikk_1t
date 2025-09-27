@@ -203,7 +203,7 @@ $$
 ::::
 
 ::::{solution}
-Vi skriver inn funkjonsuttrykket, lager punktet og bruker `Tangent(punkt, funksjon)` for å finne likningen til tangenten. Se figuren nedenfor:
+Vi skriver inn funksjonsuttrykket, lager punktet og bruker `Tangent(punkt, funksjon)` for å finne likningen til tangenten. Se figuren nedenfor:
 
 :::{figure} ./figurer/underveisoppgaver/underveisoppgave_2/sol.png
 ---
@@ -325,7 +325,7 @@ dropdown: 0
 Den deriverte er gitt ved 
 
 $$
-f'(x) = 2a + b
+f'(x) = 2ax + b
 $$
 
 Vi har at $a = 3$ og $b = -6$, så 
@@ -480,7 +480,7 @@ $$
 x = 4.
 $$
 
-Vi sjekke at dette stemmer overens med formelen for symmetrilinja til en andregradsfunksjon:
+Vi sjekker at dette stemmer overens med formelen for symmetrilinja til en andregradsfunksjon:
 
 $$
 x_0 = -\frac{b}{2a} = -\frac{-8}{2 \cdot 1} = 4
@@ -543,17 +543,16 @@ $$
 y = a(x - x_0) + y_0
 $$
 
-Når linja er en tangent, så er stigningstallet $a$ lik den momentane vekstfarten til $f$ i punktet $(x_0, f(x_0))$. Det vil si at $a = f'(x_0)$. 
+Når linja er en tangent, så er stigningstallet $a$ lik den momentane vekstfarten til $f$ i punktet $(x_0, f(x_0))$. Det vil si at $a = f'(x_0)$ og $y_0 = f(x_0)$.  
 
 
 :::::::::::::::{summary} Likningen til en tangent
-Likningen til en tangnt til grafen til en andregradsfunksjon $f$ i punktet $(x_0, f(x_0))$ er gitt ved ettpunktsformelen
+Likningen til en tangent til grafen til en andregradsfunksjon $f$ i punktet $(x_0, f(x_0))$ er gitt ved
 
 $$
-y = a(x - x_0) + y_0
+y = f'(x_0)(x - x_0) + f(x_0)
 $$
 
-der $a = f'(x_0)$ er den momentane vekstfarten til $f$ i punktet $(x_0, f(x_0))$ og $y_0 = f(x_0)$. 
 
 :::::::::::::::
 
