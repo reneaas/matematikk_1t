@@ -707,7 +707,7 @@ $$
 ---
 level: 3
 ---
-I figuren nedenfor vises grafene til de to lineære funksjonene $f$ og $g$.
+I figuren nedenfor vises grafene til to lineære funksjoner $f$ og $g$.
 
 Bestem arealet av det fargelagte området i figuren.
 

@@ -39,7 +39,7 @@ Front matter and options
     use unfenced `key: value` lines at the top followed by a blank line. The
     remaining lines become the optional caption.
 - Repeated keys are allowed for: function, point, annotate, text, vline, hline,
-    line, polygon, fill-polygon, bar, axis.
+    line, polygon, fill-polygon, bar, axis, vector.
 - All numbers may be integers or floats unless noted.
 
 Presentation and caching
@@ -162,6 +162,27 @@ Rendering details
     height attributes are stripped for responsiveness (unless `debug` is set).
 - Files are cached in `_static/plot/`. A content hash drives the filename. Use
     `name:` to override this with a stable name.
+    `name:` to override this with a stable name.
+
+Vectors
+-------
+Add one or more vectors using repeated `vector:` lines. Syntax (CSV-ish):
+
+    vector: x, y, dx, dy[, color]
+
+Where (x, y) is the tail and (dx, dy) the components. Color is optional; if
+omitted the arrow is black. Examples:
+
+    vector: 0, 0, 2, 1
+    vector: 1, -1, -0.5, 2, red
+
+Vectors are drawn with `ax.quiver` using:
+
+    angles="xy", scale_units="xy", scale=1, width=0.005, headwidth=3, headlength=5
+
+They render after functions, lines, and before points/annotations (so markers
+and labels remain readable). All numeric tokens must parse; invalid entries are
+ignored with no build break.
 """
 
 from __future__ import annotations
@@ -406,6 +427,7 @@ class PlotDirective(SphinxDirective):
             "axis": [],
             "fill-polygon": [],
             "bar": [],
+            "vector": [],
         }
         # YAML-like fenced front matter
         if lines and lines[0].strip() == "---":
@@ -1096,6 +1118,28 @@ class PlotDirective(SphinxDirective):
                 if part:
                     axis_cmds.append(part)
 
+        # vectors: x, y, dx, dy[, color]
+        vector_vals: List[Tuple[float, float, float, float, str]] = []
+        for vline in lists.get("vector", []):
+            s = str(vline).strip()
+            # allow surrounding brackets/parentheses
+            if (s.startswith("[") and s.endswith("]")) or (
+                s.startswith("(") and s.endswith(")")
+            ):
+                s = s[1:-1].strip()
+            parts = [p.strip() for p in s.split(",") if p.strip()]
+            if len(parts) < 4:
+                continue
+            try:
+                x_v = float(parts[0])
+                y_v = float(parts[1])
+                dx_v = float(parts[2])
+                dy_v = float(parts[3])
+                color_v = parts[4] if len(parts) >= 5 and parts[4] else "black"
+                vector_vals.append((x_v, y_v, dx_v, dy_v, color_v))
+            except Exception:
+                continue
+
         explicit_name = merged.get("name")
         debug_mode = "debug" in merged
 
@@ -1147,6 +1191,9 @@ class PlotDirective(SphinxDirective):
                     f"{xy[0]},{xy[1]}:{length}:{orientation}"
                     for (xy, length, orientation) in bar_vals
                 ]
+            ),
+            ";".join(
+                [f"{x},{y}:{dx},{dy}:{col}" for (x, y, dx, dy, col) in vector_vals]
             ),
             "|".join(axis_cmds),
             ";".join(
@@ -1609,6 +1656,26 @@ class PlotDirective(SphinxDirective):
                             plotmath.polygon(*pts, edges=False, facecolor=c, alpha=a)
                         except Exception:
                             plotmath.polygon(*pts, edges=False, alpha=a)
+
+                # Vectors (quiver) drawn before points so markers overlay arrow heads
+                if vector_vals:
+                    try:
+                        for x_v, y_v, dx_v, dy_v, col_v in vector_vals:
+                            ax.quiver(
+                                x_v,
+                                y_v,
+                                dx_v,
+                                dy_v,
+                                angles="xy",
+                                scale_units="xy",
+                                scale=1,
+                                width=0.0065,
+                                headwidth=4,
+                                headlength=4.5,
+                                color=col_v or "black",
+                            )
+                    except Exception:
+                        pass
 
                 # Plot points
                 for x0, y0 in point_vals:

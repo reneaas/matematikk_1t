@@ -969,7 +969,7 @@ Punktet på grafen til $f$ er $(1, 2)$. Det betyr at $f(1) = 2$.
 
 Fra grafen til $f'$ ser vi at $f'(1) = -1$. Dette er stigningstallet til tangenten. 
 
-Vi bruker ettpunktsformelene til å bestemme likningen for tangenten:
+Vi bruker ettpunktsformelen til å bestemme likningen for tangenten:
 
 $$
 y = a(x - x_0) + y_0 = -1 \cdot (x - 1) + 2 = -x + 3.

@@ -102,6 +102,14 @@ $$
 Hvilken av grafene nedenfor viser grafen til $f$?
 
 
+
+:::{clickable-figure} ./figurer/underveisoppgaver/underveisoppgave_1/merged_figure.svg
+---
+width: 100%
+---
+:::
+
+
 ::::{answer}
 Graf B
 ::::
@@ -112,12 +120,6 @@ Fra ettpunktsformen til $f(x)$ kan vi lese av at grafen må gå gjennom punktet 
 Dermed er graf B grafen til $f$.
 ::::
 
-
-:::{clickable-figure} ./figurer/underveisoppgaver/underveisoppgave_1/merged_figure.svg
----
-width: 100%
----
-:::
 
 :::::::::::::::
 

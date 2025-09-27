@@ -102,97 +102,98 @@ Grafen har et ekstremalpunkt i $(-3, 2)$. Siden den ledende koeffisienten $a = 4
 
 
 :::::::::::::::{exercise} Oppgave 2
----
-level: 1
----
-Figuren nedenfor vises grafen til en andregradsfunksjon gitt ved
-
-$$
-f(x) = a(x - x_0)^2 + y_0
-$$
-
-
-:::{figure} ./figurer/oppgaver/oppgave_2/figur.svg
----
-class: no-click, adaptive-figure
-width: 
----
-:::
-
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
-Bestem koordinatene til ekstremalpunktet til $f$ og avgjør om det er et toppunkt eller bunnpunkt.
+Grafen til en andregradsfunksjon $f$ er vist i figuren nedenfor.
+
+Bestem $f(x)$ på ekstremalpunktsform.
+
+:::{plot}
+width: 70%
+function: -(x + 1)**2 + 4, f
+:::
 
 
-Kan du si noe om fortegnet til $a$? 
-
-
-::::{solution}
-Grafens ekstremalpunkte er i $(1, 3)$. Dette er et bunnpunkt siden grafen er konveks {poly-icon}`smile`. Det betyr at $a > 0$.
+::::{answer}
+$$
+f(x) = -(x + 1)^2 + 4.
+$$
 ::::
 
+
 :::::::::::::
+
 
 
 :::::::::::::{tab-item} b
-Bestem verdiene til $x_0$ og $y_0$.
+Grafen til en andregradsfunksjon $g$ er vist i figuren nedenfor.
 
+Bestem $g(x)$ på ekstremalpunktsform.
+
+:::{plot}
+width: 70%
+function: 2 * (x - 2)**2 + 1, g
+:::
 
 ::::{answer}
 $$
-x_0 = 1 \and y_0 = 3
+g(x) = 2(x - 2)^2 + 1.
 $$
 ::::
 
+
 :::::::::::::
+
 
 
 :::::::::::::{tab-item} c
-Bestem verdien til $a$ og bestem $f(x)$.
+Grafen til en andregradsfunksjon $h$ er vist i figuren nedenfor.
+
+
+Bestem $h(x)$ på ekstremalpunktsform.
+
+
+:::{plot}
+width: 70%
+function: -2*(x - 2)**2 - 1, h
+:::
 
 
 ::::{answer}
 $$
-a = 1 \and f(x) = (x - 1)^2 + 3
+h(x) = -2(x - 2)^2 - 1.
 $$
-::::
-
-
-::::{solution}
-Vi vet nå at vi kan skrive $f(x)$ på formen
-
-$$
-f(x) = a(x - 1)^2 + 3
-$$
-
-Vi ser at grafen skjærer $y$-aksen i $(0, 4)$ som betyr at
-
-$$
-f(0) = 4 \liff a(0 - 1)^2 + 3 = 4
-$$
-
-som vi forenkler til
-
-$$
-a + 3 = 4 \liff a = 1.
-$$
-
-Dermed er 
-
-$$
-f(x) = (x - 1)^2 + 3
-$$
-
-
 ::::
 
 :::::::::::::
 
-::::::::::::::
 
+
+:::::::::::::{tab-item} d
+Grafen til en andregradsfunksjon $p$ er vist i figuren nedenfor.
+
+Bestem $p(x)$ på ekstremalpunktsform.
+
+:::{plot}
+width: 70%
+function: (x + 2)**2 - 3, p
+:::
+
+
+::::{answer}
+$$
+p(x) = (x + 2)^2 - 3.
+$$
+::::
+
+:::::::::::::
+
+
+
+::::::::::::::
 :::::::::::::::
 
 
@@ -477,7 +478,7 @@ $$
 Vi bestemmer symmetrilinja $x_0$ til grafen først. Vi har at $a = -2$ og $b = 8$, som gir oss
 
 $$
-x_0 = -\dfrac{8}{2 \cdot -2} = -\dfrac{8}{-4} = 2.
+x_0 = -\dfrac{8}{2 \cdot (-2)} = -\dfrac{8}{-4} = 2.
 $$
 
 Så må vi regne ut $y$-koordinaten til ekstremalpunktet:
@@ -516,7 +517,7 @@ $$
 Vi bestemmer symmetrilinja $x_0$ til grafen først. Vi har at $a = -1$ og $b = 4$, som gir oss
 
 $$
-x_0 = -\dfrac{4}{2 \cdot -1} = -\dfrac{4}{-2} = 2.
+x_0 = -\dfrac{4}{2 \cdot (-1)} = -\dfrac{4}{-2} = 2.
 $$
 
 Så må vi regne ut $y$-koordinaten til ekstremalpunktet:
@@ -734,6 +735,16 @@ p(x) &= 5(x + 4)^2 + 2 \\
 
 ---
 
+
+:::{margin} Tips: Oppgave 7
+Her får du bruk for at når man flytter seg $\Delta x$ enheter langs $x$-aksen fra ekstremalpunktet og funksjonsverdien endrer seg med $\Delta y$, så er 
+
+$$
+(\Delta x)^2 \cdot a = \Delta y
+$$
+:::
+
+
 :::::::::::::::{exercise} Oppgave 7
 ---
 level: 2
@@ -747,17 +758,18 @@ Grafen til en andregradsfunksjon $f$ er vist i figuren nedenfor.
 
 Bestem $f(x)$ på ekstremalpunktsform.
 
-:::{figure} ./figurer/oppgaver/oppgave_7/a.svg
----
-class: no-click, adaptive-figure
-width: 90%
----
+
+:::{plot}
+width: 70%
+function: 3/2 * (x - 2)**2 - 9, f
+ymin: -11
 :::
+
 
 
 ::::{answer}
 $$
-f(x) = (x - 2)^2 - 9.
+f(x) = \dfrac{3}{2}(x - 2)^2 - 9.
 $$
 ::::
 
@@ -769,22 +781,16 @@ $$
 f(x) = a(x - 2)^2 - 9.
 $$
 
-Vi trenger ett punkt til på grafen til $f$ for å bestemme verdien til $a$. Vi ser at grafen skjærer $y$-aksen i $(0, -5)$ som betyr at 
+Øker vi $x$-verdien med $2$ enheter fra ekstremalpunktet, så øker $y$-verdien med $6$ enheter. Altså er $\Delta x = 2$ og $\Delta y = 6$. Da får vi at 
 
 $$
-f(0) = -5 \liff a(0 - 2)^2 - 9 = -5.
+2^2\cdot a = 6 \liff 4a = 6 \liff a = \dfrac{6}{4} = \dfrac{3}{2}
 $$
 
-Det forenkler vi til
+Dermed er
 
 $$
-4a - 9 = -5 \liff 4a = 4 \liff a = 1.
-$$
-
-Dermed er 
-
-$$
-f(x) = (x - 2)^2 - 9.
+f(x) = \dfrac{3}{2}(x - 2)^2 - 9.
 $$
 ::::
 
@@ -797,16 +803,18 @@ Grafen til en andregradsfunksjon $g$ er vist i figuren nedenfor.
 
 Bestem $g(x)$ på ekstremalpunktsform.
 
-:::{figure} ./figurer/oppgaver/oppgave_7/b.svg
----
-class: no-click, adaptive-figure
-width: 90%
----
+
+:::{plot}
+width: 70%
+function: -0.5 * (x + 3)**2 + 2, g
+xmin: -8
+xmax: 4
 :::
+
 
 ::::{answer}
 $$
-g(x) = -2(x + 3)^2 + 2.
+g(x) = -\dfrac{1}{2}(x + 3)^2 + 2.
 $$
 ::::
 
@@ -845,43 +853,39 @@ Grafen til en andregradsfunksjon $h$ er vist i figuren nedenfor.
 
 Bestem $h(x)$ på ekstremalpunktsform.
 
-:::{figure} ./figurer/oppgaver/oppgave_7/c.svg
----
-class: no-click, adaptive-figure
-width: 90%
----
+
+:::{plot}
+width: 70%
+function: 5/2*(x + 3)**2 + 0, h
+ymin: -2
+ymax: 12
 :::
+
 
 
 ::::{answer}
 $$
-h(x) = (x + 1)^2 + 2.
+h(x) = \dfrac{5}{2}(x + 3)^2.
 $$
 ::::
 
 ::::{solution}
-Vi ser at grafen til $h$ har et ekstremalpunkt i $(-1, 2)$ som betyr at 
+Vi ser at grafen til $h$ har et ekstremalpunkt i $(-3, 0)$ som betyr at 
 
 $$
-h(x) = a(x + 1)^2 + 2.
+h(x) = a(x + 3)^2 + 0 = a(x + 3)^2.
 $$
 
-Vi trenger ett punkt til på grafen til $h$ for å bestemme verdien til $a$. Vi ser at grafen skjærer $y$-aksen i $(0, 3)$ som betyr at
+Vi ser at dersom vi øker $x$-verdien med $2$ enheter fra ekstremalpunktet, så øker $y$-verdien med $10$ enheter siden grafen går gjennom punktet $(-1, 10)$. Altså er $\Delta x = 2$ og $\Delta y = 10$. Da får vi at
 
 $$
-h(0) = 3 \liff a(0 + 1)^2 + 2 = 3.
-$$
-
-Vi forenkler dette til
-
-$$
-a + 2 = 3 \liff a = 1.
+2^2 \cdot a = 10 \liff 4a = 10 \liff a = \dfrac{10}{4} = \dfrac{5}{2}.
 $$
 
 Dermed er
 
 $$
-h(x) = (x + 1)^2 + 2.
+h(x) = \dfrac{5}{2}(x + 3)^2.
 $$
 ::::
 
@@ -894,16 +898,17 @@ Grafen til en andregradsfunksjon $p$ er vist i figuren nedenfor.
 
 Bestem $p(x)$ på ekstremalpunktsform.
 
-:::{figure} ./figurer/oppgaver/oppgave_7/d.svg
----
-class: no-click, adaptive-figure
-width: 90%
----
+
+
+:::{plot}
+width: 70%
+function: -2/3*(x - 2)**2 + 4, p
 :::
+
 
 ::::{answer}
 $$
-p(x) = -1(x - 2)^2 + 4.
+p(x) = -\dfrac{2}{3}(x - 2)^2 + 4.
 $$
 ::::
 
@@ -914,22 +919,16 @@ $$
 p(x) = a(x - 2)^2 + 4.
 $$
 
-Vi trenger ett punkt til på grafen til $p$ for å bestemme verdien til $a$. Vi ser at grafen skjærer $y$-aksen i $(0, 0)$ som betyr at
+Øker vi $x$ med $3$ enheter fra ekstremalpunktet, så synker $y$ med $6$ enheter siden grafen går gjennom punktet $(5, -2)$. Altså er $\Delta x = 3$ og $\Delta y = -6$. Da får vi at
 
 $$
-p(0) = 0 \liff a(0 - 2)^2 + 4 = 0.
+3^2 \cdot a = -6 \liff 9a = -6 \liff a = -\dfrac{6}{9} = -\dfrac{2}{3}
 $$
 
-Vi forenkler dette til
+Altså er 
 
 $$
-4a + 4 = 0 \liff 4a = -4 \liff a = -1.
-$$
-
-Dermed er 
-
-$$
-p(x) = -1(x - 2)^2 + 4.
+p(x) = -\dfrac{2}{3}(x - 2)^2 + 4.
 $$
 ::::
 
@@ -961,12 +960,16 @@ $$
 
 Bestem hvilken av grafene nedenfor som viser grafen til $f$.
 
-:::{figure} ./figurer/oppgaver/oppgave_8/a/merged_figure.svg
----
-class: no-click, adaptive-figure
+
+:::{multi-plot}
 width: 100%
----
+functions: (x - 1) ** 2 - 2, -((x - 1) ** 2) - 2, (x + 1) ** 2 - 2, -((x + 1) ** 2) - 2
+function-names: A, B, C, D
+rows: 2
+cols: 2
+ticks: off
 :::
+
 
 ::::{answer}
 Graf C.
@@ -989,12 +992,16 @@ $$
 
 Bestem hvilken av grafene nedenfor som viser grafen til $g$.
 
-:::{figure} ./figurer/oppgaver/oppgave_8/b/merged_figure.svg
----
-class: no-click, adaptive-figure
+
+:::{multi-plot}
 width: 100%
----
+functions: -((x + 2) ** 2) + 1, (x + 2) ** 2 + 1, (x + 1) ** 2 - 1, -((x + 1) ** 2) + 1
+function-names: A, B, C, D
+rows: 2
+cols: 2
+ticks: off
 :::
+
 
 ::::{answer}
 Graf B. 
@@ -1016,12 +1023,18 @@ $$
 
 Bestem hvilken av grafene nedenfor som viser grafen til $h$.
 
-:::{figure} ./figurer/oppgaver/oppgave_8/c/merged_figure.svg
----
-class: no-click, adaptive-figure
+
+:::{multi-plot}
 width: 100%
----
+functions: 2 * (x - 2) ** 2 - 4, 2 * (x + 2) ** 2 - 4, 2 * (x - 2) ** 2 + 4, 2 * (x + 2) ** 2 + 4
+function-names: A, B, C, D
+rows: 2
+cols: 2
+ymin: -10
+ymax: 10
+ticks: off
 :::
+
 
 ::::{answer}
 Graf C.
@@ -1043,12 +1056,19 @@ $$
 
 Bestem hvilken av grafene nedenfor som viser grafen til $p$.
 
-:::{figure} ./figurer/oppgaver/oppgave_8/d/merged_figure.svg
----
-class: no-click, adaptive-figure
+
+
+:::{multi-plot}
 width: 100%
----
+functions: 0.5 * (x + 3) ** 2 + 1, 3 * (x - 3) ** 2 + 1, -0.5 * (x + 3) ** 2 + 1, -3 * (x - 3) ** 2 + 1
+function-names: A, B, C, D
+rows: 2
+cols: 2
+ticks: off
+xmin: -8
+xmax: 8
 :::
+
 
 ::::{answer}
 Graf D.
@@ -1552,10 +1572,139 @@ $$
 
 
 :::{margin} Tips: Oppgave 12
+I denne oppgaven kan du selv velge om du vil bestemme $f(x)$ på standardform eller ekstremalpunktsform. Målet er å øve på å velge den formen som utynytter opplysningene i oppgaven best mulig!
+:::
+
+
+:::::::::::::::{exercise} Oppgave 12
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+I figuren nedenfor vises grafen til en andregradsfunksjon $f$. 
+
+Bestem $f(x)$.
+
+
+:::{plot}
+width: 70%
+function: -(x + 1)**2 + 9, f
+ymax: 11
+point: (0, 8)
+point: (-4, 0)
+point: (2, 0)
+ticks: off
+text: 0, 8, "$(0, 8)$", top-right
+text: -4, 0, "$(-4, 0)$", top-left
+text: 2, 0, "$(2, 0)$", top-right
+:::
+
+
+::::{answer}
+$$
+f(x) = -(x + 1)^2 + 9.
+$$
+::::
+
+
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+I figuren nedenfor vises grafen til en andregradsfunksjon $g$.
+
+Bestem $g(x)$.
+
+
+:::{plot}
+width: 70%
+function: 0.5 * (x - 1)**2 - 2, g
+ticks: off
+point: (1, -2)
+point: (3, 0)
+text: 1, -2, "$(1, -2)$", bottom-center
+text: 3, 0, "$(3, 0)$", bottom-right
+:::
+
+::::{answer}
+$$
+g(x) = \dfrac{1}{2}(x - 1)^2 - 2.
+$$
+::::
+
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+I figuren nedenfor vises grafen til en andregradsfunksjon $h$. 
+
+Bestem $h(x)$.
+
+:::{plot}
+width: 70%
+function: -3/4 * (x + 2)**2 + 8, h
+ticks: off
+ymax: 10
+point: (-2, 8)
+point: (0, 5)
+text: -2, 8, "$(-2, 8)$", top-center
+text: 0, 5, "$(0, 5)$", top-right
+:::
+
+::::{answer}
+$$
+h(x) = -\dfrac{3}{4}(x + 2)^2 + 8
+$$
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} d
+I figuren nedenfor vises grafen til en andregradsfunksjon $p$.
+
+Bestem $p(x)$.
+
+:::{plot}
+width: 70%
+function: x**2 - 4*x - 1, p
+ticks: off
+point: (-1, 4)
+point: (5, 4)
+point: (0, -1)
+text: -1, 4, "$(-1, 4)$", bottom-left
+text: 5, 4, "$(5, 4)$", bottom-right
+text: 0, -1, "$(0, -1)$", bottom-left
+:::
+
+
+::::{answer}
+$$
+p(x) = (x - 2)^2 - 5 = x^2 - 4x - 1.
+$$
+::::
+
+:::::::::::::
+
+
+
+::::::::::::::
+:::::::::::::::
+
+
+---
+
+
+:::{margin} Tips: Oppgave 13
 Gang ut høyre side og sammenlign leddene med $x^2$, $x$ og konstantleddene på hver side av likningen.
 :::
 
-:::::::::::::::{exercise} Oppgave 12
+:::::::::::::::{exercise} Oppgave 13
 ---
 level: 4
 ---
@@ -1611,5 +1760,6 @@ som er $y$-koordinaten til ekstremalpunktet.
 
 
 :::::::::::::::
+
 
 
