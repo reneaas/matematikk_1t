@@ -119,7 +119,7 @@ Alpha / Line Width / Font Size
 ------------------------------
 * ``alpha`` – global transparency for function curves.
 * ``lw`` – line width (float-like).
-* ``fontsize`` – base font size for axes and labels.
+* ``fontsize`` – base font size applied to axes labels, tick labels, and legends.
 
 Ticks & Grid
 ------------
@@ -178,6 +178,11 @@ Axes & Appearance:
 
 Per-Function / Per-Axis:
 * ``domains`` – list of domain specs with optional exclusions ``(a,b) \ {e1,e2}``.
+* ``points`` – per-axis point lists. Each element can be ``None`` (or omitted) or a
+    single tuple ``(x,y)`` or a list/tuple of tuples ``[(x1,y1),(x2,y2)]``. Examples:
+    ``points: [ (0,0), None, [(1,2),(2,3)] ]`` or using bracketless top-level splitting
+    ``points: [(0,0), None, ((1,2),(2,3))]``. Points are drawn as filled blue circles
+    with black edges after the function curve so they appear on top.
 * ``vlines`` / ``hlines`` – vertical / horizontal reference lines.
 * ``xlims`` / ``ylims`` – per-axis limits.
 * ``lines`` – reference lines y = a*x + b or derived from basepoint.
@@ -397,6 +402,7 @@ class MultiPlotDirective(SphinxDirective):
         "xlims": directives.unchanged,  # per-function xlim tuple or None
         "ylims": directives.unchanged,  # per-function ylim tuple or None
         "lines": directives.unchanged,  # per-axis line spec: (a,b) or (a,(x,y)) or None
+        "points": directives.unchanged,  # per-axis point lists: [(x,y),(x,y)] or None
         "xmin": directives.unchanged,
         "xmax": directives.unchanged,
         "ymin": directives.unchanged,
@@ -600,6 +606,7 @@ class MultiPlotDirective(SphinxDirective):
         xlims_raw = _split_top_level(str(merged.get("xlims", "")))
         ylims_raw = _split_top_level(str(merged.get("ylims", "")))
         lines_raw = _split_top_level(str(merged.get("lines", "")))
+        points_raw = _split_top_level(str(merged.get("points", "")))
 
         # Normalize sizes to match number of functions
         n = len(functions)
@@ -613,6 +620,7 @@ class MultiPlotDirective(SphinxDirective):
         xlims_raw = _pad(xlims_raw)
         ylims_raw = _pad(ylims_raw)
         lines_raw = _pad(lines_raw)
+        points_raw = _pad(points_raw)
 
         dom_list: List[Tuple[float, float] | None] = []
         excl_list: List[List[float]] = []
@@ -670,6 +678,62 @@ class MultiPlotDirective(SphinxDirective):
         line_specs: List[Tuple[float, float] | None] = [
             _parse_line_spec(s) for s in lines_raw[:n]
         ]
+
+        # Parse per-axis points. Each entry can be:
+        #  - "None" or empty => no points for that axis
+        #  - a single tuple like (x,y)
+        #  - a list/tuple of tuples: [(x1,y1),(x2,y2)] or ((x1,y1),(x2,y2))
+        #  - a loose comma form: (x1,y1); (x2,y2)
+        def _parse_points_entry(s: str):
+            if not isinstance(s, str):
+                return None
+            st = s.strip()
+            if not st or st.lower() == "none":
+                return None
+            lit = _safe_literal(st)
+            points_list: List[Tuple[float, float]] = []
+
+            def _coerce_pair(obj):
+                try:
+                    if (
+                        isinstance(obj, (list, tuple))
+                        and len(obj) == 2
+                        and all(isinstance(v, (int, float)) for v in obj)
+                    ):
+                        return (float(obj[0]), float(obj[1]))
+                except Exception:
+                    return None
+                return None
+
+            if isinstance(lit, (list, tuple)):
+                # Could be list of pairs or a single pair
+                if len(lit) == 2 and all(isinstance(v, (int, float)) for v in lit):
+                    p = _coerce_pair(lit)
+                    if p:
+                        points_list.append(p)
+                else:
+                    for item in lit:
+                        p = _coerce_pair(item)
+                        if p:
+                            points_list.append(p)
+                return points_list or None
+            # Fallback: find all (x,y) pattern occurrences
+            import re as _re
+
+            matches = _re.findall(
+                r"\(\s*([-+]?\d*\.?\d+(?:[eE][-+]?\d+)?)\s*,\s*([-+]?\d*\.?\d+(?:[eE][-+]?\d+)?)\s*\)",
+                st,
+            )
+            for a, b in matches:
+                try:
+                    points_list.append((float(a), float(b)))
+                except Exception:
+                    pass
+            return points_list or None
+
+        points_vals: List[List[Tuple[float, float]] | None] = [
+            _parse_points_entry(s) for s in points_raw[:n]
+        ]
         explicit_name = merged.get("name")
         debug_mode = "debug" in merged
         rows = int(float(merged.get("rows", 1)))
@@ -701,6 +765,12 @@ class MultiPlotDirective(SphinxDirective):
             "|".join(["" if xl is None else f"{xl[0]},{xl[1]}" for xl in xlim_vals]),
             "|".join(["" if yl is None else f"{yl[0]},{yl[1]}" for yl in ylim_vals]),
             "|".join(["" if ls is None else f"{ls[0]},{ls[1]}" for ls in line_specs]),
+            "|".join(
+                [
+                    "" if pv is None else ";".join([f"{p[0]},{p[1]}" for p in pv])
+                    for pv in points_vals
+                ]
+            ),
         )
         base_name = explicit_name or f"multi_plot_{content_hash}"
 
@@ -744,6 +814,16 @@ class MultiPlotDirective(SphinxDirective):
                     )
                 except Exception:
                     axes_list = axes if isinstance(axes, (list, tuple)) else [axes]
+
+                # Ensure tick label font size matches provided fontsize (legend handled later)
+                try:
+                    for _ax in axes_list:
+                        try:
+                            _ax.tick_params(labelsize=int(fontsize))
+                        except Exception:
+                            pass
+                except Exception:
+                    pass
 
                 # Manual plotting per-axis
                 import numpy as np
@@ -822,6 +902,23 @@ class MultiPlotDirective(SphinxDirective):
                         ax.legend(fontsize=int(fontsize))
                     else:
                         ax.plot(x, y, lw=lw, alpha=alpha)
+                    # Plot per-axis points if provided
+                    try:
+                        pv = points_vals[idx]
+                        if pv:
+                            xs = [p[0] for p in pv]
+                            ys = [p[1] for p in pv]
+                            ax.plot(
+                                xs,
+                                ys,
+                                linestyle="none",
+                                marker="o",
+                                markersize=max(4, min(12, int(fontsize) // 2)),
+                                color="black",
+                                alpha=0.8,
+                            )
+                    except Exception:
+                        pass
                     # Optional line y = a*x + b per axis
                     if line_specs[idx] is not None:
                         try:

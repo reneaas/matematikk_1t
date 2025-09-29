@@ -5,7 +5,7 @@ def main(dirname, save):
     #
     # Define functions
     def f(x):
-        return (x + 1) ** 2 - 3
+        return 2 * x - 1
 
     # List of functions and their labels.
     functions = [f]
@@ -28,13 +28,14 @@ def main(dirname, save):
         figsize=None,
     )
 
-    ax.set_ylabel(
-        f"$s$",
-        fontsize=20,
-        loc="top",
-        rotation="horizontal",
-        labelpad=-50,
-    )
+    ax.axis("off")
+    ax.axis("equal")
+
+    import matplotlib.pyplot as plt
+
+    print(fig.get_size_inches())  # Print current figure size in inches
+    fig.set_size_inches(4, 3)  # Set width and height in inches
+    plt.tight_layout()  # Adjust layout to prevent overlap
 
     # NOTE: Select an appropriate `dirname` to save the figure.
     # The directory `dirname` will be created automatically if it does not exist already.

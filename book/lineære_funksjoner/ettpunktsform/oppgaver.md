@@ -343,14 +343,26 @@ class: no-click, adaptive-figure
 level: 3
 ---
 
-I figuren nedenfor vises grafene til to lineære funksjoner $f$ og $g$. Grafene er parallelle.
+I figuren nedenfor vises grafene til to lineære funksjoner $f$ og $g$. Grafene er parallelle. Et område er fargelagt.
 
-:::{figure} ./figurer/oppgaver/oppgave_5/figur.svg
----
+:::{plot}
 width: 80%
-class: no-click, adaptive-figure
----
+function: -x + 1, f
+function: -(x - 2) + 1, g
+point: (2, 1)
+point: (-1, 2)
+point: (0, 1)
+text: 2, 1, "$(2, 1)$", top-right
+text: -1, 2, "$(-1, 2)$", bottom-left
+text: 0, 1, "$(0, 1)$", bottom-left
+fill-polygon: (0, 1), (1, 0), (3, 0), (0, 3), royalblue, 0.3
+xmin: -3
+ymin: -3
+ymax: 5
+xmax: 4
+ticks: off
 :::
+
 
 ::::::::::::::{tab-set}
 ---

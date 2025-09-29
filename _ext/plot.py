@@ -46,6 +46,9 @@ Presentation and caching
 ------------------------
 - width: CSS width for the inline SVG. Examples: `100%`, `640`, `640px`.
     A bare number is treated as pixels.
+- figsize: `(w, h)` in inches to override the default figure size. Applied
+    at the very end (after all drawing) via `fig.set_size_inches`. If omitted
+    the directive chooses a default based on axis mode. Example: `figsize: (6, 4)`.
 - align: left | center | right (figure alignment).
 - class: extra CSS classes (space separated) applied to the figure.
 - name: stable file/anchor name (otherwise a content hash is used).
@@ -127,6 +130,11 @@ Lines and guides
 - line: draw `y = a*x + b` with optional style/color, or compute `b` from a
     given point: `line: a, (x, y)[, linestyle][, color]`. Defaults to dashed if no
     style is given.
+ - line-segment: `(x1, y1), (x2, y2)[, linestyle][, color]` draws a finite
+    segment between two points. The two point tuples must be first. `linestyle`
+    accepts the same set (solid, dotted, dashed, dashdot). Color and style are
+    optional and order-independent; if omitted, style defaults to solid and
+    color resolves through the same named-color logic used elsewhere.
 
 Polygons and filled regions
 ---------------------------
@@ -146,10 +154,24 @@ Notes on colors for functions:
     becomes (or remains) part of the label unless you explicitly write
     ``color=green``.
 
-Axis commands
--------------
-- axis: repeated commands passed to Matplotlib's `ax.axis`, e.g. `equal`,
-    `off`, `tight`, `image`, `square`. Multiple commands are applied in order.
+Axis option (off / equal)
+------------------------
+Use `axis: off`, `axis: equal`, or `axis: off, equal` (order-independent).
+
+Special handling:
+* If `off` is present, the directive SKIPS the internal `plotmath.plot` call
+    (which would normally create ticks, grid, and labeled axes). Instead it
+    creates a plain Matplotlib figure + axes pair and immediately hides the
+    coordinate system with `ax.axis("off")`. Limits still derive from any
+    provided `xmin`, `xmax`, `ymin`, `ymax`, so functions / polygons / vectors
+    are drawn in the same data space but with no visible frame.
+* If `equal` is present, `ax.axis("equal")` is applied (after hiding if
+    combined with `off`) so that one unit in x equals one unit in y.
+
+You can still supply both: `axis: off, equal`. Additional axis commands beyond
+`off` and `equal` (like `tight` or `image`) continue to work as before when the
+axes are visible (i.e. when `off` is not included), but only `off`/`equal` have
+special creation-time effects.
 
 Captions
 --------
@@ -403,6 +425,7 @@ class PlotDirective(SphinxDirective):
         "grid": directives.unchanged,
         "lw": directives.unchanged,
         "alpha": directives.unchanged,
+        "figsize": directives.unchanged,
         # axis labels
         "xlabel": directives.unchanged,
         "ylabel": directives.unchanged,
@@ -428,6 +451,7 @@ class PlotDirective(SphinxDirective):
             "fill-polygon": [],
             "bar": [],
             "vector": [],
+            "line-segment": [],
         }
         # YAML-like fenced front matter
         if lines and lines[0].strip() == "---":
@@ -505,6 +529,7 @@ class PlotDirective(SphinxDirective):
         fontsize = _f("fontsize", 20)
         lw = _f("lw", 2.5)
         alpha_raw = merged.get("alpha")
+        figsize_raw = merged.get("figsize")
         try:
             alpha = float(alpha_raw) if alpha_raw not in (None, "") else None
         except Exception:
@@ -1103,6 +1128,41 @@ class PlotDirective(SphinxDirective):
             if pts_fp:
                 poly_fill_vals.append((pts_fp, color_fp, alpha_fp))
 
+        # line-segment: (x1,y1), (x2,y2)[, linestyle][, color]  (style/color optional, any order)
+        line_segment_vals: List[
+            Tuple[Tuple[float, float], Tuple[float, float], str | None, str | None]
+        ] = []
+        _allowed_seg_styles = {"solid", "dotted", "dashed", "dashdot"}
+        for ls in lists.get("line-segment", []):
+            s = str(ls).strip()
+            # Extract exactly two point tuples
+            matches = list(tup_pat.finditer(s))
+            if len(matches) < 2:
+                continue
+            try:
+                p1 = (float(matches[0].group(1)), float(matches[0].group(2)))
+                p2 = (float(matches[1].group(1)), float(matches[1].group(2)))
+            except Exception:
+                continue
+            # Remove those two tuples from the string (in reverse order to keep indices valid)
+            rest = s
+            for m in reversed(matches[:2]):
+                a, b = m.span()
+                rest = rest[:a] + rest[b:]
+            rest = re.sub(r",{2,}", ",", rest)
+            tokens = [
+                tok.strip().strip("'\"") for tok in rest.split(",") if tok.strip()
+            ]
+            style_seg: str | None = None
+            color_seg: str | None = None
+            for tok in tokens:
+                low = tok.lower()
+                if low in _allowed_seg_styles and style_seg is None:
+                    style_seg = low
+                elif color_seg is None:
+                    color_seg = tok
+            line_segment_vals.append((p1, p2, style_seg, color_seg))
+
         # axis commands: allow repeated keys like axis: equal / axis: off
         axis_cmds: List[str] = []
         for a in lists.get("axis", []):
@@ -1142,6 +1202,38 @@ class PlotDirective(SphinxDirective):
 
         explicit_name = merged.get("name")
         debug_mode = "debug" in merged
+
+        # Parse figsize early (string like (6,4) or [6,4]) but apply at end
+        def _parse_figsize(val: Any):
+            if not isinstance(val, str):
+                return None
+            s = val.strip()
+            if not s:
+                return None
+            lit = _safe_literal(s)
+            if isinstance(lit, (list, tuple)) and len(lit) >= 2:
+                try:
+                    w = float(lit[0])
+                    h = float(lit[1])
+                    if w > 0 and h > 0:
+                        return (w, h)
+                except Exception:
+                    return None
+            # fallback simple regex (a,b)
+            m = re.match(
+                r"\(\s*([0-9]+(?:\.[0-9]+)?)\s*,\s*([0-9]+(?:\.[0-9]+)?)\s*\)", s
+            )
+            if m:
+                try:
+                    w = float(m.group(1))
+                    h = float(m.group(2))
+                    if w > 0 and h > 0:
+                        return (w, h)
+                except Exception:
+                    return None
+            return None
+
+        parsed_figsize = _parse_figsize(figsize_raw)
 
         # Hash includes all content affecting the image
         content_hash = _hash_key(
@@ -1188,6 +1280,12 @@ class PlotDirective(SphinxDirective):
             ),
             ";".join(
                 [
+                    f"{p1[0]},{p1[1]}->{p2[0]},{p2[1]}:{(st or '')}:{(col or '')}"
+                    for (p1, p2, st, col) in line_segment_vals
+                ]
+            ),
+            ";".join(
+                [
                     f"{xy[0]},{xy[1]}:{length}:{orientation}"
                     for (xy, length, orientation) in bar_vals
                 ]
@@ -1219,6 +1317,7 @@ class PlotDirective(SphinxDirective):
             str(merged.get("ylabel", "")),
             int(bool(ticks_flag)),
             int(bool(grid_flag)),
+            str(parsed_figsize),
         )
         base_name = explicit_name or f"plot_{content_hash}"
 
@@ -1234,22 +1333,54 @@ class PlotDirective(SphinxDirective):
 
             matplotlib.use("Agg")
             try:
-                # Create bare axes using plotmath.plot with no functions
-                fig, ax = plotmath.plot(
-                    functions=[],
-                    fn_labels=False,
-                    xmin=xmin,
-                    xmax=xmax,
-                    ymin=ymin,
-                    ymax=ymax,
-                    xstep=xstep,
-                    ystep=ystep,
-                    ticks=ticks_flag,
-                    grid=grid_flag,
-                    lw=lw,
-                    alpha=alpha,
-                    fontsize=fontsize,
-                )
+                # Determine axis flags early
+                axis_off = any(str(c).lower() == "off" for c in axis_cmds)
+                axis_equal = any(str(c).lower() == "equal" for c in axis_cmds)
+
+                if axis_off:
+                    # Create a plain figure/axes (no plotmath.plot) so nothing (ticks/grid)
+                    # is drawn before we hide the axes.
+                    import matplotlib.pyplot as _plt
+
+                    fig, ax = _plt.subplots()
+                    # Provide a reasonable default size similar to plotmath defaults
+                    fig.set_size_inches(6.0, 6.0)
+                    ax.set_xlim(xmin, xmax)
+                    ax.set_ylim(ymin, ymax)
+                    # Hide coordinate system
+                    try:
+                        ax.axis("off")
+                    except Exception:
+                        pass
+                    # Apply equal aspect if requested
+                    if axis_equal:
+                        try:
+                            ax.axis("equal")
+                        except Exception:
+                            pass
+                else:
+                    # Standard path: delegate axis setup (ticks, grid, labels) to plotmath
+                    fig, ax = plotmath.plot(
+                        functions=[],
+                        fn_labels=False,
+                        xmin=xmin,
+                        xmax=xmax,
+                        ymin=ymin,
+                        ymax=ymax,
+                        xstep=xstep,
+                        ystep=ystep,
+                        ticks=ticks_flag,
+                        grid=grid_flag,
+                        lw=lw,
+                        alpha=alpha,
+                        fontsize=fontsize,
+                    )
+                    # If equal requested (without off), apply after plot creation
+                    if axis_equal:
+                        try:
+                            ax.axis("equal")
+                        except Exception:
+                            pass
 
                 # Plot requested functions directly on ax, with optional labels, per-function domains, and exclusions
                 if functions:
@@ -1563,6 +1694,54 @@ class PlotDirective(SphinxDirective):
                             x0 + dx, y0 + dy, text, fontsize=int(fontsize), ha=ha, va=va
                         )
 
+                # line segments (draw before vlines/hlines so guides overlay if needed)
+                if "line_segment_vals" in locals() and line_segment_vals:
+                    style_map_seg = {
+                        "solid": "-",
+                        "dotted": ":",
+                        "dashed": "--",
+                        "dashdot": "-.",
+                    }
+                    default_seg_color = plotmath.COLORS.get("red")
+                    try:
+                        from matplotlib import colors as _mcolors_seg
+                    except Exception:
+                        _mcolors_seg = None
+                    for p1, p2, st_seg, col_seg in line_segment_vals:
+                        (x1s, y1s), (x2s, y2s) = p1, p2
+                        ls_use = style_map_seg.get((st_seg or "solid").lower(), "-")
+                        if col_seg:
+                            _mapped_seg = plotmath.COLORS.get(col_seg)
+                        else:
+                            _mapped_seg = None
+                        col_use = (
+                            _mapped_seg if _mapped_seg else col_seg
+                        ) or default_seg_color
+                        if _mcolors_seg is not None:
+                            try:
+                                _ = _mcolors_seg.to_rgba(col_use)
+                            except Exception:
+                                col_use = default_seg_color
+                        try:
+                            ax.plot(
+                                [x1s, x2s],
+                                [y1s, y2s],
+                                linestyle=ls_use,
+                                color=col_use,
+                                lw=lw,
+                            )
+                        except Exception:
+                            try:
+                                ax.plot(
+                                    [x1s, x2s],
+                                    [y1s, y2s],
+                                    linestyle=ls_use,
+                                    color=default_seg_color,
+                                    lw=lw,
+                                )
+                            except Exception:
+                                pass
+
                 # vlines
                 style_map = {
                     "solid": "-",
@@ -1681,7 +1860,9 @@ class PlotDirective(SphinxDirective):
                 for x0, y0 in point_vals:
                     ax.plot(x0, y0, "o", markersize=10, alpha=0.8, color="black")
 
-                # axis commands (run sequentially)
+                # axis commands (run sequentially) — retain for legacy commands; we
+                # skip reapplying 'off'/'equal' earlier logic is already applied but
+                # they are harmless if repeated.
                 for cmd in axis_cmds:
                     try:
                         ax.axis(cmd)
@@ -1741,6 +1922,12 @@ class PlotDirective(SphinxDirective):
                     except Exception:
                         ax.set_xlabel(xl_text, fontsize=int(fontsize))
 
+                # Apply user figsize at the very end if provided
+                if parsed_figsize is not None:
+                    try:
+                        fig.set_size_inches(*parsed_figsize)
+                    except Exception:
+                        pass
                 fig.savefig(
                     abs_svg, format="svg", bbox_inches="tight", transparent=True
                 )

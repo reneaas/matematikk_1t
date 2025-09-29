@@ -1005,12 +1005,49 @@ Båten skal kjøre innom land på en kystlinje på et punkt $B$ for å hente fer
 
 Kystlinjen er $9$ km lang. Øy $A$ ligger $2$ km fra land og øy $C$ ligger $4$ km fra land. Se figuren nedenfor.
 
-
+<!-- 
 :::{figure} ./figurer/oppgaver/oppgave_7/figur.svg
 ---
 width: 70%
 class: no-click, adaptive-figure
 ---
+::: -->
+
+
+
+:::{plot}
+width: 70%
+axis: off
+xmin: -1
+xmax: 10
+ymax: 5
+ymin: -2
+hline: 0, -1, 10, solid
+vline: 0, 0, 2, dashed, gray
+vline: 9, 0, 4, dashed, gray
+point: (0, 2)
+point: (4, 0)
+point: (9, 4)
+line-segment: (0, 2), (4, 0), black, solid
+line-segment: (4, 0), (9, 4), black, solid
+vline: 0.65, 0, 0.4, solid, black
+hline: 0.4, 0, 0.65, solid, black
+vline: 8.35, 0, 0.4, solid, black
+hline: 0.4, 9, 8.35, solid, black
+text: 4, 0, "$B$", top-center
+text: 0, 2, "$A$", top-left
+text: 9, 4, "$C$", top-right
+lw: 1.5
+point: (0, 0)
+text: 0, -0.2, "$S$", bottom-left
+bar: (0, -0.3), 4, horizontal
+text: 2, -0.3, "$x$ km", bottom-center
+bar: (0, -0.8), 9, horizontal
+text: 4.5, -0.8, "9 km", bottom-center
+bar: (-0.5, 0), 2, vertical
+text: -0.5, 1, "2 km", center-left
+bar: (9.5, 0), 4, vertical
+text: 9.5, 2, "4 km", center-right
 :::
 
 En strandkiosk $S$ er plassert på starten av kystlinja.
@@ -1138,17 +1175,37 @@ Hvor lang tid tar det før lengden av strålen og høyden på vannstanden er lik
 level: 3
 ---
 
-Anna skal reise fra en holme som ligger $8$ km fra strandkanten. $12$ km fra det punktet på stranden som ligger nærmest holmen, ligger det en hytte. Se figuren nedenfor.
-
-:::{figure} ./figurer/oppgaver/oppgave_9/figur.svg
----
-width: 80%
-class: no-click, adaptive-figure
----
-:::
-
+Anna skal reise fra en holme som ligger $8$ km fra strandkanten. $12$ km fra det punktet på stranden som ligger nærmest holmen, ligger det en hytte. Se figuren nedenfor. 
 
 Anna kan ro med en fart på $2$ km/t og gå med en fart på $6$ km/t.
+
+:::{plot}
+width: 70%
+axis: off
+xmin: -1
+xmax: 13
+ymax: 10
+ymin: -2
+point: (0, 8)
+point: (4, 0)
+point: (12, 0)
+line-segment: (0, 8), (4, 0), blue, solid
+hline: 0, -1, 13, solid, gray
+vline: 0, 0, 8, dashed, gray
+hline: 0, 4, 12, solid, red
+text: 0, 8, "Holme", top-center
+text: 12, 0, "Hytte", top-center
+text: 4, 0, "$\ell$", top-right
+bar: (-0.5, 0), 8, vertical
+text: -0.5, 4, "8 km", center-left
+bar: (0, -0.5), 4, horizontal
+text: 2, -0.5, "$x$ km", bottom-center
+bar: (0, -1.4), 12, horizontal
+text: 6, -1.4, "12 km", bottom-center
+text: 2, 4, "I vann", top-right
+text: 8, -0.2, "På land", bottom-center
+:::
+
 
 :::::::::::::::{tab-set}
 ---
@@ -1344,12 +1401,28 @@ layout: sidebar
 
 En takrenne skal lages i form av et åpent trapes ved å brette to sidekanter fra et flatt rektangel slik at alle sidelengder i takrenna er $10$ cm og takrennen har en høyde på $x$ cm. Se figuren nedenfor.
 
-:::{figure} ./figurer/oppgaver/oppgave_10/figur.svg
----
-width: 100%
-class: no-click, adaptive-figure
----
+
+:::{plot}
+width: 70%
+axis: off
+xmin: -8.5
+xmax: 18.5
+ymin: -2
+ymax: 8
+line-segment: (0, 0), (10, 0), black, solid
+line-segment: (0, 0), (-8, 6), black, solid
+line-segment: (10, 0), (18, 6), black, solid
+text: 5, 0, "10 cm", bottom-center
+text: -4, 3, "10 cm", center-left
+text: 14.2, 3, "10 cm", center-right
+hline: 6, -8, 18, dashed, gray
+vline: 0, 0, 6, dashed, gray
+vline: 10, 0, 6, dashed, gray
+text: 0, 3, "$x$ cm", center-right
+lw: 1.5
+figsize: (8, 4)
 :::
+
 
 
 :::::::::::::::{tab-set}
@@ -1414,12 +1487,33 @@ level: 3
 ---
 
 
-:::{figure} ./figurer/oppgaver/oppgave_11/figur.svg
----
-width: 80%
-class: no-click, adaptive-figure
----
+:::{plot}
+width: 70%
+axis: off, equal
+xmin: -0.5
+xmax: 10.5
+ymax: 3
+ymin: -1
+lw: 1.5
+hline: 0, 0, 10, solid, black
+vline: 3, 0, 3, solid, black
+vline: 7, 0, 3, solid, black
+line-segment: (0, 0), (3, 3), black, solid
+line-segment: (7, 3), (10, 0), black, solid
+line-segment: (3, 3), (7, 3), black, solid
+text: 1.5, 0, "$x$", bottom-center
+text: 5, 0, "$y$", bottom-center
+text: 8.5, 0, "$x$", bottom-center
+text: 3, 1.5, "$x$", center-right
+text: 7, 1.5, "$x$", center-left
+text: 5, 3, "$y$", top-center
+vline: 2.6, 0, 0.4, solid, black
+hline: 0.4, 2.6, 3, solid, black
+hline: 0.4, 7, 7.4, solid, black
+vline: 7.4, 0, 0.4, solid, black
+figsize: (7.5, 3)
 :::
+
 
 
 Else skal gjerde inn tre områder for å lage en grønnsakshage. Det største området skal ha form som et rektangel og de to minste som likebeinte rettvinklede trekanter. Se figuren ovenfor.

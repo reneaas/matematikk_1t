@@ -527,18 +527,37 @@ Nedenfor vises 4 figurer der én av dem viser grafen til $f$.
 Bestem hvilken graf som hører til $f$. 
 
 
+
+<!-- ::::{clickable-figure} ./figurer/oppgaver/oppgave_4/merged_figure.svg
+---
+width: 100%
+---
+:::: -->
+
+
+:::{multi-plot}
+width: 100%
+functions: (x - 2)**2 / (x + 2), -(x - 2)**2 / (x + 2), (x + 2)**2 / (x - 2), -(x + 2)**2 / (x - 2)
+function-names: A, B, C, D
+rows: 2
+cols: 2
+ticks: off
+xmin: -16
+xmax: 16
+ymin: -40
+ymax: 40
+vlines: -2, -2, 2, 2
+lines: [(1,-6), (-1, 6), (1, 6), (-1,-6)]
+points: [(2, 0), (2, 0), (-2, 0), (-2, 0)]
+:::
+
+
+
 ::::{admonition} Fasit
 ---
 class: answer, dropdown
 ---
 Graf **C**. 
-::::
-
-
-::::{clickable-figure} ./figurer/oppgaver/oppgave_4/merged_figure.svg
----
-width: 100%
----
 ::::
 
 
@@ -557,6 +576,27 @@ f(x) = \dfrac{x^2 - 2x - 3}{x^2 + 2x + 1} \quad \text{og} \quad g(x) = \dfrac{x^
 $$
 
 Nedenfor viser 4 figurer der én av dem viser grafen til $f$ og én av dem viser grafen til $g$.
+
+
+
+:::{multi-plot}
+width: 100%
+functions: (x - 3) * (x + 1) / (x - 1)**2, (x**2 - 2*x - 3) / (x**2 + 2*x + 1), (x - 1)**2 / ((x + 1) * (x - 3)), -(x - 3) * (x + 1) / (x - 1)**2
+function-names: A, B, C, D
+rows: 2
+cols: 2
+ticks: off
+xmin: -10
+xmax: 10
+ymin: -10
+ymax: 10
+vlines: 1, -1, (-1, 3), 1
+hlines: 1, 1, 1, -1
+points: [((-1, 0), (3, 0)), (3, 0), (1, 0), ((-1, 0), (3, 0))]
+:::
+
+
+
 
 ::::::::::::::{tab-set}
 ---
@@ -588,13 +628,6 @@ Graf **C**.
 :::::::::::::
 ::::::::::::::
 
-
-::::{clickable-figure} ./figurer/oppgaver/oppgave_5/merged_figure.svg
----
-width: 100%
----
-::::
-
 :::::::::::::::
 
 ---
@@ -608,6 +641,26 @@ f(x) = \dfrac{x - 2}{x^2 + 4x +4} \quad \text{og} \quad g(x) = \dfrac{x^2 + 2x +
 $$
 
 Nedenfor vises 4 figurer. Én av dem viser grafen til $f$ og én av dem viser grafen til $g$.
+
+
+
+:::{multi-plot}
+width: 100%
+functions: (x - 2) / (x + 2)**2, (x + 2) / (x - 2)**2, (x + 1)**2 / (x - 1), -(x + 1)**2 / (x - 1)
+function-names: A, B, C, D
+rows: 2
+cols: 2
+ticks: off
+xmin: -10
+xmax: 10
+ymin: -20
+ymax: 20
+vlines: -2, 2, 1, 1
+lines: [None, None, (1, 3), (-1, -3)]
+points: [(2, 0), (-2, 0), (-1, 0), (-1, 0)]
+:::
+
+
 
 ::::::::::::::{tab-set}
 ---
@@ -639,13 +692,6 @@ Graf **C**.
 :::::::::::::
 
 ::::::::::::::
-
-
-::::{clickable-figure} ./figurer/oppgaver/oppgave_6/merged_figure.svg
----
-width: 100%
----
-::::
 
 :::::::::::::::
 
@@ -777,12 +823,13 @@ Tegn et fortegnsskjema for $f(x)$.
 ---
 class: answer, dropdown
 ---
-:::{figure} ./figurer/oppgaver/oppgave_7/d.svg
----
+
+
+:::{signchart}
 width: 100%
-class: no-click, adaptive-figure
----
+function: (x**2 - 16) / ((x + 2) * (x - 2)), f(x)
 :::
+
 
 ::::
 
@@ -801,12 +848,29 @@ Lag en skisse av grafen til $f$. Skissen skal inneholde:
 ---
 class: answer, dropdown
 ---
-:::{figure} ./figurer/oppgaver/oppgave_7/e.svg
----
-width: 100%
-class: no-click, adaptive-figure
----
+
+
+:::{plot}
+width: 80%
+function: (x**2 - 16) / ((x + 2) * (x - 2)), f
+ticks: off
+xmin: -10
+xmax: 10
+ymax: 10
+vline: -2
+vline: 2
+hline: 1
+text: 2, 6, "$x = 2$", center-right
+text: -2, 6, "$x = -2$", center-left
+text: 4, 1, "$y = 1$", top-center
+point: (4, 0)
+point: (-4, 0)
+text: 4, 0, "$(4,0)$", bottom-right
+text: -4, 0, "$(-4,0)$", bottom-left
 :::
+
+
+
 ::::
 
 
@@ -832,11 +896,10 @@ class: solution, dropdown
 ---
 Vi bruker fortegnslinja til $f(x)$ som vi tegnet i **d** til å bestemme hvor $f(x) \geq 0$:
 
-:::{figure} ./figurer/oppgaver/oppgave_7/f.svg
----
+:::{signchart}
 width: 100%
-class: no-click, adaptive-figure
----
+function: (x**2 - 16) / ((x + 2) * (x - 2)), f(x)
+factors: false
 :::
 
 Fra fortegnslinja til $f(x)$ kan vi se at $f(x) \geq 0$ når 
