@@ -439,7 +439,10 @@ $$
 :::::::::::::::
 
 
+
 ---
+
+
 
 
 :::::::::::::::{exercise} Oppgave 4
@@ -451,25 +454,27 @@ level: 1
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
-:::{figure} ./figurer/oppgaver/oppgave_4/a/graf.svg
----
-class: no-click, adaptive-figure
-width: 100%
+
+:::{plot}
+width: 380
+function: (x - 1)**2 + 2, f
 align: right
----
+lw: 3
+fontsize: 24
 :::
 
-Til høyre vises grafen til en andregradsfunksjon $f$.
+Til høyre vises grafen til en andregradsfunksjon $f$. 
+
+Bestem hvilken av grafene nedenfor som viser grafen til den deriverte $f'$.
 
 
-Bestem hvilken av grafene nedenfor som viser grafen til den deriverte $f'$. 
-
-
-:::{figure} ./figurer/oppgaver/oppgave_4/a/merged_figure.svg
----
-class: no-click, adaptive-figure
+:::{multi-plot}
 width: 100%
----
+functions: -2*x - 2, 2*x - 2, 2*x + 2, -2*x + 2
+function-names: A, B, C, D
+rows: 2
+cols: 2
+fontsize: 18
 :::
 
 
@@ -491,26 +496,32 @@ Altså er graf B den riktige grafen til $f'$.
 
 :::::::::::::{tab-item} b
 
-:::{figure} ./figurer/oppgaver/oppgave_4/b/graf.svg
----
-class: no-click, adaptive-figure
-width: 100%
+:::{plot}
+width: 380
+function: -((x + 2) ** 2) - 1, g
 align: right
----
+fontsize: 24
+lw: 3
 :::
 
-Til høyre vises grafen til en andregradsfunksjon $g$.
-
-Bestem hvilken av grafene nedenfor som viser grafen til den deriverte $g'$. 
 
 
+Figuren til høyre vises grafen til en andregradsfunksjon $g$.
 
-:::{figure} ./figurer/oppgaver/oppgave_4/b/merged_figure.svg
----
-class: no-click, adaptive-figure
+
+Bestem hvilken av grafene nedenfor som viser grafen til den deriverte $g'$.
+
+
+
+:::{multi-plot}
 width: 100%
----
+functions: 2 * (x - 2), -2 * (x - 2), 2 * (x + 2), -2 * (x + 2)
+function-names: A, B, C, D
+rows: 2
+cols: 2
+fontsize: 18
 :::
+
 
 ::::{answer}
 Graf D.
@@ -529,25 +540,35 @@ Altså er graf D den riktige grafen til $g'$.
 
 
 :::::::::::::{tab-item} c
-:::{figure} ./figurer/oppgaver/oppgave_4/c/graf.svg
----
-class: no-click, adaptive-figure
-width: 100%
+
+:::{plot}
+width: 380
+function: (x - 2)**2 - 9, h
 align: right
----
+fontsize: 24
+lw: 3
+ymin: -10
+ymax: 4
 :::
 
-Til høyre vises grafen til en andregradsfunksjon $h$.
-
-Bestem hvilken av grafene nedenfor som viser grafen til den deriverte $h'$. 
 
 
-:::{figure} ./figurer/oppgaver/oppgave_4/c/merged_figure.svg
----
-class: no-click, adaptive-figure
+Figuren til høyre vises grafen til en andregradsfunksjon $g$.
+
+
+Bestem hvilken av grafene nedenfor som viser grafen til den deriverte $g'$.
+
+
+
+:::{multi-plot}
 width: 100%
----
+functions: 2 * (x - 2), -2 * (x - 2), 2 * (x + 2), -2 * (x + 2)
+function-names: A, B, C, D
+rows: 2
+cols: 2
+fontsize: 18
 :::
+
 
 ::::{answer}
 Graf A.
@@ -566,25 +587,31 @@ Altså er graf A den riktige grafen til $h'$.
 
 
 :::::::::::::{tab-item} d
-:::{figure} ./figurer/oppgaver/oppgave_4/d/graf.svg
----
-class: no-click, adaptive-figure
-width: 100%
+
+:::{plot}
+width: 380
+function: -x**2 + 4, p
 align: right
----
+fontsize: 24
+lw: 3
 :::
 
-Til høyre vises grafen til en andregradsfunksjon $p$.
-
-Bestem hvilken av grafene nedenfor som viser grafen til den deriverte $p'$. 
 
 
+Figuren til høyre vises grafen til en andregradsfunksjon $g$.
 
-:::{figure} ./figurer/oppgaver/oppgave_4/d/merged_figure.svg
----
-class: no-click, adaptive-figure
+
+Bestem hvilken av grafene nedenfor som viser grafen til den deriverte $g'$.
+
+
+
+:::{multi-plot}
 width: 100%
----
+functions: 2 * (x - 2), -2 * x, 2 * x, -2 * (x + 2)
+function-names: A, B, C, D
+rows: 2
+cols: 2
+fontsize: 18
 :::
 
 

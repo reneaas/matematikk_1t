@@ -1,18 +1,81 @@
 # Dev
 
 
+
+
+
+:::::::::::::::{exercise} Oppgave 1
+
+I figuren nedenfor ser du en graf.
+
 :::{plot}
-width: 80%
-function: -2*x + 4, f
-function: x - 5, g
+width: 70%
+function: 2*x - 1, f
 :::
+
+
+:::::::::::::::
+
+
+
+:::::::::::::::{exercise} Oppgave 2
+
+:::{plot}
+width: 400
+function: 2*x + 1, f
+align: right
+fontsize: 26
+nocache:
+lw: 3.5
+:::
+
+I figuren til høyre ser du grafen til en lineær funksjon $f$.
+
+Bestem $f(x)$. 
+
+
+
+
+:::::::::::::::
+
+
+
+:::::::::::::::{exercise} Oppgave 2
+
+:::{figure} ./figurer/figur.svg
+---
+class: no-click, adaptive-figure
+width: 100%
+align: right
+---
+:::
+
+I figuren til høyre ser du grafen til en lineær funksjon $f$.
+
+Bestem $f(x)$. 
+
+
+
+
+:::::::::::::::
+
+
+
+---
+
+
+
+:::::::::::::::{exercise} Oppgave 3
 
 
 :::{plot}
 width: 70%
-vector: 1, 1, 2, 3
-vector: 2, 1, -1, 0, red
-vector: 0, 0, 0, 1, blue
-vector: -2, -1, 3, 1
-nocache:
+axis: off, equal
+hline: 0, -6, 6, solid
+vline: 0, 0, 2, dashed, gray
+point: (0, 2)
 :::
+
+
+
+:::::::::::::::

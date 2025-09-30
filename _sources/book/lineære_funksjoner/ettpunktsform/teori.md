@@ -18,17 +18,28 @@ En lineær funksjon $f$ kan skrives på ettpunktsform som følger:
 
 :::{figure} ./figurer/teori/algebraisk_representasjon/ettpunktsform.svg
 ---
-width: 70%
+width: 60%
 class: no-click, adaptive-figure
 ---
 :::
 
-:::{figure} ./figurer/teori/grafisk_representasjon/figur.svg
----
-width: 80%
-class: no-click, adaptive-figure
----
+
+:::{plot}
+width: 60%
+function: -x + 5, f
+hline: 4, 1, 2
+vline: 2, 4, 3
+xmin: -1
+xmax: 6
+ymin: -1
+ymax: 7
+text: 1.5, 4, $1$, top-center
+text: 2, 3.5, $a$, center-right
+point: (3, 2)
+text: 3, 2, "$(x_0, y_0)$", top-right
+ticks: off
 :::
+
 
 
 :::::::::::::::
@@ -103,11 +114,14 @@ Hvilken av grafene nedenfor viser grafen til $f$?
 
 
 
-:::{clickable-figure} ./figurer/underveisoppgaver/underveisoppgave_1/merged_figure.svg
----
+:::{multi-plot}
 width: 100%
----
+functions: -2*x + 5, 2*x + 1, 2*x + 5, x + 2
+function-names: A, B, C, D
+rows: 2
+cols: 2
 :::
+
 
 
 ::::{answer}
@@ -126,33 +140,65 @@ Dermed er graf B grafen til $f$.
 ---
 
 
-:::::::::::::::{underveisoppgave} Underveisoppgave 2
-Nedenfor vises grafen til en lineær funksjon $f$.
-
-
-Bestem $f(x)$ på ettpunktsform med utgangspunkt i punktet på grafen når $x_0 = 1$. 
-
-:::{figure} ./figurer/underveisoppgaver/underveisoppgave_2/figur.svg
----
-width: 80%
-class: no-click, adaptive-figure
----
+:::::::::::::::{exercise} Underveisoppgave 2
+:::{plot}
+width: 380
+function: -3*(x - 1) - 2, f
+align: right
+fontsize: 26
+lw: 3.5
 :::
 
-::::{answer}
+Til høyre vises grafen til en lineær funksjon $f$.
+
+
+Hvilken av uttrykkene nedenfor viser $f(x)$?
+
+
+:::{clear}
+:::
+
+:::::{grid} 1 2 2 2
+::::{grid-item-card} A
 $$
-f(x) = -3 \cdot (x - 1) - 4
+f(x) = -3 \cdot (x - 1) - 2
 $$
 ::::
 
+::::{grid-item-card} B
+$$
+f(x) = 3 \cdot (x - 1) - 2
+$$
+::::
+
+::::{grid-item-card} C
+$$
+f(x) = -3 \cdot (x + 1) - 2
+$$
+::::
+
+::::{grid-item-card} D
+$$
+f(x) = -3 \cdot (x - 1) + 2
+$$
+::::
+
+
+:::::
+
+
+::::{answer}
+A
+::::
+
 ::::{solution}
-Stigningstallet til grafen kan vi lese av som $a = -3$ ved å se at funksjonsverdien til $f(x)$ synker med $3$ når $x$ øker med $1$. For eksempel kan vi se dette ved at grafen går gjennom punktene $(-1, 2)$ og $(0, -1)$. 
-
-Når $x_0 = 1$ er $y_0 = -4$ som betyr at vi kan skrive $f(x)$ på ettpunktsform som:
+Vi ser fra grafen til $f$ at når vi øker $x$ med $1$, så synker $f(x)$ med $-3$. Dermed er stigningstallet $a = -3$. Vi kan også se at grafen går gjennom punktet $(1, -2)$ som betyr at 
 
 $$
-f(x) = a \cdot (x - x_0) + y_0 = -3 \cdot (x - 1) - 4
+f(x) = a(x - x_0) + y_0 = -3 \cdot (x - 1) - 2
 $$
+
+som passer med svaralternativ A.
 ::::
 
 
