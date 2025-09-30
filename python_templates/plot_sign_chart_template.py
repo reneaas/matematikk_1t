@@ -4,11 +4,12 @@ import signchart
 def main(dirname, save):
 
     f = "x**2 - 4"
+    f = "(x - 2)*(x + 2)*(x - 1)**2/(x + 1)**3"
 
     signchart.plot(
         f=f,
         fn_name="f(x)",
-        include_factors=True,
+        figsize=(6, 4),
     )
 
     if save:
@@ -36,4 +37,4 @@ if __name__ == "__main__":
 
     dirname = "/".join(parts)
 
-    main(dirname=dirname, save=True)
+    main(dirname=dirname, save=False)

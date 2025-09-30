@@ -2054,3 +2054,6 @@ som gir nullpunkt og ekstremalpunkt i $(0, 0)$. Et eksempel på en slik funksjon
 
 ::::::::::::::
 :::::::::::::::
+
+
+

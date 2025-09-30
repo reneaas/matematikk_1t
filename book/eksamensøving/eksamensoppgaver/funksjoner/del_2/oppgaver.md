@@ -1661,6 +1661,172 @@ Fra utskriften kan vi se at $T(60)$ er størst som betyr at $x = 60\degree$ gir 
 
 
 
+---
+
+
+
+
+:::::::::::::::{exercise} Oppgave 15 (Høst 2022)
+
+:::{plot}
+width: 80%
+align: right
+ticks: off
+axis: off
+xmin: -20
+xmax: 160
+ymax: 80
+ymin: -1
+lw: 1.5
+figsize: (3, 3)
+function: 70/75**2 * (x - 75)**2, (0, 150), blue
+hline: 70, 0, 150, solid, blue
+hline: 0, 0, 75, dashed, gray
+bar: (-10, 0), 70, vertical
+text: -10, 35, "70 cm", center-left
+bar: (0, 75), 150, horizontal
+text: 75, 75, "150 cm", top-center
+:::
+
+En bedrift produserer gardiner. Hvert gardin skal ha form som en parabel. Høyden skal være 70 cm og lengden øverst skal være 150 cm. 
+
+Se figuren til høyre. 
+
+:::{clear}
+:::
+
+Bedriften vil klippe ut gardinene fra tøyruller som er 140 cm brede. For å bruke så lite tøy som mulig vil en maskin klippe ut gardinene slik figuren nedenfor viser.
+
+:::{plot}
+width: 80%
+ticks: off
+axis: off
+xmin: -20
+xmax: 500
+ymax: 100
+ymin: -100
+lw: 1
+figsize: (7, 5)
+function: 70/75**2 * (x - 75)**2, (0, 150), blue
+function: -70/75**2 * (x - (75 * sqrt(2) + 75))**2 + 70, (106.06601717798213, 256.06601717798213), blue
+function: 70/75**2 * (x - (2 * 75 * sqrt(2) + 75))**2, (212.13203435596427, 362.13203435596427), blue
+function: -70/75**2 * (x - (3 * 75 * sqrt(2) + 75))**2 + 70, (318.1980515339464, 468.1980515339464), blue
+function: -70/75**2 * (x - 75)**2, (0, 150), blue
+function: 70/75**2 * (x - (75 * sqrt(2) + 75))**2 - 70, (106.06601717798213, 256.06601717798213), blue
+function: -70/75**2 * (x - (2 * 75 * sqrt(2) + 75))**2, (212.13203435596427, 362.13203435596427), blue
+function: 70/75**2 * (x - (3 * 75 * sqrt(2) + 75))**2 - 70, (318.1980515339464, 468.1980515339464), blue
+vline: 0, -70, 70, solid, blue
+hline: -70, 0, 468.1980515339464, solid, blue
+vline: 468.1980515339464, -70, 70, solid, blue
+hline: 70, 0, 468.1980515339464, solid, blue
+hline: 0, 106.06601717798213, 256.06601717798213, solid, blue
+hline: 0, 318.1980515339464, 468.1980515339464, solid, blue
+hline: 35, 0, 468.1980515339464, dashed, gray
+hline: 0, 0, 468.1980515339464, dashed, gray
+bar: (0, 80), 150, horizontal
+text: 75, 85, "150 cm", top-center
+bar: (-12, 35), 35, vertical 
+text: -12, 52.5, "35 cm", center-left
+bar: (480, 0), 70, vertical
+text: 480, 35, "70 cm", center-right
+:::
+
+
+:::{cas-popup}
+---
+layout: sidebar
+---
+:::
+
+
+Gjør beregninger, og finn ut hvor langt tøystykke bedriften minst må bruke for å lage åtte gardiner.
+
+
+
+:::{clear}
+:::
+
+
+::::{answer}
+468.2 cm.
+::::
+
+::::{solution}
+Vi velger oss et koordinatssystem slik at $x$-aksen ligger midt på gardinen. Så velger vi $x = 0$ til å samsvare med venstre side av gardinen. La $f(x)$ være funksjonsuttrykket for den første parabelen øverst til venstre i tøystykket. 
+Da vet vi at $f(0) = 70$ og $f(150) = 70.$ Siden funksjonsverdiene er de samme, må symmetrilinja ligge midt mellom de to punktene. Da kan vi bestemme symmetrilinja ved å ta gjennomsnittet av $x$-koordinatene: 
+
+$$
+x_0 = \dfrac{0 + 150}{2} = 75.
+$$
+
+Ekstremalpunktet til $f$ ligger da på $x$-aksen i $(75, 0)$. Dermed kan vi skrive $f(x)$ på ekstremalpunktsform som
+
+$$
+f(x) = a(x - 75)^2
+$$
+
+Vi bestemmer $a$ ved å bruke at $f(0) = 70$:
+
+$$
+f(0) = 70 \liff a(0 - 75)^2 = 70 \liff a = \dfrac{70}{75^2}
+$$
+
+Siden alle parablene er like, så vil denne verdien for $a$ gjelde for alle parablene. Målet vårt er å bestemme hvor langt tøystykket minst må være. 
+Fokuserer vi på den stiplede linja $y = 35$, så kan vi observere at alle parablene skjærer hverandre ved denne linja. Hvis vi da kjenner til avstanden mellom disse skjæringspunktet, så har vi nesten avstanden til hele tøystykket. 
+Vi mangler bare en bit på venstre side og en bit på høyre side som er like lange. 
+
+Vi starter med å finne avstanden mellom skjæringspunktene til $f$ og linja $y = 35$ siden dette vil gi oss begge avstandene vi trenger. Da løser vi likningen
+
+$$
+f(x) = 35
+$$
+
+Vi gjør dette med CAS:
+
+
+:::{figure} ./figurer/oppgaver/oppgave_15/sol.png
+---
+class: no-click, adaptive-figure
+width: 60%
+---
+:::
+
+Som betyr at 
+
+$$
+x_1 = \dfrac{-75\sqrt{2} + 150}{2} \qog x_2 = \dfrac{75\sqrt{2} + 150}{2}.
+$$
+
+Her er $x_2 > x_1$, så avstanden mellom de to punktene er 
+
+$$
+\Delta x = x_2 - x_1 = \dfrac{75\sqrt{2} + 150}{2} - \dfrac{-75\sqrt{2} + 150}{2} = \dfrac{150\sqrt{2}}{2} = 75\sqrt{2}.
+$$
+
+Videre vil $x_1$ være avstanden fra starten av tøystykket til det første skjæringspunktene. Denne lengden opptrer én gang på hver side av tøystykket. Vi har 4 parabler, som betyr at lengden $\Delta x$ opptrer 4 ganger.
+Dermed må lengden $L$ av tøystykket minst være 
+
+
+\begin{align*}
+L &= 2 \cdot x_1 + 4 \cdot \Delta x\\
+\\
+&= 2 \cdot \dfrac{-75\sqrt{2} + 150}{2} + 4 \cdot 75\sqrt{2}\\
+\\
+&= -75\sqrt{2} + 150 + 300\sqrt{2} \\
+\\&= 150 + 225\sqrt{2} \\
+\\
+&\approx 468.2.
+\end{align*}
+
+Tøystykket bør altså være minst 468.2 cm langt for å lage åtte gardiner.
+::::
+
+
+
+:::::::::::::::
+
+
+
 
 
 
