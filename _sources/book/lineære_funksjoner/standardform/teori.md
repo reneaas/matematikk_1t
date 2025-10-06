@@ -152,15 +152,15 @@ class: no-click, adaptive-figure
 :::{plot}
 function: 2*x - 1, f 
 width: 80%
-hline: 1, 1, 2
-vline: 2, 1, 3
-grid: off
+hline: f(1), 1, 2
+vline: 2, f(1), f(2)
+ticks: off
 xmin: -2
 xmax: 5
 ymin: -2
 ymax: 5
 text: 1.5, 1, "$1$", bottom-center
-text: 2, 2, "$a$", center-right
+text: 2, 0.5 * (f(1) + f(2)), "$a$", center-right
 point: (0, -1)
 annotate: (1, -1), (0, -1), "Skjæring med $y$-aksen $(0, b)$", -0.4
 :::
@@ -284,7 +284,7 @@ ser vi at stigningstallet til $f$ er $a = -1$ og konstantleddet er $b = 2$. Det 
 :::{plot}
 function: -x + 2, f
 width: 70%
-grid: off
+ticks: off
 point: (0, 2)
 text: 0, 2, "$(0, 2)$", center-right
 hline: 4, -2, -1
@@ -317,7 +317,7 @@ Lag en skisse av grafen til $f$ der du markerer skjæringspunktet med $y$-aksen 
 :::{plot}
 function: -2*x + 3, f
 width: 70%
-grid: off
+ticks: off
 point: (0, 3)
 text: 0, 3, "$(0, 3)$", center-left
 ymin: -2
@@ -385,7 +385,7 @@ Vi leser symbolet $\Delta$ som "endring i" slik at $\Delta y$ betyr "endring i $
 :::{plot}
 function: x + 1
 width: 70%
-grid: off
+ticks: off
 xmin: -1
 xmax: 4.5
 ymin: -1
@@ -415,15 +415,15 @@ Bestem $f(x)$.
 :::{plot}
 function: 3*x - 5, f
 width: 70%
-grid: off
+ticks: off
 xmin: -2
 xmax: 5
 ymin: -7
 ymax: 5
 point: (0, -5)
 point: (2, 1)
-text: 0, -5, "$(0, -5)$", center-left
-text: 2, 1, "$(2, 1)$", center-right
+text: 0, -5, "$(0, -5)$", center-right
+text: 2, 1, "$(2, 1)$", top-left
 :::
 
 
@@ -467,7 +467,7 @@ Bestem $f(x)$.
 :::{plot}
 function: -2*x + 4, f
 width: 70%
-grid: off
+ticks: off
 point: (0, 4)
 text: 0, 4, "$(0, 4)$", center-left
 point: (3, -2)

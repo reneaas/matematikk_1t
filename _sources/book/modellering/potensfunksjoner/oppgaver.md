@@ -263,18 +263,19 @@ Hva er perioden til en pendel med en snorlengde på $1.5$ meter, ifølge modelle
 
 :::::::::::::{tab-item} c
 
-:::{figure} ./bilder/oppgaver/oppgave_3/pendel.png
----
-class: no-click
-width: 60%
-align: right
----
-:::
-
 
 På Universitetet i Oslo, er en såkalt **Foucaults pendel** bygget for å demonstrere at jorden roterer. Pendelen sin periode er omtrent på $7.5$ sekunder. Pendelen er ca. $20$ cm over bakken på sitt laveste.
 
 Hvor høyt er taket over bakken der pendelen henger?
+
+
+:::{figure} ./bilder/oppgaver/oppgave_3/pendel.jpeg
+---
+class: no-click
+width: 50%
+align: right
+---
+:::
 :::::::::::::
 
 

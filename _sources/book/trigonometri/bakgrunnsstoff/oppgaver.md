@@ -12,15 +12,31 @@ level: 1
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
+:::{plot}
+width: 100%
+lw: 1
+line-segment: (0, 0), (1, 0), solid, black
+line-segment: (0, 0), (0, sqrt(3)), solid, black
+line-segment: (1, 0), (0, sqrt(3)), solid, black
+angle-arc: (1, 0), 0.3, 180, 120
+axis: off
+axis: equal
+figsize: (3, 3)
+align: right
+text: 0, 0, "$A$", bottom-left
+text: 1, 0, "$B$", bottom-right
+text: 0, sqrt(3), "$C$", top-center
+text: 1 - 0.3*cos(pi/6), 0.3*sin(pi/6), "$60^\circ$", top-left
+polygon: (0, 0), (0.2, 0), (0.2, 0.2), (0, 0.2), solid, black
+:::
+
+En trekant $\triangle ABC$ er vist i figuren til høyre. 
 
 Bestem $\angle C$.
 
-:::{figure} ./figurer/oppgaver/oppgave_1/a.svg
----
-width: 70%
-class: no-click, adaptive-figure
----
+:::{clear}
 :::
+
 
 ::::{admonition} Fasit
 ---
@@ -36,14 +52,33 @@ $$
 
 :::::::::::::{tab-item} b
 
+:::{plot}
+width: 100%
+axis: off
+axis: equal
+align: right
+figsize: (3, 3)
+lw: 1
+line-segment: (0, 0), (1, 0), solid, black
+line-segment: (0, 0), (0, 1), solid, black
+line-segment: (1, 0), (0, 1), solid, black
+angle-arc: (0, 1), 0.2, 270, 315
+text: 0, 0, "$A$", bottom-left
+text: 1, 0, "$B$", bottom-right
+text: 0, 1, "$C$", top-left
+text: 0.3*cos(pi/4), 1 - 0.3*sin(pi/4), "$45^\circ$", bottom-left
+polygon: (0, 0), (0.15, 0), (0.15, 0.15), (0, 0.15), solid, black
+:::
+
+
+Figuren til høyre vises en trekant $\triangle ABC$. 
+
 Bestem $\angle B$. 
 
-:::{figure} ./figurer/oppgaver/oppgave_1/b.svg
----
-width: 70%
-class: no-click, adaptive-figure
----
+
+:::{clear}
 :::
+
 
 ::::{admonition} Fasit
 ---
@@ -59,13 +94,30 @@ $$
 
 :::::::::::::{tab-item} c
 
-Bestem $\angle A$.
+:::{plot}
+width: 400
+align: right
+lw: 1
+axis: off
+axis: equal
+figsize: (5, 3)
+line-segment: (0, 0), (4, 0), solid, black
+line-segment: (4, 0), (4 - 4 * cos(pi/9)/cos(2*pi/9) * cos(20*pi/180), 4 * cos(pi/9)/cos(2*pi/9) * sin(20*pi/180)), solid, black
+line-segment: (0, 0), (4 - 4 * cos(pi/9)/cos(2*pi/9) * cos(20*pi/180), 4 * cos(pi/9)/cos(2*pi/9) * sin(20*pi/180)), solid, black
+angle-arc: (4, 0), 0.8, 180, 160
+angle-arc: (0, 0), 0.3, 0, 110
+text: 0, 0, "$A$", bottom-left
+text: 4, 0, "$B$", bottom-right
+text: 4 - 4 * cos(pi/9)/cos(2*pi/9) * cos(20*pi/180), 4 * cos(pi/9)/cos(2*pi/9) * sin(20*pi/180), "$C$", top-left
+text: 4 - 1, 0.15, "$20^\circ$", center-center
+text: 0.2, 0.2, "$110^\circ$", top-right
+:::
 
-:::{figure} ./figurer/oppgaver/oppgave_1/c.svg
----
-width: 70%
-class: no-click, adaptive-figure
----
+En trekant $\triangle ABC$ er vist i figuren til høyre. 
+
+Bestem $\angle C$.
+
+:::{clear}
 :::
 
 ::::{admonition} Fasit
@@ -73,7 +125,7 @@ class: no-click, adaptive-figure
 class: answer, dropdown
 ---
 $$
-\angle A = 110 \degree.
+\angle C = 50 \degree.
 $$
 ::::
 
@@ -88,7 +140,7 @@ $$
 
 
 
-
+---
 
 
 
@@ -100,6 +152,7 @@ $$
 ---
 level: 1
 ---
+
 
 Nedenfor vises en rettvinklet trekant.
 

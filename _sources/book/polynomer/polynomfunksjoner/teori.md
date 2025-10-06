@@ -117,16 +117,15 @@ class: no-click, adaptive-figure
 ## Tredjegradsfunksjoner
 
 
-Tredjegradsfunksjoner vil fungere som en "lekemodell" for alle polynomfunksjoner av høyere grad. Mange av teknikkene vi anvender på tredjegradsfunksjoner vil også fungere på polynomfunksjoner av høyere grad. Vi kommer til å oppdage at tredjegradsfunksjoner ikke har et like ryddig system som vi har hatt når vi har jobbet med lineære funksjoner og andregradsfunksjoner. 
+Tredjegradsfunksjoner vil fungere som en "lekemodell" for alle polynomfunksjoner av høyere grad. Alle teknikkene vi anvender på tredjegradsfunksjoner vil også fungere på polynomfunksjoner av høyere grad. Vi kommer til å oppdage at tredjegradsfunksjoner og polynomfunksjoner av høyere grad ikke har et like ryddig system som vi har hatt når vi har jobbet med lineære funksjoner og andregradsfunksjoner. 
 
 ### Standardform
 
 Akkurat som før, har vi en standardform for tredjegradsfunksjoner også:
 
 
-:::{margin} Hva med betydningen til $c$?
-Konstanten $c$ har ikke en opplagt betydning vi kan peke på her og nå. 
-Senere vil vi ha flere verktøy til å bedre forstå hva $c$ betyr for grafen til en tredjegradsfunksjon.
+:::{margin} *Woah* – det var ikke mye vi kunne si...
+Polynomfunksjoner er notoriske på å gjemme bort egenskapene sine selv om funksjonensuttrykkene er tilsynelatende enkle. Vi skal bruke mye tid å utvikle teknikker for å bryte ned polynomfunksjoner i enklere deler så vi kan forstå dem fullstendig!
 :::
 
 
@@ -140,17 +139,17 @@ $$
 der $a, b, c, d \in \mathbb{R}$ er koeffisientene til polynomet. 
 
 * Hvis $a > 0$ har grafen til $f$ form som {poly-icon}`cubicup`. Hvis $a < 0$ har grafen til $f$ form som {poly-icon}`cubicdown`.
-* Grafen til $f$ har en **anti-symmetrilinje** $x_0 = -\dfrac{b}{3a}$.
-* Grafen til $f$ har et vendepunkt i $(x_0, f(x_0))$. 
-* Grafen til $f$ skjærer $y$-aksen i $(0, d)$. 
+* Grafen til $f$ skjærer $y$-aksen i $(0, d)$.
 
 
-:::{figure} ./figurer/teori/standardform/merged_figure.svg
----
-class: no-click, adaptive-figure
-width: 100%
----
+:::{plot}
+width: 70%
+function: x^3 - 2*x^2 - x + 2, f
+ticks: off
+point: (0, f(0))
+text: 0, f(0), "$(0, d)$", top-right
 :::
+
 
 
 :::::::::::::::
