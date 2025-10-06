@@ -27,7 +27,7 @@ For å bestemme nullpunktene, eller røttene, til et tredjegradspolynom, får vi
 
 ## Tredjegradslikninger
 
-:::::::::::::::{admonition} Setning: heltallsrøtter for polynomer
+:::::::::::::::{admonition} Setning: Heltallsrøtter for polynomer
 ---
 class: summary
 ---
@@ -217,3 +217,101 @@ $$
 ::::::::::::::
 
 :::::::::::::::
+
+
+---
+
+Vi kan utvide setningen vår til å fungere mer generelt for alle rasjonale røtter:
+
+:::{margin} Merk!
+Selv om vi bruker tredjegradsfunksjoner som et eksempel her, så gjelder setningene vi ser på for **alle** polynomfunksjoner! Så bruk samme strategi uansett hvilken grad polynomet har!
+:::
+
+:::::::::::::::{summary} Setning: Rasjonale røtter for polynomer
+For et tredjegradspolynom på formen
+
+$$
+f(x) = ax^3 + bx^2 + cx + d
+$$
+
+så vil alle rasjonale røtter være på formen $x = \dfrac{p}{q}$ der $p$ er en faktor i konstantleddet $d$ og $q$ er en faktor i den ledende koeffisienten $a$.
+
+:::::::::::::::
+
+La oss se på et eksempel der vi bruker setningen ovenfor til å lage en liste over alle mulige rasjonale røtter før vi leter etter røttene.
+
+
+:::::::::::::::{example} Eksempel 2
+En tredjegradsfunksjon er gitt ved 
+
+$$
+f(x) = 6x^3 - 7x^2 - 8x + 5.
+$$
+
+Bestem i hvilke punkter grafen til $f$ skjærer $x$-aksen.
+
+
+::::{solution}
+---
+dropdown: 0
+---
+Først lister vi opp alle mulige faktorer $p$ i konstantleddet $d = 5$. Dette vil være
+
+$$
+p \in \{\pm 1, \pm 5\}
+$$
+
+Deretter lister vi opp alle mulige faktorer $q$ i den ledende koeffisienten $a = 6$. Dette vil være
+
+$$
+q \in \{\pm 1, \pm 2, \pm 3, \pm 6\}
+$$
+
+Alle mulige rasjonale løsninger $x$ vil da være på formen $x = \dfrac{p}{q}$, som gir oss mulighetene
+
+$$
+x \in \left\{\pm 1, \pm 5, \pm \frac{1}{2}, \pm \frac{5}{2}, \pm \frac{1}{3}, \pm \frac{5}{3}, \pm \frac{1}{6}, \pm \frac{5}{6}\right\}
+$$
+
+
+Vi bruker et Horner-skjema for å finne én rot:
+
+:::{horner}
+---
+p: 6x^3 - 7x^2 - 8x + 5
+x: -1
+width: 60%
+---
+:::
+
+Det betyr at 
+
+$$
+6x^3 - 7x^2 - 8x + 5 = (x + 1)(6x^2 - 13x + 5).
+$$
+
+Vi bruker så $abc$-formelen til å finne de resterende løsningene:
+
+$$
+x = \dfrac{13 \pm \sqrt{(-13)^2 - 4 \cdot 6 \cdot 5}}{2 \cdot 6} = \dfrac{13 \pm \sqrt{49}}{12} = \dfrac{13 \pm 7}{12}
+$$
+
+som gir
+
+$$
+x = \dfrac{5}{3} \quad \lor \quad x = \dfrac{1}{2}
+$$
+
+Dermed skjærer grafen til $f$ gjennom $x$-aksen når
+
+$$
+x = -1 \quad \lor \quad x = \dfrac{1}{2} \quad \lor \quad x = \dfrac{5}{3}
+$$
+
+Vi kan spesielt merke oss at **alle** røttene var i lista over *mulige kandidater* for rasjonale røtter!
+
+
+::::
+
+:::::::::::::::
+

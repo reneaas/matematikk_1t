@@ -167,3 +167,232 @@ I eksempelet over vil kodelinjene som definerer `a`, `b` og `c` være én boks.
 
 
 ## Sette inn par-puzzles
+
+## Plot-direktivet (matematikkfigurer)
+
+Plot-direktivet (`{plot}` / `.. plot::`) lar deg lage fleksible matematikkfigurer med et kompakt YAML‑lignende oppsett. Nedenfor følger en praktisk oppslagsguide med eksempler for alle primitivene. Eksemplene bruker MyST‑syntaks; reST fungerer tilsvarende.
+
+### Grunnstruktur
+
+```markdown
+:::{plot}
+function: sin(x)/x, f(x), (-6*pi, 6*pi) \ {0}
+point: (pi, f(pi))
+xmin: -10
+xmax: 10
+ymin: -5
+ymax: 5
+grid: on
+:::
+```
+
+Alle linjer før første blanklinje (eller slutten av blokken) tolkes som oppsett. Eventuell tekst etterpå blir bildetekst.
+
+### Uttrykk (SymPy)
+
+Nesten alle tallfelt støtter nå uttrykk: `pi`, `sqrt(2)`, `2*pi/3`, `exp(1)`, `sin(pi/6)`, osv. Feil eller ugyldige uttrykk fører bare til at den aktuelle linjen hoppes over (bygget feiler ikke).
+
+Støttede funksjoner (utvalg): `pi`, `E`, `sqrt`, `exp`, `log`, `sin`, `cos`, `tan`, `asin`, `acos`, `atan`, `Abs` + vanlige aritmetiske operatorer.
+
+### Felles stil og farger
+
+Der hvor `linestyle` kan angis: `solid`, `dotted`, `dashed`, `dashdot`.
+
+Farger forsøkes først slått opp i `plotmath.COLORS` (paletten). Hvis ikke funnet brukes token direkte (Matplotlib-navn/hex). Hvis fortsatt ikke gyldig brukes en fornuftig standard (typisk svart eller blå). Enkeltbokstav-farger (`b`, `g`, …) er deaktivert for funksjonsnavn slik at `f`, `g` osv. kan brukes som etiketter.
+
+### Funksjoner
+
+Former:
+```
+function: uttrykk
+function: uttrykk, etikett
+function: uttrykk (a,b)
+function: uttrykk (a,b) \ {x1, x2}
+function: [uttrykk, "etikett", (a,b), {x1, x2}]
+```
+
+Eksempler:
+```markdown
+function: x**2 - 2*x + 3, f(x)
+function: sin(x)/x, s(x), (-10,10) \ {0}
+```
+
+### Punkter
+
+```
+point: (x, y)
+```
+Der `x` eller `y` kan bruke funksjonskall på etiketter: `point: (pi, f(pi))`.
+
+### Vertikale og horisontale linjer
+
+```
+vline: x[, ymin, ymax][, linestyle][, farge]
+hline: y[, x0, x1][, linestyle][, farge]
+```
+Eksempel:
+```markdown
+vline: pi/2, -, 3, dashed, red
+hline: 0
+```
+
+### Generell linje og linjesegment
+
+```
+line: a, b[, linestyle][, farge]        # y = a*x + b
+line: a, (x0, y0)[, linestyle][, farge] # y = a*(x-x0) + y0
+line-segment: (x1, y1), (x2, y2)[, linestyle][, farge]
+```
+Eksempler:
+```markdown
+line: 2, -1
+line: -sqrt(3), (pi, 0), dotted, teal
+line-segment: (0,0), (2*sqrt(2), 2), dashed, purple
+```
+
+### Polygoner og fyll
+
+```
+polygon: (x1, y1), (x2, y2), ...[, show_vertices]
+fill-polygon: (x1, y1), (x2, y2), ...[, farge][, alpha]
+```
+Eksempler:
+```markdown
+polygon: (0,0), (2,0), (2,1), (0,1), show_vertices
+fill-polygon: (0,0), (3,0), (3,2), (0,2), lightgray, 0.25
+```
+
+### Søyle (bar)
+
+```
+bar: (x, y), lengde, orientering
+```
+`orientering`: `h|hor|horiz|horizontal` eller `v|vert|vertical`.
+
+Eksempel:
+```markdown
+bar: (0,0), 4, h
+```
+
+### Vektorer
+
+```
+vector: x, y, dx, dy[, farge]
+```
+Alle fire tall kan være uttrykk.
+```markdown
+vector: 0, 0, 2*cos(pi/6), 2*sin(pi/6), orange
+```
+
+### Vinkelbue (angle-arc)
+
+```
+angle-arc: (cx, cy), radius, start_grad, slutt_grad[, linestyle][, farge]
+```
+Vinkler i grader (0° på +x-aksen, mot klokka).
+```markdown
+angle-arc: (0,0), 3, 0, 60, dashed, red
+```
+
+### Sirkel og ellipse
+
+```
+circle: (cx, cy), r[, linestyle][, farge]
+ellipse: (cx, cy), a, b[, linestyle][, farge]
+```
+`r`, `a`, `b` > 0. Eksempel:
+```markdown
+circle: (0,0), 2*pi/6, dotted, green
+ellipse: (1, -1), 3, sqrt(5), red
+```
+
+### Parametrisk kurve
+
+```
+curve: x(t), y(t), (t0, t1)[, linestyle][, farge]
+```
+Symbol `t` er reservert. Eksempel:
+```markdown
+curve: cos(t), sin(2*t), (0, 2*pi), dashed, orange
+```
+
+### Annotering og tekst
+
+Annotering:
+```
+annotate: (xy_text), (xy_point), "Tekst"[, bue]
+```
+`bue` (kurvatur) valgfri (standard 0.3).
+
+Tekst:
+```
+text: [x, y, "tekst"[, pos][, bbox]]
+```
+`pos` kan være: `top-left`, `bottom-right`, `center-center`, osv. Prefiks `long` for større avstand: `longtop-left`.
+
+Eksempler:
+```markdown
+annotate: (pi, f(pi)), (pi, 0), "Maks?", 0.25
+text: [0, 0, "Origo", top-right, bbox]
+```
+
+### Aksevalg
+
+```
+axis: off
+axis: equal
+axis: off, equal
+```
+`off` skjuler ramme og rutenett. `equal` gir lik skala i x og y.
+
+### Figur- og layoutvalg
+
+```
+width: 100%
+figsize: (6, 4)
+fontsize: 20
+lw: 2.5
+alpha: 0.6
+```
+
+### Farge- og stiloppløsning
+
+1. Sjekk paletten `plotmath.COLORS`.
+2. Hvis ikke funnet: bruk token direkte (navn eller hex `#rrggbb`).
+3. Hvis fortsatt feil: bruk en standard (svart/blå).
+
+### Feilsituasjoner
+
+* Enkeltlinjer med feil uttrykk hoppes over – resten av figuren rendres.
+* Ugyldige intervaller (byttede grenser) blir automatisk sortert for kurver.
+* Null eller negativ radius / a / b ignoreres.
+
+### Komplett eksempel
+
+```markdown
+:::{plot}
+function: sin(x)/x, s(x), (-8*pi, 8*pi) \ {0}
+curve: cos(t), sin(2*t), (0, 2*pi), dashed, orange
+circle: (0,0), 2*pi/6, dotted, green
+ellipse: (1, -1), 3, sqrt(5), red
+point: (pi, s(pi))
+line-segment: (0,0), (2*sqrt(2), 2), dashed, purple
+vector: 0, 0, 2*cos(pi/6), 2*sin(pi/6), teal
+angle-arc: (0,0), 2.5, 0, 60, dashed
+annotate: (pi, s(pi)), (pi, 0), "Maks?", 0.25
+text: [0,0, "Origo", top-right, bbox]
+xmin: -10
+xmax: 10
+ymin: -6
+ymax: 6
+grid: on
+fontsize: 22
+width: 100%
+:::
+```
+
+Dette skal gi en rik figur med flere elementtyper og uttrykk.
+
+---
+
+For ytterligere interne detaljer se docstring i `_ext/plot.py`.

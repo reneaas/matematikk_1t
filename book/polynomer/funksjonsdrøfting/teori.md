@@ -13,19 +13,30 @@ Funksjonsdrøfting handler om å finne ut alt om grafen til en funksjon $f$ ved 
 ## Stasjonære punkter
 
 :::::::::::::::{summary} Stasjonære punkter
-Et stasjonært punkt på grafen til $f$ er et punkt der $f'(x) = 0$. Det finnes tre typer stasjonære punkter:
-1. **Bunnpunkt**
-2. **Toppunkt**
-3. **Terassepunkt**
+Et **stasjonært punkt** på grafen til $f$ er et punkt der $f'(x) = 0$. Det finnes tre typer stasjonære punkter:
+1. **Bunnpunkt**: Den deriverte er positiv før og negativ etter punktet.
+2. **Toppunkt**: Den deriverte er negativ før og positiv etter punktet.
+3. **Terrassepunkt**: Den deriverte har samme fortegn før og etter punktet.
 
 Se figuren nedenfor.
 
-:::{figure} ./figurer/teori/funksjonsdrøfting/figur.svg
----
-width: 80% 
-class: no-click, adaptive-figure
----
+
+:::{plot}
+width: 70%
+ticks: off
+function: -((x + 1) ** 2) * (x - 2) ** 3 + 3, f
+xmin: -3
+xmax: 3
+ymin: -2
+ymax: 14
+point: (-1, f(-1))
+point: (1/5, f(1/5))
+point: (2, f(2))
+text: -1, f(-1), "Bunnpunkt", bottom-center
+text: 1/5, f(1/5), "Toppunkt", top-right
+text: 2, f(2), "Terrassepunkt", top-right
 :::
+
 
 
 
@@ -63,14 +74,20 @@ $$
 x = 1 \or x = 3
 $$
 
+Dermed kan vi skrive $f'(x)$ som 
+
+$$
+f'(x) = 3(x - 1)(x - 3)
+$$
+
 For å avgjøre om punktene er bunnpunkter, toppunkter eller terrassepunkter, tegner vi et fortegnsskjema for $f'(x)$:
 
-:::{figure} ./figurer/eksempler/eksempel_1/fortegnsskjema.svg
----
-width: 80%
-class: no-click, adaptive-figure
----
+
+:::{signchart}
+width: 100%
+function: 3*x**2 - 12*x + 9, f'(x)
 :::
+
 
 Fra fortegnsskjema ser vi at $f'(x)$ går fra positiv til negativ i $x = 1$, som betyr at $f$ har et toppunkt i $(1, f(1))$. I $x = 3$ går $f'(x)$ fra negativ til positiv, som betyr at $f$ har et bunnpunkt i $(3, f(3))$.
 :::::
@@ -208,3 +225,22 @@ I $x = -2$ så skifter $f'(x)$ fortegn fra positiv til negativ som betyr at dett
 
 
 ## Vendepunkter 
+Et **vendepunkt** på grafen til $f$ forteller oss hvor grafen har minst eller størst stigning. For å finne vendepunkter på grafen til en funksjon $f$, bruker vi den **andrederiverte** som vi skriver som $f''(x)$. 
+
+
+:::::::::::::::{summary} Vendepunkter
+Et **vendepunkt** på grafen til en funksjon $f$, er et punkt der $f''(x) = 0$. Se figuren nedenfor:
+
+
+:::{plot}
+width: 70%
+function: (x**3 - 3*x**2 + 4), f
+ticks: off
+point: (1, f(1))
+:::
+
+Vendepunkter svarer til stasjonære punkter på grafen til den førstederiverte $f'$. 
+
+
+
+:::::::::::::::

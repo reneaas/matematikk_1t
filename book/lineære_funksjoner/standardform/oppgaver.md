@@ -448,6 +448,12 @@ function: x - 3, f
 width: 70%
 :::
 
+::::{answer}
+$$
+f(x) = x - 3 
+$$
+::::
+
 :::::::::::::
 
 
@@ -461,6 +467,13 @@ function: -x + 2, g
 width: 70%
 :::
 
+
+::::{answer}
+$$
+g(x) = -x + 2
+$$
+::::
+
 :::::::::::::
 
 :::::::::::::{tab-item} c
@@ -472,6 +485,12 @@ Bestem $h(x)$.
 function: 2*x - 2, h
 width: 70%
 :::
+
+::::{answer}
+$$
+h(x) = 2x - 2
+$$
+::::
 
 :::::::::::::
 
@@ -485,6 +504,12 @@ Bestem $p(x)$.
 function: -3*x + 1, p
 width: 70%
 :::
+
+::::{answer}
+$$
+p(x) = -3x + 1
+$$
+::::
 
 :::::::::::::
 
@@ -648,13 +673,12 @@ function: x - 5, g
 ticks: off
 xmin: -1
 point: (3, -2)
-text: 3, -2.1, "$(3, -2)$", center-right
+text: 3.1, -2, "$(3, -2)$", center-right
 point: (5, 0)
-text: 5, 0, "$(5, 0)$", top-center
+text: 5, 0, "$(5, 0)$", top-left
 point: (2, 0)
-text: 2.1, 0, "$(2, 0)$", top-center
+text: 2, 0, "$(2, 0)$", top-right
 fill-polygon: (0, 4), (3, -2), (0, -5), royalblue, 0.2
-nocache:
 :::
 
 
