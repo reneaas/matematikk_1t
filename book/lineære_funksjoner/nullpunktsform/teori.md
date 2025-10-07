@@ -163,7 +163,7 @@ Bestem nullpunktet til $f$.
 
 ::::{answer}
 $$
-x = -2
+x = 2
 $$
 ::::
 
@@ -171,13 +171,13 @@ $$
 Siden nullpunktsformen til $f(x)$ er gitt ved 
 
 $$
-f(x) = -3 \cdot (x + 2) = -3 \cdot (x - (-2)),
+f(x) = -3 \cdot (x - 2)
 $$
 
 betyr det at nullpunktet til $f$ er gitt ved 
 
 $$
-x = -2.
+x = 2.
 $$
 ::::
 
