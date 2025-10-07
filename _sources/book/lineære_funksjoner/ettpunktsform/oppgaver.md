@@ -495,6 +495,44 @@ $$
 
 
 
+---
+
+
+:::::::::::::::{exercise} Oppgave 7
+Grafene til to lineære funksjoner $f$ og $g$ er vist i figuren nedenfor.
+
+Punktene $A$ og $B$, og skjæringspunktet $C(3, 2)$ mellom grafen til $f$ og $g$ danner en likebeint trekant $\triangle ABC$. Arealet av trekanten er $4$. 
+
+Bestem arealet av det fargelagte området i figuren.
+
+
+:::{plot}
+width: 70%
+function: x - 1, f
+function: -(x - 5), g
+point: (1, 0)
+point: (5, 0)
+point: (3, 2)
+text: 1, 0, "$A$", bottom-right
+text: 5, 0, "$B$", bottom-left
+text: 3.1, 2, "$C(3, 2)$", center-right
+ticks: off
+xmin: -1
+ymin: -2
+fill-polygon: (0, -1), (0, 5), (3, 2), royalblue, 0.4
+:::
+
+
+::::{answer}
+Arealet av det fargelagte området er $9$.
+::::
+
+
+
+:::::::::::::::
+
+
+
 
 
 
