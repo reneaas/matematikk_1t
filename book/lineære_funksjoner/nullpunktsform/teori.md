@@ -139,7 +139,7 @@ Bestem nullpunktsformen til $f(x)$.
 
 ::::{answer}
 $$
-f(x) = -3\cdot \left(x + 2\right)
+f(x) = -3\cdot \left(x - 2\right)
 $$
 ::::
 
@@ -149,9 +149,9 @@ $$
     \\
     &= \textcolor{red}{-3}\cdot x + \left(\textcolor{red}{-3}\right)\cdot (-2) \\
     \\
-    &= \textcolor{red}{-3}\cdot \left(x - (-2)\right) \\
+    &= \textcolor{red}{-3}\cdot \left(x + (-2)\right) \\
     \\
-    &= -3\cdot \left(x + 2\right)
+    &= -3\cdot \left(x - 2\right)
 \end{align*}
 ::::
 
