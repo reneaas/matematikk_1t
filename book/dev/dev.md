@@ -5,7 +5,7 @@
 
 :::{plot}
 width: 70%
-function: -2*x + 3, f
+function: -2*x + 4, f
 :::
 
 
@@ -193,4 +193,21 @@ curve: 2 * sin(-t), 5 * cos(t), (0, 2*pi), solid, red
 vector: 0, 0, 5*cos(pi/6), 5*sin(pi/6), red
 angle-arc: (0, 0), 1.2, 0, 30
 nocache:
+:::
+
+
+
+---
+
+
+:::{plot}
+branched-function: 2*x + 1, (-2, 1), 3, [1, 3)
+xmin: -12
+xmax: 12
+ymin: -5
+ymax: 15
+grid: true
+ticks: true
+fontsize: 20
+width: 70%
 :::

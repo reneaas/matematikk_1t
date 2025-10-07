@@ -30,6 +30,7 @@ from docutils import nodes
 from sphinx.util.docutils import SphinxDirective
 from docutils.parsers.rst import directives
 
+
 def _hash_key(*parts) -> str:
     h = hashlib.sha1()
     for p in parts:
