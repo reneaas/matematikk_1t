@@ -5,7 +5,7 @@
 ---
 class: summary, dropdown
 ---
-For å få et bestemt kodeskall, skriver du nøkkelordet som vises i gif-ene og trykker på Enter. Deretter bruker du *shift*-knappen for å hoppe mellom de ulike delene av kodeskallet som må fylles ut.
+For å få et bestemt kodeskall, skriver du nøkkelordet som vises i gif-ene og trykker på Enter. Deretter bruker du *TAB*-knappen for å hoppe mellom de ulike delene av kodeskallet som må fylles ut.
 
 ::::::::::::::{tab-set}
 
