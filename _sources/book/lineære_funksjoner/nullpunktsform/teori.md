@@ -107,9 +107,24 @@ Bestem $f(x)$ på nullpunktsform.
 
 :::{plot}
 width: 70%
-function: 3*(x - 1), f
+function: 3*(x + 1), f
 :::
 
+
+::::{answer}
+$$
+f(x) = 3(x + 1)
+$$
+::::
+
+
+::::{solution}
+Grafen til $f$ skjærer $x$-aksen i $(-1, 0)$ som betyr at $x_1 = -1$. Vi ser at dersom vi øker $x$ med $1$ enhet, så øker $y$-verdien med $3$ enheter. Derfor er stigningstallet $a = 3$. Altså er
+
+$$
+f(x) = a(x - x_1) = 3(x + 1)
+$$
+::::
 
 
 :::::::::::::::
@@ -118,12 +133,59 @@ function: 3*(x - 1), f
 
 
 
+## Fra standardform til nullpunktsform
+
+
+:::::::::::::::{example} Eksempel 2
+En lineær funksjon $f$ er gitt ved 
+
+$$
+f(x) = 4x + 5
+$$
+
+Bestem $f(x)$ på nullpunktsform.
+
+
+::::{solution}
 ---
+dropdown: 0
+---
+Nullpunktsformen er gitt ved 
+
+$$
+f(x) = a(x - x_1)
+$$
+
+Vi ser fra uttrykket at $a = 4$. Vi må nå bare finne $x_1$. Dette kan vi gjøre ved å løse likningen $f(x) = 0$ siden grafen til $f$ skjærer $x$-aksen der $f(x) = 0$. Da får vi: 
+
+$$
+f(x) = 0 
+$$
+
+$$
+4x + 5 = 0
+$$
+
+$$
+4x = -5
+$$
+
+$$
+x = -\dfrac{5}{4}
+$$
+
+Dermed er $x_1 = -\dfrac{5}{4}$, og vi kan skrive $f(x)$ på nullpunktsform som
+
+$$
+f(x) = 4\left(x + \dfrac{5}{4}\right)
+$$
+::::
+
+:::::::::::::::
 
 
 
-
-:::::::::::::::{exercise} Underveisoppgave 3
+:::::::::::::::{exercise} Underveisoppgave 2
 En lineær funksjon $f$ er gitt ved 
 
 $$
@@ -135,35 +197,49 @@ $$
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
-Bestem nullpunktsformen til $f(x)$.
+Løs likningen 
+
+$$
+f(x) = 0
+$$
+
 
 ::::{answer}
 $$
-f(x) = -3\cdot \left(x - 2\right)
+x = 2
 $$
 ::::
 
 ::::{solution}
-\begin{align*}
-    f(x) &= -3\cdot x + 6 \\
-    \\
-    &= \textcolor{red}{-3}\cdot x + \left(\textcolor{red}{-3}\right)\cdot (-2) \\
-    \\
-    &= \textcolor{red}{-3}\cdot \left(x + (-2)\right) \\
-    \\
-    &= -3\cdot \left(x - 2\right)
-\end{align*}
+Vi løser likningen $f(x) = 0$: 
+
+$$
+f(x) = -3 \cdot x + 6
+$$
+
+$$
+-3 \cdot x + 6 = 0
+$$
+
+$$
+6 = 3x
+$$
+
+$$
+x = 2
+$$
 ::::
+
 
 :::::::::::::
 
 
 :::::::::::::{tab-item} b
-Bestem nullpunktet til $f$.
+Bestem $f(x)$ på nullpunktsform.
 
 ::::{answer}
 $$
-x = 2
+f(x) = -3 \cdot (x - 2)
 $$
 ::::
 
@@ -190,6 +266,8 @@ $$
 
 
 ---
+
+## Fra nullpunktsform til standardform
 
 
 :::::::::::::::{example} Eksempel 3
@@ -220,7 +298,7 @@ $$
 ---
 
 
-:::::::::::::::{exercise} Underveisoppgave 4
+:::::::::::::::{exercise} Underveisoppgave 3
 En lineær funksjon $f$ er gitt ved
 
 $$
