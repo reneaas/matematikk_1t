@@ -1837,10 +1837,3 @@ Den riktige pinkoden er $4319$.
 
 :::::::::::::::
 
-
-:::{interactive-code}
-
-:::
-
-
-
