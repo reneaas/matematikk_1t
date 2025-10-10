@@ -1825,6 +1825,9 @@ Bob mottar meldingen $4, 3, 5, 9, -5, -12$, men pinkoden funker ikke.
 
 Bestem den riktige pinkoden. 
 
+:::{clear}
+:::
+
 ::::{answer}
 Den riktige pinkoden er $4319$.
 ::::
