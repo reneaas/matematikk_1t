@@ -371,8 +371,8 @@ grafen til $f$ vises til venstre og grafen til $f'$ vises til høyre.
 
 Vi kan legge merke til følgende:
 * Symmetrilinja til $f$ er $x = -2$. Vi kan også se at da skjærer grafen til $f'$ gjennom $x$-aksen. Med andre ord er $f'(x) = 0$ ved ekstremalpunktet til $f$.
-* Til venstre for ekstremalpunktet til $f$, så stiger grafen. Vi kan se at på det tilsvarende område, så ligger grafen til $f'$ over $x$-aksen. Altså er $f'(x) > 0$ og da stiger grafen.
-* Til høyre for ekstremalpunktet til $f$, så synker grafen. Vi kan se at på det tilsvarende område, så ligger grafen til $f'$ under $x$-aksen. Altså er $f'(x) < 0$ og da synker grafen.
+* Til venstre for ekstremalpunktet til $f$, så stiger grafen. Vi kan se at på det tilsvarende område, så ligger grafen til $f'$ over $x$-aksen. Altså er $f'(x) > 0$ og da stiger grafen til $f$.
+* Til høyre for ekstremalpunktet til $f$, så synker grafen. Vi kan se at på det tilsvarende område, så ligger grafen til $f'$ under $x$-aksen. Altså er $f'(x) < 0$ og da synker grafen til $f$.
 
 :::::::::::::::
 
