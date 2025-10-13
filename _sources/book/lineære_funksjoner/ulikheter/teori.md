@@ -1,7 +1,7 @@
 # Lineære ulikheter
 
 :::{goals} Læringsmål
-* Kunne løse lineære ulikheter grafisk, algebraisk ved regning og med CAS.
+* Kunne løse lineære ulikheter grafisk, algebraisk ved regning, med CAS og ved bruk av fortegnslinjer.
 :::
 
 Vi skal se på tre strategier for å løse lineære ulikheter:
@@ -273,59 +273,101 @@ $$
 :::::::::::::::
 
 
-<!-- ## Løsning med programmering
-Å løse ulikheter med programmering handler har mye til felles med hvordan vi løser lineære likninger. Men for å gjøre dette effektivt, har vi bruk for en ny type løkke som kalles for en `while`{l=python}-løkke. En `while`{l=python}-løkke lar oss gjenta en kodeblokk så lenge en betingelse er sann. Dette er nyttig når vi ikke vet på forhånd hvor mange ganger vi må gjenta koden, som ofte er tilfellet når vi jobber med ulikheter.
 
-:::::::::::::::{explore} Utforsk 1
-Nedenfor vises en `while`{l=python}-løkke som skriver ut noen tall i en tallfølge.
-::::::::::::::{tab-set}
----
-class: tabs-parts
----
-:::::::::::::{tab-item} a
-Nedenfor vises en `while`{l=python}-løkke som skriver ut noen tall i en tallfølge.
-
-Les programmet og prøv å forutsi hvilke tall programmet skriver ut.
+### Med fortegnslinjer
+En annen strategi som vi kommer til å benytte oss særdeles mye av når vi skal løse ulikheter generelt, er å bruke fortegnslinjer til å løse ulikhetene. La oss først definere hva vi mener med dette begrepet.
 
 
-:::{interactive-code}
----
-predict:
----
-x = -3
-while x <= 3:
-    print(x)
-    
-    x = x + 1 # øker verdien til x med 1
+:::::::::::::::{summary} Fortegnslinjer
+En **fortegnslinje** er en linje som viser hvor en funksjon er positiv, negativ eller lik null. 
+Vi bruker **heltrukne** og **stiplede** linjer for å skille mellom fortegnene:
 
+* <span style="display:inline-block; width:100px; border-bottom: 3px solid red; vertical-align:middle;"></span> $=$ Positivt fortegn
+* <span style="display:inline-block; width:100px; border-bottom: 3px dashed royalblue; vertical-align:middle;"></span> $=$ Negativt fortegn
+* Vi markerer med $0$ ved nullpunktene til funksjonen.
 
-:::
+I figuren nedenfor vises fortegnslinja til $f(x) = 2(x - 1)$. 
 
-:::::::::::::
-
-
-
-:::::::::::::{tab-item} b
-Nedenfor vises et program som bruker en `while`{l=python}-løkke for å løse en lineær ulikhet. 
-
-Les programmet og bruk utskriften til å bestemme løsningen av ulikheten.
-
-
-:::{interactive-code}
-x = -10
-while 2*x - 6 < 0: # så lenge 2x - 6 < 0 ...
-    x = x + 0.125 # øker verdien til x med 0.125
-
-print(x)
-
+:::{signchart}
+width: 100%
+function: 2*(x - 3), f(x)
+factors: false
 :::
 
 
-:::::::::::::
 
 
+:::::::::::::::
 
-::::::::::::::
+
+---
 
 
-::::::::::::::: -->
+Strategien vi skal bruke når vi løser ulikheter kan oppsummeres som nedenfor.
+
+
+:::::::::::::::{summary} Strategi: Løsning av ulikheter med fortegnslinjer
+1. Vi skriver om ulikheten slik at vi for $0$ på den éne siden av ulikheten.
+2. Vi tegner fortegnslinja til $f(x)$.
+3. Vi leser av løsningen til ulikheten fra fortegnslinja til $f(x)$.
+:::::::::::::::
+
+---
+
+La oss se på et eksempel
+
+
+:::::::::::::::{example} Eksempel 6
+Løs ulikheten
+
+$$
+x - 3 \lt -2x + 3
+$$
+
+::::{solution}
+---
+dropdown: 0
+---
+Vi sørger for at vi for $0$ på den éne siden av ulikheten først:
+
+$$
+x - 3 \lt -2x + 3
+$$
+
+$$
+x + 2x - 3 - 3 \lt 0
+$$
+
+$$
+3x - 6 \lt 0
+$$
+
+Vi setter $f(x) = 3x - 6$. Da er målet vårt å løse ulikheten $f(x) \lt 0$. Først bestemmer vi nullpunktsformen til $f(x)$:
+
+$$
+f(x) = 0 \liff 3x - 6 = 0 \liff 3x = 6 \liff x = 2.
+$$
+
+Dette gir oss at $f(x) = 3(x - 2)$.
+
+Vi tegner deretter et **fortegnsskjema** for $f(x)$ ved å tenke oss følgende:
+1. Vi tegner en tallinje for $x$-aksen og markerer nullpunktet $x = 2$.
+2. Vi tegner en fortegnslinje for hver av faktorene i $f(x)$ som *her* er $3$ og $(x - 2)$.
+3. Ganger vi fortegnene sammen for hver del av fortegnslinja til $3$ og $(x - 2)$, får vi fortegnslinja til $f(x)$. 
+
+Se figuren nedenfor.
+
+:::{signchart}
+width: 100%
+function: 3*x - 6, f(x)
+:::
+
+Fra fortegnslinja til $f(x)$, ser vi at $f(x) \lt 0$ når $x < 2$ siden det er her fortegnslinja til $f(x)$ er stiplet. Dermed er løsningen av ulikheten
+
+$$
+x < 2 \liff x \in \langle \gets , 2 \rangle.
+$$
+
+::::
+
+:::::::::::::::
