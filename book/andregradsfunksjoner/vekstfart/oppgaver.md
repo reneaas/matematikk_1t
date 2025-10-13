@@ -1513,12 +1513,19 @@ Om grafen til $f$ får du vite at
 Bestem $f(x)$ og $f'(x)$.
 
 
-:::{figure} ./figurer/oppgaver/oppgave_10/figur.svg
----
-class: no-click, adaptive-figure
-width: 80%
----
+:::{plot}
+width: 70%
+xmin: -3
+xmax: 4
+ymin: -3
+ticks: off
+function: -x**2 + 2*x + 3, f
+point: (0, f(0))
+point: (3, 0)
+line: 2, 3, solid
+text: 3, 0, "$(3, 0)$", top-right
 :::
+
 
 
 ::::{answer}
