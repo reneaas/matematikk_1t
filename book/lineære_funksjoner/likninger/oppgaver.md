@@ -492,7 +492,7 @@ level: 2
 Grafene til to lineære funksjoner $f$ og $g$ er vist i figuren nedenfor. Funksjonsuttrykkene er gitt ved 
 
 $$
-f(x) = 2x - 3 \quad \text{og} \quad g(x) = -3x - 6.
+f(x) = x - 2 \quad \text{og} \quad g(x) = -3x - 6.
 $$
 
 
