@@ -496,12 +496,12 @@ f(x) = x - 2 \quad \text{og} \quad g(x) = -3x - 6.
 $$
 
 
-:::{figure} ./figurer/oppgaver/oppgave_5/figur.svg
----
-class: no-click, adaptive-figure
-width: 80%
----
+:::{plot}
+width: 70%
+function: x - 2, f
+function: -3*x - 6, g
 :::
+
 
 
 Løs likningene nedenfor ved hjelp av figuren der det er mulig. Hvis ikke må du bruke en annen metode.
