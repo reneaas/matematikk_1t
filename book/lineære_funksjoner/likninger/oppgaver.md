@@ -634,7 +634,7 @@ Bestem i hvilket punkt grafen til $f$ og $g$ skjærer hverandre.
 
 ::::{answer}
 $$
-(6, 6)
+(2, 2)
 $$
 ::::
 
