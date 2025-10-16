@@ -25,6 +25,13 @@ class: no-click, adaptive-figure
 ---
 :::
 
+
+::::{answer}
+$$
+x = -2 \and y = 1
+$$
+::::
+
 :::::::::::::
 
 :::::::::::::{tab-item} b
@@ -40,6 +47,13 @@ class: no-click, adaptive-figure
 width: 90%
 ---
 :::
+
+
+::::{answer}
+$$
+x = 4 \and y = 1
+$$
+::::
 
 
 :::::::::::::
@@ -61,6 +75,13 @@ width: 90%
 ---
 :::
 
+
+::::{answer}
+$$
+x = 3 \and y = -2
+$$
+::::
+
 :::::::::::::
 
 
@@ -79,6 +100,13 @@ class: no-click, adaptive-figure
 width: 90%
 ---
 :::
+
+
+::::{answer}
+$$
+x = -2 \and y = 4
+$$
+::::
 
 :::::::::::::
 
@@ -317,6 +345,61 @@ class: tabs-parts
     x + y &= 5 \\
     x - 2y &= -1
 \end{align*}
+
+
+::::{answer}
+$$
+x = 3 \and y = 2
+$$
+::::
+
+::::{solution}
+Vi nummererer likningene: 
+
+\begin{align*}
+    x + y &= 5 && (\t{I}) \\
+    x - 2y &= -1 && (\t{II})
+\end{align*}
+
+Vi løser likning $\t{I}$ med hensyn på $y$:
+
+$$
+x + y = 5 \liff y = 5 - x
+$$
+
+Deretter setter vi dette uttrykket inn i likning $\t{II}$:
+
+$$
+x - 2(5 - x) = -1 
+$$
+
+$$
+x - 10 + 2x = -1 
+$$
+
+$$
+3x = 9
+$$
+
+$$
+x = 3
+$$
+
+Deretter bestemmer vi $y$ ved å sette $x = 3$ inn i likning $\t{I}$:
+
+$$
+y = 5 - x = 5 - 3 = 2
+$$
+
+Dermed er 
+
+$$
+x = 3 \and y = 2
+$$
+
+::::
+
+
 :::::::::::::
 
 :::::::::::::{tab-item} b
@@ -324,6 +407,65 @@ class: tabs-parts
     3x + 2y &= -4 \\
     x - 2y &= -4
 \end{align*}
+
+
+::::{answer}
+$$
+x = -2 \and y = 1
+$$
+::::
+
+
+::::{solution}
+Vi nummererer likningene først:
+
+\begin{align*}
+    3x + 2y &= -4 && (\t{I}) \\
+    x - 2y &= -4 && (\t{II})
+\end{align*}
+
+Først løser vi likning $\t{II}$ med hensyn på $x$:
+
+$$
+x - 2y = -4 \liff x = -4 + 2y
+$$
+
+Deretter setter vi dette uttrykket inn i likning $\t{I}$:
+
+$$
+3(-4 + 2y) + 2y = -4
+$$
+
+$$
+-12 + 6y + 2y = -4
+$$
+
+$$
+-12 + 8y = -4
+$$
+
+$$
+8y = 8
+$$
+
+$$
+y = 1
+$$
+
+Deretter setter vi $y = 1$ inn i likning $\t{II}$ for å bestemme $x$:
+
+$$
+x = -4 + 2\cdot 1 = -4 + 2 = -2
+$$
+
+Dermed er løsningen 
+
+$$
+x = -2 \and y = 1
+$$
+::::
+
+
 :::::::::::::
 
 :::::::::::::{tab-item} c
@@ -331,6 +473,64 @@ class: tabs-parts
     -x + 2y &= 0 \\
     x - 4y &= -1
 \end{align*}
+
+
+::::{answer}
+$$
+x = 1 \and y = \dfrac{1}{2}
+$$
+::::
+
+::::{solution}
+Vi nummererer likningene først: 
+
+\begin{align*}
+    -x + 2y &= 0 && (\t{I}) \\
+    x - 4y &= -1 && (\t{II})
+\end{align*}
+
+Vi løser likningen $\t{II}$ med hensyn på $x$:
+
+$$
+x - 4y = -1 \liff x = -1 + 4y
+$$
+
+Deretter setter vi dette uttrykket for $x$ inn i likning $\t{I}$:
+
+$$
+-(-1 + 4y) + 2y = 0
+$$
+
+$$
+1 - 4y + 2y = 0
+$$
+
+$$
+1 - 2y = 0
+$$
+
+$$
+-2y = -1
+$$
+
+$$
+y = \dfrac{1}{2}
+$$
+
+Deretter setter vi $y = \dfrac{1}{2}$ inn i likning $\t{II}$ for å bestemme $x$:
+
+$$
+x = -1 + 4 \cdot \dfrac{1}{2} = -1 + 2 = 1
+$$
+
+Dermed er 
+
+$$
+x = 1 \and y = \dfrac{1}{2}
+$$
+::::
+
+
 :::::::::::::
 
 :::::::::::::{tab-item} d
@@ -338,6 +538,62 @@ class: tabs-parts
     2x + 4y &= 1 \\
     x - y &= 5
 \end{align*}
+
+
+::::{answer}
+$$
+x = \dfrac{7}{2} \and y = -\dfrac{3}{2}
+$$
+::::
+
+::::{solution}
+Vi nummererer likningene først: 
+
+\begin{align*}
+    2x + 4y &= 1 && (\t{I}) \\
+    x - y &= 5 && (\t{II})
+\end{align*}
+
+Vi løser likning $\t{II}$ med hensyn på $x$:
+
+$$
+x - y = 5 \liff x = 5 + y
+$$
+
+Deretter setter vi dette uttrykket for $x$ inn i likning $\t{I}$:
+
+$$
+2(5 + y) + 4y = 1
+$$
+
+$$
+10 + 2y + 4y = 1
+$$
+
+$$
+10 + 6y = 1
+$$
+
+$$
+6y = -9
+$$
+
+$$
+y = -\dfrac{3}{2}
+$$
+
+Deretter setter vi $y = -\dfrac{3}{2}$ inn i likning $\t{II}$ for å bestemme $x$:
+
+$$
+x = 5 + \left(-\dfrac{3}{2}\right) = 5 - \dfrac{3}{2} = \dfrac{10}{2} - \dfrac{3}{2} = \dfrac{7}{2}
+$$
+
+Dermed er
+
+$$
+x = \dfrac{7}{2} \and y = -\dfrac{3}{2}
+$$
+::::
 
 :::::::::::::
 
@@ -364,6 +620,67 @@ class: tabs-parts
 \end{align*}
 
 
+::::{answer}
+$$
+x = \dfrac{11}{6} \and y = \dfrac{7}{3}
+$$
+::::
+
+
+::::{solution}
+Vi nummerer likningene først:
+
+\begin{align*}
+    2x + y &= 6 && (\t{I}) \\
+    4x - y &= 5 && (\t{II})
+\end{align*}
+
+Vi legger sammen likning $\t{I}$ og likning $\t{II}$:
+
+\begin{align*}
+    2x + y &= 6 && (\t{I}) \\
+    4x - y &= 5 && (\t{II}) \\
+    \hline
+    6x + 0y &= 11 && (\t{I} + \t{II})
+\end{align*}
+
+Dermed får vi en likning som vi kan løse for $x$:
+
+$$
+6x = 11 \liff x = \dfrac{11}{6}
+$$
+
+Deretter setter vi denne verdien for $x$ inn i likning $\t{I}$ for å bestemme $y$:
+
+$$
+2 \cdot \dfrac{11}{6} + y = 6
+$$
+
+$$
+\dfrac{22}{6} + y = 6
+$$
+
+$$
+22 + 6y = 36
+$$
+
+$$
+6y = 14
+$$
+
+$$
+y = \dfrac{14}{3} = \dfrac{2 \cdot 7}{2 \cdot 3} = \dfrac{7}{3}
+$$
+
+Dermed er løsningen 
+
+$$
+x = \dfrac{11}{6} \and y = \dfrac{7}{3}
+$$
+
+::::
+
+
 :::::::::::::
 
 :::::::::::::{tab-item} b
@@ -372,6 +689,51 @@ class: tabs-parts
     -x + 2y &= 0 \\
     x - 4y &= -1
 \end{align*}
+
+
+::::{answer}
+$$
+x = 1 \and y = \dfrac{1}{2}
+$$
+::::
+
+
+::::{solution}
+Vi nummererer likningene og legger de sammen:
+
+\begin{align*}
+    -x + 2y &= 0 && (\t{I}) \\
+    x - 4y &= -1 && (\t{II}) \\
+    \hline
+    0x - 2y &= -1 && (\t{I} + \t{II})
+\end{align*}
+
+Da får vi likningen 
+
+$$
+-2y = -1 \liff y = \dfrac{1}{2}
+$$
+
+Deretter setter vi inn $y = \dfrac{1}{2}$ i likning $\t{I}$ for å bestemme $x$:
+
+$$
+-x + 2 \cdot \dfrac{1}{2} = 0
+$$
+
+$$
+-x + 1 = 0
+$$
+
+$$
+x = 1
+$$
+
+Dermed er 
+
+$$
+x = 1 \and y = \dfrac{1}{2}
+$$
+::::
 
 :::::::::::::
 
@@ -387,6 +749,72 @@ Her må du gange én av likningene med et tall før du plusser eller trekker den
 
 ::::
 
+
+::::{answer}
+$$
+x = \dfrac{3}{2} \and y = 1
+$$
+::::
+
+
+::::{solution}
+Vi nummererer likningene først: 
+
+\begin{align*}
+    2x + 3y &= 6 && (\t{I}) \\
+    4x - y &= 5 && (\t{II})
+\end{align*}
+
+Deretter ganger vi likning $\t{I}$ med $-2$:
+
+\begin{align*}
+    -4x - 6y &= -12 && (-2 \cdot \t{I}) \\
+    4x - y &= 5 && (\t{II})
+\end{align*}
+
+Så legger vi sammen de to likningene:
+
+\begin{align*}
+    -4x - 6y &= -12 && (-2 \cdot \t{I}) \\
+    4x - y &= 5 && (\t{II}) \\
+    \hline
+    0x - 7y &= -7 && (-2 \cdot \t{I} + \t{II})
+\end{align*}
+
+Dermed får vi likningen
+
+$$
+-7y = -7 \liff y = 1
+$$
+
+Deretter setter vi inn $y = 1$ i likning $\t{I}$ for å bestemme $x$:
+
+$$
+2x + 3 \cdot 1 = 6
+$$
+
+$$
+2x + 3 = 6
+$$
+
+$$
+2x = 3
+$$
+
+$$
+x = \dfrac{3}{2}
+$$
+
+Dermed er
+
+$$
+x = \dfrac{3}{2} \and y = 1
+$$
+
+
+
+::::
+
 :::::::::::::
 
 :::::::::::::{tab-item} d
@@ -395,6 +823,73 @@ Her må du gange én av likningene med et tall før du plusser eller trekker den
     2x + 3y &= 3 \\
     x - y &= 5
 \end{align*}
+
+::::{answer}
+$$
+x = \dfrac{18}{5} \and y = -\dfrac{7}{5}
+$$
+::::
+
+::::{solution}
+Først nummererer vi likningene:
+
+\begin{align*}
+    2x + 3y &= 3 && (\t{I}) \\
+    x - y &= 5 && (\t{II})
+\end{align*}
+
+Deretter gjør vi om på likningssystemet ved å gange likning $\t{II}$ med $2$:
+
+\begin{align*}
+    2x + 3y &= 3 && (\t{I}) \\
+    2x - 2y &= 10 && (2 \cdot \t{II})
+\end{align*}
+
+Hvis vi nå tar den første likningen og trekker fra den andre, så får vi: 
+
+
+
+\begin{align*}
+    2x + 3y &= 3 && (\t{I}) \\
+    2x - 2y &= 10 && (2 \cdot \t{II}) \\
+    \hline
+    0x + 5y &= -7 && (\t{I} - 2 \cdot \t{II})
+\end{align*}
+
+Da får vi 
+
+$$
+5y = -7 \liff y = -\dfrac{7}{5}
+$$
+
+Deretter setter vi inn $y = -\dfrac{7}{5}$ i likning $\t{II}$ for å bestemme $x$:
+
+$$
+x - \left(-\dfrac{7}{5}\right) = 5
+$$
+
+$$
+x + \dfrac{7}{5} = 5
+$$
+
+$$
+5x + 7 = 25
+$$
+
+$$
+5x = 18
+$$
+
+$$
+x = \dfrac{18}{5}
+$$
+
+Dermed er
+
+$$
+x = \dfrac{18}{5} \and y = -\dfrac{7}{5}
+$$
+::::
 
 :::::::::::::
 
@@ -434,6 +929,32 @@ width: 100%
 ---
 :::
 
+::::{answer}
+$$
+x = -2 \and y = 3
+$$
+::::
+
+::::{solution}
+Vi kan starte med å sjekke hva $y$ er når $x = 0$ i hver likning. Da får vi:
+
+\begin{align*}
+    0 + y &= 1 \\
+    2\cdot 0 + y &= -1
+\end{align*}
+
+\begin{align*}
+    y &= 1 \\
+    y &= -1
+\end{align*}
+
+Dette stemmer bare med figur $B$ siden de to linjene skjærer $y$-aksen i $(0, 1)$ og $(0, -1)$. Grafene skjærer hverandre i $(-2, 3)$ som betyr at løsningen av likningssystemet er
+
+$$
+x = -2 \and y = 3
+$$
+::::
+
 
 :::::::::::::
 
@@ -450,6 +971,42 @@ x + 2y &= 4 \\
 width: 100%
 ---
 :::
+
+
+::::{answer}
+$$
+x = 2 \and y = 1
+$$
+::::
+
+
+::::{solution}
+Vi kan sjekke hvor grafene skjærer $x$-aksen ved å sette inn $y = 0$:
+
+\begin{align*}
+x + 2\cdot 0 &= 4 \\
+\\
+-x + \dfrac{1}{2} \cdot 0 &= -\dfrac{3}{2}
+\end{align*}
+
+\begin{align*}
+x &= 4 \\
+\\
+-x &= -\dfrac{3}{2}
+\end{align*}
+
+Altså skjærer grafene til likningene gjennom $x$-aksen når 
+
+$$
+x = 4 \or x = \dfrac{3}{2}
+$$
+
+Det passer bare med figur A. Grafene hverandre i $(2, 1)$, så løsningen av likningssystemet er
+
+$$
+x = 2 \and y = 1
+$$
+::::
 
 :::::::::::::
 
@@ -498,6 +1055,29 @@ layout: sidebar
     4x - y &= 5
 \end{align*}
 
+::::{answer}
+$$
+x = \dfrac{3}{2} \and y = 1
+$$
+::::
+
+
+::::{solution}
+:::{figure} ./figurer/oppgaver/oppgave_6/a.png
+---
+class: no-click, adaptive-figure
+width: 70%
+---
+:::
+
+som betyr at løsningen er
+
+$$
+x = \dfrac{3}{2} \and y = 1
+$$
+
+::::
+
 
 :::::::::::::
 
@@ -515,6 +1095,28 @@ layout: sidebar
     5x + 4y &= 1
 \end{align*}
 
+
+::::{answer}
+$$
+x = \dfrac{5}{11} \and y = -\dfrac{7}{22}
+$$
+::::
+
+::::{solution}
+:::{figure} ./figurer/oppgaver/oppgave_6/b.png
+---
+class: no-click, adaptive-figure
+width: 70%
+---
+:::
+
+Løsningen er derfor 
+
+$$
+x = \dfrac{5}{11} \and y = -\dfrac{7}{22}
+$$
+::::
+
 :::::::::::::
 
 
@@ -531,6 +1133,28 @@ layout: sidebar
     x + 3y &= -4
 \end{align*}
 
+
+::::{answer}
+$$
+x = \dfrac{17}{10} \and y = -\dfrac{19}{10}
+$$
+::::
+
+::::{solution}
+:::{figure} ./figurer/oppgaver/oppgave_6/c.png
+---
+class: no-click, adaptive-figure
+width: 70%
+---
+:::
+
+Løsningen er derfor 
+
+$$
+x = \dfrac{17}{10} \and y = -\dfrac{19}{10}
+$$
+::::
+
 :::::::::::::
 
 
@@ -546,6 +1170,28 @@ layout: sidebar
     -2x + 3y &= 8 \\
     x - 2y &= -1
 \end{align*}
+
+
+::::{answer}
+$$
+x = -13 \and y = -6
+$$
+::::
+
+::::{solution}
+:::{figure} ./figurer/oppgaver/oppgave_6/d.png
+---
+class: no-click, adaptive-figure
+width: 70%
+---
+:::
+
+Løsningen er derfor 
+
+$$
+x = -13 \and y = -6
+$$
+::::
 
 :::::::::::::
 
@@ -694,6 +1340,31 @@ for x in range(????):
 :::
 
 
+::::{solution}
+:::{code-block} python
+---
+linenos:
+---
+for x in range(-10, 11):
+    for y in range(-10, 11):
+        if x + y == 0 and -2*x + 4*y == 6:
+            print((x, y))
+:::
+
+som gir utskriften 
+
+:::{code-block} console
+(-1, 1)
+:::
+
+Løsningen er dermed 
+
+$$
+x = -1 \and y = 1
+$$
+::::
+
+
 :::::::::::::
 
 :::::::::::::{tab-item} b
@@ -716,6 +1387,34 @@ for x in range(????):
 
 :::
 
+
+::::{solution}
+```{code-block} python
+---
+linenos:
+---
+for x in range(-10, 11):
+    for y in range(-10, 11):
+        if x + 1/2 * y == 2 and 1/6 * x + 1/4 * y == 0:
+            print((x, y))
+```
+
+som gir utskriften
+
+
+```{code-block} console
+(3, -2)
+```
+
+Dermed er løsningen 
+
+$$
+x = 3 \and y = -2
+$$
+
+
+::::
+
 :::::::::::::
 
 
@@ -737,6 +1436,33 @@ for x in range(????):
 
 :::
 
+
+::::{solution}
+```{code-block} python
+---
+linenos:
+---
+for x in range(-10, 11):
+    for y in range(-10, 11):
+        if 2*x + y == -1 and 5*x + y == 5:
+            print((x, y))
+```
+
+som gir utskriften 
+
+```{code-block} console
+(2, -5)
+```
+
+Dermed er løsningen 
+
+$$
+x = 2 \and y = -5
+$$
+
+
+::::
+
 :::::::::::::
 
 
@@ -757,6 +1483,33 @@ for x in range(????):
 
 
 :::
+
+
+::::{solution}
+```{code-block} python
+---
+linenos:
+---
+for x in range(-10, 11):
+    for y in range(-10, 11):
+        if 2*x - 5*y == 11 and -4*x + y == 5:
+            print((x, y))
+```
+
+som gir utskriften
+
+```{code-block} python
+(-2, -3)
+```
+
+Dermed er løsningen
+
+$$
+x = -2 \and y = -3
+$$
+
+
+::::
 
 :::::::::::::
 
