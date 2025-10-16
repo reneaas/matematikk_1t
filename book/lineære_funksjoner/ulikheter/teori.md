@@ -345,7 +345,13 @@ $$
 Vi setter $f(x) = 3x - 6$. Da er målet vårt å løse ulikheten $f(x) \lt 0$. Først bestemmer vi nullpunktsformen til $f(x)$:
 
 $$
-f(x) = 0 \liff 3x - 6 = 0 \liff 3x = 6 \liff x = 2.
+f(x) = 0 \liff 3x - 6 = 0
+$$
+
+som gir 
+
+$$
+3x = 6 \liff x = 2
 $$
 
 Dette gir oss at $f(x) = 3(x - 2)$.
