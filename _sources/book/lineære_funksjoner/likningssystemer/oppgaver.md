@@ -123,8 +123,8 @@ layout: sidebar
 Løs likningsystemet nedenfor grafisk. 
 
 \begin{align*}
-    2x + y &= -3 \\
-    -x + 3y &= 5
+    2x + y &= 3 \\
+    -x + y &= 1
 \end{align*}
 
 

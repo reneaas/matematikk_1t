@@ -814,9 +814,9 @@ x \in \langle -3, \to \rangle.
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<button id="button-ggb-cas-d905fe4a" class="ggb-cas-button">Åpne CAS‑vindu</button>
-<div id="dialog-ggb-cas-d905fe4a" title="CAS‑vindu" style="display:none;">
-    <div id="ggb-cas-d905fe4a" class="ggb-window"></div>
+<button id="button-ggb-cas-1c8a9a56" class="ggb-cas-button">Åpne CAS‑vindu</button>
+<div id="dialog-ggb-cas-1c8a9a56" title="CAS‑vindu" style="display:none;">
+    <div id="ggb-cas-1c8a9a56" class="ggb-window"></div>
 </div>
 
 <style>
@@ -833,12 +833,12 @@ x \in \langle -3, \to \rangle.
 
     function applySize() {
       if (!ggbReady) return;
-      const w = $("#ggb-cas-d905fe4a").width(),
-            h = $("#ggb-cas-d905fe4a").height();
+      const w = $("#ggb-cas-1c8a9a56").width(),
+            h = $("#ggb-cas-1c8a9a56").height();
       window.ggbApplet.setSize(Math.round(w), Math.round(h));
     }
 
-    const $dlg = $("#dialog-ggb-cas-d905fe4a").dialog({
+    const $dlg = $("#dialog-ggb-cas-1c8a9a56").dialog({
       autoOpen: false,
       width: 390, height: 580,
       resizable: true, draggable: true,
@@ -847,14 +847,14 @@ x \in \langle -3, \to \rangle.
       open: function() {
         if (!ggbReady) {
           new GGBApplet({
-            appName: "classic", id: "ggb-cas-d905fe4a",
+            appName: "classic", id: "ggb-cas-1c8a9a56",
             width: 350, height: 500,
             perspective: "C", language: "nb",
             showToolBar: true, showAlgebraInput: true,
             borderRadius: 8, enableRightClick: true, showKeyboardOnFocus: false,
             customToolBar: "1001 | 1002 | 1007 | 1010 | 6",
             appletOnLoad: () => { ggbReady = true; applySize(); }
-          }, true).inject("ggb-cas-d905fe4a");
+          }, true).inject("ggb-cas-1c8a9a56");
         } else {
           applySize();
         }
@@ -897,7 +897,7 @@ x \in \langle -3, \to \rangle.
             target = target.parentElement;
           }
           // Prevent page scroll but don't stop the event from reaching GeoGebra
-          if (!e.target.closest('#ggb-cas-d905fe4a')) {
+          if (!e.target.closest('#ggb-cas-1c8a9a56')) {
             e.preventDefault();
             e.stopPropagation();
           }
@@ -925,7 +925,7 @@ x \in \langle -3, \to \rangle.
     
     // Monitor GeoGebra applet focus/interaction to control scroll lock
     function bindScrollLock() {
-      const ggbContainer = document.getElementById('ggb-cas-d905fe4a');
+      const ggbContainer = document.getElementById('ggb-cas-1c8a9a56');
       if (!ggbContainer) {
         setTimeout(bindScrollLock, 300);
         return;
@@ -971,10 +971,10 @@ x \in \langle -3, \to \rangle.
     // Cleanup on dialog close
     $dlg.on('dialogclose', unlockScroll);
 
-    $("#button-ggb-cas-d905fe4a").button()
+    $("#button-ggb-cas-1c8a9a56").button()
       .on("click touchend pointerup", e => {
         e.preventDefault();
-        $("#dialog-ggb-cas-d905fe4a").dialog("open");
+        $("#dialog-ggb-cas-1c8a9a56").dialog("open");
       });
   });
 })();
