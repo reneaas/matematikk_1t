@@ -30,7 +30,7 @@ class: no-click, adaptive-figure
 :::::::::::::{tab-item} b
 
 \begin{align*}
-    x - 2y &= 2 \\
+    x - 2y &= -2 \\
     x + 4y &= 8
 \end{align*}
 
