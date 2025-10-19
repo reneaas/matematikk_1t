@@ -1728,12 +1728,17 @@ $$
 Vi gjør dette med CAS:
 
 
-:::{figure} ./figurer/oppgaver/oppgave_15/sol.png
+:::{figure} ./figurer/oppgaver/oppgave_14/sol.png
 ---
 class: no-click, adaptive-figure
 width: 60%
 ---
 :::
+
+
+
+
+
 
 Som betyr at 
 

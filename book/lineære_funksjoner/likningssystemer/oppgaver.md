@@ -1544,6 +1544,16 @@ class: tabs-parts
     3x + 2y - z &= 4
 \end{align*}
 
+
+::::{solution}
+:::{figure} ./figurer/oppgaver/oppgave_9/a.png
+---
+class: no-click, adaptive-figure
+width: 70%
+---
+:::
+::::
+
 :::::::::::::
 
 :::::::::::::{tab-item} b
@@ -1557,6 +1567,18 @@ class: tabs-parts
     x - y + 2z &= 4 \\
     3x + y + z &= 2
 \end{align*}
+
+
+::::{solution}
+::::{solution}
+:::{figure} ./figurer/oppgaver/oppgave_9/b.png
+---
+class: no-click, adaptive-figure
+width: 70%
+---
+:::
+::::
+::::
 
 :::::::::::::
 
@@ -1573,6 +1595,18 @@ class: tabs-parts
     -2x + 3y - z &= 5
 \end{align*}
 
+
+::::{solution}
+::::{solution}
+:::{figure} ./figurer/oppgaver/oppgave_9/c.png
+---
+class: no-click, adaptive-figure
+width: 70%
+---
+:::
+::::
+::::
+
 :::::::::::::
 
 :::::::::::::{tab-item} d
@@ -1586,6 +1620,16 @@ class: tabs-parts
     -x + 4y - z &= 2 \\
     2x - 3y + z &= 1
 \end{align*}
+
+
+::::{solution}
+:::{figure} ./figurer/oppgaver/oppgave_9/d.png
+---
+class: no-click, adaptive-figure
+width: 70%
+---
+:::
+::::
 
 :::::::::::::
 ::::::::::::::
