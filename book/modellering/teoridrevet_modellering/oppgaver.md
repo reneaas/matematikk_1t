@@ -1715,7 +1715,7 @@ $$
 f(0) = 70 \liff a(0 - 75)^2 = 70 \liff a = \dfrac{70}{75^2}
 $$
 
-Siden alle parablene er like, så vil denne verdien for $a$ gjelde for alle parablene. Målet vårt er å bestemme hvor langt tøystykket minst må være. 
+Siden alle parablene i utgangspunktet er like (de konvekse har positiv $a$, og de konkave har negativ $a$), så vil denne verdien for $a$ gjelde for alle parablene. Målet vårt er å bestemme hvor langt tøystykket minst må være. 
 Fokuserer vi på den stiplede linja $y = 35$, så kan vi observere at alle parablene skjærer hverandre ved denne linja. Hvis vi da kjenner til avstanden mellom disse skjæringspunktet, så har vi nesten avstanden til hele tøystykket. 
 Vi mangler bare en bit på venstre side og en bit på høyre side som er like lange. 
 
