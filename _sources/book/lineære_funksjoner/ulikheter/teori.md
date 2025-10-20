@@ -290,7 +290,7 @@ I figuren nedenfor vises fortegnslinja til $f(x) = 2(x - 1)$.
 
 :::{signchart}
 width: 100%
-function: 2*(x - 3), f(x)
+function: 2*(x - 1), f(x)
 factors: false
 :::
 
