@@ -6,7 +6,18 @@
 :::{plot}
 width: 70%
 function: -2*x + 4, f
+function: x**2 - 3*x + 2, g, (0, 4), gray
+xmin: -1
+xmax: 10
+ymin: -1
 :::
+
+:::{signchart}
+width: 100%
+function: x**2 - 3*x + 2
+factors: False 
+:::
+
 
 
 

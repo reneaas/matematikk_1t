@@ -133,11 +133,10 @@ Grafen til en andregradsfunksjon $f$ er vist i figuren nedenfor.
 Bestem $f(x)$.
 
 
-:::{figure} ./figurer/eksempler/eksempel_7/figur.svg
----
-class: no-click, adaptive-figure
-width: 80%
----
+:::{plot}
+width: 70%
+function: -(x + 2) * (x - 3), f
+ymax: 7
 :::
 
 
