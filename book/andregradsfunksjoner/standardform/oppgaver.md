@@ -736,12 +736,12 @@ Grafen til en andregradsfunksjon $p$ er vist i figuren nedenfor.
 
 Bestem $p(x)$.
 
-:::{figure} ./figurer/oppgaver/oppgave_6/d.svg
----
-class: no-click, adaptive-figure
+
+:::{plot}
 width: 70%
----
+function: -1/2 * x**2 + 2*x, p
 :::
+
 
 
 ::::{answer}
