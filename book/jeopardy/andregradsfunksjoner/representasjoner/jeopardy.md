@@ -6,9 +6,6 @@ Velg et lagnavn og spill Jeopardy. Samle så mange poeng som mulig!
 
 
 :::{jeopardy}
----
-teams: 2
----
 Category: Standardform
 100: 
     Q: Er grafen til $f(x) = -2x^2 + 4x - 1$ konveks eller konkav?
@@ -97,5 +94,4 @@ Category: Kvadratsetninger
 
 
 :::::::::::::::
-
 

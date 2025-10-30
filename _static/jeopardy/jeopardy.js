@@ -23,7 +23,8 @@
   function initJeopardy(container){
     let cfg = null;
     try { cfg = JSON.parse(container.getAttribute('data-config')||'{}'); } catch(e){ cfg = {}; }
-    const nTeams = Math.max(1, parseInt(cfg.teams||1,10));
+  // Default to 2 teams unless overridden by config
+  const nTeams = Math.max(1, parseInt(cfg.teams||2,10));
     const categories = cfg.categories||[];
   const values = (cfg.values||[]).slice().sort(function(a,b){return a-b;});
 
@@ -32,30 +33,64 @@
   const categoryStats = categories.map(()=>({correct:0, wrong:0}));
   let totalPlayableTiles = 0;
   let scoreboardShown = false;
+  // Pre-game and runtime options
+  let gameMode = 'duel'; // 'turn' | 'duel'
+  let timerMs = 0; // 0 => no timer
+  let currentTurn = 0;
+  let started = false;
 
     // Build top score bar
-    const scorebar = document.createElement('div');
-    scorebar.className = 'jeopardy-scorebar';
+  const scorebar = document.createElement('div');
+  scorebar.className = 'jeopardy-scorebar';
+  // Hide scorebar until the game has started
+  scorebar.style.display = 'none';
+  const turnIndicator = document.createElement('div');
+  turnIndicator.className = 'jeopardy-turn-indicator';
+  turnIndicator.style.display = 'none';
 
-  const teams = [];
-  const teamCategoryPoints = Array.from({length: nTeams}, () => Array.from({length: categories.length}, () => 0));
-    for(let i=0;i<nTeams;i++){
-      const team = { name: `Lagnavn ${i+1}`, score: 0 };
+  let teams = [];
+  let teamCategoryPoints = Array.from({length: nTeams}, () => Array.from({length: categories.length}, () => 0));
+  function updateActiveTeamHighlight(){
+    teams.forEach((t,i)=>{
+      if (!t._el) return;
+      if (gameMode==='turn' && i===currentTurn) t._el.classList.add('active');
+      else t._el.classList.remove('active');
+    });
+    // Update visible turn text
+    if (turnIndicator) {
+      if (gameMode==='turn' && started && teams.length>0) {
+        turnIndicator.style.display = '';
+        turnIndicator.textContent = `Tur: ${teams[currentTurn].name}`;
+      } else {
+        turnIndicator.style.display = 'none';
+        turnIndicator.textContent = '';
+      }
+    }
+  }
+  function rebuildTeams(newN, names){
+    teams = [];
+    scorebar.innerHTML = '';
+    teamCategoryPoints = Array.from({length: newN}, () => Array.from({length: categories.length}, () => 0));
+    for(let i=0;i<newN;i++){
+      const team = { name: names && names[i] ? names[i] : `Lag ${i+1}`, score: 0 };
       teams.push(team);
       const el = document.createElement('div');
       el.className = 'jeopardy-team';
-      const nameInput = document.createElement('input');
-      nameInput.className = 'team-name';
-      nameInput.value = team.name;
-      nameInput.addEventListener('input', ()=>{ team.name = nameInput.value; });
+      const nameSpan = document.createElement('span');
+      nameSpan.className = 'team-name';
+      nameSpan.textContent = team.name;
       const scoreSpan = document.createElement('span');
       scoreSpan.className = 'score';
       scoreSpan.textContent = '0';
-      el.appendChild(nameInput);
+      el.appendChild(nameSpan);
       el.appendChild(scoreSpan);
       scorebar.appendChild(el);
       team._elScore = scoreSpan;
+      team._el = el;
     }
+    updateActiveTeamHighlight();
+  }
+  // Do not render teams until the game starts
 
     // Build grid as table
     const table = document.createElement('table');
@@ -96,6 +131,7 @@
         if (tileStates[key] && tileStates[key].locked) { tile.disabled = true; tile.classList.add('used'); }
         tile.addEventListener('click', ()=>{
           if(tile.classList.contains('used')||tile.disabled) return;
+          if (!started) return;
           openModal(cat.name||'', val, data, tile, key);
         });
         td.appendChild(tile);
@@ -111,13 +147,14 @@
     backdrop.className = 'jeopardy-modal-backdrop';
     const modal = document.createElement('div');
     modal.className = 'jeopardy-modal';
-    const header = document.createElement('div'); header.className='jeopardy-modal-header';
-    const title = document.createElement('div');
-    const closeBtn = document.createElement('button'); closeBtn.className='j-btn warn'; closeBtn.textContent='Lukk';
+  const header = document.createElement('div'); header.className='jeopardy-modal-header';
+  const title = document.createElement('div');
+  const timerBox = document.createElement('div'); timerBox.className='jeopardy-timer'; timerBox.style.marginLeft='auto';
+  const closeBtn = document.createElement('button'); closeBtn.className='j-btn warn'; closeBtn.textContent='Lukk';
     const body = document.createElement('div'); body.className='jeopardy-modal-body';
     const footer = document.createElement('div'); footer.className='jeopardy-modal-footer';
 
-    header.appendChild(title); header.appendChild(closeBtn);
+  header.appendChild(title); header.appendChild(timerBox); header.appendChild(closeBtn);
     modal.appendChild(header); modal.appendChild(body); modal.appendChild(footer);
     backdrop.appendChild(modal);
 
@@ -125,6 +162,7 @@
     let escHandler = null;
     const hideModal = ()=>{ 
       backdrop.style.display = 'none'; 
+      try { if (typeof stopTimer === 'function') stopTimer(); } catch(e){}
       if (escHandler) { 
         try { document.removeEventListener('keydown', escHandler); } catch(e){}
         escHandler = null; 
@@ -198,6 +236,22 @@
       closeBtn.onclick = hideModal; backdrop.onclick = (e)=>{ if(e.target===backdrop) hideModal(); };
     }
 
+    // Timer utilities for modal
+    let countdownId = null;
+    function stopTimer(){ if (countdownId) { try { clearInterval(countdownId); } catch(e){} countdownId = null; } timerBox.textContent=''; }
+    function startTimer(onTimeout){
+      stopTimer();
+      if (!timerMs || timerMs <= 0) return;
+      let remaining = Math.floor(timerMs/1000);
+      const render = () => { timerBox.textContent = `${Math.floor(remaining/60)}:${String(remaining%60).padStart(2,'0')}`; };
+      render();
+      countdownId = setInterval(()=>{
+        remaining -= 1;
+        if (remaining <= 0){ stopTimer(); try { onTimeout && onTimeout(); } catch(e){} }
+        else render();
+      }, 1000);
+    }
+
     function openModal(category, value, data, tile, key){
       title.textContent = `${category} – ${value}`;
       body.innerHTML = '';
@@ -219,7 +273,14 @@
       const disableTeamButtons = () => {
         teamActions.querySelectorAll('button').forEach(b=>{ b.disabled = true; });
       };
+      const onTimeout = ()=>{
+        disableTeamButtons();
+        if (gameMode==='turn' && teams.length>0){ currentTurn = (currentTurn+1)%teams.length; updateActiveTeamHighlight(); }
+        try { setTimeout(()=>{ hideModal(); }, 300); } catch(e){}
+      };
       teams.forEach((t, i)=>{
+        // In turn-based mode, only show buttons for the active team
+        if (gameMode==='turn' && i!==currentTurn) return;
         const add = document.createElement('button'); add.className='j-btn primary'; add.textContent = `+${value} ${t.name}`;
         const sub = document.createElement('button'); sub.className='j-btn secondary'; sub.textContent = `-${value} ${t.name}`;
         const handle = (delta)=>{
@@ -245,6 +306,7 @@
           if (tile) { tile.classList.add('used'); tile.disabled = true; }
           // Disable further team actions for this question
           disableTeamButtons();
+          if (gameMode==='turn' && teams.length>0){ currentTurn = (currentTurn+1)%teams.length; updateActiveTeamHighlight(); }
           // Auto-close the modal after scoring with a brief delay
           try { setTimeout(()=>{ hideModal(); checkCompletionAndShowWinner(); }, 300); } catch(e){}
         };
@@ -261,12 +323,45 @@
 
       backdrop.style.display = 'flex';
       enableEscClose();
+      startTimer(onTimeout);
       closeBtn.onclick = hideModal; backdrop.onclick = (e)=>{ if(e.target===backdrop) hideModal(); };
     }
 
+    // Pre-game setup UI
+    const setup = document.createElement('div'); setup.className='jeopardy-setup';
+    const fTeams = document.createElement('div'); fTeams.className='jp-field';
+    const lTeams = document.createElement('label'); lTeams.textContent='Antall lag:'; const sTeams=document.createElement('select');
+    [1,2,3,4,5,6].forEach(n=>{ const opt=document.createElement('option'); opt.value=String(n); opt.textContent=String(n); if(n===nTeams) opt.selected=true; sTeams.appendChild(opt); });
+    fTeams.appendChild(lTeams); fTeams.appendChild(sTeams);
+    const namesWrap = document.createElement('div'); namesWrap.className='jp-names';
+    function renderNames(){ namesWrap.innerHTML=''; const n=parseInt(sTeams.value,10)||1; for(let i=0;i<n;i++){ const row=document.createElement('div'); row.className='jp-name-row'; const lbl=document.createElement('label'); lbl.textContent=`Lagnavn ${i+1}`; const inp=document.createElement('input'); inp.type='text'; inp.value=`Lag ${i+1}`; row.appendChild(lbl); row.appendChild(inp); namesWrap.appendChild(row);} }
+    sTeams.addEventListener('change', renderNames); renderNames();
+    const fTimer=document.createElement('div'); fTimer.className='jp-field'; const lTimer=document.createElement('label'); lTimer.textContent='Timer:'; const sTimer=document.createElement('select'); [{label:'∞',ms:0},{label:'30s',ms:30000},{label:'1 min',ms:60000},{label:'2 min',ms:120000}].forEach((t,i)=>{ const opt=document.createElement('option'); opt.value=String(t.ms); opt.textContent=t.label; if(i===0) opt.selected=true; sTimer.appendChild(opt);}); fTimer.appendChild(lTimer); fTimer.appendChild(sTimer);
+    const fMode=document.createElement('div'); fMode.className='jp-field'; const lMode=document.createElement('label'); lMode.textContent='Modus:'; const sMode=document.createElement('select'); [{v:'turn',t:'Turbasert'},{v:'duel',t:'Duel'}].forEach(m=>{ const opt=document.createElement('option'); opt.value=m.v; opt.textContent=m.t; if(m.v==='duel') opt.selected=true; sMode.appendChild(opt);}); fMode.appendChild(lMode); fMode.appendChild(sMode);
+    const startBtn=document.createElement('button'); startBtn.className='j-btn primary'; startBtn.textContent='Start spill';
+    startBtn.addEventListener('click', ()=>{
+      const newN = parseInt(sTeams.value,10)||1;
+      const names = Array.from(namesWrap.querySelectorAll('input')).map((inp,i)=> inp.value && inp.value.trim() ? inp.value.trim() : `Lag ${i+1}`);
+      gameMode = sMode.value==='turn' ? 'turn' : 'duel';
+      timerMs = parseInt(sTimer.value,10)||0;
+      // Randomize who starts to avoid always starting with first team
+      currentTurn = Math.floor(Math.random()*Math.max(1,newN));
+      // Mark game as started before building UI so indicator shows immediately
+      started = true;
+      rebuildTeams(newN, names);
+      // Show the scorebar now that the game has started
+      try { scorebar.style.display = ''; } catch(e){}
+      // Ensure indicator reflects the randomized start
+      try { updateActiveTeamHighlight(); } catch(e){}
+      setup.style.display='none';
+    });
+    setup.appendChild(fTeams); setup.appendChild(namesWrap); setup.appendChild(fTimer); setup.appendChild(fMode); setup.appendChild(startBtn);
+
     // Assemble
     container.innerHTML = '';
-    container.appendChild(scorebar);
+    container.appendChild(setup);
+  container.appendChild(scorebar);
+  container.appendChild(turnIndicator);
     container.appendChild(table);
     container.appendChild(backdrop);
   }

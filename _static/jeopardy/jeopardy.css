@@ -73,7 +73,7 @@
 
 /* When embedded inside admonitions, add extra right padding so content doesn't touch the border */
 .admonition .jeopardy-container {
-  padding-right: 1rem;
+  padding-right: 2.5rem;
 }
 
 .jeopardy-scorebar {
@@ -82,6 +82,18 @@
   flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 1rem;
+}
+.jeopardy-turn-indicator {
+  text-align: center;
+  margin: -0.5rem 0 0.5rem 0; /* tuck closer to the scorebar */
+  font-weight: 700;
+  color: var(--jp-text);
+  background: var(--jp-surface);
+  border: 1px solid var(--jp-outline);
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px; /* pill */
+  box-shadow: var(--jp-shadow);
 }
 .jeopardy-team {
   background: var(--jp-team-bg);
@@ -105,6 +117,12 @@
 }
 .jeopardy-team input.team-name::placeholder { color: rgba(255,255,255,0.7); }
 .jeopardy-team .score { font-weight: 700; margin: 0 0.5rem; }
+
+/* Active team highlight for turn-based mode */
+.jeopardy-team.active {
+  outline: 2px solid var(--jp-outline);
+  box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.35);
+}
 
 .jeopardy-grid {
   width: 100%;
@@ -155,6 +173,7 @@
   display: flex; align-items: center; justify-content: space-between;
   padding: 0.75rem 1rem; background: var(--jp-header-bg); color: var(--jp-header-fg);
 }
+.jeopardy-timer { font-weight: 700; padding: 0 0.5rem; }
 .jeopardy-modal-body { padding: 1rem; background: inherit; }
 .jeopardy-modal-footer { padding: 0.75rem 1rem; background: var(--jp-modal-footer); }
 
@@ -193,3 +212,19 @@ body[data-theme='dark'] .jeopardy-modal-body { background: inherit !important; c
 /* Images inside content */
 .jeopardy-image-container { text-align: center; margin: 0.5rem 0; }
 .jeopardy-image-container img { max-width: 100%; height: auto; border-radius: 6px; }
+
+/* Pre-game setup panel */
+.jeopardy-setup {
+  background: var(--jp-modal-bg);
+  color: var(--jp-modal-fg);
+  border: 1px solid var(--jp-outline);
+  border-radius: 8px;
+  padding: 0.75rem;
+  margin-bottom: 0.75rem;
+  box-shadow: var(--jp-shadow);
+}
+.jeopardy-setup .jp-field { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; }
+.jeopardy-setup .jp-field label { min-width: 7rem; font-weight: 600; }
+.jeopardy-setup .jp-names { display: grid; grid-template-columns: 1fr; gap: 0.35rem; margin-bottom: 0.5rem; }
+.jeopardy-setup .jp-name-row { display: flex; align-items: center; gap: 0.5rem; }
+.jeopardy-setup input, .jeopardy-setup select { padding: 0.35rem 0.5rem; border: 1px solid var(--jp-outline); border-radius: 6px; background: var(--jp-surface); color: var(--jp-text); }

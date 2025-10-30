@@ -37,7 +37,7 @@ class JeopardyDirective(SphinxDirective):
     has_content = True
     required_arguments = 0
     option_spec = {
-        "teams": directives.unchanged,  # number of teams (default 1)
+        "teams": directives.unchanged,  # number of teams (default 2)
     }
 
     def run(self):
@@ -70,9 +70,9 @@ class JeopardyDirective(SphinxDirective):
     def _parse_board(self) -> Dict[str, Any]:
         teams_opt = self.options.get("teams")
         try:
-            teams = max(1, int(str(teams_opt).strip())) if teams_opt is not None else 1
+            teams = max(1, int(str(teams_opt).strip())) if teams_opt is not None else 2
         except Exception:
-            teams = 1
+            teams = 2
 
         categories: List[Dict[str, Any]] = []
         current_cat: Dict[str, Any] | None = None
@@ -97,7 +97,7 @@ class JeopardyDirective(SphinxDirective):
             s = line.rstrip("\n")
 
             # Category header
-            m = re.match(r"^\s*Category\s*:\s*(.+?)\s*$", s)
+            m = re.match(r"^\s*Category\s*:\s*(.+?)\s*$", s, flags=re.IGNORECASE)
             if m:
                 flush_tile()
                 current_cat = {"name": m.group(1).strip(), "tiles": []}
@@ -116,14 +116,14 @@ class JeopardyDirective(SphinxDirective):
                 continue
 
             # Section Q:/A:
-            m = re.match(r"^\s*Q\s*:\s*(.*)$", s)
+            m = re.match(r"^\s*Q\s*:\s*(.*)$", s, flags=re.IGNORECASE)
             if m and current_tile is not None:
                 current_section = "Q"
                 current_tile["question"] = (
                     current_tile.get("question") or ""
                 ) + m.group(1)
                 continue
-            m = re.match(r"^\s*A\s*:\s*(.*)$", s)
+            m = re.match(r"^\s*A\s*:\s*(.*)$", s, flags=re.IGNORECASE)
             if m and current_tile is not None:
                 current_section = "A"
                 current_tile["answer"] = (current_tile.get("answer") or "") + m.group(1)
