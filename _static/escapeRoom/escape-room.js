@@ -63,7 +63,7 @@
     }
 
     function updateProgress(){
-      progress.textContent = `Oppgave ${Math.min(idx+1, steps.length)} av ${steps.length}`;
+      progress.textContent = `Rom ${Math.min(idx+1, steps.length)} av ${steps.length}`;
     }
 
     function renderStep(){

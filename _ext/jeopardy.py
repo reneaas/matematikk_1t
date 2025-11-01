@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import html as _html
 import os
 import re
 import uuid
@@ -55,8 +56,12 @@ class JeopardyDirective(SphinxDirective):
         rel_prefix = "../" * (depth + 1)
 
         # Include KaTeX like quiz does
+        # Embed JSON config safely in an HTML attribute: use double quotes and HTML-escape
+        cfg_str = _html.escape(json.dumps(data, ensure_ascii=False), quote=True)
+        json_str = json.dumps(data, ensure_ascii=False)
         html = f"""
-        <div id="{container_id}" class="jeopardy-container" data-config='{json.dumps(data, ensure_ascii=False)}'></div>
+        <div id="{container_id}" class="jeopardy-container" data-config="{cfg_str}"></div>
+        <script type="application/json" class="jeopardy-data">{json_str}</script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
         <script defer src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
         <script defer src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/auto-render.min.js"></script>

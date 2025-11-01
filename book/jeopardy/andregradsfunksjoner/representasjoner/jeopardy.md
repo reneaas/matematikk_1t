@@ -90,6 +90,7 @@ Category: Kvadratsetninger
     Q: Faktoriser $-(x + 1)^2 + 9$.
     A: $$-(x + 4)(x - 2)$$
 
+
 :::
 
 

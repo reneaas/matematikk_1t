@@ -22,7 +22,19 @@
 
   function initJeopardy(container){
     let cfg = null;
-    try { cfg = JSON.parse(container.getAttribute('data-config')||'{}'); } catch(e){ cfg = {}; }
+    try {
+      // Prefer inline JSON script to avoid attribute escaping issues
+      const dataNode = container.querySelector('script.jeopardy-data[type="application/json"]');
+      let raw = dataNode ? (dataNode.textContent || dataNode.innerText || '') : '';
+      if (!raw || !raw.trim()) {
+        raw = container.getAttribute('data-config') || '{}';
+      }
+      // Fallback: decode common HTML entities if present
+      if (raw && raw.indexOf('&') !== -1 && raw.indexOf('{') === -1) {
+        const ta = document.createElement('textarea'); ta.innerHTML = raw; raw = ta.value;
+      }
+      cfg = JSON.parse(raw);
+    } catch(e){ cfg = {}; }
   // Default to 2 teams unless overridden by config
   const nTeams = Math.max(1, parseInt(cfg.teams||2,10));
     const categories = cfg.categories||[];
@@ -260,12 +272,27 @@
       const q = document.createElement('div'); q.className='jeopardy-q'; q.innerHTML = data && data.question ? data.question : '';
       const a = document.createElement('div'); a.className='jeopardy-a'; a.innerHTML = data && data.answer ? data.answer : '';
 
-      const actions = document.createElement('div'); actions.className='jeopardy-actions';
-      const revealBtn = document.createElement('button'); revealBtn.className='j-btn secondary'; revealBtn.textContent='Fasit';
-      revealBtn.addEventListener('click', ()=>{ a.style.display = a.style.display==='block' ? 'none' : 'block'; });
-      actions.appendChild(revealBtn);
-
-  body.appendChild(q); body.appendChild(actions); body.appendChild(a);
+      // Create the reveal (Fasit) button that will live in the footer (right side)
+      const revealBtn = document.createElement('button'); revealBtn.className='j-btn success'; revealBtn.textContent='Fasit';
+      revealBtn.addEventListener('click', ()=>{
+        // Toggle visibility of the answer
+        const showing = a.style.display !== 'block';
+        a.style.display = showing ? 'block' : 'none';
+        // After toggling, scroll the modal body to the bottom so the answer is visible
+        try {
+          // Allow layout to settle before scrolling
+          setTimeout(()=>{
+            if (typeof body.scrollTo === 'function') {
+              body.scrollTo({ top: body.scrollHeight, behavior: 'smooth' });
+            } else {
+              body.scrollTop = body.scrollHeight;
+            }
+          }, 0);
+        } catch(e){
+          try { body.scrollTop = body.scrollHeight; } catch(_e){}
+        }
+      });
+  body.appendChild(q); body.appendChild(a);
 
       // Team +/- buttons for this value
       let scored = false; // prevent multiple allocations for this tile in this session
@@ -281,8 +308,8 @@
       teams.forEach((t, i)=>{
         // In turn-based mode, only show buttons for the active team
         if (gameMode==='turn' && i!==currentTurn) return;
-        const add = document.createElement('button'); add.className='j-btn primary'; add.textContent = `+${value} ${t.name}`;
-        const sub = document.createElement('button'); sub.className='j-btn secondary'; sub.textContent = `-${value} ${t.name}`;
+  const add = document.createElement('button'); add.className='j-btn primary'; add.textContent = `+${value} ${t.name}`;
+  const sub = document.createElement('button'); sub.className='j-btn warn'; sub.textContent = `-${value} ${t.name}`;
         const handle = (delta)=>{
           if (scored) return;
           if (tileStates[key] && tileStates[key].locked) return;
@@ -316,7 +343,12 @@
         if (tileStates[key] && tileStates[key].locked) { add.disabled = true; sub.disabled = true; }
         teamActions.appendChild(add); teamActions.appendChild(sub);
       });
-      footer.appendChild(teamActions);
+  // Footer layout: team +/- buttons on the left, Fasit button pinned to the right
+  const footerRight = document.createElement('div');
+  footerRight.className = 'jeopardy-footer-right';
+  footerRight.appendChild(revealBtn);
+  footer.appendChild(teamActions);
+  footer.appendChild(footerRight);
 
   renderMathIfAvailable(q); renderMathIfAvailable(a);
   highlightCodeIfAvailable(q); highlightCodeIfAvailable(a);
