@@ -519,7 +519,7 @@ $$
 Grafen til $f$ har symmetrilinje i $x = -2$ siden dette er $x$-koordinaten til toppunktet. Fra formelen for symmetrilinja til $f$ får vi da at
 
 $$
-x = -\dfrac{b}{2a} \liff -2 = -\dfrac{b}{2 \cdot (-1)} \liff b = -4.
+x = -\dfrac{b}{2a} \liff -2 = -\dfrac{b}{2 \cdot (-1)} \liff b = 4.
 $$
 ::::
 
@@ -554,7 +554,7 @@ Bruk svarene dine fra **a**, **b** og **c** til å bestemme $f(x)$.
 
 ::::{answer}
 $$
-f(x) = -x^2 - 4x + 5
+f(x) = -x^2 + 4x + 5
 $$
 ::::
 
