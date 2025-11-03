@@ -22,7 +22,19 @@
 
   function initEscapeRoom(container){
     let cfg = null;
-    try { cfg = JSON.parse(container.getAttribute('data-config')||'{}'); } catch(e){ cfg = {}; }
+    try {
+      // Prefer inline JSON script to avoid attribute escaping issues
+      const dataNode = container.querySelector('script.escape-room-data[type="application/json"]');
+      let raw = dataNode ? (dataNode.textContent || dataNode.innerText || '') : '';
+      if (!raw || !raw.trim()) {
+        raw = container.getAttribute('data-config') || '{}';
+      }
+      // Fallback: decode HTML entities if present in attribute form
+      if (raw && raw.indexOf('&') !== -1 && raw.indexOf('{') === -1) {
+        const ta = document.createElement('textarea'); ta.innerHTML = raw; raw = ta.value;
+      }
+      cfg = JSON.parse(raw);
+    } catch(e){ cfg = {}; }
     const steps = Array.isArray(cfg.steps) ? cfg.steps : [];
     const caseInsensitive = !!cfg.caseInsensitive;
 
@@ -117,6 +129,6 @@
   }
 
   document.addEventListener('DOMContentLoaded', function(){
-    document.querySelectorAll('.escape-room-container[data-config]').forEach(initEscapeRoom);
+    document.querySelectorAll('.escape-room-container').forEach(initEscapeRoom);
   });
 })();
