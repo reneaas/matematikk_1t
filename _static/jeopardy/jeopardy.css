@@ -259,6 +259,7 @@ body[data-theme='dark'] .jeopardy-modal-body { background: inherit !important; c
 .jeopardy-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
 .j-btn { padding: 0.5rem 0.75rem; border: none; border-radius: 6px; cursor: pointer; }
 .j-btn.primary { background: var(--jp-primary); color: var(--jp-on-primary); }
+.j-btn.primary:hover { filter: brightness(1.05); }
 .j-btn.secondary { background: var(--jp-secondary); color: var(--jp-text); }
 .j-btn.warn { background: var(--jp-danger); color: #fff; }
 .j-btn.warn:hover { filter: brightness(1.05); }
@@ -323,3 +324,29 @@ html.light-mode .jeopardy-setup select,
 body.light-mode .jeopardy-setup select,
 html[data-theme='light'] .jeopardy-setup select,
 body[data-theme='light'] .jeopardy-setup select { background: #FFFFFF !important; color: #000000 !important; border-color: var(--jp-outline) !important; }
+
+/* Resume prompt above setup */
+.jeopardy-resume-prompt {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--jp-outline);
+  border-radius: 8px;
+  background: var(--jp-surface);
+  box-shadow: var(--jp-shadow);
+  margin: 0.5rem 0 0.75rem;
+}
+.jeopardy-resume-actions { display: flex; gap: 0.5rem; }
+
+/* Light mode: make resume prompt light blue for consistency */
+@media (prefers-color-scheme: light) {
+  .jeopardy-resume-prompt { background: #E8F0FE; color: #000000; border-color: var(--jp-outline); }
+}
+
+/* Explicit light theme overrides */
+html.light-mode .jeopardy-resume-prompt,
+body.light-mode .jeopardy-resume-prompt,
+html[data-theme='light'] .jeopardy-resume-prompt,
+body[data-theme='light'] .jeopardy-resume-prompt { background: #E8F0FE !important; color: #000000 !important; border-color: var(--jp-outline) !important; }

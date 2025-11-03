@@ -45,6 +45,28 @@
   const categoryStats = categories.map(()=>({correct:0, wrong:0}));
   let totalPlayableTiles = 0;
   let scoreboardShown = false;
+  const storageKey = 'jeopardy:' + (container && container.id ? container.id : 'default');
+  function buildState(){
+    return {
+      started,
+      gameMode,
+      timerMs,
+      currentTurn,
+      scoreboardShown,
+      teams: teams.map(t=>({name:t.name, score:t.score})),
+      teamCategoryPoints: teamCategoryPoints.map(row=> row.slice()),
+      categoryStats: categoryStats.map(s=>({correct:s.correct, wrong:s.wrong})),
+      tileStates: Object.fromEntries(Object.entries(tileStates).map(([k,v])=>[k,{locked:!!(v&&v.locked)}]))
+    };
+  }
+  function saveState(){ try { localStorage.setItem(storageKey, JSON.stringify(buildState())); } catch(e){} }
+  function loadState(){
+    try {
+      const raw = localStorage.getItem(storageKey); if(!raw) return null; const obj = JSON.parse(raw);
+      if (!obj || typeof obj !== 'object') return null; return obj;
+    } catch(e){ return null; }
+  }
+  function clearState(){ try { localStorage.removeItem(storageKey); } catch(e){} }
   // Pre-game and runtime options
   let gameMode = 'duel'; // 'turn' | 'duel'
   let timerMs = 0; // 0 => no timer
@@ -117,6 +139,48 @@
       team._el = el;
     }
     updateActiveTeamHighlight();
+  }
+  function applySavedState(state){
+    try {
+      started = !!state.started;
+      gameMode = state.gameMode || gameMode;
+      timerMs = typeof state.timerMs === 'number' ? state.timerMs : timerMs;
+      currentTurn = typeof state.currentTurn === 'number' ? state.currentTurn : 0;
+      scoreboardShown = !!state.scoreboardShown;
+      const savedTeams = Array.isArray(state.teams) ? state.teams : [];
+      const names = savedTeams.length ? savedTeams.map(t=> t && t.name ? String(t.name) : '') : null;
+      const newN = Math.max(1, names ? names.length : nTeams);
+      rebuildTeams(newN, names || undefined);
+      // restore scores
+      if (savedTeams.length){
+        savedTeams.forEach((t,i)=>{
+          if (teams[i]){ teams[i].score = Number(t.score)||0; if (teams[i]._elScore) teams[i]._elScore.textContent = String(teams[i].score); }
+        });
+      }
+      // restore per-category points
+      if (Array.isArray(state.teamCategoryPoints)){
+        teamCategoryPoints = state.teamCategoryPoints.map(row=> Array.isArray(row)? row.slice(): []);
+      }
+      // restore category stats
+      if (Array.isArray(state.categoryStats)){
+        state.categoryStats.forEach((s,i)=>{ if (categoryStats[i]){ categoryStats[i].correct = Number(s.correct)||0; categoryStats[i].wrong = Number(s.wrong)||0; }});
+      }
+      // restore tile locks
+      if (state.tileStates && typeof state.tileStates === 'object'){
+        Object.keys(state.tileStates).forEach(k=>{ const v = state.tileStates[k]; if (v && v.locked){ tileStates[k] = {locked:true}; }});
+        try {
+          container.querySelectorAll('.jeopardy-tile').forEach(btn=>{
+            const k = btn && btn.dataset ? btn.dataset.key : null; if (!k) return;
+            if (tileStates[k] && tileStates[k].locked){ btn.disabled = true; btn.classList.add('used'); }
+          });
+        } catch(e){}
+      }
+      // show UI
+      try { scorebar.style.display = ''; } catch(e){}
+      try { resetBtn.style.display = ''; } catch(e){}
+      try { setup.style.display = 'none'; } catch(e){}
+      updateActiveTeamHighlight();
+    } catch(e){}
   }
   // Do not render teams until the game starts
 
@@ -291,6 +355,7 @@
       try { turnIndicator.style.display = 'none'; } catch(e){}
       try { resetBtn.style.display = 'none'; } catch(e){}
       try { setup.style.display = ''; } catch(e){}
+      clearState();
     }
     resetBtn.addEventListener('click', resetGame);
 
@@ -349,6 +414,7 @@
       const onTimeout = ()=>{
         disableTeamButtons();
         if (gameMode==='turn' && teams.length>0){ currentTurn = (currentTurn+1)%teams.length; updateActiveTeamHighlight(); }
+        try { saveState(); } catch(e){}
         try { setTimeout(()=>{ hideModal(); }, 300); } catch(e){}
       };
       teams.forEach((t, i)=>{
@@ -381,7 +447,10 @@
           disableTeamButtons();
           if (gameMode==='turn' && teams.length>0){ currentTurn = (currentTurn+1)%teams.length; updateActiveTeamHighlight(); }
           // Auto-close the modal after scoring with a brief delay
-          try { setTimeout(()=>{ hideModal(); checkCompletionAndShowWinner(); }, 300); } catch(e){}
+          try { 
+            saveState();
+            setTimeout(()=>{ hideModal(); checkCompletionAndShowWinner(); }, 300); 
+          } catch(e){}
         };
         add.addEventListener('click', ()=> handle(value));
         sub.addEventListener('click', ()=> handle(-value));
@@ -426,6 +495,8 @@
       currentTurn = Math.floor(Math.random()*Math.max(1,newN));
       // Mark game as started before building UI so indicator shows immediately
       started = true;
+      // If a resume prompt is present, remove it since user chose to start fresh
+      try { if (typeof resumePrompt !== 'undefined' && resumePrompt && resumePrompt.parentNode) resumePrompt.remove(); } catch(e){}
       rebuildTeams(newN, names);
       // Show the scorebar now that the game has started
       try { scorebar.style.display = ''; } catch(e){}
@@ -434,11 +505,35 @@
       // Ensure indicator reflects the randomized start
       try { updateActiveTeamHighlight(); } catch(e){}
       setup.style.display='none';
+      try { saveState(); } catch(e){}
     });
     setup.appendChild(fTeams); setup.appendChild(namesWrap); setup.appendChild(fTimer); setup.appendChild(fMode); setup.appendChild(startBtn);
 
     // Assemble
     container.innerHTML = '';
+    // Optional resume prompt
+    const saved = loadState();
+    let resumePrompt = null;
+    if (saved && (saved.started || (saved.tileStates && Object.keys(saved.tileStates).length>0) || (Array.isArray(saved.teams) && saved.teams.some(t=> (t&&Number(t.score)||0)!==0)))){
+      resumePrompt = document.createElement('div'); resumePrompt.className='jeopardy-resume-prompt';
+      const txt = document.createElement('div'); txt.className='jeopardy-resume-text'; txt.textContent = 'Fortsette der du slapp?';
+      const actions = document.createElement('div'); actions.className='jeopardy-resume-actions';
+      const btnStart = document.createElement('button'); btnStart.className='j-btn accent'; btnStart.textContent='Start fra begynnelsen';
+      const btnResume = document.createElement('button'); btnResume.className='j-btn primary'; btnResume.textContent='Fortsett';
+      actions.appendChild(btnStart); actions.appendChild(btnResume);
+      resumePrompt.appendChild(txt); resumePrompt.appendChild(actions);
+      // Start fresh: clear saved state, remove prompt, then show setup options
+      btnStart.addEventListener('click', ()=>{ 
+        try { clearState(); } catch(e){}
+        try { resumePrompt.remove(); } catch(e){}
+        try { setup.style.display = ''; } catch(e){}
+      });
+      // Resume: apply saved state (which hides setup and shows game UI), then remove prompt
+      btnResume.addEventListener('click', ()=>{ try { applySavedState(saved); } catch(e){}; try { resumePrompt.remove(); } catch(e){}; });
+      container.appendChild(resumePrompt);
+      // While resume prompt is visible, hide setup to avoid conflicting choices
+      try { setup.style.display = 'none'; } catch(e){}
+    }
     container.appendChild(setup);
   container.appendChild(topbar);
   container.appendChild(turnIndicator);
