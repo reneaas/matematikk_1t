@@ -60,7 +60,7 @@ class JeopardyDirective(SphinxDirective):
         cfg_str = _html.escape(json.dumps(data, ensure_ascii=False), quote=True)
         json_str = json.dumps(data, ensure_ascii=False)
         html = f"""
-        <div id="{container_id}" class="jeopardy-container" data-config="{cfg_str}"></div>
+        <div id="{container_id}" class="jeopardy-container" lang="no" data-config="{cfg_str}"></div>
         <script type="application/json" class="jeopardy-data">{json_str}</script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
         <script defer src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
