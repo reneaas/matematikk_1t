@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import html as _html
 import os
 import re
 import uuid
@@ -54,8 +55,14 @@ class EscapeRoomDirective(SphinxDirective):
         depth = os.path.relpath(source_dir, app_src_dir).count(os.sep)
         rel_prefix = "../" * (depth + 1)
 
+        json_str = json.dumps(data, ensure_ascii=False)
+        # Escape JSON for safe embedding in a double-quoted attribute
+        attr_json = _html.escape(json_str, quote=True)
+
         html = f"""
-        <div id="{container_id}" class="escape-room-container" data-config='{json.dumps(data, ensure_ascii=False)}'></div>
+        <div id="{container_id}" class="escape-room-container" data-config="{attr_json}">
+          <script type="application/json" class="escape-room-data">{json_str}</script>
+        </div>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
         <script defer src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
         <script defer src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/auto-render.min.js"></script>

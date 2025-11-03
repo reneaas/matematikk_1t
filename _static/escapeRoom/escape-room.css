@@ -46,6 +46,7 @@
 
 .er-controls { display: flex; gap: 0.5rem; align-items: center; margin-top: 0.75rem; }
 .er-controls input[type="text"] { flex: 1; padding: 0.5rem 0.6rem; border: 1px solid var(--er-outline); border-radius: 6px; background: transparent; color: var(--er-text); }
+.er-controls input[type="text"]::placeholder { color: #5F6368; opacity: 0.9; }
 .er-btn { padding: 0.5rem 0.75rem; border: none; border-radius: 6px; cursor: pointer; }
 .er-btn.primary { background: var(--er-primary); color: #fff; }
 
@@ -56,9 +57,13 @@
 @media (prefers-color-scheme: light) {
   .er-body { background: #FFFFFF; color: #000000; }
   .er-progress { color: #000000; opacity: 1; }
+  .er-controls input[type="text"] { background: #FFFFFF; color: #000000; border-color: var(--er-outline); }
+  .er-controls input[type="text"]::placeholder { color: #5F6368; }
 }
 @media (prefers-color-scheme: dark) {
   .er-body { background: var(--er-surface); color: var(--er-text); }
+  .er-controls input[type="text"] { background: #2A2E34; color: var(--er-text); border-color: var(--er-outline); }
+  .er-controls input[type="text"]::placeholder { color: #9AA0A6; }
 }
 
 /* Explicit theme overrides if site provides toggles (align with Jeopardy approach) */
@@ -67,12 +72,22 @@ body.light-mode .er-body,
 html[data-theme='light'] .er-body,
 body[data-theme='light'] .er-body,
 [data-mode='light'] .er-body { background: #FFFFFF !important; color: #000000 !important; }
+[data-mode='light'] .er-controls input[type="text"],
+html.light-mode .er-controls input[type="text"],
+body.light-mode .er-controls input[type="text"],
+html[data-theme='light'] .er-controls input[type="text"],
+body[data-theme='light'] .er-controls input[type="text"] { background: #FFFFFF !important; color: #000000 !important; border-color: var(--er-outline) !important; }
 
 html.dark-mode .er-body,
 body.dark-mode .er-body,
 html[data-theme='dark'] .er-body,
 body[data-theme='dark'] .er-body,
 [data-mode='dark'] .er-body { background: var(--er-surface) !important; color: var(--er-text) !important; }
+[data-mode='dark'] .er-controls input[type="text"],
+html.dark-mode .er-controls input[type="text"],
+body.dark-mode .er-controls input[type="text"],
+html[data-theme='dark'] .er-controls input[type="text"],
+body[data-theme='dark'] .er-controls input[type="text"] { background: #2A2E34 !important; color: var(--er-text) !important; border-color: var(--er-outline) !important; }
 
 /* Explicit light-mode overrides for progress text */
 html.light-mode .er-progress,

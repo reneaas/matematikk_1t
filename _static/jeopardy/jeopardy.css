@@ -80,6 +80,19 @@
   padding-right: 2.5rem;
 }
 
+/* Prevent horizontal overflow inside admonitions and tighten spacing on small widths */
+.admonition .jeopardy-container { overflow-x: hidden; }
+@media (max-width: 900px) {
+  .jeopardy-grid { border-spacing: 6px; }
+  .jeopardy-grid thead th { padding: 0.6rem; }
+  .jeopardy-tile { padding: 0.8rem 0.4rem; }
+}
+@media (max-width: 600px) {
+  .jeopardy-grid { border-spacing: 4px; }
+  .jeopardy-grid thead th { padding: 0.5rem; }
+  .jeopardy-tile { padding: 0.6rem 0.35rem; }
+}
+
 .jeopardy-scorebar {
   display: flex;
   gap: 1rem;
@@ -130,6 +143,8 @@
 
 .jeopardy-grid {
   width: 100%;
+  max-width: 100%;
+  table-layout: fixed; /* force columns to fit container width */
   border-collapse: separate;
   border-spacing: 8px;
 }
@@ -140,6 +155,12 @@
   padding: 0.75rem;
   border-radius: 8px;
   font-weight: 700;
+  /* allow long category names to wrap and avoid overflow */
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  /* scale header font for narrow containers */
+  font-size: clamp(0.85rem, 1.8vw, 1rem);
 }
 .jeopardy-grid tbody td { text-align: center; }
 
@@ -150,11 +171,16 @@
   border: 1px solid rgba(255,255,255,0.1);
   border-radius: 8px;
   padding: 1rem 0.5rem;
-  font-size: 1.25rem;
+  /* responsive font that shrinks on tight layouts */
+  font-size: clamp(0.9rem, 2.2vw, 1.25rem);
   font-weight: 800;
   cursor: pointer;
   box-shadow: var(--jp-shadow);
   transition: transform 0.06s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+  /* allow tile text to wrap when needed */
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 .jeopardy-tile:hover { transform: translateY(-2px); box-shadow: var(--jp-shadow-lg); }
 .jeopardy-tile:focus { outline: 2px solid var(--jp-outline); outline-offset: 2px; }
