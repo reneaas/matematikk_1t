@@ -36,6 +36,27 @@
       cfg = JSON.parse(raw);
     } catch(e){ cfg = {}; }
     const steps = Array.isArray(cfg.steps) ? cfg.steps : [];
+    const storageKey = 'escapeRoom:' + (container && container.id ? container.id : 'default');
+
+    function loadProgress(){
+      try {
+        const raw = window.localStorage.getItem(storageKey);
+        if (!raw) return null;
+        const obj = JSON.parse(raw);
+        if (obj && typeof obj.idx === 'number') {
+          // Clamp index to available steps
+          const clamped = Math.max(0, Math.min(steps.length, Math.floor(obj.idx)));
+          return { idx: clamped };
+        }
+      } catch(e){}
+      return null;
+    }
+    function saveProgress(i){
+      try { window.localStorage.setItem(storageKey, JSON.stringify({ idx: i })); } catch(e){}
+    }
+    function clearProgress(){
+      try { window.localStorage.removeItem(storageKey); } catch(e){}
+    }
     const caseInsensitive = !!cfg.caseInsensitive;
 
     // Build UI
@@ -47,6 +68,16 @@
     const progress = document.createElement('div');
     progress.className = 'er-progress';
     header.appendChild(progress);
+    // Visual progress bar under the label
+    const progressBar = document.createElement('div');
+    progressBar.className = 'er-progressbar';
+    progressBar.setAttribute('role', 'progressbar');
+    progressBar.setAttribute('aria-valuemin', '0');
+    progressBar.setAttribute('aria-valuemax', String((Array.isArray(cfg.steps)?cfg.steps:[]).length||0));
+    const progressFill = document.createElement('div');
+    progressFill.className = 'er-progressbar-fill';
+    progressBar.appendChild(progressFill);
+    header.appendChild(progressBar);
 
     const body = document.createElement('div');
     body.className = 'er-body';
@@ -60,7 +91,8 @@
 
     root.appendChild(header); root.appendChild(body); root.appendChild(controls); root.appendChild(feedback);
 
-    let idx = 0;
+  let idx = 0;
+  let resumePromptShown = false;
     // Avoid auto-scrolling on initial load by not auto-focusing until user interacts
     let userInitiated = false;
     const markUserInitiated = ()=>{ userInitiated = true; try { codeInput.focus({ preventScroll: true }); } catch(e){ try { codeInput.focus(); } catch(_){} } };
@@ -76,6 +108,15 @@
 
     function updateProgress(){
       progress.textContent = `Rom ${Math.min(idx+1, steps.length)} av ${steps.length}`;
+        const total = steps.length || 1;
+        const completed = Math.min(idx, steps.length);
+        const pct = Math.max(0, Math.min(100, Math.round((completed/total)*100)));
+        try { progressFill.style.width = pct + '%'; } catch(e){}
+        try {
+          progressBar.setAttribute('aria-valuenow', String(completed));
+          progressBar.setAttribute('aria-valuemax', String(total));
+        } catch(e){}
+  root.appendChild(header); root.appendChild(body); root.appendChild(controls); root.appendChild(feedback);
     }
 
     function renderStep(){
@@ -88,6 +129,8 @@
         done.innerHTML = '<h3> Ferdig! 🎉</h3>';
         body.appendChild(done);
         controls.style.display = 'none';
+        // Clear saved progress on completion
+        clearProgress();
         return;
       }
       controls.style.display = '';
@@ -102,6 +145,38 @@
       }
     }
 
+    function showResumePrompt(savedIndex){
+      resumePromptShown = true;
+      // Hide normal UI until choice made
+      body.innerHTML = '';
+      controls.style.display = 'none';
+      feedback.textContent = '';
+      const p = document.createElement('div');
+      p.className = 'er-resume-prompt';
+      const txt = document.createElement('div');
+      txt.className = 'er-resume-text';
+      const roomNum = Math.min((savedIndex||0)+1, steps.length);
+      txt.textContent = `Fortsett der du slapp (rom ${roomNum} av ${steps.length})?`;
+      const actions = document.createElement('div');
+      actions.className = 'er-resume-actions';
+  const btnStart = document.createElement('button'); btnStart.className='er-btn accent'; btnStart.textContent='Start fra begynnelsen';
+      const btnResume = document.createElement('button'); btnResume.className='er-btn primary'; btnResume.textContent='Fortsett';
+      actions.appendChild(btnStart); actions.appendChild(btnResume);
+      p.appendChild(txt); p.appendChild(actions);
+      body.appendChild(p);
+      btnStart.addEventListener('click', ()=>{
+        idx = 0;
+        clearProgress();
+        controls.style.display = '';
+        renderStep();
+      });
+      btnResume.addEventListener('click', ()=>{
+        idx = Math.max(0, Math.min(steps.length, savedIndex||0));
+        controls.style.display = '';
+        renderStep();
+      });
+    }
+
     function check(){
       const step = steps[idx] || {};
       const allowed = Array.isArray(step.codes) ? step.codes : [];
@@ -110,6 +185,8 @@
       if (ok){
         feedback.textContent = '';
         idx += 1;
+        // Persist progress after each successful room
+        saveProgress(idx);
         renderStep();
       } else {
         feedback.textContent = 'Feil kode. Prøv igjen.';
@@ -125,7 +202,15 @@
 
     container.innerHTML = '';
     container.appendChild(root);
-    renderStep();
+    // Optional resume: only show prompt if saved progress exists and is within bounds
+    const saved = loadProgress();
+    if (saved && typeof saved.idx === 'number' && saved.idx > 0 && saved.idx <= steps.length) {
+      showResumePrompt(saved.idx);
+    } else {
+      // Ensure no stale progress
+      if (saved && (saved.idx <= 0 || saved.idx > steps.length)) clearProgress();
+      renderStep();
+    }
   }
 
   document.addEventListener('DOMContentLoaded', function(){
