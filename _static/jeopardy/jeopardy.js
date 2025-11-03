@@ -59,6 +59,22 @@
   const turnIndicator = document.createElement('div');
   turnIndicator.className = 'jeopardy-turn-indicator';
   turnIndicator.style.display = 'none';
+  // Top bar with centered scorebar and a right-aligned reset button
+  const topbar = document.createElement('div');
+  topbar.className = 'jeopardy-topbar';
+  const scoreWrap = document.createElement('div');
+  scoreWrap.className = 'jeopardy-scorebar-wrap';
+  scoreWrap.appendChild(scorebar);
+  const topbarRight = document.createElement('div');
+  topbarRight.className = 'jeopardy-topbar-right';
+  const resetBtn = document.createElement('button');
+  resetBtn.className = 'j-btn accent jeopardy-reset-button';
+  resetBtn.textContent = 'Reset spill';
+  // Hide reset until the game has started
+  resetBtn.style.display = 'none';
+  topbarRight.appendChild(resetBtn);
+  topbar.appendChild(scoreWrap);
+  topbar.appendChild(topbarRight);
 
   let teams = [];
   let teamCategoryPoints = Array.from({length: nTeams}, () => Array.from({length: categories.length}, () => 0));
@@ -205,7 +221,7 @@
         openWinner();
       }
     }
-    function openWinner(){
+  function openWinner(){
       // Build a scoreboard sorted by score desc
       const sorted = teams.map((t,i)=>({name:t.name, score:t.score, idx:i}))
                           .sort((a,b)=> b.score - a.score);
@@ -247,6 +263,36 @@
       enableEscClose();
       closeBtn.onclick = hideModal; backdrop.onclick = (e)=>{ if(e.target===backdrop) hideModal(); };
     }
+
+    // Reset game to initial state
+    function resetGame(){
+      try { hideModal(); } catch(e){}
+      try { stopTimer(); } catch(e){}
+      started = false;
+      scoreboardShown = false;
+      currentTurn = 0;
+      // clear per-tile state
+      for (const k in tileStates) { try { delete tileStates[k]; } catch(e){} }
+      // reset category stats
+      for (let i=0;i<categoryStats.length;i++){ categoryStats[i].correct = 0; categoryStats[i].wrong = 0; }
+      // reset teams data and UI
+      teams = [];
+      teamCategoryPoints = Array.from({length: nTeams}, () => Array.from({length: categories.length}, () => 0));
+      scorebar.innerHTML = '';
+      // re-enable all tiles
+      try {
+        container.querySelectorAll('.jeopardy-tile').forEach(b=>{
+          b.disabled = false;
+          b.classList.remove('used');
+        });
+      } catch(e){}
+      // hide score/turn UI and show setup again
+      try { scorebar.style.display = 'none'; } catch(e){}
+      try { turnIndicator.style.display = 'none'; } catch(e){}
+      try { resetBtn.style.display = 'none'; } catch(e){}
+      try { setup.style.display = ''; } catch(e){}
+    }
+    resetBtn.addEventListener('click', resetGame);
 
     // Timer utilities for modal
     let countdownId = null;
@@ -383,6 +429,8 @@
       rebuildTeams(newN, names);
       // Show the scorebar now that the game has started
       try { scorebar.style.display = ''; } catch(e){}
+      // Show reset button when game starts
+      try { resetBtn.style.display = ''; } catch(e){}
       // Ensure indicator reflects the randomized start
       try { updateActiveTeamHighlight(); } catch(e){}
       setup.style.display='none';
@@ -392,7 +440,7 @@
     // Assemble
     container.innerHTML = '';
     container.appendChild(setup);
-  container.appendChild(scorebar);
+  container.appendChild(topbar);
   container.appendChild(turnIndicator);
     container.appendChild(table);
     container.appendChild(backdrop);
