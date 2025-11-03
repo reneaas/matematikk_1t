@@ -516,7 +516,7 @@
     let resumePrompt = null;
     if (saved && (saved.started || (saved.tileStates && Object.keys(saved.tileStates).length>0) || (Array.isArray(saved.teams) && saved.teams.some(t=> (t&&Number(t.score)||0)!==0)))){
       resumePrompt = document.createElement('div'); resumePrompt.className='jeopardy-resume-prompt';
-      const txt = document.createElement('div'); txt.className='jeopardy-resume-text'; txt.textContent = 'Fortsette der du slapp?';
+      const txt = document.createElement('div'); txt.className='jeopardy-resume-text'; txt.textContent = 'Fortsett der du slapp?';
       const actions = document.createElement('div'); actions.className='jeopardy-resume-actions';
       const btnStart = document.createElement('button'); btnStart.className='j-btn accent'; btnStart.textContent='Start fra begynnelsen';
       const btnResume = document.createElement('button'); btnResume.className='j-btn primary'; btnResume.textContent='Fortsett';

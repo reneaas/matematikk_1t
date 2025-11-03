@@ -165,8 +165,12 @@
   font-weight: 700;
   /* allow long category names to wrap and avoid overflow */
   white-space: normal;
-  word-break: break-word;
-  overflow-wrap: anywhere;
+  /* prefer hyphenation on word breaks */
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  word-break: normal;
+  overflow-wrap: break-word;
   /* scale header font for narrow containers */
   font-size: clamp(0.85rem, 1.8vw, 1rem);
 }
@@ -187,8 +191,12 @@
   transition: transform 0.06s ease, opacity 0.2s ease, box-shadow 0.2s ease;
   /* allow tile text to wrap when needed */
   white-space: normal;
-  word-break: break-word;
-  overflow-wrap: anywhere;
+  /* prefer hyphenation on word breaks */
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  word-break: normal;
+  overflow-wrap: break-word;
 }
 .jeopardy-tile:hover { transform: translateY(-2px); box-shadow: var(--jp-shadow-lg); }
 .jeopardy-tile:focus { outline: 2px solid var(--jp-outline); outline-offset: 2px; }
@@ -255,6 +263,15 @@ body[data-theme='dark'] .jeopardy-modal-body { background: inherit !important; c
 
 .jeopardy-q { font-size: 1.05rem; margin-bottom: 1rem; background: inherit !important; }
 .jeopardy-a { display: none; margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--jp-outline); }
+
+/* Improve wrapping with hyphens inside modal content */
+.jeopardy-modal-body, .jeopardy-q, .jeopardy-a {
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
 
 .jeopardy-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
 .j-btn { padding: 0.5rem 0.75rem; border: none; border-radius: 6px; cursor: pointer; }
