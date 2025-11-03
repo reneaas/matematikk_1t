@@ -250,7 +250,7 @@ Bestem koordinatene til ekstremalpunktet til $f$ og avgjør om det er et toppunk
 
 
 ::::{answer}
-Toppunkt i $(2, -1)$. 
+Bunnpunkt i $(2, -1)$. 
 ::::
 
 ::::{solution}
@@ -277,16 +277,16 @@ $$
 ::::{answer}
 
 $$
-f(x) = -(x - 2)^2 - 1
+f(x) = (x - 2)^2 - 1
 $$
 
 ::::
 
 ::::{solution}
-Vi vet at $x_0 = 2$ og $y_0 = -1$. Vi vet også at $a = -1$, som betyr at 
+Vi vet at $x_0 = 2$ og $y_0 = -1$. Vi vet også at $a = 1$, som betyr at 
 
 $$
-f(x) = a(x - x_0)^2 + y_0 = -(x - 2)^2 - 1.
+f(x) = a(x - x_0)^2 + y_0 = (x - 2)^2 - 1.
 $$
 
 ::::
