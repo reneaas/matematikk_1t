@@ -855,22 +855,22 @@ width: 80%
 
 ::::{answer}
 $$
-f(x) = (x + 1)(x - 2).
+f(x) = (x + 2)(x - 1).
 $$
 ::::
 
 
 ::::{solution}
-Vi ser at grafen til $f$ har nullpunkter $(-1, 0)$ og $(2, 0)$. Det betyr at 
+Vi ser at grafen til $f$ har nullpunkter $(-2, 0)$ og $(1, 0)$. Det betyr at 
 
 $$
-f(x) = a(x + 1)(x - 2)
+f(x) = a(x + 2)(x - 1)
 $$
 
 Vi ser også at grafen skjærer $y$-aksen i punktet $(0, -2)$ som betyr at 
 
 $$
-f(0) = -2 \liff a(0 + 1)(0 - 2) = -2.
+f(0) = -2 \liff a(0 + 2)(0 - 1) = -2.
 $$
 
 Dette forenkler vi til
@@ -879,10 +879,10 @@ $$
 -2a = -2 \liff a = 1.
 $$
 
-Dermed har vi at 
+Dermed har vi at
 
 $$
-f(x) = 1\cdot(x + 1)(x - 2) = (x + 1)(x - 2).
+f(x) = 1\cdot(x + 2)(x - 1) = (x + 2)(x - 1).
 $$
 ::::
 
