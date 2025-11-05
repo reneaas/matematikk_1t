@@ -639,7 +639,7 @@ class: no-click, adaptive-figure
 Fra utskriften kan vi lese av at 
 
 $$
-x = 32 \or y = 48,
+x = 32 \and y = 48,
 $$
 
 som betyr at butikken solgte 32 små sekker og 48 store sekker den dagen.
