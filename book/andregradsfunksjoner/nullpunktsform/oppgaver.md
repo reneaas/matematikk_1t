@@ -514,6 +514,8 @@ g(x) &= -2(x + 2)(x - 4) \\
 
 ::::
 
+:::::::::::::
+
 
 :::::::::::::{tab-item} c
 En andregradsfunksjon $h$ er gitt ved
