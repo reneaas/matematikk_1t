@@ -10,20 +10,20 @@ level: 1
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
-Bruk {numref}`fig-andregradsfunksjoner-likninger-grafisk-løsning-oppgave-1-a` til å løse 
+Grafen til en andregradsfunksjon $f$ er vist i figuren nedenfor.
+
+Bruk figuren til å løse likningen
 
 $$
 f(x) = 0
 $$
 
-:::{figure} ./figurer/oppgaver/oppgave_1/a.svg
----
-name: fig-andregradsfunksjoner-likninger-grafisk-løsning-oppgave-1-a
-width: 80%
-class: no-click, adaptive-figure
----
-viser grafen til en andregradsfunksjon $f$.
+
+:::{plot}
+width: 70%
+function: (x + 3) * (x - 1), f
 :::
+
 
 ::::{answer}
 $$
@@ -34,19 +34,17 @@ $$
 :::::::::::::
 
 :::::::::::::{tab-item} b
-Bruk {numref}`fig-andregradsfunksjoner-likninger-grafisk-løsning-oppgave-1-b` til å løse
+Grafen til en andregradsfunksjon $g$ er vist i figuren nedenfor.
+
+Bruk figuren til å løse likningen:
 
 $$
 g(x) = 0
 $$
 
-:::{figure} ./figurer/oppgaver/oppgave_1/b.svg
----
-name: fig-andregradsfunksjoner-likninger-grafisk-løsning-oppgave-1-b
-width: 80%
-class: no-click, adaptive-figure
----
-viser grafen til en andregradsfunksjon $g$.
+:::{plot}
+width: 70%
+function: (x - 1)**2, g
 :::
 
 
@@ -61,19 +59,17 @@ $$
 
 
 :::::::::::::{tab-item} c
-Bruk {numref}`fig-andregradsfunksjoner-likninger-grafisk-løsning-oppgave-1-c` til å løse
+Grafen til en andregradsfunksjon $h$ er vist i figuren nedenfor.
+
+Bruk figuren til å løse likningen
 
 $$
 h(x) = 0
 $$
 
-:::{figure} ./figurer/oppgaver/oppgave_1/c.svg
----
-name: fig-andregradsfunksjoner-likninger-grafisk-løsning-oppgave-1-c
-width: 80%
-class: no-click, adaptive-figure
----
-viser grafen til en andregradsfunksjon $h$.
+:::{plot}
+width: 70%
+function: -(x - 2) * (x+2), h
 :::
 
 
@@ -88,20 +84,20 @@ $$
 
 
 :::::::::::::{tab-item} d
-Bruk {numref}`fig-andregradsfunksjoner-likninger-grafisk-løsning-oppgave-1-d` til å løse
+Grafen til en andregradsfunksjon $p$ er vist i figuren nedenfor.
+
+Bruk figuren til å løse likningen:
 
 $$
 p(x) = 0
 $$
 
-:::{figure} ./figurer/oppgaver/oppgave_1/d.svg
----
-name: fig-andregradsfunksjoner-likninger-grafisk-løsning-oppgave-1-d
-width: 80%
-class: no-click, adaptive-figure
----
-viser grafen til en andregradsfunksjon $p$.
+:::{plot}
+width: 70%
+function: 0.5 * (x + 4) * (x - 3), p
+ymin: -7
 :::
+
 
 
 ::::{answer}
@@ -346,6 +342,26 @@ $$
 x^2 - 4 = 0
 $$
 
+
+::::{answer}
+$$
+x = \pm 2
+$$
+::::
+
+
+::::{solution}
+$$
+x^2 - 4 = 0 \liff x^2 = 4 \liff x = \pm\sqrt{4}
+$$
+
+som betyr at 
+
+$$
+x = \pm 2
+$$
+::::
+
 :::::::::::::
 
 
@@ -355,6 +371,28 @@ Løs likningen
 $$
 x^2 - 1 = 0
 $$
+
+
+::::{answer}
+$$
+x = \pm 1
+$$
+::::
+
+
+::::{solution}
+$$
+x^2 - 1 = 0 \liff x^2 = 1 \liff x = \pm \sqrt{1}
+$$
+
+som betyr at 
+
+$$
+x = \pm 1
+$$
+::::
+
+
 :::::::::::::
 
 
@@ -366,6 +404,26 @@ x^2 - 16 = 0
 $$
 
 
+::::{answer}
+$$
+x = \pm 4
+$$
+::::
+
+
+::::{solution}
+$$
+x^2 - 16 = 0 \liff x^2 = 16 \liff x = \pm \sqrt{16} 
+$$
+
+som betyr at
+
+$$
+x = \pm 4
+$$
+::::
+
+
 :::::::::::::
 
 
@@ -375,6 +433,18 @@ Løs likningen
 $$
 x^2 - 2 = 0
 $$
+
+::::{answer}
+$$
+x = \pm \sqrt{2}
+$$
+::::
+
+::::{solution}
+$$
+x^2 - 2 = 0 \liff x^2 = 2 \liff x = \pm \sqrt{2}
+$$
+::::
 
 :::::::::::::
 
@@ -401,6 +471,15 @@ Løs likningen
 $$
 x^2 - 5x = 0.
 $$
+
+
+::::{answer}
+$$
+x = 0 \or x = 5
+$$
+::::
+
+
 :::::::::::::
 
 :::::::::::::{tab-item} b
@@ -409,6 +488,13 @@ Løs likningen
 $$
 x^2 + 2x = 0.
 $$
+
+::::{answer}
+$$
+x = 0 \or x = -2
+$$
+::::
+
 :::::::::::::
 
 
@@ -419,6 +505,12 @@ $$
 x^2 - 10x = 0.
 $$
 
+::::{answer}
+$$
+x = 0 \or x = 10
+$$
+::::
+
 :::::::::::::
 
 :::::::::::::{tab-item} d
@@ -427,6 +519,13 @@ Løs likningen
 $$
 -x^2 + x = 0. 
 $$
+
+
+::::{answer}
+$$
+x = 0 \or x = 1
+$$
+::::
 
 :::::::::::::
 ::::::::::::::

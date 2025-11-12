@@ -25,7 +25,7 @@ Category: Standardform
 
 500: 
     Q: Bestem $f(x)$ på standardform for grafen vist nedenfor: ![{width="60%" class="adaptive-figure"}](figurer/standardform_500.svg)
-    A: $$f(x) = -x^2 - 2x + 2$$
+    A: $$f(x) = -x^2 - 2x + 3$$
 
 Category: Ekstremalpunktsform
 100:
