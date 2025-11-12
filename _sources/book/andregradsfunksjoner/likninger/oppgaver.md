@@ -1262,7 +1262,7 @@ og avgjør hvor mange løsninger likningen har.
 Bestem diskriminanten $D$ for likningen
 
 $$
--x^2 + 3x + 8 = 0
+2x^2 - 3x + 5 = x + 7
 $$
 
 og avgjør hvor mange løsninger likningen har.
