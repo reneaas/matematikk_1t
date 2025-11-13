@@ -127,7 +127,7 @@ Et likningssystem er gitt ved
 
 \begin{align*}
     2x - y &= 3 \\
-    x^2 - 2y - y &= 3
+    x^2 - 2x - y &= 3
 \end{align*}
 
 Nedenfor ser du en gif som viser hvordan man løser likningen med grafvinduet i Geogebra. Vi trykker på {ggb-icon}`mode_intersect` (Skjæring mellom to objekt) etterfulgt av å trykke på hver graf for å finne skjæringspunktet.
