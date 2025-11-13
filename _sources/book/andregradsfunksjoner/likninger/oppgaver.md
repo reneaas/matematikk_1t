@@ -660,7 +660,7 @@ $$
 class: answer, dropdown
 ---
 $$
-x = -1 \or x = 4
+x = \dfrac{-\sqrt{129} + 9}{2} \or x = \dfrac{\sqrt{129} + 9}{2}
 $$
 :::
 
