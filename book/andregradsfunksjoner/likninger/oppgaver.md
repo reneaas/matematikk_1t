@@ -748,7 +748,7 @@ $$
 class: answer, dropdown
 ---
 $$
-x = -2 \, \lor \, x = 1
+x = -1 - \sqrt{5} \or x = -1 + \sqrt{5}
 $$
 ::::
 :::::::::::::
