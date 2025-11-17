@@ -1,4 +1,4 @@
-# Oppgaver: Andregradsulikheter
+de . # Oppgaver: Andregradsulikheter
 
 
 
@@ -1042,15 +1042,15 @@ $$
 
 ::::{answer}
 $$
-x \in \langle \gets, -2 \rangle \cup \langle 3, \to \rangle.
+x \in \langle \gets, -3\rangle \cup \langle 1, \to \rangle
 $$
 ::::
 
 ::::{solution}
-Vi ser at grafen til $f$ skjærer $x$-aksen i $(-2, 0)$ og $(3, 0)$. Grafen ligger under $x$-aksen på nedsiden av $(-2, 0)$ og på oversiden av $(3, 0)$. Dermed er løsningen
+Vi ser at grafen til $f$ skjærer $x$-aksen i $(-3, 0)$ og $(1, 0)$. Grafen ligger under $x$-aksen på nedsiden av $(-2, 0)$ og på oversiden av $(3, 0)$. Dermed er løsningen
 
 $$
-x \in \langle \gets, -2 \rangle \cup \langle 3, \to \rangle.
+x \in \langle \gets, -3\rangle \cup \langle 1, \to \rangle
 $$
 ::::
 
@@ -1067,16 +1067,16 @@ $$
 
 ::::{answer}
 $$
-x \in \langle -3, 1 \rangle.
+x \in \langle -2, 0 \rangle.
 $$
 ::::
 
 
 ::::{solution}
-Grafen til $f$ skjærer linja $y = 3$ i $(-3, 3)$ og $(1, 3)$. Mellom disse to punktene, så ligger grafen til $f$ over linja $y = 3$. Dermed er løsningen 
+Grafen til $f$ skjærer linja $y = 3$ i $(-2, 3)$ og $(0, 3)$. Mellom disse to punktene, så ligger grafen til $f$ over linja $y = 3$. Dermed er løsningen 
 
 $$
-x \in \langle -3, 1 \rangle.
+x \in \langle -2, 0 \rangle.
 $$
 ::::
 
