@@ -1,4 +1,4 @@
-de . # Oppgaver: Andregradsulikheter
+# Oppgaver: Andregradsulikheter
 
 
 
