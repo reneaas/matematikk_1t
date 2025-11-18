@@ -103,12 +103,14 @@ $$
 x^2 - 2x - 8 \geq -2
 $$
 
-:::{figure} ./figurer/underveisoppgaver/underveisoppgave_1/figur.svg
----
-class: no-click, adaptive-figure
-width: 80%
----
+
+:::{plot}
+width: 70%
+function: x**2 - 2*x - 10, f
+ymin: -12
+ystep: 2
 :::
+
 
 
 ::::{answer}
