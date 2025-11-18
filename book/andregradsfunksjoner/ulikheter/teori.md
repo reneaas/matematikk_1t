@@ -79,10 +79,10 @@ width: 80%
 ---
 ::::
 
-Fra grafen til $f$ ser vi at $f(x) \geq 2$ når $x \leq -2$ eller når $x \geq 3$. Løsningen er derfor satt sammen av to intervaller. Det ene intervallet er $\langle \gets, 2]$ og det andre er $[3, \to \rangle$. For å sette sammen disse to plasserer vi symbolet $\cup$ mellom dem: 
+Fra grafen til $f$ ser vi at $f(x) \geq 2$ når $x \leq -2$ eller når $x \geq 3$. Løsningen er derfor satt sammen av to intervaller. Det ene intervallet er $\langle \gets, -2]$ og det andre er $[3, \to \rangle$. For å sette sammen disse to plasserer vi symbolet $\cup$ mellom dem: 
 
 $$
-x \in \langle \gets, 2] \cup [3, \to \rangle
+x \in \langle \gets, -2] \cup [3, \to \rangle
 $$
 
 Vi leser det som at $x$ er enten i det første intervallet, eller i det andre. 
