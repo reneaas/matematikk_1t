@@ -100,7 +100,7 @@ Grafen til en andregradsfunksjon $f(x) = x^2 - 2x - 8$ er vist i figuren nedenfo
 Bruk grafen til å løse ulikheten
 
 $$
-x^2 - 2x - 8 \geq -2
+x^2 - 2x - 10 \geq -2
 $$
 
 
