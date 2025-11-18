@@ -5,10 +5,10 @@ def main(dirname, save):
     #
     # Define functions
     def f(x):
-        return -((x - 1) ** 2) + 3
+        return -(x**2) + 2 * x - 2
 
     def g(x):
-        return 1 * (x + 1) - 1
+        return x
 
     # List of functions and their labels.
     functions = [f, g]
