@@ -2,7 +2,7 @@ import plotmath
 
 
 def main(dirname, save):
-    #
+
     # Define functions
     def f(x):
         return -(x**2) + 2 * x - 2

@@ -1037,9 +1037,9 @@ Topp- eller bunnpunkt
 : Grafen til $f$ er konkav {poly-icon}`frown` siden $a < 0$. Dermed har grafen et toppunkt. Toppunktet har $x$-koordinaten lik symmetrilinja, altså $x = 2$. Vi setter $x = 2$ inn i $f(x)$ for å finne $y$-koordinaten til toppunktet:
 
     $$
-    f(2) = -1 \cdot 2^2 + 4 \cdot 2 + 3 = 5.
+    f(2) = -1 \cdot 2^2 + 4 \cdot 2 + 3 = 7.
     $$
-    Dermed er toppunktet til $f$ gitt ved $(2, 5)$.
+    Dermed er toppunktet til $f$ gitt ved $(2, 7)$.
 
 
 Når har vi nok opplysninger til å tegne en skisse av grafen til $f$:
