@@ -563,9 +563,10 @@ Vi kaller $D$ for **diskriminanten**. Ut ifra diskriminanten kan vi se hvor mang
 
 Se figuren nedenfor.
 
-:::{clickable-figure} ./figurer/teori/diskriminanter/merged_figure.svg
+:::{figure} ./figurer/teori/diskriminanter/merged_figure.svg
 ---
 width: 100%
+class: no-click, adaptive-figure
 ---
 Hvis $D < 0$, har likningen ingen løsninger. Hvis $D = 0$ har likningen én løsning. Hvis $D > 0$ har likningen to løsninger. Dette tilsvarer at grafen til en andregradsfunksjon enten ikke skjærer $x$-aksen, skjærer den i ett punkt eller skjærer den i to punkter.
 :::
