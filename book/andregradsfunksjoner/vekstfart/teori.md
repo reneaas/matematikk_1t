@@ -32,14 +32,29 @@ $$
 \dfrac{\Delta f}{\Delta x} = \dfrac{f(b) - f(a)}{b - a}
 $$
 
-Se figuren nedenfor.
+Se figuren nedenfor. Linja som går gjennom de to punktene kaller vi for en **sekant**. Den gjennomsnittlige vekstfarten er altså stigningstallet til sekanten.
 
-:::{figure} ./figurer/teori/gjennomsnittlig_vekstfart/figur.svg
----
-class: no-click, adaptive-figure
+
+:::{plot}
 width: 80%
----
+function: 2 * (x - 2) ** 2 + 1, f
+line: (f(4) - f(1)) / 3, (1, f(1)), solid
+point: (1, f(1))
+point: (4, f(4))
+ymin: -2
+xmin: -1
+ymax: 11
+xmax: 5
+text: 1, f(1), "$(a, f(a))$", center-right
+text: 4, f(4), "$(b, f(b))$", center-right
+vline: 2, f(4) - 2*(f(4) - f(1))/3, f(4), dashed, gray
+hline: f(4), 2, 4, dashed, gray
+annotate: (0.3, f(4)), (2, f(4) - (f(4) - f(1))/3), "$\displaystyle \frac{f(b) - f(a)}{b - a}$", 0.3
+text: 3, f(4), "$1$", top-center
+ticks: off
+nocache:
 :::
+
 
 
 
@@ -121,7 +136,9 @@ $$
 
 
 :::::::::::::::{summary} Momentan vekstfart
-Den **momentane vekstfarten** til en andregradsfunksjon $f$ i et punkt $(a, f(a))$ på grafen, er stigningstallet til en **tangent** som **kun** går gjennom $(a, f(a))$ på grafen til $f$. Vi bruker følgende notasjon for den momentane vekstfarten:
+Den **momentane vekstfarten** til en andregradsfunksjon $f$ i $x = a$, er gitt ved stigningstallet til en linje som berører grafen til $f$ i punktet $(a, f(a))$. Denne linjen kaller vi for en **tangent**. 
+
+Vi definerer en ny skrivemåte for den momentane vekstfarten:
 
 $$
 f'(a) = \text{Momentan vekstfart til $f$ i punktet $(a, f(a))$}
@@ -129,17 +146,27 @@ $$
 
 Se figuren nedenfor. 
 
-:::{figure} ./figurer/teori/momentan_vekstfart/figur.svg
----
-class: no-click, adaptive-figure
-width: 80%
----
+
+:::{plot}
+width: 70%
+function: (x - 1)**2 + 1, f
+point: (2, f(2))
+text: 2, f(2), "$(a, f(a))$", top-left
+ymin: -2
+xmin: -2
+tangent: 2, f, solid
+vline: 3, 2, 4, dashed, gray
+hline: 2, 2, 3, dashed, gray
+text: 2.5, 2, "$1$", bottom-center
+annotate: (4.5, 1.5), (3, 3), "$\displaystyle f'(a)$", 0.3
+ticks: off
 :::
+
 
 :::::::::::::::
 
 
-Det er ikke opplagt hvordan vi kan finne stigningstallet til en tangent siden den bare er definert ved hjelp av ett punkt. Vi skal snart se hvordan vi kan gjøre dette med regning, men det er hensiktsmessig å først se hvordan vi kan gjøre det med digitale verktøy. La oss se på et eksempel:
+Det er ikke opplagt hvordan vi kan finne stigningstallet til en tangent, siden det er en linje der vi bare vet om ett punkt på linja. Vi skal snart se hvordan vi kan gjøre dette med regning, men det er hensiktsmessig å først se hvordan vi kan gjøre det med digitale verktøy. La oss se på et eksempel:
 
 
 :::::::::::::::{example} Eksempel 2
@@ -380,27 +407,30 @@ Vi kan legge merke til følgende:
 
 :::::::::::::::{exercise} Underveisoppgave 4
 
-:::{figure} ./figurer/underveisoppgaver/underveisoppgave_4/graf.svg
----
-class: no-click, adaptive-figure
-width: 100%
+:::{plot}
 align: right
----
+width: 350
+function: (x - 2)**2 - 4, f
+fontsize: 26
+lw: 4
 :::
+
 
 Grafen til en andregradsfunksjon $f$ er vist i figuren til høyre. 
 
-Nedenfor vises det fire grafer som alle kan være grafen til den deriverte $f'$. 
+Nedenfor vises det fire grafer der én viser grafen til den deriverte $f'$. 
 
 Hvilken graf viser grafen til $f'$?
 
 
-:::{figure} ./figurer/underveisoppgaver/underveisoppgave_4/merged_figure.svg
----
-class: no-click, adaptive-figure
+:::{multi-plot}
 width: 100%
----
+functions: 2*x - 4, -2*x + 4, 2*x, -2*(x - 4)
+function-names: A, B, C, D
+rows: 2
+cols: 2
 :::
+
 
 
 ::::{answer}
@@ -670,12 +700,18 @@ I figuren nedenfor vises grafen til en andregradsfunksjon $f$. Grafen har en tan
 Bestem $f(x)$ og $f'(x)$.
 
 
-:::{figure} ./figurer/eksempler/eksempel_7/figur.svg
----
-class: no-click, adaptive-figure
-width: 80%
----
+:::{plot}
+width: 70%
+function: -x**2 + 2*x + 4, f
+point: (0, f(0))
+text: 0, f(0), "$(0, 4)$", center-left
+point: (3, f(3))
+text: 3, f(3), "$(3, f(3))$", top-right
+tangent: 3, f
+ticks: off
+xmin: -3
 :::
+
 
 
 ::::{solution}
@@ -768,17 +804,25 @@ layout: sidebar
 
 I figuren nedenfor vises grafen til en andregradsfunksjon $f$. 
 
-Grafen har en tangent i punktet $(-2, f(-2))$ med stigningstall $2$ og en tangent som går gjennom ett av nullpunktene til $f$ med likningen $y = -4x + 4$.
+Grafen har en tangent i punktet $(-2, f(-2))$ med stigningstall $2$ og en tangent som går gjennom ett av nullpunktene til $f$ med likningen $y = -4x + 4$. 
 
 Bestem $f(x)$ og $f'(x)$.
 
 
-:::{figure} ./figurer/underveisoppgaver/underveisoppgave_7/figur.svg
----
-class: no-click, adaptive-figure
-width: 90%
----
+:::{plot}
+width: 70%
+function: -x**2 - 2*x + 3, f
+point: (-2, f(-2))
+text: -2, f(-2), "$(-2, f(-2))$", top-left
+tangent: -2, f
+point: (1, f(1))
+tangent: 1, f
+ymin: -2
+xmax: 3
+ticks: off 
+ymax: 8
 :::
+
 
 ::::{answer}
 $$
@@ -835,6 +879,8 @@ $$
 
 
 :::::::::::::::
+
+
 
 
 

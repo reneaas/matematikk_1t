@@ -407,7 +407,7 @@ Bestem $p(x)$ på ekstremalpunktsform.
 
 ::::{answer}
 $$
-p(x) = -\frac{1}{3}(x + 1)^2 - 3.
+p(x) = -\frac{1}{3}(x + 1)^2 + 3.
 $$
 ::::
 
@@ -422,13 +422,13 @@ $$
 For å bestemme $y$-koordinaten til ekstremalpunktet må vi sette inn $x_0$ i $p(x)$:
 
 $$
-y_0 = p(-1) = -\frac{1}{3}(-1 - 2)(-1 + 4) = -\frac{1}{3}(-3)(3) = -3.
+y_0 = p(-1) = -\frac{1}{3}(-1 - 2)(-1 + 4) = -\frac{1}{3}(-3)(3) = 3.
 $$
 
 Vi kan også lese av at $a = -\frac{1}{3}$ fra $p(x)$. Dermed er $p(x)$ på ekstremalpunktsform gitt ved
 
 $$
-p(x) = -\frac{1}{3}(x + 1)^2 - 3.
+p(x) = -\frac{1}{3}(x + 1)^2 + 3.
 $$
 ::::
 
