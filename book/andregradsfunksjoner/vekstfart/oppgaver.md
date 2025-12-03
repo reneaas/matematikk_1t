@@ -15,12 +15,11 @@ Grafen til en andregradsfunksjon $f$ er vist i figuren nedenfor.
 Bestem den gjennomsnittlige vekstfarten til $f$ i intervallet $[0, 3]$. 
 
 
-:::{figure} ./figurer/oppgaver/oppgave_1/a.svg
----
-class: no-click, adaptive-figure
-width: 80%
----
+:::{plot}
+width: 70%
+function: (x - 1)**2 - 4, f
 :::
+
 
 ::::{answer}
 $$
@@ -46,12 +45,12 @@ Grafen til en andregradsfunksjon $g$ er vist i figuren nedenfor.
 
 Bestem den gjennomsnittlige vekstfarten til $g$ i intervallet $[-2, 2]$.
 
-:::{figure} ./figurer/oppgaver/oppgave_1/b.svg
----
-class: no-click, adaptive-figure
-width: 80%
----
+
+:::{plot}
+width: 70%
+function: -0.5 * (x - 2)**2 + 4, g
 :::
+
 
 
 ::::{answer}
@@ -78,12 +77,12 @@ Grafen til en andregradsfunksjon $h$ er vist i figuren nedenfor.
 
 Bestem den gjennomsnittlige vekstfarten til $h$ i intervallet $[-3, 3]$.
 
-:::{figure} ./figurer/oppgaver/oppgave_1/c.svg
----
-class: no-click, adaptive-figure
-width: 80%
----
+
+:::{plot}
+width: 70%
+function: x**2 - 4, h
 :::
+
 
 ::::{answer}
 $$
@@ -110,12 +109,14 @@ Grafen til en andregradsfunksjon $p$ er vist i figuren nedenfor.
 
 Bestem den gjennomsnittlige vekstfarten til $p$ i intervallet $[-4, 1]$.
 
-:::{figure} ./figurer/oppgaver/oppgave_1/d.svg
----
-class: no-click, adaptive-figure
-width: 80%
----
+
+:::{plot}
+width: 70%
+function: -(x + 1)**2 + 9, p
+ymax: 10
+ymin: -4
 :::
+
 
 ::::{answer}
 $$
@@ -313,12 +314,13 @@ Grafen til den deriverte $f'$ til en andregradsfunksjon $f$ er vist i figuren ne
 
 Bestem den momentane vekstfarten til $f$ i $(3, f(3))$. 
 
-:::{figure} ./figurer/oppgaver/oppgave_3/a.svg
----
-class: no-click, adaptive-figure
-width: 80%
----
+
+
+:::{plot}
+width: 70%
+function: 2*(x - 1), f'
 :::
+
 
 
 ::::{answer}
@@ -345,12 +347,13 @@ Grafen til den deriverte $g'$ til en andregradsfunksjon $g$ er vist i figuren ne
 
 Bestem stigningstallet til tangenten til grafen til $g$ i punktet $(-3, g(-3))$.
 
-:::{figure} ./figurer/oppgaver/oppgave_3/b.svg
----
-class: no-click, adaptive-figure
-width: 80%
----
+
+
+:::{plot}
+width: 70%
+function: -2*(x + 2), g'
 :::
+
 
 ::::{answer}
 $$
@@ -377,12 +380,11 @@ Grafen til den deriverte $h'$ til en andregradsfunksjon $h$ er vist i figuren ne
 
 Bestem den momentane vekstfarten til $h$ i $(1, h(1))$. 
 
-:::{figure} ./figurer/oppgaver/oppgave_3/c.svg
----
-class: no-click, adaptive-figure
-width: 80%
----
+:::{plot}
+width: 70%
+function: -4*x, h'
 :::
+
 
 ::::{answer}
 $$
@@ -406,27 +408,28 @@ $$
 :::::::::::::{tab-item} d
 Grafen til den deriverte $p'$ til en andregradsfunksjon $p$ er vist i figuren nedenfor. 
 
-Bestem stigningstallet til tangenten til grafen til $p$ i punktet $(-2, p(-2))$. 
+Bestem stigningstallet til tangenten til grafen til $p$ i punktet $(-1, p(-1))$. 
 
-:::{figure} ./figurer/oppgaver/oppgave_3/d.svg
----
-class: no-click, adaptive-figure
-width: 80%
----
+
+
+:::{plot}
+width: 70%
+function: 2*(x + 3), p'
 :::
+
 
 ::::{answer}
 $$
-p'(-2) = 2
+p'(-1) = 4
 $$
 ::::
 
 
 ::::{solution}
-Vi ser at grafen til $p'$ går gjennom punktet $(-2, 2)$. Det er $y$-koordinaten til punktet som gir stigningstallet til tangenten til grafen til $p$ i punktet $(-2, p(-2))$. Altså er
+Vi ser at grafen til $p'$ går gjennom punktet $(-1, 4)$. Det er $y$-koordinaten til punktet som gir stigningstallet til tangenten til grafen til $p$ i punktet $(-1, p(-1))$. Altså er
 
 $$
-p'(-2) = 2
+p'(-1) = 4
 $$
 ::::
 
@@ -482,13 +485,7 @@ fontsize: 18
 Graf B.
 ::::
 
-::::{solution}
-Grafen $f$ har symmetrilinje i $x = 1$. Det betyr at grafen til $f'$ må skjære $x$-aksen i $x = 1$. Det stemmer for graf B og D. 
 
-Grafen til $f$ synker til venstre for ekstremalpunktet sitt, og stiger til høyre for ekstremalpunktet. Det betyr at $f'(x) < 0$ (grafen ligger under $x$-aksen) til venstre for $x = 1$ og $f'(x) > 0$ (grafen ligger over $x$-aksen) til høyre for $x = 1$. Det stemmer for graf B. 
-
-Altså er graf B den riktige grafen til $f'$.
-::::
 
 :::::::::::::
 
@@ -528,14 +525,6 @@ Graf D.
 ::::
 
 
-::::{solution}
-Grafen til $g$ har et ekstremalpunkt når $x = -2$. Det betyr at grafen til $g'$ skjærer $x$-aksen i $x = -2$. Dette stemmer for graf C og D. 
-
-Grafen til $g$ stiger til venstre for ekstremalpunktet og synker til høyre for ekstremalpunktet. Det betyr at $g'(x) > 0$ (grafen ligger over $x$-aksen) til venstre for $x = -2$ og $g'(x) < 0$ (grafen ligger under $x$-aksen) til høyre for $x = -2$. Dette stemmer for graf D.
-
-Altså er graf D den riktige grafen til $g'$.
-::::
-
 :::::::::::::
 
 
@@ -543,7 +532,7 @@ Altså er graf D den riktige grafen til $g'$.
 
 :::{plot}
 width: 380
-function: (x - 2)**2 - 9, h
+function: 2*(x - 2)**2 - 9, h
 align: right
 fontsize: 24
 lw: 3
@@ -553,16 +542,15 @@ ymax: 4
 
 
 
-Figuren til høyre vises grafen til en andregradsfunksjon $g$.
+Figuren til høyre vises grafen til en andregradsfunksjon $h$.
 
 
-Bestem hvilken av grafene nedenfor som viser grafen til den deriverte $g'$.
-
+Bestem hvilken av grafene nedenfor som viser grafen til den deriverte $h'$.
 
 
 :::{multi-plot}
 width: 100%
-functions: 2 * (x - 2), -2 * (x - 2), 2 * (x + 2), -2 * (x + 2)
+functions: 4 * (x - 2), -2 * (x - 2), 2 * (x - 2), -2 * (x + 2)
 function-names: A, B, C, D
 rows: 2
 cols: 2
@@ -575,39 +563,30 @@ Graf A.
 ::::
 
 
-::::{solution}
-Grafen til $h$ har symmetrilinje i $x = 2$. Det betyr at grafen til $h'$ må skjære $x$-aksen i $x = 2$. Dette stemmer for graf A og B. 
-
-Grafen til $h$ synker til venstre for symmetrilinja og stiger til høyre for symmetrilinja. Det betyr at $h'(x) < 0$ (grafen ligger under $x$-aksen) til venstre for $x = 2$ og $h'(x) > 0$ (grafen ligger over $x$-aksen) til høyre for $x = 2$. Dette stemmer for graf A.
-
-Altså er graf A den riktige grafen til $h'$.
-::::
-
 :::::::::::::
 
 
 :::::::::::::{tab-item} d
 
 :::{plot}
-width: 380
-function: -x**2 + 4, p
+width: 350
+function: -0.5*x**2 + 4, p
 align: right
-fontsize: 24
+fontsize: 26
 lw: 3
 :::
 
 
 
-Figuren til høyre vises grafen til en andregradsfunksjon $g$.
+Figuren til høyre vises grafen til en andregradsfunksjon $p$.
 
 
-Bestem hvilken av grafene nedenfor som viser grafen til den deriverte $g'$.
-
+Bestem hvilken av grafene nedenfor som viser grafen til den deriverte $p'$.
 
 
 :::{multi-plot}
 width: 100%
-functions: 2 * (x - 2), -2 * x, 2 * x, -2 * (x + 2)
+functions: x, -x, 2 * x, -2 * x
 function-names: A, B, C, D
 rows: 2
 cols: 2
@@ -619,15 +598,6 @@ fontsize: 18
 Graf B.
 ::::
 
-
-
-::::{solution}
-Grafen til $p$ har et ekstremalpunkt når $x = 0$. Det betyr at grafen til $p'$ skjærer $x$-aksen i $x = 0$. Dette stemmer for graf B og C.
-
-Grafen til $p$ stiger til venstre for ekstremalpunktet og synker til høyre for ekstremalpunktet. Det betyr at $p'(x) > 0$ (grafen ligger over $x$-aksen) til venstre for $x = 0$ og $p'(x) < 0$ (grafen ligger under $x$-aksen) til høyre for $x = 0$. Dette stemmer for graf B.
-
-Altså er graf B den riktige grafen til $p'$.
-::::
 
 
 :::::::::::::
@@ -654,13 +624,15 @@ class: tabs-parts
 ---
 :::::::::::::{tab-item} a
 
-:::{figure} ./figurer/oppgaver/oppgave_5/a/graf.svg
----
-class: no-click, adaptive-figure
-width: 100%
+
+:::{plot}
 align: right
----
+width: 350
+function: -2 * (x + 2), f'
+lw: 4
+fontsize: 26
 :::
+
 
 
 Grafen til $f'$ er vist i figuren til høyre.
@@ -668,24 +640,18 @@ Grafen til $f'$ er vist i figuren til høyre.
 Bestem hvilken av grafene nedenfor som viser grafen til $f$. 
 
 
-:::{figure} ./figurer/oppgaver/oppgave_5/a/merged_figure.svg
----
-class: no-click, adaptive-figure
+
+:::{multi-plot}
 width: 100%
----
+functions: (x - 2)**2 + 1, -(x - 2)**2 - 1, (x + 2)**2 - 1, -(x + 2)**2 + 1
+function-names: A, B, C, D
+rows: 2
+cols: 2
 :::
+
 
 ::::{answer}
 Graf D.
-::::
-
-
-::::{solution}
-Grafen til $f'$ skjærer $x$-aksen i $x = -2$. Det betyr at grafen til $f$ må ha symmetrilinje $x = -2$. Dette stemmer for graf C og D. 
-
-Til venstre for nullpunktet til $f'$ er $f'(x) > 0$ (grafen ligger over $x$-aksen), og til høyre for nullpunktet er $f'(x) < 0$ (grafen ligger under $x$-aksen). Det betyr at grafen til $f$ stiger til venstre for $x = -2$ og synker til høyre for $x = -2$. Dette stemmer for graf D.
-
-Altså er graf D den riktige grafen til $f$.
 ::::
 
 
@@ -694,13 +660,14 @@ Altså er graf D den riktige grafen til $f$.
 
 :::::::::::::{tab-item} b
 
-:::{figure} ./figurer/oppgaver/oppgave_5/b/graf.svg
----
-class: no-click, adaptive-figure
-width: 100%
+:::{plot}
 align: right
----
+width: 350
+function: 2*(x + 1), g'
+lw: 4
+fontsize: 26
 :::
+
 
 
 Grafen til $g'$ er vist i figuren til høyre.
@@ -708,24 +675,21 @@ Grafen til $g'$ er vist i figuren til høyre.
 Bestem hvilken av grafene nedenfor som viser grafen til $g$. 
 
 
-:::{figure} ./figurer/oppgaver/oppgave_5/b/merged_figure.svg
----
-class: no-click, adaptive-figure
+
+:::{multi-plot}
 width: 100%
----
+functions: (x - 1)**2 - 1, 2*(x - 1)**2 - 1, (x + 1)**2 - 1, 2*(x + 1)**2 - 1
+function-names: A, B, C, D
+rows: 2
+cols: 2
 :::
+
 
 ::::{answer}
 Graf A.
 ::::
 
-::::{solution}
-Grafen til $g'$ har et nullpunkt i $x = -1$. Det betyr at grafen til $g$ har et ekstremalpunkt i $x = -1$. Dette stemmer for graf A og D.
 
-Til venstre for nullpunktet til $g'$ er $g'(x) < 0$ (grafen ligger under $x$-aksen), og til høyre for nullpunktet er $g'(x) > 0$ (grafen ligger over $x$-aksen). Det betyr at grafen til $g$ synker til venstre for $x = -1$ og stiger til høyre for $x = -1$. Dette stemmer for graf A.
-
-Altså er graf A den riktige grafen til $g$.
-::::
 
 :::::::::::::
 
@@ -733,13 +697,14 @@ Altså er graf A den riktige grafen til $g$.
 
 :::::::::::::{tab-item} c
 
-:::{figure} ./figurer/oppgaver/oppgave_5/c/graf.svg
----
-class: no-click, adaptive-figure
-width: 100%
+:::{plot}
 align: right
----
+width: 350
+function: -4*(x + 2), h'
+lw: 4
+fontsize: 26
 :::
+
 
 
 Grafen til $h'$ er vist i figuren til høyre.
@@ -747,25 +712,22 @@ Grafen til $h'$ er vist i figuren til høyre.
 Bestem hvilken av grafene nedenfor som viser grafen til $h$. 
 
 
-:::{figure} ./figurer/oppgaver/oppgave_5/c/merged_figure.svg
----
-class: no-click, adaptive-figure
+
+:::{multi-plot}
 width: 100%
----
+functions: -(x + 2)**2 + 1, -2*(x + 2)**2 + 1, (x + 2)**2 + 1, -(x + 2)**2 + 1
+function-names: A, B, C, D
+rows: 2
+cols: 2
 :::
+
+
 
 ::::{answer}
 Graf B.
 ::::
 
 
-::::{solution}
-Grafen til $h'$ skjærer $x$-aksen i $x = 3$. Det betyr at grafen til $h$ må ha symmetrilinje $x = 3$. Dette stemmer for graf A og B.
-
-Til venstre for nullpunktet til $h'$ er $h'(x) > 0$ (grafen ligger over $x$-aksen), og til høyre for nullpunktet er $h'(x) < 0$ (grafen ligger under $x$-aksen). Det betyr at grafen til $h$ stiger til venstre for $x = 3$ og synker til høyre for $x = 3$. Dette stemmer for graf B.
-
-Altså er graf B den riktige grafen til $h$.
-::::
 
 :::::::::::::
 
@@ -773,13 +735,16 @@ Altså er graf B den riktige grafen til $h$.
 
 :::::::::::::{tab-item} d
 
-:::{figure} ./figurer/oppgaver/oppgave_5/d/graf.svg
----
-class: no-click, adaptive-figure
-width: 100%
+
+
+:::{plot}
 align: right
----
+width: 350
+function: x, p'
+lw: 4
+fontsize: 26
 :::
+
 
 
 Grafen til $p'$ er vist i figuren til høyre.
@@ -787,24 +752,20 @@ Grafen til $p'$ er vist i figuren til høyre.
 Bestem hvilken av grafene nedenfor som viser grafen til $p$. 
 
 
-:::{figure} ./figurer/oppgaver/oppgave_5/d/merged_figure.svg
----
-class: no-click, adaptive-figure
+
+:::{multi-plot}
 width: 100%
----
+functions: x**2 - 4, 2 * x**2 - 4, 0.5 * x**2 - 4, -0.5 * x**2 + 4
+function-names: A, B, C, D
+rows: 2
+cols: 2
 :::
 
 
+
+
 ::::{answer}
-Graf A.
-::::
-
-::::{solution}
-Grafen til $p'$ har et nullpunkt i $x = 0$. Det betyr at grafen til $p$ har et ekstremalpunkt i $x = 0$. Dette stemmer for graf A og D.
-
-Til venstre for nullpunktet til $p'$ er $p'(x) < 0$ (grafen ligger under $x$-aksen), og til høyre for nullpunktet er $p'(x) > 0$ (grafen ligger over $x$-aksen). Det betyr at grafen til $p$ synker til venstre for $x = 0$ og stiger til høyre for $x = 0$. Dette stemmer for graf A.
-
-Altså er graf A den riktige grafen til $p$.
+Graf C.
 ::::
 
 :::::::::::::
@@ -2216,12 +2177,9 @@ $$
 
 :::::::::::::::{exercise} Oppgave 17
 
-:::{cas-popup}
-:::
-
-
 :::{plot}
-width: 70%
+align: left
+width: 400
 function: -1/12 * x**2 + 20 
 line: -1, 23, solid
 point: (6, 17)
@@ -2233,6 +2191,14 @@ xmin: -18
 xmax: 18
 :::
 
+:::{cas-popup}
+---
+layout: sidebar
+---
+:::
+
+:::{clear}
+:::
 
 
 En arkitekt har tegnet et snitt av en lagerhall. Lagerhallen er 20 meter høy og har form som en parabel gitt ved 
