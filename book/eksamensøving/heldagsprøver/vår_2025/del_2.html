@@ -36,9 +36,10 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/tabs.css?v=4c969af8" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/munchboka/css/interactive_code.css?v=f903e660" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/munchboka/css/jeopardy.css?v=99ec9b16" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/munchboka/css/flashcards.css?v=9542c1b9" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/munchboka/css/general_style.css?v=57d653fb" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/munchboka/css/interactive_code.css?v=f903e660" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/munchboka/css/jeopardy.css?v=e40b38cf" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/munchboka/css/quiz.css?v=3f648898" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css" />
@@ -50,8 +51,8 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/munchboka/css/popup.css?v=26181dfd" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/munchboka/css/timedQuiz.css?v=89e27729" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/munchboka/css/cas_popup.css?v=bae4ad7e" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/munchboka/css/github-light.css?v=facc8b7a" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/munchboka/css/github-dark.css?v=d1235728" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/munchboka/css/github-light.css?v=a6d10b1c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/munchboka/css/github-dark.css?v=2454bc3f" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/munchboka/css/github-dark-high-contrast.css?v=4c0c1b0f" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/munchboka/css/pairPuzzle/style.css?v=f77426ac" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/munchboka/css/escapeRoom/escape-room.css?v=241d39f0" />
@@ -105,12 +106,13 @@
     <script src="../../../../_static/copybutton.js?v=f281be69"></script>
     <script src="../../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script src="../../../../_static/tabs.js?v=3ee01567"></script>
+    <script src="../../../../_static/munchboka/js/flashcards.js?v=28a4399e"></script>
     <script src="../../../../_static/munchboka/js/interactiveCode/interactiveCodeSetup.js?v=49566f0b"></script>
     <script src="../../../../_static/munchboka/js/interactiveCode/codeEditor.js?v=30f3f389"></script>
     <script src="../../../../_static/munchboka/js/interactiveCode/pythonRunner.js?v=e9f0c2d2"></script>
     <script src="../../../../_static/munchboka/js/interactiveCode/workerManager.js?v=b934d01d"></script>
     <script src="../../../../_static/munchboka/js/interactiveCode/turtleCode.js?v=0d62d95e"></script>
-    <script src="../../../../_static/munchboka/js/jeopardy.js?v=e34dfd27"></script>
+    <script src="../../../../_static/munchboka/js/jeopardy.js?v=e090935c"></script>
     <script src="../../../../_static/munchboka/js/quiz.js?v=a4e1ffeb"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
@@ -694,9 +696,9 @@ document.write(`
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<button id="button-ggb-cas-6eb30a26" class="ggb-cas-button">Åpne CAS‑vindu</button>
-<div id="dialog-ggb-cas-6eb30a26" title="CAS‑vindu" style="display:none;">
-    <div id="ggb-cas-6eb30a26" class="ggb-window"></div>
+<button id="button-ggb-cas-1cb4ee25" class="ggb-cas-button">Åpne CAS‑vindu</button>
+<div id="dialog-ggb-cas-1cb4ee25" title="CAS‑vindu" style="display:none;">
+    <div id="ggb-cas-1cb4ee25" class="ggb-window"></div>
 </div>
 
 <style>
@@ -713,12 +715,12 @@ document.write(`
 
     function applySize() {
       if (!ggbReady) return;
-      const w = $("#ggb-cas-6eb30a26").width(),
-            h = $("#ggb-cas-6eb30a26").height();
+      const w = $("#ggb-cas-1cb4ee25").width(),
+            h = $("#ggb-cas-1cb4ee25").height();
       window.ggbApplet.setSize(Math.round(w), Math.round(h));
     }
 
-    const $dlg = $("#dialog-ggb-cas-6eb30a26").dialog({
+    const $dlg = $("#dialog-ggb-cas-1cb4ee25").dialog({
       autoOpen: false,
       width: 460, height: 580,
       resizable: true, draggable: true,
@@ -727,14 +729,14 @@ document.write(`
       open: function() {
         if (!ggbReady) {
           new GGBApplet({
-            appName: "classic", id: "ggb-cas-6eb30a26",
+            appName: "classic", id: "ggb-cas-1cb4ee25",
             width: 420, height: 500,
             perspective: "C", language: "nb",
             showToolBar: true, showAlgebraInput: true,
             borderRadius: 8, enableRightClick: true, showKeyboardOnFocus: false,
             customToolBar: "1001 | 1002 | 1007 | 1010 | 6",
             appletOnLoad: () => { ggbReady = true; applySize(); }
-          }, true).inject("ggb-cas-6eb30a26");
+          }, true).inject("ggb-cas-1cb4ee25");
         } else {
           applySize();
         }
@@ -777,7 +779,7 @@ document.write(`
             target = target.parentElement;
           }
           // Prevent page scroll but don't stop the event from reaching GeoGebra
-          if (!e.target.closest('#ggb-cas-6eb30a26')) {
+          if (!e.target.closest('#ggb-cas-1cb4ee25')) {
             e.preventDefault();
             e.stopPropagation();
           }
@@ -805,7 +807,7 @@ document.write(`
     
     // Monitor GeoGebra applet focus/interaction to control scroll lock
     function bindScrollLock() {
-      const ggbContainer = document.getElementById('ggb-cas-6eb30a26');
+      const ggbContainer = document.getElementById('ggb-cas-1cb4ee25');
       if (!ggbContainer) {
         setTimeout(bindScrollLock, 300);
         return;
@@ -851,10 +853,10 @@ document.write(`
     // Cleanup on dialog close
     $dlg.on('dialogclose', unlockScroll);
 
-    $("#button-ggb-cas-6eb30a26").button()
+    $("#button-ggb-cas-1cb4ee25").button()
       .on("click touchend pointerup", e => {
         e.preventDefault();
-        $("#dialog-ggb-cas-6eb30a26").dialog("open");
+        $("#dialog-ggb-cas-1cb4ee25").dialog("open");
       });
   });
 })();
@@ -948,16 +950,16 @@ c</label><div class="sd-tab-content docutils">
 <p>En regulær 6-kant er en 6-kant der alle sidene er like lange.</p>
 <p>En sirkel med radius <span class="math notranslate nohighlight">\(1\)</span> er innskrevet i en regulær 6-kant. En trekant har et hjørne i sentrum av sirkelen. Se figuren nedenfor.</p>
 <figure class="align-default">
-<a class="no-click adaptive-figure reference internal image-reference" href="../../../../_images/figur81.svg"><img alt="../../../../_images/figur81.svg" class="no-click adaptive-figure" src="../../../../_images/figur81.svg" style="width: 80%;" /></a>
+<a class="no-click adaptive-figure reference internal image-reference" href="../../../../_images/figur77.svg"><img alt="../../../../_images/figur77.svg" class="no-click adaptive-figure" src="../../../../_images/figur77.svg" style="width: 80%;" /></a>
 </figure>
 <p>Bruk trigonometri til å bestemme arealet av 6-kanten.</p>
 
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<button id="button-ggb-cas-c1b3e7fd" class="ggb-cas-button">Åpne CAS‑vindu</button>
-<div id="dialog-ggb-cas-c1b3e7fd" title="CAS‑vindu" style="display:none;">
-    <div id="ggb-cas-c1b3e7fd" class="ggb-window"></div>
+<button id="button-ggb-cas-59235346" class="ggb-cas-button">Åpne CAS‑vindu</button>
+<div id="dialog-ggb-cas-59235346" title="CAS‑vindu" style="display:none;">
+    <div id="ggb-cas-59235346" class="ggb-window"></div>
 </div>
 
 <style>
@@ -974,12 +976,12 @@ c</label><div class="sd-tab-content docutils">
 
     function applySize() {
       if (!ggbReady) return;
-      const w = $("#ggb-cas-c1b3e7fd").width(),
-            h = $("#ggb-cas-c1b3e7fd").height();
+      const w = $("#ggb-cas-59235346").width(),
+            h = $("#ggb-cas-59235346").height();
       window.ggbApplet.setSize(Math.round(w), Math.round(h));
     }
 
-    const $dlg = $("#dialog-ggb-cas-c1b3e7fd").dialog({
+    const $dlg = $("#dialog-ggb-cas-59235346").dialog({
       autoOpen: false,
       width: 460, height: 580,
       resizable: true, draggable: true,
@@ -988,14 +990,14 @@ c</label><div class="sd-tab-content docutils">
       open: function() {
         if (!ggbReady) {
           new GGBApplet({
-            appName: "classic", id: "ggb-cas-c1b3e7fd",
+            appName: "classic", id: "ggb-cas-59235346",
             width: 420, height: 500,
             perspective: "C", language: "nb",
             showToolBar: true, showAlgebraInput: true,
             borderRadius: 8, enableRightClick: true, showKeyboardOnFocus: false,
             customToolBar: "1001 | 1002 | 1007 | 1010 | 6",
             appletOnLoad: () => { ggbReady = true; applySize(); }
-          }, true).inject("ggb-cas-c1b3e7fd");
+          }, true).inject("ggb-cas-59235346");
         } else {
           applySize();
         }
@@ -1038,7 +1040,7 @@ c</label><div class="sd-tab-content docutils">
             target = target.parentElement;
           }
           // Prevent page scroll but don't stop the event from reaching GeoGebra
-          if (!e.target.closest('#ggb-cas-c1b3e7fd')) {
+          if (!e.target.closest('#ggb-cas-59235346')) {
             e.preventDefault();
             e.stopPropagation();
           }
@@ -1066,7 +1068,7 @@ c</label><div class="sd-tab-content docutils">
     
     // Monitor GeoGebra applet focus/interaction to control scroll lock
     function bindScrollLock() {
-      const ggbContainer = document.getElementById('ggb-cas-c1b3e7fd');
+      const ggbContainer = document.getElementById('ggb-cas-59235346');
       if (!ggbContainer) {
         setTimeout(bindScrollLock, 300);
         return;
@@ -1112,10 +1114,10 @@ c</label><div class="sd-tab-content docutils">
     // Cleanup on dialog close
     $dlg.on('dialogclose', unlockScroll);
 
-    $("#button-ggb-cas-c1b3e7fd").button()
+    $("#button-ggb-cas-59235346").button()
       .on("click touchend pointerup", e => {
         e.preventDefault();
-        $("#dialog-ggb-cas-c1b3e7fd").dialog("open");
+        $("#dialog-ggb-cas-59235346").dialog("open");
       });
   });
 })();
@@ -1172,9 +1174,9 @@ T_{6-\mathrm{kant}} = 6 \cdot T_{\triangle ABC} = 6 \cdot \dfrac{\sqrt{3}}{3} = 
 <div class="sidebar-cas">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<button id="button-ggb-cas-31f5da25" class="ggb-cas-button">Åpne CAS‑vindu</button>
-<div id="dialog-ggb-cas-31f5da25" title="CAS‑vindu" style="display:none;">
-    <div id="ggb-cas-31f5da25" class="ggb-window"></div>
+<button id="button-ggb-cas-4d7d012d" class="ggb-cas-button">Åpne CAS‑vindu</button>
+<div id="dialog-ggb-cas-4d7d012d" title="CAS‑vindu" style="display:none;">
+    <div id="ggb-cas-4d7d012d" class="ggb-window"></div>
 </div>
 
 <style>
@@ -1191,12 +1193,12 @@ T_{6-\mathrm{kant}} = 6 \cdot T_{\triangle ABC} = 6 \cdot \dfrac{\sqrt{3}}{3} = 
 
     function applySize() {
       if (!ggbReady) return;
-      const w = $("#ggb-cas-31f5da25").width(),
-            h = $("#ggb-cas-31f5da25").height();
+      const w = $("#ggb-cas-4d7d012d").width(),
+            h = $("#ggb-cas-4d7d012d").height();
       window.ggbApplet.setSize(Math.round(w), Math.round(h));
     }
 
-    const $dlg = $("#dialog-ggb-cas-31f5da25").dialog({
+    const $dlg = $("#dialog-ggb-cas-4d7d012d").dialog({
       autoOpen: false,
       width: 390, height: 580,
       resizable: true, draggable: true,
@@ -1205,14 +1207,14 @@ T_{6-\mathrm{kant}} = 6 \cdot T_{\triangle ABC} = 6 \cdot \dfrac{\sqrt{3}}{3} = 
       open: function() {
         if (!ggbReady) {
           new GGBApplet({
-            appName: "classic", id: "ggb-cas-31f5da25",
+            appName: "classic", id: "ggb-cas-4d7d012d",
             width: 350, height: 500,
             perspective: "C", language: "nb",
             showToolBar: true, showAlgebraInput: true,
             borderRadius: 8, enableRightClick: true, showKeyboardOnFocus: false,
             customToolBar: "1001 | 1002 | 1007 | 1010 | 6",
             appletOnLoad: () => { ggbReady = true; applySize(); }
-          }, true).inject("ggb-cas-31f5da25");
+          }, true).inject("ggb-cas-4d7d012d");
         } else {
           applySize();
         }
@@ -1255,7 +1257,7 @@ T_{6-\mathrm{kant}} = 6 \cdot T_{\triangle ABC} = 6 \cdot \dfrac{\sqrt{3}}{3} = 
             target = target.parentElement;
           }
           // Prevent page scroll but don't stop the event from reaching GeoGebra
-          if (!e.target.closest('#ggb-cas-31f5da25')) {
+          if (!e.target.closest('#ggb-cas-4d7d012d')) {
             e.preventDefault();
             e.stopPropagation();
           }
@@ -1283,7 +1285,7 @@ T_{6-\mathrm{kant}} = 6 \cdot T_{\triangle ABC} = 6 \cdot \dfrac{\sqrt{3}}{3} = 
     
     // Monitor GeoGebra applet focus/interaction to control scroll lock
     function bindScrollLock() {
-      const ggbContainer = document.getElementById('ggb-cas-31f5da25');
+      const ggbContainer = document.getElementById('ggb-cas-4d7d012d');
       if (!ggbContainer) {
         setTimeout(bindScrollLock, 300);
         return;
@@ -1329,10 +1331,10 @@ T_{6-\mathrm{kant}} = 6 \cdot T_{\triangle ABC} = 6 \cdot \dfrac{\sqrt{3}}{3} = 
     // Cleanup on dialog close
     $dlg.on('dialogclose', unlockScroll);
 
-    $("#button-ggb-cas-31f5da25").button()
+    $("#button-ggb-cas-4d7d012d").button()
       .on("click touchend pointerup", e => {
         e.preventDefault();
-        $("#dialog-ggb-cas-31f5da25").dialog("open");
+        $("#dialog-ggb-cas-4d7d012d").dialog("open");
       });
   });
 })();
@@ -1345,7 +1347,7 @@ T_{6-\mathrm{kant}} = 6 \cdot T_{\triangle ABC} = 6 \cdot \dfrac{\sqrt{3}}{3} = 
 </ul>
 <p>Bestem <span class="math notranslate nohighlight">\(f(x)\)</span> og <span class="math notranslate nohighlight">\(f'(x)\)</span>.</p>
 <figure class="align-default">
-<a class="no-click adaptive-figure reference internal image-reference" href="../../../../_images/figur82.svg"><img alt="../../../../_images/figur82.svg" class="no-click adaptive-figure" src="../../../../_images/figur82.svg" style="width: 80%;" /></a>
+<a class="no-click adaptive-figure reference internal image-reference" href="../../../../_images/figur78.svg"><img alt="../../../../_images/figur78.svg" class="no-click adaptive-figure" src="../../../../_images/figur78.svg" style="width: 80%;" /></a>
 </figure>
 <div class="summary dropdown admonition">
 <p class="admonition-title">Retteveiledning</p>
@@ -1421,7 +1423,7 @@ f'(x) = (x^2 + 2x - 3)' = 2x + 2.
 <p class="admonition-title">Oppgave 4</p>
 <p>Nedenfor vises en sylinder fylt med vann med et lite hull i bunnen.</p>
 <figure class="align-default">
-<a class="no-click adaptive-figure reference internal image-reference" href="../../../../_images/merged_figure30.svg"><img alt="../../../../_images/merged_figure30.svg" class="no-click adaptive-figure" src="../../../../_images/merged_figure30.svg" style="width: 80%;" /></a>
+<a class="no-click adaptive-figure reference internal image-reference" href="../../../../_images/merged_figure29.svg"><img alt="../../../../_images/merged_figure29.svg" class="no-click adaptive-figure" src="../../../../_images/merged_figure29.svg" style="width: 80%;" /></a>
 </figure>
 <p>Den horisontale avstanden vannstrålen beveger seg er <span class="math notranslate nohighlight">\(S_i\)</span> meter når vannstanden er <span class="math notranslate nohighlight">\(x_i\)</span> meter over bunnen av sylinderen. I tabellen nedenfor vises et datamateriale for dette.</p>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -1585,16 +1587,16 @@ t \approx 9.76 \or t \approx 38.04.
 Båten må innom land på en kystlinje på et punkt <span class="math notranslate nohighlight">\(B\)</span> for å hente ferskvann. Båten skal reise en så kort som mulig avstand for å spare drivstoff.</p>
 <p>Kystlinjen er <span class="math notranslate nohighlight">\(9\)</span> km lang. Øy <span class="math notranslate nohighlight">\(A\)</span> ligger <span class="math notranslate nohighlight">\(2\)</span> km fra land og øy <span class="math notranslate nohighlight">\(C\)</span> ligger <span class="math notranslate nohighlight">\(4\)</span> km fra land. Se figuren nedenfor.</p>
 <figure class="align-default">
-<a class="no-click adaptive-figure reference internal image-reference" href="../../../../_images/figur83.svg"><img alt="../../../../_images/figur83.svg" class="no-click adaptive-figure" src="../../../../_images/figur83.svg" style="width: 90%;" /></a>
+<a class="no-click adaptive-figure reference internal image-reference" href="../../../../_images/figur79.svg"><img alt="../../../../_images/figur79.svg" class="no-click adaptive-figure" src="../../../../_images/figur79.svg" style="width: 90%;" /></a>
 </figure>
 <p>En strandkiosk <span class="math notranslate nohighlight">\(S\)</span> er plassert på starten av kystlinja.</p>
 
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<button id="button-ggb-cas-28b7d449" class="ggb-cas-button">Åpne CAS‑vindu</button>
-<div id="dialog-ggb-cas-28b7d449" title="CAS‑vindu" style="display:none;">
-    <div id="ggb-cas-28b7d449" class="ggb-window"></div>
+<button id="button-ggb-cas-f0f41099" class="ggb-cas-button">Åpne CAS‑vindu</button>
+<div id="dialog-ggb-cas-f0f41099" title="CAS‑vindu" style="display:none;">
+    <div id="ggb-cas-f0f41099" class="ggb-window"></div>
 </div>
 
 <style>
@@ -1611,12 +1613,12 @@ Båten må innom land på en kystlinje på et punkt <span class="math notranslat
 
     function applySize() {
       if (!ggbReady) return;
-      const w = $("#ggb-cas-28b7d449").width(),
-            h = $("#ggb-cas-28b7d449").height();
+      const w = $("#ggb-cas-f0f41099").width(),
+            h = $("#ggb-cas-f0f41099").height();
       window.ggbApplet.setSize(Math.round(w), Math.round(h));
     }
 
-    const $dlg = $("#dialog-ggb-cas-28b7d449").dialog({
+    const $dlg = $("#dialog-ggb-cas-f0f41099").dialog({
       autoOpen: false,
       width: 460, height: 580,
       resizable: true, draggable: true,
@@ -1625,14 +1627,14 @@ Båten må innom land på en kystlinje på et punkt <span class="math notranslat
       open: function() {
         if (!ggbReady) {
           new GGBApplet({
-            appName: "classic", id: "ggb-cas-28b7d449",
+            appName: "classic", id: "ggb-cas-f0f41099",
             width: 420, height: 500,
             perspective: "C", language: "nb",
             showToolBar: true, showAlgebraInput: true,
             borderRadius: 8, enableRightClick: true, showKeyboardOnFocus: false,
             customToolBar: "1001 | 1002 | 1007 | 1010 | 6",
             appletOnLoad: () => { ggbReady = true; applySize(); }
-          }, true).inject("ggb-cas-28b7d449");
+          }, true).inject("ggb-cas-f0f41099");
         } else {
           applySize();
         }
@@ -1675,7 +1677,7 @@ Båten må innom land på en kystlinje på et punkt <span class="math notranslat
             target = target.parentElement;
           }
           // Prevent page scroll but don't stop the event from reaching GeoGebra
-          if (!e.target.closest('#ggb-cas-28b7d449')) {
+          if (!e.target.closest('#ggb-cas-f0f41099')) {
             e.preventDefault();
             e.stopPropagation();
           }
@@ -1703,7 +1705,7 @@ Båten må innom land på en kystlinje på et punkt <span class="math notranslat
     
     // Monitor GeoGebra applet focus/interaction to control scroll lock
     function bindScrollLock() {
-      const ggbContainer = document.getElementById('ggb-cas-28b7d449');
+      const ggbContainer = document.getElementById('ggb-cas-f0f41099');
       if (!ggbContainer) {
         setTimeout(bindScrollLock, 300);
         return;
@@ -1749,10 +1751,10 @@ Båten må innom land på en kystlinje på et punkt <span class="math notranslat
     // Cleanup on dialog close
     $dlg.on('dialogclose', unlockScroll);
 
-    $("#button-ggb-cas-28b7d449").button()
+    $("#button-ggb-cas-f0f41099").button()
       .on("click touchend pointerup", e => {
         e.preventDefault();
-        $("#dialog-ggb-cas-28b7d449").dialog("open");
+        $("#dialog-ggb-cas-f0f41099").dialog("open");
       });
   });
 })();
@@ -1857,7 +1859,7 @@ x = 3
 <p>Nedenfor vises et kvadrat med sidelengder <span class="math notranslate nohighlight">\(3\)</span>.</p>
 <p>Kvadratet er fylt med mindre fargelagte kvadrater som blir mindre og mindre.</p>
 <figure class="align-default">
-<a class="no-click adaptive-figure reference internal image-reference" href="../../../../_images/figur84.svg"><img alt="../../../../_images/figur84.svg" class="no-click adaptive-figure" src="../../../../_images/figur84.svg" style="width: 80%;" /></a>
+<a class="no-click adaptive-figure reference internal image-reference" href="../../../../_images/figur80.svg"><img alt="../../../../_images/figur80.svg" class="no-click adaptive-figure" src="../../../../_images/figur80.svg" style="width: 80%;" /></a>
 </figure>
 <p>Lag et program som regner ut summen av arealet til de 100 største fargelagte kvadratene.</p>
 <div class="summary dropdown admonition">

@@ -2208,3 +2208,70 @@ $$
 
 :::::::::::::::
 
+
+
+---
+
+
+
+:::::::::::::::{exercise} Oppgave 17
+
+:::{cas-popup}
+:::
+
+
+:::{plot}
+width: 70%
+function: -1/12 * x**2 + 20 
+line: -1, 23, solid
+point: (6, 17)
+point: (0, 23)
+ymax: 25
+ymin: -1
+ticks: off
+xmin: -18
+xmax: 18
+:::
+
+
+
+En arkitekt har tegnet et snitt av en lagerhall. Lagerhallen er 20 meter høy og har form som en parabel gitt ved 
+
+$$
+p(x) = -\dfrac{1}{12}x^2 + 20
+$$
+
+På taket av lagerhallen skal det plasseres et webkamera. Webkameraet skal festet på en stang som er 3 meter lang. 
+
+Den rette linjen på figuren går gjennom punktet $(0, 23)$ og er en tangent til grafen. 
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Bestem likningen til tangenten.
+
+::::{answer}
+$$
+y = -x + 23
+$$
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Hvor langt fra veggen på lagerhallen kan en tyv bevege seg uten å bli fotografert av webkameraet? 
+
+::::{answer}
+Ca. 5.5 meter dersom en person er 2 meter høy. 
+::::
+
+:::::::::::::
+
+
+::::::::::::::
+
+
+:::::::::::::::
