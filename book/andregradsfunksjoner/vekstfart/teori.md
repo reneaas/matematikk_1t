@@ -273,6 +273,68 @@ f'(x) = 2ax + b
 $$
 
 
+::::{multi-plot2}
+---
+rows: 1
+cols: 2
+---
+
+:::{plot}
+function: (x - 1)**2 + 1, f 
+ticks: off
+fontsize: 26
+xmin: -2
+ymin: -1
+ymax: 4
+xmax: 4
+lw: 3
+point: (1, f(1))
+hline: f(1), 1, 2, dashed, gray
+vline: 2, f(1), f(2), dashed, gray
+text: (1 + 2)/2, f(1), "$1$", bottom-center
+text: 2, (f(1) + f(2))/2, "$a$", center-right
+:::
+
+:::{plot}
+function: 2*(x - 1), f' 
+fontsize: 26
+xmin: -2
+ymax: 4
+ymin: -2
+ticks: off
+lw: 3
+point: (1, 0)
+hline: 2*(1.5 - 1), 1.5, 2.5, dashed, gray
+vline: 2.5, 2*(1.5 - 1), 2*(2.5 - 1), dashed, gray
+text: (1.5 + 2.5) / 2, 2*(1.5 - 1), "$1$", bottom-center
+text: 2.5, (2*(1.5 - 1) + 2*(2.5 - 1)) / 2, "$2a$", center-right
+annotate: (2.5, -1), (1, 0), "Symmetrilinja til $f$", -0.3
+:::
+
+
+
+::::
+
+
+:::{plot}
+function: 2*(x - 1), f' 
+fontsize: 26
+xmin: -2
+ymax: 4
+ymin: -4
+ticks: off
+lw: 3
+point: (1, 0)
+hline: 2*(1.5 - 1), 1.5, 2.5, dashed, gray
+vline: 2.5, 2*(1.5 - 1), 2*(2.5 - 1), dashed, gray
+text: (1.5 + 2.5) / 2, 2*(1.5 - 1), "$1$", bottom-center
+text: 2.5, (2*(1.5 - 1) + 2*(2.5 - 1)) / 2, "$2a$", center-right
+annotate: (3.5, -1), (1, 0), "$x = -\frac{b}{2a}$", -0.3
+nocache:
+:::
+
+
+
 
 ::::::::::::::{admonition} Bevis
 ---
@@ -290,14 +352,39 @@ $$
 f(x) = T(x)
 $$
 
-bare ha én løsning. Hvis vi trekker $T(x)$ over på venstre side, får vi en andregradsfunksjon som har $x = x_0$ som symmetrilinje. Se figuren nedenfor: 
+bare ha én løsning. Hvis vi trekker $T(x)$ over på venstre side, får vi en andregradsfunksjon $f - T$ som bare skjærer $x$-aksen i $x = x_0$. Dette derfor også symmetrilinja til $f - T$. Se figuren nedenfor: 
 
-:::{figure} ./figurer/teori/den_deriverte/merged_figure.svg
+::::{multi-plot2}
 ---
-class: no-click, adaptive-figure
-width: 100%
+rows: 1
+cols: 2
 ---
+
+:::{plot}
+function: 0.5*(x + 1)**2 - 4, f
+tangent: 1, f
+point: (1, f(1))
+fontsize: 26
+ticks: off
+text: 1, f(1), "$(x_0, f(x_0))$", center-right
 :::
+
+
+:::{plot}
+function: 0.5 * (x + 1)**2 - 4 - (2*x - 4), f-T
+point: (1, 0)
+vline: 1, dashed, gray
+fontsize: 26
+ticks: off
+text: 1, 0, "$(x_0, 0)$", bottom-right
+annotate: (-6, 4), (1, 4), "Symmetrilinje $x = x_0$"
+:::
+
+
+::::
+
+
+
 
 La oss utføre denne regningen:
 
@@ -358,6 +445,33 @@ $$
 f'(x) = 2 \cdot 3 \cdot x - 6 = 6x - 6
 $$
 ::::
+
+:::::::::::::::
+
+
+---
+
+
+Vi kan også se på en konkret sammenheng mellom $f$ og $f'$ dersom $f(x)$ er skrevet på ekstremalpunktsform 
+ved å merke oss at nullpunktet til $f'$ ligger i symmetrilinja til $f$. Dette stemmer fordi
+
+$$
+f'(x) = 0 \liff 2ax + b = 0 \liff 2ax = -b \liff x = -\frac{b}{2a}
+$$
+
+Derfor må det være mulig å skrive $f'(x)$ på nullpunktsform som
+
+$$
+f'(x) = 2a(x - x_0) \qder x_0 = -\frac{b}{2a}
+$$
+
+
+:::::::::::::::{summary} Den deriverte på nullpunktsform
+Den deriverte til en andregradsfunksjon $f(x) = a(x - x_0)^2 + y_0$ er gitt ved
+
+$$
+f'(x) = 2a(x - x_0)
+$$
 
 :::::::::::::::
 

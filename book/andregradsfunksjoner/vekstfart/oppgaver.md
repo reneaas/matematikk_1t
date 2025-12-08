@@ -2201,6 +2201,8 @@ layout: sidebar
 :::
 
 
+
+
 En arkitekt har tegnet et snitt av en lagerhall. Lagerhallen er 20 meter høy og har form som en parabel gitt ved 
 
 $$
