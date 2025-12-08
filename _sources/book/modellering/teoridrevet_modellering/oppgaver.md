@@ -1672,7 +1672,6 @@ bar: (-12, 35), 35, vertical
 text: -12, 52.5, "35 cm", center-left
 bar: (480, 0), 70, vertical
 text: 480, 35, "70 cm", center-right
-nocache:
 :::
 
 
