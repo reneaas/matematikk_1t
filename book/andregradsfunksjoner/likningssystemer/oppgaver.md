@@ -343,7 +343,7 @@ layout: sidebar
 
 ::::{answer}
 $$
-x = 0 \and y = 1 \or x = 4 \and y = -7
+x = 0 \and y = 1 \or x = 3 \and y = -5
 $$
 ::::
 
