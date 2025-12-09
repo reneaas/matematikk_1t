@@ -686,7 +686,7 @@ cols: 2
 
 
 ::::{answer}
-Graf A.
+Graf C.
 ::::
 
 
