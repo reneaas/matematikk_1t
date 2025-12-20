@@ -715,7 +715,7 @@ Bestem hvilken av grafene nedenfor som viser grafen til $h$.
 
 :::{multi-plot}
 width: 100%
-functions: -(x + 2)**2 + 1, -2*(x + 2)**2 + 1, (x + 2)**2 + 1, -2*(x + 2)**2 + 1
+functions: -(x + 2)**2 + 1, -2*(x + 2)**2 + 1, (x + 2)**2 + 1, -(x + 2)**2 + 1
 function-names: A, B, C, D
 rows: 2
 cols: 2
