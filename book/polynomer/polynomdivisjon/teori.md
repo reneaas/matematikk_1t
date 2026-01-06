@@ -92,6 +92,30 @@ $$
 ---
 
 
+:::::::::::::::{exercise} Underveisoppgave 1
+Utfør polynomdivisjonen 
+
+$$
+(x^2 + 3x - 10) : (x - 2)
+$$
+
+
+::::{answer}
+:::{polydiv}
+---
+p: x^2 + 3x - 10
+q: x - 2
+width: 60%
+---
+:::
+::::
+
+:::::::::::::::
+
+
+---
+
+
 Vi ser på et eksempel til med et tredjegradspolynom i telleren. 
 
 :::::::::::::::{admonition} Eksempel 2
@@ -167,6 +191,34 @@ $$
 
 
 
+
+
+:::::::::::::::
+
+
+
+---
+
+
+
+:::::::::::::::{exercise} Underveisoppgave 2
+Utfør polynomdivisjonen
+
+$$
+(x^3 + 2x^2 - 5x - 6) : (x + 3)
+$$
+
+
+::::{answer}
+:::{polydiv}
+---
+p: x^3 + 2x^2 - 5x - 6
+q: x + 3
+width: 80%
+---
+:::
+
+::::
 
 
 :::::::::::::::
@@ -545,7 +597,7 @@ $$
 ---
 
 
-:::::::::::::::{admonition} Underveisoppgave 1
+:::::::::::::::{admonition} Underveisoppgave 3
 ---
 class: check
 ---

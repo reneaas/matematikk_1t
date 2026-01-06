@@ -1,5 +1,59 @@
 # Oppgaver: <br> Lineære-over-lineære
 
+
+:::::::::::::::{exercise} Oppgave 1
+Ta quizen!
+
+::::::::{quiz-2}
+:::::::{quiz-question}
+Grafen til en rasjonal funksjon $f$ er vist nedenfor.
+
+:::{plot}
+width: 60%
+fontsize: 30
+function: (x - 1) / (x - 2), f
+point: (1, 0)
+vline: 2, dashed
+hline: 1, dashed
+:::
+
+Hvilket alternativ viser $f(x)$?
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+f(x) = \dfrac{x - 1}{x - 2}
+$$
+::::::
+
+
+::::::{quiz-answer}
+$$
+f(x) = \dfrac{x + 1}{x - 2}
+$$
+::::::
+
+
+::::::{quiz-answer}
+$$
+f(x) = \dfrac{-x + 1}{x - 2}
+$$
+::::::
+
+
+::::::{quiz-answer}
+$$
+f(x) = \dfrac{x - 1}{x + 2}
+$$
+::::::
+
+:::::::
+::::::::
+
+:::::::::::::::
+
 :::::::::::::::{exercise} Oppgave 1
 ---
 level: 1
