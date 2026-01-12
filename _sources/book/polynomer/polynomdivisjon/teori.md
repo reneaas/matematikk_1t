@@ -66,7 +66,7 @@ width: 60%
 :::
 
 
-Nå sitter vi igjen med en rest $(-3x + 6)$. Dette er hvor mye vi "bommet" på det riktig svaret ved å velge $3x$. Vi kan nå gjenta samme prosess med resten. Hva må vi gange med $(x + 2)$ slik at **minst** et av leddene blir $-3x$. Det vil være $-3$. Ganger vi $-3$ med $(x + 2)$ får vi $-3x + 6$. Vi trekker dette fra resten og får:
+Nå sitter vi igjen med en rest $(-3x + 6)$. Dette er hvor mye vi "bommet" på det riktig svaret ved å velge $3x$. Vi kan nå gjenta samme prosess med resten. Hva må vi gange med $(x + 2)$ slik at **minst** et av leddene blir $-3x$. Det vil være $-3$. Ganger vi $-3$ med $(x + 2)$ får vi $-3x - 6$. Vi trekker dette fra resten og får:
 
 
 :::{polydiv}
