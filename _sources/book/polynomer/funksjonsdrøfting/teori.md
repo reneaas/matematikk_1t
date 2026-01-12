@@ -99,7 +99,7 @@ Fra fortegnsskjema ser vi at $f'(x)$ går fra positiv til negativ i $x = 1$, som
 
 Vi tar et eksempel til der alle tre typene dukker opp slik at vi vet hvordan vi kan lese de av fra et fortegnsskjema.
 
-:::::::::::::::{exercise} Eksempel 2
+:::::::::::::::{example} Eksempel 2
 En femtegradsfunksjon er gitt ved 
 
 $$
@@ -229,7 +229,7 @@ Et **vendepunkt** på grafen til $f$ forteller oss hvor grafen har minst eller s
 
 
 :::::::::::::::{summary} Vendepunkter
-Et **vendepunkt** på grafen til en funksjon $f$, er et punkt der $f''(x) = 0$. Se figuren nedenfor:
+Et **vendepunkt** på grafen til en funksjon $f$, er et punkt der $f''(x) = 0$ og $f''(x)$ skifter fortegn rundt dette punktet.
 
 
 :::{plot}
@@ -239,8 +239,62 @@ ticks: off
 point: (1, f(1))
 :::
 
-Vendepunkter svarer til stasjonære punkter på grafen til den førstederiverte $f'$. 
+Vendepunkter svarer til topp- eller bunnpunkter på grafen til den deriverte $f'$. 
+
+:::::::::::::::
 
 
+
+---
+
+
+
+
+:::::::::::::::{example} Eksempel 3
+En funksjon $f$ er gitt ved 
+
+$$
+f(x) = x^3 - 3x^2 + 4
+$$
+
+Bestem koordinatene til vendepunktet til $f$.
+
+::::{solution}
+---
+dropdown: 0
+---
+Først finner vi den andrederiverte:
+
+$$
+f'(x) = (x^3 - 3x^2 + 4)' = 3x^2 - 6x
+$$
+
+$$
+f''(x) = (3x^2 - 6x)' = 6x - 6
+$$
+
+Så løser vi likningen $f''(x) = 0$:
+
+$$
+f''(x) = 0 \liff 6x - 6 = 0 \liff x = 1
+$$
+
+Nå har vi $x$-koordinaten til vendepunktet. Vi må ha $y$-koordinaten til punktet også:
+
+$$
+y = f(1) = 1^3 - 3 \cdot 1^2 + 4 = 2
+$$
+
+Dermed har grafen til $f$ et vendepunkt i $(1, 2)$. For å være sikker på at dette faktisk er et vendepunkt, så må $f''(x)$ skifte fortegn rundt $x = 1$. Vi tegner et fortegnsskjema for $f''(x)$:
+
+
+:::{signchart}
+width: 100%
+function: 6*x - 6, f''(x)
+:::
+
+Vi ser at $f''(x)$ går fra negativ til positiv i $x = 1$, som betyr at grafen til $f$ har et vendepunkt i $(1, 2)$.
+
+::::
 
 :::::::::::::::
