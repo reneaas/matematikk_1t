@@ -1,10 +1,8 @@
 # Oppgaver: Polynomlikninger
 
 
-:::::::::::::::{admonition} Oppgave 1
----
-class: problem-level-1
----
+:::::::::::::::{exercise} Oppgave 1
+
 En tredjegradsfunksjon $f$ er gitt ved 
 
 $$
@@ -154,10 +152,7 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 2
----
-class: problem-level-2
----
+:::::::::::::::{exercise} Oppgave 2
 En tredjegradsfunksjon $f$ er gitt ved 
 
 $$
@@ -253,10 +248,7 @@ $$
 
 ---
 
-:::::::::::::::{admonition} Oppgave 3
----
-class: problem-level-2
----
+:::::::::::::::{exercise} Oppgave 3
 En tredjegradsfunksjon er gitt ved 
 
 $$
@@ -308,10 +300,7 @@ $$
 
 
 
-:::::::::::::::{admonition} Oppgave 4 
----
-class: problem-level-2
----
+:::::::::::::::{exercise} Oppgave 4 
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
@@ -361,10 +350,7 @@ $$
 ---
 
 
-:::::::::::::::{admonition} Oppgave 5
----
-class: problem-level-2
----
+:::::::::::::::{exercise} Oppgave 5
 En likning er gitt ved
 
 $$
@@ -429,14 +415,264 @@ $$
 
 
 
-
-
-
-
-:::::::::::::::{admonition} Oppgave 6
 ---
-class: problem-level-2
+
+
+
+:::::::::::::::{exercise} Oppgave 6
+Funksjonen $f$ er gitt ved 
+
+$$
+f(x) = x^3 + 2x^2 - 5x - 6
+$$
+
+I hvilke punkter skjærer grafen til funksjonen $x$-aksen?
+
+
+
+::::{answer}
+$$
+x = -3 \or x = -1 \or x = 2.
+$$
+::::
+
+::::{solution}
+De mulige heltallige røttene til $f(x)$ er 
+
+$$
+x \in \{\pm 1, \pm 2, \pm 3, \pm 6\}.
+$$
+
+Vi prøver oss fram til vi finner en rot:
+
+:::{horner}
 ---
+p: x^3 + 2x^2 - 5x - 6
+x: 1
+width: 60%
+---
+:::
+
+Det funket ikke med $x = 1$, så vi går videre:
+
+:::{horner}
+---
+p: x^3 + 2x^2 - 5x - 6
+x: -1
+width: 60%
+---
+:::
+
+Her fikk vi $0$ i rest, så $x = -1$ er en rot. Vi kan dermed faktorisere $f(x)$ som
+
+$$
+f(x) = (x + 1)(x^2 + x - 6).
+$$
+
+Vi bestemmer røttene til andregradspolynomet med $abc$-formelen:
+
+$$
+x = \dfrac{-1 \pm \sqrt{1^2 - 4 \cdot 1 \cdot (-6)}}{2 \cdot 1} = \dfrac{-1 \pm \sqrt{25}}{2} = \dfrac{-1 \pm 5}{2}
+$$
+
+som gir
+
+$$
+x = 2 \or x = -3.
+$$
+
+
+Altså skjærer grafen til $f$ gjennom $x$-aksen i punktene 
+
+$$
+x = -3 \or x = -1 \or x = 2.
+$$
+::::
+
+:::::::::::::::
+
+
+---
+
+
+:::::::::::::::{exercise} Oppgave 7
+Funksjonen $f$ er gitt ved
+
+$$
+f(x) = 2x^3 + x^2 - 18x - 9
+$$
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Vis at divisjonen $f(x) : (x - 3)$ går opp.
+
+
+::::{solution}
+:::{polydiv}
+---
+p: 2x^3 + x^2 - 18x - 9
+q: x - 3
+width: 70%
+---
+:::
+
+::::
+
+:::::::::::::
+
+
+
+:::::::::::::{tab-item} b
+Gjør beregninger og vurder hvilken av grafene nedenfor som kan være grafen til $f$.
+
+
+
+::::{multi-plot2}
+---
+rows: 1
+cols: 3
+fontsize: 30
+---
+
+:::{plot}
+function: (x + 3) * (x - 3) * (2*x - 1), A
+xmin: -5
+xmax: 5
+ymin: -20
+ymax: 30
+ticks: off
+:::
+
+
+:::{plot}
+function: (x + 3) * (x - 3) * (2*x + 1), B
+xmin: -5
+xmax: 5
+ymin: -30
+ymax: 20
+ticks: off
+:::
+
+
+:::{plot}
+function: (x + 3) * (x - 1/2) * (2*x + 1), C
+xmin: -5
+xmax: 5
+ymin: -20
+ymax: 20
+ticks: off
+:::
+
+::::
+
+
+::::{answer}
+Graf B.
+::::
+
+:::::::::::::
+
+
+::::::::::::::
+
+
+:::::::::::::::
+
+
+
+---
+
+
+
+:::::::::::::::{exercise} Oppgave 8
+Gitt likningen 
+
+$$
+x^3 - 5x^2 - 8x + 12 = (x - 1)(x + a)(x - b)
+$$
+
+Bestem $a$ og $b$ slik at likningen blir en identitet.
+
+
+::::{answer}
+$$
+a = 2 \and b = 6 \or a = -6 \and b = -2
+$$
+::::
+
+
+::::{solution}
+Vi utfører polynomdivisjonen 
+
+$$
+(x^3 - 5x^2 - 8x + 12) : (x - 1)
+$$
+
+for å bestemme andregradspolynomet i faktoriseringen:
+
+
+:::{polydiv}
+---
+p: x^3 - 5x^2 - 8x + 12
+q: x - 1
+width: 70%
+---
+:::
+
+Altså er 
+
+$$
+x^3 - 5x^2 - 8x + 12 = (x - 1)(x^2 - 4x - 12).
+$$
+
+Vi bestemmer røttene til andregradspolynomet med $abc$-formelen:
+
+$$
+x = \dfrac{4 \pm \sqrt{(-4)^2 - 4 \cdot 1 \cdot (-12)}}{2 \cdot 1} = \dfrac{4 \pm \sqrt{16 + 48}}{2} = \dfrac{4 \pm 8}{2}
+$$
+
+som gir løsningene
+
+$$
+x = 6 \or x = -2.
+$$
+
+Altså vil vi kunne skrive
+
+$$
+x^3 - 5x^2 - 8x + 12 = (x - 1)(x + 2)(x - 6).
+$$
+
+Dermed må vi ha at
+
+$$
+a = 2 \and b = 6 \or a = -6 \and b = -2
+$$
+
+for at likningen skal bli en identitet.
+
+
+::::
+
+
+:::::::::::::::
+
+
+
+
+
+
+---
+
+
+
+
+
+:::::::::::::::{exercise} Oppgave 9
 En fjerdegradslikning er gitt ved 
 
 $$
