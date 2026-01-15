@@ -314,7 +314,7 @@ $$
 class: dropdown, answer
 ---
 $$
-(x^3 - 2x^2 + 3x - 4) : (x - 2) = x^3 - 3x^2 + 8x - 24 + \dfrac{73}{x + 3}
+(x^4 - x^2 + 1) : (x + 3) = x^3 - 3x^2 + 8x - 24 + \dfrac{73}{x + 3}.
 $$
 ::::
 
@@ -323,12 +323,14 @@ $$
 ---
 class: dropdown, solution
 ---
-:::{figure} ./koder/oppgaver/oppgave_2/d.svg
+:::{polydiv}
 ---
-width: 90%
-class: no-click, adaptive-figure
+p: x^4 - x^2 + 1
+q: x + 3
+width: 100%
 ---
 :::
+
 ::::
 
 :::::::::::::
