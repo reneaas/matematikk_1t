@@ -66,7 +66,7 @@ width: 60%
 :::
 
 
-Nå sitter vi igjen med en rest $(-3x + 6)$. Dette er hvor mye vi "bommet" på det riktig svaret ved å velge $3x$. Vi kan nå gjenta samme prosess med resten. Hva må vi gange med $(x + 2)$ slik at **minst** et av leddene blir $-3x$. Det vil være $-3$. Ganger vi $-3$ med $(x + 2)$ får vi $-3x - 6$. Vi trekker dette fra resten og får:
+Nå sitter vi igjen med en rest $(-3x + 6)$. Dette er hvor mye vi "bommet" på det riktige svaret ved å velge $3x$. Vi kan nå gjenta samme prosess med resten. Hva må vi gange med $(x + 2)$ slik at **minst** et av leddene blir $-3x$. Det vil være $-3$. Ganger vi $-3$ med $(x + 2)$ får vi $-3x - 6$. Vi trekker dette fra resten og får:
 
 
 :::{polydiv}
@@ -133,7 +133,7 @@ $$
 ---
 dropdown: 0
 ---
-Først er vi etter hva vi må gange $(x + 2)$ med slik at vi får et polynom som har et ledd $x^3$. Det får vi hvis vi ganger med $x^2$. Ganger vi $x^2$ med $(x + 2)$, får vi $x^3 + 2x^2$. Vi trekker fra dette fra telleren:
+Først er vi ute etter hva vi må gange $(x + 2)$ med slik at vi får et polynom som har **minst** har ett ledd som er $x^3$. Det får vi hvis vi ganger neveneren med $x^2$. Ganger vi $x^2$ med $(x + 2)$, får vi $x^3 + 2x^2$. Vi trekker fra dette fra telleren:
 
 
 :::{polydiv}
@@ -146,7 +146,7 @@ width: 80%
 :::
 
 
-Nå sitter vi igjen med en rest $(-5x^2 - 6x)$. Nå ser vi etter hva vi må gange $(x + 2)$ med slik at ett av leddene blir $-5x^2$. Dette vil være $-5x$. Ganger vi $-5x$ med $(x + 2)$, får vi $-5x^2 - 10x$. Vi trekker fra dette fra resten:
+Nå sitter vi igjen med en rest $(-5x^2 - 6x)$ som er hvor langt unna det riktige svaret vi er ved å velge $x^2$. Nå ser vi etter hva vi må gange $(x + 2)$ med slik at minst ett av leddene blir $-5x^2$. Dette vil være $-5x$. Ganger vi $-5x$ med $(x + 2)$, får vi $-5x^2 - 10x$. Vi trekker fra dette fra resten:
 
 
 :::{polydiv}
@@ -226,7 +226,7 @@ width: 80%
 
 ---
 
-Vi kan også utføre polynomdivisjon når divisoren er et andregradspolynom.
+Vi kan også utføre polynomdivisjon når nevneren er et andregradspolynom.
 
 
 :::::::::::::::{admonition} Eksempel 3
@@ -386,7 +386,7 @@ width: 80%
 ---
 :::
 
-Vi kan merke oss at resten $R = -4$ og $f(-1) = -4$. Altså er resten i $(x + 1)$ og $f(-1)$ den samme.
+Vi kan merke oss at resten $R = -4$ og $f(-1) = -4$. Altså er resten i divisjonen $f(x) : (x + 1)$ og $f(-1)$ den samme.
 ::::
 
 :::::::::::::
