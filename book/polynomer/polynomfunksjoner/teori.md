@@ -185,13 +185,13 @@ width: 80%
 Fra utskriften får vi at 
 
 $$
-a = 1 \and b = 0 \and c = -2 \and d = 2
+a = 1 \and b = 0 \and c = -3 \and d = 2
 $$
 
 som gir 
 
 $$
-f(x) = x^3 - 2x + 2.
+f(x) = x^3 - 3x + 2.
 $$
 
 
