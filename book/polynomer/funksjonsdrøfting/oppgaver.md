@@ -293,3 +293,222 @@ Vendepunkter i $(0, 10)$ og $(2, -6)$.
 
 
 :::::::::::::::
+
+
+
+---
+
+
+:::::::::::::::{exercise} Oppgave 5
+En funksjon $f$ er gitt ved
+
+$$
+f(x) = x^3 + 4x^2 - 3x - 18
+$$
+
+Avgjør hvilken av grafene nedenfor som viser grafen til $f$.
+
+
+::::{multi-plot2}
+---
+rows: 2
+cols: 2
+ticks: off
+ymax: 20
+ymin: -20
+fontsize: 30
+---
+:::{plot}
+function: (x - 2)**2 * (x + 3)
+text: 5, 15, "A", center-center, bbox
+:::
+
+:::{plot}
+function: (x - 2) * (x + 3)**2
+text: 5, 15, "B", center-center, bbox
+:::
+
+:::{plot}
+function: -(x - 2)**2 * (x + 3)
+text: 5, 15, "C", center-center, bbox
+:::
+
+:::{plot}
+function: -(x - 2) * (x + 3)**2
+text: 5, 15, "D", center-center, bbox
+:::
+
+
+
+::::
+
+
+::::{answer}
+Graf B.
+::::
+
+
+
+:::::::::::::::
+
+
+---
+
+
+:::::::::::::::{exercise} Oppgave 6
+En funksjon $f$ er gitt ved 
+
+$$
+f(x) = x^3 - 3x^2 + 1.
+$$
+
+Avgjør hvilken av grafene nedenfor som viser grafen til $f$.
+
+
+::::{multi-plot2}
+---
+rows: 2
+cols: 2
+ymin: -10
+ymax: 10
+ticks: off
+fontsize: 30
+---
+:::{plot}
+function: -x**3 + 3 * x**2 - 1
+text: 5, 8, "A", center-center, bbox
+:::
+
+:::{plot}
+function: x**3 + 3 * x**2 - 4
+text: 5, 8, "B", center-center, bbox
+:::
+
+
+:::{plot}
+function: x**3 - 3 * x**2 + 1
+text: 5, 8, "C", center-center, bbox
+:::
+
+
+:::{plot}
+function: -(x**3 + 3 * x**2 - 4)
+text: 5, 8, "D", center-center, bbox
+:::
+
+::::
+
+
+::::{answer}
+Graf C.
+::::
+
+:::::::::::::::
+
+
+---
+
+
+
+:::::::::::::::{exercise} Oppgave 7
+For en funksjon $f$, er den deriverte $f'$ gitt ved
+
+$$
+f'(x) = x^3 - 2x^2 - x + 2.
+$$
+
+Avgjør hvilken av grafene nedenfor som viser grafen til $f$.
+
+::::{multi-plot2}
+---
+rows: 2
+cols: 2
+ymin: -8
+ymax: 8
+ticks: off
+grid: off
+fontsize: 30
+---
+:::{plot}
+function: 1/4 * x**4 + 2/3 * x**3 - 1/2 * x**2 - 2*x - 5
+text: 5, 6, "A", center-center, bbox
+:::
+
+:::{plot}
+function: -(1/4 * x**4 + 2/3 * x**3 - 1/2 * x**2 - 2*x - 5)
+text: 5, 6, "B", center-center, bbox
+:::
+
+:::{plot}
+function: 1/4 * x**4 - 2/3 * x**3 - 1/2 * x**2 + 2*x - 5
+text: 5, 6, "C", center-center, bbox
+:::
+
+:::{plot}
+function: -(1/4 * x**4 - 2/3 * x**3 - 1/2 * x**2 + 2*x - 5)
+text: 5, 6, "D", center-center, bbox
+:::
+
+::::
+
+
+::::{answer}
+Graf C.
+::::
+
+:::::::::::::::
+
+
+---
+
+
+:::::::::::::::{exercise} Oppgave 8
+Funksjonen $f$ er gitt ved
+
+$$
+f(x) = 2x^3 - 3x^2 - 12x + 6.
+$$
+
+Avgjør hvilken av grafene nedenfor som viser grafen til $f'$.
+
+
+::::{multi-plot2}
+---
+rows: 2
+cols: 2
+ymax: 16
+ymin: -16
+ticks: off
+fontsize: 30
+---
+
+:::{plot}
+function: -6 * (x - 2) * (x + 1)
+text: 5, 15, "A", center-center, bbox 
+:::
+
+
+:::{plot}
+function: -6 * (x + 2) * (x - 1)
+text: 5, 15, "B", center-center, bbox 
+:::
+
+:::{plot}
+function: 6 * (x + 2) * (x - 1)
+text: 5, 15, "C", center-center, bbox 
+:::
+
+:::{plot}
+function: 6 * (x - 2) * (x + 1)
+text: 5, 15, "D", center-center, bbox 
+:::
+
+::::
+
+
+::::{answer}
+Graf D.
+::::
+
+
+:::::::::::::::
