@@ -12,7 +12,7 @@ class: tip
 
 ## Polynomdivisjon og tangenter
 
-Vi har allerede sett at resten i polynomdivisjon med $f(x) : (x - r)$ lar oss bestemme $f(r)$. Her skal vi gå et steg videre å se at resten i en bestem polynomdivisjon kan brukes til å bestemme likningen til en tangent til grafen til polynomfunksjonen.
+Vi har allerede sett at resten i polynomdivisjon med $f(x) : (x - r)$ lar oss bestemme $f(r)$. Her skal vi gå et steg videre å se at resten i en bestemt polynomdivisjon kan brukes til å bestemme likningen til en tangent til grafen til polynomfunksjonen.
 
 
 :::::::::::::::{admonition} Utforsk 1
