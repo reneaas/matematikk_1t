@@ -1,37 +1,21 @@
 # Dev
 
 :::{plot}
-width: 100%
-function: (x - 1)**2 - 4, f
-tangent: 2, f
-tangent: -1, f
-point: (2, f(2))
-point: (-1, f(-1))
-ticks: off
-text: 2, f(2), "$(2, f(2))$", bottom-right
-text: -1, f(-1), "$(-1, f(-1))$", bottom-left
-ymin: -8
-:::
-
-
-:::{plot}
-width: 70%
-function: 2 * (x - 1), f'
-:::
-
-
-
-:::{plot}
-width: 70%
-function: -2*(x + 3) * (x - 1), f
-tangent: 1, f
-tangent: -3, f
-point: (1, f(1))
-point: (-3, f(-3))
+xmin: -12
+xmax: 12
 ymax: 12
-ticks: off
-text: -3, 0, "$A$", top-left
-text: 1, 0, "$B$", top-right
+ymin: -12
+width: 100%
+function: 2 * (x + 2) / (x - 4), f
+hline: 2
+vline: 4
+xstep: 2
+ystep: 2
 :::
 
 
+
+:::{plot}
+width: 70%
+function: 0.5 * ((x + 1)**2 - 4), f
+:::

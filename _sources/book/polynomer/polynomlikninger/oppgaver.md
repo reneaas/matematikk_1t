@@ -18,19 +18,13 @@ class: tabs-parts
 Skriv ned alle *mulige* heltallsrøtter til $f$. 
 
 
-::::{admonition} Fasit
----
-class: answer, dropdown
----
+::::{answer}
 $$
 x \in \{\pm 1, \pm 2, \pm 3, \pm 6\}. 
 $$
 ::::
 
-::::{admonition} Løsning
----
-class: dropdown, solution
----
+::::{solution}
 De mulige heltallsrøttene til $f$ er tall som deler konstantleddet $-6$. Alle hele tall som deler $-6$ er gitt ved 
 
 $$
@@ -43,10 +37,7 @@ Ta utgangspunkt i listen fra **a** og finn én rot til $f(x)$.
 
 Bruk polynomdivisjon til å faktorisere $f(x)$. 
 
-:::{admonition} Fasit
----
-class: dropdown, answer
----
+:::{answer}
 Én mulighet er $x = 1$, som gir
 
 $$
@@ -55,10 +46,7 @@ $$
 
 :::
 
-::::{admonition} Løsning
----
-class: solution, dropdown
----
+::::{solution}
 En av røttene til $f(x)$ er $x = 1$. Det kan vi se enten med et Horner-skjema eller vanlig polynomdivisjon:
 
 ````{tab} Horner-skjema
@@ -99,20 +87,14 @@ Finn resten av nullpunktene til $f$.
 Hvis nullpunktene er heltallige, sjekk at de også er en del av listen fra **a**.
 
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
+:::{answer}
 $$
 x = 1 \or x = -2 \or x = -3
 $$
 :::
 
 
-:::{admonition} Løsning
----
-class: answer, dropdown
----
+:::{solution}
 Vi bruker $abc$-formelen med andregradspolynomet for å finne de resterende røttene til $f$:
 
 $$
@@ -167,10 +149,7 @@ class: tabs-parts
 :::::::::::::{tab-item} a
 Bestem alle røttene til $f(x)$ og faktoriser $f(x)$ i lineære faktorer.
 
-::::{admonition} Fasit
----
-class: dropdown, answer
----
+::::{answer}
 $$
 x = 2 \or x = -2 \or x = 3
 $$
@@ -183,10 +162,7 @@ $$
 Tegn et fortegnsskjema for $f(x)$. 
 
 
-::::{admonition} Fasit
----
-class: dropdown, answer
----
+::::{answer}
 
 :::{figure} ./figurer/oppgaver/oppgave_2/b.svg
 ---
@@ -204,10 +180,7 @@ class: no-click, adaptive-figure
 Lag en **skisse** av grafen til $f$. Marker nullpunktene. 
 
 
-::::{admonition} Fasit
----
-class: answer, dropdown
----
+::::{answer}
 
 :::{figure} ./figurer/oppgaver/oppgave_2/c.svg
 ---
@@ -226,11 +199,7 @@ class: no-click, adaptive-figure
 Løs ulikheten $f(x) \geq 0$. 
 
 
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-
+::::{answer}
 $$
 x \in [-2, 2] \cup [3, \to \rangle
 $$
@@ -263,13 +232,8 @@ class: tabs-parts
 :::::::::::::{tab-item} a
 Bestem alle røttene til $f(x)$. 
 
-> Husk å se på en tredjegradslikning der den ledende koeffisienten er $1$ når du leter etter heltallsrøtter.
 
-
-::::{admonition} Fasit
----
-class: dropdown, answer
----
+::::{answer}
 $$
 x = -1 \or x = 3 \or x = 5. 
 $$
@@ -281,10 +245,7 @@ $$
 :::::::::::::{tab-item} b
 Løs ulikheten $f(x) \leq 0$. 
 
-::::{admonition} Fasit
----
-class: answer, dropdown
----
+::::{answer}
 $$
 -1 \leq x \and x \leq 3 \or 5 \leq x. 
 $$
@@ -313,10 +274,7 @@ $$
 x^3 - x^2 - 2x + 2 = 0. 
 $$
 
-::::{admonition} Fasit
----
-class: dropdown, answer
----
+::::{answer}
 $$
 x = 1 \or x = -\sqrt{2} \or x = \sqrt{2}
 $$
@@ -331,10 +289,7 @@ $$
 x^3 - x^2 - 2x + 2 > 0. 
 $$
 
-::::{admonition} Fasit
----
-class: answer, dropdown
----
+::::{answer}
 $$
 x \in \langle -\sqrt{2}, 1 \rangle \cup \langle \sqrt{2}, \to \rangle
 $$
@@ -367,10 +322,7 @@ class: tabs-parts
 Bestem $a$, $b$ og $c$ slik at likningen er en **identitet**.
 
 
-:::{admonition} Fasit
----
-class: dropdown, answer
----
+::::{answer}
 Én mulighet er 
 
 $$
@@ -396,10 +348,7 @@ $$
 x^3 - 3x - 2 < 0. 
 $$
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
+::::{answer}
 $$
 x \in \langle \gets, 2\rangle \setminus \{-1\}. 
 $$
