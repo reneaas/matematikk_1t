@@ -274,3 +274,132 @@ $$
 ::::
 :::::::::::::::
 
+
+
+
+---
+
+
+## Nullpunkter og vertikale asymptoter
+
+For en rasjonal funksjon $f(x) = \dfrac{P(x)}{Q(x)}$, så vil vi kun få:
+
+* Nullpunkter dersom telleren $P(x) = 0$ 
+* Vertikale asymptoter dersom nevneren $Q(x) = 0$
+
+Men dersom både $P(x) = 0$ og $Q(x) = 0$ i samme punkt, så får vi et **hull** i grafen til $f$ fremfor et nullpunkt eller en vertikal asymptote. Dette kan virke uforutsigbart ved første øyekast, men vi skal se på en strategi for å håndtere dette uten at det er noen tvil om hvorvidt vi får et nullpunkt, en vertikal asymptote eller bare et hull i grafen til $f$.
+
+:::::::::::::::{summary} Strategi: Nullpunkter og vertikale asymptoter
+La funksjonen $f$ være en rasjonal funksjon $f(x) = \dfrac{P(x)}{Q(x)}$. For å bestemme eventuelle nullpunkter, vertikale asymptoter og hull i grafen til $f$, gjør vi følgende:
+
+1. Nullpunktsfaktoriserer telleren $P(x)$ og nevneren $Q(x)$.
+2. Forkort brøken  $f(x) = \dfrac{P(x)}{Q(x)}$ så mye som mulig
+3. Bestem nullpunktene til telleren til den forkortede brøken. Disse gir nullpunktene til $f$.
+4. Bestem nullpunktene til nevneren til den forkortede brøken. Disse gir de vertikale asymptotene til $f$.
+
+
+Faktorer vi strøk bort i trinn 2 gir hull i grafen til $f$.
+
+
+:::::::::::::::
+
+
+---
+
+
+:::::::::::::::{example} Eksempel 5
+En rasjonal funksjon $f$ er gitt ved
+
+$$
+f(x) = \dfrac{x^2 - 4}{x^2 - x - 6}
+$$
+
+Bestem nullpunktene, de vertikale asymptotene og hullene til grafen til $f$.
+
+
+::::{solution}
+---
+dropdown: 0
+---
+Vi starter med å nullpunktsfaktorisere både telleren. Vi har at 
+
+$$
+x^2 - 4 = (x + 2)(x - 2)
+$$
+
+etter konjugatsetningen. Nevneren er litt mer vrien å faktorisere direkte, så vi bruker $abc$-formelen:
+
+$$
+x^2 - x - 6 = 0 \liff x = \dfrac{1 \pm \sqrt{(-1)^2 - 4 \cdot 1 \cdot (-6)}}{2 \cdot 1} = \dfrac{1 \pm \sqrt{25}}{2} = \dfrac{1 \pm 5}{2}
+$$
+
+som gir 
+
+$$
+x = -2 \or x = 3.
+$$
+
+Dermed har vi at 
+
+$$
+x^2 - x - 6 = (x + 2)(x - 3).
+$$
+
+Nå kan vi skrive om funksjonen $f$ til 
+
+$$
+f(x) = \dfrac{(x + 2)(x - 2)}{(x + 2)(x - 3)} = \dfrac{x - 2}{x - 3}, \quad x \neq -2.
+$$
+
+der vi må forutsette at $x \neq -2$ siden vi i utgangspunktet ville delt på null når $x = -2$. Dette blir et **hull** i grafen til $f$!
+
+Nå som vi har forkortet brøken så mye som mulig, kan vi lete etter eventuelle nullpunkter og vertikale asymptoter. Vi stareter med nullpunktene; dette vil være nullpunktene til tellerpolynomet: 
+
+$$
+(x - 2) = 0 \liff x = 2.
+$$
+
+Altså vil grafen til $f$ ha et nullpunkt i $x = 2$. 
+
+For å bestemme likningene til eventuelle vertikale asymptoter, så leter vi etter nullpunktene til nevnerpolynomet:
+
+$$
+x - 3 = 0 \liff x = 3.
+$$
+
+Dermed vil grafen til $f$ ha en vertikal asymptote i $x = 3$.
+
+
+Vi kan godt oppsummere funnene våre ved å skissere grafen til $f$, men vi mangler å undersøke om grafen til $f$ har en horisontal eller skrå asymptote. La oss sjekke raskt med polynomdivisjon:
+
+:::{polydiv}
+---
+p: x^2 - 4
+q: x^2 - x - 6
+width: 80%
+---
+:::
+
+Kvotienten ble $K(x) = 1$ som betyr at $y = 1$ er likningen til den horisontale asymptoten til $f$.
+
+Vi kan skissere grafen til $f$ basert på det vi har funnet:
+
+
+:::{plot}
+width: 60%
+function: (x**2 - 4) / (x**2 - x - 6), f, (-20, -2), blue
+function: (x**2 - 4) / (x**2 - x - 6), (-2, 20), blue
+function-endpoints: true
+vline: 3
+hline: 1
+:::
+
+I figuren har vi markert et "kryss" i $x = -2$ på grafen til $f$ for å markere hullet til grafen til $f$.
+
+
+
+
+::::
+
+
+:::::::::::::::
