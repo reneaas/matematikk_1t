@@ -334,7 +334,7 @@ text: 5, 15, "C", center-center, bbox
 :::
 
 :::{plot}
-function: -(x - 2) * (x + 3)**2
+function: x**3 + 6 * x**2 - 18
 text: 5, 15, "D", center-center, bbox
 :::
 
@@ -392,7 +392,7 @@ text: 5, 8, "C", center-center, bbox
 
 
 :::{plot}
-function: -(x**3 + 3 * x**2 - 4)
+function: x**3 - 6*x + 2
 text: 5, 8, "D", center-center, bbox
 :::
 
