@@ -36,9 +36,9 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css?v=4c969af8" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/munchboka/css/general_style.css?v=57d653fb" />
     <link rel="stylesheet" type="text/css" href="../../../_static/munchboka/css/escapeRoom/escape-room.css?v=241d39f0" />
     <link rel="stylesheet" type="text/css" href="../../../_static/munchboka/css/flashcards.css?v=9542c1b9" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/munchboka/css/general_style.css?v=57d653fb" />
     <link rel="stylesheet" type="text/css" href="../../../_static/munchboka/css/interactive_code.css?v=f903e660" />
     <link rel="stylesheet" type="text/css" href="../../../_static/munchboka/css/jeopardy.css?v=f760f57b" />
     <link rel="stylesheet" type="text/css" href="../../../_static/munchboka/css/quiz.css?v=84b4259a" />
@@ -57,7 +57,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/munchboka/css/github-dark-high-contrast.css?v=4c0c1b0f" />
     <link rel="stylesheet" type="text/css" href="../../../_static/munchboka/css/pairPuzzle/style.css?v=f77426ac" />
     <link rel="stylesheet" type="text/css" href="../../../_static/munchboka/css/parsons/parsonsPuzzle.css?v=9fbab2c7" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/munchboka/css/print_pdf.css?v=fc03ff79" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/munchboka/css/print_pdf.css?v=04196dc1" />
     <link id="highlight-theme-light" rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css" />
     <link id="highlight-theme-dark" rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github-dark.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/admonitions.css?v=f84a357c" />
@@ -679,10 +679,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polynomdivisjon-og-tangenter">Polynomdivisjon og tangenter</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#den-deriverte-til-en-polynomfunksjon">Den deriverte til en polynomfunksjon</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sammenheng-mellom-f-x-og-f-x">Sammenheng mellom <span class="math notranslate nohighlight">\(f(x)\)</span> og <span class="math notranslate nohighlight">\(f'(x)\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#likningen-til-en-tangent">Likningen til en tangent</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sammenheng-mellom-f-x-og-f-x">Sammenheng mellom <span class="math notranslate nohighlight">\(f(x)\)</span> og <span class="math notranslate nohighlight">\(f'(x)\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ekstremalpunkter-til-f-og-nullpunkter-til-f">Ekstremalpunkter til <span class="math notranslate nohighlight">\(f\)</span> og nullpunkter til <span class="math notranslate nohighlight">\(f'\)</span></a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utledning-av-derivasjonsreglene">Utledning av derivasjonsreglene (*)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polynomdivisjon-og-tangenter">Polynomdivisjon og tangenter (*)</a></li>
 </ul>
             </nav>
         </div>
@@ -699,13 +703,2619 @@ document.write(`
 <div class="tip admonition">
 <p class="admonition-title">Læringsmål</p>
 <ul class="simple">
-<li><p>Kunne bruke polynomdivisjon til å bestemme likningen for en tangent.</p></li>
 <li><p>Kunne derivere polynomfunksjoner algebraisk.</p></li>
-<li><p>Kunne bestemme ekstremalpunktene til en polynomfunksjon ved hjelp av den deriverte.</p></li>
+<li><p>Kunne bestemme likningen til tangenter til polynomfunksjoner.</p></li>
+<li><p>Kan beskrive sammenhengen mellom grafen til <span class="math notranslate nohighlight">\(f\)</span> og grafen til <span class="math notranslate nohighlight">\(f'\)</span>.</p></li>
 </ul>
 </div>
+<section id="den-deriverte-til-en-polynomfunksjon">
+<h2>Den deriverte til en polynomfunksjon<a class="headerlink" href="#den-deriverte-til-en-polynomfunksjon" title="Link to this heading">#</a></h2>
+<p>Når vi fant den deriverte <span class="math notranslate nohighlight">\(f'\)</span> til en andregradsfunksjon <span class="math notranslate nohighlight">\(f\)</span>, så fant vi at den deriverte var en lineær funksjon. Sagt på en annen måte: vi får et førstegradspolynom <span class="math notranslate nohighlight">\(f'(x)\)</span> når vi finner den deriverte av et andregradspolynom <span class="math notranslate nohighlight">\(f(x)\)</span>. Dette var ikke bare et sammentreff – generelt sett vil <span class="math notranslate nohighlight">\(f'(x)\)</span> være et polynom som har én grad lavere for et hvert polynom <span class="math notranslate nohighlight">\(f(x)\)</span>.</p>
+<div class="admonition summary">
+<p class="admonition-title">Den deriverte til en polynomfunksjon</p>
+<p>Gitt et polynom <span class="math notranslate nohighlight">\(f(x)\)</span> av grad <span class="math notranslate nohighlight">\(n\)</span>, vil den deriverte av polynomet <span class="math notranslate nohighlight">\(f'(x)\)</span> være et polynom av grad <span class="math notranslate nohighlight">\(n - 1\)</span>.</p>
+</div>
+<p>I praksis kan vi finne den deriverte algebraisk ved å følge noen bestemte regneregler som gjelder for alle polynomer.</p>
+<div class="admonition summary">
+<p class="admonition-title">Derivasjonsregler for polynomer</p>
+<dl class="simple myst">
+<dt>Regel 1</dt><dd><p>For et ledd <span class="math notranslate nohighlight">\(x^n\)</span> i et polynom <span class="math notranslate nohighlight">\(f(x)\)</span>, vil den deriverte av leddet være</p>
+</dd>
+</dl>
+<div class="math notranslate nohighlight">
+\[
+(x^n)' = n \cdot x^{n-1}
+\]</div>
+<dl class="simple myst">
+<dt>Regel 2</dt><dd><p>For ethvert ledd <span class="math notranslate nohighlight">\(a x^n\)</span> i et polynom <span class="math notranslate nohighlight">\(f(x)\)</span>, vil den deriverte av leddet være</p>
+</dd>
+</dl>
+<div class="math notranslate nohighlight">
+\[
+(a x^n)' = a (x^n)'
+\]</div>
+<dl class="simple myst">
+<dt>Regel 3</dt><dd><p>Hvert ledd i et polynom deriveres hver for seg:</p>
+</dd>
+</dl>
+<div class="math notranslate nohighlight">
+\[
+(ax^n + bx^m)' = (ax^n)' + (bx^m)'
+\]</div>
+<dl class="simple myst">
+<dt>Regel 4</dt><dd><p>Den deriverte av en konstant er null:</p>
+</dd>
+</dl>
+<div class="math notranslate nohighlight">
+\[
+C' = 0
+\]</div>
+<dl class="simple myst">
+<dt>Regel 5</dt><dd><p>Den deriverte av et lineært ledd <span class="math notranslate nohighlight">\(ax\)</span> er</p>
+</dd>
+</dl>
+<div class="math notranslate nohighlight">
+\[
+(ax)' = a
+\]</div>
+</div>
+<hr class="docutils" />
+<div class="example admonition">
+<p class="admonition-title">Eksempel 1</p>
+<p>Bestem den deriverte til</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = 2x^3 - 4x^2 + 6x - 2
+\]</div>
+<div class="solution admonition">
+<p class="admonition-title">Løsning</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+    f'(x) &amp;= (2x^3 - 4x^2 + 6x - 2)' \\
+    \\
+    &amp;= 2\cdot (x^3)' - 4\cdot (x^2)' + 6\cdot x' - 2' \\
+    \\
+    &amp;= 2 \cdot 3\cdot x^2 - 4\cdot 2 \cdot x^1 + 6 \cdot 1 \cdot x^0 - 0 \\
+    \\
+    &amp;= 6x^2 - 8x + 6
+\end{align*}\]</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="admonition exercise">
+<p class="admonition-title">Underveisoppgave 1</p>
+<p>Bestem den deriverte til</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = x^4 - 3x^2 + 5x - 1
+\]</div>
+<div class="admonition answer dropdown">
+<p class="admonition-title">Fasit</p>
+<div class="math notranslate nohighlight">
+\[
+f'(x) = 4x^3 - 6x + 5
+\]</div>
+</div>
+</div>
+</section>
+<section id="likningen-til-en-tangent">
+<h2>Likningen til en tangent<a class="headerlink" href="#likningen-til-en-tangent" title="Link to this heading">#</a></h2>
+<figure class="adaptive-figure plot-figure no-click align-right">
+<div class="graph-image no-click no-scaled-link"><?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 460.8 345.6" xmlns="http://www.w3.org/2000/svg" version="1.1" class="graph-inline-svg" role="img" aria-label="Tilpasset figur" style="width:100%; height:auto; display:block; margin:0 auto;">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-01-20T23:35:32.991630</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.9.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="cpl_34d21e2cf522_5480ba_figure_1">
+  <g id="cpl_34d21e2cf522_5480ba_patch_1">
+   <path d="M 0 345.6 
+L 460.8 345.6 
+L 460.8 0 
+L 0 0 
+L 0 345.6 
+z
+" style="fill: none"/>
+  </g>
+  <g id="cpl_34d21e2cf522_5480ba_axes_1">
+   <g id="cpl_34d21e2cf522_5480ba_patch_2">
+    <path d="M 10.8 334.8 
+L 447 334.8 
+L 447 24.444473 
+L 10.8 24.444473 
+L 10.8 334.8 
+z
+" style="fill: none"/>
+   </g>
+   <g id="cpl_34d21e2cf522_5480ba_matplotlib.axis_1">
+    <g id="cpl_34d21e2cf522_5480ba_text_1">
+     <!-- $x$ -->
+     <g transform="translate(430.369782 204.377732) scale(0.3 -0.3)">
+      <defs>
+       <path id="CMMI12-78" d="M 3034 2606 
+C 2829 2567 2752 2414 2752 2293 
+C 2752 2139 2874 2088 2963 2088 
+C 3155 2088 3290 2254 3290 2427 
+C 3290 2695 2982 2816 2714 2816 
+C 2323 2816 2106 2433 2048 2312 
+C 1901 2816 1504 2816 1389 2816 
+C 736 2816 390 1980 390 1839 
+C 390 1814 416 1782 461 1782 
+C 512 1782 525 1820 538 1846 
+C 755 2555 1184 2689 1370 2689 
+C 1658 2689 1715 2420 1715 2267 
+C 1715 2127 1677 1980 1600 1673 
+L 1382 798 
+C 1286 415 1101 64 762 64 
+C 730 64 570 64 435 147 
+C 666 192 717 383 717 460 
+C 717 588 621 664 499 664 
+C 346 664 179 530 179 326 
+C 179 57 480 -64 755 -64 
+C 1062 -64 1280 179 1414 441 
+C 1517 64 1837 -64 2074 -64 
+C 2726 -64 3072 773 3072 913 
+C 3072 945 3046 971 3008 971 
+C 2950 971 2944 939 2925 888 
+C 2752 326 2381 64 2093 64 
+C 1869 64 1747 230 1747 492 
+C 1747 632 1773 734 1875 1156 
+L 2099 2024 
+C 2195 2408 2413 2689 2707 2689 
+C 2720 2689 2899 2689 3034 2606 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#CMMI12-78" transform="scale(0.996264)"/>
+     </g>
+    </g>
+   </g>
+   <g id="cpl_34d21e2cf522_5480ba_matplotlib.axis_2">
+    <g id="cpl_34d21e2cf522_5480ba_text_2">
+     <!-- $y$ -->
+     <g transform="translate(241.787899 18.631022) scale(0.3 -0.3)">
+      <defs>
+       <path id="CMMI12-79" d="M 1683 -700 
+C 1510 -939 1261 -1152 947 -1152 
+C 870 -1152 563 -1152 467 -889 
+C 486 -895 518 -895 531 -895 
+C 723 -895 851 -729 851 -582 
+C 851 -435 730 -384 634 -384 
+C 531 -384 307 -458 307 -759 
+C 307 -1071 582 -1286 947 -1286 
+C 1587 -1286 2234 -700 2413 6 
+L 3040 2485 
+C 3046 2517 3059 2556 3059 2594 
+C 3059 2689 2982 2753 2886 2753 
+C 2829 2753 2694 2727 2643 2535 
+L 2170 658 
+C 2138 543 2138 530 2086 460 
+C 1958 281 1747 64 1440 64 
+C 1082 64 1050 415 1050 588 
+C 1050 952 1222 1443 1395 1903 
+C 1466 2088 1504 2178 1504 2305 
+C 1504 2574 1312 2816 998 2816 
+C 410 2816 173 1890 173 1839 
+C 173 1814 198 1782 243 1782 
+C 301 1782 307 1807 333 1897 
+C 486 2433 730 2689 979 2689 
+C 1037 2689 1146 2689 1146 2478 
+C 1146 2312 1075 2127 979 1884 
+C 666 1047 666 837 666 683 
+C 666 77 1101 -64 1421 -64 
+C 1606 -64 1837 -6 2061 230 
+L 2067 224 
+C 1971 -147 1907 -392 1683 -700 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#CMMI12-79" transform="scale(0.996264)"/>
+     </g>
+    </g>
+   </g>
+   <g id="cpl_34d21e2cf522_5480ba_line2d_1">
+    <defs>
+     <path id="cpl_34d21e2cf522_5480ba_m8e6f5c1c28" d="M 3 0 
+L -3 -3 
+L -3 3 
+z
+" style="stroke: #000000; stroke-linejoin: miter"/>
+    </defs>
+    <g>
+     <use xlink:href="#cpl_34d21e2cf522_5480ba_m8e6f5c1c28" x="447" y="179.622236" style="stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+   </g>
+   <g id="cpl_34d21e2cf522_5480ba_line2d_2">
+    <defs>
+     <path id="cpl_34d21e2cf522_5480ba_m61a5baa161" d="M 0 -3 
+L -3 3 
+L 3 3 
+z
+" style="stroke: #000000; stroke-linejoin: miter"/>
+    </defs>
+    <g>
+     <use xlink:href="#cpl_34d21e2cf522_5480ba_m61a5baa161" x="260.057143" y="24.444473" style="stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+   </g>
+   <g id="cpl_34d21e2cf522_5480ba_line2d_3">
+    <path d="M 99.666693 346.6 
+L 102.896429 324.387401 
+L 106.091448 303.935754 
+L 109.206592 285.412963 
+L 112.268486 268.532846 
+L 115.250504 253.32141 
+L 118.152646 239.648599 
+L 121.001538 227.281376 
+L 123.770555 216.233973 
+L 126.459696 206.397315 
+L 129.095587 197.584234 
+L 131.651602 189.799444 
+L 134.127742 182.952253 
+L 136.550632 176.894816 
+L 138.893646 171.624224 
+L 141.156784 167.065772 
+L 143.366673 163.105079 
+L 145.496686 159.733198 
+L 147.573448 156.854813 
+L 149.570335 154.457359 
+L 151.513972 152.462559 
+L 153.404358 150.833915 
+L 155.241494 149.537167 
+L 157.052005 148.527227 
+L 158.835891 147.784912 
+L 160.593151 147.291869 
+L 162.350412 147.028233 
+L 164.107673 146.987043 
+L 165.891558 147.165602 
+L 167.728694 147.573914 
+L 169.619081 148.223478 
+L 171.589343 149.138875 
+L 173.63948 150.339281 
+L 175.796118 151.862934 
+L 178.085882 153.759268 
+L 180.508771 156.061571 
+L 183.091412 158.830318 
+L 185.833803 162.101571 
+L 188.789196 165.979056 
+L 191.984215 170.544525 
+L 195.472111 175.923619 
+L 199.359385 182.339842 
+L 203.752536 190.033983 
+L 208.997693 199.689703 
+L 216.213111 213.483294 
+L 229.499066 238.930327 
+L 234.850723 248.647062 
+L 239.297125 256.272173 
+L 243.184398 262.510538 
+L 246.69892 267.74121 
+L 249.920564 272.145096 
+L 252.875957 275.818375 
+L 255.618348 278.883294 
+L 258.200989 281.442898 
+L 260.623878 283.535919 
+L 262.887017 285.204908 
+L 265.043655 286.524328 
+L 267.093792 287.521437 
+L 269.037429 288.225091 
+L 270.927815 288.674714 
+L 272.738326 288.880227 
+L 274.522212 288.859782 
+L 276.279473 288.616168 
+L 278.010108 288.152664 
+L 279.740743 287.460604 
+L 281.498004 286.5172 
+L 283.28189 285.30431 
+L 285.092401 283.802977 
+L 286.956162 281.965021 
+L 288.873173 279.756348 
+L 290.843435 277.14065 
+L 292.866947 274.079306 
+L 294.970335 270.483061 
+L 297.126973 266.345195 
+L 299.336861 261.618568 
+L 301.626625 256.18689 
+L 303.969639 250.05021 
+L 306.392529 243.071301 
+L 308.895294 235.167352 
+L 311.451309 226.345619 
+L 314.0872 216.432311 
+L 316.776341 205.44089 
+L 319.545358 193.170323 
+L 322.367625 179.641179 
+L 325.269767 164.622389 
+L 328.22516 148.142641 
+L 331.260428 129.937838 
+L 334.348947 110.045901 
+L 337.517341 88.166512 
+L 340.738986 64.348061 
+L 344.040505 38.250604 
+L 347.395276 9.934353 
+L 348.635238 -1 
+L 348.635238 -1 
+" clip-path="url(#cpl_34d21e2cf522_5480ba_p1319e960ad)" style="fill: none; stroke: #0072b2; stroke-width: 2.5; stroke-linecap: square"/>
+   </g>
+   <g id="cpl_34d21e2cf522_5480ba_line2d_4">
+    <path d="M 272.572801 346.6 
+L 386.133256 -1 
+" clip-path="url(#cpl_34d21e2cf522_5480ba_p1319e960ad)" style="fill: none; stroke-dasharray: 9.25,4; stroke-dashoffset: 0; stroke: #dc5e8b; stroke-width: 2.5"/>
+   </g>
+   <g id="cpl_34d21e2cf522_5480ba_line2d_5">
+    <defs>
+     <path id="cpl_34d21e2cf522_5480ba_m5313638a50" d="M 0 5 
+C 1.326016 5 2.597899 4.473168 3.535534 3.535534 
+C 4.473168 2.597899 5 1.326016 5 0 
+C 5 -1.326016 4.473168 -2.597899 3.535534 -3.535534 
+C 2.597899 -4.473168 1.326016 -5 0 -5 
+C -1.326016 -5 -2.597899 -4.473168 -3.535534 -3.535534 
+C -4.473168 -2.597899 -5 -1.326016 -5 0 
+C -5 1.326016 -4.473168 2.597899 -3.535534 3.535534 
+C -2.597899 4.473168 -1.326016 5 0 5 
+z
+" style="stroke: #000000; stroke-opacity: 0.8"/>
+    </defs>
+    <g clip-path="url(#cpl_34d21e2cf522_5480ba_p1319e960ad)">
+     <use xlink:href="#cpl_34d21e2cf522_5480ba_m5313638a50" x="306.792857" y="241.854985" style="fill-opacity: 0.8; stroke: #000000; stroke-opacity: 0.8"/>
+    </g>
+   </g>
+   <g id="cpl_34d21e2cf522_5480ba_patch_3">
+    <path d="M 260.057143 334.8 
+L 260.057143 24.444473 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="cpl_34d21e2cf522_5480ba_patch_4">
+    <path d="M 447 334.8 
+L 447 24.444473 
+" style="fill: none"/>
+   </g>
+   <g id="cpl_34d21e2cf522_5480ba_patch_5">
+    <path d="M 10.8 179.622236 
+L 447 179.622236 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="cpl_34d21e2cf522_5480ba_patch_6">
+    <path d="M 10.8 24.444473 
+L 447 24.444473 
+" style="fill: none"/>
+   </g>
+   <g id="cpl_34d21e2cf522_5480ba_text_3">
+    <!-- $(a, f(a))$ -->
+    <g transform="translate(313.335857 268.899351) scale(0.3 -0.3)">
+     <defs>
+      <path id="CMR17-28" d="M 1958 -1561 
+C 1958 -1555 1958 -1542 1939 -1523 
+C 1645 -1224 858 -407 858 1581 
+C 858 3569 1632 4379 1946 4697 
+C 1946 4704 1958 4717 1958 4736 
+C 1958 4755 1939 4768 1914 4768 
+C 1843 4768 1299 4296 986 3594 
+C 666 2887 576 2199 576 1588 
+C 576 1128 621 351 1005 -471 
+C 1312 -1135 1837 -1600 1914 -1600 
+C 1946 -1600 1958 -1587 1958 -1561 
+z
+" transform="scale(0.015625)"/>
+      <path id="CMMI12-61" d="M 1926 760 
+C 1894 651 1894 639 1805 517 
+C 1664 338 1382 64 1082 64 
+C 819 64 672 300 672 677 
+C 672 1028 870 1743 992 2012 
+C 1210 2459 1510 2689 1760 2689 
+C 2182 2689 2266 2165 2266 2114 
+C 2266 2108 2246 2024 2240 2012 
+L 1926 760 
+z
+M 2336 2395 
+C 2266 2561 2093 2816 1760 2816 
+C 1037 2816 256 1884 256 939 
+C 256 307 627 -64 1062 -64 
+C 1414 -64 1715 211 1894 422 
+C 1958 45 2259 -64 2451 -64 
+C 2643 -64 2797 51 2912 281 
+C 3014 498 3104 888 3104 913 
+C 3104 945 3078 971 3040 971 
+C 2982 971 2976 939 2950 843 
+C 2854 466 2733 64 2470 64 
+C 2285 64 2272 230 2272 358 
+C 2272 505 2291 575 2349 824 
+C 2394 984 2426 1124 2477 1309 
+C 2714 2267 2771 2497 2771 2535 
+C 2771 2625 2701 2695 2605 2695 
+C 2400 2695 2349 2472 2336 2395 
+z
+" transform="scale(0.015625)"/>
+      <path id="CMMI12-3b" d="M 1248 -31 
+C 1248 343 1126 619 864 619 
+C 659 619 557 453 557 313 
+C 557 172 653 0 870 0 
+C 954 0 1024 26 1082 83 
+C 1094 96 1101 96 1107 96 
+C 1120 96 1120 5 1120 -27 
+C 1120 -240 1082 -659 710 -1080 
+C 640 -1157 640 -1170 640 -1183 
+C 640 -1216 672 -1248 704 -1248 
+C 755 -1248 1248 -771 1248 -31 
+z
+" transform="scale(0.015625)"/>
+      <path id="CMMI12-66" d="M 2854 2566 
+C 2982 2566 3034 2566 3034 2688 
+C 3034 2752 2982 2752 2867 2752 
+L 2349 2752 
+C 2470 3429 2560 3897 2611 4107 
+C 2650 4265 2784 4416 2950 4416 
+C 3085 4416 3219 4358 3283 4298 
+C 3034 4272 2957 4082 2957 3969 
+C 2957 3837 3053 3759 3174 3759 
+C 3302 3759 3494 3870 3494 4119 
+C 3494 4393 3226 4544 2944 4544 
+C 2669 4544 2400 4334 2272 4078 
+C 2157 3848 2093 3611 1946 2752 
+L 1517 2752 
+C 1395 2752 1331 2752 1331 2637 
+C 1331 2566 1370 2566 1498 2566 
+L 1907 2566 
+C 1792 1976 1530 542 1382 -137 
+C 1274 -689 1178 -1152 858 -1152 
+C 838 -1152 653 -1152 538 -1031 
+C 864 -1005 864 -726 864 -720 
+C 864 -593 768 -517 646 -517 
+C 518 -517 326 -625 326 -867 
+C 326 -1140 608 -1280 858 -1280 
+C 1510 -1280 1779 -118 1850 199 
+C 1965 688 2278 2376 2310 2566 
+L 2854 2566 
+z
+" transform="scale(0.015625)"/>
+      <path id="CMR17-29" d="M 1683 1581 
+C 1683 2040 1638 2817 1254 3639 
+C 947 4303 422 4768 346 4768 
+C 326 4768 301 4761 301 4729 
+C 301 4717 307 4710 314 4697 
+C 621 4378 1402 3568 1402 1584 
+C 1402 -407 627 -1217 314 -1537 
+C 307 -1549 301 -1556 301 -1568 
+C 301 -1600 326 -1600 346 -1600 
+C 416 -1600 960 -1128 1274 -426 
+C 1594 281 1683 969 1683 1581 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#CMR17-28" transform="scale(0.996264)"/>
+     <use xlink:href="#CMMI12-61" transform="translate(35.280768 0) scale(0.996264)"/>
+     <use xlink:href="#CMMI12-3b" transform="translate(86.488625 0) scale(0.996264)"/>
+     <use xlink:href="#CMMI12-66" transform="translate(130.190208 0) scale(0.996264)"/>
+     <use xlink:href="#CMR17-28" transform="translate(188.910513 0) scale(0.996264)"/>
+     <use xlink:href="#CMMI12-61" transform="translate(224.19128 0) scale(0.996264)"/>
+     <use xlink:href="#CMR17-29" transform="translate(275.399138 0) scale(0.996264)"/>
+     <use xlink:href="#CMR17-29" transform="translate(310.679906 0) scale(0.996264)"/>
+    </g>
+   </g>
+   <g id="cpl_34d21e2cf522_5480ba_legend_1">
+    <g id="cpl_34d21e2cf522_5480ba_patch_7">
+     <path d="M 31.8 90.257923 
+L 142.224971 90.257923 
+Q 148.224971 90.257923 148.224971 84.257923 
+L 148.224971 45.444473 
+Q 148.224971 39.444473 142.224971 39.444473 
+L 31.8 39.444473 
+Q 25.8 39.444473 25.8 45.444473 
+L 25.8 84.257923 
+Q 25.8 90.257923 31.8 90.257923 
+z
+" style="fill: #ffffff; opacity: 0.8; stroke: #cccccc; stroke-linejoin: miter"/>
+    </g>
+    <g id="cpl_34d21e2cf522_5480ba_line2d_6">
+     <path d="M 37.8 61.944473 
+L 67.8 61.944473 
+L 97.8 61.944473 
+" style="fill: none; stroke: #0072b2; stroke-width: 2.5; stroke-linecap: square"/>
+    </g>
+    <g id="cpl_34d21e2cf522_5480ba_text_4">
+     <!-- $f$ -->
+     <g transform="translate(121.8 72.444473) scale(0.3 -0.3)">
+      <use xlink:href="#CMMI12-66" transform="scale(0.996264)"/>
+     </g>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="cpl_34d21e2cf522_5480ba_p1319e960ad">
+   <rect x="10.8" y="24.444473" width="436.2" height="310.355527"/>
+  </clipPath>
+ </defs>
+</svg>
+</div></figure>
+<p>Hvis vi ser på en tangent til grafen til <span class="math notranslate nohighlight">\(f\)</span> i et punkt <span class="math notranslate nohighlight">\((a, f(a))\)</span>, så vet vi to ting:</p>
+<ol class="arabic simple">
+<li><p>Tangenten går gjennom punktet <span class="math notranslate nohighlight">\((a, f(a))\)</span>.</p></li>
+<li><p>Stigningstallet til tangenten er lik <span class="math notranslate nohighlight">\(f'(a)\)</span>.</p></li>
+</ol>
+<p>Vi vet også at vi alltid kan skrive likningen til en linje som har stigningstall <span class="math notranslate nohighlight">\(m\)</span> som går gjennom et punkt <span class="math notranslate nohighlight">\((x_0, y_0)\)</span> på ettpunktsform:</p>
+<div class="math notranslate nohighlight">
+\[
+y = m(x - x_0) + y_0,
+\]</div>
+<p>Siden vi vet at stigningstallet er <span class="math notranslate nohighlight">\(f'(a)\)</span> så vet vi at <span class="math notranslate nohighlight">\(m = f'(a)\)</span>. Siden linjen går gjennom punktet <span class="math notranslate nohighlight">\((a, f(a))\)</span>, så vet vi at <span class="math notranslate nohighlight">\(x_0 = a\)</span> og <span class="math notranslate nohighlight">\(y_0 = f(a)\)</span>. Dermed kan vi skrive likningen til tangenten som</p>
+<div class="math notranslate nohighlight">
+\[
+y = f'(a)(x - a) + f(a).
+\]</div>
+<div class="admonition summary">
+<p class="admonition-title">Likningen til en tangent</p>
+<p>Likningen til en tangent til grafen til <span class="math notranslate nohighlight">\(f\)</span> i et punkt <span class="math notranslate nohighlight">\((a, f(a))\)</span> er gitt ved</p>
+<div class="math notranslate nohighlight">
+\[
+y = f'(a)(x - a) + f(a)
+\]</div>
+</div>
+<hr class="docutils" />
+<div class="admonition example">
+<p class="admonition-title">Eksempel 2</p>
+<p>Funksjonen <span class="math notranslate nohighlight">\(f\)</span> er gitt ved</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = x^3 - 3x^2 - 4x + 12.
+\]</div>
+<p>Bestem likningen til tangenten til grafen til <span class="math notranslate nohighlight">\(f\)</span> i punktet <span class="math notranslate nohighlight">\((1, f(1))\)</span>.</p>
+<div class="admonition solution">
+<p class="admonition-title">Løsning</p>
+<p>Likningen til tangenten er gitt ved</p>
+<div class="math notranslate nohighlight">
+\[
+y = f'(1)(x - 1) + f(1)
+\]</div>
+<p>Vi har at</p>
+<div class="math notranslate nohighlight">
+\[
+f(1) = 1^3 - 3\cdot 1^2 - 4\cdot 1 + 12 = 6
+\]</div>
+<p>Videre har vi at</p>
+<div class="math notranslate nohighlight">
+\[
+f'(x) = (x^3 - 3x^2 - 4x + 12)' = 3x^2 - 6x - 4
+\]</div>
+<p>som gir</p>
+<div class="math notranslate nohighlight">
+\[
+f'(1) = 3\cdot 1^2 - 6\cdot 1 - 4 = -7
+\]</div>
+<p>Setter vi dette inn i likningen for tangenten, så får vi</p>
+<div class="math notranslate nohighlight">
+\[
+y = -7(x - 1) + 6 = -7x + 7 + 6 = -7x + 13
+\]</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="admonition exercise">
+<p class="admonition-title">Underveisoppgave 2</p>
+<p>En funksjon <span class="math notranslate nohighlight">\(f\)</span> er gitt ved</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = x^3 + 2x^2 - x + 1.
+\]</div>
+<p>Bestem likningen til tangenten til grafen til <span class="math notranslate nohighlight">\(f\)</span> i punktet <span class="math notranslate nohighlight">\((2, f(2))\)</span>.</p>
+<div class="admonition answer dropdown">
+<p class="admonition-title">Fasit</p>
+<div class="math notranslate nohighlight">
+\[
+y = 23x - 31
+\]</div>
+</div>
+<div class="admonition solution dropdown">
+<p class="admonition-title">Løsning</p>
+<p>Likningen til tangenten er</p>
+<div class="math notranslate nohighlight">
+\[
+y = f'(2)(x - 2) + f(2)
+\]</div>
+<p>Vi har at</p>
+<div class="math notranslate nohighlight">
+\[
+f(2) = 2^3 + 2\cdot 2^2 - 2 + 1 = 15
+\]</div>
+<p>Videre har vi at</p>
+<div class="math notranslate nohighlight">
+\[
+f'(x) = (x^3 + 2x^2 - x + 1)' = 3x^2 + 4x - 1
+\]</div>
+<p>som gir</p>
+<div class="math notranslate nohighlight">
+\[
+f'(2) = 3\cdot 2^2 + 4\cdot 2 - 1 = 23
+\]</div>
+<p>Setter vi dette inn i likningen for tangenten, så får vi</p>
+<div class="math notranslate nohighlight">
+\[
+y = 23(x - 2) + 15 = 23x - 46 + 15 = 23x - 31
+\]</div>
+</div>
+</div>
+</section>
+<section id="sammenheng-mellom-f-x-og-f-x">
+<h2>Sammenheng mellom <span class="math notranslate nohighlight">\(f(x)\)</span> og <span class="math notranslate nohighlight">\(f'(x)\)</span><a class="headerlink" href="#sammenheng-mellom-f-x-og-f-x" title="Link to this heading">#</a></h2>
+<p>Vi har allerede nevnt at grafen til den deriverte <span class="math notranslate nohighlight">\(f'\)</span> vil være en polynomfunksjon av én grad lavere enn <span class="math notranslate nohighlight">\(f\)</span>. Men vi kan peke ut flere sammenhenger som er viktig å forstå for å anvende teorien i praksis.</p>
+<section id="ekstremalpunkter-til-f-og-nullpunkter-til-f">
+<h3>Ekstremalpunkter til <span class="math notranslate nohighlight">\(f\)</span> og nullpunkter til <span class="math notranslate nohighlight">\(f'\)</span><a class="headerlink" href="#ekstremalpunkter-til-f-og-nullpunkter-til-f" title="Link to this heading">#</a></h3>
+<p>La oss forestille oss at vi har en tredjegradsfunksjon <span class="math notranslate nohighlight">\(f\)</span>. Da vil <span class="math notranslate nohighlight">\(f'\)</span> være en andregradsfunksjon. La oss tegne tangenter til grafen til <span class="math notranslate nohighlight">\(f\)</span> i ekstremalpunktene til <span class="math notranslate nohighlight">\(f\)</span>. Da får vi tangenter som er horisontale og dermed har stigningstall <span class="math notranslate nohighlight">\(0\)</span>. Dette vil derfor være punkter hvor <span class="math notranslate nohighlight">\(f'(x) = 0\)</span>. Altså punkter hvor grafen til <span class="math notranslate nohighlight">\(f'\)</span> skjærer <span class="math notranslate nohighlight">\(x\)</span>-aksen. Se figuren nedenfor.</p>
+<div class="docutils container">
+<style>
+.multi-plot2-grid { }
+.multi-plot2-grid > * { max-width: 100%; }
+.multi-plot2-grid figure { margin: 0; max-width: 100%; }
+.multi-plot2-grid svg { max-width: 100%; height: auto; }
+</style><div class="multi-plot2-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(1, auto); gap: 0; width: 100%; margin-left: auto; margin-right: auto; "><figure class="adaptive-figure plot-figure no-click align-center">
+<div class="graph-image no-click no-scaled-link"><?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 460.8 345.6" xmlns="http://www.w3.org/2000/svg" version="1.1" class="graph-inline-svg" role="img" aria-label="Tilpasset figur" style="width:100%; height:auto; display:block; margin:0 auto;">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-01-21T00:08:14.822246</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.9.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="cpl_e7b661f5035b_54c92c_figure_1">
+  <g id="cpl_e7b661f5035b_54c92c_patch_1">
+   <path d="M 0 345.6 
+L 460.8 345.6 
+L 460.8 0 
+L 0 0 
+L 0 345.6 
+z
+" style="fill: none"/>
+  </g>
+  <g id="cpl_e7b661f5035b_54c92c_axes_1">
+   <g id="cpl_e7b661f5035b_54c92c_patch_2">
+    <path d="M 10.8 334.8 
+L 447 334.8 
+L 447 22.673214 
+L 10.8 22.673214 
+L 10.8 334.8 
+z
+" style="fill: none"/>
+   </g>
+   <g id="cpl_e7b661f5035b_54c92c_matplotlib.axis_1">
+    <g id="cpl_e7b661f5035b_54c92c_text_1">
+     <!-- $x$ -->
+     <g transform="translate(432.587145 200.724709) scale(0.26 -0.26)">
+      <defs>
+       <path id="CMMI12-78" d="M 3034 2606 
+C 2829 2567 2752 2414 2752 2293 
+C 2752 2139 2874 2088 2963 2088 
+C 3155 2088 3290 2254 3290 2427 
+C 3290 2695 2982 2816 2714 2816 
+C 2323 2816 2106 2433 2048 2312 
+C 1901 2816 1504 2816 1389 2816 
+C 736 2816 390 1980 390 1839 
+C 390 1814 416 1782 461 1782 
+C 512 1782 525 1820 538 1846 
+C 755 2555 1184 2689 1370 2689 
+C 1658 2689 1715 2420 1715 2267 
+C 1715 2127 1677 1980 1600 1673 
+L 1382 798 
+C 1286 415 1101 64 762 64 
+C 730 64 570 64 435 147 
+C 666 192 717 383 717 460 
+C 717 588 621 664 499 664 
+C 346 664 179 530 179 326 
+C 179 57 480 -64 755 -64 
+C 1062 -64 1280 179 1414 441 
+C 1517 64 1837 -64 2074 -64 
+C 2726 -64 3072 773 3072 913 
+C 3072 945 3046 971 3008 971 
+C 2950 971 2944 939 2925 888 
+C 2752 326 2381 64 2093 64 
+C 1869 64 1747 230 1747 492 
+C 1747 632 1773 734 1875 1156 
+L 2099 2024 
+C 2195 2408 2413 2689 2707 2689 
+C 2720 2689 2899 2689 3034 2606 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#CMMI12-78" transform="scale(0.996264)"/>
+     </g>
+    </g>
+   </g>
+   <g id="cpl_e7b661f5035b_54c92c_matplotlib.axis_2">
+    <g id="cpl_e7b661f5035b_54c92c_text_2">
+     <!-- $y$ -->
+     <g transform="translate(212.53332 17.634888) scale(0.26 -0.26)">
+      <defs>
+       <path id="CMMI12-79" d="M 1683 -700 
+C 1510 -939 1261 -1152 947 -1152 
+C 870 -1152 563 -1152 467 -889 
+C 486 -895 518 -895 531 -895 
+C 723 -895 851 -729 851 -582 
+C 851 -435 730 -384 634 -384 
+C 531 -384 307 -458 307 -759 
+C 307 -1071 582 -1286 947 -1286 
+C 1587 -1286 2234 -700 2413 6 
+L 3040 2485 
+C 3046 2517 3059 2556 3059 2594 
+C 3059 2689 2982 2753 2886 2753 
+C 2829 2753 2694 2727 2643 2535 
+L 2170 658 
+C 2138 543 2138 530 2086 460 
+C 1958 281 1747 64 1440 64 
+C 1082 64 1050 415 1050 588 
+C 1050 952 1222 1443 1395 1903 
+C 1466 2088 1504 2178 1504 2305 
+C 1504 2574 1312 2816 998 2816 
+C 410 2816 173 1890 173 1839 
+C 173 1814 198 1782 243 1782 
+C 301 1782 307 1807 333 1897 
+C 486 2433 730 2689 979 2689 
+C 1037 2689 1146 2689 1146 2478 
+C 1146 2312 1075 2127 979 1884 
+C 666 1047 666 837 666 683 
+C 666 77 1101 -64 1421 -64 
+C 1606 -64 1837 -6 2061 230 
+L 2067 224 
+C 1971 -147 1907 -392 1683 -700 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#CMMI12-79" transform="scale(0.996264)"/>
+     </g>
+    </g>
+   </g>
+   <g id="cpl_e7b661f5035b_54c92c_line2d_1">
+    <defs>
+     <path id="cpl_e7b661f5035b_54c92c_mf9962163b8" d="M 3 0 
+L -3 -3 
+L -3 3 
+z
+" style="stroke: #000000; stroke-linejoin: miter"/>
+    </defs>
+    <g>
+     <use xlink:href="#cpl_e7b661f5035b_54c92c_mf9962163b8" x="447" y="178.736607" style="stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+   </g>
+   <g id="cpl_e7b661f5035b_54c92c_line2d_2">
+    <defs>
+     <path id="cpl_e7b661f5035b_54c92c_mf649fcdc22" d="M 0 -3 
+L -3 3 
+L 3 3 
+z
+" style="stroke: #000000; stroke-linejoin: miter"/>
+    </defs>
+    <g>
+     <use xlink:href="#cpl_e7b661f5035b_54c92c_mf649fcdc22" x="228.9" y="22.673214" style="stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+   </g>
+   <g id="cpl_e7b661f5035b_54c92c_line2d_3">
+    <path d="M 97.576791 346.6 
+L 100.846292 319.211363 
+L 104.067936 294.066518 
+L 107.209705 271.258649 
+L 110.298224 250.44102 
+L 113.306867 231.648099 
+L 116.26226 214.575928 
+L 119.137777 199.248474 
+L 121.933419 185.52597 
+L 124.67581 173.162384 
+L 127.338326 162.169269 
+L 129.920967 152.42991 
+L 132.423732 143.835159 
+L 134.873247 136.204196 
+L 137.242886 129.536254 
+L 139.53265 123.741293 
+L 141.742538 118.735515 
+L 143.899176 114.39058 
+L 145.975938 110.69672 
+L 147.972825 107.585739 
+L 149.916462 104.961194 
+L 151.780223 102.808006 
+L 153.590734 101.047734 
+L 155.347995 99.643023 
+L 157.052005 98.558873 
+L 158.72939 97.751691 
+L 160.38015 97.20226 
+L 162.004285 96.89222 
+L 163.655045 96.804729 
+L 165.305805 96.939989 
+L 167.009815 97.306084 
+L 168.767076 97.916788 
+L 170.577587 98.785086 
+L 172.467973 99.941067 
+L 174.46486 101.427777 
+L 176.568248 103.275923 
+L 178.804761 105.543155 
+L 181.1744 108.266714 
+L 183.730416 111.552574 
+L 186.472807 115.451825 
+L 189.4282 120.052279 
+L 192.623219 125.446786 
+L 196.13774 131.828856 
+L 200.051639 139.411226 
+L 204.524666 148.577838 
+L 209.956198 160.24085 
+L 218.156748 178.44803 
+L 228.274309 200.79981 
+L 233.652591 212.136215 
+L 238.098993 221.004132 
+L 241.986266 228.271608 
+L 245.474162 234.330814 
+L 248.642556 239.400776 
+L 251.571324 243.676733 
+L 254.28709 247.255399 
+L 256.81648 250.226939 
+L 259.159495 252.646712 
+L 261.369383 254.617813 
+L 263.446145 256.18004 
+L 265.416407 257.389776 
+L 267.280168 258.27944 
+L 269.064054 258.889892 
+L 270.79469 259.248571 
+L 272.472075 259.369266 
+L 274.122835 259.262967 
+L 275.746969 258.933875 
+L 277.371104 258.375619 
+L 278.995239 257.581755 
+L 280.645999 256.526803 
+L 282.350009 255.168364 
+L 284.080645 253.500937 
+L 285.86453 251.470487 
+L 287.701666 249.03975 
+L 289.618678 246.125861 
+L 291.58894 242.718328 
+L 293.639077 238.716242 
+L 295.742465 234.113021 
+L 297.925728 228.787521 
+L 300.162241 222.737721 
+L 302.47863 215.819863 
+L 304.874895 207.945641 
+L 307.324409 199.120626 
+L 309.8538 189.161434 
+L 312.463065 177.961086 
+L 315.125581 165.534643 
+L 317.867973 151.652236 
+L 320.663615 136.337035 
+L 323.539132 119.32463 
+L 326.4679 100.647457 
+L 329.476543 80.0031 
+L 332.538436 57.434546 
+L 335.680205 32.59768 
+L 338.875224 5.547453 
+L 339.617403 -1 
+L 339.617403 -1 
+" clip-path="url(#cpl_e7b661f5035b_54c92c_pf2718dc2a8)" style="fill: none; stroke: #0072b2; stroke-width: 2.5; stroke-linecap: square"/>
+   </g>
+   <g id="cpl_e7b661f5035b_54c92c_line2d_4">
+    <path d="M 10.8 96.803326 
+L 447 96.803326 
+" clip-path="url(#cpl_e7b661f5035b_54c92c_pf2718dc2a8)" style="fill: none; stroke-dasharray: 9.25,4; stroke-dashoffset: 0; stroke: #dc5e8b; stroke-width: 2.5"/>
+   </g>
+   <g id="cpl_e7b661f5035b_54c92c_line2d_5">
+    <path d="M 10.8 259.36936 
+L 447 259.36936 
+" clip-path="url(#cpl_e7b661f5035b_54c92c_pf2718dc2a8)" style="fill: none; stroke-dasharray: 9.25,4; stroke-dashoffset: 0; stroke: #dc5e8b; stroke-width: 2.5"/>
+   </g>
+   <g id="cpl_e7b661f5035b_54c92c_line2d_6">
+    <defs>
+     <path id="cpl_e7b661f5035b_54c92c_mb87900bf24" d="M 0 5 
+C 1.326016 5 2.597899 4.473168 3.535534 3.535534 
+C 4.473168 2.597899 5 1.326016 5 0 
+C 5 -1.326016 4.473168 -2.597899 3.535534 -3.535534 
+C 2.597899 -4.473168 1.326016 -5 0 -5 
+C -1.326016 -5 -2.597899 -4.473168 -3.535534 -3.535534 
+C -4.473168 -2.597899 -5 -1.326016 -5 0 
+C -5 1.326016 -4.473168 2.597899 -3.535534 3.535534 
+C -2.597899 4.473168 -1.326016 5 0 5 
+z
+" style="stroke: #000000; stroke-opacity: 0.8"/>
+    </defs>
+    <g clip-path="url(#cpl_e7b661f5035b_54c92c_pf2718dc2a8)">
+     <use xlink:href="#cpl_e7b661f5035b_54c92c_mb87900bf24" x="163.47" y="96.803326" style="fill-opacity: 0.8; stroke: #000000; stroke-opacity: 0.8"/>
+    </g>
+   </g>
+   <g id="cpl_e7b661f5035b_54c92c_line2d_7">
+    <g clip-path="url(#cpl_e7b661f5035b_54c92c_pf2718dc2a8)">
+     <use xlink:href="#cpl_e7b661f5035b_54c92c_mb87900bf24" x="272.52" y="259.36936" style="fill-opacity: 0.8; stroke: #000000; stroke-opacity: 0.8"/>
+    </g>
+   </g>
+   <g id="cpl_e7b661f5035b_54c92c_patch_3">
+    <path d="M 228.9 334.8 
+L 228.9 22.673214 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="cpl_e7b661f5035b_54c92c_patch_4">
+    <path d="M 447 334.8 
+L 447 22.673214 
+" style="fill: none"/>
+   </g>
+   <g id="cpl_e7b661f5035b_54c92c_patch_5">
+    <path d="M 10.8 178.736607 
+L 447 178.736607 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="cpl_e7b661f5035b_54c92c_patch_6">
+    <path d="M 10.8 22.673214 
+L 447 22.673214 
+" style="fill: none"/>
+   </g>
+   <g id="cpl_e7b661f5035b_54c92c_text_3">
+    <!-- $(a, f(a))$ -->
+    <g transform="translate(118.495124 85.667386) scale(0.26 -0.26)">
+     <defs>
+      <path id="CMR17-28" d="M 1958 -1561 
+C 1958 -1555 1958 -1542 1939 -1523 
+C 1645 -1224 858 -407 858 1581 
+C 858 3569 1632 4379 1946 4697 
+C 1946 4704 1958 4717 1958 4736 
+C 1958 4755 1939 4768 1914 4768 
+C 1843 4768 1299 4296 986 3594 
+C 666 2887 576 2199 576 1588 
+C 576 1128 621 351 1005 -471 
+C 1312 -1135 1837 -1600 1914 -1600 
+C 1946 -1600 1958 -1587 1958 -1561 
+z
+" transform="scale(0.015625)"/>
+      <path id="CMMI12-61" d="M 1926 760 
+C 1894 651 1894 639 1805 517 
+C 1664 338 1382 64 1082 64 
+C 819 64 672 300 672 677 
+C 672 1028 870 1743 992 2012 
+C 1210 2459 1510 2689 1760 2689 
+C 2182 2689 2266 2165 2266 2114 
+C 2266 2108 2246 2024 2240 2012 
+L 1926 760 
+z
+M 2336 2395 
+C 2266 2561 2093 2816 1760 2816 
+C 1037 2816 256 1884 256 939 
+C 256 307 627 -64 1062 -64 
+C 1414 -64 1715 211 1894 422 
+C 1958 45 2259 -64 2451 -64 
+C 2643 -64 2797 51 2912 281 
+C 3014 498 3104 888 3104 913 
+C 3104 945 3078 971 3040 971 
+C 2982 971 2976 939 2950 843 
+C 2854 466 2733 64 2470 64 
+C 2285 64 2272 230 2272 358 
+C 2272 505 2291 575 2349 824 
+C 2394 984 2426 1124 2477 1309 
+C 2714 2267 2771 2497 2771 2535 
+C 2771 2625 2701 2695 2605 2695 
+C 2400 2695 2349 2472 2336 2395 
+z
+" transform="scale(0.015625)"/>
+      <path id="CMMI12-3b" d="M 1248 -31 
+C 1248 343 1126 619 864 619 
+C 659 619 557 453 557 313 
+C 557 172 653 0 870 0 
+C 954 0 1024 26 1082 83 
+C 1094 96 1101 96 1107 96 
+C 1120 96 1120 5 1120 -27 
+C 1120 -240 1082 -659 710 -1080 
+C 640 -1157 640 -1170 640 -1183 
+C 640 -1216 672 -1248 704 -1248 
+C 755 -1248 1248 -771 1248 -31 
+z
+" transform="scale(0.015625)"/>
+      <path id="CMMI12-66" d="M 2854 2566 
+C 2982 2566 3034 2566 3034 2688 
+C 3034 2752 2982 2752 2867 2752 
+L 2349 2752 
+C 2470 3429 2560 3897 2611 4107 
+C 2650 4265 2784 4416 2950 4416 
+C 3085 4416 3219 4358 3283 4298 
+C 3034 4272 2957 4082 2957 3969 
+C 2957 3837 3053 3759 3174 3759 
+C 3302 3759 3494 3870 3494 4119 
+C 3494 4393 3226 4544 2944 4544 
+C 2669 4544 2400 4334 2272 4078 
+C 2157 3848 2093 3611 1946 2752 
+L 1517 2752 
+C 1395 2752 1331 2752 1331 2637 
+C 1331 2566 1370 2566 1498 2566 
+L 1907 2566 
+C 1792 1976 1530 542 1382 -137 
+C 1274 -689 1178 -1152 858 -1152 
+C 838 -1152 653 -1152 538 -1031 
+C 864 -1005 864 -726 864 -720 
+C 864 -593 768 -517 646 -517 
+C 518 -517 326 -625 326 -867 
+C 326 -1140 608 -1280 858 -1280 
+C 1510 -1280 1779 -118 1850 199 
+C 1965 688 2278 2376 2310 2566 
+L 2854 2566 
+z
+" transform="scale(0.015625)"/>
+      <path id="CMR17-29" d="M 1683 1581 
+C 1683 2040 1638 2817 1254 3639 
+C 947 4303 422 4768 346 4768 
+C 326 4768 301 4761 301 4729 
+C 301 4717 307 4710 314 4697 
+C 621 4378 1402 3568 1402 1584 
+C 1402 -407 627 -1217 314 -1537 
+C 307 -1549 301 -1556 301 -1568 
+C 301 -1600 326 -1600 346 -1600 
+C 416 -1600 960 -1128 1274 -426 
+C 1594 281 1683 969 1683 1581 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#CMR17-28" transform="scale(0.996264)"/>
+     <use xlink:href="#CMMI12-61" transform="translate(35.280768 0) scale(0.996264)"/>
+     <use xlink:href="#CMMI12-3b" transform="translate(86.488625 0) scale(0.996264)"/>
+     <use xlink:href="#CMMI12-66" transform="translate(130.190208 0) scale(0.996264)"/>
+     <use xlink:href="#CMR17-28" transform="translate(188.910513 0) scale(0.996264)"/>
+     <use xlink:href="#CMMI12-61" transform="translate(224.19128 0) scale(0.996264)"/>
+     <use xlink:href="#CMR17-29" transform="translate(275.399138 0) scale(0.996264)"/>
+     <use xlink:href="#CMR17-29" transform="translate(310.679906 0) scale(0.996264)"/>
+    </g>
+   </g>
+   <g id="cpl_e7b661f5035b_54c92c_text_4">
+    <!-- $(b, f(b))$ -->
+    <g transform="translate(230.075445 283.455091) scale(0.26 -0.26)">
+     <defs>
+      <path id="CMMI12-62" d="M 1478 4257 
+C 1485 4283 1498 4321 1498 4352 
+C 1498 4416 1434 4416 1421 4416 
+C 1414 4416 1184 4393 1069 4377 
+C 960 4377 864 4358 749 4358 
+C 595 4345 550 4339 550 4224 
+C 550 4160 614 4160 678 4160 
+C 1005 4160 1005 4103 1005 4040 
+C 1005 3996 954 3811 928 3696 
+L 774 3085 
+C 710 2831 346 1387 320 1272 
+C 288 1114 288 1005 288 922 
+C 288 274 653 -64 1069 -64 
+C 1811 -64 2579 888 2579 1814 
+C 2579 2401 2246 2816 1766 2816 
+C 1434 2816 1133 2542 1011 2414 
+L 1478 4257 
+z
+M 1075 64 
+C 870 64 646 217 646 715 
+C 646 926 666 1047 781 1494 
+C 800 1577 902 1986 928 2069 
+C 941 2120 1318 2689 1754 2689 
+C 2035 2689 2163 2408 2163 2076 
+C 2163 1769 1984 1047 1824 715 
+C 1664 370 1370 64 1075 64 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#CMR17-28" transform="scale(0.996264)"/>
+     <use xlink:href="#CMMI12-62" transform="translate(35.280768 0) scale(0.996264)"/>
+     <use xlink:href="#CMMI12-3b" transform="translate(76.756642 0) scale(0.996264)"/>
+     <use xlink:href="#CMMI12-66" transform="translate(120.458224 0) scale(0.996264)"/>
+     <use xlink:href="#CMR17-28" transform="translate(179.178529 0) scale(0.996264)"/>
+     <use xlink:href="#CMMI12-62" transform="translate(214.459297 0) scale(0.996264)"/>
+     <use xlink:href="#CMR17-29" transform="translate(255.935171 0) scale(0.996264)"/>
+     <use xlink:href="#CMR17-29" transform="translate(291.215939 0) scale(0.996264)"/>
+    </g>
+   </g>
+   <g id="cpl_e7b661f5035b_54c92c_legend_1">
+    <g id="cpl_e7b661f5035b_54c92c_patch_7">
+     <path d="M 333.098358 321.8 
+L 428.8 321.8 
+Q 434 321.8 434 316.6 
+L 434 282.961673 
+Q 434 277.761673 428.8 277.761673 
+L 333.098358 277.761673 
+Q 327.898358 277.761673 327.898358 282.961673 
+L 327.898358 316.6 
+Q 327.898358 321.8 333.098358 321.8 
+z
+" style="fill: #ffffff; opacity: 0.8; stroke: #cccccc; stroke-linejoin: miter"/>
+    </g>
+    <g id="cpl_e7b661f5035b_54c92c_line2d_8">
+     <path d="M 338.298358 297.261673 
+L 364.298358 297.261673 
+L 390.298358 297.261673 
+" style="fill: none; stroke: #0072b2; stroke-width: 2.5; stroke-linecap: square"/>
+    </g>
+    <g id="cpl_e7b661f5035b_54c92c_text_5">
+     <!-- $f$ -->
+     <g transform="translate(411.098358 306.361673) scale(0.26 -0.26)">
+      <use xlink:href="#CMMI12-66" transform="scale(0.996264)"/>
+     </g>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="cpl_e7b661f5035b_54c92c_pf2718dc2a8">
+   <rect x="10.8" y="22.673214" width="436.2" height="312.126786"/>
+  </clipPath>
+ </defs>
+</svg>
+</div></figure>
+<figure class="adaptive-figure plot-figure no-click align-center">
+<div class="graph-image no-click no-scaled-link"><?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 460.8 345.6" xmlns="http://www.w3.org/2000/svg" version="1.1" class="graph-inline-svg" role="img" aria-label="Tilpasset figur">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-01-21T00:08:15.466944</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.9.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="cpl_3544e105f0c6_3081bb_figure_1">
+  <g id="cpl_3544e105f0c6_3081bb_patch_1">
+   <path d="M 0 345.6 
+L 460.8 345.6 
+L 460.8 0 
+L 0 0 
+L 0 345.6 
+z
+" style="fill: none"/>
+  </g>
+  <g id="cpl_3544e105f0c6_3081bb_axes_1">
+   <g id="cpl_3544e105f0c6_3081bb_patch_2">
+    <path d="M 10.8 334.8 
+L 447 334.8 
+L 447 22.673214 
+L 10.8 22.673214 
+L 10.8 334.8 
+z
+" style="fill: none"/>
+   </g>
+   <g id="cpl_3544e105f0c6_3081bb_matplotlib.axis_1">
+    <g id="cpl_3544e105f0c6_3081bb_text_1">
+     <!-- $x$ -->
+     <g transform="translate(432.587145 200.724709) scale(0.26 -0.26)">
+      <defs>
+       <path id="CMMI12-78" d="M 3034 2606 
+C 2829 2567 2752 2414 2752 2293 
+C 2752 2139 2874 2088 2963 2088 
+C 3155 2088 3290 2254 3290 2427 
+C 3290 2695 2982 2816 2714 2816 
+C 2323 2816 2106 2433 2048 2312 
+C 1901 2816 1504 2816 1389 2816 
+C 736 2816 390 1980 390 1839 
+C 390 1814 416 1782 461 1782 
+C 512 1782 525 1820 538 1846 
+C 755 2555 1184 2689 1370 2689 
+C 1658 2689 1715 2420 1715 2267 
+C 1715 2127 1677 1980 1600 1673 
+L 1382 798 
+C 1286 415 1101 64 762 64 
+C 730 64 570 64 435 147 
+C 666 192 717 383 717 460 
+C 717 588 621 664 499 664 
+C 346 664 179 530 179 326 
+C 179 57 480 -64 755 -64 
+C 1062 -64 1280 179 1414 441 
+C 1517 64 1837 -64 2074 -64 
+C 2726 -64 3072 773 3072 913 
+C 3072 945 3046 971 3008 971 
+C 2950 971 2944 939 2925 888 
+C 2752 326 2381 64 2093 64 
+C 1869 64 1747 230 1747 492 
+C 1747 632 1773 734 1875 1156 
+L 2099 2024 
+C 2195 2408 2413 2689 2707 2689 
+C 2720 2689 2899 2689 3034 2606 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#CMMI12-78" transform="scale(0.996264)"/>
+     </g>
+    </g>
+   </g>
+   <g id="cpl_3544e105f0c6_3081bb_matplotlib.axis_2">
+    <g id="cpl_3544e105f0c6_3081bb_text_2">
+     <!-- $y$ -->
+     <g transform="translate(212.53332 17.634888) scale(0.26 -0.26)">
+      <defs>
+       <path id="CMMI12-79" d="M 1683 -700 
+C 1510 -939 1261 -1152 947 -1152 
+C 870 -1152 563 -1152 467 -889 
+C 486 -895 518 -895 531 -895 
+C 723 -895 851 -729 851 -582 
+C 851 -435 730 -384 634 -384 
+C 531 -384 307 -458 307 -759 
+C 307 -1071 582 -1286 947 -1286 
+C 1587 -1286 2234 -700 2413 6 
+L 3040 2485 
+C 3046 2517 3059 2556 3059 2594 
+C 3059 2689 2982 2753 2886 2753 
+C 2829 2753 2694 2727 2643 2535 
+L 2170 658 
+C 2138 543 2138 530 2086 460 
+C 1958 281 1747 64 1440 64 
+C 1082 64 1050 415 1050 588 
+C 1050 952 1222 1443 1395 1903 
+C 1466 2088 1504 2178 1504 2305 
+C 1504 2574 1312 2816 998 2816 
+C 410 2816 173 1890 173 1839 
+C 173 1814 198 1782 243 1782 
+C 301 1782 307 1807 333 1897 
+C 486 2433 730 2689 979 2689 
+C 1037 2689 1146 2689 1146 2478 
+C 1146 2312 1075 2127 979 1884 
+C 666 1047 666 837 666 683 
+C 666 77 1101 -64 1421 -64 
+C 1606 -64 1837 -6 2061 230 
+L 2067 224 
+C 1971 -147 1907 -392 1683 -700 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#CMMI12-79" transform="scale(0.996264)"/>
+     </g>
+    </g>
+   </g>
+   <g id="cpl_3544e105f0c6_3081bb_line2d_1">
+    <defs>
+     <path id="cpl_3544e105f0c6_3081bb_m494a986df6" d="M 3 0 
+L -3 -3 
+L -3 3 
+z
+" style="stroke: #000000; stroke-linejoin: miter"/>
+    </defs>
+    <g>
+     <use xlink:href="#cpl_3544e105f0c6_3081bb_m494a986df6" x="447" y="178.736607" style="stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+   </g>
+   <g id="cpl_3544e105f0c6_3081bb_line2d_2">
+    <defs>
+     <path id="cpl_3544e105f0c6_3081bb_mdafd299e87" d="M 0 -3 
+L -3 3 
+L 3 3 
+z
+" style="stroke: #000000; stroke-linejoin: miter"/>
+    </defs>
+    <g>
+     <use xlink:href="#cpl_3544e105f0c6_3081bb_mdafd299e87" x="228.9" y="22.673214" style="stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+   </g>
+   <g id="cpl_3544e105f0c6_3081bb_line2d_3">
+    <path d="M 83.037627 -1 
+L 88.545468 18.965637 
+L 93.950375 37.732484 
+L 99.248782 55.335685 
+L 104.440689 71.822633 
+L 109.526094 87.239771 
+L 114.504999 101.632588 
+L 119.377403 115.04562 
+L 124.143307 127.52245 
+L 128.80271 139.105711 
+L 133.355613 149.837081 
+L 137.802014 159.757285 
+L 142.168541 168.960597 
+L 146.428566 177.425006 
+L 150.582091 185.188618 
+L 154.629116 192.288587 
+L 158.596264 198.803368 
+L 162.456913 204.720218 
+L 166.21106 210.073672 
+L 169.885332 214.93115 
+L 173.479729 219.317301 
+L 176.967625 223.2277 
+L 180.375645 226.719565 
+L 183.703791 229.815761 
+L 186.95206 232.538614 
+L 190.147079 234.928653 
+L 193.262223 236.983774 
+L 196.324116 238.739007 
+L 199.33276 240.208046 
+L 202.288152 241.404347 
+L 205.190295 242.34113 
+L 208.065812 243.036751 
+L 210.914704 243.497643 
+L 213.736971 243.730176 
+L 216.559238 243.739708 
+L 219.381505 243.526241 
+L 222.203772 243.089774 
+L 225.052664 242.423024 
+L 227.928182 241.51962 
+L 230.830324 240.373132 
+L 233.785717 238.963276 
+L 236.767735 237.292871 
+L 239.803003 235.336969 
+L 242.918147 233.061395 
+L 246.086541 230.468232 
+L 249.33481 227.517926 
+L 252.63633 224.216549 
+L 256.017726 220.51897 
+L 259.478997 216.402504 
+L 263.020143 211.84393 
+L 266.66779 206.781187 
+L 270.395312 201.22275 
+L 274.229335 195.099671 
+L 278.143234 188.424532 
+L 282.163633 181.121221 
+L 286.263908 173.206707 
+L 290.470683 164.597434 
+L 294.783959 155.255773 
+L 299.17711 145.205698 
+L 303.676762 134.351846 
+L 308.282915 122.653966 
+L 312.995569 110.070858 
+L 317.814723 96.560365 
+L 322.740377 82.079381 
+L 327.745907 66.667698 
+L 332.857938 50.204091 
+L 338.07647 32.642834 
+L 343.401502 13.937246 
+L 347.499873 -1 
+L 347.499873 -1 
+" clip-path="url(#cpl_3544e105f0c6_3081bb_p1922cc737b)" style="fill: none; stroke: #0072b2; stroke-width: 2.5; stroke-linecap: square"/>
+   </g>
+   <g id="cpl_3544e105f0c6_3081bb_line2d_4">
+    <defs>
+     <path id="cpl_3544e105f0c6_3081bb_m07d0e1bfca" d="M 0 5 
+C 1.326016 5 2.597899 4.473168 3.535534 3.535534 
+C 4.473168 2.597899 5 1.326016 5 0 
+C 5 -1.326016 4.473168 -2.597899 3.535534 -3.535534 
+C 2.597899 -4.473168 1.326016 -5 0 -5 
+C -1.326016 -5 -2.597899 -4.473168 -3.535534 -3.535534 
+C -4.473168 -2.597899 -5 -1.326016 -5 0 
+C -5 1.326016 -4.473168 2.597899 -3.535534 3.535534 
+C -2.597899 4.473168 -1.326016 5 0 5 
+z
+" style="stroke: #000000; stroke-opacity: 0.8"/>
+    </defs>
+    <g clip-path="url(#cpl_3544e105f0c6_3081bb_p1922cc737b)">
+     <use xlink:href="#cpl_3544e105f0c6_3081bb_m07d0e1bfca" x="147.1125" y="178.736607" style="fill-opacity: 0.8; stroke: #000000; stroke-opacity: 0.8"/>
+    </g>
+   </g>
+   <g id="cpl_3544e105f0c6_3081bb_line2d_5">
+    <g clip-path="url(#cpl_3544e105f0c6_3081bb_p1922cc737b)">
+     <use xlink:href="#cpl_3544e105f0c6_3081bb_m07d0e1bfca" x="283.425" y="178.736607" style="fill-opacity: 0.8; stroke: #000000; stroke-opacity: 0.8"/>
+    </g>
+   </g>
+   <g id="cpl_3544e105f0c6_3081bb_patch_3">
+    <path d="M 228.9 334.8 
+L 228.9 22.673214 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="cpl_3544e105f0c6_3081bb_patch_4">
+    <path d="M 447 334.8 
+L 447 22.673214 
+" style="fill: none"/>
+   </g>
+   <g id="cpl_3544e105f0c6_3081bb_patch_5">
+    <path d="M 10.8 178.736607 
+L 447 178.736607 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="cpl_3544e105f0c6_3081bb_patch_6">
+    <path d="M 10.8 22.673214 
+L 447 22.673214 
+" style="fill: none"/>
+   </g>
+   <g id="cpl_3544e105f0c6_3081bb_text_3">
+    <!-- $(a, 0)$ -->
+    <g transform="translate(85.667533 202.822338) scale(0.26 -0.26)">
+     <defs>
+      <path id="CMR17-28" d="M 1958 -1561 
+C 1958 -1555 1958 -1542 1939 -1523 
+C 1645 -1224 858 -407 858 1581 
+C 858 3569 1632 4379 1946 4697 
+C 1946 4704 1958 4717 1958 4736 
+C 1958 4755 1939 4768 1914 4768 
+C 1843 4768 1299 4296 986 3594 
+C 666 2887 576 2199 576 1588 
+C 576 1128 621 351 1005 -471 
+C 1312 -1135 1837 -1600 1914 -1600 
+C 1946 -1600 1958 -1587 1958 -1561 
+z
+" transform="scale(0.015625)"/>
+      <path id="CMMI12-61" d="M 1926 760 
+C 1894 651 1894 639 1805 517 
+C 1664 338 1382 64 1082 64 
+C 819 64 672 300 672 677 
+C 672 1028 870 1743 992 2012 
+C 1210 2459 1510 2689 1760 2689 
+C 2182 2689 2266 2165 2266 2114 
+C 2266 2108 2246 2024 2240 2012 
+L 1926 760 
+z
+M 2336 2395 
+C 2266 2561 2093 2816 1760 2816 
+C 1037 2816 256 1884 256 939 
+C 256 307 627 -64 1062 -64 
+C 1414 -64 1715 211 1894 422 
+C 1958 45 2259 -64 2451 -64 
+C 2643 -64 2797 51 2912 281 
+C 3014 498 3104 888 3104 913 
+C 3104 945 3078 971 3040 971 
+C 2982 971 2976 939 2950 843 
+C 2854 466 2733 64 2470 64 
+C 2285 64 2272 230 2272 358 
+C 2272 505 2291 575 2349 824 
+C 2394 984 2426 1124 2477 1309 
+C 2714 2267 2771 2497 2771 2535 
+C 2771 2625 2701 2695 2605 2695 
+C 2400 2695 2349 2472 2336 2395 
+z
+" transform="scale(0.015625)"/>
+      <path id="CMMI12-3b" d="M 1248 -31 
+C 1248 343 1126 619 864 619 
+C 659 619 557 453 557 313 
+C 557 172 653 0 870 0 
+C 954 0 1024 26 1082 83 
+C 1094 96 1101 96 1107 96 
+C 1120 96 1120 5 1120 -27 
+C 1120 -240 1082 -659 710 -1080 
+C 640 -1157 640 -1170 640 -1183 
+C 640 -1216 672 -1248 704 -1248 
+C 755 -1248 1248 -771 1248 -31 
+z
+" transform="scale(0.015625)"/>
+      <path id="CMR17-30" d="M 2688 2025 
+C 2688 2416 2682 3080 2413 3591 
+C 2176 4039 1798 4198 1466 4198 
+C 1158 4198 768 4058 525 3597 
+C 269 3118 243 2524 243 2025 
+C 243 1661 250 1106 448 619 
+C 723 -39 1216 -128 1466 -128 
+C 1760 -128 2208 -7 2470 600 
+C 2662 1042 2688 1559 2688 2025 
+z
+M 1466 -26 
+C 1056 -26 813 325 723 812 
+C 653 1188 653 1738 653 2096 
+C 653 2588 653 2997 736 3387 
+C 858 3929 1216 4096 1466 4096 
+C 1728 4096 2067 3923 2189 3400 
+C 2272 3036 2278 2607 2278 2096 
+C 2278 1680 2278 1169 2202 792 
+C 2067 95 1690 -26 1466 -26 
+z
+" transform="scale(0.015625)"/>
+      <path id="CMR17-29" d="M 1683 1581 
+C 1683 2040 1638 2817 1254 3639 
+C 947 4303 422 4768 346 4768 
+C 326 4768 301 4761 301 4729 
+C 301 4717 307 4710 314 4697 
+C 621 4378 1402 3568 1402 1584 
+C 1402 -407 627 -1217 314 -1537 
+C 307 -1549 301 -1556 301 -1568 
+C 301 -1600 326 -1600 346 -1600 
+C 416 -1600 960 -1128 1274 -426 
+C 1594 281 1683 969 1683 1581 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#CMR17-28" transform="scale(0.996264)"/>
+     <use xlink:href="#CMMI12-61" transform="translate(35.280768 0) scale(0.996264)"/>
+     <use xlink:href="#CMMI12-3b" transform="translate(86.488625 0) scale(0.996264)"/>
+     <use xlink:href="#CMR17-30" transform="translate(130.190208 0) scale(0.996264)"/>
+     <use xlink:href="#CMR17-29" transform="translate(175.880685 0) scale(0.996264)"/>
+    </g>
+   </g>
+   <g id="cpl_3544e105f0c6_3081bb_text_4">
+    <!-- $(b, 0)$ -->
+    <g transform="translate(289.968 202.822338) scale(0.26 -0.26)">
+     <defs>
+      <path id="CMMI12-62" d="M 1478 4257 
+C 1485 4283 1498 4321 1498 4352 
+C 1498 4416 1434 4416 1421 4416 
+C 1414 4416 1184 4393 1069 4377 
+C 960 4377 864 4358 749 4358 
+C 595 4345 550 4339 550 4224 
+C 550 4160 614 4160 678 4160 
+C 1005 4160 1005 4103 1005 4040 
+C 1005 3996 954 3811 928 3696 
+L 774 3085 
+C 710 2831 346 1387 320 1272 
+C 288 1114 288 1005 288 922 
+C 288 274 653 -64 1069 -64 
+C 1811 -64 2579 888 2579 1814 
+C 2579 2401 2246 2816 1766 2816 
+C 1434 2816 1133 2542 1011 2414 
+L 1478 4257 
+z
+M 1075 64 
+C 870 64 646 217 646 715 
+C 646 926 666 1047 781 1494 
+C 800 1577 902 1986 928 2069 
+C 941 2120 1318 2689 1754 2689 
+C 2035 2689 2163 2408 2163 2076 
+C 2163 1769 1984 1047 1824 715 
+C 1664 370 1370 64 1075 64 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#CMR17-28" transform="scale(0.996264)"/>
+     <use xlink:href="#CMMI12-62" transform="translate(35.280768 0) scale(0.996264)"/>
+     <use xlink:href="#CMMI12-3b" transform="translate(76.756642 0) scale(0.996264)"/>
+     <use xlink:href="#CMR17-30" transform="translate(120.458224 0) scale(0.996264)"/>
+     <use xlink:href="#CMR17-29" transform="translate(166.148701 0) scale(0.996264)"/>
+    </g>
+   </g>
+   <g id="cpl_3544e105f0c6_3081bb_legend_1">
+    <g id="cpl_3544e105f0c6_3081bb_patch_7">
+     <path d="M 29 321.8 
+L 132.453532 321.8 
+Q 137.653532 321.8 137.653532 316.6 
+L 137.653532 281.690105 
+Q 137.653532 276.490105 132.453532 276.490105 
+L 29 276.490105 
+Q 23.8 276.490105 23.8 281.690105 
+L 23.8 316.6 
+Q 23.8 321.8 29 321.8 
+z
+" style="fill: #ffffff; opacity: 0.8; stroke: #cccccc; stroke-linejoin: miter"/>
+    </g>
+    <g id="cpl_3544e105f0c6_3081bb_line2d_6">
+     <path d="M 34.2 297.261673 
+L 60.2 297.261673 
+L 86.2 297.261673 
+" style="fill: none; stroke: #0072b2; stroke-width: 2.5; stroke-linecap: square"/>
+    </g>
+    <g id="cpl_3544e105f0c6_3081bb_text_5">
+     <!-- $f'$ -->
+     <g transform="translate(107 306.361673) scale(0.26 -0.26)">
+      <defs>
+       <path id="CMMI12-66" d="M 2854 2566 
+C 2982 2566 3034 2566 3034 2688 
+C 3034 2752 2982 2752 2867 2752 
+L 2349 2752 
+C 2470 3429 2560 3897 2611 4107 
+C 2650 4265 2784 4416 2950 4416 
+C 3085 4416 3219 4358 3283 4298 
+C 3034 4272 2957 4082 2957 3969 
+C 2957 3837 3053 3759 3174 3759 
+C 3302 3759 3494 3870 3494 4119 
+C 3494 4393 3226 4544 2944 4544 
+C 2669 4544 2400 4334 2272 4078 
+C 2157 3848 2093 3611 1946 2752 
+L 1517 2752 
+C 1395 2752 1331 2752 1331 2637 
+C 1331 2566 1370 2566 1498 2566 
+L 1907 2566 
+C 1792 1976 1530 542 1382 -137 
+C 1274 -689 1178 -1152 858 -1152 
+C 838 -1152 653 -1152 538 -1031 
+C 864 -1005 864 -726 864 -720 
+C 864 -593 768 -517 646 -517 
+C 518 -517 326 -625 326 -867 
+C 326 -1140 608 -1280 858 -1280 
+C 1510 -1280 1779 -118 1850 199 
+C 1965 688 2278 2376 2310 2566 
+L 2854 2566 
+z
+" transform="scale(0.015625)"/>
+       <path id="CMSY10-30" d="M 1619 3040 
+C 1651 3117 1677 3174 1677 3238 
+C 1677 3424 1510 3578 1312 3578 
+C 1133 3578 1018 3456 973 3290 
+L 211 493 
+C 211 480 186 410 186 403 
+C 186 333 352 288 403 288 
+C 442 288 448 307 486 390 
+L 1619 3040 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#CMMI12-66" transform="scale(0.996264)"/>
+      <use xlink:href="#CMSY10-30" transform="translate(58.720305 36.153639) scale(0.697382)"/>
+     </g>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="cpl_3544e105f0c6_3081bb_p1922cc737b">
+   <rect x="10.8" y="22.673214" width="436.2" height="312.126786"/>
+  </clipPath>
+ </defs>
+</svg>
+</div></figure>
+</div></div>
+<p>Men det finnes også polynomfunksjoner som har punkter hvor tangenten blir horisontal, men punktet er verken et toppunkt eller et bunnpunkt. I figuren nedenfor viser vi en femtegradsfunksjon <span class="math notranslate nohighlight">\(f\)</span> og dens deriverte <span class="math notranslate nohighlight">\(f'\)</span> som er en fjerdegradsfunksjon. Vi ser at grafen til <span class="math notranslate nohighlight">\(f\)</span> har to ekstremalpunkter, men det er et punkt hvor grafen til <span class="math notranslate nohighlight">\(f\)</span> ikke snur, men hvor tangenten likevel er horisontal. Dette punktet kaller vi i stedet for et <strong>terrassepunkt</strong>.</p>
+<div class="docutils container">
+<style>
+.multi-plot2-grid { }
+.multi-plot2-grid > * { max-width: 100%; }
+.multi-plot2-grid figure { margin: 0; max-width: 100%; }
+.multi-plot2-grid svg { max-width: 100%; height: auto; }
+</style><div class="multi-plot2-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(1, auto); gap: 0; width: 100%; margin-left: auto; margin-right: auto; "><figure class="adaptive-figure plot-figure no-click align-center">
+<div class="graph-image no-click no-scaled-link"><?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 460.8 345.6" xmlns="http://www.w3.org/2000/svg" version="1.1" class="graph-inline-svg" role="img" aria-label="Tilpasset figur">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-01-22T02:14:58.477490</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.9.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="cpl_78299fe01741_060ed3_figure_1">
+  <g id="cpl_78299fe01741_060ed3_patch_1">
+   <path d="M 0 345.6 
+L 460.8 345.6 
+L 460.8 0 
+L 0 0 
+L 0 345.6 
+z
+" style="fill: none"/>
+  </g>
+  <g id="cpl_78299fe01741_060ed3_axes_1">
+   <g id="cpl_78299fe01741_060ed3_patch_2">
+    <path d="M 10.8 334.8 
+L 447 334.8 
+L 447 20.016315 
+L 10.8 20.016315 
+L 10.8 334.8 
+z
+" style="fill: none"/>
+   </g>
+   <g id="cpl_78299fe01741_060ed3_matplotlib.axis_1">
+    <g id="cpl_78299fe01741_060ed3_text_1">
+     <!-- $x$ -->
+     <g transform="translate(435.913188 195.245154) scale(0.2 -0.2)">
+      <defs>
+       <path id="CMMI12-78" d="M 3034 2606 
+C 2829 2567 2752 2414 2752 2293 
+C 2752 2139 2874 2088 2963 2088 
+C 3155 2088 3290 2254 3290 2427 
+C 3290 2695 2982 2816 2714 2816 
+C 2323 2816 2106 2433 2048 2312 
+C 1901 2816 1504 2816 1389 2816 
+C 736 2816 390 1980 390 1839 
+C 390 1814 416 1782 461 1782 
+C 512 1782 525 1820 538 1846 
+C 755 2555 1184 2689 1370 2689 
+C 1658 2689 1715 2420 1715 2267 
+C 1715 2127 1677 1980 1600 1673 
+L 1382 798 
+C 1286 415 1101 64 762 64 
+C 730 64 570 64 435 147 
+C 666 192 717 383 717 460 
+C 717 588 621 664 499 664 
+C 346 664 179 530 179 326 
+C 179 57 480 -64 755 -64 
+C 1062 -64 1280 179 1414 441 
+C 1517 64 1837 -64 2074 -64 
+C 2726 -64 3072 773 3072 913 
+C 3072 945 3046 971 3008 971 
+C 2950 971 2944 939 2925 888 
+C 2752 326 2381 64 2093 64 
+C 1869 64 1747 230 1747 492 
+C 1747 632 1773 734 1875 1156 
+L 2099 2024 
+C 2195 2408 2413 2689 2707 2689 
+C 2720 2689 2899 2689 3034 2606 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#CMMI12-78" transform="scale(0.996264)"/>
+     </g>
+    </g>
+   </g>
+   <g id="cpl_78299fe01741_060ed3_matplotlib.axis_2">
+    <g id="cpl_78299fe01741_060ed3_text_2">
+     <!-- $y$ -->
+     <g transform="translate(191.153832 16.140682) scale(0.2 -0.2)">
+      <defs>
+       <path id="CMMI12-79" d="M 1683 -700 
+C 1510 -939 1261 -1152 947 -1152 
+C 870 -1152 563 -1152 467 -889 
+C 486 -895 518 -895 531 -895 
+C 723 -895 851 -729 851 -582 
+C 851 -435 730 -384 634 -384 
+C 531 -384 307 -458 307 -759 
+C 307 -1071 582 -1286 947 -1286 
+C 1587 -1286 2234 -700 2413 6 
+L 3040 2485 
+C 3046 2517 3059 2556 3059 2594 
+C 3059 2689 2982 2753 2886 2753 
+C 2829 2753 2694 2727 2643 2535 
+L 2170 658 
+C 2138 543 2138 530 2086 460 
+C 1958 281 1747 64 1440 64 
+C 1082 64 1050 415 1050 588 
+C 1050 952 1222 1443 1395 1903 
+C 1466 2088 1504 2178 1504 2305 
+C 1504 2574 1312 2816 998 2816 
+C 410 2816 173 1890 173 1839 
+C 173 1814 198 1782 243 1782 
+C 301 1782 307 1807 333 1897 
+C 486 2433 730 2689 979 2689 
+C 1037 2689 1146 2689 1146 2478 
+C 1146 2312 1075 2127 979 1884 
+C 666 1047 666 837 666 683 
+C 666 77 1101 -64 1421 -64 
+C 1606 -64 1837 -6 2061 230 
+L 2067 224 
+C 1971 -147 1907 -392 1683 -700 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#CMMI12-79" transform="scale(0.996264)"/>
+     </g>
+    </g>
+   </g>
+   <g id="cpl_78299fe01741_060ed3_line2d_1">
+    <defs>
+     <path id="cpl_78299fe01741_060ed3_m0f37fa24fd" d="M 3 0 
+L -3 -3 
+L -3 3 
+z
+" style="stroke: #000000; stroke-linejoin: miter"/>
+    </defs>
+    <g>
+     <use xlink:href="#cpl_78299fe01741_060ed3_m0f37fa24fd" x="447" y="177.408158" style="stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+   </g>
+   <g id="cpl_78299fe01741_060ed3_line2d_2">
+    <defs>
+     <path id="cpl_78299fe01741_060ed3_mf16d779ce9" d="M 0 -3 
+L -3 3 
+L 3 3 
+z
+" style="stroke: #000000; stroke-linejoin: miter"/>
+    </defs>
+    <g>
+     <use xlink:href="#cpl_78299fe01741_060ed3_mf16d779ce9" x="204.666667" y="20.016315" style="stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+   </g>
+   <g id="cpl_78299fe01741_060ed3_line2d_3">
+    <path d="M 55.917599 346.6 
+L 58.538912 311.566571 
+L 61.121553 279.975222 
+L 63.650943 251.70665 
+L 66.127083 226.463598 
+L 68.576598 203.737032 
+L 70.972862 183.554385 
+L 73.315876 165.679634 
+L 75.60564 149.896035 
+L 77.842153 136.004702 
+L 80.025417 123.823272 
+L 82.128804 113.310311 
+L 84.178942 104.15966 
+L 86.175829 96.234498 
+L 88.119465 89.409749 
+L 90.009852 83.571165 
+L 91.820363 78.681431 
+L 93.577623 74.5602 
+L 95.255008 71.172579 
+L 96.879143 68.376664 
+L 98.450027 66.104275 
+L 99.967662 64.29344 
+L 101.432045 62.887886 
+L 102.843179 61.836562 
+L 104.201062 61.093196 
+L 105.558945 60.601198 
+L 106.890203 60.351927 
+L 108.248086 60.324508 
+L 109.632595 60.521267 
+L 111.070353 60.953816 
+L 112.587988 61.649307 
+L 114.185497 62.631353 
+L 115.889507 63.943839 
+L 117.726643 65.64424 
+L 119.72353 67.802568 
+L 121.906794 70.499789 
+L 124.303058 73.825374 
+L 126.938949 77.873677 
+L 129.894342 82.831691 
+L 133.275737 88.955881 
+L 137.242886 96.621928 
+L 142.221791 106.755383 
+L 150.555466 124.311219 
+L 159.288519 142.533055 
+L 164.799927 153.518741 
+L 169.51258 162.428625 
+L 173.799231 170.066498 
+L 177.793005 176.735101 
+L 181.573778 182.620672 
+L 185.168174 187.812488 
+L 188.629445 192.429717 
+L 191.984215 196.541969 
+L 195.25911 200.210871 
+L 198.480754 203.489483 
+L 201.649149 206.399059 
+L 204.790917 208.983137 
+L 207.906061 211.258539 
+L 211.021205 213.259442 
+L 214.136349 214.998635 
+L 217.304743 216.513948 
+L 220.526387 217.809574 
+L 223.854532 218.908453 
+L 227.315803 219.816724 
+L 230.990075 220.548355 
+L 234.930599 221.10371 
+L 239.32375 221.493386 
+L 244.489031 221.719853 
+L 251.731075 221.792351 
+L 263.446145 221.910185 
+L 268.930928 222.206289 
+L 273.643582 222.679327 
+L 277.983483 223.336453 
+L 282.083758 224.180077 
+L 286.077532 225.228353 
+L 290.018055 226.493135 
+L 293.958579 227.991736 
+L 297.978978 229.759749 
+L 302.159128 231.843553 
+L 306.632155 234.327292 
+L 311.61106 237.353812 
+L 317.894598 241.45126 
+L 330.594799 249.796821 
+L 334.748324 252.212231 
+L 338.156345 253.943415 
+L 341.111738 255.200656 
+L 343.747629 256.085825 
+L 346.143893 256.662108 
+L 348.380407 256.974322 
+L 350.483794 257.043734 
+L 352.454056 256.889569 
+L 354.344442 256.522486 
+L 356.181578 255.94149 
+L 357.992089 255.134475 
+L 359.775975 254.093714 
+L 361.559861 252.790792 
+L 363.343747 251.206751 
+L 365.127632 249.321945 
+L 366.938143 247.080564 
+L 368.775279 244.445498 
+L 370.63904 241.376611 
+L 372.529427 237.830542 
+L 374.473064 233.700452 
+L 376.443325 228.981055 
+L 378.466838 223.540605 
+L 380.516975 217.376907 
+L 382.620363 210.329019 
+L 384.750375 202.398498 
+L 386.933639 193.390286 
+L 389.143527 183.310463 
+L 391.406665 171.924238 
+L 393.696429 159.243124 
+L 396.039443 144.986173 
+L 398.409083 129.171406 
+L 400.831972 111.464406 
+L 403.281487 91.890951 
+L 405.757627 70.297298 
+L 408.287017 46.255264 
+L 410.843032 19.807262 
+L 412.714495 -1 
+L 412.714495 -1 
+" clip-path="url(#cpl_78299fe01741_060ed3_p755e3bdf34)" style="fill: none; stroke: #0072b2; stroke-width: 2.5; stroke-linecap: square"/>
+   </g>
+   <g id="cpl_78299fe01741_060ed3_line2d_4">
+    <path d="M 10.8 221.792657 
+L 447 221.792657 
+" clip-path="url(#cpl_78299fe01741_060ed3_p755e3bdf34)" style="fill: none; stroke-dasharray: 9.25,4; stroke-dashoffset: 0; stroke: #dc5e8b; stroke-width: 2.5"/>
+   </g>
+   <g id="cpl_78299fe01741_060ed3_line2d_5">
+    <defs>
+     <path id="cpl_78299fe01741_060ed3_m8306f7c4dc" d="M 0 5 
+C 1.326016 5 2.597899 4.473168 3.535534 3.535534 
+C 4.473168 2.597899 5 1.326016 5 0 
+C 5 -1.326016 4.473168 -2.597899 3.535534 -3.535534 
+C 2.597899 -4.473168 1.326016 -5 0 -5 
+C -1.326016 -5 -2.597899 -4.473168 -3.535534 -3.535534 
+C -4.473168 -2.597899 -5 -1.326016 -5 0 
+C -5 1.326016 -4.473168 2.597899 -3.535534 3.535534 
+C -2.597899 4.473168 -1.326016 5 0 5 
+z
+" style="stroke: #000000; stroke-opacity: 0.8"/>
+    </defs>
+    <g clip-path="url(#cpl_78299fe01741_060ed3_p755e3bdf34)">
+     <use xlink:href="#cpl_78299fe01741_060ed3_m8306f7c4dc" x="107.733333" y="60.308627" style="fill-opacity: 0.8; stroke: #000000; stroke-opacity: 0.8"/>
+    </g>
+   </g>
+   <g id="cpl_78299fe01741_060ed3_line2d_6">
+    <g clip-path="url(#cpl_78299fe01741_060ed3_p755e3bdf34)">
+     <use xlink:href="#cpl_78299fe01741_060ed3_m8306f7c4dc" x="253.133333" y="221.792657" style="fill-opacity: 0.8; stroke: #000000; stroke-opacity: 0.8"/>
+    </g>
+   </g>
+   <g id="cpl_78299fe01741_060ed3_line2d_7">
+    <g clip-path="url(#cpl_78299fe01741_060ed3_p755e3bdf34)">
+     <use xlink:href="#cpl_78299fe01741_060ed3_m8306f7c4dc" x="350.066667" y="257.04843" style="fill-opacity: 0.8; stroke: #000000; stroke-opacity: 0.8"/>
+    </g>
+   </g>
+   <g id="cpl_78299fe01741_060ed3_patch_3">
+    <path d="M 204.666667 334.8 
+L 204.666667 20.016315 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="cpl_78299fe01741_060ed3_patch_4">
+    <path d="M 447 334.8 
+L 447 20.016315 
+" style="fill: none"/>
+   </g>
+   <g id="cpl_78299fe01741_060ed3_patch_5">
+    <path d="M 10.8 177.408158 
+L 447 177.408158 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="cpl_78299fe01741_060ed3_patch_6">
+    <path d="M 10.8 20.016315 
+L 447 20.016315 
+" style="fill: none"/>
+   </g>
+   <g id="cpl_78299fe01741_060ed3_legend_1">
+    <g id="cpl_78299fe01741_060ed3_patch_7">
+     <path d="M 359.383352 324.8 
+L 433 324.8 
+Q 437 324.8 437 320.8 
+L 437 294.924366 
+Q 437 290.924366 433 290.924366 
+L 359.383352 290.924366 
+Q 355.383352 290.924366 355.383352 294.924366 
+L 355.383352 320.8 
+Q 355.383352 324.8 359.383352 324.8 
+z
+" style="fill: #ffffff; opacity: 0.8; stroke: #cccccc; stroke-linejoin: miter"/>
+    </g>
+    <g id="cpl_78299fe01741_060ed3_line2d_8">
+     <path d="M 363.383352 305.924366 
+L 383.383352 305.924366 
+L 403.383352 305.924366 
+" style="fill: none; stroke: #0072b2; stroke-width: 2.5; stroke-linecap: square"/>
+    </g>
+    <g id="cpl_78299fe01741_060ed3_text_3">
+     <!-- $f$ -->
+     <g transform="translate(419.383352 312.924366) scale(0.2 -0.2)">
+      <defs>
+       <path id="CMMI12-66" d="M 2854 2566 
+C 2982 2566 3034 2566 3034 2688 
+C 3034 2752 2982 2752 2867 2752 
+L 2349 2752 
+C 2470 3429 2560 3897 2611 4107 
+C 2650 4265 2784 4416 2950 4416 
+C 3085 4416 3219 4358 3283 4298 
+C 3034 4272 2957 4082 2957 3969 
+C 2957 3837 3053 3759 3174 3759 
+C 3302 3759 3494 3870 3494 4119 
+C 3494 4393 3226 4544 2944 4544 
+C 2669 4544 2400 4334 2272 4078 
+C 2157 3848 2093 3611 1946 2752 
+L 1517 2752 
+C 1395 2752 1331 2752 1331 2637 
+C 1331 2566 1370 2566 1498 2566 
+L 1907 2566 
+C 1792 1976 1530 542 1382 -137 
+C 1274 -689 1178 -1152 858 -1152 
+C 838 -1152 653 -1152 538 -1031 
+C 864 -1005 864 -726 864 -720 
+C 864 -593 768 -517 646 -517 
+C 518 -517 326 -625 326 -867 
+C 326 -1140 608 -1280 858 -1280 
+C 1510 -1280 1779 -118 1850 199 
+C 1965 688 2278 2376 2310 2566 
+L 2854 2566 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#CMMI12-66" transform="scale(0.996264)"/>
+     </g>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="cpl_78299fe01741_060ed3_p755e3bdf34">
+   <rect x="10.8" y="20.016315" width="436.2" height="314.783685"/>
+  </clipPath>
+ </defs>
+</svg>
+</div></figure>
+<figure class="adaptive-figure plot-figure no-click align-center">
+<div class="graph-image no-click no-scaled-link"><?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 460.8 345.6" xmlns="http://www.w3.org/2000/svg" version="1.1" class="graph-inline-svg" role="img" aria-label="Tilpasset figur">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-01-21T00:21:50.755669</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.9.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="cpl_5fb588f7d8de_2bc0fa_figure_1">
+  <g id="cpl_5fb588f7d8de_2bc0fa_patch_1">
+   <path d="M 0 345.6 
+L 460.8 345.6 
+L 460.8 0 
+L 0 0 
+L 0 345.6 
+z
+" style="fill: none"/>
+  </g>
+  <g id="cpl_5fb588f7d8de_2bc0fa_axes_1">
+   <g id="cpl_5fb588f7d8de_2bc0fa_patch_2">
+    <path d="M 10.8 334.8 
+L 447 334.8 
+L 447 20.016315 
+L 10.8 20.016315 
+L 10.8 334.8 
+z
+" style="fill: none"/>
+   </g>
+   <g id="cpl_5fb588f7d8de_2bc0fa_matplotlib.axis_1">
+    <g id="cpl_5fb588f7d8de_2bc0fa_text_1">
+     <!-- $x$ -->
+     <g transform="translate(435.913188 195.245154) scale(0.2 -0.2)">
+      <defs>
+       <path id="CMMI12-78" d="M 3034 2606 
+C 2829 2567 2752 2414 2752 2293 
+C 2752 2139 2874 2088 2963 2088 
+C 3155 2088 3290 2254 3290 2427 
+C 3290 2695 2982 2816 2714 2816 
+C 2323 2816 2106 2433 2048 2312 
+C 1901 2816 1504 2816 1389 2816 
+C 736 2816 390 1980 390 1839 
+C 390 1814 416 1782 461 1782 
+C 512 1782 525 1820 538 1846 
+C 755 2555 1184 2689 1370 2689 
+C 1658 2689 1715 2420 1715 2267 
+C 1715 2127 1677 1980 1600 1673 
+L 1382 798 
+C 1286 415 1101 64 762 64 
+C 730 64 570 64 435 147 
+C 666 192 717 383 717 460 
+C 717 588 621 664 499 664 
+C 346 664 179 530 179 326 
+C 179 57 480 -64 755 -64 
+C 1062 -64 1280 179 1414 441 
+C 1517 64 1837 -64 2074 -64 
+C 2726 -64 3072 773 3072 913 
+C 3072 945 3046 971 3008 971 
+C 2950 971 2944 939 2925 888 
+C 2752 326 2381 64 2093 64 
+C 1869 64 1747 230 1747 492 
+C 1747 632 1773 734 1875 1156 
+L 2099 2024 
+C 2195 2408 2413 2689 2707 2689 
+C 2720 2689 2899 2689 3034 2606 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#CMMI12-78" transform="scale(0.996264)"/>
+     </g>
+    </g>
+   </g>
+   <g id="cpl_5fb588f7d8de_2bc0fa_matplotlib.axis_2">
+    <g id="cpl_5fb588f7d8de_2bc0fa_text_2">
+     <!-- $y$ -->
+     <g transform="translate(191.153832 16.140682) scale(0.2 -0.2)">
+      <defs>
+       <path id="CMMI12-79" d="M 1683 -700 
+C 1510 -939 1261 -1152 947 -1152 
+C 870 -1152 563 -1152 467 -889 
+C 486 -895 518 -895 531 -895 
+C 723 -895 851 -729 851 -582 
+C 851 -435 730 -384 634 -384 
+C 531 -384 307 -458 307 -759 
+C 307 -1071 582 -1286 947 -1286 
+C 1587 -1286 2234 -700 2413 6 
+L 3040 2485 
+C 3046 2517 3059 2556 3059 2594 
+C 3059 2689 2982 2753 2886 2753 
+C 2829 2753 2694 2727 2643 2535 
+L 2170 658 
+C 2138 543 2138 530 2086 460 
+C 1958 281 1747 64 1440 64 
+C 1082 64 1050 415 1050 588 
+C 1050 952 1222 1443 1395 1903 
+C 1466 2088 1504 2178 1504 2305 
+C 1504 2574 1312 2816 998 2816 
+C 410 2816 173 1890 173 1839 
+C 173 1814 198 1782 243 1782 
+C 301 1782 307 1807 333 1897 
+C 486 2433 730 2689 979 2689 
+C 1037 2689 1146 2689 1146 2478 
+C 1146 2312 1075 2127 979 1884 
+C 666 1047 666 837 666 683 
+C 666 77 1101 -64 1421 -64 
+C 1606 -64 1837 -6 2061 230 
+L 2067 224 
+C 1971 -147 1907 -392 1683 -700 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#CMMI12-79" transform="scale(0.996264)"/>
+     </g>
+    </g>
+   </g>
+   <g id="cpl_5fb588f7d8de_2bc0fa_line2d_1">
+    <defs>
+     <path id="cpl_5fb588f7d8de_2bc0fa_m9d830be750" d="M 3 0 
+L -3 -3 
+L -3 3 
+z
+" style="stroke: #000000; stroke-linejoin: miter"/>
+    </defs>
+    <g>
+     <use xlink:href="#cpl_5fb588f7d8de_2bc0fa_m9d830be750" x="447" y="177.408158" style="stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+   </g>
+   <g id="cpl_5fb588f7d8de_2bc0fa_line2d_2">
+    <defs>
+     <path id="cpl_5fb588f7d8de_2bc0fa_m63e230f19d" d="M 0 -3 
+L -3 3 
+L 3 3 
+z
+" style="stroke: #000000; stroke-linejoin: miter"/>
+    </defs>
+    <g>
+     <use xlink:href="#cpl_5fb588f7d8de_2bc0fa_m63e230f19d" x="204.666667" y="20.016315" style="stroke: #000000; stroke-linejoin: miter"/>
+    </g>
+   </g>
+   <g id="cpl_5fb588f7d8de_2bc0fa_line2d_3">
+    <path d="M 86.400506 -1 
+L 89.317598 30.382652 
+L 92.193115 58.977893 
+L 95.042007 85.113858 
+L 97.837649 108.728318 
+L 100.58004 130.02041 
+L 103.269181 149.175952 
+L 105.905072 166.368197 
+L 108.461088 181.607022 
+L 110.963853 195.221253 
+L 113.413368 207.348038 
+L 115.809632 218.114831 
+L 118.152646 227.639982 
+L 120.44241 236.033284 
+L 122.678923 243.396504 
+L 124.835561 249.749888 
+L 126.938949 255.271209 
+L 128.989086 260.039346 
+L 130.959348 264.076136 
+L 132.87636 267.513 
+L 134.740121 270.410463 
+L 136.550632 272.824243 
+L 138.307892 274.80558 
+L 140.011903 276.401547 
+L 141.689288 277.673272 
+L 143.340048 278.647536 
+L 144.964182 279.34949 
+L 146.588317 279.808361 
+L 148.212452 280.035323 
+L 149.863212 280.039676 
+L 151.540597 279.821984 
+L 153.297858 279.366434 
+L 155.134994 278.655353 
+L 157.07863 277.657844 
+L 159.128768 276.350953 
+L 161.338656 274.67143 
+L 163.708295 272.584845 
+L 166.290936 270.006808 
+L 169.113203 266.868214 
+L 172.254972 263.033043 
+L 175.822743 258.314914 
+L 180.002893 252.403311 
+L 185.327925 244.462278 
+L 205.376671 214.171811 
+L 209.982824 207.837367 
+L 214.083098 202.569851 
+L 217.837246 198.102593 
+L 221.325142 194.289743 
+L 224.626662 191.003446 
+L 227.768431 188.184328 
+L 230.777074 185.778245 
+L 233.679216 183.737853 
+L 236.501483 182.023505 
+L 239.243875 180.616125 
+L 241.933016 179.485187 
+L 244.568907 178.616273 
+L 247.178172 177.988689 
+L 249.787438 177.590111 
+L 252.396704 177.416905 
+L 255.032595 177.46577 
+L 257.695111 177.737052 
+L 260.437502 178.241285 
+L 263.259769 178.987736 
+L 266.215162 180.002916 
+L 269.303681 181.301139 
+L 272.605201 182.932964 
+L 276.199597 184.962348 
+L 280.246621 187.510839 
+L 285.092401 190.837433 
+L 293.213075 196.735574 
+L 299.789489 201.390226 
+L 303.969639 204.081034 
+L 307.404285 206.034408 
+L 310.386303 207.482369 
+L 313.075444 208.547567 
+L 315.551584 209.293082 
+L 317.841348 209.754531 
+L 319.997986 209.965942 
+L 322.048123 209.946256 
+L 324.018385 209.706818 
+L 325.935396 209.24984 
+L 327.799158 208.578213 
+L 329.662919 207.667081 
+L 331.500055 206.519425 
+L 333.337191 205.108744 
+L 335.200952 203.392913 
+L 337.091339 201.342752 
+L 339.00835 198.927104 
+L 340.951987 196.112733 
+L 342.922249 192.864216 
+L 344.945761 189.091222 
+L 347.022523 184.73453 
+L 349.125911 179.79567 
+L 351.282549 174.153378 
+L 353.492437 167.733156 
+L 355.728951 160.544069 
+L 358.018715 152.426917 
+L 360.361729 143.288839 
+L 362.757993 133.029383 
+L 365.207508 121.539997 
+L 367.683648 108.846074 
+L 370.213038 94.70437 
+L 372.795678 78.981392 
+L 375.431569 61.533437 
+L 378.094085 42.405098 
+L 380.809852 21.264308 
+L 383.457173 -1 
+L 383.457173 -1 
+" clip-path="url(#cpl_5fb588f7d8de_2bc0fa_pa4e91c9557)" style="fill: none; stroke: #0072b2; stroke-width: 2.5; stroke-linecap: square"/>
+   </g>
+   <g id="cpl_5fb588f7d8de_2bc0fa_line2d_4">
+    <defs>
+     <path id="cpl_5fb588f7d8de_2bc0fa_m480d865eea" d="M 0 5 
+C 1.326016 5 2.597899 4.473168 3.535534 3.535534 
+C 4.473168 2.597899 5 1.326016 5 0 
+C 5 -1.326016 4.473168 -2.597899 3.535534 -3.535534 
+C 2.597899 -4.473168 1.326016 -5 0 -5 
+C -1.326016 -5 -2.597899 -4.473168 -3.535534 -3.535534 
+C -4.473168 -2.597899 -5 -1.326016 -5 0 
+C -5 1.326016 -4.473168 2.597899 -3.535534 3.535534 
+C -2.597899 4.473168 -1.326016 5 0 5 
+z
+" style="stroke: #000000; stroke-opacity: 0.8"/>
+    </defs>
+    <g clip-path="url(#cpl_5fb588f7d8de_2bc0fa_pa4e91c9557)">
+     <use xlink:href="#cpl_5fb588f7d8de_2bc0fa_m480d865eea" x="107.733333" y="177.408158" style="fill-opacity: 0.8; stroke: #000000; stroke-opacity: 0.8"/>
+    </g>
+   </g>
+   <g id="cpl_5fb588f7d8de_2bc0fa_line2d_5">
+    <g clip-path="url(#cpl_5fb588f7d8de_2bc0fa_pa4e91c9557)">
+     <use xlink:href="#cpl_5fb588f7d8de_2bc0fa_m480d865eea" x="253.133333" y="177.408158" style="fill-opacity: 0.8; stroke: #000000; stroke-opacity: 0.8"/>
+    </g>
+   </g>
+   <g id="cpl_5fb588f7d8de_2bc0fa_line2d_6">
+    <g clip-path="url(#cpl_5fb588f7d8de_2bc0fa_pa4e91c9557)">
+     <use xlink:href="#cpl_5fb588f7d8de_2bc0fa_m480d865eea" x="350.066667" y="177.408158" style="fill-opacity: 0.8; stroke: #000000; stroke-opacity: 0.8"/>
+    </g>
+   </g>
+   <g id="cpl_5fb588f7d8de_2bc0fa_patch_3">
+    <path d="M 204.666667 334.8 
+L 204.666667 20.016315 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="cpl_5fb588f7d8de_2bc0fa_patch_4">
+    <path d="M 447 334.8 
+L 447 20.016315 
+" style="fill: none"/>
+   </g>
+   <g id="cpl_5fb588f7d8de_2bc0fa_patch_5">
+    <path d="M 10.8 177.408158 
+L 447 177.408158 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="cpl_5fb588f7d8de_2bc0fa_patch_6">
+    <path d="M 10.8 20.016315 
+L 447 20.016315 
+" style="fill: none"/>
+   </g>
+   <g id="cpl_5fb588f7d8de_2bc0fa_legend_1">
+    <g id="cpl_5fb588f7d8de_2bc0fa_patch_7">
+     <path d="M 24.8 324.8 
+L 104.379653 324.8 
+Q 108.379653 324.8 108.379653 320.8 
+L 108.379653 293.946233 
+Q 108.379653 289.946233 104.379653 289.946233 
+L 24.8 289.946233 
+Q 20.8 289.946233 20.8 293.946233 
+L 20.8 320.8 
+Q 20.8 324.8 24.8 324.8 
+z
+" style="fill: #ffffff; opacity: 0.8; stroke: #cccccc; stroke-linejoin: miter"/>
+    </g>
+    <g id="cpl_5fb588f7d8de_2bc0fa_line2d_7">
+     <path d="M 28.8 305.924366 
+L 48.8 305.924366 
+L 68.8 305.924366 
+" style="fill: none; stroke: #0072b2; stroke-width: 2.5; stroke-linecap: square"/>
+    </g>
+    <g id="cpl_5fb588f7d8de_2bc0fa_text_3">
+     <!-- $f'$ -->
+     <g transform="translate(84.8 312.924366) scale(0.2 -0.2)">
+      <defs>
+       <path id="CMMI12-66" d="M 2854 2566 
+C 2982 2566 3034 2566 3034 2688 
+C 3034 2752 2982 2752 2867 2752 
+L 2349 2752 
+C 2470 3429 2560 3897 2611 4107 
+C 2650 4265 2784 4416 2950 4416 
+C 3085 4416 3219 4358 3283 4298 
+C 3034 4272 2957 4082 2957 3969 
+C 2957 3837 3053 3759 3174 3759 
+C 3302 3759 3494 3870 3494 4119 
+C 3494 4393 3226 4544 2944 4544 
+C 2669 4544 2400 4334 2272 4078 
+C 2157 3848 2093 3611 1946 2752 
+L 1517 2752 
+C 1395 2752 1331 2752 1331 2637 
+C 1331 2566 1370 2566 1498 2566 
+L 1907 2566 
+C 1792 1976 1530 542 1382 -137 
+C 1274 -689 1178 -1152 858 -1152 
+C 838 -1152 653 -1152 538 -1031 
+C 864 -1005 864 -726 864 -720 
+C 864 -593 768 -517 646 -517 
+C 518 -517 326 -625 326 -867 
+C 326 -1140 608 -1280 858 -1280 
+C 1510 -1280 1779 -118 1850 199 
+C 1965 688 2278 2376 2310 2566 
+L 2854 2566 
+z
+" transform="scale(0.015625)"/>
+       <path id="CMSY10-30" d="M 1619 3040 
+C 1651 3117 1677 3174 1677 3238 
+C 1677 3424 1510 3578 1312 3578 
+C 1133 3578 1018 3456 973 3290 
+L 211 493 
+C 211 480 186 410 186 403 
+C 186 333 352 288 403 288 
+C 442 288 448 307 486 390 
+L 1619 3040 
+z
+" transform="scale(0.015625)"/>
+      </defs>
+      <use xlink:href="#CMMI12-66" transform="scale(0.996264)"/>
+      <use xlink:href="#CMSY10-30" transform="translate(58.720305 36.153639) scale(0.697382)"/>
+     </g>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="cpl_5fb588f7d8de_2bc0fa_pa4e91c9557">
+   <rect x="10.8" y="20.016315" width="436.2" height="314.783685"/>
+  </clipPath>
+ </defs>
+</svg>
+</div></figure>
+</div></div>
+<div class="summary admonition">
+<p class="admonition-title">Sammenheng mellom <span class="math notranslate nohighlight">\(f(x)\)</span> og <span class="math notranslate nohighlight">\(f'(x)\)</span></p>
+<p>La <span class="math notranslate nohighlight">\(f\)</span> være en polynomfunksjon. Da vil følgende sammenhenger mellom grafene til <span class="math notranslate nohighlight">\(f\)</span> og <span class="math notranslate nohighlight">\(f'\)</span> gjelde:</p>
+<ul class="simple">
+<li><p>Punkter hvor grafen til <span class="math notranslate nohighlight">\(f'\)</span> skjærer <span class="math notranslate nohighlight">\(x\)</span>-aksen svarer til punkter på grafen til <span class="math notranslate nohighlight">\(f\)</span> hvor tangenter har stigningstall <span class="math notranslate nohighlight">\(0\)</span>.</p></li>
+<li><p>Punkter hvor <span class="math notranslate nohighlight">\(f'(x) = 0\)</span>, svarer til punkter på grafen til <span class="math notranslate nohighlight">\(f\)</span> hvor tangenter har stigningstall <span class="math notranslate nohighlight">\(0\)</span>.</p></li>
+<li><p>Grafen til <span class="math notranslate nohighlight">\(f\)</span> stiger når <span class="math notranslate nohighlight">\(f'(x) &gt; 0\)</span>.</p></li>
+<li><p>Grafen til <span class="math notranslate nohighlight">\(f\)</span> synker når <span class="math notranslate nohighlight">\(f'(x) &lt; 0\)</span>.</p></li>
+</ul>
+</div>
+<p>Ut ifra sammenhengen over, vil det i mange tilfeller være slik at punkter hvor grafen til <span class="math notranslate nohighlight">\(f'\)</span> skjærer <span class="math notranslate nohighlight">\(x\)</span>-aksen, så har grafen til <span class="math notranslate nohighlight">\(f\)</span> et ekstremalpunkt.</p>
+<div class="example admonition">
+<p class="admonition-title">Eksempel 2</p>
+<p>Grafen til en tredjegradsfunksjon <span class="math notranslate nohighlight">\(f\)</span> er vist i <a class="reference internal" href="#fig-polnyomfunksjoner-derivasjon-eksempel-2"><span class="std std-numref">Fig. 23.1</span></a>.</p>
+<figure class="align-default" id="fig-polnyomfunksjoner-derivasjon-eksempel-2">
+<a class="no-click adaptive-figure reference internal image-reference" href="../../../_images/graf4.svg"><img alt="../../../_images/graf4.svg" class="no-click adaptive-figure" src="../../../_images/graf4.svg" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 23.1 </span><span class="caption-text">viser grafen til en tredjegradsfunksjon <span class="math notranslate nohighlight">\(f\)</span></span><a class="headerlink" href="#fig-polnyomfunksjoner-derivasjon-eksempel-2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>For å forstå hvordan grafen til <span class="math notranslate nohighlight">\(f'\)</span> henger sammen med grafen til <span class="math notranslate nohighlight">\(f\)</span> kan vi</p>
+<ol class="arabic simple">
+<li><p>Tegne en fortegnslinje for <span class="math notranslate nohighlight">\(f'(x)\)</span>.</p></li>
+<li><p>Tegne grafen til <span class="math notranslate nohighlight">\(f'\)</span> ved å bruke fortegnslinjen og passe på at nullpunktene til <span class="math notranslate nohighlight">\(f'\)</span> svarer til ekstremalpunktene til <span class="math notranslate nohighlight">\(f\)</span>.</p></li>
+</ol>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Fortegnslinje til <span class="math notranslate nohighlight">\(f'(x)\)</span></label><div class="sd-tab-content docutils">
+<figure class="align-default" id="fig-polnyomfunksjoner-derivasjon-eksempel-2-fortegnslinje">
+<a class="no-click adaptive-figure reference internal image-reference" href="../../../_images/fortegnslinje4.svg"><img alt="../../../_images/fortegnslinje4.svg" class="no-click adaptive-figure" src="../../../_images/fortegnslinje4.svg" style="width: 100%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 23.2 </span><span class="caption-text">viser fortegnslinja til <span class="math notranslate nohighlight">\(f'(x)\)</span>. Sammenhengen med grafen til <span class="math notranslate nohighlight">\(f\)</span> er at <span class="math notranslate nohighlight">\(f'(x) &gt; 0\)</span> når grafen til <span class="math notranslate nohighlight">\(f\)</span> stiger og <span class="math notranslate nohighlight">\(f'(x) &lt; 0\)</span> når grafen til <span class="math notranslate nohighlight">\(f\)</span> synker. I ekstremalpunktene til <span class="math notranslate nohighlight">\(f\)</span> er <span class="math notranslate nohighlight">\(f'(x) = 0\)</span> fordi en tangent gjennom punktet vil være horisontal og dermed ha stigningstall <span class="math notranslate nohighlight">\(0\)</span>.</span><a class="headerlink" href="#fig-polnyomfunksjoner-derivasjon-eksempel-2-fortegnslinje" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Grafen til <span class="math notranslate nohighlight">\(f'\)</span></label><div class="sd-tab-content docutils">
+<figure class="align-default" id="fig-polnyomfunksjoner-derivasjon-eksempel-2-f-derivert">
+<a class="no-click adaptive-figure reference internal image-reference" href="../../../_images/f_derivert.svg"><img alt="../../../_images/f_derivert.svg" class="no-click adaptive-figure" src="../../../_images/f_derivert.svg" style="width: 80%;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 23.3 </span><span class="caption-text">viser grafen til <span class="math notranslate nohighlight">\(f'\)</span>. Nullpunktene til <span class="math notranslate nohighlight">\(f'\)</span> svarer til samme <span class="math notranslate nohighlight">\(x\)</span>-koordinater som ekstremalpunktene til <span class="math notranslate nohighlight">\(f\)</span>.</span><a class="headerlink" href="#fig-polnyomfunksjoner-derivasjon-eksempel-2-f-derivert" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="utledning-av-derivasjonsreglene">
+<h2>Utledning av derivasjonsreglene (*)<a class="headerlink" href="#utledning-av-derivasjonsreglene" title="Link to this heading">#</a></h2>
+<p>Vi har så langt bare påstått hva derivasjonsreglene for polynomer er. Her skal vi gå løs på å utlede én av reglene.</p>
+<div class="math notranslate nohighlight">
+\[
+\dfrac{f(x) - f(a)}{x - a}
+\]</div>
+<div class="admonition theory">
+<p class="admonition-title">Bevis for derivasjonsregel 1</p>
+<p>La <span class="math notranslate nohighlight">\(f(x) = x^3\)</span> være en tredjegradsfunksjon. Vi ønsker å finne den deriverte <span class="math notranslate nohighlight">\(f'(a)\)</span> i et punkt <span class="math notranslate nohighlight">\((a, f(a))\)</span> på grafen til <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<p>Vi starter med å finne den gjennomsnittlige vekstfarten til <span class="math notranslate nohighlight">\(f\)</span> i intervallet <span class="math notranslate nohighlight">\([a, x]\)</span>. Dette er gitt ved</p>
+<div class="math notranslate nohighlight">
+\[
+\dfrac{f(x) - f(a)}{x - a} = \dfrac{x^3 - a^3}{x - a}
+\]</div>
+<p>Vi utfører polynomdivisjonen med et Horner-skjema:</p>
+<figure class="adaptive-figure horner-figure no-click align-center">
+<div class="horner-image no-click no-scaled-link"><?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 162.103 50.809" class="horner-inline-svg" role="img" aria-label="Horner's scheme for (x^3 - a^3) at x=a" style="width:50%; height:auto; display:block; margin:0 auto;">
+<defs>
+<g>
+<g id="hnr_842db1092f9d_31db7e_glyph-0-0">
+<path d="M 2.9375 -6.375 C 2.9375 -6.625 2.9375 -6.640625 2.703125 -6.640625 C 2.078125 -6 1.203125 -6 0.890625 -6 L 0.890625 -5.6875 C 1.09375 -5.6875 1.671875 -5.6875 2.1875 -5.953125 L 2.1875 -0.78125 C 2.1875 -0.421875 2.15625 -0.3125 1.265625 -0.3125 L 0.953125 -0.3125 L 0.953125 0 C 1.296875 -0.03125 2.15625 -0.03125 2.5625 -0.03125 C 2.953125 -0.03125 3.828125 -0.03125 4.171875 0 L 4.171875 -0.3125 L 3.859375 -0.3125 C 2.953125 -0.3125 2.9375 -0.421875 2.9375 -0.78125 Z M 2.9375 -6.375 "/>
+</g>
+<g id="hnr_842db1092f9d_31db7e_glyph-0-1">
+<path d="M 4.578125 -3.1875 C 4.578125 -3.984375 4.53125 -4.78125 4.1875 -5.515625 C 3.734375 -6.484375 2.90625 -6.640625 2.5 -6.640625 C 1.890625 -6.640625 1.171875 -6.375 0.75 -5.453125 C 0.4375 -4.765625 0.390625 -3.984375 0.390625 -3.1875 C 0.390625 -2.4375 0.421875 -1.546875 0.84375 -0.78125 C 1.265625 0.015625 2 0.21875 2.484375 0.21875 C 3.015625 0.21875 3.78125 0.015625 4.21875 -0.9375 C 4.53125 -1.625 4.578125 -2.40625 4.578125 -3.1875 Z M 2.484375 0 C 2.09375 0 1.5 -0.25 1.328125 -1.203125 C 1.21875 -1.796875 1.21875 -2.71875 1.21875 -3.3125 C 1.21875 -3.953125 1.21875 -4.609375 1.296875 -5.140625 C 1.484375 -6.328125 2.234375 -6.421875 2.484375 -6.421875 C 2.8125 -6.421875 3.46875 -6.234375 3.65625 -5.25 C 3.765625 -4.6875 3.765625 -3.9375 3.765625 -3.3125 C 3.765625 -2.5625 3.765625 -1.890625 3.65625 -1.25 C 3.5 -0.296875 2.9375 0 2.484375 0 Z M 2.484375 0 "/>
+</g>
+<g id="hnr_842db1092f9d_31db7e_glyph-0-2">
+<path d="M 6.84375 -3.265625 C 7 -3.265625 7.1875 -3.265625 7.1875 -3.453125 C 7.1875 -3.65625 7 -3.65625 6.859375 -3.65625 L 0.890625 -3.65625 C 0.75 -3.65625 0.5625 -3.65625 0.5625 -3.453125 C 0.5625 -3.265625 0.75 -3.265625 0.890625 -3.265625 Z M 6.859375 -1.328125 C 7 -1.328125 7.1875 -1.328125 7.1875 -1.53125 C 7.1875 -1.71875 7 -1.71875 6.84375 -1.71875 L 0.890625 -1.71875 C 0.75 -1.71875 0.5625 -1.71875 0.5625 -1.53125 C 0.5625 -1.328125 0.75 -1.328125 0.890625 -1.328125 Z M 6.859375 -1.328125 "/>
+</g>
+<g id="hnr_842db1092f9d_31db7e_glyph-1-0">
+<path d="M 6.5625 -2.296875 C 6.734375 -2.296875 6.921875 -2.296875 6.921875 -2.5 C 6.921875 -2.6875 6.734375 -2.6875 6.5625 -2.6875 L 1.171875 -2.6875 C 1 -2.6875 0.828125 -2.6875 0.828125 -2.5 C 0.828125 -2.296875 1 -2.296875 1.171875 -2.296875 Z M 6.5625 -2.296875 "/>
+</g>
+<g id="hnr_842db1092f9d_31db7e_glyph-2-0">
+<path d="M 3.71875 -3.765625 C 3.53125 -4.140625 3.25 -4.40625 2.796875 -4.40625 C 1.640625 -4.40625 0.40625 -2.9375 0.40625 -1.484375 C 0.40625 -0.546875 0.953125 0.109375 1.71875 0.109375 C 1.921875 0.109375 2.421875 0.0625 3.015625 -0.640625 C 3.09375 -0.21875 3.453125 0.109375 3.921875 0.109375 C 4.28125 0.109375 4.5 -0.125 4.671875 -0.4375 C 4.828125 -0.796875 4.96875 -1.40625 4.96875 -1.421875 C 4.96875 -1.53125 4.875 -1.53125 4.84375 -1.53125 C 4.75 -1.53125 4.734375 -1.484375 4.703125 -1.34375 C 4.53125 -0.703125 4.359375 -0.109375 3.953125 -0.109375 C 3.671875 -0.109375 3.65625 -0.375 3.65625 -0.5625 C 3.65625 -0.78125 3.671875 -0.875 3.78125 -1.3125 C 3.890625 -1.71875 3.90625 -1.828125 4 -2.203125 L 4.359375 -3.59375 C 4.421875 -3.875 4.421875 -3.890625 4.421875 -3.9375 C 4.421875 -4.109375 4.3125 -4.203125 4.140625 -4.203125 C 3.890625 -4.203125 3.75 -3.984375 3.71875 -3.765625 Z M 3.078125 -1.1875 C 3.015625 -1 3.015625 -0.984375 2.875 -0.8125 C 2.4375 -0.265625 2.03125 -0.109375 1.75 -0.109375 C 1.25 -0.109375 1.109375 -0.65625 1.109375 -1.046875 C 1.109375 -1.546875 1.421875 -2.765625 1.65625 -3.234375 C 1.96875 -3.8125 2.40625 -4.1875 2.8125 -4.1875 C 3.453125 -4.1875 3.59375 -3.375 3.59375 -3.3125 C 3.59375 -3.25 3.578125 -3.1875 3.5625 -3.140625 Z M 3.078125 -1.1875 "/>
+</g>
+<g id="hnr_842db1092f9d_31db7e_glyph-2-1">
+<path d="M 3.328125 -3.015625 C 3.390625 -3.265625 3.625 -4.1875 4.3125 -4.1875 C 4.359375 -4.1875 4.609375 -4.1875 4.8125 -4.0625 C 4.53125 -4 4.34375 -3.765625 4.34375 -3.515625 C 4.34375 -3.359375 4.453125 -3.171875 4.71875 -3.171875 C 4.9375 -3.171875 5.25 -3.34375 5.25 -3.75 C 5.25 -4.265625 4.671875 -4.40625 4.328125 -4.40625 C 3.75 -4.40625 3.40625 -3.875 3.28125 -3.65625 C 3.03125 -4.3125 2.5 -4.40625 2.203125 -4.40625 C 1.171875 -4.40625 0.59375 -3.125 0.59375 -2.875 C 0.59375 -2.765625 0.703125 -2.765625 0.71875 -2.765625 C 0.796875 -2.765625 0.828125 -2.796875 0.84375 -2.875 C 1.1875 -3.9375 1.84375 -4.1875 2.1875 -4.1875 C 2.375 -4.1875 2.71875 -4.09375 2.71875 -3.515625 C 2.71875 -3.203125 2.546875 -2.546875 2.1875 -1.140625 C 2.03125 -0.53125 1.671875 -0.109375 1.234375 -0.109375 C 1.171875 -0.109375 0.953125 -0.109375 0.734375 -0.234375 C 0.984375 -0.296875 1.203125 -0.5 1.203125 -0.78125 C 1.203125 -1.046875 0.984375 -1.125 0.84375 -1.125 C 0.53125 -1.125 0.296875 -0.875 0.296875 -0.546875 C 0.296875 -0.09375 0.78125 0.109375 1.21875 0.109375 C 1.890625 0.109375 2.25 -0.59375 2.265625 -0.640625 C 2.390625 -0.28125 2.75 0.109375 3.34375 0.109375 C 4.375 0.109375 4.9375 -1.171875 4.9375 -1.421875 C 4.9375 -1.53125 4.859375 -1.53125 4.828125 -1.53125 C 4.734375 -1.53125 4.71875 -1.484375 4.6875 -1.421875 C 4.359375 -0.34375 3.6875 -0.109375 3.375 -0.109375 C 2.984375 -0.109375 2.828125 -0.421875 2.828125 -0.765625 C 2.828125 -0.984375 2.875 -1.203125 2.984375 -1.640625 Z M 3.328125 -3.015625 "/>
+</g>
+<g id="hnr_842db1092f9d_31db7e_glyph-3-0">
+<path d="M 1.90625 -2.328125 C 2.453125 -2.328125 2.84375 -1.953125 2.84375 -1.203125 C 2.84375 -0.34375 2.328125 -0.078125 1.9375 -0.078125 C 1.65625 -0.078125 1.03125 -0.15625 0.75 -0.578125 C 1.078125 -0.578125 1.15625 -0.8125 1.15625 -0.96875 C 1.15625 -1.1875 0.984375 -1.34375 0.765625 -1.34375 C 0.578125 -1.34375 0.375 -1.21875 0.375 -0.9375 C 0.375 -0.28125 1.09375 0.140625 1.9375 0.140625 C 2.90625 0.140625 3.578125 -0.515625 3.578125 -1.203125 C 3.578125 -1.75 3.140625 -2.296875 2.375 -2.453125 C 3.09375 -2.71875 3.359375 -3.234375 3.359375 -3.671875 C 3.359375 -4.21875 2.734375 -4.625 1.953125 -4.625 C 1.1875 -4.625 0.59375 -4.25 0.59375 -3.6875 C 0.59375 -3.453125 0.75 -3.328125 0.953125 -3.328125 C 1.171875 -3.328125 1.3125 -3.484375 1.3125 -3.671875 C 1.3125 -3.875 1.171875 -4.03125 0.953125 -4.046875 C 1.203125 -4.34375 1.671875 -4.421875 1.9375 -4.421875 C 2.25 -4.421875 2.6875 -4.265625 2.6875 -3.671875 C 2.6875 -3.375 2.59375 -3.046875 2.40625 -2.84375 C 2.1875 -2.578125 1.984375 -2.5625 1.640625 -2.53125 C 1.46875 -2.515625 1.453125 -2.515625 1.421875 -2.515625 C 1.40625 -2.515625 1.34375 -2.5 1.34375 -2.421875 C 1.34375 -2.328125 1.40625 -2.328125 1.53125 -2.328125 Z M 1.90625 -2.328125 "/>
+</g>
+<g id="hnr_842db1092f9d_31db7e_glyph-3-1">
+<path d="M 3.515625 -1.265625 L 3.28125 -1.265625 C 3.265625 -1.109375 3.1875 -0.703125 3.09375 -0.640625 C 3.046875 -0.59375 2.515625 -0.59375 2.40625 -0.59375 L 1.125 -0.59375 C 1.859375 -1.234375 2.109375 -1.4375 2.515625 -1.765625 C 3.03125 -2.171875 3.515625 -2.609375 3.515625 -3.265625 C 3.515625 -4.109375 2.78125 -4.625 1.890625 -4.625 C 1.03125 -4.625 0.4375 -4.015625 0.4375 -3.375 C 0.4375 -3.03125 0.734375 -2.984375 0.8125 -2.984375 C 0.96875 -2.984375 1.171875 -3.109375 1.171875 -3.359375 C 1.171875 -3.484375 1.125 -3.734375 0.765625 -3.734375 C 0.984375 -4.21875 1.453125 -4.375 1.78125 -4.375 C 2.484375 -4.375 2.84375 -3.828125 2.84375 -3.265625 C 2.84375 -2.65625 2.40625 -2.1875 2.1875 -1.9375 L 0.515625 -0.265625 C 0.4375 -0.203125 0.4375 -0.1875 0.4375 0 L 3.3125 0 Z M 3.515625 -1.265625 "/>
+</g>
+</g>
+<clipPath id="hnr_842db1092f9d_31db7e_clip-0">
+<path clip-rule="nonzero" d="M 34 33 L 162.101562 33 L 162.101562 35 L 34 35 Z M 34 33 "/>
+</clipPath>
+</defs>
+<path fill="none" stroke-width="0.398" stroke-linecap="butt" stroke-linejoin="miter" stroke="rgb(0%, 0%, 0%)" stroke-opacity="1" stroke-miterlimit="10" d="M 0.00125 -0.0015 L 0.00125 16.936 " transform="matrix(1, 0, 0, -1, 34.405, 16.936)"/>
+<g fill="rgb(0%, 0%, 0%)" fill-opacity="1">
+<use href="#hnr_842db1092f9d_31db7e_glyph-0-0" x="56.517" y="10.859"/>
+</g>
+<g fill="rgb(0%, 0%, 0%)" fill-opacity="1">
+<use href="#hnr_842db1092f9d_31db7e_glyph-0-1" x="88.387357" y="10.859"/>
+</g>
+<g fill="rgb(0%, 0%, 0%)" fill-opacity="1">
+<use href="#hnr_842db1092f9d_31db7e_glyph-0-1" x="120.267677" y="10.859"/>
+</g>
+<g fill="rgb(0%, 0%, 0%)" fill-opacity="1">
+<use href="#hnr_842db1092f9d_31db7e_glyph-1-0" x="137.423275" y="10.859"/>
+</g>
+<g fill="rgb(0%, 0%, 0%)" fill-opacity="1">
+<use href="#hnr_842db1092f9d_31db7e_glyph-2-0" x="147.383882" y="10.859"/>
+</g>
+<g fill="rgb(0%, 0%, 0%)" fill-opacity="1">
+<use href="#hnr_842db1092f9d_31db7e_glyph-3-0" x="152.652" y="7.243"/>
+</g>
+<g fill="rgb(0%, 0%, 0%)" fill-opacity="1">
+<use href="#hnr_842db1092f9d_31db7e_glyph-2-1" x="4.981" y="27.795"/>
+</g>
+<g fill="rgb(0%, 0%, 0%)" fill-opacity="1">
+<use href="#hnr_842db1092f9d_31db7e_glyph-0-2" x="13.444229" y="27.795"/>
+</g>
+<g fill="rgb(0%, 0%, 0%)" fill-opacity="1">
+<use href="#hnr_842db1092f9d_31db7e_glyph-2-0" x="23.962742" y="27.795"/>
+</g>
+<path fill="none" stroke-width="0.398" stroke-linecap="butt" stroke-linejoin="miter" stroke="rgb(0%, 0%, 0%)" stroke-opacity="1" stroke-miterlimit="10" d="M 0.00125 0.00090625 L 0.00125 16.9345 " transform="matrix(1, 0, 0, -1, 34.405, 33.872)"/>
+<g fill="rgb(0%, 0%, 0%)" fill-opacity="1">
+<use href="#hnr_842db1092f9d_31db7e_glyph-2-0" x="88.106" y="27.795"/>
+</g>
+<g fill="rgb(0%, 0%, 0%)" fill-opacity="1">
+<use href="#hnr_842db1092f9d_31db7e_glyph-2-0" x="115.509128" y="27.795"/>
+</g>
+<g fill="rgb(0%, 0%, 0%)" fill-opacity="1">
+<use href="#hnr_842db1092f9d_31db7e_glyph-3-1" x="120.778" y="24.18"/>
+</g>
+<g fill="rgb(0%, 0%, 0%)" fill-opacity="1">
+<use href="#hnr_842db1092f9d_31db7e_glyph-2-0" x="147.386" y="27.795"/>
+</g>
+<g fill="rgb(0%, 0%, 0%)" fill-opacity="1">
+<use href="#hnr_842db1092f9d_31db7e_glyph-3-0" x="152.652" y="24.18"/>
+</g>
+<g clip-path="url(#hnr_842db1092f9d_31db7e_clip-0)">
+<path fill="none" stroke-width="0.398" stroke-linecap="butt" stroke-linejoin="miter" stroke="rgb(0%, 0%, 0%)" stroke-opacity="1" stroke-miterlimit="10" d="M 0.00103125 0.0016875 L 127.895562 0.0016875 " transform="matrix(1, 0, 0, -1, 34.206, 34.072)"/>
+</g>
+<g fill="rgb(0%, 0%, 0%)" fill-opacity="1">
+<use href="#hnr_842db1092f9d_31db7e_glyph-0-0" x="56.517" y="44.732"/>
+</g>
+<g fill="rgb(0%, 0%, 0%)" fill-opacity="1">
+<use href="#hnr_842db1092f9d_31db7e_glyph-2-0" x="88.108405" y="44.732"/>
+</g>
+<g fill="rgb(0%, 0%, 0%)" fill-opacity="1">
+<use href="#hnr_842db1092f9d_31db7e_glyph-2-0" x="115.511532" y="44.732"/>
+</g>
+<g fill="rgb(0%, 0%, 0%)" fill-opacity="1">
+<use href="#hnr_842db1092f9d_31db7e_glyph-3-1" x="120.778" y="41.116"/>
+</g>
+<g fill="rgb(100%, 0%, 0%)" fill-opacity="1">
+<use href="#hnr_842db1092f9d_31db7e_glyph-0-1" x="152.14" y="44.732"/>
+</g>
+</svg>
+</div></figure>
+<p>Vi får null i rest, og bare en kvotient:</p>
+<div class="math notranslate nohighlight">
+\[
+\dfrac{f(x) - f(a)}{x - a} = x^2 + ax + a^2
+\]</div>
+<p>Hvis vi nå tenker oss at vi lar punktet <span class="math notranslate nohighlight">\((x, f(x))\)</span> nærme seg punktet <span class="math notranslate nohighlight">\((a, f(a))\)</span>. Da vil jo sekanten som går gjennom de punktene nærme seg en tangent i punktet <span class="math notranslate nohighlight">\((a, f(a))\)</span>. Den gjennomsnittlige vekstfarten vil da nærme seg stigningstallet til tangenten fordi de to linjene blir gradvis mer og mer like.</p>
+<p>Setter vi <span class="math notranslate nohighlight">\(x = a\)</span> i uttrykket, som svarer til å se at vi lar <span class="math notranslate nohighlight">\((x, f(x))\)</span> komme så nærme <span class="math notranslate nohighlight">\((a, f(a))\)</span> som overhode mulig, så får vi</p>
+<div class="math notranslate nohighlight">
+\[
+a^2 + a\cdot a + a^2 = 3a^2
+\]</div>
+<p>Altså blir stigningstallet til tangenten <span class="math notranslate nohighlight">\(3a^2\)</span>.</p>
+</div>
+</section>
 <section id="polynomdivisjon-og-tangenter">
-<h2>Polynomdivisjon og tangenter<a class="headerlink" href="#polynomdivisjon-og-tangenter" title="Link to this heading">#</a></h2>
+<h2>Polynomdivisjon og tangenter (*)<a class="headerlink" href="#polynomdivisjon-og-tangenter" title="Link to this heading">#</a></h2>
 <p>Vi har allerede sett at resten i polynomdivisjon med <span class="math notranslate nohighlight">\(f(x) : (x - r)\)</span> lar oss bestemme <span class="math notranslate nohighlight">\(f(r)\)</span>. Her skal vi gå et steg videre å se at resten i en bestemt polynomdivisjon kan brukes til å bestemme likningen til en tangent til grafen til polynomfunksjonen.</p>
 <div class="explore admonition">
 <p class="admonition-title">Utforsk 1</p>
@@ -715,8 +3325,8 @@ document.write(`
 f(x) = x^2 - 4x + 5.
 \]</div>
 <div class="sd-tab-set tabs-parts docutils">
-<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-0">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
 a</label><div class="sd-tab-content docutils">
 <p>Bestem likningen for tangenten til grafen til <span class="math notranslate nohighlight">\(f\)</span> i <span class="math notranslate nohighlight">\((1, f(1))\)</span> ved å bruke at <span class="math notranslate nohighlight">\(f'(x) = 2ax + b\)</span> for en andregradsfunksjon.</p>
 <div class="answer dropdown admonition">
@@ -727,8 +3337,8 @@ y = -2x + 4
 \]</div>
 </div>
 </div>
-<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-1">
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
 b</label><div class="sd-tab-content docutils">
 <p>Regn ut</p>
 <div class="math notranslate nohighlight">
@@ -762,8 +3372,8 @@ f(x) : (x - 1)^2
 f(x) = x^3 - 3x^2 - 4x + 12.
 \]</div>
 <div class="sd-tab-set tabs-parts docutils">
-<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-2">
+<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
 a</label><div class="sd-tab-content docutils">
 <p>Regn ut</p>
 <div class="math notranslate nohighlight">
@@ -777,8 +3387,8 @@ f(x) : (x - 2)^2
 </figure>
 </div>
 </div>
-<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-3">
+<input id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-5">
 b</label><div class="sd-tab-content docutils">
 <p>Bruk resultatet ditt fra <strong>a</strong> til å bestemme likningen for tangenten til grafen til <span class="math notranslate nohighlight">\(f\)</span> i <span class="math notranslate nohighlight">\((2, f(2))\)</span>.</p>
 <div class="answer dropdown admonition">
@@ -789,289 +3399,6 @@ b</label><div class="sd-tab-content docutils">
 y = -4x + 8,
 \]</div>
 <p>som er tangenten til grafen til <span class="math notranslate nohighlight">\(f\)</span> i <span class="math notranslate nohighlight">\((2, f(2))\)</span>.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<hr class="docutils" />
-<section id="den-deriverte-til-en-polynomfunksjon">
-<h2>Den deriverte til en polynomfunksjon<a class="headerlink" href="#den-deriverte-til-en-polynomfunksjon" title="Link to this heading">#</a></h2>
-<p>Når vi fant den deriverte <span class="math notranslate nohighlight">\(f'\)</span> til en andregradsfunksjon <span class="math notranslate nohighlight">\(f\)</span>, så fant vi at den deriverte var en lineær funksjon. Sagt på en annen måte: vi får et førstegradspolynom <span class="math notranslate nohighlight">\(f'(x)\)</span> når vi finner den deriverte av et andregradspolynom <span class="math notranslate nohighlight">\(f(x)\)</span>. Dette var ikke bare et sammentreff – generelt sett vil <span class="math notranslate nohighlight">\(f'(x)\)</span> være et polynom som har én grad lavere for et hvert polynom <span class="math notranslate nohighlight">\(f(x)\)</span>.</p>
-<div class="theory admonition">
-<p class="admonition-title">Den deriverte til en polynomfunksjon 1</p>
-<p>Gitt et polynom <span class="math notranslate nohighlight">\(f(x)\)</span> av grad <span class="math notranslate nohighlight">\(n\)</span>, vil den deriverte av polynomet <span class="math notranslate nohighlight">\(f'(x)\)</span> være et polynom av grad <span class="math notranslate nohighlight">\(n - 1\)</span>.</p>
-</div>
-<p>I praksis kan vi finne den deriverte algebraisk ved å følge noen bestemte regneregler som gjelder for alle polynomer.</p>
-<div class="summary admonition">
-<p class="admonition-title">Derivasjonsregler for polynomer</p>
-<dl class="simple myst">
-<dt>Regel 1</dt><dd><p>For ethvert ledd <span class="math notranslate nohighlight">\(a x^n\)</span> i et polynom <span class="math notranslate nohighlight">\(f(x)\)</span>, vil den deriverte av leddet være</p>
-</dd>
-</dl>
-<div class="math notranslate nohighlight">
-\[
-(a x^n)' = n\cdot a x^{n-1}
-\]</div>
-<dl class="simple myst">
-<dt>Regel 2</dt><dd><p>Hvert ledd i et polynom deriveres hver for seg:</p>
-</dd>
-</dl>
-<div class="math notranslate nohighlight">
-\[
-(ax^n + bx^m)' = (ax^n)' + (bx^m)'
-\]</div>
-<dl class="simple myst">
-<dt>Regel 3</dt><dd><p>Den deriverte av en konstant er null:</p>
-</dd>
-</dl>
-<div class="math notranslate nohighlight">
-\[
-C' = 0
-\]</div>
-<dl class="simple myst">
-<dt>Regel 4</dt><dd><p>Den deriverte av et lineært ledd <span class="math notranslate nohighlight">\(ax\)</span> er</p>
-</dd>
-</dl>
-<div class="math notranslate nohighlight">
-\[
-(ax)' = a
-\]</div>
-</div>
-<hr class="docutils" />
-<div class="example admonition">
-<p class="admonition-title">Eksempel 1</p>
-<p>Bestem den deriverte til</p>
-<div class="math notranslate nohighlight">
-\[
-f(x) = 2x^3 - 4x^2 + 6x - 2
-\]</div>
-<div class="solution admonition">
-<p class="admonition-title">Løsning</p>
-<div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-    f'(x) &amp;= (2x^3 - 4x^2 + 6x - 2)' \\
-    \\
-    &amp;= 2\cdot (x^3)' - 4\cdot (x^2)' + 6\cdot x' - 2' \\
-    \\
-    &amp;= 2 \cdot 3\cdot x^2 - 4\cdot 2 \cdot x^1 + 6 \cdot 1 \cdot x^0 - 0 \\
-    \\
-    &amp;= 6x^2 - 8x + 6
-\end{align*}\]</div>
-</div>
-</div>
-<hr class="docutils" />
-<div class="check admonition">
-<p class="admonition-title">Underveisoppgave 1</p>
-<p>Bestem den deriverte til</p>
-<div class="math notranslate nohighlight">
-\[
-f(x) = x^4 - 3x^2 + 5x - 1
-\]</div>
-<div class="answer dropdown admonition">
-<p class="admonition-title">Fasit</p>
-<div class="math notranslate nohighlight">
-\[
-f'(x) = 4x^3 - 6x + 5
-\]</div>
-</div>
-</div>
-</section>
-<section id="sammenheng-mellom-f-x-og-f-x">
-<h2>Sammenheng mellom <span class="math notranslate nohighlight">\(f(x)\)</span> og <span class="math notranslate nohighlight">\(f'(x)\)</span><a class="headerlink" href="#sammenheng-mellom-f-x-og-f-x" title="Link to this heading">#</a></h2>
-<p>En viktig sammenheng mellom <span class="math notranslate nohighlight">\(f(x)\)</span> og <span class="math notranslate nohighlight">\(f'(x)\)</span> er at <span class="math notranslate nohighlight">\(f'(x)\)</span> gir oss stigningstallet til tangenter til grafen til <span class="math notranslate nohighlight">\(f\)</span>. Spesielt vil vi kunne lese av fra <span class="math notranslate nohighlight">\(f'(x)\)</span> hvor</p>
-<ul class="simple">
-<li><p>Grafen til <span class="math notranslate nohighlight">\(f\)</span> er stigende eller synkende</p></li>
-<li><p>Grafen til <span class="math notranslate nohighlight">\(f\)</span> har topp- eller bunnpunkter</p></li>
-</ul>
-<div class="summary admonition">
-<p class="admonition-title">Sammenheng mellom <span class="math notranslate nohighlight">\(f(x)\)</span> og <span class="math notranslate nohighlight">\(f'(x)\)</span></p>
-<p>La <span class="math notranslate nohighlight">\(f\)</span> være en polynomfunksjon. Da vil følgende sammenhenger mellom grafene til <span class="math notranslate nohighlight">\(f\)</span> og <span class="math notranslate nohighlight">\(f'\)</span> gjelde:</p>
-<ul class="simple">
-<li><p>Punkter hvor grafen til <span class="math notranslate nohighlight">\(f'\)</span> skjærer <span class="math notranslate nohighlight">\(x\)</span>-aksen svarer til punkter på grafen til <span class="math notranslate nohighlight">\(f\)</span> hvor tangenter har stigningstall <span class="math notranslate nohighlight">\(0\)</span>.</p></li>
-<li><p>Punkter hvor <span class="math notranslate nohighlight">\(f'(x) = 0\)</span>, svarer til punkter på grafen til <span class="math notranslate nohighlight">\(f\)</span> hvor tangenter har stigningstall <span class="math notranslate nohighlight">\(0\)</span>.</p></li>
-<li><p>Grafen til <span class="math notranslate nohighlight">\(f\)</span> stiger når <span class="math notranslate nohighlight">\(f'(x) &gt; 0\)</span>.</p></li>
-<li><p>Grafen til <span class="math notranslate nohighlight">\(f\)</span> synker når <span class="math notranslate nohighlight">\(f'(x) &lt; 0\)</span>.</p></li>
-</ul>
-</div>
-<p>Ut ifra sammenhengen over, vil det i mange tilfeller være slik at punkter hvor grafen til <span class="math notranslate nohighlight">\(f'\)</span> skjærer <span class="math notranslate nohighlight">\(x\)</span>-aksen, så har grafen til <span class="math notranslate nohighlight">\(f\)</span> et ekstremalpunkt.</p>
-<div class="example admonition">
-<p class="admonition-title">Eksempel 2</p>
-<p>Grafen til en tredjegradsfunksjon <span class="math notranslate nohighlight">\(f\)</span> er vist i <a class="reference internal" href="#fig-polnyomfunksjoner-derivasjon-eksempel-2"><span class="std std-numref">Fig. 23.1</span></a>.</p>
-<figure class="align-default" id="fig-polnyomfunksjoner-derivasjon-eksempel-2">
-<a class="no-click adaptive-figure reference internal image-reference" href="../../../_images/graf4.svg"><img alt="../../../_images/graf4.svg" class="no-click adaptive-figure" src="../../../_images/graf4.svg" style="width: 80%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 23.1 </span><span class="caption-text">viser grafen til en tredjegradsfunksjon <span class="math notranslate nohighlight">\(f\)</span></span><a class="headerlink" href="#fig-polnyomfunksjoner-derivasjon-eksempel-2" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>For å forstå hvordan grafen til <span class="math notranslate nohighlight">\(f'\)</span> henger sammen med grafen til <span class="math notranslate nohighlight">\(f\)</span> kan vi</p>
-<ol class="arabic simple">
-<li><p>Tegne en fortegnslinje for <span class="math notranslate nohighlight">\(f'(x)\)</span>.</p></li>
-<li><p>Tegne grafen til <span class="math notranslate nohighlight">\(f'\)</span> ved å bruke fortegnslinjen og passe på at nullpunktene til <span class="math notranslate nohighlight">\(f'\)</span> svarer til ekstremalpunktene til <span class="math notranslate nohighlight">\(f\)</span>.</p></li>
-</ol>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-2" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-4">
-Fortegnslinje til <span class="math notranslate nohighlight">\(f'(x)\)</span></label><div class="sd-tab-content docutils">
-<figure class="align-default" id="fig-polnyomfunksjoner-derivasjon-eksempel-2-fortegnslinje">
-<a class="no-click adaptive-figure reference internal image-reference" href="../../../_images/fortegnslinje4.svg"><img alt="../../../_images/fortegnslinje4.svg" class="no-click adaptive-figure" src="../../../_images/fortegnslinje4.svg" style="width: 100%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 23.2 </span><span class="caption-text">viser fortegnslinja til <span class="math notranslate nohighlight">\(f'(x)\)</span>. Sammenhengen med grafen til <span class="math notranslate nohighlight">\(f\)</span> er at <span class="math notranslate nohighlight">\(f'(x) &gt; 0\)</span> når grafen til <span class="math notranslate nohighlight">\(f\)</span> stiger og <span class="math notranslate nohighlight">\(f'(x) &lt; 0\)</span> når grafen til <span class="math notranslate nohighlight">\(f\)</span> synker. I ekstremalpunktene til <span class="math notranslate nohighlight">\(f\)</span> er <span class="math notranslate nohighlight">\(f'(x) = 0\)</span> fordi en tangent gjennom punktet vil være horisontal og dermed ha stigningstall <span class="math notranslate nohighlight">\(0\)</span>.</span><a class="headerlink" href="#fig-polnyomfunksjoner-derivasjon-eksempel-2-fortegnslinje" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-</div>
-<input id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-5">
-Grafen til <span class="math notranslate nohighlight">\(f'\)</span></label><div class="sd-tab-content docutils">
-<figure class="align-default" id="fig-polnyomfunksjoner-derivasjon-eksempel-2-f-derivert">
-<a class="no-click adaptive-figure reference internal image-reference" href="../../../_images/f_derivert.svg"><img alt="../../../_images/f_derivert.svg" class="no-click adaptive-figure" src="../../../_images/f_derivert.svg" style="width: 80%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 23.3 </span><span class="caption-text">viser grafen til <span class="math notranslate nohighlight">\(f'\)</span>. Nullpunktene til <span class="math notranslate nohighlight">\(f'\)</span> svarer til samme <span class="math notranslate nohighlight">\(x\)</span>-koordinater som ekstremalpunktene til <span class="math notranslate nohighlight">\(f\)</span>.</span><a class="headerlink" href="#fig-polnyomfunksjoner-derivasjon-eksempel-2-f-derivert" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<hr class="docutils" />
-<section id="utledning-av-derivasjonsreglene">
-<h2>Utledning av derivasjonsreglene (*)<a class="headerlink" href="#utledning-av-derivasjonsreglene" title="Link to this heading">#</a></h2>
-<p>Vi har så langt bare påstått hva derivasjonsreglene for polynomer er. Her skal vi gå løs på å utlede noen av reglene.</p>
-<div class="explore admonition">
-<p class="admonition-title">Utforsk 2</p>
-<p>I <a class="reference internal" href="#fig-polynomer-derivasjon-utforsk-2"><span class="std std-numref">Fig. 23.4</span></a> vises grafen til en tredjegradsfunksjon <span class="math notranslate nohighlight">\(f\)</span> og en sekant som går gjennom to punkter <span class="math notranslate nohighlight">\((r, f(r))\)</span> og <span class="math notranslate nohighlight">\((x, f(x))\)</span> der <span class="math notranslate nohighlight">\(x &gt; r\)</span>.</p>
-<p>Vi antar her at <span class="math notranslate nohighlight">\(r\)</span> er et fastholdt tall, mens <span class="math notranslate nohighlight">\(x\)</span> kan variere.</p>
-<figure class="align-default" id="fig-polynomer-derivasjon-utforsk-2">
-<a class="no-click adaptive-figure reference internal image-reference" href="../../../_images/figur98.svg"><img alt="../../../_images/figur98.svg" class="no-click adaptive-figure" src="../../../_images/figur98.svg" style="width: 80%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 23.4 </span><span class="caption-text">viser grafen til en tredjegradsfunksjon <span class="math notranslate nohighlight">\(f\)</span> og en sekant gjennom to punkter <span class="math notranslate nohighlight">\((r, f(r))\)</span> og <span class="math notranslate nohighlight">\((x, f(x))\)</span> der <span class="math notranslate nohighlight">\(x &gt; r\)</span>.</span><a class="headerlink" href="#fig-polynomer-derivasjon-utforsk-2" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<div class="sd-tab-set tabs-parts docutils">
-<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-3" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-6">
-a</label><div class="sd-tab-content docutils">
-<p>Forklar at den gjennomsnittlige vekstfarten til <span class="math notranslate nohighlight">\(f\)</span> i intervallet <span class="math notranslate nohighlight">\([r, x]\)</span> er gitt ved</p>
-<div class="math notranslate nohighlight">
-\[
-\dfrac{f(x) - f(r)}{x - r}
-\]</div>
-</div>
-<input id="sd-tab-item-7" name="sd-tab-set-3" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-7">
-b</label><div class="sd-tab-content docutils">
-<p>Vi lar først <span class="math notranslate nohighlight">\(f(x) = x^3\)</span>.</p>
-<p>Utfør polynomdivisjonen</p>
-<div class="math notranslate nohighlight">
-\[
-K(x) = \dfrac{f(x) - f(r)}{x - r}
-\]</div>
-<p>for å finne en formel <span class="math notranslate nohighlight">\(K(x)\)</span> for den gjennomsnittlige vekstfarten til <span class="math notranslate nohighlight">\(f\)</span> i intervallet <span class="math notranslate nohighlight">\([r, x]\)</span>.</p>
-<div class="answer dropdown admonition">
-<p class="admonition-title">Fasit</p>
-<div class="math notranslate nohighlight">
-\[
-K(x) = x^2 + rx + r^2. 
-\]</div>
-</div>
-<div class="answer dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<p>Vi utfører polynomdivisjonen hvor <span class="math notranslate nohighlight">\(f(x) = x^3\)</span> og <span class="math notranslate nohighlight">\(f(r) = r^3\)</span></p>
-<figure class="align-default">
-<a class="no-click adaptive-figure reference internal image-reference" href="../../../_images/b22.svg"><img alt="../../../_images/b22.svg" class="no-click adaptive-figure" src="../../../_images/b22.svg" style="width: 80%;" /></a>
-</figure>
-<p>som betyr at kvotienten er</p>
-<div class="math notranslate nohighlight">
-\[
-K(x) = x^2 + rx + r^2. 
-\]</div>
-<p>Denne funksjonen beskriver den gjennomsnittlige vekstfarten til <span class="math notranslate nohighlight">\(f\)</span> i et intervall <span class="math notranslate nohighlight">\([r, x]\)</span>.</p>
-</div>
-</div>
-<input id="sd-tab-item-8" name="sd-tab-set-3" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-8">
-c</label><div class="sd-tab-content docutils">
-<p>Den momentane vekstfarten til <span class="math notranslate nohighlight">\(f(x) = x^3\)</span> i punktet <span class="math notranslate nohighlight">\(r\)</span> svarer i praksis til at vi lar <span class="math notranslate nohighlight">\(x = r\)</span> i formelen for <span class="math notranslate nohighlight">\(K(x)\)</span>. Bruk dette til å bestemme en formel for <span class="math notranslate nohighlight">\(f'(r)\)</span>.</p>
-<div class="answer dropdown admonition">
-<p class="admonition-title">Fasit</p>
-<div class="math notranslate nohighlight">
-\[
-f'(r) = 3r^2. 
-\]</div>
-</div>
-<div class="solution dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<p>Vi har at <span class="math notranslate nohighlight">\(K(x)\)</span> gir den gjennomsnittlige vekstfarten i <span class="math notranslate nohighlight">\([r, x]\)</span>. For å finne den momentane vekstfarten i <span class="math notranslate nohighlight">\(r\)</span>, lar vi bare <span class="math notranslate nohighlight">\(x = r\)</span> siden da beskriver vi stigningen i ett punkt. Da får vi:</p>
-<div class="math notranslate nohighlight">
-\[
-K(r) = r^2 + r\cdot r + r^2 = 3r^2.
-\]</div>
-<p>Siden dette er den momentane vekstfarten i <span class="math notranslate nohighlight">\((r, f(r))\)</span>, betyr dette at</p>
-<div class="math notranslate nohighlight">
-\[
-f'(r) = 3r^2. 
-\]</div>
-</div>
-</div>
-<input id="sd-tab-item-9" name="sd-tab-set-3" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-9">
-d</label><div class="sd-tab-content docutils">
-<p>Vi lar i stedet <span class="math notranslate nohighlight">\(f(x) = ax^3\)</span>.</p>
-<p>Bestem formelen for <span class="math notranslate nohighlight">\(K(x)\)</span> nå.</p>
-<div class="answer dropdown admonition">
-<p class="admonition-title">Fasit</p>
-<div class="math notranslate nohighlight">
-\[
-K(x) = a(x^2 + rx + r^2).
-\]</div>
-</div>
-<div class="solution dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<p>Hvis <span class="math notranslate nohighlight">\(f(x) = ax^3\)</span>, får vi</p>
-<div class="math notranslate nohighlight">
-\[
-f(x) = ax^3 \quad \text{og} \quad f(r) = ar^3.
-\]</div>
-<p>som betyr at</p>
-<div class="math notranslate nohighlight">
-\[
-K(x) = \dfrac{f(x) - f(r)}{x - r} = \dfrac{ax^3 - ar^3}{x - r} = \dfrac{a(x^3 - r^3)}{x - r} = a \cdot \dfrac{x^3 - r^3}{x - r}
-\]</div>
-<p>Siden vi allerede har funnet at</p>
-<div class="math notranslate nohighlight">
-\[
-(x^3 - r^3) : (x - r) = x^2 + rx + r^2,
-\]</div>
-<p>får vi at</p>
-<div class="math notranslate nohighlight">
-\[
-K(x) = a(x^2 + rx + r^2).
-\]</div>
-</div>
-</div>
-<input id="sd-tab-item-10" name="sd-tab-set-3" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-10">
-e</label><div class="sd-tab-content docutils">
-<p>Bruk svaret ditt fra <strong>d</strong> til å bestemme en formel for <span class="math notranslate nohighlight">\(f'(r)\)</span> når <span class="math notranslate nohighlight">\(f(x) = ax^3\)</span>.</p>
-<div class="answer dropdown admonition">
-<p class="admonition-title">Fasit</p>
-<div class="math notranslate nohighlight">
-\[
-f'(r) = 3ar^2.
-\]</div>
-</div>
-<div class="solution dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<p>Vi har at</p>
-<div class="math notranslate nohighlight">
-\[
-K(x) = a(x^2 + rx + r^2).
-\]</div>
-<p>Siden <span class="math notranslate nohighlight">\(K(x)\)</span> gir gjennomsnittlig vekstfart i <span class="math notranslate nohighlight">\([r, x]\)</span>, vil <span class="math notranslate nohighlight">\(K(r)\)</span> gi momentan vekstfart i <span class="math notranslate nohighlight">\((r, f(r))\)</span>. Dermed får vi:</p>
-<div class="math notranslate nohighlight">
-\[
-f'(r) = a \cdot (r^2 + r\cdot r + r^2) = 3ar^2.
-\]</div>
 </div>
 </div>
 </div>
@@ -1145,10 +3472,14 @@ f'(r) = a \cdot (r^2 + r\cdot r + r^2) = 3ar^2.
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polynomdivisjon-og-tangenter">Polynomdivisjon og tangenter</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#den-deriverte-til-en-polynomfunksjon">Den deriverte til en polynomfunksjon</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sammenheng-mellom-f-x-og-f-x">Sammenheng mellom <span class="math notranslate nohighlight">\(f(x)\)</span> og <span class="math notranslate nohighlight">\(f'(x)\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#likningen-til-en-tangent">Likningen til en tangent</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sammenheng-mellom-f-x-og-f-x">Sammenheng mellom <span class="math notranslate nohighlight">\(f(x)\)</span> og <span class="math notranslate nohighlight">\(f'(x)\)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ekstremalpunkter-til-f-og-nullpunkter-til-f">Ekstremalpunkter til <span class="math notranslate nohighlight">\(f\)</span> og nullpunkter til <span class="math notranslate nohighlight">\(f'\)</span></a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utledning-av-derivasjonsreglene">Utledning av derivasjonsreglene (*)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polynomdivisjon-og-tangenter">Polynomdivisjon og tangenter (*)</a></li>
 </ul>
   </nav></div>
 

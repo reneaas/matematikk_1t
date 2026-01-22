@@ -14,8 +14,8 @@ Funksjonsdrøfting handler om å finne ut alt om grafen til en funksjon $f$ ved 
 
 :::::::::::::::{summary} Stasjonære punkter
 Et **stasjonært punkt** på grafen til $f$ er et punkt der $f'(x) = 0$. Det finnes tre typer stasjonære punkter:
-1. **Bunnpunkt**: Den deriverte er positiv før og negativ etter punktet.
-2. **Toppunkt**: Den deriverte er negativ før og positiv etter punktet.
+1. **Bunnpunkt**: Den deriverte er negativ før og positiv etter punktet.
+2. **Toppunkt**: Den deriverte er positiv før og negativ etter punktet.
 3. **Terrassepunkt**: Den deriverte har samme fortegn før og etter punktet.
 
 Se figuren nedenfor.
