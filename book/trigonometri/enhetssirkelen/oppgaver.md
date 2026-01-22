@@ -7,6 +7,26 @@ level: 1
 ---
 Nedenfor vises et interaktivt vindu hvor enhetssirkelen er tegnet inn med en vinkel $v$ som kan varieres.
 
+
+:::{interactive-graph} 
+interactive-var: v, 0, 360, 36
+interactive-var-start: 0
+xmin: -1.6
+xmax: 1.6
+ymin: -1.4
+ymax: 1.4
+xstep: 0.2
+ystep: 0.2
+curve: cos(t), sin(t), (0, 2*pi), solid, blue
+point: cos(v*pi/180), sin(v*pi/180)
+text: 1.2, 1.2, "v = {v:.0f}$^\circ$", center-center
+text: cos(v*pi/180), sin(v*pi/180), "P({cos(v*pi/180):.2f}, {sin(v*pi/180):.2f})", top-right
+line-segment: (0, 0), (cos(v*pi/180), sin(v*pi/180)), red
+axis: equal
+:::
+
+
+
 :::{raw} html
 ---
 file: ./ggb/oppgaver/oppgave_1/enhetssirkelen.html
