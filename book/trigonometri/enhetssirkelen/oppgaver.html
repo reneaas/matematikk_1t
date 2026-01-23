@@ -686,6 +686,545 @@ document.write(`
 <div class="admonition exercise">
 <p class="admonition-title">Oppgave 1</p>
 <p>Nedenfor vises et interaktivt vindu hvor enhetssirkelen er tegnet inn med en vinkel <span class="math notranslate nohighlight">\(v\)</span> som kan varieres.</p>
+<figure class="adaptive-figure interactive-figure no-click align-center">
+<div class="interactive-graph no-click">
+<div class="interactive-graph-wrapper" style="max-width: 80%; margin: 0 auto; display: block;">
+    <div class="interactive-graph-container" style="display: inline-block; width: 100%;">
+        <div class="interactive-graph-display" style="text-align: center;">
+            <div id="svg-container-667e3baf" class="adaptive-figure" style="width: 100%; display: block;"></div>
+        </div>
+        <div class="interactive-graph-controls" style="padding: 8px 0; text-align: center;">
+            <div style="display: flex; align-items: center; gap: 10px; max-width: 600px; margin: 0 auto;">
+                <span style="font-family: monospace; min-width: 40px; text-align: right; font-size: 14px;">0.00</span>
+                <input type="range" 
+                       id="interactive-slider-667e3baf"
+                       class="interactive-slider"
+                       min="0" 
+                       max="36" 
+                       value="0"
+                       step="1"
+                       style="flex: 1; cursor: pointer; -webkit-appearance: none; appearance: none; height: 8px; border-radius: 5px; background: #ddd; outline: none;">
+                <span style="font-family: monospace; min-width: 40px; text-align: left; font-size: 14px;">360.00</span>
+            </div>
+            <div style="margin-top: 10px; font-family: monospace; font-size: 16px; font-weight: bold;">
+                <span id="interactive-value-667e3baf">v = 0.00</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.interactive-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #2196F3;
+    cursor: pointer;
+}
+
+.interactive-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #2196F3;
+    cursor: pointer;
+    border: none;
+}
+</style>
+
+<script>
+(function() {
+    const uniqueId = '667e3baf';
+    const baseSvgUrl = '../../../_static/interactive/interactive_5f6f3a3d9ab6/base.svg';
+    const deltasJsonUrl = '../../../_static/interactive/interactive_5f6f3a3d9ab6/deltas.json';
+    const values = [0.0000000000,10.0000000000,20.0000000000,30.0000000000,40.0000000000,50.0000000000,60.0000000000,70.0000000000,80.0000000000,90.0000000000,100.0000000000,110.0000000000,120.0000000000,130.0000000000,140.0000000000,150.0000000000,160.0000000000,170.0000000000,180.0000000000,190.0000000000,200.0000000000,210.0000000000,220.0000000000,230.0000000000,240.0000000000,250.0000000000,260.0000000000,270.0000000000,280.0000000000,290.0000000000,300.0000000000,310.0000000000,320.0000000000,330.0000000000,340.0000000000,350.0000000000,360.0000000000];
+    const varName = 'v';
+    
+    console.log('Initializing delta graph:', uniqueId);
+    console.log('Base SVG URL:', baseSvgUrl);
+    console.log('Deltas JSON URL:', deltasJsonUrl);
+    
+    const container = document.getElementById('svg-container-' + uniqueId);
+    const slider = document.getElementById('interactive-slider-' + uniqueId);
+    const valueDisplay = document.getElementById('interactive-value-' + uniqueId);
+    
+    if (!container) {
+        console.error('Container not found:', 'svg-container-' + uniqueId);
+        return;
+    }
+    if (!slider) {
+        console.error('Slider not found:', 'interactive-slider-' + uniqueId);
+        return;
+    }
+
+    function latexForVarName(name) {
+        const greek = {
+            alpha: '\\alpha', beta: '\\beta', gamma: '\\gamma', delta: '\\delta',
+            epsilon: '\\epsilon', zeta: '\\zeta', eta: '\\eta', theta: '\\theta',
+            iota: '\\iota', kappa: '\\kappa', lambda: '\\lambda', mu: '\\mu',
+            nu: '\\nu', xi: '\\xi', pi: '\\pi', rho: '\\rho', sigma: '\\sigma',
+            tau: '\\tau', upsilon: '\\upsilon', phi: '\\phi', chi: '\\chi',
+            psi: '\\psi', omega: '\\omega',
+            varphi: '\\varphi', vartheta: '\\vartheta'
+        };
+        if (greek[name]) return greek[name];
+        if (name.includes('_') || /\d/.test(name)) return name;
+        if (/^[A-Za-z]$/.test(name)) return name;
+        return name;
+    }
+
+    const varLatex = latexForVarName(varName);
+
+    function updateValueDisplay(index) {
+        const v = values[index];
+        const vStr = (typeof v === 'number' ? v.toFixed(2) : String(v));
+        if (window.katex && valueDisplay) {
+            try {
+                valueDisplay.innerHTML = window.katex.renderToString(varLatex + ' = ' + vStr, {
+                    throwOnError: false,
+                    displayMode: false,
+                });
+                return;
+            } catch (e) {
+                // fall through
+            }
+        }
+        valueDisplay.textContent = varName + ' = ' + vStr;
+    }
+    
+    let svgDoc = null;
+    let baseSvgTemplate = null;
+    let deltas = null;
+    let svgElements = {};  // Cache of ID -> element
+    let pendingFrame = null;
+
+    // Safari performance: keep one mounted SVG and revert only the elements
+    // changed by the previous frame, instead of re-mounting the full SVG.
+    let lastFrameIndex = null;
+    let baseElementsById = {};   // ID -> element in baseSvgTemplate
+    let baseOuterHtmlById = {};  // ID -> base outerHTML string
+
+    function styleSvg(svg) {
+        if (!svg) return;
+
+        // Safari can render SVGs blurry if they are scaled from fixed width/height
+        // attributes. Prefer viewBox-driven scaling with CSS sizing.
+        try {
+            svg.removeAttribute('width');
+            svg.removeAttribute('height');
+        } catch (e) {
+            // ignore
+        }
+
+        try {
+            svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+        } catch (e) {
+            // ignore
+        }
+
+        svg.style.width = '100%';
+        const h = 'auto';
+        if (h && h !== 'auto') {
+            svg.style.height = h;
+        } else {
+            svg.style.height = 'auto';
+        }
+        svg.style.display = 'block';
+
+        // Rendering hints (helps Safari in some cases)
+        svg.style.shapeRendering = 'geometricPrecision';
+        svg.style.textRendering = 'geometricPrecision';
+        svg.classList.add('adaptive-figure');
+    }
+    
+    console.log('Starting fetch...');
+    
+    // Load base SVG and deltas
+    Promise.all([
+        fetch(baseSvgUrl).then(r => {
+            console.log('Base SVG response:', r.status, r.statusText);
+            if (!r.ok) throw new Error('Failed to load base SVG: ' + r.status + ' ' + r.statusText);
+            return r.text();
+        }),
+        fetch(deltasJsonUrl).then(r => {
+            console.log('Deltas JSON response:', r.status, r.statusText);
+            if (!r.ok) throw new Error('Failed to load deltas JSON: ' + r.status + ' ' + r.statusText);
+            return r.json();
+        })
+    ]).then(([svgText, deltasData]) => {
+        console.log('SVG text length:', svgText.length);
+        console.log('Deltas count:', deltasData.length);
+        
+        // Remove XML declaration, DOCTYPE, and metadata with undeclared namespaces
+        svgText = svgText.replace(/<\?xml[^?]*\?>/g, '');
+        svgText = svgText.replace(/<!DOCTYPE[^>]*>/g, '');
+        svgText = svgText.replace(/<metadata>[\s\S]*?<\/metadata>/g, '');
+        
+        // Parse as SVG XML to ensure correct namespaces/paint behavior.
+        // (Parsing as text/html can turn the SVG into plain HTML elements,
+        // especially if serialization introduces prefixed tags like ns0:svg.)
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(svgText, 'image/svg+xml');
+
+        const parserError = doc.querySelector('parsererror');
+        if (parserError) {
+            console.error('SVG XML parse error:', parserError.textContent);
+            throw new Error('Failed to parse base.svg as SVG XML');
+        }
+
+        const svgElement = doc.documentElement;
+        if (!svgElement || svgElement.localName !== 'svg') {
+            console.error('No SVG element found after parsing');
+            throw new Error('No SVG element found in loaded content');
+        }
+
+        // Import the SVG into the current document
+        const importedSvg = document.importNode(svgElement, true);
+
+        container.innerHTML = '';
+        container.appendChild(importedSvg);
+        svgDoc = importedSvg;
+        deltas = deltasData;
+        
+        console.log('SVG element found:', !!svgDoc);
+        
+        if (!svgDoc) {
+            throw new Error('No SVG element found in loaded content');
+        }
+        
+        console.log('Styling SVG...');
+        styleSvg(svgDoc);
+
+        // Keep an immutable template of the base SVG.
+        // Deltas are computed relative to this base frame.
+        baseSvgTemplate = importedSvg.cloneNode(true);
+        buildElementCache();
+        buildBaseCache();
+        
+        console.log('Rendering initial frame...');
+        renderFrame(parseInt(slider.value));
+        
+        console.log('Attaching event listeners...');
+        console.log('SVG dimensions:', svgDoc.getBoundingClientRect());
+        console.log('Container dimensions:', container.getBoundingClientRect());
+        
+        // Attach event listeners AFTER SVG is loaded
+        slider.addEventListener('input', updateFrame);
+        slider.addEventListener('change', updateFrame);
+        slider.addEventListener('touchmove', updateFrame);
+        
+        // Keyboard navigation
+        slider.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') {
+                e.preventDefault();
+                this.value = Math.max(0, parseInt(this.value) - 1);
+                updateFrame();
+            } else if (e.key === 'ArrowRight' || e.key === 'ArrowUp') {
+                e.preventDefault();
+                this.value = Math.min(36, parseInt(this.value) + 1);
+                updateFrame();
+            }
+        });
+        
+        console.log('Delta-based graph loaded:', uniqueId, deltas.length, 'frames');
+    }).catch(err => {
+        console.error('Failed to load delta graph:', err);
+        container.innerHTML = '<p style="color: red; padding: 20px;">Failed to load interactive graph: ' + err.message + '</p>';
+    });
+    
+    function buildElementCache() {
+        if (!svgDoc) return;
+        svgElements = {};
+        svgDoc.querySelectorAll('[id]').forEach(elem => {
+            svgElements[elem.id] = elem;
+        });
+    }
+
+    function buildBaseCache() {
+        if (!baseSvgTemplate) return;
+        baseElementsById = {};
+        baseOuterHtmlById = {};
+        baseSvgTemplate.querySelectorAll('[id]').forEach(elem => {
+            baseElementsById[elem.id] = elem;
+            try {
+                baseOuterHtmlById[elem.id] = elem.outerHTML;
+            } catch (e) {
+                // ignore
+            }
+        });
+    }
+
+    function parseNamespacedAttrForRevert(attr) {
+        // Matches the encoding produced by Python-side delta generation.
+        if (!attr || attr.length < 3) return null;
+
+        const LBRACE = 123;
+        const RBRACE = 125;
+        if (attr.charCodeAt(0) !== LBRACE) return null;
+
+        // Double-brace encoding: starts with '{'
+        if (attr.length >= 4 && attr.charCodeAt(1) === LBRACE) {
+            for (let i = 2; i < attr.length - 1; i++) {
+                if (attr.charCodeAt(i) === RBRACE && attr.charCodeAt(i + 1) === RBRACE) {
+                    const ns = attr.slice(2, i);
+                    const local = attr.slice(i + 2);
+                    if (ns && local) return { ns, local };
+                    return null;
+                }
+            }
+            return null;
+        }
+
+        // Clark notation: starts with ' and has a single closing '
+        const close = attr.indexOf(String.fromCharCode(RBRACE));
+        if (close <= 1) return null;
+        const ns = attr.slice(1, close);
+        const local = attr.slice(close + 1);
+        if (!ns || !local) return null;
+        return { ns, local };
+    }
+
+    function replaceWithOuterHtmlForRevert(existingElem, outerHtml) {
+        try {
+            const parser = new DOMParser();
+            const wrapper = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">' + outerHtml + '</svg>';
+            const doc = parser.parseFromString(wrapper, 'image/svg+xml');
+            const parserError = doc.querySelector('parsererror');
+            if (parserError) return false;
+            const replacement = doc.documentElement.firstElementChild;
+            if (!replacement) return false;
+            const imported = document.importNode(replacement, true);
+            existingElem.replaceWith(imported);
+            return true;
+        } catch (e) {
+            return false;
+        }
+    }
+
+    function mountFreshBaseSvg() {
+        // IMPORTANT: Deltas are base-relative (not incremental).
+        // To support random access and ensure frame 0 correctly reverts changes,
+        // we must start from a clean base SVG on every render.
+        if (!baseSvgTemplate) return;
+        const fresh = baseSvgTemplate.cloneNode(true);
+        container.innerHTML = '';
+        container.appendChild(fresh);
+        svgDoc = fresh;
+
+        styleSvg(svgDoc);
+
+        buildElementCache();
+    }
+
+    function revertLastFrameToBase() {
+        if (lastFrameIndex === null) return;
+        if (!deltas || lastFrameIndex < 0 || lastFrameIndex >= deltas.length) {
+            lastFrameIndex = null;
+            return;
+        }
+
+        const lastDelta = deltas[lastFrameIndex] || {};
+        const changesByElem = lastDelta.changes || {};
+
+        let needFullReset = false;
+        let didReplaceOuterHtml = false;
+
+        for (const [elemId, changes] of Object.entries(changesByElem)) {
+            const liveElem = svgElements[elemId];
+            const baseElem = baseElementsById[elemId];
+            if (!liveElem || !baseElem) {
+                needFullReset = true;
+                break;
+            }
+
+            if (Object.prototype.hasOwnProperty.call(changes, 'outerHTML')) {
+                const baseOuter = baseOuterHtmlById[elemId];
+                if (!baseOuter) {
+                    needFullReset = true;
+                    break;
+                }
+                const ok = replaceWithOuterHtmlForRevert(liveElem, baseOuter);
+                if (!ok) {
+                    needFullReset = true;
+                    break;
+                }
+                didReplaceOuterHtml = true;
+                continue;
+            }
+
+            for (const attr of Object.keys(changes)) {
+                if (attr === 'textContent') {
+                    liveElem.textContent = baseElem.textContent || '';
+                } else if (attr === 'tailContent') {
+                    // skip
+                } else {
+                    const nsInfo = parseNamespacedAttrForRevert(attr);
+                    const baseVal = nsInfo
+                        ? baseElem.getAttributeNS(nsInfo.ns, nsInfo.local)
+                        : baseElem.getAttribute(attr);
+
+                    if (baseVal === null || baseVal === undefined) {
+                        if (nsInfo) liveElem.removeAttributeNS(nsInfo.ns, nsInfo.local);
+                        else liveElem.removeAttribute(attr);
+                    } else {
+                        if (nsInfo) liveElem.setAttributeNS(nsInfo.ns, nsInfo.local, baseVal);
+                        else liveElem.setAttribute(attr, baseVal);
+                    }
+                }
+            }
+        }
+
+        if (needFullReset) {
+            mountFreshBaseSvg();
+        } else if (didReplaceOuterHtml) {
+            buildElementCache();
+        }
+
+        lastFrameIndex = null;
+    }
+    
+    function applyDelta(frameIndex) {
+        console.log('applyDelta called with frameIndex:', frameIndex);
+        if (!deltas || frameIndex < 0 || frameIndex >= deltas.length) return;
+        
+        const delta = deltas[frameIndex];
+        console.log('Applying delta with', Object.keys(delta.changes).length, 'element changes');
+        
+        let didReplaceOuterHtml = false;
+
+        function parseNamespacedAttr(attr) {
+            // Supports:
+            // - Clark notation from lxml/ElementTree (namespace + localname)
+            // - Double-brace encoding (JSON-safe alternative)
+            //
+            // NOTE: This string is emitted from a Python f-string; avoid
+            // literal brace characters in this JS source.
+
+            if (!attr || attr.length < 3) return null;
+
+            const LBRACE = 123; // left brace
+            const RBRACE = 125; // right brace
+
+            if (attr.charCodeAt(0) !== LBRACE) return null;
+
+            // Double-brace encoding: starts with '{'
+            if (attr.length >= 4 && attr.charCodeAt(1) === LBRACE) {
+                // Find the first occurrence of '}' after position 2
+                for (let i = 2; i < attr.length - 1; i++) {
+                    if (attr.charCodeAt(i) === RBRACE && attr.charCodeAt(i + 1) === RBRACE) {
+                        const ns = attr.slice(2, i);
+                        const local = attr.slice(i + 2);
+                        if (ns && local) return { ns, local };
+                        return null;
+                    }
+                }
+                return null;
+            }
+
+            // Clark notation: starts with ' and has a single closing '
+            const close = attr.indexOf(String.fromCharCode(RBRACE));
+            if (close <= 1) return null;
+            const ns = attr.slice(1, close);
+            const local = attr.slice(close + 1);
+            if (!ns || !local) return null;
+            return { ns, local };
+        }
+
+        function replaceWithOuterHtml(existingElem, outerHtml) {
+            try {
+                // Parse fragment by wrapping it in an <svg> root so namespaces work.
+                const parser = new DOMParser();
+                const wrapper = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">' + outerHtml + '</svg>';
+                const doc = parser.parseFromString(wrapper, 'image/svg+xml');
+                const parserError = doc.querySelector('parsererror');
+                if (parserError) {
+                    console.error('outerHTML parse error:', parserError.textContent);
+                    return;
+                }
+                const replacement = doc.documentElement.firstElementChild;
+                if (!replacement) return;
+                const imported = document.importNode(replacement, true);
+                existingElem.replaceWith(imported);
+                didReplaceOuterHtml = true;
+            } catch (e) {
+                console.error('Failed to apply outerHTML delta:', e);
+            }
+        }
+
+        // Apply each change
+        for (const [elemId, changes] of Object.entries(delta.changes)) {
+            const elem = svgElements[elemId];
+            if (!elem) continue;
+            
+            for (const [attr, value] of Object.entries(changes)) {
+                if (attr === 'outerHTML') {
+                    replaceWithOuterHtml(elem, value);
+                } else if (attr === 'textContent') {
+                    elem.textContent = value;
+                } else if (attr === 'tailContent') {
+                    // Tail text is text after the element (rare in SVG)
+                    // For now, skip this
+                } else if (value === null) {
+                    // Handle namespaced attributes for removal
+                    const nsInfo = parseNamespacedAttr(attr);
+                    if (nsInfo) {
+                        elem.removeAttributeNS(nsInfo.ns, nsInfo.local);
+                    } else {
+                        elem.removeAttribute(attr);
+                    }
+                } else {
+                    // Handle namespaced attributes (xlink and similar).
+                    const nsInfo = parseNamespacedAttr(attr);
+                    if (nsInfo) {
+                        elem.setAttributeNS(nsInfo.ns, nsInfo.local, value);
+                    } else {
+                        elem.setAttribute(attr, value);
+                    }
+                }
+            }
+        }
+
+        // If we replaced any subtree, rebuild cache so subsequent deltas can
+        // find newly created nodes by id.
+        if (didReplaceOuterHtml) {
+            buildElementCache();
+        }
+    }
+
+    function renderFrame(frameIndex) {
+        if (!svgDoc || !deltas) return;
+        if (!baseSvgTemplate) return;
+
+        if (!svgElements || Object.keys(svgElements).length === 0) buildElementCache();
+        if (!baseElementsById || Object.keys(baseElementsById).length === 0) buildBaseCache();
+
+        if (lastFrameIndex !== null) {
+            revertLastFrameToBase();
+        }
+
+        applyDelta(frameIndex);
+        lastFrameIndex = frameIndex;
+        updateValueDisplay(frameIndex);
+    }
+    
+    function updateFrame() {
+        const index = parseInt(slider.value);
+        console.log('updateFrame called, slider value:', index);
+        
+        if (pendingFrame !== null) {
+            cancelAnimationFrame(pendingFrame);
+        }
+        
+        pendingFrame = requestAnimationFrame(() => {
+            renderFrame(index);
+            pendingFrame = null;
+        });
+    }
+})();
+</script>
+</div></figure>
 <!DOCTYPE html>
 <html lang="en">
 <head>
