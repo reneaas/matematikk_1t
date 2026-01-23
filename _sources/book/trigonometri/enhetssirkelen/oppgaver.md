@@ -9,20 +9,22 @@ Nedenfor vises et interaktivt vindu hvor enhetssirkelen er tegnet inn med en vin
 
 
 :::{interactive-graph} 
-interactive-var: v, 0, 360, 36
+interactive-var: v, 0, 360, 37
 interactive-var-start: 0
-xmin: -1.6
-xmax: 1.6
-ymin: -1.4
-ymax: 1.4
-xstep: 0.2
-ystep: 0.2
+xmin: -2
+xmax: 2
+ymin: -2
+ymax: 2
+xstep: 1
+ystep: 1
 curve: cos(t), sin(t), (0, 2*pi), solid, blue
 point: cos(v*pi/180), sin(v*pi/180)
 text: 1.2, 1.2, "v = {v:.0f}$^\circ$", center-center
-text: cos(v*pi/180), sin(v*pi/180), "P({cos(v*pi/180):.2f}, {sin(v*pi/180):.2f})", top-right
-line-segment: (0, 0), (cos(v*pi/180), sin(v*pi/180)), red
 axis: equal
+angle-arc: (0, 0), 0.3, 0, v, solid, red
+line-segment: (0, 0), (cos(v*pi/180), sin(v*pi/180)), solid, red
+text: cos(v*pi/180), sin(v*pi/180) + 0.1, "({cos(v*pi/180):.2f}, {sin(v*pi/180):.2f})", top-left
+nocache: 
 :::
 
 
