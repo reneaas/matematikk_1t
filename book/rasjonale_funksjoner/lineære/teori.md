@@ -57,7 +57,7 @@ ticks: off
 hline: 1, dashed
 vline: 2, dashed
 annotate: (-6, 5), (-1, 1), "Horisontal asymptote $y = a$", -0.3
-annotate: (3, -5), (2, -2), "Vertikal asymptote $x = c$", 0.3
+annotate: (2.5, -5), (2, -2), "Vertikal asymptote $x = c$", 0.3
 point: (-1, 0)
 annotate: (-5, -3), (-1, 0), "Nullpunkt $x = b$"
 :::
@@ -67,11 +67,83 @@ Grafen til $f$ er en **hyperbel** med
 * En horisontal asymptote med likningen $y = a$.
 * En vertikal asymptote med likningen $x = c$.
 * Et nullpunkt i $x = b$. 
-* En definisjonsmengde $D_f = \mathbb{R} \setminus \{c\}$.
-* En verdimengde $V_f = \mathbb{R} \setminus \{a\}$.
 
 
 :::::
+
+
+
+
+:::::::::::::::{exercise} Underveisoppgave 1
+I den interaktive figuren nedenfor vises grafen til en rasjonal funksjon 
+
+$$
+f(x) = \dfrac{a(x - b)}{x - c}
+$$
+
+:::{interactive-graph} 
+interactive-var: a, -4, 4, 9
+interactive-var: b, -4, 4, 9
+interactive-var: c, -4, 4, 9
+interactive-var-start: a=1, b=2, c=-1
+function: a*(x - b) / (x - c), f, (-10, 10) \ {c}
+xmin: -8
+xmax: 8
+ymin: -8
+ymax: 8
+hline: a, dashed
+vline: c, dashed
+point: (b, 0)
+width: 70%
+:::
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Bestem $a$, $b$ og $c$ slik at grafen til $f$ har 
+
+1. En horisontal asymptote med likningen $y = 2$.
+2. En vertikal asymptote med likningen $x = -1$.
+3. Et nullpunkt i $x = 3$.
+
+
+::::{answer}
+$$
+a = 2 \and b = 3 \and c = -1
+$$
+::::
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Bestem $a$, $b$ og $c$ slik at grafen til $f$ har 
+
+1. En horisontal asymptote med likningen $y = -1$.
+2. En vertikal asymptote med likningen $x = 2$.
+3. Skjærer $x$-aksen i $x = 1$.
+
+
+::::{answer}
+$$
+a = -1 \and b = 1 \and c = 2
+$$
+::::
+:::::::::::::
+
+
+
+
+
+::::::::::::::
+
+
+
+:::::::::::::::
+
+
 
 ---
 
@@ -162,7 +234,7 @@ Q: Hvilken funksjon hører til grafen? ![{width: 60%}](./figurer/quiz/quiz_1/spm
 ---
 
 
-:::::::::::::::{exercise} Underveisoppgave 1
+:::::::::::::::{exercise} Underveisoppgave 2
 I figuren nedenfor vises grafen til en rasjonal funksjon $f$.
 
 Bestem $f(x)$.
@@ -252,7 +324,7 @@ som betyr at vi kan lese av nullpunktet og asymptotene til $f$:
 ---
 
 
-:::::::::::::::{exercise} Underveisoppgave 2
+:::::::::::::::{exercise} Underveisoppgave 3
 En rasjonal funksjon $f$ er gitt ved 
 
 $$
