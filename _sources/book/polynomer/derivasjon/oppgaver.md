@@ -932,16 +932,13 @@ $$
 class: problem-level-3
 ---
 
-{numref}`fig-polynomfunksjoner-derivasjon-oppgave-9` viser grafen til en andregradsfunksjon $f'$. Tangenten gjennom toppunktet til $f'$ har likningen $y = 4$. 
+Figuren nedenfor viser grafen til $f'$.
 
-:::{figure} ./figurer/oppgaver/oppgave_9/graf.svg
----
-name: fig-polynomfunksjoner-derivasjon-oppgave-9
-width: 80%
-class: no-click, adaptive-figure
----
-viser grafen til en andregradsfunksjon $f'$. 
+:::{plot}
+width: 70%
+function: -x**2 + 2*x + 3, f'
 :::
+
 
 
 ::::::::::::::{tab-set}
@@ -956,7 +953,7 @@ Bestem $f'(x)$.
 class: dropdown, answer
 ---
 $$
-f'(x) = -\dfrac{4}{9}(x + 2)(x - 4)
+f'(x) = -x^2 + 2x + 3
 $$
 :::
 

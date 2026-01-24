@@ -160,7 +160,7 @@ $$
 
 Om funksjonen $g$ får du vite at
 * Grafen til $g$ har et bunnpunkt i $(1, -2)$.
-* Grafen til $g$ har en vendetangent i punktet $(3, g(3))$ med likningen $y = 5x - 11$.
+* Grafen til $g$ har en vendetangent i punktet $(3, g(3))$ med likningen $y = \dfrac{9}{2}x - \dfrac{19}{2}$.
 
 
 Bestem $g(x)$.
@@ -168,7 +168,7 @@ Bestem $g(x)$.
 
 ::::{answer}
 $$
-g(x) = -\dfrac{5}{8}x^3 + \dfrac{45}{8}x^2 - \dfrac{91}{8}x + \dfrac{35}{8}
+g(x) = -\dfrac{3}{8}x^3 + \dfrac{27}{8}x^2 - \dfrac{45}{8}x + \dfrac{5}{8}
 $$
 ::::
 
