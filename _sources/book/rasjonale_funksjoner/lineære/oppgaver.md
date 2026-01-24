@@ -2,6 +2,78 @@
 
 
 :::::::::::::::{exercise} Oppgave 1
+
+
+I den interaktive figuren nedenfor vises grafen til en rasjonal funksjon 
+
+$$
+f(x) = \dfrac{a(x - b)}{x - c}
+$$
+
+:::{interactive-graph} 
+interactive-var: a, -4, 4, 9
+interactive-var: b, -4, 4, 9
+interactive-var: c, -4, 4, 9
+interactive-var-start: a=1, b=2, c=-1
+function: a*(x - b) / (x - c), f, (-10, 10) \ {c}
+xmin: -8
+xmax: 8
+ymin: -8
+ymax: 8
+hline: a, dashed
+vline: c, dashed
+point: (b, 0)
+width: 60%
+:::
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Bestem $a$, $b$ og $c$ slik at grafen til $f$ har
+
+1. En horisontal asymptote med likningen $y = 3$
+2. En vertikal asymptote med likningen $x = -1$
+3. Et nullpunkt i $x = 2$.
+
+
+::::{answer}
+$$
+a = 3 \and b = 2 \and c = -1
+$$
+::::
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Bestem $a$, $b$ og $c$ slik at
+
+1. Grafen til $f$ har en horisontal asymptote med likningen $y = -2$.
+2. Grafen til $f$ skjærer $x$-aksen i $x = -3$.
+3. Grafen til $f$ har en vertikal asymptote med likningen $x = 4$.
+
+
+::::{answer}
+$$
+a = -2 \and b = -3 \and c = 4
+$$
+::::
+
+
+:::::::::::::
+
+
+::::::::::::::
+
+
+:::::::::::::::
+
+
+:::::::::::::::{exercise} Oppgave 2
 Ta quizen!
 
 ::::::::{quiz-2}
@@ -50,34 +122,168 @@ $$
 ::::::
 
 :::::::
+
+
+
+:::::::{quiz-question}
+Grafen til en rasjonal funksjon $f$ er vist nedenfor.
+
+:::{plot}
+width: 70%
+function: 2*(x - 3) / (x + 1), f, (-10, 10) \ {-1}
+vline: -1, dashed
+hline: 2, dashed
+point: (3, 0)
+xmin: -8
+xmax: 8
+ymin: -8
+ymax: 8
+:::
+
+Hvilket alterantiv viser $f(x)$?
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+f(x) = \dfrac{2(x - 3)}{x + 1}
+$$
+::::::
+
+
+::::::{quiz-answer}
+$$
+f(x) = \dfrac{3(x - 2)}{x + 1}
+$$
+::::::
+
+
+::::::{quiz-answer}
+$$
+f(x) = \dfrac{x - 3}{x - 2}
+$$
+::::::
+
+
+::::::{quiz-answer}
+$$
+f(x) = \dfrac{2(x + 1)}{x - 3}
+$$
+::::::
+
+
+:::::::
+
+
+
+:::::::{quiz-question}
+Grafen til en rasjonal funksjon $f$ er vist nedenfor.
+
+
+:::{plot}
+width: 70%
+function: -3 * (x + 1) / x
+vline: 0, dashed
+hline: -3, dashed
+point: (-1, 0)
+xmin: -8
+xmax: 8
+ymin: -8
+ymax: 8
+:::
+
+Hvilket alternativ viser $f(x)$?
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+f(x) = \dfrac{-3(x + 1)}{x}
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+f(x) = \dfrac{3(x + 1)}{x}
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+f(x) = \dfrac{-3(x - 1)}{x}
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+f(x) = \dfrac{-3(x + 1)}{x - 1}
+$$
+::::::
+
+
+:::::::
+
+
+:::::::{quiz-question}
+Grafen til en rasjonal funksjon $f$ er vist nedenfor.
+
+:::{plot}
+width: 70%
+function: 2*x / (x + 3)
+vline: -3, dashed
+hline: 2, dashed
+point: (0, 0)
+xmin: -8
+xmax: 8
+ymin: -8
+ymax: 8
+:::
+
+Hvilket alternativ viser $f(x)$?
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+f(x) = \dfrac{2x}{x + 3}
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+f(x) = \dfrac{2(x + 3)}{x}
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+f(x) = \dfrac{2x}{x - 3}
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+f(x) = \dfrac{(x + 3)}{2x}
+$$
+::::::
+
+
+:::::::
+
+
 ::::::::
 
 :::::::::::::::
 
-:::::::::::::::{exercise} Oppgave 1
----
-level: 1
----
-Ta quizen!
-
-:::{quiz}
-Q: Hvilket funksjonsuttrykk hører til grafen? ![{width: 60%}](./figurer/quiz/quiz_1/spm_1/graf.svg)
-+ $$f(x) = \dfrac{-(x - 1)}{x - 2}$$
-- $$f(x) = \dfrac{(x - 1)}{x - 2}$$
-- $$f(x) = \dfrac{(x + 1)}{x - 2}$$
-- $$f(x) = \dfrac{(x - 1)}{x + 2}$$
-
-Q: Hvilket funksjonsuttrykk hører til grafen? ![{width: 60%}](./figurer/quiz/quiz_1/spm_2/graf.svg)
-+ $$f(x) = \dfrac{2(x + 2)}{x + 3}$$
-- $$f(x) = \dfrac{2(x - 2)}{x - 3}$$
-- $$f(x) = \dfrac{-3(x + 2)}{x - 2}$$
-- $$f(x) = \dfrac{-3(x - 2)}{x + 2}$$
-:::
-:::::::::::::::
 
 
 
 ---
+
+
 
 :::::::::::::::{exercise} Oppgave 2
 ::::::::::::::{tab-set}
@@ -204,6 +410,276 @@ $$
 ---
 
 
+:::::::::::::::{exercise} Oppgave 3
+Ta quizen!
+
+::::::::{quiz-2}
+:::::::{quiz-question}
+Grafen til en rasjonal funksjon $f$ er vist i figuren nedenfor.
+
+
+:::{plot}
+width: 70%
+function: 2*(x - 1) / (x + 3), f
+vline: -3, dashed
+hline: 2, dashed
+point: (1, 0)
+xmin: -8
+xmax: 8
+ymin: -8
+ymax: 8
+:::
+
+Hvilket alternativ viser fortegnslinja til $f(x)$?
+
+
+::::::{quiz-answer}
+---
+correct: true
+---
+:::{signchart-2}
+width: 100%
+function: 2*(x - 1) / (x + 3), f(x)
+factors: false
+fontsize: 35
+:::
+
+::::::
+
+
+::::::{quiz-answer}
+:::{signchart-2}
+width: 100%
+function: 2*(x + 1) / (x - 3), f(x)
+factors: false
+fontsize: 35
+:::
+
+::::::
+
+::::::{quiz-answer}
+:::{signchart-2}
+width: 100%
+function: -2*(x - 1) / (x + 3), f(x)
+factors: false
+fontsize: 35
+:::
+
+::::::
+
+::::::{quiz-answer}
+:::{signchart-2}
+width: 100%
+function: -2*(x + 1) / (x - 3), f(x)
+factors: false
+fontsize: 35
+:::
+
+::::::
+
+
+
+
+
+:::::::
+
+
+:::::::{quiz-question}
+Grafen til en rasjonal funksjon $f$ vises i figuren nedenfor.
+
+:::{plot}
+width: 70%
+function: -2*(x + 3) / x, f
+vline: 0, dashed
+hline: -2, dashed
+point: (-3, 0)
+xmin: -8
+xmax: 8
+ymin: -8
+ymax: 8
+:::
+
+Hvilket alternativ viser fortegnslinja til $f(x)$?
+
+::::::{quiz-answer}
+---
+correct: true
+---
+:::{signchart-2}
+width: 100%
+function: -2*(x + 3) / x, f(x)
+factors: false
+fontsize: 35
+:::
+::::::
+
+::::::{quiz-answer}
+:::{signchart-2}
+width: 100%
+function: 2*(x + 3) / x, f(x)
+factors: false
+fontsize: 35
+:::
+::::::
+
+::::::{quiz-answer}
+:::{signchart-2}
+width: 100%
+function: -2*(x - 3) / x, f(x)
+factors: false
+fontsize: 35
+:::
+::::::
+
+::::::{quiz-answer}
+:::{signchart-2}
+width: 100%
+function: 2*(x - 3) / x, f(x)
+factors: false
+fontsize: 35
+:::
+::::::
+
+
+
+
+:::::::
+
+
+
+:::::::{quiz-question}
+Grafen til en rasjonal funksjon $f$ er vist i figuren nedenfor.
+
+:::{plot}
+width: 70%
+function: x / (x + 2), f
+vline: -2, dashed
+hline: 1, dashed
+point: (0, 0)
+xmin: -8
+xmax: 8
+ymin: -8
+ymax: 8
+:::
+
+Hvilket alternativ viser fortegnslinja til $f(x)$?
+
+::::::{quiz-answer}
+---
+correct: true
+---
+:::{signchart-2}
+width: 100%
+function: x / (x + 2), f(x)
+factors: false
+fontsize: 35
+:::
+::::::
+
+::::::{quiz-answer}
+:::{signchart-2}
+width: 100%
+function: (x + 2) / x, f(x)
+factors: false
+fontsize: 35
+:::
+::::::
+
+::::::{quiz-answer}
+:::{signchart-2}
+width: 100%
+function: -x / (x + 2), f(x)
+factors: false
+fontsize: 35
+:::
+::::::
+
+::::::{quiz-answer}
+:::{signchart-2}
+width: 100%
+function: -(x + 2) / x, f(x)
+factors: false
+fontsize: 35
+:::
+::::::
+
+
+
+:::::::
+
+
+:::::::{quiz-question}
+Grafen til en rasjonal funksjon $f$ er vist i figuren nedenfor.
+
+:::{plot}
+width: 70%
+function: -3*(x - 2) / (x - 4), f
+vline: 4, dashed
+hline: -3, dashed
+point: (2, 0)
+xmin: -2
+xmax: 14
+ymin: -8
+ymax: 8
+:::
+
+Hvilket alternativ viser fortegnslinja til $f(x)$?
+
+::::::{quiz-answer}
+---
+correct: true
+---
+:::{signchart-2}
+width: 100%
+function: -3*(x - 2) / (x - 4), f(x)
+factors: false
+fontsize: 35
+:::
+::::::
+
+::::::{quiz-answer}
+:::{signchart-2}
+width: 100%
+function: 3*(x - 2) / (x - 4), f(x)
+factors: false
+fontsize: 35
+:::
+::::::
+
+::::::{quiz-answer}
+:::{signchart-2}
+width: 100%
+function: -3*(x + 2) / (x - 4), f(x)
+factors: false
+fontsize: 35
+:::
+::::::
+
+::::::{quiz-answer}
+:::{signchart-2}
+width: 100%
+function: 3*(x + 2) / (x - 4), f(x)
+factors: false
+fontsize: 35
+:::
+::::::
+
+
+
+:::::::
+
+
+::::::::
+
+
+
+:::::::::::::::
+
+
+
+---
+
+
 
 :::::::::::::::{exercise} Oppgave 3
 En rasjonal funksjon $f$ er gitt ved 
@@ -244,22 +720,8 @@ class: dropdown, answer
 :::::::::::::
 
 
+
 :::::::::::::{tab-item} c
-Bestem definisjonsmengden $D_f$ og verdimengden $V_f$. 
-
-:::{admonition} Fasit
----
-class: dropdown, answer
----
-$$
-D_f = \mathbb{R} \setminus \{-1\} \quad \text{og} \quad V_f = \mathbb{R} \setminus \{2\}.
-$$
-:::
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} d
 Tegn en fortegnsskjema for $f(x)$.
 
 ::::{admonition} Fasit
@@ -276,7 +738,7 @@ class: no-click, adaptive-figure
 :::::::::::::
 
 
-:::::::::::::{tab-item} e
+:::::::::::::{tab-item} d
 Lag en skisse av grafen til $f$.
 
 Skissen skal inneholde:
@@ -302,7 +764,12 @@ class: no-click, adaptive-figure
 :::::::::::::::
 
 
+
+
 ---
+
+
+
 
 
 :::::::::::::::{exercise} Oppgave 4
@@ -413,7 +880,7 @@ $$
 
 :::::::::::::{tab-item} b
 Om en rasjonal funksjon $g$ får du vite at:
-* Definisjonsmengden til $g$ er $D_g = \mathbb{R} \setminus \{-2\}$. 
+* Grafen til $g$ har en vertikal asymptote med likningen $x = -2$.
 * Grafen til $g$ skjærer $x$-aksen i $x = 2$. 
 * Grafen til $g$ skjærer $y$-aksen i $y = 6$. 
 
@@ -434,7 +901,7 @@ $$
 
 :::::::::::::{tab-item} c
 Om en rasjonal funksjon $h$ får du vite at:
-* Verdimengden til $h$ er $V_h = \mathbb{R} \setminus \{4\}$. 
+* Grafen til $f$ har en horisontal asymptote med likningen $y = 4$.
 * Grafen til $h$ skjærer $x$-aksen i $x = -3$. 
 * Grafen til $h$ har et bruddpunkt i $x = 2$. 
 
@@ -533,7 +1000,11 @@ $$
 
 :::::::::::::::
 
+
+
 ---
+
+
 
 :::::::::::::::{exercise} Oppgave 7
 
