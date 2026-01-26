@@ -9,30 +9,25 @@ Nedenfor vises et interaktivt vindu hvor enhetssirkelen er tegnet inn med en vin
 
 
 :::{interactive-graph} 
-interactive-var: v, 0, 360, 37
-interactive-var-start: 0
-xmin: -2
-xmax: 2
-ymin: -2
-ymax: 2
+interactive-var: v, 0, 360, 361
+interactive-var-start: 30
+xmin: -1.5
+xmax: 1.5
+ymin: -1.5
+ymax: 1.5
 xstep: 1
 ystep: 1
 curve: cos(t), sin(t), (0, 2*pi), solid, blue
-point: cos(v*pi/180), sin(v*pi/180)
-text: 1.2, 1.2, "v = {v:.0f}$^\circ$", center-center
-axis: equal
+point: (cos(v*pi/180), sin(v*pi/180))
+text: 0.4 * cos(v*pi/180), 0.4 * sin(v*pi/180), "$v = {v:.0f}^\circ$", center-right
 angle-arc: (0, 0), 0.3, 0, v, solid, red
 line-segment: (0, 0), (cos(v*pi/180), sin(v*pi/180)), solid, red
-text: cos(v*pi/180), sin(v*pi/180) + 0.1, "({cos(v*pi/180):.2f}, {sin(v*pi/180):.2f})", top-left
-nocache: 
-:::
-
-
-
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_1/enhetssirkelen.html
----
+text: cos(v*pi/180), sin(v*pi/180) + 0.1, "$P({cos(v*pi/180):.2f}, {sin(v*pi/180):.2f})$", top-right
+hline: sin(v*pi/180), 0, cos(v*pi/180), dashed, gray
+vline: cos(v*pi/180), 0, sin(v*pi/180), dashed, gray
+figsize: (4, 4)
+fontsize: 14
+ticks: off
 :::
 
 
@@ -283,10 +278,26 @@ level: 1
 
 Nedenfor vises et interaktivt vindu hvor enhetssirkelen er tegnet inn med en vinkel $v$ som kan varieres.
 
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_2/enhetssirkelen.html
----
+:::{interactive-graph} 
+interactive-var: v, 0, 360, 361
+interactive-var-start: 30
+xmin: -1.5
+xmax: 1.5
+ymin: -1.5
+ymax: 1.5
+xstep: 1
+ystep: 1
+curve: cos(t), sin(t), (0, 2*pi), solid, blue
+point: (cos(v*pi/180), sin(v*pi/180))
+text: 0.4 * cos(v*pi/180), 0.4 * sin(v*pi/180), "$v = {v:.0f}^\circ$", center-right
+angle-arc: (0, 0), 0.3, 0, v, solid, red
+line-segment: (0, 0), (cos(v*pi/180), sin(v*pi/180)), solid, red
+text: cos(v*pi/180), sin(v*pi/180) + 0.1, "$P({cos(v*pi/180):.2f}, {sin(v*pi/180):.2f})$", top-right
+hline: sin(v*pi/180), 0, cos(v*pi/180), dashed, gray
+vline: cos(v*pi/180), 0, sin(v*pi/180), dashed, gray
+figsize: (4, 4)
+fontsize: 14
+ticks: off
 :::
 
 
@@ -738,10 +749,26 @@ level: 2
 Nedenfor vises et interaktivt vindu hvor enhetssirkelen er tegnet inn med en vinkel $v$ som kan varieres.
 
 
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_7/enhetssirkelen.html
----
+:::{interactive-graph} 
+interactive-var: v, 0, 360, 361
+interactive-var-start: 30
+xmin: -1.5
+xmax: 1.5
+ymin: -1.5
+ymax: 1.5
+xstep: 1
+ystep: 1
+curve: cos(t), sin(t), (0, 2*pi), solid, blue
+point: (cos(v*pi/180), sin(v*pi/180))
+text: 0.4 * cos(v*pi/180), 0.4 * sin(v*pi/180), "$v = {v:.0f}^\circ$", center-right
+angle-arc: (0, 0), 0.3, 0, v, solid, red
+line-segment: (0, 0), (cos(v*pi/180), sin(v*pi/180)), solid, red
+text: cos(v*pi/180), sin(v*pi/180) + 0.1, "$P({cos(v*pi/180):.2f}, {sin(v*pi/180):.2f})$", top-right
+hline: sin(v*pi/180), 0, cos(v*pi/180), dashed, gray
+vline: cos(v*pi/180), 0, sin(v*pi/180), dashed, gray
+figsize: (4, 4)
+fontsize: 14
+ticks: off
 :::
 
 ::::::::::::::{tab-set}
@@ -827,10 +854,26 @@ level: 2
 Nedenfor vises et interaktivt vindu hvor enhetssirkelen er tegnet inn med en vinkel $v$ som kan varieres.
 
 
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_8/enhetssirkelen.html
----
+:::{interactive-graph} 
+interactive-var: v, 0, 360, 361
+interactive-var-start: 30
+xmin: -1.5
+xmax: 1.5
+ymin: -1.5
+ymax: 1.5
+xstep: 1
+ystep: 1
+curve: cos(t), sin(t), (0, 2*pi), solid, blue
+point: (cos(v*pi/180), sin(v*pi/180))
+text: 0.4 * cos(v*pi/180), 0.4 * sin(v*pi/180), "$v = {v:.0f}^\circ$", center-right
+angle-arc: (0, 0), 0.3, 0, v, solid, red
+line-segment: (0, 0), (cos(v*pi/180), sin(v*pi/180)), solid, red
+text: cos(v*pi/180), sin(v*pi/180) + 0.1, "$P({cos(v*pi/180):.2f}, {sin(v*pi/180):.2f})$", top-right
+hline: sin(v*pi/180), 0, cos(v*pi/180), dashed, gray
+vline: cos(v*pi/180), 0, sin(v*pi/180), dashed, gray
+figsize: (4, 4)
+fontsize: 14
+ticks: off
 :::
 
 
