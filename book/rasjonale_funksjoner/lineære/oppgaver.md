@@ -366,7 +366,7 @@ ymin: -8
 class: dropdown, answer
 ---
 $$
-h(x) = \dfrac{-2(x + 2)}{x - 1}
+h(x) = \dfrac{-2(x + 1)}{x - 1}
 $$
 ::::
 
