@@ -1395,97 +1395,11 @@ class: no-click, adaptive-figure
 :::::::::::::::
 
 
+
 ---
 
 
 :::::::::::::::{exercise} Oppgave 11
-
-
-Nedenfor ser du grafen til en funksjon $f$ gitt ved
-
-$$
-f(x) = \dfrac{8}{x^2 + 20}
-$$
-
-Rektangelet under grafen har hjørner i punktene $(0, 0)$, $(5, 0)$, $(5, f(5))$ og $(0, f(5))$. 
-
-:::{figure} ./figurer/oppgaver/oppgave_11/figur.svg
----
-class: no-click, adaptive-figure
-width: 70%
----
-:::
-
-
-::::::::::::::{tab-set}
----
-class: tabs-parts
----
-:::::::::::::{tab-item} a
-
-:::{cas-popup}
----
-layout: sidebar
----
-:::
-
-
-Bestem arealet av rektangelet.
-
-
-:::::::::::::
-
-
-
-:::::::::::::{tab-item} b
-
-:::{ggb-popup} 500 300
----
-layout: sidebar
-perspective: S
----
-:::
-
-
-
-Lag en systematisk oversikt med utgangspunkt i tabellen nedenfor som viser arealet av rektanglene som har hjørner i punktene $(0, 0)$, $(n, 0)$, $(n, f(n))$ og $(0, f(n))$ for $n \in \{1, 2, \ldots, 10\}$
-
-| $n$ | $f(n)$ | Areal |
-|:---:|:---:|:---:|
-| 1 | | |
-| 2 | | |
-| 3 | | |
-| 4 | | |
-| $\vdots$ | $\vdots$ | $\vdots$ |
-| 10 |  | |
-
-:::::::::::::
-
-
-
-:::::::::::::{tab-item} c
-:::{cas-popup}
----
-layout: sidebar
----
-:::
-
-
-Bestem $k \in \langle 0, \to \rangle$ slik at arealet av rektangelet hjørnene $(0, 0)$, $(k, 0)$, $(k, f(k))$ og $(0, f(k))$ er størst mulig.
-:::::::::::::
-
-
-
-::::::::::::::
-
-:::::::::::::::
-
-
-
----
-
-
-:::::::::::::::{exercise} Oppgave 12
 
 En rasjonal funksjon $f$ er gitt ved 
 

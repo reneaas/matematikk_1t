@@ -340,6 +340,64 @@ $$
 
 Nedenfor vises fire grafer der én av dem er grafen til $f$ og én av dem er grafen til $g$.
 
+
+::::{multi-plot2}
+---
+rows: 2
+cols: 2
+xmin: -10
+xmax: 10
+ymin: -10
+ymax: 10
+fontsize: 25
+lw: 3.5
+---
+:::{plot}
+width: 100%
+function: (x + 2) / (x - 3)**2
+ticks: off
+text: 5, 8, "A", center-center, bbox
+hline: 0, dashed, red
+vline: 3, dashed, red
+:::
+
+
+:::{plot}
+width: 100%
+function: -(x + 2) / (x - 3)**2
+ticks: off
+text: 5, 8, "B", center-center, bbox
+hline: 0, dashed, red
+vline: 3, dashed, red
+:::
+
+
+:::{plot}
+width: 100%
+function: (x + 2)**2 / (x - 3)
+ticks: off
+text: 5, 35, "C", center-center, bbox
+ymin: -40
+ymax: 40
+line: 1, 7, dashed, red
+vline: 3, dashed, red
+:::
+
+:::{plot}
+width: 100%
+function: (x - 2)**2 / (x + 3)
+ticks: off
+text: 5, 35, "D", center-center, bbox
+ymin: -40
+ymax: 40
+line: 1, -7, dashed, red
+vline: -3, dashed, red
+:::
+
+::::
+
+
+
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
@@ -370,12 +428,6 @@ Graf **C**.
 :::::::::::::
 ::::::::::::::
 
-::::{clickable-figure} ./figurer/oppgave_5/merged_figure.svg
----
-width: 100%
----
-::::
-
 :::::::::::::::
 
 ---
@@ -384,13 +436,93 @@ width: 100%
 ---
 class: problem-level-2
 ---
-Nedenfor vises 4 figurer der 3 av grafene hører til de rasjonale funksjonene
+Tre rasjonale funksjoner $f$, $g$ og $h$ er gitt ved
 
 $$
 f(x) = \dfrac{x^2 + 4x - 5}{x^2 - 9} \quad\quad g(x) = \dfrac{x^2 - 1}{x^2 - 9} \quad\quad h(x) = \dfrac{x^2 - 9}{x^2 - 1}
 $$
 
-Avgjør hvilke figurer som viser grafene til $f$, $g$ og $h$.
+Avgjør hvilke av figurene nedenfor som viser grafene til $f$, $g$ og $h$.
+
+
+
+::::{multi-plot2}
+---
+rows: 3
+cols: 2
+xmin: -10
+xmax: 10
+ymin: -10
+ymax: 10
+fontsize: 25
+lw: 3.5
+---
+:::{plot}
+function: (x**2 - 1) / (x**2 - 9)
+ticks: off
+hline: 1, dashed, red
+vline: -3, dashed, red
+vline: 3, dashed, red
+text: 5, 8, "A", center-center, bbox 
+:::
+
+
+:::{plot}
+function: -(x**2 - 1) / (x**2 - 9)
+ticks: off
+hline: 1, dashed, red
+vline: -3, dashed, red
+vline: 3, dashed, red
+text: 5, 8, "B", center-center, bbox
+:::
+
+
+:::{plot}
+function: (x**2 - 9) / (x**2 - 1)
+ticks: off
+hline: 1, dashed, red
+vline: -1, dashed, red
+vline: 1, dashed, red
+text: 5, 8, "C", center-center, bbox 
+ymin: -15
+ymax: 15
+:::
+
+
+:::{plot}
+function: -(x**2 - 9) / (x**2 - 1)
+ticks: off
+hline: -1, dashed, red
+vline: -1, dashed, red
+vline: 1, dashed, red
+text: 5, 8, "D", center-center, bbox
+ymin: -15
+ymax: 15
+:::
+
+:::{plot}
+function: -(x**2 + 4*x - 5) / (x**2 - 9)
+ticks: off
+hline: -1, dashed, red
+vline: -3, dashed, red
+vline: 3, dashed, red
+text: 5, 8, "E", center-center, bbox
+:::
+
+
+:::{plot}
+function: (x**2 + 4*x - 5) / (x**2 - 9) 
+ticks: off
+hline: 1, dashed, red
+vline: -3, dashed, red
+vline: 3, dashed, red
+text: 5, 8, "F", center-center, bbox
+:::
+
+
+
+::::
+
 
 
 
@@ -398,16 +530,9 @@ Avgjør hvilke figurer som viser grafene til $f$, $g$ og $h$.
 ---
 class: answer, dropdown
 ---
-* Graf **C** hører til $f$
-* Graf **B** hører til $g$
-* Graf **A** hører til $h$
-::::
-
-
-::::{clickable-figure} ./figurer/oppgave_6/merged_figure.svg
----
-width: 100%
----
+* Graf **F** viser $f$.
+* Graf **A** viser $g$.
+* Graf **C** viser $h$.
 ::::
 
 
