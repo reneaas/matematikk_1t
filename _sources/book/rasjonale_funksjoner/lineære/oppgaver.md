@@ -892,7 +892,7 @@ Bestem et mulig uttrykk for $g(x)$.
 class: answer, dropdown
 ---
 $$
-g(x) = \dfrac{6(x - 2)}{x + 2}
+g(x) = \dfrac{-6(x - 2)}{x + 2}
 $$
 ::::
 
