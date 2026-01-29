@@ -118,7 +118,7 @@ $$
 h(x) = \dfrac{(x - 2)(x + 3)}{(x + 2)(x - 2)} = \dfrac{x + 3}{x + 2}, \quad x \neq 2.
 $$
 
-Vi ser altså at $x = -2$ er et bruddpunkt for $h$ siden det er nullpunkt for både teller og nevner. Nå kan vi lete etter nullpunktene til $h$ ved å undersøke når tellerpolynomet er null:
+Vi ser altså at $x = 2$ er et bruddpunkt for $h$ siden det er nullpunkt for både teller og nevner. Nå kan vi lete etter nullpunktene til $h$ ved å undersøke når tellerpolynomet er null:
 
 $$
 x + 3 = 0 \liff x = -3.
