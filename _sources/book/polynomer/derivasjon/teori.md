@@ -218,7 +218,7 @@ Bestem likningen til tangenten til grafen til $f$ i punktet $(2, f(2))$.
 
 ::::{answer}
 $$
-y = 23x - 31
+y = 19x - 23
 $$
 ::::
 
@@ -244,13 +244,13 @@ $$
 som gir
 
 $$
-f'(2) = 3\cdot 2^2 + 4\cdot 2 - 1 = 23
+f'(2) = 3\cdot 2^2 + 4\cdot 2 - 1 = 12 + 8 - 1 = 19
 $$
 
 Setter vi dette inn i likningen for tangenten, så får vi
 
 $$
-y = 23(x - 2) + 15 = 23x - 46 + 15 = 23x - 31
+y = 19(x - 2) + 15 = 19x - 38 + 15 = 19x - 23
 $$
 ::::
 :::::::::::::::
