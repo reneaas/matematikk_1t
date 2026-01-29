@@ -157,7 +157,7 @@ class: solution, dropdown
 Vi starter med å nullpunktsfaktorisere teller- og nevnerpolynomet for å sjekke om de har noen felles lineære faktorer. Vi bruker $abc$-formelen på tellerpolynomet:
 
 $$
-x = \dfrac{1 \pm \sqrt{1 \pm 8}}{2} = \dfrac{1 \pm 3}{2} = \begin{cases} 2 \\ -1 \end{cases}
+x = \dfrac{1 \pm \sqrt{1 + 8}}{2} = \dfrac{1 \pm 3}{2} = \begin{cases} 2 \\ -1 \end{cases}
 $$
 
 Dermed kan vi nullpunktsfaktorisere tellerpolynomet som
