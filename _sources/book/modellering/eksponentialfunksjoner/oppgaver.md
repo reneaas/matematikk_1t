@@ -1,17 +1,250 @@
 # Oppgaver: Eksponentialfunksjoner
 
-:::::::::::::::{admonition} Oppgave 1
----
-class: problem-level-1
----
-Ta quizen! Flere svaralternativer kan være riktig.
 
 
-:::{raw} html
+:::::::::::::::{exercise} Oppgave 1
+
+::::{hints} Sammenheng mellom prosentvis endring og vekstfaktor
+For en prosentvis endring $p$ er vekstfaktoren $V$ gitt ved
+
+$$
+V = 1 + p
+$$
+
+For eksempel er en økning på $25\%$ er $p = 25\%$, og da er vekstfaktoren 
+
+$$
+V = 100\% + 25\% = 125\% = 1.25
+$$
+
+Ved en nedgang på $25\%$ er $p = -25\%$, og da er vekstfaktoren
+
+$$
+V = 100\% - 25\% = 75\% = 0.75
+$$
+::::
+
+
+Ta quizen!
+
+::::::::{quiz-2}
+:::::::{quiz-question}
+Hva er vekstfaktoren ved $20\%$ økning?
+
+::::::{quiz-answer}
 ---
-file: ./quiz/oppgaver/quiz_1/quiz_1.html
+correct: true
 ---
-:::
+$$
+1.20
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+0.20
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+20
+$$
+::::::
+
+
+::::::{quiz-answer}
+$$
+2.0
+$$
+::::::
+
+:::::::
+
+
+
+:::::::{quiz-question}
+Hva er vekstfaktoren ved $10\%$ nedgang?
+
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+0.90
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+0.10
+$$
+::::::
+
+
+::::::{quiz-answer}
+$$
+-0.10
+$$
+::::::
+
+
+::::::{quiz-answer}
+$$
+-0.90
+$$
+::::::
+
+
+
+
+:::::::
+
+
+
+:::::::{quiz-question}
+Hva er vekstfaktoren ved $35\%$ økning?
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+1.35
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+0.35
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+1.035
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+35
+$$
+::::::
+
+:::::::
+
+
+
+:::::::{quiz-question}
+Hva er vekstfaktoren ved $7\%$ nedgang?
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+0.93
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+-0.07
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+1.07
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+-0.93
+$$
+::::::
+
+:::::::
+
+
+
+:::::::{quiz-question}
+En vekstfaktor er $1.08$. 
+
+Hva er det prosentvise endringen?
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+8\%\ \text{økning}
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+0.08\%\ \text{økning}
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+8\%\ \text{nedgang}
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+108\%\ \text{økning}
+$$
+::::::
+
+:::::::
+
+
+
+:::::::{quiz-question}
+En vekstfaktor er $0.85$. 
+
+Hva er den prosentvise endringen?
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+15\%\ \text{nedgang}
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+85\%\ \text{økning}
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+85\%\ \text{nedgang}
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+15\%\ \text{økning}
+$$
+::::::
+
+:::::::
+
+
+
+::::::::
+
 
 :::::::::::::::
 
@@ -20,340 +253,2003 @@ file: ./quiz/oppgaver/quiz_1/quiz_1.html
 
 
 
-:::::::::::::::{admonition} Oppgave 2
+:::::::::::::::{exercise} Oppgave 2
+Bestem vekstfaktoren til de prosentvise endringene nedenfor.
+::::::::::::::{tab-set}
 ---
-class: problem-level-1
+class: tabs-parts
 ---
+:::::::::::::{tab-item} a
+$16\%$ økning.
+
+
+::::{answer}
+$$
+V = 1.16
+$$
+::::
+
+::::{solution}
+$$
+V = 100\% + 16\% = 116\% = 1.16
+$$
+::::
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+$16\%$ nedgang.
+
+
+::::{answer}
+$$
+V = 0.84
+$$
+::::
+
+
+::::{solution}
+$$
+V = 100\% - 16\% = 84\% = 0.84
+$$
+::::
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+$3.5\%$ økning.
+
+::::{answer}
+$$
+V = 1.035
+$$
+::::
+
+::::{solution}
+$$
+V = 100\% + 3.5\% = 103.5\% = 1.035
+$$
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} d
+$3.5\%$ nedgang.
+
+::::{answer}
+$$
+V = 0.965
+$$
+::::
+
+::::{solution}
+$$
+V = 100\% - 3.5\% = 96.5\% = 0.965
+$$
+::::
+
+
+:::::::::::::
+
+
+::::::::::::::
+:::::::::::::::
+
+
+---
+
+
+:::::::::::::::{exercise} Oppgave 3
+
+:::{hints} Sammenhengen mellom prosentvis endring og vekstfaktor
+For en prosentvis endring $p$ er vekstfaktoren $V$ gitt
+
+$$
+V = 1 + p
+$$
+
+Gitt en vekstfaktor har vi da at den prosentvise endringen $p$ er gitt ved
+
+$$
+p = V - 1
+$$
+
+Hvis $p > 0$ er det en prosentvis økning, og hvis $p < 0$ er det en prosentvis nedgang.
+:::
+
+
+Bestem den prosentvise endringen til vekstfaktorene nedenfor.
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+$$
+V = 1.06
+$$
+
+::::{answer}
+$6\%$ økning.
+::::
+
+::::{solution}
+$$
+V = 1 + p \liff p = V - 1 = 1.06 - 1 = 0.06 = 6\%\
+$$
+
+Altså $6\%$ økning.
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+$$
+V = 0.96
+$$
+
+
+::::{answer}
+$4\%$ nedgang.
+::::
+
+::::{solution}
+$$
+V = 1 + p \liff p = V - 1 = 0.96 - 1 = -0.04 = -4\%
+$$
+
+Altså $4\%$ nedgang.
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+$$
+V = 1.025
+$$
+
+
+::::{answer}
+$2.5\%$ økning.
+::::
+
+::::{solution}
+$$
+V = 1 + p \liff p = V - 1 = 1.025 - 1 = 0.025 = 2.5\%
+$$
+
+Altså $2.5\%$ økning.
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} d
+$$
+V = 0.68
+$$
+
+
+::::{answer}
+$32\%$ nedgang.
+::::
+
+::::{solution}
+$$
+V = 1 + p \liff p = V - 1 = 0.68 - 1 = -0.32 = -32\%
+$$
+
+Altså $32\%$ nedgang.
+::::
+
+:::::::::::::
+
+
+::::::::::::::
+
+:::::::::::::::
+
+
+---
+
+
+:::::::::::::::{exercise} Oppgave 4
+::::{hints} Sammenhengen mellom gammel og ny verdi
+La $G$ være den opprinnelige verdien og $V$ være vekstfaktoren.  
+Da er den nye verdien $N$ gitt ved
+
+$$
+N = G \cdot V
+$$
+::::
+
+Ta quizen!
+
+::::::::{quiz-2}
+:::::::{quiz-question}
+En genser koster $500$ kr og blir satt ned med $20\%$.
+
+Hvilket uttrykk kan brukes til å regne ut den nye prisen?
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+500 \cdot 0.80
+$$
+
+::::::
+
+::::::{quiz-answer}
+$$
+500 \cdot 0.2
+$$
+::::::
+
+
+::::::{quiz-answer}
+$$
+500 - 0.2
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+500 - 0.8
+$$
+::::::
+
+
+:::::::
+
+
+
+:::::::{quiz-question}
+Lønnen til Anna økte med $20\%$ fra 2024 til 2025. Nå er lønnen hennes $720~000$.
+
+Hvilket uttrykk kan brukes for å regne ut lønnen Anna hadde i 2024?
+
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+\dfrac{720~000}{1.20}
+$$
+::::::
+
+
+::::::{quiz-answer}
+$$
+720~000 \cdot 0.80
+$$
+::::::
+
+
+::::::{quiz-answer}
+$$
+720~000 \cdot 0.2
+$$
+::::::
+
+
+::::::{quiz-answer}
+$$
+\dfrac{720~000}{0.8}
+$$
+::::::
+
+
+:::::::
+
+
+
+
+:::::::{quiz-question}
+En vare økte fra $600$ kr til $800$ kr. 
+
+Hvilket uttrykk kan brukes til å regne ut vekstfaktoren til endringen?
+
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+\dfrac{800}{600}
+$$
+
+::::::
+
+
+::::::{quiz-answer}
+$$
+\dfrac{600}{800}
+$$
+::::::
+
+
+::::::{quiz-answer}
+$$
+1 - \dfrac{800}{600}
+$$
+::::::
+
+
+::::::{quiz-answer}
+$$
+1 - \dfrac{600}{800}
+$$
+::::::
+
+
+:::::::
+
+
+
+:::::::{quiz-question}
+En bil kostet $200~000$ kr i 2024. I 2025 hadde verdien av bilen sunket med $15\%$.
+
+Hvilket uttrykk kan brukes for å finne verdien av bilen i 2025?
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+200~000 \cdot 0.85
+$$
+::::::
+
+
+::::::{quiz-answer}
+$$
+200~000 \cdot 0.15
+$$
+::::::
+
+
+::::::{quiz-answer}
+$$
+\dfrac{200~000}{0.85}
+$$
+::::::
+
+
+::::::{quiz-answer}
+$$
+\dfrac{200~000}{1.15}
+$$
+::::::
+
+
+:::::::
+
+
+
+:::::::{quiz-question}
+Beløpet på en sparekonto har vokst med $2.5\%$ i løpet av 2025. Nå er beløpet $12~500$ kr.
+
+Hvilket uttrykk kan brukes til å regne ut hvor mye det var på kontoen i starten av 2025?
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+\frac{12~500}{1.025}
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+12~500 \cdot 0.975
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+\dfrac{12~500}{0.975}
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+12~500 \cdot 0.025
+$$
+::::::
+
+
+:::::::
+
+
+:::::::{quiz-question}
+En jakke kostet $3000$ kr og ble satt ned til $2200$ kr.
+
+Hvilket uttrykk kan brukes til å regne ut hvor mange prosent jakken ble satt ned?
+
+
+::::::{quiz-answer}
+---
+correct: true
+---
+
+$$
+100\% - \dfrac{2200}{3000} \cdot 100\%
+$$
+::::::
+
+
+::::::{quiz-answer}
+$$
+100\% - \dfrac{3000}{2200} \cdot 100\%
+$$
+::::::
+
+
+::::::{quiz-answer}
+$$
+\dfrac{2200}{3000} \cdot 100\%
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+\dfrac{3000}{2200} \cdot 100\%
+$$
+::::::
+
+
+:::::::
+
+
+
+::::::::
+
+:::::::::::::::
+
+
+
+---
+
+
+
+:::::::::::::::{exercise} Oppgave 5
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+En vare koster $300$ kr og øker med $6\%$.
+
+Bestem et uttrykk for hvor mye varen koster etter økningen.
+
+::::{answer}
+$$
+300 \cdot 1.06
+$$
+::::
+
+::::{solution}
+Den gamle verdien er $G = 300$. Vekstfaktoren er 
+
+$$
+V = 100\% + 6\% = 106\% = 1.06
+$$
+
+Da er den nye prisen gitt ved
+
+$$
+N = G \cdot V = 300 \cdot 1.06
+$$
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+En jakke koster $4000$ kr og blir satt ned med $30\%$. 
+
+Bestem et uttrykk for prisen til jakken etter at den ble satt ned.
+
+
+::::{answer}
+$$
+4000 \cdot 0.7
+$$
+::::
+
+
+::::{solution}
+Den gamle prisen er $G = 4000$. Vekstfaktoren for endringen er
+
+$$
+V = 100\% - 30\% = 70\% = 0.7
+$$
+
+Den nye prisen er da 
+
+$$
+N = G \cdot V = 4000 \cdot 0.7
+$$
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+Synne sin lønn i 2025 er $500~000$ kr. Da hadde lønnen hennes økt med $5\%$ fra 2024 til 2025.
+
+Bestem et uttrykk for lønnen til Synne i 2024.
+
+
+::::{answer}
+$$
+\dfrac{500~000}{1.05}
+$$
+::::
+
+::::{solution}
+Den nye verdien er $N = 500~000$. Vekstfaktoren for endringen er
+
+$$
+V = 100\% + 5\% = 105\% = 1.05
+$$
+
+Da er lønnen i 2024 gitt ved
+
+$$
+N = G \cdot V \liff G = \dfrac{N}{V} = \dfrac{500~000}{1.05}
+$$
+::::
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} d
+En sykkel koster $5000$ kr etter at den ble satt ned med $20\%$.
+
+Bestem et uttrykk for prisen på sykkelen før at den ble satt ned.
+
+::::{answer}
+$$
+\dfrac{5000}{0.8}
+$$
+::::
+
+::::{solution}
+Den nye prisen er $N = 5000$.  
+Vekstfaktoren for endringen er
+
+$$
+V = 100\% - 20\% = 80\% = 0.8.
+$$
+
+Den opprinnelige prisen er da gitt ved
+
+$$
+N = G \cdot V \liff G = \dfrac{N}{V} = \dfrac{5000}{0.8}
+$$
+::::
+:::::::::::::
+
+
+
+::::::::::::::
+:::::::::::::::
+
+
+
+---
+
+
+
+:::::::::::::::{exercise} Oppgave 6
+
+::::{hints} Prosentvis vekst i flere perioder
+La $G$ være den opprinnelige verdien og $V$ være vekstfaktoren for hver periode. 
+Etter $x$ perioder er den nye verdien $N$ gitt ved
+
+$$
+N = G \cdot V^\d{x}
+$$
+::::
+
+
 Ta quizen!
 
 
-:::{raw} html
+::::::::{quiz-2}
+:::::::{quiz-question}
+Du setter inn $1000$ kr på en sparekonto med $3\%$ rente per år. 
+
+Hvilket uttrykk kan brukes til å regne ut beløpet på sparekontoen om 5 år?
+
+
+::::::{quiz-answer}
 ---
-file: ./quiz/oppgaver/quiz_2/quiz_2.html
+correct: true
 ---
+$$
+1000 \cdot 1.03^5
+$$
+::::::
+
+
+::::::{quiz-answer}
+$$
+1000 \cdot 1.03 \cdot 5
+$$
+::::::
+
+
+::::::{quiz-answer}
+$$
+1000 \cdot 1.15
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+1000 + 5 \cdot 0.03 \cdot 1000
+$$
+::::::
+
+:::::::
+
+
+
+:::::::{quiz-question}
+Du setter inn $2000$ kr på en sparekonto med $5\%$ årlig rente.
+
+Hvilket uttrykk kan brukes til å regne ut beløpet på sparekontoen om 4 år?
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+2000 \cdot 1.05^4
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+2000 \cdot 1.05 \cdot 4
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+2000 \cdot 1.20
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+2000 + 4 \cdot 0.05 \cdot 2000
+$$
+::::::
+:::::::
+
+
+:::::::{quiz-question}
+Et beløp på en sparekonto vokser med $4\%$ rente per år. Etter $6$ år er beløpet $2000$ kr.
+
+Hvilket uttrykk kan brukes til å finne ut hvor stort beløpet var for 6 år siden?
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+\frac{2000}{1.04^6}
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+2000 \cdot 0.96^6
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+\frac{2000}{0.96^6}
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+\dfrac{2000}{1.24}
+$$
+::::::
+:::::::
+
+
+:::::::{quiz-question}
+En befolkning vokser med $2\%$ per år. Etter $10$ år er befolkningen $11~000$ mennesker.
+
+Hvilket uttrykk kan brukes til å finne ut hvor stor befolkningen var for $10$ år siden?
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+\frac{11~000}{1.02^{10}}
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+11~000 \cdot 0.98^{10}
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+\frac{11~000}{0.98^{10}}
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+\dfrac{11~000}{1.20}
+$$
+::::::
+:::::::
+
+
+:::::::{quiz-question}
+En bil ble kjøpt for $300~000$ kr og har sunket med $8\%$ per år de siste 5 årene.
+
+Hvilket uttrykk kan brukes til regne ut verdien av bilen etter 5 år?
+
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+300~000 \cdot 0.92^5
+$$
+::::::
+
+
+::::::{quiz-answer}
+$$
+300~000 \cdot 0.6
+$$
+::::::
+
+
+::::::{quiz-answer}
+$$
+300~000 \cdot 0.4
+$$
+::::::
+
+
+::::::{quiz-answer}
+$$
+300~000 \cdot 0.08^5
+$$
+::::::
+
+
+:::::::
+
+
+:::::::{quiz-question}
+Verdien på en aksje har sunket med $4\%$ per år de siste 3 årene. Nå er verdien på aksjen $150$ kr.
+
+Hvilket uttrykk kan brukes til å regne ut verdien på aksjen for 3 år siden?
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+\frac{150}{0.96^3}
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+150 \cdot 1.04^3
+$$
+::::::
+
+
+::::::{quiz-answer}
+$$
+150 \cdot 1.12
+$$
+::::::
+
+
+::::::{quiz-answer}
+$$
+\dfrac{150}{0.88}
+$$
+::::::
+
+
+:::::::
+
+
+::::::::
+
+:::::::::::::::
+
+
+
+---
+
+
+
+:::::::::::::::{exercise} Oppgave 7
+Ta quizen!
+
+::::::::{quiz-2}
+
+:::::::{quiz-question}
+En bil koster opprinnelig $400~000$ kr. Verdien til bilen synker med $8\%$ per år. 
+
+Hvilket funksjonsuttrykk beskriver verdien til bilen etter $x$ år?
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+f(x) = 400~000 \cdot 0.92^x
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+f(x) = 400~000 \cdot 0.08^x
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+f(x) = 400~000 \cdot 0.92 \cdot x
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+f(x) = 400~000 \cdot 1.08^x
+$$
+::::::
+
+:::::::
+
+
+:::::::{quiz-question}
+Antall følgere på en konto i sosiale medier var opprinnelig $20~000$. Antall følgere øker med $5\%$ per år.
+
+Hvilket funksjonsuttrykk beskriver antall følgere etter $x$ år?
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+f(x) = 20~000 \cdot 1.05^x
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+f(x) = 20~000 \cdot 0.05^x
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+f(x) = 20~000 \cdot 1.05 \cdot x
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+f(x) = 20~000 \cdot 0.95^x
+$$
+::::::
+:::::::
+
+
+:::::::{quiz-question}
+Mengden medisinsk oksygen i en tank er opprinnelig $1~000$ liter. Mengden oksygen minker med $10\%$ per time.
+
+Hvilket funksjonsuttrykk beskriver mengden oksygen etter $x$ timer?
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+f(x) = 1~000 \cdot 0.90^x
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+f(x) = 1~000 \cdot 0.10^x
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+f(x) = 1~000 \cdot 0.90 \cdot x
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+f(x) = 1~000 \cdot 1.10^x
+$$
+::::::
+:::::::
+
+
+:::::::{quiz-question}
+Temperaturen i en kopp varm te er opprinnelig $80^\circ\text{C}$. Temperaturen synker med $12\%$ per minutt.
+
+Hvilket funksjonsuttrykk beskriver temperaturen etter $x$ minutter?
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+f(x) = 80 \cdot 0.88^x
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+f(x) = 80 \cdot 0.12^x
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+f(x) = 80 \cdot 0.88 \cdot x
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+f(x) = 80 \cdot 1.12^x
+$$
+::::::
+:::::::
+
+
+:::::::{quiz-question}
+Verdien av et kunstverk var opprinnelig $120~000$ kr. Verdien øker med $6\%$ per år.
+
+Hvilket funksjonsuttrykk beskriver verdien av kunstverket etter $x$ år?
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+f(x) = 120~000 \cdot 1.06^x
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+f(x) = 120~000 \cdot 0.06^x
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+f(x) = 120~000 \cdot 1.06 \cdot x
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+f(x) = 120~000 \cdot 0.94^x
+$$
+::::::
+:::::::
+
+
+:::::::{quiz-question}
+Antall abonnenter på en strømmetjeneste var opprinnelig $50~000$. Antall abonnenter synker med $4\%$ per år.
+
+Hvilket funksjonsuttrykk beskriver antall abonnenter etter $x$ år?
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+f(x) = 50~000 \cdot 0.96^x
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+f(x) = 50~000 \cdot 0.04^x
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+f(x) = 50~000 \cdot 0.96 \cdot x
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+f(x) = 50~000 \cdot 1.04^x
+$$
+::::::
+:::::::
+
+
+
+
+::::::::
+
+:::::::::::::::
+
+
+
+---
+
+
+:::::::::::::::{exercise} Oppgave 8
+Alma og Synne leste om en lottovinner som vant et beløp i lotto for 10 år siden. Lottovinneren satte inn pengene på sparekonto med $5\%$ rente per år. Nå er beløpet på sparekontoen $1~500~000$ kr.
+
+Alma og Synne diskuterer hvordan de kan regne ut hvor mye lottovinneren vant i lotto for 10 år siden.
+
+:::{dialogue}
+---
+name1: Alma
+name2: Synne
+speaker1: left
+speaker2: right
+---
+Alma: Å regne ut vekstfaktoren $V$ er jo ganske greit.
+Synne: Sant! Vanligvis ville jeg bare tatt sluttverdien og delt på $V^{10}$ siden det har gått 10 år.
+Alma: Ja, men jeg har også lest at vi har **definert** at $V^{-10} = \dfrac{1}{V^{10}}$
+Synne: Åh! Det må jo bety at vi bare kan gange med $V^{-10}$ i stedet for å dele på $V^{10}$!
 :::
 
-:::::::::::::::
 
----
-
-
-:::::::::::::::{admonition} Oppgave 3
----
-class: problem-level-1
----
-::::::::::::::{tab-set}
----
-class: tabs-parts
----
-:::::::::::::{tab-item} a
-Bestem vekstfaktoren til en økning på $40 \%$.
+<br>
 
 
-::::{admonition} Fasit
+Ta utgangspunkt i dialogen til Alma og Synne og avgjør hvilke av uttrykkene nedenfor som kan brukes til å regne ut hvor mye lottovinneren vant i lotto for 10 år siden.
+
+::::{grid} 1 1 2 3
 ---
-class: answer, dropdown
+gutter: 2
 ---
+:::{grid-item-card}
+1)
+^^^
 $$
-V = 1.4
+1~500~000 \cdot 1.05^{-10}
 $$
-::::
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} b
-Bestem vekstfaktoren til en nedgang på $15 \%$.
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-$$
-V = 0.85
-$$
-::::
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} c
-Bestem vekstfaktoren til en økning på $18 \%$.
-
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-$$
-V = 1.18
-$$
-::::
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} d
-Bestem vekstfaktoren til en nedgang på $12 \%$.
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-$$
-V = 0.88
-$$
-::::
-
-:::::::::::::
-
-
-::::::::::::::
-
-:::::::::::::::
-
----
-
-:::::::::::::::{admonition} Oppgave 4
----
-class: problem-level-1
----
-Bestem den prosentvise endringen for hver vekstfaktor. 
-::::::::::::::{tab-set}
----
-class: tabs-parts
----
-:::::::::::::{tab-item} a
-$$
-V = 1.22
-$$
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-$$
-p = 22 \%
-$$
-::::
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} b
-$$
-V = 0.93
-$$ 
-
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-$$
-p = -7 \%
-$$
-::::
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} c
-$$
-V = 0.4
-$$ 
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-$$
-p = -60 \%
-$$
-::::
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} d
-
-$$
-V = 1.45
-$$ 
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-$$
-p = 45 \%
-$$
-::::
-
-:::::::::::::
-
-::::::::::::::
-
-
-:::::::::::::::
-
----
-
-:::::::::::::::{admonition} Oppgave 5
----
-class: problem-level-1
----
-En eksponentialfunksjon $f$ er gitt ved 
-
-$$
-f(x) = 2 \cdot 3^x. 
-$$
-
-
-::::::::::::::{tab-set}
----
-class: tabs-parts
----
-:::::::::::::{tab-item} a
-Bestem $f(0)$. 
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-$$
-f(0) = 2.
-$$
-::::
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} b
-Bestem $f(4)$. 
-
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-$$
-f(4) = 162.
-$$
-::::
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} c
-Bruk CAS til å løse likningen 
-
-$$
-f(x) = 1000.
-$$
-
-````{tab} Geogebra
-
-Nedenfor vises et CAS-vindu som løser likningen $f(x) = 50$. Gjør nødvendige endringer og løs likningen din. 
-
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_5/c.html
----
 :::
 
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-**CAS-vindu med løsning**:
+:::{grid-item-card}
+2)
+^^^
+$$
+1~500~000 \cdot 0.95^{10}
+$$
+:::
 
-:::{raw} html
+:::{grid-item-card}
+3)
+^^^
+$$
+\dfrac{1~500~000}{0.95^{10}}
+$$
+:::
+
+:::{grid-item-card}
+4)
+^^^
+$$
+\dfrac{1~500~000}{1.05^{10}}
+$$
+:::
+
+
+:::{grid-item-card}
+5)
+^^^
+$$
+1~500~000 \cdot 0.95^{-10}
+$$
+:::
+
+
+:::{grid-item-card}
+6)
+^^^
+$$
+1~500~000 \cdot 1.05^{10}
+$$
+:::
+::::
+
+
+
+::::{answer}
+Uttrykk 1 og uttrykk 4.
+::::
+
+
+::::{solution}
+Vekstfaktoren er gitt ved
+
+$$
+V = 100\% + 5\% = 105\% = 1.05
+$$
+
+Dette eliminerer uttrykk 2, 3 og 5.
+
+Vi kan enten gange sluttenverdien med $V^{-10}$ eller dele sluttverdien med $V^{10}$. Dette betyr at det uttrykkene enten er
+
+$$
+1~500~000 \cdot 1.05^{-10} \qquad \mathrm{(Uttrykk \, 1)}
+$$
+
+eller 
+
+$$
+\dfrac{1~500~000}{1.05^{10}} \qquad \mathrm{(Uttrykk \, 4)}
+$$
+
+Altså er uttrykk 1 og uttrykk 4 riktige.
+::::
+
+
+:::::::::::::::
+
+
+
 ---
-file: ./ggb/oppgaver/oppgave_5/c_solution.html
+
+
+:::::::::::::::{exercise} Oppgave 9
+Ta quizen!
+
+
+::::::::{quiz-2}
+:::::::{quiz-question}
+Beløpet på en sparekonto er nå $300~000$ kr. Beløpet er økt med $3\%$ per år siden pengene ble satt inn.
+
+Hvilket eller hvilke av uttrykkene nedenfor kan brukes til å regne ut beløpet på kontoen for $8$ år siden?
+
+
+::::::{quiz-answer}
 ---
+correct: true
+---
+$$
+\dfrac{300~000}{1.03^8}
+$$
+::::::
+
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+300~000 \cdot 1.03^{-8}
+$$
+::::::
+
+
+::::::{quiz-answer}
+$$
+300~000 \cdot 0.97^8
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+\dfrac{300~000}{0.97^8}
+$$
+::::::
+
+:::::::
+
+
+:::::::{quiz-question}
+Verdien av en bolig er nå $4~000~000$ kr. Verdien har økt med $2\%$ per år de siste $10$ årene.
+
+Hvilket eller hvilke av uttrykkene nedenfor kan brukes til å regne ut verdien av boligen for $10$ år siden?
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+\dfrac{4~000~000}{1.02^{10}}
+$$
+::::::
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+4~000~000 \cdot 1.02^{-10}
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+4~000~000 \cdot 0.98^{10}
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+\dfrac{4~000~000}{0.98^{10}}
+$$
+::::::
+:::::::
+
+
+:::::::{quiz-question}
+Mengden radioaktivt stoff er nå $800$ gram. Stoffet har avtatt med $6\%$ per år de siste $15$ årene.
+
+Hvilket eller hvilke av uttrykkene nedenfor kan brukes til å regne ut hvor mye stoff det var for $15$ år siden?
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+\dfrac{800}{0.94^{15}}
+$$
+::::::
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+800 \cdot 0.94^{-15}
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+800 \cdot 1.06^{15}
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+\dfrac{800}{1.06^{15}}
+$$
+::::::
+:::::::
+
+
+:::::::{quiz-question}
+Verdien av en maskin er nå $600~000$ kr. Verdien har sunket med $10\%$ per år de siste $7$ årene.
+
+Hvilket eller hvilke av uttrykkene nedenfor kan brukes til å regne ut hva maskinen var verdt for $7$ år siden?
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+\dfrac{600~000}{0.90^{7}}
+$$
+::::::
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+600~000 \cdot 0.90^{-7}
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+600~000 \cdot 1.10^{7}
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+\dfrac{600~000}{1.10^{7}}
+$$
+::::::
+:::::::
+
+
+::::::::
+
+
+:::::::::::::::
+
+
+---
+
+
+:::::::::::::::{exercise} Oppgave 10
+Alma og Synne skal spare penger til å reise om 5 år. Det skal sette inn $5000$ kr til sammen hvert år på en konto som har $3\%$ rente per år.
+
+De vil bruke programmering til å løse oppgaven. De diskuterer:
+
+
+:::{dialogue}
+---
+name1: Alma
+name2: Synne
+speaker1: left
+speaker2: right
+---
+Alma: Når vi har regnet ut vekstfaktoren, så kan vi skrive kodelinjen `s = s * vekstfaktor**5`{l=python} for å regne ut hvor mye vi har etter 5 år.
+Synne: Sant! Men det vil bare fungere når vi setter inn ett innskudd på starten. Jeg tror vi bør skrive <br> `s = s * vekstfaktor`{l=python} <br> i en løkke som kjører 5 ganger.
+Alma: God idé! For da kan vi jo legge til et fast innskudd til `s`{l=python} i starten av hvert år også!
+Synne: Nettopp, og da vil vi enklere kunne regne ut en mer realistisk sparesituasjon hvor vi setter inn penger hvert år.
 :::
 
 <br>
 
-**Løsning**:
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Hvilke **to** programmer nedenfor kan brukes til å regne ut hvor mye Alma og Synne har sammen etter 5 år hvis de bare setter inn 5000 kr **én gang** i starten?
 
-$$
-f(x) = 1000 \liff x \approx 5.66. 
-$$
+:::::{grid} 1 1 2 2
+---
+gutter: 2
+---
+::::{grid-item-card}
+1)
+^^^
+:::{code-block} python
+---
+linenos:
+---
+s = 5000
+vekstfaktor = 1.03
 
+s = s * vekstfaktor ** 5
+:::
 ::::
 
-````
-
-
-````{tab} Python 
-
-Nedenfor vises et eksempel på løsningen til likningen $f(x) = 50$ i Python. Endre på programmet slik at det løser riktig likning.
-
-:::{raw} html
+::::{grid-item-card}
+2)
+^^^
+:::{code-block} python
 ---
-file: ./python/oppgaver/oppgave_5/c.html
+linenos:
 ---
+s = 5000
+vekstfaktor = 1.03
+
+for x in range(5):
+    s = s * vekstfaktor
+
 :::
+::::
 
-::::{admonition} Fasit
+::::{grid-item-card}
+3)
+^^^
+:::{code-block} python
 ---
-class: answer, dropdown
+linenos:
 ---
-**Programkode:**
+s = 5000
+vekstfaktor = 0.97
 
+s = s * vekstfaktor ** 5
+:::
+::::
+
+::::{grid-item-card}
+4)
+^^^
+:::{code-block} python
+---
+linenos:
+---
+s = 5000
+vekstfaktor = 0.97
+
+for x in range(5):
+    s = s * vekstfaktor
+:::
+::::
+:::::
+
+::::{answer}
+Program 1 og program 2.
+::::
+
+
+:::::::::::::
+
+
+
+:::::::::::::{tab-item} b
+Alma og Synne skal i stedet sette inn $5000$ kr på starten av hvert år. Det riktige programmet som vil gjøre dette er plassert i tilfeldig rekkefølge nedenfor.
+
+1. Sett sammen programmet i riktig rekkefølge
+2. Bruk programmet til å bestemme sparebeløpet de vil ha etter 5 år.
+
+
+::::{parsons-puzzle}
+---
+indentation: student
+---
+:::{code-block} python
+# chunk-start
+s = 0 
+vekstfaktor = 1.03
+innskudd = 5000
+# chunk-end
+
+for x in range(5):
+    s = s + innskudd
+    s = s * vekstfaktor
+
+print(s)
+:::
+::::
+
+
+:::::::::::::
+
+
+::::::::::::::
+
+
+
+:::::::::::::::
+
+
+---
+
+
+:::::::::::::::{exercise} Oppgave 11
+Ta quizen!
+
+
+::::::::{quiz-2}
+
+:::::::{quiz-question}
+Lønna til Bror var $400~000$ kr for fem år siden. Lønna hans har økt med $5\%$ per år de siste fem årene.
+
+Hvilke **to** programmer nedenfor kan brukes til å beregne lønnen til Bror i dag?
+
+
+::::::{quiz-answer}
+---
+correct: true
+---
+:::{code-block} python
+---
+linenos:
+---
+L = 400_000
+p = 5 / 100
+V = 1 + p
+
+L = L * V ** 5
+
+print(L)
+:::
+::::::
+
+::::::{quiz-answer}
+---
+correct: true
+---
+:::{code-block} python
+---
+linenos:
+---
+L = 400_000
+p = 5 / 100
+V = 1 + p
+
+for x in range(5):
+    L = L * V
+
+print(L)
+:::
+::::::
+
+::::::{quiz-answer}
+:::{code-block} python
+---
+linenos:
+---
+L = 400_000
+p = 5 / 100
+V = 1 + p
+
+for x in range(5):
+    L = L * V ** 5
+
+print(L)
+:::
+::::::
+
+
+::::::{quiz-answer}
+:::{code-block} python
+---
+linenos:
+---
+L = 400_000
+p = 5 / 100
+V = 1 + p
+
+for x in range(5):
+    L = L + V
+
+print(L)
+:::
+::::::
+
+
+:::::::
+
+
+:::::::{quiz-question}
+Anna satte inn et beløp på en sparekonto for 5 år siden. I dag har Anna $10~000$ kr på sparekontoen sin. Sparekontoen har $3\%$ rente per år.
+
+Hvilke **to** programmer nedenfor kan brukes til å regne ut hvor mye Anna satte inn på sparekontoen for 5 år siden?
+
+
+::::::{quiz-answer}
+---
+correct: true
+---
 :::{code-block} python
 ---
 linenos: 
 ---
-from casify import *
+s = 10_000
+p = 3 / 100
+V = 1 + p
 
-f = funksjon("2 * 3 ** x")
+for x in range(5):
+    s = s / V
 
-løsning = nløs("f(x) = 1000")
-
-print(løsning)
+print(s)
 :::
+::::::
 
-**Utskrift**:
 
-:::{code-block} console
-x = 5.657
+::::::{quiz-answer}
+---
+correct: true
+---
+:::{code-block} python
+---
+linenos:
+---
+s = 10_000
+p = 3 / 100
+V = 1 + p
+
+s = s / V ** 5
+
+print(s)
 :::
-
-**Løsning**:
-
-Løsningen er $x \approx 5.657$.
-
-::::
-
-````
-
-:::::::::::::
+::::::
 
 
+::::::{quiz-answer}
+:::{code-block} python
+---
+linenos:
+---
+s = 10_000
+p = 3 / 100
+V = 1 - p
 
-::::::::::::::
+for x in range(5):
+    s = s * V
+
+print(s)
+:::
+::::::
+
+
+::::::{quiz-answer}
+:::{code-block} python
+---
+linenos:
+---
+s = 10_000
+p = 3 / 100
+V = 1 - p
+
+s = s * V**5
+
+print(s)
+:::
+::::::
+
+:::::::
+
+
+:::::::{quiz-question}
+En elsykkel ble kjøpt for 4 år siden. I dag er verdien av elsykkelen $18~000$ kr. Verdien har sunket med $10\%$ per år.
+
+Hvilke **to** programmer nedenfor kan brukes til å regne ut hva elsykkelen var verdt da den ble kjøpt?
+
+
+::::::{quiz-answer}
+---
+correct: true
+---
+:::{code-block} python
+---
+linenos: 
+---
+v = 18_000
+p = 10 / 100
+V = 1 - p
+
+for x in range(4):
+    v = v / V
+
+print(v)
+:::
+::::::
+
+
+::::::{quiz-answer}
+---
+correct: true
+---
+:::{code-block} python
+---
+linenos:
+---
+v = 18_000
+p = 10 / 100
+V = 1 - p
+
+v = v / V ** 4
+
+print(v)
+:::
+::::::
+
+
+::::::{quiz-answer}
+:::{code-block} python
+---
+linenos:
+---
+v = 18_000
+p = 10 / 100
+V = 1 + p
+
+for x in range(4):
+    v = v / V
+
+print(v)
+:::
+::::::
+
+
+::::::{quiz-answer}
+:::{code-block} python
+---
+linenos:
+---
+v = 18_000
+p = 10 / 100
+V = 1 - p
+
+v = v * V**4
+
+print(v)
+:::
+::::::
+:::::::
+
+:::::::{quiz-question}
+En bestand med fisk er i dag på $25~000$ fisk. Bestanden har økt med $4\%$ per år de siste 6 årene.
+
+Hvilke **to** programmer nedenfor kan brukes til å regne ut hvor mange fisk det var i bestanden for 6 år siden?
+
+
+::::::{quiz-answer}
+---
+correct: true
+---
+:::{code-block} python
+---
+linenos: 
+---
+f = 25_000
+p = 4 / 100
+V = 1 + p
+
+for x in range(6):
+    f = f / V
+
+print(f)
+:::
+::::::
+
+
+::::::{quiz-answer}
+---
+correct: true
+---
+:::{code-block} python
+---
+linenos:
+---
+f = 25_000
+p = 4 / 100
+V = 1 + p
+
+f = f / V ** 6
+
+print(f)
+:::
+::::::
+
+
+::::::{quiz-answer}
+:::{code-block} python
+---
+linenos:
+---
+f = 25_000
+p = 4 / 100
+V = 1 - p
+
+for x in range(6):
+    f = f * V
+
+print(f)
+:::
+::::::
+
+
+::::::{quiz-answer}
+:::{code-block} python
+---
+linenos:
+---
+f = 25_000
+p = 4 / 100
+V = 1 - p
+
+f = f * V ** 6
+
+print(f)
+:::
+::::::
+:::::::
+
+
+:::::::{quiz-question}
+Verdien av en bolig er i dag $3~200~000$ kr. Verdien har økt med $2\%$ per år de siste 12 årene.
+
+Hvilke **to** programmer nedenfor kan brukes til å regne ut hva boligen var verdt for 12 år siden?
+
+
+::::::{quiz-answer}
+---
+correct: true
+---
+:::{code-block} python
+---
+linenos: 
+---
+v = 3_200_000
+p = 2 / 100
+V = 1 + p
+
+for x in range(12):
+    v = v / V
+
+print(v)
+:::
+::::::
+
+
+::::::{quiz-answer}
+---
+correct: true
+---
+:::{code-block} python
+---
+linenos:
+---
+v = 3_200_000
+p = 2 / 100
+V = 1 + p
+
+v = v / V ** 12
+
+print(v)
+:::
+::::::
+
+
+::::::{quiz-answer}
+:::{code-block} python
+---
+linenos:
+---
+v = 3_200_000
+p = 2 / 100
+V = 1 - p
+
+for x in range(12):
+    v = v * V
+
+print(v)
+:::
+::::::
+
+
+::::::{quiz-answer}
+:::{code-block} python
+---
+linenos:
+---
+v = 3_200_000
+p = 2 / 100
+V = 1 - p
+
+v = v * V ** 12
+
+print(v)
+:::
+::::::
+:::::::
+
+
+:::::::{quiz-question}
+Temperaturen i en kopp te er opprinnelig $80^\circ\text{C}$. Temperaturen synker med $5\%$ per minutt.
+
+Hvilke **to** programmer nedenfor kan brukes til å regne ut temperaturen etter 6 minutter?
+
+
+::::::{quiz-answer}
+---
+correct: true
+---
+:::{code-block} python
+---
+linenos: 
+---
+T = 80
+p = 5 / 100
+V = 1 - p
+
+for x in range(6):
+    T = T * V
+
+print(T)
+:::
+::::::
+
+
+::::::{quiz-answer}
+---
+correct: true
+---
+:::{code-block} python
+---
+linenos:
+---
+T = 80
+p = 5 / 100
+V = 1 - p
+
+T = T * V ** 6
+
+print(T)
+:::
+::::::
+
+
+::::::{quiz-answer}
+:::{code-block} python
+---
+linenos:
+---
+T = 80
+p = 5 / 100
+V = 1 + p
+
+for x in range(6):
+    T = T * V
+
+print(T)
+:::
+::::::
+
+
+::::::{quiz-answer}
+:::{code-block} python
+---
+linenos:
+---
+T = 80
+p = 5 / 100
+V = 1 - p
+
+for x in range(6):
+    T = T - V
+
+print(T)
+:::
+::::::
+:::::::
+
+
+
+::::::::
 
 
 :::::::::::::::
 
 
+
 ---
 
 
-:::::::::::::::{admonition} Oppgave 6
----
-class: problem-level-2
----
-Anna kjøper en bil og anslår at verdien til bilen de neste årene kan beskrives av funksjonen
+:::::::::::::::{exercise} Oppgave 12
+Nedenfor vises en figur som er satt sammen av mange linjestykker.
 
-$$
-f(x) = 200000 \cdot 0.85^x.
-$$
+Lengden til et linjestykke er alltid $90\%$ av lengden til det forrige linjestykket. Det første linjestykket er $100 \, \mathrm{cm}$ langt.
 
-der $f(x)$ kr er verdien til bilen $x$ år etter hun kjøpte den.
+
+:::{figure} ./figurer/oppgaver/oppgave_11/figur.svg
+---
+class: no-click, adaptive-figure
+width: 100%
+---
+:::
 
 
 ::::::::::::::{tab-set}
@@ -361,196 +2257,28 @@ der $f(x)$ kr er verdien til bilen $x$ år etter hun kjøpte den.
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
-Hvor mye er bilen til Anna verdt nå? 
+Bestem et uttrykk for den samlede lengden til de fire første linjestykkene.
 
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-$$
-f(0) = 200000.
-$$
 
-Bilen til Anna er verdt $200000$ kr nå.
+::::{answer}
+$$
+100 + 100 \cdot 0.9 + 100 \cdot 0.9^2 + 100 \cdot 0.9^3
+$$
 ::::
+
 
 :::::::::::::
 
 
 :::::::::::::{tab-item} b
-Hvor mye anslår Anna at bilens verdi vil synke med per år? 
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-Bilens verdi vil synke med $15 \%$ per år.
-::::
+Lag et program som beregner den samlede lengden av de 10 000 første linjestykkene. 
 
 
-:::::::::::::
+:::{interactive-code}
+# Din kode her
 
 
-:::::::::::::{tab-item} c
-Regn ut verdien til bilen etter $5$ år.
-
-
-````{tab} Geogebra
-
-<br>
-
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_6/c.html
----
 :::
-
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-**CAS-vindu med løsning**:
-
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_6/c_solution.html
----
-:::
-
-<br>
-
-**Svar**:
-
-Bilen koster ca. $88741$ kr etter $5$ år.
-::::
-
-````
-
-
-````{tab} Python
-
-<br>
-
-:::{raw} html
----
-file: ./python/oppgaver/oppgave_6/c.html
----
-:::
-
-<br>
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-**Programkode**:
-
-:::{code-block} python
----
-linenos:
----
-from casify import *
-
-f = funksjon("200_000 * 0.85 ** x")
-
-verdi = f(5)
-print(verdi)
-:::
-
-**Utskrift**:
-:::{code-block} console
-88741.0625000000
-:::
-
-**Svar:**
-
-Bilen koster ca. $88741$ kr etter $5$ år.
-::::
-
-````
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} d
-Bestem hvor mange år det tar før verdien til bilen er halvert.
-
-
-````{tab} Geogebra
-
-<br>
-
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_6/d.html
----
-:::
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-**CAS-vindu med løsning**:
-
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_6/d_solution.html
----
-:::
-
-<br>
-
-**Svar**:
-
-Det tar litt over $4$ år før verdien til bilen er halvert.
-::::
-
-````
-
-
-````{tab} Python
-
-<br>
-
-:::{raw} html
----
-file: ./python/oppgaver/oppgave_6/d.html
----
-:::
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-**Programkode**:
-
-:::{code-block} python
----
-linenos:
----
-from casify import *
-
-f = funksjon("200_000 * 0.85 ** x")
-
-løsning = nløs("f(x) = 100_000")
-
-print(løsning)
-:::
-
-**Utskrift**:
-:::{code-block} console
-x = 4.265
-:::
-
-**Svar**:
-
-Det tar litt over $4$ år før verdien til bilen er halvert.
-::::
-
-````
-
-
 :::::::::::::
 
 
@@ -560,396 +2288,107 @@ Det tar litt over $4$ år før verdien til bilen er halvert.
 :::::::::::::::
 
 
+
 ---
 
 
-:::::::::::::::{admonition} Oppgave 7
+:::::::::::::::{exercise} Oppgave 13
+I figuren nedenfor vises en følge av kvadrater der det første kvadratet har sidelengde $1$.
+
+Sidelengden til det neste kvadratet er alltid $70\%$ av sidelengden til det forrige kvadratet.
+
+:::{figure} ./figurer/oppgaver/oppgave_12/figur.svg
 ---
-class: problem-level-2
+class: no-click, adaptive-figure
+width: 100%
 ---
-Du setter inn $1000 \, \text{kr}$ på en bankkonto som gir en rente på $3 \%$ per år.
+:::
+
 
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
-Lag en modell $f$ for sparebeløpet $f(x)$ kr etter $x$ år.
+Bestem et uttrykk for summen av arealene til de fire første kvadratene.
 
 
-::::{admonition} Fasit
----
-class: answer, dropdown
----
+::::{answer}
 $$
-f(x) = 1000 \cdot 1.03^x. 
+1 + 0.7^2 + 0.7^4 + 0.7^6
 $$
 ::::
 
 
 :::::::::::::
+
 
 :::::::::::::{tab-item} b
-Bestem hvor lang tid det tar før sparebeløpet er dobbelt så stort som det opprinnelige beløpet.
+Lag et program som beregner summen av arealene til de 10 000 første kvadratene.
 
 
-````{tab} Geogebra
+:::{interactive-code}
+# Din kode her
 
-<br>
 
-:::{raw} html
+:::
+:::::::::::::
+
+
+::::::::::::::
+
+:::::::::::::::
+
+
+
 ---
-file: ./ggb/oppgaver/oppgave_7/b.html
+
+
+
+:::::::::::::::{exercise} Oppgave 14
+Nedenfor vises et kvadrat med sidelengder $3$.
+
+Kvadratet er fylt med mindre fargelagte kvadrater som blir mindre og mindre.
+
+:::{figure} ./figurer/oppgaver/oppgave_13/figur.svg
+---
+class: no-click, adaptive-figure
+width: 80%
 ---
 :::
 
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-**CAS-vindu med løsning**
 
-:::{raw} html
+::::::::::::::{tab-set}
 ---
-file: ./ggb/oppgaver/oppgave_7/b_solution.html
+class: tabs-parts
 ---
-:::
+:::::::::::::{tab-item} a
+Bestem et uttrykk for summen av arealene til de fire største fargelagte kvadratene.
 
-<br>
-
-Det tar ca. 24 år før sparebeløpet er dobbelt så stort som det opprinnelige beløpet.
+::::{answer}
+$$
+3 + 3 \cdot \dfrac{1}{4} + 3 \cdot \left(\dfrac{1}{4}\right)^2 + 3 \cdot \left(\dfrac{1}{4}\right)^3
+$$
 ::::
 
+:::::::::::::
 
-````
+
+:::::::::::::{tab-item} b
+Bestem summen av arealene til de 10 000 største fargelagte kvadratene.
 
 
-````{tab} Python 
+:::{interactive-code}
+# Din kode her
 
-<br>
 
-:::{raw} html
----
-file: ./python/oppgaver/oppgave_7/b.html
----
 :::
 
-<br>
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-
-**Programkode**:
-
-:::{code-block} python
----
-linenos:
----
-from casify import *
-
-f = funksjon("1000 * 1.03 ** x")
-
-løsning = nløs("f(x) = 2000")
-
-print(løsning)
-:::
-
-**Utskrift**:
-:::{code-block} console
-x = 23.45
-:::
-
-Det tar ca. 24 år før sparebeløpet er dobbelt så stort som det opprinnelige beløpet.
-::::
-
-````
 
 :::::::::::::
 
-:::::::::::::{tab-item} c
-Nedenfor vises et program som skal regne ut sparebeløpet etter $10$ år ved å bruke følgende algoritme: 
-
-1. Sett `sparebeløp = 1000`{l=python}.
-2. Øk `sparebeløp`{l=python} med renten hvert år så lenge antall år er mindre enn $10$. 
-
-
-Skriv ferdig programmet og bruk det til å regne ut sparebeløpet etter $10$ år.
-
-:::{raw} html
----
-file: ./python/oppgaver/oppgave_7/c.html
----
-:::
-
-:::::::::::::
-
-:::::::::::::{tab-item} d
-Nå skal du sette inn $1000 \, \mathrm{kr}$ hvert år på kontoen. For å regne ut sparebeløpet ditt hvert år, kan du bruke følgende strategi:
-
-1. Legg til renten først,
-2. Legg til innskuddet. 
-
-Gjenta dette hvert år.
-
-Fullfør programmet nedenfor og bruk det til å bestemme hvor mange år det tar å spare opp $100 000 \, \mathrm{kr}$.
-
-:::{raw} html
----
-file: ./python/oppgaver/oppgave_7/d.html
----
-:::
-
-:::::::::::::
 
 ::::::::::::::
 
 
 :::::::::::::::
-
----
-
-
-:::::::::::::::{admonition} Oppgave 8 
----
-class: problem-level-2
----
-Kristin jobber som biolog og studerer veksten av en bakteriekultur i et laboratorium. Hun har målt antall bakterier ved forskjellige tidspunkter og mener antallet bakterier følger en eksponentiell vekst. Hun har samlet inn dataen i tabellen nedenfor.
-
-| Tid (timer) | Antall bakterier |
-|-------------|------------------|
-| 0           | 100              |
-| 1           | 150              |
-| 2           | 225              |
-| 3           | 337              |
-| 4           | 506              |
-
-
-<br>
-
-:::::::::::::{tab-set}
----
-class: tabs-parts
----
-
-::::::::::::{tab-item} a
-Bruk opplysningene i tabellen ovenfor til å lage en eksponentiell modell $f$ som gir $f(x)$ bakterier etter $x$ timer.
-
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-
-
-````{tab} Geogebra
-
-**Svar**:
-
-$$
-f(x) = 100.01 \cdot 1.5^x
-$$
-
-
-**CAS-vindu med løsning**:
-
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_8/a_solution.html
----
-:::
-
-> Du kan fint bare bruke `Reg`-kommandoen, men da er det ikke like lett å få lest av hva vekstfaktoren er. Du kan jo prøve å se hva som skjer!
-
-````
-
-````{tab} Python 
-
-**Svar**:
-
-$$
-f(x) = 99.965 \cdot 1.5^x
-$$
-
-**Programkode**:
-
-:::{code-block} python
----
-linenos:
----
-from casify import *
-
-xdata = [0, 1, 2, 3, 4]
-ydata = [100, 150, 225, 337, 506] 
-modell = "a * b ** x" 
-
-f = reg(
-    modell=modell,
-    xdata=xdata,
-    ydata=ydata,
-)
-
-print(f) # Skriv ut funksjonsuttrykket
-:::
-
-**Utskrift**:
-:::{code-block} console
-          x
-99.965*1.5 
-:::
-
-````
-::::
-
-::::::::::::
-
-
-::::::::::::{tab-item} b
-Bruk modellen til å anslå hvor mange bakterier det er etter $24$ timer.
-
-:::::{admonition} Fasit
----
-class: answer, dropdown
----
-
-````{tab} Geogebra
-
-**Svar**:
-1 673 625 bakterier.
-
-
-**CAS-vindu med løsning**:
-
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_8/b_solution.html
----
-:::
-
-
-````
-
-````{tab} Python 
-**Svar**: 
-
-1 682 822 bakterier.
-
-**Programkode**:
-Vi må utvide programmet fra oppgave **a** med følgende linje:
-
-:::{code-block} python
-print(f(24)) # antall bakterier etter 24 timer
-::: 
-
-**Utskrift**:
-
-:::{code-block} console
-1682822.02567596
-:::
-
-````
-:::::
-
-
-::::::::::::
-
-::::::::::::{tab-item} c
-Bruk modellen til å anslå hvor lang tid det tar før det er 10 millioner bakterier i kulturen.
-
-:::::{admonition} Fasit
----
-class: answer, dropdown
----
-
-````{tab} Geogebra
-
-**Svar**:
-
-Litt over 28 timer. 
-
-
-**CAS-vindu med løsning**:
-:::{raw} html
----
-file: ./ggb/oppgaver/oppgave_8/c_solution.html
----
-:::
-
-````
-
-````{tab} Python 
-
-**Svar**:
-
-Litt over 28 timer.
-
-**Programkode**:
-Vi utvider det forrige programmet fra **a** og **b** med disse kodelinjene:
-
-:::{code-block} python
-løsning = nløs("f(x) = 10_000_000")
-
-print(løsning)
-:::
-
-**Utskrift**:
-
-:::{code-block} console
-x = 28.395
-:::
-
-
-````
-
-:::::
-
-
-::::::::::::
-
-
-
-
-
-:::::::::::::
-
-> I denne oppgaven trenger du digitale hjelpemidler for å løse oppgaven. Velg mellom Geogebra eller Python.
-
-````{tab} Geogebra
-
-<br>
-
-:::{raw} html 
----
-file: ./ggb/oppgaver/oppgave_8/oppgave_8.html
----
-:::
-
-````
-
-
-````{tab} Python 
-
-<br>
-
-:::{raw} html 
----
-file: ./python/oppgaver/oppgave_8/oppgave_8.html
----
-:::
-
-````
-
-
-
-:::::::::::::::
-
-
-
-
-
-
-
-
-
-
