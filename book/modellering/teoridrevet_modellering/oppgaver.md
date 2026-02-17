@@ -37,9 +37,14 @@ perspective: S
 ---
 :::
 
+
 Anna mener at arealet blir størst mulig dersom alle sidekantene er like lange.
 
 Lag en oversikt over arealet for ulike lengder på sidekantene og vurder om Anna sin påstand er riktig.
+
+
+:::{clear}
+:::
 
 
 ::::{hints}

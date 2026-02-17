@@ -11,236 +11,571 @@ class: tip
 * Kunne skrive enkle programmer som bruker prosentvis endring og eksponentiell vekst. 
 :::::
 
-Eksponentialfunksjoner er en type funksjon som brukes til å beskrive prosesser der noe vokser eller minker med en fast prosentvis endring. Funksjonen dukker opp i mange sammenhenger i naturvitenskap, økonomi, samfunnsvitenskap og teknologi. 
+**Eksponentialfunksjoner** brukes til å beskrive situasjoner der noe vokser eller synker med en **fast prosentvis** endring. Denne prosentvise endringen kan vi uttrykke med en **vekstfaktor** som lar oss sette opp en funksjon som beskriver utviklingen.
 
-For at vi skal kunne forstå eksponentialfunksjoner, er det viktig at vi har en god forståelse av prosentregning og vekstfaktor *først*. 
 
 ## Prosent
+Når vi snakker om prosent av noe, så mener vi gjerne en del av det hele. Prosent betyr "per hundre" eller "delt på hundre", og vi kan tolke prosenttegnet $\% = \dfrac{1}{100} = 0.01$. Det betyr at vi kan representere en prosent på tre ulike måter:
 
-Når vi jobber med prosentregning, kan vi representere en prosent på tre ulike måter:
-
-:::::{admonition} Prosent
----
-class: summary
----
-Tre ulike måter å representere en prosent på:
+:::::::::::::::{summary} Prosent: Representasjoner
 
 $$
 \underbrace{\dfrac{30}{100}}_{\text{brøk}} = \underbrace{0.3}_{\text{desimaltall}} = \underbrace{30 \%}_{\text{prosent}}
 $$
 
-Vi kan dermed tolke at prosenttegnet betyr $\% = \dfrac{1}{100} = 0.01$.
-:::::
+Vi tolker prosenttegnet $\%$ som at det betyr  $\% = \dfrac{1}{100} = 0.01$ og at $30\%$ betyr $30 \cdot \dfrac{1}{100} = 0.3$.
+
+:::::::::::::::
+
+
 
 ---
 
 
 :::::::::::::::{exercise} Underveisoppgave 1
-Ta quizen! Flere alternativer kan være riktig. 
+Ta quizen! Flere alternativer kan være riktig.
 
 
-:::{quiz}
-Q: Hva er det samme som $20\%$
-+ $0.2$
-+ $\dfrac{20}{100}$
-- $0.02$
-- $\dfrac{2}{100}$
+::::::::{quiz-2}
+:::::::{quiz-question}
+Hva er det samme som $20\%$?
 
-Q: Hva er det samme som $0.75$?
-+ $75\%$
-+ $\dfrac{3}{4}$
-- $7.5\%$
-- $\dfrac{75}{10}$
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+0.2
+$$
+::::::
 
-Q: Hva er det samme som $\dfrac{1}{4}$?
-+ $25\%$
-+ $0.25$
-- $2.5\%$
-- $0.025$
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+\dfrac{20}{100}
+$$
+::::::
 
-Q: Hva er det samme som $150\%$?
-+ $1.5$
-+ $\dfrac{3}{2}$
-- $0.15$
-- $\dfrac{15}{100}$
 
-Q: Hva er det samme som $0.08$?
-+ $8\%$
-+ $\dfrac{8}{100}$
-- $80\%$
-- $\dfrac{8}{10}$
+::::::{quiz-answer}
+$$
+\dfrac{2}{100}
+$$
+::::::
 
-Q: Hva er det samme som $\dfrac{3}{5}$?
-+ $60\%$
-+ $0.6$
-- $35\%$
-- $0.35$
-:::
 
+::::::{quiz-answer}
+$$
+0.02
+$$
+::::::
+
+:::::::
+
+
+
+:::::::{quiz-question}
+Hva er det samme som $0.75$?
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+75\%
+$$
+::::::
+
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+\dfrac{3}{4}
+$$
+::::::
+
+
+::::::{quiz-answer}
+$$
+7.5 \%
+$$
+::::::
+
+
+::::::{quiz-answer}
+$$
+\dfrac{75}{10}
+$$
+::::::
+
+
+
+:::::::
+
+
+
+:::::::{quiz-question}
+Hva er det samme som $\dfrac{1}{4}$?
+
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+25\%
+$$
+::::::
+
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+\dfrac{25}{100}
+$$
+::::::
+
+
+::::::{quiz-answer}
+$$
+2.5 \%
+$$
+::::::
+
+
+
+::::::{quiz-answer}
+$$
+0.20
+$$
+::::::
+
+
+
+
+:::::::
+
+
+:::::::{quiz-question}
+Hva er det samme som $150\%$? 
+
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+\dfrac{150}{100}
+$$
+::::::
+
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+1.5
+$$
+::::::
+
+
+::::::{quiz-answer}
+$$
+0.15
+$$
+::::::
+
+
+::::::{quiz-answer}
+$$
+\dfrac{15}{100}
+$$
+::::::
+
+
+:::::::
+
+
+:::::::{quiz-question}
+Hva er det samme som $0.08$?
+
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+8 \%
+$$
+::::::
+
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+\dfrac{8}{100}
+$$
+::::::
+
+
+::::::{quiz-answer}
+$$
+\dfrac{8}{10}
+$$
+::::::
+
+
+::::::{quiz-answer}
+$$
+80 \%
+$$
+::::::
+
+
+
+
+
+
+:::::::
+
+
+
+::::::::
 
 :::::::::::::::
 
+
+---
+
 ## Vekstfaktor
 
-Når en størrelse øker eller minker med en viss prosent, vil forholdet mellom den nye verdien $N$ og den gamle verdien $G$ være noe vi kaller for **vekstfaktoren** $V$ til endringen. Vi skriver
+En **vekstfaktor** er det tallet vi må gange en opprinnelig verdi med for å få den nye verdien etter en prosentvis endring. 
+
+Tenk deg at du har $1000$ kr på sparekonto og så øker beløpet med $5\%$. Pengene du har etter økningen er da 
 
 $$
-V = \dfrac{N}{G} \liff N = G \cdot V.
+\underbrace{1000}_{100 \%} + \underbrace{0.05 \cdot 1000}_{5 \%} = \underbrace{(1 + 0.05)}_{105\%} \cdot 1000 = \textcolor{red}{1.05} \cdot 1000
 $$
 
-Det kan da være naturlig å lure på om vi kan finne en generell beskrivelse av vekstfaktoren $V$ dersom vi vet hvor mange prosent $p$ en størrelse øker eller minker med. Vi vet at verdien før endringen $G$ skal endres med en prosent $p$, så vi kan derfor skrive at verdien etter endringen er
+Tallet $1.05$ kaller vi for **vekstfaktoren** til endringen. 
+
+Vi kan også forestille oss en situasjon der et beløp i stedet synker med $5\%$. Da har vi at det nye beløpet er
 
 $$
-N = G + \underbrace{p \cdot G}_{\text{prosentvis endring}} = G \cdot (1 + p)
+\underbrace{1000}_{100 \%} - \underbrace{0.05 \cdot 1000}_{5 \%} = \underbrace{(1 - 0.05)}_{95\%} \cdot 1000 = \textcolor{red}{0.95} \cdot 1000
 $$
 
-Sammenlikner vi de to likningene over, kan vi konkludere at vekstfaktoren generelt sett kan uttrykkes som 
+Da ble vekstfaktoren $0.95$. 
 
-$$
-V = 1 + p. 
-$$
+Vi kan merke oss at når det er en økning, så blir vekstfaktoren et tall større enn $1$, og når det er en nedgang, så blir vekstfaktoren et positivt tall mindre enn $1$.
 
-:::::{admonition} Vekstfaktor
----
-class: summary
----
-Vekstfaktoren $V$ når en verdi endres med en viss prosent $p$ er gitt ved 
+Mer generelt har vi følgende beskrivelse av vekstfaktorer:
+
+:::::::::::::::{summary} Vekstfaktor og prosentvis endring
+Når en størrelse øker eller minker med en prosent $p$, så er vekstfaktoren $V$ gitt ved
 
 $$
 V = 1 + p
 $$
 
-der $p$ er den prosentvise endringen. 
+| $V$ | $p$ | Beskrivelse |
+| --- | --- | --- |
+| $V > 1$ | $p > 0$ | Økning |
+| $0 < V < 1$ | $p < 0$ | Nedgang |
 
-* $p > 0$ brukes for økning. Da er $V > 1$.
-* $p < 0$ brukes for nedgang. Da er $0 < V < 1$.
-:::::
+:::::::::::::::
+
+
+
+---
+
 
 :::::::::::::::{example} Eksempel 1
-Bestem vekstfaktoren til $20\%$ økning. 
+En vare øker med $15 \%$. Bestem vekstfaktoren til endringen.
 
 
 ::::{solution}
 ---
 dropdown: 0
 ---
-Vekstfaktoren $V$ til $20\%$ økning er
+Her er $p = 15 \% = 0.15$ siden det er en økning på $15 \%$. Vekstfaktoren $V$ er da
 
 $$
-V = 100\% + 20\% = 120\% = 1.2
+V = 1 + p = 1 + 0.15 = 1.15.
 $$
 ::::
-
 
 :::::::::::::::
 
 
----
-
-
-:::::::::::::::{exercise} Underveisoppgave 2
-Bestem vekstfaktoren til $30\%$ nedgang.
-
-
-::::{answer}
-$$
-V = 0.7
-$$
-::::
-
-::::{solution}
-Vekstfaktoren til $30\%$ nedgang er
-
-$$
-V = 100\% - 30\% = 70\% = 0.7
-$$
-::::
-
-
-:::::::::::::::
 
 ---
 
-## Eksponentialfunksjoner
-
-Nå er vi klare for å se på hva en eksponentialfunksjon er. Vi skriver en eksponentialfunksjon $f$ på formen 
-
-$$
-f(x) = a \cdot b^x.
-$$
-
-For å se hva det har med en prosentregning og vekstfaktorer å gjøre, kan vi se på sammenhengen mellom $f(x)$ og $f(x + 1)$:
-
-$$
-f(x + 1) = a \cdot b^{x + 1} = \underbrace{a \cdot b^x}_{\displaystyle f(x)} \cdot b = f(x) \cdot b.
-$$
-
-Altså får vi funksjonsverdien i neste punkt $x + 1$ ved å gange funksjonsverdien i $x$ med faktoren $b$. Dermed kan vi tolke $b$ som en vekstfaktor!
-
-:::::::::::::::{summary} Eksponentialfunksjoner
-
-En **eksponentialfunksjon** $f$ er en funksjon på formen
-
-
-:::{figure} ./figurer/teori/algebraisk_representasjon.svg
----
-width: 50%
-class: no-click, adaptive-figure
----
-:::
-
-der $a \in \mathbb{R} \setminus \{0\}$ og $b \in \langle 0, \to\rangle$ er konstanter.
-
-:::{figure} ./figurer/teori/grafisk_representasjon.svg
----
-name: eksponentialfunksjoner-representasjoner-grafisk-representasjon
-width: 80%
-class: no-click, adaptive-figure
----
-:::
-
-:::::::::::::::
-
-
----
 
 
 :::::::::::::::{example} Eksempel 2
-Nedenfor vises to eksempler på eksponentialfunksjoner:
+Prisen på en vare synker med $8 \%$. Bestem vekstfaktoren til endringen.
 
-:::::{grid} 1 1 2 2
-::::{grid-item-card}
-$$
-f(x) = 1 \cdot 2^x
-$$
-^^^
-:::{figure} ./figurer/eksempler/eksempel_2/a.svg
+::::{solution}
 ---
-class: no-click, adaptive-figure
-width: 100%
+dropdown: 0
 ---
-:::
+Her er $p = -8 \% = -0.08$ siden det er en nedgang på $8 \%$. Vekstfaktoren $V$ er da
 
+$$
+V = 1 + p = 1 - 0.08 = 0.92
+$$
 ::::
+:::::::::::::::
 
 
-::::{grid-item-card}
-$$
-f(x) = 100 \cdot \left(\dfrac{1}{2}\right)^x
-$$
-^^^
-:::{figure} ./figurer/eksempler/eksempel_2/b.svg
+
+
 ---
-class: no-click, adaptive-figure
-width: 100%
+
+
+
+
+:::::::::::::::{exercise} Underveisoppgave 2
+Ta quizen!
+
+::::::::{quiz-2}
+
+:::::::{quiz-question}
+Hva blir vekstfaktoren ved $10\%$ økning?
+
+
+::::::{quiz-answer}
 ---
-:::
+correct: true
+---
+$$
+1.1
+$$
+::::::
 
-::::
 
-:::::
+::::::{quiz-answer}
+$$
+1.01
+$$
+::::::
 
 
+::::::{quiz-answer}
+$$
+0.9
+$$
+::::::
+
+
+::::::{quiz-answer}
+$$
+0.99
+$$
+::::::
+
+
+
+:::::::
+
+
+:::::::{quiz-question}
+Hva er vekstfaktoren ved $9\%$ nedgang?
+
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+0.91
+$$
+::::::
+
+
+::::::{quiz-answer}
+$$
+1.09
+$$
+::::::
+
+
+::::::{quiz-answer}
+$$
+-0.91
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+-0.09
+$$
+::::::
+
+
+:::::::
+
+
+:::::::{quiz-question}
+Hva er den prosentvise endringen hvis vekstfaktoren er $1.02$?
+
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+2\%
+$$
+::::::
+
+
+::::::{quiz-answer}
+$$
+20\%
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+102\%
+$$
+::::::
+
+
+::::::{quiz-answer}
+$$
+-2\%
+$$
+::::::
+
+
+:::::::
+
+
+:::::::{quiz-question}
+Hva er den prosentvise endringen hvis vekstfaktoren er $0.70$?
+
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+-30\%
+$$
+::::::
+
+
+::::::{quiz-answer}
+$$
+30 \%
+$$
+::::::
+
+
+::::::{quiz-answer}
+$$
+70 \%
+$$
+::::::
+
+
+::::::{quiz-answer}
+$$
+-70\%
+$$
+::::::
+
+
+
+
+:::::::
+
+
+:::::::{quiz-question}
+Hva er den prosentvise endringen hvis vekstfaktoren er $1.25$?
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+25\%
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+125\%
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+-25\%
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+0.25\%
+$$
+::::::
+
+:::::::
+
+
+:::::::{quiz-question}
+Hva er den prosentvise endringen hvis vekstfaktoren er $0.85$?
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+-15\%
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+15\%
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+-85\%
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+85\%
+$$
+::::::
+
+
+
+
+:::::::
+
+
+
+
+
+::::::::
 
 
 :::::::::::::::
@@ -248,76 +583,151 @@ width: 100%
 
 ---
 
-## Bestemme $f(x)$
-Vi kan anvende to strategier for å bestemme funksjonsuttrykket til en eksponentialfunksjon.
-1. Fra informasjon om to punkter på grafen til $f$
-2. En eksponentiell modell med regresjon
 
 
-La oss se på et eksempel der vi bestemme $f(x)$ ut ifra informasjon om to punkter på grafen til $f$.
+## Eksponentiell vekst fremover og bakover
+
+La oss forestille oss en vare som koster $100$ kr i dag, og som øker med $10\%$. Da er vekstfaktoren $1.10$. Da vil verdien etter endringen være gitt ved 
+
+$$
+\underbrace{100}_{\mathrm{Startverdi}} \cdot \underbrace{1.10}_{\mathrm{Vekstfaktor}} = \underbrace{110}_{\mathrm{Sluttverdi}}
+$$
+
+Når vi skal finne verdien *etter* en endring ganger vi altså vekstfaktoren med startverdien for å få sluttverdien.
 
 
+:::::::::::::::{summary} Eksponentiell vekst fremover
+La $G$ være startverdien og $V$ være vekstfaktoren for en prosentvis endring. Da er sluttverdien $N$ etter endringen gitt ved
 
-:::{margin}
-Bruk CAS-vinduet til å følge eksempelet!
-:::
+$$
+N = G \cdot V
+$$
+:::::::::::::::
 
-:::::::::::::::{example} Eksempel 3
-En eksponentialfunksjon $f$ går gjennom punktene $(0, 2)$ og $(3, 32)$. 
 
-::::{solution}
 ---
-dropdown: 0
+
+La oss nå forestille oss at en vare opprinnelig kostet $G$ kr, og så sank prisen med $20 \%$. Da kostet den 400 kr. For å finne startverdien $G$ kan vi da sette opp likningen
+
+$$
+G \cdot 0.80 = 400 \liff G = \dfrac{400}{0.80} = 500.
+$$
+
+
+Altså deler vi med vekstfaktoren når vi ønsker å regne oss *bakover* for å finne startverdien.
+
+:::::::::::::::{summary} Eksponentiell vekst bakover
+La $N$ være sluttverdien og $V$ være vekstfaktoren for en prosentvis endring. Da er startverdien $G$ før endringen gitt ved
+
+$$
+G = \dfrac{N}{V}
+$$
+
+:::::::::::::::
+
+
+
+## Eksponential vekst i flere steg
+
+La oss forestille oss at en vare først koster $100$ kr, så øker den med $10\%$ og så synker den med $10\%$. Hva er prisen på varen etter disse to endringene? Vi kan beregne verdien etter hver endring hver for seg. 
+
+Først har vi at 
+
+$$
+100 \cdot \underbrace{1.10}_{10\% \, \mathrm{økning}} = 110
+$$
+
+Deretter skal varen synke med $10\%$, så vi har at
+
+$$
+110 \cdot \underbrace{0.90}_{10\% \, \mathrm{nedgang}} = 99.
+$$
+
+Den samlede regningen vi har gjort fra den opprinnelige verdien er da
+
+$$
+\underbrace{100}_{\mathrm{Startverdi}} \cdot \underbrace{ \underbrace{1.10}_{10\% \, \mathrm{økning}} \cdot\underbrace{0.90}_{10\% \, \mathrm{nedgang}}}_{\mathrm{Samlet \, vekstfaktor}} = \underbrace{99}_{\mathrm{Sluttverdi}}
+$$
+
+Vi kan altså regne ut en **samlet** vekstfaktor for alle endringene ved å gange vekstfaktorene sammen. Deretter ganger vi den samlede vekstfaktoren med startverdien for å få sluttverdien.
+
+:::::::::::::::{summary} Eksponentiell vekst i flere steg
+Når en størrelse gjennomgår $n$ prosentvise endringer med vekstfaktorer $V_1, V_2, \ldots, V_n$, så er den samlede vekstfaktoren $V$ gitt ved
+
+$$
+V = V_1 \cdot V_2 \cdot \ldots \cdot V_n
+$$
+
+La $G$ være startverdien. Da er sluttverdien $N$ gitt ved 
+
+$$
+N = G \cdot V = G \cdot V_1 \cdot V_2 \cdot \ldots \cdot V_n
+$$
+
+Hvis de prosentvise endringene er like, altså at $V_1 = V_2 = \ldots = V_n = V$, så vil sluttverdien være gitt ved 
+
+$$
+N = G \cdot V^n
+$$
+
+:::::::::::::::
+
+
+
 ---
 
 
-:::{cas-popup}
----
-layout: sidebar
----
-:::
+## Eksponentialfunksjoner
+
+En eksponentialfunksjon $f(x)$ består av to byggesteiner: 
+1. En **startverdi** $a$ som forteller oss hvor den eksponentielle veksten starter.
+2. En **vekstfaktor** $b$ som forteller oss hvor stor den prosentvise veksten er når vi øker $x$ med $1$.
+
+> Vi bruker ordet "prosentvis vekst" både når det er en økning og når det er en nedgang. 
 
 
+La oss lage oss en oversikt over funksjonstypen:
 
-En eksponentialfunksjoner er på formen
+:::::::::::::::{summary} Eksponentialfunksjoner
+En eksponentialfunksjon $f$ kan skrives på formen
 
 $$
 f(x) = a \cdot b^x
 $$
 
-Grafen til $f$ går gjennom punktene $(0, 2)$ og $(3, 32)$ som betyr at
+der 
 
-$$
-f(0) = 2 \and f(3) = 32
-$$
-
-Vi kan bruke CAS til å bestemme verdiene til $a$ og $b$ ved hjelp av de to likningene:
+* $a$ er **startverdien** til den eksponentielle veksten når $x = 0$ (skjæring med $y$-aksen).
+* $b$ er **vekstfaktoren** som forteller oss hvor mye $f(x)$ vokser eller synker når $x$ øker med $1$.
 
 
-:::{figure} ./videoer/cas_bestemme_funksjonsuttrykk.gif
+
+::::{multi-plot2}
 ---
-class: no-click, adaptive-figure
-width: 60%
+rows: 1
+cols: 2
+ticks: off
+fontsize: 26
 ---
+:::{plot}
+function: 1 * 2**x
+ymin: -1
+ymax: 6
+xmax: 5
+xmin: -5
+text: -3.5, 4, "$b > 1$", center-center, bbox 
+annotate: (2, 1), (0, 1), "$f(0) = a$", -0.3
+point: (0, 1)
 :::
 
-Fra gif-en ser vi at vi får at 
-
-$$
-a = 2 \and b = 2 \sqrt[3]{2}
-$$
-
-Vekstfaktoren $b$ har en eksakt verdi, men i praksis er den ikke så lett å tolke. Hvis vi trykker på {ggb-icon}`mode_numeric` får vi en tilnærmet verdi for $b$ som gir 
-
-$$
-a = 2 \and b\approx 2.52. 
-$$
-
-Det betyr at $f(x)$ er gitt ved
-
-$$
-f(x) = 2 \cdot \left(2 \sqrt[3]{2}\right)^x \approx 2 \cdot 2.52^x
-$$
+:::{plot}
+function: 1 * 0.5**x
+ymin: -1
+ymax: 6
+xmax: 5
+xmin: -5
+text: -3.5, 4, "$0 < b < 1$", center-center, bbox 
+:::
 
 ::::
 
@@ -327,114 +737,74 @@ $$
 
 ---
 
-:::::::::::::::{exercise} Underveisoppgave 3 
+:::::::::::::::{example} Eksempel 3
+Nedenfor ser vi to eksempler eksponentialfunksjoner. 
 
-:::{cas-popup}
+
+::::{multi-plot2}
 ---
-layout: sidebar
+rows: 1
+cols: 2
+fontsize: 26
 ---
+:::{plot}
+function: 1 * 2**x, f
+ymin: -1
+ymax: 6
+xmax: 6
+xmin: -6
+text: -3.5, 4, "$f(x) = 1 \cdot 2^x$", center-center, bbox
 :::
 
-
-En eksponentialfunksjon $f$ går gjennom punktene $(1, 10)$ og $(3, 40)$. 
-
-Bestem $f(x)$.
-
-
-:::{clear}
+:::{plot}
+function: 4 * 0.5**x, g
+ymin: -1
+ymax: 6
+xmax: 6
+xmin: -6
+text: -3.5, 4, "$g(x) = 4 \cdot \left(\displaystyle \frac{1}{2}\right)^x$", center-center, bbox
 :::
 
-
-::::{answer}
-$$
-f(x) = 5 \cdot 2^x 
-$$
 ::::
 
-::::{solution}
-En eksponentialfunksjon $f$ er på formen 
-
-$$
-f(x) = a \cdot b^x.
-$$
-
-Vi bruker CAS for å bestemme $a$ og $b$ slik at grafen til $f$ går gjennom punktet $(1, 10)$ og $(3, 40)$:
-
-:::{figure} ./figurer/underveisoppgaver/underveisoppgave_3/sol.png
----
-class: no-click, adaptive-figure
-width: 60%
----
-:::
-
-Vi velge den løsningen som gir at $b \in \langle 0, \to\rangle$. Dermed får vi
-
-$$
-a = 5 \and b = 2. 
-$$
-
-Det betyr at 
-
-$$
-f(x) = 5 \cdot 2^x 
-$$
 
 
-::::
 :::::::::::::::
 
+
 ---
 
-Eksponentialfunksjoner kan brukes til å beskrive en del praktiske situasjoner. Vi sier at funksjonen **modellerer** situasjonen. Hvis en eksponentialfunksjon $f$ brukes for å modellere en praktisk situasjon, kaller vi den for en **eksponentiell modell**.
 
-I de fleste situasjoner, ønsker vi å lage en eksponentiell modell ut ifra et datamateriale som viser hvordan to størrelser henger sammen. La oss se på et eksempel på hvordan dette gjøres:
+La oss se mer konkret på hvordan eksponentialfunksjoner kan brukes til å beskrive praktiske situasjoner.
 
-
-:::{margin}
-Prøv å følge eksempelet nedenfor ved å bruke CAS-vinduet!
-:::
 
 :::::::::::::::{example} Eksempel 4
-:::{cas-popup}
-:::
+Du setter inn $1000$ kr på en sparekonto som gir $5\%$ rente per år. 
 
-En pasient får en medisin. I tabellen nedenfor vises konsentrasjonen av medisinen i mg/mL i blodet til pasienten ved ulike tidspunkter etter at pasienten fikk medisinen.
-
-:::{clear}
-:::
-
-| Tid (minutter) | $0$ | $5$ | $10$ | $15$ | $20$ |
-|----------------|---|---|----|----|----|
-| Konsentrasjon ($\mathrm{mg}/\mathrm{mL}$) | $3.00$ | $2.70$ | $2.43$ | $2.19$ | $1.97$ |
-
-
-<br>
-
-Lag en modell $K$ som gir konsentrasjonen $K(x)$ mg/mL når det har gått $x$ minutter siden pasienten har fått medisinen.
+Bestem en funksjon $f(x)$ som gir beløpet du har på kontoen etter $x$ år.
 
 
 ::::{solution}
 ---
 dropdown: 0
 ---
-
-Vi skriver inn punktene i en liste i CAS og bruker `RegEksp(data)` for å bestemme en eksponentiell modell $K(x)$ med regresjon. Se gif-en nedenfor.
-
-
-:::{figure} ./videoer/regresjon_cas_cropped.gif
----
-class: no-click, adaptive-figure
-width: 100%
----
-:::
-
-
-Fra gif-en ser vi at modellen vi får med regresjon er gitt ved 
+Siden vi setter inn $1000$ kr, så er startverdien 
 
 $$
-K(x) = 3 \cdot 0.98^x
+a = 1000.
+$$ 
+
+Siden renten er $5\%$ per år, så er vekstfaktoren 
+
+$$
+b = 1 + 0.05 = 1.05.
 $$
 
+Det betyr at funksjonen $f(x)$ som beskriver beløpet på kontoen etter $x$ år er
+
+$$
+f(x) = 1000 \cdot 1.05^x
+$$
 ::::
 
 
@@ -444,48 +814,496 @@ $$
 ---
 
 
-:::::::::::::::{exercise} Underveisoppgave 4
+:::::::::::::::{exercise} Underveisoppgave 3
+En bil blir kjøpt for 200 000 kr, og verdien synker med 15\% per år.
 
-:::{cas-popup}
-:::
-
-
-
-Befolkningen i en kommune i noen av årene mellom 2015 og 2024 er vist i figuren nedenfor.
-
-| År | 2015 | 2017 | 2018 | 2020 | 2024 |
-|---|---|---|---|---|---|
-| Befolkningstall | 10000 | 10404 | 10612 | 11484 | 11944 |
-
-<br>
-
-Bestem en eksponentiell modell $B$ som gir befolkningstallet $B(x)$ der $x$ er antall år etter 2015. Det vil si $x = 0$ er 2015, $x = 1$ er 2016 og så videre. 
-
-
+Sett opp et funksjonsuttrykk $f(x)$ som gir verdien av bilen etter $x$ år.
 
 ::::{answer}
 $$
-B(x) = 10041.72 \cdot 1.02^x
+f(x) = 200 \, 000 \cdot 0.85^x
 $$
 ::::
+
 
 ::::{solution}
-Vi skriver inn datamateriale i CAS, men passer på at vi skriver inn årstallene $x$ slik at de er antall år etter 2015. Deretter bruker vi `RegEksp(data)` for å bestemme den eksponentielle modellen:
-
-:::{figure} ./figurer/underveisoppgaver/underveisoppgave_4/sol.png
----
-class: no-click, adaptive-figure
-width: 100%
----
-:::
-
-Fra utskriften ser vi at 
+Startverdien er $200 \, 000$ kr siden dette er det bilen blir kjøpt for, så 
 
 $$
-B(x) = 10041.72 \cdot 1.02^x
+a = 200 \, 000.
 $$
 
+Verdien til bilen synker med $15 \%$ hvert år som betyr at vekstfaktoren er
+
+$$
+b = 100\% - 15\% = 85\% = 0.85.
+$$
+
+Dermed er funksjonen $f(x)$ som beskriver verdien av bilen etter $x$ år gitt ved
+
+$$
+f(x) = a \cdot b^x = 200 \, 000 \cdot 0.85^x.
+$$
 ::::
+
 
 :::::::::::::::
 
+
+
+---
+
+
+## Negative eksponenter
+Når vi definerte eksponentialfunksjonen $f(x)$, så sa vi at $a = f(0)$ representerte startverdien og at $b$ var vekstfaktoren som forteller oss hvor mye $f(x)$ vokser eller synker når $x$ øker med $1$. Men funksjonsuttrykket kan helt fint brukes til å regne ut $f(x)$ for negative $x$-verdier også. Å regne ut $f(x)$ får negative $x$-verdier kan tolkes som å regne seg bakover i tid. For eksempel, hvis vi har at
+
+
+$$
+f(x) = 100 \cdot 0.9^x
+$$
+
+betyr det at at verdien $2$ år *før* "startverdien" må være
+
+$$
+f(-2) = 100 \cdot 0.9^{-2}
+$$
+
+Dette bør være et helt rimelig uttrykk å regne med siden det er helt rimelig å tenke at noe kan ha hatt en verdi i fortiden, men det er litt uklart hva det vil si å opphøye et tall med en negativ eksponent. Det vi skal *mene* med å opphøye med en negativ eksponent er at
+
+$$
+0.9^{-2} = \dfrac{1}{0.9^2}
+$$
+
+Vi så tidligere at når vi ønsket å regne oss *bakover* fra en sluttverdi, så delte vi med vekstfaktoren. Siden det å sette inn en negativ $x$-verdi må svare til å regne oss bakover (gjerne bakover i *tid*), så er det rimelig å **definere** det som følger:
+
+
+:::::::::::::::{summary} Negative eksponenter
+La $b$ være et grunntall. Da vil en potens med negativ eksponent $-x$ være definert ved
+
+$$
+b^{-x} = \dfrac{1}{b^x}
+$$
+
+Når vi regner ut $b^{-x}$ betyr dette altså det samme som å dele med $b^x$. 
+
+:::::::::::::::
+
+
+---
+
+
+:::::::::::::::{example} Eksempel
+Du har satt inn et innskudd på en bankkonto som gir $5\%$ rente per år. Etter $3$ år har du $20~000$ kr på kontoen. 
+
+Hvilket eller hvilke av uttrykkene nedenfor kan brukes til å finne ut hvor mye du satte inn i utgangspunktet?
+
+
+::::{grid} 1 1 2 3
+---
+gutter: 2
+---
+:::{grid-item-card}
+1)
+^^^
+$$
+20~000 \cdot 0.95^3
+$$
+:::
+
+:::{grid-item-card}
+2)
+^^^
+$$
+\dfrac{20~000}{1.05^3}
+$$
+:::
+
+:::{grid-item-card}
+3)
+^^^
+$$
+20~000 \cdot 1.05^3
+$$
+:::
+
+:::{grid-item-card}
+4)
+^^^
+$$
+20~000 \cdot 0.95^{-3}
+$$
+:::
+
+
+:::{grid-item-card}
+5)
+^^^
+$$
+\dfrac{20~000}{0.95^3}
+$$
+:::
+
+
+:::{grid-item-card}
+6)
+^^^
+$$
+20~000 \cdot 1.05^{-3}
+$$
+:::
+::::
+
+
+::::{solution}
+---
+dropdown: 0
+---
+Siden innskuddet skal vokse med $5\%$ per år, så er vekstfaktoren $b = 1.05$. Da har vi at innskuddet vi satt inn må oppfylle
+
+$$
+20~000 \cdot 1.05^{-3} = 20~000 \cdot \dfrac{1}{1.05^3} = \dfrac{20~000}{1.05^3}
+$$
+
+Dermed vil uttrykk 2) og 6) kunne brukes til å finne ut hvor mye du satte inn i utgangspunktet.
+::::
+
+
+:::::::::::::::
+
+
+---
+
+
+:::::::::::::::{exercise} Underveisoppgave
+Ta quizen nedenfor. Flere alternativer kan være riktige.
+
+
+::::::::{quiz-2}
+:::::::{quiz-question}
+En vare har økt med $4 \%$ over 5 år. Varen koster nå $500$ kr.
+
+Hvilket eller hvilke av uttrykkene nedenfor kan brukes til å finne ut hva varen kostet for noen år siden?
+
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+500 \cdot 1.04^{-5}
+$$
+::::::
+
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+\dfrac{500}{1.04^5}
+$$
+::::::
+
+
+::::::{quiz-answer}
+$$
+500 \cdot 0.96^5
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+\dfrac{500}{0.96^5}
+$$
+::::::
+
+:::::::
+
+:::::::{quiz-question}
+En bakteriekultur dobles hver time. Etter 6 timer er det 12 800 bakterier.
+
+Hvilket eller hvilke av uttrykkene nedenfor kan brukes til å finne ut hvor mange bakterier det var i utgangspunktet?
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+12~800 \cdot 2^{-6}
+$$
+::::::
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+\dfrac{12~800}{2^6}
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+12~800 \cdot 0.5^6
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+\dfrac{12~800}{0.5^6}
+$$
+::::::
+
+:::::::
+
+:::::::{quiz-question}
+Mengden radioaktivt stoff minker med 8% per dag. Etter 10 dager er det 500 gram igjen.
+
+Hvilket eller hvilke av uttrykkene nedenfor kan brukes til å finne ut hvor mye stoff det var for 10 dager siden?
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+500 \cdot 0.92^{-10}
+$$
+::::::
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+\dfrac{500}{0.92^{10}}
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+500 \cdot 1.08^{10}
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+500 \cdot 0.08^{-10}
+$$
+::::::
+
+:::::::
+
+:::::::{quiz-question}
+En befolkning vokser med 3% per år. Etter 8 år er befolkningen 150 000 mennesker.
+
+Hvilket eller hvilke av uttrykkene nedenfor kan brukes til å finne ut hvor mange mennesker det var for 8 år siden?
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+150~000 \cdot 1.03^{-8}
+$$
+::::::
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+\dfrac{150~000}{1.03^8}
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+150~000 \cdot 0.97^8
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+\dfrac{150~000}{0.97^8}
+$$
+::::::
+
+:::::::
+
+:::::::{quiz-question}
+En bil minker i verdi med 12% per år. Etter 4 år er bilen verdt 88 000 kr.
+
+Hvilket eller hvilke av uttrykkene nedenfor kan brukes til å finne ut hva bilen kostet i utgangspunktet?
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+88~000 \cdot 0.88^{-4}
+$$
+::::::
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+\dfrac{88~000}{0.88^4}
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+88~000 \cdot 1.12^4
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+\dfrac{88~000}{1.12^4}
+$$
+::::::
+
+:::::::
+
+:::::::{quiz-question}
+En investering øker med 6% per kvartal. Etter 12 kvartaler er investeringen verdt 45 000 kr.
+
+Hvilket eller hvilke av uttrykkene nedenfor kan brukes til å finne ut hva den opprinnelige investeringen var?
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+45~000 \cdot 1.06^{-12}
+$$
+::::::
+
+::::::{quiz-answer}
+---
+correct: true
+---
+$$
+\dfrac{45~000}{1.06^{12}}
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+45~000 \cdot 0.94^{12}
+$$
+::::::
+
+::::::{quiz-answer}
+$$
+\dfrac{45~000}{0.94^{12}}
+$$
+::::::
+
+:::::::
+
+::::::::
+
+
+:::::::::::::::
+
+
+
+---
+
+
+
+## Programmering av eksponentiell vekst
+
+Noen ganger jobber vi med situasjoner der vi har eksponentiell vekst i flere ledd. For eksempel kan vi forestille oss at vi skal sette inn et fast beløp på en sparekonto hvert år som vokser med en bestemt rente for hvert år. For å regne å dette, må vi modellere eksponentiell vekst for *hvert* innskudd og summere de opp for å få det totale sparebeløpet. 
+
+For å håndtere slike situasjoner, kan vi først merke oss at det er en enkel sammenheng mellom $f(x)$ og $f(x + 1)$ for en eksponentialfunksjon:
+
+$$
+f(x + 1) = a \cdot b^{x + 1} = \underbrace{a \cdot b^x}_{\displaystyle f(x)} \cdot b = f(x) \cdot b.
+$$
+
+Altså får vi $f(x + 1)$ ved å gange $f(x)$ med vekstfaktoren $b$. Det betyr at vi kan regne ut $f(x)$ for alle $x$ ved å starte med $f(0) = a$ og så gange med $b$ for hvert steg vi tar oppover i $x$-verdiene.
+
+
+
+---
+
+
+:::::::::::::::{example} Eksempel
+Du setter inn $1000$ kr på en sparekonto som gir $5\%$ rente per år. 
+
+Lag et program som regner ut på kontoen etter $5$ år.
+
+
+
+::::{solution}
+---
+dropdown: 0
+---
+Vi har at startverdien er $a = 1000$ og at vekstfaktoren er $b = 1.05$. Da har vi at 
+
+En algoritme for å regne ut beløpet på kontoen etter $5$ år kan da være:
+
+* Start med $s = 1000$.
+* for $n = 1, 2, \ldots, 5$:
+    * $s = s \cdot 1.05$
+
+Programmet nedenfor regner ut beløpet på kontoen etter $5$ år:
+
+:::{interactive-code}
+s = 1000                # startverdi
+for n in range(1, 6):   # for år 1, 2, 3, 4, 5
+    s = s * 1.05        # Øk sparebeløpet med 5%
+
+print(f"{s = :.2f} kr")
+:::
+::::
+
+
+:::::::::::::::
+
+
+
+---
+
+
+I eksempelet over kunne vi prinsippet bare regnet ut beløpet på kontoen etter $5$ år med regnestykket $1000 \cdot 1.05^5$. Det er derfor ikke spesielt nyttig å bruke programmering til å regne ut dette når vi enkelt bare kan plugge inn regnestykket i en kalkulator. Derimot er det mer nyttig å bruke programmering i neste eksempel.
+
+
+:::::::::::::::{example} Eksempel 
+Du skal sette inn et innskudd på $1000$ kr på en sparekonto hver måned som gir $0.4 \%$ rente per måned. 
+
+Hvor mange måneder må du spare før du har $10~000$ kr på kontoen?
+
+::::{solution}
+---
+dropdown: 0
+---
+Her har vi at startverdien er $a = 1000$ og at vekstfaktoren er $b = 1.004$. Siden vi setter inn et innskudd hver måned, kan vi ikke bare bruke én eksponentiell modell for å regne ut beløpet på kontoen over tid. I stedet må vi bruke algoritmen nedenfor:
+
+* Start med $s = 1000$.
+* Så lenge $s < 10~000$:
+    * $s = s \cdot 1.004$
+    * $s = s + 1000$
+    
+
+Programmet nedenfor regner ut hvor mange måneder du må spare før du har $10~000$ kr på kontoen:
+
+:::{interactive-code}
+s = 1000                # startverdi
+måneder = 0             # antall måneder
+while s < 10_000:       # så lenge beløpet på kontoen er
+    s = s * 1.004 + 1000 # Øk sparebeløpet med 0.4%
+    s = s + 1000         # Legg til det nye innskuddet
+    måneder += 1          # øk antall måneder med 1
+
+print(f"Etter {måneder = } har vi et sparebeløp på {s = :.2f} kr")
+:::
+
+::::
+
+
+:::::::::::::::

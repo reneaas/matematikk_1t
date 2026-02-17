@@ -11,9 +11,7 @@ class: tip
 * Kunne skrive enkle programmer som bruker prosentvis endring og eksponentiell vekst. 
 :::::
 
-Eksponentialfunksjoner er en type funksjon som brukes til å beskrive prosesser der noe vokser eller minker med en fast prosentvis endring. Funksjonen dukker opp i mange sammenhenger i naturvitenskap, økonomi, samfunnsvitenskap og teknologi. 
-
-For at vi skal kunne forstå eksponentialfunksjoner, er det viktig at vi har en god forståelse av prosentregning og vekstfaktor *først*. 
+**Eksponentialfunksjoner** brukes til å beskrive situasjoner der noe vokser eller minker med en **fast prosentvis** endring. Denne prosentvise endringen kan vi uttrykke med en **vekstfaktor** som lar oss sette opp en funksjon som beskrives utviklingen.
 
 ## Prosent
 
@@ -33,23 +31,60 @@ Vi kan dermed tolke at prosenttegnet betyr $\% = \dfrac{1}{100} = 0.01$.
 :::::
 
 
-:::::{admonition} Quiz 1
----
-class: quiz
----
-Ta quizen! Flere svaralternativer kan være riktig.
 
-:::{raw} html
+
+
 ---
-file: ./quiz/teori/quiz_1/quiz_1.html
----
+
+
+
+
+
+
+:::::::::::::::{exercise} Underveisoppgave 1
+Ta quizen! Flere alternativer kan være riktig. 
+
+
+:::{quiz}
+Q: Hva er det samme som $20\%$
++ $0.2$
++ $\dfrac{20}{100}$
+- $0.02$
+- $\dfrac{2}{100}$
+
+Q: Hva er det samme som $0.75$?
++ $75\%$
++ $\dfrac{3}{4}$
+- $7.5\%$
+- $\dfrac{75}{10}$
+
+Q: Hva er det samme som $\dfrac{1}{4}$?
++ $25\%$
++ $0.25$
+- $2.5\%$
+- $0.025$
+
+Q: Hva er det samme som $150\%$?
++ $1.5$
++ $\dfrac{3}{2}$
+- $0.15$
+- $\dfrac{15}{100}$
+
+Q: Hva er det samme som $0.08$?
++ $8\%$
++ $\dfrac{8}{100}$
+- $80\%$
+- $\dfrac{8}{10}$
+
+Q: Hva er det samme som $\dfrac{3}{5}$?
++ $60\%$
++ $0.6$
+- $35\%$
+- $0.35$
 :::
 
-:::::
 
-
-
----
+:::::::::::::::
 
 ## Vekstfaktor
 
@@ -87,173 +122,69 @@ der $p$ er den prosentvise endringen.
 * $p < 0$ brukes for nedgang. Da er $0 < V < 1$.
 :::::
 
----
+:::::::::::::::{example} Eksempel 1
+Bestem vekstfaktoren til $20\%$ økning. 
 
-Prøv deg på Underveisoppgave 1 før du går videre!
 
-:::::::::::::::{admonition} Underveisoppgave 1
+::::{solution}
 ---
-class: check
+dropdown: 0
 ---
-::::::::::::::{tab-set}
----
-class: tabs-parts
----
-:::::::::::::{tab-item} a
-Bestem vekstfaktoren $V$ ved en økning på $30 \%$. 
-
-:::::{admonition} Løsning
----
-class: solution, dropdown
----
-Siden det er en økning på $30 \%$, setter vi $p = 30 \% = 0.3$. Vekstfaktoren er dermed
+Vekstfaktoren $V$ til $20\%$ økning er
 
 $$
-V = 1 + p = 1 + 0.3 = 1.3.
+V = 100\% + 20\% = 120\% = 1.2
 $$
-:::::
+::::
 
-:::::::::::::
-
-
-:::::::::::::{tab-item} b
-Bestem vekstfaktoren ved en nedgang på $12 \%$.
-
-
-:::::{admonition} Løsning
----
-class: solution, dropdown
----
-Siden det er en nedgang på $12 \%$, setter vi $p = -12 \% = -0.12$. Vekstfaktoren er dermed
-
-$$
-V = 1 + p = 1 - 0.12 = 0.88.
-$$
-:::::
-
-:::::::::::::
-
-::::::::::::::
 
 :::::::::::::::
 
 
 ---
 
-:::::::::::::::{admonition} Quiz 2 
----
-class: quiz 
----
-Ta quizen! 
 
-:::{raw} html
----
-file: ./quiz/teori/quiz_2/quiz_2.html
----
-:::
-
-:::::::::::::::
+:::::::::::::::{exercise} Underveisoppgave 2
+Bestem vekstfaktoren til $30\%$ nedgang.
 
 
+::::{answer}
+$$
+V = 0.7
+$$
+::::
 
----
-
-Prøv deg på Underveisoppgave 2 der du skal bruke vekstfaktor for å regne ut verdien etter prosentvise endringer!
-
-:::::::::::::::{admonition} Underveisoppgave 2
----
-class: check
----
-En vare koster $120 \, \text{kr}$. Varen øker først med $20 \%$ og deretter synker den med $10 \%$. 
-
-::::::::::::::{tab-set}
----
-class: tabs-parts
----
-:::::::::::::{tab-item} a
-Bestem prisen på varen etter den har økt med $20 \%$.
-
-:::::{admonition} Løsning
----
-class: solution, dropdown
----
-Verdien før endringen er $G = 120 \ \text{kr}$. Varen øker med en prosent $p = 20 \%$ så vi kan regne ut vekstfaktoren som 
+::::{solution}
+Vekstfaktoren til $30\%$ nedgang er
 
 $$
-V = 1 + p = 1 + 20 \% = 1 + 0.2 = 1.2.
+V = 100\% - 30\% = 70\% = 0.7
 $$
-
-Prisen etter økningen er dermed 
-
-$$
-N_1 = G \cdot V = 120 \ \text{kr} \cdot 1.2 = 144 \ \text{kr}. 
-$$
-:::::
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} b
-Bestem verdien til varen etter den har sunket med $10 \%$.
-
-:::::{admonition} Løsning
----
-class: solution, dropdown
----
-Verdien til varen er nå $N_1 = 144 \ \text{kr}$. Varen synker med en prosent $p = -10 \%$ så vi kan regne ut vekstfaktoren som
-
-$$
-V = 1 + p = 1 - 10 \% = 1 - 0.1 = 0.9.
-$$
-
-Prisen etter nedgangen er dermed
-
-$$
-N_2 = N_1 \cdot V = 144 \ \text{kr} \cdot 0.9 = 129.6 \ \text{kr}.
-$$
-:::::
-
-:::::::::::::
-
-
-::::::::::::::
+::::
 
 
 :::::::::::::::
 
+---
 
 ## Eksponentialfunksjoner
-Vi tenker oss at en størrelse $a$ endres med en fast prosent $p$ gjentatte ganger. Vekstfaktoren blir da $V = 1 + p$ og er den samme for hver endring. Vi tenker oss at $N_0 = G$ er verdien *før* noen prosentvis endring har funnet sted. Verdien etter én endring $N_1$ blir da
+
+Nå er vi klare for å se på hva en eksponentialfunksjon er. Vi skriver en eksponentialfunksjon $f$ på formen 
 
 $$
-N_1 = N_0 \cdot V = G \cdot V
+f(x) = a \cdot b^x.
 $$
 
-Etter to endringer blir verdien $N_2$
+For å se hva det har med en prosentregning og vekstfaktorer å gjøre, kan vi se på sammenhengen mellom $f(x)$ og $f(x + 1)$:
 
 $$
-N_2 = N_1 \cdot V = \underbrace{G \cdot V}_{=N_1} \cdot V = G \cdot V^2.
+f(x + 1) = a \cdot b^{x + 1} = \underbrace{a \cdot b^x}_{\displaystyle f(x)} \cdot b = f(x) \cdot b.
 $$
 
-Vi tar med verdien etter tre endringer $N_3$ også:
+Altså får vi funksjonsverdien i neste punkt $x + 1$ ved å gange funksjonsverdien i $x$ med faktoren $b$. Dermed kan vi tolke $b$ som en vekstfaktor!
 
-$$
-N_3 = N_2 \cdot V = \underbrace{G \cdot V^2}_{=N_2} \cdot V = G \cdot V^3.
-$$
+:::::::::::::::{summary} Eksponentialfunksjoner
 
-Fra regningen over, er det tydelig at vi kan generalisere mønsteret til at verdien etter $x$ endringer er
-
-$$
-N(x) = G \cdot V^x
-$$
-
-der startverdien er $N(0) = G$ og $V$ er vekstfaktoren for den faste prosentvise endringen. Utregningene over motiverer en generell definisjon av det vi kaller for en **eksponentialfunksjon**:
-
-
-:::::{admonition} Eksponentialfunksjoner
----
-class: theory
----
 En **eksponentialfunksjon** $f$ er en funksjon på formen
 
 
@@ -272,328 +203,297 @@ name: eksponentialfunksjoner-representasjoner-grafisk-representasjon
 width: 80%
 class: no-click, adaptive-figure
 ---
-
-viser den grafiske representasjonen av eksponentialfunksjoner for ulike verdier av $b$. Grafen skjærer $y$-aksen i $y = a$.
 :::
-:::::
 
-> Du merket kanskje at vi byttet ut $G$ med $a$ og $V$ med $b$ i den generelle definisjonen av eksponentialfunksjoner. Det er ikke noe spesiell grunn til dette annet at det er vanligere å bruke $a$ og $b$ for konstantene.
+:::::::::::::::
 
 
-:::::::::::::::{admonition} Eksempel 1
 ---
-class: example
----
-Nedenfor vises to eksempler på eksponentialfunksjoner.
 
-::::::::::::::{tab-set}
----
-class: tabs-parts
----
-:::::::::::::{tab-item} Funksjon 1
 
+:::::::::::::::{example} Eksempel 2
+Nedenfor vises to eksempler på eksponentialfunksjoner:
+
+:::::{grid} 1 1 2 2
+::::{grid-item-card}
 $$
 f(x) = 1 \cdot 2^x
 $$
-
-:::{figure} ./figurer/eksempler/eksempel_1/a.svg
+^^^
+:::{figure} ./figurer/eksempler/eksempel_2/a.svg
 ---
-width: 100%
 class: no-click, adaptive-figure
----
-viser grafen til $f(x) = 1 \cdot 2^x$. Vi kan se at $f(x)$ dobler seg for hver verdi av $x \in \mathbb{N}$ og at grafen skjærer $y$-aksen i $y = 1$. 
-:::
-
-:::::::::::::
-
-:::::::::::::{tab-item} Funksjon 2
-
-$$
-f(x) = 100 \cdot \left(\dfrac{1}{2}\right)^x 
-$$
-
-:::{figure} ./figurer/eksempler/eksempel_1/b.svg
----
 width: 100%
+---
+:::
+
+::::
+
+
+::::{grid-item-card}
+$$
+f(x) = 100 \cdot \left(\dfrac{1}{2}\right)^x
+$$
+^^^
+:::{figure} ./figurer/eksempler/eksempel_2/b.svg
+---
 class: no-click, adaptive-figure
----
-viser grafen til $f(x) = 100 \cdot \left(\dfrac{1}{2}\right)^x$. Vi kan se at $f(x)$ halveres for hver verdi av $x \in \mathbb{N}$ og at grafen skjærer $y$-aksen i $y = 100$.
-:::
-
-
-:::::::::::::
-::::::::::::::
-
-
-:::::::::::::::
-
-
----
-
-## Eksponentielle modeller
-
-Som vi beskrev innledningsvis, så er eksponentialfunksjoner egnet for å beskrive en del prosesser der noe vokser eller minker med en fast prosentvis endring. Her skal vi se på et par eksempler der vi bruker en eksponentialfunksjon som en modell for en praktisk situasjon. Når vi bruker en eksponentialfunksjon som en modell for en praktisk situasjon, kaller vi modellen for en **eksponentiell modell**.
-
-Vi starter med et eksempel der vi kan sette opp en eksponentiell modell direkte fra informasjonen som er oppgitt. 
-
-:::::::::::::::{admonition} Eksempel 2
----
-class: example
----
-En bakteriekultur består av $100$ bakterier. Hver time øker antallet bakterier med $80 \%$ per time.
-
-
-> Her velger du selv om du vil se på løsning med CAS i Geogebra eller Python. 
-
-````{tab} Geogebra
-
-<br>
-
-::::::::::::::{tab-set}
----
-class: tabs-parts
----
-
-:::::::::::::{tab-item} a
-Lag en modell $f$ som gir $f(x)$ bakterier etter $x$ timer.
-
-
-::::{admonition} Fasit
----
-class: dropdown, answer
----
-$$
-f(x) = 100 \cdot 1.8^x
-$$
-
-::::
-
-::::{admonition} Løsning
----
-class: dropdown, solution
----
-Siden antall bakterier øker med en fast prosent $80 \%$ per time, vil vekstfaktoren i modellen være 
-
-$$
-b = 1 + 80 \% = 1 + 0.8 = 1.8. 
-$$
-
-Bakteriekulturen består opprinnelig av $100$ bakterier, som betyr at $f(0) = a = 100$. Dermed får vi modellen
-
-$$
-f(x) = 100 \cdot 1.8^x. 
-$$
-
-::::
-
-:::::::::::::
-
-:::::::::::::{tab-item} b
-Bestem hvor mange timer det tar før det er $1000$ bakterier i bakteriekulturen. 
-
-
-::::{admonition} Løsning
----
-class: solution
----
-For å bestemme hvor lang tid det tar før det er $1000$ bakterier i bakteriekulturen, kan vi løse likningen 
-
-$$
-f(x) = 1000. 
-$$
-
-Vi bruker CAS til dette:
-
-:::{raw} html
----
-file: ./ggb/eksempler/eksempel_2/b.html
+width: 100%
 ---
 :::
 
-<br>
-
-Fra løsningen med CAS finner vi at $x \approx 3.92$ som betyr at det tar ca. 4 timer før det er 1000 bakterier i bakteriekulturen.
-
 ::::
-
-:::::::::::::
-
-::::::::::::::
-
-
-````
-
-
-````{tab} Python 
-
-<br>
-
-::::::::::::::{tab-set}
----
-class: tabs-parts
----
-
-:::::::::::::{tab-item} a
-Lag en modell $f$ som gir $f(x)$ bakterier etter $x$ timer.
-
-
-::::{admonition} Fasit
----
-class: dropdown, answer
----
-$$
-f(x) = 100 \cdot 1.8^x
-$$
-
-::::
-
-::::{admonition} Løsning
----
-class: dropdown, solution
----
-Siden antall bakterier øker med en fast prosent $80 \%$ per time, vil vekstfaktoren i modellen være 
-
-$$
-b = 1 + 80 \% = 1 + 0.8 = 1.8. 
-$$
-
-Bakteriekulturen består opprinnelig av $100$ bakterier, som betyr at $f(0) = a = 100$. Dermed får vi modellen
-
-$$
-f(x) = 100 \cdot 1.8^x. 
-$$
-
-::::
-
-
-:::::::::::::
-
-:::::::::::::{tab-item} b
-Bestem hvor mange timer det tar før det er $1000$ bakterier i bakteriekulturen. 
-
-
-::::{admonition} Løsning
----
-class: solution 
----
-For å bestemme hvor lang tid det tar før det er $1000$ bakterier i bakteriekulturen, kan vi løse likningen 
-
-$$
-f(x) = 1000. 
-$$
-
-Vi bruker CAS til dette:
-
-:::{raw} html
----
-file: ./python/eksempler/eksempel_2/b.html
----
-:::
-
-<br>
-
-Kjører vi programmet (gjør det!), finner vi at utskriften blir 
-
-:::{code-block} console
-x = 3.917
-:::
-
-som betyr at det tar ca. $4$ timer før det er $1000$ bakterier i bakteriekulturen.
-
-::::
-
-:::::::::::::
-
-
-::::::::::::::
-
-````
-
-:::::::::::::::
-
----
-
-Vi tar et eksempel der vi bruker regresjon til å bestemme en eksponentiell modell. 
-
-
-
-:::::::::::::::{admonition} Eksempel 3
----
-class: example, full-width
----
-En pasient får en medisin. I tabellen nedenfor vises konsentrasjonen av medisinen i $\mathrm{mg}/\mathrm{mL}$ i blodet til pasienten ved ulike tidspunkter etter at pasienten fikk medisinen.
-
-
-| Tid (minutter) | $0$ | $5$ | $10$ | $15$ | $20$ | $25$ | $30$ |
-|----------------|---|---|----|----|----|----|----|
-| Konsentrasjon ($\mathrm{mg}/\mathrm{mL}$) | $3.00$ | $2.70$ | $2.43$ | $2.19$ | $1.97$ | $1.77$ | $1.59$ |
-
-<br>
-
-1. Bestem en modell $K$ som gir konsentrasjonen $K(x)$ i $\mathrm{mg}/\mathrm{mL}$ i blodet til pasienten etter $x$ minutter.
-
-2. Bruk modellen til å bestemme når pasienten har mindre enn $1 \, \mathrm{mg}/\mathrm{mL}$ medisin i blodet.
-
-:::::{admonition} Løsning
----
-class: solution
----
-
-````{tab} Geogebra 
-
-I CAS-vinduet nedenfor, gjør vi følgende:
-
-1. Vi definerer en liste med datapunktene i en liste med navn `data`.
-2. Vi bruker `Reg`-kommandoen i CAS for å lage eksponentialfunksjon.
-3. Skriver ut funksjonsuttrykket ved å skrive "$K(x)$". 
-4. Vi løser likningen $K(x) = 1$ for å finne hvor mange minutter det tar før pasienten har mindre enn $1.5 \, \mathrm{mg}/\mathrm{mL}$ medisin i blodet.
-
-:::{raw} html 
----
-file: ./ggb/eksempler/eksempel_3/eksempel_3.html
----
-:::
-
-<br>
-
-Fra CAS-vinduet kan vi se at det tar ca. 52 minutter før pasienten har mindre enn $1 \, \mathrm{mg}/\mathrm{mL}$ medisin i blodet.
-
-````
-
-
-````{tab} Python 
-
-Vi lager modellen med regresjon i Python og løser likningen $K(x) = 1$ for å finne hvor mange minutter det tar før pasienten har mindre enn $1 \, \mathrm{mg}/\mathrm{mL}$ medisin i blodet.
-
-
-:::{raw} html 
----
-file: ./python/eksempler/eksempel_3/eksempel_3.html
----
-:::
-
-<br>
-
-Kjører vi programmet (gjør det!) så finner vi at 
-
-1. $K(x) = 3.001 \cdot 0.979^x$.
-2. $x = 51.779$ som betyr at det tar omtrent 52 minutter før konsentrasjonen er mindre enn $1 \, \mathrm{mg}/\mathrm{mL}$.
-
-
-
-````
 
 :::::
 
+
+
+
 :::::::::::::::
 
 
+---
+
+## Bestemme $f(x)$
+Vi kan anvende to strategier for å bestemme funksjonsuttrykket til en eksponentialfunksjon.
+1. Fra informasjon om to punkter på grafen til $f$
+2. En eksponentiell modell med regresjon
+
+
+La oss se på et eksempel der vi bestemme $f(x)$ ut ifra informasjon om to punkter på grafen til $f$.
 
 
 
+:::{margin}
+Bruk CAS-vinduet til å følge eksempelet!
+:::
+
+:::::::::::::::{example} Eksempel 3
+En eksponentialfunksjon $f$ går gjennom punktene $(0, 2)$ og $(3, 32)$. 
+
+::::{solution}
+---
+dropdown: 0
+---
+
+
+:::{cas-popup}
+---
+layout: sidebar
+---
+:::
 
 
 
+En eksponentialfunksjoner er på formen
+
+$$
+f(x) = a \cdot b^x
+$$
+
+Grafen til $f$ går gjennom punktene $(0, 2)$ og $(3, 32)$ som betyr at
+
+$$
+f(0) = 2 \and f(3) = 32
+$$
+
+Vi kan bruke CAS til å bestemme verdiene til $a$ og $b$ ved hjelp av de to likningene:
+
+
+:::{figure} ./videoer/cas_bestemme_funksjonsuttrykk.gif
+---
+class: no-click, adaptive-figure
+width: 60%
+---
+:::
+
+Fra gif-en ser vi at vi får at 
+
+$$
+a = 2 \and b = 2 \sqrt[3]{2}
+$$
+
+Vekstfaktoren $b$ har en eksakt verdi, men i praksis er den ikke så lett å tolke. Hvis vi trykker på {ggb-icon}`mode_numeric` får vi en tilnærmet verdi for $b$ som gir 
+
+$$
+a = 2 \and b\approx 2.52. 
+$$
+
+Det betyr at $f(x)$ er gitt ved
+
+$$
+f(x) = 2 \cdot \left(2 \sqrt[3]{2}\right)^x \approx 2 \cdot 2.52^x
+$$
+
+::::
+
+
+:::::::::::::::
+
+
+---
+
+:::::::::::::::{exercise} Underveisoppgave 3 
+
+:::{cas-popup}
+---
+layout: sidebar
+---
+:::
+
+
+En eksponentialfunksjon $f$ går gjennom punktene $(1, 10)$ og $(3, 40)$. 
+
+Bestem $f(x)$.
+
+
+:::{clear}
+:::
+
+
+::::{answer}
+$$
+f(x) = 5 \cdot 2^x 
+$$
+::::
+
+::::{solution}
+En eksponentialfunksjon $f$ er på formen 
+
+$$
+f(x) = a \cdot b^x.
+$$
+
+Vi bruker CAS for å bestemme $a$ og $b$ slik at grafen til $f$ går gjennom punktet $(1, 10)$ og $(3, 40)$:
+
+:::{figure} ./figurer/underveisoppgaver/underveisoppgave_3/sol.png
+---
+class: no-click, adaptive-figure
+width: 60%
+---
+:::
+
+Vi velge den løsningen som gir at $b \in \langle 0, \to\rangle$. Dermed får vi
+
+$$
+a = 5 \and b = 2. 
+$$
+
+Det betyr at 
+
+$$
+f(x) = 5 \cdot 2^x 
+$$
+
+
+::::
+:::::::::::::::
+
+---
+
+Eksponentialfunksjoner kan brukes til å beskrive en del praktiske situasjoner. Vi sier at funksjonen **modellerer** situasjonen. Hvis en eksponentialfunksjon $f$ brukes for å modellere en praktisk situasjon, kaller vi den for en **eksponentiell modell**.
+
+I de fleste situasjoner, ønsker vi å lage en eksponentiell modell ut ifra et datamateriale som viser hvordan to størrelser henger sammen. La oss se på et eksempel på hvordan dette gjøres:
+
+
+:::{margin}
+Prøv å følge eksempelet nedenfor ved å bruke CAS-vinduet!
+:::
+
+:::::::::::::::{example} Eksempel 4
+:::{cas-popup}
+:::
+
+En pasient får en medisin. I tabellen nedenfor vises konsentrasjonen av medisinen i mg/mL i blodet til pasienten ved ulike tidspunkter etter at pasienten fikk medisinen.
+
+:::{clear}
+:::
+
+| Tid (minutter) | $0$ | $5$ | $10$ | $15$ | $20$ |
+|----------------|---|---|----|----|----|
+| Konsentrasjon ($\mathrm{mg}/\mathrm{mL}$) | $3.00$ | $2.70$ | $2.43$ | $2.19$ | $1.97$ |
+
+
+<br>
+
+Lag en modell $K$ som gir konsentrasjonen $K(x)$ mg/mL når det har gått $x$ minutter siden pasienten har fått medisinen.
+
+
+::::{solution}
+---
+dropdown: 0
+---
+
+Vi skriver inn punktene i en liste i CAS og bruker `RegEksp(data)` for å bestemme en eksponentiell modell $K(x)$ med regresjon. Se gif-en nedenfor.
+
+
+:::{figure} ./videoer/regresjon_cas_cropped.gif
+---
+class: no-click, adaptive-figure
+width: 100%
+---
+:::
+
+
+Fra gif-en ser vi at modellen vi får med regresjon er gitt ved 
+
+$$
+K(x) = 3 \cdot 0.98^x
+$$
+
+::::
+
+
+:::::::::::::::
+
+
+---
+
+
+:::::::::::::::{exercise} Underveisoppgave 4
+
+:::{cas-popup}
+:::
+
+
+
+Befolkningen i en kommune i noen av årene mellom 2015 og 2024 er vist i figuren nedenfor.
+
+| År | 2015 | 2017 | 2018 | 2020 | 2024 |
+|---|---|---|---|---|---|
+| Befolkningstall | 10000 | 10404 | 10612 | 11484 | 11944 |
+
+<br>
+
+Bestem en eksponentiell modell $B$ som gir befolkningstallet $B(x)$ der $x$ er antall år etter 2015. Det vil si $x = 0$ er 2015, $x = 1$ er 2016 og så videre. 
+
+
+
+::::{answer}
+$$
+B(x) = 10041.72 \cdot 1.02^x
+$$
+::::
+
+::::{solution}
+Vi skriver inn datamateriale i CAS, men passer på at vi skriver inn årstallene $x$ slik at de er antall år etter 2015. Deretter bruker vi `RegEksp(data)` for å bestemme den eksponentielle modellen:
+
+:::{figure} ./figurer/underveisoppgaver/underveisoppgave_4/sol.png
+---
+class: no-click, adaptive-figure
+width: 100%
+---
+:::
+
+Fra utskriften ser vi at 
+
+$$
+B(x) = 10041.72 \cdot 1.02^x
+$$
+
+::::
+
+:::::::::::::::
 
 
 

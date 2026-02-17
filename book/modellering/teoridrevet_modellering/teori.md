@@ -241,6 +241,70 @@ Fra gif-en ovenfor ser vi at når vi løser $A'(x) = 0$, så får vi $x = 16$. H
 :::::::::::::::
 
 
+### Programmering
+
+En annen vanlig strategi er å bruke programmering til å løse optimeringsproblemer. Hvis vi forestiller oss en funksjon $f$ der vi er ute etter å finne den største eller minste mulige verdien til funksjoner, så kan vi bruke programmering med en algoritme som tar utgangspunkt i figurene vist nedenfor:
+
+
+::::{multi-plot2}
+---
+rows: 1
+cols: 2
+fontsize: 25
+xmin: -1
+xmax: 6
+ymin: -1
+ymax: 6
+ticks: off
+---
+:::{plot}
+function: (x - 3)**2 + 1, (0, 6), f, blue
+point: (1, f(1))
+point: (2, f(2))
+point: (3, f(3))
+point: (4, f(4))
+vline: 1, 0, f(1), dashed, gray
+vline: 2, 0, f(2), dashed, gray
+vline: 3, 0, f(3), dashed, gray
+vline: 4, 0, f(4), dashed, gray
+text: 1, 0, "$x_1$", bottom-center
+text: 2, 0, "$x_2$", bottom-center
+text: 3, 0, "$x_3$", bottom-center
+text: 4, 0, "$x_4$", bottom-center
+annotate: (2, f(1) + 1), (1, f(1)), "$f(x_1) > f(x_2)$"
+annotate: (2, f(1) + 1), (2, f(2)), "$f(x_1) > f(x_2)$"
+annotate: (3.5, f(4) + 2), (3, f(3)), "$f(x_3) \leq f(x_4)$"
+annotate: (3.5, f(4) + 2), (4, f(4)), "$f(x_3) \leq f(x_4)$"
+:::
+
+:::{plot}
+function: -(x - 3)**2 + 5, (0, 6), f, blue
+point: (1, f(1))
+point: (2, f(2))
+point: (3, f(3))
+point: (4, f(4))
+vline: 1, 0, f(1), dashed, gray
+vline: 2, 0, f(2), dashed, gray
+vline: 3, 0, f(3), dashed, gray
+vline: 4, 0, f(4), dashed, gray
+text: 1, 0, "$x_1$", bottom-center
+text: 2, 0, "$x_2$", bottom-center
+text: 3, 0, "$x_3$", bottom-center, red
+text: 4, 0, "$x_4$", bottom-center
+annotate: (-2, f(1) + 1.5), (1, f(1)), "$f(x_1) < f(x_2)$", 0.3
+annotate: (-2, f(1) + 1.5), (2, f(2)), "$f(x_1) < f(x_2)$", -0.3
+annotate: (3.2, f(4) + 2.5), (3, f(3)), "$f(x_3) \geq f(x_4)$", 0.3
+annotate: (3.2, f(4) + 2.5), (4, f(4)), "$f(x_3) \geq f(x_4)$", -0.3
+:::
+
+::::
+
+I figuren ovenfor til venstre, skal vi lete etter toppunktet til grafen til $f$. I figure ovenfor til høyre, skal vi lete etter bunnpunktet til grafen til $f$. 
+
+
+
+
+
 
 ## Klassiske problemstillinger
 De vanligste problemstillingene som kommer til å dukke opp er å bestemme modeller som beskriver areal, lengder eller volum. Etter vi har satt opp modellene, kan vi velge en av de tre strategiene vi har sett på for å løse optimeringsproblemet. I eksemplene nedenfor vil vi fokusere på det å sette opp modeller og løse optimeringsproblemene som betyr at eksemplene i seg selv her ikke representerer noen praktisk situasjon. Jobben din i oppgavene er å gjenkjenne typen matematisk problemstilling som er beskrevet i den praktiske situasjonen og oversette dette til en matematisk modell!
