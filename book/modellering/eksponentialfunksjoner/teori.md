@@ -701,6 +701,21 @@ der
 * $b$ er **vekstfaktoren** som forteller oss hvor mye $f(x)$ vokser eller synker når $x$ øker med $1$.
 
 
+:::{interactive-graph} 
+width: 70%
+interactive-var: a, 0, 5, 16
+interactive-var: b, 0.01, 5, 16
+interactive-var-start: a=1, b=2
+xmin: -6
+xmax: 6
+ymin: -1
+ymax: 6
+function: a * b**x
+point: (0, a)
+text: 0, a, "(0, {a :.2f})", top-left
+:::
+
+
 
 ::::{multi-plot2}
 ---
@@ -738,7 +753,7 @@ text: -3.5, 4, "$0 < b < 1$", center-center, bbox
 ---
 
 :::::::::::::::{example} Eksempel 3
-Nedenfor ser vi to eksempler eksponentialfunksjoner. 
+Nedenfor ser vi to eksempler på eksponentialfunksjoner. 
 
 
 ::::{multi-plot2}

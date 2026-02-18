@@ -721,21 +721,58 @@ f(x) = \dfrac{1}{9}(x + 1)(x - 6)^2
 $$
 
 
-:::{figure} ./figurer/oppgave_9/figur.svg
----
+:::{plot}
+xmin: -1
+xmax: 8
+ymin: -1
+ymax: 8
 width: 70%
-class: no-click, adaptive-figure
----
+function: 1/9 * (x + 1) * (x - 6)**2, f
+fill-between: f(x), 0, (0, 6), blue, 0.3, where=above
+nocache:
 :::
+
 
 For å bestemme arealet av det fargelagte området, skal du summere arealene til rektangler som bruker $f(x)$ som høyde til rektangler for ulike verdier av $x$ i intervallet $[0, 6]$. Se figurene nedenfor:
 
-:::{figure} ./figurer/oppgave_9/merged_figure.svg
+::::{multi-plot2}
 ---
+rows: 1
+cols: 2
+fontsize: 24
+---
+:::{plot}
+xmin: -1
+xmax: 8
+ymin: -1
+ymax: 8
 width: 100%
-class: no-click, adaptive-figure
----
+function: 1/9 * (x + 1) * (x - 6)**2, f
+let: N = 6
+let: a = 0
+let: b = 6
+let: h = (b - a) / N
+repeat: n=0..N; polygon: (a + n * h, 0), (a + (n + 1) * h, 0), (a + (n + 1) * h, f(a + n * h)), (a + n * h, f(a + n * h)), blue, 0.3
+text: 6, 5, "6 rektangler", bbox
 :::
+
+
+:::{plot}
+xmin: -1
+xmax: 8
+ymin: -1
+ymax: 8
+width: 100%
+function: 1/9 * (x + 1) * (x - 6)**2, f
+let: N = 12
+let: a = 0
+let: b = 6
+let: h = (b - a) / N
+repeat: n=0..N; polygon: (a + n * h, 0), (a + (n + 1) * h, 0), (a + (n + 1) * h, f(a + n * h)), (a + n * h, f(a + n * h)), blue, 0.3
+text: 6, 5, "12 rektangler", bbox
+:::
+::::
+
 
 ::::::::::::::{tab-set}
 ---
