@@ -2244,12 +2244,25 @@ Nedenfor vises en figur som er satt sammen av mange linjestykker.
 Lengden til et linjestykke er alltid $90\%$ av lengden til det forrige linjestykket. Det første linjestykket er $100 \, \mathrm{cm}$ langt.
 
 
-:::{figure} ./figurer/oppgaver/oppgave_11/figur.svg
----
-class: no-click, adaptive-figure
-width: 100%
----
+:::{plot}
+width: 80%
+figsize: (8, 2)
+lw: 2
+fontsize: 20
+axis: off
+axis: equal
+let: L = 100
+let: k = 0.9
+def: x(n) = L*k*(1 - k**(2*n))/(1 - k**2)
+def: y(n) = L*(1 + (-1)**n * k**(2*n + 2))/(1 + k**2)
+line-segment: (0, 0), (0, L), blue
+repeat: n=0..49; line-segment: (x(n), y(n)), (x(n+1), y(n)), blue
+repeat: n=0..49; line-segment: (x(n+1), y(n)), (x(n+1), y(n+1)), blue
+text: -1, 0.5 * L, "100 cm", center-left
+text: 0.5 * k * L, L, "90 cm", top-center
+nocache:
 :::
+
 
 
 ::::::::::::::{tab-set}
@@ -2289,7 +2302,12 @@ Lag et program som beregner den samlede lengden av de 10 000 første linjestykke
 
 
 
+
+
 ---
+
+
+
 
 
 :::::::::::::::{exercise} Oppgave 13
@@ -2297,12 +2315,22 @@ I figuren nedenfor vises en følge av kvadrater der det første kvadratet har si
 
 Sidelengden til det neste kvadratet er alltid $70\%$ av sidelengden til det forrige kvadratet.
 
-:::{figure} ./figurer/oppgaver/oppgave_12/figur.svg
----
-class: no-click, adaptive-figure
-width: 100%
----
+
+:::{plot}
+width: 70%
+figsize: (8, 2)
+let: a0 = 1        # first square side length
+let: g = 0.7       # scale factor for side length
+let: gap = 0.5     # horizontal gap between squares
+def: s(n) = a0*g**n
+def: x(n) = n*gap + a0*(1 - g**n)/(1 - g)
+repeat: n=0..7; polygon: (x(n), 0), (x(n)+s(n), 0), (x(n)+s(n), s(n)), (x(n), s(n)), blue, 0.3
+axis: off
+axis: equal
 :::
+
+
+
 
 
 ::::::::::::::{tab-set}
@@ -2350,12 +2378,22 @@ Nedenfor vises et kvadrat med sidelengder $3$.
 
 Kvadratet er fylt med mindre fargelagte kvadrater som blir mindre og mindre.
 
-:::{figure} ./figurer/oppgaver/oppgave_13/figur.svg
----
-class: no-click, adaptive-figure
-width: 80%
----
+
+:::{plot}
+width: 50%
+let: L = 3
+let: r = 1/2
+def: s(n) = L*(1 - r**n)
+polygon: (0, 0), (L, 0), (L, L), (0, L)
+repeat: n=1..10; line-segment: (s(n), s(n-1)), (s(n), L), dashed, black
+repeat: n=1..10; line-segment: (s(n-1), s(n)), (L, s(n)), dashed, black
+repeat: n=1..10; fill-polygon: (s(n-1), s(n-1)), (s(n), s(n-1)), (s(n), s(n)), (s(n-1), s(n)), blue, 0.3
+axis: off
+axis: equal
+lw: 1
+nocache: 
 :::
+
 
 
 ::::::::::::::{tab-set}
@@ -2367,7 +2405,7 @@ Bestem et uttrykk for summen av arealene til de fire største fargelagte kvadrat
 
 ::::{answer}
 $$
-3 + 3 \cdot \dfrac{1}{4} + 3 \cdot \left(\dfrac{1}{4}\right)^2 + 3 \cdot \left(\dfrac{1}{4}\right)^3
+3 + \dfrac{3}{4} + \dfrac{3}{4^2} + \dfrac{3}{4^3}
 $$
 ::::
 
@@ -2389,6 +2427,202 @@ Bestem summen av arealene til de 10 000 største fargelagte kvadratene.
 
 
 ::::::::::::::
+
+
+:::::::::::::::
+
+
+
+---
+
+
+:::::::::::::::{exercise} Oppgave 15
+En likesidet trekant har areal $9$. Trekanten er delt i mindre likesidete trekanter der noen er fargelagte. Oppdelingen fortsetter for alltid. Se figuren nedenfor. 
+
+
+
+:::{plot}
+width: 50%
+let: L = 1
+let: r = 1/2
+let: k = sqrt(3)/2
+let: h = k * L
+def: s(n) = r * h * (r**n - 1) / (r - 1)
+polygon: (-0.5 * L, 0), (0.5 * L, 0), (0, h)
+repeat: n=1..10; polygon: (0, s(n-1)), (r * L / 2**n, s(n)), (-r * L / 2**n, s(n)), blue, 0.3
+axis: off
+axis: equal
+nocache:
+:::
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Bestem et uttrykk for summen av arealene til de fire største fargelagte trekantene.
+
+
+::::{answer}
+$$
+9 + \dfrac{9}{4} + \dfrac{9}{4^2} + \dfrac{9}{4^3}
+$$
+::::
+
+:::::::::::::
+
+
+
+:::::::::::::{tab-item} b
+Lag et program som beregner summen av arealene til de 10 000 største fargelagte trekantene.
+
+
+:::{interactive-code}
+# Din kode her
+
+
+:::
+
+
+::::{answer}
+Arealet av de 10 000 største fargelagte trekantene er omtrent lik 12.
+::::
+
+
+::::{solution}
+:::{code-block} python
+---
+linenos:
+---
+areal = 9
+s = 0
+for n in range(10_000):
+    s += areal
+    areal /= 4
+    
+print(s)
+:::
+
+Når programmet kjøres får vi utskriften
+
+:::{code-block} console
+11.999999999999998
+:::
+
+Altså er arealet av de 10 000 største fargelagte trekantene omtrent lik 12.
+::::
+
+:::::::::::::
+
+
+::::::::::::::
+
+
+
+:::::::::::::::
+
+
+
+---
+
+
+
+:::::::::::::::{exercise} Oppgave 16
+:::{plot}
+align: right
+width: 100%
+figsize: (3, 3)
+xmin: -1.2
+xmax: 1.2
+ymin: -0.2
+ymax: 2.0
+axis: off
+axis: equal
+let: a0 = 2
+polygon: (-a0/2, 0), (a0/2, 0), (0, sqrt(3)*a0/2), black, 0
+let: a1 = a0/2
+polygon: (-a1/2, sqrt(3)*a1/2), (a1/2, sqrt(3)*a1/2), (0, 0), black, 0
+def: a(n) = a1/2**(n+1)
+def: h(n) = sqrt(3)/3 + sqrt(3)/6 * (-1/2)**n
+repeat: n=0..9; polygon: (-a(n)/2, h(n+1)), (a(n)/2, h(n+1)), (0, h(n)), black, 0
+lw: 0.5
+nocache:
+:::
+
+I figuren til høyre vises en likesidet trekant med sidelengder $2$.
+
+Inni den ytre trekanten er det innskrevet en mindre likesidet trekant. Inni denne trekanten er det igjen innskrevet en enda mindre likesidet trekant. 
+
+Slik fortsetter det i det uendelige.
+
+
+:::{clear}
+:::
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Bestem et uttrykk for summen av omkretsene til de fire største trekantene.
+
+
+::::{answer}
+$$
+6 + \dfrac{6}{2} + \dfrac{6}{2^2} + \dfrac{6}{2^3}
+$$
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Lag et program som regner ut summen av omkretsene til de 10 000 største trekantene.
+
+
+:::{interactive-code}
+# Din kode her
+
+
+:::
+
+
+
+::::{answer}
+Summen av omkretsene til de 10 000 største trekantene er omtrent lik 12.
+::::
+
+
+::::{solution}
+:::{code-block} python
+---
+linenos:
+---
+s = 0
+omkrets = 2 * 3
+for x in range(10_000):
+    s += omkrets
+    omkrets = omkrets / 2
+    
+print(f"{s = }")
+:::
+
+som gir utskriften
+
+:::{code-block} console
+s = 11.999999999999998
+:::
+
+som betyr at summen av omkretsene til de 10 000 største trekantene er omtrent like 12.
+::::
+
+
+
+:::::::::::::
+
+::::::::::::::
+
 
 
 :::::::::::::::
