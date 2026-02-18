@@ -703,8 +703,8 @@ der
 
 :::{interactive-graph} 
 width: 70%
-interactive-var: a, 0, 5, 16
-interactive-var: b, 0.01, 5, 16
+interactive-var: a, 0, 5, 64
+interactive-var: b, 0.01, 5, 64
 interactive-var-start: a=1, b=2
 xmin: -6
 xmax: 6
