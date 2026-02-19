@@ -1162,8 +1162,6 @@ Bestem arealet av $\triangle OAB$
 
 
 
----
-
 
 
 

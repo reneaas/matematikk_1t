@@ -15,7 +15,7 @@ class: tip
 
 
 ## Prosent
-Når vi snakker om prosent av noe, så mener vi gjerne en del av det hele. Prosent betyr "per hundre" eller "delt på hundre", og vi kan tolke prosenttegnet $\% = \dfrac{1}{100} = 0.01$. Det betyr at vi kan representere en prosent på tre ulike måter:
+Når vi snakker om prosent av noe, så mener vi gjerne en del av det hele. Prosent betyr "per hundre" eller "delt på hundre", og vi kan tolke prosenttegnet $\% = \dfrac{1}{100} = 0.01$. Det betyr at vi kan representere prosent på tre ulike måter:
 
 :::::::::::::::{summary} Prosent: Representasjoner
 
@@ -268,7 +268,7 @@ $$
 
 Tallet $1.05$ kaller vi for **vekstfaktoren** til endringen. 
 
-Vi kan også forestille oss en situasjon der et beløp i stedet synker med $5\%$. Da har vi at det nye beløpet er
+Vi kan også forestille oss en situasjon der beløpet i stedet synker med $5\%$. Da har vi at det nye beløpet er
 
 $$
 \underbrace{1000}_{100 \%} - \underbrace{0.05 \cdot 1000}_{5 \%} = \underbrace{(1 - 0.05)}_{95\%} \cdot 1000 = \textcolor{red}{0.95} \cdot 1000
@@ -607,6 +607,28 @@ $$
 
 ---
 
+
+:::::::::::::::{exercise} Underveisoppgave 3
+En vare koster $300$ kr. Prisen øker med $20\%$.
+
+Bestem et uttrykk for prisen etter økningen.
+
+
+::::{answer}
+$$
+300 \cdot 1.20
+$$
+::::
+
+
+:::::::::::::::
+
+
+
+---
+
+
+
 La oss nå forestille oss at en vare opprinnelig kostet $G$ kr, og så sank prisen med $20 \%$. Da kostet den 400 kr. For å finne startverdien $G$ kan vi da sette opp likningen
 
 $$
@@ -627,7 +649,26 @@ $$
 
 
 
-## Eksponential vekst i flere steg
+---
+
+
+:::::::::::::::{exercise} Underveisoppgave 4
+En jakke er på tilbud med $30\%$ rabatt, og prisen er nå $700$ kr.
+
+Bestem et uttrykk for den opprinnelige prisen. 
+
+
+::::{answer}
+$$
+\dfrac{700}{0.70}
+$$
+::::
+
+:::::::::::::::
+
+
+
+## Eksponentiell vekst i flere steg
 
 La oss forestille oss at en vare først koster $100$ kr, så øker den med $10\%$ og så synker den med $10\%$. Hva er prisen på varen etter disse to endringene? Vi kan beregne verdien etter hver endring hver for seg. 
 
@@ -673,11 +714,45 @@ $$
 :::::::::::::::
 
 
+---
+
+
+:::::::::::::::{exercise} Underveisoppgave 5
+En vare koster $500$ kr. Prisen øker først med $20\%$, og så synker den med $10\%$.
+
+Bestem et uttrykk for prisen etter disse to endringene.
+
+::::{answer}
+$$
+500 \cdot 1.2 \cdot 0.9
+$$
+::::
+:::::::::::::::
+
+
+---
+
+
+:::::::::::::::{exercise} Underveisoppgave 6
+Lønna til Anna har økt med $5\%$ per år i $3$ år. Lønnen til Anna var opprinnelig $400~000$ kr. 
+
+Bestem et uttrykk for lønnen til Anna etter de $3$ årene.
+
+
+::::{answer}
+$$
+400~000 \cdot 1.05^3
+$$
+::::
+:::::::::::::::
+
+
 
 ---
 
 
 ## Eksponentialfunksjoner
+Vi kan generalisere mønsteret vi har kommet fram til så langt til å lage oss en funksjon som beskriver en eksponentiell vekst. En slik funksjon kaller vi for en **eksponentialfunksjon**.
 
 En eksponentialfunksjon $f(x)$ består av to byggesteiner: 
 1. En **startverdi** $a$ som forteller oss hvor den eksponentielle veksten starter.
@@ -701,10 +776,31 @@ der
 * $b$ er **vekstfaktoren** som forteller oss hvor mye $f(x)$ vokser eller synker når $x$ øker med $1$.
 
 
+::::{multi-plot2}
+---
+rows: 1
+cols: 2
+---
+:::{plot}
+width: 100%
+function: 1 * 2**x, blue
+function: 1 * 0.5**x, red
+ymin: -1
+ymax: 6
+xmax: 5
+xmin: -5
+text: 3.5, 4, "$b > 1$", center-center, bbox 
+text: -3.5, 4, "$0 < b < 1$", center-center, bbox 
+annotate: (2, 1), (0, 1), "$f(0) = a$", 0
+point: (0, 1)
+ticks: off
+fontsize: 26
+:::
+
 :::{interactive-graph} 
-width: 70%
-interactive-var: a, 0, 5, 64
-interactive-var: b, 0.01, 5, 64
+width: 100%
+interactive-var: a, 0, 5, 50
+interactive-var: b, 0, 5, 50
 interactive-var-start: a=1, b=2
 xmin: -6
 xmax: 6
@@ -713,35 +809,7 @@ ymax: 6
 function: a * b**x
 point: (0, a)
 text: 0, a, "(0, {a :.2f})", top-left
-:::
-
-
-
-::::{multi-plot2}
----
-rows: 1
-cols: 2
-ticks: off
-fontsize: 26
----
-:::{plot}
-function: 1 * 2**x
-ymin: -1
-ymax: 6
-xmax: 5
-xmin: -5
-text: -3.5, 4, "$b > 1$", center-center, bbox 
-annotate: (2, 1), (0, 1), "$f(0) = a$", -0.3
-point: (0, 1)
-:::
-
-:::{plot}
-function: 1 * 0.5**x
-ymin: -1
-ymax: 6
-xmax: 5
-xmin: -5
-text: -3.5, 4, "$0 < b < 1$", center-center, bbox 
+fontsize: 24
 :::
 
 ::::
@@ -829,7 +897,7 @@ $$
 ---
 
 
-:::::::::::::::{exercise} Underveisoppgave 3
+:::::::::::::::{exercise} Underveisoppgave 7
 En bil blir kjøpt for 200 000 kr, og verdien synker med 15\% per år.
 
 Sett opp et funksjonsuttrykk $f(x)$ som gir verdien av bilen etter $x$ år.
@@ -907,7 +975,7 @@ Når vi regner ut $b^{-x}$ betyr dette altså det samme som å dele med $b^x$.
 ---
 
 
-:::::::::::::::{example} Eksempel
+:::::::::::::::{example} Eksempel 5
 Du har satt inn et innskudd på en bankkonto som gir $5\%$ rente per år. Etter $3$ år har du $20~000$ kr på kontoen. 
 
 Hvilket eller hvilke av uttrykkene nedenfor kan brukes til å finne ut hvor mye du satte inn i utgangspunktet?
@@ -989,7 +1057,7 @@ Dermed vil uttrykk 2) og 6) kunne brukes til å finne ut hvor mye du satte inn i
 ---
 
 
-:::::::::::::::{exercise} Underveisoppgave
+:::::::::::::::{exercise} Underveisoppgave 8
 Ta quizen nedenfor. Flere alternativer kan være riktige.
 
 
@@ -1232,22 +1300,10 @@ $$
 
 ## Programmering av eksponentiell vekst
 
-Noen ganger jobber vi med situasjoner der vi har eksponentiell vekst i flere ledd. For eksempel kan vi forestille oss at vi skal sette inn et fast beløp på en sparekonto hvert år som vokser med en bestemt rente for hvert år. For å regne å dette, må vi modellere eksponentiell vekst for *hvert* innskudd og summere de opp for å få det totale sparebeløpet. 
-
-For å håndtere slike situasjoner, kan vi først merke oss at det er en enkel sammenheng mellom $f(x)$ og $f(x + 1)$ for en eksponentialfunksjon:
-
-$$
-f(x + 1) = a \cdot b^{x + 1} = \underbrace{a \cdot b^x}_{\displaystyle f(x)} \cdot b = f(x) \cdot b.
-$$
-
-Altså får vi $f(x + 1)$ ved å gange $f(x)$ med vekstfaktoren $b$. Det betyr at vi kan regne ut $f(x)$ for alle $x$ ved å starte med $f(0) = a$ og så gange med $b$ for hvert steg vi tar oppover i $x$-verdiene.
+Vi kan bruke programmering til å regne med eksponentiell vekst. La oss se på et eksempel.
 
 
-
----
-
-
-:::::::::::::::{example} Eksempel
+:::::::::::::::{example} Eksempel 6
 Du setter inn $1000$ kr på en sparekonto som gir $5\%$ rente per år. 
 
 Lag et program som regner ut på kontoen etter $5$ år.
@@ -1264,7 +1320,7 @@ En algoritme for å regne ut beløpet på kontoen etter $5$ år kan da være:
 
 * Start med $s = 1000$.
 * for $n = 1, 2, \ldots, 5$:
-    * $s = s \cdot 1.05$
+    * Sett $s = s \cdot 1.05$
 
 Programmet nedenfor regner ut beløpet på kontoen etter $5$ år:
 
@@ -1281,17 +1337,15 @@ print(f"{s = :.2f} kr")
 :::::::::::::::
 
 
+I eksempelet ovenfor kunne vi i prinsippet bare regnet ut $1000 \cdot 1.05^5$ direkte, så det kan virke litt *unødvendig* å bruke programmering her.
 
----
-
-
-I eksempelet over kunne vi prinsippet bare regnet ut beløpet på kontoen etter $5$ år med regnestykket $1000 \cdot 1.05^5$. Det er derfor ikke spesielt nyttig å bruke programmering til å regne ut dette når vi enkelt bare kan plugge inn regnestykket i en kalkulator. Derimot er det mer nyttig å bruke programmering i neste eksempel.
+Men la oss forestille oss at vi i stedet skal sette inn et innskudd på starten av hvert år. Det er her programmering kan skinne. 
 
 
-:::::::::::::::{example} Eksempel 
-Du skal sette inn et innskudd på $1000$ kr på en sparekonto hver måned som gir $0.4 \%$ rente per måned. 
+:::::::::::::::{example} Eksempel 7
+Du skal sette inn et innskudd på $1000$ kr på en sparekonto på starten av hvert år. Rensten per år er på $5\%$. 
 
-Hvor mange måneder må du spare før du har $10~000$ kr på kontoen?
+Hvor mye penger har du å kontoen etter $10$ år?
 
 ::::{solution}
 ---
@@ -1299,23 +1353,21 @@ dropdown: 0
 ---
 Her har vi at startverdien er $a = 1000$ og at vekstfaktoren er $b = 1.004$. Siden vi setter inn et innskudd hver måned, kan vi ikke bare bruke én eksponentiell modell for å regne ut beløpet på kontoen over tid. I stedet må vi bruke algoritmen nedenfor:
 
-* Start med $s = 1000$.
-* Så lenge $s < 10~000$:
-    * $s = s \cdot 1.004$
-    * $s = s + 1000$
+* Start med $s = 0$.
+* For $n = 1, 2, \ldots, 10$ år:
+    * Sett $s = s + 1000$ for å legge til det nye innskuddet
+    * Sett $s = s \cdot 1.05$ for å øke sparebeløpet med 5% rente
     
 
-Programmet nedenfor regner ut hvor mange måneder du må spare før du har $10~000$ kr på kontoen:
+Programmet nedenfor bruker algoritmen ovenfor.
 
 :::{interactive-code}
-s = 1000                # startverdi
-måneder = 0             # antall måneder
-while s < 10_000:       # så lenge beløpet på kontoen er
-    s = s * 1.004 + 1000 # Øk sparebeløpet med 0.4%
-    s = s + 1000         # Legg til det nye innskuddet
-    måneder += 1          # øk antall måneder med 1
+s = 0
+for n in range(1, 11):  # for år 1, 2, ..., 10
+    s = s + 1000        # Legg til det nye innskuddet
+    s = s * 1.05        # Øk sparebeløpet med 5% rente
 
-print(f"Etter {måneder = } har vi et sparebeløp på {s = :.2f} kr")
+print(f"{s = :.2f} kr")
 :::
 
 ::::
