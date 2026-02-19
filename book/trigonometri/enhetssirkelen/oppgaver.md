@@ -11,10 +11,10 @@ Nedenfor vises et interaktivt vindu hvor enhetssirkelen er tegnet inn med en vin
 :::{interactive-graph} 
 interactive-var: v, 0, 360, 361
 interactive-var-start: 30
-xmin: -1.5
-xmax: 1.5
-ymin: -1.5
-ymax: 1.5
+xmin: -2
+xmax: 2
+ymin: -2
+ymax: 2
 xstep: 1
 ystep: 1
 curve: cos(t), sin(t), (0, 2*pi), solid, blue
@@ -26,7 +26,7 @@ text: cos(v*pi/180), sin(v*pi/180) + 0.1, "$P({cos(v*pi/180):.2f}, {sin(v*pi/180
 hline: sin(v*pi/180), 0, cos(v*pi/180), dashed, gray
 vline: cos(v*pi/180), 0, sin(v*pi/180), dashed, gray
 figsize: (4, 4)
-fontsize: 14
+fontsize: 10
 ticks: off
 :::
 

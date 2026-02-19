@@ -2626,3 +2626,192 @@ som betyr at summen av omkretsene til de 10 000 største trekantene er omtrent l
 
 
 :::::::::::::::
+
+
+
+---
+
+
+
+:::::::::::::::{exercise} Oppgave 17
+Anna jobber med eksponentialfunksjonen
+
+$$
+f(x) = 10 \cdot \left(\dfrac{1}{2}\right)^x, \quad x \in [0, 5]
+$$
+
+Anna vil bestemme arealet av et fargelagt område mellom grafen til $f$ og $x$-aksen. Hun har laget seg en figur som viser hvordan hun har tenkt at hun kan finne en tilnærmet verdi til arealet ved å bruke rektangler. Se figurene nedenfor.
+
+::::{multi-plot2}
+---
+rows: 1
+cols: 2
+---
+:::{plot}
+width: 100%
+fontsize: 24
+function: 10 * 2**-x, (0, 5), f, blue
+fill-between: f(x), 0, (0, 5), blue, 0.3
+xmin: -1
+xmax: 6
+ymin: -1
+ymax: 11
+:::
+
+:::{interactive-graph} 
+width: 100%
+fontsize: 24
+interactive-var: N, 1, 64, 64
+interactive-var-start: 5
+xmin: -1
+xmax: 6
+ymin: -1
+ymax: 11
+function: 10 * 2**-x, (0, 5), f, blue
+let: a = 0
+let: b = 5
+let: h = (b - a) / N
+let: M = N - 1
+repeat: n=0..M; polygon: (a + n * h, 0), (a + (n + 1) * h, 0), (a + (n + 1) * h, f(a + n * h)), (a + n * h, f(a + n * h)), blue, 0.3
+text: 6, 5, "{N:0.f} rektangler", bbox
+:::
+::::
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Bestem et uttrykk for arealet som Anna kan bruke til å regne ut arealet med $5$ rektangler.
+
+
+::::{answer}
+$$
+f(0) + f(1) + f(2) + f(3) + f(4)
+$$
+::::
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Bestem et uttrykk for arealet som Anna kan bruke til å regne ut arealet med $10$ rektangler.
+
+
+::::{answer}
+$$
+f(0)\cdot 0.5 + f(0.5) \cdot 0.5 + f(1) \cdot 0.5 + \ldots + f(4) \cdot 0.5 + f(4.5) \cdot 0.5
+$$
+::::
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+Lag et program som finner arealet av det fargelagte området ved å bruke 10 000 rektangler.
+
+
+:::{interactive-code}
+# Din kode her
+
+
+:::
+
+
+
+::::{answer}
+:::{code-block} python
+---
+linenos:
+---
+def f(x):
+    return 10 * (1/2) ** x
+    
+N_rektangler = 10_000
+bredde = 5 / N_rektangler
+areal = 0
+for i in range(N_rektangler):
+    x = i * bredde
+    areal = areal + f(x) * bredde
+    
+print(areal)
+:::
+::::
+
+
+:::::::::::::
+
+
+::::::::::::::
+
+
+
+
+
+
+:::::::::::::::
+
+
+
+---
+
+
+
+:::::::::::::::{exercise} Oppgave 18
+En pasient tar regelmessig et medikament som inneholder 1000 mg virkestoff per tablett. Kroppen bryter ned virkestoffet slik at det minker med $20\%$ per time.
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Bestem et uttrykk som gir mengden virkestoff i kroppen til pasienten dersom en tablett tas hver time.
+
+::::{answer}
+$$
+1000 + 1000 \cdot 0.8 + 1000 \cdot 0.8^2 + 1000 \cdot 0.8^3 + \ldots
+$$
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Bestem et uttrykk som gir mengden virkestoff i kroppen til pasienten dersom en tablett tas hver 4. time.
+
+
+::::{answer}
+$$
+1000 + 1000 \cdot 0.8^4 + 1000 \cdot 0.8^8 + 1000 \cdot 0.8^{12} + \ldots
+$$
+::::
+
+
+:::::::::::::
+
+
+
+:::::::::::::{tab-item} c
+Lag et program som bestemmer mengden virkestoff pasienten har i kroppen dersom en tablett tas hver 4.time over lang tid.
+
+
+:::{interactive-code}
+# Din kode her
+
+
+:::
+
+
+:::::::::::::
+
+
+::::::::::::::
+
+
+
+
+:::::::::::::::
+
