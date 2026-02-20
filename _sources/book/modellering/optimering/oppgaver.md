@@ -1898,7 +1898,7 @@ line-segment: (0, 1), (cos(pi + pi/6), sin(pi + pi/6))
 ellipse: (0, 0), 1, 0.2, gray, dashed
 ellipse: (0, sin(-pi/6)), cos(-pi/6), 0.2, red, dashed
 line-segment: (0, sin(-pi/6)), (cos(-pi/6), sin(-pi/6)), black, solid
-text: 0.5 * cos(-pi/6), sin(-pi/6) - 0.1, "$r$", center-center
+text: 0.5 * cos(-pi/6), sin(-pi/6) - 0.1, "$\ell$", center-center
 bar: (1.1, -0.5), 1.5, vertical
 text: 1.05, 0.25, "$h$", center-right
 fontsize: 30
@@ -1916,16 +1916,16 @@ line-segment: (0, sin(-pi/6)), (cos(-pi/6), sin(-pi/6)), black, solid
 line-segment: (0, sin(-pi/6)), (-cos(-pi/6), sin(-pi/6)), black, dotted
 line-segment: (0, 0), (cos(-pi/6), sin(-pi/6)), solid, black
 line-segment: (0, 0), (0, sin(-pi/6)), solid, black
-text: 0.5 * cos(-pi/6), sin(-pi/6) - 0.1, "$s$", center-center
+text: 0.5 * cos(-pi/6), sin(-pi/6) - 0.1, "$\ell$", center-center
 bar: (1.1, -0.5), 1.5, vertical
 text: 1.05, 0.25, "$h$", center-right
 fontsize: 30
 lw: 3
-text: 0 - 0.1, 0.5 * sin(-pi/6), "$\ell$", center-center
-text: 0.5 * cos(-pi/6), 0 - 0.1, "$r$", center-center
+text: 0 - 0.1, 0.5 * sin(-pi/6), "$s$", center-center
+text: 0.5 * cos(-pi/6), 0 - 0.1, "$1$", center-center
 polygon: (0, sin(-pi/6)), (0.1, sin(-pi/6)), (0.1, sin(-pi/6) + 0.1), (0, sin(-pi/6) + 0.1)
 line-segment: (0, 0), (0, 1), dotted, black
-text: 0 + 0.1, 0.4, "$r$", center-left
+text: 0 + 0.1, 0.4, "$1$", center-left
 :::
 ::::
 
