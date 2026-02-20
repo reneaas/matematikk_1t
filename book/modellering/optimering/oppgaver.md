@@ -765,6 +765,7 @@ class: no-click, adaptive-figure
 ---
 
 
+
 :::::::::::::::{exercise} Oppgave 8
 En halvsirkel er gitt ved
 
