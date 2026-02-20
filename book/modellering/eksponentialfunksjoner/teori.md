@@ -938,7 +938,7 @@ $$
 
 
 ## Negative eksponenter
-Når vi definerte eksponentialfunksjonen $f(x)$, så sa vi at $a = f(0)$ representerte startverdien og at $b$ var vekstfaktoren som forteller oss hvor mye $f(x)$ vokser eller synker når $x$ øker med $1$. Men funksjonsuttrykket kan helt fint brukes til å regne ut $f(x)$ for negative $x$-verdier også. Å regne ut $f(x)$ får negative $x$-verdier kan tolkes som å regne seg bakover i tid. For eksempel, hvis vi har at
+Når vi definerte eksponentialfunksjonen $f(x)$, så sa vi at $a = f(0)$ representerte startverdien og at $b$ var vekstfaktoren som forteller oss hvor mye $f(x)$ vokser eller synker når $x$ øker med $1$. Men funksjonsuttrykket kan helt fint brukes til å regne ut $f(x)$ for negative $x$-verdier også. Å regne ut $f(x)$ for negative $x$-verdier kan tolkes som å regne seg bakover i tid. For eksempel, hvis vi har at
 
 
 $$
@@ -1343,9 +1343,9 @@ Men la oss forestille oss at vi i stedet skal sette inn et innskudd på starten 
 
 
 :::::::::::::::{example} Eksempel 7
-Du skal sette inn et innskudd på $1000$ kr på en sparekonto på starten av hvert år. Rensten per år er på $5\%$. 
+Du skal sette inn et innskudd på $1000$ kr på en sparekonto på starten av hvert år. Renten per år er på $5\%$. 
 
-Hvor mye penger har du å kontoen etter $10$ år?
+Hvor mye penger har du på kontoen etter $10$ år?
 
 ::::{solution}
 ---

@@ -2376,7 +2376,7 @@ Lag et program som beregner summen av arealene til de 10 000 første kvadratene.
 :::::::::::::::{exercise} Oppgave 14
 Nedenfor vises et kvadrat med sidelengder $3$.
 
-Kvadratet er fylt med mindre fargelagte kvadrater som blir mindre og mindre.
+Kvadratet er fylt med mindre kvadrater. Noen av kvadratene er fargelagte.
 
 
 :::{plot}
@@ -2405,7 +2405,7 @@ Bestem et uttrykk for summen av arealene til de fire største fargelagte kvadrat
 
 ::::{answer}
 $$
-3 + \dfrac{3}{4} + \dfrac{3}{4^2} + \dfrac{3}{4^3}
+\dfrac{9}{4} + \dfrac{9}{4^2} + \dfrac{9}{4^3} + \dfrac{9}{4^4}
 $$
 ::::
 
@@ -2413,7 +2413,7 @@ $$
 
 
 :::::::::::::{tab-item} b
-Bestem summen av arealene til de 10 000 største fargelagte kvadratene.
+Lag et program som beregner summen av arealene til de 10 000 største fargelagte kvadratene.
 
 
 :::{interactive-code}
@@ -2421,6 +2421,23 @@ Bestem summen av arealene til de 10 000 største fargelagte kvadratene.
 
 
 :::
+
+
+::::{answer}
+:::{code-block} python
+---
+linenos:
+---
+areal = 9 / 4
+s = 0
+
+for n in range(10_000):
+    s = s + areal
+    areal = areal / 4
+    
+print(f"{s = }")
+:::
+::::
 
 
 :::::::::::::
@@ -2640,7 +2657,9 @@ $$
 f(x) = 10 \cdot \left(\dfrac{1}{2}\right)^x, \quad x \in [0, 5]
 $$
 
-Anna vil bestemme arealet av et fargelagt område mellom grafen til $f$ og $x$-aksen. Hun har laget seg en figur som viser hvordan hun har tenkt at hun kan finne en tilnærmet verdi til arealet ved å bruke rektangler. Se figurene nedenfor.
+Anna vil bestemme arealet av det fargelagt område mellom grafen til $f$ og $x$-aksen. 
+
+Hun har laget seg en figur som viser hvordan hun har tenkt at hun kan finne en tilnærmet verdi til arealet ved å bruke rektangler. Se figurene nedenfor.
 
 ::::{multi-plot2}
 ---
