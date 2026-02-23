@@ -2,105 +2,30 @@
 
 
 
+
 :::::::::::::::{exercise} Oppgave 1
-Anna og Bjørn har materiale nok til å lage et gjerde som er 64 m langt.
-
-De skal gjerde inn et område som skal ha form som et rektangel, og de ønsker at området skal få størst mulig areal. Se figuren nedenfor.
-
-:::{plot}
-width: 60%
-axis: off
-polygon: (0, 0), (44, 0), (44, 20), (0, 20)
-xmin: -5
-xmax: 45
-ymax: 22
-ymin: -2
-text: 22, 0, "$x$", bottom-center
-text: 44, 10, "$y$", center-right
-figsize: (4, 2)
-:::
-
-
-
-
-
-::::::::::::::{tab-set}
 ---
-class: tabs-parts
+aids: true
 ---
-:::::::::::::{tab-item} a
-
-:::{ggb-popup}
----
-layout: sidebar
-perspective: S
----
-:::
-
-
-Anna mener at arealet blir størst mulig dersom alle sidekantene er like lange.
-
-Lag en oversikt over arealet for ulike lengder på sidekantene og vurder om Anna sin påstand er riktig.
-
-
-:::{clear}
-:::
-
-
-::::{hints}
-Sett først opp et uttrykk for omkretsen uttrykt med $x$ og $y$. Deretter kan du løse likningen for $y$ og la $x$ bestemme verdiene til $y$.
-::::
-
-
-
-
-:::::::::::::
-
-
-
-:::::::::::::{tab-item} b
-
-:::{cas-popup}
----
-layout: sidebar
----
-:::
-
-
-
-Bjørn vil sette opp et funksjonsuttrykk for å bestemme hvilken lengde på sidekantene som gir størst mulig areal.
-
-
-Lag modellen for Bjørn og bruk den til å bestemme hvilken lengde på sidekantene som gir størst mulig areal.
-:::::::::::::
-
-
-::::::::::::::
-
-:::::::::::::::
-
-
----
-
-
-
-:::::::::::::::{exercise} Oppgave 2
 Alma og Synne skal slå opp telt ved en elvebredde. De skal sette opp et tau rundt teltet for å holde dyr unna. 
 
-De har 80 m med tau og fire pinner. Området de skal gjerde inn skal ha form som et rektangel og de tenker å bruke elvebredden som en av sidene i rektangelet slik at de kan gjerde inn et større område. Målet deres er å få et størst mulig areal innenfor gjerdet. Se figuren nedenfor.
+De har $40$ meter med tau og vil sette opp tauet slik at det danner et rektangel der den éne siden er langs elvebredden. Se figuren nedenfor.
 
 
 :::{plot}
 width: 70%
 axis: off
-figsize: (5, 3)
+figsize: (5, 2)
 hline: 0, -10, 10, solid, blue
 line-segment: (0, 0), (8, 0), black, solid
 line-segment: (-4, 0), (-4, 5), black, solid
 line-segment: (-4, 5), (4, 5), black, solid
 line-segment: (4, 5), (4, 0), black, solid
 text: 0, 0, "Elvebredde", bottom-center
-annotate: (5, 5), (0, 5), "Gjerde", 0.5
+annotate: (7, 6), (4, 5), "Tau", 0.5
+text: -4, 0.5 * 5, "$y$", center-left
+text: 0, 5, "$x$", top-center
+axis: equal
 :::
 
 
@@ -119,7 +44,61 @@ perspective: S
 
 Lag en oversikt over arealet for ulike lengder på sidekantene og avgjør omtrent hvilken lengde på sidekantene som gir størst mulig areal.
 
+:::{clear}
+:::
 
+:::{table}
+width: 60%
+labels: $x$, $y$, Areal
+0, 20, 0
+4, 18, 72
+8, ,
+...
+40, , 
+:::
+
+
+
+
+
+::::{solution}
+Siden vi vi har $40$ meter med tau, så vil vi ha at
+
+$$
+x + 2y = 40 \liff y = \dfrac{40 - x}{2}
+$$
+
+Arealet vil bare være 
+
+$$
+A = x \cdot y
+$$
+
+Da kan vi lage en oversikt som følger:
+
+
+:::{figure} ./figurer/oppgaver/1/a/regneark_verdier.png
+---
+class: no-click, adaptive-figure
+width: 60%
+---
+:::
+
+og oversikten med formler:
+
+
+
+:::{figure} ./figurer/oppgaver/1/a/regneark_formler.png
+---
+class: no-click, adaptive-figure
+width: 60%
+---
+:::
+
+
+
+
+::::
 
 
 :::::::::::::
@@ -143,18 +122,48 @@ Lag en grafisk framstilling for Synne og bruk den til å bestemme hvilken lengde
 ::::{answer}
 :::{plot}
 width: 80%
-function: x * (80 - 2*x), (0, 40), A
+let: a = -2
+let: b = 40
+let: x0 = -b / (2*a)
+function: x * (40 - 2*x), (0, 20), A
 xmin: -5
-xmax: 45
+xmax: 25
 xstep: 5
-ymin: -200
-ymax: 1000
-ystep: 200
-point: (20, 800)
-text: 20, 800, "$(20, 800)$", top-center
+ymin: -50
+ymax: 300
+ystep: 50
+point: (x0, A(x0))
+text: x0, A(x0), "$({x0}, {A(x0)})$", top-center
 xlabel: $x / \mathrm{m}$
 ylabel: $A(x) / \mathrm{m^2}$, -40
 :::
+
+::::
+
+
+
+::::{solution}
+Vi vet fra oppgave **a** at
+
+$$
+y = \dfrac{40 - x}{2}
+$$
+
+Arealet kan derfor behandles som en funksjon av $x$: 
+
+$$
+A = x \cdot y = x \cdot \dfrac{40 - x}{2}
+$$
+
+Altså er 
+
+$$
+A(x) = x \cdot \dfrac{40 - x}{2}
+$$
+
+Vi lager en grafisk framstilling og bruker {ggb-icon}`mode_extremum` til å finne koordinatene til ekstremalpunktet til grafen. 
+
+
 
 ::::
 
@@ -173,7 +182,7 @@ layout: sidebar
 
 Alma vil løse oppgaven helt eksakt. 
 
-Bruk CAS til å bestemme den eksakte verdien for lengden på sidekantene som gir størst mulig areal.
+Bestem en eksakt verdi for sidelengdene som gir størst mulig areal.
 :::::::::::::
 
 
@@ -187,33 +196,38 @@ Bruk CAS til å bestemme den eksakte verdien for lengden på sidekantene som gir
 ---
 
 
-:::::::::::::::{exercise} Oppgave 3
-En andregradsfunksjon $f$ er gitt ved
-
-$$
-f(x) = -x^2 + 9 \qder x \in [0, 3].
-$$
-
-En trekant har hjørner i $(0, 0)$, $(k, 0)$ og $(k, f(k))$. Se figuren nedenfor.
-
+:::::::::::::::{exercise} Oppgave 2
 
 :::{plot}
-width: 70%
-function: -x**2 + 9, (0, 3), f
-xmin: -1
-xmax: 4
-ymax: 10
-ymin: -1
+align: right
+width: 100%
+function: (x**2 - 9)**4, (0, 3), f
+xmin: -0.5
+xmax: 3.5
+ymin: -200
+ymax: 7000
 ticks: off
-polygon: (0, 0), (2, 0), (2, 5), blue, 0.2
+polygon: (0, 0), (1, 0), (1, f(1)), (0, f(1))
 point: (0, 0)
-point: (2, 0)
-point: (2, 5)
-text: 0, 0, "$(0, 0)$", bottom-left
-text: 2, 0, "$(k, 0)$", bottom-center
-text: 2, 5, "$(k, f(k))$", top-right
+point: (1, 0)
+point: (1, f(1))
+point: (0, f(1))
+text: 1, f(1), "$(t, f(t))$", top-right
+fontsize: 30
+lw: 3.5
 :::
 
+Funksjonen $f$ er gitt ved
+
+$$
+f(x) = (x^2 - 9)^4 \qfor x \in \langle 0, 3 \rangle.
+$$
+
+
+Et rektangel har hjørnene $(0, 0)$, $(t, 0)$, $(t, f(t))$ og $(0, f(t))$. Se figuren til høyre.
+
+:::{clear}
+:::
 
 
 ::::::::::::::{tab-set}
@@ -230,13 +244,31 @@ perspective: S
 :::
 
 
-Lag en systematisk oversikt over arealet av trekanten for ulike verdier av $k \in [0, 3]$ og finn et estimat på hvilken verdi av $k$ som gir størst mulig areal.
+Lag en systematisk oversikt som vist nedenfor. Fyll inn verdiene som mangler.
+
+
+:::{clear}
+:::
+
+
+:::{table}
+labels: $t$, Areal av rektangel
+0, 0
+0.5,
+1, 4096
+...
+3,
+:::
+
 
 
 :::::::::::::
 
 
+
+
 :::::::::::::{tab-item} b
+
 :::{ggb-popup}
 ---
 layout: sidebar
@@ -244,13 +276,15 @@ layout: sidebar
 :::
 
 
-Lag en grafisk framstilling som viser sammenhengen mellom arealet $A(k)$ av trekanten og $k$. 
+Lag et funksjonsuttrykk som viser sammenhengen mellom $t$ og arealet av rektangelet.
 
-Bestem det største mulige arealet trekanten kan ha.
+Lag en grafisk framstilling av sammenhengen.
 :::::::::::::
 
 
+
 :::::::::::::{tab-item} c
+
 :::{cas-popup}
 ---
 layout: sidebar
@@ -258,15 +292,125 @@ layout: sidebar
 :::
 
 
-Bestem en eksakt verdi for det største arealet trekanten kan ha.
-
-
+Bestem en eksakt verdi for det største mulige arealet et slikt rektangel kan ha.
 :::::::::::::
+
 
 
 ::::::::::::::
 
+:::::::::::::::
 
+
+
+---
+
+
+:::::::::::::::{exercise} Oppgave 3
+
+:::{plot}
+align: right
+width: 100%
+let: k = 2
+let: b = 9
+function: -x**2 + b*x, (0, b), f
+xmin: -1
+xmax: 10
+ymin: -1
+ymax: 24
+polygon: (0, 0), (k, 0), (k, f(k)), (0, f(k)), blue, 0.2
+fontsize: 28
+ticks: off
+point: (0, 0)
+point: (k, 0)
+point: (k, f(k))
+point: (0, f(k))
+text: k, f(k), "$(k, f(k))$", bottom-right
+text: k, 0, "$(k, 0)$", bottom-center
+:::
+
+
+Anna jobber med funksjonen $f$ gitt ved
+
+$$
+f(x) = -x^2 + 9x, \quad x \in [0, 9].
+$$
+
+Et rektangel har hjørnene $(0, 0)$, $(k, 0)$, $(k, f(k))$ og $(0, f(k))$. Se figuren til høyre.
+
+
+:::{clear}
+:::
+
+Anna vil bruke programmering til å bestemme hvilken verdi av $k$ som gir størst mulig areal for rektangelet. Hun har skrevet disse funksjonene i programmet sitt:
+
+```python
+def f(x):
+    return -x**2 + 9*x
+
+def A(x):
+    return x * f(x)
+```
+
+Hvilket program nedenfor kan Anna bruke for å løse oppgaven? 
+
+::::{grid} 1 1 2 2
+---
+gutter: 2
+---
+:::{grid-item-card}
+1)
+^^^
+```python
+k = 0
+while f(k) < f(k + 0.01):
+    k = k + 0.01
+
+print(k)
+```
+:::
+
+:::{grid-item-card}
+2)
+^^^
+```python
+k = 0
+while f(k) > f(k + 0.01):
+    k = k + 0.01
+
+print(k)
+```
+:::
+
+:::{grid-item-card}
+3)
+^^^
+```python
+k = 0
+while A(k) < A(k + 0.01):
+    k = k + 0.01
+
+print(k)
+```
+:::
+
+:::{grid-item-card}
+4)
+^^^
+```python
+k = 0
+while A(k) > A(k + 0.01):
+    k = k + 0.01
+
+print(k)
+```
+:::
+::::
+
+
+::::{answer}
+Program 3.
+::::
 
 :::::::::::::::
 
@@ -275,6 +419,79 @@ Bestem en eksakt verdi for det største arealet trekanten kan ha.
 
 
 :::::::::::::::{exercise} Oppgave 4
+:::{plot}
+align: right
+width: 100%
+function: -x**2 + 9, (0, 3), f
+xmin: -1
+xmax: 4
+ymax: 10
+ymin: -1
+ticks: off
+polygon: (0, 0), (2, 0), (2, 5), blue, 0.2
+point: (0, 0)
+point: (2, 0)
+point: (2, 5)
+text: 0, 0, "$(0, 0)$", bottom-left
+text: 2, 0, "$(k, 0)$", bottom-center
+text: 2, 5, "$(k, f(k))$", top-right
+fontsize: 28
+:::
+
+En andregradsfunksjon $f$ er gitt ved
+
+$$
+f(x) = -x^2 + 9 \qder x \in [0, 3].
+$$
+
+En trekant har hjørner i $(0, 0)$, $(k, 0)$ og $(k, f(k))$. Se figuren nedenfor.
+
+
+
+:::{clear}
+:::
+
+Lag et program som bestemmer det største mulige arealet trekanten kan ha.
+
+
+:::{interactive-code}
+# Din kode her
+
+
+:::
+
+
+::::{answer}
+:::{code-block} python
+---
+linenos:
+---
+def f(x):
+    return -x**2 + 9
+    
+def A(x):
+    return x * f(x)
+    
+k = 0
+while A(k) < A(k + 0.01):
+    k = k + 0.01
+    
+print(A(k))
+:::
+::::
+
+
+:::::::::::::::
+
+
+
+
+---
+
+
+
+
+:::::::::::::::{exercise} Oppgave 5
 En tredjegradsfunksjon $f$ er gitt ved
 
 $$
@@ -306,55 +523,36 @@ text: 1, 3, "$(1, f(1))$", top-left
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
-Bestem arealet av trekanten.
 
-:::::::::::::
-
-
-:::::::::::::{tab-item} b
-
-:::{ggb-popup}
----
-layout: sidebar
-perspective: S
----
-:::
-
-
-
-En trekant har hjørner i $(k, 0)$, $(4, 0)$, og $(k, f(k))$ der $k \in [0, 4]$. 
-
-Lag en systematisk oversikt over arealet av trekanten for ulike verdier av $k$ og finn et estimat på hvilken verdi av $k$ som gir størst mulig areal.
-:::::::::::::
-
-
-:::::::::::::{tab-item} c
-
-:::{ggb-popup}
----
-layout: sidebar
----
-:::
-
-
-En trekant har hjørner i $(k, 0)$, $(4, 0)$, og $(k, f(k))$ der $k \in [0, 4]$. 
-
-Lag en grafisk fremstilling som viser arealet $A(k)$ til trekanten for $k \in [0, 4]$. Bestem det største mulige arealet trekanten kan ha.
-:::::::::::::
-
-
-:::::::::::::{tab-item} d
 :::{cas-popup}
 ---
 layout: sidebar
 ---
 :::
 
-En trekant har hjørner i $(k, 0)$, $(4, 0)$, og $(k, f(k))$ der $k \in [0, 4]$. 
 
-Bestem en eksakt verdi for $k$ som gir det største arealet for trekanten. 
+
+Bestem arealet av trekanten.
 
 :::::::::::::
+
+
+
+:::::::::::::{tab-item} b
+
+:::{cas-popup}
+---
+layout: sidebar
+---
+:::
+
+
+
+En trekant har hjørner i $(k, 0)$, $(4, 0)$, og $(k, f(k))$ der $k \in [0, 4]$. 
+
+Bestem det største mulige arealet en slik trekant kan ha.
+:::::::::::::
+
 
 
 ::::::::::::::
@@ -368,17 +566,11 @@ Bestem en eksakt verdi for $k$ som gir det største arealet for trekanten.
 ---
 
 
-:::::::::::::::{exercise} Oppgave 5
-Nedenfor ser du grafen til en funksjon $f$ gitt ved
-
-$$
-f(x) = \dfrac{8}{x^2 + 20} \qder D_f = [0, \to \rangle
-$$
-
-Et rektangel har hjørnene $(0, 0)$, $(r, 0)$, $(r, f(r))$ og $(0, f(r))$. Se figuren nedenfor.
+:::::::::::::::{exercise} Oppgave 6
 
 :::{plot}
-width: 70%
+align: right
+width: 100%
 function: 8/(x**2 + 20), (0, 20), f
 xmin: -1
 xmax: 15
@@ -395,8 +587,20 @@ text: 5, 0, "$(r, 0)$", bottom-center
 text: 5, f(5), "$(r, f(r))$", top-right
 text: 0, f(5), "$(0, f(r))$", top-left
 ticks: off
+fontsize: 28
 :::
 
+Anna jobber med funksjonen gitt ved
+
+$$
+f(x) = \dfrac{8}{x^2 + 20} \qder D_f = [0, \to \rangle
+$$
+
+Et rektangel har hjørnene $(0, 0)$, $(r, 0)$, $(r, f(r))$ og $(0, f(r))$.
+
+
+:::{clear}
+:::
 
 ::::::::::::::{tab-set}
 ---
@@ -449,6 +653,20 @@ Bestem en eksakt verdi for det største arealet rektangelet kan ha.
 :::::::::::::
 
 
+:::::::::::::{tab-item} d
+Lag et program som finner det største mulige arealet et slikt rektangel kan ha.
+
+
+:::{interactive-code}
+# Din kode her
+
+
+:::
+
+
+:::::::::::::
+
+
 
 ::::::::::::::
 
@@ -458,34 +676,28 @@ Bestem en eksakt verdi for det største arealet rektangelet kan ha.
 
 
 
+
 ---
 
 
 
-:::::::::::::::{exercise} Oppgave 6
-
-:::{cas-popup}
----
-layout: sidebar
----
-:::
+:::::::::::::::{exercise} Oppgave 7
 
 
-En båt skal reise fra en øy $A$ til en øy $C$. <br>
-Båten skal kjøre innom land på en kystlinje på et punkt $B$ for å hente ferskvann. Punktet kan være hvor som helst langs kystlinjen. Båten skal reise en så kort som mulig avstand for å spare drivstoff.
+En båt skal reise fra en øy $A$ til en øy $C$. 
+Båten skal innom land i et punkt $B(x, 0)$ for å hente ferskvann. Punktet skal velges slik at reisen fra $A$ til $C$ blir så kort som mulig.
 
-Kystlinjen er $9$ km lang. Øy $A$ ligger $2$ km fra land og øy $C$ ligger $4$ km fra land. En strandkiosk $S$ er plassert på starten av kystlinja.
+Kystlinjen starter i $S(0, 0)$ og er $9$ km lang. Øy $A$ ligger $2$ km fra land og øy $C$ ligger $4$ km fra land.
 
 Se figuren nedenfor.
 
 
 :::{plot}
+figsize: (8, 4)
+axis: equal
 width: 70%
 axis: off
-xmin: -1
-xmax: 10
-ymax: 5
-ymin: -2
+let: ds = 0.4
 hline: 0, -1, 10, solid
 vline: 0, 0, 2, dashed, gray
 vline: 9, 0, 4, dashed, gray
@@ -494,24 +706,25 @@ point: (4, 0)
 point: (9, 4)
 line-segment: (0, 2), (4, 0), black, solid
 line-segment: (4, 0), (9, 4), black, solid
-vline: 0.65, 0, 0.4, solid, black
-hline: 0.4, 0, 0.65, solid, black
-vline: 8.35, 0, 0.4, solid, black
-hline: 0.4, 9, 8.35, solid, black
-text: 4, 0, "$B$", top-center
+line-segment: (0, ds), (ds, ds), black, solid
+line-segment: (ds, 0), (ds, ds), black, solid
+line-segment: (9 - ds, 0), (9 - ds, ds), black, solid
+line-segment: (9, ds), (9 - ds, ds), black, solid
+text: 4, 0, "$B(x, 0)$", bottom-right
 text: 0, 2, "$A$", top-left
 text: 9, 4, "$C$", top-right
 lw: 1.5
 point: (0, 0)
-text: 0, -0.2, "$S$", bottom-left
+text: 0, -0.2, "$S(0, 0)$", bottom-left
 bar: (0, -0.3), 4, horizontal
-text: 2, -0.3, "$x$ km", bottom-center
+text: 2, -0.2, "$x$ km", bottom-center
 bar: (0, -0.8), 9, horizontal
 text: 4.5, -0.8, "9 km", bottom-center
 bar: (-0.5, 0), 2, vertical
 text: -0.5, 1, "2 km", center-left
 bar: (9.5, 0), 4, vertical
 text: 9.5, 2, "4 km", center-right
+fontsize: 22
 :::
 
 
@@ -524,7 +737,31 @@ text: 9.5, 2, "4 km", center-right
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
-Bestem lengden båten må kjøre fra $A$ til $C$ dersom den går i land $1$ km fra strandkiosken. 
+
+:::{ggb-popup}
+---
+layout: sidebar
+perspective: S
+---
+:::
+
+
+
+Lag en oversikt som vist nedenfor. Fyll inn de manglende verdiene og bruk oversikten til å anslå hvilken verdi av $x$ som gir kortest mulig reisevei fra $A$ til $C$.
+
+:::{clear}
+:::
+
+
+:::{table}
+labels: $x$ (km), Reiselengde (km)
+0, $\sqrt{4} + \sqrt{97} \approx 11.84$
+1, $\sqrt{5} + \sqrt{80} \approx 11.26$
+2, 
+...
+9,
+:::
+
 
 
 
@@ -533,7 +770,18 @@ Bestem lengden båten må kjøre fra $A$ til $C$ dersom den går i land $1$ km f
 
 
 :::::::::::::{tab-item} b
-Lag en modell $L$ som gir lengden $L(x)$ som båten må kjøre dersom den går i land en avstand $x$ fra strandkiosken.
+
+:::{ggb-popup}
+---
+layout: sidebar
+---
+:::
+
+
+
+Lag en modell $L(x)$ som viser sammenhengen mellom $x$ og reiselengden fra $A$ til $C$ når båten går innom land i punktet $B(x, 0)$.
+
+Lag en grafisk framstilling som viser sammenhengen.
 
 
 
@@ -542,8 +790,44 @@ Lag en modell $L$ som gir lengden $L(x)$ som båten må kjøre dersom den går i
 
 
 :::::::::::::{tab-item} c
-Bestem hvor langt unna strandkiosken båten må gå i land for å få kortest mulig reisevei fra $A$ til $C$.
 
+:::{cas-popup}
+---
+layout: sidebar
+---
+:::
+
+
+
+Bestem eksakte koordinater for punktet $B$ som gir kortest mulig reisevei fra $A$ til $C$.
+
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} d
+Lag et program som finner koordinatene til punktet $B$ som gir kortest reisevei.
+
+
+:::{hints} Kvadratrot i Python
+For å få kvadratrot i python har kan du importere `sqrt`{l=python}-funksjonen fra `math`{l=python}-biblioteket. For eksempel regner programmet nedenfor ut kvadratroten av $5$: 
+
+```python
+from math import sqrt
+
+y = sqrt(5)
+```
+
+:::
+
+
+:::{interactive-code}
+# Din kode her
+
+
+
+:::
 
 
 :::::::::::::
@@ -556,14 +840,71 @@ Bestem hvor langt unna strandkiosken båten må gå i land for å få kortest mu
 
 
 
+
 ---
 
 
 
-::::::::::::::::{exercise} Oppgave 7
+
+
+:::::::::::::::{exercise} Oppgave 8
+
+:::{cas-popup}
 ---
-level: 3
+layout: sidebar
 ---
+:::
+
+
+
+En funksjon $f$ er gitt ved 
+
+$$
+f(x) = ax^3 + bx^2, \quad x \in [0, 8]
+$$
+
+En trekant $\triangle ABC$ er dannet ved at $A$ er i origo, $B$ er er punkt på $x$-aksen og $C$ er et punkt på grafen til $f$ med samme $x$-koordinat som $B$.
+
+:::{plot}
+width: 60%
+function: -2 * x**3 + 16 * x**2, (0, 8), f
+xmin: -1
+xmax: 9
+ymin: -10
+ymax: 160
+polygon: (0, 0), (4, 0), (4, f(4)), blue, 0.2
+ticks: off
+point: (0, 0)
+point: (4, 0)
+point: (4, f(4))
+text: 0, 0, "$A$", bottom-left
+text: 4, 0, "$B$", bottom-right
+text: 4, f(4), "$C$", top-left
+fontsize: 26
+:::
+
+Om trekanten får du vite at:
+
+* Arealet av trekanten er $7$ når koordinatene til $B$ er $(1, 0)$.
+* Arealet av trekanten er størst når koordinatene til $B$ er $(6, 0)$.
+
+Bestem $a$ og $b$. 
+
+
+::::{answer}
+$$
+a = -2 \and b = 16
+$$
+::::
+
+:::::::::::::::
+
+
+---
+
+
+
+::::::::::::::::{exercise} Oppgave 9
 
 Anna skal reise fra en holme som ligger $8$ km fra strandkanten. $12$ km fra det punktet på stranden som ligger nærmest holmen, ligger det en hytte. 
 Anna kan ro med en fart på $2$ km/t og gå med en fart på $6$ km/t. Anna kan gå i land i hvilket som helst punkt $\ell$ på veien.
@@ -765,146 +1106,91 @@ class: no-click, adaptive-figure
 ---
 
 
-
-:::::::::::::::{exercise} Oppgave 8
-En halvsirkel er gitt ved
-
-$$
-x^2 + y^2 = 4 \qder y \geq 0.
-$$
-
-Et rektangel har hjørnene $(-a, 0)$, $(a, 0)$, $(a, f(a))$ og $(-a, f(-a))$ der $f$ er funksjonen som beskriver halvsirkelen. 
-
-Se figuren nedenfor.
-
+:::::::::::::::{exercise} Oppgave 10
 
 :::{plot}
-width: 70%
-ticks: off 
-xmin: -2.5
-xmax: 2.5
-ymin: -0.1
-ymax: 2.5
-function: sqrt(4 - x**2), (-2, 2), f
-polygon: (-1.5, 0), (1.5, 0), (1.5, f(1.5)), (-1.5, f(-1.5)), blue, 0.2
-point: (-1.5, 0)
-point: (1.5, 0)
-point: (1.5, f(1.5))
-point: (-1.5, f(-1.5))
+align: right
+figsize: (6, 6)
+axis: off
 axis: equal
-text: -1.5, 0, "$(-a, 0)$", bottom-center
-text: 1.5, 0, "$(a, 0)$", bottom-center
-text: 1.5, f(1.5), "$(a, f(a))$", top-right
-text: -1.5, f(-1.5), "$(-a, f(-a))$", top-left
+width: 100%
+let: r = 2
+let: h = sqrt(16 - r**2)
+line-segment: (0, 0), (0, h), solid, black
+line-segment: (0, 0), (r, 0), solid, black
+ellipse: (0, 0), r, 0.2*r, dashed, blue
+line-segment: (0, h), (r, 0), solid, blue
+line-segment: (0, h), (-r, 0), solid, blue
+text: 0.5 * r, -0.1, "$r$", center-center
+text: 0, 0.5 * h, "$h$", center-left
+text: 0.5 * r, 0.5 * h, "$9$", top-right
+fontsize: 28
 :::
 
+En sirkulær kjegle med sidekant på $9$ er vist i figuren til høyre.
 
-::::::::::::::{tab-set}
----
-class: tabs-parts
----
-:::::::::::::{tab-item} a
-:::{ggb-popup}
----
-layout: sidebar
-perspective: S
----
-:::
+Volumet $V$ av en slik kjegle er gitt ved 
 
-Lag en systematisk oversikt over arealet av rektangelet for ulike verdier av $a \in [0, 2]$ og finn et estimat på hvilken verdi av $a$ som gir størst mulig areal.
+$$
+V = \dfrac{\pi r^2 h}{3}
+$$
 
-:::::::::::::
-
-
-:::::::::::::{tab-item} b
-:::{ggb-popup}
----
-layout: sidebar
----
-:::
-
-Lag en grafisk framstilling som viser sammenhengen mellom arealet $A(a)$ av rektangelet og $a$.
-
-Bestem det største mulige arealet rektangelet kan ha.
-
-:::::::::::::
+der $r$ er radius i bunnen av kjeglen og $h$ er høyden til kjeglen.
 
 
 
-:::::::::::::{tab-item} c
-:::{cas-popup}
----
-layout: sidebar
----
-:::
-
-Bestem en eksakt verdi for det største arealet rektangelet kan ha.
-:::::::::::::
-
-
-::::::::::::::
-
-
-
+Bestem det største mulige volumet en slik kjegle kan ha.
 
 
 :::::::::::::::
 
 
-
 ---
 
 
-
-
-
-:::::::::::::::{exercise} Oppgave 9
-
+:::::::::::::::{exercise} Oppgave 11
 :::{cas-popup}
 ---
 layout: sidebar
 ---
 :::
 
-
-
-En funksjon $f$ er gitt ved 
+En funksjon $f$ er gitt ved
 
 $$
-f(x) = ax^3 + bx^2, \quad x \in [0, 8]
+f(x) = -x^2 + 6x \qfor x \in [0, 6]
 $$
 
-En trekant $\triangle ABC$ er dannet ved at $A$ er i origo, $B$ er er punkt på $x$-aksen og $C$ er et punkt på grafen til $f$ med samme $x$-koordinat som $B$.
+Nedenfor vises grafen til $f$ sammen med et rektangel $ABCD$.
+
+I rektangelet er $A(a, 0)$ og $D(a, f(a))$ der $a \in \langle 0, 3\rangle$. Punktet $C$ ligger på grafen til $f$.
+
+Bestem $a$ slik at arealet av rektangelet $ABCD$ er størst mulig.
 
 :::{plot}
-width: 60%
-function: -2 * x**3 + 16 * x**2, (0, 8), f
+width: 70%
+function: 6*x - x**2, (0, 6), f
+polygon: (1, 0), (1, f(1)), (5, f(5)), (5, 0)
 xmin: -1
-xmax: 9
-ymin: -10
-ymax: 160
-polygon: (0, 0), (4, 0), (4, f(4)), blue, 0.2
+ymin: -1
+ymax: 10
+xmax: 7
 ticks: off
-point: (0, 0)
-point: (4, 0)
-point: (4, f(4))
-text: 0, 0, "$A$", bottom-left
-text: 4, 0, "$B$", bottom-right
-text: 4, f(4), "$C$", top-left
-fontsize: 26
+point: (1, 0)
+point: (1, f(1))
+point: (5, f(5))
+point: (5, 0)
+text: 1, 0, "$A$", bottom-left
+text: 1, f(1), "$D$", top-left
+text: 5, f(5), "$C$", top-right
+text: 5, 0, "$B$", bottom-right
 :::
 
-Om trekanten får du vite at:
-
-* Arealet av trekanten er $7$ når koordinatene til $B$ er $(1, 0)$.
-* Arealet av trekanten er størst når koordinatene til $B$ er $(6, 0)$.
-
-Bestem $a$ og $b$. 
 
 
 ::::{answer}
 $$
-a = -2 \and b = 16
+a = 3 - \sqrt{3}
 $$
 ::::
 
@@ -915,7 +1201,7 @@ $$
 
 
 
-:::::::::::::::{exercise} Oppgave 10
+:::::::::::::::{exercise} Oppgave 12
 En lysstråle ble først observert i et punkt $A(1000, 0)$ i luften og deretter i et punkt $B(10000, -1000)$ i vann. Alle avstander er målt i meter. 
 
 Lyset reiser med en fart på $300 \, \mathrm{m/ \mu s}$ i luft og $225 \, \mathrm{m/ \mu s}$ i vann. Her står $1 \, \mu s$ for 1 mikrosekund og er det samme som én milliondel av ett sekund. Lyset vil velge den veien mellom punktene $A$ og $B$ som gir kortest mulig reisetid.
@@ -974,7 +1260,7 @@ figsize: (6, 4)
 
 
 
-::::::::::::::::{exercise} Oppgave 11
+::::::::::::::::{exercise} Oppgave 13
 
 :::{cas-popup}
 ---
@@ -1068,10 +1354,7 @@ $$
 
 
 
-::::::::::::::::{exercise} Oppgave 12
----
-level: 3
----
+::::::::::::::::{exercise} Oppgave 14
 
 
 :::{plot}
@@ -1348,7 +1631,7 @@ $$
 
 
 
-:::::::::::::::{exercise} Oppgave 13
+:::::::::::::::{exercise} Oppgave 15
 ---
 level: 3
 ---
@@ -1562,7 +1845,7 @@ som gir en overflate på ca. $258 \, \mathrm{cm}^2$.
 
 
 
-:::::::::::::::{exercise} Oppgave 14
+:::::::::::::::{exercise} Oppgave 16
 
 :::{plot}
 align: right
@@ -1656,7 +1939,7 @@ Hvor stort er overflatearealet da?
 
 
 
-:::::::::::::::{exercise} Oppgave 15
+:::::::::::::::{exercise} Oppgave 18
 
 
 :::{cas-popup}
@@ -1729,7 +2012,7 @@ Vi ser at $d'(x) = 0$ når $x = 2$. Vi ser også at $d''(2) > 0$ som betyr at $d
 
 
 
-:::::::::::::::{exercise} Oppgave 16
+:::::::::::::::{exercise} Oppgave 19
 :::{cas-popup}
 ---
 layout: sidebar
@@ -1861,7 +2144,7 @@ $$
 
 
 
-:::::::::::::::{exercise} Oppgave 17
+:::::::::::::::{exercise} Oppgave 20
 
 
 
@@ -2009,4 +2292,183 @@ $$
 
 ::::
 :::::::::::::::
+
+
+
+---
+
+
+
+
+
+:::::::::::::::{exercise} Oppgave 21
+:::{cas-popup}
+---
+layout: sidebar
+---
+:::
+
+
+Fire byer $A$, $B$, $C$ og $D$ ligger plassert slik at de danner et kvadrat med sidelengde $10$ km. 
+
+Vi skal lage en veiforbindelse mellom disse fire byene. Veilengden mellom de fire byene blir kortest mulig dersom vi lager veiene via to punkter $E$ og $F$. Se figuren nedenfor.
+
+Vi lar $x$ være avstanden mellom $E$ og $F$. 
+
+Bestem $x$ slik at den samlede veilengden mellom byene blir kortest mulig.
+
+
+:::{plot}
+width: 70%
+point: (0, 0)
+point: (10, 0)
+point: (10, 10)
+point: (0, 10)
+axis: off
+axis: equal
+point: (5, 2)
+point: (5, 8)
+line-segment: (0, 0), (5, 2)
+line-segment: (10, 0), (5, 2)
+line-segment: (10, 10), (5, 8)
+line-segment: (0, 10), (5, 8)
+line-segment: (5, 2), (5, 8)
+line-segment: (0, 0), (10, 0), dashed, gray
+line-segment: (10, 0), (10, 10), dashed, gray
+line-segment: (10, 10), (0, 10), dashed, gray
+line-segment: (0, 10), (0, 0), dashed, gray
+text: 0, 0, "$A$", bottom-left
+text: 10, 0, "$B$", bottom-right
+text: 10, 10, "$C$", top-right
+text: 0, 10, "$D$", top-left
+text: 5, 2, "$E$", bottom-center
+text: 5, 8, "$F$", top-center
+text: 5, 5, "$x$", center-right
+text: 2.5, 1, "$s$", top-left
+text: 10 - 2.5, 1, "$s$", top-right
+text: 2.5, 9, "$s$", bottom-left
+text: 10 - 2.5, 9, "$s$", bottom-right
+text: 5, 0, "$10$", bottom-center
+text: 10, 5, "$10$", center-right
+:::
+
+
+
+::::{answer}
+$$
+x = \dfrac{-10\sqrt{3} + 30}{3}
+$$
+::::
+
+
+
+
+:::::::::::::::
+
+
+
+
+
+
+----
+
+
+
+:::::::::::::::{exercise} Oppgave 22
+En halvsirkel er gitt ved
+
+$$
+x^2 + y^2 = 4 \qder y \geq 0.
+$$
+
+Et rektangel har hjørnene $(-a, 0)$, $(a, 0)$, $(a, f(a))$ og $(-a, f(-a))$ der $f$ er funksjonen som beskriver halvsirkelen. 
+
+Se figuren nedenfor.
+
+
+:::{plot}
+width: 70%
+ticks: off 
+xmin: -2.5
+xmax: 2.5
+ymin: -0.1
+ymax: 2.5
+function: sqrt(4 - x**2), (-2, 2), f
+polygon: (-1.5, 0), (1.5, 0), (1.5, f(1.5)), (-1.5, f(-1.5)), blue, 0.2
+point: (-1.5, 0)
+point: (1.5, 0)
+point: (1.5, f(1.5))
+point: (-1.5, f(-1.5))
+axis: equal
+text: -1.5, 0, "$(-a, 0)$", bottom-center
+text: 1.5, 0, "$(a, 0)$", bottom-center
+text: 1.5, f(1.5), "$(a, f(a))$", top-right
+text: -1.5, f(-1.5), "$(-a, f(-a))$", top-left
+:::
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+:::{ggb-popup}
+---
+layout: sidebar
+perspective: S
+---
+:::
+
+Lag en systematisk oversikt over arealet av rektangelet for ulike verdier av $a \in [0, 2]$ og finn et estimat på hvilken verdi av $a$ som gir størst mulig areal.
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+:::{ggb-popup}
+---
+layout: sidebar
+---
+:::
+
+Lag en grafisk framstilling som viser sammenhengen mellom arealet $A(a)$ av rektangelet og $a$.
+
+Bestem det største mulige arealet rektangelet kan ha.
+
+:::::::::::::
+
+
+
+:::::::::::::{tab-item} c
+:::{cas-popup}
+---
+layout: sidebar
+---
+:::
+
+Bestem en eksakt verdi for det største arealet rektangelet kan ha.
+:::::::::::::
+
+
+::::::::::::::
+
+
+
+
+
+:::::::::::::::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

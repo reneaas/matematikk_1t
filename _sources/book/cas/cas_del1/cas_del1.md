@@ -16,8 +16,8 @@ CAS er en forkortelse for *Computer Algebra System*. CAS består av en samling f
 ## Likninger
 
 For å løse likninger med CAS, skriver vi inn likningen først – deretter bruker vi én av to innebygde funksjoner:
-1. Vi bruker <img src="/_static/icons/ggb/mode_solve.svg" class="inline-image"/> for å løse likningen {popup}`eksakt.<Eksakt løsning vil si at vi får et svar som er det nøyaktige svaret. Svaret kan blant annet inneholde kvadratrøtter eller brøker.>`
-2. Vi bruker <img src="/_static/icons/ggb/mode_nsolve.svg" class="inline-image"/> for å løse likningen {popup}`numerisk.<Numerisk løsning vil så si at vi får et tall som svar som ikke nødvendigvis er det nøyaktige svaret, men et omtrentlig svar. Svaret er ofte et desimaltall.>` 
+1. Vi bruker {ggb-icon}`mode_solve` for å løse likningen {popup}`eksakt.<Eksakt løsning vil si at vi får et svar som er det nøyaktige svaret. Svaret kan blant annet inneholde kvadratrøtter eller brøker.>`
+2. Vi bruker {ggb-icon}`mode_nsolve` for å løse likningen {popup}`numerisk.<Numerisk løsning vil så si at vi får et tall som svar som ikke nødvendigvis er det nøyaktige svaret, men et omtrentlig svar. Svaret er ofte et desimaltall.>` 
 
 
 
@@ -29,7 +29,7 @@ For å skrive gangetegn i CAS-vinduet, bruker vi `*` mellom tall og variabler.
 :::
 
 :::::::::::::::{explore} Utforsk 1
-I {numref}`fig-cas-kurs-del-1-likninger-gif` nedenfor vises det hvordan man kan løse en likning eksakt med <img src="/_static/icons/ggb/mode_solve.svg" class="inline-image"/> i CAS.
+I {numref}`fig-cas-kurs-del-1-likninger-gif` nedenfor vises det hvordan man kan løse en likning eksakt med {ggb-icon}`mode_solve` i CAS.
 
 
 :::{figure} ./videoer/cas-likninger.gif
@@ -38,7 +38,7 @@ width: 80%
 class: no-click, adaptive-figure
 name: fig-cas-kurs-del-1-likninger-gif
 ---
-viser hvordan vi løser en likning eksakt med CAS. Vi skriver inn likningen og trykker på <img src="/_static/icons/ggb/mode_solve.svg" class="inline-image"/> for å løse den.
+viser hvordan vi løser en likning eksakt med CAS. Vi skriver inn likningen og trykker på {ggb-icon}`mode_solve` for å løse den.
 :::
 
 
@@ -233,8 +233,8 @@ $$
 x^2 - 3x + 1 = 0
 $$
 
-1. Eksakt med <img src="/_static/icons/ggb/mode_solve.svg" class="inline-image"/>
-2. Numerisk med <img src="/_static/icons/ggb/mode_nsolve.svg" class="inline-image"/>
+1. Eksakt med {ggb-icon}`mode_solve` 
+2. Numerisk med {ggb-icon}`mode_nsolve`
 
 ::::{solution}
 :::{figure} ./figurer/utforsk/utforsk_2/b.png
@@ -264,7 +264,7 @@ toolbar: "true"
 
 
 :::::::::::::::{underveisoppgave} Underveisoppgave 2
-> Bruk CAS-vinduet til å løse likningene nedenfor. Løs de både eksakt med <img src="/_static/icons/ggb/mode_solve.svg" class="inline-image"/> og numerisk med <img src="/_static/icons/ggb/mode_nsolve.svg" class="inline-image"/>.
+> Bruk CAS-vinduet til å løse likningene nedenfor. Løs de både eksakt med {ggb-icon}`mode_solve` og numerisk med {ggb-icon}`mode_nsolve`.
 
 :::{cas-popup} 400 500
 :::
@@ -352,7 +352,7 @@ For å løse ulikheter med CAS, bruker vi akkurat de samme funksjonene som vi br
 :::::::::::::::{explore} Utforsk 3
 I {numref}`fig-cas-kurs-del-1-ulikheter-eksakt-gif` nedenfor viser vi hvordan vi løser en ulikhet eksakt med CAS. Fremgangsmåten er lik den for likninger hvor vi:
 1. Skriver inn ulikheten
-2. Trykket på <img src="/_static/icons/ggb/mode_solve.svg" class="inline-image"/> for å løse den.
+2. Trykket på {ggb-icon}`mode_solve` for å løse den.
 
 
 :::{figure} ./videoer/cas-ulikheter-eksakt.gif
@@ -361,7 +361,7 @@ width: 80%
 class: no-click, adaptive-figure
 name: fig-cas-kurs-del-1-ulikheter-eksakt-gif
 ---
-viser hvordan vi løser en ulikhet eksakt med CAS. Vi skriver inn ulikheter og så trykker vi på <img src="/_static/icons/ggb/mode_solve.svg" class="inline-image"/> for å løse dem.
+viser hvordan vi løser en ulikhet eksakt med CAS. Vi skriver inn ulikheter og så trykker vi på {ggb-icon}`mode_solve` for å løse dem.
 :::
 
 
@@ -493,17 +493,17 @@ class: no-click, adaptive-figure
 
 ### Numerisk løsning
 
-Når vi løste likninger, kunne vi løse dem numerisk med <img src="/_static/icons/ggb/mode_nsolve.svg" class="inline-image"/>. Det kan vi **ikke** gjøre med ulikheter. 
+Når vi løste likninger, kunne vi løse dem numerisk med {ggb-icon}`mode_nsolve`. Det kan vi **ikke** gjøre med ulikheter. 
 Ønsker vi å finne en numerisk løsning av en ulikhet, må vi i stedet
-1. Løse ulikheten eksakt med <img src="/_static/icons/ggb/mode_solve.svg" class="inline-image"/>
-2. Bruk <img src="/_static/icons/ggb/mode_numeric.svg" class="inline-image"/> til å finne en numerisk verdi for løsningen fra punkt 1.
+1. Løse ulikheten eksakt med {ggb-icon}`mode_solve`
+2. Bruk {ggb-icon}`mode_numeric` til å finne en numerisk verdi for løsningen fra punkt 1.
 
 I Utforsk 4 ser vi på hvordan.
 
 :::::::::::::::{explore} Utforsk 4
 I {numref}`fig-cas-kurs-del-1-ulikheter-numerisk-gif` nedenfor viser vi hvordan man kan finne en numerisk løsning av en ulikhet med CAS. Det gjøres med følgende fremgangsmåte:
-1. Løs ulikheten eksakt med <img src="/_static/icons/ggb/mode_solve.svg" class="inline-image"/>
-2. Bruk <img src="/_static/icons/ggb/mode_numeric.svg" class="inline-image"/> for å finne en numerisk verdi for løsningen fra punkt 1.
+1. Løs ulikheten eksakt med {ggb-icon}`mode_solve`
+2. Bruk {ggb-icon}`mode_numeric` for å finne en numerisk verdi for løsningen fra punkt 1.
 
 
 :::{figure} ./videoer/cas-ulikheter-numerisk.gif
@@ -512,7 +512,7 @@ width: 80%
 class: no-click, adaptive-figure
 name: fig-cas-kurs-del-1-ulikheter-numerisk-gif
 ---
-viser hvordan man løser en ulikhet numerisk med CAS. Først løser vi den eksakt med <img src="/_static/icons/ggb/mode_solve.svg" class="inline-image"/> og deretter bruker vi <img src="/_static/icons/ggb/mode_numeric.svg" class="inline-image"/> for å finne en numerisk verdi for løsningen.
+viser hvordan man løser en ulikhet numerisk med CAS. Først løser vi den eksakt med {ggb-icon}`mode_solve` og deretter bruker vi {ggb-icon}`mode_numeric` for å finne en numerisk verdi for løsningen.
 :::
 
 
@@ -601,7 +601,7 @@ $$
 
 
 ## Likningssystemer
-Likningssystemer kan vi løse både eksakt med <img src="/_static/icons/ggb/mode_solve.svg" class="inline-image"/> og numerisk med <img src="/_static/icons/ggb/mode_nsolve.svg" class="inline-image"/>. I Utforsk 5 ser vi på hvordan vi kan gjøre dette.
+Likningssystemer kan vi løse både eksakt med {ggb-icon}`mode_solve` og numerisk med {ggb-icon}`mode_nsolve`. I Utforsk 5 ser vi på hvordan vi kan gjøre dette.
 
 
 
@@ -609,7 +609,7 @@ Likningssystemer kan vi løse både eksakt med <img src="/_static/icons/ggb/mode
 
 I figuren nedenfor vises det hvordan vi løser et likningssystem med CAS.
 1. Først markerer vi likningene i likningssystemet.
-2. Så løser vi likningssystemet eksakt med <img src="/_static/icons/ggb/mode_solve.svg" class="inline-image"/> eller numerisk med <img src="/_static/icons/ggb/mode_nsolve.svg" class="inline-image"/>.
+2. Så løser vi likningssystemet eksakt med {ggb-icon}`mode_solve` eller numerisk med {ggb-icon}`mode_nsolve`.
 
 
 :::{figure} ./videoer/cas-løs-likningssystemer.gif
@@ -617,11 +617,11 @@ I figuren nedenfor vises det hvordan vi løser et likningssystem med CAS.
 class: no-click, adaptive-figure
 width: 80%
 ---
-viser hvordan vi først markerer likningene (*klikk-og-dra*) og deretter trykker på <img src="/_static/icons/ggb/mode_solve.svg" class="inline-image"/> eller <img src="/_static/icons/ggb/mode_nsolve.svg" class="inline-image"/> for å løse likningssystemet.
+viser hvordan vi først markerer likningene (*klikk-og-dra*) og deretter trykker på {ggb-icon}`mode_solve` eller {ggb-icon}`mode_nsolve` for å løse likningssystemet.
 :::
 
 
-Bruk fremgangsmåten i figuren ovenfor til å løse likningssystemene nedenfor. Løs de både eksakt med <img src="/_static/icons/ggb/mode_solve.svg" class="inline-image"/> og numerisk med <img src="/_static/icons/ggb/mode_nsolve.svg" class="inline-image"/>.
+Bruk fremgangsmåten i figuren ovenfor til å løse likningssystemene nedenfor. Løs de både eksakt med {ggb-icon}`mode_solve` og numerisk med {ggb-icon}`mode_nsolve`.
 
 
 :::{cas-popup} 400 500
@@ -722,7 +722,7 @@ $$
 
 :::::::::::::::{underveisoppgave} Underveisoppgave 5
 
-Bruk CAS til å løse likningssystemene nedenfor. Løs de både eksakt med <img src="/_static/icons/ggb/mode_solve.svg" class="inline-image"/> og numerisk med <img src="/_static/icons/ggb/mode_nsolve.svg" class="inline-image"/>.
+Bruk CAS til å løse likningssystemene nedenfor. Løs de både eksakt med {ggb-icon}`mode_solve` og numerisk med {ggb-icon}`mode_nsolve`.
 
 :::{cas-popup} 400 500
 :::
@@ -748,7 +748,7 @@ class: tabs-parts
 \begin{align*}
     3x + 2y &= 7 \\
     \\
-    -x - 3y = -\dfrac{7}{2}
+    -x - 3y &= -\dfrac{7}{2}
 \end{align*}
 
 :::::::::::::
