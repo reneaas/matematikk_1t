@@ -11,11 +11,25 @@ For å lage en polynomfunksjon som en regresjonsmodell, kan du bruke `RegPoly(da
 
 :::::::::::::::{exercise} Oppgave 1
 
-Tabellen nedenfor viser hvor mange bagetter en kantine har solgt hver av de siste sju ukene, og hvor stort overskudd salget har gitt.
+Tabellen nedenfor viser hvor mange bagetter en kantine har solgt hver av de siste sju ukene, og hvor stort overskudd salget har gitt
 
-| Solgte bagetter | 100 | 130 | 160 | 175 | 190 | 220 | 235 |
-|:------|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **Overskudd (kroner)** | 1450 | 2300 | 3050 | 3365 | 3720 | 4140 | 4175 |
+
+:::{table}
+---
+transpose:
+---
+labels: Solgte bagetter, Overskudd (kroner)
+100, 1450
+130, 2300
+160, 3050
+175, 3365
+190, 3720
+220, 4140
+235, 4175
+:::
+
+
+
 
 
 ::::::::::::::{tab-set}
@@ -151,12 +165,23 @@ som gir at $O'(235) \approx 8.74$ kr per bagett. Den praktiske tolkningen av det
 
 Tabellen nedenfor viser antallet registrerte tilfeller av kikhoste i Norge noen måneder i perioden januar 2023 - oktober 2024.
 
-| Måned | Januar <br> 2023 | Mai <br> 2023 | Oktober <br> 2023 | Februar <br> 2024 | August <br> 2024 | Oktober <br> 2024 |
-|---|:---:|:---:|:---:|:---:|:---:|:---:|
-| Antall registrerte tilfeller | 29 | 93 | 164 | 284 | 1035 | 1657 |
- 
+
+:::{table}
+---
+transpose:
+---
+labels: Måned, Antall registrerte tilfeller
+Januar 2023, 29
+Mai 2023, 93
+Oktober 2023, 164
+Februar 2024, 284
+August 2024, 1035
+Oktober 2024, 1657
+:::
+
 
 <br>
+
 
 La $x$ være antall måneder etter desember 2022, det vil si at $x = 1$ tilsvarer januar 2023, $x = 3$ tilsvarer mars 2023, og så videre.
 
@@ -805,13 +830,18 @@ Lufttrykk måles ofte i hektopascal (hPa). Jo høyere over havet vi befinner oss
 
 Når lufttrykket er lavere enn 1000 hPa, vil kokepunktet for vann være lavere enn $100 \degree \mathrm{C}$. Se tabellen nedenfor.
 
-| Lufttrykk $\left(\mathrm{hPa}\right)$ | Kokepunkt for vann $\left(\degree \mathrm{C}\right)$ |
-|------|---|
-| $1000$ | $100$ |
-| $500$ | $81.4$ |
-| $200$ | $60.1$ |
-| $80$ | $41.5$ |
-| $40$ | $29$ |
+:::{table}
+---
+transpose:
+---
+labels: Lufttrykk (hPa), Kokepunkt for vann ($\mathrm{^\circ C}$)
+1000, 100
+500, 81.4
+200, 60.1
+80, 41.5
+40, 29
+:::
+
 
 
 ::::::::::::::{tab-set}
@@ -981,9 +1011,18 @@ class: no-click, adaptive-figure
 Den horisontale avstanden vannstrålen beveger seg $S$ meter når vannstanden er $x$ meter over bunnen av sylinderen. I tabellen nedenfor vises et datamateriale for dette.
 
 
-| $x$ (meter) | $8$ | $6$ | $5$ | $3$ | $2$ | 
-|:------------|:---:|:---:|:---:|:---:|:---:|
-| **$S$ (meter)** | $5.66$ | $4.90$ | $4.47$ | $3.46$ | $2.83$ |
+:::{table}
+---
+transpose:
+---
+labels: $x$ (meter), $S$ (meter)
+$8$, $5.66$
+$6$, $4.90$
+$5$, $4.47$
+$3$, $3.46$
+$2$, $2.83$
+:::
+
 
 ::::::::::::::{tab-set}
 ---
