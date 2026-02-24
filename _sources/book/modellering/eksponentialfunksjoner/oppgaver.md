@@ -2304,9 +2304,9 @@ lengde = 100
 s = 0
 for n in range(10_000):
     s = s + lengde
-    lengde = lengde = 0.9
+    lengde = lengde * 0.9
     
-print(f"{s = :.2f} cm")
+print(s)
 :::
 ::::
 
