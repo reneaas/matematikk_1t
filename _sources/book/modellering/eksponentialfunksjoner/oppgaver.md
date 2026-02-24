@@ -2292,6 +2292,25 @@ Lag et program som beregner den samlede lengden av de 10 000 første linjestykke
 
 
 :::
+
+
+
+::::{answer}
+:::{code-block} python
+---
+linenos:
+---
+lengde = 100
+s = 0
+for n in range(10_000):
+    s = s + lengde
+    lengde = lengde = 0.9
+    
+print(f"{s = :.2f} cm")
+:::
+::::
+
+
 :::::::::::::
 
 
@@ -2360,6 +2379,27 @@ Lag et program som beregner summen av arealene til de 10 000 første kvadratene.
 
 
 :::
+
+
+
+::::{answer}
+:::{code-block} python
+---
+linenos:
+---
+sidelengde = 1
+s = 0
+for n in range(10_000):
+    areal = sidelengde ** 2
+    s = s + areal
+    sidelengde = sidelengde * 0.7
+    
+print(s)
+:::
+::::
+
+
+
 :::::::::::::
 
 

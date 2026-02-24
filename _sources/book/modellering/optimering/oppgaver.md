@@ -2461,6 +2461,37 @@ Bestem en eksakt verdi for det største arealet rektangelet kan ha.
 
 
 
+---
+
+
+
+:::::::::::::::{exercise} Oppgave x
+:::{plot}
+width: 70%
+ticks: off
+let: x = 2.4
+point: (0, 4)
+point: (8, 0)
+point: (0, x)
+point: (x, 0)
+point: (4, 2)
+line-segment: (0, 4), (8, 0), solid, black
+polygon: (x, 0), (0, x), (4, 2), blue, 0.2
+text: 0, x, "$P(0, a)$", center-left
+text: x, 0, "$Q(a, 0)$", bottom-center
+text: 0, 0, "$O$", bottom-left
+text: 8, 0, "$B(8, 0)$", bottom-center
+text: 0, 4, "$A(0, 4)$", center-left
+text: 4, 2, "$M(4, 2)$", top-right
+xmin: -1
+xmax: 9
+ymin: -1
+ymax: 5 
+:::
+
+:::::::::::::::
+
+
 
 
 
