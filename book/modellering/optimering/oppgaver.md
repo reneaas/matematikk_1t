@@ -197,6 +197,9 @@ Bestem en eksakt verdi for sidelengdene som gir størst mulig areal.
 
 
 :::::::::::::::{exercise} Oppgave 2
+---
+aids: true
+---
 
 :::{plot}
 align: right
@@ -307,6 +310,9 @@ Bestem en eksakt verdi for det største mulige arealet et slikt rektangel kan ha
 
 
 :::::::::::::::{exercise} Oppgave 3
+---
+aids: true
+---
 
 :::{plot}
 align: right
@@ -419,6 +425,10 @@ Program 3.
 
 
 :::::::::::::::{exercise} Oppgave 4
+---
+aids: true
+---
+
 :::{plot}
 align: right
 width: 100%
@@ -492,6 +502,10 @@ print(A(k))
 
 
 :::::::::::::::{exercise} Oppgave 5
+---
+aids: true
+---
+
 En tredjegradsfunksjon $f$ er gitt ved
 
 $$
@@ -567,6 +581,9 @@ Bestem det største mulige arealet en slik trekant kan ha.
 
 
 :::::::::::::::{exercise} Oppgave 6
+---
+aids: true
+---
 
 :::{plot}
 align: right
@@ -682,6 +699,9 @@ Lag et program som finner det største mulige arealet et slikt rektangel kan ha.
 
 
 :::::::::::::::{exercise} Oppgave 7
+---
+aids: true
+---
 
 
 En båt skal reise fra en øy $A$ til en øy $C$. 
@@ -848,6 +868,9 @@ y = sqrt(5)
 
 
 :::::::::::::::{exercise} Oppgave 8
+---
+aids: true
+---
 
 :::{cas-popup}
 ---
@@ -905,6 +928,9 @@ $$
 
 
 ::::::::::::::::{exercise} Oppgave 9
+---
+aids: true
+---
 
 Anna skal reise fra en holme som ligger $8$ km fra strandkanten. $12$ km fra det punktet på stranden som ligger nærmest holmen, ligger det en hytte. 
 Anna kan ro med en fart på $2$ km/t og gå med en fart på $6$ km/t. Anna kan gå i land i hvilket som helst punkt $\ell$ på veien.
@@ -1107,6 +1133,9 @@ class: no-click, adaptive-figure
 
 
 :::::::::::::::{exercise} Oppgave 10
+---
+aids: true
+---
 
 :::{plot}
 align: right
@@ -1149,6 +1178,10 @@ Bestem det største mulige volumet en slik kjegle kan ha.
 
 
 :::::::::::::::{exercise} Oppgave 11
+---
+aids: true
+---
+
 :::{cas-popup}
 ---
 layout: sidebar
@@ -1202,6 +1235,11 @@ $$
 
 
 :::::::::::::::{exercise} Oppgave 12
+---
+aids: true
+---
+
+
 En lysstråle ble først observert i et punkt $A(1000, 0)$ i luften og deretter i et punkt $B(10000, -1000)$ i vann. Alle avstander er målt i meter. 
 
 Lyset reiser med en fart på $300 \, \mathrm{m/ \mu s}$ i luft og $225 \, \mathrm{m/ \mu s}$ i vann. Her står $1 \, \mu s$ for 1 mikrosekund og er det samme som én milliondel av ett sekund. Lyset vil velge den veien mellom punktene $A$ og $B$ som gir kortest mulig reisetid.
@@ -1261,6 +1299,9 @@ figsize: (6, 4)
 
 
 ::::::::::::::::{exercise} Oppgave 13
+---
+aids: true
+---
 
 :::{cas-popup}
 ---
@@ -1355,6 +1396,9 @@ $$
 
 
 ::::::::::::::::{exercise} Oppgave 14
+---
+aids: true
+---
 
 
 :::{plot}
@@ -1633,7 +1677,7 @@ $$
 
 :::::::::::::::{exercise} Oppgave 15
 ---
-level: 3
+aids: true
 ---
 
 Isabel er industridesigner. Hun arbeider med et design på bokser med form som sylindre.
@@ -1846,6 +1890,9 @@ som gir en overflate på ca. $258 \, \mathrm{cm}^2$.
 
 
 :::::::::::::::{exercise} Oppgave 16
+---
+aids: true
+---
 
 :::{plot}
 align: right
@@ -1940,6 +1987,9 @@ Hvor stort er overflatearealet da?
 
 
 :::::::::::::::{exercise} Oppgave 18
+---
+aids: true
+---
 
 
 :::{cas-popup}
@@ -2013,6 +2063,10 @@ Vi ser at $d'(x) = 0$ når $x = 2$. Vi ser også at $d''(2) > 0$ som betyr at $d
 
 
 :::::::::::::::{exercise} Oppgave 19
+---
+aids: true
+---
+
 :::{cas-popup}
 ---
 layout: sidebar
@@ -2145,6 +2199,9 @@ $$
 
 
 :::::::::::::::{exercise} Oppgave 20
+---
+aids: true
+---
 
 
 
@@ -2302,6 +2359,10 @@ $$
 
 
 :::::::::::::::{exercise} Oppgave 21
+---
+aids: true
+---
+
 :::{cas-popup}
 ---
 layout: sidebar
@@ -2375,6 +2436,10 @@ $$
 
 
 :::::::::::::::{exercise} Oppgave 22
+---
+aids: true
+---
+
 En halvsirkel er gitt ved
 
 $$
@@ -2465,7 +2530,13 @@ Bestem en eksakt verdi for det største arealet rektangelet kan ha.
 
 
 
-:::::::::::::::{exercise} Oppgave x
+:::::::::::::::{exercise} Oppgave 23
+---
+aids: true
+---
+
+En trekant $\triangle PQM$ der $a \in \langle 0, 4\rangle$ er innskrevet i et større trekant $\triangle OBA$. Se figuren nedenfor.
+
 :::{plot}
 width: 70%
 ticks: off
@@ -2475,19 +2546,47 @@ point: (8, 0)
 point: (0, x)
 point: (x, 0)
 point: (4, 2)
+let: dx = 0.15
+let: dy = 0.15
 line-segment: (0, 4), (8, 0), solid, black
 polygon: (x, 0), (0, x), (4, 2), blue, 0.2
-text: 0, x, "$P(0, a)$", center-left
-text: x, 0, "$Q(a, 0)$", bottom-center
-text: 0, 0, "$O$", bottom-left
-text: 8, 0, "$B(8, 0)$", bottom-center
-text: 0, 4, "$A(0, 4)$", center-left
-text: 4, 2, "$M(4, 2)$", top-right
-xmin: -1
+text: 0 - dx, x, "$P(0, a)$", center-left
+text: x, -dy, "$Q(a, 0)$", bottom-center
+text: -dx, -dy, "$O$", bottom-left
+text: 8, dy, "$B(8, 0)$", top-right
+text: 0 - dx, 4, "$A(0, 4)$", center-left
+text: 4 + dx, 2 + dy, "$M(4, 2)$", top-right
+xmin: -1.5
 xmax: 9
 ymin: -1
 ymax: 5 
+axis: equal
 :::
+
+
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Vis at arealet $T$ av den fargelangte trekanten er gitt ved 
+
+$$
+T(a) = -\dfrac{1}{2}a^2 + 3a
+$$
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Bestem det største arealet trekanten kan ha.
+
+
+:::::::::::::
+
+
+::::::::::::::
 
 :::::::::::::::
 
