@@ -77,7 +77,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/munchboka/css/table.css?v=30eed71c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/munchboka/css/pairPuzzle/style.css?v=f77426ac" />
     <link rel="stylesheet" type="text/css" href="../../../_static/munchboka/css/parsons/parsonsPuzzle.css?v=8c5c5c21" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/munchboka/css/print_pdf.css?v=04196dc1" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/munchboka/css/print_pdf.css?v=448841f9" />
     <link id="highlight-theme-light" rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github.min.css" />
     <link id="highlight-theme-dark" rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/github-dark.min.css" />
   
@@ -650,13 +650,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="oppgaver-datadrevet-modellering">
 <h1>Oppgaver: Datadrevet modellering<a class="headerlink" href="#oppgaver-datadrevet-modellering" title="Link to this heading">#</a></h1>
-<aside class="margin sidebar">
-<p class="sidebar-title">Tips: Oppgave 1</p>
-<p>I oppgaver hvor du skal vise at modell er en god modell, så er det ofte lurt å bare utføre regresjon med datamateriale du har fått og velge den samme modelltypen som er oppgitt.</p>
-<hr class="docutils" />
-<p>For å lage en polynomfunksjon som en regresjonsmodell, kan du bruke <code class="docutils literal notranslate"><span class="pre">RegPoly(data,</span> <span class="pre">polynomgrad)</span></code>.</p>
-</aside>
-<div class="admonition exercise">
+<div class="admonition exercise exercise-aids">
 <p class="admonition-title">Oppgave 1</p>
 <p>Tabellen nedenfor viser hvor mange bagetter en kantine har solgt hver av de siste sju ukene, og hvor stort overskudd salget har gitt</p>
 <div class="munchboka-table-container docutils container">
@@ -670,78 +664,334 @@ a</label><div class="sd-tab-content docutils">
 \[
 O(x) = -0.09x^2 + 51.04x - 2776.98
 \]</div>
-<p>er en god modell for hvor stort overskuddet en uke blir når kantinen produserer og selger <span class="math notranslate nohighlight">\(x\)</span> bagetter i løpet av uken.</p>
-<div class="solution dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<p>Vi bruker regresjon med en polynomfunksjon av grad <span class="math notranslate nohighlight">\(2\)</span> siden den oppgitte modellen er en andregradsfunksjon:</p>
-<figure class="align-default">
-<a class="no-click adaptive-figure reference internal image-reference" href="../../../_images/sol37.png"><img alt="../../../_images/sol37.png" class="no-click adaptive-figure" src="../../../_images/sol37.png" style="width: 100%;" /></a>
-</figure>
-<p>Vi kan altså se at</p>
-<div class="math notranslate nohighlight">
-\[
-O(x) = -0.09x^2 + 51.04x - 2776.98
-\]</div>
-<p>er en god modell ut ifra regresjonsanalysen og datapunktene vi har brukt.</p>
-</div>
+<p>er en god modell for hvor stort overskuddet blir en i løpet av en uke når kantinen produserer og selger <span class="math notranslate nohighlight">\(x\)</span> bagetter i løpet av uka.</p>
 </div>
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-1">
 b</label><div class="sd-tab-content docutils">
-<p>Hvor mange bagetter må kantinen produsere og selge i løpet av en uke, ifølge modellen <span class="math notranslate nohighlight">\(O\)</span>, for at overskuddet skal bli størst mulig?</p>
-<p>Hvor stort blir dette overskuddet?</p>
-<div class="solution dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<p>Grafen til <span class="math notranslate nohighlight">\(O\)</span> vil ha et toppunkt siden <span class="math notranslate nohighlight">\(O\)</span> er en andregradsfunksjon og ledende koeffisient er negativ. Da vil overskuddet blir størst mulig når <span class="math notranslate nohighlight">\(O'(x) = 0\)</span>. Vi løser likningen med CAS:</p>
-<figure class="align-default">
-<a class="no-click adaptive-figure reference internal image-reference" href="../../../_images/sol38.png"><img alt="../../../_images/sol38.png" class="no-click adaptive-figure" src="../../../_images/sol38.png" style="width: 60%;" /></a>
-</figure>
-<p>som betyr at <span class="math notranslate nohighlight">\(O'(x) = 0\)</span> når <span class="math notranslate nohighlight">\(x \approx 283.56\)</span>. Kantina må derfor produsere og selges ca. 284 bagetter for at overskuddet skal bli størst mulig. Vi ser at overskuddet da er</p>
-<div class="math notranslate nohighlight">
-\[
-O(283.56) \approx 4459 \, \text{kr}
-\]</div>
-</div>
+<p>Hvor mange bagetter må kantinen produsere og selge i løpet av en uke for at overskuddet skal bli størst mulig, ifølge modellen?</p>
+<p>Hvor stor blir dette overskuddet?</p>
 </div>
 <input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-2">
 c</label><div class="sd-tab-content docutils">
-<p>Bestem stigningstallet til den rette linjen som går gjennom punktene <span class="math notranslate nohighlight">\((100, O(100))\)</span> og <span class="math notranslate nohighlight">\((200, O(200))\)</span>. Gi en praktisk tolkning av svaret du får.</p>
-<div class="solution dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<p>Vi bestemmer stigningstallet til linja gjennom punktene <span class="math notranslate nohighlight">\((100, O(100))\)</span> og <span class="math notranslate nohighlight">\((200, O(200))\)</span> ved å regne ut den gjennomsnittlige vekstfarten til <span class="math notranslate nohighlight">\(O\)</span> i intervallet <span class="math notranslate nohighlight">\([100, 200]\)</span>. Dette gjør vi direkte med CAS:</p>
-<figure class="align-default">
-<a class="no-click adaptive-figure reference internal image-reference" href="../../../_images/sol39.png"><img alt="../../../_images/sol39.png" class="no-click adaptive-figure" src="../../../_images/sol39.png" style="width: 100%;" /></a>
-</figure>
-<p>som gir oss ca. 24 kr per bagett. Den praktiske tolkning av tallet er at dersom kantina øker antall bagetter de produserer og selger fra <span class="math notranslate nohighlight">\(100\)</span> til <span class="math notranslate nohighlight">\(200\)</span>, så vil overskuddet øke med ca <span class="math notranslate nohighlight">\(24\)</span> kr per bagett i gjennomsnitt.</p>
-</div>
+<p>Bestem stigningstallet til den rette linjen som går gjennom punktene <span class="math notranslate nohighlight">\((100, O(100))\)</span> og <span class="math notranslate nohighlight">\((200, O(200))\)</span>.</p>
+<p>Gi en praktisk tolkning av svaret.</p>
 </div>
 <input id="sd-tab-item-3" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-3">
 d</label><div class="sd-tab-content docutils">
-<p>Bestem den momentane vekstfarten når <span class="math notranslate nohighlight">\(x = 235\)</span>. Gi en praktisk tolkning av svaret du får.</p>
-<div class="solution dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<p>Den momentane vekstfarten til <span class="math notranslate nohighlight">\(O\)</span> i <span class="math notranslate nohighlight">\(x = 235\)</span> er <span class="math notranslate nohighlight">\(O'(235)\)</span>. Vi regner ut dette med CAS:</p>
-<figure class="align-default">
-<a class="no-click adaptive-figure reference internal image-reference" href="../../../_images/sol40.png"><img alt="../../../_images/sol40.png" class="no-click adaptive-figure" src="../../../_images/sol40.png" style="width: 100%;" /></a>
-</figure>
-<p>som gir at <span class="math notranslate nohighlight">\(O'(235) \approx 8.74\)</span> kr per bagett. Den praktiske tolkningen av dette tallet er at dersom kantina øker antall bagetter de produserer og selger fra <span class="math notranslate nohighlight">\(235\)</span> til <span class="math notranslate nohighlight">\(236\)</span>, så vil overskuddet øke med ca <span class="math notranslate nohighlight">\(8.74\)</span> kr.</p>
-</div>
+<p>Bestem den momentane vekstfarten når <span class="math notranslate nohighlight">\(x = 235\)</span>.</p>
+<p>Gi en praktisk tolkning av svaret.</p>
 </div>
 </div>
 </div>
 <hr class="docutils" />
-<div class="admonition exercise">
+<div class="admonition exercise exercise-aids">
 <p class="admonition-title">Oppgave 2</p>
+<figure class="adaptive-figure plot-figure no-click align-right">
+<div class="graph-image no-click no-scaled-link"><?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 216 216" xmlns="http://www.w3.org/2000/svg" version="1.1" class="graph-inline-svg" role="img" aria-label="Tilpasset figur" style="width:60%; height:auto; display:block; margin:0 auto;">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-02-28T18:21:04.936090</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.9.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="cpl_235675b5cf3c_9dc9af_figure_1">
+  <g id="cpl_235675b5cf3c_9dc9af_patch_1">
+   <path d="M 0 216 
+L 216 216 
+L 216 0 
+L 0 0 
+L 0 216 
+z
+" style="fill: none"/>
+  </g>
+  <g id="cpl_235675b5cf3c_9dc9af_axes_1">
+   <g id="cpl_235675b5cf3c_9dc9af_patch_2">
+    <path d="M 94.472366 146.032894 
+C 104.558807 146.032894 114.233492 142.025508 121.365683 134.893317 
+C 128.497874 127.761126 132.50526 118.086441 132.50526 108 
+C 132.50526 97.913559 128.497874 88.238874 121.365683 81.106683 
+C 114.233492 73.974492 104.558807 69.967106 94.472366 69.967106 
+C 84.385925 69.967106 74.71124 73.974492 67.579049 81.106683 
+C 60.446858 88.238874 56.439472 97.913559 56.439472 108 
+C 56.439472 118.086441 60.446858 127.761126 67.579049 134.893317 
+C 74.71124 142.025508 84.385925 146.032894 94.472366 146.032894 
+z
+" clip-path="url(#cpl_235675b5cf3c_9dc9af_p27bb468079)" style="fill: #d95f02; fill-opacity: 0.2; stroke: #d95f02; stroke-width: 2.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="cpl_235675b5cf3c_9dc9af_patch_3">
+    <path d="M 94.472366 184.065787 
+C 114.645249 184.065787 133.994618 176.051016 148.259 161.786634 
+C 162.523382 147.522252 170.538154 128.172883 170.538154 108 
+C 170.538154 87.827117 162.523382 68.477748 148.259 54.213366 
+C 133.994618 39.948984 114.645249 31.934213 94.472366 31.934213 
+C 74.299484 31.934213 54.950114 39.948984 40.685732 54.213366 
+C 26.42135 68.477748 18.406579 87.827117 18.406579 108 
+C 18.406579 128.172883 26.42135 147.522252 40.685732 161.786634 
+C 54.950114 176.051016 74.299484 184.065787 94.472366 184.065787 
+L 94.472366 184.065787 
+z
+" clip-path="url(#cpl_235675b5cf3c_9dc9af_p27bb468079)" style="fill: none; stroke-dasharray: 9.25,4; stroke-dashoffset: 0; stroke: #808080; stroke-width: 2.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="cpl_235675b5cf3c_9dc9af_patch_4">
+    <path d="M 148.259 65.623234 
+C 151.284933 65.623234 154.187338 64.421018 156.326995 62.281361 
+C 158.466653 60.141704 159.668868 57.239298 159.668868 54.213366 
+C 159.668868 51.187434 158.466653 48.285028 156.326995 46.145371 
+C 154.187338 44.005713 151.284933 42.803498 148.259 42.803498 
+C 145.233068 42.803498 142.330662 44.005713 140.191005 46.145371 
+C 138.051348 48.285028 136.849132 51.187434 136.849132 54.213366 
+C 136.849132 57.239298 138.051348 60.141704 140.191005 62.281361 
+C 142.330662 64.421018 145.233068 65.623234 148.259 65.623234 
+z
+" clip-path="url(#cpl_235675b5cf3c_9dc9af_p27bb468079)" style="fill: #008080; fill-opacity: 0.2; stroke: #008080; stroke-width: 2.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="cpl_235675b5cf3c_9dc9af_text_1">
+    <!-- Sola -->
+    <g transform="translate(77.872902 112.980682) scale(0.2 -0.2)">
+     <defs>
+      <path id="CMSS17-53" d="M 2797 4169 
+C 2515 4334 2208 4480 1690 4480 
+C 864 4480 333 3879 333 3266 
+C 333 3025 403 2753 653 2475 
+C 902 2196 1184 2121 1542 2033 
+C 1690 1994 1939 1924 1984 1906 
+C 2342 1767 2515 1444 2515 1140 
+C 2515 742 2202 318 1645 318 
+C 1453 318 890 318 358 819 
+L 269 318 
+C 794 -64 1363 -128 1651 -128 
+C 2438 -128 3002 488 3002 1186 
+C 3002 1440 2925 1763 2656 2061 
+C 2394 2347 2163 2410 1638 2549 
+C 1338 2626 1146 2677 986 2873 
+C 877 3013 819 3146 819 3317 
+C 819 3673 1126 4060 1690 4060 
+C 1971 4060 2336 4002 2707 3660 
+L 2797 4169 
+z
+" transform="scale(0.015625)"/>
+      <path id="CMSS17-6f" d="M 2829 1356 
+C 2829 2176 2221 2816 1504 2816 
+C 768 2816 173 2157 173 1356 
+C 173 544 787 -64 1498 -64 
+C 2227 -64 2829 563 2829 1356 
+z
+M 1504 337 
+C 1050 337 659 709 659 1408 
+C 659 2151 1114 2427 1498 2427 
+C 1914 2427 2342 2126 2342 1408 
+C 2342 683 1926 337 1504 337 
+z
+" transform="scale(0.015625)"/>
+      <path id="CMSS17-6c" d="M 947 4416 
+L 474 4416 
+L 474 0 
+L 947 0 
+L 947 4416 
+z
+" transform="scale(0.015625)"/>
+      <path id="CMSS17-61" d="M 2406 1791 
+C 2406 2392 1978 2808 1402 2808 
+C 1120 2808 813 2757 461 2553 
+L 499 2135 
+C 659 2248 934 2432 1395 2432 
+C 1722 2432 1920 2180 1920 1782 
+L 1920 1536 
+C 896 1536 256 1238 256 726 
+C 256 461 416 -64 947 -64 
+C 1043 -64 1562 -64 1933 217 
+L 1933 -19 
+L 2406 -19 
+L 2406 1791 
+z
+M 1920 816 
+C 1920 701 1920 548 1728 434 
+C 1562 325 1350 325 1261 325 
+C 941 325 723 511 723 744 
+C 723 1211 1722 1211 1920 1211 
+L 1920 816 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#CMSS17-53" transform="scale(0.996264)"/>
+     <use xlink:href="#CMSS17-6f" transform="translate(52.048516 0) scale(0.996264)"/>
+     <use xlink:href="#CMSS17-6c" transform="translate(98.89214 0) scale(0.996264)"/>
+     <use xlink:href="#CMSS17-61" transform="translate(121.072863 0) scale(0.996264)"/>
+    </g>
+   </g>
+   <g id="cpl_235675b5cf3c_9dc9af_text_2">
+    <!-- Planet -->
+    <g transform="translate(155.104921 43.535979) scale(0.2 -0.2)">
+     <defs>
+      <path id="CMSS17-50" d="M 2106 1856 
+C 2874 1856 3501 2453 3501 3158 
+C 3501 3850 2899 4453 2067 4453 
+L 570 4453 
+L 570 0 
+L 1107 0 
+L 1107 1856 
+L 2106 1856 
+z
+M 1926 4096 
+C 2669 4096 2995 3627 2995 3157 
+C 2995 2720 2694 2226 1926 2226 
+L 1094 2226 
+L 1094 4096 
+L 1926 4096 
+z
+" transform="scale(0.015625)"/>
+      <path id="CMSS17-6e" d="M 2618 1877 
+C 2618 2283 2522 2816 1798 2816 
+C 1389 2816 1120 2606 941 2389 
+L 941 2758 
+L 474 2758 
+L 474 0 
+L 960 0 
+L 960 1559 
+C 960 1964 1114 2428 1549 2428 
+C 2112 2428 2131 2048 2131 1829 
+L 2131 0 
+L 2618 0 
+L 2618 1877 
+z
+" transform="scale(0.015625)"/>
+      <path id="CMSS17-65" d="M 2502 1377 
+C 2502 1590 2490 2003 2285 2345 
+C 2061 2713 1696 2816 1421 2816 
+C 755 2816 192 2188 192 1375 
+C 192 582 774 -64 1510 -64 
+C 1798 -64 2150 19 2470 248 
+C 2470 274 2458 414 2451 420 
+C 2451 433 2432 630 2432 656 
+C 2125 407 1773 325 1517 325 
+C 1107 325 666 667 646 1377 
+L 2502 1377 
+z
+M 698 1728 
+C 781 2084 1062 2421 1421 2421 
+C 1517 2421 1965 2421 2080 1728 
+L 698 1728 
+z
+" transform="scale(0.015625)"/>
+      <path id="CMSS17-74" d="M 1069 2368 
+L 1901 2368 
+L 1901 2737 
+L 1069 2737 
+L 1069 3520 
+L 614 3520 
+L 614 2737 
+L 109 2737 
+L 109 2368 
+L 602 2368 
+L 602 749 
+C 602 384 685 -64 1107 -64 
+C 1427 -64 1722 25 2003 172 
+L 1901 548 
+C 1747 414 1562 337 1363 337 
+C 1082 337 1069 696 1069 856 
+L 1069 2368 
+z
+" transform="scale(0.015625)"/>
+     </defs>
+     <use xlink:href="#CMSS17-50" transform="scale(0.996264)"/>
+     <use xlink:href="#CMSS17-6c" transform="translate(59.735586 0) scale(0.996264)"/>
+     <use xlink:href="#CMSS17-61" transform="translate(81.916309 0) scale(0.996264)"/>
+     <use xlink:href="#CMSS17-6e" transform="translate(126.83823 0) scale(0.996264)"/>
+     <use xlink:href="#CMSS17-65" transform="translate(175.043173 0) scale(0.996264)"/>
+     <use xlink:href="#CMSS17-74" transform="translate(216.681995 0) scale(0.996264)"/>
+    </g>
+   </g>
+   <g id="cpl_235675b5cf3c_9dc9af_Quiver_1">
+    <path d="M 147.904008 54.568358 
+L 118.826954 25.491303 
+L 117.761979 27.266262 
+L 115.98702 21.941385 
+L 121.311897 23.716344 
+L 119.536938 24.78132 
+L 148.613992 53.858374 
+L 147.904008 54.568358 
+" clip-path="url(#cpl_235675b5cf3c_9dc9af_p27bb468079)"/>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="cpl_235675b5cf3c_9dc9af_p27bb468079">
+   <rect x="10.8" y="10.8" width="167.344732" height="194.4"/>
+  </clipPath>
+ </defs>
+</svg>
+</div></figure>
+<p>Perioden til en planet er tiden det tar for planeten å gjennomføre en runde rundt solen.</p>
+<p>Nedenfor vises en tabell over periodene til noen av planetene i solsystemet vårt og deres avstand til solen. Avstandene er gitt i astronomiske enheter (AU) der <span class="math notranslate nohighlight">\(1 \text{ AU} = 149.6\)</span> millioner km er avstanden fra jorden til solen.</p>
+<div style="clear: both;"></div><div class="munchboka-table-container docutils container">
+<div class="munchboka-table-frame munchboka-table-frame--align-center"><div class="munchboka-table-scroll"><table class="munchboka-table" data-katex="true"><thead><tr><th scope="col" class="munchboka-table-label munchboka-table-align-center">Planet</th><th scope="col" class="munchboka-table-label munchboka-table-align-center">Avstand (AU)</th><th scope="col" class="munchboka-table-label munchboka-table-align-center">Periode (År)</th></tr></thead><tbody><tr><td class="munchboka-table-align-center">Merkur</td><td class="munchboka-table-align-center">0.39</td><td class="munchboka-table-align-center">0.24</td></tr><tr><td class="munchboka-table-align-center">Venus</td><td class="munchboka-table-align-center">0.72</td><td class="munchboka-table-align-center">0.62</td></tr><tr><td class="munchboka-table-align-center">Mars</td><td class="munchboka-table-align-center">1.52</td><td class="munchboka-table-align-center">1.88</td></tr><tr><td class="munchboka-table-align-center">Jupiter</td><td class="munchboka-table-align-center">5.20</td><td class="munchboka-table-align-center">11.86</td></tr><tr><td class="munchboka-table-align-center">Saturn</td><td class="munchboka-table-align-center">9.58</td><td class="munchboka-table-align-center">29.46</td></tr></tbody></table></div></div></div>
+<div class="sd-tab-set tabs-parts docutils">
+<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
+a</label><div class="sd-tab-content docutils">
+<p>Lag en modell på formen</p>
+<div class="math notranslate nohighlight">
+\[
+P(x) = a \cdot x^b
+\]</div>
+<p>som viser sammenhengen mellom perioden <span class="math notranslate nohighlight">\(P(x)\)</span> i år og avstanden <span class="math notranslate nohighlight">\(x\)</span> i AU.</p>
+</div>
+<input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-5">
+b</label><div class="sd-tab-content docutils">
+<p>Hva er perioden til jorda, ifølge modellen din?</p>
+</div>
+<input id="sd-tab-item-6" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-6">
+c</label><div class="sd-tab-content docutils">
+<p>Neptun er den planeten som ligger lengst unna solen med en avstand på ca. <span class="math notranslate nohighlight">\(30.1 \, \mathrm{AU}\)</span>.</p>
+<p>Hvor lang tid bruker Neptun på én runde rundt solen, ifølge modellen din?</p>
+</div>
+<input id="sd-tab-item-7" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-7">
+d</label><div class="sd-tab-content docutils">
+<p>Pluto er en dvergplanet som bruker hele 247.94 år på én runde rundt solen.</p>
+<p>Hvor langt unna solen er Pluto, ifølge modellen din?</p>
+</div>
+<input id="sd-tab-item-8" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-8">
+e</label><div class="sd-tab-content docutils">
+<p>Johannes Kepler var en astronom som levde rundt år 1600. Han oppdaget en lov som vi i dag kaller for Keplers 3.lov:</p>
+<blockquote>
+<div><p>For perioden <span class="math notranslate nohighlight">\(P\)</span> og avstanden <span class="math notranslate nohighlight">\(x\)</span> til en planet, så er <span class="math notranslate nohighlight">\(P^2\)</span> proporsjonal med <span class="math notranslate nohighlight">\(x^3\)</span>. Det betyr at det finnes en konstant <span class="math notranslate nohighlight">\(k\)</span> slik at <span class="math notranslate nohighlight">\(P^2 = k \cdot x^3\)</span>.</p>
+</div></blockquote>
+<p>Undersøk om modellen din stemmer med Keplers 3.lov.</p>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="admonition exercise exercise-aids">
+<p class="admonition-title">Oppgave 3</p>
 <p>Tabellen nedenfor viser antallet registrerte tilfeller av kikhoste i Norge noen måneder i perioden januar 2023 - oktober 2024.</p>
 <div class="munchboka-table-container docutils container">
 <div class="munchboka-table-frame munchboka-table-frame--align-center"><div class="munchboka-table-scroll"><table class="munchboka-table munchboka-table--transpose" data-katex="true"><tbody><tr><th scope="row" class="munchboka-table-label munchboka-table-align-center">Måned</th><td class="munchboka-table-align-center">Januar 2023</td><td class="munchboka-table-align-center">Mai 2023</td><td class="munchboka-table-align-center">Oktober 2023</td><td class="munchboka-table-align-center">Februar 2024</td><td class="munchboka-table-align-center">August 2024</td><td class="munchboka-table-align-center">Oktober 2024</td></tr><tr><th scope="row" class="munchboka-table-label munchboka-table-align-center">Antall registrerte tilfeller</th><td class="munchboka-table-align-center">29</td><td class="munchboka-table-align-center">93</td><td class="munchboka-table-align-center">164</td><td class="munchboka-table-align-center">284</td><td class="munchboka-table-align-center">1035</td><td class="munchboka-table-align-center">1657</td></tr></tbody></table></div></div></div>
 <br>
 <p>La <span class="math notranslate nohighlight">\(x\)</span> være antall måneder etter desember 2022, det vil si at <span class="math notranslate nohighlight">\(x = 1\)</span> tilsvarer januar 2023, <span class="math notranslate nohighlight">\(x = 3\)</span> tilsvarer mars 2023, og så videre.</p>
 <div class="sd-tab-set tabs-parts docutils">
-<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-4">
+<input checked="checked" id="sd-tab-item-9" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-9">
 a</label><div class="sd-tab-content docutils">
 <p>Bruk opplysningene ovenfor til å vise at funksjonen <span class="math notranslate nohighlight">\(K\)</span> gitt ved</p>
 <div class="math notranslate nohighlight">
@@ -749,64 +999,22 @@ a</label><div class="sd-tab-content docutils">
 K(x) = 27.8 \cdot 1.2^x
 \]</div>
 <p>er en god modell for antall registrerte tilfeller av kikhoste i Norge i perioden januar 2023 - oktober 2024.</p>
-<div class="admonition solution dropdown">
-<p class="admonition-title">Løsning</p>
-<p>Vi legger inn verdiene for <span class="math notranslate nohighlight">\(x\)</span> og <span class="math notranslate nohighlight">\(K(x)\)</span> i et regneark:</p>
-<figure class="align-default">
-<a class="no-click adaptive-figure reference internal image-reference" href="../../../_images/a_regneark2.png"><img alt="../../../_images/a_regneark2.png" class="no-click adaptive-figure" src="../../../_images/a_regneark2.png" style="width: 80%;" /></a>
-</figure>
-<p>deretter utfører vi regresjon med en eksponentiell modell:</p>
-<figure class="align-default">
-<a class="no-click adaptive-figure reference internal image-reference" href="../../../_images/a_regresjonsmodell1.png"><img alt="../../../_images/a_regresjonsmodell1.png" class="no-click adaptive-figure" src="../../../_images/a_regresjonsmodell1.png" style="width: 80%;" /></a>
-</figure>
-<p>Fra skjermbilde ovenfor, kan vi se at modellen vi får er:</p>
-<div class="math notranslate nohighlight">
-\[
-K(x) = 27.809 \cdot 1.1987^x \approx 27.8 \cdot 1.2^x.
-\]</div>
-<p>Dermed har vi vist at det oppgitte uttrykket for <span class="math notranslate nohighlight">\(K(x)\)</span> er en god modell for antall registrerte tilfeller av kikhoste i Norge i perioden januar 2023 - oktober 2024 der <span class="math notranslate nohighlight">\(x\)</span> er antall måneder etter desember 2022.</p>
 </div>
-</div>
-<input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-5">
+<input id="sd-tab-item-10" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-10">
 b</label><div class="sd-tab-content docutils">
 <p>Bestem stigningstallet til den rette linjen som gjennom punktene <span class="math notranslate nohighlight">\((4, K(4))\)</span> og <span class="math notranslate nohighlight">\((21, K(21))\)</span>. <br> Gi en praktisk tolkning av svaret du får.</p>
-<div class="admonition solution dropdown">
-<p class="admonition-title">Løsning</p>
-<p>Vi bruker uttrykket for <span class="math notranslate nohighlight">\(K(x)\)</span> som er oppgitt i oppgaven. Stigningstallet til linja som går gjennom punktene <span class="math notranslate nohighlight">\((4, K(4))\)</span> og <span class="math notranslate nohighlight">\((21, K(21))\)</span> svarer til den gjennomsnittlige vekstfarten til <span class="math notranslate nohighlight">\(K(x)\)</span> i intervallet <span class="math notranslate nohighlight">\([4, 21]\)</span> som vi kan bestemme slik:</p>
-<figure class="align-default">
-<a class="no-click adaptive-figure reference internal image-reference" href="../../../_images/b33.png"><img alt="../../../_images/b33.png" class="no-click adaptive-figure" src="../../../_images/b33.png" style="width: 80%;" /></a>
-</figure>
-<p>I celle 2 ser vi at stigningstallet er omtrent <span class="math notranslate nohighlight">\(71.84\)</span>. Den praktiske tolkningen av dette er at antallet registrerte tilfeller av kikhoste økte i gjennomsnitt med ca. <span class="math notranslate nohighlight">\(72\)</span> tilfeller per måned i perioden fra april 2023 til september 2024 siden <span class="math notranslate nohighlight">\(x = 4\)</span> tilsvarer april 2023 og <span class="math notranslate nohighlight">\(x = 21\)</span> tilsvarer september 2024.</p>
 </div>
-</div>
-<input id="sd-tab-item-6" name="sd-tab-set-1" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-6">
+<input id="sd-tab-item-11" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-11">
 c</label><div class="sd-tab-content docutils">
 <p>Hvor mange tilfeller av kikhoste vil bli registrert i Norge i mai 2025 ifølge modellen?</p>
-<div class="admonition answer dropdown">
-<p class="admonition-title">Fasit</p>
-<p>Ifølge modellen blir det registrert omtrent <span class="math notranslate nohighlight">\(5499\)</span> tilfeller av kikhoste i Norge i mai 2025.</p>
-</div>
-<div class="admonition solution dropdown">
-<p class="admonition-title">Løsning</p>
-<p>Vi kan tolke problemet som at vi skal bestemme <span class="math notranslate nohighlight">\(K(x)\)</span> i mai 2025, som vi kan gjøre ved å sette</p>
-<div class="math notranslate nohighlight">
-\[
-x = \underbrace{5}_{\text{første mai måned}} + \underbrace{12}_{\text{antall måneder i et år}}\cdot \underbrace{2}_{\text{2 år senere}} = 29
-\]</div>
-<p>Vi regner ut med CAS:</p>
-<figure class="align-default">
-<a class="no-click adaptive-figure reference internal image-reference" href="book/modellering/datadrevet_modellering/figurer/oppgaver/3/c.png"><img alt="book/modellering/datadrevet_modellering/figurer/oppgaver/3/c.png" class="no-click adaptive-figure" src="book/modellering/datadrevet_modellering/figurer/oppgaver/3/c.png" style="width: 80%;" /></a>
-</figure>
-<p>Dermed vil modellen gi at antall registrerte tilfeller av kikhoste i Norge i mai 2025 er omtrent <span class="math notranslate nohighlight">\(K(29) \approx 5499\)</span>.</p>
-</div>
 </div>
 </div>
 </div>
 <hr class="docutils" />
-<div class="admonition exercise">
-<p class="admonition-title">Oppgave 3</p>
+<div class="admonition exercise exercise-aids">
+<p class="admonition-title">Oppgave 4</p>
 <p>En fabrikk har en vanntank. Vannet i tanken skal tappes ut.</p>
 <p>Anta at funksjonen <span class="math notranslate nohighlight">\(V\)</span> gitt ved</p>
 <div class="math notranslate nohighlight">
@@ -815,115 +1023,36 @@ V(x) = 2000 - 2000\cdot \left(1 - \dfrac{x}{40}\right)^2 \, , \quad 0 \leq x \le
 \]</div>
 <p>kan brukes som en modell for hvor mange liter vann <span class="math notranslate nohighlight">\(V(x)\)</span> som er tappet ut av tanken <span class="math notranslate nohighlight">\(x\)</span> minutter etter tappingen startet.</p>
 <div class="sd-tab-set tabs-parts docutils">
-<input checked="checked" id="sd-tab-item-7" name="sd-tab-set-2" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-7">
+<input checked="checked" id="sd-tab-item-12" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-12">
 a</label><div class="sd-tab-content docutils">
 <p>Bestem <span class="math notranslate nohighlight">\(V(0)\)</span>. Gi en praktisk tolkning av svaret.</p>
-<div class="solution dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<p>Vi bestemmer <span class="math notranslate nohighlight">\(V(0)\)</span> ved å bruke CAS:</p>
-<figure class="align-default">
-<a class="no-click adaptive-figure reference internal image-reference" href="../../../_images/sol41.png"><img alt="../../../_images/sol41.png" class="no-click adaptive-figure" src="../../../_images/sol41.png" style="width: 80%;" /></a>
-</figure>
-<p>Altså er <span class="math notranslate nohighlight">\(V(0) = 0\)</span> som forteller oss at når vi setter i gang å tappe ut vann, så har vi tappet ut <span class="math notranslate nohighlight">\(0\)</span> liter med vann.</p>
 </div>
-</div>
-<input id="sd-tab-item-8" name="sd-tab-set-2" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-8">
+<input id="sd-tab-item-13" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-13">
 b</label><div class="sd-tab-content docutils">
 <p>Bestem verdimengden til <span class="math notranslate nohighlight">\(V\)</span>.</p>
-<div class="solution dropdown admonition">
-<p class="admonition-title">Fasit</p>
-<div class="math notranslate nohighlight">
-\[
-V(x) \in [0, 2000]
-\]</div>
 </div>
-<div class="solution dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<p>Fra den praktiske situasjonen, vil det være naturlig at verdimengden er <span class="math notranslate nohighlight">\(V(x) \in [0, V_\mathrm{maks}]\)</span> for et maksimalt volum <span class="math notranslate nohighlight">\(V_\mathrm{maks}\)</span>. For å bestemme dette kan vi regne ut verdien til <span class="math notranslate nohighlight">\(V(x)\)</span> i endepunktene <span class="math notranslate nohighlight">\(x\in \{0, 40\}\)</span>. Vi regner ut for det sistenevnte punktet med CAS og finner:</p>
-<figure class="align-default">
-<a class="no-click adaptive-figure reference internal image-reference" href="../../../_images/sol42.png"><img alt="../../../_images/sol42.png" class="no-click adaptive-figure" src="../../../_images/sol42.png" style="width: 100%;" /></a>
-</figure>
-<p>som betyr at <span class="math notranslate nohighlight">\(V(0) = 0\)</span> og <span class="math notranslate nohighlight">\(V(40) = 2000\)</span>. Dermed vil verdimengden kunne beskrives som</p>
-<div class="math notranslate nohighlight">
-\[
-V(x) \in [0, 2000]
-\]</div>
-<p>som forteller oss ta vi til sammen har 2000 liter med vann i tanken.</p>
-</div>
-</div>
-<input id="sd-tab-item-9" name="sd-tab-set-2" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-9">
+<input id="sd-tab-item-14" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-14">
 c</label><div class="sd-tab-content docutils">
 <p>Hvor lang tid vil det ta før halvparten av vannet er tappet ut av tanken?</p>
-<div class="answer dropdown admonition">
-<p class="admonition-title">Fasit</p>
-<p><span class="math notranslate nohighlight">\(11.72\)</span> minutter.</p>
 </div>
-<div class="solution dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<p>For å avgjøre hvor lang tid det tar før halvparten av vannet er tappet ut, løser vi likningen</p>
-<div class="math notranslate nohighlight">
-\[
-V(x) = \dfrac{2000}{2} = 1000
-\]</div>
-<p>siden vi fant at det til sammen var 2000 liter med vann i tanken i oppgave <strong>b</strong>. Vi løser likningen med CAS:</p>
-<figure class="align-default">
-<a class="no-click adaptive-figure reference internal image-reference" href="../../../_images/sol43.png"><img alt="../../../_images/sol43.png" class="no-click adaptive-figure" src="../../../_images/sol43.png" style="width: 100%;" /></a>
-</figure>
-<p>Her får vi to løsninger, men det er bare løsningen <span class="math notranslate nohighlight">\(x \in [0, 40]\)</span> som er meningsfull, som betyr at det tar <span class="math notranslate nohighlight">\(11.72\)</span> minutter før halvparten av vannet er tappet ut av tanken.</p>
-</div>
-</div>
-<input id="sd-tab-item-10" name="sd-tab-set-2" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-10">
+<input id="sd-tab-item-15" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-15">
 d</label><div class="sd-tab-content docutils">
 <p>Bestem stigningstallet til den rette linjen som går gjennom punktene <span class="math notranslate nohighlight">\((0, V(0))\)</span> og <span class="math notranslate nohighlight">\((30, V(30))\)</span>. Gi en praktisk tolkning av svaret du får.</p>
-<div class="answer dropdown admonition">
-<p class="admonition-title">Fasit</p>
-<p><span class="math notranslate nohighlight">\(62.5\)</span> liter per minutt tappes ut i gjennomsnitt de første 30 minuttene av tappingen.</p>
 </div>
-<div class="solution dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<p>Stigningstallet til den rette linjen gjennom <span class="math notranslate nohighlight">\((0, V(0))\)</span> og <span class="math notranslate nohighlight">\((30, V(30))\)</span> svarer til den gjennomsnittlige vekstfarten til <span class="math notranslate nohighlight">\(V(x)\)</span> i intervallet <span class="math notranslate nohighlight">\([0, 30]\)</span>. Vi regner ut dette med CAS:</p>
-<figure class="align-default">
-<a class="no-click adaptive-figure reference internal image-reference" href="../../../_images/sol44.png"><img alt="../../../_images/sol44.png" class="no-click adaptive-figure" src="../../../_images/sol44.png" style="width: 100%;" /></a>
-</figure>
-<p>som betyr at stigningstallet til linja er <span class="math notranslate nohighlight">\(62.5\)</span> liter per minutt. Den praktiske tolkningen av svaret er at det tappes ut <span class="math notranslate nohighlight">\(62.5\)</span> liter per minutt i gjennomsnitt de første 30 minuttene av tappingen.</p>
-</div>
-</div>
-<input id="sd-tab-item-11" name="sd-tab-set-2" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-11">
+<input id="sd-tab-item-16" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-16">
 e</label><div class="sd-tab-content docutils">
 <p>Undersøk om det noen gang vil tappes ut mer enn 105 liter vann i løpet av ett minutt.</p>
-<div class="answer dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<p>Den praktiske tolkningen av den momentane vekstfarten <span class="math notranslate nohighlight">\(V'(x)\)</span> er at den forteller oss omtrent hvor mye volumet med vann endrer dersom vi øker verdien av <span class="math notranslate nohighlight">\(x\)</span> med <span class="math notranslate nohighlight">\(1\)</span>. Med andre ord</p>
-<div class="math notranslate nohighlight">
-\[
-V'(x) \approx V(x + 1) - V(x)
-\]</div>
-<p>som betyr at det er tilnærmet verdi for hvor mye vann som tappes ut i løpet av ett minutt. Siden spørsmålet handler om det tappes ut mer enn <span class="math notranslate nohighlight">\(105\)</span> liter, betyr det at vi lurer på om</p>
-<div class="math notranslate nohighlight">
-\[
-V'(x) &lt; -105
-\]</div>
-<p>for noen <span class="math notranslate nohighlight">\(x \in [0, 40]\)</span>. Vi løser ulikheten med CAS:</p>
-<figure class="align-default">
-<a class="no-click adaptive-figure reference internal image-reference" href="../../../_images/sol45.png"><img alt="../../../_images/sol45.png" class="no-click adaptive-figure" src="../../../_images/sol45.png" style="width: 100%;" /></a>
-</figure>
-<div class="math notranslate nohighlight">
-\[
-V'(x) &lt; -105 \liff x &gt; 82
-\]</div>
-<p>som ikke ligger innenfor definisjonsmengden. Med andre ord finner vi at det <em>aldri</em> tappes ut mer enn <span class="math notranslate nohighlight">\(105\)</span> liter vann i løpet av ett minutt.</p>
-</div>
 </div>
 </div>
 </div>
 <hr class="docutils" />
-<div class="admonition exercise">
-<p class="admonition-title">Oppgave 4</p>
+<div class="admonition exercise exercise-aids">
+<p class="admonition-title">Oppgave 5</p>
 <p>En gruppe statistikere har sett på hvordan folketallet i et område har endret seg siden 1960, og laget en modell <span class="math notranslate nohighlight">\(F\)</span> gitt ved</p>
 <div class="math notranslate nohighlight">
 \[
@@ -931,194 +1060,72 @@ F(x) = \dfrac{1}{1000}\cdot \left(0.027 x^3 - 5.8 x^2 + 220x + 7900\right), \qua
 \]</div>
 <p>for folketallet <span class="math notranslate nohighlight">\(F(x)\)</span> tusen innbyggere i området <span class="math notranslate nohighlight">\(x\)</span> år etter 1960.</p>
 <div class="sd-tab-set tabs-parts docutils">
-<input checked="checked" id="sd-tab-item-12" name="sd-tab-set-3" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-12">
+<input checked="checked" id="sd-tab-item-17" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-17">
 a</label><div class="sd-tab-content docutils">
 <p>Vis hvordan du på to ulike måter kan bestemme når folketallet var høyest ifølge modellen.</p>
-<div class="solution dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<p><strong>Metode 1: Løse <span class="math notranslate nohighlight">\(F'(x) = 0\)</span></strong> <br>
-Siden løsningene av <span class="math notranslate nohighlight">\(F'(x) = 0\)</span> gir ekstremalpunktene som vil være punkter når folketallet enten er lavest eller høyest, kan vi løse denne likningen for å avgjøre når folketallet var høyest. Vi gjør dette med CAS:</p>
-<figure class="align-default">
-<a class="no-click adaptive-figure reference internal image-reference" href="book/modellering/datadrevet_modellering/oppgave_5/a/metode_1.png"><img alt="book/modellering/datadrevet_modellering/oppgave_5/a/metode_1.png" class="no-click adaptive-figure" src="book/modellering/datadrevet_modellering/oppgave_5/a/metode_1.png" style="width: 100%;" /></a>
-</figure>
-<p>Her får vi to kandidater</p>
-<div class="math notranslate nohighlight">
-\[
-x \approx 22.5 \or x \approx 120.71.
-\]</div>
-<p>Men kun den første kandidaten ligger innenfor definisjonsmengden <span class="math notranslate nohighlight">\(D_F = [0, 80]\)</span>. Vi kan undersøke om det er toppunkt ved å regne ut <span class="math notranslate nohighlight">\(F(x)\)</span> i to “nabopunkter” til <span class="math notranslate nohighlight">\(x = 22.5\)</span> og sjekker om <span class="math notranslate nohighlight">\(F(22.5)\)</span> er større enn begge. Vi gjør utregningen med CAS:</p>
-<figure class="align-default">
-<a class="no-click adaptive-figure reference internal image-reference" href="book/modellering/datadrevet_modellering/oppgave_5/a/metode_1_exercise.png"><img alt="book/modellering/datadrevet_modellering/oppgave_5/a/metode_1_exercise.png" class="no-click adaptive-figure" src="book/modellering/datadrevet_modellering/oppgave_5/a/metode_1_exercise.png" style="width: 100%;" /></a>
-</figure>
-<p>som forteller oss at</p>
-<div class="math notranslate nohighlight">
-\[
-F(22.5) &gt; F(20) \and F(22.5) &gt; F(25)
-\]</div>
-<p>så <span class="math notranslate nohighlight">\(x = 22.5\)</span> svarer til et toppunkt. Dermed er det høyeste folketallet i området <span class="math notranslate nohighlight">\(x = 22.5\)</span> år etter 1960 som tilsvarer i år 1982.</p>
-<p><strong>Metode 2: Finne toppunktet grafisk</strong> <br>
-Vi kan også bruke den grafiske representasjonen til <span class="math notranslate nohighlight">\(F\)</span> og bestemme toppunktet med en graftegner. Se figuren nedenfor.</p>
-<figure class="align-default" id="id1">
-<a class="no-click adaptive-figure reference internal image-reference" href="book/modellering/datadrevet_modellering/oppgave_5/a/metode_2.png"><img alt="book/modellering/datadrevet_modellering/oppgave_5/a/metode_2.png" class="no-click adaptive-figure" src="book/modellering/datadrevet_modellering/oppgave_5/a/metode_2.png" style="width: 100%;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 31.1 </span><span class="caption-text">viser grafen til <span class="math notranslate nohighlight">\(F\)</span> der <span class="math notranslate nohighlight">\(y\)</span>-aksen viser folketallet i tusen innbyggere og <span class="math notranslate nohighlight">\(x\)</span>-aksen viser antall år etter 1960.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
-</figcaption>
-</figure>
-<p>Her har vi brukt følgende kommando i Geogebra for å bestemme koordinatene til toppunktet:</p>
-<figure class="align-default">
-<a class="no-click adaptive-figure reference internal image-reference" href="book/modellering/datadrevet_modellering/oppgave_5/a/metode_2_kommando.png"><img alt="book/modellering/datadrevet_modellering/oppgave_5/a/metode_2_kommando.png" class="no-click adaptive-figure" src="book/modellering/datadrevet_modellering/oppgave_5/a/metode_2_kommando.png" style="width: 60%;" /></a>
-</figure>
-<p>som forteller oss at koordinatene til toppunktet er <span class="math notranslate nohighlight">\((22.5, 10.22)\)</span> som betyr at folketallet var høyest når <span class="math notranslate nohighlight">\(x = 22.5\)</span> år etter 1960 som tilsvarer i år 1982.</p>
-</div>
-</div>
-<input id="sd-tab-item-13" name="sd-tab-set-3" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-13">
-b</label><div class="sd-tab-content docutils">
-<p>Bestem stigningstallet til den rette linjen som går gjennom punktene <span class="math notranslate nohighlight">\((30, F(30))\)</span> og <span class="math notranslate nohighlight">\((70, F(70))\)</span>. Gi en praktisk tolkning av dette stigningstallet.</p>
-<div class="solution dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<p>Stigningstallet til den rette linjen som går gjennom <span class="math notranslate nohighlight">\((30, F(30))\)</span> og <span class="math notranslate nohighlight">\((70, F(70))\)</span> er den gjennomsnittlige vekstfarten til <span class="math notranslate nohighlight">\(F\)</span> i intervallet <span class="math notranslate nohighlight">\([30, 70]\)</span>. Vi regner ut dette med CAS:</p>
-<figure class="align-default">
-<a class="no-click adaptive-figure reference internal image-reference" href="book/modellering/datadrevet_modellering/oppgave_5/b/sol.png"><img alt="book/modellering/datadrevet_modellering/oppgave_5/b/sol.png" class="no-click adaptive-figure" src="book/modellering/datadrevet_modellering/oppgave_5/b/sol.png" style="width: 80%;" /></a>
-</figure>
-<p>Vi ser at stigningstallet til linja er ca. <span class="math notranslate nohighlight">\(-0.15\)</span> som betyr at folketallet synker med ca. <span class="math notranslate nohighlight">\(150\)</span> innbyggere per år i gjennomsnitt i perioden fra 1990 til 2030, iføle modellen.</p>
-</div>
-</div>
-<input id="sd-tab-item-14" name="sd-tab-set-3" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-14">
-c</label><div class="sd-tab-content docutils">
-<p>Når vil folketallet avta raskest ifølge modellen?</p>
-<div class="solution dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<p>Folketallet vil avta raskest når den momentane vekstfarten <span class="math notranslate nohighlight">\(F'(x)\)</span> er minst mulig <em>og</em> negativ. Vi må altså lete etter bunnpunktet til <span class="math notranslate nohighlight">\(F'(x)\)</span>. Vi kan gjøre dette ved å løse likningen <span class="math notranslate nohighlight">\(F''(x) = 0\)</span>. Det vil si, vi deriverer den deriverte <span class="math notranslate nohighlight">\(F'\)</span> for å finne ut hvor mye <span class="math notranslate nohighlight">\(F'\)</span> endrer seg, og så finner vi bunnpunktet til <span class="math notranslate nohighlight">\(F'\)</span> for å bestemme når <span class="math notranslate nohighlight">\(F''(x) = 0\)</span>. Vi gjør dette med CAS:</p>
-<figure class="align-default">
-<a class="no-click adaptive-figure reference internal image-reference" href="book/modellering/datadrevet_modellering/oppgave_5/c/sol.png"><img alt="book/modellering/datadrevet_modellering/oppgave_5/c/sol.png" class="no-click adaptive-figure" src="book/modellering/datadrevet_modellering/oppgave_5/c/sol.png" style="width: 80%;" /></a>
-</figure>
-<p>som betyr at når <span class="math notranslate nohighlight">\(x \approx 71.6\)</span>, altså i år 2031, vil folketallet avta raskest ifølge modellen. Vi kan være sikre på at dette er punktet hvor <span class="math notranslate nohighlight">\(F'(x)\)</span> er minst mulig <em>og</em> negativ fordi grafen til <span class="math notranslate nohighlight">\(F\)</span> synker mest her ved å referere tilbake til grafen til <span class="math notranslate nohighlight">\(F\)</span> fra oppgave <strong>a</strong>. Grafen til <span class="math notranslate nohighlight">\(F\)</span> synker etter at <span class="math notranslate nohighlight">\(x = 22.5\)</span> frem til <span class="math notranslate nohighlight">\(x = 80\)</span> og <span class="math notranslate nohighlight">\(F'(x)\)</span> er negativ i hele dette intervallet. Tangenten til grafen til <span class="math notranslate nohighlight">\(F\)</span> vil være “brattest” i <span class="math notranslate nohighlight">\(x = 71.6\)</span>, og siden stigningstallet er negativt, vil det svare til når folketallet avtar raskest ifølge modellen.</p>
-</div>
-</div>
-</div>
-</div>
-<hr class="docutils" />
-<div class="admonition exercise">
-<p class="admonition-title">Oppgave 5</p>
-<figure class="align-right">
-<a class="no-click reference internal image-reference" href="../../../_images/newspaper.png"><img alt="../../../_images/newspaper.png" class="no-click" src="../../../_images/newspaper.png" style="width: 50%;" /></a>
-</figure>
-<p>Funksjonen <span class="math notranslate nohighlight">\(P\)</span> gitt ved</p>
-<div class="math notranslate nohighlight">
-\[
-P(x) = 3600 \cdot 0.85^x + 600
-\]</div>
-<p>er en modell som viser hvor mange personer som abonnerte på papirutgaven av en avis <span class="math notranslate nohighlight">\(x\)</span> år etter 2010.</p>
-<div class="sd-tab-set tabs-parts docutils">
-<input checked="checked" id="sd-tab-item-15" name="sd-tab-set-4" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-15">
-a</label><div class="sd-tab-content docutils">
-<p>Vis hvordan du på to ulike måter kan finne ut hvor mange person som abonnerte på papirutgaven av avisen i 2010.</p>
-<div class="solution dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<ol class="arabic simple">
-<li><p><strong>Metode 1: Regne ut <span class="math notranslate nohighlight">\(P(0)\)</span></strong> <br>
-Vi kan bruke funksjonsuttrykket og regne ut <span class="math notranslate nohighlight">\(P(0)\)</span> siden <span class="math notranslate nohighlight">\(x = 0\)</span> tilsvarer å 2010. Vi bruker CAS til å utføre dette:</p></li>
-</ol>
-<figure class="align-default">
-<a class="no-click adaptive-figure reference internal image-reference" href="book/modellering/datadrevet_modellering/oppgave_4/a/metode_1.png"><img alt="book/modellering/datadrevet_modellering/oppgave_4/a/metode_1.png" class="no-click adaptive-figure" src="book/modellering/datadrevet_modellering/oppgave_4/a/metode_1.png" style="width: 100%;" /></a>
-</figure>
-<ol class="arabic simple" start="2">
-<li><p><strong>Metode 2: Finne skjæringen med <span class="math notranslate nohighlight">\(y\)</span>-aksen</strong> <br>
-Vi bruker den grafiske representasjonen til <span class="math notranslate nohighlight">\(P\)</span> og bestemmer skjæringen med <span class="math notranslate nohighlight">\(y\)</span>-aksen med en graftegner. Se figuren nedenfor.</p></li>
-</ol>
-<figure class="align-default">
-<a class="no-click adaptive-figure reference internal image-reference" href="book/modellering/datadrevet_modellering/oppgave_4/a/metode_2.png"><img alt="book/modellering/datadrevet_modellering/oppgave_4/a/metode_2.png" class="no-click adaptive-figure" src="book/modellering/datadrevet_modellering/oppgave_4/a/metode_2.png" style="width: 100%;" /></a>
-</figure>
-<p>I utgangspunktet bruker vi bare kommandoen:</p>
-<figure class="align-default">
-<a class="no-click adaptive-figure reference internal image-reference" href="book/modellering/datadrevet_modellering/oppgave_4/a/skjæringspunkt.png"><img alt="book/modellering/datadrevet_modellering/oppgave_4/a/skjæringspunkt.png" class="no-click adaptive-figure" src="book/modellering/datadrevet_modellering/oppgave_4/a/skjæringspunkt.png" style="width: 60%;" /></a>
-</figure>
-<p>som forteller oss at punktet <span class="math notranslate nohighlight">\((0, 4200)\)</span> ligger på grafen til <span class="math notranslate nohighlight">\(P\)</span>. Dermed er det 4200 personer som abonnerte på papirutgaven når <span class="math notranslate nohighlight">\(x = 0\)</span> som tilsvarer i år 2010.</p>
-</div>
-</div>
-<input id="sd-tab-item-16" name="sd-tab-set-4" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-16">
-b</label><div class="sd-tab-content docutils">
-<p>Bestem stigningstallet til den rette linjen som går gjennom punktene <span class="math notranslate nohighlight">\((4, P(4))\)</span> og <span class="math notranslate nohighlight">\((14, P(14))\)</span>. Gi en praktisk tolkning av svaret du får.</p>
-<div class="solution dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<p>Stigningstallet til den rette linjen som går gjennom <span class="math notranslate nohighlight">\((4, P(4))\)</span> og <span class="math notranslate nohighlight">\((14, P(14))\)</span> er den gjennomsnittlige vekstfarten til <span class="math notranslate nohighlight">\(P\)</span> i intervallet <span class="math notranslate nohighlight">\([4, 14]\)</span>. Vi regner ut dette med CAS:</p>
-<figure class="align-default">
-<a class="no-click adaptive-figure reference internal image-reference" href="book/modellering/datadrevet_modellering/oppgave_4/b/sol.png"><img alt="book/modellering/datadrevet_modellering/oppgave_4/b/sol.png" class="no-click adaptive-figure" src="book/modellering/datadrevet_modellering/oppgave_4/b/sol.png" style="width: 100%;" /></a>
-</figure>
-<p>Altså er stigningstallet til linja ca. <span class="math notranslate nohighlight">\(-151\)</span>. Den praktiske tolkningen er at antall abonnenter papirutgaven av avisen synker med 151 abonnenter per år i gjennomsnitt, i perioden fra 2014 til 2024.</p>
-</div>
-</div>
-<input id="sd-tab-item-17" name="sd-tab-set-4" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-17">
-c</label><div class="sd-tab-content docutils">
-<p>Bestem den momentane vekstfarten når <span class="math notranslate nohighlight">\(x = 10\)</span>. Gi en praktisk tolkning av svaret du får.</p>
-<div class="solution dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<p>Den momentane vekstfarten til <span class="math notranslate nohighlight">\(P\)</span> når <span class="math notranslate nohighlight">\(x = 10\)</span>, er gitt ved <span class="math notranslate nohighlight">\(P'(10)\)</span>. Vi regner ut dette med CAS:</p>
-<figure class="align-default">
-<a class="no-click adaptive-figure reference internal image-reference" href="book/modellering/datadrevet_modellering/oppgave_4/c/sol.png"><img alt="book/modellering/datadrevet_modellering/oppgave_4/c/sol.png" class="no-click adaptive-figure" src="book/modellering/datadrevet_modellering/oppgave_4/c/sol.png" style="width: 100%;" /></a>
-</figure>
-<p>som betyr at</p>
-<div class="math notranslate nohighlight">
-\[
-P'(10) \approx -116
-\]</div>
-<p>Den praktiske tolkningen av dette tallet er at det er det blir ca. 116 færre abonnenter fra år <span class="math notranslate nohighlight">\(x = 10\)</span> til <span class="math notranslate nohighlight">\(x = 11\)</span> som betyr at i løpet av år 2020, så vil det være ca. 116 person som kansellerer abonnementet sitt på papirutgaven av avisen.</p>
-</div>
 </div>
 <input id="sd-tab-item-18" name="sd-tab-set-4" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-18">
-d</label><div class="sd-tab-content docutils">
-<p>I 2019 abonnerte 1000 personer på den digitale utgaven av avisen. Antallet personer som abonnerte på den digitale utgaven, økte med <span class="math notranslate nohighlight">\(5.5 \%\)</span> hvert år fra 2019 til 2024.</p>
-<p>I hvilket år var det for første gang flere personer som abonnerte på den digitale utgaven av avisen enn på papirutgaven?</p>
-<div class="solution dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<p>Vi kan sette opp en modell <span class="math notranslate nohighlight">\(D\)</span> som gir antall abonnenter <span class="math notranslate nohighlight">\(D(t)\)</span> på den digitale utgaven <span class="math notranslate nohighlight">\(t\)</span> år etter 2019 slik at <span class="math notranslate nohighlight">\(t = 0\)</span> svarer til år 2019. Siden det er prosentvis økning på <span class="math notranslate nohighlight">\(5.5 \%\)</span> per år fra en startverdi på <span class="math notranslate nohighlight">\(1000\)</span> abonnenter i 2019, vil modellen være en eksponentiell modell på formen</p>
-<div class="math notranslate nohighlight">
-\[
-D(t) = \underbrace{1000}_{\text{startverdi}} \cdot \underbrace{1.055^t}_{\mathrm{vekstfaktor}}
-\]</div>
-<p>For å kunne sammenligne <span class="math notranslate nohighlight">\(D(t)\)</span> med <span class="math notranslate nohighlight">\(P(x)\)</span>, er det hjelpsomt å bytte variabel i én av modellene så vi kan sammenligne funksjonsverdiene direkte. Her kan vi for eksempel bytte variabel i <span class="math notranslate nohighlight">\(D(t)\)</span> til <span class="math notranslate nohighlight">\(x\)</span> slik at vi får en modell <span class="math notranslate nohighlight">\(D(x)\)</span> som gir antall abonnenter på den digitale utgaven av avisen <span class="math notranslate nohighlight">\(x\)</span> år etter 2010. Men samtidig må vi huske på at denne modellen kun er gyldig fra og med år 2019, altså når <span class="math notranslate nohighlight">\(x \geq 9\)</span>. Det betyr at vi kan skrive sammenhengen mellom <span class="math notranslate nohighlight">\(t\)</span> og <span class="math notranslate nohighlight">\(x\)</span> som</p>
-<div class="math notranslate nohighlight">
-\[
-t = x - 9
-\]</div>
-<p>så lenge <span class="math notranslate nohighlight">\(x \geq 9\)</span> siden <span class="math notranslate nohighlight">\(x = 9\)</span> vil gi <span class="math notranslate nohighlight">\(t = 0\)</span>, <span class="math notranslate nohighlight">\(x = 10\)</span> vil gi <span class="math notranslate nohighlight">\(t = 1\)</span> osv.</p>
-<p>Da kan vi skrive om <span class="math notranslate nohighlight">\(D(t)\)</span> til <span class="math notranslate nohighlight">\(D(x)\)</span> ved å bytte variabelen slik vi har definert over:</p>
-<div class="math notranslate nohighlight">
-\[
-D(x) = 1000 \cdot 1.055^{x - 9}
-\]</div>
-<p>der modellen kun gir mening for <span class="math notranslate nohighlight">\(x \geq 9\)</span> siden dette er fra og med år 2019. Med denne modellen, kan vi nå undersøke når antall papirabonnenter <span class="math notranslate nohighlight">\(P(x)\)</span> er mindre enn antall digitale abonnenter <span class="math notranslate nohighlight">\(D(x)\)</span> ved å løse ulikheten</p>
-<div class="math notranslate nohighlight">
-\[
-P(x) &lt; D(x)
-\]</div>
-<p>som vi gjør med CAS:</p>
-<figure class="align-default">
-<a class="no-click adaptive-figure reference internal image-reference" href="book/modellering/datadrevet_modellering/oppgave_4/d/sol.png"><img alt="book/modellering/datadrevet_modellering/oppgave_4/d/sol.png" class="no-click adaptive-figure" src="book/modellering/datadrevet_modellering/oppgave_4/d/sol.png" style="width: 100%;" /></a>
-</figure>
-<p>Altså vil antall papirabonnenter bli lavere enn antall digitale abonnenter når <span class="math notranslate nohighlight">\(x &gt; 11.58\)</span> som betyr at det i løpet av år 2021 blir flere digitale abonnenter enn papirabonnenter.</p>
+b</label><div class="sd-tab-content docutils">
+<p>Bestem stigningstallet til den rette linjen som går gjennom punktene <span class="math notranslate nohighlight">\((30, F(30))\)</span> og <span class="math notranslate nohighlight">\((70, F(70))\)</span>. Gi en praktisk tolkning av dette stigningstallet.</p>
 </div>
+<input id="sd-tab-item-19" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-19">
+c</label><div class="sd-tab-content docutils">
+<p>Når vil folketallet avta raskest ifølge modellen?</p>
 </div>
 </div>
 </div>
 <hr class="docutils" />
-<hr class="docutils" />
-<div class="admonition exercise">
+<div class="admonition exercise exercise-aids">
 <p class="admonition-title">Oppgave 6</p>
+<p>Strømmen som holder vannet i et hagebasseng varmt, blir slått av.</p>
+<p>Anta at funksjonen <span class="math notranslate nohighlight">\(T\)</span> gitt ved</p>
+<div class="math notranslate nohighlight">
+\[
+T(x) = 3.5 + 34.5 \cdot 0.87^x,  \quad x \geq 0
+\]</div>
+<p>kan brukes som en modell for temperaturen <span class="math notranslate nohighlight">\(T(x) \degree \mathrm{C}\)</span> i vannet <span class="math notranslate nohighlight">\(x\)</span> timer etter at strømmen er slått av.</p>
+<div class="sd-tab-set tabs-parts docutils">
+<input checked="checked" id="sd-tab-item-20" name="sd-tab-set-5" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-20">
+a</label><div class="sd-tab-content docutils">
+<p>Hva er temperaturen i vannet når strømmen blir slått av?</p>
+</div>
+<input id="sd-tab-item-21" name="sd-tab-set-5" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-21">
+b</label><div class="sd-tab-content docutils">
+<p>Hvor lang tid vil det ta før temperaturen i vannet er under <span class="math notranslate nohighlight">\(20\degree \mathrm{C}\)</span>?</p>
+</div>
+<input id="sd-tab-item-22" name="sd-tab-set-5" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-22">
+c</label><div class="sd-tab-content docutils">
+<p>Bestem stigningstallet til den rette linjen som går gjennom punktene <span class="math notranslate nohighlight">\((0, T(0))\)</span> og <span class="math notranslate nohighlight">\((4, T(4))\)</span>.</p>
+<p>Gi en praktisk tolkning av svaret.</p>
+</div>
+<input id="sd-tab-item-23" name="sd-tab-set-5" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-23">
+d</label><div class="sd-tab-content docutils">
+<p>Vil temperaturen i vannet noen gang synke med mer enn <span class="math notranslate nohighlight">\(5\degree\mathrm{C}\)</span> i løpet av én time?</p>
+</div>
+<input id="sd-tab-item-24" name="sd-tab-set-5" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-24">
+e</label><div class="sd-tab-content docutils">
+<p>Gi en praktisk tolkning av tallet <span class="math notranslate nohighlight">\(3.5\)</span> i modellen.</p>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="admonition exercise exercise-aids">
+<p class="admonition-title">Oppgave 7</p>
 <p>Lufttrykk måles ofte i hektopascal (hPa). Jo høyere over havet vi befinner oss, jo lavere er lufttrykket. Lufttrykket ved havets overflate er ca. 1000 hPa.</p>
 <p>Når lufttrykket er lavere enn 1000 hPa, vil kokepunktet for vann være lavere enn <span class="math notranslate nohighlight">\(100 \degree \mathrm{C}\)</span>. Se tabellen nedenfor.</p>
 <div class="munchboka-table-container docutils container">
 <div class="munchboka-table-frame munchboka-table-frame--align-center"><div class="munchboka-table-scroll"><table class="munchboka-table munchboka-table--transpose" data-katex="true"><tbody><tr><th scope="row" class="munchboka-table-label munchboka-table-align-center">Lufttrykk (hPa)</th><td class="munchboka-table-align-center">1000</td><td class="munchboka-table-align-center">500</td><td class="munchboka-table-align-center">200</td><td class="munchboka-table-align-center">80</td><td class="munchboka-table-align-center">40</td></tr><tr><th scope="row" class="munchboka-table-label munchboka-table-align-center">Kokepunkt for vann ($\mathrm{^\circ C}$)</th><td class="munchboka-table-align-center">100</td><td class="munchboka-table-align-center">81.4</td><td class="munchboka-table-align-center">60.1</td><td class="munchboka-table-align-center">41.5</td><td class="munchboka-table-align-center">29</td></tr></tbody></table></div></div></div>
 <div class="sd-tab-set tabs-parts docutils">
-<input checked="checked" id="sd-tab-item-19" name="sd-tab-set-5" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-19">
+<input checked="checked" id="sd-tab-item-25" name="sd-tab-set-6" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-25">
 a</label><div class="sd-tab-content docutils">
 <p>Bestem en modell <span class="math notranslate nohighlight">\(K\)</span> på formen</p>
 <div class="math notranslate nohighlight">
@@ -1126,25 +1133,9 @@ a</label><div class="sd-tab-content docutils">
 K(x) = a \cdot x^b
 \]</div>
 <p>som tilnærmet viser sammenhengen mellom lufttrykket <span class="math notranslate nohighlight">\(x\)</span> hPa og kokepunktet <span class="math notranslate nohighlight">\(K(x) \, \degree \mathrm{C}\)</span>.</p>
-<div class="solution dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<p>Først fyller vi inn datapunktene i et regneark:</p>
-<figure class="align-default">
-<a class="no-click adaptive-figure reference internal image-reference" href="book/modellering/datadrevet_modellering/oppgave_3/a/regneark.png"><img alt="book/modellering/datadrevet_modellering/oppgave_3/a/regneark.png" class="no-click adaptive-figure" src="book/modellering/datadrevet_modellering/oppgave_3/a/regneark.png" style="width: 30%;" /></a>
-</figure>
-<p>deretter bruker vi regresjonsanalyse og velger <strong>potens</strong> som modellklasse:</p>
-<figure class="align-default">
-<a class="no-click adaptive-figure reference internal image-reference" href="book/modellering/datadrevet_modellering/oppgave_3/a/regresjonsmodell.png"><img alt="book/modellering/datadrevet_modellering/oppgave_3/a/regresjonsmodell.png" class="no-click adaptive-figure" src="book/modellering/datadrevet_modellering/oppgave_3/a/regresjonsmodell.png" style="width: 100%;" /></a>
-</figure>
-<p>Modellen vår <span class="math notranslate nohighlight">\(K\)</span> er derfor gitt ved</p>
-<div class="math notranslate nohighlight">
-\[
-K(x) = 7.56 \cdot x^{0.38}
-\]</div>
 </div>
-</div>
-<input id="sd-tab-item-20" name="sd-tab-set-5" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-20">
+<input id="sd-tab-item-26" name="sd-tab-set-6" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-26">
 b</label><div class="sd-tab-content docutils">
 <p>Nedenfor vises en samtale mellom to elever.</p>
 <div class="dialogue"><div class="dialogue-entry speaker1"><div class="speaker-name">Ari</div><p>Et egg blir ikke hardkokt dersom temperaturen i vannet er lavere enn <span class="math notranslate nohighlight">\(85 \, \degree\mathrm{C}\)</span>. Betyr det at det ikke går an å få egg hardkokte på et høyt fjell?</p>
@@ -1153,90 +1144,56 @@ b</label><div class="sd-tab-content docutils">
 </div><div class="dialogue-entry speaker2"><div class="speaker-name">Lisa</div><p>Jeg har lært at lufttrykket halveres for hver <span class="math notranslate nohighlight">\(5.5\)</span> km. Jeg vil ta utgangspunkt i dette og lage en modell på samme form som den du lager, Ari.</p>
 </div></div><br>
 <p>Lag modellen til Ari og Lisa.</p>
-<div class="solution dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<p>Modellen til Ari er en eksponentiell modell der vekstfaktoren er <span class="math notranslate nohighlight">\(0.88\)</span> siden det er <span class="math notranslate nohighlight">\(12 \%\)</span> nedgang per kilometer. Vi kaller modellen for <span class="math notranslate nohighlight">\(A\)</span>. Da har vi at</p>
-<div class="math notranslate nohighlight">
-\[
-A(x) = 1000 \cdot 0.88^x
-\]</div>
-<p>siden <span class="math notranslate nohighlight">\(x\)</span> er antall kilometer over havet og lufttrykket er <span class="math notranslate nohighlight">\(1000 hPa\)</span> ved havnivå.</p>
-<p>Modellen til Lisa er også en eksponentiell modell der vi vet at lufttrykket halveres for hver <span class="math notranslate nohighlight">\(5.5\)</span> km. Vi lar <span class="math notranslate nohighlight">\(L\)</span> være modellen til Lisa. Da har vi at</p>
-<div class="math notranslate nohighlight">
-\[
-L(x) = 1000 \cdot b^x
-\]</div>
-<p>Siden lufttrykket halveres for hver <span class="math notranslate nohighlight">\(5.5\)</span> km, betyr det at</p>
-<div class="math notranslate nohighlight">
-\[
-L(5.5) = 500. 
-\]</div>
-<p>Vi må bestemme <span class="math notranslate nohighlight">\(b\)</span> slik at dette stemmer. Vi gjør det med CAS:</p>
-<figure class="align-default">
-<a class="no-click adaptive-figure reference internal image-reference" href="book/modellering/datadrevet_modellering/oppgave_3/b/sol_lisa.png"><img alt="book/modellering/datadrevet_modellering/oppgave_3/b/sol_lisa.png" class="no-click adaptive-figure" src="book/modellering/datadrevet_modellering/oppgave_3/b/sol_lisa.png" style="width: 100%;" /></a>
-</figure>
-<p>Vi ser at <span class="math notranslate nohighlight">\(b \approx 0.88\)</span> akkurat som i Ari sin modell. Det er altså ingen nevneverdig forskjell mellom de to modellene, de er bare beskrevet på forskjellig måte.</p>
 </div>
-</div>
-<input id="sd-tab-item-21" name="sd-tab-set-5" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-21">
+<input id="sd-tab-item-27" name="sd-tab-set-6" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-27">
 c</label><div class="sd-tab-content docutils">
 <p>Omtrent hvor høyt over havet er det mulig å få egg hardkokte?</p>
-<div class="solution dropdown admonition">
-<p class="admonition-title">Løsning</p>
-<p>Vi finner først ut hvilket lufttrykk <span class="math notranslate nohighlight">\(x\)</span> som gir <span class="math notranslate nohighlight">\(K(x) = 85\)</span>. Vi løser likningen med CAS:</p>
-<figure class="align-default">
-<a class="no-click adaptive-figure reference internal image-reference" href="book/modellering/datadrevet_modellering/oppgave_3/c/sol_del1.png"><img alt="book/modellering/datadrevet_modellering/oppgave_3/c/sol_del1.png" class="no-click adaptive-figure" src="book/modellering/datadrevet_modellering/oppgave_3/c/sol_del1.png" style="width: 100%;" /></a>
-</figure>
-<p>som betyr at vi må ha et lufttrykk på omtrent <span class="math notranslate nohighlight">\(574.76\)</span> hPa. Vi kan så bestemme ved hvilken høyde over havet dette lufttrykket er ved å bruke Ari sin modell i CAS:</p>
-<figure class="align-default">
-<a class="no-click adaptive-figure reference internal image-reference" href="book/modellering/datadrevet_modellering/oppgave_3/c/sol_del2.png"><img alt="book/modellering/datadrevet_modellering/oppgave_3/c/sol_del2.png" class="no-click adaptive-figure" src="book/modellering/datadrevet_modellering/oppgave_3/c/sol_del2.png" style="width: 100%;" /></a>
-</figure>
-<p>som forteller oss at kokepunktet er på <span class="math notranslate nohighlight">\(85 \degree \mathrm{C}\)</span> når vi er omtrent <span class="math notranslate nohighlight">\(4.3\)</span> km over havet. Dermed er dette den størst høyden vi kan være på for å kunne lage hardkokte egg.</p>
-</div>
 </div>
 </div>
 </div>
 <hr class="docutils" />
-<div class="admonition exercise">
+<div class="admonition exercise exercise-aids">
 <p class="admonition-title">Oppgave 8</p>
-<p>En sylinder med et hull i bunnen vil tappe ut vann når hullet er åpent.</p>
-<figure class="align-default">
-<a class="no-click adaptive-figure reference internal image-reference" href="../../../_images/merged_figure26.svg"><img alt="../../../_images/merged_figure26.svg" class="no-click adaptive-figure" src="../../../_images/merged_figure26.svg" style="width: 70%;" /></a>
-</figure>
-<p>Den horisontale avstanden vannstrålen beveger seg <span class="math notranslate nohighlight">\(S\)</span> meter når vannstanden er <span class="math notranslate nohighlight">\(x\)</span> meter over bunnen av sylinderen. I tabellen nedenfor vises et datamateriale for dette.</p>
+<p>Sofie og Malene dro på hyttetur, og da de ankom hytta, var temperaturen i stua <span class="math notranslate nohighlight">\(2.0 \degree \mathrm{C}\)</span>. De skrudde på varmen stilte termostaten på <span class="math notranslate nohighlight">\(20 \degree \mathrm{C}\)</span>.</p>
+<p>Tabellen nedenfor viser temperaturen i stua <span class="math notranslate nohighlight">\(x\)</span> minutter etter at de skrudde på varmen.</p>
 <div class="munchboka-table-container docutils container">
-<div class="munchboka-table-frame munchboka-table-frame--align-center"><div class="munchboka-table-scroll"><table class="munchboka-table munchboka-table--transpose" data-katex="true"><tbody><tr><th scope="row" class="munchboka-table-label munchboka-table-align-center">$x$ (meter)</th><td class="munchboka-table-align-center">$8$</td><td class="munchboka-table-align-center">$6$</td><td class="munchboka-table-align-center">$5$</td><td class="munchboka-table-align-center">$3$</td><td class="munchboka-table-align-center">$2$</td></tr><tr><th scope="row" class="munchboka-table-label munchboka-table-align-center">$S$ (meter)</th><td class="munchboka-table-align-center">$5.66$</td><td class="munchboka-table-align-center">$4.90$</td><td class="munchboka-table-align-center">$4.47$</td><td class="munchboka-table-align-center">$3.46$</td><td class="munchboka-table-align-center">$2.83$</td></tr></tbody></table></div></div></div>
+<div class="munchboka-table-frame munchboka-table-frame--align-center"><div class="munchboka-table-scroll"><table class="munchboka-table munchboka-table--transpose" data-katex="true"><tbody><tr><th scope="row" class="munchboka-table-label munchboka-table-align-center">Tid (minutter)</th><td class="munchboka-table-align-center">1</td><td class="munchboka-table-align-center">5</td><td class="munchboka-table-align-center">10</td><td class="munchboka-table-align-center">20</td><td class="munchboka-table-align-center">30</td><td class="munchboka-table-align-center">50</td><td class="munchboka-table-align-center">80</td><td class="munchboka-table-align-center">120</td></tr><tr><th scope="row" class="munchboka-table-label munchboka-table-align-center">Temperatur ($\mathrm{^\circ C}$)</th><td class="munchboka-table-align-center">2.0</td><td class="munchboka-table-align-center">3.7</td><td class="munchboka-table-align-center">5.3</td><td class="munchboka-table-align-center">8.0</td><td class="munchboka-table-align-center">10.2</td><td class="munchboka-table-align-center">13.4</td><td class="munchboka-table-align-center">16.4</td><td class="munchboka-table-align-center">18.4</td></tr></tbody></table></div></div></div>
 <div class="sd-tab-set tabs-parts docutils">
-<input checked="checked" id="sd-tab-item-22" name="sd-tab-set-6" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-22">
+<input checked="checked" id="sd-tab-item-28" name="sd-tab-set-7" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-28">
 a</label><div class="sd-tab-content docutils">
 <p>Lag en modell på formen</p>
 <div class="math notranslate nohighlight">
 \[
-S(x) = a \cdot x^b
+T(x) = a \cdot b^x 
 \]</div>
-<p>som viser hvor mange meter <span class="math notranslate nohighlight">\(S(x)\)</span> vannstrålen beveger seg horisontalt når vannstanden er <span class="math notranslate nohighlight">\(x\)</span> meter over bunnen av sylinderen.</p>
+<p>som gir temperaturen <span class="math notranslate nohighlight">\(T(x)\)</span> i grader Celsius i stua <span class="math notranslate nohighlight">\(x\)</span> minutter etter at varmen er skrudd på.</p>
 </div>
-<input id="sd-tab-item-23" name="sd-tab-set-6" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-23">
+<input id="sd-tab-item-29" name="sd-tab-set-7" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-29">
 b</label><div class="sd-tab-content docutils">
-<p>Etter at hullet ble åpnet, varierte høyden til vannstanden med tiden slik at den kan beskrives av en modell på formen</p>
+<p>Anslå gyldighetsområdet til modellen <span class="math notranslate nohighlight">\(T\)</span>.</p>
+</div>
+<input id="sd-tab-item-30" name="sd-tab-set-7" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-30">
+c</label><div class="sd-tab-content docutils">
+<p>Sofie og Malene har fått en annen idé.</p>
+<div class="dialogue"><div class="dialogue-entry speaker1"><div class="speaker-name">Sofie</div><p>Jeg tror kanskje det er bedre å velge en modell på formen <span class="math notranslate nohighlight">\(T(x) = a \cdot b^x + c\)</span> siden temperaturen skal nærme seg <span class="math notranslate nohighlight">\(20 ^\circ \mathrm{C}\)</span> etter hvert.</p>
+</div><div class="dialogue-entry speaker2"><div class="speaker-name">Malene</div><p>Men det får vi jo ikke laget med regresjon i Geogebra.</p>
+</div><div class="dialogue-entry speaker1"><div class="speaker-name">Sofie</div><p>Sant, men <span class="math notranslate nohighlight">\(T(x) - c = a \cdot b^x\)</span> er jo en eksponentialfunksjon, og det kan vi jo lage med regresjon i Geogebra.</p>
+</div><div class="dialogue-entry speaker2"><div class="speaker-name">Malene</div><p>Ah, da kan vi jo bare trekke fra verdien til <span class="math notranslate nohighlight">\(c\)</span> fra temperaturene i tabellen.</p>
+</div><div class="dialogue-entry speaker1"><div class="speaker-name">Sofie</div><p>Og så bare plusser vi på <span class="math notranslate nohighlight">\(c\)</span> igjen på modellen vår etterpå. Det er jo smart!</p>
+</div><div class="dialogue-entry speaker2"><div class="speaker-name">Malene</div><p>Men hva er verdien til <span class="math notranslate nohighlight">\(c\)</span>? Hmm..</p>
+</div></div><br>
+<p>Ta utgangspunkt i diskusjonen til Sofie og Malene og lag en modell på formen</p>
 <div class="math notranslate nohighlight">
 \[
-h(t) = k\cdot(t - r)^2
+T(x) = a \cdot b^x + c
 \]</div>
-<p>Når hullet i bunnen ble åpnet var vannstanden <span class="math notranslate nohighlight">\(10\)</span> meter over bunnen. Tanken ble halvfull etter <span class="math notranslate nohighlight">\(7\)</span> sekunder.</p>
-<p>Bestem <span class="math notranslate nohighlight">\(k\)</span> og <span class="math notranslate nohighlight">\(r\)</span>. Gi en praktisk tolkning av konstanten <span class="math notranslate nohighlight">\(r\)</span>.</p>
-</div>
-<input id="sd-tab-item-24" name="sd-tab-set-6" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-24">
-c</label><div class="sd-tab-content docutils">
-<p>Hvor lang tid tar det før lengden av strålen og høyden på vannstanden er like?</p>
 </div>
 </div>
 </div>
-<hr class="docutils" />
 </section>
 
     <script type="text/x-thebe-config">
