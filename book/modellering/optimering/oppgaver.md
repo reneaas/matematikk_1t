@@ -1738,12 +1738,13 @@ Lag en oversikt som vist nedenfor. Gjør beregninger og fyll inn verdiene som ma
 :::{clear}
 :::
 
-| Radius, $r$ (cm) | Høyde, $h$ (cm) | Overflate, $\mathcal{O}$ (cm$^2$) | Volum, $V$ (cm$^3$) |
-|:---:|:---:|:---:|:---:|
-| 2 | 35.8  | 462.6 | 450 |
-| 4 |  |   | 450 |
-| 6 |  |   | 450 |
-| 8 |  |   | 450 |
+:::{table}
+labels: Radius $r$ (cm), Høyde $h$ (cm), Overflate $\mathcal{O}$ ($\mathrm{cm}^2$), Volum $V$ ($\mathrm{cm}^3$) 
+2, 35.8, 462.6, 450
+4, , , 450
+6, , , 450
+8, , , 450
+:::
 
 :::::{solution}
 Vi kan skrive om formelen for volum slik at vi kan bestemme høyden $h$ gitt et volum $V$ og en radius $r$ som:
@@ -1946,13 +1947,16 @@ class: tabs-parts
 :::::::::::::{tab-item} a
 Lag en oversikt som vist nedenfor. Gjør beregninger og fyll inn verdiene som mangler.
 
-| Radius $r$ (cm)| Høyde $h$ (cm) | Overflate $A$ (cm$^2$) | Volum $V$ (cm$^3$) |
-|:---:|:---:|:---:|:---:|
-| 1 | |  | 12$\pi$ |
-| 2 | |  | 12$\pi$ |
-| 3 | |  | 12$\pi$ |
-| 4 | |  | 12$\pi$ |
-| 5 | |  | 12$\pi$ |
+
+:::{table}
+labels: Radius $r$ (cm), Høyde $h$ (cm), Overflate $A$ (cm$^2$), Volum $V$ (cm$^3$)
+1, , , 12$\pi$
+2, , , 12$\pi$
+3, , , 12$\pi$
+4, , , 12$\pi$
+5, , , 12$\pi$
+:::
+
 
 :::::::::::::
 
