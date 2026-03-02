@@ -842,3 +842,106 @@ $$
 
 
 :::::::::::::::
+
+
+
+---
+
+
+
+
+:::::::::::::::{exercise} Oppgave 9
+---
+aids: true
+---
+
+En sylinder med et hull i bunnen vil tappe ut vann når hullet er åpent. 
+
+:::{figure} ./figurer/oppgaver/oppgave_8/merged_figure.svg
+---
+width: 70%
+class: no-click, adaptive-figure
+---
+:::
+
+Den horisontale avstanden vannstrålen beveger seg $S$ meter når vannstanden er $x$ meter over bunnen av sylinderen. I tabellen nedenfor vises et datamateriale for dette.
+
+
+:::{table}
+---
+transpose:
+---
+labels: $x$ (meter), $S$ (meter)
+$8$, $5.66$
+$6$, $4.90$
+$5$, $4.47$
+$3$, $3.46$
+$2$, $2.83$
+:::
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Lag en modell på formen 
+
+$$
+S(x) = a \cdot x^b
+$$
+
+som viser hvor mange meter $S(x)$ vannstrålen beveger seg horisontalt når vannstanden er $x$ meter over bunnen av sylinderen.
+
+::::{answer}
+$$
+S(x) = 1.99 \cdot x^{0.5}
+$$
+::::
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Etter at hullet ble åpnet, varierte høyden til vannstanden med tiden slik at den kan beskrives av en modell på formen 
+
+$$
+h(t) = k\cdot(t - r)^2
+$$
+
+Når hullet i bunnen ble åpnet var vannstanden $10$ meter over bunnen. Tanken ble halvfull etter $7$ sekunder.
+
+Bestem $k$ og $r$. Gi en praktisk tolkning av konstanten $r$. 
+
+
+::::{answer}
+$$
+k \approx 0.02 \and r \approx 23.9
+$$
+
+Verdien til $r$ er tiden det tar før tanken er tom, ifølge modellen. Altså vil tanken være tom etter ca. 23.9 sekunder.
+::::
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+Hvor lang tid tar det før lengden av strålen og høyden på vannstanden er like?
+
+::::{answer}
+$$
+S(h(t)) = h(t) \limplies t \approx 9.83
+$$
+
+Altså tar det ca. 9.83 sekunder før høyden og vannstrålen er like lange.
+::::
+
+
+:::::::::::::
+
+::::::::::::::
+
+
+:::::::::::::::
