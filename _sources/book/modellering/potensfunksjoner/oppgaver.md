@@ -100,8 +100,8 @@ xmax: 5
 ---
 class: answer, dropdown
 ---
-* Graf A tilhører $f$.
-* Graf B tilhører $h$.
+* Graf A tilhører $h$.
+* Graf B tilhører $f$.
 * Graf C tilhører $g$.
 ::::
 
