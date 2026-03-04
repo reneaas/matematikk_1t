@@ -163,7 +163,23 @@ $$
 
 Vi lager en grafisk framstilling og bruker {ggb-icon}`mode_extremum` til å finne koordinatene til ekstremalpunktet til grafen. 
 
-
+:::{plot}
+width: 80%
+let: a = -2
+let: b = 40
+let: x0 = -b / (2*a)
+function: x * (40 - 2*x), (0, 20), A
+xmin: -5
+xmax: 25
+xstep: 5
+ymin: -50
+ymax: 300
+ystep: 50
+point: (x0, A(x0))
+text: x0, A(x0), "$({x0}, {A(x0)})$", top-center
+xlabel: $x / \mathrm{m}$
+ylabel: $A(x) / \mathrm{m^2}$, -40
+:::
 
 ::::
 
@@ -183,6 +199,20 @@ layout: sidebar
 Alma vil løse oppgaven helt eksakt. 
 
 Bestem en eksakt verdi for sidelengdene som gir størst mulig areal.
+
+
+
+:::{clear}
+:::
+
+
+::::{answer}
+$$
+x = 20 \and y = 10
+$$
+::::
+
+
 :::::::::::::
 
 
@@ -264,6 +294,28 @@ labels: $t$, Areal av rektangel
 :::
 
 
+::::{answer}
+Regneark med verdier:
+
+:::{figure} ./figurer/oppgaver/2/a/regneark_verdier.png
+---
+class: no-click, adaptive-figure
+width: 50%
+---
+:::
+
+Oversikten med formlene som er brukt i regnearket:
+
+:::{figure} ./figurer/oppgaver/2/a/regneark_formler.png
+---
+class: no-click, adaptive-figure
+width: 60%
+---
+:::
+
+::::
+
+
 
 :::::::::::::
 
@@ -281,7 +333,31 @@ layout: sidebar
 
 Lag et funksjonsuttrykk som viser sammenhengen mellom $t$ og arealet av rektangelet.
 
-Lag en grafisk framstilling av sammenhengen.
+Lag en grafisk framstilling av sammenhengen og bruk den til å bestemme det største mulige arealet rektangelet kan ha.
+
+
+
+:::{clear}
+:::
+
+::::{answer}
+:::{plot}
+width: 70%
+function: x * (x**2 - 9)**4, (0, 3), A
+xmin: -0.5
+xmax: 3.5
+ymin: -0.5
+ymax: 4200
+ticks: off
+point: (1, 4096)
+text: 1, 4096, "$(1, 4096)$", top-right
+:::
+
+Størst mulig areal er $4096$ når $t = 1$.
+
+::::
+
+
 :::::::::::::
 
 
@@ -296,6 +372,13 @@ layout: sidebar
 
 
 Bestem en eksakt verdi for det største mulige arealet et slikt rektangel kan ha.
+
+
+::::{answer}
+$$
+A_\mathrm{størst} = 4096
+$$
+::::
 :::::::::::::
 
 
@@ -548,6 +631,13 @@ layout: sidebar
 
 Bestem arealet av trekanten.
 
+
+::::{answer}
+$$
+\dfrac{9}{2}
+$$
+::::
+
 :::::::::::::
 
 
@@ -565,6 +655,13 @@ layout: sidebar
 En trekant har hjørner i $(k, 0)$, $(4, 0)$, og $(k, f(k))$ der $k \in [0, 4]$. 
 
 Bestem det største mulige arealet en slik trekant kan ha.
+
+
+::::{answer}
+$$
+A_\mathrm{størst} = 8
+$$
+::::
 :::::::::::::
 
 
@@ -638,6 +735,35 @@ Lag en systematisk oversikt over arealet for verdier av $r \in \{0, 1, 2, \ldots
 
 Bruk oversikten til å anslå hvilken verdi av $r$ som gir størst mulig areal.
 
+
+:::{clear}
+:::
+
+::::{answer}
+Fra oversikten nedenfor kan vi anslå at en verdi $r \in [4, 5]$ gir størst mulig areal.
+
+Oversikt i regneark med verdier:
+
+:::{figure} ./figurer/oppgaver/6/a/regneark_verdier.png
+---
+class: no-click, adaptive-figure
+width: 60%
+---
+:::
+
+
+Oversikt med formler:
+
+:::{figure} ./figurer/oppgaver/6/a/regneark_formler.png
+---
+class: no-click, adaptive-figure
+width: 60%
+---
+:::
+
+
+::::
+
 :::::::::::::
 
 
@@ -654,6 +780,28 @@ layout: sidebar
 Lag en grafisk framstilling som viser sammenhengen mellom arealet $A(r)$ og $r$.
 
 Bruk den grafiske framstillingen til å bestemme hvilken verdi av $r$ som gir størst mulig areal.
+
+
+::::{answer}
+:::{plot}
+width: 70%
+function: x * (8/(x**2 + 20)), (0, 18), A
+xmin: -0.5
+xmax: 14
+ymin: -0.5
+ymax: 1.5
+ystep: 0.5
+xstep: 2
+point: (4.47, A(4.47))
+text: 4.47, A(4.47), "$(4.47, {A(4.47):.2f})$", top-right
+grid: off
+:::
+
+Arealet blir størst når $r \approx 4.47$ og det største arealet er omtrent $0.89$.
+
+::::
+
+
 :::::::::::::
 
 
@@ -667,6 +815,13 @@ layout: sidebar
 
 Bestem en eksakt verdi for det største arealet rektangelet kan ha.
 
+
+::::{answer}
+$$
+A_\mathrm{størst} = \dfrac{2}{5} \sqrt{5}
+$$
+::::
+
 :::::::::::::
 
 
@@ -679,6 +834,27 @@ Lag et program som finner det største mulige arealet et slikt rektangel kan ha.
 
 
 :::
+
+
+::::{answer}
+:::{code-block} python
+---
+linenos:
+---
+def f(x):
+    return 8 / (x**2 + 20)
+    
+def A(x):
+    return x * f(x)
+    
+
+x = 0
+while A(x) < A(x + 0.01):
+    x = x + 0.01
+    
+print(A(x))
+:::
+::::
 
 
 :::::::::::::
