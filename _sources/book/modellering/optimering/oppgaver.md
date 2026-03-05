@@ -168,9 +168,9 @@ width: 80%
 let: a = -2
 let: b = 40
 let: x0 = -b / (2*a)
-function: x * (40 - 2*x), (0, 20), A
+function: x * (40 - x)  / 2, (0, 20), A
 xmin: -5
-xmax: 25
+xmax: 45
 xstep: 5
 ymin: -50
 ymax: 300
