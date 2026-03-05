@@ -11,6 +11,8 @@ Alma og Synne skal slå opp telt ved en elvebredde. De skal sette opp et tau run
 
 De har $40$ meter med tau og vil sette opp tauet slik at det danner et rektangel der den éne siden er langs elvebredden. Se figuren nedenfor.
 
+> Vannet er trygt slik at det ikke er noen alligatorer i elven, så det er ikke nødvendig å ha tau på den siden av teltet som vender mot elven!
+
 
 :::{plot}
 width: 70%
@@ -120,14 +122,15 @@ Lag en grafisk framstilling for Synne og bruk den til å bestemme hvilken lengde
 
 
 ::::{answer}
+
 :::{plot}
 width: 80%
-let: a = -2
-let: b = 40
+let: a = -1/2
+let: b = 20
 let: x0 = -b / (2*a)
-function: x * (40 - 2*x), (0, 20), A
+function: x * (40 - x)  / 2, (0, 40), A
 xmin: -5
-xmax: 25
+xmax: 45
 xstep: 5
 ymin: -50
 ymax: 300
@@ -165,10 +168,10 @@ Vi lager en grafisk framstilling og bruker {ggb-icon}`mode_extremum` til å finn
 
 :::{plot}
 width: 80%
-let: a = -2
-let: b = 40
+let: a = -1/2
+let: b = 20
 let: x0 = -b / (2*a)
-function: x * (40 - x)  / 2, (0, 20), A
+function: x * (40 - x)  / 2, (0, 40), A
 xmin: -5
 xmax: 45
 xstep: 5
@@ -373,6 +376,9 @@ layout: sidebar
 
 Bestem en eksakt verdi for det største mulige arealet et slikt rektangel kan ha.
 
+ 
+:::{clear}
+:::
 
 ::::{answer}
 $$
