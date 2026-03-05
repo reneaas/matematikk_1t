@@ -173,8 +173,8 @@ Fra gif-en ovenfor er vi at ekstremalpunktet til grafen er $(16, 256)$. Dette er
 Å løse optimeringsproblemer ved hjelp av grafisk framstilling er en god og robust strategi som gir oss god oversikt over situasjonen ved hjelp av grafen og hjelper oss å bestemme verdier for $x$ som gjør en størrelse størst eller minst mulig. En svakhet med denne strategien er at den egentlig ikke gir oss **eksakte** verdier. I Eksempel 1 og 2, så er den riktige verdien et heltall som vi derfor får eksakt. Men i noen tilfeller vil det riktig svaret være et desimaltall eller et irrasjonalt tall og da vil denne strategien bare gi oss en tilnærmet verdi for svaret.
 
 
-### CAS
-Den tredje strategien vi skal se på er å bruke CAS til å finne den optimale verdien ved hjelp av den deriverte. Vi tar utgangspunkt i samme situasjon som i Eksempel 1 og 2 i eksemplet nedenfor.
+### Analytisk løsning med CAS
+Den tredje strategien vi skal se på er å bruke CAS til å finne en **analytisk** løsning til å finne den optimale verdien ved hjelp av den deriverte. Vi tar utgangspunkt i samme situasjon som i Eksempel 1 og 2 i eksemplet nedenfor.
 
 :::::::::::::::{example} Eksempel 3
 Et område skal gjerdes inn og skal ha form som et rektangel. Vi har 64 m med gjerde til rådighet som vi skal bruke til å gjerde inn området. Målet er å få størst mulig areal. 
