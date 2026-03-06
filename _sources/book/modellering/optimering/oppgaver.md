@@ -638,6 +638,9 @@ layout: sidebar
 Bestem arealet av trekanten.
 
 
+:::{clear}
+:::
+
 ::::{answer}
 $$
 \dfrac{9}{2}
@@ -662,6 +665,9 @@ En trekant har hjørner i $(k, 0)$, $(4, 0)$, og $(k, f(k))$ der $k \in [0, 4]$.
 
 Bestem det største mulige arealet en slik trekant kan ha.
 
+
+:::{clear}
+:::
 
 ::::{answer}
 $$
@@ -822,6 +828,9 @@ layout: sidebar
 Bestem en eksakt verdi for det største arealet rektangelet kan ha.
 
 
+:::{clear}
+:::
+
 ::::{answer}
 $$
 A_\mathrm{størst} = \dfrac{2}{5} \sqrt{5}
@@ -957,13 +966,37 @@ Lag en oversikt som vist nedenfor. Fyll inn de manglende verdiene og bruk oversi
 
 :::{table}
 labels: $x$ (km), Reiselengde (km)
-0, $\sqrt{4} + \sqrt{97} \approx 11.84$
-1, $\sqrt{5} + \sqrt{80} \approx 11.26$
+0, $\sqrt{4} + \sqrt{97} \approx 11.85$
+1, $\sqrt{5} + \sqrt{80} \approx 11.18$
 2, 
 ...
 9,
 :::
 
+
+
+::::{answer}
+Oversikt med verdier:
+
+
+:::{figure} ./figurer/oppgaver/7/a/regneark_verdier.png
+---
+class: no-click, adaptive-figure
+width: 60%
+---
+:::
+
+Oversikt med formler:
+
+:::{figure} ./figurer/oppgaver/7/a/regneark_formler.png
+---
+class: no-click, adaptive-figure
+width: 70%
+---
+:::
+
+
+::::
 
 
 
@@ -983,7 +1016,32 @@ layout: sidebar
 
 Lag en modell $L(x)$ som viser sammenhengen mellom $x$ og reiselengden fra $A$ til $C$ når båten går innom land i punktet $B(x, 0)$.
 
-Lag en grafisk framstilling som viser sammenhengen.
+Lag en grafisk framstilling som viser sammenhengen. 
+
+Bruk den grafiske framstillingen til å anslå hvilken verdi av $x$ som gir kortest mulig reisevei fra $A$ til $C$.
+
+::::{answer}
+$$
+L(x) = \sqrt{x^2 + 4} + \sqrt{(9 - x)^2 + 16}
+$$
+
+:::{plot}
+width: 70%
+figsize: (6, 6)
+function: sqrt(x**2 + 2**2) + sqrt((9 - x)**2 + 4**2), (0, 9), L
+xmin: -1
+xmax: 10
+ymin: 0
+ymax: 14
+ystep: 2
+point: (3, L(3))
+text: 3, L(3), "$(3, {L(3):.2f})$", top-right
+grid: off
+:::
+
+Reiseveien er kortest når $x \approx 3$ km. Altså bør båten gå i land i $B(3, 0)$ for å få kortest mulig reisevei fra $A$ til $C$.
+
+::::
 
 
 
@@ -1001,9 +1059,17 @@ layout: sidebar
 
 
 
-Bestem eksakte koordinater for punktet $B$ som gir kortest mulig reisevei fra $A$ til $C$.
+Bestem en eksakt verdi for den korteste mulige reiseveien fra $A$ til $C$.
 
 
+:::{clear}
+:::
+
+::::{answer}
+$$
+L_\mathrm{kortest} = 3\sqrt{13}
+$$
+::::
 
 :::::::::::::
 
@@ -1027,9 +1093,30 @@ y = sqrt(5)
 :::{interactive-code}
 # Din kode her
 
-
-
 :::
+
+
+::::{answer}
+:::{code-block} python
+---
+linenos:
+---
+from math import sqrt
+
+def L(x):
+    return sqrt(x**2 + 2**2) + sqrt((9 - x)**2 + 4**2)
+    
+
+x = 0
+while L(x) > L(x + 0.125):
+    x = x + 0.125
+    
+B = (x, 0)
+print(B)
+:::
+
+som gir utskriften $(3.0, 0)$. 
+::::
 
 
 :::::::::::::
@@ -1159,9 +1246,7 @@ Bestem hvor lang tid Anna bruker til hytta dersom hun ror i land $6$ km fra det 
 ---
 class: answer, dropdown
 ---
-$$
-T = 6 \, \mathrm{t}
-$$
+$6$ timer.
 :::::
 
 :::::{admonition} Løsning
@@ -1191,6 +1276,8 @@ til å gå til hytta. Den totale tiden hun bruker til hytta blir derfor
 $$
 T = T_\mathrm{robåt} + T_\mathrm{gåtur} = 5 \, \mathrm{t} + 1 \, \mathrm{t} = 6 \, \mathrm{t}.
 $$
+
+Altså bruker Anna $6$ timer. 
 
 :::::
 
@@ -1258,48 +1345,27 @@ Hva er den kortest tiden Anna kan bruke?
 ---
 class: answer, dropdown
 ---
-* Anna må gå i land ved $x \approx 2.83 \, \mathrm{km}$ for å få kortest mulig reisetid.
-* Anna bruker da $T \approx 5.77 \, \mathrm{t}$ på reisen.
+Anna må gå i land ca. 2.83 km fra det punktet på stranden som ligger nærmest holmen for å få kortest mulig reisetid. Den korteste tiden Anna kan bruke på reisen er da ca. 5.77 timer.
 :::::
 
 :::::{admonition} Løsning
 ---
 class: solution, dropdown
 ---
-For å finne ut hvor Anna må gå i land for at hun skal bruke minst mulig tid på å reise til hytta, løser vi likningen $T'(x) = 0$ med CAS for å finne $x$-koordinaten til et eventuelt bunnpunkt for $T$:
+For å avgjøre hvor Anna må gå i land for å få kortest mulig reisetid, finner vi 
+1. Ekstremalpunktet til $T$ ved å løse $T'(x) = 0$.
+2. Regner ut $T(x)$ i ekstremalpunktet.
 
+Vi bruker CAS til å utføre selve regningen:
 
-:::{figure} ./figurer/oppgave_9/c.png
+:::{figure} ./figurer/oppgaver/7/c/sol.png
 ---
-width: 100%
 class: no-click, adaptive-figure
----
-:::
-
-Dermed vil Anna bruke minst mulig tid dersom hun går i land ved
-
-$$
-x = 2 \sqrt{2} \, \mathrm{km} \approx 2.83 \, \mathrm{km}.
-$$
-
-Da bruker hun ca. $5.77$ timer på reisen. 
-
-Vi bør dobbeltsjekke at dette svarer til et bunnpunkt ved å regne ut $T(x)$ i endepunktene og sjekke at verdiene vi får er høyere:
-
-:::{figure} ./figurer/oppgave_9/exercise.png
----
 width: 80%
-class: no-click, adaptive-figure
 ---
 :::
 
-* Hvis Anna ror båten direkte til nærmeste punkt på stranden, bruker hun $T(0) = 6$ timer. 
-* Hvis Anna ror båten hele veien til hytta, bruker hun $T(12) \approx 7.21$ timer.
-
-
-**Konklusjon**:
-* Anna må gå i land ved $x \approx 2.83 \, \mathrm{km}$ for å få kortest mulig reisetid.
-* Anna bruker da $T \approx 5.77 \, \mathrm{t}$ på reisen.
+Dermed vil Anna måtte gå i land ca. 2.83 km fra det punktet på stranden som ligger nærmest holmen for å få kortest mulig reisetid. Den korteste tiden Anna kan bruke på reisen er da ca. 5.77 timer.
 
 :::::
 
@@ -1318,6 +1384,13 @@ class: no-click, adaptive-figure
 ---
 aids: true
 ---
+
+:::{cas-popup}
+---
+layout: sidebar
+---
+:::
+
 
 :::{plot}
 align: right
@@ -1350,7 +1423,57 @@ der $r$ er radius i bunnen av kjeglen og $h$ er høyden til kjeglen.
 
 
 
-Bestem det største mulige volumet en slik kjegle kan ha.
+Bestem en eksakt verdi for det største mulige volumet en slik kjegle kan ha.
+
+:::{clear}
+:::
+
+::::{answer}
+$$
+V_\mathrm{størst} = 54\sqrt{3} \cdot \pi
+$$
+::::
+
+::::{solution}
+Vi har at 
+
+$$
+V = \dfrac{\pi r^2 h}{3} \and h^2 + r^2 = 9^2
+$$
+
+Vi skriver om den andre likningen til
+
+$$
+r^2 = 81 - h^2
+$$
+
+Så setter vi inn for $r^2$ i uttrykket for volumet slik at vi får:
+
+$$
+V(h) = \dfrac{\pi(81 - h^2)h}{3}
+$$
+
+For å bestemme en eksakt verdi for det største mulige volumet kjeglen kan ha:
+1. Finner vi ekstremalpunktet ved å løse $V'(h) = 0$
+2. Regner ut $V(h)$ i ekstremalpunktet.
+
+Vi bruker CAS til å utføre selve regningen:
+
+:::{figure} ./figurer/oppgaver/10/sol.png
+---
+class: no-click, adaptive-figure
+width: 80%
+---
+:::
+
+Altså er det største mulige volumet en slik kjegle kan ha gitt ved 
+
+$$
+V_\mathrm{størst} = 54\sqrt{3} \cdot \pi
+$$
+
+::::
+
 
 
 :::::::::::::::
@@ -1380,12 +1503,12 @@ Nedenfor vises grafen til $f$ sammen med et rektangel $ABCD$.
 
 I rektangelet er $A(a, 0)$ og $D(a, f(a))$ der $a \in \langle 0, 3\rangle$. Punktet $C$ ligger på grafen til $f$.
 
-Bestem $a$ slik at arealet av rektangelet $ABCD$ er størst mulig.
+Bestem en eksakt verdi for $a$ som gjør at arealet av rektangelet $ABCD$ er størst mulig.
 
 :::{plot}
 width: 70%
 function: 6*x - x**2, (0, 6), f
-polygon: (1, 0), (1, f(1)), (5, f(5)), (5, 0)
+polygon: (1, 0), (1, f(1)), (5, f(5)), (5, 0), blue, 0.2
 xmin: -1
 ymin: -1
 ymax: 10
@@ -1409,68 +1532,51 @@ a = 3 - \sqrt{3}
 $$
 ::::
 
-:::::::::::::::
 
+::::{solution}
+Funksjonen $f$ gir oss høyden til rektangelet. Koordinatene til $A$ er gitt ved $(a, 0)$ som betyr at høyden til rektangelet må være $f(a)$. Men vi må også avgjøre hva koordinatene til punktet $B$ er så vi vet hvor lang grunnlinja til rektangelet er. Men punktet $C$ må ha samme høyde $f(a)$ som betyr at $x$-koordinaten til både $B$ og $C$ kan bestemmes ved å løse likningen
 
+$$
+f(x) = f(a)
+$$
+
+som vi gjør med CAS: 
+
+:::{figure} ./figurer/oppgaver/11/sol1.png
 ---
-
-
-
-:::::::::::::::{exercise} Oppgave 12
----
-aids: true
----
-
-
-En lysstråle ble først observert i et punkt $A(1000, 0)$ i luften og deretter i et punkt $B(10000, -1000)$ i vann. Alle avstander er målt i meter. 
-
-Lyset reiser med en fart på $300 \, \mathrm{m/ \mu s}$ i luft og $225 \, \mathrm{m/ \mu s}$ i vann. Her står $1 \, \mu s$ for 1 mikrosekund og er det samme som én milliondel av ett sekund. Lyset vil velge den veien mellom punktene $A$ og $B$ som gir kortest mulig reisetid.
-
-Se figuren nedenfor.
-
-
-
-Bestem hvor lang tid lysstrålen brukte fra $A$ til $B$.
-
-
-
-:::{plot}
+class: no-click, adaptive-figure
 width: 70%
-xmin: -1000
-xmax: 11000
-ymax: 1100
-ymin: -1200
-ticks: off
-axis: off
-point: (0, 1000)
-point: (10000, -1000)
-point: (7000, 0)
-text: 0, 1000, "$A$", top-left
-text: 10000, -1000, "$B$", bottom-right
-text: 7000, 0, "$M$", top-right
-vector: 0, 1000, 7000, -1000, red
-vector: 7000, 0, 3000, -1000, red
-vline: 0, 0, 1000, dashed, gray
-vline: 10000, 0, -1000, dashed, gray
-hline: 0, -5000, 15000, solid, gray
-bar: (-500, 0), 1000, v
-bar: (10500, 0), -1000, v
-text: -500, 500, "1000 m", center-left
-text: 10500, -500, "1000 m", center-right
-text: 8000, 800, "Luft", center-left
-text: -800, -800, "Vann", center-left
-bar: (0, -1100), 10000, h
-text: 5000, -1100, "10000 m", bottom-center
-figsize: (6, 4)
+---
 :::
 
+Altså vil $f(x) = f(a)$ når 
 
-:::{cas-popup}
+$$
+x = a \or x = 6 - a.
+$$
+
+Dermed vil arealet av rektangelet $ABCD$ være gitt ved
+
+$$
+A(a) = (6 - a - a) \cdot f(a) = (6 - 2a)f(a)
+$$
+
+For å bestemme den verdien av $a$ som gjør at arealet til rektangelet $ABCD$ er størst mulig, finner vi ekstremalpunktet ved å løse $A'(a) = 0$. Vi bruker CAS til å utføre selve regningen:
+
+:::{figure} ./figurer/oppgaver/11/sol2.png
+---
+class: no-click, adaptive-figure
+width: 70%
+---
 :::
 
-:::{ggb-popup}
-:::
+Siden $a \in \langle 0, 3\rangle$, så er det største arealet av rektangelet $ABCD$ når 
 
+$$
+a = 3 - \sqrt{3}.
+$$
+
+::::
 
 :::::::::::::::
 
@@ -1480,7 +1586,7 @@ figsize: (6, 4)
 
 
 
-::::::::::::::::{exercise} Oppgave 13
+::::::::::::::::{exercise} Oppgave 12
 ---
 aids: true
 ---
@@ -1490,7 +1596,6 @@ aids: true
 layout: sidebar
 ---
 :::
-
 
 
 En takrenne skal lages i form av et åpent trapes ved å brette to sidekanter fra et flatt rektangel slik at alle sidelengder i takrenna er $10$ cm og takrennen har en høyde på $x$ cm. Se figuren nedenfor.
@@ -1530,8 +1635,25 @@ Bestem tverrsnittsarealet $T$ av takrenna dersom høyden av takrenna er $6$ cm.
 
 ::::{answer}
 $$
-T = 60 \, \mathrm{cm^2}. 
+T = 108~\mathrm{cm^2}. 
 $$
+::::
+
+
+::::{solution}
+Takrenna består av to trekanter med grunnlinje 
+
+$$
+g = \sqrt{10^2 - 6^2} = \sqrt{64} = 8
+$$
+
+Rektangelet i midten har grunnlinje $10~\mathrm{cm}$ og høyde $6~\mathrm{cm}$. Dermed blir tverrsnittsarealet til takrenna
+
+$$
+T = \underbrace{10 \cdot 6}_{\mathrm{rektangel}} + \underbrace{2 \cdot \frac{1}{2} \cdot 8 \cdot 6}_{\mathrm{2 \, trekanter}} = 108
+$$
+
+Altså er tverrsnittsarealet $T$ av takrenna når høyden av takrenna er $6$ cm gitt ved $108~\mathrm{cm^2}$.
 ::::
 
 
@@ -1550,6 +1672,23 @@ T(x) = 10x + x\sqrt{100 - x^2}
 $$
 ::::
 
+
+::::{solution}
+Når takrenna er $x$ cm høy, så vil grunnlinja til de to trekantene være
+
+$$
+\ell = \sqrt{10^2 - x^2} = \sqrt{100 - x^2}.
+$$
+
+Da blir tverrsnittsarealet til takrenna
+
+$$
+T(x) = \underbrace{10 \cdot x}_{\mathrm{rektangel}} + \underbrace{2 \cdot \frac{1}{2} \cdot \sqrt{100 - x^2} \cdot x}_{\mathrm{2 \, trekanter}} = 10x + x\sqrt{100 - x^2}.
+$$
+::::
+
+
+
 ::::::::::::::
 
 
@@ -1560,6 +1699,25 @@ Bestem hvilken høyde som lar mest mulig vann strømme gjennom takrenna til enhv
 $$
 x = 5\sqrt{3} \, \mathrm{cm} \approx 8.66 \, \mathrm{cm}
 $$
+::::
+
+::::{solution}
+For å avgjøre hvilken høyde vi burde bruke for å få mest, må vi finne ekstremalpunktet til $T$ ved å løse $T'(x) = 0$. Vi bruker CAS til å utføre selve regningen:
+
+:::{figure} ./figurer/oppgaver/12/sol.png
+---
+class: no-click, adaptive-figure
+width: 70%
+---
+:::
+
+Fra utregningen finner vi at 
+
+$$
+x = 5 \sqrt{3} \approx 8.66
+$$
+
+gir det største mulige tverrsnittsarealet. Altså må høyden være ca. $8.66~\mathrm{cm}$ for at mest mulig vann skal kunne strømme gjennom takrenna til enhver tid.
 ::::
 ::::::::::::::
 
@@ -1577,7 +1735,7 @@ $$
 
 
 
-::::::::::::::::{exercise} Oppgave 14
+::::::::::::::::{exercise} Oppgave 13
 ---
 aids: true
 ---
@@ -1857,7 +2015,7 @@ $$
 
 
 
-:::::::::::::::{exercise} Oppgave 15
+:::::::::::::::{exercise} Oppgave 14
 ---
 aids: true
 ---
@@ -2072,7 +2230,7 @@ som gir en overflate på ca. $258 \, \mathrm{cm}^2$.
 
 
 
-:::::::::::::::{exercise} Oppgave 16
+:::::::::::::::{exercise} Oppgave 15
 ---
 aids: true
 ---
@@ -2172,7 +2330,7 @@ Hvor stort er overflatearealet da?
 
 
 
-:::::::::::::::{exercise} Oppgave 18
+:::::::::::::::{exercise} Oppgave 16
 ---
 aids: true
 ---
@@ -2248,7 +2406,7 @@ Vi ser at $d'(x) = 0$ når $x = 2$. Vi ser også at $d''(2) > 0$ som betyr at $d
 
 
 
-:::::::::::::::{exercise} Oppgave 19
+:::::::::::::::{exercise} Oppgave 17
 ---
 aids: true
 ---
@@ -2384,7 +2542,7 @@ $$
 
 
 
-:::::::::::::::{exercise} Oppgave 20
+:::::::::::::::{exercise} Oppgave 18
 ---
 aids: true
 ---
@@ -2544,7 +2702,7 @@ $$
 
 
 
-:::::::::::::::{exercise} Oppgave 21
+:::::::::::::::{exercise} Oppgave 19
 ---
 aids: true
 ---
@@ -2621,7 +2779,7 @@ $$
 
 
 
-:::::::::::::::{exercise} Oppgave 22
+:::::::::::::::{exercise} Oppgave 20
 ---
 aids: true
 ---
@@ -2716,7 +2874,7 @@ Bestem en eksakt verdi for det største arealet rektangelet kan ha.
 
 
 
-:::::::::::::::{exercise} Oppgave 23
+:::::::::::::::{exercise} Oppgave 21
 ---
 aids: true
 ---
