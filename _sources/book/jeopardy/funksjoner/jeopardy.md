@@ -28,6 +28,56 @@ $$
 
 :::::::
 
+:::::::{jeopardy-question}
+---
+category: Lineære funksjoner
+points: 200
+---
+:::{plot}
+width: 380
+align: right
+function: -3 * x + 1, f
+fontsize: 26
+:::
+
+
+
+Grafen til en lineær funksjon er vist i figuren til høyre.
+
+Bestem $f(x)$.
+
+
+:::{clear}
+:::
+
+::::::{jeopardy-answer}
+$$
+f(x) = -3x + 1
+$$
+::::::
+
+
+
+
+:::::::
+
+
+
+:::::::{jeopardy-question}
+---
+category: Lineære funksjoner
+points: 300
+---
+To lineære funksjoner $f$ og $g$ er gitt ved 
+
+$$
+f(x) = 
+$$
+:::::::
+
+
+
+
 
 
 :::::::{jeopardy-question}
@@ -112,7 +162,7 @@ $$
 
 :::::::{jeopardy-question}
 ---
-category: Blanding
+category: Eksponentialfunksjoner
 points: 100
 ---
 
@@ -125,4 +175,79 @@ points: 100
 ::::::::
 :::::::::::::::
 
+
+
+
+---
+
+
+
+
+:::::::::::::::{exercise} Jeopardy 2
+
+
+::::::::{jeopardy-2}
+:::::::{jeopardy-question}
+---
+category: Likninger
+points: 100
+---
+
+:::::::
+
+
+
+:::::::{jeopardy-question}
+---
+category: Likningssystemer
+points: 100
+---
+
+:::::::
+
+
+
+:::::::{jeopardy-question}
+---
+category: Ulikheter
+points: 100
+---
+
+:::::::
+
+
+
+:::::::{jeopardy-question}
+---
+category: Programmering
+points: 100
+---
+
+:::::::
+
+
+
+:::::::{jeopardy-question}
+---
+category: Optimering
+points: 100
+---
+
+:::::::
+
+
+:::::::{jeopardy-question}
+---
+category: Vekstfart
+points: 100
+---
+
+:::::::
+
+
+::::::::
+
+
+
+:::::::::::::::
 
