@@ -221,6 +221,88 @@ $$
 
 Nedenfor vises seks grafer. 
 
+
+::::{multi-plot2}
+---
+rows: 2
+cols: 3
+ticks: off
+fontsize: 30
+xmin: -10
+xmax: 10
+lw: 4
+---
+:::{plot}
+function: (2 * x - 8) / (x - 2)
+ymin: -10
+ymax: 10
+hline: 2, dashed, red
+vline: 2, dashed, red
+text: -8, 8, "A", center-center, bbox
+:::
+
+
+:::{plot}
+function: -(2 * x - 8) / (x + 2)
+ymin: -10
+ymax: 10
+hline: -2, dashed, red
+vline: -2, dashed, red
+text: -8, 8, "B", center-center, bbox
+:::
+
+
+:::{plot}
+function: (2 * x - 8) / (x + 2)
+ymin: -10
+ymax: 10
+hline: 2, dashed, red
+vline: -2, dashed, red
+text: -8, 8, "C", center-center, bbox
+:::
+
+
+:::{plot}
+function: (x**2 + 1) / ((x + 2) * (x - 2)) - 1
+ymin: -10
+ymax: 10
+hline: 0, dashed, red
+vline: -2, dashed, red
+vline: 2, dashed, red
+text: -8, 8, "D", center-center, bbox
+:::
+
+
+
+:::{plot}
+function: (x**2 - 1) / ((x + 3) * (x - 2))
+ymin: -6
+ymax: 6
+hline: 1, dashed, red
+vline: -3, dashed, red
+vline: 2, dashed, red
+text: -8, 5, "E", center-center, bbox
+:::
+
+
+
+
+:::{plot}
+function: (x**2 - 4) / ((x + 3) * (x - 3))
+vline: -3, dashed, red
+vline: 3, dashed, red
+hline: 1, dashed, red
+ymin: -6
+ymax: 6
+text: -8, 5, "F", center-center, bbox
+:::
+
+
+
+
+
+::::
+
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
@@ -305,13 +387,6 @@ Graf A, B og C har alle sammen bare én vertikal asymptote og er automatisk elim
 :::::::::::::
 
 ::::::::::::::
-
-
-:::{clickable-figure} ./figurer/oppgave_4/merged_figure.svg
----
-width: 100%
----
-:::
 
 :::::::::::::::
 

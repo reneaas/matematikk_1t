@@ -572,8 +572,7 @@ text: 13, -6, "$12$", center-right
 ---
 dropdown: 0
 ---
-
-La $M$ ha koordinatene $(x, 0)$ slik at avstanden fra "skyggen" til $A$ er $x$ og avstanden fra "skyggen" til $B$ er $12 - x$. Vi kan bruke Pytagoras' setning til å sette opp en modell for lengden $L$ av $AM + MB$. Først bestemmer vi $AM$:
+La $M$ ha koordinatene $(x, 0)$ slik at avstanden fra punktet som ligger på linja som ligger nærmest $A$ til punktet $M$ er lik $x$, og avstanden fra punktet som ligger på linja som ligger nærmest $B$ til punktet $M$ er lik $12 - x$. Vi kan bruke Pytagoras' setning til å sette opp en modell for lengden $L$ av $AM + MB$. Først bestemmer vi $AM$:
 
 $$
 AM = \sqrt{x^2 + 10^2} = \sqrt{x^2 + 100}

@@ -987,22 +987,56 @@ Lag et program som regner ut hvor mange rader det er i en figur dersom arealet a
 :::::::::::::::
 
 
-
 :::::::::::::::{exercise} Oppgave 12
-
-En lysstråle ble først observert ved et punkt $A(1000, 0)$ i luften og deretter i et punkt $B(10000, -1000)$ i vann.
-
-Alle avstander er målt i meter. Se figuren nedenfor.
-
-
-:::{figure} ./figurer/oppgave_12/figur.svg
----
-width: 80%
-class: no-click, adaptive-figure
----
+:::{plot}
+width: 100%
+align: right
+function: 2 * x**3 - x**2 - 4*x + 8, (0, 2), h, solid, blue
+xmin: -0.5
+xmax: 2.5
+ymin: -0.5
+ymax: 15
+ticks: off
 :::
 
-Lyset reiser med en fart på $300 \, \mathrm{m/\mu s}$ (meter per mikrosekund) i luft og $225 \, \mathrm{m/\mu s}$ i vann. Her står $1 \, \mathrm{\mu s}$ for 1 mikrosekund som en milliondel av et sekund.
+Sara jobber med funksjonen $h$ gitt ved
+
+$$
+h(x) = 2x^3 - x^2 - 4x + 8, \quad x \in [0, 2],
+$$
+
+som beskriver høydeprofilen til en sykkeletappe. Når man har syklet $x$ km i luftlinje fra starten av etappen, befinner man seg $h(x)$ km over havet.
+
+Sara vil regne ut lengden av etappen med programmering. Hun har laget seg en figur som viser hvordan hun har tenkt å gjøre det.
+
+
+:::{plot}
+width: 70%
+function: 2 * x**3 - x**2 - 4*x + 8, (0, 2), h, solid, blue
+xmin: -0.5
+xmax: 2.5
+ymin: -0.5
+xstep: 0.5
+ymax: 15
+grid: off
+yticks: off
+let: N = 4
+let: a = 0
+let: b = 2
+let: dx = (b - a) / N
+repeat: i=0..N-1; line-segment: (a + i*dx, h(a + i*dx)), (a + (i + 1)*dx, h(a + (i + 1)*dx)), solid, black
+repeat: i=0..N-1; text: 0.5 * (a + i*dx + a + (i + 1)*dx), 0.5 * (h(a + i*dx) + h(a + (i + 1)*dx)) + 0.25, "$\ell_{i + 1}$", top-center
+repeat: i=0..N; point: (a + i*dx, h(a + i*dx))
+line-segment: (0, h(0.5)), (0.5, h(0.5)), dashed, gray
+line-segment: (0, h(0)), (0, h(0.5)), dashed, gray
+line-segment: (1.5, h(1.5)), (2, h(1.5)), dashed, gray
+line-segment: (2, h(1.5)), (2, h(2)), dashed, gray
+text: 0.5 * (0 + 0.5), h(0.5), "$\Delta x$", bottom-center
+text: 0, 0.5 * (h(0) + h(0.5)), "$\Delta y_1$", center-left
+text: 0.5 * (1.5 + 2), h(1.5), "$\Delta x$", bottom-center
+text: 2, 0.5 * (h(1.5) + h(2)), "$\Delta y_4$", center-right
+:::
+
 
 
 ::::::::::::::{tab-set}
@@ -1010,249 +1044,33 @@ Lyset reiser med en fart på $300 \, \mathrm{m/\mu s}$ (meter per mikrosekund) i
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
-Nedenfor vises et program som regner ut tiden det tar for lyset å reise fra $A$ til $M(3000, 0)$.
-
-Pusle sammen programmet i riktig rekkefølge.
+Lag en oversikt som vist nedenfor. Gjør beregning og fyll ut verdiene som mangler.
 
 
-::::{admonition} Fasit
----
-class: dropdown, answer
----
-:::{code-block} python
----
-linenos:
----
-from math import sqrt # jeg må være første kodelinje!
-
-def tid_luft(x):
-    fart_luft = 300 # meter per mikrosekund
-    
-    AM = sqrt(x**2 + 1000**2) # meter
-    tid = AM / fart_luft # mikrosekunder
-
-    return tid
-    
-
-x = 3000
-reisetid = tid_luft(x)
-
-print(f"{reisetid = :.2f} mikrosekunder")
+:::{table}
+labels: $n$, $\Delta x$, $\Delta y_n$, $\ell_n$
+$1$, $0.5$, $-2$, $\sqrt{(-2)^2 + (0.5)^2} \approx 2.06$
+$2$, $0.5$, , 
+$3$, $0.5$, ,
+$4$, $0.5$, ,
 :::
 
-::::
 
 :::::::::::::
+
 
 :::::::::::::{tab-item} b
-Forklar matematikken bak kodelinje 6 og 7 i programmet.
+Lag et program som regner ut lengden av etappen ved å bruke $10~000$ linjestykker.
 
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-* **Kodelinje 6** bruker Pytagoras' setning til å regne ut avstanden $AM$ der den ene kateten er $x = 3000$ m og den andre kateten er $1000$ m. 
-* **Kodelinje 7** bruker vei-fart-tid-formelen $s = v \cdot t$ til å regne ut tiden det tar å reise avstanden $AM$ i luft, der $s$ er avstanden, $v$ er farten og $t$ er tiden.
-::::
+:::{interactive-code}
+# Din kode her
 
-:::::::::::::
-
-
-:::::::::::::{tab-item} c
-Utvid programmet slik at det regner ut tiden det tar for lyset å reise fra $M$ til $C$ i vann.
-
-Bruk programmet til å regne ut tiden det tar for lyset å reise helt fra $A$ til $C$.
-
-
-::::::{admonition} Fasit
----
-class: answer, dropdown
----
-:::{code-block} python
----
-linenos:
-emphasize-lines: 11-17, 21
----
-from math import sqrt
-
-def tid_luft(x):
-    fart_luft = 300 # meter per mikrosekund
-
-    AM = sqrt(x**2 + 1000**2) # meter
-    tid = AM / fart_luft # mikrosekunder
-
-    return tid
-    
-def tid_vann(x):
-    fart_vann = 225 # meter per mikrosekund
-    
-    MC = sqrt((x - 10_000)**2 + 1000**2)
-    tid = MC / fart_vann
-    
-    return tid
-    
-
-x = 3000
-reisetid = tid_luft(x) + tid_vann(x)
-
-print(f"{reisetid = :.2f} mikrosekunder")
-:::
-
-som gir utskriften
-
-:::{code-block} console
-reisetid = 41.97 mikrosekunder
-:::
-
-som betyr at lyset bruker omtrent $41.97$ mikrosekunder fra $A$ til $C$.
-
-::::::
-
-
-:::::::::::::
-
-
-
-:::::::::::::{tab-item} d
-Utvid programmet ditt med en funksjon `T(x)`{l=python} som bruker funksjonen `tid_luft(x)`{l=python} og `tid_vann(x)`{l=python} til å regne ut den totale tiden lysstrålen bruker fra $A$ til $C$ når den treffer vannoverflaten i punktet $M(x, 0)$.
-
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-Funksjonen må plasseres nedenfor funksjonene `tid_luft(x)`{l=python} og `tid_vann(x)`{l=python} i programmet fra **a**. Da kan vi definere funksjonen som:
-
-:::{code-block} python
----
-linenos:
----
-def T(x):
-    return tid_luft(x) + tid_vann(x)
-:::
-
-::::
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} e
-Ifølge Snells lov, vil lysstrålen vil alltid "velge" den veien mellom $A$ og $C$ som gir kortest mulig reisetid. 
-
-Utvid programmet ditt og bruk det til å bestemme i hvilket punkt lysstrålen må ha truffet vannoverflaten.
-
-::::::::{admonition} Fasit
----
-class: answer, dropdown
----
-:::::::{tab-set}
-::::::{tab-item} 1. Strategi
-Vi må bestemme hvilken verdi av $x$ som gir minst mulig verdi for $T(x)$. Dette kan vi gjøre ved å starte med $x = 0$, og deretter øke $x$ med et lite tall så lenge reisetiden i $x$ er større enn reisetiden i $x + \mathrm{lite \, tall}$. Altså, så lenge
-
-$$
-T(x) > T(x + \mathrm{lite \, tall})
-$$ 
-
-Når $T(x) \leq T(x + \mathrm{lite \, tall})$, har vi funnet den verdien av $x$ som gir kortest mulig reisetid.
-::::::
-
-::::::{tab-item} 2. Utvidelse til programkode
-Utvidelse av programkoden fra **b**:
-
-:::{code-block} python
-x = 0
-while T(x) > T(x + 0.01):
-    x = x + 0.01
-    
-print(x)
-:::
-
-::::::
-
-::::::{tab-item} 3. Full programkode
-Utvidelse av programkoden fra **b**:
-
-:::{code-block} python
----
-linenos:
----
-from math import sqrt
-
-def tid_luft(x):
-    fart_luft = 300 # meter per mikrosekund
-
-    AM = sqrt(x**2 + 1000**2) # meter
-    tid = AM / fart_luft # mikrosekunder
-
-    return tid
-    
-def tid_vann(x):
-    fart_vann = 225 # meter per mikrosekund
-    
-    MC = sqrt((x - 10_000)**2 + 1000**2)
-    tid = MC / fart_vann
-    
-    return tid
-
-    
-def T(x):
-    return tid_luft(x) + tid_vann(x)    
-
-
-x = 0
-while T(x) > T(x + 0.01):
-    x = x + 0.01
-
-print(f"{x = :.2f} meter")
 
 :::
-
-som gir utskriften
-
-:::{code-block} console
-x = 8882.18 meter
-:::
-
-som betyr at lysstrålen traff vannet omtrentlig i punktet $M(8882, 0)$.
-
-::::::
-
-:::::::
-::::::::
-
 :::::::::::::
 
 
 ::::::::::::::
 
 
-
-
-:::{parsons-puzzle}
-from math import sqrt # jeg må være første kodelinje!
-
-def tid_luft(x):
-    fart_luft = 300 # meter per mikrosekund
-    
-    AM = sqrt(x**2 + 1000**2) # meter;    tid = AM / fart_luft # mikrosekunder
-
-    return tid
-    
-
-x = 3000;reisetid = tid_luft(x)
-
-print(f"{reisetid = :.2f} mikrosekunder")
-
-:::
-
-
 :::::::::::::::
-
-
-
-
-
-
-
-
-
