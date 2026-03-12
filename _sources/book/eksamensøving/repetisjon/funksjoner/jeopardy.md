@@ -1,4 +1,4 @@
-# Repetisjon: *Any% completion*
+# Repetisjon: *Speedrun*
 
 > Nedenfor finner du en oppgaver som er laget for å gi deg en raskt oversikt over fagstoffet i 1T organisert gjennom Jeopardy-oppgaver så alt ligger på ett sted. 
 
