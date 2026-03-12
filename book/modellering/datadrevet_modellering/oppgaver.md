@@ -392,10 +392,10 @@ Hvor lang tid vil det ta før halvparten av vannet er tappet ut av tanken?
 
 ::::{answer}
 $$
-V(x) = \dfrac{1}{2} \cdot 2000 \liff x \approx 68.28
+V(x) = \dfrac{1}{2} \cdot 2000 \liff x \approx 11.72
 $$
 
-Ca. 68 minutter.
+Ca. 12 minutter.
 ::::
 
 :::::::::::::
