@@ -775,7 +775,7 @@ lw: 1
 :::
 ::::
 
-La $T_n$ være antall nye trekanter i figur $n$ og la $A_n$ være arealet til én slik ny trekant.
+La $T_n$ være antall trekanter i figur $n$ og la $A_n$ være arealet av hver 
 
 
 ::::::::::::::{tab-set}
@@ -788,9 +788,9 @@ Lag en oversikt som vist nedenfor. Fyll ut verdiene som mangler.
 
 
 :::{table}
-labels: Figur $n$, $T_n$, $A_n$, Areal av hele figuren
-$1$, $1$, $3$, $3$
-$2$, $3$, $1$, $3 + 9$
+labels: Figur $n$, $T_{n + 1}$, $A_n$, Areal av hele figuren
+$1$, , , ,
+$2$, , , ,
 $3$, , , ,
 $4$, , , ,
 :::
