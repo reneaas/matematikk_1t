@@ -875,7 +875,7 @@ $$
 
 ---
 
-<!-- 
+
 
 :::::::::::::::{exercise}  Rasjonale funksjoner: (*Infinite-wall-glitch*)
 
@@ -966,20 +966,55 @@ points: 100
 En rasjonal funksjon $f$ er gitt ved
 
 $$
-f(x) = \drac{x^2 - 4}{x^2 - 1}
+f(x) = \dfrac{x^2 - 4}{x^2 - 1}
 $$
 
 Hvilken av grafene nedenfor viser grafen til $f$?
 
 
+::::{multi-plot2}
+---
+rows: 1
+cols: 3
+ymin: -7
+ymax: 7
+xmin: -7
+xmax: 7
+fontsize: 28
+---
+:::{plot}
+function: (x**2 - 4) / (x**2 - 1)
+vline: -1, dashed, red
+vline: 1, dashed, red
+hline: 1, dashed, red 
+text: -4, 5, "A", center-center, bbox
+:::
+
+:::{plot}
+function: (x**2 - 1) / (x**2 - 4)
+vline: -2, dashed, red
+vline: 2, dashed, red
+hline: 1, dashed, red
+text: -4, 5, "B", center-center, bbox 
+:::
+
+:::{plot}
+function: -(x**2 - 4) / (x**2 - 1)
+vline: -1, dashed, red
+vline: 1, dashed, red
+hline: -1, dashed, red
+text: -4, 5, "C", center-center, bbox
+:::
+::::
+
+
+::::::{jeopardy-answer}
+Graf A
+::::::
+
+
 
 :::::::
-
-
-::::::::
-
-
----
 
 
 :::::::{jeopardy-question}
@@ -987,8 +1022,43 @@ Hvilken av grafene nedenfor viser grafen til $f$?
 category: Generelle rasjonale funksjoner
 points: 200
 ---
+Bestem asymptotene til 
+
+$$
+f(x) = \dfrac{2x^2 - 4}{(x + 3)(x - 2)}
+$$
+
+
+::::::{jeopardy-answer}
+* Horisontal asymptote: $y = 2$
+* Vertikale asymptoter: $x = -3$ og $x = 2$
+::::::
 
 :::::::
 
 
-::::::::::::::: -->
+:::::::{jeopardy-question}
+---
+category: Generelle rasjonale funksjoner
+points: 300
+---
+Bestem nullpunktene til 
+
+$$
+f(x) = \dfrac{(x + 2)(x - 3)}{(x + 1)(x - 5)}
+$$
+
+::::::{jeopardy-answer}
+$$
+x = -2 \quad \mathrm{og} \quad x = 3
+$$
+::::::
+:::::::
+
+
+
+::::::::
+
+
+
+:::::::::::::::
