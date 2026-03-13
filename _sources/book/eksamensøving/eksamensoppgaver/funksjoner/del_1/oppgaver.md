@@ -23,10 +23,7 @@ Grafen til $f$ skjærer gjennom $x$-aksen i $x = -2$ og $x = 4$.
 
 
 
-::::{admonition} Løsning
----
-class: solution, dropdown
----
+::::{solution} 
 Vi bruker $abc$-formelen til å bestemme når $f(x) = 0$: 
 
 $$
@@ -70,10 +67,7 @@ Grafen til $f$ skjærer gjennom $x$-aksen i $x = -1$, $x = 2$ og $x = -3$.
 ::::
 
 
-::::{admonition} Løsning
----
-class: solution, dropdown
----
+::::{solution}
 Vi må bestemme hvilke $x$ som medfører at $f(x) = 0$. Først kan vi lete etter et heltallige nullpunkter $x$ som deler konstantleddet i $f(x)$. Kandidater for dette er 
 
 $$
@@ -140,10 +134,7 @@ y = -4x + 5.
 $$
 ::::
 
-::::::::{admonition} Løsning
----
-class: solution, dropdown
----
+::::::::{solution}
 :::::::{tab-set}
 ::::::{tab-item} Strategi 1: Den deriverte
 Tangenten går gjennom punktet $(1, f(1))$ som har $y$-koordinat:
@@ -319,10 +310,7 @@ Graf C.
 ::::
 
 
-::::{admonition} Løsning
----
-class: solution, dropdown
----
+::::{solution}
 Vi kan skrive om $f(x)$ til 
 
 $$
@@ -352,10 +340,7 @@ Graf F.
 ::::
 
 
-::::{admonition} Løsning
----
-class: solution, dropdown
----
+::::{solution}
 Vi kan bruke konjugatsetningen til å skrive om $g(x)$ til
 
 $$
@@ -418,18 +403,21 @@ $$
 $$
 ::::
 
-::::{admonition} Løsning
----
-class: solution, dropdown
----
+
+
+
+::::{solution}
 Vi utfører polynomdivisjon for å få et andregradspolynom vi kan faktorisere:
 
-:::{figure} ./koder/oppgave_5/polydiv.svg
+
+:::{polydiv}
 ---
-width: 80%
-class: no-click, adaptive-figure
+p: x^3 - 5x^2 - 8x + 12
+q: x^2 - 4x + 12
+width: 70%
 ---
 :::
+
 
 Altså kan vi faktorisere tredjegradspolynomet som 
 
@@ -500,10 +488,7 @@ $$
 ::::
 
 
-::::{admonition} Løsning
----
-class: solution, dropdown
----
+::::{solution}
 Grafen til $f$ passer med en rasjonal funksjon der teller- og nevnerpolynomet er lineære polynomer. Da kan vi skrive $f(x)$ på formen
 
 $$
@@ -568,10 +553,7 @@ $$
 ::::
 
 
-::::{admonition} Løsning
----
-class: solution, dropdown
----
+::::{solution}
 Vi skriver $f(x)$ på nullpunktsform siden vi kan lese av begge nullpunktene til $f$ som gir:
 
 $$
@@ -616,10 +598,7 @@ $$
 ::::
 
 
-::::{admonition} Løsning
----
-class: solution, dropdown
----
+::::{solution}
 Ulikheten $f(x) > 12$ er gitt ved 
 
 $$
@@ -697,10 +676,7 @@ $$
 ::::
 
 
-::::{admonition} Løsning
----
-class: solution, dropdown
----
+::::{solution}
 Vi kan skrive arealet av det grønne fargelagte området som 
 
 $$
@@ -745,10 +721,7 @@ Hvilke to polynomdivisjoner kan hun ha utført?
 Utfør de to polynomdivisjonene, og forklar at hver av dem viser at faktoriseringen er riktig.
 
 
-::::{admonition} Løsning
----
-class: solution, dropdown
----
+::::{solution} 
 Guri kan ha utført polynomdivisjonen:
 
 :::{figure} ./koder/oppgave_9/polydiv1.svg
@@ -804,10 +777,7 @@ class: answer, dropdown
 Bunnpunktet er $(-1, -4)$. 
 ::::
 
-::::{admonition} Løsning
----
-class: solution, dropdown
----
+::::{solution}
 Symmetrilinja til $f$ kan vi bestemme ved gjennomsnittet av nullpunktene som gir
 
 $$
@@ -853,10 +823,7 @@ $$
 ::::
 
 
-::::{admonition} Løsning
----
-class: solution, dropdown
----
+::::{solution}
 Vi må nullpunktsfaktorisere $f(x)$ for å løse ulikheten. Først leter vi etter et heltallig nullpunkt ved å prøve ut verdier av $x$ som deler konstantleddet i $f(x)$. Kandidatene for dette er 
 
 $$
@@ -962,10 +929,7 @@ f'(x) = -2x + 5.
 $$
 ::::
 
-::::{admonition} Løsning
----
-class: solution, dropdown
----
+::::{solution} 
 Siden $f$ er en andregradsfunksjon, betyr det at $f'$ er en lineær funksjon
 
 $$
@@ -1053,10 +1017,7 @@ class: answer, dropdown
 Graf A
 ::::
 
-::::{admonition} Løsning
----
-class: solution, dropdown
----
+::::{solution} 
 Vi kan sjekke skjæringen med $y$-aksen for å se om vi kan eliminere graf $C$:
 
 $$
@@ -1094,10 +1055,7 @@ $$
 ::::
 
 
-::::{admonition} Løsning
----
-class: solution, dropdown
----
+::::{solution} 
 Løsningen av ulikheten 
 
 $$
@@ -1145,10 +1103,7 @@ s = 5 \and r = 25.
 $$
 ::::
 
-::::{admonition} Løsning
----
-class: solution, dropdown
----
+::::{solution} 
 Vi ganger ut høyresiden:
 
 $$
