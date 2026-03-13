@@ -32,10 +32,7 @@ y = -2x + 4.
 $$
 :::::
 
-:::::{admonition} Løsning
----
-class: solution, dropdown
----
+:::::{solution}
 Siden $P(1, 2) \in f$, så er $f(1) = 2$. Siden $x$-koordinaten er $x = 1$, betyr det stigningstallet til tangenten er $a = f'(1)$. Fra grafen til $f'$ ovenfor, kan vi se at grafen går gjennom punktet $(1, -2)$ som betyr at $f'(1) = -2$. <br> 
 Bruker vi ettpunktsformelen, blir derfor likningen for tangenten til $f$ i punktet $P$ gitt ved 
 
@@ -76,10 +73,7 @@ $$
 :::::
 
 
-:::::{admonition} Løsning
----
-class: solution, dropdown
----
+:::::{solution}
 Ut ifra opplysningene kan vi skrive om en rasjonal funksjon på formen
 
 $$
@@ -138,10 +132,7 @@ $$
 :::::
 
 
-:::::{admonition} Løsning
----
-class: solution, dropdown
----
+:::::{solution} 
 Fra opplysningene kan vi sette opp et likningssystem med fire likninger og fire ukjente. 
 
 1) **Grafen til $f$ går gjennom punktet $(2, 6)$** <br>
@@ -244,10 +235,7 @@ PQ = 6
 $$
 :::::
 
-:::::{admonition} Løsning
----
-class: solution, dropdown
----
+:::::{solution}
 La $PQ$ være avstanden fra $P$ til $Q$. Siden $x$-koordinaten til de to punktene er like, følger det at avnstanden $PQ$ er lik avstanden mellom $y$-koordinatene til punktene $P$ og $Q$. Altså blir avstanden:
 
 $$
@@ -285,10 +273,7 @@ a_\mathrm{størst} = \dfrac{\sqrt{19} + 1}{3}
 $$
 :::::
 
-:::::{admonition} Løsning 
----
-class: solution, dropdown
----
+:::::{solution}
 La $d(a)$ være avstanden fra $R$ til $S$. Da har vi at 
 
 $$
@@ -365,10 +350,7 @@ $$
 :::::
 
 
-:::::{admonition} Løsning
----
-class: solution, dropdown
----
+:::::{solution}
 Vi kan sette opp et likningssystem med tre likninger og tre ukjente fra opplysningene i oppgaven.
 
 1) **Punktet $(-8, 0)$ er et toppunkt på grafen til $f$** <br>
@@ -437,10 +419,7 @@ f'(x) = 2x - 2.
 $$
 :::::
 
-:::::{admonition} Løsning
----
-class: solution, dropdown
----
+:::::{solution} 
 Siden $f$ er en andregradsfunksjon, kan vi skrive den på formen
 
 $$
@@ -489,10 +468,7 @@ f(x) = x^2 - 2x + 4.
 $$
 :::::
 
-:::::{admonition} Løsning
----
-class: solution, dropdown
----
+:::::{solution} 
 Fra oppgave **a** vet vi at 
 
 $$
@@ -559,10 +535,7 @@ A = 245.5 \, \mathrm{m}^2
 $$
 :::::
 
-:::::{admonition} Løsning
----
-class: solution, dropdown
----
+:::::{solution} 
 Først må vi bestemme hvor lange linjestykkene $y$ i figuren er. Vi vet at $x = 8$ meter. Til sammen summerer linjestykkene til $L = 100$ meter. Vi kan skrive den samlede lengden av linjestykkene som
 
 $$
@@ -622,10 +595,7 @@ som betyr at arealet av grønnsakhagen er omtrent $A = 245.5 \, \mathrm{m}^2$ de
 Lag en oversikt som viser hvordan arealet av grønnsakhagen endrer seg dersom hun velger andre lengder på katetene. Av oversikten skal Else kunne se omtrent hvor lange katetene må være for at arealet av grønnsakhagen skal bli størst mulig.
 
 
-:::::{admonition} Løsning
----
-class: solution, dropdown
----
+:::::{solutino} 
 Vi bruker en grafisk framstilling av arealet $A(x)$ for å se hvordan arealet endrer seg med lengden på katetene. Vi kan bruke Geogebra-vinduet til å lage grafen til $A$ siden vi allerede har definert $A(x)$ i CAS.
 
 :::{figure} ./figurer/oppgave_7/b.png
@@ -656,10 +626,7 @@ A(x) = 50x - (1 + \sqrt{2})x^2.
 $$
 :::::
 
-:::::{admonition} Løsning
----
-class: solution, dropdown
----
+:::::{solution}
 Vi har allerede laget denne modellen i oppgave **a** som er gitt ved 
 
 $$
@@ -682,10 +649,7 @@ x = (25\sqrt{2} - 25) \, \mathrm{m} \approx 10.36 \, \mathrm{m}.
 $$
 :::::
 
-:::::{admonition} Løsning
----
-class: solution, dropdown
----
+:::::{solution}
 For å bestemme den kateten som gir størst mulig areal, bruker vi CAS og løser $A'(x) = 0$ for å bestemme $x$-koordinaten til toppunktet til $A$:
 
 :::{figure} ./figurer/oppgave_7/d.png
@@ -722,10 +686,7 @@ $$
 :::::
 
 
-:::::{admonition} Løsning
----
-class: solution, dropdown
----
+:::::{solution} 
 Modellen er gyldig så lenge $A(x) > 0$ og $y > 0$. Vi løser den første ulikheten i CAS:
 
 
@@ -795,10 +756,7 @@ class: tabs-parts
 Vis at $f$ bare har ett nullpunkt uavhengig av verdien av $b$.
 
 
-:::::{admonition} Løsning
----
-class: solution, dropdown
----
+:::::{solution} 
 Vi bestemmer nullpunktene til $f$ ved å løse likningen $f(x) = 0$ med CAS:
 
 :::{figure} ./figurer/oppgave_8/a.png
@@ -838,10 +796,7 @@ b = -3 \or b = 3.
 $$
 :::::
 
-:::::{admonition} Løsning
----
-class: solution, dropdown
----
+:::::{solution} 
 Vi løser likningen $f'(x) = 0$ med CAS:
 
 :::{figure} ./figurer/oppgave_8/b.png
@@ -879,10 +834,7 @@ class: answer, dropdown
 :::::
 
 
-:::::{admonition} Løsning
----
-class: solution, dropdown
----
+:::::{solution}
 Vi løser likningen $f'(x) = 3$ med CAS for å bestemme ved hvilke $x$-verdier vi får tangenter som har stigningstall $3$.
 
 :::{figure} ./figurer/oppgave_8/c1.png
@@ -967,10 +919,7 @@ T = 6 \, \mathrm{t}
 $$
 :::::
 
-:::::{admonition} Løsning
----
-class: solution, dropdown
----
+:::::{solution} 
 Vi bruker Pytagoras' setning til å regne ut hvor langt Anna må ro for å komme i land $6$ km fra det punktet på stranden som ligger nærmest holmen. Da får vi at:
 
 $$
@@ -1013,10 +962,7 @@ $$
 :::::
 
 
-:::::{admonition} Løsning
----
-class: solution, dropdown
----
+:::::{solution} 
 Hvis Anna ror i land $x$ km fra det punktet på stranden som ligger nærmest holmen, må hun ro en avstand på
 
 $$
@@ -1065,10 +1011,7 @@ class: answer, dropdown
 * Anna bruker da $T \approx 5.77 \, \mathrm{t}$ på reisen.
 :::::
 
-:::::{admonition} Løsning
----
-class: solution, dropdown
----
+:::::{solution} 
 For å finne ut hvor Anna må gå i land for at hun skal bruke minst mulig tid på å reise til hytta, løser vi likningen $T'(x) = 0$ med CAS for å finne $x$-koordinaten til et eventuelt bunnpunkt for $T$:
 
 
@@ -1146,10 +1089,7 @@ class: tabs-parts
 Bestem arealet av rektangelet.
 
 
-:::::{admonition} Løsning
----
-class: solution, dropdown
----
+:::::{solution} 
 Arealet til rektangelet er gitt ved 
 
 $$
@@ -1182,10 +1122,7 @@ $$
 Lag en systematisk oversikt som viser arealet av rektanglene som har hjørner i punktene $(0, 0)$, $(n, 0)$, $(n, f(n))$ og $(0, f(n))$ for $n \in \{1, 2, 3, \ldots, 10\}$. 
 
 
-:::::{admonition} Løsning
----
-class: solution, dropdown
----
+:::::{solution} 
 > Her er det mange muligheten for hva som menes med "systematisk oversikt". Vi velger å lage en grafisk framstilling, men man kan for eksempel lage en verditabell ved hjelp av en Pythonprogram eller regne ut verdiene med CAS og lage en tabell manuelt.
 
 Vi kan lage en modell $A$ for arealet av rektangelet, og så vise en graf av arealet der vi marker punktene $(n, A(n))$ for $n \in \{1, 2, 3, \ldots, 10\}$ på grafen. Modellen $A(x)$ vil være 
@@ -1215,10 +1152,7 @@ viser grafen til arealet $A$ med punktene $(n, A(n))$ for $n \in \{1, 2, 3, \ldo
 Bestem $k$ slik at arealet av rektangelet som har hjørner i punktene $(0, 0)$, $(k, 0)$, $(k, f(k))$ og $(0, f(k))$ blir størst mulig.
 
 
-:::::{admonition} Løsning 
----
-class: solution, dropdown
----
+:::::{solution} 
 For å bestemme hvilke verdi av $k$ som gir størst mulig areal, kan vi løse likningen $A'(k) = 0$ med CAS:
 
 :::{figure} ./figurer/oppgave_10/c/sol.png
