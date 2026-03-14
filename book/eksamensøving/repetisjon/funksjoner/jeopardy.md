@@ -810,7 +810,7 @@ factors: false
 
 ::::::{jeopardy-answer}
 $$
-x \in \langle -3, \to \rangle
+x \in [-3, \to \rangle
 $$
 ::::::
 
