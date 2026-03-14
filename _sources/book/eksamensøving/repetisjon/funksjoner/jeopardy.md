@@ -810,7 +810,7 @@ factors: false
 
 ::::::{jeopardy-answer}
 $$
-x \in \langle -3, \to \rangle \setminus \{2\}
+x \in \langle -3, \to \rangle
 $$
 ::::::
 
