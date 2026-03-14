@@ -775,7 +775,7 @@ lw: 1
 :::
 ::::
 
-La $T_n$ være antall trekanter i figur $n$ og la $A_n$ være arealet av hver 
+La $T_n$ være antall nye trekanter i figur $n$ og la $A_n$ være arealet av hver nye trekant i figur $n$.
 
 
 ::::::::::::::{tab-set}
