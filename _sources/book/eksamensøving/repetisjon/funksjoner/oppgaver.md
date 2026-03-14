@@ -60,7 +60,7 @@ Bestem koordinatene til bunnpunktet til $h$.
 
 ::::{answer}
 $$
-\left(-\dfrac{1}{2}, -5\right)
+\left(-\dfrac{1}{2}, -\dfrac{49}{8}\right)
 $$
 ::::
 
