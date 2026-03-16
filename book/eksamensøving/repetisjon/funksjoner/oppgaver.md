@@ -11,6 +11,7 @@
 
 
 :::::::::::::::{exercise} Oppgave 1 (6 poeng)
+
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
@@ -388,6 +389,9 @@ $$
 
 
 :::::::::::::::{exercise} Oppgave 1 (8 poeng)
+---
+aids: true
+---
 
 :::{figure} ./bilder/blacksmithing.png
 ---
@@ -456,6 +460,10 @@ Hva er temperaturen til omgivelsene til metallstykket, ifølge modellen?
 
 
 :::::::::::::::{exercise} Oppgave 2 (2 poeng)
+---
+aids: true
+---
+
 Til en konsert, ble det solgt billetter til to forskjellige priser:
 
 :::{table}
@@ -486,6 +494,10 @@ $170$ studentbilletter og $80$ ordinære billetter.
 
 
 :::::::::::::::{exercise} Oppgave 3 (4 poeng)
+---
+aids: true
+---
+
 Grunnflaten til en bygning skal ha en form som er består av et rektangel og en halvsirkel som vist i figuren nedenfor. 
 
 Omkretsen $\mathcal{O}$ og arealet $A$ av en sirkel er gitt ved
@@ -561,6 +573,10 @@ $$
 
 
 :::::::::::::::{exercise} Oppgave 4 (4 poeng)
+---
+aids: true
+---
+
 I figurfølgen nedenfor har den første trekanten areal $9$.
 
 
