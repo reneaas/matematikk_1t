@@ -589,7 +589,7 @@ $$
 
 
 
-:::::::::::::::{exercise} Oppgave 4 (4 poeng)
+:::::::::::::::{exercise} Oppgave 4 (6 poeng)
 ---
 aids: true
 ---
