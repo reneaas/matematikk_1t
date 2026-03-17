@@ -915,11 +915,11 @@ Lag et program som regner ut det samlede arealet av de fargelagte trekantene av 
 ---
 linenos:
 ---
-samlet_areal = 1 + 3 * 1 / 9 # areal av de 2 første figurene
-for n in range(3, 101):
-    T = 4 * 3**n # antall trekanter i figur n
-    areal = 1 / 9**n # areal av hver trekant i figur n
-    samlet_areal = samlet_areal + T * areal
+samlet_areal = 1 + 3 * 1 / 9 # n = 1 og n = 2
+for n in range(3, 101): # n = 3, 4, ..., 100
+    T = 3 * 4**(n - 2)
+    A = 1 / 9**(n - 1)
+    samlet_areal = samlet_areal + T * A
     
 print(samlet_areal)
 :::
