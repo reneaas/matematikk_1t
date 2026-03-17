@@ -884,7 +884,20 @@ $4$, $3 \cdot 4^2$ = 48, $\dfrac{1}{9^3}$, $48 \cdot \dfrac{1}{9^3}$
 :::::::::::::
 
 
-:::::::::::::{tab-item} b
+:::::::::::::{tab-item} b 
+Bestem en formel for $F_n$ for $n = 1, 2, 3 \ldots$. 
+
+
+::::{answer}
+$$
+F_1 = 1 \and F_2 = 3 \cdot \dfrac{1}{9} \and F_n = 3 \cdot 4^{n - 2} \cdot \dfrac{1}{9^{n - 1}} \text{ for } n \geq 3
+$$
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
 Figurfølgen består av $100$ figurer som følger samme mønster som de fire første figurene ovenfor.
 
 Lag et program som regner ut det samlede arealet av de fargelagte trekantene av de $100$ første figurene i følgen.
