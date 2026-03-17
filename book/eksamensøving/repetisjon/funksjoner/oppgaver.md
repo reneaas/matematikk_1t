@@ -927,8 +927,10 @@ print(samlet_areal)
 som gir utskriften
 
 :::{code-block} console
-1.555555555555555
+1.5999999999999994
 :::
+
+Det samlede arealet er altså ca. $1.6$. 
 ::::
 
 
