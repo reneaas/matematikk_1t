@@ -517,7 +517,7 @@ aids: true
 
 Grunnflaten til en bygning skal ha en form som er består av et rektangel og en halvsirkel som vist i figuren nedenfor. 
 
-Omkretsen $\mathcal{O}$ og arealet $A$ av en sirkel er gitt ved
+Omkretsen $\mathcal{O}$ og arealet $A$ av en sirkel med radius $r$ er gitt ved
 
 $$
 \mathcal{O} = 2 \pi r \quad \text{og} \quad A = \pi r^2
