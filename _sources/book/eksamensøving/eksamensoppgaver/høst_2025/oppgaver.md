@@ -930,9 +930,9 @@ Ta utgangspunkt i algoritmen og lag et program som regner ut summen av arealene 
 areal_sum = 0
 
 areal = 36 # Arealet til den store trekanten
-for n in range(1, 101):
-    areal = 1/4 * areal # Arealet av den fargelagte trekanten
+for n in range(100):
     areal_sum = areal_sum + areal # summerer opp arealene
+    areal = 1/4 * areal # Arealet av den fargelagte trekanten
     
 print(areal_sum)
 :::
@@ -940,10 +940,10 @@ print(areal_sum)
 som gir utskriften
 
 :::{code-block} console
-11.999999999999998
+47.99999999999999
 :::
 
-som betyr at summen av arealene av de 100 første trekantene er ca. 12.
+som betyr at summen av arealene av de 100 første trekantene er ca. 48.
 ::::
 
 
