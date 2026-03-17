@@ -414,7 +414,7 @@ Vi utfører polynomdivisjon for å få et andregradspolynom vi kan faktorisere:
 ---
 p: x^3 - 5x^2 - 8x + 12
 q: x - 1
-width: 70%
+width: 80%
 ---
 :::
 
