@@ -885,12 +885,14 @@ $4$, $3 \cdot 4^2$ = 48, $\dfrac{1}{9^3}$, $48 \cdot \dfrac{1}{9^3}$
 
 
 :::::::::::::{tab-item} b 
-Bestem en formel for $F_n$ for $n = 1, 2, 3 \ldots$. 
+Bestem en formel for $F_n$ for $n = 3, 4, 5 \ldots$. 
 
 
 ::::{answer}
+Vi har at $F_1 = 1$ og $F_2 = 3 \cdot \dfrac{1}{9}$. Formelen for $n = 3, 4, 5, \ldots$ kan beskrives ved
+
 $$
-F_1 = 1 \and F_2 = 3 \cdot \dfrac{1}{9} \and F_n = 3 \cdot 4^{n - 2} \cdot \dfrac{1}{9^{n - 1}} \text{ for } n \geq 3
+F_n = T_n \cdot A_n = 3 \cdot 4^{n - 2} \cdot \dfrac{1}{9^{n - 1}}\quad \text{ for } \quad n \geq 3
 $$
 ::::
 
