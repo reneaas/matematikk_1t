@@ -11,6 +11,7 @@
 
 
 :::::::::::::::{exercise} Oppgave 1 (6 poeng)
+
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
@@ -388,6 +389,9 @@ $$
 
 
 :::::::::::::::{exercise} Oppgave 1 (8 poeng)
+---
+aids: true
+---
 
 :::{figure} ./bilder/blacksmithing.png
 ---
@@ -416,6 +420,9 @@ class: tabs-parts
 Hva er temperaturen i metallstykket idet det blir tatt ut av ovnen?
 
 
+::::{answer}
+$520~\degree\mathrm{C}$. 
+::::
 :::::::::::::
 
 
@@ -426,6 +433,10 @@ Metallet kan bare bearbeides så lenge temperaturen i metallet er mer enn $150 \
 
 Hvor lang tid har smeden på seg til å bearbeide metallstykket etter det blir at ut av ovnen?
 
+::::{answer}
+Ca. $26$ minutter.
+
+::::
 
 :::::::::::::
 
@@ -435,12 +446,22 @@ Hvor lang tid har smeden på seg til å bearbeide metallstykket etter det blir a
 Bestem stigningstallet til linja som går gjennom punktene $(0, T(0))$ og $(10, T(10))$.
 
 Gi en praktisk tolkning av svaret.
+
+::::{answer}
+* Stigningstallet er $-20.06$.
+* Praktisk tolkning: Temperaturen til metallet stykket synker i gjennomsnitt med $20~\degree\mathrm{C}$ per minutt de første 10 minuttene etter at smeden tar ut metallstykket av ovnen.
+::::
+
 :::::::::::::
 
 
 :::::::::::::{tab-item} d
 Hva er temperaturen til omgivelsene til metallstykket, ifølge modellen?
 
+::::{answer}
+Temperaturen til omgivelsene er $20~\degree\mathrm{C}$.
+
+::::
 
 :::::::::::::
 
@@ -456,6 +477,10 @@ Hva er temperaturen til omgivelsene til metallstykket, ifølge modellen?
 
 
 :::::::::::::::{exercise} Oppgave 2 (2 poeng)
+---
+aids: true
+---
+
 Til en konsert, ble det solgt billetter til to forskjellige priser:
 
 :::{table}
@@ -486,6 +511,10 @@ $170$ studentbilletter og $80$ ordinære billetter.
 
 
 :::::::::::::::{exercise} Oppgave 3 (4 poeng)
+---
+aids: true
+---
+
 Grunnflaten til en bygning skal ha en form som er består av et rektangel og en halvsirkel som vist i figuren nedenfor. 
 
 Omkretsen $\mathcal{O}$ og arealet $A$ av en sirkel er gitt ved
@@ -561,8 +590,13 @@ $$
 
 
 :::::::::::::::{exercise} Oppgave 4 (4 poeng)
-I figurfølgen nedenfor har den første trekanten areal $9$.
+---
+aids: true
+---
 
+> Oppgaven er endret litt siden sist du kanskje så denne fordi den forrige oppgaven ville gitt "uendelig" areal på datamaskinen. 
+
+Nedenfor vises en figurfølge med fargelagte likesidete trekanter. Den første trekanten har areal $1$.
 
 ::::{multi-plot2}
 ---
@@ -572,66 +606,13 @@ cols: 4
 
 :::{plot}
 width: 100%
+nocache:
 figsize: (6, 6)
 let: L = 6
 let: h = sqrt(3) * L / 2
-axis: off
-axis: equal
-
-macro: tri(x1, y1, x2, y2, x3, y3, color, alpha)
-    fill-polygon: (x1, y1), (x2, y2), (x3, y3), color, alpha
-    line-segment: (x1, y1), (x2, y2), solid, black
-    line-segment: (x2, y2), (x3, y3), solid, black
-    line-segment: (x3, y3), (x1, y1), solid, black
-endmacro
-
-use: tri(-L/2, 0, L/2, 0, 0, h, #d6eaf8, 0.45)
-:::
-
-
-:::{plot}
-width: 100%
-figsize: (6, 6)
-
-let: L = 6
-let: h = sqrt(3) * L / 2
-
-macro: tri(x1, y1, x2, y2, x3, y3, color, alpha)
-    fill-polygon: (x1, y1), (x2, y2), (x3, y3), color, alpha
-    line-segment: (x1, y1), (x2, y2), solid, black
-    line-segment: (x2, y2), (x3, y3), solid, black
-    line-segment: (x3, y3), (x1, y1), solid, black
-endmacro
-
-macro: bump(x1, y1, x2, y2, color, alpha)
-    let: p1x = (2*x1 + x2) / 3
-    let: p1y = (2*y1 + y2) / 3
-    let: p2x = (x1 + 2*x2) / 3
-    let: p2y = (y1 + 2*y2) / 3
-    let: dx = (x2 - x1) / 3
-    let: dy = (y2 - y1) / 3
-    let: ax = p1x + dx / 2 + sqrt(3) * dy / 2
-    let: ay = p1y - sqrt(3) * dx / 2 + dy / 2
-    use: tri(p1x, p1y, ax, ay, p2x, p2y, color, alpha)
-endmacro
-
-use: tri(-L/2, 0, L/2, 0, 0, h, #d6eaf8, 0.45)
-
-use: bump(-L/2, 0, L/2, 0, #63b3ed, 0.50)
-use: bump(L/2, 0, 0, h, #63b3ed, 0.50)
-use: bump(0, h, -L/2, 0, #63b3ed, 0.50)
-
 axis: off
 axis: equal
 lw: 1
-:::
-
-
-:::{plot}
-width: 100%
-figsize: (6, 6)
-let: L = 6
-let: h = sqrt(3) * L / 2
 
 macro: tri(x1, y1, x2, y2, x3, y3, color, alpha)
     fill-polygon: (x1, y1), (x2, y2), (x3, y3), color, alpha
@@ -640,72 +621,19 @@ macro: tri(x1, y1, x2, y2, x3, y3, color, alpha)
     line-segment: (x3, y3), (x1, y1), solid, black
 endmacro
 
-macro: bump(x1, y1, x2, y2, color, alpha)
-    let: p1x = (2*x1 + x2) / 3
-    let: p1y = (2*y1 + y2) / 3
-    let: p2x = (x1 + 2*x2) / 3
-    let: p2y = (y1 + 2*y2) / 3
-    let: dx = (x2 - x1) / 3
-    let: dy = (y2 - y1) / 3
-    let: ax = p1x + dx / 2 + sqrt(3) * dy / 2
-    let: ay = p1y - sqrt(3) * dx / 2 + dy / 2
-    use: tri(p1x, p1y, ax, ay, p2x, p2y, color, alpha)
-endmacro
+use: tri(-L/2, 0, L/2, 0, 0, h, #7dd3fc, 0.3)
+:::
 
-use: tri(-L/2, 0, L/2, 0, 0, h, #bee3f8, 0.45)
-use: bump(-L/2, 0, L/2, 0, #63b3ed, 0.45)
-use: bump(L/2, 0, 0, h, #63b3ed, 0.45)
-use: bump(0, h, -L/2, 0, #63b3ed, 0.45)
-let: A1x = -L/2
-let: A1y = 0
-let: B1x = -L/6
-let: B1y = 0
-let: C1x = 0
-let: C1y = -sqrt(3) * L / 6
-let: D1x = L/6
-let: D1y = 0
-let: E1x = L/2
-let: E1y = 0
-let: F1x = L/3
-let: F1y = sqrt(3) * L / 6
-let: G1x = L/2
-let: G1y = sqrt(3) * L / 3
-let: H1x = L/6
-let: H1y = sqrt(3) * L / 3
-let: I1x = 0
-let: I1y = h
-let: J1x = -L/6
-let: J1y = sqrt(3) * L / 3
-let: K1x = -L/2
-let: K1y = sqrt(3) * L / 3
-let: L1x = -L/3
-let: L1y = sqrt(3) * L / 6
-use: bump(A1x, A1y, B1x, B1y, #2b6cb0, 0.5)
-use: bump(B1x, B1y, C1x, C1y, #2b6cb0, 0.5)
-use: bump(C1x, C1y, D1x, D1y, #2b6cb0, 0.5)
-use: bump(D1x, D1y, E1x, E1y, #2b6cb0, 0.5)
 
-use: bump(E1x, E1y, F1x, F1y, #2b6cb0, 0.5)
-use: bump(F1x, F1y, G1x, G1y, #2b6cb0, 0.5)
-use: bump(G1x, G1y, H1x, H1y, #2b6cb0, 0.5)
-use: bump(H1x, H1y, I1x, I1y, #2b6cb0, 0.5)
+:::{plot}
+width: 100%
+figsize: (6, 6)
 
-use: bump(I1x, I1y, J1x, J1y, #2b6cb0, 0.5)
-use: bump(J1x, J1y, K1x, K1y, #2b6cb0, 0.5)
-use: bump(K1x, K1y, L1x, L1y, #2b6cb0, 0.5)
-use: bump(L1x, L1y, A1x, A1y, #2b6cb0, 0.5)
+let: L = 6
+let: h = sqrt(3) * L / 2
 axis: off
 axis: equal
 lw: 1
-:::
-
-
-:::{plot}
-width: 100%
-figsize: (6, 6)
-
-let: L = 6
-let: h = sqrt(3) * L / 2
 
 macro: tri(x1, y1, x2, y2, x3, y3, color, alpha)
     fill-polygon: (x1, y1), (x2, y2), (x3, y3), color, alpha
@@ -724,6 +652,64 @@ macro: bump(x1, y1, x2, y2, color, alpha)
     let: ax = p1x + dx / 2 + sqrt(3) * dy / 2
     let: ay = p1y - sqrt(3) * dx / 2 + dy / 2
     use: tri(p1x, p1y, ax, ay, p2x, p2y, color, alpha)
+endmacro
+
+line-segment: (-L/2, 0), (L/2, 0), solid, gray
+line-segment: (L/2, 0), (0, h), solid, gray
+line-segment: (0, h), (-L/2, 0), solid, gray
+
+use: bump(-L/2, 0, L/2, 0, #7dd3fc, 0.70)
+use: bump(L/2, 0, 0, h, #7dd3fc, 0.70)
+use: bump(0, h, -L/2, 0, #7dd3fc, 0.70)
+:::
+
+
+:::{plot}
+width: 100%
+figsize: (6, 6)
+let: L = 6
+let: h = sqrt(3) * L / 2
+axis: off
+axis: equal
+lw: 1
+
+macro: tri(x1, y1, x2, y2, x3, y3, color, alpha)
+    fill-polygon: (x1, y1), (x2, y2), (x3, y3), color, alpha
+    line-segment: (x1, y1), (x2, y2), solid, black
+    line-segment: (x2, y2), (x3, y3), solid, black
+    line-segment: (x3, y3), (x1, y1), solid, black
+endmacro
+
+macro: bump(x1, y1, x2, y2, color, alpha)
+    let: p1x = (2*x1 + x2) / 3
+    let: p1y = (2*y1 + y2) / 3
+    let: p2x = (x1 + 2*x2) / 3
+    let: p2y = (y1 + 2*y2) / 3
+    let: dx = (x2 - x1) / 3
+    let: dy = (y2 - y1) / 3
+    let: ax = p1x + dx / 2 + sqrt(3) * dy / 2
+    let: ay = p1y - sqrt(3) * dx / 2 + dy / 2
+    use: tri(p1x, p1y, ax, ay, p2x, p2y, color, alpha)
+endmacro
+
+macro: edge0(x1, y1, x2, y2, color)
+    line-segment: (x1, y1), (x2, y2), solid, color
+endmacro
+
+macro: edge1(x1, y1, x2, y2, color)
+    let: p1x = (2*x1 + x2) / 3
+    let: p1y = (2*y1 + y2) / 3
+    let: p2x = (x1 + 2*x2) / 3
+    let: p2y = (y1 + 2*y2) / 3
+    let: dx = (x2 - x1) / 3
+    let: dy = (y2 - y1) / 3
+    let: ax = p1x + dx / 2 + sqrt(3) * dy / 2
+    let: ay = p1y - sqrt(3) * dx / 2 + dy / 2
+
+    use: edge0(x1, y1, p1x, p1y, color)
+    use: edge0(p1x, p1y, ax, ay, color)
+    use: edge0(ax, ay, p2x, p2y, color)
+    use: edge0(p2x, p2y, x2, y2, color)
 endmacro
 
 macro: refine(x1, y1, x2, y2, color, alpha)
@@ -742,6 +728,97 @@ macro: refine(x1, y1, x2, y2, color, alpha)
     use: bump(p2x, p2y, x2, y2, color, alpha)
 endmacro
 
+use: edge1(-L/2, 0, L/2, 0, gray)
+use: edge1(L/2, 0, 0, h, gray)
+use: edge1(0, h, -L/2, 0, gray)
+
+use: refine(-L/2, 0, L/2, 0, #38bdf8, 0.75)
+use: refine(L/2, 0, 0, h, #38bdf8, 0.75)
+use: refine(0, h, -L/2, 0, #38bdf8, 0.75)
+:::
+
+
+:::{plot}
+width: 100%
+figsize: (6, 6)
+axis: off
+nocache:
+axis: equal
+
+let: L = 6
+let: h = sqrt(3) * L / 2
+
+macro: tri(x1, y1, x2, y2, x3, y3, color, alpha)
+    fill-polygon: (x1, y1), (x2, y2), (x3, y3), color, alpha
+    line-segment: (x1, y1), (x2, y2), solid, black
+    line-segment: (x2, y2), (x3, y3), solid, black
+    line-segment: (x3, y3), (x1, y1), solid, black
+endmacro
+
+macro: bump(x1, y1, x2, y2, color, alpha)
+    let: p1x = (2*x1 + x2) / 3
+    let: p1y = (2*y1 + y2) / 3
+    let: p2x = (x1 + 2*x2) / 3
+    let: p2y = (y1 + 2*y2) / 3
+    let: dx = (x2 - x1) / 3
+    let: dy = (y2 - y1) / 3
+    let: ax = p1x + dx / 2 + sqrt(3) * dy / 2
+    let: ay = p1y - sqrt(3) * dx / 2 + dy / 2
+    use: tri(p1x, p1y, ax, ay, p2x, p2y, color, alpha)
+endmacro
+
+macro: edge0(x1, y1, x2, y2, color)
+    line-segment: (x1, y1), (x2, y2), solid, color
+endmacro
+
+macro: edge1(x1, y1, x2, y2, color)
+    let: p1x = (2*x1 + x2) / 3
+    let: p1y = (2*y1 + y2) / 3
+    let: p2x = (x1 + 2*x2) / 3
+    let: p2y = (y1 + 2*y2) / 3
+    let: dx = (x2 - x1) / 3
+    let: dy = (y2 - y1) / 3
+    let: ax = p1x + dx / 2 + sqrt(3) * dy / 2
+    let: ay = p1y - sqrt(3) * dx / 2 + dy / 2
+
+    use: edge0(x1, y1, p1x, p1y, color)
+    use: edge0(p1x, p1y, ax, ay, color)
+    use: edge0(ax, ay, p2x, p2y, color)
+    use: edge0(p2x, p2y, x2, y2, color)
+endmacro
+
+macro: refine(x1, y1, x2, y2, color, alpha)
+    let: p1x = (2*x1 + x2) / 3
+    let: p1y = (2*y1 + y2) / 3
+    let: p2x = (x1 + 2*x2) / 3
+    let: p2y = (y1 + 2*y2) / 3
+    let: dx = (x2 - x1) / 3
+    let: dy = (y2 - y1) / 3
+    let: ax = p1x + dx / 2 + sqrt(3) * dy / 2
+    let: ay = p1y - sqrt(3) * dx / 2 + dy / 2
+
+    use: bump(x1, y1, p1x, p1y, color, alpha)
+    use: bump(p1x, p1y, ax, ay, color, alpha)
+    use: bump(ax, ay, p2x, p2y, color, alpha)
+    use: bump(p2x, p2y, x2, y2, color, alpha)
+endmacro
+
+macro: edge2(x1, y1, x2, y2, color)
+    let: p1x = (2*x1 + x2) / 3
+    let: p1y = (2*y1 + y2) / 3
+    let: p2x = (x1 + 2*x2) / 3
+    let: p2y = (y1 + 2*y2) / 3
+    let: dx = (x2 - x1) / 3
+    let: dy = (y2 - y1) / 3
+    let: ax = p1x + dx / 2 + sqrt(3) * dy / 2
+    let: ay = p1y - sqrt(3) * dx / 2 + dy / 2
+
+    use: edge1(x1, y1, p1x, p1y, color)
+    use: edge1(p1x, p1y, ax, ay, color)
+    use: edge1(ax, ay, p2x, p2y, color)
+    use: edge1(p2x, p2y, x2, y2, color)
+endmacro
+
 macro: refine2(x1, y1, x2, y2, color, alpha)
     let: p1x = (2*x1 + x2) / 3
     let: p1y = (2*y1 + y2) / 3
@@ -758,24 +835,17 @@ macro: refine2(x1, y1, x2, y2, color, alpha)
     use: refine(p2x, p2y, x2, y2, color, alpha)
 endmacro
 
-use: tri(-L/2, 0, L/2, 0, 0, h, #d6eaf8, 0.45)
-use: bump(-L/2, 0, L/2, 0, #85c1e9, 0.45)
-use: bump(L/2, 0, 0, h, #85c1e9, 0.45)
-use: bump(0, h, -L/2, 0, #85c1e9, 0.45)
-use: refine(-L/2, 0, L/2, 0, #3498db, 0.50)
-use: refine(L/2, 0, 0, h, #3498db, 0.50)
-use: refine(0, h, -L/2, 0, #3498db, 0.50)
-use: refine2(-L/2, 0, L/2, 0, #1f5f99, 0.55)
-use: refine2(L/2, 0, 0, h, #1f5f99, 0.55)
-use: refine2(0, h, -L/2, 0, #1f5f99, 0.55)
+use: edge2(-L/2, 0, L/2, 0, gray)
+use: edge2(L/2, 0, 0, h, gray)
+use: edge2(0, h, -L/2, 0, gray)
 
-axis: off
-axis: equal
-lw: 1
+use: refine2(-L/2, 0, L/2, 0, #7dd3fc, 0.80)
+use: refine2(L/2, 0, 0, h, #7dd3fc, 0.80)
+use: refine2(0, h, -L/2, 0, #7dd3fc, 0.80)
 :::
 ::::
 
-La $T_n$ være antall nye trekanter i figur $n$ og la $A_n$ være arealet av hver nye trekant i figur $n$.
+La $T_n$ være antall fargelagte trekanter i figur $n$ og la $A_n$ være arealet til én slik trekant i figur $n$. La $F_n$ være arealet til det fargelagte området i figur $n$.
 
 
 ::::::::::::::{tab-set}
@@ -788,12 +858,25 @@ Lag en oversikt som vist nedenfor. Fyll ut verdiene som mangler.
 
 
 :::{table}
-labels: Figur $n$, $T_{n + 1}$, $A_n$, Areal av hele figuren
-$1$, , , ,
-$2$, , , ,
-$3$, , , ,
-$4$, , , ,
+width: 60%
+labels: Figur $n$, $T_n$, $A_n$, $F_n$
+$1$, $1$, $1$, $1 \cdot 1$ 
+$2$, , , $3 \cdot \dfrac{1}{9}$,
+$3$, ,
+$4$, ,
 :::
+
+
+::::{answer}
+:::{table}
+width: 60%
+labels: Figur $n$, $T_n$, $A_n$, $F_n$
+$1$, $1$, $1$, $1 \cdot 1$ 
+$2$, $3$, $\dfrac{1}{9}$, $3 \cdot \dfrac{1}{9}$
+$3$, $3 \cdot 4 = 12$, $\dfrac{1}{9^2}$, $12 \cdot \dfrac{1}{9^2}$ 
+$4$, $3 \cdot 4^2$ = 48, $\dfrac{1}{9^3}$, $48 \cdot \dfrac{1}{9^3}$
+:::
+::::
 
 
 
@@ -801,10 +884,23 @@ $4$, , , ,
 :::::::::::::
 
 
-:::::::::::::{tab-item} b
-Figurfølgen består av $10~000$ figurer som følger samme mønster som de tre første figurene.
+:::::::::::::{tab-item} b 
+Bestem en formel for $F_n$ for $n = 1, 2, 3 \ldots$. 
 
-Lag et program som regner ut det samlede arealet av de $10~000$ første figurene i følgen.
+
+::::{answer}
+$$
+F_1 = 1 \and F_2 = 3 \cdot \dfrac{1}{9} \and F_n = 3 \cdot 4^{n - 2} \cdot \dfrac{1}{9^{n - 1}} \text{ for } n \geq 3
+$$
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+Figurfølgen består av $100$ figurer som følger samme mønster som de fire første figurene ovenfor.
+
+Lag et program som regner ut det samlede arealet av de fargelagte trekantene av de $100$ første figurene i følgen.
 
 
 :::{interactive-code}
@@ -812,6 +908,28 @@ Lag et program som regner ut det samlede arealet av de $10~000$ første figurene
 
 
 :::
+
+
+::::{answer}
+:::{code-block} python
+---
+linenos:
+---
+samlet_areal = 1 + 3 * 1 / 9 # areal av de 2 første figurene
+for n in range(3, 101):
+    T = 4 * 3**n # antall trekanter i figur n
+    areal = 1 / 9**n # areal av hver trekant i figur n
+    samlet_areal = samlet_areal + T * areal
+    
+print(samlet_areal)
+:::
+
+som gir utskriften
+
+:::{code-block} console
+1.555555555555555
+:::
+::::
 
 
 :::::::::::::
