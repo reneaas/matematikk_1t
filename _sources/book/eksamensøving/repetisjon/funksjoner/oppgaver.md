@@ -517,7 +517,7 @@ aids: true
 
 Grunnflaten til en bygning skal ha en form som er består av et rektangel og en halvsirkel som vist i figuren nedenfor. 
 
-Omkretsen $\mathcal{O}$ og arealet $A$ av en sirkel med radius $r$ er gitt ved
+Omkretsen $\mathcal{O}$ og arealet $A$ av en sirkel er gitt ved
 
 $$
 \mathcal{O} = 2 \pi r \quad \text{og} \quad A = \pi r^2
@@ -589,7 +589,7 @@ $$
 
 
 
-:::::::::::::::{exercise} Oppgave 4 (6 poeng)
+:::::::::::::::{exercise} Oppgave 4 (4 poeng)
 ---
 aids: true
 ---
@@ -884,22 +884,7 @@ $4$, $3 \cdot 4^2$ = 48, $\dfrac{1}{9^3}$, $48 \cdot \dfrac{1}{9^3}$
 :::::::::::::
 
 
-:::::::::::::{tab-item} b 
-Bestem en formel for $F_n$ for $n = 3, 4, 5 \ldots$. 
-
-
-::::{answer}
-Vi har at $F_1 = 1$ og $F_2 = 3 \cdot \dfrac{1}{9}$. Formelen for $n = 3, 4, 5, \ldots$ kan beskrives ved
-
-$$
-F_n = T_n \cdot A_n = 3 \cdot 4^{n - 2} \cdot \dfrac{1}{9^{n - 1}}\quad \text{ for } \quad n \geq 3
-$$
-::::
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} c
+:::::::::::::{tab-item} b
 Figurfølgen består av $100$ figurer som følger samme mønster som de fire første figurene ovenfor.
 
 Lag et program som regner ut det samlede arealet av de fargelagte trekantene av de $100$ første figurene i følgen.
@@ -917,11 +902,11 @@ Lag et program som regner ut det samlede arealet av de fargelagte trekantene av 
 ---
 linenos:
 ---
-samlet_areal = 1 + 3 * 1 / 9 # n = 1 og n = 2
-for n in range(3, 101): # n = 3, 4, ..., 100
-    T = 3 * 4**(n - 2)
-    A = 1 / 9**(n - 1)
-    samlet_areal = samlet_areal + T * A
+samlet_areal = 1 + 3 * 1 / 9 # areal av de 2 første figurene
+for n in range(3, 101):
+    T = 4 * 3**n # antall trekanter i figur n
+    areal = 1 / 9**n # areal av hver trekant i figur n
+    samlet_areal = samlet_areal + T * areal
     
 print(samlet_areal)
 :::
@@ -929,10 +914,8 @@ print(samlet_areal)
 som gir utskriften
 
 :::{code-block} console
-1.5999999999999994
+1.555555555555555
 :::
-
-Det samlede arealet er altså ca. $1.6$. 
 ::::
 
 
