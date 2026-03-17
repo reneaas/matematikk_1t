@@ -894,10 +894,10 @@ Sett opp en algoritme Maria kan bruke for å finne summen av arealene av de 100 
 
 
 ::::{solution}
-La $T$ være arealet av hele trekanten. Den første fargelagte trekanten vil ha $1/3$ av grunnlinja og $1/3$ av høyden til den opprinnelige trekanten. Det betyr at arealet blir $1/9$ av arealet til $T$. Den neste fargelagte trekanten vil ha $1/9$ av dette arealet igjen. La $T_n$ være arealet av den $n$-te fargelagte trekanten. Da har vi at
+La $T$ være arealet av hele trekanten. Den første fargelagte trekanten vil ha $1/2$ av grunnlinja og $1/2$ av høyden til den opprinnelige trekanten. Det betyr at arealet blir $1/4$ av arealet til $T$. Den neste fargelagte trekanten vil ha $1/4$ av dette arealet igjen. La $T_n$ være arealet av den $n$-te fargelagte trekanten. Da har vi at
 
 $$
-T_{n + 1} = \dfrac{1}{9} T_n
+T_{n + 1} = \dfrac{1}{4} T_n
 $$
 
 Da kan vi lage følgende algoritme:
@@ -905,7 +905,7 @@ Da kan vi lage følgende algoritme:
 1. Sett arealet $T$.
 2. Sett summen av arealene til $0$.
 3. For $n = 1, 2, \ldots, 100$:
-    1. Beregn $T_{n} = \dfrac{1}{9}\cdot T_{n - 1}$.
+    1. Beregn $T_{n} = \dfrac{1}{4}\cdot T_{n - 1}$.
     2. Legg $T_n$ til summen av arealene.
 
 ::::
@@ -931,7 +931,7 @@ areal_sum = 0
 
 areal = 36 # Arealet til den store trekanten
 for n in range(1, 101):
-    areal = 1/9 * areal # Arealet av den fargelagte trekanten
+    areal = 1/4 * areal # Arealet av den fargelagte trekanten
     areal_sum = areal_sum + areal # summerer opp arealene
     
 print(areal_sum)
@@ -940,10 +940,10 @@ print(areal_sum)
 som gir utskriften
 
 :::{code-block} console
-4.5
+11.999999999999998
 :::
 
-som betyr at summen av arealene av de 100 første trekantene er $4.5$.
+som betyr at summen av arealene av de 100 første trekantene er ca. 12.
 ::::
 
 
