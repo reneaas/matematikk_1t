@@ -1,4 +1,4 @@
-# Oppgaver: Pytagoras' setning, formlikhet og vinkler
+# Oppgaver: Trekantgeometri
 
 
 
