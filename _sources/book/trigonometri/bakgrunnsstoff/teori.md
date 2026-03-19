@@ -1,6 +1,17 @@
-# Pytagoras' setning, formlikhet og vinkler
+# Trekantgeometri
 
-En trekant er en geometrisk figur som består av tre hjørner og tre sider. Vi skal se på noen grunnleggende egenskaper ved trekanter, og vi skal se på noen viktige sammenhenger som er nyttige når vi skal jobbe med trigonometri.
+
+:::{admonition} Læringsmål
+---
+class: tip
+---
+* Kunne bruke egenskapene til likesidete, likebeinte og rettvinklete trekanter til å bestemme ukjente sider og vinkler. 
+* Kunne bruke Pytagoras' setning til å finne ukjente sider i en rettvinklet trekant.
+* Kunne bruke formlikhet til å beregne ukjente sidelengder i trekanter.
+* Kunne undersøke om to trekanter er formlike.
+:::
+
+En trekant er en geometrisk figur som består av tre hjørner og tre sidekanter. Her skal vi repetere noen viktige egenskaper ved trekanter som vi kommer til å få bruk for når vi skal jobbe med trigonometri. Trigonometri er en del av matematikken som gir en ny måte å bruke sammenhenger mellom vinkler og sider i trekanter på. 
 
 
 ## Vinkler
