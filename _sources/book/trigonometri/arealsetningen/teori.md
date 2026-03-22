@@ -6,39 +6,72 @@ class: tip
 ---
 * Kunne bruke arealsetningen til arealberegninger for trekanter. 
 * Kunne begrunne arealsetningen.
-* Kunne bestemme $\sin v$ for vinkler $v \in \langle 0\degree, 180\degree\rangle$.
-
 :::::::::::::::
 
 
 
 ## Repetisjon: Arealet av en trekant
 
-Fra geometri har du tidligere lært en måte å regne ut arealet av en trekant.
-
-
-:::::::::::::::{admonition} Arealet av en trekant
----
-class: summary
----
-Arealet $T$ av en trekant med grunnlinje $g$ og høyde $h$ er gitt ved
+Fra geometri har du tidligere lært en måte å regne ut arealet av en trekant. Arealet $T$ av en trekant med grunnlinje $g$ og høyde $h$ er 
 
 $$
-T = \dfrac{g\cdot h}{2}
+T = \dfrac{1}{2} \cdot g \cdot h.
 $$
 
-Dette stemmer både om vinkelene er **spisse** ($<90\degree$) eller om trekanten har en vinkel som er **stump** ($>90\degree$). Se figuren nedenfor. 
+Høyden $h$ vil være den korteste avstanden fra linja som går gjennom linjestykke til grunnlinja $g$ og hjørnet som ikke ligger på grunnlinja.
 
-:::{figure} ./figurer/teori/areal/merged_figure.svg
+
+::::{multi-plot2}
 ---
+rows: 1
+cols: 2
+---
+:::{plot}
 width: 100%
-class: no-click, adaptive-figure
----
+axis: off
+axis: equal
+triangle: svs=(4, 30, 2), color=blue, angle-color=red, angles=none
+nocache:
+let: Ax = 0
+let: Ay = 0
+let: Bx = 4
+let: By = 0
+let: Cx = 2 * cos(pi/6)
+let: Cy = 2 * sin(pi/6)
+vline: Cx, 0, Cy, dashed, gray
+text: Cx, 0.5*Cy, "$h$", center-right
+let: ds = 0.2
+line-segment: (Cx - ds, 0), (Cx - ds, ds), solid, gray
+line-segment: (Cx - ds, ds), (Cx, ds), solid, gray
+text: 0.5 * (Ax + Bx), 0, "$g$", bottom-center
 :::
 
-:::::::::::::::
+:::{plot}
+width: 100%
+axis: off
+axis: equal
+triangle: svs=(3, 120, 2), color=blue, angle-color=red, angles=none
+nocache:
+let: Ax = 0
+let: Ay = 0
+let: Bx = 3
+let: By = 0
+let: Cx = 2 * cos(2 * pi / 3)
+let: Cy = 2 * sin(2 * pi / 3)
+vline: Cx, 0, Cy, dashed, gray
+hline: 0, Ax, Cx, dashed, gray
+text: Cx, 0.5*Cy, "$h$", center-right
+let: ds = 0.2
+line-segment: (Cx + ds, 0), (Cx + ds, ds), solid, gray
+line-segment: (Cx + ds, ds), (Cx, ds), solid, gray
+text: 0.5 * (Ax + Bx), 0, "$g$", bottom-center
+:::
+::::
+
+
 
 ---
+
 
 
 :::::::::::::::{admonition} Underveisoppgave 1
@@ -83,357 +116,316 @@ $$
 
 :::::::::::::::
 
----
-
-
-## Supplementvinkler
-
-
-Vi trenger et nytt begrep for å beskrive sammenhengen mellom to vinkler. 
-
-:::::::::::::::{admonition} Supplementvinkler
----
-class: summary
----
-
-Supplementvinkler
-: To vinkler $u$ og $v$ er **supplementvinkler** dersom $u + v = 180\degree$.
-
-
-:::{figure} ./figurer/teori/vinkler/supplementvinkler.svg
----
-width: 80%
-class: no-click, adaptive-figure
----
-:::
-
-
-:::::::::::::::
-
-
-
 
 ## Arealsetningen
 
 Arealsetningen lar oss regne ut arealet så lenge vi kjenner til to sidelenger og vinkelen som disse sidene spenner ut. 
 
-:::::::::::::::{admonition} Arealsetningen
----
-class: summary
----
-Arealet av en trekant er produktet av to sidelenger ganget med sinus til vinkelen som er spent ut av sidene, delt på 2.
-Vi kan dermed regne ut arealet $T$ på tre forskjellige måter:
+:::::::::::::::{summary} Arealsetningen
+
+:::{plot}
+width: 100%
+ticks: off
+axis: off
+axis: equal 
+align: right
+triangle: svs=(3, 30, 6), angles=(A), color=blue, angle-color=red, angle-radius=40, corner-labels=(A="$A$", B="$B$", C="$C$"), lw=3
+fontsize: 30
+:::
 
 
+Gitt en trekant $\triangle ABC$, så er arealet $T$ av trekanten gitt ved
+
+
+$$
+T = \dfrac{1}{2} \cdot AB \cdot AC \cdot \sin A
+$$
+
+
+
+:::{clear}
+:::
+
+::::::::::::::{admonition} Forklaring av formelen
+---
+class: theory, dropdown
+--- 
+:::{plot}
+width: 100%
+ticks: off
+axis: off
+axis: equal 
+align: right
+let: Ax = 0
+let: Ay = 0
+let: Bx = 3
+let: By = 0
+let: Cx = 6 * cos(pi/6)
+let: Cy = 6 * sin(pi/6)
+triangle: svs=(3, 30, 6), angles=(A), color=blue, angle-color=red, angle-radius=40, corner-labels=(A="$A$", B="$B$", C="$C$"), lw=3
+vline: Cx, 0, Cy, dashed, gray
+hline: 0, Bx, Cx, dashed, gray
+text: Cx, 0.5*Cy, "$h$", center-right
+text: Cx, 0, "$D$", bottom-right
+let: ds = 0.3
+line-segment: (Cx - ds, 0), (Cx - ds, ds), solid, gray
+line-segment: (Cx - ds, ds), (Cx, ds), solid, gray 
+fontsize: 30
+:::
+
+Vi lager oss en hjelpefigur som vist til høyre for en trekant $\triangle ABC$. Med de stiplede linjene får vi rettvinklet trekant $\triangle ADC$
+
+Grunnlinja i trekanten er $AB$, og høyden er $h$. Arealet av trekanten er derfor 
+
+$$
+T = \dfrac{1}{2} \cdot AB \cdot h.
+$$
+
+Fra definisjonen av $\sin A$, har vi at 
+
+$$
+\sin A = \dfrac{h}{AC} \liff h = AC \cdot \sin A.
+$$
+
+Setter vi dette inn i formelen for arealet, får vi
+
+$$
+T = \dfrac{1}{2} \cdot AB \cdot AC \cdot \sin A.
+$$
+
+
+::::::::::::::
+
+
+
+:::::::::::::::
+
+
+---
+
+
+:::::::::::::::{example} Eksempel 2
+
+:::{plot}
+figsize: (6, 6)
+width: 100%
+align: right
+axis: off
+axis: equal
+triangle: svs=(3, 30, 4), angles=A, color=blue, angle-color=red, angle-radius=30, side-labels=(AB=exact, CA=exact), angle-labels=(A=numeric)
+fontsize: 30
+nocache:
+:::
+
+
+Figuren til høyre viser en trekant $\triangle ABC$. 
+
+Bestem arealet av trekanten.
+
+
+:::{clear}
+:::
+
+
+::::{solution}
+---
+dropdown: 0
+---
+Arealet til trekanten er gitt ved 
+
+$$
+T = \dfrac{1}{2} \cdot AB \cdot AC \cdot \sin A.
+$$
+
+Vi har at $\sin A = \sin 30\degree = \dfrac{1}{2}$. Siden $AB = 3$ og $AC = 4$, så får vi at arealet av trekanten er
+
+$$
+T = \dfrac{1}{2} \cdot 3 \cdot 4 \cdot \dfrac{1}{2} = 3.
+$$
+::::
+:::::::::::::::
+
+
+
+
+---
+
+
+
+
+:::::::::::::::{exercise} Underveisoppgave 2
+
+:::{plot}
+align: right
+width: 100%
+axis: off
+axis: equal
+triangle: svs=(5, 60, 2), angles=A, color=blue, angle-color=red, angle-radius=25, side-labels=(AB=exact, CA=exact), angle-labels=(A=numeric)
+fontsize: 30
+:::
+
+
+En trekant $\triangle ABC$ er vist i figuren til høyre.
+
+Bestem arealet av trekanten.
+
+
+:::{clear}
+:::
+
+
+::::{answer}
+$$
+T = \dfrac{5\sqrt{3}}{4}.
+$$
+::::
+
+
+::::{solution}
+Arealet av trekanten er
+
+$$
+T = \dfrac{1}{2} \cdot AB \cdot AC \cdot \sin A.
+$$
+
+Vi har at $\sin A = \sin 60\degree = \dfrac{\sqrt{3}}{2}$. Siden $AB = 5$ og $AC = 2$, så får vi at arealet av trekanten er
+
+$$
+T = \dfrac{1}{2} \cdot 5 \cdot 2 \cdot \dfrac{\sqrt{3}}{2} = \dfrac{5\sqrt{3}}{4}.
+$$
+::::
+
+:::::::::::::::
+
+
+
+---
+
+
+Hittil har vi fokusert på arealsetningen ut ifra hjørne $A$ i en trekant, men den fungerer like godt ut ifra hjørnene $B$ og $C$.
+
+
+:::::::::::::::{summary} Arealsetningen: Generelt
+:::{plot}
+width: 100%
+ticks: off
+axis: off
+axis: equal 
+align: right
+triangle: svs=(3, 45, 4), angles=all, color=blue, angle-color=red, angle-radius=20, corner-labels=(A="$A$", B="$B$", C="$C$"), lw=3, side-text=(AB="$c$", CA="$b$", BC="$a$")
+fontsize: 30
+:::
+
+
+Gitt en trekant $\triangle ABC$, så er arealet $T$ av trekanten gitt ved
+
+$$
 \begin{align*}
-T &= \dfrac{1}{2} \cdot AB \cdot AC \cdot \sin \angle A \\
+T &= \dfrac{1}{2} \cdot b \cdot c \cdot \sin A && (\mathrm{hjørne \, A})\\
 \\
-T &= \dfrac{1}{2} \cdot BA \cdot BC \cdot \sin \angle B \\
+T &= \dfrac{1}{2} \cdot a \cdot c \cdot \sin B && (\mathrm{hjørne \, B})\\
 \\
-T &= \dfrac{1}{2} \cdot CA \cdot CB \cdot \sin \angle C
+T &= \dfrac{1}{2} \cdot a \cdot b \cdot \sin C && (\mathrm{hjørne \, C})
 \end{align*}
+$$
 
 
-Se figuren nedenfor.
 
-:::{figure} ./figurer/teori/arealsetningen/spiss.svg
----
-width: 80%
-class: no-click, adaptive-figure
----
-:::
+Det er enklest å huske formelen for arealsetningen ved å tenke seg følgende oppskrift:
+1. Velg et hjørne i trekanten.
+2. Ta produktet av de to sidene som spenner ut vinkelen i hjørnet.
+3. Gang med sinus til vinkelen i hjørnet.
+4. Del med 2.
 
 :::::::::::::::
 
 
+
 ---
 
 
 
-:::::::::::::::{admonition} Underveisoppgave 2
----
-class: check
----
-Nedenfor vises en trekant $\triangle ABC$. 
 
-
-:::{figure} ./figurer/underveisoppgaver/oppgave_2/figur.svg
----
-width: 70%
-class: no-click, adaptive-figure
----
-:::
-
-I CAS-vinduet nedenfor vises én måte å bruke arealsetningen på for å bestemme arealet av trekanten. <br>
-Bestem arealet på de to andre måtene som arealsetningen gir.
-
-:::{raw} html
----
-file: ./ggb/underveisoppgaver/oppgave_2/cas_vindu.html
----
-:::
-
-
-::::{admonition} Løsning
----
-class: solution, dropdown
----
-Går vi ut ifra $\angle B$, får vi:
-
-$$
-T = \dfrac{1}{2} \cdot BA \cdot BC \cdot \sin \angle B,
-$$
-
-som vi kan regne ut med CAS:
-
-:::{figure} ./ggb/underveisoppgaver/oppgave_2/vinkel_B.png
----
+:::::::::::::::{example} Eksempel 3
+:::{plot}
 width: 100%
-class: no-click, adaptive-figure
----
+align: right
+triangle: points=((0, 0), (4, 0), (4 - 2 * cos(pi/3), 2 * sin(pi/3))), color=blue, angle-color=red, angles=(B), angle-radius=20, corner-labels=(A="$A$", B="$B$", C="$C$"), lw=3, side-labels=(AB=exact, BC=exact), angle-labels=(B=numeric)
+fontsize: 30
+axis: off
+axis: equal
 :::
 
-Går vi ut ifra $\angle C$, får vi:
 
-$$
-T = \dfrac{1}{2} \cdot CA \cdot CB \cdot \sin \angle C,
-$$
+Figuren til høyre viser en trekant $\triangle ABC$.
 
-som gir 
+Bestem arealet til trekanten.
 
-:::{figure} ./ggb/underveisoppgaver/oppgave_2/vinkel_C.png
+
+:::{clear}
+:::
+
+
+::::{solution}
 ---
+dropdown: 0
+---
+Vi tar produktet av de to sidene som spenner ut vinkelen i hjørnet $B$. Siden $AB = 4$ og $BC = 2$, så får vi at arealet av trekanten er
+
+$$
+T = \dfrac{1}{2} \cdot 4 \cdot 2 \cdot \sin 60\degree = \dfrac{1}{2} \cdot 4 \cdot 2 \cdot \dfrac{\sqrt{3}}{2} = 2\sqrt{3}
+$$
+
+der vi har brukt at $\sin 60\degree = \dfrac{\sqrt{3}}{2}$.
+
+::::
+
+
+:::::::::::::::
+
+
+---
+
+
+
+:::::::::::::::{exercise} Underveisoppgave 3
+
+:::{plot}
 width: 100%
-class: no-click, adaptive-figure
----
+align: right
+triangle: points=((0, 0), (3, 0), (3 - 5 * cos(pi/6), 5 * sin(pi/6))), color=blue, angle-color=red, angles=(B), angle-radius=30, corner-labels=(A="$A$", B="$B$", C="$C$"), lw=3, side-labels=(AB=exact, BC=exact), angle-labels=(B=numeric)
+axis: equal
+axis: off
+fontsize: 30
 :::
 
 
-Arealet av trekanten er altså 
 
-$$
-T \approx 0.77.
-$$
+I figuren til høyre vises en trekant $\triangle ABC$.
 
-::::
-
-
-:::::::::::::::
-
----
-
-I Underveisoppgave 2 kan det hende du stusset litt over at vi kan regne ut $\sin v$ når vinkelen $v > 90\degree$. Vi har jo så langt bare definert $\sin v$ ved hjelp av rettvinklede trekanter, og der finnes det ingen stumpe vinkler. Så det er naturlig å lure på hvordan dette gir mening.
-
-Vi skal i det som følger både begrunne arealsetningen og gi mening til hva det vil si å regne ut $\sin v$ når $v > 90\degree$ så vi får tatt knekken på det mentale ubehaget. **Du** skal få begrunne setningen ut ifra en spiss vinkel først. Deretter skal vi utforske hva som skjer når vi går ut ifra en vinkel som er stump.
-
----
+Bestem arealet av trekanten.
 
 
 
-:::::::::::::::{admonition} Utforsk 1
----
-class: explore
----
-Nedenfor vises en trekant $\triangle ABC$ med en spiss vinkel $\angle A$, en høyde $h$ og en grunnlinje $g$.
-
-:::{figure} ./figurer/utforsk/utforsk_1/figur.svg
----
-width: 80%
-class: no-click, adaptive-figure
----
+:::{clear}
 :::
 
-
-::::::::::::::{tab-set}
----
-class: tabs-parts
----
-:::::::::::::{tab-item} a
-Uttrykk grunnlinjen $g$ ved hjelp av én av sidelengdene $AB$, $AC$ eller $BC$. 
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
+::::{answer}
 $$
-g = AB
+T = \dfrac{15}{4}
 $$
 ::::
 
-:::::::::::::
 
+::::{solution}
+Arealet av trekanten er
 
-:::::::::::::{tab-item} b
-Bestem $\sin \angle A$ uttrykt ved hjelp av én eller flere av lengdene $AB$, $AC$, $BC$ og $h$.
-
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
 $$
-\sin \angle A = \dfrac{h}{AC}
+T = \dfrac{1}{2} \cdot 3 \cdot 5 \cdot \sin 30\degree = \dfrac{1}{2} \cdot 3 \cdot 5 \cdot \dfrac{1}{2} = \dfrac{15}{4}.
 $$
 ::::
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} c
-Bestem en formel for $h$ ut ifra svaret ditt fra **b**. 
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-$$
-h = AC \cdot \sin \angle A
-$$
-::::
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} d
-Bestem en formel for arealet $T$ av trekanten ut ifra det du har funnet i **a**, **b** og **c** uttrykt med $\sin \angle A$. 
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-$$
-T = \dfrac{1}{2} g \cdot h = \dfrac{1}{2} \cdot AB \cdot AC \cdot \sin \angle A
-$$
-
-siden $g = AB$ og $h = AC \cdot \sin \angle A$.
-::::
-
-
-:::::::::::::
-
-
-::::::::::::::
 
 :::::::::::::::
-
----
-
-Nå har vi begrunnet hvorfor arealsetningen stemmer når vi tar utgangspunkt i en spiss vinkel. Nå skal vi undersøke hvordan vi kan forstå arealsetningen når vi tar utgangspunkt i en stump vinkel. Måten vi skal forstå $\sin v$ når $v$ er stump, er at vi bestemmer sinus til vinkelen vi får ved å danne en rettvinklet trekant på *utsiden* av trekanten. 
-
-
-:::::::::::::::{admonition} Utforsk 2
----
-class: explore
----
-Nedenfor vises en trekant $\triangle ABC$ med en stump vinkel $\angle A$, en høyde $h$ og en grunnlinje $g$.
-
-
-:::{figure} ./figurer/utforsk/utforsk_2/figur.svg
----
-width: 80%
-class: no-click, adaptive-figure
----
-:::
-
-
-::::::::::::::{tab-set}
----
-class: tabs-parts
----
-:::::::::::::{tab-item} a
-Bestem grunnlinja $g$ uttrykt ved hjelp av én av sidelengdene $AB$, $AC$ eller $BC$.
-
-
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-$$
-g = AB
-$$
-::::
-
-:::::::::::::
-
-
-
-:::::::::::::{tab-item} b
-Bestem høyden $h$ uttrykt ved hjelp av sidelenger i $\triangle ABC$ og vinkel $v$.
-
-
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-$$
-h = AC \cdot \sin (180\degree - v)
-$$
-::::
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} c
-Bestem arealet $T$ av trekanten ut ifra det du har funnet i **a** og **b**.
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-$$
-T = \dfrac{1}{2}\cdot AB \cdot AC \cdot \sin (180\degree - v)
-$$
-::::
-
-
-:::::::::::::
-
-
-::::::::::::::
-
-
-:::::::::::::::
-
-
-Ut ifra resultatet i **c** Utforsk 2, så ser vi at det er rimelig å **definere** $\sin v$ for en **stump** vinkel som at 
-
-$$
-\sin v = \sin (180\degree - v).
-$$
-
-Dette valget gjør at vi kan bruke arealsetningen med alle vinkler $v\degree \in \langle 0, 180\rangle$.
-
-Det vi mener med dette er at dersom vi skal regne ut $\sin v$ til en stump vinkel på **innsiden** av en trekant, så gjør vi det ved å danne en rettvinklet trekant på **utsiden** og bruker supplementvinkelen $180\degree - v$. Du kan sjekke nærmere i Utforsk 3 at kalkulatorer som regner ut $\sin v$ til en stump vinkel gjør nettopp dette.
-
-
-:::::::::::::::{admonition} Utforsk 3
----
-class: explore
----
-Bruk CAS-vinduet nedenfor til å undersøke verdien til $\sin v$ og $\sin (180\degree - v)$ for følgende stumpe vinkler:
-
-$$
-v \in \{120\degree, 135\degree, 150\degree\}
-$$
-
-
-:::{cas-window}
-:::
-
-
-:::::::::::::::
-
-
-
-
-
-
-
-
-
-
 
 
 
