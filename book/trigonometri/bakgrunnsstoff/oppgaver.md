@@ -3,6 +3,7 @@
 
 
 
+
 :::::::::::::::{exercise} Oppgave 1
 ---
 level: 1
@@ -14,20 +15,11 @@ class: tabs-parts
 :::::::::::::{tab-item} a
 :::{plot}
 width: 100%
-lw: 1
-line-segment: (0, 0), (1, 0), solid, black
-line-segment: (0, 0), (0, sqrt(3)), solid, black
-line-segment: (1, 0), (0, sqrt(3)), solid, black
-angle-arc: (1, 0), 0.3, 180, 120
+align: right
 axis: off
 axis: equal
-figsize: (3, 3)
-align: right
-text: 0, 0, "$A$", bottom-left
-text: 1, 0, "$B$", bottom-right
-text: 0, sqrt(3), "$C$", top-center
-text: 1 - 0.3*cos(pi/6), 0.3*sin(pi/6), "$60^\circ$", top-left
-polygon: (0, 0), (0.2, 0), (0.2, 0.2), (0, 0.2), solid, black
+triangle: svs=(3, 45, 5), angle-labels=(A=numeric, B=numeric) 
+fontsize: 30
 :::
 
 En trekant $\triangle ABC$ er vist i figuren til høyre. 
@@ -43,7 +35,7 @@ Bestem $\angle C$.
 class: answer, dropdown
 ---
 $$
-\angle C = 30 \degree.
+\angle C = 36.39 \degree.
 $$
 ::::
 
@@ -54,20 +46,11 @@ $$
 
 :::{plot}
 width: 100%
+align: right
 axis: off
 axis: equal
-align: right
-figsize: (3, 3)
-lw: 1
-line-segment: (0, 0), (1, 0), solid, black
-line-segment: (0, 0), (0, 1), solid, black
-line-segment: (1, 0), (0, 1), solid, black
-angle-arc: (0, 1), 0.2, 270, 315
-text: 0, 0, "$A$", bottom-left
-text: 1, 0, "$B$", bottom-right
-text: 0, 1, "$C$", top-left
-text: 0.3*cos(pi/4), 1 - 0.3*sin(pi/4), "$45^\circ$", bottom-left
-polygon: (0, 0), (0.15, 0), (0.15, 0.15), (0, 0.15), solid, black
+triangle: svs=(3, 90, 3), angle-labels=(C=numeric) 
+fontsize: 30
 :::
 
 
@@ -95,22 +78,12 @@ $$
 :::::::::::::{tab-item} c
 
 :::{plot}
-width: 400
+width: 100%
 align: right
-lw: 1
 axis: off
 axis: equal
-figsize: (5, 3)
-line-segment: (0, 0), (4, 0), solid, black
-line-segment: (4, 0), (4 - 4 * cos(pi/9)/cos(2*pi/9) * cos(20*pi/180), 4 * cos(pi/9)/cos(2*pi/9) * sin(20*pi/180)), solid, black
-line-segment: (0, 0), (4 - 4 * cos(pi/9)/cos(2*pi/9) * cos(20*pi/180), 4 * cos(pi/9)/cos(2*pi/9) * sin(20*pi/180)), solid, black
-angle-arc: (4, 0), 0.8, 180, 160
-angle-arc: (0, 0), 0.3, 0, 110
-text: 0, 0, "$A$", bottom-left
-text: 4, 0, "$B$", bottom-right
-text: 4 - 4 * cos(pi/9)/cos(2*pi/9) * cos(20*pi/180), 4 * cos(pi/9)/cos(2*pi/9) * sin(20*pi/180), "$C$", top-left
-text: 4 - 1, 0.15, "$20^\circ$", center-center
-text: 0.2, 0.2, "$110^\circ$", top-right
+triangle: svs=(2, 110, 2), angle-labels=(A=numeric, B=numeric) 
+fontsize: 30
 :::
 
 En trekant $\triangle ABC$ er vist i figuren til høyre. 
@@ -125,7 +98,7 @@ Bestem $\angle C$.
 class: answer, dropdown
 ---
 $$
-\angle C = 50 \degree.
+\angle C = 35 \degree.
 $$
 ::::
 
@@ -152,346 +125,528 @@ $$
 ---
 level: 1
 ---
-
-
-Nedenfor vises en rettvinklet trekant.
-
-Bestem $x$. 
-
-
-:::{figure} ./figurer/oppgaver/oppgave_2/figur.svg
----
-width: 70%
-class: no-click, adaptive-figure
----
-viser en rettvinklet trekant.
-:::
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-$$
-x = \sqrt{3}. 
-$$
-::::
-
-
-:::::::::::::::
-
----
-
-
-:::::::::::::::{exercise} Oppgave 3
----
-level: 1
----
-
-Nedenfor vises en rettvinklet trekant.
-
-Bestem $x$. 
-
-
-:::{figure} ./figurer/oppgaver/oppgave_3/figur.svg
----
-width: 70%
-class: no-click, adaptive-figure
----
-:::
-
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-$$
-x = 5 \sqrt{3}.
-$$
-::::
-
-:::::::::::::::
-
----
-
-
-:::::::::::::::{exercise} Oppgave 4
----
-level: 1
----
-Nedenfor vises en trekant. 
-
-Bestem høyden $h$ i trekanten. 
-
-
-:::{figure} ./figurer/oppgaver/oppgave_4/figur.svg
----
-width: 70%
-class: no-click, adaptive-figure
----
-viser en trekant.
-:::
-
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-$$
-h = 2\sqrt{3}.
-$$
-::::
-
-
-:::::::::::::::
-
----
-
-
-:::::::::::::::{exercise} Oppgave 5
----
-level: 1
----
-Nedenfor vises en rettvinklet trekant.
-
-Bestem $x$.
-
-:::{figure} ./figurer/oppgaver/oppgave_5/figur.svg
----
-width: 70%
-class: no-click, adaptive-figure
----
-:::
-
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-$$
-x = 6.
-$$
-::::
-
-
-:::::::::::::::
-
----
-
-:::::::::::::::{exercise} Oppgave 6
----
-level: 2
----
-Nedenfor vises to rettvinklete trekanter.
-
-
-:::{figure} ./figurer/oppgaver/oppgave_6/merged_figure.svg
----
-width: 100%
-class: no-click, adaptive-figure
----
-:::
-
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
-Forklar at $\triangle ABC \sim \triangle DEF$.
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-Vi kjenner til alle sidelengdene i $\triangle ABC$ og $\triangle DEF$, så vi kan sjekke SSS-kriteriet:
-
-$$
-\dfrac{DE}{AB} = \dfrac{8}{4} = 2 \and \dfrac{DF}{AC} = \dfrac{6}{3} = 2 \and \dfrac{EF}{BC} = \dfrac{10}{5} = 2.
-$$
-
-Siden alle forholdstallene er like, må $\triangle ABC \sim \triangle DEF$.
-::::
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} b
-Bestem $\angle F$ og $\angle E$.
-
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-$$
-\angle F = \angle C = 53.13 \degree \and \angle E = \angle B = 36.87 \degree.
-$$
-::::
-
-:::::::::::::
-
-
-::::::::::::::
-
-
-
-:::::::::::::::
-
-
-
-
----
-
-:::::::::::::::{exercise} Oppgave 7
----
-level: 2
----
-Nedenfor vises to rettvinklete trekanter.
-
-:::{figure} ./figurer/oppgaver/oppgave_7/merged_figure.svg
----
+:::{plot}
 width: 100%
-class: no-click, adaptive-figure
----
+align: right
+axis: off
+axis: equal
+triangle: sss=(3, 2*sqrt(3), sqrt(3)), angle-labels=(B=numeric), angles=(A, B), side-labels=(AB=exact, BC=exact) 
+fontsize: 30
 :::
 
+I figuren til høyre vises en trekant $\triangle ABC$.
 
-::::::::::::::{tab-set}
----
-class: tabs-parts
----
-:::::::::::::{tab-item} a
-Forklar at $\triangle ABC \sim \triangle EDF$. 
+Bestem $CA$. 
 
 
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-I $\triangle ABC$ har vi at 
-
-
-$$
-\angle C = 90 \degree - \angle B = 90 \degree - 30 \degree = 60 \degree.
-$$
-
-For $\triangle EDF$ har vi samtidig at:
-
-$$
-\angle D = 90 \degree - \angle F = 90 \degree - 60 \degree = 30 \degree.
-$$
-
-Dermed er
-
-$$
-\angle B = \angle D \and \angle C = \angle F \and \angle A = \angle E,
-$$
-
-som etter VVV-kriteriet betyr at $\triangle ABC \sim \triangle EDF$.
-::::
-
-:::::::::::::
-
-
-:::::::::::::{tab-item} b
-Bestem $x$, $y$ og $z$.
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-$$
-x = 6 \and y = \sqrt{3} \and z = 2 \sqrt{3}.
-$$
-
-::::
-
-:::::::::::::
-
-
-::::::::::::::
-
-
-
-:::::::::::::::
-
-
----
-
-:::::::::::::::{exercise} Oppgave 8
----
-level: 2
----
-Nedenfor vises to trekanter.
-
-:::{figure} ./figurer/oppgaver/oppgave_8/merged_figure.svg
----
-width: 100%
-class: no-click, adaptive-figure
----
+:::{clear}
 :::
 
-
-::::::::::::::{tab-set}
----
-class: tabs-parts
----
-:::::::::::::{tab-item} a
-Forklar at $\triangle ABC \sim \triangle EDF$. 
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-Vi kan bestemme alle vinklene i de to trekantene som gjør det hensiktsmessig å sjekke VVV-kriteriet.
-
-For $\triangle ABC$ har vi at
-
+::::{answer}
 $$
-\angle A = 120 \degree \and \angle C = 30 \degree \and \angle B = 180 \degree - \angle A - \angle C = 30 \degree.
+CA = \sqrt{3}. 
 $$
-
-og for $\triangle EDF$ har vi at
-
-$$
-\angle D = 30 \degree \and \angle F = 30 \degree \and \angle E = 180 \degree - \angle D - \angle F = 120 \degree.
-$$
-
-Ut ifra VVV-kriteriet er derfor $\triangle ABC \sim \triangle EDF$.
 ::::
-
 :::::::::::::
 
 
+
 :::::::::::::{tab-item} b
+:::{plot}
+width: 100%
+align: right
+axis: off
+axis: equal
+triangle: sss=(5, 10, 5*sqrt(3)), angle-labels=(B=numeric), angles=(A, B), side-labels=(AB=exact, BC=exact), angle-radius=40
+fontsize: 34
+:::
+
+En trekant $\triangle ABC$ er vist i figuren til høyre.
+
 Bestem $AC$.
 
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-Trekant $\triangle ABC$ er likebeint så $AB = AC = 3$. 
+
+:::{clear}
+:::
+
+::::{answer}
+$$
+AC = 5 \sqrt{3}.
+$$
 ::::
 
 :::::::::::::
 
 
 :::::::::::::{tab-item} c
-Bestem $DE$ og $EF$. 
+:::{plot}
+width: 100%
+align: right
+axis: off
+axis: equal
+triangle: sss=(2 * sqrt(3), 2, 4), angle-labels=(A=numeric), angles=(A, B), side-labels=(BC=exact), angle-radius=25
+fontsize: 30
+:::
 
-::::{admonition} Fasit
----
-class: answer, dropdown
----
+
+En trekant $\triangle ABC$ er vist i figuren til høyre.
+
+
+Bestem $AB$ og $AC$.
+
+
+:::{clear}
+:::
+
+
+::::{answer}
 $$
-DE = EF = 6.
+AB = 2 \sqrt{3} \and AC = 4.
+$$
+::::
+
+
+:::::::::::::
+
+
+::::::::::::::
+
+
+:::::::::::::::
+
+---
+
+
+
+:::::::::::::::{exercise} Oppgave 3
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+:::{plot}
+width: 100%
+align: right
+axis: off
+axis: equal
+triangle: sss=(4, 5, 3), angles=(A, B, C), side-labels=(BC=exact, AB=exact), angle-radius=30
+fontsize: 30
+:::
+
+En trekant $\triangle ABC$ er vist i figuren til høyre. 
+
+Bestem $CA$.
+
+:::{clear}
+:::
+
+
+::::{answer}
+$$
+CA = 3.
+$$
+::::
+
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+:::{plot}
+width: 100%
+align: right
+axis: off
+axis: equal
+triangle: svs=(3, 90, 2), angles=(A, B, C), side-labels=(BC=exact, CA=exact), angle-radius=25
+fontsize: 30
+:::
+
+
+En trekant $\triangle ABC$ er vist i figuren til høyre.
+
+
+Bestem $AB$.
+
+
+:::{clear}
+:::
+
+
+::::{answer}
+$$
+AB = 3.
+$$
+::::
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+:::{plot}
+width: 100%
+align: right
+axis: off
+axis: equal
+triangle: sss=(6 * cos(pi/3), 6 * sin(pi/3), 6), angles=(A, B, C), side-labels=(BC=exact, AB=exact), angle-radius=30, label-offset=20
+fontsize: 30
+:::
+
+
+En trekant $\triangle ABC$ er vist i figuren til høyre.
+
+Bestem $AC$.
+
+
+
+:::{clear}
+:::
+
+::::{answer}
+$$
+AC = 6.
 $$
 ::::
 
 :::::::::::::
 
+
+::::::::::::::
+:::::::::::::::
+
+
+---
+
+
+
+:::::::::::::::{exercise} Oppgave 4
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+:::{plot}
+width: 100%
+align: right
+axis: off
+axis: equal
+triangle: sss=(4, 4, 4), angles=(A, B), side-labels=(AB=exact), angle-radius=30, angle-labels=(A=numeric, B=numeric)
+fontsize: 30
+vline: 2, 0, 2*sqrt(3), dashed, gray
+let: ds = 0.3
+line-segment: (2 + ds, 0), (2 + ds, ds), solid, gray
+line-segment: (2 + ds, ds), (2, ds), solid, gray
+text: 2, 0.5 * 2 * sqrt(3), "$h$", center-right
+:::
+
+En trekant $\triangle ABC$ er vist i figuren til høyre.
+
+I trekanten er $AB = 4$.
+
+Bestem høyden $h$ i trekanten.
+
+
+
+:::{clear}
+:::
+
+
+::::{answer}
+$$
+h = 2 \sqrt{3}.
+$$
+::::
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+:::{plot}
+width: 100%
+align: right
+axis: off
+axis: equal
+triangle: sss=(4, 4, 4), angles=(A, B), angle-radius=30, angle-labels=(A=numeric, B=numeric)
+fontsize: 30
+vline: 2, 0, 2*sqrt(3), dashed, gray
+let: ds = 0.3
+line-segment: (2 + ds, 0), (2 + ds, ds), solid, gray
+line-segment: (2 + ds, ds), (2, ds), solid, gray
+text: 2, 0.5 * 2 * sqrt(3), "$3$", center-right
+:::
+
+En trekant $\triangle ABC$ er vist i figuren til høyre.
+
+
+Bestem omkretsen til trekanten.
+
+
+:::{clear}
+:::
+
+::::{answer}
+$$
+\dfrac{45}{4}
+$$
+::::
+
+:::::::::::::
+
+
+
+:::::::::::::{tab-item} c
+
+:::{plot}
+width: 100%
+align: right
+axis: off
+axis: equal
+triangle: sss=(4, 4, 4), angles=(A, B), angle-radius=30, side-text=(AB="$g$"), angle-labels=(A=numeric, B=numeric)
+fontsize: 30
+vline: 2, 0, 2*sqrt(3), dashed, gray
+let: ds = 0.3
+line-segment: (2 + ds, 0), (2 + ds, ds), solid, gray
+line-segment: (2 + ds, ds), (2, ds), solid, gray
+text: 2, 0.5 * 2 * sqrt(3), "$h$", center-right
+:::
+
+Arealet $T$ av en trekant er gitt ved
+
+$$
+T = \dfrac{1}{2} \cdot g \cdot h.
+$$
+
+Trekanten til høyre er en likesidet trekant som har arealet $T = 3$. 
+
+Bestem omkretsen til trekanten.
+
+
+:::{clear}
+:::
+
+
+::::{answer}
+$$
+6 \sqrt{3}
+$$
+::::
+
+:::::::::::::
+
+
 ::::::::::::::
 
 
+
+:::::::::::::::
+
+
+
+---
+
+
+
+:::::::::::::::{exercise} Oppgave 5
+I en sirkel med radius $4$ er det tegnet inn en trekant $\triangle ABC$ der $A$ er sentrum i sirkelen, og $B$ og $C$ ligger på sirkelperiferien.
+
+:::{plot}
+width: 100%
+align: right
+axis: off
+axis: equal
+let: r = 4
+circle: (0, 0), r, red
+triangle: points=((0, 0), (r, 0), (r * cos(120 * pi/180), r * sin(120 * pi/180))), angles=(A), angle-radius=30, angle-labels=(A=numeric), angle-radius=25, angle-text-offset=14
+fontsize: 30
+nocache:
+:::
+
+
+:::{clear}
+:::
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Bestem høyden $h$ til trekanten relativ til grunnlinja $AB$.
+
+
+::::{answer}
+$$
+h = 2 \sqrt{3}.
+$$
+::::
+
+:::::::::::::
+
+:::::::::::::{tab-item} b
+Bestem arealet av trekanten.
+
+::::{answer}
+$$
+4 \sqrt{3}
+$$
+::::
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+Bestem $BC$.
+
+::::{answer}
+$$
+BC = 4 \sqrt{3}.
+$$
+::::
+:::::::::::::
+::::::::::::::
+
+
+:::::::::::::::
+
+
+
+---
+
+
+
+:::::::::::::::{exercise} Oppgave 6
+:::{plot}
+fontsize: 30
+ticks: off
+align: right
+axis: equal
+width: 100%
+let: r = 1
+let: v = 120
+circle: (0, 0), r, red
+point: (-r * cos(v * pi/180), -r * sin(v * pi/180))
+point: (0, 0)
+point: (-r, 0)
+line-segment: (0, 0), (-r, 0), solid, blue
+line-segment: (0, 0), (-r * cos(v * pi/180), -r * sin(v * pi/180)), solid, blue
+line-segment: (-r, 0), (-r * cos(v * pi/180), -r * sin(v * pi/180)), solid, blue
+angle-arc: (-r, 0), 0.4, 0, -30
+let: u = -30
+text: -r + 0.5 * cos(u * pi/180), 0.3 * sin(u * pi/180), "$30^\circ$", center-right
+text: -r * cos(v * pi/180), -r * sin(v * pi/180), "$P$", bottom-right
+:::
+
+I et koordinatsystem er det tegnet inn en trekant og sirkel med radius $6$.
+
+To av hjørnene til trekanten ligger på sirkelen, og det tredje hjørnet er i sentrum av sirkelen.
+
+Bestem koordinatene til punktet $P$ på figuren.
+
+
+
+:::{clear}
+:::
+
+
+
+::::{answer}
+$$
+P\left(3, -3\sqrt{3}\right)
+$$
+::::
+
+
+:::::::::::::::
+
+
+
+---
+
+
+
+:::::::::::::::{exercise} Oppgave 7
+
+:::{plot}
+fontsize: 30
+width: 100%
+align: right
+axis: off
+axis: equal
+triangle: sss=(4, 2*sqrt(3), 2), angles=(B, C), angle-labels=(B=numeric), angle-radius=20, angle-label-offset=20, side-labels=(BC=exact)
+triangle: sss=(2, sqrt(3), 1), angles=(C), corner-labels=none, angle-radius=20, side-labels=(CA=exact)
+text: cos(pi/3), sin(pi/3), "$E$", top-left
+text: 2, 0, "$D$", bottom-center
+:::
+
+I figuren til høyre er
+
+* $AE = 1$
+* $BC = 2\sqrt{3}$.
+
+
+La $T_{\triangle ABC}$ være arealet til trekanten $\triangle ABC$ og $T_{\triangle ADE}$ være arealet til trekanten $\triangle ADE$.
+
+Bestem forholdet
+
+$$
+\dfrac{T_{\triangle ABC}}{T_{\triangle ADE}}
+$$
+
+
+:::{clear}
+:::
+
+
+::::{answer}
+$$
+\dfrac{T_{\triangle ABC}}{T_{\triangle ADE}} = 4.
+$$
+::::
+
+
+
+:::::::::::::::
+
+
+
+
+---
+
+
+
+:::::::::::::::{exercise} Oppgave 8
+I figuren nedenfor vises en trekant.
+
+Bestem $x$, $y$ og $z$.
+
+:::{plot}
+width: 60%
+fontsize: 30
+axis: off
+axis: equal
+triangle: sss=(10, 5*sqrt(3), 5), angles=(B, C), angle-labels=(B=numeric), angle-radius=50, angle-text-offset=20, side-text=(BC="$y$", CA="$x$"), label-offset=20
+vline: 5 * cos(pi/3), 0, 5 * sin(pi/3), dashed, gray
+let: ds = 0.7
+line-segment: (5 * cos(pi/3) + ds, 0), (5 * cos(pi/3) + ds, ds), solid, gray
+line-segment: (5 * cos(pi/3) + ds, ds), (5 * cos(pi/3), ds), solid, gray
+text: 5 * cos(pi / 3), 0, "$D$", bottom-center
+bar: (0, -1), 10, h
+text: 5, -1, "$10$", bottom-center
+text: 5 * cos(pi/3), 0.5 * 5 * sin(pi/3), "$z$", center-right
+:::
+
+
+::::{answer}
+$$
+x = 5 \and y = 5 \sqrt{3} \and z = \dfrac{5\sqrt{3}}{2}
+$$
+::::
 
 :::::::::::::::
 
@@ -501,133 +656,39 @@ $$
 
 
 :::::::::::::::{exercise} Oppgave 9
----
-level: 2
----
-Nedenfor vises to trekanter $\triangle ABC$ og $\triangle ADE$ der 
+Arealet av figuren nedenfor er $12 \sqrt{3}$.
 
-$$
-BC = 2\sqrt{3} \quad\quad\quad AB = 4 \quad\quad\quad AE = 1. 
-$$
+Bestem $CM$.
 
-:::{figure} ./figurer/oppgaver/oppgave_9/figur.svg
----
-width: 80%
-class: no-click, adaptive-figure
----
+
+:::{plot}
+width: 60%
+fontsize: 30
+axis: off
+axis: equal
+let: Ax = 0
+let: Ay = 0
+let: Bx = 6
+let: By = 0
+let: Cx = 3
+let: Cy = 3 * sqrt(3)
+let: Mx = (Ax + Bx + Cx) / 3
+let: My = (Ay + By + Cy) / 3
+triangle: points=((Ax, Ay), (Mx, My), (Cx, Cy)), angles=(A, C), angle-radius=40, corner-labels=none, angle-labels=(A=numeric, C=numeric), angle-text-offset=20
+triangle: points=((Mx, My), (Bx, By), (Cx, Cy)), angles=(B, C), angle-radius=40, corner-labels=none, angle-labels=(B=numeric, C=numeric), angle-text-offset=20
+text: Ax, Ay, "$A$", bottom-left
+text: Bx, By, "$B$", bottom-right
+text: Cx, Cy, "$C$", top-center
+text: Mx, My - 0.2, "$M$", bottom-center
 :::
 
 
-::::::::::::::{tab-set}
----
-class: tabs-parts
----
-:::::::::::::{tab-item} a
-Forklar at $\triangle ABC \sim \triangle ADE$.
-
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-$\angle A$ er en felles vinkel i $\triangle ABC$ og $\triangle ADE$. Vi har også at $\angle E = \angle C = 90 \degree$. Siden to av vinklene er like, blir den siste også lik i hver av trekantene som betyr at trekantene oppfyller VVV-kriteriet og derfor er 
-
+::::{answer}
 $$
-\triangle ABC \sim \triangle ADE.
+CM = 4 \sqrt{2}
 $$
 ::::
-
-:::::::::::::
-
-
-
-:::::::::::::{tab-item} b
-Bestem $DE$. 
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-$$
-DE = \sqrt{3}. 
-$$
-::::
-
-:::::::::::::
-
-::::::::::::::
 
 
 
 :::::::::::::::
-
-
----
-
-
-:::::::::::::::{exercise} Oppgave 10
----
-level: 3
----
-Figuren nedenfor viser en trekant.
-
-Bestem $x$, $y$ og $z$.
-
-:::{figure} ./figurer/oppgaver/oppgave_10/figur.svg
----
-width: 80%
-class: no-click, adaptive-figure
----
-:::
-
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-$$
-x = 5 \and y = 5 \sqrt{3} \and z = \dfrac{5\sqrt{3}}{2}
-$$
-::::
-
-:::::::::::::::
-
----
-
-:::::::::::::::{exercise} Oppgave 11
----
-level: 3
----
-Bestem $CM$ i figuren nedenfor.
-
-
-:::{figure} ./figurer/oppgaver/oppgave_11/figur.svg
----
-width: 80%
-class: no-click, adaptive-figure
----
-:::
-
-
-::::{admonition} Fasit
----
-class: answer, dropdown
----
-$$
-CM = 2\sqrt{3}
-$$
-::::
-
-
-:::::::::::::::
-
-
-
-
-
-
-
-
-
-
-
