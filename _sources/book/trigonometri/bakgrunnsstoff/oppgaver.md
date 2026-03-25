@@ -685,7 +685,7 @@ text: Mx, My - 0.2, "$M$", bottom-center
 
 ::::{answer}
 $$
-CM = 4 \sqrt{2}
+CM = 2 \sqrt{6}
 $$
 ::::
 
