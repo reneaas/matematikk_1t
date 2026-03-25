@@ -1,16 +1,21 @@
-# Oppgaver: $\sin v$, $\cos v$ og $\tan v$
+# Oppgaver: Sinus, cosinus og tangens
 
 :::::::::::::::{exercise} Oppgave 1
----
-level: 1
----
-I figuren nedenfor vises en rettvinklet trekant.
+:::{plot}
+width: 100%
+align: right
+triangle: sss=(8, 10, 6), angles=(A, B, C), angle-radius=50, side-labels=(AB=exact, BC=exact, ,CA=exact), side-offset=20
+axis: off
+axis: equal
+fontsize: 34
+nocache:
+:::
 
-:::{figure} ./figurer/oppgaver/oppgave_1/figur.svg
----
-width: 70%
-class: no-click, adaptive-figure
----
+
+I figuren til høyre vises en trekant $\triangle ABC$.
+
+
+:::{clear}
 :::
 
 ::::::::::::::{tab-set}
@@ -21,10 +26,7 @@ class: tabs-parts
 Bestem $\sin B$ og $\cos B$. 
 
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
+:::{answer}
 $$
 \sin B = \dfrac{6}{10} = \dfrac{3}{5} \quad \quad \quad \cos B = \dfrac{8}{10} = \dfrac{4}{5}
 $$
@@ -36,10 +38,7 @@ $$
 :::::::::::::{tab-item} b
 Bestem $\tan B$. 
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
+:::{answer}
 $$
 \tan B = \dfrac{6}{8} = \dfrac{3}{4}
 $$
@@ -52,10 +51,7 @@ $$
 Bestem $\sin C$ og $\cos C$.
 
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
+:::{answer}
 $$
 \sin C = \dfrac{8}{10} = \dfrac{4}{5} \quad \quad \quad \cos C = \dfrac{6}{10} = \dfrac{3}{5}
 $$
@@ -68,10 +64,7 @@ $$
 :::::::::::::{tab-item} d
 Bestem $\tan C$.
 
-:::{admonition} Fasit
----
-class: answer, dropdown
----
+:::{answer}
 $$
 \tan C = \dfrac{8}{6} = \dfrac{4}{3}
 $$
@@ -88,16 +81,20 @@ $$
 
 
 :::::::::::::::{exercise} Oppgave 2
----
-level: 1
----
-I figuren nedenfor vises en rettvinklet trekant.
+:::{plot}
+width: 100%
+align: right
+triangle: sss=(3, sqrt(3), 2 * sqrt(3)), angles=(A, B, C), angle-radius=50, side-labels=(AB=exact, CA=exact), side-offset=25
+axis: off
+axis: equal
+fontsize: 34
+nocache:
+:::
 
-:::{figure} ./figurer/oppgaver/oppgave_2/figur.svg
----
-width: 70%
-class: no-click, adaptive-figure
----
+I figuren til høyre vises en trekant $\triangle ABC$.
+
+
+:::{clear}
 :::
 
 ::::::::::::::{tab-set}
@@ -181,91 +178,116 @@ $$
 :::::::::::::::
 
 
+
 ---
 
 
 :::::::::::::::{exercise} Oppgave 3
----
-level: 1
----
-> I denne oppgaven skal du bruke CAS til å bestemme vinklene i trekanten. 
 
-I figuren nedenfor vises den samme rettvinklete trekanten du jobbet med i oppgave 2. 
+::::{hints} Hvordan regne ut sinus og cosinus med CAS
+> I gif-en nedenfor viser vi hvordan man bruker CAS til å bestemme $\sin v$, $\cos v$ og $\tan v$ for en vinkel $v = 30\degree$ i en rettvinklet trekant. For å få gradertegn $\degree$ må du:
+> 1. Trykke på "option + o" på tastaturet på **macOS**.
+> 2. Trykke på "Alt + o" på tasteturet på **Windows**.
 
-:::{figure} ./figurer/oppgaver/oppgave_3/figur.svg
+:::{figure} ./gifer/tutorial_1.webp
 ---
-width: 70%
 class: no-click, adaptive-figure
+width: 80%
 ---
 :::
 
-:::{cas-popup} 350 500
+::::
+
+
+
+:::{plot}
+width: 100%
+align: right
+triangle: sss=(8 * cos(pi/5), 8 * sin(pi/5), 8), angles=(A, B, C), angle-radius=50, side-labels=(AB=exact), side-offset=25, angle-labels=(A=numeric)
+axis: off
+axis: equal
+fontsize: 34
+nocache:
 :::
 
-> For å skrive $A^\circ$ i CAS-vinduet, kan du bruke "Alt" + "o" på Windows og "⌥" (option) + "o" på Mac for å få gradertegnet $^\circ$ 
+En trekant $\triangle ABC$ er vist til høyre.
+
+
+:::{clear}
+:::
 
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
-Bestem vinkel $A$ ved å løse en passende likning med $\sin A^\circ$. 
 
-::::{admonition} Fasit
+:::{cas-popup}
 ---
-class: answer, dropdown
----
-:::{figure} ./ggb/oppgaver/oppgave_3/a.png
----
-width: 100%
-class: no-click, adaptive-figure
+layout: sidebar
 ---
 :::
 
-Dermed er $A = 30$. 
+
+Regn ut $\sin A$ og $\cos A$ med CAS.
+
+
+:::{clear}
+:::
+
+
+::::{answer}
+$$
+\sin A = \dfrac{1}{4}\sqrt{2\left(5 - \sqrt{5}\right)} \and \cos B = \dfrac{1}{4} \left(\sqrt{5} + 1\right)
+$$
 ::::
 
 :::::::::::::
 
 
 :::::::::::::{tab-item} b
-Bestem vinkel $C$ ved å løse en passende likning med $\sin C^\circ$.
 
-> For å skrive kvadratrot $\sqrt{x}$ i CAS-vinduet, kan du bruke `sqrt(x)`-funksjonen. 
-
-::::{admonition} Fasit
+:::{cas-popup}
 ---
-class: answer, dropdown
----
-:::{figure} ./ggb/oppgaver/oppgave_3/b.png
----
-width: 100%
-class: no-click, adaptive-figure
+layout: sidebar
 ---
 :::
 
-Dermed er $C = 60$. Dette er den eneste løsningen som som tilfredsstiller $C^\circ \in [0^\circ, 90^\circ]$. 
+
+
+Bruk trigonometri til å bestemme $AC$.
+
+:::{clear}
+:::
+
+::::{answer}
+$$
+AC = \sqrt{5} + 3
+$$
 ::::
+
 :::::::::::::
 
 
 :::::::::::::{tab-item} c
-Bestem vinkel $C$ ved å løse en passende likning med $\cos C^\circ$.
-
-
-::::{admonition} Fasit
+:::{cas-popup}
 ---
-class: answer, dropdown
----
-:::{figure} ./ggb/oppgaver/oppgave_3/c.png
----
-width: 100%
-class: no-click, adaptive-figure
+layout: sidebar
 ---
 :::
 
-Dermed er $C = 60$. 
+
+Bruk trigonometri til å bestemme $BC$.
+
+:::{clear}
+:::
+
+::::{answer}
+$$
+BC = 2\sqrt{2(-\sqrt{5} + 5)}
+$$
 ::::
+
 :::::::::::::
 
 ::::::::::::::
@@ -275,20 +297,24 @@ Dermed er $C = 60$.
 ---
 
 :::::::::::::::{exercise} Oppgave 4
----
-level: 1
----
-> I denne oppgaven skal du bruke CAS til å regne ut $\sin v$, $\cos v$ og $\tan v$ for ulike vinkler $v$. 
-
-:::{cas-popup} 350 500
-:::
 
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
+
+:::{cas-popup}
+---
+layout: sidebar
+---
+:::
+
+
 Bruk CAS til å regne ut $\sin 45^\circ$, $\cos 45^\circ$ og $\tan 45^\circ$.
+
+:::{clear}
+:::
 
 ::::{admonition} Fasit
 ---
@@ -311,7 +337,19 @@ $$
 :::::::::::::
 
 :::::::::::::{tab-item} b
+
+:::{cas-popup}
+---
+layout: sidebar
+---
+:::
+
+
 Bruk CAS til å regne ut $\sin 60^\circ$, $\cos 60^\circ$ og $\tan 60^\circ$.
+
+
+:::{clear}
+:::
 
 ::::{admonition} Fasit
 ---
@@ -344,16 +382,21 @@ $$
 ---
 level: 1
 ---
-> I denne oppgaven skal du bruke CAS til å bestemme ukjente sidelenger i rettvinklede trekanter.
-
-:::{cas-popup} 350 500
-:::
+> I denne oppgaven skal du bruke trigonometri og CAS til å bestemme ukjente sidelenger i rettvinklede trekanter.
 
 ::::::::::::::{tab-set}
 ---
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
+
+:::{cas-popup}
+---
+layout: sidebar
+---
+:::
+
+
 I figuren nedenfor vises en rettvinklet trekant.
 
 Bruk CAS til å bestemme $x$. 
@@ -387,6 +430,13 @@ Dermed er $x = 10$.
 
 
 :::::::::::::{tab-item} b
+
+:::{cas-popup}
+---
+layout: sidebar
+---
+:::
+
 
 I figuren nedenfor vises en rettvinklet trekant.
 
@@ -422,6 +472,13 @@ Dermed er $x = 2$.
 
 :::::::::::::{tab-item} c
 
+:::{cas-popup}
+---
+layout: sidebar
+---
+:::
+
+
 I figuren nedenfor vises en rettvinklet trekant.
 
 Bruk CAS til å bestemme $x$. 
@@ -452,6 +509,15 @@ Dermed er $x = 4\sqrt{2}$.
 :::::::::::::
 
 :::::::::::::{tab-item} d
+
+:::{cas-popup}
+---
+layout: sidebar
+---
+:::
+
+
+
 I figuren nedenfor vises en rettvinklet trekant.
 
 Bruk CAS til å bestemme $x$.
@@ -484,6 +550,16 @@ Altså er $x = 4$.
 
 
 :::::::::::::{tab-item} e
+
+
+:::{cas-popup}
+---
+layout: sidebar
+---
+:::
+
+
+
 I figuren nedenfor vises en rettvinklet trekant.
 
 Bruk CAS til å bestemme $x$.
@@ -513,6 +589,15 @@ Altså er $x = 1.25$.
 
 
 :::::::::::::{tab-item} f
+
+:::{cas-popup}
+---
+layout: sidebar
+---
+:::
+
+
+
 I figuren nedenfor vises en rettvinklet trekant.
 
 Bruk CAS til å bestemme $x$.
@@ -551,16 +636,23 @@ Altså er $x = 3.22$.
 
 
 :::::::::::::::{exercise} Oppgave 6
----
-level: 2
----
-En likesidet trekant er vist i figuren nedenfor. 
+> I denne oppgaven skal du lære å utlede eksakte verdier for sinus og cosinus når vinklene er $30^\circ$ og $60^\circ$. Disse verdiene er viktige å **huske** utenat, men det er enklere å huske dem dersom du vet hvor de kommer fra. 
 
-:::{figure} ./figurer/oppgaver/oppgave_6/figur.svg
----
-width: 70%
-class: no-click, adaptive-figure
----
+:::{plot}
+width: 100%
+align: right
+axis: equal
+axis: off
+triangle: sss=(2, 2, 2), angles=(A, B, C), side-labels=(AB=exact, BC=exact, CA=exact), angle-radius=30
+fontsize: 32
+:::
+
+
+
+En likesidet trekant $\triangle ABC$ er vist i figuren til høyre. 
+
+
+:::{clear}
 :::
 
 
@@ -635,26 +727,55 @@ for $v = 30^\circ$ og $v = 60^\circ$.
 
 
 :::::::::::::::{exercise} Oppgave 7
----
-level: 2
----
-Bruk trekanten nedenfor til å bestemme en eksakt verdi for $\sin 45^\circ$ og $\cos 45^\circ$.
+> I denne oppgaven skal du lære hvordan man kommer fram til sinus og cosinus når vinkelen er $45^\circ$. Det er også viktig å kunne disse verdiene utenat. Igjen – det er enklest å huske dersom man vet hvordan man kommer fram til dem.
 
-:::{figure} ./figurer/oppgaver/oppgave_7/figur.svg
----
-width: 70%
-class: no-click, adaptive-figure
----
+:::{plot}
+width: 100%
+align: right
+triangle: sss=(1, 1, sqrt(2)), angles=(A, B, C), side-labels=(CA=exact), angle-radius=30, angle-labels=(A=numeric, C=numeric)
+fontsize: 32
+axis: off
+axis: equal
 :::
 
-::::{admonition} Fasit
+
+
+:::{clear}
+:::
+
+
+::::::::::::::{tab-set}
 ---
-class: answer, dropdown
+class: tabs-parts
 ---
+:::::::::::::{tab-item} a
+Bestem sidelengdene $AB$ og $BC$. 
+
+
+::::{answer}
+$$
+AB = BC = 1
+$$
+::::
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Bruk trigonometri til å bestemme de eksakte verdiene for $\sin 45\degree$ og $\cos 45\degree$.
+
+
+::::{answer}
 $$
 \sin 45^\circ = \frac{\sqrt{2}}{2} \quad \quad \quad \cos 45^\circ = \frac{\sqrt{2}}{2}
 $$
 ::::
+
+
+:::::::::::::
+
+
+::::::::::::::
 
 
 
