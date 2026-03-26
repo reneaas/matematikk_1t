@@ -84,7 +84,7 @@ $$
 :::{plot}
 width: 100%
 align: right
-triangle: sss=(3, sqrt(3), 2 * sqrt(3)), angles=(A, B, C), angle-radius=50, side-labels=(AB=exact, CA=exact), side-offset=25
+triangle: sss=(3, sqrt(3), 2 * sqrt(3)), angles=(A, B, C), angle-radius=20, side-labels=(AB=exact, CA=exact), side-offset=25
 axis: off
 axis: equal
 fontsize: 34
