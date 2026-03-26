@@ -391,7 +391,7 @@ Bestem omkretsen til trekanten.
 
 ::::{answer}
 $$
-\dfrac{45}{4}
+6 \sqrt{3}
 $$
 ::::
 
