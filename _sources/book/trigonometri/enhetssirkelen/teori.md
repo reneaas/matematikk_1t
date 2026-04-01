@@ -9,10 +9,34 @@ class: tip
 * Kunne bruke enhetssirkelen til å bestemme $\cos v$ og $\sin v$ for vinkler $v \in [0, 360\degree\rangle$.
 ::::
 
-Så langt har vi brukt rettvinklede trekanter for å beskrive sinus og cosinus som forholdstallet mellom to sider. Når vi jobbet med arealsetningen, fant vi at vi også kunne gi en meningsfull definisjon av $\sin v$ selv om $v$ var en stump vinkel. Måten vi gjorde det på, var å bruke en rettvinklet trekant på utsiden av trekanten for å finne høyden i trekanten slik at vi kunne bruke definisjonen av sinus. 
+Vi har sett at $\sin v$ og $\cos v$ er forholdstall i rettvinklede trekanter. Fordi alle rettvinklede trekanter med samme vinkel $v$ er formlike, er disse forholdstallene like uansett hvor stor trekantene er.
 
-Men $\sin v$ og $\cos v$ forteller oss indirekte hvor stor en vinkelbue $v$ er. I Utforsk 1 nedenfor skal vi se hvordan vi kan uttrykke $\sin v$ og $\cos v$ dersom vi jobber med en rettvinklet trekant der hypotenusen er $1$.
 
+:::{interactive-graph}
+parallel: true
+interactive-var: v, 0, 360, 36
+interactive-var-start: 30
+triangle: points=((0, 0), (cos(v * pi/180), 0), (cos(v * pi/180), sin(v * pi/180))), angles=(A, B), color=blue
+point: (cos(v * pi/180), sin(v * pi/180))
+circle: (0, 0), 1, blue, solid 
+axis: equal
+:::
+
+
+
+:::{plot}
+width: 70%
+let: v = 30
+triangle: points=((0, 0), (cos(v * pi/180), sin(v * pi/180)), (cos(v * pi/180), 0)), angles=(A, B), color=blue
+axis: equal
+nocache:
+:::
+
+
+
+
+
+Hvis vi tenker oss at vi tegner en rettviklet trekant med hypotenus lik $1$ i et koordinatsystem, og plasserer hjørnet med vinkel $v$ i origo, så vil det andre hjørnet på hypotenusen ha koordinatene $(\cos v, \sin v)$. Varierer vi vinkelen, vil det ene hjørnet alltid ligge på en sirkel med radius $1$ som har sentrum i origo. Dette vil også være tilfeller dersom vi lar $v$ være større enn $90\degree$. Denne sirkelen kaller vi for **enhetssirkelen**.
 
 
 :::::::::::::::{admonition} Utforsk 1
