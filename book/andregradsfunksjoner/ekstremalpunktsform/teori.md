@@ -169,13 +169,18 @@ $$
 
 Du kan variere verdiene til $a$, $x_0$ og $y_0$ for å se hvordan grafen endrer seg. 
 
-Endre på verdiene og lag figurene som er vist i Eksempel 1.
 
-:::{ggb} 720 600
----
-material_id: wapc5yua
----
+:::{interactive-graph} 
+interactive-var: a, -5, 5, 11
+interactive-var: x_0, -5, 5, 11
+interactive-var: y_0, -5, 5, 11
+interactive-var-start: a=1, x_0=2, y_0=-1
+function: a * (x - x_0)**2 + y_0, f
+point: (x_0, y_0)
+vline: x_0
 :::
+
+
 
 :::::::::::::::
 

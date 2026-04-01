@@ -19,6 +19,15 @@ Bruk figuren nedenfor til å løse likningssystemet
     -x + y &= 2
 \end{align*}
 
+
+:::{plot}
+width: 70%
+implicit-curve: x**2 - 2 * x + y = 4
+implicit-curve: -x + y = 2, red
+nocache:
+:::
+
+
 :::{figure} ./figurer/oppgaver/oppgave_1/a.svg
 ---
 class: no-click, adaptive-figure
