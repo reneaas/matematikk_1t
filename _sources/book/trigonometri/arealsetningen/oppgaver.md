@@ -110,7 +110,7 @@ width: 100%
 align: right
 axis: equal
 axis: off
-triangle: svs=(2, 53, 3), angles=all, color=blue, angle-color=red, angle-radius=20, side-labels=(AB=numeric, CA=numeric, BC=numeric), angle-labels=(A=numeric, B=numeric, C=numeric)
+triangle: svs=(2, 53, 3), angles=all, color=blue, angle-color=red, angle-radius=50, side-labels=(AB=numeric, CA=numeric, BC=numeric), angle-labels=(A=numeric, B=numeric, C=numeric)
 fontsize: 30
 nocache:
 :::

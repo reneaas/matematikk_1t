@@ -31,6 +31,12 @@ Bruk figuren til høyre til å bestemme
 * $\tan 36\degree$
 
 
+::::{answer}
+* $\cos 36 \degree = 0.81$
+* $\sin 36 \degree = 0.59$
+* $\tan 36 \degree = \dfrac{0.59}{0.81} = \dfrac{59}{81}$
+::::
+
 :::::::::::::
 
 
@@ -57,6 +63,15 @@ Bruk figuren til å bestemme
 * $\cos 72\degree$
 * $\sin 72\degree$
 * $\tan 72\degree$
+
+
+::::{answer}
+* $\cos 72\degree = 0.31$
+* $\sin 72\degree = 0.95$
+* $\tan 72\degree = \dfrac{0.95}{0.31} = \dfrac{95}{31}$
+::::
+
+
 :::::::::::::
 
 
@@ -82,6 +97,14 @@ Bruk figuren til å bestemme
 * $\cos 140\degree$
 * $\sin 140\degree$
 * $\tan 140\degree$
+
+
+::::{answer}
+* $\cos 140\degree = -0.77$
+* $\sin 140\degree = 0.64$
+* $\tan 140\degree = \dfrac{0.64}{-0.77} = -\dfrac{64}{77}$
+::::
+
 
 :::::::::::::
 
@@ -120,6 +143,14 @@ grid: off
 
 
 Bestem koordinatene til punktet $P$ på enhetssirkelen vist til høyre.
+
+
+::::{answer}
+$$
+P\left(\dfrac{\sqrt{3}}{2}, \dfrac{1}{2}\right)
+$$
+::::
+
 :::::::::::::
 
 
@@ -141,6 +172,16 @@ grid: off
 
 
 Bestem koordinatene til punktet $P$ på enhetssirkelen vist til høyre.
+
+
+
+::::{answer}
+$$
+P\left(\dfrac{\sqrt{2}}{2}, \dfrac{\sqrt{2}}{2}\right)
+$$
+::::
+
+
 :::::::::::::
 
 
@@ -162,6 +203,15 @@ grid: off
 
 
 Bestem koordinatene til punktet $P$ på enhetssirkelen vist til høyre.
+
+
+::::{answer}
+$$
+P\left(\dfrac{1}{2}, \dfrac{\sqrt{3}}{2}\right)
+$$
+::::
+
+
 :::::::::::::
 
 
@@ -278,6 +328,14 @@ class: tabs-parts
 :::::::::::::{tab-item} a
 Bestem koordinatene til punktet $P$.
 
+
+
+::::{answer}
+$$
+P\left(-\dfrac{\sqrt{2}}{2}, \dfrac{\sqrt{2}}{2}\right)
+$$
+::::
+
 :::::::::::::
 
 
@@ -287,6 +345,16 @@ Bestem eksakte verdier for
 * $\cos 135\degree$
 * $\sin 135\degree$
 * $\tan 135\degree$
+
+
+
+::::{answer}
+* $\cos 135\degree = -\dfrac{\sqrt{2}}{2}$
+* $\sin 135\degree = \dfrac{\sqrt{2}}{2}$
+* $\tan 135\degree = -1$
+::::
+
+
 :::::::::::::
 
 
@@ -331,6 +399,13 @@ class: tabs-parts
 :::::::::::::{tab-item} a
 Bestem koordinatene til punktet $P$. 
 
+
+::::{answer}
+$$
+P\left(-\dfrac{\sqrt{3}}{2}, \dfrac{1}{2}\right)
+$$
+::::
+
 :::::::::::::
 
 
@@ -340,6 +415,13 @@ Bestem eksakte verdier for
 * $\cos 150\degree$
 * $\sin 150\degree$
 * $\tan 150\degree$
+
+::::{answer}
+* $\cos 150\degree = -\dfrac{\sqrt{3}}{2}$
+* $\sin 150\degree = \dfrac{1}{2}$
+* $\tan 150\degree = -\dfrac{1}{\sqrt{3}} = -\dfrac{\sqrt{3}}{3}$
+::::
+
 :::::::::::::
 
 
@@ -349,8 +431,6 @@ Bestem eksakte verdier for
 :::::::::::::::
 
 
-
----
 
 
 
