@@ -276,7 +276,7 @@ Bestem arealet av trekanten.
 
 ::::{answer}
 $$
-T = \dfrac{5\sqrt{3}}{4}.
+T = \dfrac{5\sqrt{3}}{2}.
 $$
 ::::
 
@@ -291,7 +291,7 @@ $$
 Vi har at $\sin A = \sin 60\degree = \dfrac{\sqrt{3}}{2}$. Siden $AB = 5$ og $AC = 2$, så får vi at arealet av trekanten er
 
 $$
-T = \dfrac{1}{2} \cdot 5 \cdot 2 \cdot \dfrac{\sqrt{3}}{2} = \dfrac{5\sqrt{3}}{4}.
+T = \dfrac{1}{2} \cdot 5 \cdot 2 \cdot \dfrac{\sqrt{3}}{2} = \dfrac{5\sqrt{3}}{2}.
 $$
 ::::
 
