@@ -361,13 +361,13 @@ $$
 :::{plot}
 axis: off
 axis: equal
-fontsize: 28
+fontsize: 32
 width: 100%
 align: right
 let: v = 30 * pi / 180
 let: Px = cos(v)
 let: Py = sin(v)
-triangle: points=((0, 0), (Px, 0), (Px, Py)), angles=(A, B, C), corner-labels=none, angle-radius=80, side-labels=(CA=exact), side-text=(AB="$x$", BC="$y$"), angle-text=(A="$v$", C="$90^\circ - v$")
+triangle: points=((0, 0), (Px, 0), (Px, Py)), angles=(A, B, C), corner-labels=none, angle-radius=80, side-labels=(CA=exact), side-text=(AB="$x$", BC="$y$"), angle-text=(A="$v$", C="$90^\circ - v$"), angle-offset=24, label-offset=24
 :::
 
 

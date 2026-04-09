@@ -110,9 +110,8 @@ width: 100%
 align: right
 axis: equal
 axis: off
-triangle: svs=(2, 53, 3), angles=all, color=blue, angle-color=red, angle-radius=50, side-labels=(AB=numeric, CA=numeric, BC=numeric), angle-labels=(A=numeric, B=numeric, C=numeric)
+triangle: svs=(2, 53, 3), angles=all, color=blue, angle-color=red, angle-radius=90, side-labels=(AB=numeric, CA=numeric, BC=numeric), angle-labels=(A=numeric, B=numeric, C=numeric), label-offset=24, angle-offset=24
 fontsize: 30
-nocache:
 :::
 
 :::{cas-popup}
@@ -191,7 +190,7 @@ Bestem arealet av trekanten.
 
 ::::{answer}
 $$
-\sqrt{35\sqrt{2}}{2}
+\dfrac{35\sqrt{2}}{2}
 $$
 ::::
 :::::::::::::
@@ -320,6 +319,10 @@ I figuren til høyre vises en skisse av en boligtomt.
 
 Bestem arealet av tomten.
 
+
+
+:::{clear}
+:::
 
 ::::{answer}
 $$

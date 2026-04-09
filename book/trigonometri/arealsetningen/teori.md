@@ -212,9 +212,8 @@ width: 100%
 align: right
 axis: off
 axis: equal
-triangle: svs=(3, 30, 4), angles=A, color=blue, angle-color=red, angle-radius=30, side-labels=(AB=exact, CA=exact), angle-labels=(A=numeric)
+triangle: svs=(3, 30, 4), angles=A, color=blue, angle-color=red, angle-radius=100, side-labels=(AB=exact, CA=exact), angle-labels=(A=numeric)
 fontsize: 30
-nocache:
 :::
 
 
@@ -312,8 +311,9 @@ ticks: off
 axis: off
 axis: equal 
 align: right
-triangle: svs=(3, 45, 4), angles=all, color=blue, angle-color=red, angle-radius=20, corner-labels=(A="$A$", B="$B$", C="$C$"), lw=3, side-text=(AB="$c$", CA="$b$", BC="$a$")
-fontsize: 30
+triangle: svs=(3, 45, 4), angles=all, color=blue, angle-color=red, angle-radius=80, corner-labels=(A="$A$", B="$B$", C="$C$"), lw=3, side-text=(AB="$c$", CA="$b$", BC="$a$")
+fontsize: 32
+nocache:
 :::
 
 
