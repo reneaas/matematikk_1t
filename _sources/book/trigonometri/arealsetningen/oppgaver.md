@@ -172,6 +172,13 @@ class: tabs-parts
 I en trekant $\triangle ABC$ er $AB = 8$, $AC = 6$ og $\angle A = 30\degree$.
 
 Bestem arealet av trekanten.
+
+
+::::{answer}
+$$
+12
+$$
+::::
 :::::::::::::
 
 
@@ -180,6 +187,13 @@ Bestem arealet av trekanten.
 I en trekant $\triangle ABC$ er $AB = 5$, $BC = 7$ og $\angle B = 45\degree$.
 
 Bestem arealet av trekanten.
+
+
+::::{answer}
+$$
+\sqrt{35\sqrt{2}}{2}
+$$
+::::
 :::::::::::::
 
 
@@ -187,6 +201,13 @@ Bestem arealet av trekanten.
 I en trekant $\triangle ABC$ er $BC = 10$ og $AC = 8$ og $\angle C = 120\degree$.
 
 Bestem arealet av trekanten.
+
+
+::::{answer}
+$$
+20 \sqrt{3}
+$$
+::::
 :::::::::::::
 
 
@@ -299,6 +320,13 @@ I figuren til høyre vises en skisse av en boligtomt.
 
 Bestem arealet av tomten.
 
+
+::::{answer}
+$$
+50 + 75\sqrt{2}
+$$
+::::
+
 :::::::::::::::
 
 
@@ -355,6 +383,12 @@ class: tabs-parts
 Bestem arealet av $\triangle SAB$.
 
 
+::::{answer}
+$$
+T_{\triangle SAB} = \sqrt{3}
+$$
+::::
+
 :::::::::::::
 
 
@@ -362,6 +396,12 @@ Bestem arealet av $\triangle SAB$.
 :::::::::::::{tab-item} b
 Bestem arealet av $\triangle CAB$. 
 
+
+::::{answer}
+$$
+T_{\triangle CAB} = 2\sqrt{3}
+$$
+::::
 
 :::::::::::::
 
@@ -421,6 +461,12 @@ class: tabs-parts
 :::::::::::::{tab-item} a
 Bestem en eksakt verdi for $CD$.
 
+::::{answer}
+$$
+CD = \sqrt{3} \cdot a
+$$
+::::
+
 
 :::::::::::::
 
@@ -428,7 +474,11 @@ Bestem en eksakt verdi for $CD$.
 :::::::::::::{tab-item} b
 Bestem en eksakt verdi for arealet av firkanten.
 
-
+::::{answer}
+$$
+\sqrt{3} \cdot a^2
+$$
+::::
 :::::::::::::
 
 
