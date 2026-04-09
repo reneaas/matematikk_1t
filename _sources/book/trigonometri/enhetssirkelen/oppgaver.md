@@ -31,6 +31,10 @@ Bruk figuren til høyre til å bestemme
 * $\tan 36\degree$
 
 
+
+:::{clear}
+:::
+
 ::::{answer}
 * $\cos 36 \degree = 0.81$
 * $\sin 36 \degree = 0.59$
@@ -65,6 +69,10 @@ Bruk figuren til å bestemme
 * $\tan 72\degree$
 
 
+
+:::{clear}
+:::
+
 ::::{answer}
 * $\cos 72\degree = 0.31$
 * $\sin 72\degree = 0.95$
@@ -98,6 +106,10 @@ Bruk figuren til å bestemme
 * $\sin 140\degree$
 * $\tan 140\degree$
 
+
+
+:::{clear}
+:::
 
 ::::{answer}
 * $\cos 140\degree = -0.77$
@@ -145,6 +157,10 @@ grid: off
 Bestem koordinatene til punktet $P$ på enhetssirkelen vist til høyre.
 
 
+
+:::{clear}
+:::
+
 ::::{answer}
 $$
 P\left(\dfrac{\sqrt{3}}{2}, \dfrac{1}{2}\right)
@@ -173,6 +189,10 @@ grid: off
 
 Bestem koordinatene til punktet $P$ på enhetssirkelen vist til høyre.
 
+
+
+:::{clear}
+:::
 
 
 ::::{answer}
@@ -204,6 +224,10 @@ grid: off
 
 Bestem koordinatene til punktet $P$ på enhetssirkelen vist til høyre.
 
+
+
+:::{clear}
+:::
 
 ::::{answer}
 $$
