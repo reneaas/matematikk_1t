@@ -387,7 +387,7 @@ $$
 :::::::::::::::
 
 
-<!-- 
+
 ### Supplementvinkler
 
 
@@ -395,6 +395,40 @@ $$
 
 :::::::::::::::{summary} Sinus til supplementvinkler
 
+:::{plot}
+fontsize: 28
+width: 100%
+align: right
+circle: (0, 0), 1, blue, solid
+let: v = 60
+let: u = 180 - v
+let: Px = cos(v * pi / 180)
+let: Py = sin(v * pi / 180)
+let: Qx = cos(u * pi / 180)
+let: Qy = sin(u * pi / 180)
+point: (Px, Py)
+point: (Qx, Qy)
+line-segment: (0, 0), (Px, Py), solid, red
+text: Px, Py, "$P(\cos v, \sin v)$", top-right
+text: Qx, Qy, "$Q(\cos u, \sin u)$", top-left
+angle-arc: (0, 0), 0.3, 0, u, red
+text: 0.5 * Px, 0.5 * Py, "$1$", top-left
+angle-arc: (0, 0), 0.2, 0, v, red
+let: u = 30
+text: 0.25 * cos(u / 180 * pi), 0.15 * sin(u / 180 * pi), "$v$", top-right
+axis: equal
+grid: off
+ticks: off
+nocache:
+:::
+
+
+
+For alle vinkler $v$ gjelder 
+
+$$
+\boxed{\sin (180\degree - v) = \sin v}
+$$
 :::::::::::::::
 
 
@@ -402,4 +436,4 @@ $$
 
 :::::::::::::::{summary} Cosinus til supplementvinkler
 
-::::::::::::::: -->
+:::::::::::::::
