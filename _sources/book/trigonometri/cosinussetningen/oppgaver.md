@@ -267,20 +267,36 @@ $$
 
 
 :::::::::::::::{exercise} Oppgave 3
----
-level: 2
----
+
+
 En trekant $\triangle ABC$ er vist nedenfor.
 
-:::{figure} ./figurer/oppgaver/oppgave_3/figur.svg
----
-width: 80%
-class: no-click, adaptive-figure
----
+
+:::{plot}
+fontsize: 25
+width: 60%
+axis: equal
+axis: off
+let: l = 1
+let: Ax = 0
+let: Ay = 0
+let: Bx = 5 * l
+let: By = 0
+let: Cx = 2 * l * cos(pi/3)
+let: Cy = 2 * l * sin(pi/3)
+line-segment: (Ax, Ay), (Bx, By), solid, blue
+line-segment: (Bx, By), (Cx, Cy), solid, blue
+line-segment: (Cx, Cy), (Ax, Ay), solid, blue
+text: Ax, Ay, "$A$", bottom-left
+text: Bx, By, "$B$", center-right
+text: Cx, Cy, "$C$", top-center
+angle-arc: (Ax, Ay), 0.4, 0, 60, red
+text: 0.4 * cos(pi/6), 0.4 * sin(pi/6), "$60^\circ$", top-right
+text: 0.5 * (Ax + Bx), Ay - 0.1, "$5\ell$", bottom-center
+text: 0.5 * (Ax + Cx), 0.5 * (Ay + Cy), "$2\ell$", top-left
 :::
 
-:::{cas-popup}
-:::
+
 
 
 ::::::::::::::{tab-set}
@@ -293,22 +309,22 @@ Bestem et eksakt uttrykk for arealet av trekanten uttrykkt ved $\ell$.
 
 ::::{answer}
 $$
-T = \dfrac{5}{2}\sqrt{3} \cdot \ell^2
+T = \dfrac{5\sqrt{3}}{2} \cdot \ell^2
 $$
 ::::
 
 
 ::::{solution}
-Bruker arealsetningen og regner ut med CAS:
+Med arealsetningen får vi at
 
-:::{figure} ./figurer/oppgaver/oppgave_3/a/sol.png
----
-width: 100%
-class: no-click, adaptive-figure
----
-:::
 $$
-T = \dfrac{5}{2}\sqrt{3} \cdot \ell^2
+T = \dfrac{1}{2} \cdot 2\ell \cdot 5\ell \cdot \sin 60\degree.
+$$
+
+Vi vet at $\sin 60\degree = \dfrac{\sqrt{3}}{2}$, som gir at
+
+$$
+T = \dfrac{1}{2} \cdot 2 \ell \cdot 5 \ell \cdot \dfrac{\sqrt{3}}{2} = \dfrac{5\sqrt{3}}{2} \cdot \ell^2.
 $$
 ::::
 
@@ -325,26 +341,31 @@ Bestem et eksakt uttrykk for lengden $BC$ uttrykt ved $\ell$.
 
 ::::{answer}
 $$
-x = \sqrt{19} \cdot \ell
+BC = \sqrt{19} \cdot \ell
 $$
 ::::
 
 
 ::::{solution}
-La $x = BC$. Vi bruker cosinussetningen til å bestemme $x$ uttrykt ved $\ell$:
-
-:::{figure} ./figurer/oppgaver/oppgave_3/b/sol.png
----
-width: 100%
-class: no-click, adaptive-figure
----
-:::
-
-Vi antar at $\ell > 0$, som betyr at 
+Vi lar $x = BC$. Fra cosinussetningen får vi da at
 
 $$
-x = \sqrt{19} \cdot \ell
+x^2 = (2 \ell)^2 + (5 \ell)^2 - 2 \cdot (2 \ell) \cdot (5 \ell) \cdot \cos 60\degree.
 $$
+
+Vi vet at $\cos 60\degree = \dfrac{1}{2}$, som gir at
+
+$$
+x^2 = 4 \ell^2 + 25 \ell^2 - 2 \cdot 2 \ell \cdot 5 \ell \cdot \dfrac{1}{2} = 19 \ell^2
+$$
+
+som betyr at
+
+$$
+x = \sqrt{19} \cdot \ell.
+$$
+
+Altså er $BC = \sqrt{19} \cdot \ell$.
 ::::
 
 :::::::::::::
@@ -360,21 +381,52 @@ $$
 
 :::::::::::::::{exercise} Oppgave 4
 ---
-level: 2
+aids: true
 ---
+
+:::{cas-popup}
+---
+layout: sidebar
+---
+:::
+
+
 En firkant $\square ABCD$ er vist nedenfor.
 
 
-:::{figure} ./figurer/oppgaver/oppgave_4/figur.svg
----
-width: 80%
-class: no-click, adaptive-figure
----
+:::{plot}
+fontsize: 25
+axis: off
+axis: equal
+width: 50%
+let: Ax = 0
+let: Ay = 0
+let: Bx = sqrt(3)
+let: By = 0
+let: Cx = Bx
+let: Cy = By + 1
+let: Dx = Cx + 3 * cos((90 + 180 - 120) * pi / 180)
+let: Dy = Cy + 3 * sin((90 + 180 - 120) * pi / 180)
+line-segment: (Ax, Ay), (Bx, By), solid, blue
+line-segment: (Bx, By), (Cx, Cy), solid, blue
+line-segment: (Cx, Cy), (Dx, Dy), solid, blue
+line-segment: (Dx, Dy), (Ax, Ay), solid, blue
+text: Ax, Ay, "$A$", bottom-left
+text: Bx, By, "$B$", bottom-right
+text: Cx, Cy, "$C$", top-right
+text: Dx, Dy, "$D$", top-left
+let: ds = 0.2
+line-segment: (Bx - ds, By), (Bx - ds, By + ds), solid, gray
+line-segment: (Bx - ds, By + ds), (Bx, By + ds), solid, gray
+angle-arc: (Cx, Cy), 0.2, 90 + 180 - 120, 90 + 180, red
+text: 0.5 * (Ax + Bx), 0.5 * (Ay + By) - 0.1, "$\sqrt{3}$", bottom-center
+text: 0.5 * (Ax + Dx), 0.5 * (Ay + Dy) - 0.1, "$\sqrt{7}$", bottom-left
+text: 0.5 * (Bx + Cx) + 0.1, 0.5 * (By + Cy), "$1$", center-right
+text: Cx - 0.18, Cy - 0.1, "$120^\circ$", bottom-left
 :::
 
 
-:::{cas-popup}
-:::
+
 
 
 ::::::::::::::{tab-set}
@@ -604,22 +656,53 @@ $$
 
 :::::::::::::::{exercise} Oppgave 6
 ---
-level: 2
+aids: true
 ---
+
+
+:::{cas-popup}
+---
+layout: sidebar
+---
+:::
+
 
 En firkant $\square ABCD$ er vist nedenfor.
 
 
-:::{figure} ./figurer/oppgaver/oppgave_6/figur.svg
----
-width: 80%
-class: no-click, adaptive-figure
----
+:::{plot}
+fontsize: 25
+width: 60%
+axis: off
+axis: equal
+let: a = 1
+let: Ax = 0
+let: Ay = 0
+let: Bx = a
+let: By = 0
+let: Cx = Bx + sqrt(2) * a * cos((180 - 75 - 30) * pi / 180)
+let: Cy = By + sqrt(2) * a * sin((180 - 75 - 30) * pi / 180)
+let: Dx = Ax + a * cos(120 * pi / 180)
+let: Dy = Ay + a * sin(120 * pi / 180)
+line-segment: (Ax, Ay), (Bx, By), solid, blue
+line-segment: (Bx, By), (Cx, Cy), solid, blue
+line-segment: (Cx, Cy), (Dx, Dy), solid, blue
+line-segment: (Dx, Dy), (Ax, Ay), solid, blue
+line-segment: (Bx, By), (Dx, Dy), dashed, gray
+angle-arc: (Ax, Ay), 0.15, 0, 120, red
+angle-arc: (Bx, By), 0.2, 180 - 105, 180 - 105 + 75, red
+angle-arc: (Dx, Dy), 0.3, 120 + 180, 120 + 180 + 30, red
+text: Ax, Ay, "$A$", bottom-left
+text: Bx, By, "$B$", bottom-right
+text: Cx, Cy, "$C$", top-right
+text: Dx, Dy, "$D$", top-left
+text: Ax, Ay + 0.15, "$120^\circ$", top-right
+text: Bx, By + 0.2, "$75^\circ$", top-left
+text: Dx + 0.2, Dy - 0.22, "$30^\circ$", bottom-right 
+text: 0.5 * (Ax + Bx), Ay, "$a$", bottom-center
+text: 0.5 * (Bx + Cx), 0.5 * (By + Cy), "$\sqrt{2} \cdot a$", bottom-right
 :::
 
-
-:::{cas-popup}
-:::
 
 
 
@@ -763,19 +846,56 @@ $$
 
 :::::::::::::::{exercise} Oppgave 7
 ---
-level: 2
+aids: true
 ---
-Nedenfor vises en regulær 5-kant $ABCDE$. Alle sidelengdene er $\ell$ og vinklene i hvert hjørne er $108 \degree$.
-
-:::{figure} ./figurer/oppgaver/oppgave_7/figur.svg
----
-width: 80%
-class: no-click, adaptive-figure
----
-:::
 
 :::{cas-popup}
+---
+layout: sidebar
+---
 :::
+
+
+Nedenfor vises en regulær 5-kant med sidelengder $\ell$.
+
+
+
+:::{plot}
+axis: off
+axis: equal
+width: 50%
+let: u = (180 - 108) * pi / 180
+let: N = 5
+let: l = 1
+let: Ax = 0
+let: Ay = 0
+let: Bx = l
+let: By = 0
+let: Cx = Bx + l * cos(u)
+let: Cy = By + l * sin(u)
+let: Dx = Cx + l * cos(2 * u)
+let: Dy = Cy + l * sin(2 * u)
+let: Ex = Dx + l * cos(3 * u)
+let: Ey = Dy + l * sin(3 * u)
+line-segment: (Ax, Ay), (Bx, By), solid, blue
+line-segment: (Bx, By), (Cx, Cy), solid, blue
+line-segment: (Cx, Cy), (Dx, Dy), solid, blue
+line-segment: (Dx, Dy), (Ex, Ey), solid, blue
+line-segment: (Ex, Ey), (Ax, Ay), solid, blue
+line-segment: (Ax, Ay), (Cx, Cy), dashed, gray
+line-segment: (Cx, Cy), (Ex, Ey), dashed, gray
+text: Ax, Ay, "$A$", bottom-left
+text: Bx, By, "$B$", bottom-right
+text: Cx, Cy, "$C$", center-right
+text: Dx, Dy, "$D$", top-center
+text: Ex, Ey, "$E$", center-left
+angle-arc: (Bx, By), 0.15, 180 - 108, 180, red
+text: Bx, By + 0.15, "$108^\circ$", top-left
+fontsize: 25
+text: 0.5 * (Ax + Bx), 0.5 * (Ay + By) - 0.1, "$\ell$", bottom-center
+:::
+
+
 
 
 ::::::::::::::{tab-set}
@@ -950,22 +1070,65 @@ Dette er en mulighet for opplysningene Anna kan ha fått.
 
 :::::::::::::::{exercise} Oppgave 9
 ---
-level: 3
+aids: true
 ---
+
+:::{cas-popup}
+---
+layout: sidebar
+---
+:::
+
+
 Nedenfor vises en regulær $7$-kant med sidelengder $2$. 
 
 Bestem arealet av $7$-kanten.
 
-:::{figure} ./figurer/oppgaver/oppgave_9/figur.svg
----
-width: 80%
-class: no-click, adaptive-figure
----
+
+:::{plot}
+axis: off
+axis: equal
+width: 50%
+let: N = 7
+let: u = (180 - 128.57) * pi / 180
+let: Ax = 0
+let: Ay = 0
+let: Bx = 2
+let: By = 0
+let: Cx = Bx + 2*cos(u)
+let: Cy = By + 2*sin(u)
+let: Dx = Cx + 2*cos(2*u)
+let: Dy = Cy + 2*sin(2*u)
+let: Ex = Dx + 2*cos(3*u)
+let: Ey = Dy + 2*sin(3*u)
+let: Fx = Ex + 2*cos(4*u)
+let: Fy = Ey + 2*sin(4*u)
+let: Gx = Fx + 2*cos(5*u)
+let: Gy = Fy + 2*sin(5*u)
+line-segment: (Ax, Ay), (Bx, By), solid, blue
+line-segment: (Bx, By), (Cx, Cy), solid, blue
+line-segment: (Cx, Cy), (Dx, Dy), solid, blue
+line-segment: (Dx, Dy), (Ex, Ey), solid, blue
+line-segment: (Ex, Ey), (Fx, Fy), solid, blue
+line-segment: (Fx, Fy), (Gx, Gy), solid, blue
+line-segment: (Gx, Gy), (Ax, Ay), solid, blue
+line-segment: (Ax, Ay), (Cx, Cy), dashed, gray
+line-segment: (Ax, Ay), (Fx, Fy), dashed, gray
+line-segment: (Cx, Cy), (Fx, Fy), dashed, gray
+line-segment: (Cx, Cy), (Ex, Ey), dashed, gray
+angle-arc: (Bx, By), 0.3, 180 - 128.57, 180, red
+text: Bx, By + 0.25, "$128.57^\circ$", top-left
+fontsize: 25
+text: Ax, Ay, "$A$", bottom-left
+text: Bx, By, "$B$", bottom-right
+text: Cx, Cy, "$C$", center-right
+text: Dx, Dy, "$D$", top-right
+text: Ex, Ey, "$E$", top-center
+text: Fx, Fy, "$F$", top-left
+text: Gx, Gy, "$G$", center-left
+text: 0.5 * (Ax + Bx), 0.5 * (Ay + By), "$2$", bottom-center
 :::
 
-
-:::{cas-popup}
-:::
 
 
 ::::{answer}
@@ -1079,6 +1242,68 @@ $$
 
 
 :::::::::::::::
+
+
+
+
+---
+
+
+
+:::::::::::::::{exercise} Oppgave 10
+En sirkel med radius $1$ er innskrevet i en regulær $6$-kant. 
+
+
+:::{plot}
+axis: off
+axis: equal
+width: 50%
+let: r = 1
+let: l = 2 * sqrt(3) / 3 * r
+circle: (0, 0), r, solid, black
+let: N = 6
+repeat: n=0..N-1; line-segment: (l * cos(2 * pi / N * n), l * sin(2 * pi / N * n)), (l * cos(2 * pi / N * (n + 1)), l * sin(2 * pi / N * (n + 1))), solid, blue
+repeat: n=0..N-1; line-segment: (0, 0), (l * cos(2 * pi / N * n), l * sin(2 * pi / N * n)), dashed, gray
+line-segment: (0, 0), (r * cos(pi / 6), r * sin(pi / 6)), dashed, red
+text: r * cos(pi / 6) / 2 + 0.1, r * sin(pi / 6) / 2 + 0.2, "$1$", center-center
+fontsize: 25
+:::
+
+
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Bestem en eksakt verdi for omkretsen $\mathcal{O}$ av $6$-kanten.
+
+::::{answer}
+$$
+\mathcal{O} = 4 \sqrt{3}
+$$
+::::
+:::::::::::::
+
+
+
+:::::::::::::{tab-item} b
+En eksakt verdi for arealet $T$ av $6$-kanten.
+
+
+::::{answer}
+$$
+T = 2 \sqrt{3}
+$$
+::::
+
+:::::::::::::
+
+::::::::::::::
+
+:::::::::::::::
+
+
 
 
 

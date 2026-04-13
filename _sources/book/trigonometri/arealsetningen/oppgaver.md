@@ -12,7 +12,7 @@ width: 100%
 align: right
 axis: equal
 axis: off
-triangle: svs=(3, 30, 2), angles=A, color=blue, angle-color=red, angle-radius=25, side-labels=(AB=exact, CA=exact), angle-labels=(A=numeric)
+triangle: svs=(3, 30, 2), angles=A, color=blue, angle-color=red, angle-radius=60, side-labels=(AB=exact, CA=exact), angle-labels=(A=numeric), label-offset=24, angle-offset=24
 fontsize: 30
 :::
 
@@ -41,7 +41,7 @@ width: 100%
 align: right
 axis: equal
 axis: off
-triangle: svs=(2, 45, 5), angles=A, color=blue, angle-color=red, angle-radius=25, side-labels=(AB=exact, CA=exact), angle-labels=(A=numeric)
+triangle: svs=(2, 45, 5), angles=A, color=blue, angle-color=red, angle-radius=60, side-labels=(AB=exact, CA=exact), angle-labels=(A=numeric), label-offset=24, angle-offset=24
 fontsize: 30
 :::
 
@@ -69,7 +69,7 @@ width: 100%
 align: right
 axis: equal
 axis: off
-triangle: svs=(5, 60, 3), angles=A, color=blue, angle-color=red, angle-radius=25, side-labels=(AB=exact, CA=exact), angle-labels=(A=numeric)
+triangle: svs=(5, 60, 3), angles=A, color=blue, angle-color=red, angle-radius=60, side-labels=(AB=exact, CA=exact), angle-labels=(A=numeric), label-offset=24, angle-offset=24
 fontsize: 30
 :::
 
@@ -236,7 +236,7 @@ let: Cx = Bx
 let: Cy = 6 * sin(v)
 let: Dx = 6 * cos(v)
 let: Dy = 6 * sin(v)
-polygon: (Ax, Ay), (Bx, By), (Cx, Cy), (Dx, Dy), blue, 0.1
+polygon: (Ax, Ay), (Bx, By), (Cx, Cy), (Dx, Dy), blue, 0
 text: Ax, Ay, "$A$", bottom-left
 text: Bx, By, "$B$", bottom-right
 text: Cx, Cy, "$C$", top-right
@@ -249,6 +249,8 @@ angle-arc: (Ax, Ay), 0.5, 0, 150
 text: 1.2 * cos(pi / 6), 1.2 * sin(pi / 6), "$150^\circ$", center-center
 text: 0.5 * (Ax + Bx), 0, "$6$", bottom-center
 text: 0.5 * (Ax + Dx), 0.5 * (Ay + Dy), "$6$", bottom-left
+line-segment: (Bx - ds, By), (Bx - ds, By + ds), solid, gray
+line-segment: (Bx - ds, By + ds), (Bx, By + ds), solid, gray
 fontsize: 30
 :::
 
@@ -318,8 +320,6 @@ I figuren til høyre vises en skisse av en boligtomt.
 
 
 Bestem arealet av tomten.
-
-
 
 :::{clear}
 :::
@@ -684,5 +684,38 @@ Bestem arealet Arkimedes fant.
 ::::::::::::::
 
 
+:::::::::::::::
+
+
+
+
+---
+
+
+
+
+:::::::::::::::{exercise} Oppgave 11
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Gitt en trekant $ABC$ der $AB = 3 \sqrt{2}$, $AC = 8$ og $\angle A = 45\degree$.
+
+Bestem arealet av trekanten.
+
+:::::::::::::
+
+
+
+:::::::::::::{tab-item} b
+Gitt en trekant PQR der $PQ = 3 \sqrt{2}$, $PR = 8$ og $\angle P = 140\degree$.
+
+Avgjør hvilke av trekantene $ABC$ og $PQR$ som har størst areal.
+
+:::::::::::::
+
+
+::::::::::::::
 :::::::::::::::
 
