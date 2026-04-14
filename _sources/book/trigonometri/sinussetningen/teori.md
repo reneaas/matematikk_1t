@@ -142,7 +142,7 @@ $$
 Så ganger vi med $\sqrt{3}$ på begge sider, og da får vi at
 
 $$
-x = \dfrac{4\sqrt{3}}{\sqrt{2}} = 4\sqrt{\dfrac{3}{2}} = 2\sqrt{6}
+x = \dfrac{4\sqrt{3}}{\sqrt{2}} = \dfrac{4 \sqrt{3} \cdot \sqrt{2}}{\sqrt{2} \cdot \sqrt{2}} = \dfrac{4\sqrt{6}}{2} = 2\sqrt{6}
 $$
 
 Altså er $BC = 2\sqrt{6}$.
