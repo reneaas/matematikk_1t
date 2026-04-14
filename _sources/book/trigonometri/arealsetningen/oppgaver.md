@@ -283,6 +283,13 @@ $$
 
 :::::::::::::::{exercise} Oppgave 5
 
+:::{cas-popup}
+---
+layout: sidebar
+---
+:::
+
+
 :::{plot}
 nocache:
 fontsize: 30
@@ -326,7 +333,7 @@ Bestem arealet av tomten.
 
 ::::{answer}
 $$
-50 + 75\sqrt{2}
+50 + \dfrac{75\sqrt{3} + 175}{2}
 $$
 ::::
 
