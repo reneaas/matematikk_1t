@@ -190,7 +190,7 @@ Bestem arealet av trekanten.
 
 ::::{answer}
 $$
-\dfrac{35\sqrt{2}}{2}
+\dfrac{35\sqrt{2}}{4}
 $$
 ::::
 :::::::::::::
