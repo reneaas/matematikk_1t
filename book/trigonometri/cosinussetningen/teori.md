@@ -343,16 +343,14 @@ $$
 $$
 
 $$
-x^2 - 8x + 16 = 0
+x^2 - 8x + 16 = 0 \liff (x - 4)^2 = 0
 $$
 
-Nå bruker vi $abc$-formelen:
+Altså må $x = 4$ som betyr at
 
 $$
-x = \dfrac{8 \pm \sqrt{(-8)^2 - 4 \cdot 1 \cdot 16}}{2 \cdot 1} = \dfrac{8 \pm \sqrt{64 - 64}}{2} = \dfrac{8}{2} = 4
+AD = 4.
 $$
-
-Altså må $AD = 4$.
 ::::
 
 
