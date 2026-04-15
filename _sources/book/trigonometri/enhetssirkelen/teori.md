@@ -433,7 +433,7 @@ $$
 
 
 
-
+<!-- 
 :::::::::::::::{summary} Cosinus til supplementvinkler
 
-:::::::::::::::
+::::::::::::::: -->
