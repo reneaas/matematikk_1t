@@ -550,7 +550,7 @@ Bestem en eksakt verdi for arealet til sekskanten.
 
 ::::{answer}
 $$
-T = 24 \sqrt{3}.
+T = 6 \sqrt{3}.
 $$
 ::::
 
