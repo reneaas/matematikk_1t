@@ -203,7 +203,7 @@ width: 80%
 :::{plot}
 width: 100%
 align: right
-triangle: sss=(8 * cos(pi/5), 8 * sin(pi/5), 8), angles=(A, B, C), angle-radius=50, side-labels=(AB=exact), side-offset=25, angle-labels=(A=numeric)
+triangle: sss=(8 * cos(pi/5), 8 * sin(pi/5), 8), angles=(A, B, C), angle-radius=60, side-labels=(AB=exact), side-offset=25, angle-labels=(A=numeric), angle-offset=24
 axis: off
 axis: equal
 fontsize: 34
@@ -262,7 +262,7 @@ Bruk trigonometri til å bestemme $AC$.
 
 ::::{answer}
 $$
-AC = \sqrt{5} + 3
+AC = 8
 $$
 ::::
 
