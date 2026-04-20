@@ -388,11 +388,8 @@ $$
 
 
 
-### Supplementvinkler
 
-
-
-
+<!-- 
 :::::::::::::::{summary} Sinus til supplementvinkler
 
 :::{plot}
@@ -429,7 +426,7 @@ For alle vinkler $v$ gjelder
 $$
 \boxed{\sin (180\degree - v) = \sin v}
 $$
-:::::::::::::::
+::::::::::::::: -->
 
 
 
