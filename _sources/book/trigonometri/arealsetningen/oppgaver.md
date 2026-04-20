@@ -486,7 +486,7 @@ Bestem en eksakt verdi for arealet av firkanten.
 
 ::::{answer}
 $$
-\sqrt{3} \cdot a^2
+\dfrac{\sqrt{3} + 3}{2} \cdot a^2
 $$
 ::::
 :::::::::::::
