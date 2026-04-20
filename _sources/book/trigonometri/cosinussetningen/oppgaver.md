@@ -528,8 +528,9 @@ $$
 
 :::::::::::::::{exercise} Oppgave 5
 ---
-level: 2
+aids: true
 ---
+
 Nedenfor vises en firkant $\square ABCD$. 
 
 :::{figure} ./figurer/oppgaver/oppgave_5/figur.svg
@@ -1328,7 +1329,7 @@ $$
 
 
 ::::{solution}
-Sidelengdene til de $6$ trekantene som bygger opp $6$-kanten har sidelengder $$\ell = 2x$ der $x = \dfrac{\sqrt{3}}{3}$ som vi fant i oppgave **a**. Altså blir sidelengdene som spenner ut hver trekant i $6$-kanten lik
+Sidelengdene til de $6$ trekantene som bygger opp $6$-kanten har sidelengder $\ell = 2x$ der $x = \dfrac{\sqrt{3}}{3}$ som vi fant i oppgave **a**. Altså blir sidelengdene som spenner ut hver trekant i $6$-kanten lik
 
 $$
 \ell = 2x = 2 \cdot \dfrac{\sqrt{3}}{3} = \dfrac{2\sqrt{3}}{3}.
