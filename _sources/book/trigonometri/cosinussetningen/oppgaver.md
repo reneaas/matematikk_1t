@@ -1283,6 +1283,35 @@ $$
 \mathcal{O} = 4 \sqrt{3}
 $$
 ::::
+
+
+::::{solution}
+Sirkelen er innskrevet i en regulær $6$-kant som betyr at **høyden** i trekanten er lik radius i sirkelen. Dermed er høyden $1$. 
+
+Sentralvinkelen $v$ i hver trekant i $6$-kanten vil være
+
+$$
+v = \dfrac{360\degree}{6} = 60\degree.
+$$
+
+Deler vi opp hver av de $6$ trekantene i to like store mindre, rettvinklede trekanter, så vil vi få en rettvinkla trekant der den lengste kateten er lik høyden $1$, og trekanten blir er $30\degree$-$60\degree$-$90\degree$ trekant. Da følger det at den korteste kateten $x$ er halvparten av hypotenusen $2x$. Vi bruker Pytagoras' setning for å finne $x$:
+
+$$
+(2x)^2 = x^2 + 1^2 \liff 3x^2 = 1
+$$
+
+$$
+x^2 = \dfrac{1}{3} \liff x = \dfrac{1}{\sqrt{3}} = \dfrac{\sqrt{3}}{3}.
+$$
+
+Vi har at $6$-kanten må bestå av $12$ slike deler som betyr at omkretsen til $6$-kanten er
+
+$$
+\mathcal{O} = 12x = 12 \cdot \dfrac{\sqrt{3}}{3} = 4 \sqrt{3}.
+$$
+::::
+
+
 :::::::::::::
 
 
@@ -1295,6 +1324,43 @@ En eksakt verdi for arealet $T$ av $6$-kanten.
 $$
 T = 2 \sqrt{3}
 $$
+::::
+
+
+::::{solution}
+Sidelengdene til de $6$ trekantene som bygger opp $6$-kanten har sidelengder $$\ell = 2x$ der $x = \dfrac{\sqrt{3}}{3}$ som vi fant i oppgave **a**. Altså blir sidelengdene som spenner ut hver trekant i $6$-kanten lik
+
+$$
+\ell = 2x = 2 \cdot \dfrac{\sqrt{3}}{3} = \dfrac{2\sqrt{3}}{3}.
+$$
+
+
+
+Da kan vi bruke arealsetningen for å finne arealet av hver trekant:
+
+$$
+\begin{align*}
+T_{\triangle} &= \dfrac{1}{2} \cdot \ell^2 \cdot \sin(60\degree) \\
+\\
+&= \dfrac{1}{2} \cdot \left(\dfrac{2\sqrt{3}}{3}\right)^2 \cdot \dfrac{\sqrt{3}}{2} \\
+\\
+&= \dfrac{1}{2} \cdot \dfrac{12}{9} \cdot \dfrac{\sqrt{3}}{2} \\
+\\
+&= \dfrac{1}{2} \cdot \dfrac{4}{3} \cdot \dfrac{\sqrt{3}}{2} \\
+\\
+&= \dfrac{2\sqrt{3}}{6} \\
+\\
+&= \dfrac{\sqrt{3}}{3}.
+\end{align*}
+$$
+
+
+Siden det er $6$ slike trekanter i $6$-kanten, så blir arealet av $6$-kanten:
+
+$$
+T = 6 \cdot T_{\triangle} = 6 \cdot \dfrac{\sqrt{3}}{3} = 2 \sqrt{3}.
+$$
+
 ::::
 
 :::::::::::::
