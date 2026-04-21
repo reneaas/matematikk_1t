@@ -970,8 +970,175 @@ $$
 ---
 
 
-:::::::::::::::{exercise} Oppgave 10 (Vår 2024)
-:::{figure} ./figurer/oppgave_10/figur.svg
+:::::::::::::::{exercise} Oppgave 10 (høst 2025)
+
+
+
+:::{plot}
+axis: off
+axis: equal
+width: 70%
+polygon: (0, 0), (3, 0), (3 - sqrt(3)*cos(pi/6), 0 + sqrt(3)*sin(pi/6))
+polygon: (0, 0), ((3*sqrt(2) + sqrt(6))/2 * cos(pi/4), -(3*sqrt(2) + sqrt(6))/2 * sin(pi/4)), (3, 0)
+angle-arc: (3, 0), 0.3 , 180, 150
+text: 2.7, 0, "$30^\circ$", top-left
+angle-arc: (3 - sqrt(3)*cos(pi/6), 0 + sqrt(3)*sin(pi/6)), 0.3, -30, -30-120
+text: 3 - sqrt(3)*cos(pi/6), sqrt(3)*sin(pi/6) - 0.3, "$120^\circ$", bottom-center 
+angle-arc: (0, 0), 0.3, 0, -45
+text: 0.3, -0.05, "$45^\circ$", bottom-right
+text: 0, 0, "$A$", center-left
+text: 3, 0, "$C$", center-right
+text: 3 - sqrt(3)*cos(pi/6), sqrt(3)*sin(pi/6), "$D$", top-center
+text: (3*sqrt(2) + sqrt(6))/2 * cos(pi/4), -(3*sqrt(2) + sqrt(6))/2 * sin(pi/4), "$B$", bottom-center
+text: 0.5 * (3 - sqrt(3)*cos(pi/6) + 3), 0.5 * sqrt(3)*sin(pi/6) + 0.1, "$\sqrt{3}$", top-right
+text: 0.5 * ( (3*sqrt(2) + sqrt(6))/2 * cos(pi/4) + 3), 0.5 * (-(3*sqrt(2) + sqrt(6))/2 * sin(pi/4)), "$\sqrt{6}$", bottom-right
+:::
+
+
+:::{cas-popup}
+---
+layout: sidebar
+---
+:::
+
+Gitt figuren ovenfor.
+
+
+:::{clear}
+:::
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Gjør beregninger og vis at $AC = 3$.
+
+
+::::{solution}
+La $x = AC$. Vi bruker sinussetningen for å bestemme sidelengden med CAS:
+
+
+:::{figure} ./figurer/oppgave_10/a.png
+---
+class: no-click, adaptive-figure
+width: 60%
+---
+:::
+
+Altså er $AC = 3$. 
+
+
+::::
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Bestem arealet av firkanten $ABCD$.
+
+Gi svaret eksakt.
+
+
+::::{answer}
+$$
+T_{\square ABCD} = \dfrac{3}{4}\left(2\sqrt{3} + 3\right)
+$$
+::::
+
+
+::::{solution}
+Firkanten $ABCD$ er består av to trekanter $\triangle ABC$ og $\triangle ACD$. 
+
+Arealet av $\triangle ACD$ kan vi bestemme direkte med arealsetningen:
+
+$$
+T_{\triangle ACD} = \dfrac{1}{2}\cdot AC \cdot CD \cdot \sin 30\degree
+$$
+
+Vi regner ut med CAS:
+
+:::{figure} ./figurer/oppgave_10/b_1.png
+---
+class: no-click, adaptive-figure
+width: 60%
+---
+:::
+
+Altså er $T_{\triangle ACD} = \dfrac{3\sqrt{3}}{4}$.
+
+
+For å bestemme arealet av $\triangle ABC$ bruker vi også arealsetningen. Her velger vi å ta utgangspunkt i vinkelen $\angle BAC = 45\degree$ som vil gi
+
+$$
+T_{\triangle ABC} = \dfrac{1}{2} \cdot AB \cdot AC \cdot \sin 45\degree
+$$
+
+
+Vi kjenner ikke til $AB$, men den kan vi bestemme ved hjelp av cosinussetningen med utgangspunkt i vinkelen $\angle BAC$ som gir
+
+$$
+BC^2 = AC^2 + AB^2 - 2 \cdot AC \cdot AB \cdot \cos 45\degree
+$$
+
+Vi bruker CAS til å bestemme $AB$. La $x = AB$. 
+
+:::{figure} ./figurer/oppgave_10/b_2.png
+---
+class: no-click, adaptive-figure
+width: 60%
+---
+:::
+
+Sidelengden $AB$ er lenger enn $AC$, så vi må velge den største løsningen. Altså er
+
+$$
+AB = \dfrac{3 \sqrt{2} + \sqrt{6}}{2}
+$$
+
+Så regner vi ut arealet av $\triangle ABC$ med CAS:
+
+:::{figure} ./figurer/oppgave_10/b_3.png
+---
+class: no-click, adaptive-figure
+width: 60%
+---
+:::
+
+Så legger vi sammen de to arealene for å få det eksakte arealet av firkanten $ABCD$:
+
+
+:::{figure} ./figurer/oppgave_10/b_4.png
+---
+class: no-click, adaptive-figure
+width: 60%
+---
+:::
+
+Dermed er det eksakte arealet av firkanten $ABCD$ gitt ved
+
+$$
+T_{\square ABCD} = \dfrac{3}{4}\left(2\sqrt{3} + 3\right)
+$$
+
+
+::::
+
+:::::::::::::
+
+
+::::::::::::::
+
+
+:::::::::::::::
+
+
+---
+
+
+:::::::::::::::{exercise} Oppgave 11 (Vår 2024)
+:::{figure} ./figurer/oppgave_11/figur.svg
 ---
 width: 80%
 class: no-click, adaptive-figure
@@ -1013,7 +1180,7 @@ $$
 
 ved å bruke CAS: 
 
-:::{figure} ./figurer/oppgave_10/a.png
+:::{figure} ./figurer/oppgave_11/a.png
 ---
 width: 80%
 class: no-click, adaptive-figure
@@ -1048,7 +1215,7 @@ $$
 Vi løser likningen med CAS:
 
 
-:::{figure} ./figurer/oppgave_10/b.png
+:::{figure} ./figurer/oppgave_11/b.png
 ---
 width: 80%
 class: no-click, adaptive-figure
@@ -1081,6 +1248,9 @@ Vinklene $u$ og $v$ kan bli like store dersom lysstrålen går parallelt med lin
 
 
 :::::::::::::::
+
+
+
 
 
 
