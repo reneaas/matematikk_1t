@@ -3,6 +3,15 @@
 > Oppgavene her kan løses **med** hjelpemidler.
 
 :::::::::::::::{exercise} Oppgave 1 (Vår 2024)
+
+:::{cas-popup}
+---
+layout: sidebar
+---
+:::
+
+
+
 Du får vite følgende om en trekant $ABC$
 
 * $AB$ er $8$
@@ -10,11 +19,7 @@ Du får vite følgende om en trekant $ABC$
 * Arealet av trekanten er $4\sqrt{3}$
 
 
-Bestem lengdene av sidene $AC$ og $BC$ {popup}`eksakt.<Med eksakt så mener man at svaret skal uttrykkes med eventuelle brøker, kvadratrøtter, hele tall osv. Ingen desimaltall.>`
-
-
-:::{cas-popup} 350 500
-:::
+Bestem lengdene av sidene $AC$ og $BC$ eksakt.
 
 
 :::::{answer}
@@ -83,13 +88,26 @@ Dermed er $BC = 2\sqrt{21}$.
 
 :::::::::::::::{exercise} Oppgave 2 (Høst 2024)
 
-:::{figure} ./figurer/oppgave_2/figur.svg
----
-width: 80%
-class: no-click, adaptive-figure
----
-viser en stjerne satt sammen av 12 like store likesidede trekanter.
+
+:::{plot}
+axis: equal
+axis: off
+width: 50%
+let: s = 4
+let: v = pi / 3
+repeat: n=0..5; line-segment: (s * cos(v * n), s * sin(v * n)), (s * cos(v * (n + 1)), s * sin(v * (n + 1))), dashed, gray
+repeat: n=0..5; line-segment: (0, 0), (s * cos(v * n), s * sin(v * n)), dashed, gray
+repeat: n=0..5; line-segment: (s * cos(v * n), s * sin(v * n)), ((s * cos(v * n) + s * cos(v * (n + 1))), s * sin(v * n) + s * sin(v * (n + 1))), solid, black
+repeat: n=0..5; line-segment: ((s * cos(v * n) + s * cos(v * (n + 1))), s * sin(v * n) + s * sin(v * (n + 1))), (s * cos(v * (n + 1)), s * sin(v * (n + 1))), solid, black
 :::
+
+
+:::{cas-popup}
+---
+layout: sidebar
+---
+:::
+
 
 Maria skal lage en stjerne ved å sette sammen $12$ like store likesidede trekanter. <br>
 Lengdene av sidekantene i trekantene er $4$.
@@ -97,10 +115,6 @@ Lengdene av sidekantene i trekantene er $4$.
 Ved å bruke Pytagoras' setning og arealberegninger har Maria kommet fram til at arealet av stjernen vil bli $48\sqrt{3}$. 
 
 Vis at du kan komme fram til samme resultat ved å bruke trigonometri. 
-
-
-:::{cas-popup} 350 500
-:::
 
 
 :::::{solution}
@@ -970,7 +984,7 @@ $$
 ---
 
 
-:::::::::::::::{exercise} Oppgave 10 (høst 2025)
+:::::::::::::::{exercise} Oppgave 10 (Høst 2025)
 
 
 
