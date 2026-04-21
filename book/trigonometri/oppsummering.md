@@ -196,4 +196,29 @@ $$
 
 ::::::
 
+
+::::::{grid-item-card}
+---
+columns: 12
+---
+**Eksakte verdier**
+^^^
+
+:::{table}
+---
+transpose: true
+---
+labels: $v$, $\cos v$, $\sin v$
+$0^{\circ}$, $1$, $0$
+$30^{\circ}$, $\dfrac{\sqrt{3}}{2}$, $\dfrac{1}{2}$
+$45^{\circ}$, $\dfrac{\sqrt{2}}{2}$, $\dfrac{\sqrt{2}}{2}$
+$60^{\circ}$, $\dfrac{1}{2}$, $\dfrac{\sqrt{3}}{2}$
+$90^{\circ}$, $0$, $1$
+:::
+
+
+
+
+::::::
+
 ::::::::
