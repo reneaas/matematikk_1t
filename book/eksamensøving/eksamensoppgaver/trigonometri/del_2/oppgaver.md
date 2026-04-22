@@ -981,7 +981,12 @@ $$
 
 :::::::::::::::
 
+
+
+
 ---
+
+
 
 
 :::::::::::::::{exercise} Oppgave 10 (Høst 2025)
@@ -1151,8 +1156,95 @@ $$
 ---
 
 
-:::::::::::::::{exercise} Oppgave 11 (Vår 2024)
-:::{figure} ./figurer/oppgave_11/figur.svg
+
+:::::::::::::::{exercise} Oppgave 11
+
+:::{cas-popup}
+---
+layout: sidebar
+---
+:::
+
+
+En sirkel med sentrum $S$ og radius $6$ er vist i figuren nedenfor. 
+
+Bestem en eksakt verdi for arealet av det fargelagte området.
+
+
+:::{plot}
+width: 50%
+axis: off
+axis: equal
+let: r = 2
+let: v = 30 * pi / 180
+let: u = 2 * v
+circle: (0, 0), r, solid, black
+line-segment: (-r, 0), (r * cos(u), r*sin(u)), solid, blue
+line-segment: (-r, 0), (r, 0), solid, blue
+angle-arc: (-r, 0), 0.5, 0, v * 180 / pi
+text: -r + 0.5, 0, "$30^\circ$", top-right
+line-segment: (0, 0), (r * cos(u), r*sin(u)), dashed, gray
+fill-between: tan(v) * (x + r), 0, (-r, r*cos(u)), blue, 0.2, where=above
+fill-between: sqrt(r**2 - x**2), 0, (r*cos(u), r), blue, 0.2, where=above
+angle-arc: (0, 0), 0.4, 0, u * 180 / pi
+point: (0, 0)
+text: 0, 0, "$S$", bottom-center
+fontsize: 26
+:::
+
+
+
+::::{answer}
+$$
+T = 9\sqrt{3} + 6\pi
+$$
+::::
+
+
+::::{solution}
+Vi kan tenke på det fargelagte området som å være summen av to områder: 
+1. En trekant
+2. En sirkelsektor
+
+
+To av sidene i trekanten vil være lik radius i sirkelen som betyr at den er likebeint. Da følger det at to av vinklene er $30\degree$ som betyr at sentralvinkelen i trekanten må være $120\degree$. Arealet av trekanten er derfor
+
+$$
+T_\triangle = \dfrac{1}{2} \cdot 6 \cdot 6 \cdot \sin 120\degree = 9\sqrt{3}.
+$$
+
+La $v$ være vinkelen i sirkelsektoren som er fargelagt. Da har vi at
+
+$$
+v + 120\degree = 180\degree \liff v = 60\degree.
+$$
+
+Arealet av sirkelsektoren vil være prosentandelen av hele sirkelen ganget med arealet til en full sirkel. Altså:
+
+$$
+T_\circ = \dfrac{v}{360\degree} \cdot \pi \cdot 6^2 = \dfrac{60\degree}{360\degree} \cdot 36\pi = \dfrac{1}{6} \cdot 36\pi = 6\pi.
+$$
+
+Dermed er arealet av det fargelagte området gitt ved
+
+$$
+T = T_\triangle + T_\circ = 9\sqrt{3} + 6\pi.
+$$
+
+::::
+
+
+
+:::::::::::::::
+
+
+
+
+---
+
+
+:::::::::::::::{exercise} Oppgave 12 (Vår 2024)
+:::{figure} ./figurer/oppgave_12/figur.svg
 ---
 width: 80%
 class: no-click, adaptive-figure
@@ -1160,7 +1252,7 @@ align: right
 ---
 :::
 
-Når en lysstråle går fra luft til vann, skiften den retning. <br>
+Når en lysstråle går fra luft til vann, skifter den retning. <br>
 På figuren står linjen $m$ vinkelrett på vannoverflaten og lysstrålen går fra å danne en vinkel $u$ med $m$ til å danne en vinkel $v$ med $m$.
 
 Når lysstrålen går fra luft til vann, vil 
@@ -1194,7 +1286,7 @@ $$
 
 ved å bruke CAS: 
 
-:::{figure} ./figurer/oppgave_11/a.png
+:::{figure} ./figurer/oppgave_12/a.png
 ---
 width: 80%
 class: no-click, adaptive-figure
@@ -1229,7 +1321,7 @@ $$
 Vi løser likningen med CAS:
 
 
-:::{figure} ./figurer/oppgave_11/b.png
+:::{figure} ./figurer/oppgave_12/b.png
 ---
 width: 80%
 class: no-click, adaptive-figure
