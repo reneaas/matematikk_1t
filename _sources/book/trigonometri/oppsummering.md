@@ -94,6 +94,8 @@ columns: 6
 
 $$
 \begin{align*}
+\cos^2 v + \sin^2 v &= 1 \\
+\\
 \sin (180\degree - v) &= \sin v \\
 \\
 \cos (180\degree - v) &= -\cos v \\
