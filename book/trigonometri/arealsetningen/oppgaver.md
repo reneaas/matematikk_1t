@@ -683,13 +683,13 @@ axis: equal
 let: a = 5
 let: Ax = 0
 let: Ay = 0
-let: Bx = sqrt(13) * a
-let: By = 0
 let: Cx = Ax + 2 * a * cos(pi/6)
 let: Cy = Ay + 2 * a * sin(pi/6)
 let: Dx = 0
 let: Dy = a
-polygon: (Ax, Ay), (Bx, By), (Cx, Cy), (Dx, Dy), blue, 0.1
+let: Bx = Cx + sqrt(3) * a * cos(-pi/6)
+let: By = Cy + sqrt(3) * a * sin(-pi/6)
+polygon: (Ax, Ay), (Bx, By), (Cx, Cy), (Dx, Dy), blue, 0
 text: Ax, Ay, "$A$", bottom-left
 text: Bx, By, "$B$", bottom-right
 text: Cx, Cy, "$C$", top-right
