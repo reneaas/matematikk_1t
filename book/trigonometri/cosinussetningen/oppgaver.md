@@ -267,6 +267,9 @@ $$
 
 
 :::::::::::::::{exercise} Oppgave 3
+---
+level: 2
+---
 
 
 En trekant $\triangle ABC$ er vist nedenfor.
@@ -304,7 +307,7 @@ text: 0.5 * (Ax + Cx), 0.5 * (Ay + Cy), "$2\ell$", top-left
 class: tabs-parts
 ---
 :::::::::::::{tab-item} a
-Bestem et eksakt uttrykk for arealet av trekanten uttrykkt ved $\ell$.
+Bestem et eksakt uttrykk for arealet av trekanten uttrykt ved $\ell$.
 
 
 ::::{answer}
@@ -381,7 +384,7 @@ Altså er $BC = \sqrt{19} \cdot \ell$.
 
 :::::::::::::::{exercise} Oppgave 4
 ---
-aids: true
+level: 2
 ---
 
 :::{cas-popup}
@@ -528,7 +531,7 @@ $$
 
 :::::::::::::::{exercise} Oppgave 5
 ---
-aids: true
+level: 2
 ---
 
 Nedenfor vises en firkant $\square ABCD$. 
@@ -657,7 +660,7 @@ $$
 
 :::::::::::::::{exercise} Oppgave 6
 ---
-aids: true
+level: 2
 ---
 
 
@@ -847,7 +850,7 @@ $$
 
 :::::::::::::::{exercise} Oppgave 7
 ---
-aids: true
+level: 2
 ---
 
 :::{cas-popup}
@@ -1071,7 +1074,7 @@ Dette er en mulighet for opplysningene Anna kan ha fått.
 
 :::::::::::::::{exercise} Oppgave 9
 ---
-aids: true
+level: 3
 ---
 
 :::{cas-popup}
@@ -1252,6 +1255,10 @@ $$
 
 
 :::::::::::::::{exercise} Oppgave 10
+---
+level: 3
+---
+
 En sirkel med radius $1$ er innskrevet i en regulær $6$-kant. 
 
 

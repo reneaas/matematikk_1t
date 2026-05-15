@@ -1357,6 +1357,87 @@ Vinklene $u$ og $v$ kan bli like store dersom lysstrålen går parallelt med lin
 
 
 
+---
+
+
+
+:::::::::::::::{exercise} Oppgave 13
+:::{plot}
+width: 60%
+axis: off
+axis: equal
+let: r = 2
+let: N = 7
+circle: (0, 0), r, dotted, gray
+repeat: n=0..N-1; point: (r * cos(pi/ 2 + 2 * n * pi / N), r * sin(pi/ 2 + 2 * n * pi / N))
+let: s = 4 * sin(pi / 7)
+let: t = 4 * cos(pi / 7) * sin(pi/7) / (cos(2*pi/7) + 1)
+let: u = 2 * pi / 7
+let: v = 5 * pi / 7
+let: h = t * sin(u)
+let: H = r - h
+repeat: n=0..N-1; line-segment: (r * cos(pi/ 2 + 2 * n * pi / N), r * sin(pi/ 2 + 2 * n * pi / N)), (H / cos(u/2) * cos(pi/2 + u/2 + 2 * n * pi / N), H / cos(u/2) * sin(pi/2 + u/2 + 2 * n * pi / N)), solid, blue
+repeat: n=0..N-1; line-segment: (r * cos(pi/ 2 + 2 * (n + 1) * pi / N), r * sin(pi/ 2 + 2 * (n + 1) * pi / N)), (H / cos(u/2) * cos(pi/2 + u/2 + 2 * n * pi / N), H / cos(u/2) * sin(pi/2 + u/2 + 2 * n * pi / N)), solid, blue
+repeat: n=0..N-1; line-segment: (H / cos(u/2) * cos(pi/2 + u/2 + 2 * n * pi / N), H / cos(u/2) * sin(pi/2 + u/2 + 2 * n * pi / N)), (H / cos(u/2) * cos(pi/2 + u/2 + 2 * (n + 1) * pi / N), H / cos(u/2) * sin(pi/2 + u/2 + 2 * (n + 1) * pi / N)), dashed, gray
+let: m = 4
+let: n = 5
+line-segment: (0, 0), (r * cos(pi / 2 + 2 * m * pi / N), r * sin(pi / 2 + 2 * m * pi / N)), dashdot, black
+line-segment: (0, 0), (r * cos(pi / 2 + 2 * n * pi / N), r * sin(pi / 2 + 2 * n * pi / N)), dashdot, black
+angle-arc: (0, 0), 0.4, (pi / 2 + 2 * m * pi / N) * 180 / pi, (pi / 2 + 2 * n * pi / N) * 180 / pi
+angle-arc: (H / cos(u/2) * cos(pi/2 + u/2 + 2 * m * pi / N), H / cos(u/2) * sin(pi/2 + u/2 + 2 * m * pi / N)), 0.2, (pi / 2 - v/2 + 2 * (m + n)/2 * pi / N) * 180/ pi, (pi / 2 + v/2 + 2 * (m + n)/2 * pi / N) * 180 / pi
+text: 0.4 * cos(pi / 2 + 2 * (m + n)/2 * pi / N), 0.4 * sin(pi / 2 + 2 * (m + n)/2 * pi / N), "$u$", bottom-right
+text: 1.25 * H * cos(pi / 2 + 2 * (m + n)/2 * pi / N), 1.25 * H * sin(pi / 2 + 2 * (m + n)/2 * pi / N), "$v$", bottom-right
+line-segment: (r * cos(pi/2 + 2 * m * pi / N), r * sin(pi/2 + 2 * m * pi / N)), (r * cos(pi/2 + 2 * n * pi / N), r * sin(pi/2 + 2 * n * pi / N)), solid, red
+annotate: (r + 0.1, -0.8 * r), (0.5 * r * cos(pi/2 + 2 * m * pi / N) + 0.5 * r * cos(pi/2 + 2 * n * pi / N), 0.5 * r * sin(pi/2 + 2 * m * pi / N) + 0.5 * r * sin(pi/2 + 2 * n * pi / N)), "$s$", top-left
+text: r * cos(pi / 2 + 2 * 0 * pi / N), r * sin(pi / 2 + 2 * 0 * pi / N) + 0.1, "$D$", top-center
+text: r * cos(pi / 2 + 2 * 1 * pi / N), r * sin(pi / 2 + 2 * 1 * pi / N) + 0.1, "$E$", top-left
+text: r * cos(pi / 2 + 2 * 2 * pi / N), r * sin(pi / 2 + 2 * 2 * pi / N) - 0.1, "$F$", bottom-left
+text: r * cos(pi / 2 + 2 * 3 * pi / N), r * sin(pi / 2 + 2 * 3 * pi / N) - 0.1, "$G$", bottom-left
+text: r * cos(pi / 2 + 2 * 4 * pi / N), r * sin(pi / 2 + 2 * 4 * pi / N) - 0.1, "$A$", bottom-right
+text: r * cos(pi / 2 + 2 * 5 * pi / N) + 0.1, r * sin(pi / 2 + 2 * 5 * pi / N) , "$B$", bottom-right
+text: r * cos(pi / 2 + 2 * 6 * pi / N), r * sin(pi / 2 + 2 * 6 * pi / N), "$C$", top-right
+:::
+
+I figuren ovenfor vises et heptagram $ABCDFG$ som er innskrevet i en sirkel med radius $r = 2$. Linjestykke $AB = s$. 
+
+::::::::::::::{tab-set}
+---
+class: tabs-parts
+---
+:::::::::::::{tab-item} a
+Bestem vinkel $u$ og vinkel $v$.
+
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} b
+Bestem $s$.
+
+:::::::::::::
+
+
+:::::::::::::{tab-item} c
+Sidelengdene i figuren er $t$.
+
+Bestem omkretsen av heptagrammet.
+:::::::::::::
+
+
+:::::::::::::{tab-item} d
+Bestem arealet av heptagrammet.
+
+
+:::::::::::::
+
+
+::::::::::::::
+
+
+:::::::::::::::
+
+
+
 
 
 
